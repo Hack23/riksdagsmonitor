@@ -3,22 +3,21 @@ date: 2026-05-28
 subfolder: interpellations
 slug: 2026-05-28-interpellations
 source_folder: analysis/daily/2026-05-28/interpellations
-generated_at: 2026-05-28T15:56:17.680Z
+generated_at: 2026-05-28T22:29:32.792Z
 language: en
 layout: article
 ---
-## Executive Brief
+## What Happened
 <!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-28/interpellations/executive-brief.md -->
 
 ---
 
-### 🎯 BLUF
-
+### Lede
 The Swedish Social Democrats (S) and Miljöpartiet (MP) filed 20 interpellations during 2026-05-21 to 2026-05-28, in the final weeks before the Riksdag's summer recess. The wave constitutes a systematic, coordinated pre-election accountability campaign targeting the Tidö coalition across unemployment, climate targets, healthcare, economic inequality, social services, and defence. Arbetsmarknadsminister Johan Britz (L) — who also holds the acting climate portfolio — faces six separate interpellations, exposing him as the coalition's most electorally vulnerable minister. All government answers are due before the summer recess (June 9–18), placing the coalition under simultaneous public pressure in its final pre-election parliamentary weeks.
 
 ### 🧭 3 Decisions This Brief Supports
 
-1. **Monitor Britz's answer on 2030 transport target (HD10514, deadline 2026-06-12)**: The government's position on the transport target is the single highest-stakes policy clarification before recess. If Britz abandons it, EU compliance and election narrative effects are severe. If reaffirmed, it contradicts his predecessor's public stance.
+1. **Monitor Britz's answer on 2030 transport target (Riksdag document #10514 (HD10514), deadline 2026-06-12)**: The government's position on the transport target is the single highest-stakes policy clarification before recess. If Britz abandons it, EU compliance and election narrative effects are severe. If reaffirmed, it contradicts his predecessor's public stance.
 2. **Track unemployment answer timing and framing (HD10519, deadline 2026-06-10)**: S's "100,000 fler arbetslösa" frame is their primary economic campaign number. Britz's response will either neutralise or amplify this frame for the autumn campaign.
 3. **Assess healthcare cluster for compound crisis risk (HD10500, HD10516, HD10517, HD10513)**: Multiple healthcare interpellations converge with documented policy outcomes (dental care patient dropout, elderly care funding stress). Any regional hospital announcement before June creates compound media event.
 
@@ -138,9 +137,9 @@ Use this guide to read the article as a political-intelligence product rather th
 
 | Icon | Reader need | What you'll get |
 |---|---|---|
-| 📊 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
+| 📊 | [Lede and editorial decisions](#rm-what-happened) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
 | 🔮 | [Scenarios](#rm-scenario-analysis) | alternative outcomes with probabilities, triggers, and warning signs |
-| 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📦 | [Deep Dive: Data Download Manifest](#rm-deep-dive-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
 | 📝 | [Coalition Stability](#rm-coalition-stability) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Cross Type Synthesis](#rm-cross-type-synthesis) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Election Forecast Update](#rm-election-forecast-update) | supporting analytical lens with primary-source evidence and audit-traceable citations |
@@ -160,7 +159,7 @@ Use this guide to read the article as a political-intelligence product rather th
 | 📝 | [Temporal Dynamics](#rm-temporal-dynamics) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Thematic Brief](#rm-thematic-brief) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
-| 🏷️ | [Audit appendix](#rm-data-download-manifest) | classification, cross-reference, methodology and manifest evidence for reviewers |
+| 🏷️ | [Audit appendix](#rm-deep-dive-data-download-manifest) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
 ## Per-document intelligence
 
@@ -449,7 +448,7 @@ The most likely outcome is Scenario B (40%), with elements of Scenario C (20%) r
 
 *economicProvenance: IMF WEO-2026-04, vintageAgeMonths=1, provider=imf*
 
-## Data Download Manifest
+## Deep Dive: Data Download Manifest
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-28/interpellations/data-download-manifest.md -->
 
 **Workflow**: News: Interpellation Debates

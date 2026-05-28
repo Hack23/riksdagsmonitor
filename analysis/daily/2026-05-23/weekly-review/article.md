@@ -3,11 +3,11 @@ date: 2026-05-23
 subfolder: weekly-review
 slug: 2026-05-23-weekly-review
 source_folder: analysis/daily/2026-05-23/weekly-review
-generated_at: 2026-05-28T15:56:17.462Z
+generated_at: 2026-05-28T22:29:32.542Z
 language: en
 layout: article
 ---
-## Executive Brief
+## What Happened
 <!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-23/weekly-review/executive-brief.md -->
 
 ---
@@ -16,7 +16,7 @@ layout: article
 
 Sweden's Riksdag closed the week of 22 May 2026 with a substantial legislative harvest spanning national security, tax authority expansion, education reform, and consumer protection. The governing coalition (M, SD, KD, L) advanced multiple flagship bills through committee stage, setting up chamber votes in late May and June 2026.
 
-**Top story — Security & Migration**: The Justice Committee (JuU) cleared committee report HD024192, the Miljöpartiet opposition motion against prop. 2025/26:267 (*Stärkt skydd mot utlänningar som utgör kvalificerade säkerhetshot*). The Tidö coalition's security proposition, tightening detention and expulsion powers for foreign nationals assessed as qualified security threats, is expected to pass with M/SD/KD/L support over objections from S, MP, and V. MP specifically challenges provisions allowing children to be held in expanded circumstances — a child-rights red line for the green opposition.
+**Top story — Security & Migration**: The Justice Committee (JuU) cleared committee report Riksdag document #024192 (HD024192), the Miljöpartiet opposition motion against prop. 2025/26:267 (*Stärkt skydd mot utlänningar som utgör kvalificerade säkerhetshot*). The Tidö coalition's security proposition, tightening detention and expulsion powers for foreign nationals assessed as qualified security threats, is expected to pass with M/SD/KD/L support over objections from S, MP, and V. MP specifically challenges provisions allowing children to be held in expanded circumstances — a child-rights red line for the green opposition.
 
 **Tax Authority**: The Taxation Committee (SkU) processed opposition motion HD024191 challenging prop. 2025/26:261 on Skatteverket's expanded population-registration powers. The Tidö government's proposal extends Skatteverket's authority to verify residential addresses proactively — a measure framed as anti-fraud but challenged by critics as surveillance overreach. The motion to limit the powers faces a majority against it in the chamber.
 
@@ -69,9 +69,9 @@ Use this guide to read the article as a political-intelligence product rather th
 
 | Icon | Reader need | What you'll get |
 |---|---|---|
-| 📊 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
-| 🧠 | [Synthesis Summary](#rm-synthesis-summary) | evidence-anchored narrative consolidating primary sources into one coherent story line |
-| 🎯 | [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps |
+| 📊 | [Lede and editorial decisions](#rm-what-happened) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
+| 🧠 | [Why It Matters](#rm-why-it-matters) | evidence-anchored narrative consolidating primary sources into one coherent story line |
+| 🎯 | [Key Judgments](#rm-key-findings) | confidence-bearing political-intelligence conclusions and collection gaps |
 | 📈 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals |
 | 👥 | [Stakeholder Perspectives](#rm-stakeholder-perspectives) | winners, losers and undecided actors with stake-weighted positions and pressure points |
 | 🔢 | [Coalition Mathematics](#rm-coalition-mathematics) | parliamentary arithmetic showing exactly who can pass or block this measure and at what margin |
@@ -87,13 +87,13 @@ Use this guide to read the article as a political-intelligence product rather th
 | ⚙️ | [Implementation Feasibility](#rm-implementation-feasibility) | delivery feasibility, capability gaps, timelines and execution risks for the proposed action |
 | 📰 | [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder |
 | 😈 | [Devil's Advocate](#rm-devils-advocate) | alternative hypotheses, steel-manned counter-arguments and the strongest case against the lead reading |
-| 🏷️ | [Classification Results](#rm-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
-| 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
-| 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
-| 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
-| 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
+| 🏷️ | [Deep Dive: Classification Results](#rm-deep-dive-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
+| 🔀 | [Deep Dive: Cross-Reference Map](#rm-deep-dive-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
+| 🔬 | [Deep Dive: Methodology & Limitations](#rm-deep-dive-methodology--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
+| 📦 | [Deep Dive: Data Download Manifest](#rm-deep-dive-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 🏷️ | [Audit appendix](#rm-deep-dive-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
-## Synthesis Summary
+## Why It Matters
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-23/weekly-review/synthesis-summary.md -->
 
 ### Core Assessment
@@ -130,7 +130,7 @@ This week follows the **Tidö legislative consolidation pattern** observed since
 
 IMF WEO Apr-2026: Sweden GDP growth projected at +1.8% for 2026, recovering from the +0.5% post-inflation slowdown of 2023–2024. General government gross debt (GGXWDG_NGDP) approximately 33% of GDP, among the lowest in EU — fiscal space available for the education investment implied by UbU19/27 action plans. Inflation (HICP) returning toward 2% target. Labour market tight; vocational training reform (UbU27) responds to documented skills gap in technical trades.
 
-## Intelligence Assessment — Key Judgments
+## Key Findings
 <!-- source: intelligence-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-23/weekly-review/intelligence-assessment.md -->
 
 ### Key Intelligence Questions (KIQ)
@@ -1191,7 +1191,7 @@ The dominant analytical narrative is: *"The Tidö coalition is delivering effici
 
 **Verdict**: The dominant "reform delivery" narrative overstates outcome certainty; implementation risk (R-04 in risk register) is underweighted in government communications.
 
-## Classification Results
+## Deep Dive: Classification Results
 <!-- source: classification-results.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-23/weekly-review/classification-results.md -->
 
 ### Document Classification
@@ -1247,7 +1247,7 @@ FOREIGN: OSCE, COUNCIL_OF_EUROPE
 WEEK: 2026-W21
 ```
 
-## Cross-Reference Map
+## Deep Dive: Cross-Reference Map
 <!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-23/weekly-review/cross-reference-map.md -->
 
 ### Intra-Week Document Linkages
@@ -1310,7 +1310,7 @@ graph LR
 | Global trade slowdown | Risk-assessment | IMF WEO Apr-2026 global projections |
 | Nordic security environment | SfU37/HD024192 | NATO accession 2024; Nordic defence cooperation |
 
-## Methodology Reflection & Limitations
+## Deep Dive: Methodology & Limitations
 <!-- source: methodology-reflection.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-23/weekly-review/methodology-reflection.md -->
 
 ### SAT Catalog Attestation (≥ 10 techniques required)
@@ -1398,7 +1398,7 @@ graph LR
 - Lawful bases applied: Art. 9(2)(e) — manifestly made public; Art. 9(2)(g) — substantial public interest
 - Data minimisation: Party positions cited at group level; individual MPs named only where they are the bill's author/spokesperson in a public document
 
-## Data Download Manifest
+## Deep Dive: Data Download Manifest
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-23/weekly-review/data-download-manifest.md -->
 
 **Workflow**: News: Weekly Review

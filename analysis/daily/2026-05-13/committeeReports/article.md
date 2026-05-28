@@ -3,11 +3,11 @@ date: 2026-05-13
 subfolder: committeeReports
 slug: 2026-05-13-committeeReports
 source_folder: analysis/daily/2026-05-13/committeeReports
-generated_at: 2026-05-28T15:56:16.904Z
+generated_at: 2026-05-28T22:29:31.888Z
 language: en
 layout: article
 ---
-## Executive Brief
+## What Happened
 <!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/committeeReports/executive-brief.md -->
 
 **BLUF**: On 12 May 2026, Sweden's Riksdag received two betänkanden of high political significance: Betänkande 2025/26:NU21 on comprehensive rural policy (prop. 2025/26:158) and Betänkande 2025/26:CU30 on a new energy efficiency goal replacing the 2030 quantitative target (prop. 2025/26:159). Both reports reveal a governing bloc (M, SD, KD, L) advancing its pre-election legislative programme against sustained opposition (S, V, C, MP) that files multi-point reservations but lacks the parliamentary arithmetic to block the proposals. The energy report is especially consequential: Sweden is abandoning a 50% quantitative energy efficiency target in favour of a qualitative goal that explicitly accommodates nuclear expansion and electrification — a seismic shift in energy governance ahead of the September 2026 election.
@@ -58,9 +58,9 @@ Use this guide to read the article as a political-intelligence product rather th
 
 | Icon | Reader need | What you'll get |
 |---|---|---|
-| 📊 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
-| 🧠 | [Synthesis Summary](#rm-synthesis-summary) | evidence-anchored narrative consolidating primary sources into one coherent story line |
-| 🎯 | [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps |
+| 📊 | [Lede and editorial decisions](#rm-what-happened) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
+| 🧠 | [Why It Matters](#rm-why-it-matters) | evidence-anchored narrative consolidating primary sources into one coherent story line |
+| 🎯 | [Key Judgments](#rm-key-findings) | confidence-bearing political-intelligence conclusions and collection gaps |
 | 📈 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals |
 | 👥 | [Stakeholder Perspectives](#rm-stakeholder-perspectives) | winners, losers and undecided actors with stake-weighted positions and pressure points |
 | 🔢 | [Coalition Mathematics](#rm-coalition-mathematics) | parliamentary arithmetic showing exactly who can pass or block this measure and at what margin |
@@ -76,10 +76,10 @@ Use this guide to read the article as a political-intelligence product rather th
 | ⚙️ | [Implementation Feasibility](#rm-implementation-feasibility) | delivery feasibility, capability gaps, timelines and execution risks for the proposed action |
 | 📰 | [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder |
 | 😈 | [Devil's Advocate](#rm-devils-advocate) | alternative hypotheses, steel-manned counter-arguments and the strongest case against the lead reading |
-| 🏷️ | [Classification Results](#rm-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
-| 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
-| 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
-| 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 🏷️ | [Deep Dive: Classification Results](#rm-deep-dive-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
+| 🔀 | [Deep Dive: Cross-Reference Map](#rm-deep-dive-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
+| 🔬 | [Deep Dive: Methodology & Limitations](#rm-deep-dive-methodology--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
+| 📦 | [Deep Dive: Data Download Manifest](#rm-deep-dive-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
 | 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
@@ -94,9 +94,9 @@ Use this guide to read the article as a political-intelligence product rather th
 | 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
-| 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
+| 🏷️ | [Audit appendix](#rm-deep-dive-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
-## Synthesis Summary
+## Why It Matters
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/committeeReports/synthesis-summary.md -->
 
 ### Lead Story Decision
@@ -158,7 +158,7 @@ graph TB
     style D fill:#0a0e27,stroke:#ff006e,color:#ff006e
 ```
 
-## Intelligence Assessment — Key Judgments
+## Key Findings
 <!-- source: intelligence-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/committeeReports/intelligence-assessment.md -->
 
 ### Key Judgments (KJ)
@@ -1212,7 +1212,7 @@ Challenge the dominant analytical frame using ACH (Analysis of Competing Hypothe
 
 **ACH conclusion**: None of the three hypotheses is inconsistent with all evidence. The most analytically actionable result is that H2 is likely TRUE for short-term rural service outcomes — this constrains media-facing claims about NU21's impact. H1 uncertainty (45%) is the primary risk driver for CU30.
 
-## Classification Results
+## Deep Dive: Classification Results
 <!-- source: classification-results.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/committeeReports/classification-results.md -->
 
 ### 7-Dimension Classification
@@ -1253,7 +1253,7 @@ Challenge the dominant analytical frame using ACH (Analysis of Competing Hypothe
 
 Both documents are GDPR Art. 9 SAFE — no personal data beyond named MPs/ministers in public office (Art. 9(2)(e) publicly made political opinions). All data sourced from official Riksdag API (data.riksdagen.se). No special category data handling required.
 
-## Cross-Reference Map
+## Deep Dive: Cross-Reference Map
 <!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/committeeReports/cross-reference-map.md -->
 
 ### Policy Cluster: Economic Competitiveness + Territorial Cohesion
@@ -1325,7 +1325,7 @@ graph LR
     style CU30 fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
 ```
 
-## Methodology Reflection & Limitations
+## Deep Dive: Methodology & Limitations
 <!-- source: methodology-reflection.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/committeeReports/methodology-reflection.md -->
 
 ### ICD 203 Analytic Standards Audit
@@ -1380,7 +1380,7 @@ The high-confidence judgments (KJ-1, KJ-3, KJ-5) are grounded entirely in A-tier
 
 This analysis is produced from publicly available Riksdag API data supplemented by structural political inference. It does not constitute legal advice on EU directive compliance, electoral polling analysis, or financial advice. Source citations are provided to enable independent verification.
 
-## Data Download Manifest
+## Deep Dive: Data Download Manifest
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/committeeReports/data-download-manifest.md -->
 
 > ℹ️ **Data-Only Pipeline**: This script downloads and persists raw data.

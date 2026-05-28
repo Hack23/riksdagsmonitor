@@ -3,11 +3,11 @@ date: 2026-05-22
 subfolder: motions
 slug: 2026-05-22-motions
 source_folder: analysis/daily/2026-05-22/motions
-generated_at: 2026-05-28T15:56:17.423Z
+generated_at: 2026-05-28T22:29:32.498Z
 language: en
 layout: article
 ---
-## Executive Brief
+## What Happened
 <!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/motions/executive-brief.md -->
 
 ---
@@ -22,7 +22,7 @@ Swedish opposition parties filed a concentrated wave of motions in Riksdagen dur
 
 **IMMEDIATE (SfU — migration)**: An unusually broad cross-party coalition — V, C, S — opposes both the abolition of permanent residence permits (prop. 2025/26:262) and stricter detention rules (prop. 2025/26:265). Centre's conditional cooperation is the key parliamentary variable; if C votes with S and V, the government faces embarrassing defeats in SfU.
 
-**MEDIUM-TERM (SkU — biometric data)**: V's partial opposition to expanded Skatteverket biometric powers (HD024187) targets the cross-agency fingerprint/facial image sharing between Skatteverket and Migrationsverket. This is a proportionality/GDPR challenge that Lagrådet may also scrutinise.
+**MEDIUM-TERM (SkU — biometric data)**: V's partial opposition to expanded Skatteverket biometric powers (Riksdag document #024187 (HD024187)) targets the cross-agency fingerprint/facial image sharing between Skatteverket and Migrationsverket. This is a proportionality/GDPR challenge that Lagrådet may also scrutinise.
 
 **MEDIUM-TERM (KU — transparency)**: C and S both reject prop. 2025/26:258 on union political contribution disclosure. Government faces coalition strain on this bill.
 
@@ -47,9 +47,9 @@ Use this guide to read the article as a political-intelligence product rather th
 
 | Icon | Reader need | What you'll get |
 |---|---|---|
-| 📊 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
-| 🧠 | [Synthesis Summary](#rm-synthesis-summary) | evidence-anchored narrative consolidating primary sources into one coherent story line |
-| 🎯 | [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps |
+| 📊 | [Lede and editorial decisions](#rm-what-happened) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
+| 🧠 | [Why It Matters](#rm-why-it-matters) | evidence-anchored narrative consolidating primary sources into one coherent story line |
+| 🎯 | [Key Judgments](#rm-key-findings) | confidence-bearing political-intelligence conclusions and collection gaps |
 | 📈 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals |
 | 👥 | [Stakeholder Perspectives](#rm-stakeholder-perspectives) | winners, losers and undecided actors with stake-weighted positions and pressure points |
 | 🔢 | [Coalition Mathematics](#rm-coalition-mathematics) | parliamentary arithmetic showing exactly who can pass or block this measure and at what margin |
@@ -65,13 +65,26 @@ Use this guide to read the article as a political-intelligence product rather th
 | ⚙️ | [Implementation Feasibility](#rm-implementation-feasibility) | delivery feasibility, capability gaps, timelines and execution risks for the proposed action |
 | 📰 | [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder |
 | 😈 | [Devil's Advocate](#rm-devils-advocate) | alternative hypotheses, steel-manned counter-arguments and the strongest case against the lead reading |
-| 🏷️ | [Classification Results](#rm-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
-| 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
-| 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
-| 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
-| 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
+| 🏷️ | [Deep Dive: Classification Results](#rm-deep-dive-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
+| 🔀 | [Deep Dive: Cross-Reference Map](#rm-deep-dive-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
+| 🔬 | [Deep Dive: Methodology & Limitations](#rm-deep-dive-methodology--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
+| 📦 | [Deep Dive: Data Download Manifest](#rm-deep-dive-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 🏷️ | [Audit appendix](#rm-deep-dive-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
-## Synthesis Summary
+## Why It Matters
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/motions/synthesis-summary.md -->
 
 ---
@@ -168,7 +181,7 @@ Prop. 2025/26:255 (*Stickprovsinsamling av uppgifter om hushållens skulder*) pr
 - HD024167 (2025/26:4167): metadata, SfU 2026-05-13
 - riksdag-regering MCP: live as of 2026-05-22T07:59:24Z
 
-## Intelligence Assessment — Key Judgments
+## Key Findings
 <!-- source: intelligence-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/motions/intelligence-assessment.md -->
 
 ---
@@ -1479,7 +1492,7 @@ The opposition's wave of May 2026 motions is more narratively significant than l
 - LSU prop. 267 passes intact: 75%
 - Biometric prop. 261 passes intact: 80%
 
-## Classification Results
+## Deep Dive: Classification Results
 <!-- source: classification-results.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/motions/classification-results.md -->
 
 ---
@@ -1550,7 +1563,7 @@ The opposition's wave of May 2026 motions is more narratively significant than l
 4. **Privacy/GDPR as common thread**: Three of four high-significance clusters involve personal data, biometric databases, or financial data — reflecting GDPR-era legislative consciousness
 5. **Electoral framing**: All motions filed 5 months before September 2026 election; opposition is building policy contrast narratives, not seeking legislative victories
 
-## Cross-Reference Map
+## Deep Dive: Cross-Reference Map
 <!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/motions/cross-reference-map.md -->
 
 ---
@@ -1614,7 +1627,7 @@ gantt
     FiU vote (estimated)               :fi2, 2026-06-15, 3d
 ```
 
-## Methodology Reflection & Limitations
+## Deep Dive: Methodology & Limitations
 <!-- source: methodology-reflection.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/motions/methodology-reflection.md -->
 
 ---
@@ -1687,7 +1700,7 @@ This analysis employed the following SATs from the tradecraft catalog:
 - All Family C (electoral), Family D domain lens files: completed
 - data-download-manifest.md: Full provenance, fallback documentation
 
-## Data Download Manifest
+## Deep Dive: Data Download Manifest
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/motions/data-download-manifest.md -->
 
 **Workflow**: News: Opposition Motions
@@ -1774,13 +1787,537 @@ No prior PIR files found in `analysis/daily/` for motions subfolder within last 
 
 None identified in current download batch.
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/motions/executive-brief_ar.md -->
+
+<!-- dir: rtl -->
+# الموجز التنفيذي — مقترحات المعارضة، 2026-05-22
+
+**التصنيف**: عام | للاستخدام: صانعو القرار، المحللون السياسيون، الصحفيون
+**التاريخ**: 2026-05-22 | **Riksmöte**: 2025/26
+**المؤلف**: James Pether Sörling
+
+---
+
+### الوضع
+
+قدّمت أحزاب المعارضة السويدية موجةً مكثفةً من المقترحات إلى البرلمان (Riksdag) خلال الفترة 19–21 مايو 2026، متحديةً جدول أعمال الحكومة التشريعي في أربعة مجالات: تشريعات الأمن الوطني، والمراقبة البيومترية، وسياسة الهجرة، والشفافية السياسية. وتمثّل هذه المقترحات ضغطاً برلمانياً متأخراً قبيل انتخابات عام 2026.
+
+### نقاط العمل الرئيسية
+
+**فوري (JuU — قانون الأمن)**: يطالب Vänsterpartiet برفض prop. 2025/26:267 الذي يوسّع احتجاز الأجانب المصنَّفين "تهديدات أمنية مؤهَّلة" ومراقبتهم. ويرى V أن القانون الحالي قسري بما يكفي أصلاً، وأن المعيار الجديد ("ما يُعدّ مبرراً بصفة خاصة لأمن السويد") غامق دستورياً. ومن المتوقع إجراء تصويت لجنة JuU قبل العطلة الصيفية.
+
+**فوري (SfU — الهجرة)**: تعارض تحالف حزبي واسع بصورة استثنائية — يضم V وC وS — كلاً من إلغاء تصاريح الإقامة الدائمة (prop. 2025/26:262) وتشديد قواعد الاحتجاز (prop. 2025/26:265). ويُعدّ تعاون Centerpartiet المشروط المتغيّر البرلماني الحاسم؛ فإذا صوّت C مع S وV، فستواجه الحكومة هزائم محرجة في لجنة SfU.
+
+**متوسط الأمد (SkU — البيانات البيومترية)**: يستهدف معارضة V الجزئية للصلاحيات البيومترية الموسَّعة لـ Skatteverket (HD024187) التبادلَ المشترك بين الوكالات لبصمات الأصابع وصور الوجوه بين Skatteverket وMigrationsverket. ويمثّل هذا تحدياً للتناسب والامتثال لنظام حماية البيانات (GDPR) قد يتولى Lagrådet أيضاً فحصه.
+
+**متوسط الأمد (KU — الشفافية)**: يرفض كلٌّ من C وS prop. 2025/26:258 بشأن الإفصاح عن المساهمات السياسية للنقابات. وتواجه الحكومة توترات داخل الائتلاف بشأن هذا المشروع.
+
+**متوسط الأمد (FiU — إحصاءات الديون)**: تطالب S بسجل شامل لديون الأسر وأصولها، في حين تصرّ الحكومة على الاكتفاء بالجمع العيّني. وقد أيّد Riksbanken علناً جمعاً أكثر شمولاً للبيانات.
+
+### الخلاصة
+
+يواجه الهجوم التشريعي الربيعي المتأخر لحكومة Tidö عام 2026 معارضةً منسّقةً في مجالات الأمن والهجرة والحوكمة الديمقراطية. ويُعدّ Vänsterpartiet أكثر المتحديين إنتاجاً (4 مقترحات مقدَّمة في 21 مايو 2026 وحده)، فيما يُتيح كلٌّ من S وC إمكانية كسر الائتلاف في ملفَّي الهجرة والشفافية. ستُشكّل النتائج الروايات الانتخابية حول سيادة القانون وحقوق الخصوصية وسياسة الهجرة السويدية في سياق انتخابات Riksdag العامة المقررة في سبتمبر 2026.
+
+---
+
+### قائمة المراقبة للـ 72 ساعة القادمة
+
+- جدول لجنة SfU لـ prop. 2025/26:262 وprop. 2025/26:265
+- جدول لجنة JuU لـ prop. 2025/26:267
+- أي Lagrådets yttranden بشأن prop. 2025/26:267 أو prop. 2025/26:261
+- التصريحات العلنية لـ Centerpartiet (C) بشأن تصويت الهجرة/الاحتجاز
+
+<!-- source-sha: 1e3aa0ef9bd9e24e5bba6a3819633c8c784d855a -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/motions/executive-brief_da.md -->
+
+**Klassifikation**: PUBLIC | Til: Beslutningstagere, politiske analytikere, journalister
+**Dato**: 2026-05-22 | **Riksmöte**: 2025/26
+**Forfatter**: James Pether Sörling
+
+---
+
+### Situation
+
+Svenske oppositionspartier indgav en koncentreret bølge af motioner i Riksdagen i perioden 19.–21. maj 2026, der udfordrer regeringens lovgivningsdagsorden på fire områder: national sikkerhedslovgivning, biometrisk overvågning, migrationspolitik og politisk transparens. Motionerne repræsenterer et sent parlamentarisk pres inden valget i 2026.
+
+### Vigtige handlingspunkter
+
+**OMGÅENDE (JuU — sikkerhedslov)**: Vänsterpartiet kræver afvisning af prop. 2025/26:267, som udvider tilbageholdelse og overvågning af udlændinge, der anses for "kvalificerede sikkerhedstrusler". V hævder, at den eksisterende lov allerede er alt for restriktiv, og at den nye standard ("særligt begrundet af hensyn til Sveriges sikkerhed") er konstitutionelt vag. JuU-udvalgsafstemning forventes inden sommerrecess.
+
+**OMGÅENDE (SfU — migration)**: En usædvanligt bred tværpartikoalition — V, C, S — modsætter sig både afskaffelsen af permanente opholdstilladelser (prop. 2025/26:262) og strammere regler for frihedsberøvelse (prop. 2025/26:265). Centerpartiets betingede samarbejde er den afgørende parlamentariske variabel; hvis C stemmer med S og V, står regeringen over for pinlige nederlag i SfU.
+
+**MELLEMLANG SIGT (SkU — biometriske data)**: V's delvise modstand mod udvidede biometriske beføjelser for Skatteverket (HD024187) retter sig mod krydsudveksling af fingeraftryk og ansigtsbilleder mellem Skatteverket og Migrationsverket. Dette er en proportionalitets- og GDPR-udfordring, som Lagrådet også kan komme til at granske.
+
+**MELLEMLANG SIGT (KU — transparens)**: C og S afviser begge prop. 2025/26:258 om fagforeningers politiske bidrag. Regeringen står over for koalitionsspændinger om dette lovforslag.
+
+**MELLEMLANG SIGT (FiU — gældsstatistik)**: S kræver et samlet register over husholdningers gæld og aktiver; regeringen insisterer på stikprøveindsamling. Riksbanken har offentligt støttet mere omfattende data.
+
+### Konklusion
+
+Tidö-regeringens lovgivningspres i foråret 2026 møder koordineret modstand på sikkerhed, migration og demokratisk styring. Vänsterpartiet er den mest produktive udfordrer (4 motioner indgivet den 21. maj 2026 alene), mens S og C giver koalitionsbrydende potentiale på migrations- og transparensforslag. Resultatet vil forme valgfortællinger om retsstaten, privatlivsrettigheder og dansk migrationspolitik op til riksdagsvalget i september 2026.
+
+---
+
+### Overvågningsliste for de næste 72 timer
+
+- SfU-udvalgskalender for prop. 2025/26:262 og 2025/26:265
+- JuU-udvalgskalender for prop. 2025/26:267
+- Eventuelle Lagrådets yttranden om prop. 2025/26:267 eller 2025/26:261
+- Centerpartiets (C) offentlige udmeldinger om migrations-/frihedsberøvelsesafstemningen
+
+<!-- source-sha: 1e3aa0ef9bd9e24e5bba6a3819633c8c784d855a -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/motions/executive-brief_de.md -->
+
+**Klassifizierung**: ÖFFENTLICH | Für: Entscheidungsträger, Politikanalysten, Journalisten
+**Datum**: 2026-05-22 | **Riksmöte**: 2025/26
+**Autor**: James Pether Sörling
+
+---
+
+### Lage
+
+Schwedische Oppositionsparteien reichten zwischen dem 19. und 21. Mai 2026 eine konzentrierte Welle von Motionen im Riksdag ein und fochten die Gesetzgebungsagenda der Regierung in vier Bereichen an: nationale Sicherheitsgesetzgebung, biometrische Überwachung, Migrationspolitik und politische Transparenz. Die Motionen repräsentieren einen parlamentarischen Spätdruck vor den Wahlen 2026.
+
+### Wichtige Maßnahmenpunkte
+
+**SOFORTMASSNAHMEN (JuU — Sicherheitsgesetz)**: Vänsterpartiet fordert die Ablehnung von prop. 2025/26:267, das die Inhaftierung und Überwachung von Ausländern ausweitet, die als „qualifizierte Sicherheitsbedrohungen" angesehen werden. V argumentiert, dass das bestehende Gesetz bereits übermäßig repressiv ist und der neue Standard („besonders gerechtfertigt für Schwedens Sicherheit") verfassungsrechtlich unbestimmt ist. JuU-Ausschussabstimmung wird vor der Sommerpause erwartet.
+
+**SOFORTMASSNAHMEN (SfU — Migration)**: Eine ungewöhnlich breite überparteiliche Koalition — V, C, S — lehnt sowohl die Abschaffung von Daueraufenthaltstiteln (prop. 2025/26:262) als auch strengere Inhaftierungsregeln (prop. 2025/26:265) ab. Die bedingte Zusammenarbeit von Centerpartiet ist die entscheidende parlamentarische Variable; wenn C mit S und V stimmt, drohen der Regierung peinliche Niederlagen in SfU.
+
+**MITTELFRISTIG (SkU — biometrische Daten)**: V's teilweiser Widerstand gegen erweiterte biometrische Befugnisse für Skatteverket (HD024187) zielt auf den behördenübergreifenden Austausch von Fingerabdrücken und Gesichtsbildern zwischen Skatteverket und Migrationsverket ab. Dies ist eine Verhältnismäßigkeits- und DSGVO-Herausforderung, die auch Lagrådet prüfen könnte.
+
+**MITTELFRISTIG (KU — Transparenz)**: C und S lehnen beide prop. 2025/26:258 zur Offenlegung politischer Gewerkschaftsspenden ab. Die Regierung sieht sich Koalitionsspannungen bei diesem Gesetzentwurf gegenüber.
+
+**MITTELFRISTIG (FiU — Schuldenstatistik)**: S fordert ein umfassendes Haushaltsschulden- und Vermögensregister; die Regierung besteht auf Stichprobenerhebung. Die Riksbanken hat öffentlich umfassendere Daten befürwortet.
+
+### Fazit
+
+Die spätfrühjährliche Gesetzgebungsoffensive der Tidö-Regierung 2026 trifft auf koordinierten Widerstand in den Bereichen Sicherheit, Migration und demokratische Governance. Vänsterpartiet ist der produktivste Herausforderer (allein 4 Motionen am 21. Mai 2026 eingereicht), während S und C koalitionsbrechendes Potenzial bei Migrations- und Transparenzgesetzen bieten. Das Ergebnis wird die Wahlnarrative zu Rechtsstaatlichkeit, Datenschutzrechten und schwedischer Migrationspolitik vor der Riksdag-Wahl im September 2026 prägen.
+
+---
+
+### Beobachtungsliste für die nächsten 72 Stunden
+
+- SfU-Ausschussplan für prop. 2025/26:262 und 2025/26:265
+- JuU-Ausschussplan für prop. 2025/26:267
+- Etwaige Lagrådets yttranden zu prop. 2025/26:267 oder 2025/26:261
+- Öffentliche Erklärungen von Centerpartiet (C) zur Migrations-/Inhaftierungsabstimmung
+
+<!-- source-sha: 1e3aa0ef9bd9e24e5bba6a3819633c8c784d855a -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/motions/executive-brief_es.md -->
+
+**Clasificación**: PÚBLICO | Para: Responsables de decisiones, analistas políticos, periodistas
+**Fecha**: 2026-05-22 | **Riksmöte**: 2025/26
+**Autor**: James Pether Sörling
+
+---
+
+### Situación
+
+Los partidos de oposición suecos presentaron una concentrada oleada de mociones en el Riksdag entre el 19 y el 21 de mayo de 2026, cuestionando la agenda legislativa del gobierno en cuatro áreas: legislación de seguridad nacional, vigilancia biométrica, política migratoria y transparencia política. Las mociones representan una presión parlamentaria tardía antes de las elecciones de 2026.
+
+### Puntos de acción clave
+
+**INMEDIATO (JuU — ley de seguridad)**: Vänsterpartiet exige el rechazo de la prop. 2025/26:267, que amplía la detención y vigilancia de extranjeros considerados «amenazas cualificadas para la seguridad». V argumenta que la ley existente ya es excesivamente punitiva y que el nuevo estándar («especialmente justificado para la seguridad de Suecia») es constitucionalmente ambiguo. Se espera la votación de la comisión JuU antes del receso de verano.
+
+**INMEDIATO (SfU — migración)**: Una coalición transpartidaria inusualmente amplia — V, C, S — se opone tanto a la abolición de los permisos de residencia permanente (prop. 2025/26:262) como a las normas más estrictas de detención (prop. 2025/26:265). La cooperación condicional de Centerpartiet es la variable parlamentaria clave; si C vota con S y V, el gobierno enfrenta embarazosas derrotas en SfU.
+
+**MEDIO PLAZO (SkU — datos biométricos)**: La oposición parcial de V a la ampliación de los poderes biométricos de Skatteverket (HD024187) apunta al intercambio interinstitucional de huellas dactilares e imágenes faciales entre Skatteverket y Migrationsverket. Este es un desafío de proporcionalidad y RGPD que Lagrådet también podría examinar.
+
+**MEDIO PLAZO (KU — transparencia)**: C y S rechazan la prop. 2025/26:258 sobre divulgación de contribuciones políticas sindicales. El gobierno enfrenta tensiones de coalición en este proyecto de ley.
+
+**MEDIO PLAZO (FiU — estadísticas de deuda)**: S exige un registro integral de deudas y activos de los hogares; el gobierno insiste en la recopilación por muestreo únicamente. El Riksbanken ha apoyado públicamente datos más completos.
+
+### Conclusión
+
+La ofensiva legislativa de mayo 2026 del gobierno Tidö enfrenta oposición coordinada en seguridad, migración y gobernanza democrática. Vänsterpartiet es el más prolífico (4 mociones el 21 de mayo), mientras que S y C ofrecen potencial de ruptura de coalición en migración y transparencia. El resultado moldeará las narrativas electorales sobre el Estado de derecho y privacidad antes de septiembre 2026.
+
+---
+
+### Lista de seguimiento para las próximas 72 horas
+
+- Calendario de la comisión SfU para prop. 2025/26:262 y 2025/26:265
+- Calendario de la comisión JuU para prop. 2025/26:267
+- Posibles Lagrådets yttranden sobre prop. 2025/26:267 o 2025/26:261
+- Declaraciones públicas de Centerpartiet (C) sobre la votación de migración/detención
+
+<!-- source-sha: 1e3aa0ef9bd9e24e5bba6a3819633c8c784d855a -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/motions/executive-brief_fi.md -->
+
+**Luokitus**: PUBLIC | Kohderyhmä: Päätöksentekijät, politiikan analyytikot, toimittajat
+**Päivämäärä**: 2026-05-22 | **Riksmöte**: 2025/26
+**Tekijä**: James Pether Sörling
+
+---
+
+### Tilanne
+
+Ruotsin oppositiopuolueet jättivät tiiviin aallon aloitteita Riksdagenille 19.–21. toukokuuta 2026 haastamalla hallituksen lainsäädäntöohjelman neljällä alueella: kansallinen turvallisuuslainsäädäntö, biometrinen valvonta, maahanmuuttopolitiikka ja poliittinen avoimuus. Aloitteet edustavat myöhäistä parlamentaarista painetta ennen vuoden 2026 vaaleja.
+
+### Tärkeimmät toimintapisteet
+
+**VÄLITTÖMÄT (JuU — turvallisuuslaki)**: Vänsterpartiet vaatii prop. 2025/26:267:n hylkäämistä, joka laajentaa "kvalifioituina turvallisuusuhkina" pidettyjen ulkomaalaisten säilöönottoa ja valvontaa. V väittää, että nykyinen laki on jo liian rankaiseva ja uusi standardi ("erityisesti Ruotsin turvallisuuden kannalta perusteltua") on perustuslaillisesti epämääräinen. JuU-valiokunnan äänestys odotetaan ennen kesätaukoa.
+
+**VÄLITTÖMÄT (SfU — maahanmuutto)**: Epätavallisen laaja puolueiden välinen koalitio — V, C, S — vastustaa sekä pysyvien oleskelulupien poistamista (prop. 2025/26:262) että tiukempia säilöönottovelvoitteita (prop. 2025/26:265). Centerpartiets ehdollinen yhteistyö on parlamentaarinen avainmuuttuja; jos C äänestää S:n ja V:n kanssa, hallitus kohtaa kiusallisia tappioita SfU:ssa.
+
+**KESKIPITKÄ AIKAVÄLI (SkU — biometriset tiedot)**: V:n osittainen vastustus Skatteverketin laajennettuja biometrisiä valtuuksia kohtaan (HD024187) kohdistuu sormenjälkien ja kasvokuvien ristiinvaihtoon Skatteverketin ja Migrationsverketin välillä. Tämä on suhteellisuus- ja GDPR-haaste, jonka Lagrådet voi myös tarkistaa.
+
+**KESKIPITKÄ AIKAVÄLI (KU — avoimuus)**: C ja S hylkäävät molemmat prop. 2025/26:258:n ammattiliittojen poliittisista lahjoituksista. Hallitus kohtaa koalitiojännityksiä tämän lakiehdotuksen suhteen.
+
+**KESKIPITKÄ AIKAVÄLI (FiU — velkatilastot)**: S vaatii kattavaa kotitalouksien velka- ja varallisuusrekisteriä; hallitus vaatii vain otantakeräyksen. Riksbanken on julkisesti tukenut kattavampaa tiedonkeruuta.
+
+### Johtopäätös
+
+Tidö-hallituksen lakiehdotusryntäys keväällä 2026 kohtaa koordinoitua vastustusta turvallisuuden, maahanmuuton ja demokraattisen hallinnon alueilla. Vänsterpartiet on aktiivisin haastaja (4 aloitetta jätetty yksin 21. toukokuuta 2026), kun taas S ja C tarjoavat koalitiota rikkovaa potentiaalia maahanmuutto- ja avoimuuslakiesityksistä. Lopputulos muovaa vaalinarratiiveja oikeusvaltiosta, yksityisyysoikeuksista ja Ruotsin maahanmuuttopolitiikasta ennen syyskuun 2026 riksdagvaalit.
+
+---
+
+### Seurantalista seuraavalle 72 tunnille
+
+- SfU-valiokunnan aikataulu prop. 2025/26:262:lle ja 2025/26:265:lle
+- JuU-valiokunnan aikataulu prop. 2025/26:267:lle
+- Mahdolliset Lagrådets yttranden prop. 2025/26:267:sta tai 2025/26:261:stä
+- Centerpartiets (C) julkiset lausunnot maahanmuutto-/säilöönottovaalista
+
+<!-- source-sha: 1e3aa0ef9bd9e24e5bba6a3819633c8c784d855a -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/motions/executive-brief_fr.md -->
+
+**Auteur** : James Pether Sörling
+
+---
+
+### Situation
+
+Les partis d'opposition suédois ont déposé une vague concentrée de motions au Riksdag entre le 19 et le 21 mai 2026, contestant l'agenda législatif du gouvernement dans quatre domaines : la législation sur la sécurité nationale, la surveillance biométrique, la politique migratoire et la transparence politique. Ces motions représentent une pression parlementaire tardive avant les élections de 2026.
+
+### Points d'action clés
+
+**IMMÉDIAT (JuU — loi sécurité)** : Vänsterpartiet exige le rejet de la prop. 2025/26:267, qui élargit la détention et la surveillance des étrangers considérés comme des « menaces sécuritaires qualifiées ». V affirme que la loi existante est déjà trop punitive et que le nouveau standard (« particulièrement justifié pour la sécurité de la Suède ») est constitutionnellement vague. Vote de la commission JuU attendu avant la pause estivale.
+
+**IMMÉDIAT (SfU — migration)** : Une coalition transpartisane inhabituellement large — V, C, S — s'oppose à la fois à l'abolition des titres de séjour permanents (prop. 2025/26:262) et à des règles de détention plus strictes (prop. 2025/26:265). La coopération conditionnelle de Centerpartiet est la variable parlementaire décisive ; si C vote avec S et V, le gouvernement risque des défaites embarrassantes en SfU.
+
+**MOYEN TERME (SkU — données biométriques)** : L'opposition partielle de V à l'extension des pouvoirs biométriques de Skatteverket (HD024187) cible le partage interministériel d'empreintes digitales et d'images faciales entre Skatteverket et Migrationsverket. Il s'agit d'un défi en matière de proportionnalité et de RGPD que Lagrådet pourrait également examiner.
+
+**MOYEN TERME (KU — transparence)** : C et S rejettent tous deux la prop. 2025/26:258 sur la divulgation des contributions politiques syndicales. Le gouvernement fait face à des tensions de coalition sur ce projet de loi.
+
+**MOYEN TERME (FiU — statistiques d'endettement)** : S exige un registre complet des dettes et actifs des ménages ; le gouvernement insiste sur une collecte par échantillonnage uniquement. La Riksbanken a publiquement soutenu des données plus complètes.
+
+### Conclusion
+
+L'offensive législative du gouvernement Tidö de mai 2026 suscite une opposition coordonnée sur la sécurité, la migration et la gouvernance démocratique. Vänsterpartiet est le plus prolifique (4 motions le 21 mai), tandis que S et C offrent un potentiel de rupture de coalition sur les projets migratoires et de transparence. Le résultat façonnera les récits électoraux sur l'État de droit et la vie privée avant septembre 2026.
+
+---
+
+### Liste de surveillance pour les 72 prochaines heures
+
+- Calendrier de la commission SfU sur les prop. 2025/26:262 et 2025/26:265
+- Calendrier de la commission JuU sur la prop. 2025/26:267
+- Éventuels Lagrådets yttranden sur la prop. 2025/26:267 ou 2025/26:261
+- Déclarations publiques de Centerpartiet (C) sur le vote migration/détention
+
+<!-- source-sha: 1e3aa0ef9bd9e24e5bba6a3819633c8c784d855a -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/motions/executive-brief_he.md -->
+
+<!-- dir: rtl -->
+# תקציר מנהלים — הצעות האופוזיציה, 2026-05-22
+
+**סיווג**: פומבי | מיועד ל: מקבלי החלטות, אנליסטים פוליטיים, עיתונאים
+**תאריך**: 2026-05-22 | **Riksmöte**: 2025/26
+**מחבר**: James Pether Sörling
+
+---
+
+### מצב
+
+מפלגות האופוזיציה השוודיות הגישו גל מרוכז של הצעות לריקסדאג בין ה-19 ל-21 במאי 2026, תוך אתגור סדר היום החקיקתי של הממשלה בארבעה תחומים: חקיקת ביטחון לאומי, מעקב ביומטרי, מדיניות הגירה ושקיפות פוליטית. ההצעות מייצגות לחץ פרלמנטרי מאוחר לפני בחירות 2026.
+
+### נקודות פעולה מרכזיות
+
+**מיידי (JuU — חוק ביטחון)**: Vänsterpartiet דורשת דחיית prop. 2025/26:267, המרחיבה מעצר ומעקב של זרים הנחשבים "איומי ביטחון מוסמכים". V טוענת שהחוק הקיים כבר קפדני מדי ושהסטנדרט החדש ("מוצדק במיוחד לביטחון שוודיה") מעורפל מבחינה חוקתית. הצבעת ועדת JuU צפויה לפני הפגרה הקיצית.
+
+**מיידי (SfU — הגירה)**: קואליציה רחבה ויוצאת דופן בין-מפלגתית — V, C, S — מתנגדת הן לביטול אשרות שהייה קבועות (prop. 2025/26:262) והן לכללי מעצר מחמירים יותר (prop. 2025/26:265). שיתוף הפעולה המותנה של Centerpartiet הוא המשתנה הפרלמנטרי המכריע; אם C תצביע עם S ו-V, הממשלה עלולה להתמודד עם תבוסות מביכות ב-SfU.
+
+**טווח בינוני (SkU — נתונים ביומטריים)**: התנגדותה החלקית של V להרחבת הסמכויות הביומטריות של Skatteverket (HD024187) ממוקדת בשיתוף הבין-סוכנותי של טביעות אצבע ותמונות פנים בין Skatteverket ל-Migrationsverket. זהו אתגר של מידתיות ו-GDPR שגם Lagrådet עשוי לבחון.
+
+**טווח בינוני (KU — שקיפות)**: C ו-S שניהם דוחים את prop. 2025/26:258 בנוגע לגילוי תרומות פוליטיות של ארגוני עובדים. הממשלה עומדת בפני מתחים קואליציוניים בנוגע להצעת חוק זו.
+
+**טווח בינוני (FiU — סטטיסטיקת חובות)**: S דורשת רישום מקיף של חובות ונכסי משקי בית; הממשלה מתעקשת על איסוף מדגמי בלבד. Riksbanken תמכה בפומבי בנתונים מקיפים יותר.
+
+### סיכום
+
+ההתקפה החקיקתית של ממשלת Tidö לסוף אביב 2026 נתקלת בהתנגדות מתואמת בתחומי הביטחון, ההגירה והממשל הדמוקרטי. Vänsterpartiet הוא המאתגר הפורה ביותר (4 הצעות שהוגשו ב-21 במאי 2026 לבדו), בעוד S ו-C מספקים פוטנציאל לפירוק הקואליציה בהצעות החוק בנושא הגירה ושקיפות. התוצאה תעצב נרטיבים בחירתיים על שלטון החוק, זכויות פרטיות ומדיניות ההגירה השוודית לקראת הבחירות הכלליות לריקסדאג בספטמבר 2026.
+
+---
+
+### רשימת מעקב ל-72 השעות הבאות
+
+- לוח הזמנים של ועדת SfU לגבי prop. 2025/26:262 ו-prop. 2025/26:265
+- לוח הזמנים של ועדת JuU לגבי prop. 2025/26:267
+- כל Lagrådets yttranden בנוגע ל-prop. 2025/26:267 או prop. 2025/26:261
+- הצהרות פומביות של Centerpartiet (C) בנוגע להצבעת ההגירה/המעצר
+
+<!-- source-sha: 1e3aa0ef9bd9e24e5bba6a3819633c8c784d855a -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/motions/executive-brief_ja.md -->
+
+**分類**: 公開 | 対象: 意思決定者、政策アナリスト、ジャーナリスト
+**日付**: 2026-05-22 | **Riksmöte**: 2025/26
+**著者**: James Pether Sörling
+
+---
+
+### 状況
+
+スウェーデンの野党各党は2026年5月19日から21日にかけて、国家安全保障法、生体認証監視、移民政策、政治的透明性の4分野で政府の立法議題に異議を唱える動議をリクスダーグに集中的に提出した。これらの動議は2026年選挙前の議会における後半期のプレッシャーを示すものである。
+
+### 主要アクションポイント
+
+**即時対応（JuU — 安全保障法）**: Vänsterpartietは、「適格安全保障上の脅威」とみなされた外国人の拘留・監視を拡大するprop. 2025/26:267の否決を求めている。Vは既存の法律がすでに過度に懲罰的であり、新基準（「スウェーデンの安全保障上、特に正当と認められる」）が憲法上曖昧だと主張する。JuU委員会の採決は夏季休会前が予定されている。
+
+**即時対応（SfU — 移民）**: 異例に広いV、C、Sの超党派連合が、永住許可証の廃止（prop. 2025/26:262）と拘留規則の強化（prop. 2025/26:265）の双方に反対している。Centerpartietの条件付き協力が議会の決定的変数であり、CがSおよびVと共に投票すれば、政府はSfUで恥ずかしい敗北を喫するリスクがある。
+
+**中期（SkU — 生体認証データ）**: SkatteverketへのHD024187のSkatteverketとMigrationsverket間における指紋・顔画像の機関横断的共有に対するVの部分的反対は、比例性とGDPRへの挑戦であり、Lagrådが審査する可能性もある。
+
+**中期（KU — 透明性）**: CとSはともにprop. 2025/26:258（労働組合の政治献金の開示）を否決している。政府はこの法案をめぐる連立内の緊張に直面している。
+
+**中期（FiU — 債務統計）**: Sは家計の債務と資産の包括的な登録簿を求め、政府はサンプル調査のみを主張する。リクスバンケンは公式に包括的なデータ収集を支持している。
+
+### 結論
+
+Tidö政権の2026年春後半の立法攻勢は、安全保障、移民、民主主義的ガバナンスの各分野で協調した反対に直面している。Vänsterpartietが最も積極的な挑戦者（2026年5月21日だけで4件の動議を提出）であり、SとCは移民・透明性法案で連立崩壊の潜在力を持つ。その結果は、2026年9月の総選挙に向けた法の支配、プライバシー権、スウェーデンの移民政策に関する選挙的語りを形成することになる。
+
+---
+
+### 今後72時間の注目リスト
+
+- prop. 2025/26:262およびprop. 2025/26:265に関するSfU委員会のスケジュール
+- prop. 2025/26:267に関するJuU委員会のスケジュール
+- prop. 2025/26:267またはprop. 2025/26:261に関するLagrådets yttranden（もしあれば）
+- 移民・拘留投票に関するCenterpartiet（C）の公式声明
+
+<!-- source-sha: 1e3aa0ef9bd9e24e5bba6a3819633c8c784d855a -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/motions/executive-brief_ko.md -->
+
+**분류**: 공개 | 대상: 의사결정자, 정책 분석가, 언론인
+**날짜**: 2026-05-22 | **Riksmöte**: 2025/26
+**저자**: James Pether Sörling
+
+---
+
+### 상황
+
+스웨덴 야당들은 2026년 5월 19일부터 21일 사이에 국가 안보 법률, 생체 인식 감시, 이민 정책, 정치적 투명성 등 네 가지 분야에서 정부의 입법 의제에 도전하는 동의들을 릭스다그에 집중적으로 제출하였다. 이 동의들은 2026년 선거 전 의회의 후반기 압박을 나타낸다.
+
+### 주요 행동 지침
+
+**즉시 (JuU — 안보법)**: Vänsterpartiet는 "자격 있는 안보 위협"으로 간주되는 외국인에 대한 구금 및 감시를 확대하는 prop. 2025/26:267의 거부를 요구한다. V는 기존 법률이 이미 지나치게 처벌적이며 새 기준("스웨덴 안보를 위해 특히 정당화됨")이 헌법적으로 모호하다고 주장한다. JuU 위원회 표결은 여름 휴회 전 예정되어 있다.
+
+**즉시 (SfU — 이민)**: 이례적으로 광범위한 초당적 연합 — V, C, S — 이 영주권 허가 폐지(prop. 2025/26:262)와 엄격한 구금 규정(prop. 2025/26:265) 모두에 반대한다. Centerpartiet의 조건부 협력이 핵심 의회 변수이며, C가 S 및 V와 함께 투표할 경우 정부는 SfU에서 당혹스러운 패배를 당할 수 있다.
+
+**중기 (SkU — 생체 인식 데이터)**: Skatteverket의 확대된 생체 인식 권한(HD024187)에 대한 V의 부분적 반대는 Skatteverket과 Migrationsverket 간 기관 간 지문 및 안면 이미지 공유를 겨냥한다. 이는 Lagrådet이 검토할 수 있는 비례성 및 GDPR 과제이다.
+
+**중기 (KU — 투명성)**: C와 S 모두 노동조합 정치 기여금 공개에 관한 prop. 2025/26:258을 거부한다. 정부는 이 법안을 둘러싼 연립 내 긴장에 직면해 있다.
+
+**중기 (FiU — 부채 통계)**: S는 가계 부채 및 자산의 포괄적 등록을 요구하며, 정부는 표본 수집만을 고집한다. Riksbanken은 더 포괄적인 데이터를 공개적으로 지지한다.
+
+### 결론
+
+2026년 늦봄 Tidö 정부의 입법 공세는 안보, 이민, 민주적 거버넌스 분야에서 조율된 반대에 직면하고 있다. Vänsterpartiet가 가장 적극적인 도전자(2026년 5월 21일 단독으로 4건의 동의 제출)이며, S와 C는 이민 및 투명성 법안에서 연립 붕괴 잠재력을 제공한다. 그 결과는 2026년 9월 총선을 앞두고 법치주의, 프라이버시 권리, 스웨덴 이민 정책에 관한 선거 담론을 형성할 것이다.
+
+---
+
+### 향후 72시간 관찰 목록
+
+- prop. 2025/26:262 및 prop. 2025/26:265에 대한 SfU 위원회 일정
+- prop. 2025/26:267에 대한 JuU 위원회 일정
+- prop. 2025/26:267 또는 prop. 2025/26:261에 관한 Lagrådets yttranden (있을 경우)
+- 이민/구금 투표에 관한 Centerpartiet (C)의 공식 성명
+
+<!-- source-sha: 1e3aa0ef9bd9e24e5bba6a3819633c8c784d855a -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/motions/executive-brief_nl.md -->
+
+**Classificatie**: OPENBAAR | Voor: Beleidsmakers, politieke analisten, journalisten
+**Datum**: 2026-05-22 | **Riksmöte**: 2025/26
+**Auteur**: James Pether Sörling
+
+---
+
+### Situatie
+
+Zweedse oppositiepartijen dienden tussen 19 en 21 mei 2026 een geconcentreerde golf moties in bij de Riksdag, waarmee ze de wetgevingsagenda van de regering op vier gebieden uitdagen: nationale veiligheidswetgeving, biometrische surveillance, migratiebeleid en politieke transparantie. De moties vertegenwoordigen een laat parlementair drukmiddel voor de verkiezingen van 2026.
+
+### Belangrijke actiepunten
+
+**ONMIDDELLIJK (JuU — veiligheidswet)**: Vänsterpartiet eist verwerping van prop. 2025/26:267, dat de detentie en surveillance uitbreidt van buitenlanders die worden beschouwd als «gekwalificeerde veiligheidsrisico's». V stelt dat de bestaande wet al te straf is en dat de nieuwe norm («bijzonder gerechtvaardigd voor de veiligheid van Zweden») grondwettelijk vaag is. JuU-commissiestemming wordt voor het zomerreces verwacht.
+
+**ONMIDDELLIJK (SfU — migratie)**: Een ongewoon brede partijoverstijgende coalitie — V, C, S — verzet zich zowel tegen de afschaffing van permanente verblijfsvergunningen (prop. 2025/26:262) als tegen strengere detentieregels (prop. 2025/26:265). De voorwaardelijke samenwerking van Centerpartiet is de cruciale parlementaire variabele; als C met S en V stemt, dreigen de regering gênante nederlagen in SfU.
+
+**MIDDELLANGE TERMIJN (SkU — biometrische gegevens)**: V's gedeeltelijke verzet tegen uitgebreide biometrische bevoegdheden voor Skatteverket (HD024187) richt zich op het interbestuurlijk uitwisselen van vingerafdrukken en gezichtsafbeeldingen tussen Skatteverket en Migrationsverket. Dit is een proportionaliteits- en AVG-uitdaging die Lagrådet ook zou kunnen onderzoeken.
+
+**MIDDELLANGE TERMIJN (KU — transparantie)**: C en S verwerpen beiden prop. 2025/26:258 over de openbaarmaking van politieke vakbondsbijdragen. De regering staat voor coalitie spanningen over dit wetsvoorstel.
+
+**MIDDELLANGE TERMIJN (FiU — schuldenstatistiek)**: S eist een uitgebreid register van huishoudschulden en -activa; de regering staat op steekproefverzameling. De Riksbanken heeft publiekelijk uitgebreidere gegevens bepleit.
+
+### Conclusie
+
+De wetgevingsoffensief van het Tidö-kabinet in het late voorjaar van 2026 stuit op gecoördineerde tegenstand op het gebied van veiligheid, migratie en democratisch bestuur. Vänsterpartiet is de meest productieve uitdager (4 moties ingediend op 21 mei 2026 alleen), terwijl S en C coalitiebreekpotentieel bieden op migratie- en transparantiewetsvoorstellen. De uitkomst zal de electorale narratieven over rechtsstaat, privacyrechten en Zweeds migratiebeleid bepalen voor de algemene verkiezingen van september 2026.
+
+---
+
+### Observatielijst voor de komende 72 uur
+
+- SfU-commissieschema voor prop. 2025/26:262 en 2025/26:265
+- JuU-commissieschema voor prop. 2025/26:267
+- Eventuele Lagrådets yttranden over prop. 2025/26:267 of 2025/26:261
+- Publieke verklaringen van Centerpartiet (C) over de migratie-/detentiestemming
+
+<!-- source-sha: 1e3aa0ef9bd9e24e5bba6a3819633c8c784d855a -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/motions/executive-brief_no.md -->
+
+**Klassifikasjon**: PUBLIC | Til: Beslutningstakere, politiske analytikere, journalister
+**Dato**: 2026-05-22 | **Riksmöte**: 2025/26
+**Forfatter**: James Pether Sörling
+
+---
+
+### Situasjon
+
+Svenske opposisjonspartier leverte en konsentrert bølge av motsjoner i Riksdagen i perioden 19.–21. mai 2026 og utfordret regjeringens lovgivningsagenda på fire områder: nasjonal sikkerhetslovgivning, biometrisk overvåking, migrasjonspolitikk og politisk transparens. Mots jonene representerer et sent parlamentarisk press foran valget i 2026.
+
+### Viktige handlingspunkter
+
+**UMIDDELBART (JuU — sikkerhetslov)**: Vänsterpartiet krever avslag på prop. 2025/26:267, som utvider internering og overvåking av utlendinger som anses som «kvalifiserte sikkerhetstrusler». V hevder at den eksisterende loven allerede er altfor restriktiv og at den nye standarden («særlig berettiget av hensyn til Sveriges sikkerhet») er konstitusjonelt vag. JuU-komitéavstemning forventes før sommerrecess.
+
+**UMIDDELBART (SfU — migrasjon)**: En usedvanlig bred tverrpartikoalisjon — V, C, S — motsetter seg både avskaffelsen av permanente oppholdstillatelser (prop. 2025/26:262) og strengere internering (prop. 2025/26:265). Centerpartiets betingede samarbeid er den avgjørende parlamentariske variabelen; dersom C stemmer med S og V, risikerer regjeringen pinlige nederlag i SfU.
+
+**MELLOMLANG SIKT (SkU — biometriske data)**: V's delvise motstand mot utvidede biometriske fullmakter for Skatteverket (HD024187) retter seg mot kryssutveksling av fingeravtrykk og ansiktsbilder mellom Skatteverket og Migrationsverket. Dette er en proporsjonalitets- og GDPR-utfordring som Lagrådet også kan komme til å granske.
+
+**MELLOMLANG SIKT (KU — transparens)**: C og S avviser begge prop. 2025/26:258 om fagforeningers politiske bidrag. Regjeringen møter koalisjonstensjon om dette lovforslaget.
+
+**MELLOMLANG SIKT (FiU — gjeldsstatistikk)**: S krever et helhetlig register over husholdningers gjeld og eiendeler; regjeringen insisterer på stikkprøveinnsamling. Riksbanken har offentlig støttet mer omfattende data.
+
+### Konklusjon
+
+Tidö-regjeringens lovgivningsoffensiv sent våren 2026 møter koordinert motstand innen sikkerhet, migrasjon og demokratisk styring. Vänsterpartiet er den mest produktive utfordreren (4 motsjoner innlevert den 21. mai 2026 alene), mens S og C gir koalisjonsbrytende potensial på migrasjons- og transparensforslag. Resultatet vil forme valgfortellinger om rettsstaten, personvernrettigheter og svensk migrasjonspolitikk foran riksdagsvalget i september 2026.
+
+---
+
+### Overvåkningsliste for de neste 72 timene
+
+- SfU-komitékalender for prop. 2025/26:262 og 2025/26:265
+- JuU-komitékalender for prop. 2025/26:267
+- Eventuelle Lagrådets yttranden om prop. 2025/26:267 eller 2025/26:261
+- Centerpartiets (C) offentlige uttalelser om migrasjons-/interneringsavstemningen
+
+<!-- source-sha: 1e3aa0ef9bd9e24e5bba6a3819633c8c784d855a -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/motions/executive-brief_sv.md -->
+
+**Klassificering**: PUBLIC | För: Beslutsfattare, policyanalytiker, journalister
+**Datum**: 2026-05-22 | **Riksmöte**: 2025/26
+**Författare**: James Pether Sörling
+
+---
+
+### Läge
+
+Svenska oppositionspartier lämnade in en koncentrerad våg av motioner i Riksdagen under 19–21 maj 2026 som utmanar regeringens lagstiftningsagenda inom fyra områden: nationell säkerhetslagstiftning, biometrisk övervakning, migrationspolitik och politisk transparens. Motionerna representerar sent parlamentariskt tryck inför valet 2026.
+
+### Viktiga åtgärdspunkter
+
+**OMEDELBART (JuU — säkerhetslag)**: Vänsterpartiet kräver avslag på prop. 2025/26:267, som utvidgar förvar och övervakning av utlänningar som anses vara "kvalificerade säkerhetshot". V hävdar att den befintliga lagen redan är alltför repressiv och att den nya standarden ("särskilt motiverat för Sveriges säkerhet") är konstitutionellt oklar. JuU:s utskottsomröstning förväntas före sommaruppehållet.
+
+**OMEDELBART (SfU — migration)**: En ovanligt bred partikonstellation — V, C, S — motsätter sig både avskaffandet av permanenta uppehållstillstånd (prop. 2025/26:262) och strängare regler för förvar (prop. 2025/26:265). Centerpartiets villkorliga samarbete är den avgörande parlamentariska variabeln; om C röstar med S och V riskerar regeringen pinsamma nederlag i SfU.
+
+**MEDELLÅNG SIKT (SkU — biometriska data)**: V:s partiella opposition mot utvidgade biometriska befogenheter för Skatteverket (HD024187) riktar in sig på utbytet av fingeravtryck och ansiktsbilder mellan Skatteverket och Migrationsverket mellan myndigheter. Detta är en proportionalitets- och GDPR-utmaning som Lagrådet också kan komma att granska.
+
+**MEDELLÅNG SIKT (KU — transparens)**: C och S avvisar båda prop. 2025/26:258 om redovisning av politiska bidrag från fackförbund. Regeringen möter koalitionsspänningar kring detta lagförslag.
+
+**MEDELLÅNG SIKT (FiU — skuldstatistik)**: S kräver ett heltäckande register över hushållens skulder och tillgångar; regeringen insisterar på insamling via urval. Riksbanken har offentligt stött en mer heltäckande datainsamling.
+
+### Slutsats
+
+Tidöregeringens lagstiftningsoffensiv i slutet av våren 2026 möter ett samordnat motstånd inom säkerhet, migration och demokratisk styrning. Vänsterpartiet är den mest produktiva utmanaren (4 motioner inlämnade den 21 maj 2026 ensamt), medan S och C utgör en potentiell koalitionsbrytande kraft i frågor om migration och transparenslagstiftning. Resultatet kommer att forma valnarrativ kring rättsstaten, integritetsrättigheter och svensk migrationspolitik inför riksdagsvalet i september 2026.
+
+---
+
+### Bevakningslista för de närmaste 72 timmarna
+
+- SfU:s utskottsschema för prop. 2025/26:262 och 2025/26:265
+- JuU:s utskottsschema för prop. 2025/26:267
+- Eventuellt Lagrådets yttrande om prop. 2025/26:267 eller 2025/26:261
+- Centerpartiets (C) offentliga uttalanden om omröstningen om migration/förvar
+
+<!-- source-sha: 1e3aa0ef9bd9e24e5bba6a3819633c8c784d855a -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/motions/executive-brief_zh.md -->
+
+**密级**：公开 | 面向：决策者、政策分析人员、记者
+**日期**：2026-05-22 | **Riksmöte**：2025/26
+**作者**：James Pether Sörling
+
+---
+
+### 形势
+
+2026年5月19日至21日，瑞典反对党在瑞典国会（Riksdag）提交了集中的一批动议，从国家安全立法、生物特征监控、移民政策和政治透明度四个领域挑战政府的立法议程。这些动议代表着2026年大选前的后期议会压力。
+
+### 关键行动要点
+
+**立即（JuU——安全法）**：Vänsterpartiet要求否决prop. 2025/26:267，该提案将扩大对被认定为"合格安全威胁"的外国人的羁押和监控。V认为现行法律已然过于惩罚性，新标准（"为瑞典安全而特别正当"）在宪法层面表述模糊。JuU委员会的投票预计在夏季休会前举行。
+
+**立即（SfU——移民）**：V、C、S形成异常广泛的跨党派联盟，同时反对永久居留许可的废除（prop. 2025/26:262）和更严格的羁押规定（prop. 2025/26:265）。中央党的有条件合作是关键议会变量；若C与S和V共同投票，政府将在SfU面临令人尴尬的失败。
+
+**中期（SkU——生物特征数据）**：V对Skatteverket扩大生物特征权限（HD024187）的部分反对，针对Skatteverket与Migrationsverket之间跨机构指纹和面部图像共享。这是比例性和GDPR合规的挑战，Lagrådet也可能对此进行审查。
+
+**中期（KU——透明度）**：C和S均反对关于工会政治捐款披露的prop. 2025/26:258。政府在该法案上面临联合政府内部张力。
+
+**中期（FiU——债务统计）**：S要求建立全面的家庭债务与资产登记系统；政府坚持仅进行抽样采集。Riksbanken已公开支持更全面的数据收集。
+
+### 结论
+
+Tidö政府2026年春末的立法攻势在安全、移民和民主治理领域遭遇协调一致的反对。Vänsterpartiet是最活跃的挑战者（仅2026年5月21日就提交了4项动议），而S和C在移民和透明度法案上具备瓦解联合政府的潜力。结果将在2026年9月大选前塑造关于法治、隐私权和瑞典移民政策的选举叙事。
+
+---
+
+### 未来72小时关注清单
+
+- SfU委员会关于prop. 2025/26:262和prop. 2025/26:265的议程
+- JuU委员会关于prop. 2025/26:267的议程
+- 关于prop. 2025/26:267或prop. 2025/26:261的Lagrådets yttranden（如有）
+- 中央党（C）关于移民/羁押投票的公开声明
+
+<!-- source-sha: 1e3aa0ef9bd9e24e5bba6a3819633c8c784d855a -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 0 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 0 | Linked in Article Sources, not expanded inline |
 
@@ -1816,3 +2353,16 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/motions/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/motions/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/motions/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/motions/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/motions/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/motions/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/motions/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/motions/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/motions/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/motions/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/motions/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/motions/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/motions/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/motions/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/motions/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/motions/executive-brief_zh.md)

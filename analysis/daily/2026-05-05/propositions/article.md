@@ -3,23 +3,21 @@ date: 2026-05-05
 subfolder: propositions
 slug: 2026-05-05-propositions
 source_folder: analysis/daily/2026-05-05/propositions
-generated_at: 2026-05-28T15:56:16.329Z
+generated_at: 2026-05-28T22:29:31.259Z
 language: en
 layout: article
 ---
-## Executive Brief
+## What Happened
 <!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/propositions/executive-brief.md -->
 
 ---
 
-### BLUF
-
-Sweden's government introduced Proposition 2025/26:255 (HD03255) on 5 May 2026, creating a statutory basis for Finansinspektionen to conduct mandatory sample surveys of household debt data from credit institutions. The measure addresses a decade-long gap in Sweden's macro-prudential monitoring toolkit — acknowledged by both Riksbank and IMF — as the country carries one of Europe's highest household debt-to-income ratios. Chamber vote is scheduled for 15 June 2026 via betänkande FiU45.
+### Lede
+Sweden's government introduced Proposition 2025/26:255 (Riksdag document #03255 (HD03255)) on 5 May 2026, creating a statutory basis for Finansinspektionen to conduct mandatory sample surveys of household debt data from credit institutions. The measure addresses a decade-long gap in Sweden's macro-prudential monitoring toolkit — acknowledged by both Riksbank and IMF — as the country carries one of Europe's highest household debt-to-income ratios. Chamber vote is scheduled for 15 June 2026 via betänkande FiU45.
 
 ---
 
-### Decisions This Brief Supports
-
+### Decisions and confidence context
 1. **Editorial decision**: Whether this proposition warrants a dedicated feature or sidebar in coverage of Sweden's macro-prudential policy developments
 2. **Analytical decision**: How this data infrastructure relates to ongoing FI/Riksbank discussions on tightening borrower-based measures (DSTI, amortisation requirements)
 3. **Monitoring decision**: Whether to track Lagrådet yttrande (expected Q2 2026) and FiU45 committee report for significant amendments that might weaken privacy safeguards or the sample methodology
@@ -64,9 +62,9 @@ Use this guide to read the article as a political-intelligence product rather th
 
 | Icon | Reader need | What you'll get |
 |---|---|---|
-| 📊 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
-| 🧠 | [Synthesis Summary](#rm-synthesis-summary) | evidence-anchored narrative consolidating primary sources into one coherent story line |
-| 🎯 | [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps |
+| 📊 | [Lede and editorial decisions](#rm-what-happened) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
+| 🧠 | [Why It Matters](#rm-why-it-matters) | evidence-anchored narrative consolidating primary sources into one coherent story line |
+| 🎯 | [Key Judgments](#rm-key-findings) | confidence-bearing political-intelligence conclusions and collection gaps |
 | 📈 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals |
 | 👥 | [Stakeholder Perspectives](#rm-stakeholder-perspectives) | winners, losers and undecided actors with stake-weighted positions and pressure points |
 | 🔢 | [Coalition Mathematics](#rm-coalition-mathematics) | parliamentary arithmetic showing exactly who can pass or block this measure and at what margin |
@@ -82,10 +80,10 @@ Use this guide to read the article as a political-intelligence product rather th
 | ⚙️ | [Implementation Feasibility](#rm-implementation-feasibility) | delivery feasibility, capability gaps, timelines and execution risks for the proposed action |
 | 📰 | [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder |
 | 😈 | [Devil's Advocate](#rm-devils-advocate) | alternative hypotheses, steel-manned counter-arguments and the strongest case against the lead reading |
-| 🏷️ | [Classification Results](#rm-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
-| 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
-| 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
-| 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 🏷️ | [Deep Dive: Classification Results](#rm-deep-dive-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
+| 🔀 | [Deep Dive: Cross-Reference Map](#rm-deep-dive-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
+| 🔬 | [Deep Dive: Methodology & Limitations](#rm-deep-dive-methodology--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
+| 📦 | [Deep Dive: Data Download Manifest](#rm-deep-dive-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
 | 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
@@ -100,9 +98,9 @@ Use this guide to read the article as a political-intelligence product rather th
 | 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
-| 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
+| 🏷️ | [Audit appendix](#rm-deep-dive-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
-## Synthesis Summary
+## Why It Matters
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/propositions/synthesis-summary.md -->
 
 ---
@@ -155,7 +153,7 @@ flowchart TD
     style F fill:#1a1e3d,color:#e0e0e0,stroke:#00d9ff
 ```
 
-## Intelligence Assessment — Key Judgments
+## Key Findings
 <!-- source: intelligence-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/propositions/intelligence-assessment.md -->
 
 ---
@@ -1158,7 +1156,7 @@ The dominant hypothesis (A) is supported by the preponderance of available evide
 
 **Key discriminating indicator**: Lagrådet yttrande — a critical yttrande would support Hypothesis B; a positive yttrande with minor proportionality observations would support Hypothesis A.
 
-## Classification Results
+## Deep Dive: Classification Results
 <!-- source: classification-results.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/propositions/classification-results.md -->
 
 ---
@@ -1207,7 +1205,7 @@ quadrantChart
 **Dissemination Level**: PUBLIC — no personal data, parliamentary public records  
 **Information Quality**: A2 (reliable source; single-document verification)
 
-## Cross-Reference Map
+## Deep Dive: Cross-Reference Map
 <!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/propositions/cross-reference-map.md -->
 
 ---
@@ -1259,7 +1257,7 @@ flowchart LR
     style LagRad fill:#ff006e,color:#fff,stroke:#ff006e
 ```
 
-## Methodology Reflection & Limitations
+## Deep Dive: Methodology & Limitations
 <!-- source: methodology-reflection.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/propositions/methodology-reflection.md -->
 
 ---
@@ -1322,7 +1320,7 @@ flowchart LR
 
 **Mitigation**: All gaps documented; confidence levels calibrated conservatively; forward collection requirements specified.
 
-## Data Download Manifest
+## Deep Dive: Data Download Manifest
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/propositions/data-download-manifest.md -->
 
 ### Document Summary

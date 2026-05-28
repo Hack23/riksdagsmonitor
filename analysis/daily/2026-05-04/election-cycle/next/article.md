@@ -3,21 +3,19 @@ date: 2026-05-04
 subfolder: election-cycle/next
 slug: 2026-05-04-election-cycle/next
 source_folder: analysis/daily/2026-05-04/election-cycle/next
-generated_at: 2026-05-28T15:56:16.184Z
+generated_at: 2026-05-28T22:29:31.092Z
 language: en
 layout: article
 ---
-## Executive Brief
+## What Happened
 <!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/next/executive-brief.md -->
 
 ---
 
-### BLUF
-
+### Lede
 The 2026–2030 Swedish mandate will be shaped by four structural megaforces that transcend electoral outcomes: NATO 2.4% GDP defence obligation (binding), nuclear construction decision (required by energy math), housing emergency (compounding deficit), and demographic ageing (eldercare demand +18% by 2030). The defining political question is not which government forms, but whether it resolves the SD cabinet question — Sweden's most consequential constitutional question of the decade. IMF WEO Apr-2026 projects 2.4% GDP growth for 2026 with sustained recovery through 2030.
 
-### Decisions This Brief Supports
-
+### Decisions and confidence context
 1. **Formation scenario planning**: A1/A2 (Tidö) vs B1/B2/B3 (S-bloc) — what policies, actors, and risks follow?
 2. **Nuclear decision preparation**: Site selection, investment decision, timeline — what must happen when?
 3. **Housing policy design**: State investment vs market activation — which instruments and what scale?
@@ -73,15 +71,15 @@ Use this guide to read the article as a political-intelligence product rather th
 
 | Icon | Reader need | What you'll get |
 |---|---|---|
-| 📊 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
-| 🧠 | [Synthesis Summary](#rm-synthesis-summary) | evidence-anchored narrative consolidating primary sources into one coherent story line |
+| 📊 | [Lede and editorial decisions](#rm-what-happened) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
+| 🧠 | [Why It Matters](#rm-why-it-matters) | evidence-anchored narrative consolidating primary sources into one coherent story line |
 | 📝 | [Cycle Trajectory](#rm-cycle-trajectory) | election-cycle trajectory: turning points, polling momentum and coalition realignment paths |
 | ⚠️ | [Risk assessment](#rm-risk-assessment) | policy, electoral, institutional, communications, and implementation risk register |
 | 📝 | [Quantitative SWOT](#rm-quantitative-swot) | weighted, scored SWOT register with explicit confidence ratings and decision implications |
 | 📝 | [Political STRIDE Assessment](#rm-political-stride-assessment) | STRIDE-based threat model adapted to political institutions and democratic processes |
 | 📝 | [Wildcards & Black Swans](#rm-wildcards--black-swans) | low-probability, high-impact disruptive events that could derail the base-case forecast |
 | 📝 | [PESTLE Analysis](#rm-pestle-analysis) | political, economic, social, technological, legal and environmental drivers shaping the outcome |
-| 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
+| 🔀 | [Deep Dive: Cross-Reference Map](#rm-deep-dive-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 📝 | [Actor Assessment](#rm-actor-assessment) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Coalition Dynamics](#rm-coalition-dynamics) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Comparative Context](#rm-comparative-context) | supporting analytical lens with primary-source evidence and audit-traceable citations |
@@ -114,9 +112,9 @@ Use this guide to read the article as a political-intelligence product rather th
 | 📝 | [Strategic Implications](#rm-strategic-implications) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Timeline Analysis](#rm-timeline-analysis) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Trend Analysis](#rm-trend-analysis) | supporting analytical lens with primary-source evidence and audit-traceable citations |
-| 🏷️ | [Audit appendix](#rm-cross-reference-map) | classification, cross-reference, methodology and manifest evidence for reviewers |
+| 🏷️ | [Audit appendix](#rm-deep-dive-cross-reference-map) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
-## Synthesis Summary
+## Why It Matters
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/next/synthesis-summary.md -->
 
 **Horizon**: T+1460d from election | **Depth multiplier**: 2.5× Tier-C  
@@ -198,7 +196,7 @@ Sweden's old-age dependency ratio rises from 32% (2026) to 36% (2030) to 40% (20
 - Pension contributions: Stable (Swedish DC pension system well-funded)
 - Labour market: Workforce composition changes; immigration needed for care sector
 
-**The irony**: The migration restriction agenda (HD03262–HD03265) reduces the supply of care sector workers precisely as demographic demand for care rises. This tension will define the 2026–2030 mandate's social policy debate.
+**The irony**: The migration restriction agenda (Riksdag document #03262 (HD03262)–HD03265) reduces the supply of care sector workers precisely as demographic demand for care rises. This tension will define the 2026–2030 mandate's social policy debate.
 
 ---
 
@@ -620,7 +618,7 @@ STRIDE level: HIGH
 
 **Water resources**: Swedish hydrological security good; climate change affects precipitation patterns but not catastrophically.
 
-## Cross-Reference Map
+## Deep Dive: Cross-Reference Map
 <!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/next/cross-reference-map.md -->
 
 ### Year-Ahead Citations (Required: ≥2)

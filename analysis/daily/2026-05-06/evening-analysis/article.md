@@ -3,16 +3,15 @@ date: 2026-05-06
 subfolder: evening-analysis
 slug: 2026-05-06-evening-analysis
 source_folder: analysis/daily/2026-05-06/evening-analysis
-generated_at: 2026-05-28T15:56:16.382Z
+generated_at: 2026-05-28T22:29:31.316Z
 language: en
 layout: article
 ---
-## Executive Brief
+## What Happened
 <!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-06/evening-analysis/executive-brief.md -->
 
-### BLUF (Bottom Line Up Front)
-
-**6 May 2026 is the most consequential single legislative day of the Tidö government era.** Four landmark decisions locked in structural changes to criminal justice, welfare, and defence intelligence simultaneously. The Riksdag voted today to: (1) imprison children aged 15-17 as adults from 1 July 2026 (JuU30 — youth imprisonment replacing sluten ungdomsvård); (2) bypass planning law to fast-track prison construction (CU25); (3) require qualification periods before migrants access welfare benefits (SfU21); and (4) modernise SIGINT legislation (FöU18) for full NATO-era operation. Meanwhile, the government tabled EU-Central Asia partnership ratifications (HD03249/48) and faces 8 coordinated opposition motions on forestry and youth crime where Centerpartiet's dual defection is the key election realignment signal.
+### Lede
+**6 May 2026 is the most consequential single legislative day of the Tidö government era.** Four landmark decisions locked in structural changes to criminal justice, welfare, and defence intelligence simultaneously. The Riksdag voted today to: (1) imprison children aged 15-17 as adults from 1 July 2026 (JuU30 — youth imprisonment replacing sluten ungdomsvård); (2) bypass planning law to fast-track prison construction (CU25); (3) require qualification periods before migrants access welfare benefits (SfU21); and (4) modernise SIGINT legislation (FöU18) for full NATO-era operation. Meanwhile, the government tabled EU-Central Asia partnership ratifications (Riksdag document #03249 (HD03249)/48) and faces 8 coordinated opposition motions on forestry and youth crime where Centerpartiet's dual defection is the key election realignment signal.
 
 ### Priority Matrix
 
@@ -55,9 +54,9 @@ Use this guide to read the article as a political-intelligence product rather th
 
 | Icon | Reader need | What you'll get |
 |---|---|---|
-| 📊 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
-| 🧠 | [Synthesis Summary](#rm-synthesis-summary) | evidence-anchored narrative consolidating primary sources into one coherent story line |
-| 🎯 | [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps |
+| 📊 | [Lede and editorial decisions](#rm-what-happened) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
+| 🧠 | [Why It Matters](#rm-why-it-matters) | evidence-anchored narrative consolidating primary sources into one coherent story line |
+| 🎯 | [Key Judgments](#rm-key-findings) | confidence-bearing political-intelligence conclusions and collection gaps |
 | 📈 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals |
 | 👥 | [Stakeholder Perspectives](#rm-stakeholder-perspectives) | winners, losers and undecided actors with stake-weighted positions and pressure points |
 | 🔢 | [Coalition Mathematics](#rm-coalition-mathematics) | parliamentary arithmetic showing exactly who can pass or block this measure and at what margin |
@@ -73,10 +72,10 @@ Use this guide to read the article as a political-intelligence product rather th
 | ⚙️ | [Implementation Feasibility](#rm-implementation-feasibility) | delivery feasibility, capability gaps, timelines and execution risks for the proposed action |
 | 📰 | [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder |
 | 😈 | [Devil's Advocate](#rm-devils-advocate) | alternative hypotheses, steel-manned counter-arguments and the strongest case against the lead reading |
-| 🏷️ | [Classification Results](#rm-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
-| 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
-| 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
-| 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 🏷️ | [Deep Dive: Classification Results](#rm-deep-dive-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
+| 🔀 | [Deep Dive: Cross-Reference Map](#rm-deep-dive-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
+| 🔬 | [Deep Dive: Methodology & Limitations](#rm-deep-dive-methodology--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
+| 📦 | [Deep Dive: Data Download Manifest](#rm-deep-dive-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
 | 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
@@ -90,9 +89,9 @@ Use this guide to read the article as a political-intelligence product rather th
 | 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
-| 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
+| 🏷️ | [Audit appendix](#rm-deep-dive-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
-## Synthesis Summary
+## Why It Matters
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-06/evening-analysis/synthesis-summary.md -->
 
 ### Overview
@@ -136,7 +135,7 @@ The 6 May 2026 session is characterised by **speed and lock-in**: the government
 
 **Most significant intelligence gap**: Whether Social Democrats will commit to reversing JuU30 as an explicit electoral promise. Their Ja vote today creates a contradiction with CRC-based criticism.
 
-## Intelligence Assessment — Key Judgments
+## Key Findings
 <!-- source: intelligence-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-06/evening-analysis/intelligence-assessment.md -->
 
 ### Key Judgments
@@ -1046,7 +1045,7 @@ For opposition:
 - C's dual positioning (rural economics + rights-based criminal justice) reflects C's genuine ideological hybrid between market liberalism and social liberalism — it is internally consistent.
 - **Counter-finding**: The election timing of these specific motions, combined with C's polls showing potential for entering a S-led government, does suggest strategic calculation.
 
-## Classification Results
+## Deep Dive: Classification Results
 <!-- source: classification-results.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-06/evening-analysis/classification-results.md -->
 
 ### Admiralty Scale Ratings
@@ -1080,7 +1079,7 @@ All data in this analysis derives from:
 **Retention**: 7 years per Hack23 data retention policy  
 **Review date**: 2033-05-06
 
-## Cross-Reference Map
+## Deep Dive: Cross-Reference Map
 <!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-06/evening-analysis/cross-reference-map.md -->
 
 ### Tier-C Aggregation References
@@ -1154,7 +1153,7 @@ prop. 2025/26:136 (Government) → SfU betänkande (SfU21) → Riksdag adoption 
 | Prop. 246 | Lagrådet yttrande | 2026-06-01 |
 | Motions HD024145/46 | JuU committee vote | 2026-06-01 |
 
-## Methodology Reflection & Limitations
+## Deep Dive: Methodology & Limitations
 <!-- source: methodology-reflection.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-06/evening-analysis/methodology-reflection.md -->
 
 ### Analysis Approach
@@ -1207,7 +1206,7 @@ This evening analysis follows the Tier-C aggregation methodology defined in:
 - Scenario analysis applies T+30d/T+90d/T+Election horizon stratification per methodology guide
 - Cross-reference map documents all sibling analysis links and legislative chains
 
-## Data Download Manifest
+## Deep Dive: Data Download Manifest
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-06/evening-analysis/data-download-manifest.md -->
 
 ### Sources Accessed

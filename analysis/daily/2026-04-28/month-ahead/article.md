@@ -3,20 +3,19 @@ date: 2026-04-28
 subfolder: month-ahead
 slug: 2026-04-28-month-ahead
 source_folder: analysis/daily/2026-04-28/month-ahead
-generated_at: 2026-05-28T15:56:15.840Z
+generated_at: 2026-05-28T22:29:30.704Z
 language: en
 layout: article
 ---
-## Executive Brief
+## What Happened
 <!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/month-ahead/executive-brief.md -->
 
-### 🎯 BLUF
-
+### Lede
 Sweden's Riksdag enters May 2026 with the Kristersson government's security-and-order programme nearing its legislative climax: a coordinated criminal-justice cluster (weapons law, prison construction, youth offenders, paid police training) is poised for final votes, while the Social Democrats prosecute a six-front interpellation campaign on infrastructure, welfare, and corporate crime that exposes the coalition's vulnerabilities ahead of the September 2026 election. The HD01CU40 lantmäteri committee report signals renewed government attention to digital public-sector modernisation, and the Russia-Ukraine geopolitical pressure track deepens with fresh motions on overflight permits and EU visa restrictions. Coalition mathematics remain tight at +1 seat majority; any defection on boundary-testing Justice Committee amendments would be election-defining.
 
 ### 🧭 3 Decisions This Brief Supports
 
-1. **Editorial priority**: Lead coverage on the criminal-justice legislative cluster (HD01JuU10, HD01CU25, HD03246, HD03237) as the government's core pre-election narrative investment — highest news value May 2026.
+1. **Editorial priority**: Lead coverage on the criminal-justice legislative cluster (HD01JuU10, HD01CU25, Riksdag document #03246 (HD03246), HD03237) as the government's core pre-election narrative investment — highest news value May 2026.
 2. **Opposition analysis**: Track the S-party six-interpellation strategy across ministers; HD10449 (infrastructure), HD10450 (sick-pay), HD10451 (corporate crime) are the highest-salience targets.
 3. **Forward intelligence**: Monitor PIR-1 (coalition stability), PIR-6 (polling), PIR-7 (Centre Party coalition signal) as election-cycle leading indicators.
 
@@ -62,9 +61,9 @@ Use this guide to read the article as a political-intelligence product rather th
 
 | Icon | Reader need | What you'll get |
 |---|---|---|
-| 📊 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
-| 🧠 | [Synthesis Summary](#rm-synthesis-summary) | evidence-anchored narrative consolidating primary sources into one coherent story line |
-| 🎯 | [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps |
+| 📊 | [Lede and editorial decisions](#rm-what-happened) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
+| 🧠 | [Why It Matters](#rm-why-it-matters) | evidence-anchored narrative consolidating primary sources into one coherent story line |
+| 🎯 | [Key Judgments](#rm-key-findings) | confidence-bearing political-intelligence conclusions and collection gaps |
 | 📈 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals |
 | 👥 | [Stakeholder Perspectives](#rm-stakeholder-perspectives) | winners, losers and undecided actors with stake-weighted positions and pressure points |
 | 🔢 | [Coalition Mathematics](#rm-coalition-mathematics) | parliamentary arithmetic showing exactly who can pass or block this measure and at what margin |
@@ -80,10 +79,10 @@ Use this guide to read the article as a political-intelligence product rather th
 | ⚙️ | [Implementation Feasibility](#rm-implementation-feasibility) | delivery feasibility, capability gaps, timelines and execution risks for the proposed action |
 | 📰 | [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder |
 | 😈 | [Devil's Advocate](#rm-devils-advocate) | alternative hypotheses, steel-manned counter-arguments and the strongest case against the lead reading |
-| 🏷️ | [Classification Results](#rm-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
-| 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
-| 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
-| 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 🏷️ | [Deep Dive: Classification Results](#rm-deep-dive-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
+| 🔀 | [Deep Dive: Cross-Reference Map](#rm-deep-dive-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
+| 🔬 | [Deep Dive: Methodology & Limitations](#rm-deep-dive-methodology--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
+| 📦 | [Deep Dive: Data Download Manifest](#rm-deep-dive-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
 | 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
@@ -98,9 +97,9 @@ Use this guide to read the article as a political-intelligence product rather th
 | 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
-| 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
+| 🏷️ | [Audit appendix](#rm-deep-dive-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
-## Synthesis Summary
+## Why It Matters
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/month-ahead/synthesis-summary.md -->
 
 ### Lead Story
@@ -165,7 +164,7 @@ HD11752 (revocation of Russian overflight permits) and HD11753 (EU visa restrict
 
 May 2026 is the final major legislative window before summer recess. Bills clearing this window enter into force before the September 2026 election. The criminal justice cluster is the government's narrative investment; the S interpellation campaign is the opposition's pre-election counter-offensive.
 
-## Intelligence Assessment — Key Judgments
+## Key Findings
 <!-- source: intelligence-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/month-ahead/intelligence-assessment.md -->
 
 ### Key Judgment 1 (KJ-1): Government Will Achieve Core Justice Delivery
@@ -1561,7 +1560,7 @@ All-party consensus supports HD03231/HD03232. Devil's advocate: a foreign policy
 2. **TU minister Andreas Carlson** has twice avoided specific Södra stambanan funding questions in media — potentially rehearsing a planned announcement or a planned deflection.
 3. **Centre Party's silence** on coalition positioning is atypical for the May pre-election window in historical patterns.
 
-## Classification Results
+## Deep Dive: Classification Results
 <!-- source: classification-results.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/month-ahead/classification-results.md -->
 
 ### Classification Matrix
@@ -1620,7 +1619,7 @@ graph LR
     style P2 fill:#7c3aed,stroke:#7c3aed,color:#fff
 ```
 
-## Cross-Reference Map
+## Deep Dive: Cross-Reference Map
 <!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/month-ahead/cross-reference-map.md -->
 
 ### Policy Clusters
@@ -1682,7 +1681,7 @@ graph TD
 **Bundle**: HD01JuU10 + HD01CU25 + HD03246 + HD03237 = government criminal justice bundle — bundle edge label applied.  
 **Thematic**: HD11752 + HD11753 = Russia policy hardening theme — thematic edge label applied.
 
-## Methodology Reflection & Limitations
+## Deep Dive: Methodology & Limitations
 <!-- source: methodology-reflection.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/month-ahead/methodology-reflection.md -->
 
 ### ICD 203 Self-Audit
@@ -1742,7 +1741,7 @@ Prior cycle (2026-04-27 month-ahead) made 7 predictions trackable:
 
 **Calibration note**: No systematic forecast calibration data available for prior-cycle predictions against outcomes within this workflow. Recommend establishing outcome-tracking file at analysis/calibration/month-ahead-outcomes.json in a future iteration.
 
-## Data Download Manifest
+## Deep Dive: Data Download Manifest
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/month-ahead/data-download-manifest.md -->
 
 ### Document Inventory

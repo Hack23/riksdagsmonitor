@@ -3,18 +3,18 @@ date: 2026-05-05
 subfolder: election-cycle/current
 slug: 2026-05-05-election-cycle/current
 source_folder: analysis/daily/2026-05-05/election-cycle/current
-generated_at: 2026-05-28T15:56:16.275Z
+generated_at: 2026-05-28T22:29:31.208Z
 language: en
 layout: article
 ---
-## Executive Brief
+## What Happened
 <!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/election-cycle/current/executive-brief.md -->
 
 ### ACTION SUMMARY
 
 Sweden's Tidö coalition enters its final 131-day stretch with five critical signals from today's parliamentary record that require immediate analytical attention:
 
-1. **SIDA abolition proposal (HD10464)** — A written question demanding the dissolution of Sida (Swedish International Development Cooperation Agency) indicates an accelerating ideological assault on Sweden's multilateral commitments. If this reaches legislative status before 13 September, it would represent the most dramatic foreign policy break of any Swedish government since 1945.
+1. **SIDA abolition proposal (Riksdag document #10464 (HD10464))** — A written question demanding the dissolution of Sida (Swedish International Development Cooperation Agency) indicates an accelerating ideological assault on Sweden's multilateral commitments. If this reaches legislative status before 13 September, it would represent the most dramatic foreign policy break of any Swedish government since 1945.
 
 2. **Non-political civil servants at Regeringskansliet (HD10466)** — This proposal for depoliticising the government civil service contains significant rule-of-law implications and signals SD's structural consolidation agenda beyond electoral cycles.
 
@@ -45,9 +45,9 @@ Use this guide to read the article as a political-intelligence product rather th
 
 | Icon | Reader need | What you'll get |
 |---|---|---|
-| 📊 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
-| 🧠 | [Synthesis Summary](#rm-synthesis-summary) | evidence-anchored narrative consolidating primary sources into one coherent story line |
-| 🎯 | [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps |
+| 📊 | [Lede and editorial decisions](#rm-what-happened) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
+| 🧠 | [Why It Matters](#rm-why-it-matters) | evidence-anchored narrative consolidating primary sources into one coherent story line |
+| 🎯 | [Key Judgments](#rm-key-findings) | confidence-bearing political-intelligence conclusions and collection gaps |
 | 📈 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals |
 | 👥 | [Stakeholder Perspectives](#rm-stakeholder-perspectives) | winners, losers and undecided actors with stake-weighted positions and pressure points |
 | 🔢 | [Coalition Mathematics](#rm-coalition-mathematics) | parliamentary arithmetic showing exactly who can pass or block this measure and at what margin |
@@ -68,10 +68,10 @@ Use this guide to read the article as a political-intelligence product rather th
 | ⚙️ | [Implementation Feasibility](#rm-implementation-feasibility) | delivery feasibility, capability gaps, timelines and execution risks for the proposed action |
 | 📰 | [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder |
 | 😈 | [Devil's Advocate](#rm-devils-advocate) | alternative hypotheses, steel-manned counter-arguments and the strongest case against the lead reading |
-| 🏷️ | [Classification Results](#rm-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
-| 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
-| 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
-| 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 🏷️ | [Deep Dive: Classification Results](#rm-deep-dive-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
+| 🔀 | [Deep Dive: Cross-Reference Map](#rm-deep-dive-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
+| 🔬 | [Deep Dive: Methodology & Limitations](#rm-deep-dive-methodology--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
+| 📦 | [Deep Dive: Data Download Manifest](#rm-deep-dive-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
 | 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
@@ -85,9 +85,9 @@ Use this guide to read the article as a political-intelligence product rather th
 | 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
-| 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
+| 🏷️ | [Audit appendix](#rm-deep-dive-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
-## Synthesis Summary
+## Why It Matters
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/election-cycle/current/synthesis-summary.md -->
 
 **Horizon**: T+1460d (4 years) | **Depth multiplier**: 2.5× Tier-C  
@@ -169,7 +169,7 @@ The Tidö mandate's final 131 days will be characterized by:
 
 **Overall mandate rating**: B+ (Strong policy delivery with institutional stress; unlikely to win outright majority but may retain largest-bloc status)
 
-## Intelligence Assessment — Key Judgments
+## Key Findings
 <!-- source: intelligence-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/election-cycle/current/intelligence-assessment.md -->
 
 ### Source Quality Assessment
@@ -1610,7 +1610,7 @@ The coalition has managed risk effectively across 1,331 days but the final 131 d
 
 **Verdict**: The L threshold counterfactual is the most consequential and has the highest probability of being correct. Analysts should weight L survival probability at ~75-80% rather than 65%.
 
-## Classification Results
+## Deep Dive: Classification Results
 <!-- source: classification-results.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/election-cycle/current/classification-results.md -->
 
 ### Document Type Distribution
@@ -1656,7 +1656,7 @@ The coalition has managed risk effectively across 1,331 days but the final 131 d
 
 **Overall mandate delivery score**: 69% across 7 stated commitments
 
-## Cross-Reference Map
+## Deep Dive: Cross-Reference Map
 <!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/election-cycle/current/cross-reference-map.md -->
 
 **Type**: Cross-horizon citation network | **Required**: ≥2 year-ahead + ≥12 monthly reviews
@@ -1721,7 +1721,7 @@ The coalition has managed risk effectively across 1,331 days but the final 131 d
 | PIR-4: Economic growth vs forecast | IMF WEO Apr-2026 | On track (1.8%) |
 | PIR-5: SIDA abolition progression | HD10464 | New signal (today) |
 
-## Methodology Reflection & Limitations
+## Deep Dive: Methodology & Limitations
 <!-- source: methodology-reflection.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/election-cycle/current/methodology-reflection.md -->
 
 ### Analytical Approach
@@ -1780,7 +1780,7 @@ All economic figures sourced from WEO Apr-2026 (provider: imf, vintage: WEO-2026
   - 30–44%: unlikely, probably not
   - <30%: highly unlikely, almost certainly not
 
-## Data Download Manifest
+## Deep Dive: Data Download Manifest
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/election-cycle/current/data-download-manifest.md -->
 
 **Source**: Riksdagen Open Data API via riksdag-regering-mcp  

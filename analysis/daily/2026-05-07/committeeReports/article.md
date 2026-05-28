@@ -3,23 +3,21 @@ date: 2026-05-07
 subfolder: committeeReports
 slug: 2026-05-07-committeeReports
 source_folder: analysis/daily/2026-05-07/committeeReports
-generated_at: 2026-05-28T15:56:16.428Z
+generated_at: 2026-05-28T22:29:31.362Z
 language: en
 layout: article
 ---
-## Executive Brief
+## What Happened
 <!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/committeeReports/executive-brief.md -->
 
 ---
 
-### BLUF
-
+### Lede
 The Riksdag's Defence Committee (FöU) has presented a landmark betänkande modernising Sweden's signals intelligence (SIGINT) law — the most significant reform to the framework since the 2008 FRA law — while simultaneously approving accelerated prison construction powers and social insurance qualification tightening. These five committee reports, dated 2026-05-06, collectively reshape Sweden's security architecture, criminal justice capacity, and welfare state eligibility rules in one legislative session.
 
 ---
 
-### Decisions This Brief Supports
-
+### Decisions and confidence context
 1. **Policy analysts and civil-liberties organisations**: FöU18 on SIGINT modernisation is now in formal debate ("Debatt om förslag") — the window for public scrutiny before a final vote is open. Assess risk of unchecked mass surveillance versus NATO interoperability requirements.
 
 2. **Kriminalvården leadership and justice ministry officials**: CU25 has passed — temporary building permits for prisons/detention centres take effect 1 July 2026. Accelerate planning for new capacity sites to absorb sentence-length increases driven by penalty reforms.
@@ -83,9 +81,9 @@ Use this guide to read the article as a political-intelligence product rather th
 
 | Icon | Reader need | What you'll get |
 |---|---|---|
-| 📊 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
-| 🧠 | [Synthesis Summary](#rm-synthesis-summary) | evidence-anchored narrative consolidating primary sources into one coherent story line |
-| 🎯 | [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps |
+| 📊 | [Lede and editorial decisions](#rm-what-happened) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
+| 🧠 | [Why It Matters](#rm-why-it-matters) | evidence-anchored narrative consolidating primary sources into one coherent story line |
+| 🎯 | [Key Judgments](#rm-key-findings) | confidence-bearing political-intelligence conclusions and collection gaps |
 | 📈 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals |
 | 👥 | [Stakeholder Perspectives](#rm-stakeholder-perspectives) | winners, losers and undecided actors with stake-weighted positions and pressure points |
 | 🔢 | [Coalition Mathematics](#rm-coalition-mathematics) | parliamentary arithmetic showing exactly who can pass or block this measure and at what margin |
@@ -101,10 +99,10 @@ Use this guide to read the article as a political-intelligence product rather th
 | ⚙️ | [Implementation Feasibility](#rm-implementation-feasibility) | delivery feasibility, capability gaps, timelines and execution risks for the proposed action |
 | 📰 | [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder |
 | 😈 | [Devil's Advocate](#rm-devils-advocate) | alternative hypotheses, steel-manned counter-arguments and the strongest case against the lead reading |
-| 🏷️ | [Classification Results](#rm-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
-| 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
-| 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
-| 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 🏷️ | [Deep Dive: Classification Results](#rm-deep-dive-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
+| 🔀 | [Deep Dive: Cross-Reference Map](#rm-deep-dive-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
+| 🔬 | [Deep Dive: Methodology & Limitations](#rm-deep-dive-methodology--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
+| 📦 | [Deep Dive: Data Download Manifest](#rm-deep-dive-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
 | 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
@@ -119,9 +117,9 @@ Use this guide to read the article as a political-intelligence product rather th
 | 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
-| 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
+| 🏷️ | [Audit appendix](#rm-deep-dive-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
-## Synthesis Summary
+## Why It Matters
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/committeeReports/synthesis-summary.md -->
 
 ---
@@ -195,7 +193,7 @@ mindmap
 2. **Will CU25 implementation trigger PBL exemptions** in practice, and if so, which municipalities will bear the planning burden of new prison sites? [HIGH likelihood given Kriminalvården's stated capacity deficit]
 3. **SfU21 legal challenge**: Will trade unions or immigration advocacy groups challenge the social insurance qualification tightening before Arbetsdomstolen or EU courts? [MEDIUM probability]
 
-## Intelligence Assessment — Key Judgments
+## Key Findings
 <!-- source: intelligence-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/committeeReports/intelligence-assessment.md -->
 
 ---
@@ -1558,7 +1556,7 @@ quadrantChart
 
 3. **CU25 implementation pace**: The analysis assumes rapid implementation. Historical evidence suggests Kriminalvården will face procurement, planning, and staffing delays regardless of PBL powers. The 2028–2029 estimate for new places may be optimistic.
 
-## Classification Results
+## Deep Dive: Classification Results
 <!-- source: classification-results.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/committeeReports/classification-results.md -->
 
 ---
@@ -1656,7 +1654,7 @@ quadrantChart
 
 ```
 
-## Cross-Reference Map
+## Deep Dive: Cross-Reference Map
 <!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/committeeReports/cross-reference-map.md -->
 
 ---
@@ -1708,7 +1706,7 @@ graph LR
     style SfU24 fill:#9966ff,color:#fff
 ```
 
-## Methodology Reflection & Limitations
+## Deep Dive: Methodology & Limitations
 <!-- source: methodology-reflection.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/committeeReports/methodology-reflection.md -->
 
 ---
@@ -1764,7 +1762,7 @@ The dominance of category 4 in FöU18/FöU16/SfU21/SfU24 analysis is a limitatio
 
 ### AI-FIRST Improvement Log (Pass 2 Changes)
 
-## Data Download Manifest
+## Deep Dive: Data Download Manifest
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/committeeReports/data-download-manifest.md -->
 
 **Workflow**: news-committee-reports  

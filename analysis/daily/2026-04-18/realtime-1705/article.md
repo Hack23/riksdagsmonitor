@@ -3,11 +3,11 @@ date: 2026-04-18
 subfolder: realtime-1705
 slug: 2026-04-18-realtime-1705
 source_folder: analysis/daily/2026-04-18/realtime-1705
-generated_at: 2026-05-28T15:56:15.263Z
+generated_at: 2026-05-28T22:29:30.051Z
 language: en
 layout: article
 ---
-## Executive Brief
+## What Happened
 <!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/realtime-1705/executive-brief.md -->
 
 <p align="center">
@@ -25,7 +25,7 @@ layout: article
 
 ### 🧭 BLUF (Bottom Line Up Front)
 
-**On 2026-04-13 – 16, the Kristersson government tabled a coordinated four-document pre-election sprint: Vårproposition 2026 (HD03100, DIW 9.5) sets the macro frame, an extra supplementary budget (HD03236, DIW 8.5) delivers fuel-tax cuts and electricity/gas subsidies to cost-of-living voters, Justice Minister Gunnar Strömmer's youth-offender law (HD03246, DIW 7.5) toughens rules for 15–17 year-olds, and the SfU committee's migration-inhibition order (HD01SfU22, DIW 6.5) replaces temporary residence permits for deportation-blocked individuals.** The package lands against a fragile macro backdrop — GDP growth just 0.82 % (2024) after −0.20 % (2023), unemployment at 8.7 % (≈ 450,000 people, 2025), inflation tamed to 2.84 % (2024 vs 8.55 % 2023). The most acute operational risk is the SiS youth-detention capacity crisis (already 100 %+ utilisation); the most acute legal risk is ECHR Article 3/5 exposure on HD01SfU22; the most acute fiscal-credibility risk is three mini-budgets in two months drawing Riksrevisionen commentary. `[HIGH]`
+**On 2026-04-13 – 16, the Kristersson government tabled a coordinated four-document pre-election sprint: Vårproposition 2026 (Riksdag document #03100 (HD03100), DIW 9.5) sets the macro frame, an extra supplementary budget (HD03236, DIW 8.5) delivers fuel-tax cuts and electricity/gas subsidies to cost-of-living voters, Justice Minister Gunnar Strömmer's youth-offender law (HD03246, DIW 7.5) toughens rules for 15–17 year-olds, and the SfU committee's migration-inhibition order (HD01SfU22, DIW 6.5) replaces temporary residence permits for deportation-blocked individuals.** The package lands against a fragile macro backdrop — GDP growth just 0.82 % (2024) after −0.20 % (2023), unemployment at 8.7 % (≈ 450,000 people, 2025), inflation tamed to 2.84 % (2024 vs 8.55 % 2023). The most acute operational risk is the SiS youth-detention capacity crisis (already 100 %+ utilisation); the most acute legal risk is ECHR Article 3/5 exposure on HD01SfU22; the most acute fiscal-credibility risk is three mini-budgets in two months drawing Riksrevisionen commentary. `[HIGH]`
 
 ---
 
@@ -111,8 +111,8 @@ Use this guide to read the article as a political-intelligence product rather th
 
 | Icon | Reader need | What you'll get |
 |---|---|---|
-| 📊 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
-| 🧠 | [Synthesis Summary](#rm-synthesis-summary) | evidence-anchored narrative consolidating primary sources into one coherent story line |
+| 📊 | [Lede and editorial decisions](#rm-what-happened) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
+| 🧠 | [Why It Matters](#rm-why-it-matters) | evidence-anchored narrative consolidating primary sources into one coherent story line |
 | 📈 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals |
 | 👥 | [Stakeholder Perspectives](#rm-stakeholder-perspectives) | winners, losers and undecided actors with stake-weighted positions and pressure points |
 | 🔮 | [Scenarios](#rm-scenario-analysis) | alternative outcomes with probabilities, triggers, and warning signs |
@@ -120,9 +120,9 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🧮 | [SWOT Analysis](#rm-swot-analysis) | strengths, weaknesses, opportunities and threats matrix grounded in primary-source evidence |
 | 🛡️ | [Threat Analysis](#rm-threat-analysis) | actor capabilities, intent and threat vectors targeting institutional integrity |
 | 🌍 | [Comparative International](#rm-comparative-international) | peer-country comparisons (Nordic, EU, OECD) showing how similar measures fared elsewhere |
-| 🏷️ | [Classification Results](#rm-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
-| 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
-| 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 🏷️ | [Deep Dive: Classification Results](#rm-deep-dive-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
+| 🔀 | [Deep Dive: Cross-Reference Map](#rm-deep-dive-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
+| 📦 | [Deep Dive: Data Download Manifest](#rm-deep-dive-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
 | 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
@@ -137,9 +137,9 @@ Use this guide to read the article as a political-intelligence product rather th
 | 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
-| 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
+| 🏷️ | [Audit appendix](#rm-deep-dive-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
-## Synthesis Summary
+## Why It Matters
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/realtime-1705/synthesis-summary.md -->
 
 ### Key Findings
@@ -1038,7 +1038,7 @@ Rationale: Multiple simultaneous high-probability threats (legal challenge to HD
 
 ---
 
-## Classification Results
+## Deep Dive: Classification Results
 <!-- source: classification-results.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/realtime-1705/classification-results.md -->
 
 ### Document Classification Matrix
@@ -1067,7 +1067,7 @@ The April 2026 legislative cluster represents a **rightward acceleration** in co
 ### Historical Classification
 This legislative sprint is analogous to the Reinfeldt government's 2009 fiscal expansion (anti-austerity during financial crisis) in its use of supplementary budget mechanisms — but with a more ideologically homogeneous direction (right-populist rather than centrist crisis management).
 
-## Cross-Reference Map
+## Deep Dive: Cross-Reference Map
 <!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/realtime-1705/cross-reference-map.md -->
 
 ### Document Dependency Graph
@@ -1123,7 +1123,7 @@ Youth crime law and migration inhibition orders both belong to the Tidö agreeme
 - HD03231 (Ukraine tribunal accession)
 - HD03232 (Ukraine compensation commission)
 
-## Data Download Manifest
+## Deep Dive: Data Download Manifest
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/realtime-1705/data-download-manifest.md -->
 
 ### Data Sources Used

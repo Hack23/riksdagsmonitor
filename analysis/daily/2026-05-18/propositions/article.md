@@ -3,19 +3,18 @@ date: 2026-05-18
 subfolder: propositions
 slug: 2026-05-18-propositions
 source_folder: analysis/daily/2026-05-18/propositions
-generated_at: 2026-05-28T15:56:17.226Z
+generated_at: 2026-05-28T22:29:32.253Z
 language: en
 layout: article
 ---
-## Executive Brief
+## What Happened
 <!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-18/propositions/executive-brief.md -->
 
 **Article date**: 2026-05-18  
 **Subfolder**: propositions  
 
-### BLUF
-
-Sweden's Kristersson minority government submitted eight major propositions to the Riksdag in a single pre-election legislative sprint, including a landmark bill (HD03262 / Prop. 2025/26:262) that eliminates permanent residence permits and aligns Swedish migration law with the EU's new Common European Asylum System — the most structurally significant change since the 2016 Asylum Act. Arriving 118 days before the September 13, 2026 general election, the five-bill migration cluster, a state e-ID proposition (HD03250), a military cooperation bill (HD03254) and a political transparency measure (HD03258) together represent the government's full programme delivery bid. Liberalerna's 16 votes form the critical coalition margin; if they hold, the migration overhaul passes; if they fracture on ECHR grounds (particularly HD03265 detention expansion), key bills stall and become central election-period battlegrounds.
+### Lede
+Sweden's Kristersson minority government submitted eight major propositions to the Riksdag in a single pre-election legislative sprint, including a landmark bill (Riksdag document #03262 (HD03262) / Prop. 2025/26:262) that eliminates permanent residence permits and aligns Swedish migration law with the EU's new Common European Asylum System — the most structurally significant change since the 2016 Asylum Act. Arriving 118 days before the September 13, 2026 general election, the five-bill migration cluster, a state e-ID proposition (HD03250), a military cooperation bill (HD03254) and a political transparency measure (HD03258) together represent the government's full programme delivery bid. Liberalerna's 16 votes form the critical coalition margin; if they hold, the migration overhaul passes; if they fracture on ECHR grounds (particularly HD03265 detention expansion), key bills stall and become central election-period battlegrounds.
 
 ### Key Judgments (High Confidence — B2)
 
@@ -64,9 +63,9 @@ Use this guide to read the article as a political-intelligence product rather th
 
 | Icon | Reader need | What you'll get |
 |---|---|---|
-| 📊 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
+| 📊 | [Lede and editorial decisions](#rm-what-happened) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
 | 🔮 | [Scenarios](#rm-scenario-analysis) | alternative outcomes with probabilities, triggers, and warning signs |
-| 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📦 | [Deep Dive: Data Download Manifest](#rm-deep-dive-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
 | 📝 | [Actors Stakeholders](#rm-actors-stakeholders) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Coalition Dynamics](#rm-coalition-dynamics) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Committee Analysis](#rm-committee-analysis) | supporting analytical lens with primary-source evidence and audit-traceable citations |
@@ -106,7 +105,7 @@ Use this guide to read the article as a political-intelligence product rather th
 | 📝 | [Timeline Horizon](#rm-timeline-horizon) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Voting Pattern Analysis](#rm-voting-pattern-analysis) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
-| 🏷️ | [Audit appendix](#rm-data-download-manifest) | classification, cross-reference, methodology and manifest evidence for reviewers |
+| 🏷️ | [Audit appendix](#rm-deep-dive-data-download-manifest) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
 ## Per-document intelligence
 
@@ -424,7 +423,7 @@ Full text retrieved. HTML format (PDF conversion). Key elements visible from hea
 - W3: BankID technical failure → fast-tracks e-ID public support
 - W4: NATO collective defence invocation → HD03254 becomes urgent operational necessity
 
-## Data Download Manifest
+## Deep Dive: Data Download Manifest
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-18/propositions/data-download-manifest.md -->
 
 **Article date**: 2026-05-18  
@@ -1007,8 +1006,7 @@ See also: electoral-analysis.md for detailed scenario tree
 **Artikeldato**: 2026-05-18  
 **Undermappe**: propositions  
 
-### BLUF
-
+### Lede
 Sveriges Kristersson-mindretalsregering indsendte otte større lovforslag til Riksdagen i en enkelt præ-valgslovgivningssprint, herunder et skelsættende lovforslag (HD03262 / Prop. 2025/26:262), der afskaffer permanente opholdstilladelser og bringer svensk migrationslovgivning i overensstemmelse med EU's nye fælles europæiske asylsystem — den mest strukturelt betydningsfulde ændring siden asylloven i 2016. Med 118 dage til valget den 13. september 2026 udgør de fem migrationslove, et forslag om statens e-legitimation (HD03250), et forslag om militært samarbejde (HD03254) og en politisk transparensforanstaltning (HD03258) tilsammen regeringens fulde programleveringsbud. Liberalernes 16 mandater udgør den afgørende koalitionsmargin; hvis de holder, vedtages migrationsreformen; hvis de splintres på ECHR-grunde (navnlig HD03265 om udvidet frihedsberøvelse), stilles nøgleforslagene i bero og bliver centrale valgkampsspørgsmål.
 
 ### Nøglevurderinger (Høj tillid — B2)
@@ -1065,8 +1063,7 @@ De fem migrationslove (HD03262, HD03264, HD03265, HD03267 og det tidligere HD032
 **Artikeldatum**: 2026-05-18  
 **Unterordner**: propositions  
 
-### BLUF
-
+### Lede
 Schwedens Minderheitsregierung unter Kristersson legte in einem einzigen Vorwahlgesetzgebungssprint acht umfangreiche Gesetzentwürfe dem Riksdag vor, darunter ein wegweisendes Gesetz (HD03262 / Prop. 2025/26:262), das den unbefristeten Aufenthaltstitel abschafft und das schwedische Migrationsrecht mit dem neuen Gemeinsamen Europäischen Asylsystem der EU in Einklang bringt — die bedeutendste strukturelle Änderung seit dem Asylgesetz 2016. Mit 118 Tagen bis zur Parlamentswahl am 13. September 2026 stellen das Fünf-Gesetze-Migrationspaket, ein Gesetzentwurf zur staatlichen E-ID (HD03250), ein Militärkooperationsgesetz (HD03254) und eine politische Transparenzmaßnahme (HD03258) gemeinsam das vollständige Programmliefer-Angebot der Regierung dar. Die 16 Mandate der Liberalen bilden den entscheidenden Koalitionsrahmen; halten sie, wird die Migrationsreform verabschiedet; brechen sie wegen EGMR-Bedenken (insbesondere HD03265 zur Abschiebehaftverlängerung) weg, stagnieren Schlüsselgesetze und werden zu zentralen Wahlkampfthemen.
 
 ### Schlüsselurteile (Hohe Konfidenz — B2)
@@ -1123,8 +1120,7 @@ Das Fünf-Gesetze-Migrationspaket (HD03262, HD03264, HD03265, HD03267 und das fr
 **Fecha del artículo**: 2026-05-18  
 **Subcarpeta**: propositions  
 
-### BLUF
-
+### Lede
 El gobierno minoritario de Kristersson en Suecia presentó ocho grandes proposiciones al Riksdag en un único sprint legislativo preelectoral, incluyendo un proyecto de ley histórico (HD03262 / Prop. 2025/26:262) que elimina los permisos de residencia permanente y alinea el derecho migratorio sueco con el nuevo Sistema Europeo Común de Asilo de la UE — el cambio estructural más significativo desde la Ley de Asilo de 2016. A 118 días de las elecciones generales del 13 de septiembre de 2026, el racimo de cinco leyes de migración, una propuesta de e-ID estatal (HD03250), una propuesta de cooperación militar (HD03254) y una medida de transparencia política (HD03258) representan conjuntamente la oferta completa de entrega del programa del gobierno. Los 16 votos de los Liberales forman el margen crítico de la coalición; si se mantienen, la reforma migratoria se aprueba; si se fracturan por motivos del CEDH (especialmente la extensión de la detención en HD03265), los proyectos clave se paralizan y se convierten en campos de batalla electorales.
 
 ### Juicios clave (Alta confianza — B2)
@@ -1181,8 +1177,7 @@ Las cinco leyes de migración (HD03262, HD03264, HD03265, HD03267 y la anterior 
 **Artikkelin päivämäärä**: 2026-05-18  
 **Alikansio**: propositions  
 
-### BLUF
-
+### Lede
 Ruotsin Kristerssonin vähemmistöhallitus esitti kahdeksan merkittävää lakiehdotusta Riksdagille yhdessä ennen vaaleja käydyssä lainsäädäntösprintissä, mukaan lukien historiallinen lakiehdotus (HD03262 / Prop. 2025/26:262), joka poistaa pysyvät oleskeluluvat ja sovittaa Ruotsin maahanmuuttolainsäädännön EU:n uuteen yhteiseen eurooppalaiseen turvapaikkajärjestelmään — merkittävin rakenteellinen muutos vuoden 2016 turvapaikkalain jälkeen. 118 päivää ennen 13. syyskuuta 2026 pidettäviä parlamenttivaaleja viisi maahanmuuttolakia, valtion sähköistä henkilöllisyyskorttia koskeva ehdotus (HD03250), puolustusvoimien yhteistyötä koskeva ehdotus (HD03254) ja poliittista avoimuutta koskeva toimenpide (HD03258) muodostavat yhdessä hallituksen täydellisen ohjelmatoimitustarjouksen. Liberaalien 16 kansanedustajapaikkaa muodostavat kriittisen koalitiomarginaalin; jos he pitävät, maahanmuuttouudistus hyväksytään; jos se hajoaa ECHR-perustein (erityisesti HD03265 säilöönpidon laajennus), keskeisiä lakiehdotuksia pysäytetään ja niistä tulee keskeisiä vaalikauden taistelukysymyksiä.
 
 ### Keskeiset arvioinnit (Korkea luotettavuus — B2)
@@ -1239,8 +1234,7 @@ Viisi maahanmuuttolakia (HD03262, HD03264, HD03265, HD03267 ja aiempi HD03263) e
 **Date de l'article** : 2026-05-18  
 **Sous-dossier** : propositions  
 
-### BLUF
-
+### Lede
 Le gouvernement minoritaire de Kristersson en Suède a soumis huit propositions législatives majeures au Riksdag dans un seul sprint législatif pré-électoral, incluant un projet de loi historique (HD03262 / Prop. 2025/26:262) supprimant les titres de séjour permanents et alignant le droit suédois de l'immigration sur le nouveau Régime d'asile européen commun de l'UE — le changement structurel le plus significatif depuis la loi sur l'asile de 2016. À 118 jours des élections législatives du 13 septembre 2026, le groupe de cinq textes migratoires, une proposition d'e-ID d'État (HD03250), un texte sur la coopération militaire (HD03254) et une mesure de transparence politique (HD03258) représentent ensemble l'offre complète du gouvernement en matière de livraison de programme. Les 16 votes des Libéraux constituent la marge de coalition critique ; s'ils tiennent, la refonte migratoire est adoptée ; s'ils se fracturent sur des motifs CEDH (notamment la prolongation de la rétention dans HD03265), les textes clés sont bloqués et deviennent des champs de bataille centraux pour la période électorale.
 
 ### Jugements clés (Confiance élevée — B2)
@@ -1480,8 +1474,7 @@ Les cinq textes migratoires (HD03262, HD03264, HD03265, HD03267 et le précéden
 **Artikeldatum**: 2026-05-18  
 **Submap**: propositions  
 
-### BLUF
-
+### Lede
 De Zweedse minderheidsregering van Kristersson diende acht grote wetsvoorstellen in bij de Riksdag in één pre-verkiezingswetgevingssprint, waaronder een baanbrekend wetsvoorstel (HD03262 / Prop. 2025/26:262) dat permanente verblijfsvergunningen afschaft en het Zweedse migratierecht in lijn brengt met het nieuwe Gemeenschappelijk Europees Asielstelsel van de EU — de meest structureel significante wijziging sinds de Asielwet van 2016. Met 118 dagen tot de verkiezingen van 13 september 2026 vertegenwoordigen het cluster van vijf migratiewetten, een voorstel voor een staats-e-ID (HD03250), een voorstel voor militaire samenwerking (HD03254) en een maatregel voor politieke transparantie (HD03258) samen het volledige programmaleveringsbod van de regering. De 16 stemmen van de Liberalen vormen de kritieke coalitiemarge; als die standhouden, wordt de migratiehervorming aangenomen; als ze breken op EVRM-gronden (met name de uitbreiding van bewaring in HD03265), stagneren sleutelwetten en worden ze centrale kiesslagvelden.
 
 ### Sleuteloordelen (Hoge betrouwbaarheid — B2)
@@ -1538,8 +1531,7 @@ De vijf migratiewetten (HD03262, HD03264, HD03265, HD03267 en het eerdere HD0326
 **Artikkeldato**: 2026-05-18  
 **Undermappe**: propositions  
 
-### BLUF
-
+### Lede
 Sveriges Kristersson-mindretallsregjering leverte åtte store proposisjoner til Riksdagen i en enkelt forhåndsvalgslovgivningssprint, inkludert et historisk lovforslag (HD03262 / Prop. 2025/26:262) som avskaffet permanente oppholdstillatelser og bringer svensk migrasjonslovgivning i tråd med EUs nye felles europeiske asylsystem — den mest strukturelt betydningsfulle endringen siden asylloven i 2016. Med 118 dager til valget 13. september 2026 utgjør de fem migrasjonslovene, et forslag om statlig e-ID (HD03250), et forslag om militært samarbeid (HD03254) og et politisk transparenstiltak (HD03258) til sammen regjeringens fullstendige programleveringsbud. Liberalernes 16 mandater utgjør den avgjørende koalisjonsmargin; hvis de holder, vedtas migrasjonsreformen; hvis de sprekker på ECHR-grunnlag (særlig HD03265 om utvidet frihetsberøvelse), stanser nøkkelforslag og blir sentrale valgkamptemaer.
 
 ### Nøkkelvurderinger (Høy tillit — B2)
@@ -1596,8 +1588,7 @@ De fem migrasjonslovene (HD03262, HD03264, HD03265, HD03267 og det tidligere HD0
 **Artikeldatum**: 2026-05-18  
 **Undermapp**: propositions  
 
-### BLUF
-
+### Lede
 Sveriges Kristerssonska minoritetsregering lämnade in åtta stora propositioner till riksdagen i en enda lagstiftningssprint inför valet, inklusive ett historiskt lagförslag (HD03262 / Prop. 2025/26:262) som avskaffar permanenta uppehållstillstånd och anpassar svensk migrationslagstiftning till EU:s nya gemensamma europeiska asylsystem — den mest strukturellt betydelsefulla förändringen sedan asyllagen 2016. Med 118 dagar kvar till riksdagsvalet den 13 september 2026 utgör det femtedeliga migrationsklustret, en proposition om statlig e-legitimation (HD03250), en proposition om militärt samarbete (HD03254) och en transparensåtgärd för politiken (HD03258) sammantaget regeringens fullständiga programleveransbud. Liberalernas 16 mandat utgör det avgörande koalitionsmarginalen; om de håller går migrationsomvandlingen igenom; om de spricker av ECHR-skäl (särskilt HD03265 om utökad förvar) riskerar nyckelpropositionerna att stanna och bli centrala valfrågor.
 
 ### Nyckelbedömningar (Hög säkerhet — B2)

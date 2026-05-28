@@ -3,18 +3,17 @@ date: 2026-04-26
 subfolder: monthly-review
 slug: 2026-04-26-monthly-review
 source_folder: analysis/daily/2026-04-26/monthly-review
-generated_at: 2026-05-28T15:56:15.665Z
+generated_at: 2026-05-28T22:29:30.508Z
 language: en
 layout: article
 ---
-## Executive Brief
+## What Happened
 <!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/monthly-review/executive-brief.md -->
 
 **Window**: 2026-03-27 → 2026-04-26 (30 days) | **Riksmöte**: 2025/26
 
-### 🎯 BLUF
-
-The 30-day window 2026-03-27 → 2026-04-26 marks the **legislative completion phase** of the Tidö coalition's 2025/26 portfolio. Four April-24 committee reports (HD01JuU10 vapenlag, HD01JuU31 Polisreformen-uppföljning, HD01SoU25 äldreomsorg, HD01CU24 byggprocess) close the regulatory ledger. Three April-23 propositions (HD03252, HD03253, HD03256) signal continued executive activity into the closing weeks. Sweden is now **140 days from election** with the political axis shifting from *legislation* to *implementation risk* and *campaign framing*.
+### Lede
+The 30-day window 2026-03-27 → 2026-04-26 marks the **legislative completion phase** of the Tidö coalition's 2025/26 portfolio. Four April-24 committee reports (HD01JuU10 vapenlag, HD01JuU31 Polisreformen-uppföljning, HD01SoU25 äldreomsorg, HD01CU24 byggprocess) close the regulatory ledger. Three April-23 propositions (Riksdag document #03252 (HD03252), HD03253, HD03256) signal continued executive activity into the closing weeks. Sweden is now **140 days from election** with the political axis shifting from *legislation* to *implementation risk* and *campaign framing*.
 
 ### 🧭 3 Decisions This Brief Supports
 
@@ -37,7 +36,7 @@ The 30-day window 2026-03-27 → 2026-04-26 marks the **legislative completion p
 
 ### Confidence label
 
-Overall: **HIGH (A1)** for structural completion picture. **MEDIUM (B2)** for forward electoral dynamics (poll lag, opposition strategy adaptation). **LOW (C3)** for HD03252/HD03253 implementation timeline (committee passage uncertain).
+Overall: **HIGH (A1, high confidence, corroborated by multiple sources)** for structural completion picture. **MEDIUM (B2)** for forward electoral dynamics (poll lag, opposition strategy adaptation). **LOW (C3)** for HD03252/HD03253 implementation timeline (committee passage uncertain).
 
 ```mermaid
 flowchart TB
@@ -84,9 +83,9 @@ Use this guide to read the article as a political-intelligence product rather th
 
 | Icon | Reader need | What you'll get |
 |---|---|---|
-| 📊 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
-| 🧠 | [Synthesis Summary](#rm-synthesis-summary) | evidence-anchored narrative consolidating primary sources into one coherent story line |
-| 🎯 | [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps |
+| 📊 | [Lede and editorial decisions](#rm-what-happened) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
+| 🧠 | [Why It Matters](#rm-why-it-matters) | evidence-anchored narrative consolidating primary sources into one coherent story line |
+| 🎯 | [Key Judgments](#rm-key-findings) | confidence-bearing political-intelligence conclusions and collection gaps |
 | 📈 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals |
 | 👥 | [Stakeholder Perspectives](#rm-stakeholder-perspectives) | winners, losers and undecided actors with stake-weighted positions and pressure points |
 | 🔢 | [Coalition Mathematics](#rm-coalition-mathematics) | parliamentary arithmetic showing exactly who can pass or block this measure and at what margin |
@@ -102,10 +101,10 @@ Use this guide to read the article as a political-intelligence product rather th
 | ⚙️ | [Implementation Feasibility](#rm-implementation-feasibility) | delivery feasibility, capability gaps, timelines and execution risks for the proposed action |
 | 📰 | [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder |
 | 😈 | [Devil's Advocate](#rm-devils-advocate) | alternative hypotheses, steel-manned counter-arguments and the strongest case against the lead reading |
-| 🏷️ | [Classification Results](#rm-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
-| 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
-| 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
-| 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 🏷️ | [Deep Dive: Classification Results](#rm-deep-dive-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
+| 🔀 | [Deep Dive: Cross-Reference Map](#rm-deep-dive-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
+| 🔬 | [Deep Dive: Methodology & Limitations](#rm-deep-dive-methodology--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
+| 📦 | [Deep Dive: Data Download Manifest](#rm-deep-dive-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
 | 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
@@ -120,9 +119,9 @@ Use this guide to read the article as a political-intelligence product rather th
 | 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
-| 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
+| 🏷️ | [Audit appendix](#rm-deep-dive-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
-## Synthesis Summary
+## Why It Matters
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/monthly-review/synthesis-summary.md -->
 
 **Window**: 2026-03-27 → 2026-04-26 (30 days) · **Riksmöte**: 2025/26
@@ -236,13 +235,12 @@ Overall analytic confidence: **HIGH (A1)** for legislative completion picture an
 
 **Temporal note**: Score of 4 on temporal coverage (not 5) reflects IMF economic data unavailability; methodology-reflection.md documents this gap.
 
-## Intelligence Assessment — Key Judgments
+## Key Findings
 <!-- source: intelligence-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/monthly-review/intelligence-assessment.md -->
 
 **Standards**: ICD 203 (Analytic Standards) compliance asserted
 
-### Bottom Line Up Front
-
+### Lede
 Sweden is 140 days from the 2026-09-13 election. The Tidö coalition has legislatively completed its 2025/26 programme. Three new April-23 propositions (HD03252, HD03253, HD03256) and the April-24 committee-report batch are the final significant deliverables of riksmöte 2025/26. The political decision space has shifted entirely to implementation risk, campaign framing, and electoral coalition arithmetic.
 
 ### Key Judgments
@@ -1954,7 +1952,7 @@ quadrantChart
 **Limitations**: IMF economic data unavailable this run. Polling vintage: 31 days.  
 **Standards**: ICD 203; AI FIRST (minimum 2 iterations)
 
-## Classification Results
+## Deep Dive: Classification Results
 <!-- source: classification-results.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/monthly-review/classification-results.md -->
 
 ### 7-Dimension Classification per Document
@@ -2002,7 +2000,7 @@ pie title Priority Distribution (document count)
 **Limitations**: IMF economic data unavailable this run. Polling vintage: 31 days.  
 **Standards**: ICD 203; AI FIRST (minimum 2 iterations)
 
-## Cross-Reference Map
+## Deep Dive: Cross-Reference Map
 <!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/monthly-review/cross-reference-map.md -->
 
 ### Policy Clusters
@@ -2089,7 +2087,7 @@ graph LR
 **Limitations**: IMF economic data unavailable this run. Polling vintage: 31 days.  
 **Standards**: ICD 203; AI FIRST (minimum 2 iterations)
 
-## Methodology Reflection & Limitations
+## Deep Dive: Methodology & Limitations
 <!-- source: methodology-reflection.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/monthly-review/methodology-reflection.md -->
 
 ### ICD 203 Self-Audit
@@ -2129,7 +2127,7 @@ graph LR
 
 **Mitigation**: Scenario probabilities marked as C3/C4 confidence in all artifacts that cite them.
 
-## Data Download Manifest
+## Deep Dive: Data Download Manifest
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/monthly-review/data-download-manifest.md -->
 
 **Workflow**: news-monthly-review
@@ -2272,7 +2270,7 @@ flowchart TB
 
 **Window**: 2026-03-27 → 2026-04-26 (30 days) | **Riksmöte**: 2025/26
 
-### 🎯 BLUF
+### Lede
 30-dages vinduet 2026-03-27 → 2026-04-26 markerer **den lovgivningsmæssige afslutningsfase** af Tidö-koalitionens 2025/26-portefølje. Fire april-24-betænkninger (HD01JuU10 våbenlov, HD01JuU31 Politireform-opfølgning, HD01SoU25 ældrepleje, HD01CU24 byggeproces) lukker det regulatoriske regnskab. Tre april-23-propositioner (HD03252, HD03253, HD03256) signalerer fortsat udøvende aktivitet ind i de afsluttende uger. Sverige er nu **140 dage fra valget** med den politiske akse skiftende fra *lovgivning* til *implementeringsrisiko* og *kampagneindramning*.
 
 ### 🧭 3 Decisions This Brief Supports
@@ -2342,7 +2340,7 @@ flowchart TB
 
 **Window**: 2026-03-27 → 2026-04-26 (30 days) | **Riksmöte**: 2025/26
 
-### 🎯 BLUF
+### Lede
 Das 30-Tages-Fenster 2026-03-27 → 2026-04-26 markiert die **gesetzgeberische Abschlussphase** des 2025/26-Portfolios der Tidö-Koalition. Vier Ausschussberichte vom 24. April (HD01JuU10 Waffengesetz, HD01JuU31 Polizeireform-Folgebericht, HD01SoU25 Altenpflege, HD01CU24 Bauprozess) schließen das Regulierungsregister. Drei Regierungsvorlagen vom 23. April (HD03252, HD03253, HD03256) signalisieren fortgesetzte Regierungsaktivität in den Abschlusswochen. Schweden ist jetzt **140 Tage vor der Wahl** mit der politischen Achse, die sich von *Gesetzgebung* zu *Umsetzungsrisiko* und *Kampagnenframing* verschiebt.
 
 ### 🧭 3 Decisions This Brief Supports
@@ -2412,7 +2410,7 @@ flowchart TB
 
 **Window**: 2026-03-27 → 2026-04-26 (30 days) | **Riksmöte**: 2025/26
 
-### 🎯 BLUF
+### Lede
 La ventana de 30 días 2026-03-27 → 2026-04-26 marca la **fase de cierre legislativo** de la cartera 2025/26 de la coalición Tidö. Cuatro informes de comisión del 24 de abril (HD01JuU10 ley de armas, HD01JuU31 seguimiento reforma policial, HD01SoU25 atención a personas mayores, HD01CU24 proceso de construcción) cierran el libro de contabilidad regulatorio. Tres propuestas gubernamentales del 23 de abril (HD03252, HD03253, HD03256) señalan actividad ejecutiva continuada en las semanas finales. Suecia está ahora a **140 días de las elecciones**, con el eje político pasando de la *legislación* al *riesgo de implementación* y el *encuadre de campaña*.
 
 ### 🧭 3 Decisions This Brief Supports
@@ -2482,7 +2480,7 @@ flowchart TB
 
 **Window**: 2026-03-27 → 2026-04-26 (30 days) | **Riksmöte**: 2025/26
 
-### 🎯 BLUF
+### Lede
 30 päivän ikkuna 2026-03-27 → 2026-04-26 merkitsee **Tidö-koalition 2025/26 portfolion lainsäädännöllisiä loppuvaihetta**. Neljä huhtikuun 24. mietintöä (HD01JuU10 aselelaki, HD01JuU31 poliisiuudistusseuranta, HD01SoU25 vanhustenhoito, HD01CU24 rakennusprosessi) sulkevat sääntelytilinpäätöksen. Kolme huhtikuun 23. ehdotusta (HD03252, HD03253, HD03256) viestivät jatkuvasta toimeenpanoaktiivisuudesta loppuviikoille. Ruotsi on nyt **140 päivää vaalista** poliittisen akselin siirtyessä *lainsäädännöstä* *toimeenpanoriskiin* ja *kampanjatarinointiin*.
 
 ### 🧭 3 Decisions This Brief Supports
@@ -2552,7 +2550,7 @@ flowchart TB
 
 **Window**: 2026-03-27 → 2026-04-26 (30 days) | **Riksmöte**: 2025/26
 
-### 🎯 BLUF
+### Lede
 La fenêtre de 30 jours 2026-03-27 → 2026-04-26 marque la **phase de clôture législative** du portefeuille 2025/26 de la coalition Tidö. Quatre rapports de commissions du 24 avril (HD01JuU10 loi sur les armes, HD01JuU31 suivi réforme policière, HD01SoU25 soins aux personnes âgées, HD01CU24 processus de construction) ferment le bilan réglementaire. Trois propositions gouvernementales du 23 avril (HD03252, HD03253, HD03256) signalent une activité exécutive soutenue jusqu'aux dernières semaines. La Suède est maintenant à **140 jours des élections**, l'axe politique basculant de la *législation* vers le *risque d'implémentation* et le *cadrage de campagne*.
 
 ### 🧭 3 Decisions This Brief Supports
@@ -2838,7 +2836,7 @@ flowchart TB
 
 **Window**: 2026-03-27 → 2026-04-26 (30 days) | **Riksmöte**: 2025/26
 
-### 🎯 BLUF
+### Lede
 Het 30-dagenvenster 2026-03-27 → 2026-04-26 markeert de **wetgevende afrondingsfase** van de 2025/26-portefeuille van de Tidö-coalitie. Vier commissierapporten van 24 april (HD01JuU10 wapenwet, HD01JuU31 politiehervorming-follow-up, HD01SoU25 ouderenzorg, HD01CU24 bouwproces) sluiten het regulatoire grootboek. Drie wetsvoorstellen van 23 april (HD03252, HD03253, HD03256) signaleren voortgezette uitvoerende activiteit in de slotweek. Zweden is nu **140 dagen voor de verkiezingen**, met de politieke as die verschuift van *wetgeving* naar *implementatierisico* en *campagnekader*.
 
 ### 🧭 3 Decisions This Brief Supports
@@ -2908,7 +2906,7 @@ flowchart TB
 
 **Window**: 2026-03-27 → 2026-04-26 (30 days) | **Riksmöte**: 2025/26
 
-### 🎯 BLUF
+### Lede
 30-dagersvinduet 2026-03-27 → 2026-04-26 markerer **den lovgivningsmessige avslutningsfasen** av Tidö-koalisjonens 2025/26-portefølje. Fire april-24-innstillinger (HD01JuU10 våpenlov, HD01JuU31 politireform-oppfølging, HD01SoU25 eldreomsorg, HD01CU24 byggesektor) lukker det regulatoriske regnskapet. Tre april-23-proposisjoner (HD03252, HD03253, HD03256) signaliserer fortsatt utøvende aktivitet inn i de avsluttende ukene. Sverige er nå **140 dager fra valget** med den politiske aksen som skifter fra *lovgivning* til *gjennomføringsrisiko* og *kampanjeinnramning*.
 
 ### 🧭 3 Decisions This Brief Supports
@@ -2980,8 +2978,7 @@ flowchart TB
 **Fönster**: 2026-03-27 → 2026-04-26 (30 dagar) | **Riksmöte**: 2025/26
 **Konfidensgrad**: HÖG (A1) | **Admiralitetsintervall**: A1–C3 | **Dagar till val**: 140
 
-### 🎯 BLUF
-
+### Lede
 30-dagarsfönstret 2026-03-27 → 2026-04-26 markerar **den lagstiftande slutfasen** av Tidökoalitionens 2025/26-portfolio. Fyra april-24-betänkanden (HD01JuU10 vapenlag, HD01JuU31 Polisreformen-uppföljning, HD01SoU25 äldreomsorg, HD01CU24 byggprocess) stänger det regulatoriska räkenskapsbladet. Tre april-23-propositioner (HD03252, HD03253, HD03256) signalerar fortsatt exekutiv aktivitet in i avslutningsveckorna. Sverige är nu **140 dagar från valet** med den politiska axeln som skiftar från *lagstiftning* till *genomföranderisk* och *kampanjinramning*.
 
 ### 🧭 3 Beslut detta underlag stöder

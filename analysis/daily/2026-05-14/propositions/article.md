@@ -3,16 +3,15 @@ date: 2026-05-14
 subfolder: propositions
 slug: 2026-05-14-propositions
 source_folder: analysis/daily/2026-05-14/propositions
-generated_at: 2026-05-28T15:56:17.041Z
+generated_at: 2026-05-28T22:29:32.041Z
 language: en
 layout: article
 ---
-## Executive Brief
+## What Happened
 <!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/propositions/executive-brief.md -->
 
-### 🎯 BLUF
-
-The Tidö government delivered three propositions on 7 May 2026 that collectively define its pre-election policy narrative: a state e-identity system (HD03250) anchoring Sweden's digital sovereignty, expanded Tax Agency population-registration powers (HD03261) signalling efficiency-and-security governance, and sharply strengthened deportation powers against qualified security threats (HD03267) that directly targets the SD voter base. All three advance before the September 2026 election, compressing the parliamentary calendar and forcing opposition parties to respond on government-chosen terrain.
+### Lede
+The Tidö government delivered three propositions on 7 May 2026 that collectively define its pre-election policy narrative: a state e-identity system (Riksdag document #03250 (HD03250)) anchoring Sweden's digital sovereignty, expanded Tax Agency population-registration powers (HD03261) signalling efficiency-and-security governance, and sharply strengthened deportation powers against qualified security threats (HD03267) that directly targets the SD voter base. All three advance before the September 2026 election, compressing the parliamentary calendar and forcing opposition parties to respond on government-chosen terrain.
 
 ### 🧭 3 Decisions This Brief Supports
 
@@ -65,9 +64,9 @@ Use this guide to read the article as a political-intelligence product rather th
 
 | Icon | Reader need | What you'll get |
 |---|---|---|
-| 📊 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
-| 🧠 | [Synthesis Summary](#rm-synthesis-summary) | evidence-anchored narrative consolidating primary sources into one coherent story line |
-| 🎯 | [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps |
+| 📊 | [Lede and editorial decisions](#rm-what-happened) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
+| 🧠 | [Why It Matters](#rm-why-it-matters) | evidence-anchored narrative consolidating primary sources into one coherent story line |
+| 🎯 | [Key Judgments](#rm-key-findings) | confidence-bearing political-intelligence conclusions and collection gaps |
 | 📈 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals |
 | 👥 | [Stakeholder Perspectives](#rm-stakeholder-perspectives) | winners, losers and undecided actors with stake-weighted positions and pressure points |
 | 🔢 | [Coalition Mathematics](#rm-coalition-mathematics) | parliamentary arithmetic showing exactly who can pass or block this measure and at what margin |
@@ -83,10 +82,10 @@ Use this guide to read the article as a political-intelligence product rather th
 | ⚙️ | [Implementation Feasibility](#rm-implementation-feasibility) | delivery feasibility, capability gaps, timelines and execution risks for the proposed action |
 | 📰 | [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder |
 | 😈 | [Devil's Advocate](#rm-devils-advocate) | alternative hypotheses, steel-manned counter-arguments and the strongest case against the lead reading |
-| 🏷️ | [Classification Results](#rm-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
-| 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
-| 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
-| 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 🏷️ | [Deep Dive: Classification Results](#rm-deep-dive-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
+| 🔀 | [Deep Dive: Cross-Reference Map](#rm-deep-dive-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
+| 🔬 | [Deep Dive: Methodology & Limitations](#rm-deep-dive-methodology--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
+| 📦 | [Deep Dive: Data Download Manifest](#rm-deep-dive-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
 | 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
@@ -101,9 +100,9 @@ Use this guide to read the article as a political-intelligence product rather th
 | 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
-| 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
+| 🏷️ | [Audit appendix](#rm-deep-dive-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
-## Synthesis Summary
+## Why It Matters
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/propositions/synthesis-summary.md -->
 
 ### Lede
@@ -171,7 +170,7 @@ The three propositions are institutionally coherent: they strengthen Sweden's di
 
 *Source primary documents: HD03250, HD03261, HD03267 (riksdagen.se, 2026-05-07)*
 
-## Intelligence Assessment — Key Judgments
+## Key Findings
 <!-- source: intelligence-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/propositions/intelligence-assessment.md -->
 
 **Vintage**: May 2026
@@ -1130,7 +1129,7 @@ quadrantChart
 
 **Verdict**: The challenge identifies a communication/perception risk but not a substantive governance problem. The propositions stand independently on their merits.
 
-## Classification Results
+## Deep Dive: Classification Results
 <!-- source: classification-results.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/propositions/classification-results.md -->
 
 **Classification framework**: `political-classification-guide.md`  
@@ -1171,7 +1170,7 @@ quadrantChart
 **GDPR relevance**: Register-to-register data sharing raises proportionality questions; DPA oversight required  
 *Source*: HD03261 (riksdagen.se, 2026-05-07)
 
-## Cross-Reference Map
+## Deep Dive: Cross-Reference Map
 <!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/propositions/cross-reference-map.md -->
 
 ### Intra-Package Cross-References
@@ -1210,7 +1209,7 @@ quadrantChart
 - IMF WEO Apr-2026: SWE NGDP_RPCH 2026 = 2.1% (WEO:NGDP_RPCH, vintage Apr-2026) — used in implementation-feasibility.md
 - IMF WEO Apr-2026: SWE GGXWDG_NGDP 2026 ≈ 35% — used in risk-assessment.md economic dimension
 
-## Methodology Reflection & Limitations
+## Deep Dive: Methodology & Limitations
 <!-- source: methodology-reflection.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/propositions/methodology-reflection.md -->
 
 ### Data Sources Used
@@ -1260,7 +1259,7 @@ quadrantChart
 - **Pass 1**: Initial artifact creation from primary source data
 - **Pass 2**: Read-back and improvement of all artifacts; added evidentiary citations; strengthened comparative analysis; deepened electoral impact assessment
 
-## Data Download Manifest
+## Deep Dive: Data Download Manifest
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/propositions/data-download-manifest.md -->
 
 ### Document Table
@@ -1394,8 +1393,7 @@ graph LR
 **Klassificering**: OFFENTLIG | **Konfidensgrad**: HØJ [B2]  
 **Valnærhed**: ≤6 måneder (september 2026)
 
-### 🎯 BLUF
-
+### Lede
 Tidö-regeringen fremlagde tre propositioner den 7. maj 2026, som tilsammen definerer regeringens prævalgsfortælling: et statsligt e-identitetssystem (HD03250) der forankrer Sveriges digitale suverænitet, udvidede folkebokføringsbeføjelser til Skatteverket (HD03261) der signalerer effektivitets- og sikkerhedsforvaltning, samt kraftigt styrkede udvisningsbeføjelser mod kvalificerede sikkerhedstrusler (HD03267) der direkte retter sig mod SD's vælgerbasis. Alle tre propositioner behandles inden valget i september 2026, hvilket komprimerer den parlamentariske kalender og tvinger oppositionspartierne til at reagere på regerings valgte terrain.
 
 ### 🧭 3 Beslutninger dette dokument understøtter
@@ -1453,8 +1451,7 @@ Propositionen om sikkerhedsudvisning (HD03267) mangler en specialadvokatordning 
 **Klassifizierung**: ÖFFENTLICH | **Konfidenzgrad**: HOCH [B2]  
 **Wahlnähe**: ≤6 Monate (September 2026)
 
-### 🎯 BLUF
-
+### Lede
 Die Tidö-Regierung legte am 7. Mai 2026 drei Gesetzentwürfe vor, die zusammen die Vorwahl-Politikstrategie definieren: ein staatliches E-Identitätssystem (HD03250) als Anker schwedischer digitaler Souveränität, erweiterte Meldewesenskompetenzen für das Finanzamt (HD03261) als Signal für Effizienz- und Sicherheitsgovernance sowie massiv gestärkte Abschiebebefugnisse gegen qualifizierte Sicherheitsbedrohungen (HD03267), die direkt auf die SD-Wählerschaft abzielt. Alle drei Gesetzentwürfe werden vor der Wahl im September 2026 behandelt, was den parlamentarischen Kalender verdichtet und die Oppositionsparteien zwingt, auf vom Regierungslager gewähltem Terrain zu reagieren.
 
 ### 🧭 3 Entscheidungen, die dieses Dokument unterstützt
@@ -1512,8 +1509,7 @@ Dem Gesetzentwurf zur Sicherheitsabschiebung (HD03267) fehlt ein Sonderanwalts-M
 **Clasificación**: PÚBLICO | **Nivel de confianza**: ALTO [B2]  
 **Proximidad electoral**: ≤6 meses (septiembre de 2026)
 
-### 🎯 BLUF
-
+### Lede
 El gobierno Tidö presentó el 7 de mayo de 2026 tres proposiciones que en conjunto definen su narrativa política preelectoral: un sistema de identidad electrónica estatal (HD03250) que ancla la soberanía digital de Suecia, competencias ampliadas de registro de población para la Agencia Tributaria (HD03261) que señalan una gobernanza orientada a la eficiencia y la seguridad, y poderes de expulsión considerablemente reforzados contra amenazas de seguridad cualificadas (HD03267) dirigidos directamente al electorado del SD. Las tres proposiciones avanzan antes de las elecciones de septiembre de 2026, comprimiendo el calendario parlamentario y obligando a los partidos de la oposición a responder en el terreno elegido por el gobierno.
 
 ### 🧭 3 Decisiones que apoya este documento
@@ -1571,8 +1567,7 @@ La proposición de expulsión por seguridad (HD03267) carece de un mecanismo de 
 **Luokittelu**: JULKINEN | **Luotettavuusaste**: KORKEA [B2]  
 **Vaalietäisyys**: ≤6 kuukautta (syyskuu 2026)
 
-### 🎯 BLUF
-
+### Lede
 Tidö-hallitus jätti kolme esitystä 7. toukokuuta 2026, jotka yhdessä määrittelevät hallituksen vaalienedellisen politiikkakertomuksen: valtiollinen sähköinen henkilöllisyysjärjestelmä (HD03250) vahvistaa Ruotsin digitaalista suvereniteettia, laajennetut väestörekisterivelvollisuudet Verohallinnolle (HD03261) viestivät tehokkuus- ja turvallisuushallinnosta, ja merkittävästi vahvistettu karkottamisvalta kvalifioituja turvallisuusuhkia vastaan (HD03267) kohdistuu suoraan SD:n äänestäjäkuntaan. Kaikki kolme esitystä käsitellään ennen syyskuun 2026 vaaleja, mikä tiivistää parlamentaarista kalenteria ja pakottaa oppositiopuolueet reagoimaan hallituksen valitsemalla maaperällä.
 
 ### 🧭 3 Päätöstä, joita tämä dokumentti tukee
@@ -1629,8 +1624,7 @@ Turvallisuuskarkottamisesityksestä (HD03267) puuttuu erityisasiamiehen mekanism
 
 **Proximité électorale** : ≤6 mois (septembre 2026)
 
-### 🎯 BLUF
-
+### Lede
 Le gouvernement Tidö a déposé le 7 mai 2026 trois propositions qui, ensemble, définissent son récit politique pré-électoral : un système d'identité électronique étatique (HD03250) ancrant la souveraineté numérique de la Suède, des compétences élargies d'enregistrement de la population pour l'Agence fiscale (HD03261) signalant une gouvernance axée sur l'efficacité et la sécurité, ainsi que des pouvoirs d'expulsion considérablement renforcés contre les menaces sécuritaires qualifiées (HD03267) ciblant directement l'électorat du SD. Les trois propositions avancent avant les élections de septembre 2026, comprimant le calendrier parlementaire et obligeant les partis d'opposition à répondre sur un terrain choisi par le gouvernement.
 
 ### 🧭 3 Décisions soutenues par ce document
@@ -1868,8 +1862,7 @@ IMF WEO 2026년 4월: 스웨덴 2026년 실질 GDP 성장률 2.1% 추정, 정부
 **Classificatie**: OPENBAAR | **Betrouwbaarheidsniveau**: HOOG [B2]  
 **Verkiezingsnabijheid**: ≤6 maanden (september 2026)
 
-### 🎯 BLUF
-
+### Lede
 De Tidö-regering diende op 7 mei 2026 drie wetsvoorstellen in die gezamenlijk het pre-electorale politieke narratief definiëren: een staatlijk e-identiteitssysteem (HD03250) dat Zweden's digitale soevereiniteit verankert, uitgebreide bevolkingsregistratiebevoegdheden voor de Belastingdienst (HD03261) die efficiëntie- en veiligheidsbestuur signaleren, en aanzienlijk versterkte uitzettingsbevoegdheden tegen gekwalificeerde veiligheidsdreigingen (HD03267) die rechtstreeks gericht zijn op het SD-electoraat. Alle drie wetsvoorstellen worden behandeld vóór de verkiezingen van september 2026, wat de parlementaire agenda verdicht en de oppositiepartijen dwingt te reageren op door de regering gekozen terrein.
 
 ### 🧭 3 Beslissingen die dit document ondersteunt
@@ -1927,8 +1920,7 @@ Het wetsvoorstel inzake veiligheidsuitwijzing (HD03267) mist een bijzondere-advo
 **Klassifisering**: OFFENTLIG | **Konfidensnivå**: HØY [B2]  
 **Valnærhet**: ≤6 måneder (september 2026)
 
-### 🎯 BLUF
-
+### Lede
 Tidö-regjeringen fremla tre proposisjoner 7. mai 2026 som samlet definerer regjeringens narrativ for perioden frem mot valget: et statlig e-identitetssystem (HD03250) som forankrer Sveriges digitale suverenitet, utvidede folkeregistreringsbeføyelser for Skatteverket (HD03261) som signaliserer effektivitets- og sikkerhetsforvaltning, og kraftig styrket utvisningsadgang mot kvalifiserte sikkerhetstrusler (HD03267) som direkte retter seg mot SD-velgernes kjernesaker. Alle tre proposisjoner behandles før valget i september 2026, noe som komprimerer den parlamentariske kalenderen og tvinger opposisjonspartiene til å reagere på valgt regjeringsterreng.
 
 ### 🧭 3 Beslutninger dette dokumentet støtter
@@ -1986,8 +1978,7 @@ Proposisjonen om sikkerhetsutvisning (HD03267) mangler en spesialadvokatordning 
 **Klassificering**: OFFENTLIG | **Konfidensgrad**: HÖG [B2]  
 **Valnärhet**: ≤6 månader (september 2026)
 
-### 🎯 BLUF
-
+### Lede
 Tidöregeringen lade fram tre propositioner den 7 maj 2026 som sammantaget definierar regeringens förvalvärdsberättelse: ett statligt e-legitimationssystem (HD03250) som förankrar Sveriges digitala suveränitet, utvidgade folkbokföringsuppgifter för Skatteverket (HD03261) som signalerar effektivitets- och säkerhetsstyrning, samt kraftigt förstärkt utvisningsbefogenhet mot kvalificerade säkerhetshot (HD03267) som direkt riktar sig till SD:s väljarBas. Alla tre propositioner behandlas före valet i september 2026, vilket pressar den parlamentariska kalendern och tvingar oppositionspartierna att reagera på regeringsvalt terrain.
 
 ### 🧭 3 Beslut som detta underrättelsedokument stödjer

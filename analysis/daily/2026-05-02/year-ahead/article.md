@@ -3,11 +3,11 @@ date: 2026-05-02
 subfolder: year-ahead
 slug: 2026-05-02-year-ahead
 source_folder: analysis/daily/2026-05-02/year-ahead
-generated_at: 2026-05-28T15:56:16.116Z
+generated_at: 2026-05-28T22:29:31.016Z
 language: en
 layout: article
 ---
-## Executive Brief
+## What Happened
 <!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-02/year-ahead/executive-brief.md -->
 
 **Horizon**: 365 days · **Depth**: comprehensive · **Tier**: C  
@@ -18,7 +18,7 @@ layout: article
 
 ### Headline Assessment
 
-Sweden enters the most consequential twelve months since the 2022 election cycle. Four simultaneous migration reform propositions (HD03262–HD03265) signal a government prepared to define the election campaign on ideological terrain favourable to Tidö's right flank. Yet the coalition's zero-margin majority (exactly 175/349 seats) and two threshold-endangered parties create structural fragility that could unravel any legislative overconfidence before September 2026.
+Sweden enters the most consequential twelve months since the 2022 election cycle. Four simultaneous migration reform propositions (Riksdag document #03262 (HD03262)–HD03265) signal a government prepared to define the election campaign on ideological terrain favourable to Tidö's right flank. Yet the coalition's zero-margin majority (exactly 175/349 seats) and two threshold-endangered parties create structural fragility that could unravel any legislative overconfidence before September 2026.
 
 **The central tension of the year ahead**: The Tidöalliansen must simultaneously deliver on migration hardlining to satisfy SD (the coalition's 70-seat anchor), maintain fiscal credibility to reassure M voters under US tariff shock stress, and prevent SD–KD energy disagreement (HD10448) from fracturing the coalition before election day.
 
@@ -90,9 +90,9 @@ Use this guide to read the article as a political-intelligence product rather th
 
 | Icon | Reader need | What you'll get |
 |---|---|---|
-| 📊 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
-| 🧠 | [Synthesis Summary](#rm-synthesis-summary) | evidence-anchored narrative consolidating primary sources into one coherent story line |
-| 🎯 | [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps |
+| 📊 | [Lede and editorial decisions](#rm-what-happened) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
+| 🧠 | [Why It Matters](#rm-why-it-matters) | evidence-anchored narrative consolidating primary sources into one coherent story line |
+| 🎯 | [Key Judgments](#rm-key-findings) | confidence-bearing political-intelligence conclusions and collection gaps |
 | 📈 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals |
 | 👥 | [Stakeholder Perspectives](#rm-stakeholder-perspectives) | winners, losers and undecided actors with stake-weighted positions and pressure points |
 | 🔢 | [Coalition Mathematics](#rm-coalition-mathematics) | parliamentary arithmetic showing exactly who can pass or block this measure and at what margin |
@@ -111,10 +111,10 @@ Use this guide to read the article as a political-intelligence product rather th
 | ⚙️ | [Implementation Feasibility](#rm-implementation-feasibility) | delivery feasibility, capability gaps, timelines and execution risks for the proposed action |
 | 📰 | [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder |
 | 😈 | [Devil's Advocate](#rm-devils-advocate) | alternative hypotheses, steel-manned counter-arguments and the strongest case against the lead reading |
-| 🏷️ | [Classification Results](#rm-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
-| 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
-| 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
-| 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 🏷️ | [Deep Dive: Classification Results](#rm-deep-dive-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
+| 🔀 | [Deep Dive: Cross-Reference Map](#rm-deep-dive-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
+| 🔬 | [Deep Dive: Methodology & Limitations](#rm-deep-dive-methodology--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
+| 📦 | [Deep Dive: Data Download Manifest](#rm-deep-dive-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
 | 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
@@ -128,9 +128,9 @@ Use this guide to read the article as a political-intelligence product rather th
 | 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
-| 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
+| 🏷️ | [Audit appendix](#rm-deep-dive-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
-## Synthesis Summary
+## Why It Matters
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-02/year-ahead/synthesis-summary.md -->
 
 **Tier**: C · **Depth**: comprehensive · **Horizon**: 365 days  
@@ -213,7 +213,7 @@ The ESO report quantifying Sweden's criminal economy at SEK 352bn (approximately
 
 **The single most important variable** [horizon:election]: Whether Liberalerna clears the 4% threshold. If L fails, the Tidö majority evaporates, almost certainly producing a S-led minority or hung parliament. This single polling trajectory determines the institutional landscape for all subsequent analysis.
 
-## Intelligence Assessment — Key Judgments
+## Key Findings
 <!-- source: intelligence-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-02/year-ahead/intelligence-assessment.md -->
 
 **PIR register**: 8 active PIRs (5 carried forward + 3 new)  
@@ -2558,7 +2558,7 @@ The synthesis-summary.md concludes that:
 
 **Net devil's advocate conclusion**: The primary assessment underestimates (a) Lagrådet's potential flexibility and (b) the L–MP anti-correlation tactical dynamic. The year-ahead probability distribution should be viewed as a range rather than a point estimate: Tidö continuation probability is 35–48%; S-led is 20–30%; hung parliament 20–28%.
 
-## Classification Results
+## Deep Dive: Classification Results
 <!-- source: classification-results.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-02/year-ahead/classification-results.md -->
 
 **Method**: Thematic taxonomy per analysis/methodologies/ai-driven-analysis-guide.md  
@@ -2638,7 +2638,7 @@ The synthesis-summary.md concludes that:
 | MIGRATION × CRIMINAL_JUSTICE | HD03263, HD03265 | SD electoral identity |
 | ELECTORAL × FISCAL | HC01FiU20 | Campaign promise headroom |
 
-## Cross-Reference Map
+## Deep Dive: Cross-Reference Map
 <!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-02/year-ahead/cross-reference-map.md -->
 
 **Horizon**: 365 days · **Tier**: C  
@@ -2734,7 +2734,7 @@ The Riksdagsmonitor year-ahead workflow is the first of its kind in this analysi
 }
 ```
 
-## Methodology Reflection & Limitations
+## Deep Dive: Methodology & Limitations
 <!-- source: methodology-reflection.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-02/year-ahead/methodology-reflection.md -->
 
 **Horizon**: T+365d · **Depth**: comprehensive  
@@ -2837,7 +2837,7 @@ The Riksdagsmonitor year-ahead workflow is the first of its kind in this analysi
 | US-EU tariff framework announced | Revise GDP estimate; update economic context | MEDIUM |
 | Police quarterly performance report Q2 2026 | Update PIR-B | MEDIUM |
 
-## Data Download Manifest
+## Deep Dive: Data Download Manifest
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-02/year-ahead/data-download-manifest.md -->
 
 **Workflow**: news-year-ahead  

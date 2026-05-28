@@ -3,19 +3,17 @@ date: 2026-05-04
 subfolder: motions
 slug: 2026-05-04-motions
 source_folder: analysis/daily/2026-05-04/motions
-generated_at: 2026-05-28T15:56:16.215Z
+generated_at: 2026-05-28T22:29:31.134Z
 language: en
 layout: article
 ---
-## Executive Brief
+## What Happened
 <!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/executive-brief.md -->
 
-### BLUF
-
+### Lede
 Sixteen active opposition motions filed 2026-04-29 challenge six government propositions across energy, environment, criminal justice, transport, and taxation policy. Socialdemokraterna (S) leads with nine motions, flanked by Miljöpartiet (MP), Vänsterpartiet (V), and Centerpartiet (C). With Sweden's general election 132 days away (14 September 2026), these motions constitute both substantive policy opposition and explicit pre-election positioning. The most significant battles: (1) the proposed environmental permitting authority (prop. 238) opposed by S, MP, V, and C on different grounds; (2) criminal age-of-responsibility reduction to 13 (prop. 246) where S accepts 14 but rejects 13; and (3) wind power municipal veto reform (prop. 239) where opposition broadly demands faster action.
 
-### Decisions This Brief Supports
-
+### Decisions and confidence context
 1. **Editorial teams**: Lead with criminal age/youth crime and env. permitting as the two highest-impact conflicts
 2. **Policy analysts**: Map opposition demands as pre-election policy commitments with electoral accountability implications
 3. **Risk monitors**: Assess probability of government defeats in committee/plenary on contested amendment points
@@ -28,7 +26,7 @@ Sixteen active opposition motions filed 2026-04-29 challenge six government prop
 - **Youth crime**: S accepts lowering criminal age to 14 (not 13), opposing prop. 246's core provision; cross-party majority unlikely against the 13-year threshold without SD defection
 - **Env. permitting**: S demands material reforms alongside the new authority; V demands rejection; MP and C seek modifications — the government faces a fragmented opposition with no unified block
 - **Energy/wind**: S, MP, C all demand bolder wind power policy including earlier municipal veto reform; this aligns with prior S-led motion failures in 2021-22
-- **Withdrawal of HD024127**: unexplained — strategic repositioning signal
+- **Withdrawal of Riksdag document #024127 (HD024127)**: unexplained — strategic repositioning signal
 - **IMF data unavailable** (network egress blocked); economic context estimated from prior cached data
 
 ### Top Forward Trigger
@@ -54,9 +52,9 @@ Use this guide to read the article as a political-intelligence product rather th
 
 | Icon | Reader need | What you'll get |
 |---|---|---|
-| 📊 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
-| 🧠 | [Synthesis Summary](#rm-synthesis-summary) | evidence-anchored narrative consolidating primary sources into one coherent story line |
-| 🎯 | [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps |
+| 📊 | [Lede and editorial decisions](#rm-what-happened) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
+| 🧠 | [Why It Matters](#rm-why-it-matters) | evidence-anchored narrative consolidating primary sources into one coherent story line |
+| 🎯 | [Key Judgments](#rm-key-findings) | confidence-bearing political-intelligence conclusions and collection gaps |
 | 📈 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals |
 | 👥 | [Stakeholder Perspectives](#rm-stakeholder-perspectives) | winners, losers and undecided actors with stake-weighted positions and pressure points |
 | 🔢 | [Coalition Mathematics](#rm-coalition-mathematics) | parliamentary arithmetic showing exactly who can pass or block this measure and at what margin |
@@ -72,10 +70,10 @@ Use this guide to read the article as a political-intelligence product rather th
 | ⚙️ | [Implementation Feasibility](#rm-implementation-feasibility) | delivery feasibility, capability gaps, timelines and execution risks for the proposed action |
 | 📰 | [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder |
 | 😈 | [Devil's Advocate](#rm-devils-advocate) | alternative hypotheses, steel-manned counter-arguments and the strongest case against the lead reading |
-| 🏷️ | [Classification Results](#rm-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
-| 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
-| 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
-| 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 🏷️ | [Deep Dive: Classification Results](#rm-deep-dive-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
+| 🔀 | [Deep Dive: Cross-Reference Map](#rm-deep-dive-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
+| 🔬 | [Deep Dive: Methodology & Limitations](#rm-deep-dive-methodology--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
+| 📦 | [Deep Dive: Data Download Manifest](#rm-deep-dive-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
 | 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
@@ -90,9 +88,9 @@ Use this guide to read the article as a political-intelligence product rather th
 | 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
-| 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
+| 🏷️ | [Audit appendix](#rm-deep-dive-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
-## Synthesis Summary
+## Why It Matters
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/synthesis-summary.md -->
 
 ### Lead Story Decision
@@ -143,7 +141,7 @@ graph TD
     GOVT --> |Challenged by| C[C: 4 motions<br/>Market/municipal]
 ```
 
-## Intelligence Assessment — Key Judgments
+## Key Findings
 <!-- source: intelligence-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/intelligence-assessment.md -->
 
 ### Key Judgements
@@ -1113,7 +1111,7 @@ Right-wing media and governing party communications may attempt to frame S+MP+V+
 
 **Verdict**: Government has genuine evidentiary standing; S needs stronger social-scientific argument.
 
-## Classification Results
+## Deep Dive: Classification Results
 <!-- source: classification-results.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/classification-results.md -->
 
 ### Classification Dimensions
@@ -1162,7 +1160,7 @@ Right-wing media and governing party communications may attempt to frame S+MP+V+
 - V party attribution for HD024133, HD024134, HD024135 unconfirmed — sponsor "Malcolm Momodou Jallow m.fl." is a known V Riksdag member (verification: V party page confirms)
 - HD024128 full text not retrieved — S motion on tonnage tax; low significance
 
-## Cross-Reference Map
+## Deep Dive: Cross-Reference Map
 <!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/cross-reference-map.md -->
 
 ### Proposition → Motion Mapping
@@ -1224,7 +1222,7 @@ graph LR
 - Tonnage tax (HD024128): Industry-level fiscal neutrality argument; shipping sector contributes ~2% of Swedish maritime GDP [est.]
 - Energy investment (prop. 239/240): New wind and grid investment represents SEK 200–400bn multi-year commitment [est. based on SCB energy sector statistics from 2024]
 
-## Methodology Reflection & Limitations
+## Deep Dive: Methodology & Limitations
 <!-- source: methodology-reflection.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/methodology-reflection.md -->
 
 ### What Worked Well
@@ -1284,7 +1282,7 @@ All confidence levels use the WEP (Words of Estimative Probability) ladder:
 - LOW [D2]: Based on metadata only + historical pattern matching
 - ESTIMATED [est.]: Based on prior cached data; IMF API unavailable
 
-## Data Download Manifest
+## Deep Dive: Data Download Manifest
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/data-download-manifest.md -->
 
 ### Document Table
@@ -1353,8 +1351,7 @@ No prior PIR files found for motions subfolder. Standing PIRs PIR-1 through PIR-
 
 **المؤلف**: جيمس بيثر سورلينغ | **التاريخ**: 2026-05-04 | **التصنيف**: عام | **مستوى الثقة**: عالٍ [B2]
 
-### BLUF
-
+### Lede
 ستة عشر مقترح معارضة نشطاً مقدمة في 2026-04-29 تتحدى ستة مقترحات حكومية في سياسة الطاقة والبيئة والعدالة الجنائية والنقل والضرائب. يقود حزب الديمقراطيين الاجتماعيين (S) بتسعة مقترحات، مدعوماً من حزب البيئة (MP) وحزب اليسار (V) وحزب الوسط (C). مع بُعد الانتخابات العامة السويدية 132 يوماً (14 سبتمبر 2026)، تشكّل هذه المقترحات معارضة سياسية جوهرية وتموضعاً صريحاً قبيل الانتخابات. أبرز المعارك: (1) هيئة تراخيص البيئة المقترحة (الاقتراح 238) التي تعارضها S وMP وV وC لأسباب مختلفة؛ (2) خفض سن المسؤولية الجنائية إلى 13 (الاقتراح 246) حيث تقبل S بـ14 لكن ترفض 13؛ و(3) إصلاح حق النقض البلدي في طاقة الرياح (الاقتراح 239) حيث تطالب المعارضة على نطاق واسع باتخاذ إجراءات أسرع.
 
 ### القرارات التي يدعمها هذا الموجز
@@ -1396,8 +1393,7 @@ graph LR
 ## Executive Brief Da
 <!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/executive-brief_da.md -->
 
-### BLUF
-
+### Lede
 Seksten aktive oppositionsforslag indgivet 2026-04-29 udfordrer seks regeringsforslag inden for energi, miljø, kriminaljustis, transport og skattepolitik. Socialdemokraterna (S) leder med ni forslag, flanket af Miljøpartiet (MP), Venstre (V) og Centerpartiet (C). Med Sveriges valg 132 dage væk (14. september 2026) udgør disse forslag både substantiel politisk opposition og eksplicit præ-valgpositionering. De vigtigste kampe: (1) det foreslåede miljøtilladelsesorgan (prop. 238) som S, MP, V og C modsætter sig af forskellige grunde; (2) kriminel aldersansvarssænkning til 13 (prop. 246), hvor S accepterer 14 men afviser 13; og (3) reform af kommunalt vindenergiveto (prop. 239), hvor oppositionen bredt kræver hurtigere handling.
 
 ### Beslutninger dette brief støtter
@@ -1441,8 +1437,7 @@ graph LR
 
 **Autor**: James Pether Sörling | **Datum**: 2026-05-04 | **Einstufung**: ÖFFENTLICH | **Konfidenz**: HOCH [B2]
 
-### BLUF
-
+### Lede
 Sechzehn aktive Oppositionsanträge, eingereicht am 2026-04-29, fordern sechs Regierungsvorlagen in den Bereichen Energie, Umwelt, Strafjustiz, Verkehr und Steuerpolitik heraus. Socialdemokraterna (S) führt mit neun Anträgen, flankiert von Miljöpartiet (MP), Vänsterpartiet (V) und Centerpartiet (C). Mit Schwedens Parlamentswahl 132 Tage entfernt (14. September 2026) stellen diese Anträge sowohl substantielle politische Opposition als auch explizite Vorwahlpositionierung dar. Die wichtigsten Auseinandersetzungen: (1) die vorgeschlagene Umweltgenehmigungsbehörde (Prop. 238), die von S, MP, V und C aus verschiedenen Gründen abgelehnt wird; (2) Absenkung des Strafmündigkeitsalters auf 13 (Prop. 246), wobei S 14 akzeptiert, aber 13 ablehnt; und (3) Reform des kommunalen Windkraftvetos (Prop. 239), wo die Opposition weitgehend schnelleres Handeln fordert.
 
 ### Entscheidungen, die dieses Briefing unterstützt
@@ -1484,8 +1479,7 @@ graph LR
 ## Executive Brief Es
 <!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/executive-brief_es.md -->
 
-### BLUF
-
+### Lede
 Dieciséis mociones de oposición activas presentadas el 2026-04-29 desafían seis propuestas gubernamentales en política energética, medioambiental, de justicia penal, transporte y fiscal. Socialdemokraterna (S) lidera con nueve mociones, flanqueado por Miljöpartiet (MP), Vänsterpartiet (V) y Centerpartiet (C). Con las elecciones generales de Suecia 132 días (14 de septiembre de 2026), estas mociones constituyen tanto oposición política sustantiva como posicionamiento preelectoral explícito. Las batallas más significativas: (1) la propuesta autoridad de permisos medioambientales (prop. 238) a la que S, MP, V y C se oponen por diferentes razones; (2) reducción de la edad de responsabilidad penal a 13 años (prop. 246) donde S acepta 14 pero rechaza 13; y (3) reforma del veto municipal en energía eólica (prop. 239) donde la oposición ampliamente exige acción más rápida.
 
 ### Decisiones que apoya este informe
@@ -1529,8 +1523,7 @@ graph LR
 
 **Tekijä**: James Pether Sörling | **Päivämäärä**: 2026-05-04 | **Luokitus**: JULKINEN | **Luottamustaso**: KORKEA [B2]
 
-### BLUF
-
+### Lede
 Kuusitoista aktiivista 2026-04-29 jätettyjä oppositioaloitetta haastaa kuusi hallituksen esitystä energia-, ympäristö-, rikoslainsäädäntö-, liikenne- ja veropolitiikassa. Socialdemokraterna (S) johtaa yhdeksällä aloitteella, flankeerattuna Miljöpartietillä (MP), Vänsterpartietillä (V) ja Centerpartietillä (C). Ruotsin eduskuntavaalit ovat 132 päivän päässä (14. syyskuuta 2026), ja nämä aloitteet muodostavat sekä asiasisällöllisen opposition että eksplisiittisen vaaliasemoinnin. Tärkeimmät taistelut: (1) ehdotettu ympäristölupaviranomainen (prop. 238), jota S, MP, V ja C vastustavat eri syistä; (2) rikosoikeudellisen vastuuiän alentaminen 13 vuoteen (prop. 246), jossa S hyväksyy 14 mutta hylkää 13; ja (3) kunnallisen tuulivoimaveto-oikeuden uudistus (prop. 239), jossa oppositio laajasti vaatii nopeampia toimia.
 
 ### Päätökset joita tämä katsaus tukee
@@ -1572,8 +1565,7 @@ graph LR
 ## Executive Brief Fr
 <!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/executive-brief_fr.md -->
 
-### BLUF
-
+### Lede
 Seize motions d'opposition actives déposées le 2026-04-29 défient six propositions gouvernementales dans les domaines de l'énergie, de l'environnement, de la justice pénale, des transports et de la fiscalité. Socialdemokraterna (S) mène avec neuf motions, flanqué de Miljöpartiet (MP), Vänsterpartiet (V) et Centerpartiet (C). Avec les élections générales de la Suède 132 jours à venir (14 septembre 2026), ces motions constituent à la fois une opposition politique substantielle et un positionnement pré-électoral explicite. Les batailles les plus significatives : (1) l'autorité de permis environnementaux proposée (prop. 238) à laquelle S, MP, V et C s'opposent pour différentes raisons ; (2) la réduction de l'âge de responsabilité pénale à 13 ans (prop. 246) où S accepte 14 mais rejette 13 ; et (3) la réforme du veto municipal en éolien (prop. 239) où l'opposition réclame généralement une action plus rapide.
 
 ### Décisions soutenues par ce briefing
@@ -1619,8 +1611,7 @@ graph LR
 
 **מחבר**: ג'יימס פת'ר סורלינג | **תאריך**: 2026-05-04 | **סיווג**: ציבורי | **אמינות**: גבוהה [B2]
 
-### BLUF
-
+### Lede
 שש עשרה הצעות אופוזיציה פעילות שהוגשו ב-2026-04-29 מאתגרות שש הצעות ממשלתיות במדיניות האנרגיה, הסביבה, המשפט הפלילי, התחבורה והמיסוי. Socialdemokraterna (S) מוביל עם תשע הצעות, מלווה ב-Miljöpartiet (MP), Vänsterpartiet (V) ו-Centerpartiet (C). כשבחירות הכלליות של שוודיה 132 יום (14 בספטמבר 2026), הצעות אלה מהוות הן אופוזיציה פוליטית מהותית והן מיצוב ברור לפני הבחירות. הקרבות המשמעותיים ביותר: (1) רשות ההיתרים הסביבתיים המוצעת (הצעה 238) שאותה מתנגדים S, MP, V ו-C מסיבות שונות; (2) הורדת גיל האחריות הפלילית ל-13 (הצעה 246) שבה S מקבלת 14 אך דוחה 13; ו-(3) רפורמת הווטו העירוני לאנרגיית רוח (הצעה 239) שבה האופוזיציה דורשת באופן רחב פעולה מהירה יותר.
 
 ### החלטות שתדריך זה תומך בהן
@@ -1662,8 +1653,7 @@ graph LR
 ## Executive Brief Ja
 <!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/executive-brief_ja.md -->
 
-### BLUF
-
+### Lede
 2026年4月29日に提出された16の有効な野党動議が、エネルギー、環境、刑事司法、交通、税制政策において6つの政府提案に挑戦している。Socialdemokraterna（S）が9動議でリードし、Miljöpartiet（MP）、Vänsterpartiet（V）、Centerpartiet（C）が続く。スウェーデン総選挙まで132日（2026年9月14日）と迫るなか、これらの動議は実質的な政治的反対意見と明確な選挙前ポジショニングの両方を構成する。最も重要な争点：（1）提案238の環境許可当局（S、MP、V、Cがそれぞれ異なる理由で反対）；（2）刑事責任年齢を13歳に引き下げ（提案246、Sは14歳を受け入れるが13歳は拒否）；（3）風力エネルギーの市町村拒否権改革（提案239、野党が広く一段と迅速な行動を要求）。
 
 ### このブリーフが支援する決定
@@ -1705,8 +1695,7 @@ graph LR
 ## Executive Brief Ko
 <!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/executive-brief_ko.md -->
 
-### BLUF
-
+### Lede
 2026년 4월 29일에 제출된 16개의 활성 야당 발의안이 에너지, 환경, 형사 사법, 교통, 세제 정책에서 6개의 정부 제안에 도전하고 있다. Socialdemokraterna(S)가 9개 발의안으로 선두를 달리며 Miljöpartiet(MP), Vänsterpartiet(V), Centerpartiet(C)가 뒤를 잇는다. 스웨덴 총선까지 132일(2026년 9월 14일)을 앞두고 이 발의안들은 실질적인 정치적 반대와 명확한 선거 전 포지셔닝 모두를 구성한다. 가장 중요한 전선: (1) 제안 238의 환경허가청(S, MP, V, C가 각기 다른 이유로 반대); (2) 형사책임 연령을 13세로 인하(제안 246, S는 14세 수용 但 13세 거부); (3) 풍력 에너지에 대한 지방자치단체 거부권 개혁(제안 239, 야당이 광범위하게 더 신속한 조치 요구).
 
 ### 이 브리프가 지원하는 결정
@@ -1748,8 +1737,7 @@ graph LR
 ## Executive Brief Nl
 <!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/executive-brief_nl.md -->
 
-### BLUF
-
+### Lede
 Zestien actieve oppositiemotie's ingediend op 2026-04-29 dagen zes regeringsvoorstellen uit op het gebied van energie, milieu, strafjustitie, vervoer en belastingbeleid. Socialdemokraterna (S) leidt met negen motie's, geflankeerd door Miljöpartiet (MP), Vänsterpartiet (V) en Centerpartiet (C). Met de Zweedse algemene verkiezingen 132 dagen weg (14 september 2026) vormen deze motie's zowel substantiële politieke oppositie als expliciete pre-verkiezingspositionering. De meest significante strijd: (1) de voorgestelde milieuvergunninsautoriteit (prop. 238) waartegen S, MP, V en C zich om verschillende redenen verzetten; (2) verlaging van de strafrechtelijke aansprakelijkheidsleeftijd naar 13 (prop. 246) waarbij S 14 accepteert maar 13 verwerpt; en (3) hervorming van het gemeentelijk windenergiveto (prop. 239) waarbij de oppositie generaal snellere actie eist.
 
 ### Beslissingen die dit briefing ondersteunt
@@ -1793,8 +1781,7 @@ graph LR
 
 **Forfatter**: James Pether Sörling | **Dato**: 2026-05-04 | **Klassifisering**: OFFENTLIG | **Konfidensgrad**: HØY [B2]
 
-### BLUF
-
+### Lede
 Seksten aktive opposisjonsforslag innlevert 2026-04-29 utfordrer seks regjeringsforslag innen energi, miljø, strafferett, transport og skattepolitikk. Socialdemokraterna (S) leder med ni forslag, flankert av Miljøpartiet (MP), Venstresiden (V) og Centerpartiet (C). Med Sveriges stortingsvalg 132 dager unna (14. september 2026) utgjør disse forslagene både substansiell politisk opposisjon og eksplisitt pre-valgsposisjonering. De viktigste kampene: (1) det foreslåtte miljøtillatelseorganet (prop. 238) som S, MP, V og C motsetter seg av ulike grunner; (2) senking av den strafferettslige lavalderen til 13 (prop. 246) der S aksepterer 14 men avviser 13; og (3) reform av kommunalt vindkraftsveto (prop. 239) der opposisjonen bredt krever raskere handling.
 
 ### Beslutninger dette briefet støtter
@@ -1838,8 +1825,7 @@ graph LR
 
 **Författare**: James Pether Sörling | **Datum**: 2026-05-04 | **Klassificering**: OFFENTLIG | **Konfidensgrad**: HÖG [B2]
 
-### BLUF
-
+### Lede
 Sexton aktiva oppositionsmotioner inlämnade 2026-04-29 utmanar sex regeringspropositioner inom energi, miljö, kriminaljustis, transport och skattepolitik. Socialdemokraterna (S) leder med nio motioner, flankerade av Miljöpartiet (MP), Vänsterpartiet (V) och Centerpartiet (C). Med Sveriges riksdagsval 132 dagar bort (14 september 2026) utgör dessa motioner både sakpolitisk opposition och tydlig förvalpositionering. De viktigaste striderna: (1) förslaget om ny tillståndsmyndighet för miljö (prop. 238) som S, MP, V och C motsätter sig av olika skäl; (2) sänkning av straffmyndighetsåldern till 13 år (prop. 246) där S accepterar 14 men avvisar 13; och (3) reform av kommunalt vindkraftsveto (prop. 239) där oppositionen brett kräver snabbare åtgärder.
 
 ### Beslut som detta underlag stöder
@@ -1881,8 +1867,7 @@ graph LR
 ## Executive Brief Zh
 <!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/executive-brief_zh.md -->
 
-### BLUF
-
+### Lede
 2026年4月29日提交的16项有效反对党动议在能源、环境、刑事司法、交通和税收政策领域挑战6项政府提案。Socialdemokraterna（S）以9项动议领先，Miljöpartiet（MP）、Vänsterpartiet（V）和Centerpartiet（C）紧随其后。距离瑞典大选132天（2026年9月14日），这些动议既是实质性政治反对，也是明确的选前定位。最重要的争论焦点：（1）提案238的环境许可当局（S、MP、V、C出于不同原因反对）；（2）将刑事责任年龄降至13岁（提案246，S接受14岁但拒绝13岁）；（3）风能市政否决权改革（提案239，反对党普遍要求采取更迅速的行动）。
 
 ### 本简报支持的决策

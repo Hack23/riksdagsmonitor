@@ -3,11 +3,11 @@ date: 2026-05-05
 subfolder: election-cycle/next
 slug: 2026-05-05-election-cycle/next
 source_folder: analysis/daily/2026-05-05/election-cycle/next
-generated_at: 2026-05-28T15:56:16.281Z
+generated_at: 2026-05-28T22:29:31.216Z
 language: en
 layout: article
 ---
-## Executive Brief
+## What Happened
 <!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/election-cycle/next/executive-brief.md -->
 
 ### FORMATION PREVIEW
@@ -38,9 +38,9 @@ Use this guide to read the article as a political-intelligence product rather th
 
 | Icon | Reader need | What you'll get |
 |---|---|---|
-| 📊 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
-| 🧠 | [Synthesis Summary](#rm-synthesis-summary) | evidence-anchored narrative consolidating primary sources into one coherent story line |
-| 🎯 | [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps |
+| 📊 | [Lede and editorial decisions](#rm-what-happened) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
+| 🧠 | [Why It Matters](#rm-why-it-matters) | evidence-anchored narrative consolidating primary sources into one coherent story line |
+| 🎯 | [Key Judgments](#rm-key-findings) | confidence-bearing political-intelligence conclusions and collection gaps |
 | 📈 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals |
 | 👥 | [Stakeholder Perspectives](#rm-stakeholder-perspectives) | winners, losers and undecided actors with stake-weighted positions and pressure points |
 | 🔢 | [Coalition Mathematics](#rm-coalition-mathematics) | parliamentary arithmetic showing exactly who can pass or block this measure and at what margin |
@@ -61,10 +61,10 @@ Use this guide to read the article as a political-intelligence product rather th
 | ⚙️ | [Implementation Feasibility](#rm-implementation-feasibility) | delivery feasibility, capability gaps, timelines and execution risks for the proposed action |
 | 📰 | [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder |
 | 😈 | [Devil's Advocate](#rm-devils-advocate) | alternative hypotheses, steel-manned counter-arguments and the strongest case against the lead reading |
-| 🏷️ | [Classification Results](#rm-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
-| 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
-| 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
-| 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 🏷️ | [Deep Dive: Classification Results](#rm-deep-dive-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
+| 🔀 | [Deep Dive: Cross-Reference Map](#rm-deep-dive-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
+| 🔬 | [Deep Dive: Methodology & Limitations](#rm-deep-dive-methodology--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
+| 📦 | [Deep Dive: Data Download Manifest](#rm-deep-dive-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
 | 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
@@ -78,9 +78,9 @@ Use this guide to read the article as a political-intelligence product rather th
 | 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
-| 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
+| 🏷️ | [Audit appendix](#rm-deep-dive-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
-## Synthesis Summary
+## Why It Matters
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/election-cycle/next/synthesis-summary.md -->
 
 **Horizon**: T+1460d from election | **Depth multiplier**: 2.5× Tier-C  
@@ -92,7 +92,7 @@ Use this guide to read the article as a political-intelligence product rather th
 
 ### Lead Assessment (Updated 2026-05-05)
 
-The 2026-2030 Swedish mandate will be shaped by today's signals from the final phase of the current mandate. The emergence of the **SIDA abolition demand (HD10464)** and **non-political civil servants proposal (HD10466)** on 2026-05-05 adds two new structural variables to the next mandate's opening conditions:
+The 2026-2030 Swedish mandate will be shaped by today's signals from the final phase of the current mandate. The emergence of the **SIDA abolition demand (Riksdag document #10464 (HD10464))** and **non-political civil servants proposal (HD10466)** on 2026-05-05 adds two new structural variables to the next mandate's opening conditions:
 
 1. If Tidö wins: SIDA reduction + civil service reform become early legislative priorities (T+90 to T+180d)
 2. If Red-Green wins: Restoring SIDA and reversing HD10466 become opening legislative moves — creating an immediate confrontation with outgoing Tidö institutional structure
@@ -195,7 +195,7 @@ The fiscal arithmetic says YES. The political will question is unanswered.
 **Assessment**: Probability that nuclear construction begins before 2030: 45% (Tidö) / 20% (Red-Green).  
 **Assessment**: Probability that housing starts exceed 20k/year by 2028: 30% (Red-Green) / 15% (Tidö).
 
-## Intelligence Assessment — Key Judgments
+## Key Findings
 <!-- source: intelligence-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/election-cycle/next/intelligence-assessment.md -->
 
 ### Summary
@@ -835,7 +835,7 @@ Combined probability of government collapse before 2030: **~25%**. A snap electi
 
 **Confidence that conventional (full mandate) is wrong**: 25%
 
-## Classification Results
+## Deep Dive: Classification Results
 <!-- source: classification-results.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/election-cycle/next/classification-results.md -->
 
 ### Forward-Looking Thematic Classification
@@ -866,7 +866,7 @@ Combined probability of government collapse before 2030: **~25%**. A snap electi
 | HD10469 (parental insurance) | LOW | Policy maintenance |
 | All others | LOW | Operational/routine |
 
-## Cross-Reference Map
+## Deep Dive: Cross-Reference Map
 <!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/election-cycle/next/cross-reference-map.md -->
 
 **Cross-reference**: See analysis/daily/2026-05-05/election-cycle/current/cross-reference-map.md for current-anchor parallel
@@ -892,7 +892,7 @@ From current-day signals (HD10464, HD10466, HD01JuU30, HD11782, HD11787):
 - Current-anchor parallel: analysis/daily/2026-05-05/election-cycle/current/cross-reference-map.md
 - IMF economic context: data/imf-context.json (WEO Apr-2026, degraded mode)
 
-## Methodology Reflection & Limitations
+## Deep Dive: Methodology & Limitations
 <!-- source: methodology-reflection.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/election-cycle/next/methodology-reflection.md -->
 
 ### Summary
@@ -917,7 +917,7 @@ The four megaforces of the next mandate (defence, nuclear, housing, demographics
 - Prior: analysis/daily/2026-05-04/election-cycle/next/methodology-reflection.md
 - Current-anchor parallel: analysis/daily/2026-05-05/election-cycle/current/methodology-reflection.md
 
-## Data Download Manifest
+## Deep Dive: Data Download Manifest
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/election-cycle/next/data-download-manifest.md -->
 
 **Cross-reference**: See analysis/daily/2026-05-05/election-cycle/current/data-download-manifest.md for current-anchor parallel

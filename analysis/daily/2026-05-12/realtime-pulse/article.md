@@ -3,11 +3,11 @@ date: 2026-05-12
 subfolder: realtime-pulse
 slug: 2026-05-12-realtime-pulse
 source_folder: analysis/daily/2026-05-12/realtime-pulse
-generated_at: 2026-05-28T15:56:16.895Z
+generated_at: 2026-05-28T22:29:31.878Z
 language: en
 layout: article
 ---
-## Executive Brief
+## What Happened
 <!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/realtime-pulse/executive-brief.md -->
 
 ### BLUF — Bottom Line Up Front
@@ -17,7 +17,7 @@ Tisdagen den 12 maj 2026 präglas av Vänsterpartiets tredubbla interpellationso
 ### Critical Intelligence Points
 
 **1. V:s tredubbla interpellationsoffensiv** [HIGH SALIENCE]
-- HD10484 (Nadja Awad → Anna Tenje / M): Missförhållanden i vinstdriven äldreomsorg — fyra ministerfrågor om tillsyn, sanktioner, vinstkrav, personalförsörjning. Bakgrundsdata: Socialstyrelsen prognostiserar 50 000 nyanställningar behövs till 2030; SVT/SR dokumenterat upprepade skandaler.
+- Riksdag document #10484 (HD10484) (Nadja Awad → Anna Tenje / M): Missförhållanden i vinstdriven äldreomsorg — fyra ministerfrågor om tillsyn, sanktioner, vinstkrav, personalförsörjning. Bakgrundsdata: Socialstyrelsen prognostiserar 50 000 nyanställningar behövs till 2030; SVT/SR dokumenterat upprepade skandaler.
 - HD10486 (Nadja Awad → Johan Britz / L): Jämställda löner i välfärden — V:s "kvinnolönelyft" (30 mdr SEK/10 år) som partipositionering; fem ministerfrågor om strukturell lönediskriminering.
 - WEP: Inget ministerbesked förväntas inom deadlinen 29 maj som ger V substantiell seger, men frågorna skapar kampanjmaterial inför 13 september.
 
@@ -77,9 +77,9 @@ Use this guide to read the article as a political-intelligence product rather th
 
 | Icon | Reader need | What you'll get |
 |---|---|---|
-| 📊 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
-| 🧠 | [Synthesis Summary](#rm-synthesis-summary) | evidence-anchored narrative consolidating primary sources into one coherent story line |
-| 🎯 | [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps |
+| 📊 | [Lede and editorial decisions](#rm-what-happened) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
+| 🧠 | [Why It Matters](#rm-why-it-matters) | evidence-anchored narrative consolidating primary sources into one coherent story line |
+| 🎯 | [Key Judgments](#rm-key-findings) | confidence-bearing political-intelligence conclusions and collection gaps |
 | 📈 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals |
 | 👥 | [Stakeholder Perspectives](#rm-stakeholder-perspectives) | winners, losers and undecided actors with stake-weighted positions and pressure points |
 | 🔢 | [Coalition Mathematics](#rm-coalition-mathematics) | parliamentary arithmetic showing exactly who can pass or block this measure and at what margin |
@@ -95,10 +95,10 @@ Use this guide to read the article as a political-intelligence product rather th
 | ⚙️ | [Implementation Feasibility](#rm-implementation-feasibility) | delivery feasibility, capability gaps, timelines and execution risks for the proposed action |
 | 📰 | [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder |
 | 😈 | [Devil's Advocate](#rm-devils-advocate) | alternative hypotheses, steel-manned counter-arguments and the strongest case against the lead reading |
-| 🏷️ | [Classification Results](#rm-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
-| 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
-| 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
-| 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 🏷️ | [Deep Dive: Classification Results](#rm-deep-dive-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
+| 🔀 | [Deep Dive: Cross-Reference Map](#rm-deep-dive-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
+| 🔬 | [Deep Dive: Methodology & Limitations](#rm-deep-dive-methodology--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
+| 📦 | [Deep Dive: Data Download Manifest](#rm-deep-dive-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
 | 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
@@ -113,9 +113,9 @@ Use this guide to read the article as a political-intelligence product rather th
 | 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
-| 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
+| 🏷️ | [Audit appendix](#rm-deep-dive-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
-## Synthesis Summary
+## Why It Matters
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/realtime-pulse/synthesis-summary.md -->
 
 ### Lead Story
@@ -179,7 +179,7 @@ graph LR
 
 ---
 
-## Intelligence Assessment — Key Judgments
+## Key Findings
 <!-- source: intelligence-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/realtime-pulse/intelligence-assessment.md -->
 
 **ICD 203 Standard Applied** | **Author**: James Pether Sörling | **Date**: 2026-05-12
@@ -1491,7 +1491,7 @@ Three comparators chosen: Denmark (Nordic peer, welfare model closest to Sweden)
    **Challenge**: What if SD announces opposition?  
    **Conclusion**: This is exactly PIR-CONST-ABORT — if this assumption fails, Scenario C fires (10% WEP)
 
-## Classification Results
+## Deep Dive: Classification Results
 <!-- source: classification-results.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/realtime-pulse/classification-results.md -->
 
 ### Classification Matrix
@@ -1554,7 +1554,7 @@ All documents are **PUBLIC** class (riksdag.se openly published). No classified 
 
 **Data retention**: Parliamentary records are permanent archives — no deletion mechanism applies.
 
-## Cross-Reference Map
+## Deep Dive: Cross-Reference Map
 <!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/realtime-pulse/cross-reference-map.md -->
 
 **Tier-C Required**: This Tier-C aggregation artifact MUST cross-reference all sibling folders under `analysis/daily/2026-05-12/`
@@ -1621,7 +1621,7 @@ graph LR
     style CR fill:#1a1e3d,color:#ffbe0b,stroke:#ffbe0b
 ```
 
-## Methodology Reflection & Limitations
+## Deep Dive: Methodology & Limitations
 <!-- source: methodology-reflection.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/realtime-pulse/methodology-reflection.md -->
 
 ### ICD 203 Compliance Audit
@@ -1729,7 +1729,7 @@ Scenario probabilities sum to 100% (scenario-analysis.md: A=65%, B=20%, C=10%, D
 4. **Improvement 4**: Add Novus/Demoskop poll tracking integration as a FI-007 input update when new data published within window.
 5. **Improvement 5**: Verify BRÅ source citation for HD10483 with direct URL rather than relying solely on interpellation text reference.
 
-## Data Download Manifest
+## Deep Dive: Data Download Manifest
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/realtime-pulse/data-download-manifest.md -->
 
 ### MCP Server Status

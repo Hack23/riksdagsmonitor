@@ -3,18 +3,17 @@ date: 2026-05-12
 subfolder: motions
 slug: 2026-05-12-motions
 source_folder: analysis/daily/2026-05-12/motions
-generated_at: 2026-05-28T15:56:16.875Z
+generated_at: 2026-05-28T22:29:31.857Z
 language: en
 layout: article
 ---
-## Executive Brief
+## What Happened
 <!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/motions/executive-brief.md -->
 
 **Priority**: HIGH — election-year immigration debate, constitutional rights dimensions
 
-### BLUF
-
-Vänsterpartiet filed two committee motions on 2026-05-11 opposing the Tidö government's tightened immigration regime. Motion HD024149 demands full rejection of *prop. 2025/26:264* on stricter character requirements for residence permits, citing ECHR Article 8 family-life rights and lack of legal certainty. Motion HD024150 partially opposes *prop. 2025/26:263* on deportation enforcement, accepting some enforcement measures but rejecting mandatory data-sharing between welfare agencies and the police. With the September 2026 election four months away, these motions function simultaneously as legal challenges and political positioning instruments for V's electorate base.
+### Lede
+Vänsterpartiet filed two committee motions on 2026-05-11 opposing the Tidö government's tightened immigration regime. Motion Riksdag document #024149 (HD024149) demands full rejection of *prop. 2025/26:264* on stricter character requirements for residence permits, citing ECHR Article 8 family-life rights and lack of legal certainty. Motion HD024150 partially opposes *prop. 2025/26:263* on deportation enforcement, accepting some enforcement measures but rejecting mandatory data-sharing between welfare agencies and the police. With the September 2026 election four months away, these motions function simultaneously as legal challenges and political positioning instruments for V's electorate base.
 
 ### Key Findings
 
@@ -58,9 +57,9 @@ Use this guide to read the article as a political-intelligence product rather th
 
 | Icon | Reader need | What you'll get |
 |---|---|---|
-| 📊 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
-| 🧠 | [Synthesis Summary](#rm-synthesis-summary) | evidence-anchored narrative consolidating primary sources into one coherent story line |
-| 🎯 | [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps |
+| 📊 | [Lede and editorial decisions](#rm-what-happened) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
+| 🧠 | [Why It Matters](#rm-why-it-matters) | evidence-anchored narrative consolidating primary sources into one coherent story line |
+| 🎯 | [Key Judgments](#rm-key-findings) | confidence-bearing political-intelligence conclusions and collection gaps |
 | 📈 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals |
 | 👥 | [Stakeholder Perspectives](#rm-stakeholder-perspectives) | winners, losers and undecided actors with stake-weighted positions and pressure points |
 | 🔢 | [Coalition Mathematics](#rm-coalition-mathematics) | parliamentary arithmetic showing exactly who can pass or block this measure and at what margin |
@@ -76,10 +75,10 @@ Use this guide to read the article as a political-intelligence product rather th
 | ⚙️ | [Implementation Feasibility](#rm-implementation-feasibility) | delivery feasibility, capability gaps, timelines and execution risks for the proposed action |
 | 📰 | [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder |
 | 😈 | [Devil's Advocate](#rm-devils-advocate) | alternative hypotheses, steel-manned counter-arguments and the strongest case against the lead reading |
-| 🏷️ | [Classification Results](#rm-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
-| 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
-| 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
-| 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 🏷️ | [Deep Dive: Classification Results](#rm-deep-dive-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
+| 🔀 | [Deep Dive: Cross-Reference Map](#rm-deep-dive-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
+| 🔬 | [Deep Dive: Methodology & Limitations](#rm-deep-dive-methodology--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
+| 📦 | [Deep Dive: Data Download Manifest](#rm-deep-dive-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
 | 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
@@ -94,9 +93,9 @@ Use this guide to read the article as a political-intelligence product rather th
 | 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
-| 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
+| 🏷️ | [Audit appendix](#rm-deep-dive-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
-## Synthesis Summary
+## Why It Matters
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/motions/synthesis-summary.md -->
 
 ### Headline Intelligence
@@ -150,7 +149,7 @@ Neither proposition's Lagrådet referral status was confirmed. If Lagrådet issu
 ---
 *Pass 2 improvement: HD024150's tillkännagivanden (parliamentary mandates to government) are a specific parliamentary tool — if passed, they would require the government to act within a defined timeframe. That both yrkanden in HD024150 are framed as tillkännagivanden (not just yrkar avslag) is notable: V is asking Parliament to *instruct* the government, not just reject the proposition. This is a sophisticated use of parliamentary procedure that increases political pressure even if defeated.*
 
-## Intelligence Assessment — Key Judgments
+## Key Findings
 <!-- source: intelligence-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/motions/intelligence-assessment.md -->
 
 **Admiralty Source**: A (Riksdag official documents — known directly)
@@ -1302,7 +1301,7 @@ It weakens one element:
 
 **Recommendation**: The article should acknowledge the government's framing (EU-alignment, explicit codification of existing practice) to maintain intellectual credibility, then rebut with the standalone-ground and chilling-effect evidence.
 
-## Classification Results
+## Deep Dive: Classification Results
 <!-- source: classification-results.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/motions/classification-results.md -->
 
 ### Documents Classification
@@ -1373,7 +1372,7 @@ Immigration Reform Cluster 2026
 **No PII**: Analysis references public officials (MPs, party leaders) in their public capacity only.
 **GDPR**: No personal data processing beyond publicly registered parliamentary information.
 
-## Cross-Reference Map
+## Deep Dive: Cross-Reference Map
 <!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/motions/cross-reference-map.md -->
 
 ### Document Relationships
@@ -1445,7 +1444,7 @@ See comparative-international.md for:
 - UK's points-based character assessment (good character requirement)
 - ECHR case-law on Art. 8 and residence permit revocation
 
-## Methodology Reflection & Limitations
+## Deep Dive: Methodology & Limitations
 <!-- source: methodology-reflection.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/motions/methodology-reflection.md -->
 
 ### Data Collection Assessment
@@ -1500,7 +1499,7 @@ See comparative-international.md for:
 **Weakest artifacts (flagged for Pass 2 improvement)**: implementation-feasibility (IMF data gap), coalition-mathematics (needs current polling data)
 **Improvement priorities**: Add specific statute references in stakeholder-perspectives; add ECHR case citations to devils-advocate; improve economic dimension given IMF fetch failure
 
-## Data Download Manifest
+## Deep Dive: Data Download Manifest
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/motions/data-download-manifest.md -->
 
 **Workflow**: news-motions

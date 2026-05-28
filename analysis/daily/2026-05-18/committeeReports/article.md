@@ -3,19 +3,17 @@ date: 2026-05-18
 subfolder: committeeReports
 slug: 2026-05-18-committeeReports
 source_folder: analysis/daily/2026-05-18/committeeReports
-generated_at: 2026-05-28T15:56:17.166Z
+generated_at: 2026-05-28T22:29:32.187Z
 language: en
 layout: article
 ---
-## Executive Brief
+## What Happened
 <!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-18/committeeReports/executive-brief.md -->
 
-### BLUF
-
+### Lede
 The Swedish Riksdag's Committee on the Constitution (KU) has unanimously recommended approving Proposition 2025/26:164, which amends Kommunallagen to eliminate the legal grey zone around remote participation in municipal meetings and strengthens oversight of private welfare-service operators. Effective 1 July 2026, all 290 municipalities and 21 regions gain clearer rules for digital governance while the board must annually report to the full council on private operator compliance — a direct legislative strike against welfare fraud. The reform is technically non-controversial but administratively significant.
 
-### Decisions This Brief Supports
-
+### Decisions and confidence context
 1. **Municipal compliance officers**: Prepare updated meeting procedures; identify presidium members who currently attend remotely — prohibited post-July 2026; draft new standing orders for council-mandated remote attendance rules.
 2. **Private welfare-service operators**: Expect heightened scrutiny from municipal oversight chains; the reporting obligation creates a documented compliance record accessible to full councils and ultimately the public.
 3. **Opposition parties (all 8 parties)**: This consensus bill requires no parliamentary strategy beyond plenary confirmation; monitor implementation quality at municipal level for accountability audit fodder.
@@ -61,9 +59,9 @@ Use this guide to read the article as a political-intelligence product rather th
 
 | Icon | Reader need | What you'll get |
 |---|---|---|
-| 📊 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
-| 🧠 | [Synthesis Summary](#rm-synthesis-summary) | evidence-anchored narrative consolidating primary sources into one coherent story line |
-| 🎯 | [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps |
+| 📊 | [Lede and editorial decisions](#rm-what-happened) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
+| 🧠 | [Why It Matters](#rm-why-it-matters) | evidence-anchored narrative consolidating primary sources into one coherent story line |
+| 🎯 | [Key Judgments](#rm-key-findings) | confidence-bearing political-intelligence conclusions and collection gaps |
 | 📈 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals |
 | 👥 | [Stakeholder Perspectives](#rm-stakeholder-perspectives) | winners, losers and undecided actors with stake-weighted positions and pressure points |
 | 🔢 | [Coalition Mathematics](#rm-coalition-mathematics) | parliamentary arithmetic showing exactly who can pass or block this measure and at what margin |
@@ -79,9 +77,9 @@ Use this guide to read the article as a political-intelligence product rather th
 | ⚙️ | [Implementation Feasibility](#rm-implementation-feasibility) | delivery feasibility, capability gaps, timelines and execution risks for the proposed action |
 | 📰 | [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder |
 | 😈 | [Devil's Advocate](#rm-devils-advocate) | alternative hypotheses, steel-manned counter-arguments and the strongest case against the lead reading |
-| 🏷️ | [Classification Results](#rm-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
-| 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
-| 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 🏷️ | [Deep Dive: Classification Results](#rm-deep-dive-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
+| 🔬 | [Deep Dive: Methodology & Limitations](#rm-deep-dive-methodology--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
+| 📦 | [Deep Dive: Data Download Manifest](#rm-deep-dive-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
 | 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
@@ -96,9 +94,9 @@ Use this guide to read the article as a political-intelligence product rather th
 | 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
-| 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
+| 🏷️ | [Audit appendix](#rm-deep-dive-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
-## Synthesis Summary
+## Why It Matters
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-18/committeeReports/synthesis-summary.md -->
 
 **Lead Story**: KU35 Advances Municipal Democracy and Anti-Fraud Reforms to Plenary  
@@ -160,7 +158,7 @@ mindmap
 - SOU 2024:43 — Commission analysis (case law review)
 - Kommunallagen (2017:725) §§ 5:16, 5:72, 6:24 — Statutory basis
 
-## Intelligence Assessment — Key Judgments
+## Key Findings
 <!-- source: intelligence-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-18/committeeReports/intelligence-assessment.md -->
 
 **Document**: HD01KU35 / KU35  
@@ -1286,7 +1284,7 @@ After applying devil's advocate analysis, the primary conclusions hold:
 - SOU 2024:43 [B2]
 - Devil's Advocate methodology: ICA Structured Analytic Techniques
 
-## Classification Results
+## Deep Dive: Classification Results
 <!-- source: classification-results.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-18/committeeReports/classification-results.md -->
 
 **Method**: 7-dimension classification schema (ICA standards)  
@@ -1331,7 +1329,7 @@ Flags:      unanimous | SOU-backed | July-2026-effective
 **Overall classification confidence**: HIGH (8.5/10)  
 Single document; unanimous decision; no ambiguity in legislative intent.
 
-## Methodology Reflection & Limitations
+## Deep Dive: Methodology & Limitations
 <!-- source: methodology-reflection.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-18/committeeReports/methodology-reflection.md -->
 
 **Document**: HD01KU35  
@@ -1393,7 +1391,7 @@ In Pass 2, the following will be verified for each artifact:
 - ICD 203 (Intelligence Community Directive) — Analytic standards
 - [analysis/methodologies/ai-driven-analysis-guide.md] — v6.9 pipeline reference
 
-## Data Download Manifest
+## Deep Dive: Data Download Manifest
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-18/committeeReports/data-download-manifest.md -->
 
 **Subfolder**: committeeReports  

@@ -3,16 +3,15 @@ date: 2026-04-24
 subfolder: motions
 slug: 2026-04-24-motions
 source_folder: analysis/daily/2026-04-24/motions
-generated_at: 2026-05-28T15:56:15.568Z
+generated_at: 2026-05-28T22:29:30.400Z
 language: en
 layout: article
 ---
-## Executive Brief
+## What Happened
 <!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/executive-brief.md -->
 
-### 🎯 BLUF
-
-Between 2026-04-15 and 2026-04-17, the four opposition parties (S, V, MP, C) filed **20 counter-motions** against **9 Tidö-government propositions** — a coordinated legislative response concentrated in three utskott (FiU/SfU/SoU) and anchored on the drivmedelsbudget (prop 2025/26:236, [HD024082](https://data.riksdagen.se/dokument/HD024082.html)). **Sverigedemokraterna filed zero counter-motions**, preserving complete Tidö-bloc discipline. The wave telegraphs 2026-election positioning: S owns the fiscal-climate axis; V owns the distributional axis; MP owns the vapenexport axis; C owns the procedural-reform axis; SD stays silent.
+### Lede
+Between 2026-04-15 and 2026-04-17, the four opposition parties (S, V, MP, C) filed **20 counter-motions** against **9 Tidö-government propositions** — a coordinated legislative response concentrated in three utskott (FiU/SfU/SoU) and anchored on the drivmedelsbudget (prop 2025/26:236, [Riksdag document #024082 (HD024082)](https://data.riksdagen.se/dokument/HD024082.html)). **Sverigedemokraterna filed zero counter-motions**, preserving complete Tidö-bloc discipline. The wave telegraphs 2026-election positioning: S owns the fiscal-climate axis; V owns the distributional axis; MP owns the vapenexport axis; C owns the procedural-reform axis; SD stays silent.
 
 ### 🧭 3 Decisions This Brief Supports
 
@@ -76,9 +75,9 @@ Use this guide to read the article as a political-intelligence product rather th
 
 | Icon | Reader need | What you'll get |
 |---|---|---|
-| 📊 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
-| 🧠 | [Synthesis Summary](#rm-synthesis-summary) | evidence-anchored narrative consolidating primary sources into one coherent story line |
-| 🎯 | [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps |
+| 📊 | [Lede and editorial decisions](#rm-what-happened) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
+| 🧠 | [Why It Matters](#rm-why-it-matters) | evidence-anchored narrative consolidating primary sources into one coherent story line |
+| 🎯 | [Key Judgments](#rm-key-findings) | confidence-bearing political-intelligence conclusions and collection gaps |
 | 📈 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals |
 | 👥 | [Stakeholder Perspectives](#rm-stakeholder-perspectives) | winners, losers and undecided actors with stake-weighted positions and pressure points |
 | 🔢 | [Coalition Mathematics](#rm-coalition-mathematics) | parliamentary arithmetic showing exactly who can pass or block this measure and at what margin |
@@ -94,10 +93,10 @@ Use this guide to read the article as a political-intelligence product rather th
 | ⚙️ | [Implementation Feasibility](#rm-implementation-feasibility) | delivery feasibility, capability gaps, timelines and execution risks for the proposed action |
 | 📰 | [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder |
 | 😈 | [Devil's Advocate](#rm-devils-advocate) | alternative hypotheses, steel-manned counter-arguments and the strongest case against the lead reading |
-| 🏷️ | [Classification Results](#rm-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
-| 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
-| 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
-| 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 🏷️ | [Deep Dive: Classification Results](#rm-deep-dive-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
+| 🔀 | [Deep Dive: Cross-Reference Map](#rm-deep-dive-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
+| 🔬 | [Deep Dive: Methodology & Limitations](#rm-deep-dive-methodology--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
+| 📦 | [Deep Dive: Data Download Manifest](#rm-deep-dive-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
 | 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
@@ -112,9 +111,9 @@ Use this guide to read the article as a political-intelligence product rather th
 | 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
-| 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
+| 🏷️ | [Audit appendix](#rm-deep-dive-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
-## Synthesis Summary
+## Why It Matters
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/synthesis-summary.md -->
 
 ---
@@ -194,11 +193,10 @@ Full judgments, uncertainty and drivers → `intelligence-assessment.md`. Forwar
 
 *Sources: riksdag-regering MCP `get_motioner` (2026-04-24T01:05:50Z); all dok_id verifiable at data.riksdagen.se.*
 
-## Intelligence Assessment — Key Judgments
+## Key Findings
 <!-- source: intelligence-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/intelligence-assessment.md -->
 
-### Bottom Line Up Front
-
+### Lede
 Opposition filed **20 motions across 9 Tidö bills in 3 days (2026-04-15 to 2026-04-17)**, with **zero SD counter-motions**. The pattern reveals disciplined Tidö support on the government side and fragmented-but-parallel opposition on the other. Tidö retains procedural majority (176/349 seats); passage of most bills intact is the most likely outcome (~55%), but election-cycle amplification makes the motion content a narrative-shaping instrument for 2026.
 
 ### Key Judgments
@@ -2206,7 +2204,7 @@ Structured challenge to the lead synthesis. Presents competing hypotheses (ACH �
 
 *Structured challenge does not reject the lead synthesis but recommends hedging on confidence where evidence is thin. All dok_id citations are verifiable at [data.riksdagen.se](https://data.riksdagen.se/).*
 
-## Classification Results
+## Deep Dive: Classification Results
 <!-- source: classification-results.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/classification-results.md -->
 
 Seven-dimension classification per document. Dimensions: **Policy Area**, **Process Stage**, **Partisan Axis**, **Electoral Salience**, **Legal Intensity**, **Fiscal Impact**, **Distributional Effect**.
@@ -2298,7 +2296,7 @@ flowchart LR
 
 *Classification cross-validated against significance-scoring.md DIW tiers (L3 ↔ P0, L2+ ↔ P1, L2 ↔ P2, L1 ↔ P3).*
 
-## Cross-Reference Map
+## Deep Dive: Cross-Reference Map
 <!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/cross-reference-map.md -->
 
 Maps policy clusters, legislative chains, opposition coordination patterns across 20 motions.
@@ -2402,7 +2400,7 @@ flowchart LR
 
 *Cross-reference map generated from 20 motion manifest. Verifiable via `search_dokument` on any dok_id.*
 
-## Methodology Reflection & Limitations
+## Deep Dive: Methodology & Limitations
 <!-- source: methodology-reflection.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/methodology-reflection.md -->
 
 ### §ICD 203 audit
@@ -2463,7 +2461,7 @@ At least 10 SATs applied to this run:
 4. **SD internal discourse** — public-statement analysis of SD deputies not performed; H3 (Tidö fragility) needs this.
 5. **Cross-border comparators** — Danish/German/UK equivalents described but not quantified on motion-density metric.
 
-## Data Download Manifest
+## Deep Dive: Data Download Manifest
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/data-download-manifest.md -->
 
 **Workflow**: news-motions
@@ -2600,8 +2598,7 @@ flowchart TB
 ## Executive Brief Da
 <!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/executive-brief_da.md -->
 
-### 🎯 BLUF
-
+### Lede
 Mellem 2026-04-15 og 2026-04-17 indgav de fire oppositionspartier (S, V, MP, C) **20 modmotioner** mod **9 Tidö-regeringsforslag** — et koordineret lovgivningssvar koncentreret i tre udvalg (FiU/SfU/SoU) og forankret i drivmedelsbudgetten (prop 2025/26:236, [HD024082](https://data.riksdagen.se/dokument/HD024082.html)). **Sverigedemokraterna indgav nul modmotioner** og bevarede fuldstændig Tidö-blokdisciplin. Bølgen telegraferer valgpositionering frem til 2026: S ejer den finanspolitisk-klimatmæssige akse; V ejer fordelingsaxlen; MP ejer våbeneksportakslen; C ejer den proceduremæssige reformaxel; SD forbliver tavs.
 
 ### 🧭 3 beslutninger dette brief understøtter
@@ -2663,8 +2660,7 @@ flowchart TB
 ## Executive Brief De
 <!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/executive-brief_de.md -->
 
-### 🎯 BLUF
-
+### Lede
 Zwischen dem 2026-04-15 und 2026-04-17 reichten die vier Oppositionsparteien (S, V, MP, C) **20 Gegenmotionen** gegen **9 Tidö-Regierungsvorlagen** ein — eine koordinierte Gesetzgebungsantwort, die sich auf drei Ausschüsse (FiU/SfU/SoU) konzentriert und im Kraftstoffhaushalt (Prop. 2025/26:236, [HD024082](https://data.riksdagen.se/dokument/HD024082.html)) verankert ist. **Sverigedemokraterna reichte null Gegenmotionen ein** und bewahrte die vollständige Tidö-Blockdisziplin. Die Welle telegrafiert Wahlpositionierung bis 2026: S besitzt die finanzpolitisch-klimatische Achse; V besitzt die Verteilungsachse; MP besitzt die Waffenexportachse; C besitzt die Achse für Verfahrensreform; SD bleibt still.
 
 ### 🧭 3 Entscheidungen, die dieser Bericht unterstützt
@@ -2730,8 +2726,7 @@ Erneut gelesen und abgeschlossen 2026-04-24T01:23Z. Verifiziert: (1) alle 20 dok
 ## Executive Brief Es
 <!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/executive-brief_es.md -->
 
-### 🎯 BLUF
-
+### Lede
 Entre el 2026-04-15 y el 2026-04-17, los cuatro partidos de la oposición (S, V, MP, C) presentaron **20 contramociones** contra **9 proposiciones del gobierno Tidö** — una respuesta legislativa coordinada concentrada en tres comisiones (FiU/SfU/SoU) y anclada en el presupuesto de combustibles (prop 2025/26:236, [HD024082](https://data.riksdagen.se/dokument/HD024082.html)). **Sverigedemokraterna no presentó ninguna contramoción**, preservando la plena disciplina del bloque Tidö. La oleada telegrafía el posicionamiento electoral hasta 2026: S posee el eje fiscal-climático; V posee el eje distributivo; MP posee el eje de exportación de armas; C posee el eje de reforma procedimental; SD guarda silencio.
 
 ### 🧭 3 decisiones que apoya este informe
@@ -2856,8 +2851,7 @@ flowchart TB
 ## Executive Brief Fr
 <!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/executive-brief_fr.md -->
 
-### 🎯 BLUF
-
+### Lede
 Entre le 2026-04-15 et le 2026-04-17, les quatre partis d'opposition (S, V, MP, C) ont déposé **20 contre-motions** contre **9 propositions du gouvernement Tidö** — une réponse législative coordonnée concentrée dans trois commissions (FiU/SfU/SoU) et ancrée dans le budget des carburants (prop 2025/26:236, [HD024082](https://data.riksdagen.se/dokument/HD024082.html)). **Sverigedemokraterna n'a déposé aucune contre-motion**, préservant la pleine discipline du bloc Tidö. La vague télégraphie le positionnement électoral jusqu'en 2026 : S possède l'axe fiscal-climatique ; V possède l'axe distributif ; MP possède l'axe export d'armes ; C possède l'axe réforme procédurale ; SD reste silencieux.
 
 ### 🧭 3 décisions que ce rapport soutient
@@ -3123,8 +3117,7 @@ flowchart TB
 ## Executive Brief Nl
 <!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/executive-brief_nl.md -->
 
-### 🎯 BLUF
-
+### Lede
 Tussen 2026-04-15 en 2026-04-17 dienden de vier oppositiepartijen (S, V, MP, C) **20 tegenmotie** in tegen **9 Tidö-regeringsvoorstellen** — een gecoördineerde wetgevingsreactie geconcentreerd in drie commissies (FiU/SfU/SoU) en verankerd in de brandstofbegroting (prop 2025/26:236, [HD024082](https://data.riksdagen.se/dokument/HD024082.html)). **Sverigedemokraterna diende nul tegenmotie in** en bewaarde de volledige Tidö-blokdiscipline. De golf telegrafie verkiezingspositionering tot 2026: S bezit de fiscaal-klimaatas; V bezit de verdelingsas; MP bezit de wapexportas; C bezit de procedurehervormingsas; SD blijft stil.
 
 ### 🧭 3 beslissingen die dit overzicht ondersteunt
@@ -3186,8 +3179,7 @@ flowchart TB
 ## Executive Brief No
 <!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/executive-brief_no.md -->
 
-### 🎯 BLUF
-
+### Lede
 Mellom 2026-04-15 og 2026-04-17 leverte de fire opposisjonspartiene (S, V, MP, C) **20 motmotsjoner** mot **9 Tidö-regjeringsproposisjoner** — et koordinert lovgivningssvar konsentrert i tre utvalg (FiU/SfU/SoU) og forankret i drivmedelsbudsjettet (prop 2025/26:236, [HD024082](https://data.riksdagen.se/dokument/HD024082.html)). **Sverigedemokraterna leverte null motmotsjoner** og bevarte fullstendig Tidö-blokk-disiplin. Bølgen telegraferer valgposisjonering frem til 2026: S eier den finanspolitisk-klimatmessige aksen; V eier fordelingsakselen; MP eier våpeneksportakselen; C eier den prosessuelle reformakselen; SD forblir stille.
 
 ### 🧭 3 beslutninger dette briefet støtter
@@ -3249,8 +3241,7 @@ flowchart TB
 ## Executive Brief Sv
 <!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/executive-brief_sv.md -->
 
-### 🎯 BLUF
-
+### Lede
 Mellan 2026-04-15 och 2026-04-17 lämnade de fyra oppositionspartierna (S, V, MP, C) in **20 följdmotioner** mot **9 Tidö-regeringspropositioner** — ett samordnat lagstiftningssvar koncentrerat till tre utskott (FiU/SfU/SoU) och förankrat i drivmedelsbudgeten (prop 2025/26:236, [HD024082](https://data.riksdagen.se/dokument/HD024082.html)). **Sverigedemokraterna lämnade noll följdmotioner**, vilket bevarar fullständig Tidö-blockdisciplin. Vågen telegraferar valpositionering inför 2026: S äger den finanspolitisk-klimatmässiga axeln; V äger fördelningsaxeln; MP äger vapenexportaxeln; C äger axeln för processuell reform; SD håller tyst.
 
 ### 🧭 3 beslut som denna sammanfattning stöder

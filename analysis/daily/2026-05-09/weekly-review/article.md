@@ -3,20 +3,19 @@ date: 2026-05-09
 subfolder: weekly-review
 slug: 2026-05-09-weekly-review
 source_folder: analysis/daily/2026-05-09/weekly-review
-generated_at: 2026-05-28T15:56:16.667Z
+generated_at: 2026-05-28T22:29:31.618Z
 language: en
 layout: article
 ---
-## Executive Brief
+## What Happened
 <!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/weekly-review/executive-brief.md -->
 
 ---
 
-### BLUF (Bottom Line Up Front)
-
+### Lede
 The week of 2–9 May 2026 produced a cluster of domestic legislation in housing, education, social welfare and the rule of law, while foreign-policy questions exposed a sharp cross-party fissure over Israel's interception of a Swedish-crewed vessel in international waters. With the 2026 general election approximately 16 weeks away, every major debate carries electoral signalling beyond its immediate legislative purpose.
 
-**Lead Judgment**: The Tidö coalition (M, SD, KD, L) is entering a legislative sprint designed to lock in key policy wins before the summer recess and the September 2026 election. The housing market flexibility package (HD01CU31), education credentialing reform (HD01UbU28) and social-welfare staffing improvement (HD01SoU36) collectively reinforce the government's "reform-delivery" narrative. However, the Israel/Gaza flotilla incident (HD11803), the rural lighting controversy (HD11801) and the SD-driven veil ban question (HD11802) risk fragmenting the coalition's public messaging and energising the opposition.
+**Lead Judgment**: The Tidö coalition (M, SD, KD, L) is entering a legislative sprint designed to lock in key policy wins before the summer recess and the September 2026 election. The housing market flexibility package (HD01CU31), education credentialing reform (HD01UbU28) and social-welfare staffing improvement (HD01SoU36) collectively reinforce the government's "reform-delivery" narrative. However, the Israel/Gaza flotilla incident (Riksdag document #11803 (HD11803)), the rural lighting controversy (HD11801) and the SD-driven veil ban question (HD11802) risk fragmenting the coalition's public messaging and energising the opposition.
 
 ---
 
@@ -87,9 +86,9 @@ Use this guide to read the article as a political-intelligence product rather th
 
 | Icon | Reader need | What you'll get |
 |---|---|---|
-| 📊 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
-| 🧠 | [Synthesis Summary](#rm-synthesis-summary) | evidence-anchored narrative consolidating primary sources into one coherent story line |
-| 🎯 | [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps |
+| 📊 | [Lede and editorial decisions](#rm-what-happened) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
+| 🧠 | [Why It Matters](#rm-why-it-matters) | evidence-anchored narrative consolidating primary sources into one coherent story line |
+| 🎯 | [Key Judgments](#rm-key-findings) | confidence-bearing political-intelligence conclusions and collection gaps |
 | 📈 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals |
 | 👥 | [Stakeholder Perspectives](#rm-stakeholder-perspectives) | winners, losers and undecided actors with stake-weighted positions and pressure points |
 | 🔢 | [Coalition Mathematics](#rm-coalition-mathematics) | parliamentary arithmetic showing exactly who can pass or block this measure and at what margin |
@@ -105,10 +104,10 @@ Use this guide to read the article as a political-intelligence product rather th
 | ⚙️ | [Implementation Feasibility](#rm-implementation-feasibility) | delivery feasibility, capability gaps, timelines and execution risks for the proposed action |
 | 📰 | [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder |
 | 😈 | [Devil's Advocate](#rm-devils-advocate) | alternative hypotheses, steel-manned counter-arguments and the strongest case against the lead reading |
-| 🏷️ | [Classification Results](#rm-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
-| 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
-| 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
-| 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 🏷️ | [Deep Dive: Classification Results](#rm-deep-dive-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
+| 🔀 | [Deep Dive: Cross-Reference Map](#rm-deep-dive-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
+| 🔬 | [Deep Dive: Methodology & Limitations](#rm-deep-dive-methodology--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
+| 📦 | [Deep Dive: Data Download Manifest](#rm-deep-dive-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
 | 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
@@ -123,9 +122,9 @@ Use this guide to read the article as a political-intelligence product rather th
 | 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
-| 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
+| 🏷️ | [Audit appendix](#rm-deep-dive-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
-## Synthesis Summary
+## Why It Matters
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/weekly-review/synthesis-summary.md -->
 
 ---
@@ -261,7 +260,7 @@ The housing market (CU31) context is critical: Sweden's owner-occupied housing m
 
 ---
 
-## Intelligence Assessment — Key Judgments
+## Key Findings
 <!-- source: intelligence-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/weekly-review/intelligence-assessment.md -->
 
 ---
@@ -2480,7 +2479,7 @@ These contrarian positions do not negate the primary analysis but should inform 
 
 ---
 
-## Classification Results
+## Deep Dive: Classification Results
 <!-- source: classification-results.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/weekly-review/classification-results.md -->
 
 ---
@@ -2587,7 +2586,7 @@ flowchart TD
 
 ---
 
-## Cross-Reference Map
+## Deep Dive: Cross-Reference Map
 <!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/weekly-review/cross-reference-map.md -->
 
 **Tier-C context**: Cross-type synthesis with sibling analysis folders
@@ -2699,7 +2698,7 @@ The `analysis/daily/2026-05-09/monthly-review/` folder exists as a same-day sibl
 - The housing reform (CU31) is a weekly-review primary story but should appear in the monthly review's cumulative legislative tracking
 - Any monthly-review PIR items carried forward to this weekly cycle should be noted (see intelligence-assessment.md §Prior-Cycle PIR Roll-forward)
 
-## Methodology Reflection & Limitations
+## Deep Dive: Methodology & Limitations
 <!-- source: methodology-reflection.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/weekly-review/methodology-reflection.md -->
 
 ---
@@ -2818,7 +2817,7 @@ Plus: `pir-status.json` (required sidecar; to be created) + 11 per-document anal
 
 ---
 
-## Data Download Manifest
+## Deep Dive: Data Download Manifest
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/weekly-review/data-download-manifest.md -->
 
 > ℹ️ **Data-Only Pipeline**: This script downloads and persists raw data.

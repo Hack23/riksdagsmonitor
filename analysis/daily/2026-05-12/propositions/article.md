@@ -3,19 +3,19 @@ date: 2026-05-12
 subfolder: propositions
 slug: 2026-05-12-propositions
 source_folder: analysis/daily/2026-05-12/propositions
-generated_at: 2026-05-28T15:56:16.883Z
+generated_at: 2026-05-28T22:29:31.866Z
 language: en
 layout: article
 ---
-## Executive Brief
+## What Happened
 <!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/propositions/executive-brief.md -->
 
 <!-- analysis-type: executive-brief -->
 
 ### Classification: PUBLIC | Sensitivity: OPEN
 
-### BLUF
-Three government propositions submitted 7 May 2026 advance the Tidö coalition's state-capacity agenda in the final parliamentary stretch before the September 2026 election. The security proposition (HD03267) carries the highest salience and legal complexity; the Skatteverket expansion (HD03261) the highest societal sensitivity on privacy grounds; the e-ID (HD03250) the broadest public interest.
+### Lede
+Three government propositions submitted 7 May 2026 advance the Tidö coalition's state-capacity agenda in the final parliamentary stretch before the September 2026 election. The security proposition (Riksdag document #03267 (HD03267)) carries the highest salience and legal complexity; the Skatteverket expansion (HD03261) the highest societal sensitivity on privacy grounds; the e-ID (HD03250) the broadest public interest.
 
 ### Critical Intelligence Points
 
@@ -49,8 +49,8 @@ Use this guide to read the article as a political-intelligence product rather th
 
 | Icon | Reader need | What you'll get |
 |---|---|---|
-| 📊 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
-| 🧠 | [Synthesis Summary](#rm-synthesis-summary) | evidence-anchored narrative consolidating primary sources into one coherent story line |
+| 📊 | [Lede and editorial decisions](#rm-what-happened) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
+| 🧠 | [Why It Matters](#rm-why-it-matters) | evidence-anchored narrative consolidating primary sources into one coherent story line |
 | 📈 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals |
 | 👥 | [Stakeholder Perspectives](#rm-stakeholder-perspectives) | winners, losers and undecided actors with stake-weighted positions and pressure points |
 | 🔢 | [Coalition Mathematics](#rm-coalition-mathematics) | parliamentary arithmetic showing exactly who can pass or block this measure and at what margin |
@@ -69,10 +69,10 @@ Use this guide to read the article as a political-intelligence product rather th
 | ⚙️ | [Implementation Feasibility](#rm-implementation-feasibility) | delivery feasibility, capability gaps, timelines and execution risks for the proposed action |
 | 📰 | [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder |
 | 😈 | [Devil's Advocate](#rm-devils-advocate) | alternative hypotheses, steel-manned counter-arguments and the strongest case against the lead reading |
-| 🏷️ | [Political Classification](#rm-political-classification) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
-| 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
+| 🏷️ | [Deep Dive: Political Classification](#rm-deep-dive-political-classification) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
+| 🔀 | [Deep Dive: Cross-Reference Map](#rm-deep-dive-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 📝 | [Horizon PIR Roll-Forward](#rm-horizon-pir-roll-forward) | Priority Intelligence Requirements rolled forward across long horizons (T+72h → T+1460d) |
-| 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📦 | [Deep Dive: Data Download Manifest](#rm-deep-dive-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
 | 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
@@ -87,9 +87,9 @@ Use this guide to read the article as a political-intelligence product rather th
 | 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
-| 🏷️ | [Audit appendix](#rm-political-classification) | classification, cross-reference, methodology and manifest evidence for reviewers |
+| 🏷️ | [Audit appendix](#rm-deep-dive-political-classification) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
-## Synthesis Summary
+## Why It Matters
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/propositions/synthesis-summary.md -->
 
 <!-- analysis-type: synthesis-summary -->
@@ -1162,7 +1162,7 @@ The government would respond: all three propositions have been in preparation fo
 
 **Assessment**: The steelman is partially valid for HD03250 and HD03261 (both have long legislative histories). For HD03267, the timing/content nexus with SD's election campaign is harder to dismiss.
 
-## Political Classification
+## Deep Dive: Political Classification
 <!-- source: political-classification.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/propositions/political-classification.md -->
 
 <!-- analysis-type: political-classification -->
@@ -1197,7 +1197,7 @@ The government would respond: all three propositions have been in preparation fo
 - Election relevance: HIGH — all three align with Tidö's 2026 electoral positioning
 - Riksdag urgency: HIGH — propositions submitted at end of riksmöte, targeted for adoption before summer recess
 
-## Cross-Reference Map
+## Deep Dive: Cross-Reference Map
 <!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/propositions/cross-reference-map.md -->
 
 <!-- analysis-type: cross-reference-map -->
@@ -1288,7 +1288,7 @@ This analysis establishes baseline positions for:
 - HD03261 Skatteverket: Monitor IMY advisory pipeline and SkU committee amendments
 - HD03250 e-ID: Monitor TU committee hearing schedule and eIDAS 2.0 European Commission communications
 
-## Data Download Manifest
+## Deep Dive: Data Download Manifest
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/propositions/data-download-manifest.md -->
 
 > ℹ️ **Data-Only Pipeline**: This script downloads and persists raw data.

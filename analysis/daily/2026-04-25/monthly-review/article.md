@@ -3,18 +3,17 @@ date: 2026-04-25
 subfolder: monthly-review
 slug: 2026-04-25-monthly-review
 source_folder: analysis/daily/2026-04-25/monthly-review
-generated_at: 2026-05-28T15:56:15.604Z
+generated_at: 2026-05-28T22:29:30.440Z
 language: en
 layout: article
 ---
-## Executive Brief
+## What Happened
 <!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/executive-brief.md -->
 
 ---
 
-### BLUF
-
-Sweden's 30-day legislative window closes with the Kristersson government (M–SD–KD–L) **completing its pre-election regulatory portfolio**. The April 24 committee batch — **HD01JuU10 (new firearms law), HD01JuU31 (police-reform follow-up), HD01SoU25 (elderly-care reinforcement), HD01CU24 (construction-process efficiency)** — clamps the regulatory closure on top of the April 22 fiscal climax (HD01FiU48 fuel-tax relief, M+SD+S+KD supermajority) [riksdagen.se]. Healthcare and crime remain the dominant *electoral* wedges; opposition interpellation traffic (HD10448 wind-power disinformation, HD11747 work-environment subsidies, HD11749 rights-of-detained children, HD11748 consular-protection in Burundi) shows S/V/MP running a **disciplined three-track narrative** while **SD has filed zero counter-motions** against the four April-24 committee reports — a structural-confidence signal that has now persisted for 18 consecutive sitting days.
+### Lede
+Sweden's 30-day legislative window closes with the Kristersson government (M–SD–KD–L) **completing its pre-election regulatory portfolio**. The April 24 committee batch — **HD01JuU10 (new firearms law), HD01JuU31 (police-reform follow-up), HD01SoU25 (elderly-care reinforcement), HD01CU24 (construction-process efficiency)** — clamps the regulatory closure on top of the April 22 fiscal climax (HD01FiU48 fuel-tax relief, M+SD+S+KD supermajority) [riksdagen.se]. Healthcare and crime remain the dominant *electoral* wedges; opposition interpellation traffic (Riksdag document #10448 (HD10448) wind-power disinformation, HD11747 work-environment subsidies, HD11749 rights-of-detained children, HD11748 consular-protection in Burundi) shows S/V/MP running a **disciplined three-track narrative** while **SD has filed zero counter-motions** against the four April-24 committee reports — a structural-confidence signal that has now persisted for 18 consecutive sitting days.
 
 ---
 
@@ -83,9 +82,9 @@ Use this guide to read the article as a political-intelligence product rather th
 
 | Icon | Reader need | What you'll get |
 |---|---|---|
-| 📊 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
-| 🧠 | [Synthesis Summary](#rm-synthesis-summary) | evidence-anchored narrative consolidating primary sources into one coherent story line |
-| 🎯 | [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps |
+| 📊 | [Lede and editorial decisions](#rm-what-happened) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
+| 🧠 | [Why It Matters](#rm-why-it-matters) | evidence-anchored narrative consolidating primary sources into one coherent story line |
+| 🎯 | [Key Judgments](#rm-key-findings) | confidence-bearing political-intelligence conclusions and collection gaps |
 | 📈 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals |
 | 👥 | [Stakeholder Perspectives](#rm-stakeholder-perspectives) | winners, losers and undecided actors with stake-weighted positions and pressure points |
 | 🔢 | [Coalition Mathematics](#rm-coalition-mathematics) | parliamentary arithmetic showing exactly who can pass or block this measure and at what margin |
@@ -101,10 +100,10 @@ Use this guide to read the article as a political-intelligence product rather th
 | ⚙️ | [Implementation Feasibility](#rm-implementation-feasibility) | delivery feasibility, capability gaps, timelines and execution risks for the proposed action |
 | 📰 | [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder |
 | 😈 | [Devil's Advocate](#rm-devils-advocate) | alternative hypotheses, steel-manned counter-arguments and the strongest case against the lead reading |
-| 🏷️ | [Classification Results](#rm-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
-| 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
-| 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
-| 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 🏷️ | [Deep Dive: Classification Results](#rm-deep-dive-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
+| 🔀 | [Deep Dive: Cross-Reference Map](#rm-deep-dive-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
+| 🔬 | [Deep Dive: Methodology & Limitations](#rm-deep-dive-methodology--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
+| 📦 | [Deep Dive: Data Download Manifest](#rm-deep-dive-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
 | 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
@@ -119,9 +118,9 @@ Use this guide to read the article as a political-intelligence product rather th
 | 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
-| 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
+| 🏷️ | [Audit appendix](#rm-deep-dive-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
-## Synthesis Summary
+## Why It Matters
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/synthesis-summary.md -->
 
 **Window**: 2026-03-26 → 2026-04-25 (30 days) · **Riksmöte**: 2025/26
@@ -191,7 +190,7 @@ flowchart TB
 
 ### Confidence statement
 
-Overall analytic confidence is **HIGH (A1)** for the structural picture (delivery complete, opposition wedge taxonomy stable, SD discipline visible). Confidence is **MEDIUM (B2)** for forward-poll dynamics (single-source dependence on Demoskop / SOM-lag) and for the precise *implementation* trajectory of HD01JuU31 (RiR 2026:6 contains 9 open recommendations, none yet closed).
+Overall analytic confidence is **HIGH (A1, high confidence, corroborated by multiple sources)** for the structural picture (delivery complete, opposition wedge taxonomy stable, SD discipline visible). Confidence is **MEDIUM (B2)** for forward-poll dynamics (single-source dependence on Demoskop / SOM-lag) and for the precise *implementation* trajectory of HD01JuU31 (RiR 2026:6 contains 9 open recommendations, none yet closed).
 
 ### Open PIRs carried forward
 
@@ -199,13 +198,12 @@ Overall analytic confidence is **HIGH (A1)** for the structural picture (deliver
 - **PIR-2**: Does HD01JuU31's audit produce a Polismyndigheten reorganisation announcement before 2026-08-31?
 - **PIR-3**: Will SD's zero-counter-motion discipline survive the September manifesto launch window?
 
-## Intelligence Assessment — Key Judgments
+## Key Findings
 <!-- source: intelligence-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/intelligence-assessment.md -->
 
 **Standards**: ICD 203 (Analytic Standards) compliance asserted
 
-### Bottom Line Up Front
-
+### Lede
 Sweden's Tidö coalition (M-SD-KD-L) has, within the 30-day window 2026-03-26 → 2026-04-25, **committed and structurally locked-in** its declared 2025/26 legislative portfolio across all four core domains (fiscal, energy, security/defence, criminal-justice/welfare). The April-24 closure batch (HD01JuU10/JuU31/SoU25/CU24) completes the regulatory ledger. The strategic decision-relevant pivot is from *legislation* to *implementation*, with Polismyndigheten capacity (RiR 2026:6) the most binding constraint and healthcare-financing the most exposed wedge.
 
 ### Key Judgments
@@ -1386,7 +1384,7 @@ The remainder of this brief assumes this finding is **wrong** and tests three co
 1. Reword "delivered" → "committed and structurally locked-in" (H1).
 2. Drop SD-discipline confidence VERY HIGH → HIGH for June–September (H2).
 
-## Classification Results
+## Deep Dive: Classification Results
 <!-- source: classification-results.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/classification-results.md -->
 
 ### 7-dimension classification
@@ -1436,7 +1434,7 @@ flowchart LR
   style V stroke-width:2px
 ```
 
-## Cross-Reference Map
+## Deep Dive: Cross-Reference Map
 <!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/cross-reference-map.md -->
 
 **Mode**: Tier-C aggregation — siblings ingested per `ext/tier-c-aggregation.md`
@@ -1490,7 +1488,7 @@ flowchart LR
 
 This monthly review extends `analysis/daily/2026-04-23/monthly-review/` by 2 calendar days and integrates the 2026-04-24 closure batch. The dominant analytic claim — *the Tidö coalition has completed its declared 2025/26 portfolio with implementation now the binding risk* — is **strengthened** by HD01JuU10/JuU31/SoU25/CU24 evidence and **unaltered** in direction.
 
-## Methodology Reflection & Limitations
+## Deep Dive: Methodology & Limitations
 <!-- source: methodology-reflection.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/methodology-reflection.md -->
 
 **Standards reference**: ICD 203 (Analytic Standards), Heuer & Pherson Structured Analytic Techniques
@@ -1563,7 +1561,7 @@ This monthly review extends `analysis/daily/2026-04-23/monthly-review/` by 2 cal
 - ⚠️ Lookback fallback (1-day) means "monthly" is arithmetic only on siblings; document this explicitly in manifest.
 - ⚠️ One MCP enrichment retry needed.
 
-## Data Download Manifest
+## Deep Dive: Data Download Manifest
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/data-download-manifest.md -->
 
 ### Documents in this aggregation
@@ -1829,8 +1827,7 @@ flowchart TD
 
 ---
 
-### BLUF
-
+### Lede
 La ventana legislativa de 30 días de Suecia se cierra con el gobierno Kristersson (M–SD–KD–L) **completando su cartera regulatoria preelectoral**. El lote de comité del 24 de abril — **HD01JuU10 (nueva ley de armas), HD01JuU31 (seguimiento de reforma policial), HD01SoU25 (refuerzo de atención a mayores), HD01CU24 (eficiencia en procesos de construcción)** — cierra el cierre regulatorio encima del clímax fiscal del 22 de abril (HD01FiU48 reducción de impuesto sobre combustibles, M+SD+S+KD supermayoría) [riksdagen.se]. La sanidad y la criminalidad siguen siendo las cuñas *electorales* dominantes; el tráfico de interpelaciones de la oposición (HD10448 desinformación sobre energía eólica, HD11747 subsidios al trabajo, HD11749 derechos de menores detenidos, HD11748 protección consular en Burundi) muestra a S/V/MP operando una **narrativa disciplinada de tres pistas** mientras **SD ha presentado cero contramociones** contra los cuatro informes de comité del 24 de abril — una señal de confianza estructural que ya persiste durante 18 días de sesión consecutivos.
 
 ---
@@ -1978,8 +1975,7 @@ flowchart TD
 
 ---
 
-### BLUF
-
+### Lede
 La fenêtre législative de 30 jours de la Suède se ferme avec le gouvernement Kristersson (M–SD–KD–L) **complétant son portefeuille réglementaire pré-électoral**. Le lot de commission du 24 avril — **HD01JuU10 (nouvelle loi sur les armes), HD01JuU31 (suivi de la réforme policière), HD01SoU25 (renforcement des soins aux personnes âgées), HD01CU24 (efficacité des processus de construction)** — verrouille la clôture réglementaire au-dessus du climax financier du 22 avril (HD01FiU48 réduction de la taxe sur les carburants, M+SD+S+KD supermajorité) [riksdagen.se]. La santé et la criminalité restent les clivages *électoraux* dominants ; le trafic d'interpellations de l'opposition (HD10448 désinformation sur l'éolien, HD11747 subventions au travail, HD11749 droits des enfants détenus, HD11748 protection consulaire au Burundi) montre S/V/MP opérant un **narratif discipliné à trois pistes** tandis que **SD n'a déposé zéro contre-motion** contre les quatre rapports de commission du 24 avril — un signal de confiance structurelle qui persiste désormais depuis 18 jours de séance consécutifs.
 
 ---
@@ -2281,8 +2277,7 @@ flowchart TD
 
 ---
 
-### BLUF
-
+### Lede
 Het 30-daagse wetgevingsvenster van Zweden sluit terwijl de regering-Kristersson (M–SD–KD–L) haar **pre-verkiezingsregulatorische portefeuille voltooit**. Het comitébatch van 24 april — **HD01JuU10 (nieuwe vuurwapenwet), HD01JuU31 (follow-up politiereform), HD01SoU25 (versterking ouderenzorg), HD01CU24 (efficiëntie bouwprocessen)** — sluit de regulatoire afsluiting bovenop het financiële hoogtepunt van 22 april (HD01FiU48 brandstofbelastingverlichting, M+SD+S+KD supermeerderheid) [riksdagen.se]. Gezondheidszorg en criminaliteit blijven de dominerende *electorale* wiggen; het interpellatie-verkeer van de oppositie (HD10448 windkracht-desinformatie, HD11747 arbeidsmarktsubsidies, HD11749 rechten van gedetineerde kinderen, HD11748 consulaire bescherming in Burundi) toont S/V/MP met een **gedisciplineerd drie-sporen narratief** terwijl **SD nul tegenmotions** heeft ingediend tegen de vier commissierapporten van 24 april — een structureel vertrouwenssignaal dat nu al 18 opeenvolgende vergaderdagen standhoudt.
 
 ---

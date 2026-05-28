@@ -3,15 +3,14 @@ date: 2026-05-06
 subfolder: election-cycle/next
 slug: 2026-05-06-election-cycle/next
 source_folder: analysis/daily/2026-05-06/election-cycle/next
-generated_at: 2026-05-28T15:56:16.371Z
+generated_at: 2026-05-28T22:29:31.307Z
 language: en
 layout: article
 ---
-## Executive Brief
+## What Happened
 <!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-06/election-cycle/next/executive-brief.md -->
 
-### BLUF
-
+### Lede
 The post-2026 election cycle (2026-2030) will be governed by one of two fundamentally different coalitions — Tidö continuation (WEP LIKELY) or Red-Green bloc (WEP UNLIKELY). The 2026-05-06 documents reveal the policy contestation terrain for this next mandate: social insurance reform, SIGINT authority, and foreign policy orientation (Gaza) are the three primary policy battlegrounds between cycles.
 
 ### Three Key Decisions for Next Government
@@ -20,7 +19,7 @@ The post-2026 election cycle (2026-2030) will be governed by one of two fundamen
 
 2. **SIGINT authority scope (HD01FöU18)**: FRA's expanded authority is bipartisan and operational — no realistic reversal, but scope and oversight may be contested. Next government adjustment probability: WEP UNLIKELY [horizon:cycle].
 
-3. **Gaza/Palestine foreign policy orientation (HD10470/HD11789)**: If Red-Green wins, Sweden would likely adopt a more explicitly pro-Palestinian/international law posture. If Tidö continues, current policy stance maintained.
+3. **Gaza/Palestine foreign policy orientation (Riksdag document #10470 (HD10470)/HD11789)**: If Red-Green wins, Sweden would likely adopt a more explicitly pro-Palestinian/international law posture. If Tidö continues, current policy stance maintained.
 
 ### Economic Baseline for 2026-2030
 
@@ -38,9 +37,9 @@ Use this guide to read the article as a political-intelligence product rather th
 
 | Icon | Reader need | What you'll get |
 |---|---|---|
-| 📊 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
-| 🧠 | [Synthesis Summary](#rm-synthesis-summary) | evidence-anchored narrative consolidating primary sources into one coherent story line |
-| 🎯 | [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps |
+| 📊 | [Lede and editorial decisions](#rm-what-happened) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
+| 🧠 | [Why It Matters](#rm-why-it-matters) | evidence-anchored narrative consolidating primary sources into one coherent story line |
+| 🎯 | [Key Judgments](#rm-key-findings) | confidence-bearing political-intelligence conclusions and collection gaps |
 | 📈 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals |
 | 👥 | [Stakeholder Perspectives](#rm-stakeholder-perspectives) | winners, losers and undecided actors with stake-weighted positions and pressure points |
 | 🔢 | [Coalition Mathematics](#rm-coalition-mathematics) | parliamentary arithmetic showing exactly who can pass or block this measure and at what margin |
@@ -61,10 +60,10 @@ Use this guide to read the article as a political-intelligence product rather th
 | ⚙️ | [Implementation Feasibility](#rm-implementation-feasibility) | delivery feasibility, capability gaps, timelines and execution risks for the proposed action |
 | 📰 | [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder |
 | 😈 | [Devil's Advocate](#rm-devils-advocate) | alternative hypotheses, steel-manned counter-arguments and the strongest case against the lead reading |
-| 🏷️ | [Classification Results](#rm-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
-| 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
-| 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
-| 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 🏷️ | [Deep Dive: Classification Results](#rm-deep-dive-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
+| 🔀 | [Deep Dive: Cross-Reference Map](#rm-deep-dive-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
+| 🔬 | [Deep Dive: Methodology & Limitations](#rm-deep-dive-methodology--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
+| 📦 | [Deep Dive: Data Download Manifest](#rm-deep-dive-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
 | 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
@@ -78,9 +77,9 @@ Use this guide to read the article as a political-intelligence product rather th
 | 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
-| 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
+| 🏷️ | [Audit appendix](#rm-deep-dive-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
-## Synthesis Summary
+## Why It Matters
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-06/election-cycle/next/synthesis-summary.md -->
 
 ### Overview
@@ -99,7 +98,7 @@ The 2026-05-06 legislative outputs (HD01CU25, HD01FöU18, HD01SfU21, HD01SfU24) 
 
 > economicProvenance: {provider: "imf", dataflow: "WEO", indicator: "NGDP_RPCH, LUR", vintage: "WEO Apr-2026", retrieved_at: "2026-05-06"}
 
-## Intelligence Assessment — Key Judgments
+## Key Findings
 <!-- source: intelligence-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-06/election-cycle/next/intelligence-assessment.md -->
 
 ### Overview
@@ -574,7 +573,7 @@ IMF WEO Apr-2026 projects Sweden GDP growth recovery to 2.2% (2027) and 2.3% (20
 
 > economicProvenance: {provider: "imf", dataflow: "WEO+FM", indicator: "NGDP_RPCH, LUR, GGXCNL_NGDP", vintage: "WEO Apr-2026", retrieved_at: "2026-05-06"}
 
-## Classification Results
+## Deep Dive: Classification Results
 <!-- source: classification-results.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-06/election-cycle/next/classification-results.md -->
 
 ### Overview
@@ -593,7 +592,7 @@ The 2026-05-06 legislative outputs (HD01CU25, HD01FöU18, HD01SfU21, HD01SfU24) 
 
 > economicProvenance: {provider: "imf", dataflow: "WEO", indicator: "NGDP_RPCH, LUR", vintage: "WEO Apr-2026", retrieved_at: "2026-05-06"}
 
-## Cross-Reference Map
+## Deep Dive: Cross-Reference Map
 <!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-06/election-cycle/next/cross-reference-map.md -->
 
 ### Reference
@@ -613,7 +612,7 @@ IMF WEO Apr-2026 projects Sweden GDP growth recovery to 2.2% (2027) and 2.3% (20
 
 > economicProvenance: {provider: "imf", dataflow: "WEO+FM", indicator: "NGDP_RPCH, LUR, GGXCNL_NGDP", vintage: "WEO Apr-2026", retrieved_at: "2026-05-06"}
 
-## Methodology Reflection & Limitations
+## Deep Dive: Methodology & Limitations
 <!-- source: methodology-reflection.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-06/election-cycle/next/methodology-reflection.md -->
 
 ### Reference
@@ -633,7 +632,7 @@ IMF WEO Apr-2026 projects Sweden GDP growth recovery to 2.2% (2027) and 2.3% (20
 
 > economicProvenance: {provider: "imf", dataflow: "WEO+FM", indicator: "NGDP_RPCH, LUR, GGXCNL_NGDP", vintage: "WEO Apr-2026", retrieved_at: "2026-05-06"}
 
-## Data Download Manifest
+## Deep Dive: Data Download Manifest
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-06/election-cycle/next/data-download-manifest.md -->
 
 ### Document Set for Next-Cycle Analysis
@@ -693,8 +692,7 @@ The `next` cycle analyzes implications of 2026-05-06 documents for the post-Sept
 
 **Dato**: 2026-05-06 | **Cyklus**: Næste | **Horisont**: [horizon:cycle]
 
-### BLUF
-
+### Lede
 Valcyklussen efter 2026 (2026–2030) vil blive styret af en af to fundamentalt forskellige koalitioner — Tidø-fortsættelse (WEP SANDSYNLIG) eller Rød-Grøn-blokken (WEP USANDSYNLIG). Dokumenterne fra 2026-05-06 afslører det politiske kampterræn for næste mandat: social forsikringsreform, SIGINT-myndighed og udenrigspolitisk orientering (Gaza) er de tre primære politiske kamppladser mellem cyklusserne.
 
 ### Tre nøglebeslutninger for næste regering
@@ -722,8 +720,7 @@ Valcyklussen efter 2026 (2026–2030) vil blive styret af en af to fundamentalt 
 
 **Datum**: 2026-05-06 | **Zyklus**: Nächster | **Horizont**: [horizon:cycle]
 
-### BLUF
-
+### Lede
 Der Wahlzyklus nach 2026 (2026–2030) wird von einer von zwei grundlegend verschiedenen Koalitionen regiert — Tidø-Fortsetzung (WEP WAHRSCHEINLICH) oder Rot-Grün-Block (WEP UNWAHRSCHEINLICH). Die Dokumente vom 2026-05-06 enthüllen das politische Wettbewerbsgelände für das nächste Mandat: Sozialversicherungsreform, SIGINT-Befugnis und außenpolitische Ausrichtung (Gaza) sind die drei primären politischen Schlachtfelder zwischen den Zyklen.
 
 ### Drei Schlüsselentscheidungen für die nächste Regierung
@@ -751,8 +748,7 @@ Der Wahlzyklus nach 2026 (2026–2030) wird von einer von zwei grundlegend versc
 
 **Fecha**: 2026-05-06 | **Ciclo**: Próximo | **Horizonte**: [horizon:cycle]
 
-### BLUF
-
+### Lede
 El ciclo electoral post-2026 (2026–2030) será gobernado por una de dos coaliciones fundamentalmente diferentes — continuación de Tidö (WEP PROBABLE) o el bloque Rojo-Verde (WEP IMPROBABLE). Los documentos del 2026-05-06 revelan el terreno de competencia política para el próximo mandato: reforma de seguridad social, autoridad SIGINT y orientación de política exterior (Gaza) son los tres principales campos de batalla políticos entre los ciclos.
 
 ### Tres decisiones clave para el próximo gobierno
@@ -780,8 +776,7 @@ El ciclo electoral post-2026 (2026–2030) será gobernado por una de dos coalic
 
 **Päivämäärä**: 2026-05-06 | **Sykli**: Seuraava | **Horisontti**: [horizon:cycle]
 
-### BLUF
-
+### Lede
 Vuoden 2026 jälkeinen vaalikausi (2026–2030) tullaan hallitsemaan jommankumman kahdesta perustavanlaatuisesti erilaisesta koalitiosta toimesta — Tidö-jatkuminen (WEP TODENNÄKÖINEN) tai punavihreiden blokki (WEP EPÄTODENNÄKÖINEN). Päivämäärän 2026-05-06 asiakirjat paljastavat seuraavan toimikauden poliittisen kilpailun maaston: sosiaalivakuutusuudistus, SIGINT-toimivalta ja ulkopoliittinen suuntautuminen (Gaza) ovat kolme ensisijaista politiikan taistelukenttää syklien välillä.
 
 ### Kolme avainpäätöstä seuraavalle hallitukselle
@@ -807,8 +802,7 @@ Vuoden 2026 jälkeinen vaalikausi (2026–2030) tullaan hallitsemaan jommankumma
 ## Executive Brief Fr
 <!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-06/election-cycle/next/executive-brief_fr.md -->
 
-### BLUF
-
+### Lede
 Le cycle électoral post-2026 (2026–2030) sera gouverné par l'une des deux coalitions fondamentalement différentes — continuation de Tidö (WEP PROBABLE) ou le bloc Rouge-Vert (WEP IMPROBABLE). Les documents du 2026-05-06 révèlent le terrain de compétition politique pour le prochain mandat : réforme de l'assurance sociale, autorité SIGINT et orientation de politique étrangère (Gaza) sont les trois principaux champs de bataille politiques entre les cycles.
 
 ### Trois décisions clés pour le prochain gouvernement
@@ -865,8 +859,7 @@ Le cycle électoral post-2026 (2026–2030) sera gouverné par l'une des deux co
 
 **日付**: 2026年5月6日 | **サイクル**: 次期 | **ホライズン**: [horizon:cycle]
 
-### BLUF
-
+### Lede
 2026年以降の選挙サイクル（2026年～2030年）は、二つの根本的に異なる連立政権のいずれかによって統治される。ティドー継続（WEP 可能性が高い）または赤緑ブロック（WEP 可能性が低い）である。2026年5月6日の文書は、次の任期における政策競争の地形を明らかにする。社会保険改革、SIGINT権限、外交政策の方向性（ガザ）がサイクル間の三つの主要な政策戦場だ。
 
 ### 次期政府のための3つの主要決定事項
@@ -923,8 +916,7 @@ Le cycle électoral post-2026 (2026–2030) sera gouverné par l'une des deux co
 
 **Datum**: 2026-05-06 | **Cyclus**: Volgende | **Horizon**: [horizon:cycle]
 
-### BLUF
-
+### Lede
 De post-2026 verkiezingscyclus (2026–2030) zal worden bestuurd door een van twee fundamenteel verschillende coalities — Tidø-voortzetting (WEP WAARSCHIJNLIJK) of het Rood-Groen-blok (WEP ONWAARSCHIJNLIJK). De documenten van 2026-05-06 onthullen het politieke competitieterrein voor het volgende mandaat: sociale verzekeringshervorming, SIGINT-bevoegdheid en buitenlands-beleid-oriëntatie (Gaza) zijn de drie primaire politieke slagvelden tussen de cycli.
 
 ### Drie sleutelbeslissingen voor de volgende regering
@@ -952,8 +944,7 @@ De post-2026 verkiezingscyclus (2026–2030) zal worden bestuurd door een van tw
 
 **Dato**: 2026-05-06 | **Syklus**: Neste | **Horisont**: [horizon:cycle]
 
-### BLUF
-
+### Lede
 Valgperioden etter 2026 (2026–2030) vil bli styrt av én av to fundamentalt ulike koalisjoner — Tidø-fortsettelse (WEP SANNSYNLIG) eller Rød-Grønn-blokken (WEP USANNSYNLIG). Dokumentene fra 2026-05-06 avslører det politiske kampterrenet for neste mandat: trygdereform, SIGINT-myndighet og utenrikspolitisk orientering (Gaza) er de tre primære politiske slagfeltene mellom syklusene.
 
 ### Tre nøkkelbeslutninger for neste regjering
@@ -981,8 +972,7 @@ Valgperioden etter 2026 (2026–2030) vil bli styrt av én av to fundamentalt ul
 
 **Datum**: 2026-05-06 | **Cykel**: Nästa | **Horisont**: [horizon:cycle]
 
-### BLUF
-
+### Lede
 Valcykeln efter 2026 (2026–2030) kommer att styras av en av två fundamentalt olika koalitioner — Tidö-fortsättning (WEP TROLIG) eller Röd-Grön-blocket (WEP OSANNOLIK). Dokumenten från 2026-05-06 avslöjar terrängen för politisk kamp under nästa mandat: socialförsäkringsreform, SIGINT-befogenhet och utrikespolitisk orientering (Gaza) är de tre primära politiska slagfälten mellan cyklerna.
 
 ### Tre nyckelbeslut för nästa regering

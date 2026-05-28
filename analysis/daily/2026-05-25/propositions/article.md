@@ -3,17 +3,16 @@ date: 2026-05-25
 subfolder: propositions
 slug: 2026-05-25-propositions
 source_folder: analysis/daily/2026-05-25/propositions
-generated_at: 2026-05-28T15:56:17.501Z
+generated_at: 2026-05-28T22:29:32.585Z
 language: en
 layout: article
 ---
-## Executive Brief
+## What Happened
 <!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-25/propositions/executive-brief.md -->
 
-**BLUF**: The Tidö government filed eight propositions in late April–May 2026, forming a coherent pre-election strategy centred on maximum migration restriction, digital state-building, and selective transparency. The migration cluster (HD03267, HD03264, HD03265, HD03263) carries ECHR constitutional risk and will be the decisive electoral battleground. Decision-makers should expect legal challenges, Lagrådet objections, and intense opposition counter-mobilisation over summer 2026.
+**BLUF**: The Tidö government filed eight propositions in late April–May 2026, forming a coherent pre-election strategy centred on maximum migration restriction, digital state-building, and selective transparency. The migration cluster (Riksdag document #03267 (HD03267), HD03264, HD03265, HD03263) carries ECHR constitutional risk and will be the decisive electoral battleground. Decision-makers should expect legal challenges, Lagrådet objections, and intense opposition counter-mobilisation over summer 2026.
 
-### BLUF
-
+### Lede
 Sweden's Tidö coalition (M + KD + L, SD support) has tabled eight propositions establishing a pre-election legislative record on migration tightening, state digital infrastructure, and political transparency. The migration cluster — four bills from Justitiedepartementet — represents the most comprehensive restriction package since 2015. A national state e-ID (Prop. 2025/26:250) expands state digital sovereignty. Transparency legislation (Prop. 2025/26:258) provides reputational counterweight. All eight will be decided before the September 13, 2026 election.
 
 ### Decisions Supported
@@ -68,9 +67,9 @@ Use this guide to read the article as a political-intelligence product rather th
 
 | Icon | Reader need | What you'll get |
 |---|---|---|
-| 📊 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
-| 🧠 | [Synthesis Summary](#rm-synthesis-summary) | evidence-anchored narrative consolidating primary sources into one coherent story line |
-| 🎯 | [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps |
+| 📊 | [Lede and editorial decisions](#rm-what-happened) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
+| 🧠 | [Why It Matters](#rm-why-it-matters) | evidence-anchored narrative consolidating primary sources into one coherent story line |
+| 🎯 | [Key Judgments](#rm-key-findings) | confidence-bearing political-intelligence conclusions and collection gaps |
 | 📈 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals |
 | 👥 | [Stakeholder Perspectives](#rm-stakeholder-perspectives) | winners, losers and undecided actors with stake-weighted positions and pressure points |
 | 🔢 | [Coalition Mathematics](#rm-coalition-mathematics) | parliamentary arithmetic showing exactly who can pass or block this measure and at what margin |
@@ -86,14 +85,14 @@ Use this guide to read the article as a political-intelligence product rather th
 | ⚙️ | [Implementation Feasibility](#rm-implementation-feasibility) | delivery feasibility, capability gaps, timelines and execution risks for the proposed action |
 | 📰 | [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder |
 | 😈 | [Devil's Advocate](#rm-devils-advocate) | alternative hypotheses, steel-manned counter-arguments and the strongest case against the lead reading |
-| 🏷️ | [Classification Results](#rm-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
-| 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
-| 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
-| 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 🏷️ | [Deep Dive: Classification Results](#rm-deep-dive-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
+| 🔀 | [Deep Dive: Cross-Reference Map](#rm-deep-dive-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
+| 🔬 | [Deep Dive: Methodology & Limitations](#rm-deep-dive-methodology--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
+| 📦 | [Deep Dive: Data Download Manifest](#rm-deep-dive-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
-| 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
+| 🏷️ | [Audit appendix](#rm-deep-dive-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
-## Synthesis Summary
+## Why It Matters
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-25/propositions/synthesis-summary.md -->
 
 **Effective document window**: 2026-04-30 to 2026-05-07
@@ -172,7 +171,7 @@ flowchart TD
 
 All documents sourced from data.riksdagen.se via riksdag-regering MCP. Party attributions verified through department/minister signatures. The propositions are signed by Ebba Busch (vice statsminister), Gunnar Strömmer (Justice), Johan Forssell (Migration), and Niklas Wykman (Finance).
 
-## Intelligence Assessment — Key Judgments
+## Key Findings
 <!-- source: intelligence-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-25/propositions/intelligence-assessment.md -->
 
 ---
@@ -1560,7 +1559,7 @@ xychart-beta
 
 **Primary assessment**: H1 at 70% confidence is the best-supported hypothesis. H3 (SD influence) is a complementary sub-hypothesis, not mutually exclusive with H1. H2 and H4 serve as important sanity checks preventing overconfident framing.
 
-## Classification Results
+## Deep Dive: Classification Results
 <!-- source: classification-results.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-25/propositions/classification-results.md -->
 
 ### 7-Dimension Classification
@@ -1669,7 +1668,7 @@ pie title Priority Distribution of 10 Propositions
     style "P2 Standard" fill:#00d9ff
 ```
 
-## Cross-Reference Map
+## Deep Dive: Cross-Reference Map
 <!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-25/propositions/cross-reference-map.md -->
 
 ### Policy Clusters
@@ -1747,7 +1746,7 @@ flowchart LR
     style INT fill:#1a1a1a,color:#888
 ```
 
-## Methodology Reflection & Limitations
+## Deep Dive: Methodology & Limitations
 <!-- source: methodology-reflection.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-25/propositions/methodology-reflection.md -->
 
 ---
@@ -1801,7 +1800,7 @@ Scan for prohibited phrases across all Family A–D artifacts:
 
 ---
 
-## Data Download Manifest
+## Deep Dive: Data Download Manifest
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-25/propositions/data-download-manifest.md -->
 
 > ℹ️ **Data-Only Pipeline**: This script downloads and persists raw data.

@@ -3,11 +3,11 @@ date: 2026-05-28
 subfolder: evening-analysis
 slug: 2026-05-28-evening-analysis
 source_folder: analysis/daily/2026-05-28/evening-analysis
-generated_at: 2026-05-28T19:18:08.301Z
+generated_at: 2026-05-28T22:29:32.783Z
 language: en
 layout: article
 ---
-## Executive Brief
+## What Happened
 <!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-28/evening-analysis/executive-brief.md -->
 
 <!-- artifact: executive-brief | family: A | pass: 2 -->
@@ -17,15 +17,14 @@ layout: article
 
 ---
 
-### BLUF
-
-Sweden ends the parliamentary week of 2026-05-28 with an unusual density of legislative output: three government propositions (incl. Prop. 2025/26:271), one supplementary budget (HD03275), five committee report approvals (HD01FöU15, HD01JuU38, HD01SfU34), and 20 opposition interpellations — all produced within 72 hours. The Tidö coalition (M+SD+KD+L, 176/349 seats) is executing a deliberate sprint to accumulate legislative delivery evidence before the September 2026 election. The opposition (S+V+C+MP, 173 seats) has simultaneously launched the most concentrated accountability offensive of the riksmöte, targeting Labour Minister Johan Britz (L) with six interpellations on unemployment and climate. The intelligence verdict: the Tidö government holds the legislative initiative, but faces compounding exposure on values politics (abortion), civil liberties (biometric surveillance, security-threat deportations), and climate target coherence.
+### Lede
+Sweden ends the parliamentary week of 2026-05-28 with an unusual density of legislative output: three government propositions, one supplementary budget, five committee report approvals, and 20 opposition interpellations — all produced within 72 hours. The Tidö coalition (M+SD+KD+L, 176/349 seats) is executing a deliberate sprint to accumulate legislative delivery evidence before the September 2026 election. The opposition (S+V+C+MP, 173 seats) has simultaneously launched the most concentrated accountability offensive of the riksmöte, targeting Labour Minister Johan Britz (L) with six interpellations on unemployment and climate. The intelligence verdict: the Tidö government holds the legislative initiative, but faces compounding exposure on values politics (abortion), civil liberties (biometric surveillance, security-threat deportations), and climate target coherence.
 
 ---
 
 ### Three Decisions This Brief Supports
 
-1. **Track the abortion reform committee process (HD03271 → SoU)**: SD will attempt amendments (conscience clauses for healthcare workers) during SoU committee phase — any SD demand that the government accommodate will signal whether the Tidö coalition's discipline is cracking under pre-election values pressure.
+1. **Track the abortion reform committee process (Riksdag document #03271 (HD03271) → SoU)**: SD will attempt amendments (conscience clauses for healthcare workers) during SoU committee phase — any SD demand that the government accommodate will signal whether the Tidö coalition's discipline is cracking under pre-election values pressure.
 
 2. **Monitor Britz climate answer deadline (HD10514, 2026-06-12)**: The single highest-stakes policy answer before the summer recess. If Britz abandons the 2030 transport target, the government's climate credibility collapses before the election campaign. Monitor for pre-emptive government statement or strategic delay tactic.
 
@@ -87,9 +86,9 @@ Use this guide to read the article as a political-intelligence product rather th
 
 | Icon | Reader need | What you'll get |
 |---|---|---|
-| 📊 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
-| 🧠 | [Synthesis Summary](#rm-synthesis-summary) | evidence-anchored narrative consolidating primary sources into one coherent story line |
-| 🎯 | [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps |
+| 📊 | [Lede and editorial decisions](#rm-what-happened) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
+| 🧠 | [Why It Matters](#rm-why-it-matters) | evidence-anchored narrative consolidating primary sources into one coherent story line |
+| 🎯 | [Key Judgments](#rm-key-findings) | confidence-bearing political-intelligence conclusions and collection gaps |
 | 📈 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals |
 | 👥 | [Stakeholder Perspectives](#rm-stakeholder-perspectives) | winners, losers and undecided actors with stake-weighted positions and pressure points |
 | 🔢 | [Coalition Mathematics](#rm-coalition-mathematics) | parliamentary arithmetic showing exactly who can pass or block this measure and at what margin |
@@ -105,13 +104,13 @@ Use this guide to read the article as a political-intelligence product rather th
 | ⚙️ | [Implementation Feasibility](#rm-implementation-feasibility) | delivery feasibility, capability gaps, timelines and execution risks for the proposed action |
 | 📰 | [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder |
 | 😈 | [Devil's Advocate](#rm-devils-advocate) | alternative hypotheses, steel-manned counter-arguments and the strongest case against the lead reading |
-| 🏷️ | [Classification Results](#rm-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
-| 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
-| 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
-| 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
-| 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
+| 🏷️ | [Deep Dive: Classification Results](#rm-deep-dive-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
+| 🔀 | [Deep Dive: Cross-Reference Map](#rm-deep-dive-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
+| 🔬 | [Deep Dive: Methodology & Limitations](#rm-deep-dive-methodology--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
+| 📦 | [Deep Dive: Data Download Manifest](#rm-deep-dive-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 🏷️ | [Audit appendix](#rm-deep-dive-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
-## Synthesis Summary
+## Why It Matters
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-28/evening-analysis/synthesis-summary.md -->
 
 <!-- artifact: synthesis-summary | family: A | pass: 2 -->
@@ -213,7 +212,7 @@ New PIRs generated from this week's analysis: See pir-status.json.
 
 *Sources: analysis/daily/2026-05-28/{propositions,motions,committee-reports,interpellations,monthly-review}/synthesis-summary.md | riksdag-regering-mcp | IMF WEO-2026-04 (age: 1 month, not stale)*
 
-## Intelligence Assessment — Key Judgments
+## Key Findings
 <!-- source: intelligence-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-28/evening-analysis/intelligence-assessment.md -->
 
 <!-- artifact: intelligence-assessment | family: A | pass: 2 -->
@@ -1651,7 +1650,7 @@ SfU34 (migration detention governance failure) must be assessed against ECHR jur
 
 *Devil's Advocate analysis: Challenge all institutional conclusions with adversarial framing. Not editorial positions.*
 
-## Classification Results
+## Deep Dive: Classification Results
 <!-- source: classification-results.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-28/evening-analysis/classification-results.md -->
 
 <!-- artifact: classification-results | family: B | pass: 2 -->
@@ -1716,7 +1715,7 @@ All sources are publicly available. No classified, confidential, or restricted g
 
 *Classification authority: Hack23 CLASSIFICATION.md | Review date: 2026-11-28*
 
-## Cross-Reference Map
+## Deep Dive: Cross-Reference Map
 <!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-28/evening-analysis/cross-reference-map.md -->
 
 <!-- artifact: cross-reference-map | family: D | pass: 2 -->
@@ -1813,7 +1812,7 @@ The Tier-C additive gate requires this evening-analysis to:
 
 *Cross-reference map serves as Tier-C additive gate documentation + audit trail for cross-type synthesis compliance.*
 
-## Methodology Reflection & Limitations
+## Deep Dive: Methodology & Limitations
 <!-- source: methodology-reflection.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-28/evening-analysis/methodology-reflection.md -->
 
 <!-- artifact: methodology-reflection | family: B | pass: 2 -->
@@ -1853,7 +1852,7 @@ All 23 artifacts created from sibling analysis synthesis. Key analytical decisio
 2. **PIR management**: 8 prior PIRs reviewed; PIR-01 closed (FöU15 approved); PIR-02 superseded (MP not S reserved on JuU38); PIR-03 confirmed; PIRs 04-08 updated; PIRs 09-13 new
 3. **Tier-C cross-type synthesis**: All five sibling folders incorporated into synthesis-summary.md and cross-reference-map.md
 
-## Data Download Manifest
+## Deep Dive: Data Download Manifest
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-28/evening-analysis/data-download-manifest.md -->
 
 <!-- artifact: data-download-manifest | family: D | pass: 1 -->

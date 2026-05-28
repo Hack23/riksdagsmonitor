@@ -3,17 +3,16 @@ date: 2026-05-22
 subfolder: realtime-monitor
 slug: 2026-05-22-realtime-monitor
 source_folder: analysis/daily/2026-05-22/realtime-monitor
-generated_at: 2026-05-28T15:56:17.441Z
+generated_at: 2026-05-28T22:29:32.523Z
 language: en
 layout: article
 ---
-## Executive Brief
+## What Happened
 <!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/realtime-monitor/executive-brief.md -->
 
 ---
 
-### Decisions This Brief Supports
-
+### Decisions and confidence context
 | Decision | Decision-Maker | Urgency | Recommendation |
 |----------|----------------|:-------:|----------------|
 | Monitor JuU for committee reservations on child-detention (prop. 2025/26:267) | Intelligence analyst / newsroom | T+72h | Activate daily Riksdag calendar monitoring |
@@ -23,9 +22,8 @@ layout: article
 
 ---
 
-### BLUF (Bottom Line Up Front)
-
-Sweden's Riksdag on 22 May 2026 is processing a coordinated late-spring legislative cluster. The **top breaking signal** is MP's civil-liberties challenge (dok_id HD024192) to the government's security-threat foreigners proposition (prop. 2025/26:267), specifically targeting continued child detention. Simultaneously, stricter family reunification conditions (HD01SfU37) advance, and Skatteverket gains expanded population-registration powers (HD024191). The Tidö government is completing its pre-summer legislative agenda under emerging opposition pressure.
+### Lede
+Sweden's Riksdag on 22 May 2026 is processing a coordinated late-spring legislative cluster. The **top breaking signal** is MP's civil-liberties challenge (dok_id Riksdag document #024192 (HD024192)) to the government's security-threat foreigners proposition (prop. 2025/26:267), specifically targeting continued child detention. Simultaneously, stricter family reunification conditions (HD01SfU37) advance, and Skatteverket gains expanded population-registration powers (HD024191). The Tidö government is completing its pre-summer legislative agenda under emerging opposition pressure.
 
 ---
 
@@ -91,9 +89,9 @@ Use this guide to read the article as a political-intelligence product rather th
 
 | Icon | Reader need | What you'll get |
 |---|---|---|
-| 📊 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
-| 🧠 | [Synthesis Summary](#rm-synthesis-summary) | evidence-anchored narrative consolidating primary sources into one coherent story line |
-| 🎯 | [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps |
+| 📊 | [Lede and editorial decisions](#rm-what-happened) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
+| 🧠 | [Why It Matters](#rm-why-it-matters) | evidence-anchored narrative consolidating primary sources into one coherent story line |
+| 🎯 | [Key Judgments](#rm-key-findings) | confidence-bearing political-intelligence conclusions and collection gaps |
 | 📈 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals |
 | 👥 | [Stakeholder Perspectives](#rm-stakeholder-perspectives) | winners, losers and undecided actors with stake-weighted positions and pressure points |
 | 🔢 | [Coalition Mathematics](#rm-coalition-mathematics) | parliamentary arithmetic showing exactly who can pass or block this measure and at what margin |
@@ -109,13 +107,13 @@ Use this guide to read the article as a political-intelligence product rather th
 | ⚙️ | [Implementation Feasibility](#rm-implementation-feasibility) | delivery feasibility, capability gaps, timelines and execution risks for the proposed action |
 | 📰 | [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder |
 | 😈 | [Devil's Advocate](#rm-devils-advocate) | alternative hypotheses, steel-manned counter-arguments and the strongest case against the lead reading |
-| 🏷️ | [Classification Results](#rm-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
-| 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
-| 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
-| 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
-| 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
+| 🏷️ | [Deep Dive: Classification Results](#rm-deep-dive-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
+| 🔀 | [Deep Dive: Cross-Reference Map](#rm-deep-dive-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
+| 🔬 | [Deep Dive: Methodology & Limitations](#rm-deep-dive-methodology--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
+| 📦 | [Deep Dive: Data Download Manifest](#rm-deep-dive-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 🏷️ | [Audit appendix](#rm-deep-dive-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
-## Synthesis Summary
+## Why It Matters
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/realtime-monitor/synthesis-summary.md -->
 
 **Admiralty Rating**: B2 (Reliable source, probably true)  
@@ -175,7 +173,7 @@ CU betänkande on a new consumer credit law reflects EU transposition obligation
 
 ---
 
-## Intelligence Assessment — Key Judgments
+## Key Findings
 <!-- source: intelligence-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/realtime-monitor/intelligence-assessment.md -->
 
 **Admiralty Rating**: B2 (Reliable source, probably true)  
@@ -1537,7 +1535,7 @@ Swedish public broadcaster SVT and SR (Radio Sweden) have editorial balance obli
 | Skatteverket civil-liberties framing | More nuanced | Operational vs. surveillance distinction matters |
 | Scenario D probability | 5% → 3% | Coalition discipline assessment strengthened |
 
-## Classification Results
+## Deep Dive: Classification Results
 <!-- source: classification-results.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/realtime-monitor/classification-results.md -->
 
 ---
@@ -1592,7 +1590,7 @@ All documents analyzed are **public parliamentary records** under Offentlighetsp
 | Party position mapping | MEDIUM-HIGH | Inferred from Tidö agreement + parliamentary record; no formal committee vote yet on these items |
 | GDPR basis | HIGH | Art. 9 framework well-established for parliamentary data |
 
-## Cross-Reference Map
+## Deep Dive: Cross-Reference Map
 <!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/realtime-monitor/cross-reference-map.md -->
 
 ---
@@ -1686,7 +1684,7 @@ graph TD
 | 2026-05-21 | evening-analysis | Prior-day evening analysis — full-day synthesis that today's realtime cluster builds on | analysis/daily/2026-05-21/evening-analysis/ |
 | 2026-05-20 | evening-analysis | 2-day prior evening analysis — cross-cycle pattern validation for Tidö legislative sprint | analysis/daily/2026-05-20/evening-analysis/ |
 
-## Methodology Reflection & Limitations
+## Deep Dive: Methodology & Limitations
 <!-- source: methodology-reflection.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/realtime-monitor/methodology-reflection.md -->
 
 **ICD 203 Standards Self-Assessment**  
@@ -1822,7 +1820,7 @@ Pass 2 read-back completed 2026-05-22T16:30Z (run_id=26299246626, attempt=1). Al
 | implementation-feasibility.md | ✅ |
 | forward-indicators.md | ✅ |
 
-## Data Download Manifest
+## Deep Dive: Data Download Manifest
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/realtime-monitor/data-download-manifest.md -->
 
 **Workflow**: News Realtime Monitor

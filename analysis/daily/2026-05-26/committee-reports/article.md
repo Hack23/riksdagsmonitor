@@ -3,11 +3,11 @@ date: 2026-05-26
 subfolder: committee-reports
 slug: 2026-05-26-committee-reports
 source_folder: analysis/daily/2026-05-26/committee-reports
-generated_at: 2026-05-28T15:56:17.518Z
+generated_at: 2026-05-28T22:29:32.603Z
 language: en
 layout: article
 ---
-## Executive Brief
+## What Happened
 <!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-26/committee-reports/executive-brief.md -->
 
 ---
@@ -56,9 +56,9 @@ Use this guide to read the article as a political-intelligence product rather th
 
 | Icon | Reader need | What you'll get |
 |---|---|---|
-| 📊 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
-| 🧠 | [Synthesis Summary](#rm-synthesis-summary) | evidence-anchored narrative consolidating primary sources into one coherent story line |
-| 🎯 | [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps |
+| 📊 | [Lede and editorial decisions](#rm-what-happened) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
+| 🧠 | [Why It Matters](#rm-why-it-matters) | evidence-anchored narrative consolidating primary sources into one coherent story line |
+| 🎯 | [Key Judgments](#rm-key-findings) | confidence-bearing political-intelligence conclusions and collection gaps |
 | 📈 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals |
 | 👥 | [Stakeholder Perspectives](#rm-stakeholder-perspectives) | winners, losers and undecided actors with stake-weighted positions and pressure points |
 | 🔢 | [Coalition Mathematics](#rm-coalition-mathematics) | parliamentary arithmetic showing exactly who can pass or block this measure and at what margin |
@@ -74,14 +74,14 @@ Use this guide to read the article as a political-intelligence product rather th
 | ⚙️ | [Implementation Feasibility](#rm-implementation-feasibility) | delivery feasibility, capability gaps, timelines and execution risks for the proposed action |
 | 📰 | [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder |
 | 😈 | [Devil's Advocate](#rm-devils-advocate) | alternative hypotheses, steel-manned counter-arguments and the strongest case against the lead reading |
-| 🏷️ | [Classification Results](#rm-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
-| 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
-| 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
-| 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 🏷️ | [Deep Dive: Classification Results](#rm-deep-dive-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
+| 🔀 | [Deep Dive: Cross-Reference Map](#rm-deep-dive-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
+| 🔬 | [Deep Dive: Methodology & Limitations](#rm-deep-dive-methodology--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
+| 📦 | [Deep Dive: Data Download Manifest](#rm-deep-dive-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
-| 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
+| 🏷️ | [Audit appendix](#rm-deep-dive-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
-## Synthesis Summary
+## Why It Matters
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-26/committee-reports/synthesis-summary.md -->
 
 **Sources**: HD01JuU47, HD01JuU48, HD01UU19, HD01UU24 (riksdag-regering-mcp, 2026-05-26)
@@ -100,7 +100,7 @@ The Justice Committee (JuU) presents a betänkande enabling **new police tools t
 
 JuU presents a report on **a wholesale reform of the Swedish sentencing and sanctions system** — the most comprehensive restructuring of the *påföljdssystem* in decades. Scheduled for chamber **decision 13 August 2026** (alongside UU24, SfU37, UbU30). The reform responds to accumulated inconsistencies and the need to align sentencing with the doubled-penalty gang legislation (prop. 2025/26:218).
 
-**Political significance**: VERY HIGH. Opposition motions (including HD024114, S/MP critical of lack of proportionality evidence) indicate contested terrain. A sentencing system overhaul affects every level of prosecution and judiciary.
+**Political significance**: VERY HIGH. Opposition motions (including Riksdag document #024114 (HD024114), S/MP critical of lack of proportionality evidence) indicate contested terrain. A sentencing system overhaul affects every level of prosecution and judiciary.
 
 #### 3. NATO Activities 2025 (HD01UU19 — UU19)
 
@@ -143,7 +143,7 @@ UU presents a betänkande on **establishing a Swedish civilian intelligence serv
 - JuU48 passage with significant debate: **LIKELY** (70-80%)
 - UU24 passage (August recess window may delay): **LIKELY** (65-75%)
 
-## Intelligence Assessment — Key Judgments
+## Key Findings
 <!-- source: intelligence-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-26/committee-reports/intelligence-assessment.md -->
 
 **ICD 203 Standards Applied**: Source reliability, analytical confidence, alternative hypotheses
@@ -1929,7 +1929,7 @@ Historical Swedish intelligence services have been used for domestic political s
 | UU19 | Oversight too thin to be meaningful | MEDIUM-HIGH | Advocate for stronger parliamentary investigation powers |
 | UU24 | Creates risk faster than oversight can contain it | VERY HIGH | Oversight framework must precede or accompany capability creation |
 
-## Classification Results
+## Deep Dive: Classification Results
 <!-- source: classification-results.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-26/committee-reports/classification-results.md -->
 
 ### Document Classification
@@ -1993,7 +1993,7 @@ Historical Swedish intelligence services have been used for domestic political s
 - **Party alignment**: Broad Tidö bloc sponsorship; opposition pressure on rights dimensions
 - **Riksmöte stage**: Late-session acceleration — all four for June/August decisions
 
-## Cross-Reference Map
+## Deep Dive: Cross-Reference Map
 <!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-26/committee-reports/cross-reference-map.md -->
 
 ### Document Relationships
@@ -2071,7 +2071,7 @@ graph LR
 
 **UU prior votes (2025/26)**: Same — no votes indexed. **Prior voteringar: new riksmöte — no votes indexed yet for UU in 2025/26; using UU19 full text and party composition as proxy.**
 
-## Methodology Reflection & Limitations
+## Deep Dive: Methodology & Limitations
 <!-- source: methodology-reflection.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-26/committee-reports/methodology-reflection.md -->
 
 **SAT Techniques Applied**: Listed below with attestation
@@ -2155,7 +2155,7 @@ IMF pre-warm executed. Direct economic context claims are minimal in this analys
 | Prior-voteringar enrichment | 🟡 Partial | New riksmöte — 0 votes indexed |
 | Full-text retrieval | 🟡 Partial | 1/4 published; 3/4 pre-publication |
 
-## Data Download Manifest
+## Deep Dive: Data Download Manifest
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-26/committee-reports/data-download-manifest.md -->
 
 > ℹ️ **Data-Only Pipeline**: This script downloads and persists raw data.

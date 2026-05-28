@@ -3,11 +3,11 @@ date: 2026-04-17
 subfolder: realtime-1434
 slug: 2026-04-17-realtime-1434
 source_folder: analysis/daily/2026-04-17/realtime-1434
-generated_at: 2026-05-28T15:56:15.248Z
+generated_at: 2026-05-28T22:29:30.033Z
 language: en
 layout: article
 ---
-## Executive Brief
+## What Happened
 <!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/executive-brief.md -->
 
 <p align="center">
@@ -25,7 +25,7 @@ layout: article
 
 ### 🧭 BLUF (Bottom Line Up Front)
 
-**Sweden's Konstitutionsutskottet advanced two grundlag amendments (HD01KU32 + HD01KU33) on 2026-04-17 — the first substantive narrowing of *Tryckfrihetsförordningen* (1766) in the digital-evidence domain in years. Because grundlag change requires two identical Riksdag votes spanning a general election, the September 2026 campaign becomes a de-facto referendum on press-freedom transparency.** On the same 24-hour window, FM Maria Malmer Stenergard and PM Ulf Kristersson tabled Sweden's accession to the Special Tribunal for the Crime of Aggression against Ukraine (HD03231) and the International Compensation Commission (HD03232) — the first aggression-crime tribunal since Nuremberg. The cluster reveals a coordinated pre-election legislative sprint across democratic infrastructure, foreign-policy norm entrepreneurship, housing-market integrity, and quality-of-life deregulation. `[HIGH]`
+**Sweden's Konstitutionsutskottet advanced two grundlag amendments (HD01KU32 + HD01KU33) on 2026-04-17 — the first substantive narrowing of *Tryckfrihetsförordningen* (1766) in the digital-evidence domain in years. Because grundlag change requires two identical Riksdag votes spanning a general election, the September 2026 campaign becomes a de-facto referendum on press-freedom transparency.** On the same 24-hour window, FM Maria Malmer Stenergard and PM Ulf Kristersson tabled Sweden's accession to the Special Tribunal for the Crime of Aggression against Ukraine (Riksdag document #03231 (HD03231)) and the International Compensation Commission (HD03232) — the first aggression-crime tribunal since Nuremberg. The cluster reveals a coordinated pre-election legislative sprint across democratic infrastructure, foreign-policy norm entrepreneurship, housing-market integrity, and quality-of-life deregulation. `[HIGH]`
 
 ---
 
@@ -104,8 +104,8 @@ Use this guide to read the article as a political-intelligence product rather th
 
 | Icon | Reader need | What you'll get |
 |---|---|---|
-| 📊 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
-| 🧠 | [Synthesis Summary](#rm-synthesis-summary) | evidence-anchored narrative consolidating primary sources into one coherent story line |
+| 📊 | [Lede and editorial decisions](#rm-what-happened) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
+| 🧠 | [Why It Matters](#rm-why-it-matters) | evidence-anchored narrative consolidating primary sources into one coherent story line |
 | 📈 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals |
 | 👥 | [Stakeholder Perspectives](#rm-stakeholder-perspectives) | winners, losers and undecided actors with stake-weighted positions and pressure points |
 | 🔮 | [Scenarios](#rm-scenario-analysis) | alternative outcomes with probabilities, triggers, and warning signs |
@@ -113,10 +113,10 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🧮 | [SWOT Analysis](#rm-swot-analysis) | strengths, weaknesses, opportunities and threats matrix grounded in primary-source evidence |
 | 🛡️ | [Threat Analysis](#rm-threat-analysis) | actor capabilities, intent and threat vectors targeting institutional integrity |
 | 🌍 | [Comparative International](#rm-comparative-international) | peer-country comparisons (Nordic, EU, OECD) showing how similar measures fared elsewhere |
-| 🏷️ | [Classification Results](#rm-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
-| 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
-| 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
-| 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 🏷️ | [Deep Dive: Classification Results](#rm-deep-dive-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
+| 🔀 | [Deep Dive: Cross-Reference Map](#rm-deep-dive-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
+| 🔬 | [Deep Dive: Methodology & Limitations](#rm-deep-dive-methodology--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
+| 📦 | [Deep Dive: Data Download Manifest](#rm-deep-dive-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
 | 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
@@ -131,9 +131,9 @@ Use this guide to read the article as a political-intelligence product rather th
 | 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
-| 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
+| 🏷️ | [Audit appendix](#rm-deep-dive-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
-## Synthesis Summary
+## Why It Matters
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/synthesis-summary.md -->
 
 | Field | Value |
@@ -2917,7 +2917,7 @@ graph TD
 
 ---
 
-## Classification Results
+## Deep Dive: Classification Results
 <!-- source: classification-results.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/classification-results.md -->
 
 | Field | Value |
@@ -3059,7 +3059,7 @@ Classification **Restricted** (none) would apply to:
 
 ---
 
-## Cross-Reference Map
+## Deep Dive: Cross-Reference Map
 <!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/cross-reference-map.md -->
 
 | Field | Value |
@@ -3238,7 +3238,7 @@ Continuity with adjacent Riksdagsmonitor runs — so subsequent analysts can fin
 
 ---
 
-## Methodology Reflection & Limitations
+## Deep Dive: Methodology & Limitations
 <!-- source: methodology-reflection.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/methodology-reflection.md -->
 
 | Field | Value |
@@ -3453,7 +3453,7 @@ Directory `README.md` provides quality tier, reading order by audience (executiv
 
 ---
 
-## Data Download Manifest
+## Deep Dive: Data Download Manifest
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/data-download-manifest.md -->
 
 | Field | Value |

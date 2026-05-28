@@ -3,11 +3,11 @@ date: 2026-05-11
 subfolder: motions
 slug: 2026-05-11-motions
 source_folder: analysis/daily/2026-05-11/motions
-generated_at: 2026-05-28T15:56:16.802Z
+generated_at: 2026-05-28T22:29:31.772Z
 language: en
 layout: article
 ---
-## Executive Brief
+## What Happened
 <!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/motions/executive-brief.md -->
 
 **ARTICLE_DATE**: 2026-05-11 | **SUBFOLDER**: motions | **Family**: A | **Confidence**: HIGH  
@@ -15,8 +15,7 @@ layout: article
 
 ---
 
-### BLUF (Bottom Line Up Front)
-
+### Lede
 Eight opposition motions filed against two government propositions expose deep cross-party fractures on forestry deregulation and juvenile criminal justice with 125 days to election. On forestry (Prop. 2025/26:242), a five-party opposition — V, S, C, MP each opposing for different ideological reasons, SD seeking targeted modifications — demonstrates that even the government's coalition partner SD conditions its support. On youth offenders (Prop. 2025/26:246), a cross-bloc alliance of V, C, and MP unanimously rejects lowering the criminal liability age to 13, citing child welfare research and the Swedish model of youth rehabilitation. Both files activate core election-year cleavages: environment vs. economic production, and punitive vs. rehabilitative criminal justice.
 
 ---
@@ -52,7 +51,7 @@ Eight opposition motions filed against two government propositions expose deep c
 
 | Claim | Evidence | Retrieved | Confidence |
 |-------|----------|-----------|------------|
-| V rejects forestry prop except appeals | HD024141 (dok_id), paragraph 1 claim | 2026-05-11 | HIGH |
+| V rejects forestry prop except appeals | Riksdag document #024141 (HD024141) (dok_id), paragraph 1 claim | 2026-05-11 | HIGH |
 | MP rejects forestry prop entirely | HD024147 (dok_id), förslag section | 2026-05-11 | HIGH |
 | S demands impact analysis before adoption | HD024144 (dok_id), förslag section | 2026-05-11 | HIGH |
 | C demands production package | HD024145 (dok_id), motivering | 2026-05-11 | HIGH |
@@ -69,9 +68,9 @@ Use this guide to read the article as a political-intelligence product rather th
 
 | Icon | Reader need | What you'll get |
 |---|---|---|
-| 📊 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
-| 🧠 | [Synthesis Summary](#rm-synthesis-summary) | evidence-anchored narrative consolidating primary sources into one coherent story line |
-| 🎯 | [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps |
+| 📊 | [Lede and editorial decisions](#rm-what-happened) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
+| 🧠 | [Why It Matters](#rm-why-it-matters) | evidence-anchored narrative consolidating primary sources into one coherent story line |
+| 🎯 | [Key Judgments](#rm-key-findings) | confidence-bearing political-intelligence conclusions and collection gaps |
 | 📈 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals |
 | 👥 | [Stakeholder Perspectives](#rm-stakeholder-perspectives) | winners, losers and undecided actors with stake-weighted positions and pressure points |
 | 🔢 | [Coalition Mathematics](#rm-coalition-mathematics) | parliamentary arithmetic showing exactly who can pass or block this measure and at what margin |
@@ -87,10 +86,10 @@ Use this guide to read the article as a political-intelligence product rather th
 | ⚙️ | [Implementation Feasibility](#rm-implementation-feasibility) | delivery feasibility, capability gaps, timelines and execution risks for the proposed action |
 | 📰 | [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder |
 | 😈 | [Devil's Advocate](#rm-devils-advocate) | alternative hypotheses, steel-manned counter-arguments and the strongest case against the lead reading |
-| 🏷️ | [Classification Results](#rm-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
-| 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
-| 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
-| 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 🏷️ | [Deep Dive: Classification Results](#rm-deep-dive-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
+| 🔀 | [Deep Dive: Cross-Reference Map](#rm-deep-dive-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
+| 🔬 | [Deep Dive: Methodology & Limitations](#rm-deep-dive-methodology--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
+| 📦 | [Deep Dive: Data Download Manifest](#rm-deep-dive-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
 | 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
@@ -105,9 +104,9 @@ Use this guide to read the article as a political-intelligence product rather th
 | 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
-| 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
+| 🏷️ | [Audit appendix](#rm-deep-dive-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
-## Synthesis Summary
+## Why It Matters
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/motions/synthesis-summary.md -->
 
 **Family**: A | **Confidence**: HIGH | **IMF Vintage**: WEO-2026-04
@@ -187,7 +186,7 @@ Both policy files are election-year positioning exercises. The parties are not p
 | EU Nature Restoration Law cited | HD024147, MP motion | 2026-05-11 | HIGH |
 | S demands consequence analysis | HD024144 förslag | 2026-05-11 | HIGH |
 
-## Intelligence Assessment — Key Judgments
+## Key Findings
 <!-- source: intelligence-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/motions/intelligence-assessment.md -->
 
 **Family**: C | **Confidence**: HIGH | **Format**: ACH (Analysis of Competing Hypotheses)
@@ -1865,7 +1864,7 @@ graph TD
     DA4 --> V4["Verdict: PARTIAL<br/>SD motion is real<br/>V/MP mainly electoral"]
 ```
 
-## Classification Results
+## Deep Dive: Classification Results
 <!-- source: classification-results.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/motions/classification-results.md -->
 
 **Family**: A | **Confidence**: HIGH
@@ -1925,7 +1924,7 @@ quadrantChart
 | MP cites EU Nature Restoration Law | HD024147 motivering: EU-rätt citations | 2026-05-11 | HIGH |
 | SD cites land freedom for biodiversity | HD024143 motivering: biologisk mångfald | 2026-05-11 | HIGH |
 
-## Cross-Reference Map
+## Deep Dive: Cross-Reference Map
 <!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/motions/cross-reference-map.md -->
 
 **Family**: B | **Confidence**: HIGH
@@ -1990,7 +1989,7 @@ graph LR
 | HD024142, HD024146, HD024148 share age-13 rejection | förslag sections | 2026-05-11 | HIGH |
 | No prior voteringar in 2025/26 | riksdag-regering-mcp null result | 2026-05-11 | HIGH |
 
-## Methodology Reflection & Limitations
+## Deep Dive: Methodology & Limitations
 <!-- source: methodology-reflection.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/motions/methodology-reflection.md -->
 
 **Family**: C | **Confidence**: HIGH
@@ -2047,7 +2046,7 @@ All significance scores in this analysis reflect DIW-adjusted values. Raw scores
 | Election date 2026-09-13 | Swedish Valmyndigheten | 2026-05-11 | HIGH |
 | DIW 1.5× multiplier T-125 | analysis/methodologies/ai-driven-analysis-guide.md | 2026-05-11 | HIGH |
 
-## Data Download Manifest
+## Deep Dive: Data Download Manifest
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/motions/data-download-manifest.md -->
 
 **Workflow**: news-motions | **ARTICLE_DATE**: 2026-05-11 | **SUBFOLDER**: motions  

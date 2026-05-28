@@ -3,11 +3,11 @@ date: 2026-05-28
 subfolder: motions
 slug: 2026-05-28-motions
 source_folder: analysis/daily/2026-05-28/motions
-generated_at: 2026-05-28T15:56:17.697Z
+generated_at: 2026-05-28T22:29:32.811Z
 language: en
 layout: article
 ---
-## Executive Brief
+## What Happened
 <!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-28/motions/executive-brief.md -->
 
 **Prepared for:** Editorial and intelligence leadership
@@ -59,7 +59,7 @@ The week's motions reflect Sweden's pre-election political landscape: a governin
 ### Confidence Assessment
 
 - Analysis based on 8 motions directly verified via Riksdag MCP (get_motioner, get_dokument_innehall)
-- Full text retrieved for top 3 priority documents (HD024192, HD024191, HD024188)
+- Full text retrieved for top 3 priority documents (Riksdag document #024192 (HD024192), HD024191, HD024188)
 - Voting predictions based on parliamentary arithmetic + historical pattern analysis
 - No IMF data anomaly affecting Swedish political-economy context
 - **Overall confidence: HIGH**
@@ -72,12 +72,12 @@ Use this guide to read the article as a political-intelligence product rather th
 
 | Icon | Reader need | What you'll get |
 |---|---|---|
-| 📊 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
-| 🧠 | [Synthesis Summary](#rm-synthesis-summary) | evidence-anchored narrative consolidating primary sources into one coherent story line |
+| 📊 | [Lede and editorial decisions](#rm-what-happened) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
+| 🧠 | [Why It Matters](#rm-why-it-matters) | evidence-anchored narrative consolidating primary sources into one coherent story line |
 | ⚠️ | [Risk assessment](#rm-risk-assessment) | policy, electoral, institutional, communications, and implementation risk register |
 | 📜 | [Historical Parallels](#rm-historical-parallels) | comparable past episodes from Swedish and international politics, with explicit lessons learned |
-| 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
-| 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 🔀 | [Deep Dive: Cross-Reference Map](#rm-deep-dive-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
+| 📦 | [Deep Dive: Data Download Manifest](#rm-deep-dive-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
 | 📝 | [Coalition Implications](#rm-coalition-implications) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Committee Signals](#rm-committee-signals) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Election Proximity Analysis](#rm-election-proximity-analysis) | supporting analytical lens with primary-source evidence and audit-traceable citations |
@@ -109,9 +109,9 @@ Use this guide to read the article as a political-intelligence product rather th
 | 📝 | [Stakeholder Mapping](#rm-stakeholder-mapping) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Vote Prediction](#rm-vote-prediction) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
-| 🏷️ | [Audit appendix](#rm-cross-reference-map) | classification, cross-reference, methodology and manifest evidence for reviewers |
+| 🏷️ | [Audit appendix](#rm-deep-dive-cross-reference-map) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
-## Synthesis Summary
+## Why It Matters
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-28/motions/synthesis-summary.md -->
 
 **Election Proximity Multiplier:** 1.5× DIW (108 days to election, 13 Sep 2026)  
@@ -439,7 +439,7 @@ V and MP's 2026 motions (HD024187, HD024191) follow a consistent incremental obj
 | Folkbokföring biometric arc | MEDIUM-HIGH | 3-year escalation pattern confirmed |
 | Pre-election security timing | HIGH | Repeated every electoral cycle |
 
-## Cross-Reference Map
+## Deep Dive: Cross-Reference Map
 <!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-28/motions/cross-reference-map.md -->
 
 ---
@@ -502,7 +502,7 @@ V and MP's 2026 motions (HD024187, HD024191) follow a consistent incremental obj
 - All Props 267, 261, 255 votes must occur BEFORE recess.
 - This creates scheduling pressure: JuU, SkU, FiU must finalise reports by ~15 June.
 
-## Data Download Manifest
+## Deep Dive: Data Download Manifest
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-28/motions/data-download-manifest.md -->
 
 **Workflow**: News: Opposition Motions

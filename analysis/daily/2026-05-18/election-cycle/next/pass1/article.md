@@ -3,15 +3,14 @@ date: 2026-05-18
 subfolder: election-cycle/next/pass1
 slug: 2026-05-18-election-cycle/next/pass1
 source_folder: analysis/daily/2026-05-18/election-cycle/next/pass1
-generated_at: 2026-05-28T15:56:17.200Z
+generated_at: 2026-05-28T22:29:32.224Z
 language: en
 layout: article
 ---
-## Executive Brief
+## What Happened
 <!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-18/election-cycle/next/pass1/executive-brief.md -->
 
-### BLUF (Bottom Line Up Front)
-
+### Lede
 **Even-money** (45–55% [horizon:election]) that the 2026-09-13 Riksdagsval produces a **hung-parliament-style outcome** requiring **> 30 days of coalition formation**. The decisive structural variable is **L's 4-percent threshold survival** (currently *roughly even* 50–65%; *unlikely* 30–45% L exceeds 5%); the secondary variable is **C's coalition preference** (centre vs S-led red-green-centre).
 
 ### Three Cycle-Defining Findings (Forward)
@@ -22,7 +21,7 @@ layout: article
 
 ### Why This Matters Now (May 2026)
 
-- **Late-mandate positioning** by opposition (HD10483 consent law, HD10484 elderly-care, HD10485 prostitution-taxation, HD10486 equal pay, HD01NU21 rural framework) signals campaign-platform construction; *likely* (60–75% [horizon:cycle]) these surface as governing-coalition planks under any C-scenario.
+- **Late-mandate positioning** by opposition (Riksdag document #10483 (HD10483) consent law, HD10484 elderly-care, HD10485 prostitution-taxation, HD10486 equal pay, HD01NU21 rural framework) signals campaign-platform construction; *likely* (60–75% [horizon:cycle]) these surface as governing-coalition planks under any C-scenario.
 - **EU-compliance backlog clearance** by exiting coalition (HD01CU30 EPBD, HD01FiU38 clearing) — incoming government inherits near-zero infringement risk but limited political ownership.
 - **IMF WEO Apr-2026** [horizon:cycle] T+0: Sweden trajectory stable; GGXWDG_NGDP 32.4% (2026) → 34.6% (2030) baseline; downside risk *unlikely* (20–35%) on fiscal-shock scenario.
 
@@ -64,8 +63,8 @@ Use this guide to read the article as a political-intelligence product rather th
 
 | Icon | Reader need | What you'll get |
 |---|---|---|
-| 📊 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
-| 🧠 | [Synthesis Summary](#rm-synthesis-summary) | evidence-anchored narrative consolidating primary sources into one coherent story line |
+| 📊 | [Lede and editorial decisions](#rm-what-happened) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
+| 🧠 | [Why It Matters](#rm-why-it-matters) | evidence-anchored narrative consolidating primary sources into one coherent story line |
 | 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
@@ -81,7 +80,7 @@ Use this guide to read the article as a political-intelligence product rather th
 | 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 🏷️ | [Audit appendix](#rm-article-sources) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
-## Synthesis Summary
+## Why It Matters
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-18/election-cycle/next/pass1/synthesis-summary.md -->
 
 ### 2026-05-18 Daily Refresh — T-118 to next-cycle anchor
