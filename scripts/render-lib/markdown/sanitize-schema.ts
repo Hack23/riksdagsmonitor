@@ -48,6 +48,7 @@ export const HEADING_ID_PREFIX = 'rm-';
  */
 export const sanitizeSchema: typeof defaultSchema = {
   ...defaultSchema,
+  tagNames: [...(defaultSchema.tagNames ?? []), 'abbr'],
   // Drop `id` from the clobber list — heading IDs are already prefixed
   // by `rehypeSlugWithPrefix` via `HEADING_ID_PREFIX`; allowing sanitize
   // to also prefix would produce `rm-rm-…` and break autolink-headings
@@ -71,6 +72,13 @@ export const sanitizeSchema: typeof defaultSchema = {
     a: [...(defaultSchema.attributes?.a ?? []), ['className', 'anchor', 'heading-anchor'], 'ariaHidden', 'tabIndex'],
     span: [...(defaultSchema.attributes?.span ?? []), ['className', 'icon', 'icon-link']],
     div: [...(defaultSchema.attributes?.div ?? []), ['className', 'rm-table-wrap']],
+    abbr: [
+      ...(defaultSchema.attributes?.abbr ?? []),
+      ['className', 'rm-glossary-term'],
+      'title',
+      'tabIndex',
+      'ariaLabel',
+    ],
     h1: [...(defaultSchema.attributes?.h1 ?? []), 'id'],
     h2: [...(defaultSchema.attributes?.h2 ?? []), 'id'],
     h3: [...(defaultSchema.attributes?.h3 ?? []), 'id'],

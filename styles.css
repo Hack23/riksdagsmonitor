@@ -14108,3 +14108,57 @@ html[data-theme="dark"] .card {
     padding-inline: 0.7rem;
   }
 }
+
+.rm-glossary-term {
+  border-bottom: 1px dotted var(--accent, #60a5fa);
+  text-decoration: none;
+  cursor: help;
+}
+
+.rm-political-context {
+  margin: 1.2rem 0;
+  border: 1px solid var(--border, rgba(148, 163, 184, 0.35));
+  border-radius: 12px;
+  background: var(--card-bg, rgba(15, 23, 42, 0.35));
+}
+
+.rm-political-context summary {
+  cursor: pointer;
+  font-weight: 700;
+  padding: 0.85rem 1rem;
+}
+
+.rm-political-context-body {
+  padding: 0 1rem 1rem;
+}
+
+.rm-political-context h2 {
+  margin: 0.3rem 0 0.9rem;
+  font-size: 1.15rem;
+}
+
+.rm-political-context h3 {
+  margin: 0.85rem 0 0.4rem;
+  font-size: 1rem;
+}
+
+.rm-political-context ul {
+  margin: 0.2rem 0 0.7rem 1.2rem;
+}
+
+.rm-political-context-actors {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.rm-political-context-actors li {
+  margin-bottom: 0.45rem;
+}
+
+.rm-political-context-meta {
+  display: block;
+  opacity: 0.9;
+  font-size: 0.92rem;
+  margin-top: 0.15rem;
+}

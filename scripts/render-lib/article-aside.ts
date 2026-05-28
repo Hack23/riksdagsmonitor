@@ -47,6 +47,7 @@ import { readerGuideI18n } from './aggregator/reader-guide-i18n.js';
 import { readerValueFor } from './aggregator/reader-guide-descriptions-i18n.js';
 import { READER_GUIDE_ENTRIES, anchorForTitle, auditAnchorForArtifacts, hasPerDocumentAnalyses, selectReaderGuideArtifacts } from './aggregator/reader-guide.js';
 import { titleForArtifact } from './aggregator/order.js';
+import { buildPoliticalContextModel } from './political-context.js';
 
 // ─────────────────────────────────────────────────────────────────────────
 // Reader navigation (compact localised table)
@@ -265,4 +266,52 @@ export function renderMethodsReference(input: MethodsReferenceInput): string {
         </div>
         <p class="rm-reader-guide-cta"><a href="${prefix}${piFile}"><span class="rm-icon" aria-hidden="true">📚</span> ${escapeHtml(t.articleReaderGuideMoreMethodologies)}</a></p>
       </section>`;
+}
+
+// ─────────────────────────────────────────────────────────────────────────
+// Political context (collapsible onboarding block)
+// ─────────────────────────────────────────────────────────────────────────
+
+export interface PoliticalContextInput {
+  readonly lang: Language;
+  readonly markdown: string;
+}
+
+export function renderPoliticalContext(input: PoliticalContextInput): string {
+  const model = buildPoliticalContextModel(input.markdown, input.lang);
+
+  const partyCards = model.partyCards
+    .map((p) => `          <li><strong>${escapeHtml(p.abbreviation)}</strong> ${escapeHtml(p.name)} — ${escapeHtml(p.description)} <span class="rm-political-context-meta">Seats: ${p.seats}/349 | Position: ${escapeHtml(p.position)} | Government role: ${escapeHtml(p.governmentRole)}</span></li>`)
+    .join('\n');
+
+  const comparisons = model.comparativeAnchors
+    .slice(0, 3)
+    .map((item) => `          <li>${escapeHtml(item)}</li>`)
+    .join('\n');
+
+  return `
+      <details class="rm-political-context" open>
+        <summary aria-label="${escapeHtml(model.labels.summary)}">${escapeHtml(model.labels.summary)}</summary>
+        <div class="rm-political-context-body">
+          <h2>${escapeHtml(model.labels.heading)}</h2>
+          <h3>${escapeHtml(model.labels.govHeading)}</h3>
+          <p>${escapeHtml(model.governmentComposition)}</p>
+          <h3>${escapeHtml(model.labels.spectrumHeading)}</h3>
+          <ul>
+${model.spectrum.map((item) => `            <li>${escapeHtml(item)}</li>`).join('\n')}
+          </ul>
+          <h3>${escapeHtml(model.labels.institutionsHeading)}</h3>
+          <ul>
+${model.institutions.map((item) => `            <li>${escapeHtml(item)}</li>`).join('\n')}
+          </ul>
+${comparisons.length > 0 ? `          <h3>${escapeHtml(model.labels.comparisonsHeading)}</h3>
+          <ul>
+${comparisons}
+          </ul>` : ''}
+${partyCards.length > 0 ? `          <h3>${escapeHtml(model.labels.actorsHeading)}</h3>
+          <ul class="rm-political-context-actors">
+${partyCards}
+          </ul>` : ''}
+        </div>
+      </details>`;
 }

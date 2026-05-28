@@ -1,0 +1,155 @@
+{
+  "version": 1,
+  "contextDepthByLanguage": {
+    "sv": "minimal",
+    "en": "medium",
+    "da": "medium",
+    "no": "medium",
+    "fi": "medium",
+    "de": "medium",
+    "fr": "medium",
+    "es": "medium",
+    "nl": "medium",
+    "ar": "maximum",
+    "he": "maximum",
+    "ja": "maximum",
+    "ko": "maximum",
+    "zh": "maximum"
+  },
+  "parties": {
+    "SD": {
+      "name": "Sweden Democrats",
+      "description": "Right-wing populist party, government support partner.",
+      "seats": 73,
+      "position": "Right",
+      "governmentRole": "Support party"
+    },
+    "KD": {
+      "name": "Christian Democrats",
+      "description": "Conservative Christian democratic party in government.",
+      "seats": 19,
+      "position": "Centre-right",
+      "governmentRole": "Coalition party"
+    },
+    "M": {
+      "name": "Moderates",
+      "description": "Liberal-conservative party leading the current government.",
+      "seats": 68,
+      "position": "Centre-right",
+      "governmentRole": "Prime minister party"
+    },
+    "L": {
+      "name": "Liberals",
+      "description": "Social-liberal party and junior coalition member.",
+      "seats": 16,
+      "position": "Centre",
+      "governmentRole": "Coalition party"
+    },
+    "S": {
+      "name": "Social Democrats",
+      "description": "Main centre-left opposition party and largest party by seats.",
+      "seats": 107,
+      "position": "Centre-left",
+      "governmentRole": "Opposition"
+    },
+    "V": {
+      "name": "Left Party",
+      "description": "Democratic socialist opposition party.",
+      "seats": 24,
+      "position": "Left",
+      "governmentRole": "Opposition"
+    },
+    "MP": {
+      "name": "Green Party",
+      "description": "Environmental and progressive opposition party.",
+      "seats": 18,
+      "position": "Centre-left",
+      "governmentRole": "Opposition"
+    },
+    "C": {
+      "name": "Centre Party",
+      "description": "Liberal agrarian party, currently outside government.",
+      "seats": 24,
+      "position": "Centre",
+      "governmentRole": "Opposition"
+    }
+  },
+  "terms": {
+    "riksmöte": {
+      "label": "riksmöte",
+      "definition": "Parliamentary session year in Sweden (roughly equivalent to a UK parliamentary session)."
+    },
+    "betänkande": {
+      "label": "betänkande",
+      "definition": "Committee report to parliament, similar to a UK select committee report before chamber decision."
+    },
+    "proposition": {
+      "label": "proposition",
+      "definition": "Government bill submitted to the Riksdag for debate and vote."
+    },
+    "motion": {
+      "label": "motion",
+      "definition": "Legislative proposal introduced by MPs or party groups."
+    },
+    "utskott": {
+      "label": "utskott",
+      "definition": "Parliamentary committee that prepares bills and oversight reports."
+    },
+    "Tidökoalition": {
+      "label": "Tidökoalition",
+      "definition": "Informal label for the governing bloc under the Tidö Agreement (M, KD, L with SD support)."
+    },
+    "A2": {
+      "label": "A2",
+      "definition": "Admiralty reliability code: source is judged usually reliable; information is probably true."
+    },
+    "B3": {
+      "label": "B3",
+      "definition": "Admiralty reliability code: source is mostly reliable; information is possibly true."
+    }
+  },
+  "institutions": [
+    "Riksdag — Sweden's parliament (349 seats), comparable in role to Germany's Bundestag.",
+    "Regeringen — Sweden's executive government led by the Prime Minister.",
+    "Utskott — standing committees that examine bills before plenary votes."
+  ],
+  "comparativeAnchors": [
+    "Riksdag: Sweden's national parliament, similar to Germany's Bundestag or Japan's Diet lower house.",
+    "Betänkande: committee report stage, comparable to UK select-committee reporting before floor debate.",
+    "Riksmöte: annual parliamentary session cycle, similar to a legislative term year in many democracies."
+  ],
+  "componentLabels": {
+    "en": {
+      "heading": "Understanding Swedish Politics",
+      "summary": "Political Context",
+      "govHeading": "Government composition",
+      "spectrumHeading": "Political spectrum",
+      "institutionsHeading": "Key institutions",
+      "comparisonsHeading": "International comparison anchors",
+      "actorsHeading": "Political actors"
+    },
+    "sv": {
+      "heading": "Så fungerar svensk politik",
+      "summary": "Politisk kontext",
+      "govHeading": "Regeringsunderlag",
+      "spectrumHeading": "Politisk skala",
+      "institutionsHeading": "Nyckelinstitutioner",
+      "comparisonsHeading": "Internationella jämförelser",
+      "actorsHeading": "Politiska aktörer"
+    },
+    "da": { "heading": "Forstå svensk politik", "summary": "Politisk kontekst", "govHeading": "Regeringssammensætning", "spectrumHeading": "Politisk spektrum", "institutionsHeading": "Nøgleinstitutioner", "comparisonsHeading": "Internationale sammenligninger", "actorsHeading": "Politiske aktører" },
+    "no": { "heading": "Forstå svensk politikk", "summary": "Politisk kontekst", "govHeading": "Regjeringssammensetning", "spectrumHeading": "Politisk spekter", "institutionsHeading": "Nøkkelinstitusjoner", "comparisonsHeading": "Internasjonale sammenligninger", "actorsHeading": "Politiske aktører" },
+    "fi": { "heading": "Ymmärrä Ruotsin politiikkaa", "summary": "Poliittinen konteksti", "govHeading": "Hallituskokoonpano", "spectrumHeading": "Poliittinen kenttä", "institutionsHeading": "Keskeiset instituutiot", "comparisonsHeading": "Kansainväliset vertailut", "actorsHeading": "Poliittiset toimijat" },
+    "de": { "heading": "Schwedische Politik verstehen", "summary": "Politischer Kontext", "govHeading": "Regierungszusammensetzung", "spectrumHeading": "Politisches Spektrum", "institutionsHeading": "Schlüsselinstitutionen", "comparisonsHeading": "Internationale Vergleichsanker", "actorsHeading": "Politische Akteure" },
+    "fr": { "heading": "Comprendre la politique suédoise", "summary": "Contexte politique", "govHeading": "Composition du gouvernement", "spectrumHeading": "Spectre politique", "institutionsHeading": "Institutions clés", "comparisonsHeading": "Repères comparatifs internationaux", "actorsHeading": "Acteurs politiques" },
+    "es": { "heading": "Entender la política sueca", "summary": "Contexto político", "govHeading": "Composición del gobierno", "spectrumHeading": "Espectro político", "institutionsHeading": "Instituciones clave", "comparisonsHeading": "Anclajes comparativos internacionales", "actorsHeading": "Actores políticos" },
+    "nl": { "heading": "Zweedse politiek begrijpen", "summary": "Politieke context", "govHeading": "Regeringssamenstelling", "spectrumHeading": "Politiek spectrum", "institutionsHeading": "Belangrijke instellingen", "comparisonsHeading": "Internationale vergelijkingsankers", "actorsHeading": "Politieke actoren" },
+    "ar": { "heading": "فهم السياسة السويدية", "summary": "السياق السياسي", "govHeading": "تكوين الحكومة", "spectrumHeading": "الطيف السياسي", "institutionsHeading": "المؤسسات الرئيسية", "comparisonsHeading": "مراجع المقارنة الدولية", "actorsHeading": "الجهات السياسية" },
+    "he": { "heading": "הבנת הפוליטיקה השוודית", "summary": "הקשר פוליטי", "govHeading": "הרכב הממשלה", "spectrumHeading": "מפה פוליטית", "institutionsHeading": "מוסדות מרכזיים", "comparisonsHeading": "עוגני השוואה בינלאומיים", "actorsHeading": "שחקנים פוליטיים" },
+    "ja": { "heading": "スウェーデン政治を理解する", "summary": "政治コンテキスト", "govHeading": "政権構成", "spectrumHeading": "政治スペクトラム", "institutionsHeading": "主要機関", "comparisonsHeading": "国際比較アンカー", "actorsHeading": "政治アクター" },
+    "ko": { "heading": "스웨덴 정치 이해하기", "summary": "정치 맥락", "govHeading": "정부 구성", "spectrumHeading": "정치 스펙트럼", "institutionsHeading": "핵심 기관", "comparisonsHeading": "국제 비교 앵커", "actorsHeading": "정치 행위자" },
+    "zh": { "heading": "理解瑞典政治", "summary": "政治背景", "govHeading": "政府构成", "spectrumHeading": "政治光谱", "institutionsHeading": "关键机构", "comparisonsHeading": "国际比较锚点", "actorsHeading": "政治行为体" }
+  },
+  "spectrum": ["Left: V", "Centre-left: S, MP", "Centre: C, L", "Centre-right: KD, M", "Right: SD"],
+  "governmentComposition": "Current governing arrangement: M + KD + L coalition with SD support (Tidö Agreement)."
+}
