@@ -27,7 +27,7 @@ describe('article-aside — renderReaderNavigation', () => {
     // Localised artifact labels surface as anchor link text — the
     // legacy <code>filename</code> column is removed, audit-grade
     // traceability lives in the Analysis Sources card grid instead.
-    expect(html).toContain('BLUF and editorial decisions');
+    expect(html).toContain('Lede and editorial decisions');
     expect(html).toContain('Risk assessment');
     expect(html).not.toContain('<code>executive-brief.md</code>');
     expect(html).not.toContain('<code>risk-assessment.md</code>');
@@ -39,7 +39,7 @@ describe('article-aside — renderReaderNavigation', () => {
     expect(html).toContain('📊'); // executive-brief icon
     expect(html).toContain('⚠️'); // risk-assessment icon
     // Always-present audit appendix row.
-    expect(html).toContain('rm-classification-results');
+    expect(html).toContain('rm-deep-dive-classification-results');
     // The methodology cards must NOT be in the navigation table — they
     // belong to the methods-reference block at the article foot.
     expect(html).not.toContain('rm-reader-guide-grid');
@@ -89,8 +89,8 @@ describe('article-aside — renderReaderNavigation', () => {
       lang: 'en',
       artifactsUsed: ['executive-brief.md', 'political-classification.md'],
     });
-    expect(html).toContain('href="#rm-political-classification"');
-    expect(html).not.toContain('href="#rm-classification-results"');
+    expect(html).toContain('href="#rm-deep-dive-political-classification"');
+    expect(html).not.toContain('href="#rm-deep-dive-classification-results"');
   });
 
   it('renders rows for ALL analysis artifacts, not just the curated lenses', () => {
@@ -106,7 +106,7 @@ describe('article-aside — renderReaderNavigation', () => {
         'wildcards-blackswans.md',
       ],
     });
-    expect(html).toContain('BLUF and editorial decisions');
+    expect(html).toContain('Lede and editorial decisions');
     // Non-curated artifacts (not in the per-language ENTRIES blocks)
     // now resolve their description from the centralised
     // READER_VALUE_I18N map, so every row carries a unique reader-
@@ -151,7 +151,7 @@ describe('article-aside — renderReaderNavigation', () => {
     expect(html).not.toMatch(/href="#rm-pir-status"/);
     expect(html).not.toMatch(/href="#rm-economic-data"/);
     // Curated lens still renders.
-    expect(html).toContain('BLUF and editorial decisions');
+    expect(html).toContain('Lede and editorial decisions');
   });
 
   it('de-duplicates filename-variant alias groups (election-2026-analysis vs election-cycle-analysis)', () => {

@@ -73,7 +73,9 @@ import {
   renderReaderNavigation,
   renderAnalysisArtifactsReference,
   renderMethodsReference,
+  renderPoliticalContext,
 } from './article-aside.js';
+import { enrichArticleMarkdownWithPoliticalContext } from './political-context.js';
 import { applyScannabilityTransforms, transformProgressiveDisclosure } from './article-scannability.js';
 
 /**
@@ -544,8 +546,10 @@ export async function renderArticleHtml(input: RenderArticleInput): Promise<stri
 
   const cleanedContent = stripBodyDuplicateSections(parsed.content);
 
+  const enrichedContent = enrichArticleMarkdownWithPoliticalContext(cleanedContent, input.lang);
+
   const bodyHtml = rewriteMarkdownHrefsInHtml(
-    await renderMarkdownToHtml(cleanedContent),
+    await renderMarkdownToHtml(enrichedContent),
     input.subfolderRepoRelPath,
   );
 
@@ -617,6 +621,10 @@ export async function renderArticleHtml(input: RenderArticleInput): Promise<stri
     lang: input.lang,
     artifactsUsed: artifacts,
   });
+  const politicalContextHtml = renderPoliticalContext({
+    lang: input.lang,
+    markdown: enrichedContent,
+  });
   const analysisArtifactsHtml = renderAnalysisArtifactsReference({
     lang: input.lang,
     artifactsUsed: artifacts,
@@ -648,7 +656,7 @@ ${tocHtml}
         <div class="rm-article-body">
 ${leadHtml}
         </div>
-${readerNavigationHtml}${restHtml ? `
+${readerNavigationHtml}${politicalContextHtml}${restHtml ? `
         <div class="rm-article-body rm-article-body-rest">
 ${restHtml}
         </div>` : ''}
