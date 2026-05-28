@@ -151,8 +151,8 @@ export function aliasGroupFor(file: string): ReadonlySet<string> | null {
  * {@link prettifyFallbackTitle}.
  */
 const SECTION_TITLES: Record<string, string> = {
-  'executive-brief.md': 'Executive Brief',
-  'synthesis-summary.md': 'Synthesis Summary',
+  'executive-brief.md': 'What Happened',
+  'synthesis-summary.md': 'Why It Matters',
   'significance-scoring.md': 'Significance Scoring',
   'stakeholder-perspectives.md': 'Stakeholder Perspectives',
   'stakeholder-impact.md': 'Stakeholder Perspectives',
@@ -178,12 +178,12 @@ const SECTION_TITLES: Record<string, string> = {
   'media-framing-analysis.md': 'Media Framing Analysis',
   'implementation-feasibility.md': 'Implementation Feasibility',
   'devils-advocate.md': "Devil's Advocate",
-  'intelligence-assessment.md': 'Intelligence Assessment — Key Judgments',
-  'classification-results.md': 'Classification Results',
-  'political-classification.md': 'Political Classification',
-  'cross-reference-map.md': 'Cross-Reference Map',
-  'methodology-reflection.md': 'Methodology Reflection & Limitations',
-  'data-download-manifest.md': 'Data Download Manifest',
+  'intelligence-assessment.md': 'Key Findings',
+  'classification-results.md': 'Deep Dive: Classification Results',
+  'political-classification.md': 'Deep Dive: Political Classification',
+  'cross-reference-map.md': 'Deep Dive: Cross-Reference Map',
+  'methodology-reflection.md': 'Deep Dive: Methodology & Limitations',
+  'data-download-manifest.md': 'Deep Dive: Data Download Manifest',
 };
 
 /**

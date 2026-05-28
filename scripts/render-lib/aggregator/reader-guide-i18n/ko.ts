@@ -32,7 +32,7 @@ export const CHROME: ReaderGuideChrome = {
 
 export const ENTRIES: Record<string, ReaderGuideEntryI18n> = {
   'executive-brief.md': {
-    label: 'BLUF 및 편집 결정',
+    label: '리드 문단 및 편집 결정',
     readerValue: '무엇이 일어났는지, 왜 중요한지, 누가 책임이 있는지, 다음 날짜 지정 트리거에 대한 빠른 답변',
   },
   'intelligence-assessment.md': {

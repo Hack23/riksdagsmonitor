@@ -546,9 +546,9 @@ describe('render-lib — aggregateAnalysis (integration)', () => {
     // the reader), then the Reader Intelligence Guide routes them into the
     // deeper lenses, then synthesis → intelligence-assessment must follow.
     const guidePos = result.markdown.indexOf('## Reader Intelligence Guide');
-    const execPos = result.markdown.indexOf('## Executive Brief');
-    const synthPos = result.markdown.indexOf('## Synthesis Summary');
-    const kjPos = result.markdown.indexOf('## Intelligence Assessment');
+    const execPos = result.markdown.indexOf('## What Happened');
+    const synthPos = result.markdown.indexOf('## Why It Matters');
+    const kjPos = result.markdown.indexOf('## Key Findings');
     expect(execPos).toBeGreaterThan(-1);
     expect(guidePos).toBeGreaterThan(execPos);
     expect(synthPos).toBeGreaterThan(guidePos);
@@ -579,6 +579,41 @@ describe('render-lib — aggregateAnalysis (integration)', () => {
     expect(result.artifactsUsed).not.toContain('article.sv.md');
   });
 
+  it('normalizes BLUF framing and adds first-use confidence/doc-id context in aggregated output', () => {
+    const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'rm-render-narrative-'));
+    const sub = path.join(tmp, '2099-01-01', 'narrative');
+    fs.mkdirSync(sub, { recursive: true });
+    fs.writeFileSync(
+      path.join(sub, 'executive-brief.md'),
+      [
+        '# Parliamentary update',
+        '',
+        '## 🎯 BLUF (Bottom Line Up Front)',
+        '',
+        'The coalition moved three migration measures into fast-track committee handling.',
+        '',
+        '## Decisions This Brief Supports',
+        '',
+        '- **HIGH (B2)** confidence on HD03271 passage timing.',
+        '- **MEDIUM (C2)** confidence on implementation sequencing.',
+      ].join('\n'),
+    );
+    fs.writeFileSync(path.join(sub, 'synthesis-summary.md'), '# S\n\nSynthesis body.\n');
+
+    const result = aggregateAnalysis({
+      subfolderAbsPath: sub,
+      subfolderRepoRelPath: 'analysis/daily/2099-01-01/narrative',
+      date: '2099-01-01',
+      subfolder: 'narrative',
+    });
+
+    expect(result.markdown).toContain('### Lede');
+    expect(result.markdown).toContain('### Decisions and confidence context');
+    expect(result.markdown).toContain('HIGH (B2, high confidence, corroborated by multiple sources)');
+    expect(result.markdown).toContain('Riksdag document #03271 (HD03271)');
+    expect(result.markdown).not.toContain('BLUF (Bottom Line Up Front)');
+  });
+
   it('Reader Guide is built from emitted artifacts — a file cleaned to empty is NOT linked', () => {
     // Regression test: reader guide must only link headings that actually
     // get emitted. Previously it was built from rootArtifactSet (files on
@@ -605,11 +640,11 @@ describe('render-lib — aggregateAnalysis (integration)', () => {
       subfolder: 'guide-emitted',
     });
     // synthesis-summary survived cleaning → appears in guide
-    expect(result.markdown).toContain('[Synthesis Summary]');
+    expect(result.markdown).toContain('[Why It Matters]');
     // intelligence-assessment was cleaned to empty → must NOT appear in guide
-    expect(result.markdown).not.toContain('[Intelligence Assessment]');
+    expect(result.markdown).not.toContain('[Key Findings]');
     // The section itself is also absent from the body
-    expect(result.markdown).not.toContain('## Intelligence Assessment');
+    expect(result.markdown).not.toContain('## Key Findings');
   });
 });
 
@@ -796,13 +831,13 @@ describe('render-lib — constants + URL helpers', () => {
 describe('render-lib — titleForArtifact', () => {
   it('returns the curated title for every known canonical artifact', () => {
     const known = [
-      ['executive-brief.md', 'Executive Brief'],
-      ['synthesis-summary.md', 'Synthesis Summary'],
-      ['intelligence-assessment.md', 'Intelligence Assessment — Key Judgments'],
+      ['executive-brief.md', 'What Happened'],
+      ['synthesis-summary.md', 'Why It Matters'],
+      ['intelligence-assessment.md', 'Key Findings'],
       ['risk-assessment.md', 'Risk Assessment'],
       ['devils-advocate.md', "Devil's Advocate"],
-      ['data-download-manifest.md', 'Data Download Manifest'],
-      ['methodology-reflection.md', 'Methodology Reflection & Limitations'],
+      ['data-download-manifest.md', 'Deep Dive: Data Download Manifest'],
+      ['methodology-reflection.md', 'Deep Dive: Methodology & Limitations'],
     ] as const;
     for (const [file, expected] of known) {
       expect(titleForArtifact(file)).toBe(expected);
