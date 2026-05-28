@@ -31,9 +31,12 @@ jobs:
   build:
     name: Build for Homepage Tests
     runs-on: ubuntu-latest
-    # Bumped from 10 → 15 after observing ~9m45s build times getting
-    # cancelled at the 10-min cap on busier runners (see run #26052744369).
-    timeout-minutes: 15
+    # Bumped 10 → 15 after observing ~9m45s build times getting cancelled at
+    # the 10-min cap on busier runners (see run #26052744369), then 15 → 20 as
+    # the news corpus kept growing (main was already ~11m25s on 2026-05-23 and
+    # newer daily-news re-renders pushed full 14-language builds past the 15-min
+    # cap, e.g. run #26598575902 cancelled at 13m48s).
+    timeout-minutes: 20
     
     steps:
       - name: Harden Runner
