@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.0",
+  "generated": "2026-05-28T08:00:00Z",
+  "article_date": "2026-05-28",
+  "subfolder": "interpellations",
+  "priority_intelligence_requirements": [
+    {
+      "pir_id": "PIR-IP-2026-001",
+      "title": "Labour Market Deterioration and Government Response",
+      "description": "Multiple S interpellations against Arbetsmarknadsminister Britz (L) challenging the government's handling of rising unemployment (100,000+ increase) and Sweden's elevated youth unemployment (among EU's highest).",
+      "status": "active",
+      "horizon": "T+30d",
+      "collection_notes": "HD10519 (Östergötland unemployment), HD10519 related motions; answer deadline 2026-06-10. Election proximity elevates urgency — unemployment is a defining battleground for September 2026.",
+      "trigger_for_follow_up": "Government response to interpellation or Britz comment on unemployment statistics"
+    },
+    {
+      "pir_id": "PIR-IP-2026-002",
+      "title": "2030 Climate Targets and Transport Goal Crisis",
+      "description": "Åsa Westlund (S) and Jytte Guteland (S) challenge the government on status of transport target to 2030 after previous climate minister Pourmokhtari signalled intent to abandon it. Johan Britz now acting climate minister.",
+      "status": "active",
+      "horizon": "T+14d",
+      "collection_notes": "HD10514 answer deadline 2026-06-12. Key indicator: will government confirm or disavow transport target?",
+      "trigger_for_follow_up": "Any government statement or proposition on 2030 climate targets"
+    },
+    {
+      "pir_id": "PIR-IP-2026-003",
+      "title": "Healthcare System Stress — Hospitals, Elderly Care, Dental Coverage",
+      "description": "Multiple interpellations challenge government on healthcare cuts: Köpings sjukhus closure risk, dental care rollback for 20-23 year olds, elderly care funding shortfalls, LOV in primary care.",
+      "status": "active",
+      "horizon": "T+30d",
+      "collection_notes": "HD10500, HD10517, HD10516, HD10518. All targeting different KD/M ministers. Suggests coordinated S opposition strategy on welfare.",
+      "trigger_for_follow_up": "Any regional hospital announcement, government healthcare statement"
+    },
+    {
+      "pir_id": "PIR-IP-2026-004",
+      "title": "Economic Inequality and Distributional Politics",
+      "description": "Niklas Karlsson (S) challenges Svantesson (M) on constitutional obligation to protect individual welfare and whether tax cuts are widening inequality. References 1 kap. 2 § regeringsformen.",
+      "status": "active",
+      "horizon": "T+30d",
+      "collection_notes": "HD10511 answer deadline 2026-06-18. Framing strategy: constitutional law vs. tax policy signals S's election narrative.",
+      "trigger_for_follow_up": "Government distributional analysis publication, budget proposals"
+    },
+    {
+      "pir_id": "PIR-IP-2026-005",
+      "title": "Defence and Military Readiness — FMV and Conscription",
+      "description": "Erik Ezelius (S) raises concerns about FMV's footprint in garrison towns and physical fitness standards for conscripts. Election-year bipartisan topic with high public salience.",
+      "status": "active",
+      "horizon": "T+30d",
+      "collection_notes": "HD10503, HD10502. Defence is strategically sensitive during election year.",
+      "trigger_for_follow_up": "Swedish Armed Forces announcements, FMV restructuring news"
+    }
+  ],
+  "roll_forward_date": "2026-06-01"
+}
