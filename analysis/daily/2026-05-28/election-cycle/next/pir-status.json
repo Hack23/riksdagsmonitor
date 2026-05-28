@@ -1,0 +1,49 @@
+{
+  "schema_version": "1.0",
+  "cycle": "election-cycle/next",
+  "date": "2026-05-28",
+  "subfolder": "election-cycle/next",
+  "generated_at": "2026-05-28T00:00:00Z",
+  "pirs": [
+    {
+      "id": "PIR-N1",
+      "question": "What is the most probable formation outcome after September 13, 2026?",
+      "status": "active",
+      "confidence": "medium",
+      "assessment": "Formation B (S+C) at 60% — C-party pivot is the key variable",
+      "next_update": "2026-05-29"
+    },
+    {
+      "id": "PIR-N2",
+      "question": "Will L clear the 4% threshold?",
+      "status": "watch",
+      "confidence": "low-medium",
+      "assessment": "L at 4.9% — within margin of error; probability of sub-4%: 35%",
+      "next_update": "2026-05-29"
+    },
+    {
+      "id": "PIR-N3",
+      "question": "Can SD reach 23%+ to enable Formation A without L?",
+      "status": "watch",
+      "confidence": "low-medium",
+      "assessment": "SD at 20.5%; 23%+ probability: 30%",
+      "next_update": "2026-05-29"
+    },
+    {
+      "id": "PIR-N4",
+      "question": "What economic conditions will the next government inherit?",
+      "status": "active",
+      "confidence": "high",
+      "assessment": "IMF: 2.1% GDP growth, 8.4% unemployment, 36.2% debt/GDP — strong fiscal starting position",
+      "next_update": "2026-06-28"
+    },
+    {
+      "id": "PIR-N5",
+      "question": "What is the HD03271 trajectory post-election?",
+      "status": "active",
+      "confidence": "medium",
+      "assessment": "Formation A: in force. Formation B: repeal tabled by Q1 2027.",
+      "next_update": "2026-09-14"
+    }
+  ]
+}
