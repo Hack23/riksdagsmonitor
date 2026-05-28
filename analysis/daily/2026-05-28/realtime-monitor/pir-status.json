@@ -1,0 +1,95 @@
+{
+  "schema_version": "1.0",
+  "article_date": "2026-05-28",
+  "subfolder": "realtime-monitor",
+  "workflow": "News Realtime Monitor",
+  "run_id": "26571219628",
+  "generated_at": "2026-05-28T11:20:03Z",
+  "pirs": [
+    {
+      "id": "PIR-01",
+      "question": "Will SD publicly condition its FiU vote on HD03275's Middle East relief provisions?",
+      "status": "open",
+      "trigger": "SD press release or parliamentary statement on Middle East household relief component",
+      "expected_by": "2026-06-11",
+      "priority": "critical",
+      "documents": ["HD03275"],
+      "risk_linkage": "R01",
+      "threat_linkage": "T02"
+    },
+    {
+      "id": "PIR-02",
+      "question": "What is the NU committee's specific recommendation on municipal wind-power veto reduction?",
+      "status": "open",
+      "trigger": "NU committee report HD01NU20 publication",
+      "expected_by": "2026-06-15",
+      "priority": "high",
+      "documents": ["HD01NU20"],
+      "risk_linkage": "R04",
+      "threat_linkage": "T05"
+    },
+    {
+      "id": "PIR-03",
+      "question": "Will Lagrådet raise substantive objections to HD03276's definitional scope?",
+      "status": "open",
+      "trigger": "Lagrådet referral letter receipt and publication",
+      "expected_by": "2026-07-15",
+      "priority": "high",
+      "documents": ["HD03276"],
+      "risk_linkage": "R02",
+      "threat_linkage": "T03"
+    },
+    {
+      "id": "PIR-04",
+      "question": "What are the eligibility criteria for HD03275's Middle East household relief component?",
+      "status": "open",
+      "trigger": "Finance Ministry regulation (förordning) publication",
+      "expected_by": "2026-07-01",
+      "priority": "high",
+      "documents": ["HD03275"],
+      "risk_linkage": "R01",
+      "stakeholder_linkage": "Segment 3 (cost-of-living voters)"
+    },
+    {
+      "id": "PIR-05",
+      "question": "How will S structure its election campaign narrative around today's written questions?",
+      "status": "open",
+      "trigger": "S party press releases, DN/SVT/AB interviews referencing today's question batch",
+      "expected_by": "2026-06-11",
+      "priority": "medium",
+      "documents": ["HD11846", "HD11847", "HD11848", "HD11849", "HD11850", "HD11851", "HD11852", "HD11853", "HD11854", "HD11855", "HD11856", "HD11857"],
+      "risk_linkage": "R09",
+      "threat_linkage": "T01"
+    }
+  ],
+  "intelligence_gaps": [
+    {
+      "id": "GAP-01",
+      "description": "Full text of HD03275, HD03276, HD03277 not available — pdf_html_wrapper format limits substantive detail",
+      "severity": "medium",
+      "mitigation": "Monitor Riksdag document publication system for full-text HTML versions"
+    },
+    {
+      "id": "GAP-02",
+      "description": "IMF WEO Apr-2026 Nordic peer data (NOR, FIN) returned null values from IMF MCP — analyst estimates used",
+      "severity": "low",
+      "mitigation": "Use published WEO tables as backup; cross-validate with ECB/national central banks"
+    },
+    {
+      "id": "GAP-03",
+      "description": "NU committee report HD01NU20 full recommendation text not available — only title confirmed",
+      "severity": "medium",
+      "mitigation": "Monitor Riksdag betänkande publication; expect within 14 days"
+    },
+    {
+      "id": "GAP-04",
+      "description": "Voteringar for comparable recent legislation not yet indexed in Riksdag database",
+      "severity": "low",
+      "mitigation": "Check again in 48 hours; Riksdag database typically indexes voting records within 24–48h of vote"
+    }
+  ],
+  "pir_rollforward": {
+    "from_prior_cycle": "none identified",
+    "note": "First realtime-monitor analysis for 2026-05-28; no prior-cycle PIRs carried forward"
+  }
+}
