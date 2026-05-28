@@ -1,0 +1,48 @@
+{
+  "schema_version": "1.0",
+  "generated": "2026-05-28T08:00:00Z",
+  "article_date": "2026-05-28",
+  "subfolder": "interpellations",
+  "overall_signal_level": "elevated",
+  "signal_score": 72,
+  "signal_rationale": "20 new interpellations (2026-05-21 to 2026-05-28) reveal a concentrated, coordinated opposition offensive by S across unemployment, climate, healthcare, and economic inequality — all primary election battlegrounds for September 2026. Election proximity (DIW ×1.5) amplifies signal.",
+  "dominant_themes": [
+    {"theme": "unemployment_labour_market", "signal_strength": "high", "document_count": 3, "keywords": ["arbetslöshet", "ungdomsarbetslöshet", "a-kassa", "arbetsmarknad"]},
+    {"theme": "climate_policy", "signal_strength": "high", "document_count": 5, "keywords": ["klimatmål", "transportmål", "klimatanpassning", "grön omställning"]},
+    {"theme": "healthcare_welfare", "signal_strength": "high", "document_count": 5, "keywords": ["sjukhus", "tandvård", "äldreomsorgen", "sjukersättning", "primärvård"]},
+    {"theme": "economic_inequality", "signal_strength": "medium", "document_count": 1, "keywords": ["fördelningseffekter", "skattepolitik", "klyftor", "regeringsformen"]},
+    {"theme": "defence_military", "signal_strength": "medium", "document_count": 2, "keywords": ["FMV", "värnplikt", "mönstring", "totalförsvar"]},
+    {"theme": "social_welfare_crime", "signal_strength": "medium", "document_count": 2, "keywords": ["HVB-hem", "kriminella kopplingar", "socialtjänst", "skyddade boenden"]}
+  ],
+  "election_proximity_flag": true,
+  "election_multiplier": 1.5,
+  "opposition_intensity": "very_high",
+  "questioner_distribution": {
+    "S": 17,
+    "MP": 3,
+    "others": 0
+  },
+  "respondent_distribution": {
+    "Johan Britz (L)": 6,
+    "Jakob Forssmed (KD)": 2,
+    "Anna Tenje (M)": 2,
+    "Camilla Waltersson Grönvall (M)": 2,
+    "Andreas Carlson (KD)": 2,
+    "Pål Jonson (M)": 2,
+    "Ebba Busch (KD)": 1,
+    "Elisabeth Svantesson (M)": 1,
+    "Elisabet Lann (KD)": 1,
+    "Lotta Edholm (L)": 1
+  },
+  "most_targeted_minister": "Johan Britz (L)",
+  "most_active_questioner": "Eva Lindh (S)",
+  "constitutional_reference_count": 1,
+  "economicProvenance": {
+    "provider": "imf",
+    "dataflow": "WEO",
+    "vintage": "WEO-2026-04",
+    "vintageAgeMonths": 1,
+    "retrieved_at": "2026-05-28T07:49:17Z",
+    "note": "WEO April 2026 vintage. Sweden unemployment ~8.4% (2025), GDP growth ~1.8% (2025 est)."
+  }
+}
