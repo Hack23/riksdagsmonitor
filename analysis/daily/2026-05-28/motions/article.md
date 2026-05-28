@@ -3,7 +3,7 @@ date: 2026-05-28
 subfolder: motions
 slug: 2026-05-28-motions
 source_folder: analysis/daily/2026-05-28/motions
-generated_at: 2026-05-28T08:24:03.630Z
+generated_at: 2026-05-28T10:21:06.973Z
 language: en
 layout: article
 ---
@@ -81,6 +81,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 📝 | [Coalition Implications](#rm-coalition-implications) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Committee Signals](#rm-committee-signals) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Election Proximity Analysis](#rm-election-proximity-analysis) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Intelligence Brief](#rm-executive-intelligence-brief) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Future Outlook](#rm-future-outlook) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Key Actors](#rm-key-actors) | supporting analytical lens with primary-source evidence and audit-traceable citations |
@@ -728,6 +741,838 @@ This places Props 267/261 in the **high electoral salience** tier for the 2026 c
 2. **S's floor vote** (June): If S votes with government → defines S as security-hardline, isolates V+MP.
 3. **International bodies** (July–August): UNHCR or CoE critique of child detention would land during campaign season.
 4. **First implementation dates** (Prop 261: Jan 2027): Government will announce biometric system readiness during campaign.
+
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-28/motions/executive-brief_ar.md -->
+
+<!-- dir: rtl -->
+# الملخص الاستخباراتي التنفيذي — مقترحات المعارضة 2026-05-28
+
+**التصنيف:** عام  
+**التاريخ:** 2026-05-28  
+**أُعدّ لـ:** القيادة التحريرية والاستخباراتية
+
+---
+
+### الوضع الراهن
+
+قُدِّمت أربعة مقترحات معارضة جديدة في 2026-05-21/22 ضد اقتراحَين حكوميَّين — Prop 267 (الأجانب الذين يمثلون تهديدات أمنية مؤهلة، تعديل LSU) وProp 261 (صلاحيات Skatteverket البيومترية الموسعة). يُشكّل Vänsterpartiet (V) وMiljöpartiet (MP) كتلة المعارضة، فيما يُحافظ Socialdemokraterna (S) على صمت استراتيجي. تبقى 108 أيام حتى الانتخابات العامة.
+
+---
+
+### النتائج الرئيسية
+
+1. **كتلة الحقوق V+MP راسخة**: أربعة مقترحات ضد اقتراحين تُرسّخ موقف معارضة للحريات المدنية منسجم، في وقت تدخل فيه السويد موسم الحملات الانتخابية.
+
+2. **احتجاز الأطفال هو عنوان الصدارة**: الاعتراض المحدد لـ MP على توسيع احتجاز الأطفال في Prop 267 (§§ 9, 10, 19) هو المطلب الأكثر فاعلية سياسياً — مؤسَّس قانوناً، ذو صدى عاطفي، ومدعوم من المفوضية السامية للأمم المتحدة لشؤون اللاجئين وإنقاذ الطفولة.
+
+3. **تأكيد التوسع في المراقبة البيومترية**: تمثّل مشاركة البيانات بين Skatteverket وMigrationsverket في Prop 261 توسعاً هيكلياً لقدرات المراقبة الإدارية في السويد. لا يمكن التراجع عنها تقنياً بعد التنفيذ (يناير 2027).
+
+4. **الصمت الاستراتيجي لـ S حاسم**: لم تُقدِّم S أي مقترحات بشأن أيٍّ من الاقتراحين. إن صوّتت S مع الحكومة في يونيو، سيُعزَل V+MP؛ وإن امتنعت S عن التصويت، تكون المقترحات مجرد سجلات معارضة رسمية.
+
+5. **L هي متغير الائتلاف الرئيسي**: قد تُفضي مداولات L الداخلية بشأن الاتفاقية الأوروبية لحقوق الإنسان إلى تحفظ رسمي في تقرير JuU بشأن Prop 267 — حماية للسمعة دون انشقاق فعلي. هذا محتمل.
+
+6. **الحكومة ستنتصر في التصويتات**: سيُقرّ كلا الاقتراحين قبل الإجازة الصيفية. تعمل مقترحات المعارضة كعلامات لبرامج انتخابية، لا كأدوات حجب.
+
+---
+
+### التقييم
+
+تعكس مقترحات الأسبوع المشهد السياسي السويدي في مرحلة ما قبل الانتخابات: ائتلاف حاكم يستغل الجلسة الأخيرة لـ riksmöte لسنّ حزمة أمنية وهجرة ومراقبة شاملة، ومعارضة مجزأة (V+MP متحدان، S غامض، C/L غير مؤكدَين) عاجزة عن إعاقة التشريع لكنها تتموضع لانتخابات سبتمبر.
+
+**فجوة استخباراتية حرجة**: اتجاه تصويت S على Prop 267 — المجهول الأكثر أهمية بمفرده. تصويت S لصالح الحكومة سيُؤكد انعطافة S نحو اليمين في سياسات الهجرة والأمن ويُحدد الحساب الانتخابي لكتلة اليسار.
+
+---
+
+### بنود العمل / التوصيات
+
+| البند | الأولوية | المسؤول | الموعد النهائي |
+|-------|---------|---------|---------------|
+| مراقبة التصريحات العلنية لـ S بشأن Prop 267 | عالية | المكتب السياسي | 10 يونيو 2026 |
+| تتبع قائمة شهود جلسة JuU | عالية | المكتب السياسي | 5 يونيو 2026 |
+| فحص تصريحات أعضاء لجنة L بشأن Prop 267 ECHR | عالية | المكتب السياسي | 15 يونيو 2026 |
+| مراقبة تاريخ تصويت SfU (PIR-MOT-2026-05-21-005) | عالية | المكتب السياسي | 1 يونيو 2026 |
+| تتبع ما بعد التنفيذ (Prop 261 يناير 2027) | متوسطة | مكتب المدى البعيد | يناير 2027 |
+
+---
+
+### تقييم الموثوقية
+
+- التحليل مبني على 8 مقترحات تم التحقق منها مباشرةً عبر Riksdag MCP
+- استُرجع النص الكامل لثلاثة وثائق ذات أولوية (HD024192، HD024191، HD024188)
+- تنبؤات التصويت مبنية على الحساب البرلماني وتحليل الأنماط التاريخية
+- **الموثوقية الإجمالية: عالية**
+
+---
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-28/motions/executive-brief_da.md -->
+
+**Klassifikation:** OFFENTLIG  
+**Dato:** 2026-05-28  
+**Udarbejdet for:** Redaktionel og efterretningsledelse
+
+---
+
+### Situationsoverblik
+
+Fire nye oppositionsbevægelser blev indgivet 2026-05-21/22 mod to regeringspropositioner — Prop 267 (sikkerhedstruende udlændinge, LSU-ændring) og Prop 261 (Skatteverkets udvidede biometriske beføjelser). Vänsterpartiet (V) og Miljöpartiet (MP) udgør oppositionsblokken, mens Socialdemokraterna (S) opretholder en strategisk tavshed. Valget er 108 dage væk.
+
+---
+
+### Centrale konklusioner
+
+1. **V+MP's rettighetsblok befæstet**: Fire bevægelser mod to propositioner etablerer en konsekvent civil-friheds-opposition, efterhånden som Sverige træder ind i valgkampssæsonen.
+
+2. **Børnevaretægt er overskriften**: MP's målrettede indvending mod Prop 267's udvidelse af børnevaretægt (§§ 9, 10, 19) er det politisk mest potente krav — juridisk velbegrundet, emotionelt genklang og støttet af UNHCR og Redd Barna.
+
+3. **Biometrisk overvågningsudbred bekræftet**: Prop 261's Skatteverket–Migrationsverket datadeling repræsenterer en strukturel udvidelse af Sveriges administrative overvågningskapacitet. Teknisk irreversibel efter implementering (jan. 2027).
+
+4. **S's strategiske tavshed er afgørende**: S har ikke indgivet bevægelser om nogen af propositionerne. Hvis S stemmer med regeringen i juni, isoleres V+MP; hvis S undlader at stemme, fungerer bevægelserne kun som formelle oppositionsprotokoller.
+
+5. **L er den afgørende koalitionsvariabel**: L's interne EMRK-overvejelser kan resultere i et formelt forbehold i JuU's betænkning om Prop 267 — en omdømmemæssig sikring uden reel afvigelse. Dette er sandsynligt.
+
+6. **Regeringen vil sejre i afstemningerne**: Begge propositioner vil blive vedtaget inden sommerferien. Oppositionsbevægelser fungerer som valgmanifestmarkører, ikke som blokeringsinstrumenter.
+
+---
+
+### Vurdering
+
+Ugens bevægelser afspejler Sveriges forvalgspolitiske landskab: en regeringskoalition, der bruger den sidste riksmöte-session til at gennemføre en omfattende sikkerheds-, migrations- og overvågningspakke, og en fragmenteret opposition (V+MP forenede, S tvetydig, C/L usikre), der ikke kan blokere lovgivningen, men positionerer sig til septembervalget.
+
+**Kritisk efterretningshul**: S's stemmeretning om Prop 267 — den eneste mest afgørende ukendte faktor. En S pro-regerings-stemme ville bekræfte S's højreforskydning inden for migrations/sikkerhedspolitik og definere venstreblokkens valgkalkule.
+
+---
+
+### Handlingspunkter / Anbefalinger
+
+| Handling | Prioritet | Ansvarlig | Deadline |
+|----------|-----------|-----------|----------|
+| Overvåg S's offentlige udtalelser om Prop 267 | HØJ | Politisk redaktion | 10. juni 2026 |
+| Spor JuU-høringers vidneliste | HØJ | Politisk redaktion | 5. juni 2026 |
+| Tjek L-komitémedlemmers udtalelser om Prop 267 EMRK | HØJ | Politisk redaktion | 15. juni 2026 |
+| Overvåg SfU-afstemningsdato (PIR-MOT-2026-05-21-005) | HØJ | Politisk redaktion | 1. juni 2026 |
+| Efterimplementeringssporing (Prop 261 jan. 2027) | MIDDEL | Langsigtet redaktion | Jan. 2027 |
+
+---
+
+### Tillidsvurdering
+
+- Analyse baseret på 8 bevægelser direkte verificeret via Riksdagens MCP
+- Fuldtekst hentet for de tre prioriterede dokumenter (HD024192, HD024191, HD024188)
+- Stemmeforudsigelser baseret på parlamentarisk aritmetik og historisk mønsteranalyse
+- **Samlet tillid: HØJ**
+
+---
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-28/motions/executive-brief_de.md -->
+
+**Klassifizierung:** ÖFFENTLICH  
+**Datum:** 2026-05-28  
+**Vorbereitet für:** Redaktionelle und Nachrichtenführung
+
+---
+
+### Lagebild
+
+Vier neue Oppositionsanträge wurden am 2026-05-21/22 gegen zwei Regierungsvorlagen eingereicht — Prop 267 (sicherheitsgefährdende Ausländer, LSU-Änderung) und Prop 261 (erweiterte biometrische Befugnisse des Skatteverket). Vänsterpartiet (V) und Miljöpartiet (MP) bilden den Oppositionsblock, während Socialdemokraterna (S) strategisches Schweigen wahrt. Bis zur Wahl sind es noch 108 Tage.
+
+---
+
+### Zentrale Erkenntnisse
+
+1. **V+MP-Rechteblock gefestigt**: Vier Anträge gegen zwei Vorlagen etablieren eine kohärente bürgerrechtliche Oppositionshaltung, während Schweden in die Wahlkampfsaison eintritt.
+
+2. **Kinderinhaftierung ist das Topthema**: MPs gezielter Einwand gegen die Erweiterung der Kinderinhaftierung in Prop 267 (§§ 9, 10, 19) ist die politisch schlagkräftigste Forderung — rechtlich fundiert, emotional resonant und von UNHCR und Save the Children unterstützt.
+
+3. **Biometrische Überwachungsausweitung bestätigt**: Die Datenweitergabe von Skatteverket–Migrationsverket in Prop 261 stellt eine strukturelle Erweiterung der administrativen Überwachungskapazität Schwedens dar. Nach der Implementierung (Jan. 2027) technisch irreversibel.
+
+4. **S's strategisches Schweigen ist ausschlaggebend**: S hat zu keiner der Vorlagen Anträge eingereicht. Wenn S im Juni mit der Regierung stimmt, werden V+MP isoliert; wenn S sich enthält, dienen die Anträge nur als formelle Oppositionsprotokolle.
+
+5. **L ist die entscheidende Koalitionsvariable**: L's interne EMRK-Überlegung kann zu einem formellen Vorbehalt in JuU's Bericht zu Prop 267 führen — eine reputationsmäßige Absicherung ohne reellen Verrat. Dies ist wahrscheinlich.
+
+6. **Die Regierung wird bei den Abstimmungen siegen**: Beide Vorlagen werden vor der Sommerpause verabschiedet. Oppositionsanträge fungieren als Wahlprogrammmarkierungen, nicht als Blockierungsinstrumente.
+
+---
+
+### Beurteilung
+
+Die Anträge der Woche spiegeln Schwedens politische Vorwahllandschaft wider: eine Regierungskoalition, die die letzte Riksmöte-Sitzung nutzt, um ein umfassendes Sicherheits-, Migrations- und Überwachungspaket umzusetzen, und eine fragmentierte Opposition (V+MP vereint, S zweideutig, C/L unsicher), die die Gesetzgebung nicht blockieren kann, sich aber für die Septemberwahl positioniert.
+
+**Kritische Nachrichtenlücke**: S's Stimmrichtung zu Prop 267 — die einzige wichtigste unbekannte Größe. Eine S-Pro-Regierungsstimme würde S's Rechtsverschiebung in der Migrations/Sicherheitspolitik bestätigen und die Wahlkalkulation des linken Blocks definieren.
+
+---
+
+### Maßnahmen / Empfehlungen
+
+| Maßnahme | Priorität | Verantwortlich | Frist |
+|----------|-----------|----------------|-------|
+| S's öffentliche Aussagen zu Prop 267 beobachten | HOCH | Politische Redaktion | 10. Juni 2026 |
+| Zeugenliste der JuU-Anhörung verfolgen | HOCH | Politische Redaktion | 5. Juni 2026 |
+| Aussagen von L-Ausschussmitgliedern zu Prop 267 EMRK prüfen | HOCH | Politische Redaktion | 15. Juni 2026 |
+| SfU-Abstimmungsdatum verfolgen (PIR-MOT-2026-05-21-005) | HOCH | Politische Redaktion | 1. Juni 2026 |
+| Nachimplementierungsverfolgung (Prop 261 Jan. 2027) | MITTEL | Langfristige Redaktion | Jan. 2027 |
+
+---
+
+### Vertrauensbewertung
+
+- Analyse basiert auf 8 direkt via Riksdagens MCP verifizierten Anträgen
+- Volltext für die drei Prioritätsdokumente abgerufen (HD024192, HD024191, HD024188)
+- Abstimmungsvorhersagen basieren auf parlamentarischer Arithmetik und historischer Musteranalyse
+- **Gesamtvertrauen: HOCH**
+
+---
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-28/motions/executive-brief_es.md -->
+
+**Clasificación:** PÚBLICO  
+**Fecha:** 2026-05-28  
+**Preparado para:** Dirección editorial y de inteligencia
+
+---
+
+### Situación
+
+Cuatro nuevas mociones de oposición fueron presentadas el 2026-05-21/22 contra dos proposiciones gubernamentales — Prop 267 (extranjeros que representan amenazas de seguridad cualificadas, enmienda LSU) y Prop 261 (poderes biométricos ampliados del Skatteverket). Vänsterpartiet (V) y Miljöpartiet (MP) forman el bloque de oposición, mientras que Socialdemokraterna (S) mantiene un silencio estratégico. Las elecciones son en 108 días.
+
+---
+
+### Hallazgos clave
+
+1. **Bloque de derechos V+MP consolidado**: Cuatro mociones contra dos proposiciones establecen una posición de oposición de libertades civiles coherente mientras Suecia entra en la temporada de campaña electoral.
+
+2. **La detención de menores es el titular principal**: La objeción específica de MP a la extensión de la detención de menores en Prop 267 (§§ 9, 10, 19) es la demanda políticamente más potente — fundamentada jurídicamente, emocionalmente resonante y apoyada por el ACNUR y Save the Children.
+
+3. **Expansión de la vigilancia biométrica confirmada**: El intercambio de datos Skatteverket–Migrationsverket en Prop 261 representa una expansión estructural de las capacidades de vigilancia administrativa de Suecia. Técnicamente irreversible una vez implementada (ene. 2027).
+
+4. **El silencio estratégico de S es decisivo**: S no ha presentado mociones sobre ninguna de las proposiciones. Si S vota con el gobierno en junio, V+MP quedarán aislados; si S se abstiene, las mociones sirven únicamente como registros de oposición formales.
+
+5. **L es la variable clave de la coalición**: La deliberación interna de L sobre el CEDH podría producir una reserva formal en el informe de JuU sobre Prop 267 — una protección reputacional sin defección sustancial. Esto es probable.
+
+6. **El gobierno prevalecerá en las votaciones**: Ambas proposiciones serán aprobadas antes del receso de verano. Las mociones de oposición sirven como marcadores de manifiesto electoral, no como instrumentos de bloqueo.
+
+---
+
+### Evaluación
+
+Las mociones de la semana reflejan el panorama político preelectoral de Suecia: una coalición gobernante que utiliza la última sesión del riksmöte para promulgar un paquete integral de seguridad, migración y vigilancia, y una oposición fragmentada (V+MP unidos, S ambiguo, C/L inciertos) incapaz de bloquear la legislación pero posicionándose para las elecciones de septiembre.
+
+**Brecha de inteligencia crítica**: La dirección del voto de S sobre Prop 267 — la incógnita más determinante. Un voto S pro-gobierno confirmaría el viraje hacia la derecha de S en migración/seguridad y definiría el cálculo electoral del bloque de izquierda.
+
+---
+
+### Puntos de acción / Recomendaciones
+
+| Acción | Prioridad | Responsable | Plazo |
+|--------|-----------|-------------|-------|
+| Monitorear declaraciones públicas de S sobre Prop 267 | ALTA | Redacción política | 10 de junio de 2026 |
+| Seguir la lista de testigos de la audiencia JuU | ALTA | Redacción política | 5 de junio de 2026 |
+| Verificar declaraciones de miembros del comité L sobre Prop 267 CEDH | ALTA | Redacción política | 15 de junio de 2026 |
+| Monitorear fecha de votación SfU (PIR-MOT-2026-05-21-005) | ALTA | Redacción política | 1 de junio de 2026 |
+| Seguimiento post-implementación (Prop 261 ene. 2027) | MEDIA | Redacción largo plazo | Ene. 2027 |
+
+---
+
+### Evaluación de fiabilidad
+
+- Análisis basado en 8 mociones directamente verificadas a través del MCP del Riksdag
+- Texto completo recuperado para los tres documentos prioritarios (HD024192, HD024191, HD024188)
+- Predicciones de voto basadas en aritmética parlamentaria y análisis de patrones históricos
+- **Fiabilidad general: ALTA**
+
+---
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-28/motions/executive-brief_fi.md -->
+
+**Luokitus:** JULKINEN  
+**Päivämäärä:** 2026-05-28  
+**Valmisteltu:** Toimitukselliselle ja tiedustelujohdolle
+
+---
+
+### Tilannekatsaus
+
+Neljä uutta oppositiomotioita jätettiin 2026-05-21/22 kahta hallituksen esitystä vastaan — Prop 267 (turvallisuusuhkaavat ulkomaalaiset, LSU-muutos) ja Prop 261 (Skatteverketin laajennetut biometriset valtuudet). Vänsterpartiet (V) ja Miljöpartiet (MP) muodostavat oppositioblokin, kun taas Socialdemokraterna (S) ylläpitää strategista hiljaisuutta. Vaaleissa on 108 päivää aikaa.
+
+---
+
+### Keskeiset havainnot
+
+1. **V+MP:n oikeuksien blokki vahvistunut**: Neljä motiota kahta esitystä vastaan vakiinnuttaa johdonmukaisen kansalaisvapauksien opposition, kun Ruotsi astuu vaalikampanjakauteen.
+
+2. **Lasten vangitseminen on otsikkoaihe**: MP:n kohdennettu vastustus Prop 267:n lasten vangitsemisen laajentamista (§§ 9, 10, 19) kohtaan on poliittisesti tehokkain vaatimus — oikeudellisesti perusteltu, emotionaalisesti resonoiva ja UNHCR:n ja Pelastakaa lapset -järjestön tukema.
+
+3. **Biometrinen valvonnan laajentuminen vahvistettu**: Prop 261:n Skatteverket–Migrationsverket tietojen jakaminen edustaa Ruotsin hallinnollisen valvontakapasiteetin rakenteellista laajentumista. Teknisesti peruuttamaton käyttöönoton jälkeen (tammi 2027).
+
+4. **S:n strateginen hiljaisuus on ratkaisevaa**: S ei ole jättänyt motiota kumpaakaan esitykseen. Jos S äänestää hallituksen kanssa kesäkuussa, V+MP eristetään; jos S pidättäytyy, moottorit toimivat vain muodollisina oppositiopöytäkirjoina.
+
+5. **L on tärkein koalitiomuuttuja**: L:n sisäinen ECHR-harkinta voi tuottaa muodollisen varauksen JuU:n mietinnössä Prop 267:stä — maineen suojaus ilman todellista liittolaisista irtaantumista. Tämä on todennäköistä.
+
+6. **Hallitus voittaa äänestyksissä**: Molemmat esitykset hyväksytään ennen kesälomaa. Oppositiomoottorit toimivat vaaliohjelmamerkkeinä, eivät estämisvälineinä.
+
+---
+
+### Arviointi
+
+Viikon moottorit heijastavat Ruotsin esivaalipoliittista maisemaa: hallitteva koalitio käyttää viimeistä riksmöte-istuntoa laajan turvallisuus-, muuttoliike- ja valvontapaketin toteuttamiseen, ja hajanainen oppositio (V+MP yhdistyneet, S epäselvä, C/L epävarmat) ei pysty estämään lainsäädäntöä, mutta asemoituu syyskuun vaaleja varten. V:n täysi hylkäämisstrategia Prop 267:n suhteen ja MP:n kohdistetumpi lähestymistapa heijastavat edistyksellisen oppisition sisäistä koordinaatiota.
+
+**Kriittinen tiedusteluaukko**: S:n äänestyssuunta Prop 267:ssa — yksittäinen tärkein tuntematon tekijä. S:n hallituksenpuolinen ääni vahvistaisi S:n oikeistosuuntauksen maahanmuutto/turvallisuuspolitiikassa ja määrittelisi vasemmistoblokin vaalilogiikan.
+
+---
+
+### Toimintakohteet / Suositukset
+
+| Kohde | Prioriteetti | Vastuullinen | Määräaika |
+|-------|-------------|-------------|-----------|
+| Seuraa S:n julkisia lausuntoja Prop 267:sta | KORKEA | Poliittinen toimitustiimi | 10. kesäkuuta 2026 |
+| Seuraa JuU:n kuulemisten todistajalistaa | KORKEA | Poliittinen toimitustiimi | 5. kesäkuuta 2026 |
+| Tarkista L:n komitean jäsenten lausunnot Prop 267 ECHR:stä | KORKEA | Poliittinen toimitustiimi | 15. kesäkuuta 2026 |
+| Seuraa SfU:n äänestysajankohtaa (PIR-MOT-2026-05-21-005) | KORKEA | Poliittinen toimitustiimi | 1. kesäkuuta 2026 |
+| Käyttöönottojälkeinen seuranta (Prop 261 tammi 2027) | KESKI | Pitkän aikavälin toimitustiimi | Tammi 2027 |
+
+---
+
+### Luotettavuusarviointi
+
+- Analyysi perustuu 8 motioon, jotka on tarkistettu suoraan Riksdagens MCP:n kautta
+- Koko teksti haettu kolmelle prioriteeettidokumentille (HD024192, HD024191, HD024188)
+- Äänestysennusteet parlamentaariseen aritmetiikkaan ja historialliseen mallianalyysiin perustuen
+- **Kokonaisluottamus: KORKEA**
+
+---
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-28/motions/executive-brief_fr.md -->
+
+**Préparé pour :** Direction éditoriale et renseignement
+
+---
+
+### Situation
+
+Quatre nouvelles motions d'opposition ont été déposées le 2026-05-21/22 contre deux propositions gouvernementales — Prop 267 (étrangers représentant des menaces sécuritaires qualifiées, amendement LSU) et Prop 261 (pouvoirs biométriques élargis du Skatteverket). Vänsterpartiet (V) et Miljöpartiet (MP) forment le bloc d'opposition, tandis que Socialdemokraterna (S) maintient un silence stratégique. Les élections sont dans 108 jours.
+
+---
+
+### Conclusions clés
+
+1. **Le bloc des droits V+MP solidifié** : Quatre motions contre deux propositions établissent une position d'opposition civique cohérente alors que la Suède entre dans la saison de campagne électorale.
+
+2. **La détention des enfants est le titre principal** : L'objection ciblée de MP à l'extension de la détention des enfants dans Prop 267 (§§ 9, 10, 19) est la demande politiquement la plus puissante — juridiquement fondée, émotionnellement résonante et soutenue par le HCR et Save the Children.
+
+3. **L'expansion de la surveillance biométrique confirmée** : Le partage de données Skatteverket–Migrationsverket dans Prop 261 représente une expansion structurelle des capacités de surveillance administrative de la Suède. Techniquement irréversible une fois mise en œuvre (jan. 2027).
+
+4. **Le silence stratégique de S est décisif** : S n'a déposé aucune motion sur l'une ou l'autre proposition. Si S vote avec le gouvernement en juin, V+MP seront isolés ; si S s'abstient, les motions servent uniquement de records d'opposition formels.
+
+5. **L est la variable de coalition clé** : La délibération interne de L sur la CEDH pourrait produire une réserve formelle dans le rapport de JuU sur Prop 267 — une protection de réputation sans défection substantielle. C'est probable.
+
+6. **Le gouvernement prévaudra lors des votes** : Les deux propositions seront adoptées avant la pause estivale. Les motions d'opposition servent de marqueurs de manifeste électoral, pas d'instruments de blocage.
+
+---
+
+### Évaluation
+
+Les motions de la semaine reflètent le paysage politique pré-électoral de la Suède : une coalition gouvernante utilisant la dernière session du riksmöte pour promulguer un paquet sécuritaire, migratoire et de surveillance complet, et une opposition fragmentée (V+MP unis, S ambigu, C/L incertains) incapable de bloquer la législation mais se positionnant pour l'élection de septembre.
+
+**Lacune de renseignement critique** : La direction du vote de S sur Prop 267 — l'inconnue la plus déterminante. Un vote S pro-gouvernemental confirmerait le virage à droite de S sur la migration/sécurité et définirait le calcul électoral du bloc de gauche.
+
+---
+
+### Actions / Recommandations
+
+| Action | Priorité | Responsable | Échéance |
+|--------|----------|-------------|----------|
+| Surveiller les déclarations publiques de S sur Prop 267 | HAUTE | Rédaction politique | 10 juin 2026 |
+| Suivre la liste de témoins de l'audition JuU | HAUTE | Rédaction politique | 5 juin 2026 |
+| Vérifier les déclarations des membres du comité L sur Prop 267 CEDH | HAUTE | Rédaction politique | 15 juin 2026 |
+| Surveiller la date du vote SfU (PIR-MOT-2026-05-21-005) | HAUTE | Rédaction politique | 1er juin 2026 |
+| Suivi post-implémentation (Prop 261 jan. 2027) | MOYEN | Rédaction long terme | Jan. 2027 |
+
+---
+
+### Évaluation de la fiabilité
+
+- Analyse basée sur 8 motions directement vérifiées via le MCP du Riksdag
+- Texte intégral récupéré pour les trois documents prioritaires (HD024192, HD024191, HD024188)
+- Prévisions de vote basées sur l'arithmétique parlementaire et l'analyse des tendances historiques
+- **Fiabilité globale : HAUTE**
+
+---
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-28/motions/executive-brief_he.md -->
+
+<!-- dir: rtl -->
+# סיכום מודיעיני לניהול — הצעות האופוזיציה 2026-05-28
+
+**סיווג:** פומבי  
+**תאריך:** 2026-05-28  
+**הוכן עבור:** ניהול מערכתי ומודיעיני
+
+---
+
+### המצב הנוכחי
+
+ארבע הצעות אופוזיציה חדשות הוגשו ב-2026-05-21/22 נגד שתי הצעות ממשלתיות — Prop 267 (זרים המהווים איום ביטחוני מסוכן, תיקון LSU) ו-Prop 261 (הרחבת סמכויות ביומטריות של Skatteverket). Vänsterpartiet (V) ו-Miljöpartiet (MP) מהווים את גוש האופוזיציה, בעוד Socialdemokraterna (S) שומרת על שתיקה אסטרטגית. נותרו 108 ימים לבחירות.
+
+---
+
+### ממצאים מרכזיים
+
+1. **גוש הזכויות V+MP מגובש**: ארבע הצעות נגד שתי הצאות ממשלתיות מבססות עמדת אופוזיציה עקבית בתחום חירויות האזרח, כשוודיה נכנסת לעונת הקמפיין הבחירותי.
+
+2. **מעצר ילדים הוא הכותרת**: ההתנגדות הממוקדת של MP להרחבת מעצר ילדים ב-Prop 267 (§§ 9, 10, 19) היא הדרישה הפוליטית הפוטנטית ביותר — מבוססת משפטית, מהדהדת רגשית ונתמכת על ידי נציבות האו"ם לפליטים ו-Save the Children.
+
+3. **התרחבות מעקב ביומטרי אושרה**: שיתוף הנתונים של Skatteverket–Migrationsverket ב-Prop 261 מייצג הרחבה מבנית של יכולות הפיקוח המנהלתי של שוודיה. אי-הפיך מבחינה טכנית לאחר יישום (ינו' 2027).
+
+4. **שתיקתה האסטרטגית של S היא המכרעת**: S לא הגישה הצעות לגבי אף אחת מן ההצעות. אם S תצביע עם הממשלה ביוני, V+MP יבודדו; אם S תמנע, ישמשו ההצעות כרשומות אופוזיציה פורמליות בלבד.
+
+5. **L היא משתנה הקואליציה המרכזי**: הדיון הפנימי של L בנוגע לאמנה האירופאית לזכויות אדם עלול לייצר הסתייגות פורמלית בדוח JuU על Prop 267 — הגנת מוניטין ללא ערעור ממשי. זה סביר.
+
+6. **הממשלה תנצח בהצבעות**: שתי ההצעות יאושרו לפני הפגרה הקיץ. הצעות האופוזיציה משמשות כסמני מניפסט בחירותי, לא ככלי חסימה.
+
+---
+
+### הערכה
+
+הצעות השבוע משקפות את הנוף הפוליטי הטרום-בחירותי של שוודיה: קואליציה שלטת המשתמשת בסשן האחרון של riksmöte לחקיקת חבילת ביטחון, הגירה ומעקב מקיפה, ואופוזיציה מפוצלת (V+MP מאוחדים, S דו-משמעי, C/L לא בטוחים) שאינה מסוגלת לחסום את החקיקה אך מתמצבת לקראת בחירות ספטמבר.
+
+**פערי מודיעין קריטיים**: כיוון הצבעת S על Prop 267 — הגורם הבלתי-ידוע החשוב ביותר. הצבעת S עם הממשלה תאשר את ההיסט ימינה של S בנושאי הגירה/ביטחון ותגדיר את חשבון הבחירות של גוש השמאל.
+
+---
+
+### פריטי פעולה / המלצות
+
+| פריט | עדיפות | אחראי | תאריך יעד |
+|------|--------|--------|-----------|
+| מעקב אחר הצהרות ציבוריות של S על Prop 267 | גבוהה | מחלקה פוליטית | 10 ביוני 2026 |
+| מעקב אחר רשימת עדים בשמיעת JuU | גבוהה | מחלקה פוליטית | 5 ביוני 2026 |
+| בדיקת הצהרות חברי ועדת L על Prop 267 ECHR | גבוהה | מחלקה פוליטית | 15 ביוני 2026 |
+| מעקב אחר תאריך הצבעת SfU (PIR-MOT-2026-05-21-005) | גבוהה | מחלקה פוליטית | 1 ביוני 2026 |
+| מעקב לאחר יישום (Prop 261 ינו' 2027) | בינונית | מחלקה ארוכת טווח | ינו' 2027 |
+
+---
+
+### הערכת אמינות
+
+- ניתוח המבוסס על 8 הצעות שנאמתו ישירות דרך Riksdag MCP
+- טקסט מלא שוחזר עבור שלושת המסמכים בעדיפות (HD024192, HD024191, HD024188)
+- תחזיות הצבעה מבוססות על אריתמטיקה פרלמנטרית וניתוח דפוסים היסטוריים
+- **אמינות כוללת: גבוהה**
+
+---
+
+### מודיעין נוסף לשלב 2 (2026-05-28)
+
+**ראיות טקסטואליות ספציפיות שנלקחו ממעבר על הטקסט המלא:**
+
+#### Prop 267 — מנגנון משפטי מרכזי (מ-HD024188)
+קריטריון הגירוש החדש של הממשלה: *"om det är särskilt påkallat med hänsyn till Sveriges säkerhet"* (אם הדבר מצוין במיוחד בהתחשב בביטחון שוודיה). זה מחליף את הסטנדרט הקודם "ניתן להניח שיבצע מעשי טרור." המעבר מהערכת איום אינדיבידואלית לסטנדרט אינטרס ביטחוני רחב יותר הוא מה שCRD ו-Advokatsamfundet מתנגדים לו ספציפית.
+
+#### Prop 261 — דאגה מבנית מרכזית (מ-HD024191)
+הדאגה המדויקת ביותר של MP: אנשים המתגוררים פיזית בשוודיה אך חסרי כתובת מגורים יציבה ולכן אינם יכולים להירשם ל-folkbokföringsadress מוצאים את עצמם במלכוד "22-catch" — הם תושבים אך אינם קיימים מבחינה מנהלתית, ומאבדים גישה לשירותי בריאות, שירותים סוציאליים וכל הזכויות האחרות הקשורות לכתובת. מוערך שיותר מ-34,000 איש בשוודיה חווים חוסר בית בכל שנה.
+
+<!-- source-sha: ab10e5c6f3fce2e937d1d97b29389c79a9cfb574 -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-28/motions/executive-brief_ja.md -->
+
+**分類:** 公開  
+**日付:** 2026-05-28  
+**作成対象:** 編集・情報管理部門
+
+---
+
+### 状況
+
+2026-05-21/22、二つの政府提案に対する四件の野党動議が提出された — Prop 267（安全保障上の脅威となる外国人、LSU改正）とProp 261（Skatteverketの生体認証権限拡大）。Vänsterpartiet (V) とMiljöpartiet (MP) が野党ブロックを形成し、Socialdemokraterna (S) は戦略的沈黙を保っている。総選挙まで108日。
+
+---
+
+### 主要事項
+
+1. **V+MP権利ブロック強固化**: 二つの提案に対する四件の動議により、スウェーデンが選挙戦シーズンに入る中、一貫した市民自由擁護の野党立場が確立される。
+
+2. **子どもの拘禁が最重要**: Prop 267の子ども拘禁延長（§§ 9, 10, 19）に対するMPの的を絞った異議は、政治的に最も強力な要求である — 法的根拠があり、感情的に響き、UNHCRとセーブ・ザ・チルドレンに支持されている。
+
+3. **生体認証監視の拡大確認**: Prop 261のSkatteverket–Migrationsverket間のデータ共有は、スウェーデンの行政監視能力の構造的拡大を意味する。実装後（2027年1月）は技術的に不可逆。
+
+4. **Sの戦略的沈黙が決定的**: Sはいずれの提案に対しても動議を提出していない。6月にSが政府と共に投票すれば、V+MPは孤立する；Sが棄権すれば、動議は正式な野党記録として機能するのみ。
+
+5. **Lが重要な連立変数**: LのECHR（欧州人権条約）内部審議はProp 267に関するJuUの報告書に公式留保をもたらす可能性がある — 実質的な離反なしの評判保護。これは公算が高い。
+
+6. **政府は採決で勝利する**: 両提案は夏季休会前に可決される。野党動議は選挙マニフェスト記録として機能し、阻止手段としてではない。
+
+---
+
+### 評価
+
+今週の動議はスウェーデンの選挙前政治状況を反映している：執政連立が最後のriksmöteセッションを利用して包括的な安全保障・移民・監視パッケージを成立させ、断片化した野党（V+MPは団結、Sは曖昧、C/Lは不確実）が法案を阻止できないまま9月選挙へのポジショニングを行っている。
+
+**重要な情報ギャップ**: Prop 267に関するSの投票方向 — 最も重要な単一の未知数。SによるProp 267への政府支持票はSの移民/安全保障における右方向転換を確認し、左派ブロックの選挙計算を規定することになる。
+
+---
+
+### 行動項目 / 推奨事項
+
+| 項目 | 優先度 | 担当 | 期限 |
+|------|--------|------|------|
+| Prop 267に関するSの公的発言を監視 | 高 | 政治部門 | 2026年6月10日 |
+| JuU公聴会の証人リストを追跡 | 高 | 政治部門 | 2026年6月5日 |
+| Prop 267 ECHRに関するL委員会メンバーの発言を確認 | 高 | 政治部門 | 2026年6月15日 |
+| SfU採決日を監視（PIR-MOT-2026-05-21-005） | 高 | 政治部門 | 2026年6月1日 |
+| 実装後追跡（Prop 261 2027年1月） | 中 | 長期部門 | 2027年1月 |
+
+---
+
+### 信頼性評価
+
+- Riksdag MCPにより直接確認された8件の動議に基づく分析
+- 優先3文書（HD024192、HD024191、HD024188）の全文取得済み
+- 投票予測は議会算術と歴史的パターン分析に基づく
+- **総合信頼度: 高**
+
+---
+
+### パス2追加情報（2026-05-28）
+
+**全文レビューから抽出した具体的なテキスト証拠:**
+
+#### Prop 267 — 主要法的メカニズム（HD024188より）
+政府の新たな国外追放基準：*"om det är särskilt påkallat med hänsyn till Sveriges säkerhet"*（スウェーデンの安全保障に鑑み特に要求される場合）。これは以前の「テロ行為を犯すと推測される」という基準に代わるもの。個別の脅威評価からより広範な安全保障上の利益基準への転換が、CRDとAdvokatsamfundetが最も具体的に反対している点。
+
+#### Prop 261 — 主要な構造的懸念（HD024191より）
+MPの最も的確な懸念：スウェーデンに物理的に居住しているが安定した住所がなくfolkbokföringsadressへの登録ができない人々は「Catch-22」状況にある — 居住者であるが行政上は存在せず、医療、社会サービス、その他すべての住所連動権利へのアクセスを失う。スウェーデンでは年間推定34,000人以上がホームレスを経験している。
+
+<!-- source-sha: ab10e5c6f3fce2e937d1d97b29389c79a9cfb574 -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-28/motions/executive-brief_ko.md -->
+
+**분류:** 공개  
+**날짜:** 2026-05-28  
+**작성 대상:** 편집 및 정보 지도부
+
+---
+
+### 상황
+
+2026-05-21/22에 두 정부 제안서에 반대하는 네 건의 야당 동의안이 제출되었다 — Prop 267(자격을 갖춘 안보 위협 외국인, LSU 개정)과 Prop 261(Skatteverket의 확대된 생체인식 권한). Vänsterpartiet(V)와 Miljöpartiet(MP)가 야당 블록을 형성하고, Socialdemokraterna(S)는 전략적 침묵을 유지하고 있다. 총선까지 108일 남았다.
+
+---
+
+### 핵심 발견 사항
+
+1. **V+MP 권리 블록 공고화**: 두 제안서에 대한 네 건의 동의안은 스웨덴이 선거 캠페인 시즌에 접어들면서 일관된 시민 자유 야당 입장을 확립한다.
+
+2. **아동 구금이 주요 현안**: Prop 267의 아동 구금 연장(§§ 9, 10, 19)에 대한 MP의 표적화된 이의는 정치적으로 가장 강력한 요구이다 — 법적으로 근거가 있고, 감성적으로 공감을 얻으며, UNHCR과 세이브더칠드런의 지지를 받는다.
+
+3. **생체인식 감시 확장 확인**: Prop 261의 Skatteverket–Migrationsverket 데이터 공유는 스웨덴의 행정 감시 능력의 구조적 확대를 나타낸다. 구현 후 기술적으로 되돌릴 수 없다(2027년 1월).
+
+4. **S의 전략적 침묵이 결정적**: S는 어떤 제안서에 대해서도 동의안을 제출하지 않았다. 6월에 S가 정부와 함께 투표하면 V+MP는 고립된다; S가 기권하면 동의안은 단지 공식 야당 기록으로 기능한다.
+
+5. **L이 핵심 연립 변수**: L의 ECHR(유럽인권협약) 내부 심의는 Prop 267에 관한 JuU 보고서에 공식 유보를 생성할 수 있다 — 실질적인 이탈 없는 평판 보호. 이는 가능성이 높다.
+
+6. **정부는 표결에서 승리할 것**: 두 제안서 모두 여름 휴회 전에 통과될 것이다. 야당 동의안은 선거 공약 마커로 기능하며, 차단 수단이 아니다.
+
+---
+
+### 평가
+
+이번 주 동의안들은 스웨덴의 선거 전 정치 환경을 반영한다: 집권 연립이 마지막 riksmöte 세션을 이용해 포괄적인 안보·이민·감시 패키지를 시행하고, 분열된 야당(V+MP 단결, S 모호, C/L 불확실)은 법안을 차단할 수 없지만 9월 선거를 위해 포지셔닝하고 있다.
+
+**중요 정보 격차**: Prop 267에 대한 S의 투표 방향 — 단일로 가장 중요한 미지수. S의 친정부 투표는 이민/안보에서의 S의 우경화를 확인하고 좌파 블록의 선거 계산을 규정하게 된다.
+
+---
+
+### 행동 항목 / 권고 사항
+
+| 항목 | 우선순위 | 담당자 | 기한 |
+|------|---------|--------|------|
+| Prop 267에 관한 S의 공개 발언 모니터링 | 높음 | 정치 부서 | 2026년 6월 10일 |
+| JuU 청문회 증인 목록 추적 | 높음 | 정치 부서 | 2026년 6월 5일 |
+| Prop 267 ECHR에 관한 L 위원회 의원 발언 확인 | 높음 | 정치 부서 | 2026년 6월 15일 |
+| SfU 투표 날짜 모니터링(PIR-MOT-2026-05-21-005) | 높음 | 정치 부서 | 2026년 6월 1일 |
+| 구현 후 추적(Prop 261 2027년 1월) | 중간 | 장기 부서 | 2027년 1월 |
+
+---
+
+### 신뢰성 평가
+
+- Riksdag MCP를 통해 직접 확인된 8건의 동의안에 기반한 분석
+- 우선순위 3개 문서(HD024192, HD024191, HD024188) 전문 검색 완료
+- 의회 산술 및 역사적 패턴 분석을 기반으로 한 투표 예측
+- **전반적 신뢰도: 높음**
+
+---
+
+### 패스 2 추가 정보(2026-05-28)
+
+**전문 검토에서 추출된 구체적인 텍스트 증거:**
+
+#### Prop 267 — 핵심 법적 메커니즘(HD024188에서)
+정부의 새로운 추방 기준: *"om det är särskilt påkallat med hänsyn till Sveriges säkerhet"*（스웨덴의 안보를 고려하여 특별히 요구되는 경우). 이는 이전 기준인 "테러 행위를 저지를 것으로 추정될 수 있다"를 대체한다. 개별화된 위협 평가에서 더 광범위한 안보 이익 기준으로의 전환이 CRD와 Advokatsamfundet이 가장 구체적으로 반대하는 내용이다.
+
+#### Prop 261 — 핵심 구조적 우려(HD024191에서)
+MP의 가장 정확한 우려: 물리적으로 스웨덴에 거주하지만 안정적인 거주지 주소가 없어 folkbokföringsadress에 등록할 수 없는 사람들은 "캐치-22" 상황에 처해 있다 — 그들은 거주자이지만 행정적으로 존재하지 않아 의료, 사회 서비스 및 기타 모든 주소 연동 권리 접근을 잃게 된다. 스웨덴에서는 연간 34,000명 이상이 노숙 경험을 하는 것으로 추산된다.
+
+<!-- source-sha: ab10e5c6f3fce2e937d1d97b29389c79a9cfb574 -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-28/motions/executive-brief_nl.md -->
+
+**Classificatie:** OPENBAAR  
+**Datum:** 2026-05-28  
+**Opgesteld voor:** Redactionele en inlichtingenleiding
+
+---
+
+### Situatie
+
+Vier nieuwe oppositiemoties werden ingediend op 2026-05-21/22 tegen twee regeringsvoorstellen — Prop 267 (vreemdelingen die gekwalificeerde veiligheidsrisico's vormen, LSU-wijziging) en Prop 261 (uitgebreide biometrische bevoegdheden van Skatteverket). Vänsterpartiet (V) en Miljöpartiet (MP) vormen het oppositieblok, terwijl Socialdemokraterna (S) strategisch zwijgt. De verkiezingen zijn over 108 dagen.
+
+---
+
+### Kernbevindingen
+
+1. **V+MP rechtenblok geconsolideerd**: Vier moties tegen twee voorstellen vestigen een coherente burgerrechten-oppositiepositie terwijl Zweden het verkiezingscampagneseizoen ingaat.
+
+2. **Detentie van kinderen is het hoofdartikel**: MP's gerichte bezwaar tegen de uitbreiding van kinderdetentie in Prop 267 (§§ 9, 10, 19) is de politiek meest impactvolle eis — juridisch onderbouwd, emotioneel resonant en gesteund door UNHCR en Save the Children.
+
+3. **Biometrische surveillance-uitbreiding bevestigd**: De Skatteverket–Migrationsverket gegevensdeling in Prop 261 vertegenwoordigt een structurele uitbreiding van Zweden's administratieve surveillancecapaciteit. Technisch onomkeerbaar na implementatie (jan. 2027).
+
+4. **S's strategisch stilzwijgen is beslissend**: S heeft geen moties ingediend over een van beide voorstellen. Als S in juni met de regering stemt, worden V+MP geïsoleerd; als S zich onthoudt, dienen de moties slechts als formele oppositieprotocollen.
+
+5. **L is de sleutel coalitievariabele**: L's interne EVRM-overweging kan leiden tot een formeel voorbehoud in het rapport van JuU over Prop 267 — een reputatiebescherming zonder wezenlijk verraad. Dit is waarschijnlijk.
+
+6. **De regering zal zegevieren bij de stemmen**: Beide voorstellen worden aangenomen vóór het zomerverlof. Oppositiemoties fungeren als verkiezingsmanifest-markeringen, niet als blokkeringsinstrumenten.
+
+---
+
+### Beoordeling
+
+De moties van de week weerspiegelen het politieke voorverkie zingslandschap van Zweden: een regerende coalitie die de laatste riksmöte-sessie gebruikt om een uitgebreid veiligheids-, migratie- en surveillancepakket door te voeren, en een gefragmenteerde oppositie (V+MP verenigd, S tweeslachtig, C/L onzeker) die de wetgeving niet kan blokkeren maar zich positioneert voor de septemberverkiezingen.
+
+**Kritische inlichtingskloof**: S's stemrichting over Prop 267 — de enige meest bepalende onbekende factor. Een pro-regeringsstem van S zou S's rechtse verschuiving in migratie/veiligheidsbeleid bevestigen en de electorale berekening van het linkse blok bepalen.
+
+---
+
+### Actiepunten / Aanbevelingen
+
+| Actie | Prioriteit | Verantwoordelijke | Deadline |
+|-------|-----------|-------------------|----------|
+| S's publieke verklaringen over Prop 267 volgen | HOOG | Politieke redactie | 10 juni 2026 |
+| JuU-hoorzitting getuigenlijst volgen | HOOG | Politieke redactie | 5 juni 2026 |
+| L-comitéleden verklaringen over Prop 267 EVRM controleren | HOOG | Politieke redactie | 15 juni 2026 |
+| SfU-stemdatum volgen (PIR-MOT-2026-05-21-005) | HOOG | Politieke redactie | 1 juni 2026 |
+| Post-implementatie-tracking (Prop 261 jan. 2027) | GEMIDDELD | Langetermijnredactie | Jan. 2027 |
+
+---
+
+### Betrouwbaarheidsbeoordeling
+
+- Analyse gebaseerd op 8 moties direct geverifieerd via de Riksdag MCP
+- Volledige tekst opgehaald voor de drie prioriteitsdocumenten (HD024192, HD024191, HD024188)
+- Stemvoorspellingen gebaseerd op parlementaire rekenkunde en historische patroonanalyse
+- **Algehele betrouwbaarheid: HOOG**
+
+---
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-28/motions/executive-brief_no.md -->
+
+**Klassifisering:** OFFENTLIG  
+**Dato:** 2026-05-28  
+**Utarbeidet for:** Redaksjonell og etterretningsledelse
+
+---
+
+### Situasjonsoversikt
+
+Fire nye opposisjonsmotioner ble innlevert 2026-05-21/22 mot to regjeringsproposisjoner — Prop 267 (sikkerhetsfarlige utlendinger, LSU-endring) og Prop 261 (Skatteverkets utvidede biometriske fullmakter). Vänsterpartiet (V) og Miljöpartiet (MP) utgjør opposisjonsblokken, mens Socialdemokraterna (S) opprettholder en strategisk taushet. Valget er 108 dager unna.
+
+---
+
+### Sentrale funn
+
+1. **V+MPs rettighetsblokk befestet**: Fire motioner mot to proposisjoner etablerer en konsekvent sivil-frihetsopposisjon når Sverige går inn i sin valgkampsesong.
+
+2. **Barnfengsling er overskriften**: MPs målrettede innvending mot Prop 267's utvidelse av barnfengsling (§§ 9, 10, 19) er det politisk mest potente kravet — juridisk begrunnet, emosjonelt gjenklang og støttet av UNHCR og Redd Barna.
+
+3. **Biometrisk overvåkningsspredning bekreftet**: Prop 261's Skatteverket–Migrationsverket datadeling representerer en strukturell utvidelse av Sveriges administrative overvåkningskapasitet. Teknisk irreversibel etter implementering (jan. 2027).
+
+4. **S's strategiske taushet er avgjørende**: S har ikke innlevert motioner om noen av proposisjonene. Hvis S stemmer med regjeringen i juni, isoleres V+MP; hvis S avstår, fungerer motionene bare som formelle opposisjonsprotokoller.
+
+5. **L er den viktige koalisjonsvariabelen**: L's interne EMK-overveielse kan resultere i et formelt forbehold i JuU's innstilling om Prop 267 — en omdømmemessig sikring uten reelt avvik. Dette er sannsynlig.
+
+6. **Regjeringen vil vinne i voterингene**: Begge proposisjonene vil vedtas før sommerferien. Opposisjonsmotioner fungerer som valgmanifestmarkører, ikke som blokeringsinstrumenter.
+
+---
+
+### Vurdering
+
+Ukens motioner gjenspeiler Sveriges forvalgspolitiske landskap: en regjerende koalisjon som bruker den siste riksmöte-sesjonen til å gjennomføre en omfattende sikkerhets-, migrasjons- og overvåkningspakke, og en fragmentert opposisjon (V+MP forent, S tvetydig, C/L usikre) som ikke kan blokkere lovgivningen, men posisjonerer seg for septembervalget.
+
+**Kritisk etterretningslukke**: S's stemmere retning om Prop 267 — den eneste mest avgjørende ukjente faktoren. En S pro-regjerings-stemme ville bekrefte S's høyreforskyvning innen migrasjons/sikkerhetspolitikk og definere venstreblokkets valgkalkyle.
+
+---
+
+### Handlingspunkter / Anbefalinger
+
+| Handling | Prioritet | Ansvarlig | Frist |
+|----------|-----------|-----------|-------|
+| Overvåk S's offentlige uttalelser om Prop 267 | HØY | Politisk redaksjon | 10. juni 2026 |
+| Følg JuU-høringers vitnesteliste | HØY | Politisk redaksjon | 5. juni 2026 |
+| Sjekk L-komitémedlemmers uttalelser om Prop 267 EMK | HØY | Politisk redaksjon | 15. juni 2026 |
+| Overvåk SfU-voterингsdato (PIR-MOT-2026-05-21-005) | HØY | Politisk redaksjon | 1. juni 2026 |
+| Etterimplementeringssporing (Prop 261 jan. 2027) | MIDDELS | Langsiktig redaksjon | Jan. 2027 |
+
+---
+
+### Tillitsvurdering
+
+- Analyse basert på 8 motioner direkte verifisert via Riksdagens MCP
+- Fulltekst hentet for de tre prioriterte dokumentene (HD024192, HD024191, HD024188)
+- Stemmeforutsigelser basert på parlamentarisk aritmetikk og historisk mønsteranalyse
+- **Samlet tillit: HØY**
+
+---
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-28/motions/executive-brief_sv.md -->
+
+**Klassificering:** OFFENTLIG  
+**Datum:** 2026-05-28  
+**Förberedd för:** Redaktionell och underrättelseledning
+
+---
+
+### Lägesöversikt
+
+Fyra nya oppositionsmotioner inlämnades 2026-05-21/22 mot två regeringspropositioner — Prop 267 (säkerhetshot mot utlänningar, LSU-ändring) och Prop 261 (Skatteverkets utökade biometriska befogenheter). Vänsterpartiet (V) och Miljöpartiet (MP) bildar oppositionsblocket, medan Socialdemokraterna (S) håller en strategisk tystnad. Det är 108 dagar till riksdagsvalet.
+
+---
+
+### Centrala slutsatser
+
+1. **V+MP:s rättsliga bloc befäst**: Fyra motioner mot två propositioner etablerar en konsekvent civil-frihetsopposition när Sverige går in i sin valrörelsesäsong.
+
+2. **Barnhäktning är rubriknyheten**: MP:s riktade invändning mot Prop 267:s utvidgning av barnhäktning (§§ 9, 10, 19) är det politiskt mest potenta kravet — juridiskt grundat, emotionellt resonant och stött av UNHCR och Rädda barnen.
+
+3. **Biometrisk övervakningskräfta bekräftad**: Prop 261:s Skatteverket–Migrationsverket datadelning representerar en strukturell utvidgning av Sveriges administrativa övervakningskapacitet. Tekniskt irreversibel när den väl är implementerad (jan 2027).
+
+4. **S:s strategiska tystnad är avgörande**: S har inte lämnat in några motioner om någon av propositionerna. Om S röstar med regeringen i juni isoleras V+MP; om S avstår fungerar motionerna enbart som formella oppositionsprotokoll.
+
+5. **L är den viktigaste koalitionsvariabeln**: L:s interna EKMR-deliberation kan leda till ett formellt förbehåll i JuU:s betänkande om Prop 267 — ett renommémässigt skydd utan reellt svek. Detta är troligt.
+
+6. **Regeringen kommer att segra i omröstningarna**: Båda propositionerna kommer att gå igenom före sommaruppehållet. Oppositionsmotioner fungerar som valmanifestmarkörer, inte som blockeringsinstrument.
+
+---
+
+### Bedömning
+
+Veckans motioner speglar Sveriges förvalslandskap: en styrande koalition som använder den sista riksmötessessionen för att genomföra ett omfattande säkerhets-, migrations- och övervakningspaket, och en fragmenterad opposition (V+MP förenade, S tvetydig, C/L osäkra) som inte kan blockera lagstiftningen men positionerar sig inför septembervalet.
+
+**Kritisk underrättelselucka**: S:s röstriktning om Prop 267 — den enskilt mest avgörande okända faktorn. En S-proregerings-röst skulle bekräfta S:s högerförskjutning inom migrations- och säkerhetspolitiken och definiera vänsterblockets valkalkyl.
+
+---
+
+### Åtgärdspunkter / Rekommendationer
+
+| Åtgärd | Prioritet | Ansvarig | Deadline |
+|--------|-----------|----------|----------|
+| Bevaka S:s offentliga uttalanden om Prop 267 | HÖG | Politisk redaktion | 10 juni 2026 |
+| Följa JuU:s utfrågningsvittneslista | HÖG | Politisk redaktion | 5 juni 2026 |
+| Kontrollera L-ledamöternas uttalanden om Prop 267 EKMR | HÖG | Politisk redaktion | 15 juni 2026 |
+| Bevaka SfU-omröstningsdatum (PIR-MOT-2026-05-21-005) | HÖG | Politisk redaktion | 1 juni 2026 |
+| Efterimplementeringsspårning (Prop 261 jan 2027) | MEDEL | Långsiktig redaktion | Jan 2027 |
+
+---
+
+### Konfidensbedömning
+
+- Analys baserad på 8 motioner direkt verifierade via Riksdagens MCP
+- Fulltext hämtad för de tre prioriterade dokumenten (HD024192, HD024191, HD024188)
+- Röstningsprognoser baserade på parlamentarisk aritmetik och historisk mönsteranalys
+- **Övergripande konfidensen: HÖG**
+
+---
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-28/motions/executive-brief_zh.md -->
+
+**分类：** 公开  
+**日期：** 2026-05-28  
+**编制对象：** 编辑与情报领导层
+
+---
+
+### 形势概述
+
+2026-05-21/22，针对两项政府提案提交了四份新的反对党动议 — Prop 267（构成合格安全威胁的外国人，LSU修正案）和Prop 261（Skatteverket扩大生物识别权力）。Vänsterpartiet（V）和Miljöpartiet（MP）组成反对党集团，而Socialdemokraterna（S）保持战略沉默。距大选还有108天。
+
+---
+
+### 主要发现
+
+1. **V+MP权利集团巩固**：针对两项提案的四份动议确立了一致的公民自由反对立场，而瑞典正进入选举活动季。
+
+2. **儿童羁押是头条**：MP对Prop 267儿童羁押延伸（§§ 9, 10, 19）的针对性异议是政治上最具潜力的要求 — 有法律依据、情感共鸣，并获得联合国难民署和救助儿童会的支持。
+
+3. **生物特征监控蔓延已得到确认**：Prop 261的Skatteverket–Migrationsverket数据共享代表了瑞典行政监控能力的结构性扩展。实施后（2027年1月）在技术上不可逆转。
+
+4. **S的战略沉默至关重要**：S没有就任何一项提案提交动议。如果S在6月与政府一起投票，V+MP将被孤立；如果S弃权，动议只作为正式的反对党记录。
+
+5. **L是关键的联盟变量**：L内部关于欧洲人权公约的审议可能在JuU关于Prop 267的报告中产生正式保留意见 — 一种无实质性背叛的声誉保护。这是有可能的。
+
+6. **政府将在投票中胜出**：两项提案都将在夏季休会前获得通过。反对党动议作为选举宣言标记，而非阻碍工具。
+
+---
+
+### 评估
+
+本周动议反映了瑞典的选前政治格局：一个执政联盟利用最后一届riksmöte会议颁布全面的安全、移民和监控方案，而一个分裂的反对派（V+MP联合，S模糊，C/L不确定）无法阻止立法，但为9月选举做好定位。
+
+**关键情报缺口**：S在Prop 267上的投票方向 — 最重要的单一未知因素。S投赞成票将证实S在移民/安全领域的右移，并界定左派集团的选举计算。
+
+---
+
+### 行动项目 / 建议
+
+| 项目 | 优先级 | 负责人 | 截止日期 |
+|------|--------|--------|---------|
+| 监控S关于Prop 267的公开声明 | 高 | 政治部门 | 2026年6月10日 |
+| 追踪JuU听证会证人名单 | 高 | 政治部门 | 2026年6月5日 |
+| 核查L委员会成员关于Prop 267欧洲人权公约的声明 | 高 | 政治部门 | 2026年6月15日 |
+| 监控SfU投票日期（PIR-MOT-2026-05-21-005） | 高 | 政治部门 | 2026年6月1日 |
+| 实施后跟踪（Prop 261 2027年1月） | 中 | 长期部门 | 2027年1月 |
+
+---
+
+### 可信度评估
+
+- 分析基于通过Riksdag MCP直接验证的8份动议
+- 已检索三份优先文件（HD024192、HD024191、HD024188）的全文
+- 投票预测基于议会算术和历史规律分析
+- **总体可信度：高**
+
+---
+
+### 第2轮补充情报（2026-05-28）
+
+**从全文审查中提取的具体文本证据：**
+
+#### Prop 267 — 核心法律机制（来自HD024188）
+政府新的驱逐标准：*"om det är särskilt påkallat med hänsyn till Sveriges säkerhet"*（如果考虑到瑞典安全特别需要的话）。这取代了以前的标准"可以推定会实施恐怖行为"。从个体化威胁评估转变为更广泛的安全利益标准，这正是CRD和Advokatsamfundet最具体反对的内容。
+
+#### Prop 261 — 核心结构性问题（来自HD024191）
+MP最精确的关切：实际居住在瑞典但缺乏稳定住所因而无法注册folkbokföringsadress的人处于"第22条军规"的困境 — 他们是居民，但在行政上不存在，失去了对医疗保健、社会服务和所有其他与地址挂钩权利的访问。估计每年有超过34,000人在瑞典经历无家可归状况。
+
+<!-- source-sha: ab10e5c6f3fce2e937d1d97b29389c79a9cfb574 -->
 
 ## Executive Intelligence Brief
 <!-- source: executive-intelligence-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-28/motions/executive-intelligence-brief.md -->
@@ -1632,7 +2477,7 @@ This generated report reconciles the analysis folder with the article projection
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 23 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 36 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 3 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 1 | Linked in Article Sources, not expanded inline |
 
@@ -1658,6 +2503,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`coalition-implications.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-28/motions/coalition-implications.md)
 - [`committee-signals.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-28/motions/committee-signals.md)
 - [`election-proximity-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-28/motions/election-proximity-analysis.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-28/motions/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-28/motions/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-28/motions/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-28/motions/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-28/motions/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-28/motions/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-28/motions/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-28/motions/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-28/motions/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-28/motions/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-28/motions/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-28/motions/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-28/motions/executive-brief_zh.md)
 - [`executive-intelligence-brief.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-28/motions/executive-intelligence-brief.md)
 - [`future-outlook.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-28/motions/future-outlook.md)
 - [`key-actors.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-28/motions/key-actors.md)

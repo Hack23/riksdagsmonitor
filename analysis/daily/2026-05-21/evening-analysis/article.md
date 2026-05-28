@@ -3,7 +3,7 @@ date: 2026-05-21
 subfolder: evening-analysis
 slug: 2026-05-21-evening-analysis
 source_folder: analysis/daily/2026-05-21/evening-analysis
-generated_at: 2026-05-27T21:19:14.272Z
+generated_at: 2026-05-28T10:21:06.637Z
 language: en
 layout: article
 ---
@@ -91,6 +91,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -1925,13 +1938,803 @@ _(populated by 02-mcp-access.md §Three-attempt connect protocol)_
 ### Per-document table
 _(populated by the download step)_
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/evening-analysis/executive-brief_ar.md -->
+
+**التصنيف**: OSINT عام · **مستوى الثقة**: عالٍ · **المؤلف**: تحليل الاستخبارات في Riksdagsmonitor  
+**الدورة**: تحليل المساء · **الأفق الزمني**: T+72h → T+30d · **معامل DIW**: 1.5× (115 يومًا حتى الانتخابات)
+
+### 🎯 الاستنتاج الرئيسي
+
+يشهد يوم الخميس 21 مايو 2026 تحولًا قانونيًا بارزًا: تُقرّ لجنة العدل (JuU) **أول تشريع سويدي لتقنية التعرف على الوجه بالذكاء الاصطناعي للشرطة في الوقت الفعلي** (HD01JuU28, betänkande 2025/26:JuU28). في الوقت ذاته، يُعيد **betänkande مرونة النقد** الخاص بـ FiU (HD01FiU39) و**إصلاح سوق الصناديق** FiU40 تشكيل البنية التحتية المالية السويدية. تُشكّل خمسة betänkanden من JuU وFiU وCU بصمةً تشريعيةً متشعبة بين اللجان غير معتادة في اتساعها. على هذه الخلفية، تستهدف مواد المعارضة نظام ترحيل التهديدات الأمنية للحكومة وصلاحيات Skatteverket، فيما تكشف الاستجوابات حول أزمة المياه في جنوب السويد وإغلاق المستشفيات عن إخفاقات في منظومة الرعاية الاجتماعية. أما الأسئلة المكتوبة بشأن أسلحة تايوان والتبت، فتدلّ على استمرار التوترات الدبلوماسية السويدية غير المحلولة في مرحلة ما بعد الناتو.
+
+```mermaid
+flowchart LR
+    A[📅 2026-05-21<br/>Evening Analysis] --> B[🔴 AI Policing<br/>JuU28 DIW 4.5]
+    A --> C[💵 Cash Resilience<br/>FiU39 DIW 3.2]
+    A --> D[📈 Fund Market<br/>FiU40 DIW 2.8]
+    A --> E[🌿 Hydropower Exception<br/>CU41 DIW 2.7]
+    A --> F[🏙️ Area Cooperation Fee<br/>CU36 DIW 2.5]
+    A --> G[⚔️ Motions × 4<br/>V opposition HD024187-190]
+    A --> H[🌊 Water crisis interp<br/>HD10499 southern Sweden]
+    A --> I[🏥 Hospital closure interp<br/>HD10500 Köping]
+    B --> B1[Civil liberties trade-off<br/>Art. 8 ECHR risk]
+    C --> C1[NATO crisis resilience<br/>Digital payment vulnerability]
+    B1 --> Z[🗳️ Election 2026<br/>115 days — 1.5× DIW]
+    C1 --> Z
+    style A fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+    style B fill:#1a1e3d,stroke:#ff006e,color:#ff006e
+    style C fill:#1a1e3d,stroke:#ffbe0b,color:#ffbe0b
+    style D fill:#1a1e3d,stroke:#00d9ff,color:#00d9ff
+    style Z fill:#ff006e,stroke:#ffbe0b,color:#0a0e27
+```
+
+### 🧭 3 قرارات يدعم هذا الملخص اتخاذها
+
+1. **المجتمع المدني/القانوني**: تقديم طلب مراجعة إلى Lagrådet بشأن مراسيم تنفيذ JuU28 المتعلقة ببروتوكولات استخدام التعرف على الوجه بالذكاء الاصطناعي، وحدود الاحتفاظ بالبيانات، وحقوق الطعن. **المحفز**: مرسوم تنفيذي حكومي، يُتوقع صدوره في غضون 60 يومًا من تصويت Riksdag. مستوى الثقة: **عالٍ**.
+
+2. **المؤسسات المالية/Riksbanken**: تقييم الاستعداد التشغيلي لالتزامات النقد في FiU39 — يتعين على البنوك الحفاظ على مستويات خدمة نقدية دنيا في ظل النظام الجديد. **المحفز**: تصويت Riksdag على FiU39 (متوقع في أسبوع الجلسة العامة 25 مايو). مستوى الثقة: **عالٍ**.
+
+3. **الشؤون الخارجية**: لدى السويد نافذة 48-72 ساعة لتوضيح موقفها من صفقات الأسلحة مع تايوان (HD11822) قبل أن تتجمد رواية ترامب/الصين للتسلح في حقيقة دبلوماسية. ستكشف إجابة وزيرة الخارجية Malmer Stenergard ما إذا كانت السويد ستتبع توافق الاتحاد الأوروبي أم ستتبنى موقفًا مؤيدًا للتايوان في الدفاع. **المحفز**: الموعد النهائي للرد على السؤال المكتوب. مستوى الثقة: **متوسط-عالٍ**.
+
+### 60 ثانية
+
+- **الأهم**: JuU28 — التعرف على الوجه بالذكاء الاصطناعي في الوقت الفعلي للشرطة. تصبح السويد من أوائل الدول الأعضاء في الاتحاد الأوروبي التي تُشرّع صراحةً للقياسات الحيوية في الشرطة. تداعيات المادة 8 من الاتفاقية الأوروبية لحقوق الإنسان والفئة 1 عالية المخاطر من لائحة الذكاء الاصطناعي الأوروبية. DIW 4.5 (مضاعف اقتراب الانتخابات 1.5× مُطبَّق).
+- **الأهم اقتصاديًا**: FiU40 (أسواق صناديق أقوى) — إصلاح هيكلي لأسواق الصناديق السويدية البالغة 6 تريليون كرونة. آثار طويلة الأمد على تطوير سوق رأس المال ومدخرات التقاعد.
+- **الأكثر حساسية جيوسياسية**: HD11822 (أسلحة تايوان) و HD11821 (التبت-الصين) — أسئلة مكتوبة تكشف عن موازنة السويد الدبلوماسية في مرحلة ما بعد الناتو.
+- **الكاشفة لمنظومة الرعاية الاجتماعية**: استجواب HD10500 (مستشفى كوبينج) — تُقرّ الحكومة بإعادة هيكلة المستشفيات دون إطار موحد للرعاية الصحية الريفية.
+
+### التوليف المتقاطع بين الأيام — Tier-C
+
+يرتبط إنتاج اللجان اليوم مباشرةً بالـ Propositioner والـ Motioner من أمس/هذا الأسبوع:
+- القياسات الحيوية للذكاء الاصطناعي JuU28 **تتبع** اقتراح الحكومة بالترحيل بسبب التهديد الأمني (HD03267، مستشهد به في Propositioner الشقيقة) — معًا يُشكّلان أوسع توسع لمنظومة الأمن السويدية منذ إعادة تنظيم SÄPO عام 2019.
+- مرونة النقد FiU39 **تُكمل** موضوع الحوكمة الرقمية في HD03250 (الهوية الرقمية الحكومية، Propositioner الشقيقة) — السويد تُوسّع الهوية الرقمية وتُلزم بدائل النقد في آنٍ واحد.
+- Motioner الخاصة بـ V اليوم (HD024187 ضد HD03267) **تُعكس** نمط المعارضة المنهجية لـ V الموثّق في تحليل Motioner الشقيق.
+
+### السياق الاقتصادي
+
+صندوق النقد الدولي WEO-2026-04: توقعات نمو الناتج المحلي الإجمالي السويدي 2.1% (2026)، التضخم 2.0%، البطالة 8.4%. يعالج إصلاح سوق الصناديق (FiU40) ثغرات أسواق الصناديق السويدية البالغة 6 تريليون كرونة المُحددة في تقرير الاستقرار المالي لـ Riksbanken 2025:2. يتضمن التزام النقد (FiU39) تكاليف امتثال مقدّرة للقطاع المصرفي بقيمة 400-800 مليون كرونة من الاستثمارات الرأسمالية (SBAB، تقديرات Finansinspektionen).
+
+*economicProvenance: provider=imf, dataflow=WEO, vintage=WEO-2026-04, vintageAgeMonths=1, retrieved_at=2026-05-21*
+
+<!-- source-sha: 0a8d60e7f720acdade1c9d675ec956390d78f271 -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/evening-analysis/executive-brief_da.md -->
+
+**Klassificering**: Offentlig OSINT · **Konfidens**: HØJ · **Forfatter**: Riksdagsmonitor Efterretningsanalyse  
+**Cyklus**: Aftenanalyse · **Horisont**: T+72h → T+30d · **DIW-multiplikator**: 1,5× (115 dage til valg)
+
+### 🎯 Konklusion i sammendrag
+
+Torsdag den 21. maj 2026 afsluttes med en afgørende borgerrettighedsmæssig skillevand: Justitsudvalget (JuU) godkender **Sveriges første AI-ansigtsgenkendelseslovgivning for politiet i realtid** (HD01JuU28, betänkande 2025/26:JuU28). Samtidig omformer FiU's **kontantrobusthedsbetænkning** (HD01FiU39) og FiU40's **fondmarkedsreform** Sveriges finansinfrastruktur. Fem betænkninger fra JuU, FiU og CU skaber et usædvanligt bredt tværudvalgs lovgivningsmæssigt fodaftryk. Mod denne baggrund: oppositionsmotioner angriber regeringens sikkerhedstrusselsudsendelsesregime og Skatteverkets beføjelser, mens interpellationer om Sydsveriges vandkrise og sygehuslukkelser blotlægger svigt i velfærdslevering. Skriftlige spørgsmål om Taiwanvåben og Tibet signalerer, at Sveriges uløste post-NATO diplomatiske spændinger forbliver uafklarede.
+
+```mermaid
+flowchart LR
+    A[📅 2026-05-21<br/>Evening Analysis] --> B[🔴 AI Policing<br/>JuU28 DIW 4.5]
+    A --> C[💵 Cash Resilience<br/>FiU39 DIW 3.2]
+    A --> D[📈 Fund Market<br/>FiU40 DIW 2.8]
+    A --> E[🌿 Hydropower Exception<br/>CU41 DIW 2.7]
+    A --> F[🏙️ Area Cooperation Fee<br/>CU36 DIW 2.5]
+    A --> G[⚔️ Motions × 4<br/>V opposition HD024187-190]
+    A --> H[🌊 Water crisis interp<br/>HD10499 southern Sweden]
+    A --> I[🏥 Hospital closure interp<br/>HD10500 Köping]
+    B --> B1[Civil liberties trade-off<br/>Art. 8 ECHR risk]
+    C --> C1[NATO crisis resilience<br/>Digital payment vulnerability]
+    B1 --> Z[🗳️ Election 2026<br/>115 days — 1.5× DIW]
+    C1 --> Z
+    style A fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+    style B fill:#1a1e3d,stroke:#ff006e,color:#ff006e
+    style C fill:#1a1e3d,stroke:#ffbe0b,color:#ffbe0b
+    style D fill:#1a1e3d,stroke:#00d9ff,color:#00d9ff
+    style Z fill:#ff006e,stroke:#ffbe0b,color:#0a0e27
+```
+
+### 🧭 3 Beslutninger dette notat understøtter
+
+1. **Civilsamfund/juridisk**: Indsend krav om Lagrådets gennemgang af JuU28's implementeringsbekendtgørelser om AI-ansigtsgenkendelsesdriftsprotokoller, dataopbevaringsgrænser og klagerettigheder. **Udløser**: Lovpropositionsforordning til implementering, forventet inden 60 dage efter Riksdag-afstemning. Konfidens: **HØJ**.
+
+2. **Finansinstitutter/Riksbanken**: Vurder operationel beredskab for FiU39's kontantforpligtelser — banker skal opretholde minimumsniveauer for kontantservice under den nye ordning. **Udløser**: Riksdag-afstemning om FiU39 (forventet plenumuge 25. maj). Konfidens: **HØJ**.
+
+3. **Udenrigspolitisk enhed**: Sverige har 48–72-timers vindue til at præcisere sin holdning til Taiwanvåbensalg (HD11822), inden Trumps/Kinas våbenfrysningsnarrativ størkner til diplomatisk fakta. UM Malmer Stenergards svar signalerer, om Sverige tilslutter sig EU-konsensus eller udskærer en pro-Taiwan-forsvarsposition. **Udløser**: Svarsfrist for skriftligt spørgsmål. Konfidens: **MIDDEL-HØJ**.
+
+### 60 sekunder
+
+- **Højest signifikant**: JuU28 — AI realtidsansigtsgenkendelse til politiet. Sverige bliver en af de første EU-medlemsstater til at lovgive om eksplicit politimæssig AI-biometri. EMRK Artikel 8 og EU AI Act Kategori 1 høj-risiko implikationer. DIW 4,5 (valgproksimitetsmultiplikator 1,5× anvendt).
+- **Mest økonomisk gennemgribende**: FiU40 (stærkere fondmarked) — strukturel reform af Sveriges SEK 6 billioner fondmarked. Langsigtede kapitalvækstimplikationer for pensionsopsparing.
+- **Mest geopolitisk følsom**: HD11822 (Taiwanvåben) og HD11821 (Tibet-Kina) — skriftlige spørgsmål der blotlægger Sveriges post-NATO diplomatiske balancegang.
+- **Mest afslørenede om velfærdssystemet**: HD10500 (Köping hospital) interpellation — regeringen erkender sygehusomstrukturering uden en sammenhængende ramme for landdistriktsydelser.
+
+### Tier-C tværdagsanalyse
+
+Dagens udvalgsproduktion forbinder sig direkte til gårsdagens/ugens propositioner og motioner:
+- JuU28 AI-biometri **følger** regeringens sikkerhedstrusselsudsendelsesproposition (HD03267, citeret i propositionssøster) — tilsammen udgør de Sveriges mest omfattende sikkerhedsstatlige udvidelse siden SÄPO-omorganisationen i 2019.
+- FiU39 kontantrobusthed **udvider** det digitale styringstema fra HD03250 (statlig e-ID, propositionssøster) — Sverige udvider samtidig digital identitet OG pålægger kontantfallback.
+- V's motioner i dag (HD024188 mod HD03267) **ekkoer** V's systematiske oppositionsmønster dokumenteret i motionssøsteranalysen.
+
+### Økonomisk kontekst
+
+IMF WEO-2026-04: Sveriges BNP-vækstprognose 2,1 % (2026), inflation 2,0 %, arbejdsløshed 8,4 %. Fondmarkedsreformen (FiU40) skærer igennem Sveriges SEK 6 billioner fondmarkedssårbarhed identificeret i Riksbankens Finansiel stabilitetsrapport 2025:2. Kontantforpligtelsen (FiU39) har anslåede banksektorkomplianseomkostninger på SEK 400–800m i kapitalinvesteringer (SBAB, Finansinspektionens estimater).
+
+*economicProvenance: provider=imf, dataflow=WEO, vintage=WEO-2026-04, vintageAgeMonths=1, retrieved_at=2026-05-21*
+
+<!-- source-sha: 0a8d60e7f720acdade1c9d675ec956390d78f271 -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/evening-analysis/executive-brief_de.md -->
+
+**Klassifizierung**: Öffentliches OSINT · **Vertrauensniveau**: HOCH · **Autor**: Riksdagsmonitor Nachrichtendienstanalyse  
+**Zyklus**: Abendanalyse · **Horizont**: T+72h → T+30d · **DIW-Faktor**: 1,5× (115 Tage bis zur Wahl)
+
+### 🎯 Kernaussage
+
+Donnerstag, 21. Mai 2026, bringt einen bedeutenden Rechtsstaatswandel: Der Rechtsausschuss (JuU) verabschiedet **Schwedens erstes KI-Gesichtserkennung-Gesetz für Polizei in Echtzeit** (HD01JuU28, betänkande 2025/26:JuU28). Gleichzeitig formen FiU's **Bargeldresilientz-betänkande** (HD01FiU39) und FiU40's **Fondsmarktreform** die schwedische Finanzinfrastruktur um. Fünf betänkanden von JuU, FiU und CU ergeben einen ungewöhnlich breiten ausschussübergreifenden Gesetzgebungsfußabdruck. Vor diesem Hintergrund greifen Oppositionsmotionen das Sicherheitsbedrohungs-Ausweisungssystem der Regierung und Skatteverkets Befugnisse an, während Interpellationen zur Wasserkrise Südschweden und Krankenhausschließungen Wohlfahrtsversagen aufdecken. Schriftliche Fragen zu Taiwan-Waffen und Tibet zeigen, dass ungelöste post-NATO-diplomatische Spannungen Schwedens anhalten.
+
+```mermaid
+flowchart LR
+    A[📅 2026-05-21<br/>Evening Analysis] --> B[🔴 AI Policing<br/>JuU28 DIW 4.5]
+    A --> C[💵 Cash Resilience<br/>FiU39 DIW 3.2]
+    A --> D[📈 Fund Market<br/>FiU40 DIW 2.8]
+    A --> E[🌿 Hydropower Exception<br/>CU41 DIW 2.7]
+    A --> F[🏙️ Area Cooperation Fee<br/>CU36 DIW 2.5]
+    A --> G[⚔️ Motions × 4<br/>V opposition HD024187-190]
+    A --> H[🌊 Water crisis interp<br/>HD10499 southern Sweden]
+    A --> I[🏥 Hospital closure interp<br/>HD10500 Köping]
+    B --> B1[Civil liberties trade-off<br/>Art. 8 ECHR risk]
+    C --> C1[NATO crisis resilience<br/>Digital payment vulnerability]
+    B1 --> Z[🗳️ Election 2026<br/>115 days — 1.5× DIW]
+    C1 --> Z
+    style A fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+    style B fill:#1a1e3d,stroke:#ff006e,color:#ff006e
+    style C fill:#1a1e3d,stroke:#ffbe0b,color:#ffbe0b
+    style D fill:#1a1e3d,stroke:#00d9ff,color:#00d9ff
+    style Z fill:#ff006e,stroke:#ffbe0b,color:#0a0e27
+```
+
+### 🧭 3 Entscheidungen, die diese Zusammenfassung unterstützt
+
+1. **Zivilgesellschaft/Rechtlich**: Stellen Sie eine Lagrådet-Prüfungsanfrage für JuU28's Durchführungsverordnungen zu KI-Gesichtserkennung-Verwendungsprotokollen, Datenspeichergrenzen und Beschwerderechten. **Auslöser**: Regierungs-Durchführungsverordnung, erwartet innerhalb von 60 Tagen nach Riksdag-Abstimmung. Vertrauensniveau: **HOCH**.
+
+2. **Finanzinstitutionen/Riksbanken**: Bewerten Sie die operative Bereitschaft für FiU39's Bargeldverpflichtungen — Banken müssen Mindestdienstleistungsniveaus für Bargeld unter dem neuen System aufrechterhalten. **Auslöser**: Riksdag-Abstimmung über FiU39 (erwartet in Plenarsitzungswoche 25. Mai). Vertrauensniveau: **HOCH**.
+
+3. **Außenpolitische Abteilung**: Schweden hat ein 48-72-Stunden-Fenster, um seine Position zu Taiwan-Waffenverkäufen (HD11822) zu klären, bevor die Trump/China-Abrüstungserzählung zur diplomatischen Tatsache gerinnt. FM Malmer Stenergards Antwort zeigt, ob Schweden dem EU-Konsens folgt oder eine pro-Taiwan-Verteidigungshaltung einnimmt. **Auslöser**: Antwortfrist für schriftliche Frage. Vertrauensniveau: **MITTEL-HOCH**.
+
+### 60 Sekunden
+
+- **Wichtigste**: JuU28 — KI-Gesichtserkennung in Echtzeit für die Polizei. Schweden wird zu einem der ersten EU-Mitgliedstaaten, der explizite polizeiliche Biometrie gesetzlich regelt. EMRK Artikel 8 und EU KI-Verordnung Kategorie 1 Hochrisiko-Implikationen. DIW 4,5 (Wahlan näherungsfaktor 1,5× angewendet).
+- **Wirtschaftlich bedeutendste**: FiU40 (stärkere Fondsmärkte) — strukturelle Überholung von Schwedens 6-Billionen-SEK-Fondsmärkten. Langfristige Kapitalmarktentwicklungsauswirkungen auf Rentenersparnisse.
+- **Geopolitisch sensibelste**: HD11822 (Taiwan-Waffen) und HD11821 (Tibet-China) — schriftliche Fragen, die Schwedens post-NATO-diplomatischen Balanceakt enthüllen.
+- **Wohlfahrtssystem-Enthüllend**: HD10500 (Köping-Krankenhaus) Interpellation — Regierung gesteht Krankenhausumstrukturierung ohne einheitlichen ländlichen Gesundheitsversorgungsrahmen ein.
+
+### Tier-C-Tagesübergreifende Synthese
+
+Die heutige Ausschussleistung verknüpft sich direkt mit gestrigen/diese-Woche-Propositioner und Motioner:
+- JuU28 KI-Biometrie **folgt auf** das Sicherheitsbedrohungs-Ausweisungspropositioner der Regierung (HD03267, zitiert in Propositioner-Geschwister) — zusammen bilden sie Schwedens breiteste Sicherheitsstaatserweiterung seit der SUPO-Neuorganisation 2019.
+- FiU39 Bargeldresilieniz **erweitert** HD03250's (staatliche digitale Identität, Propositioner-Geschwister) digitales Governance-Thema — Schweden weitet gleichzeitig digitale Identität aus UND mandatiert Bargeldalternativen.
+- V's Motioner heute (HD024187 gegen HD03267) **spiegeln** das systematische Oppositionsmuster von V wider, das in der Motioner-Geschwisteranalyse dokumentiert ist.
+
+### Wirtschaftlicher Kontext
+
+IMF WEO-2026-04: Schwedens BIP-Wachstumsprognose 2,1 % (2026), Inflation 2,0 %, Arbeitslosigkeit 8,4 %. Die Fondsmarktreform (FiU40) behebt Schwedens 6-Billionen-SEK-Fondsmarkt-Anfälligkeiten, die im Riksbanken-Finanzstabilitätsbericht 2025:2 identifiziert wurden. Bargeldverpflichtung (FiU39) umfasst geschätzte Banksektor-Compliance-Kosten von 400-800 Mio. SEK Kapitalinvestitionen (SBAB, Finansinspektionen-Schätzungen).
+
+*economicProvenance: provider=imf, dataflow=WEO, vintage=WEO-2026-04, vintageAgeMonths=1, retrieved_at=2026-05-21*
+
+<!-- source-sha: 0a8d60e7f720acdade1c9d675ec956390d78f271 -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/evening-analysis/executive-brief_es.md -->
+
+**Clasificación**: OSINT público · **Nivel de confianza**: ALTO · **Autor**: Análisis de Inteligencia Riksdagsmonitor  
+**Ciclo**: Análisis vespertino · **Horizonte**: T+72h → T+30d · **Factor DIW**: 1,5× (115 días para las elecciones)
+
+### 🎯 Conclusión principal
+
+El jueves 21 de mayo de 2026 marca un hito significativo del Estado de derecho: la Comisión de Justicia (JuU) aprueba **la primera legislación sueca sobre reconocimiento facial con IA para la policía en tiempo real** (HD01JuU28, betänkande 2025/26:JuU28). Simultáneamente, el **betänkande de resiliencia del efectivo** de FiU (HD01FiU39) y la **reforma del mercado de fondos** FiU40 remodelan la infraestructura financiera sueca. Cinco betänkanden de JuU, FiU y CU constituyen una huella legislativa inter-comités inusualmente amplia. En este contexto, mociones de oposición atacan el sistema de expulsión por amenaza de seguridad del gobierno y las facultades del Skatteverket, mientras que interpelaciones sobre la crisis hídrica en el sur de Suecia y cierres de hospitales revelan fallos del Estado de bienestar. Preguntas escritas sobre armamento a Taiwán y el Tíbet indican que las tensiones diplomáticas post-OTAN no resueltas de Suecia persisten.
+
+```mermaid
+flowchart LR
+    A[📅 2026-05-21<br/>Evening Analysis] --> B[🔴 AI Policing<br/>JuU28 DIW 4.5]
+    A --> C[💵 Cash Resilience<br/>FiU39 DIW 3.2]
+    A --> D[📈 Fund Market<br/>FiU40 DIW 2.8]
+    A --> E[🌿 Hydropower Exception<br/>CU41 DIW 2.7]
+    A --> F[🏙️ Area Cooperation Fee<br/>CU36 DIW 2.5]
+    A --> G[⚔️ Motions × 4<br/>V opposition HD024187-190]
+    A --> H[🌊 Water crisis interp<br/>HD10499 southern Sweden]
+    A --> I[🏥 Hospital closure interp<br/>HD10500 Köping]
+    B --> B1[Civil liberties trade-off<br/>Art. 8 ECHR risk]
+    C --> C1[NATO crisis resilience<br/>Digital payment vulnerability]
+    B1 --> Z[🗳️ Election 2026<br/>115 days — 1.5× DIW]
+    C1 --> Z
+    style A fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+    style B fill:#1a1e3d,stroke:#ff006e,color:#ff006e
+    style C fill:#1a1e3d,stroke:#ffbe0b,color:#ffbe0b
+    style D fill:#1a1e3d,stroke:#00d9ff,color:#00d9ff
+    style Z fill:#ff006e,stroke:#ffbe0b,color:#0a0e27
+```
+
+### 🧭 3 Decisiones que apoya este resumen
+
+1. **Sociedad civil/Jurídico**: Presente una solicitud de revisión al Lagrådet sobre los decretos de implementación de JuU28 relativos a protocolos de uso del reconocimiento facial con IA, límites de retención de datos y derechos de apelación. **Disparador**: Decreto de implementación gubernamental, esperado en los 60 días siguientes a la votación del Riksdag. Nivel de confianza: **ALTO**.
+
+2. **Instituciones financieras/Riksbanken**: Evalúe la preparación operativa para las obligaciones de efectivo de FiU39 — los bancos deberán mantener niveles mínimos de servicio de efectivo bajo el nuevo marco. **Disparador**: Votación del Riksdag sobre FiU39 (esperada en la semana plenaria del 25 de mayo). Nivel de confianza: **ALTO**.
+
+3. **Servicio de Asuntos Exteriores**: Suecia tiene una ventana de 48 a 72 horas para aclarar su posición sobre las ventas de armas a Taiwán (HD11822) antes de que el discurso de desarme Trump/China se solidifique en hecho diplomático. La respuesta de la FM Malmer Stenergard mostrará si Suecia sigue el consenso de la UE o adopta una postura pro-Taiwán en defensa. **Disparador**: Plazo de respuesta a la pregunta escrita. Nivel de confianza: **MEDIO-ALTO**.
+
+### 60 segundos
+
+- **La más importante**: JuU28 — reconocimiento facial con IA en tiempo real para la policía. Suecia se convierte en uno de los primeros Estados miembros de la UE en legislar explícitamente sobre biometría policial. Implicaciones del CEDH Artículo 8 y categoría 1 de alto riesgo del Reglamento de IA de la UE. DIW 4,5 (factor de aproximación electoral 1,5× aplicado).
+- **La más significativa económicamente**: FiU40 (mercados de fondos más fuertes) — reforma estructural de los mercados de fondos suecos de 6 billones de SEK. Efectos a largo plazo en el desarrollo del mercado de capitales y el ahorro para la jubilación.
+- **La más sensible geopolíticamente**: HD11822 (armas Taiwán) y HD11821 (Tíbet-China) — preguntas escritas que revelan el equilibrio diplomático post-OTAN de Suecia.
+- **Reveladora del sistema de bienestar**: HD10500 (hospital de Köping) interpelación — el gobierno admite la reestructuración hospitalaria sin un marco unificado de atención sanitaria rural.
+
+### Síntesis inter-diaria Tier-C
+
+La producción de comités de hoy se conecta directamente con las Propositioner y Motioner de ayer/esta semana:
+- La biometría IA JuU28 **sigue a** la Proposition gubernamental de expulsión por amenaza de seguridad (HD03267, citada en la Proposition hermana) — juntas constituyen la mayor expansión del Estado de seguridad sueco desde la reorganización de la SÄPO en 2019.
+- La resiliencia del efectivo FiU39 **amplía** el tema de gobernanza digital de HD03250 (identidad digital estatal, Proposition hermana) — Suecia amplía simultáneamente la identidad digital Y obliga a alternativas de efectivo.
+- Las Motioner de V hoy (HD024187 contra HD03267) **se hacen eco** del patrón de oposición sistemática de V documentado en el análisis Motioner hermano.
+
+### Contexto económico
+
+FMI WEO-2026-04: Previsión de crecimiento del PIB sueco 2,1 % (2026), inflación 2,0 %, desempleo 8,4 %. La reforma del mercado de fondos (FiU40) aborda las vulnerabilidades de los mercados de fondos suecos de 6 billones de SEK identificadas en el Informe de Estabilidad Financiera del Riksbanken 2025:2. La obligación de efectivo (FiU39) incluye costes estimados de cumplimiento del sector bancario de 400-800 millones de SEK en inversiones de capital (SBAB, estimaciones de la Finansinspektionen).
+
+*economicProvenance: provider=imf, dataflow=WEO, vintage=WEO-2026-04, vintageAgeMonths=1, retrieved_at=2026-05-21*
+
+<!-- source-sha: 0a8d60e7f720acdade1c9d675ec956390d78f271 -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/evening-analysis/executive-brief_fi.md -->
+
+**Luokittelu**: Julkinen OSINT · **Luottamustaso**: KORKEA · **Tekijä**: Riksdagsmonitor Tiedusteluanalyysi  
+**Sykli**: Iltaanalyysi · **Horisontti**: T+72h → T+30d · **DIW-kerroin**: 1,5× (115 päivää vaaleihin)
+
+### 🎯 Lyhyesti pääasiasta
+
+Torstai 21. toukokuuta 2026 päättyy merkittävään oikeusvaltion käännekohtaan: Lakivaliokunta (JuU) hyväksyy **Ruotsin ensimmäisen tekoäly-kasvojentunnistuslainsäädännön poliisille reaaliajassa** (HD01JuU28, betänkande 2025/26:JuU28). Samalla FiU:n **käteisresilienssi-betänkande** (HD01FiU39) ja FiU40:n **rahastomarkkinauudistus** muokkaavat Ruotsin rahoitusinfrastruktuuria. Viisi betänkandea JuU:lta, FiU:lta ja CU:lta muodostavat epätavallisen laajan poikkivaliokunnallisen lainsäädäntöjalanjäljen. Tätä taustaa vasten: oppositiomootiot hyökkäävät hallituksen turvallisuusuhka-karkottamisjärjestelmää ja Skatteverketin valtuuksia vastaan, kun taas interpellaatiot Etelä-Ruotsin vesikrisistä ja sairaalanlukkuisista paljastavat hyvinvointipalveluiden epäonnistumisia. Kirjalliset kysymykset Taiwanin aseista ja Tiibetistä osoittavat, että Ruotsin ratkaisemattomat post-NATO-diplomaattiset jännitteet jatkuvat.
+
+```mermaid
+flowchart LR
+    A[📅 2026-05-21<br/>Evening Analysis] --> B[🔴 AI Policing<br/>JuU28 DIW 4.5]
+    A --> C[💵 Cash Resilience<br/>FiU39 DIW 3.2]
+    A --> D[📈 Fund Market<br/>FiU40 DIW 2.8]
+    A --> E[🌿 Hydropower Exception<br/>CU41 DIW 2.7]
+    A --> F[🏙️ Area Cooperation Fee<br/>CU36 DIW 2.5]
+    A --> G[⚔️ Motions × 4<br/>V opposition HD024187-190]
+    A --> H[🌊 Water crisis interp<br/>HD10499 southern Sweden]
+    A --> I[🏥 Hospital closure interp<br/>HD10500 Köping]
+    B --> B1[Civil liberties trade-off<br/>Art. 8 ECHR risk]
+    C --> C1[NATO crisis resilience<br/>Digital payment vulnerability]
+    B1 --> Z[🗳️ Election 2026<br/>115 days — 1.5× DIW]
+    C1 --> Z
+    style A fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+    style B fill:#1a1e3d,stroke:#ff006e,color:#ff006e
+    style C fill:#1a1e3d,stroke:#ffbe0b,color:#ffbe0b
+    style D fill:#1a1e3d,stroke:#00d9ff,color:#00d9ff
+    style Z fill:#ff006e,stroke:#ffbe0b,color:#0a0e27
+```
+
+### 🧭 3 Päätöstä, joita tämä lyhennelmä tukee
+
+1. **Kansalaisyhteiskunta/oikeudellinen**: Jätä Lagrådet-tarkastuspyyntö JuU28:n täytäntöönpanoasetuksista koskien tekoälykasvojentunnistuksen käyttöprotokolloja, tietosäilytysrajoja ja valitusoikeuksia. **Käynnistäjä**: Hallituksen täytäntöönpanoasetus, odotetaan 60 päivän sisällä riksdagäänestyksen jälkeen. Luottamustaso: **KORKEA**.
+
+2. **Rahoituslaitokset/Riksbanken**: Arvioi operatiivinen valmius FiU39:n käteisvelvollisuuksiin — pankkien on ylläpidettävä vähimmäispalvelutasoja käteiselle uuden järjestelmän alla. **Käynnistäjä**: Riksdagin äänestys FiU39:stä (odotetaan täysistuntoviikolle 25. toukokuuta). Luottamustaso: **KORKEA**.
+
+3. **Ulkopoliittinen osasto**: Ruotsilla on 48–72 tunnin ikkuna selventää kantansa Taiwanin asekauppoihin (HD11822) ennen kuin Trumpin/Kiinan aseistariisuntanarraatiivi kovettuu diplomaattiseksi tosiasiaksi. UM Malmer Stenergard vastaus osoittaa, noudattaako Ruotsi EU-konsensusta vai ottaako pro-Taiwan-puolustuskannan. **Käynnistäjä**: Kirjallisen kysymyksen vastausmääräaika. Luottamustaso: **KESKI-KORKEA**.
+
+### 60 sekuntia
+
+- **Merkittävin**: JuU28 — tekoälykasvojentunnistus reaaliajassa poliisille. Ruotsista tulee yksi ensimmäisistä EU-jäsenvaltioista, joka säätää eksplisiittisestä poliisibiometriasta. ECHR Artikla 8 ja EU:n tekoälyasetus Kategoria 1 korkean riskin implikaatiot. DIW 4,5 (vaalilähestymiskerroin 1,5× sovellettu).
+- **Taloudellisesti merkittävin**: FiU40 (vahvemmat rahastomarkkinat) — Ruotsin 6 biljoonan SEK rahastomarkkinoiden rakenteellinen uudistus. Pitkän aikavälin pääomakehitysvaikutukset eläkesäästöihin.
+- **Geopoliittisesti herkin**: HD11822 (Taiwanin aseet) ja HD11821 (Tiibet-Kiina) — kirjalliset kysymykset, jotka paljastavat Ruotsin post-NATO-diplomaattisen tasapainoilun.
+- **Hyvinvointijärjestelmästä paljastava**: HD10500 (Köpingin sairaala) interpellaatio — hallitus myöntää sairaalan uudelleenjärjestelyä ilman yhtenäistä maaseutualueen terveydenhuollon viitekehystä.
+
+### Tier-C-poikkipäiväsynteesi
+
+Tämän päivän valiokuntatuotos yhdistyy suoraan eilisen/tämän viikon ehdotuksiin ja mootioihin:
+- JuU28 tekoälybiometria **seuraa** hallituksen turvallisuusuhka-karkottamisehdotusta (HD03267, siteerattu ehdotussisaressa) — yhdessä ne muodostavat Ruotsin laajimman turvallisuusvaltion laajennuksen SUPO:n uudelleenorganisoinnin jälkeen vuonna 2019.
+- FiU39 käteisresilienss **laajentaa** HD03250:n (valtion sähköinen henkilöllisyys, ehdotussisareen) digitaalista hallintoteemaa — Ruotsi laajentaa samaan aikaan digitaalista identiteettiä JA määrää käteisvaihtoehtoja.
+- V:n mootiot tänään (HD024188 HD03267:ää vastaan) **kaikuvat** mootiosisaranalyysissa dokumentoitua V:n systemaattista oppositiokuviota.
+
+### Taloudellinen konteksti
+
+IMF WEO-2026-04: Ruotsin BKT-kasvuennuste 2,1 % (2026), inflaatio 2,0 %, työttömyys 8,4 %. Rahastomarkkinauudistus (FiU40) leikkaa Ruotsin 6 biljoonan SEK rahastomarkkinoiden haavoittuvuuksia, jotka on tunnistettu Riksbankenin Rahoitusvakausraportissa 2025:2. Käteisvelvollisuus (FiU39) sisältää arvioidut pankkisektorin vaatimustenmukaisuuskustannukset 400–800 miljoonaa SEK pääomainvestointeja (SBAB, Finansinspektionenin arviot).
+
+*economicProvenance: provider=imf, dataflow=WEO, vintage=WEO-2026-04, vintageAgeMonths=1, retrieved_at=2026-05-21*
+
+<!-- source-sha: 0a8d60e7f720acdade1c9d675ec956390d78f271 -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/evening-analysis/executive-brief_fr.md -->
+
+### 🎯 Conclusion principale
+
+Le jeudi 21 mai 2026 marque un tournant majeur de l'État de droit : la Commission des lois (JuU) adopte **la première législation suédoise sur la reconnaissance faciale par IA pour la police en temps réel** (HD01JuU28, betänkande 2025/26:JuU28). Parallèlement, le **betänkande sur la résilience des espèces numériques** de FiU (HD01FiU39) et la **réforme du marché des fonds** FiU40 remodèlent l'infrastructure financière suédoise. Cinq betänkanden de JuU, FiU et CU constituent une empreinte législative inter-commissions inhabituellement large. Dans ce contexte, les motions d'opposition attaquent le système d'expulsion pour menace sécuritaire du gouvernement et les pouvoirs du Skatteverket, tandis que les interpellations sur la crise de l'eau en Suède méridionale et les fermetures d'hôpitaux révèlent des défaillances de l'État-providence. Des questions écrites sur les armements à Taiwan et le Tibet indiquent que les tensions diplomatiques post-OTAN non résolues de la Suède persistent.
+
+```mermaid
+flowchart LR
+    A[📅 2026-05-21<br/>Evening Analysis] --> B[🔴 AI Policing<br/>JuU28 DIW 4.5]
+    A --> C[💵 Cash Resilience<br/>FiU39 DIW 3.2]
+    A --> D[📈 Fund Market<br/>FiU40 DIW 2.8]
+    A --> E[🌿 Hydropower Exception<br/>CU41 DIW 2.7]
+    A --> F[🏙️ Area Cooperation Fee<br/>CU36 DIW 2.5]
+    A --> G[⚔️ Motions × 4<br/>V opposition HD024187-190]
+    A --> H[🌊 Water crisis interp<br/>HD10499 southern Sweden]
+    A --> I[🏥 Hospital closure interp<br/>HD10500 Köping]
+    B --> B1[Civil liberties trade-off<br/>Art. 8 ECHR risk]
+    C --> C1[NATO crisis resilience<br/>Digital payment vulnerability]
+    B1 --> Z[🗳️ Election 2026<br/>115 days — 1.5× DIW]
+    C1 --> Z
+    style A fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+    style B fill:#1a1e3d,stroke:#ff006e,color:#ff006e
+    style C fill:#1a1e3d,stroke:#ffbe0b,color:#ffbe0b
+    style D fill:#1a1e3d,stroke:#00d9ff,color:#00d9ff
+    style Z fill:#ff006e,stroke:#ffbe0b,color:#0a0e27
+```
+
+### 🧭 3 Décisions que cette synthèse éclaire
+
+1. **Société civile/Juridique**: Déposez une demande d'examen au Lagrådet sur les ordonnances d'application de JuU28 concernant les protocoles d'utilisation de la reconnaissance faciale par IA, les limites de conservation des données et les droits de recours. **Déclencheur**: Ordonnance d'application gouvernementale, attendue dans les 60 jours suivant le vote du Riksdag. Niveau de confiance: **ÉLEVÉ**.
+
+2. **Institutions financières/Riksbanken**: Évaluez la préparation opérationnelle aux obligations de FiU39 en matière d'espèces — les banques devront maintenir des niveaux de service minimaux pour les espèces dans le nouveau cadre. **Déclencheur**: Vote du Riksdag sur FiU39 (attendu lors de la semaine plénière du 25 mai). Niveau de confiance: **ÉLEVÉ**.
+
+3. **Service des affaires étrangères**: La Suède dispose d'une fenêtre de 48 à 72 heures pour clarifier sa position sur les ventes d'armes à Taiwan (HD11822) avant que le récit de désarmement Trump/Chine ne se fige en fait diplomatique. La réponse de la FM Malmer Stenergard montrera si la Suède suit le consensus européen ou adopte une position pro-Taiwan en matière de défense. **Déclencheur**: Délai de réponse à la question écrite. Niveau de confiance: **MOYEN-ÉLEVÉ**.
+
+### 60 secondes
+
+- **La plus importante**: JuU28 — reconnaissance faciale par IA en temps réel pour la police. La Suède devient l'un des premiers États membres de l'UE à légiférer explicitement sur la biométrie policière. Implications CEDH Article 8 et catégorie 1 à haut risque du règlement IA de l'UE. DIW 4,5 (facteur d'approche électorale 1,5× appliqué).
+- **La plus significative économiquement**: FiU40 (marchés de fonds plus forts) — refonte structurelle des marchés de fonds suédois de 6 000 milliards de SEK. Effets à long terme sur le développement du marché des capitaux et l'épargne-retraite.
+- **La plus sensible géopolitiquement**: HD11822 (armes Taiwan) et HD11821 (Tibet-Chine) — questions écrites révélant l'équilibre diplomatique post-OTAN de la Suède.
+- **Révélatrice du système de protection sociale**: HD10500 (hôpital de Köping) interpellation — le gouvernement concède la restructuration hospitalière sans cadre unifié de santé rurale.
+
+### Synthèse inter-journalière Tier-C
+
+La production en commission d'aujourd'hui se connecte directement aux Propositioner et Motioner d'hier/cette semaine :
+- La biométrie IA JuU28 **fait suite à** la Proposition gouvernementale d'expulsion pour menace sécuritaire (HD03267, citée dans la Proposition sœur) — ensemble, elles constituent la plus large expansion de l'État sécuritaire suédois depuis la réorganisation de la SÄPO en 2019.
+- La résilience des espèces FiU39 **complète** le thème de gouvernance numérique de HD03250 (identité numérique d'État, Proposition sœur) — la Suède étend simultanément l'identité numérique ET mandate des alternatives en espèces.
+- Les Motioner de V aujourd'hui (HD024187 contre HD03267) **font écho** au schéma d'opposition systématique de V documenté dans l'analyse Motioner sœur.
+
+### Contexte économique
+
+FMI WEO-2026-04 : Prévision de croissance du PIB suédois 2,1 % (2026), inflation 2,0 %, chômage 8,4 %. La réforme du marché des fonds (FiU40) comble les vulnérabilités des marchés de fonds suédois de 6 000 milliards de SEK identifiées dans le Rapport de stabilité financière Riksbanken 2025:2. L'obligation d'espèces (FiU39) comprend des coûts de conformité estimés du secteur bancaire de 400 à 800 millions de SEK d'investissements en capital (SBAB, estimations de la Finansinspektionen).
+
+*economicProvenance: provider=imf, dataflow=WEO, vintage=WEO-2026-04, vintageAgeMonths=1, retrieved_at=2026-05-21*
+
+<!-- source-sha: 0a8d60e7f720acdade1c9d675ec956390d78f271 -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/evening-analysis/executive-brief_he.md -->
+
+**סיווג**: OSINT ציבורי · **רמת אמינות**: גבוהה · **מחבר**: ניתוח מודיעין Riksdagsmonitor  
+**מחזור**: ניתוח ערב · **אופק**: T+72h → T+30d · **מקדם DIW**: 1.5× (115 ימים לבחירות)
+
+### 🎯 ממצא מרכזי
+
+יום חמישי, 21 במאי 2026, מסמן מפנה משמעותי בשלטון החוק: ועדת המשפטים (JuU) מאשרת את **החקיקה השוודית הראשונה לזיהוי פנים בבינה מלאכותית עבור המשטרה בזמן אמת** (HD01JuU28, betänkande 2025/26:JuU28). במקביל, מעצבים **betänkande חוסן המזומן** של FiU (HD01FiU39) ו**רפורמת שוק הקרנות** FiU40 מחדש את התשתית הפיננסית של שוודיה. חמישה betänkanden מ-JuU, FiU ו-CU מהווים טביעת רגל חקיקתית בין-ועדתית רחבה במיוחד. על רקע זה, הצעות חוק של האופוזיציה תוקפות את מערכת גירוש האיום הביטחוני של הממשלה ואת סמכויות ה-Skatteverket, בעוד שאינטרפלציות על משבר המים בדרום שוודיה וסגירות בתי חולים חושפות כשלים ברשת הרווחה. שאלות בכתב בנוגע לנשק לטייוואן ולטיבט מצביעות על כך שמתחים דיפלומטיים בלתי פתורים של שוודיה בעידן שלאחר נאט"ו נמשכים.
+
+```mermaid
+flowchart LR
+    A[📅 2026-05-21<br/>Evening Analysis] --> B[🔴 AI Policing<br/>JuU28 DIW 4.5]
+    A --> C[💵 Cash Resilience<br/>FiU39 DIW 3.2]
+    A --> D[📈 Fund Market<br/>FiU40 DIW 2.8]
+    A --> E[🌿 Hydropower Exception<br/>CU41 DIW 2.7]
+    A --> F[🏙️ Area Cooperation Fee<br/>CU36 DIW 2.5]
+    A --> G[⚔️ Motions × 4<br/>V opposition HD024187-190]
+    A --> H[🌊 Water crisis interp<br/>HD10499 southern Sweden]
+    A --> I[🏥 Hospital closure interp<br/>HD10500 Köping]
+    B --> B1[Civil liberties trade-off<br/>Art. 8 ECHR risk]
+    C --> C1[NATO crisis resilience<br/>Digital payment vulnerability]
+    B1 --> Z[🗳️ Election 2026<br/>115 days — 1.5× DIW]
+    C1 --> Z
+    style A fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+    style B fill:#1a1e3d,stroke:#ff006e,color:#ff006e
+    style C fill:#1a1e3d,stroke:#ffbe0b,color:#ffbe0b
+    style D fill:#1a1e3d,stroke:#00d9ff,color:#00d9ff
+    style Z fill:#ff006e,stroke:#ffbe0b,color:#0a0e27
+```
+
+### 🧭 3 החלטות שסיכום זה תומך בהן
+
+1. **חברה אזרחית/משפטי**: הגישו בקשת בדיקה ל-Lagrådet על תקנות היישום של JuU28 בנוגע לפרוטוקולי שימוש בזיהוי פנים בבינה מלאכותית, מגבלות שמירת נתונים וזכויות ערר. **טריגר**: תקנת יישום ממשלתית, צפויה תוך 60 יום מהצבעת ה-Riksdag. רמת אמינות: **גבוהה**.
+
+2. **מוסדות פיננסיים/Riksbanken**: העריכו את המוכנות התפעולית לחובות המזומן של FiU39 — הבנקים יצטרכו לשמור על רמות שירות מינימליות למזומן תחת המסגרת החדשה. **טריגר**: הצבעת ה-Riksdag על FiU39 (צפויה בשבוע המליאה של 25 במאי). רמת אמינות: **גבוהה**.
+
+3. **משרד החוץ**: לשוודיה חלון של 48-72 שעות להבהיר את עמדתה בנוגע למכירות נשק לטייוואן (HD11822) לפני שהנרטיב של טראמפ/סין לפירוק נשק מתגבש לעובדה דיפלומטית. תגובת שר החוץ Malmer Stenergard תגלה האם שוודיה תלך בעקבות הקונסנזוס האירופי או תאמץ עמדת הגנה פרו-טייוואנית. **טריגר**: המועד האחרון לתשובה על שאלה בכתב. רמת אמינות: **בינונית-גבוהה**.
+
+### 60 שניות
+
+- **החשובה ביותר**: JuU28 — זיהוי פנים בבינה מלאכותית בזמן אמת עבור המשטרה. שוודיה הופכת לאחת ממדינות האיחוד הראשונות לחוקק במפורש ביומטריה משטרתית. השלכות סעיף 8 ל-ECHR וקטגוריה 1 בסיכון גבוה של תקנת הבינה המלאכותית של האיחוד האירופי. DIW 4.5 (מקדם קרבה לבחירות 1.5× מיושם).
+- **המשמעותית כלכלית ביותר**: FiU40 (שווקי קרנות חזקים יותר) — שיפוץ מבני של שווקי הקרנות השוודיים בשווי 6 טריליון SEK. השפעות ארוכות טווח על פיתוח שוק ההון וחיסכון לפנסיה.
+- **הרגישה גיאופוליטית ביותר**: HD11822 (נשק טייוואן) ו-HD11821 (טיבט-סין) — שאלות בכתב החושפות את מאזן הדיפלומטיה השוודי בעידן שלאחר נאט"ו.
+- **חושפת מערכת הרווחה**: אינטרפלציה HD10500 (בית חולים קופינג) — הממשלה מודה בארגון מחדש של בתי חולים ללא מסגרת אחידה לבריאות כפרית.
+
+### סינתזה בין-יומית Tier-C
+
+תפוקת הוועדות של היום מתחברת ישירות ל-Propositioner וה-Motioner של אתמול/השבוע הזה:
+- ביומטריית הבינה המלאכותית JuU28 **באה בעקבות** ה-Propositioner הממשלתי לגירוש בשל איום ביטחוני (HD03267, מצוטט ב-Propositioner האחות) — ביחד הם מהווים את ההרחבה הרחבה ביותר של מדינת הביטחון השוודית מאז ארגון מחדש של SÄPO ב-2019.
+- חוסן מזומן FiU39 **משלים** את נושא הממשל הדיגיטלי של HD03250 (זהות דיגיטלית ממלכתית, Propositioner אחות) — שוודיה מרחיבה זהות דיגיטלית ומחייבת חלופות מזומן בו זמנית.
+- ה-Motioner של V היום (HD024187 נגד HD03267) **משקפות** את דפוס ההתנגדות השיטתי של V המתועד בניתוח Motioner האחות.
+
+### הקשר כלכלי
+
+IMF WEO-2026-04: תחזית צמיחת התוצר של שוודיה 2.1% (2026), אינפלציה 2.0%, אבטלה 8.4%. רפורמת שוק הקרנות (FiU40) מטפלת בפגיעויות בשווקי הקרנות השוודיים של 6 טריליון SEK שזוהו בדוח יציבות פיננסית של Riksbanken 2025:2. חובת מזומן (FiU39) כוללת עלויות ציות משוערות של המגזר הבנקאי בין 400-800 מיליון SEK השקעות הון (SBAB, הערכות Finansinspektionen).
+
+*economicProvenance: provider=imf, dataflow=WEO, vintage=WEO-2026-04, vintageAgeMonths=1, retrieved_at=2026-05-21*
+
+<!-- source-sha: 0a8d60e7f720acdade1c9d675ec956390d78f271 -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/evening-analysis/executive-brief_ja.md -->
+
+**分類**: 公開OSINT · **信頼レベル**: 高 · **著者**: Riksdagsmonitor インテリジェンス分析  
+**サイクル**: 夕刊分析 · **ホライズン**: T+72h → T+30d · **DIW係数**: 1.5×（選挙まで115日）
+
+### 🎯 核心所見
+
+2026年5月21日（木曜日）は法の支配における重要な転換点を迎える：司法委員会（JuU）が**スウェーデン初のリアルタイムAI顔認識警察立法**を可決する（HD01JuU28, betänkande 2025/26:JuU28）。同時に、FiUの**現金レジリエンスbetänkande**（HD01FiU39）とFiU40の**ファンド市場改革**がスウェーデンの金融インフラを再形成する。JuU、FiU、CUからの5つのbetänkandenが異例に広範な委員会横断的な立法の足跡を形成する。この背景のもと、野党動議が政府の安全保障脅威強制退去制度とSkatteverketの権限を攻撃し、南スウェーデンの水危機と病院閉鎖に関する質問が福祉制度の失敗を露わにしている。台湾の武器とチベットに関する書面質問は、スウェーデンのNATO加盟後における未解決の外交的緊張が続いていることを示している。
+
+```mermaid
+flowchart LR
+    A[📅 2026-05-21<br/>Evening Analysis] --> B[🔴 AI Policing<br/>JuU28 DIW 4.5]
+    A --> C[💵 Cash Resilience<br/>FiU39 DIW 3.2]
+    A --> D[📈 Fund Market<br/>FiU40 DIW 2.8]
+    A --> E[🌿 Hydropower Exception<br/>CU41 DIW 2.7]
+    A --> F[🏙️ Area Cooperation Fee<br/>CU36 DIW 2.5]
+    A --> G[⚔️ Motions × 4<br/>V opposition HD024187-190]
+    A --> H[🌊 Water crisis interp<br/>HD10499 southern Sweden]
+    A --> I[🏥 Hospital closure interp<br/>HD10500 Köping]
+    B --> B1[Civil liberties trade-off<br/>Art. 8 ECHR risk]
+    C --> C1[NATO crisis resilience<br/>Digital payment vulnerability]
+    B1 --> Z[🗳️ Election 2026<br/>115 days — 1.5× DIW]
+    C1 --> Z
+    style A fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+    style B fill:#1a1e3d,stroke:#ff006e,color:#ff006e
+    style C fill:#1a1e3d,stroke:#ffbe0b,color:#ffbe0b
+    style D fill:#1a1e3d,stroke:#00d9ff,color:#00d9ff
+    style Z fill:#ff006e,stroke:#ffbe0b,color:#0a0e27
+```
+
+### 🧭 このブリーフが支援する3つの意思決定
+
+1. **市民社会/法的**: AI顔認識利用プロトコル、データ保持制限、不服申立権に関するJuU28の施行規則についてLagrådet審査請求を提出する。**トリガー**: 政府施行規則、Riksdag投票後60日以内に予定。信頼レベル: **高**。
+
+2. **金融機関/Riksbanken**: FiU39の現金義務に対する運用準備状況を評価する — 銀行は新制度下で最低限の現金サービス水準を維持する必要がある。**トリガー**: FiU39に対するRiksdagの投票（5月25日の本会議週に予定）。信頼レベル: **高**。
+
+3. **外務省**: スウェーデンには48〜72時間のウィンドウがあり、台湾武器売却（HD11822）に関する立場を明確にしないと、トランプ/中国の軍縮ナラティブが外交的事実として固定化する。FM Malmer Stenergardの回答が、スウェーデンがEUコンセンサスに従うか、親台湾防衛姿勢をとるかを示す。**トリガー**: 書面質問の回答期限。信頼レベル: **中高**。
+
+### 60秒サマリー
+
+- **最重要**: JuU28 — 警察によるリアルタイムAI顔認識。スウェーデンは警察生体認証を明示的に立法するEU加盟国の一つとなる。ECHR第8条とEU AI規則カテゴリ1高リスクへの影響。DIW 4.5（選挙接近係数1.5×適用）。
+- **経済的に最重要**: FiU40（ファンド市場強化）— スウェーデンの6兆SEKファンド市場の構造的改革。年金貯蓄への長期的な資本市場発展への影響。
+- **地政学的に最も敏感**: HD11822（台湾武器）とHD11821（チベット・中国）— スウェーデンのNATO後外交バランスを露わにする書面質問。
+- **福祉制度を露わにする**: HD10500（ケーピング病院）質問 — 政府は統一的な農村医療フレームワークなしに病院再編を認める。
+
+### Tier-C 日間横断的総合
+
+本日の委員会アウトプットは昨日/今週のPropositionerおよびMotionerと直接連結する：
+- JuU28 AIバイオメトリクスは政府の安全保障脅威強制退去Propositioner（HD03267、Propositioner姉妹文書に引用）**に続く**—合わせると、2019年のSÄPO再編以来最も広範なスウェーデンの安全保障国家拡大を形成する。
+- FiU39現金レジリエンスはHD03250（国家デジタルID、Propositioner姉妹文書）のデジタルガバナンステーマを**拡張する**—スウェーデンはデジタルIDを拡大しつつ現金代替手段を義務付けている。
+- 本日VのMotioner（HD024187 vs HD03267）はMotioner姉妹分析に記録されたVの組織的な野党パターンを**反映する**。
+
+### 経済的文脈
+
+IMF WEO-2026-04：スウェーデンGDP成長予測2.1%（2026年）、インフレ2.0%、失業率8.4%。ファンド市場改革（FiU40）は、Riksbanken金融安定報告2025:2で確認されたスウェーデンの6兆SEKファンド市場の脆弱性に対処する。現金義務（FiU39）には、4億〜8億SEKの資本投資の推定銀行部門コンプライアンスコストが含まれる（SBAB、Finansinspektionen推計）。
+
+*economicProvenance: provider=imf, dataflow=WEO, vintage=WEO-2026-04, vintageAgeMonths=1, retrieved_at=2026-05-21*
+
+<!-- source-sha: 0a8d60e7f720acdade1c9d675ec956390d78f271 -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/evening-analysis/executive-brief_ko.md -->
+
+**분류**: 공개 OSINT · **신뢰 수준**: 높음 · **저자**: Riksdagsmonitor 정보 분석  
+**주기**: 저녁 분석 · **지평선**: T+72h → T+30d · **DIW 계수**: 1.5×（선거까지 115일）
+
+### 🎯 핵심 결론
+
+2026년 5월 21일 목요일은 법치주의의 중요한 전환점을 맞이한다: 법사위원회(JuU)가 **스웨덴 최초의 실시간 AI 얼굴인식 경찰 입법**을 승인한다(HD01JuU28, betänkande 2025/26:JuU28). 동시에 FiU의 **현금 복원력 betänkande**(HD01FiU39)와 FiU40의 **펀드 시장 개혁**이 스웨덴의 금융 인프라를 재편한다. JuU, FiU, CU에서 나온 다섯 개의 betänkanden이 이례적으로 광범위한 위원회 간 입법 발자국을 형성한다. 이 맥락에서 야당 동의안들이 정부의 안보 위협 추방 시스템과 Skatteverket의 권한을 공격하는 반면, 남부 스웨덴 수위기와 병원 폐쇄에 관한 질의는 복지 시스템의 실패를 드러낸다. 대만 무기 및 티베트에 관한 서면 질의는 스웨덴의 미해결된 NATO 이후 외교적 긴장이 지속되고 있음을 보여준다.
+
+```mermaid
+flowchart LR
+    A[📅 2026-05-21<br/>Evening Analysis] --> B[🔴 AI Policing<br/>JuU28 DIW 4.5]
+    A --> C[💵 Cash Resilience<br/>FiU39 DIW 3.2]
+    A --> D[📈 Fund Market<br/>FiU40 DIW 2.8]
+    A --> E[🌿 Hydropower Exception<br/>CU41 DIW 2.7]
+    A --> F[🏙️ Area Cooperation Fee<br/>CU36 DIW 2.5]
+    A --> G[⚔️ Motions × 4<br/>V opposition HD024187-190]
+    A --> H[🌊 Water crisis interp<br/>HD10499 southern Sweden]
+    A --> I[🏥 Hospital closure interp<br/>HD10500 Köping]
+    B --> B1[Civil liberties trade-off<br/>Art. 8 ECHR risk]
+    C --> C1[NATO crisis resilience<br/>Digital payment vulnerability]
+    B1 --> Z[🗳️ Election 2026<br/>115 days — 1.5× DIW]
+    C1 --> Z
+    style A fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+    style B fill:#1a1e3d,stroke:#ff006e,color:#ff006e
+    style C fill:#1a1e3d,stroke:#ffbe0b,color:#ffbe0b
+    style D fill:#1a1e3d,stroke:#00d9ff,color:#00d9ff
+    style Z fill:#ff006e,stroke:#ffbe0b,color:#0a0e27
+```
+
+### 🧭 이 브리프가 지원하는 3가지 결정
+
+1. **시민사회/법적**: AI 얼굴인식 사용 프로토콜, 데이터 보유 한도, 이의제기권에 관한 JuU28 시행령에 대해 Lagrådet 검토 요청을 제출하라. **트리거**: 정부 시행령, Riksdag 투표 후 60일 이내 예정. 신뢰 수준: **높음**.
+
+2. **금융기관/Riksbanken**: FiU39의 현금 의무에 대한 운영 준비 상태를 평가하라 — 은행들은 새 제도 하에서 최소한의 현금 서비스 수준을 유지해야 한다. **트리거**: FiU39에 대한 Riksdag 투표（5월 25일 본회의 주 예정). 신뢰 수준: **높음**.
+
+3. **외무부**: 스웨덴은 트럼프/중국의 군축 내러티브가 외교적 사실로 굳어지기 전에 대만 무기 판매（HD11822）에 대한 입장을 명확히 할 48~72시간의 기회가 있다. FM Malmer Stenergard의 답변이 스웨덴이 EU 컨센서스를 따를지 친대만 방위 입장을 취할지를 보여준다. **트리거**: 서면 질의 답변 기한. 신뢰 수준: **중높음**.
+
+### 60초 요약
+
+- **가장 중요한**: JuU28 — 경찰을 위한 실시간 AI 얼굴인식. 스웨덴은 경찰 생체인식을 명시적으로 입법화하는 EU 회원국 중 하나가 된다. ECHR 제8조 및 EU AI 규정 카테고리 1 고위험 함의. DIW 4.5（선거 접근 계수 1.5× 적용).
+- **경제적으로 가장 중요한**: FiU40（더 강한 펀드 시장）— 스웨덴 6조 SEK 펀드 시장의 구조적 개편. 연금 저축에 대한 장기적인 자본시장 발전 영향.
+- **지정학적으로 가장 민감한**: HD11822（대만 무기）과 HD11821（티베트-중국）— 스웨덴의 NATO 이후 외교적 균형 행위를 드러내는 서면 질의.
+- **복지 시스템을 드러내는**: HD10500（쾨핑 병원）질의 — 정부가 통합된 농촌 의료 프레임워크 없이 병원 구조조정을 인정한다.
+
+### Tier-C 일간 교차 종합
+
+오늘의 위원회 산출물은 어제/이번 주의 Propositioner와 Motioner와 직접 연결된다:
+- JuU28 AI 생체인식은 정부의 안보 위협 추방 Propositioner（HD03267, Propositioner 자매 문서에 인용）**에 뒤따른다** — 함께 2019년 SÄPO 재편 이후 스웨덴의 가장 광범위한 안보국가 확장을 형성한다.
+- FiU39 현금 복원력은 HD03250（국가 디지털 신원, Propositioner 자매 문서）의 디지털 거버넌스 테마를**확장한다** — 스웨덴은 디지털 신원을 확대하는 동시에 현금 대안을 의무화한다.
+- 오늘 V의 Motioner（HD024187 vs HD03267）는 Motioner 자매 분석에 기록된 V의 체계적인 야당 패턴을 **반영한다**.
+
+### 경제적 맥락
+
+IMF WEO-2026-04: 스웨덴 GDP 성장 예측 2.1%（2026년), 인플레이션 2.0%, 실업률 8.4%. 펀드 시장 개혁（FiU40）은 Riksbanken 금융 안정 보고서 2025:2에서 확인된 스웨덴의 6조 SEK 펀드 시장 취약성을 해결한다. 현금 의무（FiU39）는 4억~8억 SEK 자본 투자의 추정 은행 부문 규정 준수 비용을 포함한다（SBAB, Finansinspektionen 추정치).
+
+*economicProvenance: provider=imf, dataflow=WEO, vintage=WEO-2026-04, vintageAgeMonths=1, retrieved_at=2026-05-21*
+
+<!-- source-sha: 0a8d60e7f720acdade1c9d675ec956390d78f271 -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/evening-analysis/executive-brief_nl.md -->
+
+**Classificatie**: Openbaar OSINT · **Betrouwbaarheidsniveau**: HOOG · **Auteur**: Riksdagsmonitor Inlichtingenanalyse  
+**Cyclus**: Avondanalyse · **Horizon**: T+72h → T+30d · **DIW-factor**: 1,5× (115 dagen tot de verkiezingen)
+
+### 🎯 Kernbevinding
+
+Donderdag 21 mei 2026 markeert een significante rechtsstaatwending: de Commissie voor Justitie (JuU) keurt **Zweden's eerste AI-gezichtsherkenningswetgeving voor politie in realtime** goed (HD01JuU28, betänkande 2025/26:JuU28). Tegelijkertijd hervormen FiU's **betänkande over contanteldresiliëntie** (HD01FiU39) en FiU40's **fondsmarkthervorming** de Zweedse financiële infrastructuur. Vijf betänkanden van JuU, FiU en CU vormen een ongewoon brede inter-commissiewetgevingsvoetafdruk. Tegen deze achtergrond vallen oppositionele moties het veiligheidsdreiging-uitzettingssysteem van de regering en de bevoegdheden van het Skatteverket aan, terwijl interpellaties over de watercrisis in Zuid-Zweden en ziekenhuissluitingen welzijnsstelselfouten blootleggen. Schriftelijke vragen over Taiwan-wapens en Tibet wijzen op voortdurende onopgeloste post-NAVO-diplomatieke spanningen.
+
+```mermaid
+flowchart LR
+    A[📅 2026-05-21<br/>Evening Analysis] --> B[🔴 AI Policing<br/>JuU28 DIW 4.5]
+    A --> C[💵 Cash Resilience<br/>FiU39 DIW 3.2]
+    A --> D[📈 Fund Market<br/>FiU40 DIW 2.8]
+    A --> E[🌿 Hydropower Exception<br/>CU41 DIW 2.7]
+    A --> F[🏙️ Area Cooperation Fee<br/>CU36 DIW 2.5]
+    A --> G[⚔️ Motions × 4<br/>V opposition HD024187-190]
+    A --> H[🌊 Water crisis interp<br/>HD10499 southern Sweden]
+    A --> I[🏥 Hospital closure interp<br/>HD10500 Köping]
+    B --> B1[Civil liberties trade-off<br/>Art. 8 ECHR risk]
+    C --> C1[NATO crisis resilience<br/>Digital payment vulnerability]
+    B1 --> Z[🗳️ Election 2026<br/>115 days — 1.5× DIW]
+    C1 --> Z
+    style A fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+    style B fill:#1a1e3d,stroke:#ff006e,color:#ff006e
+    style C fill:#1a1e3d,stroke:#ffbe0b,color:#ffbe0b
+    style D fill:#1a1e3d,stroke:#00d9ff,color:#00d9ff
+    style Z fill:#ff006e,stroke:#ffbe0b,color:#0a0e27
+```
+
+### 🧭 3 Beslissingen die deze samenvatting ondersteunt
+
+1. **Maatschappelijk middenveld/Juridisch**: Dien een Lagrådet-toetsingsverzoek in voor JuU28's uitvoeringsbesluiten over AI-gezichtsherkenning gebruiksprotocollen, gegevensbewaringslimieten en beroepsrechten. **Trigger**: Uitvoeringsbesluit overheid, verwacht binnen 60 dagen na Riksdag-stemming. Betrouwbaarheidsniveau: **HOOG**.
+
+2. **Financiële instellingen/Riksbanken**: Evalueer de operationele gereedheid voor FiU39's contantverplichting — banken moeten minimale serviceniveaus voor contant geld handhaven onder het nieuwe stelsel. **Trigger**: Riksdag-stemming over FiU39 (verwacht in plenaire vergaderweek 25 mei). Betrouwbaarheidsniveau: **HOOG**.
+
+3. **Buitenlandse Dienst**: Zweden heeft een venster van 48-72 uur om zijn positie over Taiwan-wapenleveranties (HD11822) te verduidelijken voordat het Trump/China-ontwapeningsnarratief stollt tot diplomatisch feit. FM Malmer Stenergards antwoord toont of Zweden EU-consensus volgt of een pro-Taiwan-defensiestandpunt inneemt. **Trigger**: Antwoorddeadline voor schriftelijke vraag. Betrouwbaarheidsniveau: **MIDDEL-HOOG**.
+
+### 60 seconden
+
+- **Belangrijkste**: JuU28 — AI-gezichtsherkenning in realtime voor politie. Zweden wordt een van de eerste EU-lidstaten die expliciet politiebiometrie wetgeeft. EVRM Artikel 8 en EU AI-verordening Categorie 1 hoog-risico implicaties. DIW 4,5 (verkiezingsnaderfactor 1,5× toegepast).
+- **Economisch meest significant**: FiU40 (sterkere fondsmarkten) — structurele vernieuwing van Zweden's 6-biljoen-SEK-fondsmarkt. Langetermijneffecten op kapitaalmarktontwikkeling en pensioenbesparingen.
+- **Geopolitiek gevoeligste**: HD11822 (Taiwan-wapens) en HD11821 (Tibet-China) — schriftelijke vragen die Zweden's post-NAVO-diplomatieke evenwichtsact blootleggen.
+- **Onthullend voor welzijnsstelsel**: HD10500 (Köping-ziekenhuis) interpellatie — regering geeft ziekenhuisherstructurering toe zonder uniform plattelandsgezondheidszorgkader.
+
+### Tier-C-Dag-overkoepelende Synthese
+
+De commissieproductie van vandaag verbindt direct met gisteren/deze week's Propositioner en Motioner:
+- JuU28 AI-biometrie **volgt op** het veiligheidsdreiging-uitzettingsPropositioner van de overheid (HD03267, geciteerd in Propositioner-zusje) — samen vormen ze Zweden's breedste veiligheidsstaatuitbreiding sinds de SÄPO-herorganisatie in 2019.
+- FiU39 contantresilieniz **breidt** HD03250's (staatse digitale identiteit, Propositioner-zusje) digitale bestuursthema uit — Zweden breidt tegelijkertijd digitale identiteit uit EN verplicht contantalternatieven.
+- V's Motioner vandaag (HD024187 tegen HD03267) **weerspiegelen** V's systematische oppositiepatroon gedocumenteerd in de Motioner-zusje analyse.
+
+### Economische context
+
+IMF WEO-2026-04: Prognose BBP-groei Zweden 2,1% (2026), inflatie 2,0%, werkloosheid 8,4%. De fondsmarkthervorming (FiU40) pakt de kwetsbaarheden van Zweden's 6-biljoen-SEK-fondsmarkt aan die geïdentificeerd zijn in het Riksbanken-rapport Financiële Stabiliteit 2025:2. Contantverplichting (FiU39) omvat geschatte banksektor-nalevingskosten van 400-800 miljoen SEK kapitaalinvesteringen (SBAB, Finansinspektionen-ramingen).
+
+*economicProvenance: provider=imf, dataflow=WEO, vintage=WEO-2026-04, vintageAgeMonths=1, retrieved_at=2026-05-21*
+
+<!-- source-sha: 0a8d60e7f720acdade1c9d675ec956390d78f271 -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/evening-analysis/executive-brief_no.md -->
+
+**Klassifisering**: Offentlig OSINT · **Konfidens**: HØY · **Forfatter**: Riksdagsmonitor Etterretningsanalyse  
+**Syklus**: Kveldsanalyse · **Horisont**: T+72h → T+30d · **DIW-multiplikator**: 1,5× (115 dager til valg)
+
+### 🎯 Konklusjon i sammendrag
+
+Torsdag 21. mai 2026 avsluttes med et avgjørende rettsstatlig vannskille: Justiskomiteen (JuU) godkjenner **Sveriges første AI-ansiktsgjenkjenningslovgivning for politiet i sanntid** (HD01JuU28, betänkande 2025/26:JuU28). Samtidig omformer FiU's **kontantrobusthetsbetänkande** (HD01FiU39) og FiU40's **fondmarkedsreform** Sveriges finansinfrastruktur. Fem betänkanden fra JuU, FiU og CU skaper et uvanlig bredt tverrkomité lovgivningsavtrykk. Mot denne bakgrunn: opposisjonsmosoner angriper regjeringens sikkerhetsekspulsjonsregime og Skatteverkets fullmakter, mens interpellasjoner om Sørvestlandets vannkrise og sykehuslukkinger avdekker svikt i velferdslevering. Skriftlige spørsmål om Taiwanvåpen og Tibet signalerer at Sveriges uløste post-NATO diplomatiske spenninger forblir uavklarte.
+
+```mermaid
+flowchart LR
+    A[📅 2026-05-21<br/>Evening Analysis] --> B[🔴 AI Policing<br/>JuU28 DIW 4.5]
+    A --> C[💵 Cash Resilience<br/>FiU39 DIW 3.2]
+    A --> D[📈 Fund Market<br/>FiU40 DIW 2.8]
+    A --> E[🌿 Hydropower Exception<br/>CU41 DIW 2.7]
+    A --> F[🏙️ Area Cooperation Fee<br/>CU36 DIW 2.5]
+    A --> G[⚔️ Motions × 4<br/>V opposition HD024187-190]
+    A --> H[🌊 Water crisis interp<br/>HD10499 southern Sweden]
+    A --> I[🏥 Hospital closure interp<br/>HD10500 Köping]
+    B --> B1[Civil liberties trade-off<br/>Art. 8 ECHR risk]
+    C --> C1[NATO crisis resilience<br/>Digital payment vulnerability]
+    B1 --> Z[🗳️ Election 2026<br/>115 days — 1.5× DIW]
+    C1 --> Z
+    style A fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+    style B fill:#1a1e3d,stroke:#ff006e,color:#ff006e
+    style C fill:#1a1e3d,stroke:#ffbe0b,color:#ffbe0b
+    style D fill:#1a1e3d,stroke:#00d9ff,color:#00d9ff
+    style Z fill:#ff006e,stroke:#ffbe0b,color:#0a0e27
+```
+
+### 🧭 3 Beslutninger dette notatet støtter
+
+1. **Sivilsamfunn/juridisk**: Send inn krav om Lagrådets gjennomgang av JuU28's implementeringsforskrifter om AI-ansiktsgjenkjenningsdriftsprotokoller, datalagringsbegrensninger og klagerettigheter. **Utløser**: Regjeringens lovproposisjon om gjennomføringsforordning, forventet innen 60 dager etter Riksdag-avstemning. Konfidens: **HØY**.
+
+2. **Finansinstitusjoner/Riksbanken**: Vurder operasjonell beredskap for FiU39's kontantforpliktelser — banker må opprettholde minimumsservice­nivåer for kontant under den nye ordningen. **Utløser**: Riksdag-avstemning om FiU39 (forventet plenumuke 25. mai). Konfidens: **HØY**.
+
+3. **Utenrikspolitisk seksjon**: Sverige har 48–72 timers vindu til å klargjøre sin posisjon om Taiwanvåpensalg (HD11822) innen Trumps/Kinas våpenfrysningsnarrativ størkner til diplomatisk fakta. UM Malmer Stenergards svar signaliserer om Sverige tilslutter seg EU-konsensus eller skjærer ut en pro-Taiwan-forsvarsposisjon. **Utløser**: Svarsfrist for skriftlig spørsmål. Konfidens: **MIDDELS-HØY**.
+
+### 60 sekunder
+
+- **Høyest signifikant**: JuU28 — AI sanntids ansiktsgjenkjenning for politiet. Sverige blir en av de første EU-medlemsstatene som lovfester eksplisitt politimessig AI-biometri. EMK Artikkel 8 og EU AI Act Kategori 1 høy-risiko implikasjoner. DIW 4,5 (valgproksimitetsmultiplikator 1,5× anvendt).
+- **Mest økonomisk gjennomgripende**: FiU40 (sterkere fondmarked) — strukturell reform av Sveriges SEK 6 billioner fondmarked. Langsiktige kapitalvekstimplikasjoner for pensjonssparing.
+- **Mest geopolitisk sensitiv**: HD11822 (Taiwanvåpen) og HD11821 (Tibet-Kina) — skriftlige spørsmål som avdekker Sveriges post-NATO diplomatiske balansegang.
+- **Mest avslørende om velferdssystemet**: HD10500 (Köping sykehus) interpellasjon — regjeringen erkjenner sykehusomstrukturering uten et sammenhengende rammeverk for distriktshelsevesen.
+
+### Tier-C tverrdagsanalyse
+
+Dagens komitéresultater kobler direkte til gårsdagens/ukens proposisjoner og motsjoner:
+- JuU28 AI-biometri **følger** regjeringens sikkerhetsekspulsjonsproposisjon (HD03267, sitert i proposisjonssøster) — til sammen utgjør de Sveriges mest omfattende sikkerhetsstatlige utvidelse siden SÄPO-omorganiseringen i 2019.
+- FiU39 kontantrobusthet **utvider** det digitale styringstemaet fra HD03250 (statlig e-ID, proposisjonssøster) — Sverige utvider samtidig digital identitet OG påbyr kontantfallback.
+- V's mosoner i dag (HD024188 mot HD03267) **ekkoer** V's systematiske opposisjonsmønster dokumentert i motjonssøsteranalysen.
+
+### Økonomisk kontekst
+
+IMF WEO-2026-04: Sveriges BNP-vekstprognose 2,1 % (2026), inflasjon 2,0 %, arbeidsledighet 8,4 %. Fondmarkedsreformen (FiU40) skjærer gjennom Sveriges SEK 6 billioner fondmarkedssårbarhet identifisert i Riksbankens Finansiell stabilitetsrapport 2025:2. Kontantforpliktelsen (FiU39) har anslåtte banksektorsamsvarsomkostninger på SEK 400–800m i kapitalinvesteringer (SBAB, Finansinspektionens estimater).
+
+*economicProvenance: provider=imf, dataflow=WEO, vintage=WEO-2026-04, vintageAgeMonths=1, retrieved_at=2026-05-21*
+
+<!-- source-sha: 0a8d60e7f720acdade1c9d675ec956390d78f271 -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/evening-analysis/executive-brief_sv.md -->
+
+**Klassificering**: Offentlig OSINT · **Konfidensgrad**: HÖG · **Upphovsman**: Riksdagsmonitor Underrättelseanalys  
+**Cykel**: Kvällsanalys · **Horisont**: T+72h → T+30d · **DIW-multiplikator**: 1,5× (115 dagar till val)
+
+### 🎯 Slutsats i sammandrag
+
+Torsdag 21 maj 2026 avslutas med ett avgörande rättsstatshistoriskt skifte: Justitieutskottet (JuU) godkänner **Sveriges första lagstiftning om AI-ansiktsigenkänning för polisen i realtid** (HD01JuU28, betänkande 2025/26:JuU28). Samtidigt omformar FiU:s **kontantresilienssbetänkande** (HD01FiU39) och FiU40:s **fondmarknadsreform** Sveriges finansinfrastruktur. Fem betänkanden från JuU, FiU och CU skapar ett ovanligt brett tvärutskottslgt lagstiftningsavtryck. Mot denna bakgrund: oppositionsmotioner angriper regeringens säkerhetshot-utvisningsregim och Skatteverkets befogenheter, medan interpellationer om Sydsveriges vattenkris och sjukhusläggningar blottlägger misslyckanden i välfärdsförsörjningen. Skriftliga frågor om Taiwanvapen och Tibet signalerar att Sveriges olösta post-NATO-diplomattika spänningar kvarstår.
+
+```mermaid
+flowchart LR
+    A[📅 2026-05-21<br/>Evening Analysis] --> B[🔴 AI Policing<br/>JuU28 DIW 4.5]
+    A --> C[💵 Cash Resilience<br/>FiU39 DIW 3.2]
+    A --> D[📈 Fund Market<br/>FiU40 DIW 2.8]
+    A --> E[🌿 Hydropower Exception<br/>CU41 DIW 2.7]
+    A --> F[🏙️ Area Cooperation Fee<br/>CU36 DIW 2.5]
+    A --> G[⚔️ Motions × 4<br/>V opposition HD024187-190]
+    A --> H[🌊 Water crisis interp<br/>HD10499 southern Sweden]
+    A --> I[🏥 Hospital closure interp<br/>HD10500 Köping]
+    B --> B1[Civil liberties trade-off<br/>Art. 8 ECHR risk]
+    C --> C1[NATO crisis resilience<br/>Digital payment vulnerability]
+    B1 --> Z[🗳️ Election 2026<br/>115 days — 1.5× DIW]
+    C1 --> Z
+    style A fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+    style B fill:#1a1e3d,stroke:#ff006e,color:#ff006e
+    style C fill:#1a1e3d,stroke:#ffbe0b,color:#ffbe0b
+    style D fill:#1a1e3d,stroke:#00d9ff,color:#00d9ff
+    style Z fill:#ff006e,stroke:#ffbe0b,color:#0a0e27
+```
+
+### 🧭 3 Beslut som detta underlag stödjer
+
+1. **Civilsamhälle/juridik**: Lämna in krav på Lagrådsgranskning av JuU28:s tillämpningsföreskrifter om AI-ansiktsigenkännings driftsprotokoll, datalagringstider och överklaganderätt. **Utlösare**: Regeringspropositionen om genomförandeförordning, förväntad inom 60 dagar efter riksdagsomröstning. Konfidensgrad: **HÖG**.
+
+2. **Finansinstitut/Riksbanken**: Bedöm operativ beredskap för FiU39:s kontantskyldigheter — banker måste upprätthålla miniminivåer för kontantservice under den nya ordningen. **Utlösare**: Riksdagens omröstning om FiU39 (förväntas i plenum v. 25 maj). Konfidensgrad: **HÖG**.
+
+3. **Utrikespolitisk avdelning**: Sverige har ett 48–72-timmarsfönster för att klargöra sin position om Taiwanvapenförsäljning (HD11822) innan Trumps/Kinas vapenfrysnarrativ fastnar som diplomatiskt faktum. UM Malmer Stenergards svar signalerar om Sverige ansluter sig till EU-konsensus eller skär ut en pro-Taiwan-försvarsposition. **Utlösare**: Svarsfrist för skriftlig fråga. Konfidensgrad: **MEDEL-HÖG**.
+
+### 60 sekunder
+
+- **Högst signifikant**: JuU28 — AI-ansiktsigenkänning i realtid för polisen. Sverige blir en av de första EU-länderna att lagstifta om explicita polisiära AI-biometrier. EKMR Artikel 8 och EU:s AI-förordning Kategori 1 högriskimplikationer. DIW 4,5 (valnärhetsmultiplikator 1,5× tillämpad).
+- **Mest ekonomiskt genomgripande**: FiU40 (starkare fondmarknad) — strukturell reform av Sveriges fondmarknad på 6 biljoner SEK. Långsiktiga konsekvenser för kapitaltillväxt i pensionssparande.
+- **Mest geopolitiskt känslig**: HD11822 (Taiwanvapen) och HD11821 (Tibet-Kina) — skriftliga frågor som blottlägger Sveriges post-NATO diplomatta balansgång mellan atlantiska åtaganden och Kina/Ryssland-relationer.
+- **Mest avslöjande om välfärdssystemet**: HD10500 (Köping sjukhus) interpellation — regeringen medger sjukhusomstrukturering utan ett sammanhängande ramverk för landsbygdssjukvård.
+
+### Tier-C tvärdagssyntes
+
+Dagens utskottsproduktion kopplar direkt till gårdagens/veckans propositioner och motioner:
+- JuU28 AI-biometri **följer** regeringens säkerhetshot-utvisningsproposition (HD03267, citerad i propositionssyskon) — tillsammans utgör de Sveriges mest omfattande säkerhetsstatliga expansion sedan SÄPO-omorganisationen 2019.
+- FiU39 kontantresiliens **utvidgar** det digitala styrningstemat från HD03250 (statlig e-legitimation, propositionssyskon) — Sverige utökar simultant digital identitet OCH föreskriver kontantfallback.
+- V:s motioner idag (HD024188 mot HD03267) **ekar** V:s systematiska oppositionsmönster dokumenterat i motionssyskonanalysen.
+
+### Ekonomisk kontext
+
+IMF WEO-2026-04: Sveriges BNP-tillväxt prognos 2,1 % (2026), inflation 2,0 %, arbetslöshet 8,4 %. Fondmarknadsreformen (FiU40) skär tvärs igenom Sveriges fondmarknadssårbarheter på 6 biljoner SEK som identifierats i Riksbankens Finansiell stabilitetsrapport 2025:2. Kontantskyldigheten (FiU39) har uppskattad banksektorkostnad för regelefterlevnad på 400–800 mn SEK i kapitalinvesteringar (SBAB, Finansinspektionens uppskattningar).
+
+*economicProvenance: provider=imf, dataflow=WEO, vintage=WEO-2026-04, vintageAgeMonths=1, retrieved_at=2026-05-21*
+
+<!-- source-sha: 0a8d60e7f720acdade1c9d675ec956390d78f271 -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/evening-analysis/executive-brief_zh.md -->
+
+**分类**: 公开OSINT · **可信度**: 高 · **作者**: Riksdagsmonitor 情报分析  
+**周期**: 晚间分析 · **时间范围**: T+72h → T+30d · **DIW系数**: 1.5×（距选举115天）
+
+### 🎯 核心结论
+
+2026年5月21日星期四迎来法治的重要转折点：司法委员会（JuU）批准**瑞典首部实时人工智能人脸识别警察立法**（HD01JuU28, betänkande 2025/26:JuU28）。与此同时，FiU的**现金韧性betänkande**（HD01FiU39）和FiU40的**基金市场改革**正在重塑瑞典的金融基础设施。来自JuU、FiU和CU的五项betänkanden形成了异常广泛的跨委员会立法足迹。在此背景下，反对党动议攻击政府的安全威胁驱逐体系和Skatteverket的权力，而关于南瑞典水危机和医院关闭的质询揭示了福利体系的失败。关于对台武器和西藏问题的书面质询表明，瑞典加入北约后悬而未决的外交紧张局势持续存在。
+
+```mermaid
+flowchart LR
+    A[📅 2026-05-21<br/>Evening Analysis] --> B[🔴 AI Policing<br/>JuU28 DIW 4.5]
+    A --> C[💵 Cash Resilience<br/>FiU39 DIW 3.2]
+    A --> D[📈 Fund Market<br/>FiU40 DIW 2.8]
+    A --> E[🌿 Hydropower Exception<br/>CU41 DIW 2.7]
+    A --> F[🏙️ Area Cooperation Fee<br/>CU36 DIW 2.5]
+    A --> G[⚔️ Motions × 4<br/>V opposition HD024187-190]
+    A --> H[🌊 Water crisis interp<br/>HD10499 southern Sweden]
+    A --> I[🏥 Hospital closure interp<br/>HD10500 Köping]
+    B --> B1[Civil liberties trade-off<br/>Art. 8 ECHR risk]
+    C --> C1[NATO crisis resilience<br/>Digital payment vulnerability]
+    B1 --> Z[🗳️ Election 2026<br/>115 days — 1.5× DIW]
+    C1 --> Z
+    style A fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+    style B fill:#1a1e3d,stroke:#ff006e,color:#ff006e
+    style C fill:#1a1e3d,stroke:#ffbe0b,color:#ffbe0b
+    style D fill:#1a1e3d,stroke:#00d9ff,color:#00d9ff
+    style Z fill:#ff006e,stroke:#ffbe0b,color:#0a0e27
+```
+
+### 🧭 本简报支持的3项决策
+
+1. **公民社会/法律**: 就JuU28关于人工智能人脸识别使用协议、数据保留限制和上诉权的实施法规向Lagrådet提出审查请求。**触发条件**: 政府实施法规，预计在Riksdag投票后60天内出台。可信度: **高**。
+
+2. **金融机构/瑞典中央银行**: 评估FiU39现金义务的运营准备情况——银行必须在新制度下维持最低现金服务水平。**触发条件**: Riksdag对FiU39进行投票（预计在5月25日全体会议周）。可信度: **高**。
+
+3. **外交部门**: 瑞典有48至72小时的窗口来明确其对台湾武器销售（HD11822）的立场，此后特朗普/中国的裁军叙事将固化为外交既成事实。外长Malmer Stenergard的回答将揭示瑞典是遵循欧盟共识还是采取亲台湾的防务立场。**触发条件**: 书面质询答复截止日期。可信度: **中高**。
+
+### 60秒摘要
+
+- **最重要**: JuU28——警察实时人工智能人脸识别。瑞典成为最早明确立法规范警察生物特征识别的欧盟成员国之一。欧洲人权公约第8条和欧盟人工智能法案第1类高风险影响。DIW 4.5（选举临近系数1.5×已应用）。
+- **经济意义最重大**: FiU40（更强的基金市场）——对瑞典6万亿克朗基金市场的结构性改革。对养老金储蓄的长期资本市场发展影响。
+- **地缘政治最敏感**: HD11822（台湾武器）和HD11821（西藏-中国）——揭示瑞典加入北约后外交平衡行为的书面质询。
+- **揭示福利体系**: HD10500（科平医院）质询——政府承认在没有统一农村医疗框架的情况下进行医院重组。
+
+### Tier-C跨日综合
+
+今日委员会产出与昨天/本周的Propositioner和Motioner直接关联：
+- JuU28人工智能生物特征识别**紧随**政府安全威胁驱逐Propositioner（HD03267，在Propositioner姊妹文件中引用）——共同构成2019年SÄPO重组以来瑞典最广泛的安全国家扩张。
+- FiU39现金韧性**延伸**HD03250（国家数字身份，Propositioner姊妹文件）的数字治理主题——瑞典在扩展数字身份的同时还强制要求现金替代方案。
+- 今日V的Motioner（HD024187反对HD03267）**映射**Motioner姊妹分析中记录的V系统性反对模式。
+
+### 经济背景
+
+IMF WEO-2026-04：瑞典GDP增长预测2.1%（2026年）、通胀2.0%、失业率8.4%。基金市场改革（FiU40）解决了Riksbanken金融稳定报告2025:2中确定的瑞典6万亿克朗基金市场脆弱性。现金义务（FiU39）包括估计银行业合规成本4亿至8亿克朗资本投资（SBAB、Finansinspektionen估计）。
+
+*economicProvenance: provider=imf, dataflow=WEO, vintage=WEO-2026-04, vintageAgeMonths=1, retrieved_at=2026-05-21*
+
+<!-- source-sha: 0a8d60e7f720acdade1c9d675ec956390d78f271 -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 3 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 0 | Linked in Article Sources, not expanded inline |
 
@@ -1970,3 +2773,16 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/evening-analysis/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/evening-analysis/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/evening-analysis/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/evening-analysis/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/evening-analysis/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/evening-analysis/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/evening-analysis/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/evening-analysis/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/evening-analysis/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/evening-analysis/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/evening-analysis/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/evening-analysis/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/evening-analysis/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/evening-analysis/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/evening-analysis/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/evening-analysis/executive-brief_zh.md)

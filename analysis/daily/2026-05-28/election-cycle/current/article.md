@@ -3,7 +3,7 @@ date: 2026-05-28
 subfolder: election-cycle/current
 slug: 2026-05-28-election-cycle/current
 source_folder: analysis/daily/2026-05-28/election-cycle/current
-generated_at: 2026-05-28T09:53:45.259Z
+generated_at: 2026-05-28T10:21:06.952Z
 language: en
 layout: article
 ---
@@ -94,8 +94,6 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📝 | [Analysis Index](#rm-analysis-index) | supporting analytical lens with primary-source evidence and audit-traceable citations |
-| 📝 | [Cross Run Diff](#rm-cross-run-diff) | supporting analytical lens with primary-source evidence and audit-traceable citations |
-| 📝 | [Mcp Reliability Audit](#rm-mcp-reliability-audit) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Reference Analysis Quality](#rm-reference-analysis-quality) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Workflow Audit](#rm-workflow-audit) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
@@ -1808,101 +1806,6 @@ Primary parliamentary facts: **A1** | IMF economic indicators: **B2** | Polling:
 - Supplementary: 4/5 ✅
 - **Total: 32 artifacts** (exceeds minimum 23 required)
 
-## Cross Run Diff
-<!-- source: cross-run-diff.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-28/election-cycle/current/cross-run-diff.md -->
-
-**Baseline**: analysis/daily/2026-05-27/election-cycle/current/  
-**Current**: analysis/daily/2026-05-28/election-cycle/current/  
-**Delta**: −1 day (T-108 → T-107)
-
-### Key Changes (May 27 → May 28)
-
-#### New Parliamentary Developments
-
-| Change | Impact | Prior day had? |
-|---|---|---|
-| HD01CU44 — EU Inc. subsidiarity betänkande (May 28) | NEW — not in prior run | No |
-| T-107 vs T-108 — 1 additional day elapsed | Minor time update | T-108 |
-
-#### Continuity Items (no change)
-- HD03271 abortion proposition: same status (in plenary pipeline)
-- HD01JuU38, HD01FöU15, HD01UFöU3: same committee reports (published May 27)
-- Opinion polling: no new polls published May 28
-- IMF data: same vintage (April 2026) — no new vintage available
-
-### Qualitative Differences vs Prior Run
-
-#### Improved depth in this run
-1. **quantitative-swot.md**: New artifact (not in prior run — added per election-cycle blocking artifact requirement)
-2. **political-stride-assessment.md**: New artifact
-3. **documents/HD01CU44-referenced**: HD01CU44 published today; prior run had no CU44 betänkande
-4. **devils-advocate.md**: Three full counterfactual paragraphs (this run improves on prior day's two-paragraph version)
-5. **election-2026-analysis.md**: Added Gantt chart (improved from prior run's plain table)
-
-#### Unchanged assessment conclusions
-- Election outcome: ROUGHLY EVEN [45–55%] — same as T-108
-- Seat projection: S+V+MP+C = 176 — same
-- Top risk: R01 abortion mobilisation — same
-- Top opportunity: SD ballot vs poll gap — same
-
-### Methodological Improvement Trajectory
-
-| Metric | T-108 (May 27) | T-107 (May 28) | Delta |
-|---|---|---|---|
-| Dok IDs cited | 11 | 14 | +3 |
-| Mermaid charts | 4 | 6 | +2 |
-| Evidence statistics per artifact | 6.5 avg | 7.2 avg | +0.7 |
-| Counterfactual paragraphs | 2 | 3 | +1 |
-| Artifacts total | 28 | 32 | +4 |
-
-**Assessment**: This run represents a measurable quality improvement over the T-108 baseline across all tracked metrics. The addition of quantitative-swot.md and political-stride-assessment.md (both missing from prior run) closes the election-cycle blocking artifact gap.
-
-## Mcp Reliability Audit
-<!-- source: mcp-reliability-audit.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-28/election-cycle/current/mcp-reliability-audit.md -->
-
-### Health Check Results
-
-| Server | Status | Response time | Tools called | Failures |
-|---|---|---|---|---|
-| riksdag-regering | ✅ LIVE | <2s avg | 6 | 0 |
-| scb | Not tested this run | N/A | 0 | N/A |
-| world-bank | Not tested this run | N/A | 0 | N/A |
-
-**MCP session summary**: `get_sync_status` → `{"status":"live"}` confirmed at agent_minute=1.
-
-### Tool Call Audit (riksdag-regering)
-
-| Tool | Params | Response quality | Dok count |
-|---|---|---|---|
-| get_sync_status | none | ✅ `{"status":"live"}` | N/A |
-| get_propositioner | limit:10 | ✅ 10 propositions | 10 |
-| get_betankanden | limit:10 | ✅ 10 committee reports | 10 |
-| get_motioner | limit:10 | ✅ 10 motions | 10 |
-| search_voteringar | bet:AU10, rm:2025/26 | ✅ Vote data | N/A |
-| fetch_paginated_documents | rm:2026/27 | ✅ Documents | 10+ |
-
-### Data Freshness Assessment
-
-| Document | Date | Freshness |
-|---|---|---|
-| HD01CU44 | 2026-05-28 | ✅ Today — fresh |
-| HD01JuU38 | 2026-05-27 | ✅ Yesterday — fresh |
-| HD01FöU15 | 2026-05-27 | ✅ Yesterday — fresh |
-| HD01UFöU3 | 2026-05-26 | ✅ 2 days — fresh |
-| HD03271 | 2026-05-26 | ✅ 2 days — fresh |
-
-### IMF Data Access
-
-IMF WEO data accessed via IMF public API (not requiring subscription key for WEO/Datamapper subcommands). April 2026 vintage used. Economic claims vintage-stamped throughout analysis artifacts.
-
-**Note**: `scripts/imf-fetch.ts` with `--persist` flag would cache IMF data to `analysis/imf/`. This run used inline IMF data from prior publications and WEO April 2026 vintage. For next run, consider running `npx tsx scripts/imf-fetch.ts compare --indicator NGDP_RPCH --countries SWE,DNK,NOR,FIN,DEU --persist` to update cache.
-
-### Reliability Score
-
-**Overall MCP reliability this run**: 100% (0 failures)  
-**Data completeness**: 95% (IMF not independently fetched; uses prior vintage)  
-**Recommendation**: MCP reliable for continued use; IMF persist flag recommended for next daily run
-
 ## Reference Analysis Quality
 <!-- source: reference-analysis-quality.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-28/election-cycle/current/reference-analysis-quality.md -->
 
@@ -2054,7 +1957,7 @@ This generated report reconciles the analysis folder with the article projection
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 31 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 29 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 3 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 1 | Linked in Article Sources, not expanded inline |
 
@@ -2098,8 +2001,6 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-28/election-cycle/current/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-28/election-cycle/current/methodology-reflection.md)
 - [`analysis-index.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-28/election-cycle/current/analysis-index.md)
-- [`cross-run-diff.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-28/election-cycle/current/cross-run-diff.md)
-- [`mcp-reliability-audit.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-28/election-cycle/current/mcp-reliability-audit.md)
 - [`reference-analysis-quality.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-28/election-cycle/current/reference-analysis-quality.md)
 - [`workflow-audit.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-28/election-cycle/current/workflow-audit.md)
 

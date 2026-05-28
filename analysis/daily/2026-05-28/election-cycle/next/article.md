@@ -3,7 +3,7 @@ date: 2026-05-28
 subfolder: election-cycle/next
 slug: 2026-05-28-election-cycle/next
 source_folder: analysis/daily/2026-05-28/election-cycle/next
-generated_at: 2026-05-28T09:53:46.040Z
+generated_at: 2026-05-28T10:21:06.957Z
 language: en
 layout: article
 ---
@@ -71,8 +71,6 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📝 | [Analysis Index](#rm-analysis-index) | supporting analytical lens with primary-source evidence and audit-traceable citations |
-| 📝 | [Cross Run Diff](#rm-cross-run-diff) | supporting analytical lens with primary-source evidence and audit-traceable citations |
-| 📝 | [Mcp Reliability Audit](#rm-mcp-reliability-audit) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Reference Analysis Quality](#rm-reference-analysis-quality) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Workflow Audit](#rm-workflow-audit) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
@@ -1206,65 +1204,6 @@ The `next/` analysis is inherently more speculative than `current/`:
 - [x] Pass-2: methodology-reflection.md contains "Pass-2 status: executed in full"
 - [x] pir-status.json subfolder = "election-cycle/next"
 
-## Cross Run Diff
-<!-- source: cross-run-diff.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-28/election-cycle/next/cross-run-diff.md -->
-
-### Comparison: 2026-05-28 next/ vs 2026-05-27 next/
-
-#### Seat Projection Changes
-
-| Party | T-108 (2026-05-27) | T-107 (2026-05-28) | Delta |
-|---|---|---|---|
-| S | 112 | 113 | +1 |
-| SD | 71 | 72 | +1 |
-| M | 67 | 67 | 0 |
-| C | 26 | 26 | 0 |
-| V | 28 | 28 | 0 |
-| MP | 17 | 18 | +1 |
-| KD | 19 | 20 | +1 |
-| L | 17 | 17 | 0 |
-
-*+1 day of polling movement: S and SD both +1, MP and KD +1 (reflecting recent Demoskop/IPSOS averages).*
-
-#### Formation Probability Changes
-
-| Formation | T-108 | T-107 | Delta |
-|---|---|---|---|
-| Formation B (S+C) | 58% | 60% | +2pp |
-| Formation A (Tidö-2) | 28% | 27% | -1pp |
-| Grand Coalition | 8% | 7% | -1pp |
-| Repeat Election | 6% | 6% | 0 |
-
-#### Key Developments Between T-108 and T-107
-
-1. New abortion debate data (HD03271 implementation proximity) raises Formation B advantage
-2. No new major polling releases — minor movement within margin of error
-3. C-party leadership maintained pre-election signalling toward S-bloc
-
-#### Verdict: Stable trajectory. Formation B probability above 55% for 7 consecutive days.
-
-## Mcp Reliability Audit
-<!-- source: mcp-reliability-audit.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-28/election-cycle/next/mcp-reliability-audit.md -->
-
-### Server Status
-
-| MCP Server | Calls | Failures | Success Rate |
-|---|---|---|---|
-| riksdag-regering | 12 | 0 | 100% |
-| scb | 2 | 0 | 100% |
-| world-bank | 0 | 0 | N/A |
-| imf (via bash tsx) | 2 | 0 | 100% |
-
-### Data Availability
-
-All required parliamentary data was available from the same MCP session as current/ analysis. No duplicate fetching was required.
-
-### Caching
-
-Next-cycle analysis used cached MCP results from current/ pass. No additional network calls required for parliamentary documents.
-
-### Verdict: PASS
-
 ## Reference Analysis Quality
 <!-- source: reference-analysis-quality.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-28/election-cycle/next/reference-analysis-quality.md -->
 
@@ -1337,7 +1276,7 @@ This generated report reconciles the analysis folder with the article projection
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 31 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 29 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 3 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 1 | Linked in Article Sources, not expanded inline |
 
@@ -1381,8 +1320,6 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-28/election-cycle/next/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-28/election-cycle/next/methodology-reflection.md)
 - [`analysis-index.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-28/election-cycle/next/analysis-index.md)
-- [`cross-run-diff.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-28/election-cycle/next/cross-run-diff.md)
-- [`mcp-reliability-audit.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-28/election-cycle/next/mcp-reliability-audit.md)
 - [`reference-analysis-quality.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-28/election-cycle/next/reference-analysis-quality.md)
 - [`workflow-audit.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-28/election-cycle/next/workflow-audit.md)
 
