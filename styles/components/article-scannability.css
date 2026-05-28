@@ -140,7 +140,7 @@
   font-weight: 600;
 }
 
-/* Mobile: collapse TOC into a disclosure widget */
+/* Mobile: disable sticky positioning and height constraints */
 @media (max-width: 767px) {
   .rm-article-toc {
     position: static;

@@ -45,6 +45,30 @@ describe('Article Scannability Transforms', () => {
       const result = transformConfidenceChips(html);
       expect(result).toContain('rm-confidence--high');
     });
+
+    it('does not modify heading id attributes containing high/medium/low', () => {
+      const html = '<h2 id="rm-medium-threats">Medium Threats</h2>';
+      const result = transformConfidenceChips(html);
+      expect(result).toContain('id="rm-medium-threats"');
+      // Text content should still be wrapped
+      expect(result).toContain('rm-confidence--medium');
+    });
+
+    it('does not modify href attributes containing high/medium/low', () => {
+      const html = '<a href="#rm-low-priority">Low priority</a>';
+      const result = transformConfidenceChips(html);
+      expect(result).toContain('href="#rm-low-priority"');
+      // Text content should still be wrapped
+      expect(result).toContain('rm-confidence--low');
+    });
+
+    it('does not inject spans into class or data attributes', () => {
+      const html = '<div class="high-impact" data-level="MEDIUM"><p>HIGH confidence</p></div>';
+      const result = transformConfidenceChips(html);
+      expect(result).toContain('class="high-impact"');
+      expect(result).toContain('data-level="MEDIUM"');
+      expect(result).toContain('rm-confidence--high');
+    });
   });
 
   describe('transformAdmiraltyBadges', () => {
@@ -68,6 +92,12 @@ describe('Article Scannability Transforms', () => {
       const html = '<p>(G1) or (A7) should not match</p>';
       const result = transformAdmiraltyBadges(html);
       expect(result).not.toContain('rm-admiralty');
+    });
+
+    it('does not modify attributes containing Admiralty-like patterns', () => {
+      const html = '<a href="#section-(A2)">Rating (A2)</a>';
+      const result = transformAdmiraltyBadges(html);
+      expect(result).toContain('href="#section-(A2)"');
     });
   });
 
@@ -95,6 +125,14 @@ describe('Article Scannability Transforms', () => {
       const html = '<p>T+14d</p>';
       const result = transformTimelineIndicators(html);
       expect(result).toContain('>T+14d</span>');
+    });
+
+    it('does not modify attributes containing timeline-like patterns', () => {
+      const html = '<h2 id="rm-T+7d-outlook">T+7d outlook</h2>';
+      const result = transformTimelineIndicators(html);
+      expect(result).toContain('id="rm-T+7d-outlook"');
+      // Text content should still be wrapped
+      expect(result).toContain('rm-timeline--urgent');
     });
   });
 
@@ -202,7 +240,7 @@ describe('Article Scannability Transforms', () => {
   });
 
   describe('applyScannabilityTransforms', () => {
-    it('applies all transforms and returns TOC + footer', () => {
+    it('applies inline transforms and returns TOC + footer (no progressive disclosure)', () => {
       const html = '<h2 id="rm-brief">Executive Brief</h2><p>Confidence: HIGH (A2), expected T+7d</p><h2 id="rm-detail">Document Analysis</h2><p>Detail</p><h2 id="rm-end">Summary</h2><p>End</p>';
       const { transformedBody, tocHtml, methodologyFooterHtml } = applyScannabilityTransforms(html, 'en');
 
@@ -212,8 +250,9 @@ describe('Article Scannability Transforms', () => {
       expect(transformedBody).toContain('rm-admiralty');
       // Timeline applied
       expect(transformedBody).toContain('rm-timeline--urgent');
-      // Progressive disclosure applied
-      expect(transformedBody).toContain('rm-disclosure');
+      // Progressive disclosure is NOT applied by applyScannabilityTransforms
+      // (it must be called separately after body splitting)
+      expect(transformedBody).not.toContain('rm-disclosure');
       // TOC generated
       expect(tocHtml).toContain('rm-article-toc');
       // Methodology footer generated

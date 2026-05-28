@@ -74,7 +74,7 @@ import {
   renderAnalysisArtifactsReference,
   renderMethodsReference,
 } from './article-aside.js';
-import { applyScannabilityTransforms } from './article-scannability.js';
+import { applyScannabilityTransforms, transformProgressiveDisclosure } from './article-scannability.js';
 
 /**
  * CSS selectors identifying the voice-assistant TTS-readable regions of
@@ -550,10 +550,13 @@ export async function renderArticleHtml(input: RenderArticleInput): Promise<stri
   );
 
   // Apply visual scannability transforms (confidence chips, admiralty
-  // badges, timeline indicators, progressive disclosure).
+  // badges, timeline indicators). Progressive disclosure is applied after
+  // splitting so that wrapping <h2> sections in <details> doesn't interfere
+  // with the split logic.
   const { transformedBody, tocHtml, methodologyFooterHtml } = applyScannabilityTransforms(bodyHtml, input.lang);
 
-  const { lead: leadHtml, rest: restHtml } = splitBodyAtSecondH2(transformedBody);
+  const { lead: leadHtml, rest: rawRestHtml } = splitBodyAtSecondH2(transformedBody);
+  const restHtml = transformProgressiveDisclosure(rawRestHtml);
 
   const articleUrl = `${BASE_URL}/${input.canonicalPath}`;
   const langMeta = LANGUAGE_META[input.lang];

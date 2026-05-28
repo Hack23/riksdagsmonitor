@@ -92,25 +92,49 @@ function admiraltyTooltip(code: string): string {
   return `${src}; ${info}`;
 }
 
+// ─── Text-Node-Only Replacement ───────────────────────────────────────────────
+
+/**
+ * Apply a regex replacement only to text segments of an HTML string, leaving
+ * tag markup (attributes, tag names) untouched. The HTML is split into text
+ * segments and tag segments by matching complete tags; the replacement is
+ * applied only to the text parts.
+ */
+function replaceInTextNodes(
+  html: string,
+  pattern: RegExp,
+  replacer: (substring: string, ...args: string[]) => string,
+): string {
+  // Split html into alternating text/tag segments. Tags include the full
+  // `<…>` (including attributes), everything else is text content.
+  const TAG_SPLIT_RE = /(<[^>]*>)/g;
+  const parts = html.split(TAG_SPLIT_RE);
+  for (let i = 0; i < parts.length; i++) {
+    // Odd-indexed segments are tags; even-indexed are text nodes.
+    if (i % 2 === 0) {
+      parts[i] = parts[i].replace(pattern, replacer as (...a: unknown[]) => string);
+    }
+  }
+  return parts.join('');
+}
+
 // ─── Confidence Chip Transform ────────────────────────────────────────────────
 
 /**
- * Detect standalone confidence labels (HIGH, MEDIUM, LOW) anywhere in the
- * rendered text and wrap them in styled chip spans.
+ * Detect standalone confidence labels (HIGH, MEDIUM, LOW) in text nodes of
+ * the rendered HTML and wrap them in styled chip spans.
  *
  * Matching is whole-word and case-insensitive. An Admiralty code in
  * parentheses immediately following the label (e.g. `"HIGH (A2)"`) is
  * permitted but **not** required — the lookahead is optional, so any
  * standalone occurrence is wrapped regardless of surrounding context.
  *
- * Because matching is context-free, this transform must only run on
- * intelligence article bodies where HIGH/MEDIUM/LOW denote confidence
- * ratings, not on arbitrary prose.
+ * Replacements are applied only to text nodes (not inside tag attributes)
+ * to avoid corrupting heading IDs, hrefs, or other attribute values.
  */
 export function transformConfidenceChips(html: string): string {
-  // Match standalone "HIGH", "MEDIUM", "LOW" (whole-word, case-insensitive),
-  // optionally trailed by parenthetical Admiralty notation like "(B2)".
-  return html.replace(
+  return replaceInTextNodes(
+    html,
     /\b(HIGH|MEDIUM|LOW)\b(?=\s*(?:\([A-F][1-6]\))?)/gi,
     (match) => {
       const level = match.toUpperCase() as 'HIGH' | 'MEDIUM' | 'LOW';
@@ -125,9 +149,13 @@ export function transformConfidenceChips(html: string): string {
 /**
  * Detect Admiralty codes like "(A2)", "(B3)", "(C1)" in parentheses and
  * wrap them in styled badge spans with descriptive tooltips.
+ *
+ * Replacements are applied only to text nodes to avoid corrupting attribute
+ * values that may contain matching patterns.
  */
 export function transformAdmiraltyBadges(html: string): string {
-  return html.replace(
+  return replaceInTextNodes(
+    html,
     /\(([A-F][1-6])\)/g,
     (_match, code: string) => {
       const tooltip = admiraltyTooltip(code);
@@ -141,9 +169,13 @@ export function transformAdmiraltyBadges(html: string): string {
 /**
  * Detect timeline markers like "T+7d", "T+30d", "T+90d" and wrap them
  * in styled timeline indicator spans with human-readable labels.
+ *
+ * Replacements are applied only to text nodes to avoid corrupting attribute
+ * values.
  */
 export function transformTimelineIndicators(html: string): string {
-  return html.replace(
+  return replaceInTextNodes(
+    html,
     /\bT\+(\d+)d\b/g,
     (_match, days: string) => {
       const n = parseInt(days, 10);
@@ -343,7 +375,14 @@ export function renderMethodologyFooter(lang: Language): string {
 
 /**
  * Apply all scannability transforms to the rendered article body HTML.
- * Order: confidence → admiralty → timeline → progressive disclosure.
+ *
+ * Inline transforms (confidence → admiralty → timeline) are applied first.
+ * Progressive disclosure is deliberately **excluded** here because it wraps
+ * `<h2>` sections in `<details>` wrappers — if `splitBodyAtSecondH2()` runs
+ * after this transform it may split inside a wrapper, producing malformed
+ * HTML. Callers should apply {@link transformProgressiveDisclosure} to the
+ * "rest" chunk **after** splitting.
+ *
  * TOC and methodology footer are returned separately for template placement.
  */
 export function applyScannabilityTransforms(bodyHtml: string, lang: Language): {
@@ -355,7 +394,6 @@ export function applyScannabilityTransforms(bodyHtml: string, lang: Language): {
   transformed = transformConfidenceChips(transformed);
   transformed = transformAdmiraltyBadges(transformed);
   transformed = transformTimelineIndicators(transformed);
-  transformed = transformProgressiveDisclosure(transformed);
 
   const tocHtml = generateArticleToc(transformed, lang);
   const methodologyFooterHtml = renderMethodologyFooter(lang);
