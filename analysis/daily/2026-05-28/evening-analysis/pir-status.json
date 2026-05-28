@@ -1,0 +1,170 @@
+{
+  "schema": "pir-status/v1.0",
+  "date": "2026-05-28",
+  "cycle": "evening-analysis",
+  "run_id": "26595402071",
+  "prior_cycle": "analysis/daily/2026-05-27/evening-analysis/pir-status.json",
+  "election_date": "2026-09-13",
+  "days_to_election": 108,
+  "pirs": [
+    {
+      "id": "PIR-01",
+      "title": "NCSC FöU15 Cybersecurity + BP27 Budget",
+      "status": "CLOSED-MONITORED",
+      "prior_status": "OPEN",
+      "horizon": "2026-06-30",
+      "confidence": "HIGH",
+      "confidence_code": "A2",
+      "resolution_evidence": "HD01FöU15 approved by FöU committee 2026-05-27. Force date 15 July confirmed. Chamber vote ~2026-06-03.",
+      "new_pir_spawned": "PIR-09",
+      "updated": "2026-05-28"
+    },
+    {
+      "id": "PIR-02",
+      "title": "S Reservation on JuU38 Juvenile Provisions",
+      "status": "SUPERSEDED",
+      "prior_status": "OPEN",
+      "horizon": "2026-06-05",
+      "confidence": "MEDIUM",
+      "confidence_code": "B3",
+      "resolution_evidence": "JuU38 approved with MP reservation (pt 1), not S reservation. Prediction incorrect: MP reserved, S did not.",
+      "note": "Replaced by PIR-10: monitor S chamber debate strategy on JuU38.",
+      "new_pir_spawned": "PIR-10",
+      "updated": "2026-05-28"
+    },
+    {
+      "id": "PIR-03",
+      "title": "SfU34 Migration Detention Riksrevisionen Measures",
+      "status": "CONFIRMED-ACTIVE",
+      "prior_status": "OPEN",
+      "horizon": "2026-09-13",
+      "confidence": "HIGH",
+      "confidence_code": "A2",
+      "resolution_evidence": "Five reservations (S, V, C, MP) confirmed. Government rejected all motions. Fault line locked for election campaign.",
+      "updated": "2026-05-28"
+    },
+    {
+      "id": "PIR-04",
+      "title": "HD01UU18 Arms Export Trusted Partner Criteria",
+      "status": "OPEN-DATA-GAP",
+      "prior_status": "OPEN",
+      "horizon": "2026-06-30",
+      "confidence": "LOW",
+      "confidence_code": "C3",
+      "resolution_evidence": "HD01UU18 downloaded as metadata-only. No text available for analysis. PIR horizon extended.",
+      "updated": "2026-05-28"
+    },
+    {
+      "id": "PIR-05",
+      "title": "ECHR Cases on Migration Detention",
+      "status": "OPEN-REINFORCED",
+      "prior_status": "OPEN",
+      "horizon": "2026-12-31",
+      "confidence": "MEDIUM",
+      "confidence_code": "B2",
+      "resolution_evidence": "SfU34 five-reservation pattern cites child rights (MP) and proportionality — domestic political reinforcement for ECHR concern axis.",
+      "updated": "2026-05-28"
+    },
+    {
+      "id": "PIR-06",
+      "title": "2026 Election Date Announcement",
+      "status": "OPEN-STATIC",
+      "prior_status": "OPEN",
+      "horizon": "2026-07-31",
+      "confidence": "HIGH",
+      "confidence_code": "A2",
+      "resolution_evidence": "No new announcement. 108-day count confirms election date set as 2026-09-13.",
+      "updated": "2026-05-28"
+    },
+    {
+      "id": "PIR-07",
+      "title": "NCC Cited at NATO Summit",
+      "status": "OPEN-PRECONDITION-MET",
+      "prior_status": "OPEN",
+      "horizon": "2026-08-01",
+      "confidence": "MEDIUM",
+      "confidence_code": "B2",
+      "resolution_evidence": "FöU15 passage strengthens NCSC's legal basis for international information-sharing. Pre-condition for NATO summit visibility met.",
+      "updated": "2026-05-28"
+    },
+    {
+      "id": "PIR-08",
+      "title": "Kriminalvården Capacity Expansion Plan",
+      "status": "OPEN-PRESSURE-INCREASING",
+      "prior_status": "OPEN",
+      "horizon": "2026-09-01",
+      "confidence": "MEDIUM",
+      "confidence_code": "B2",
+      "resolution_evidence": "JuU38 tougher recidivism sentencing (force 2 Jul) will increase custody demand. No expansion announcement in today's batch.",
+      "updated": "2026-05-28"
+    },
+    {
+      "id": "PIR-09",
+      "title": "NCSC Operational Readiness Post-15 July",
+      "status": "OPEN-NEW",
+      "prior_status": null,
+      "horizon": "2026-07-15",
+      "confidence": "MEDIUM",
+      "confidence_code": "B2",
+      "requirement": "Will NCSC successfully operationalise FRA information-sharing by 15 July 2026? What inter-agency agreements are needed before force date?",
+      "spawned_from": "PIR-01",
+      "updated": "2026-05-28"
+    },
+    {
+      "id": "PIR-10",
+      "title": "S Abstention Pattern on JuU38 — Chamber Strategy",
+      "status": "OPEN-NEW",
+      "prior_status": null,
+      "horizon": "2026-06-05",
+      "confidence": "MEDIUM",
+      "confidence_code": "B3",
+      "requirement": "Will S challenge JuU38 in chamber debate or table late amendment? Was the absence from reservation list strategic?",
+      "spawned_from": "PIR-02",
+      "updated": "2026-05-28"
+    },
+    {
+      "id": "PIR-11",
+      "title": "Britz Climate Answer — 2030 Transport Target (HD10514)",
+      "status": "OPEN-NEW-CRITICAL",
+      "prior_status": null,
+      "horizon": "2026-06-12",
+      "confidence": "HIGH",
+      "confidence_code": "A2",
+      "requirement": "Will Britz confirm, modify, or abandon the 2030 transport sector emissions target? Answer due 2026-06-12.",
+      "electoral_significance": "CRITICAL — defines L and Tidö climate credibility for election campaign",
+      "updated": "2026-05-28"
+    },
+    {
+      "id": "PIR-12",
+      "title": "SD Abortion Strategy in SoU Committee",
+      "status": "OPEN-NEW",
+      "prior_status": null,
+      "horizon": "2026-08-01",
+      "confidence": "MEDIUM",
+      "confidence_code": "B2",
+      "requirement": "Will SD table conscience-clause amendments during SoU committee review of HD03271? Will KD publicly oppose any SD amendment attempt?",
+      "updated": "2026-05-28"
+    },
+    {
+      "id": "PIR-13",
+      "title": "L Electoral Threshold Risk",
+      "status": "OPEN-NEW-HIGH",
+      "prior_status": null,
+      "horizon": "2026-07-01",
+      "confidence": "MEDIUM",
+      "confidence_code": "B3",
+      "requirement": "Will Britz exposure on unemployment+climate interpellations push L further below threshold in June polls? Threshold breach probability: 20%.",
+      "threshold_breach_probability": 0.20,
+      "updated": "2026-05-28"
+    }
+  ],
+  "summary": {
+    "total_pirs": 13,
+    "closed": 1,
+    "superseded": 1,
+    "open": 11,
+    "new_this_cycle": 5,
+    "critical_pirs": ["PIR-11", "PIR-13"],
+    "highest_confidence_open": ["PIR-03", "PIR-06", "PIR-11"]
+  }
+}
