@@ -1,0 +1,30 @@
+{
+  "generated": "2026-05-28T07:55:00Z",
+  "article_date": "2026-05-28",
+  "subfolder": "interpellations",
+  "riksmote": "2025/26",
+  "total_in_period": 520,
+  "documents_analyzed": 20,
+  "documents": [
+    {"dok_id": "HD10520", "titel": "Snabbare och mer förutsägbara tillståndsprocesser", "datum": "2026-05-28", "questioner": "Aida Birinxhiku", "questioner_party": "S", "respondent": "Johan Britz", "respondent_party": "L", "topic_tags": ["permits", "environmental_law", "competitiveness", "green_transition"]},
+    {"dok_id": "HD10519", "titel": "Åtgärder mot arbetslösheten i Östergötland", "datum": "2026-05-27", "questioner": "Eva Lindh", "questioner_party": "S", "respondent": "Johan Britz", "respondent_party": "L", "topic_tags": ["unemployment", "labour_market", "youth_unemployment", "regional"]},
+    {"dok_id": "HD10518", "titel": "LOV i primärvården", "datum": "2026-05-27", "questioner": "Eva Lindh", "questioner_party": "S", "respondent": "Elisabet Lann", "respondent_party": "KD", "topic_tags": ["healthcare", "primary_care", "LOV", "market_mechanisms"]},
+    {"dok_id": "HD10517", "titel": "Tandvård för unga", "datum": "2026-05-27", "questioner": "Jim Svensk Larm", "questioner_party": "S", "respondent": "Jakob Forssmed", "respondent_party": "KD", "topic_tags": ["dental_care", "youth", "welfare", "healthcare"]},
+    {"dok_id": "HD10516", "titel": "Äldreomsorgens ekonomiska förutsättningar", "datum": "2026-05-27", "questioner": "Eva Lindh", "questioner_party": "S", "respondent": "Anna Tenje", "respondent_party": "M", "topic_tags": ["elderly_care", "welfare", "municipal_finance", "staffing"]},
+    {"dok_id": "HD10515", "titel": "Ökad takt i klimatarbetet", "datum": "2026-05-26", "questioner": "Jytte Guteland", "questioner_party": "S", "respondent": "Johan Britz", "respondent_party": "L", "topic_tags": ["climate", "climate_policy", "green_transition", "EU"]},
+    {"dok_id": "HD10514", "titel": "Klimatmålen till 2030", "datum": "2026-05-26", "questioner": "Åsa Westlund", "questioner_party": "S", "respondent": "Johan Britz", "respondent_party": "L", "topic_tags": ["climate_targets", "2030", "transport_goal", "climate_policy"]},
+    {"dok_id": "HD10513", "titel": "Sjukersättning för personer som saknar arbetsförmåga", "datum": "2026-05-25", "questioner": "Jessica Rodén", "questioner_party": "S", "respondent": "Anna Tenje", "respondent_party": "M", "topic_tags": ["sick_pay", "disability", "social_insurance", "welfare"]},
+    {"dok_id": "HD10512", "titel": "Socialtjänstens och kvinnojourernas skydd av våldsutsatta", "datum": "2026-05-25", "questioner": "Sanna Backeskog", "questioner_party": "S", "respondent": "Camilla Waltersson Grönvall", "respondent_party": "M", "topic_tags": ["domestic_violence", "shelters", "social_services", "gender"]},
+    {"dok_id": "HD10511", "titel": "Den ekonomiska politikens fördelningseffekter", "datum": "2026-05-25", "questioner": "Niklas Karlsson", "questioner_party": "S", "respondent": "Elisabeth Svantesson", "respondent_party": "M", "topic_tags": ["economic_inequality", "tax_policy", "distribution", "fiscal_policy"]},
+    {"dok_id": "HD10510", "titel": "Klimatpåverkan från transporter inom Stockholms stad", "datum": "2026-05-25", "questioner": "Katarina Luhr", "questioner_party": "MP", "respondent": "Johan Britz", "respondent_party": "L", "topic_tags": ["climate", "transport", "local_government", "Stockholm"]},
+    {"dok_id": "HD10509", "titel": "Ny lagstiftning för klimatanpassning", "datum": "2026-05-25", "questioner": "Katarina Luhr", "questioner_party": "MP", "respondent": "Johan Britz", "respondent_party": "L", "topic_tags": ["climate_adaptation", "legislation", "SOU", "climate_policy"]},
+    {"dok_id": "HD10508", "titel": "Stöd till civilsamhällets trafiksäkerhetsorganisationer", "datum": "2026-05-22", "questioner": "Carina Ödebrink", "questioner_party": "S", "respondent": "Andreas Carlson", "respondent_party": "KD", "topic_tags": ["road_safety", "civil_society", "grants", "transport"]},
+    {"dok_id": "HD10507", "titel": "Statsbidrag till kooperativ utveckling", "datum": "2026-05-22", "questioner": "Eva Lindh", "questioner_party": "S", "respondent": "Ebba Busch", "respondent_party": "KD", "topic_tags": ["cooperatives", "grants", "social_economy", "near_market"]},
+    {"dok_id": "HD10506", "titel": "Forskning och innovation för framtidens transportsystem", "datum": "2026-05-22", "questioner": "Carina Ödebrink", "questioner_party": "S", "respondent": "Andreas Carlson", "respondent_party": "KD", "topic_tags": ["transport_RD", "innovation", "infrastructure", "national_plan"]},
+    {"dok_id": "HD10505", "titel": "HVB-hem med kriminella kopplingar som fortfarande är i drift", "datum": "2026-05-22", "questioner": "Gustaf Lantz", "questioner_party": "S", "respondent": "Camilla Waltersson Grönvall", "respondent_party": "M", "topic_tags": ["care_homes", "crime", "oversight", "social_services"]},
+    {"dok_id": "HD10504", "titel": "Våld och kränkningar på internatskolor", "datum": "2026-05-22", "questioner": "Gustaf Lantz", "questioner_party": "S", "respondent": "Lotta Edholm", "respondent_party": "L", "topic_tags": ["boarding_schools", "abuse", "education", "Skolinspektionen"]},
+    {"dok_id": "HD10503", "titel": "FMV:s närvaro i förbandsorter", "datum": "2026-05-22", "questioner": "Erik Ezelius", "questioner_party": "S", "respondent": "Pål Jonson", "respondent_party": "M", "topic_tags": ["defence", "FMV", "defence_industry", "regional"]},
+    {"dok_id": "HD10502", "titel": "Grundläggande fysisk förmåga", "datum": "2026-05-22", "questioner": "Erik Ezelius", "questioner_party": "S", "respondent": "Pål Jonson", "respondent_party": "M", "topic_tags": ["defence", "conscription", "military_fitness", "total_defence"]},
+    {"dok_id": "HD10500", "titel": "Framtiden för Köpings sjukhus och andra utpekade nedläggningshotade sjukhus", "datum": "2026-05-21", "questioner": "Åsa Eriksson", "questioner_party": "S", "respondent": "Jakob Forssmed", "respondent_party": "KD", "topic_tags": ["hospitals", "healthcare", "regional_healthcare", "Västmanland"]}
+  ]
+}
