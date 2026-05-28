@@ -8,7 +8,7 @@
 **Subfolder**: realtime-monitor
 **Improvement mode**: false
 **Riksmöte**: 2025/26
-**Status**: complete — 21 documents downloaded, 10 with full text
+**Status**: complete — 21 documents initial run + 2 new betänkanden discovered in improvement run 26588891376 = **23 documents total**, 12 with full text
 
 ## MCP Attempts
 
@@ -29,6 +29,8 @@ Data sources: `get_propositioner`, `get_motioner`, `get_betankanden`, `search_vo
 | HD01JuU35 | Tillfällig verkställighet av svenska fängelsestraff utomlands | bet | JuU | — | live | pdf_html_wrapper (100015 chars) | no |
 | HD01MJU27 | Stärkt kontroll av fusk i livsmedelskedjan | bet | MJU | — | live | 87159 chars | no |
 | HD01NU20 | Vindkraft i kommuner | bet | NU | — | live | pdf_html_wrapper (100015 chars) | no |
+| HD01TU17 | Nya regler mot bedrägerier och annat vilseledande genom elektroniska kommunikationstjänster | bet | TU | — | live (improvement run 16:58Z) | 48.7KB full text | no |
+| HD01TU18 | Interoperabilitet vid datadelning inom den offentliga förvaltningen | bet | TU | — | live (improvement run 16:58Z) | 48.9KB full text | no |
 | HD10520 | Snabbare och mer förutsägbara tillståndsprocesser | mot | — | S | live | summary present | no |
 | HD10521 | Spaniens amnesti för illegala invandrare | mot | — | SD | live | summary present | no |
 | HD11846 | Tandvårdskostnader för våldsutsatta | fråga | — | S | live | metadata_only | no |
