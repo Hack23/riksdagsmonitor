@@ -1,0 +1,80 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-05-27T00:00:00Z",
+  "subfolder": "year-ahead",
+  "cycle": "year-ahead",
+  "article_date": "2026-05-27",
+  "horizon": "T+365d",
+  "pirs": [
+    {
+      "id": "PIR-1",
+      "question": "Will Tidö coalition retain majority in September 2026 election?",
+      "band": "election",
+      "status": "OPEN",
+      "confidence": "MODERATE",
+      "current_assessment": "35% probability red-green wins; 30% Tidö renewal; 25% fragmented",
+      "next_review": "2026-08-20"
+    },
+    {
+      "id": "PIR-2",
+      "question": "Can SD sustain vote share above 18% without government responsibility fatigue?",
+      "band": "election",
+      "status": "OPEN",
+      "confidence": "MODERATE",
+      "current_assessment": "18-19% baseline; 15% floor risk if incumbency fatigue; 22% ceiling if conservative mobilisation",
+      "next_review": "2026-08-20"
+    },
+    {
+      "id": "PIR-3",
+      "question": "Will unemployment fall below 8% before election day?",
+      "band": "quarter",
+      "status": "OPEN",
+      "confidence": "LOW-MODERATE",
+      "current_assessment": "IMF projects 8.6% for 2026; falling below 8% before September 2026 unlikely (<20% probability)",
+      "next_review": "2026-07-15"
+    },
+    {
+      "id": "PIR-4",
+      "question": "Will Sweden formalise permanent 2% GDP defence target in budget legislation?",
+      "band": "year",
+      "status": "PARTIAL",
+      "confidence": "HIGH",
+      "current_assessment": "2.5% already in 2025/26 budget; formal legislative floor expected in 2027 budget regardless of election",
+      "next_review": "2026-12-15"
+    },
+    {
+      "id": "PIR-5",
+      "question": "Will abortion law trigger coalition fracture or solidarity vote?",
+      "band": "month",
+      "status": "OPEN",
+      "confidence": "MODERATE",
+      "current_assessment": "3% probability of government-defeating defection; 80% probability passes with narrow margin",
+      "next_review": "2026-06-10"
+    },
+    {
+      "id": "PIR-6",
+      "question": "Will climate policy retreat provoke EU infringement action?",
+      "band": "year",
+      "status": "OPEN",
+      "confidence": "MODERATE",
+      "current_assessment": "60% probability formal monitoring escalation by end 2026; 35% formal infringement notification by mid-2027",
+      "next_review": "2026-10-01"
+    },
+    {
+      "id": "PIR-7",
+      "question": "Can M hold together a heterogeneous government bloc post-election?",
+      "band": "cycle",
+      "status": "OPEN",
+      "confidence": "LOW",
+      "current_assessment": "Depends on election result; Tidö-2 possible but seat arithmetic precarious; grand coalition remote",
+      "next_review": "2026-11-01"
+    }
+  ],
+  "roll_forward_rules": {
+    "applicable": true,
+    "next_article_type": "monthly-review",
+    "pirs_to_carry": ["PIR-1", "PIR-2", "PIR-3", "PIR-5"],
+    "pirs_to_resolve": [],
+    "pirs_to_retire": []
+  }
+}
