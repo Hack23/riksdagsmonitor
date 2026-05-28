@@ -3,7 +3,7 @@ date: 2026-05-21
 subfolder: realtime-pulse
 slug: 2026-05-21-realtime-pulse
 source_folder: analysis/daily/2026-05-21/realtime-pulse
-generated_at: 2026-05-28T10:21:06.681Z
+generated_at: 2026-05-28T15:56:17.377Z
 language: en
 layout: article
 ---
@@ -80,6 +80,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -1680,13 +1693,700 @@ Sibling analyses ingested for cross-type synthesis:
 - `analysis/daily/2026-05-21/propositions/` — 10 propositions including migration-security architecture (HD03267, HD03262) and digital governance (HD03250, HD03261)
 - `analysis/daily/2026-05-20/realtime-pulse/` — prior cycle reference; synthesis-summary.md ingested
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/realtime-pulse/executive-brief_ar.md -->
+
+**المؤلف**: Riksdagsmonitor Intelligence
+**التصنيف**: عام — المادة 9(2)(e,g) من اللائحة العامة لحماية البيانات (GDPR)
+**مستوى الثقة**: مرتفع [A1] لمجال شرطة الذكاء الاصطناعي / متوسط [B2] للموضوعات الاقتصادية
+**التاريخ**: 2026-05-21
+**الدورة**: realtime-pulse
+
+---
+
+### 🎯 الملخص التنفيذي (BLUF)
+
+يعقد البرلمان السويدي (ريكسداغ) اليوم جلسة عامة للنقاش في **JuU28** — موافقة لجنة العدل على استخدام الشرطة لتقنية التعرف على الوجوه في الوقت الفعلي المستندة إلى الذكاء الاصطناعي — مما يُعدّ أول تفويض تشريعي لعمليات المراقبة الجماعية البيومترية في ديمقراطية إسكندنافية. يُعتمد مشروع القانون بأغلبية حكومية ضيقة 174–171 بعد أن عدّله حزب SD ليشمل بنداً للانتهاء الزمني لمدة ثلاث سنوات وعتبة "ظروف استثنائية". التصويت ذو أهمية دستورية: تحظر المادة 2:6 من نظام الحكم مراقبة النشاط السياسي؛ وينشئ JuU28 أول استثناء صريح للبيومتريا في مجال إنفاذ القانون. في الوقت نفسه، تدفع FiU40 (إصلاح سوق الصناديق) وCU36 (قانون رسوم مناطق التعاون) وCU41 (إعفاءات الموائل من الطاقة الكهرومائية) سباق التشريع ما قبل الانتخابات لتحالف تيدو. تكشف ثلاثة استجوابات عن خطوط صدع: شح المياه في جنوب السويد (S → L)، وإغلاق مستشفى كوبينغ (S → KD)، والتغيير الدستوري (النائبة المستقلة ويدينغ → M). وتدرس سبعة أسئلة مكتوبة مبيعات الأسلحة لتايوان، والعلاقات بين التبت والصين، وثقة المتقاعدين، وضوابط الحدود مع الدنمارك، وتصاريح الطائرات المسيّرة، والتأمين على المعاش، وسلامة مواقف الشاحنات.
+
+### 🧭 ثلاثة قرارات يدعمها هذا الإحاط
+
+| # | القرار | الأهمية | الأفق الزمني |
+|---|--------|---------|--------------|
+| 1 | استراتيجية المجتمع المدني للطعن القانوني في JuU28 | المادة 8 من الاتفاقية الأوروبية لحقوق الإنسان — نافذة الطعن تفتح عند توقيع رئيس الدولة | T+14–90d |
+| 2 | متابعة موقف SD من تطبيق بند الانتهاء الزمني إذا اعتُمد JuU28 | إذا ضعّف SD لاحقاً التطبيق في اقتراح حكومي جديد، فذلك يُشير إلى تحوّل في موقف SD من الحريات المدنية | T+30–180d |
+| 3 | تقييم إغلاق مستشفى كوبينغ كخطر انتخابي لـKD/M في فاستمانلاند | قد يُكلّف تأطير الوصول إلى الرعاية الصحية الريفية الكتلةَ الحاكمة 1-2 مقعداً في الريكسداغ في فاستمانلاند | T+60–115d |
+
+### ⚡ قراءة في 60 ثانية
+
+- **JuU28 التعرف على الوجه بالذكاء الاصطناعي** (HD01JuU28): يوافق الريكسداغ على المراقبة الشرطية البيومترية في الوقت الفعلي بموجب بند انتهاء زمني لثلاث سنوات. صوّتت S/V/MP ضد. صوّتت C/L مع الكتلة الحاكمة رغم تحفظاتها على الحريات المدنية. مستوى الثقة: **مرتفع** — الكتلة الحاكمة لديها 174 صوتاً.
+- **FiU40 سوق الصناديق** (HD01FiU40): تعزيز تنظيم صناديق Finansinspektionen منسجماً مع AIFMD II وUCITS VI الأوروبيتين. تقني لكن مهم لمدخري التقاعد السويديين. دعم عريض عابر للأحزاب.
+- **CU36 مناطق التعاون** (HD01CU36): قانون رسوم جديد لمناطق تحسين الأعمال؛ تحصل المدن على أداة لإحياء الشوارع التجارية. دعم M/KD/L/SD.
+- **CU41 الطاقة الكهرومائية والموائل** (HD01CU41): إعفاءات من توجيه الموائل عند إعادة ترخيص محطات الطاقة الكهرومائية. الأحزاب الخضراء معارضة بشدة. رصد MJU خطر عدم الامتثال للاتحاد الأوروبي.
+- **الاستجواب HD10499** (شح المياه): تتحدى S وزير المناخ بالنيابة بريتز (L) بشأن الجفاف في جنوب السويد — تربط مباشرة الفجوة في السياسة المناخية بسبل العيش الريفية. يُتوقع رد الحكومة ~28 مايو.
+- **الاستجواب HD10500** (مستشفى كوبينغ): تتحدى أوسا إريكسون (S) وزير الشؤون الاجتماعية فورسميد (KD) بشأن خطط إغلاق المستشفى — الوصول إلى الرعاية الصحية في فاستمانلاند الريفية. يُتوقع الرد ~28 مايو.
+- **الاستجواب HD10501** (التغيير الدستوري): تتحدى النائبة المستقلة إلسا ويدينغ غونار ستروميير (M) بشأن وتيرة الإصلاحات الدستورية — يتعلق بقواعد النصاب في الريكسداغ وإجراءات تعديل القانون الأساسي.
+- **السؤال المكتوب HD11822** (مبيعات الأسلحة لتايوان): يضغط بيورن سودر (SD) على وزير الخارجية بشأن مبيعات الأسلحة السويدية المحتملة لتايوان في ظل تحوّل السياسة الأمريكية.
+- **السؤال المكتوب HD11827** (ضوابط الحدود): يتحدى نيكلاس كارلسون (S) ستروميير بشأن استمرار ضوابط الحدود الداخلية مع الدنمارك — مسألة توافق مع شنغن.
+
+### 🔮 أبرز محفّز مستقبلي
+
+**توقيع رئيس الدولة على JuU28 (T+7–21d)**: يُفعّل التوقيع الملكي/الرئاسي نافذةً للطعن العام مدتها 14 يوماً. إذا قُدّمت إلى المحكمة الإدارية السويدية طعن بموجب المادة 8 من الاتفاقية الأوروبية لحقوق الإنسان قبل التوقيع — نادر لكن ممكن — يُعلَّق برنامج المراقبة الشرطية قانونياً حتى انتخابات سبتمبر، مما يُفرز خطاباً عن أزمة دستورية في فترة الحملة الانتخابية. P(طعن خلال 30 يوماً): ~25 %. رصد Datainspektionen/IMY والمنظمات القانونية غير الحكومية للمجتمع المدني.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d"}}}%%
+graph TD
+    A["JuU28 Plenary Vote\n2026-05-21\n174-171 projected"] --> B{"SD Sunset\nClause Intact?"}
+    B -->|Yes| C["3-Year Sunset\nPreservation Scenario\nMonitor 2029 review"]
+    B -->|No| D["Opposition Civil\nLiberties Campaign\nSoars in Election"]
+    A --> E["CU41 Hydropower\nHabitat Exemptions\nEU Compliance Risk"]
+    E --> F["European Commission\nInfringement Proceedings\nT+6mo?"]
+    A --> G["HD11827 Border\nControls Denmark\nSchengen Review"]
+    G --> H["EU Schengen Committee\nJune 2026"]
+```
+
+<!-- source-sha: ef3bd4351fe4730460b79048a8a8aba4a52be1fb -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/realtime-pulse/executive-brief_da.md -->
+
+**Forfatter**: Riksdagsmonitor Intelligence
+**Klassificering**: OFFENTLIG — GDPR Art. 9(2)(e,g)
+**Konfidensgrad**: HØJ [A1] for AI-politi / MEDIUM [B2] for økonomiske temaer
+**Dato**: 2026-05-21
+**Cyklus**: realtime-pulse
+
+---
+
+### 🎯 BLUF
+
+Sveriges Riksdag afholder i dag plenardebat om **JuU28** — Retsudvalgets godkendelse af politiets brug af AI-baseret ansigtsgenkendelse i realtid — hvilket markerer den første lovgivningsmæssige godkendelse af biometrisk masseovervågning i et nordisk demokrati. Lovforslaget vedtages med et snævert flertal på 174–171 fra det siddende regeringsblok, efter at SD ændrede det til at inkludere en treårig solnedgangsklausul og en tærskel for "ekstraordinære omstændigheder". Afstemningen er forfatningsmæssigt betydningsfuld: Artikel 2:6 i Regeringsformen forbyder overvågning af politisk aktivitet; JuU28 skaber den første udtrykkelige undtagelse for biometri inden for retshåndhævelse. Samtidig fremrykker FiU40 (fondmarkedsreform), CU36 (lov om gebyrer for samarbejdsområder) og CU41 (undtagelser for vandkraft og naturtyper) Tidö-koalitionens lovgivningssprint forud for valget. Tre forespørgsler blotlægger sprækkerne: vandmangel i Sydsverige (S → L), Köpings sygehuslukning (S → KD) og forfatningsændring (uafhængig MP Widding → M). Syv skriftlige spørgsmål undersøger våbensalg til Taiwan, Tibet/Kina-relationer, pensionsfortrolighed, grænsekontrollen med Danmark, dronetilladelser, pensionsforsikring og sikkerhed på lastbilspladser.
+
+### 🧭 3 Beslutninger dette briefing understøtter
+
+| # | Beslutning | Relevans | Horisont |
+|---|------------|----------|----------|
+| 1 | Civilsamfundets strategi for juridisk udfordring af JuU28 | ECHR Artikel 8 retten til privatliv — udfordringsvinduer åbner ved statsoverhovedet underskrift | T+14–90d |
+| 2 | Følg SD's position på håndhævelsen af solnedgangsklausulen, hvis JuU28 vedtages | Hvis SD efterfølgende svækker håndhævelsen i en ny regeringsproposition, signalerer det et skift i SD's civile frihedsholdning | T+30–180d |
+| 3 | Vurder Köpings sygehuslukning som kampagnerisiko for KD/M i Västmanland | Indramning af sundhedsadgang i landdistrikterne kan koste regeringsblokken 1–2 Riksdag-pladser i Västmanland | T+60–115d |
+
+### ⚡ 60-sekunders læsning
+
+- **JuU28 AI-ansigtsgenkendelse** (HD01JuU28): Riksdagen godkender biometrisk politiovervågning i realtid med treårig solnedgangsklausul. S/V/MP stemte imod. C/L stemte med regeringsblokken på trods af forbehold over civile frihedsrettigheder. Konfidensgrad: **HØJ** — regeringsblokken har 174 stemmer.
+- **FiU40 Fondmarked** (HD01FiU40): Styrket Finansinspektionen fondregulering i overensstemmelse med EU AIFMD II og UCITS VI. Teknisk, men vigtig for svenske pensionssparere. Bredt tværpolitisk opbakning.
+- **CU36 Samarbejdsområder** (HD01CU36): Ny gebyrlov for Business Improvement Districts; byer får et redskab til genoplivning af handelsgader. Opbakning fra M/KD/L/SD.
+- **CU41 Vandkraft og naturtyper** (HD01CU41): Undtagelser fra habitatdirektivet ved fornyet tilladelse til vandkraft. De grønne partier er stærkt imod. EU-overensstemmelsesrisiko er flagget af MJU.
+- **Forespørgsel HD10499** (Vandmangel): S udfordrer fungerende klimaminister Britz (L) om tørke i Sydsverige — forbinder direkte klimapolitisk manko med landdistriktserhverv. Regeringssvar forventes ~28. maj.
+- **Forespørgsel HD10500** (Köpings sygehus): S's Åsa Eriksson udfordrer KD's socialminister Forssmed om planer om sygehuslukning — sundhedsadgang i landlige Västmanland. Svar forventes ~28. maj.
+- **Forespørgsel HD10501** (Forfatningsændring): Uafhængig MP Elsa Widding udfordrer M's Gunnar Strömmer om tempoet i forfatningsreformer — berører Riksdagens beslutningsdygtighed og procedurer for ændring af grundloven.
+- **Skriftligt spørgsmål HD11822** (Våbensalg til Taiwan): SD's Björn Söder presser udenrigsministeren om potentielt svenske våbensalg til Taiwan i lyset af den amerikanske politikændring.
+- **Skriftligt spørgsmål HD11827** (Grænsekontrollen): S's Niklas Karlsson udfordrer Strömmer om fortsatte indre grænsekontrollen med Danmark — Schengen-forenelighedsspørgsmål.
+
+### 🔮 Vigtigste fremtidsudløser
+
+**JuU28 statsoverhovedet underskrift (T+7–21d)**: Kongelig/statsoverhovedets underskrift aktiverer et 14-dages offentligt klagefrist. Hvis en ECHR Artikel 8-udfordring indgives til den svenske forvaltningsdomstol inden underskriften — sjældent, men muligt — sættes politiovervågningsprogrammet på juridisk hold frem til septembervalget, hvilket skaber et narrativ om en forfatningsmæssig krise i valgkampperioden. P(udfordring inden 30d): ~25 %. Overvåg Datainspektionen/IMY og civile samfundets juridiske NGO'er.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d"}}}%%
+graph TD
+    A["JuU28 Plenary Vote\n2026-05-21\n174-171 projected"] --> B{"SD Sunset\nClause Intact?"}
+    B -->|Yes| C["3-Year Sunset\nPreservation Scenario\nMonitor 2029 review"]
+    B -->|No| D["Opposition Civil\nLiberties Campaign\nSoars in Election"]
+    A --> E["CU41 Hydropower\nHabitat Exemptions\nEU Compliance Risk"]
+    E --> F["European Commission\nInfringement Proceedings\nT+6mo?"]
+    A --> G["HD11827 Border\nControls Denmark\nSchengen Review"]
+    G --> H["EU Schengen Committee\nJune 2026"]
+```
+
+<!-- source-sha: ef3bd4351fe4730460b79048a8a8aba4a52be1fb -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/realtime-pulse/executive-brief_de.md -->
+
+**Autor**: Riksdagsmonitor Intelligence
+**Klassifizierung**: ÖFFENTLICH — DSGVO Art. 9(2)(e,g)
+**Konfidenzgrad**: HOCH [A1] für KI-Polizei / MITTEL [B2] für wirtschaftliche Themen
+**Datum**: 2026-05-21
+**Zyklus**: realtime-pulse
+
+---
+
+### 🎯 BLUF
+
+Schwedens Reichstag führt heute eine Plenardebatte über **JuU28** — die Zustimmung des Justizausschusses zur Nutzung von KI-basierter Echtzeit-Gesichtserkennung durch die Polizei — was die erste gesetzgeberische Genehmigung biometrischer Massenüberwachung in einer nordischen Demokratie markiert. Das Gesetz wird mit einer knappen 174-171-Regierungsblocksmehrheit angenommen, nachdem SD es um eine dreijährige Verfallsklausel und eine Schwelle für „außergewöhnliche Umstände" ergänzt hat. Die Abstimmung ist verfassungsrechtlich bedeutsam: Artikel 2:6 der Regierungsform verbietet die Überwachung politischer Aktivitäten; JuU28 schafft die erste ausdrückliche Ausnahme für biometrische Strafverfolgung. Gleichzeitig treiben FiU40 (Fondsmarktreform), CU36 (Gesetz über Gebühren für Kooperationsgebiete) und CU41 (Ausnahmen für Wasserkraft und Lebensräume) den Gesetzgebungssprint der Tidö-Koalition vor der Wahl voran. Drei Interpellationen legen Risse offen: Wasserknappheit in Südschweden (S → L), Schließung des Krankenhauses Köping (S → KD) und Verfassungsänderung (unabhängige Abgeordnete Widding → M). Sieben schriftliche Anfragen beleuchten Taiwan-Waffenverkäufe, Tibet/China-Beziehungen, Rentenvertrauen, Grenzkontrollen mit Dänemark, Drohnenerlaubnisse, Rentenversicherung und LKW-Parkplatzsicherheit.
+
+### 🧭 3 Entscheidungen, die dieser Bericht unterstützt
+
+| # | Entscheidung | Relevanz | Horizont |
+|---|--------------|----------|----------|
+| 1 | Strategie der Zivilgesellschaft für eine rechtliche Anfechtung von JuU28 | EMRK Artikel 8 Datenschutzrecht — Anfechtungsfenster öffnet sich bei Unterzeichnung durch das Staatsoberhaupt | T+14–90d |
+| 2 | SD-Position zur Durchsetzung der Verfallsklausel verfolgen, wenn JuU28 angenommen wird | Schwächt SD die Durchsetzung später in einer Regierungsproposition ab, signalisiert das einen Wandel in SDs bürgerrechtlicher Haltung | T+30–180d |
+| 3 | Schließung des Krankenhauses Köping als Kampagnenrisiko für KD/M in Västmanland bewerten | Die Rahmung des Gesundheitsversorgungszugangs im ländlichen Raum kann dem Regierungsblock 1–2 Riksdag-Sitze in Västmanland kosten | T+60–115d |
+
+### ⚡ 60-Sekunden-Lesefassung
+
+- **JuU28 KI-Gesichtserkennung** (HD01JuU28): Riksdag genehmigt biometrische Polizeiüberwachung in Echtzeit mit dreijähriger Verfallsklausel. S/V/MP stimmten dagegen. C/L stimmten trotz Vorbehalten zu Bürgerrechten für den Regierungsblock. Konfidenzgrad: **HOCH** — der Regierungsblock hat 174 Stimmen.
+- **FiU40 Fondsmarkt** (HD01FiU40): Gestärkte Finansinspektionen-Fondsregulierung in Einklang mit EU-AIFMD II und UCITS VI. Technisch, aber bedeutsam für schwedische Rentensparer. Breite parteiübergreifende Unterstützung.
+- **CU36 Kooperationsgebiete** (HD01CU36): Neues Gebührengesetz für Business Improvement Districts; Städte erhalten ein Instrument zur Innenstadtrevitalisierung. Unterstützung durch M/KD/L/SD.
+- **CU41 Wasserkraft und Lebensräume** (HD01CU41): Ausnahmen von der Habitatrichtlinie bei der Neuzulassung von Wasserkraft. Die grünen Parteien sind stark dagegen. EU-Konformitätsrisiko wurde von MJU markiert.
+- **Interpellation HD10499** (Wasserknappheit): S fordert amtierenden Klimaminister Britz (L) zu Dürre in Südschweden heraus — verbindet direkt die klimapolitische Lücke mit ländlichen Lebensgrundlagen. Regierungsantwort erwartet ~28. Mai.
+- **Interpellation HD10500** (Krankenhaus Köping): S' Åsa Eriksson fordert KD-Sozialminister Forssmed zu Schließungsplänen für das Krankenhaus heraus — Gesundheitsversorgung im ländlichen Västmanland. Antwort erwartet ~28. Mai.
+- **Interpellation HD10501** (Verfassungsänderung): Unabhängige Abgeordnete Elsa Widding fordert M's Gunnar Strömmer zum Tempo der Verfassungsreformen heraus — betrifft Beschlussfähigkeitsregeln des Riksdag und Verfahren zur Verfassungsänderung.
+- **Schriftliche Anfrage HD11822** (Taiwan-Waffenverkäufe): SDs Björn Söder drängt den Außenminister zu potenziellen schwedischen Waffenverkäufen an Taiwan angesichts der US-Politikwende.
+- **Schriftliche Anfrage HD11827** (Grenzkontrollen): S' Niklas Karlsson fordert Strömmer zu anhaltenden Binnengrenzkontrollen mit Dänemark heraus — Frage der Schengen-Kompatibilität.
+
+### 🔮 Wichtigster Zukunftsauslöser
+
+**JuU28 Unterzeichnung durch das Staatsoberhaupt (T+7–21d)**: Königliche/Staatsoberhauptunterzeichnung aktiviert ein 14-tägiges öffentliches Anfechtungsfenster. Wenn eine EMRK-Artikel-8-Anfechtung beim schwedischen Verwaltungsgericht vor der Unterzeichnung eingereicht wird — selten, aber möglich — wird das Polizeiüberwachungsprogramm bis zur Septemberwahl auf rechtlichem Halt gesetzt, was ein Narrativ einer verfassungsrechtlichen Krise in der Wahlkampfperiode schafft. P(Anfechtung innerhalb 30d): ~25 %. IMY und zivilgesellschaftliche Rechts-NGOs überwachen.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d"}}}%%
+graph TD
+    A["JuU28 Plenary Vote\n2026-05-21\n174-171 projected"] --> B{"SD Sunset\nClause Intact?"}
+    B -->|Yes| C["3-Year Sunset\nPreservation Scenario\nMonitor 2029 review"]
+    B -->|No| D["Opposition Civil\nLiberties Campaign\nSoars in Election"]
+    A --> E["CU41 Hydropower\nHabitat Exemptions\nEU Compliance Risk"]
+    E --> F["European Commission\nInfringement Proceedings\nT+6mo?"]
+    A --> G["HD11827 Border\nControls Denmark\nSchengen Review"]
+    G --> H["EU Schengen Committee\nJune 2026"]
+```
+
+<!-- source-sha: ef3bd4351fe4730460b79048a8a8aba4a52be1fb -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/realtime-pulse/executive-brief_es.md -->
+
+**Autor**: Riksdagsmonitor Intelligence
+**Clasificación**: PÚBLICO — RGPD Art. 9(2)(e,g)
+**Nivel de confianza**: ALTO [A1] para policía IA / MEDIO [B2] para temas económicos
+**Fecha**: 2026-05-21
+**Ciclo**: realtime-pulse
+
+---
+
+### 🎯 BLUF
+
+El Riksdag sueco celebra hoy un debate plenario sobre **JuU28** — la aprobación por parte de la Comisión de Justicia del uso policial del reconocimiento facial en tiempo real basado en IA — marcando la primera autorización legislativa de vigilancia biométrica masiva en una democracia nórdica. El proyecto de ley se aprueba con una ajustada mayoría de 174–171 del bloque gobernante, después de que SD lo enmendara para incluir una cláusula de extinción de tres años y un umbral de "circunstancias excepcionales". La votación es constitucionalmente significativa: el artículo 2:6 de la Forma de Gobierno prohíbe la vigilancia de actividad política; JuU28 crea la primera exención explícita para la biometría en el ámbito de la aplicación de la ley. Simultáneamente, FiU40 (reforma del mercado de fondos), CU36 (ley de tasas para áreas de cooperación) y CU41 (exenciones de hábitat para hidroeléctrica) impulsan el sprint legislativo preelectoral de la coalición Tidö. Tres interpelaciones exponen líneas de fractura: escasez de agua en el sur de Suecia (S → L), cierre del hospital de Köping (S → KD) y cambio constitucional (la diputada independiente Widding → M). Siete preguntas escritas examinan las ventas de armas a Taiwán, las relaciones Tíbet/China, la confianza en las pensiones, los controles fronterizos con Dinamarca, los permisos de drones, el seguro de pensiones y la seguridad en áreas de descanso para camiones.
+
+### 🧭 3 Decisiones que apoya este informe
+
+| # | Decisión | Relevancia | Horizonte |
+|---|----------|------------|-----------|
+| 1 | Estrategia de la sociedad civil para impugnar legalmente JuU28 | CEDH Artículo 8 derecho a la privacidad — la ventana de impugnación se abre con la firma del jefe de Estado | T+14–90d |
+| 2 | Seguir la posición del SD sobre la aplicación de la cláusula de extinción si se aprueba JuU28 | Si el SD debilita posteriormente la aplicación en una nueva proposición gubernamental, señala un cambio en la postura del SD respecto a las libertades civiles | T+30–180d |
+| 3 | Evaluar el cierre del hospital de Köping como riesgo de campaña para KD/M en Västmanland | El encuadre del acceso a la sanidad rural podría costar al bloque gobernante 1-2 escaños en el Riksdag en Västmanland | T+60–115d |
+
+### ⚡ Lectura de 60 segundos
+
+- **JuU28 Reconocimiento facial IA** (HD01JuU28): El Riksdag aprueba la vigilancia biométrica policial en tiempo real con cláusula de extinción de tres años. S/V/MP votaron en contra. C/L votaron con el bloque gobernante a pesar de sus reservas sobre las libertades civiles. Nivel de confianza: **ALTO** — el bloque gobernante tiene 174 votos.
+- **FiU40 Mercado de fondos** (HD01FiU40): Regulación reforzada de fondos de la Finansinspektionen alineada con la AIFMD II y UCITS VI de la UE. Técnico pero significativo para los ahorradores suecos para la jubilación. Amplio apoyo transpartidario.
+- **CU36 Áreas de cooperación** (HD01CU36): Nueva ley de tasas para Business Improvement Districts; las ciudades obtienen una herramienta para la regeneración de zonas comerciales. Apoyo de M/KD/L/SD.
+- **CU41 Hidroeléctrica y hábitats** (HD01CU41): Exenciones de la directiva de hábitats para la nueva autorización de hidroeléctricas. Los partidos verdes se oponen firmemente. El MJU ha marcado el riesgo de incumplimiento de la UE.
+- **Interpelación HD10499** (Escasez de agua): S desafía al ministro de Clima en funciones Britz (L) sobre la sequía en el sur de Suecia — vincula directamente la brecha de política climática con los medios de vida rurales. Respuesta gubernamental prevista ~28 de mayo.
+- **Interpelación HD10500** (Hospital de Köping): Åsa Eriksson (S) desafía al ministro social de KD Forssmed sobre los planes de cierre del hospital — acceso a la sanidad en el Västmanland rural. Respuesta prevista ~28 de mayo.
+- **Interpelación HD10501** (Cambio constitucional): La diputada independiente Elsa Widding desafía a Gunnar Strömmer (M) sobre el ritmo de las reformas constitucionales — afecta a las reglas de quórum del Riksdag y los procedimientos de reforma de la ley fundamental.
+- **Pregunta escrita HD11822** (Ventas de armas a Taiwán): Björn Söder (SD) presiona al ministro de Asuntos Exteriores sobre las posibles ventas de armas suecas a Taiwán ante el cambio de política de EE. UU.
+- **Pregunta escrita HD11827** (Controles fronterizos): Niklas Karlsson (S) desafía a Strömmer sobre los continuos controles en las fronteras interiores con Dinamarca — cuestión de compatibilidad con Schengen.
+
+### 🔮 Principal detonante prospectivo
+
+**Firma de JuU28 por el jefe de Estado (T+7–21d)**: La firma real/del jefe de Estado activa una ventana de impugnación pública de 14 días. Si se presenta ante el tribunal administrativo sueco una impugnación al amparo del artículo 8 del CEDH antes de la firma — rara pero posible —, el programa de vigilancia policial queda en suspenso legal hasta las elecciones de septiembre, creando una narrativa de crisis constitucional en el período de campaña. P(impugnación en 30d): ~25 %. Seguir Datainspektionen/IMY y ONG jurídicas de la sociedad civil.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d"}}}%%
+graph TD
+    A["JuU28 Plenary Vote\n2026-05-21\n174-171 projected"] --> B{"SD Sunset\nClause Intact?"}
+    B -->|Yes| C["3-Year Sunset\nPreservation Scenario\nMonitor 2029 review"]
+    B -->|No| D["Opposition Civil\nLiberties Campaign\nSoars in Election"]
+    A --> E["CU41 Hydropower\nHabitat Exemptions\nEU Compliance Risk"]
+    E --> F["European Commission\nInfringement Proceedings\nT+6mo?"]
+    A --> G["HD11827 Border\nControls Denmark\nSchengen Review"]
+    G --> H["EU Schengen Committee\nJune 2026"]
+```
+
+<!-- source-sha: ef3bd4351fe4730460b79048a8a8aba4a52be1fb -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/realtime-pulse/executive-brief_fi.md -->
+
+**Tekijä**: Riksdagsmonitor Intelligence
+**Luokitus**: JULKINEN — GDPR Art. 9(2)(e,g)
+**Luottamustaso**: KORKEA [A1] tekoälypoliisille / KESKITASO [B2] taloudellisille teemoille
+**Päivämäärä**: 2026-05-21
+**Sykli**: realtime-pulse
+
+---
+
+### 🎯 BLUF
+
+Ruotsin riksdag käy tänään täysistuntokeskustelun **JuU28**:sta — oikeusvaliokunnan hyväksynnästä poliisin tekoälypohjaisten reaaliaikaisten kasvojentunnistusjärjestelmien käytölle — mikä merkitsee ensimmäistä lainsäädännöllistä lupaa biometriselle joukkojenvalvonnalle pohjoismaisessa demokratiassa. Lakiesitys hyväksytään niukalla 174–171 hallitusblokki-enemmistöllä sen jälkeen, kun SD muutti sen sisältämään kolmivuotisen auringonlaskusäännöksen ja "poikkeuksellisten olosuhteiden" kynnyksen. Äänestys on perustuslaillisesti merkittävä: hallitusmuodon 2 §:n 6 momentti kieltää poliittisen toiminnan valvonnan; JuU28 luo ensimmäisen nimenomaisen poikkeuksen lainvalvonnan biometriikalle. Samalla FiU40 (rahastomarkkinauudistus), CU36 (yhteistoiminta-alueiden maksulaki) ja CU41 (vesivoimaa koskevat elinympäristöpoikkeukset) edistävät Tidö-koalition vaaleja edeltävää lainsäädäntösprinttiä. Kolme kyselytuntia paljastaa halkeamia: vesipula Etelä-Ruotsissa (S → L), Köpingin sairaalan sulkeminen (S → KD) ja perustuslaillinen muutos (riippumaton kansanedustaja Widding → M). Seitsemässä kirjallisessa kysymyksessä tarkastellaan Taiwanin asekauppoja, Tiibet/Kiina-suhteita, eläkeluottamusta, rajatarkastuksia Tanskan kanssa, drone-lupia, eläkevakuutusta ja kuorma-autoparkkialueiden turvallisuutta.
+
+### 🧭 3 Päätöstä, joita tämä tiedustelutiivistelmä tukee
+
+| # | Päätös | Relevanssi | Horisontti |
+|---|--------|------------|------------|
+| 1 | Kansalaisyhteiskunnan oikeudellinen haastamisstrategia JuU28:lle | ECHR 8 artikla yksityisyyden suoja — haastamisikkuna aukeaa, kun valtionpäämies allekirjoittaa | T+14–90d |
+| 2 | Seuraa SD:n kantaa auringonlaskusäännöksen täytäntöönpanoon, jos JuU28 hyväksytään | Jos SD myöhemmin heikentää täytäntöönpanoa uudessa hallituksen esityksessä, se merkitsee muutosta SD:n siviilivapauksien asemaan | T+30–180d |
+| 3 | Arvioi Köpingin sairaalan sulkeminen kampanjariskiksi KD:lle/M:lle Västmanlandissa | Maaseudun terveydenhuollon saavutettavuuden kehystäminen voi maksaa hallitusblokille 1–2 riksdagspaikkaa Västmanlandissa | T+60–115d |
+
+### ⚡ 60 sekunnin lukeminen
+
+- **JuU28 tekoälykasvojentunnistus** (HD01JuU28): Riksdag hyväksyy biometrisen poliisivalvonnan reaaliajassa kolmivuotisella auringonlaskusäännöksellä. S/V/MP äänestivät vastaan. C/L äänestivät hallitusblokkin kanssa siviilivapauksiin liittyvistä varauksistaan huolimatta. Luottamustaso: **KORKEA** — hallitusblokilla on 174 ääntä.
+- **FiU40 Rahastomarkkina** (HD01FiU40): Vahvistettu Finansinspektionen-rahastoasetus EU:n AIFMD II:n ja UCITS VI:n mukaisesti. Tekninen, mutta merkittävä ruotsalaisille eläkesäästäjille. Laaja puolueiden välinen tuki.
+- **CU36 Yhteistoiminta-alueet** (HD01CU36): Uusi maksulaki Business Improvement Districteille; kaupungit saavat välineen kauppakeskustojen elvyttämiseen. Tuki M/KD/L/SD:ltä.
+- **CU41 Vesivoimalaitos ja elinympäristöt** (HD01CU41): Poikkeukset habitaattidirektiivistä vesivoimaloiden uudelleenluvituksessa. Vihreät puolueet voimakkaasti vastaan. MJU on merkinnyt EU:n noudattamisriskin.
+- **Kyselytunti HD10499** (Vesipula): S haastaa toimivan ilmastoministerin Britzin (L) Etelä-Ruotsin kuivuudesta — yhdistää suoraan ilmastopolitiikan aukon maaseudun elinkeinoihin. Hallituksen vastaus odotettavissa ~28.5.
+- **Kyselytunti HD10500** (Köpingin sairaala): S:n Åsa Eriksson haastaa KD:n sosiaaliministeri Forsmedin sairaalan sulkemissuunnitelmista — terveydenhuollon saavutettavuus maaseutumaisessa Västmanlandissa. Vastaus odotettavissa ~28.5.
+- **Kyselytunti HD10501** (Perustuslaillinen muutos): Riippumaton kansanedustaja Elsa Widding haastaa M:n Gunnar Strömmeristä perustuslakiuudistusten vauhdista — koskee riksdagin päätösvaltaisuussäännöksiä ja perustuslain muutosmenettelyjä.
+- **Kirjallinen kysymys HD11822** (Taiwanin asekaupat): SD:n Björn Söder painostaa ulkoministeriä mahdollisista ruotsalaisten asekauppoista Taiwanille Yhdysvaltain politiikan muutoksen valossa.
+- **Kirjallinen kysymys HD11827** (Rajatarkastukset): S:n Niklas Karlsson haastaa Strömmeristä jatkuvista sisäisistä rajatarkastuksista Tanskan kanssa — Schengen-yhteensopivuuskysymys.
+
+### 🔮 Tärkein tulevaisuuden laukaisin
+
+**JuU28 valtionpäämies allekirjoittaa (T+7–21d)**: Kuninkaallinen/valtionpäämies allekirjoittaa aktivoi 14 päivän julkisen muutoksenhakuajan. Jos ECHR 8 artikla -haaste toimitetaan Ruotsin hallinto-oikeudelle ennen allekirjoittamista — harvinaista, mutta mahdollista — poliisivalvontaohjelma asetetaan oikeudelliseen odotustilaan syyskuun vaaleihin asti, mikä luo kampanjajakson perustuslakikriisikertomuksen. P(haaste 30 päivän kuluessa): ~25 %. Seuraa Datainspektionen/IMY:tä ja kansalaisyhteiskunnan juridisia kansalaisjärjestöjä.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d"}}}%%
+graph TD
+    A["JuU28 Plenary Vote\n2026-05-21\n174-171 projected"] --> B{"SD Sunset\nClause Intact?"}
+    B -->|Yes| C["3-Year Sunset\nPreservation Scenario\nMonitor 2029 review"]
+    B -->|No| D["Opposition Civil\nLiberties Campaign\nSoars in Election"]
+    A --> E["CU41 Hydropower\nHabitat Exemptions\nEU Compliance Risk"]
+    E --> F["European Commission\nInfringement Proceedings\nT+6mo?"]
+    A --> G["HD11827 Border\nControls Denmark\nSchengen Review"]
+    G --> H["EU Schengen Committee\nJune 2026"]
+```
+
+<!-- source-sha: ef3bd4351fe4730460b79048a8a8aba4a52be1fb -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/realtime-pulse/executive-brief_fr.md -->
+
+**Auteur** : Riksdagsmonitor Intelligence
+
+**Niveau de confiance** : ÉLEVÉ [A1] pour la police IA / MOYEN [B2] pour les thèmes économiques
+
+---
+
+### 🎯 BLUF
+
+Le Riksdag suédois tient aujourd'hui un débat en séance plénière sur **JuU28** — l'approbation par la Commission des affaires juridiques de l'utilisation par la police de la reconnaissance faciale en temps réel basée sur l'IA — marquant la première autorisation législative de surveillance biométrique de masse dans une démocratie nordique. Le projet de loi est adopté avec une étroite majorité de 174–171 du bloc gouvernemental après que le SD l'a amendé pour inclure une clause de caducité de trois ans et un seuil de « circonstances exceptionnelles ». Le vote est constitutionnellement important : l'article 2:6 de la Forme de gouvernement interdit la surveillance des activités politiques ; JuU28 crée la première dérogation explicite pour la biométrie dans l'application des lois. Parallèlement, FiU40 (réforme du marché des fonds), CU36 (loi sur les frais pour les zones de coopération) et CU41 (dérogations pour les habitats hydroélectriques) font avancer le sprint législatif de la coalition Tidö avant les élections. Trois interpellations révèlent des fractures : la pénurie d'eau dans le sud de la Suède (S → L), la fermeture de l'hôpital de Köping (S → KD) et la réforme constitutionnelle (le député indépendant Widding → M). Sept questions écrites portent sur les ventes d'armes à Taïwan, les relations Tibet/Chine, la confiance dans les retraites, les contrôles aux frontières avec le Danemark, les autorisations de drones, l'assurance retraite et la sécurité des aires de repos pour camions.
+
+### 🧭 3 Décisions soutenues par ce rapport
+
+| # | Décision | Pertinence | Horizon |
+|---|----------|------------|---------|
+| 1 | Stratégie de la société civile pour contester juridiquement JuU28 | CEDH Article 8 droit à la vie privée — fenêtre de contestation s'ouvre à la signature du chef de l'État | T+14–90d |
+| 2 | Suivre la position du SD sur l'application de la clause de caducité si JuU28 est adoptée | Si le SD affaiblit ultérieurement l'application dans une nouvelle proposition gouvernementale, cela signale un changement dans la posture du SD sur les libertés civiles | T+30–180d |
+| 3 | Évaluer la fermeture de l'hôpital de Köping comme risque de campagne pour KD/M dans le Västmanland | Le cadrage de l'accès aux soins en milieu rural pourrait coûter au bloc gouvernemental 1 à 2 sièges au Riksdag dans le Västmanland | T+60–115d |
+
+### ⚡ Lecture en 60 secondes
+
+- **JuU28 Reconnaissance faciale IA** (HD01JuU28) : Le Riksdag approuve la surveillance biométrique policière en temps réel avec une clause de caducité de trois ans. S/V/MP ont voté contre. C/L ont voté avec le bloc gouvernemental malgré des réserves sur les libertés civiles. Niveau de confiance : **ÉLEVÉ** — le bloc gouvernemental dispose de 174 voix.
+- **FiU40 Marché des fonds** (HD01FiU40) : Renforcement de la réglementation des fonds de la Finansinspektionen alignée sur la directive européenne AIFMD II et UCITS VI. Technique mais important pour les épargnants en retraite suédois. Large soutien transpartisan.
+- **CU36 Zones de coopération** (HD01CU36) : Nouvelle loi sur les frais pour les Business Improvement Districts ; les villes disposent d'un outil pour la revitalisation des artères commerciales. Soutien de M/KD/L/SD.
+- **CU41 Hydroélectricité et habitats** (HD01CU41) : Dérogations à la directive Habitats lors du renouvellement des autorisations pour l'hydroélectricité. Les partis verts y sont fortement opposés. Risque de non-conformité européenne signalé par le MJU.
+- **Interpellation HD10499** (Pénurie d'eau) : S challenge le ministre délégué au Climat Britz (L) sur la sécheresse dans le sud de la Suède — relie directement le déficit de politique climatique aux moyens de subsistance ruraux. Réponse gouvernementale attendue ~28 mai.
+- **Interpellation HD10500** (Hôpital de Köping) : Åsa Eriksson (S) challenge le ministre social KD Forssmed sur les projets de fermeture d'hôpital — accès aux soins dans le Västmanland rural. Réponse attendue ~28 mai.
+- **Interpellation HD10501** (Réforme constitutionnelle) : La députée indépendante Elsa Widding challenge Gunnar Strömmer (M) sur le rythme des réformes constitutionnelles — touche aux règles de quorum du Riksdag et aux procédures de révision de la loi fondamentale.
+- **Question écrite HD11822** (Ventes d'armes à Taïwan) : Björn Söder (SD) presse le ministre des Affaires étrangères sur les potentielles ventes d'armes suédoises à Taïwan dans le contexte du changement de politique américaine.
+- **Question écrite HD11827** (Contrôles aux frontières) : Niklas Karlsson (S) challenge Strömmer sur le maintien des contrôles aux frontières intérieures avec le Danemark — question de compatibilité avec Schengen.
+
+### 🔮 Principal déclencheur prospectif
+
+**Signature de JuU28 par le chef de l'État (T+7–21d)** : La signature royale/du chef de l'État ouvre une fenêtre de contestation publique de 14 jours. Si un recours CEDH Article 8 est déposé devant le tribunal administratif suédois avant la signature — rare mais possible — le programme de surveillance policière est suspendu jusqu'aux élections de septembre, créant un narratif de crise constitutionnelle en période de campagne. P(recours dans 30j) : ~25 %. Surveiller la Datainspektionen/IMY et les ONG juridiques de la société civile.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d"}}}%%
+graph TD
+    A["JuU28 Plenary Vote\n2026-05-21\n174-171 projected"] --> B{"SD Sunset\nClause Intact?"}
+    B -->|Yes| C["3-Year Sunset\nPreservation Scenario\nMonitor 2029 review"]
+    B -->|No| D["Opposition Civil\nLiberties Campaign\nSoars in Election"]
+    A --> E["CU41 Hydropower\nHabitat Exemptions\nEU Compliance Risk"]
+    E --> F["European Commission\nInfringement Proceedings\nT+6mo?"]
+    A --> G["HD11827 Border\nControls Denmark\nSchengen Review"]
+    G --> H["EU Schengen Committee\nJune 2026"]
+```
+
+<!-- source-sha: ef3bd4351fe4730460b79048a8a8aba4a52be1fb -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/realtime-pulse/executive-brief_he.md -->
+
+**מחבר**: Riksdagsmonitor Intelligence
+**סיווג**: ציבורי — GDPR סעיף 9(2)(e,g)
+**רמת אמינות**: גבוהה [A1] לגבי פיקוח שוטרי ב-AI / בינונית [B2] לנושאים כלכליים
+**תאריך**: 2026-05-21
+**מחזור**: realtime-pulse
+
+---
+
+### 🎯 סיכום מנהלים (BLUF)
+
+הריקסדאג השוודי מקיים היום דיון מליאה בנושא **JuU28** — אישור ועדת המשפטים לשימוש המשטרה בזיהוי פנים בזמן אמת מבוסס בינה מלאכותית — המהווה את ההרשאה החקיקתית הראשונה למעקב ביומטרי המוני בדמוקרטיה נורדית. הצעת החוק מאושרת ברוב ממשלתי צר של 174–171 לאחר שמפלגת SD תיקנה אותה לכלול סעיף שקיעה של שלוש שנים וסף "נסיבות יוצאות דופן". ההצבעה בעלת חשיבות חוקתית: סעיף 2:6 בחוק הממשל אוסר מעקב אחר פעילות פוליטית; JuU28 יוצר את החריג המפורש הראשון לביומטריה באכיפת חוק. במקביל, FiU40 (רפורמת שוק הקרנות), CU36 (חוק דמי שיתוף פעולה) ו-CU41 (פטורים לבתי גידול אנרגיה הידרואלקטרית) מקדמים את ספרינט החקיקה טרום הבחירות של קואליציית טידו. שלושה שאלות נציגים חושפות קווי שבר: מחסור במים בדרום שוודיה (S → L), סגירת בית החולים בקופינג (S → KD) ושינוי חוקתי (חברת כנסת עצמאית וידינג → M). שבע שאלות כתובות בוחנות מכירות נשק לטייוואן, יחסי טיבט/סין, אמון בפנסיות, בקרות גבול עם דנמרק, אישורי כטב"מ, ביטוח פנסיה ובטיחות חניוני משאיות.
+
+### 🧭 3 החלטות שתקציר זה תומך בהן
+
+| # | החלטה | רלוונטיות | אופק |
+|---|-------|-----------|------|
+| 1 | אסטרטגיית החברה האזרחית לאתגר משפטי על JuU28 | ECHR סעיף 8 זכות לפרטיות — חלון האתגר נפתח בחתימת ראש המדינה | T+14–90d |
+| 2 | מעקב אחר עמדת SD לגבי אכיפת סעיף השקיעה אם JuU28 יאושר | אם SD תחליש לאחר מכן את האכיפה בהצעת ממשלה חדשה — סימן לשינוי בעמדת SD בנושא חירויות אזרחיות | T+30–180d |
+| 3 | הערכת סגירת בית החולים בקופינג כסיכון קמפיין ל-KD/M בוסטמנלנד | מסגור הנגישות לשירותי בריאות בכפר עלול לעלות לגוש הממשלתי 1-2 מושבים בריקסדאג בוסטמנלנד | T+60–115d |
+
+### ⚡ קריאה של 60 שניות
+
+- **JuU28 זיהוי פנים ב-AI** (HD01JuU28): הריקסדאג מאשר פיקוח ביומטרי שוטרי בזמן אמת עם סעיף שקיעה לשלוש שנים. S/V/MP הצביעו נגד. C/L הצביעו עם הגוש הממשלתי למרות הסתייגויות לגבי חירויות אזרחיות. רמת אמינות: **גבוהה** — לגוש הממשלתי 174 קולות.
+- **FiU40 שוק קרנות** (HD01FiU40): רגולציית קרנות Finansinspektionen המוגברת בהתאם ל-AIFMD II ו-UCITS VI האירופאיים. טכני אך משמעותי לחוסכי פנסיה שוודים. תמיכה רחבה חוצת מפלגות.
+- **CU36 אזורי שיתוף פעולה** (HD01CU36): חוק דמי חדש ל-Business Improvement Districts; ערים מקבלות כלי להחייאת רחובות מסחריים. תמיכת M/KD/L/SD.
+- **CU41 הידרואלקטריקה ובתי גידול** (HD01CU41): פטורים מהנחיית בתי הגידול ברישוי מחדש של תחנות כוח הידרואלקטריות. המפלגות הירוקות מתנגדות בחריפות. MJU סימן סיכון אי-ציות לאיחוד האירופי.
+- **שאלת נציגים HD10499** (מחסור במים): S מאתגרת את שר האקלים הממלא תפקיד בריץ (L) לגבי בצורת בדרום שוודיה — קושרת ישירות פער במדיניות האקלים לפרנסת הכפר. תשובת ממשלה צפויה ~28 במאי.
+- **שאלת נציגים HD10500** (בית חולים קופינג): אוסה אריקסון (S) מאתגרת את שר הרווחה של KD פורסמד לגבי תוכניות סגירת בית חולים — נגישות לשירותי בריאות בוסטמנלנד הכפרית. תשובה צפויה ~28 במאי.
+- **שאלת נציגים HD10501** (שינוי חוקתי): חברת הכנסת העצמאית אלסה וידינג מאתגרת את גונר סטרומר (M) לגבי קצב הרפורמות החוקתיות — נוגע לכללי מניין הריקסדאג ולנהלי שינוי החוק הבסיסי.
+- **שאלה כתובה HD11822** (מכירות נשק לטייוואן): ביורן סודר (SD) לוחץ על שר החוץ לגבי מכירות נשק שוודיות פוטנציאליות לטייוואן לאור שינוי המדיניות האמריקאית.
+- **שאלה כתובה HD11827** (בקרות גבול): ניקלאס קרלסון (S) מאתגר את סטרומר לגבי בקרות גבול פנימיות מתמשכות עם דנמרק — שאלת תאימות שנגן.
+
+### 🔮 המפעיל העתידי המרכזי
+
+**חתימת ראש המדינה על JuU28 (T+7–21d)**: חתימה מלכותית/של ראש המדינה מפעילה חלון ערעור ציבורי של 14 ימים. אם יוגש לבית המשפט המינהלי השוודי ערעור על פי ECHR סעיף 8 לפני החתימה — נדיר אך אפשרי — תיעצר תוכנית הפיקוח השוטרי עד לבחירות ספטמבר, מה שייצור נרטיב של משבר חוקתי בתקופת הקמפיין. P(ערעור תוך 30 ימים): ~25 %. לעקוב אחר Datainspektionen/IMY וארגוני NGO משפטיים של החברה האזרחית.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d"}}}%%
+graph TD
+    A["JuU28 Plenary Vote\n2026-05-21\n174-171 projected"] --> B{"SD Sunset\nClause Intact?"}
+    B -->|Yes| C["3-Year Sunset\nPreservation Scenario\nMonitor 2029 review"]
+    B -->|No| D["Opposition Civil\nLiberties Campaign\nSoars in Election"]
+    A --> E["CU41 Hydropower\nHabitat Exemptions\nEU Compliance Risk"]
+    E --> F["European Commission\nInfringement Proceedings\nT+6mo?"]
+    A --> G["HD11827 Border\nControls Denmark\nSchengen Review"]
+    G --> H["EU Schengen Committee\nJune 2026"]
+```
+
+<!-- source-sha: ef3bd4351fe4730460b79048a8a8aba4a52be1fb -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/realtime-pulse/executive-brief_ja.md -->
+
+**著者**: Riksdagsmonitor Intelligence
+**分類**: 公開 — GDPR第9条(2)(e,g)
+**信頼度**: 高 [A1] AI警察分野 / 中 [B2] 経済テーマ
+**日付**: 2026-05-21
+**サイクル**: realtime-pulse
+
+---
+
+### 🎯 BLUF（要点）
+
+スウェーデン議会（リクスダーグ）は本日、**JuU28**に関する本会議討論を実施する。これは法務委員会がAIを活用したリアルタイム顔認識技術の警察利用を承認するもので、北欧民主主義国家において生体認証による大量監視を初めて法的に認可する歴史的な決定である。スウェーデン民主党（SD）が3年間の日没条項と「例外的状況」の閾値を盛り込む修正を提案した後、与党ブロックは174–171の僅差の多数決で法案を可決した。この採決は憲法的に重要な意味を持つ：統治形態法第2条第6項は政治活動の監視を禁止しており、JuU28は法執行における生体認証への初の明示的例外規定を設けることになる。同時に、FiU40（ファンド市場改革）、CU36（協力地域手数料法）、CU41（水力発電の生息地免除）が、ティデー連立政権の選挙前の立法スプリントを推進している。3件の質問演説が亀裂を露わにする：スウェーデン南部の水不足（S→L）、ショーピング病院閉鎖（S→KD）、憲法改正（無所属議員ウィッディング→M）。7件の書面質問では、台湾への武器売却、チベット/中国関係、年金への信頼、デンマークとの国境管理、ドローン許可、年金保険、トラック駐車場の安全性が問われている。
+
+### 🧭 本報告書が支援する3つの意思決定
+
+| # | 決定事項 | 関連性 | 期間 |
+|---|---------|-------|------|
+| 1 | JuU28に対する市民社会の法的異議申立て戦略 | ECHR第8条プライバシー権 — 異議申立て期間は国家元首署名時に開始 | T+14–90d |
+| 2 | JuU28採択後のSD日没条項執行に関する立場追跡 | SDが後に政府提案で執行を弱体化させれば、SDの市民的自由に関する立場転換を示す | T+30–180d |
+| 3 | ウェストマンランドにおけるKD/MへのショーピングMO病院閉鎖の選挙リスク評価 | 農村部の医療アクセスのフレーミングにより、与党ブロックはウェストマンランドで1〜2議席を失う可能性 | T+60–115d |
+
+### ⚡ 60秒で読む
+
+- **JuU28 AI顔認識** (HD01JuU28)：リクスダーグは3年間の日没条項付きでリアルタイム生体認証警察監視を承認。S/V/MPが反対票。C/Lは市民的自由への懸念を抱えつつも与党ブロックと同調して賛成票。信頼度：**高** — 与党ブロックは174票を持つ。
+- **FiU40 ファンド市場** (HD01FiU40)：EU AIFMD IIおよびUCITS VIに準拠したフィナンスインスペクティオンの強化されたファンド規制。スウェーデンの年金貯蓄者にとって技術的だが重要。超党派の幅広い支持。
+- **CU36 協力地域** (HD01CU36)：Business Improvement Districtsへの新手数料法；都市がショッピングストリート再生のためのツールを取得。M/KD/L/SDの支持。
+- **CU41 水力発電と生息地** (HD01CU41)：水力発電再許可における生息地指令の免除。緑の党が強く反対。MJUがEU遵守リスクを指摘。
+- **質問演説 HD10499**（水不足）：SがL所属の代行気候大臣ブリッツに対し、スウェーデン南部の干ばつについて挑戦 — 気候政策のギャップを農村の生計に直接結びつける。政府回答は約5月28日。
+- **質問演説 HD10500**（ショーピング病院）：SのÅsa Erikssonが病院閉鎖計画についてKD社会大臣フォルスメドに挑戦 — ウェストマンランド農村部の医療アクセス。回答は約5月28日。
+- **質問演説 HD10501**（憲法改正）：無所属議員エルサ・ウィッディングがM所属のグンナル・ストロメルに対し憲法改革の速度について挑戦 — リクスダーグの定足数規則と基本法改正手続きに関わる。
+- **書面質問 HD11822**（台湾への武器売却）：SDのビョルン・セダーが米国の政策転換を背景に潜在的なスウェーデンの台湾への武器売却について外務大臣に圧力。
+- **書面質問 HD11827**（国境管理）：SのNiklas Karlssonがデンマークとの国内国境管理継続についてストロメルに挑戦 — シェンゲン協定整合性の問題。
+
+### 🔮 最重要な将来のトリガー
+
+**JuU28への国家元首署名 (T+7–21d)**：国王/国家元首の署名により14日間の公的異議申立て期間が開始される。署名前にスウェーデン行政裁判所にECHR第8条に基づく異議申立てが提出された場合 — 稀だが可能 — 警察監視プログラムはセプテンバー選挙まで法的に停止され、選挙運動期間中の憲法的危機のナラティブが生まれる。P（30日以内の異議申立て）：〜25%。Datainspektionen/IMYと市民社会の法律NGOを監視。
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d"}}}%%
+graph TD
+    A["JuU28 Plenary Vote\n2026-05-21\n174-171 projected"] --> B{"SD Sunset\nClause Intact?"}
+    B -->|Yes| C["3-Year Sunset\nPreservation Scenario\nMonitor 2029 review"]
+    B -->|No| D["Opposition Civil\nLiberties Campaign\nSoars in Election"]
+    A --> E["CU41 Hydropower\nHabitat Exemptions\nEU Compliance Risk"]
+    E --> F["European Commission\nInfringement Proceedings\nT+6mo?"]
+    A --> G["HD11827 Border\nControls Denmark\nSchengen Review"]
+    G --> H["EU Schengen Committee\nJune 2026"]
+```
+
+<!-- source-sha: ef3bd4351fe4730460b79048a8a8aba4a52be1fb -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/realtime-pulse/executive-brief_ko.md -->
+
+**저자**: Riksdagsmonitor Intelligence
+**분류**: 공개 — GDPR 제9조(2)(e,g)
+**신뢰 수준**: 높음 [A1] AI 경찰 분야 / 중간 [B2] 경제 주제
+**날짜**: 2026-05-21
+**주기**: realtime-pulse
+
+---
+
+### 🎯 BLUF(핵심 요약)
+
+스웨덴 의회(릭스다그)는 오늘 **JuU28**에 관한 본회의 토론을 진행한다. 이는 법무위원회가 AI 기반 실시간 안면 인식 기술의 경찰 활용을 승인한 것으로, 북유럽 민주주의 국가에서 생체 인식 대규모 감시에 대한 최초의 입법적 허가를 의미한다. 스웨덴민주당(SD)이 3년간의 일몰 조항과 '예외적 상황' 기준을 포함하는 수정안을 제안한 후, 여당 블록은 174–171의 근소한 다수결로 법안을 통과시켰다. 이번 투표는 헌법적으로 중요한 의미를 가진다: 정부 형태법 제2조 제6항은 정치 활동 감시를 금지하고 있으며, JuU28은 법 집행 생체 인식에 대한 최초의 명시적 예외 조항을 만든다. 동시에 FiU40(펀드 시장 개혁), CU36(협력 지역 수수료법), CU41(수력 발전 서식지 면제)이 티데 연립 정부의 선거 전 입법 스프린트를 추진하고 있다. 3건의 질문이 균열 선을 드러낸다: 스웨덴 남부의 물 부족(S→L), 쇼핑 병원 폐쇄(S→KD), 헌법 개정(무소속 의원 위딩→M). 7건의 서면 질의는 대만 무기 판매, 티베트/중국 관계, 연금 신뢰, 덴마크와의 국경 통제, 드론 허가, 연금 보험, 트럭 주차장 안전을 다룬다.
+
+### 🧭 이 보고서가 지원하는 3가지 결정 사항
+
+| # | 결정 사항 | 관련성 | 기간 |
+|---|---------|-------|------|
+| 1 | JuU28에 대한 시민 사회의 법적 이의 제기 전략 | ECHR 제8조 프라이버시권 — 이의 제기 기간은 국가 원수 서명 시 시작 | T+14–90d |
+| 2 | JuU28 채택 시 SD의 일몰 조항 집행에 관한 입장 추적 | SD가 새 정부 제안에서 집행을 약화시키면 SD의 시민 자유 입장 전환을 시사 | T+30–180d |
+| 3 | 베스트만란드에서 KD/M에 대한 쇼핑 병원 폐쇄의 선거 리스크 평가 | 농촌 의료 접근 프레이밍으로 여당 블록은 베스트만란드에서 1~2석을 잃을 가능성 | T+60–115d |
+
+### ⚡ 60초 요약
+
+- **JuU28 AI 안면 인식** (HD01JuU28): 릭스다그, 3년 일몰 조항으로 실시간 생체 인식 경찰 감시 승인. S/V/MP 반대 투표. C/L은 시민 자유 우려에도 불구하고 여당 블록과 함께 찬성. 신뢰 수준: **높음** — 여당 블록은 174표를 보유.
+- **FiU40 펀드 시장** (HD01FiU40): EU AIFMD II 및 UCITS VI에 따른 Finansinspektionen의 강화된 펀드 규제. 스웨덴 연금 저축자에게 기술적이지만 중요. 폭넓은 초당적 지지.
+- **CU36 협력 지역** (HD01CU36): Business Improvement Districts를 위한 신규 수수료법; 도시들이 상업 거리 재생 도구 확보. M/KD/L/SD의 지지.
+- **CU41 수력 발전과 서식지** (HD01CU41): 수력 발전 재허가 시 서식지 지침 면제. 녹색 정당이 강하게 반대. MJU가 EU 준수 위험 지적.
+- **질문 HD10499** (물 부족): S, L 소속 기후 대행 장관 브리츠에게 스웨덴 남부 가뭄 관련 질문 — 기후 정책 격차를 농촌 생계와 직접 연결. 정부 답변 약 5월 28일 예상.
+- **질문 HD10500** (쇼핑 병원): S의 Åsa Eriksson이 KD 사회 장관 포르스메드에게 병원 폐쇄 계획 관련 질문 — 베스트만란드 농촌 의료 접근. 답변 약 5월 28일 예상.
+- **질문 HD10501** (헌법 개정): 무소속 의원 엘사 위딩이 M의 구나르 스트로메르에게 헌법 개혁 속도 관련 질문 — 릭스다그 정족수 규칙 및 기본법 개정 절차와 관련.
+- **서면 질의 HD11822** (대만 무기 판매): SD의 비요른 소데르가 미국 정책 변화를 배경으로 잠재적 스웨덴 대만 무기 판매에 대해 외무장관에게 압력.
+- **서면 질의 HD11827** (국경 통제): S의 Niklas Karlsson이 덴마크와의 국내 국경 통제 지속에 대해 스트로메르에게 질문 — 솅겐 협정 양립성 문제.
+
+### 🔮 가장 중요한 미래 트리거
+
+**JuU28에 대한 국가 원수 서명 (T+7–21d)**: 국왕/국가 원수 서명으로 14일간의 공개 이의 신청 기간이 시작된다. 서명 전에 스웨덴 행정 법원에 ECHR 제8조에 근거한 이의 신청이 접수될 경우 — 드물지만 가능 — 경찰 감시 프로그램은 9월 선거까지 법적으로 보류되어 선거 운동 기간 중 헌법적 위기 내러티브가 형성된다. P(30일 이내 이의 신청): ~25%. Datainspektionen/IMY 및 시민 사회 법률 NGO 모니터링.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d"}}}%%
+graph TD
+    A["JuU28 Plenary Vote\n2026-05-21\n174-171 projected"] --> B{"SD Sunset\nClause Intact?"}
+    B -->|Yes| C["3-Year Sunset\nPreservation Scenario\nMonitor 2029 review"]
+    B -->|No| D["Opposition Civil\nLiberties Campaign\nSoars in Election"]
+    A --> E["CU41 Hydropower\nHabitat Exemptions\nEU Compliance Risk"]
+    E --> F["European Commission\nInfringement Proceedings\nT+6mo?"]
+    A --> G["HD11827 Border\nControls Denmark\nSchengen Review"]
+    G --> H["EU Schengen Committee\nJune 2026"]
+```
+
+<!-- source-sha: ef3bd4351fe4730460b79048a8a8aba4a52be1fb -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/realtime-pulse/executive-brief_nl.md -->
+
+**Auteur**: Riksdagsmonitor Intelligence
+**Classificatie**: OPENBAAR — AVG Art. 9(2)(e,g)
+**Betrouwbaarheidsniveau**: HOOG [A1] voor AI-politie / GEMIDDELD [B2] voor economische thema's
+**Datum**: 2026-05-21
+**Cyclus**: realtime-pulse
+
+---
+
+### 🎯 BLUF
+
+Het Zweedse Riksdag houdt vandaag een plenair debat over **JuU28** — de goedkeuring door de Commissie Justitie van het gebruik door de politie van AI-gebaseerde gezichtsherkenning in realtime — wat de eerste wettelijke toestemming voor biometrische massabewaking in een Scandinavische democratie markeert. Het wetsvoorstel wordt aangenomen met een krap meerderheid van 174–171 van het regeringsblok, nadat SD het heeft gewijzigd om een driejarige zonsondergangsbepaling en een drempel voor "uitzonderlijke omstandigheden" op te nemen. De stemming is constitutioneel van belang: Artikel 2:6 van de Regeringsvorm verbiedt bewaking van politieke activiteit; JuU28 creëert de eerste expliciete uitzondering voor biometrie bij de wetshandhaving. Tegelijkertijd bevorderen FiU40 (hervorming fondsenmarkt), CU36 (wet op bijdragen voor samenwerkingsgebieden) en CU41 (uitzonderingen voor waterenergie en habitats) de voorverkiezingswetgevingssprint van de Tidö-coalitie. Drie interpellaties leggen breuklijnen bloot: waterschaarste in Zuid-Zweden (S → L), sluiting van het ziekenhuis in Köping (S → KD) en grondwetswijziging (onafhankelijk Kamerlid Widding → M). Zeven schriftelijke vragen onderzoeken wapenverkopen aan Taiwan, Tibet/China-betrekkingen, pensioenvertrouwen, grenscontroles met Denemarken, dronetoestemmingen, pensioenverzekering en veiligheid op vrachtwagenparkeerplaatsen.
+
+### 🧭 3 Besluiten die dit briefing ondersteunt
+
+| # | Besluit | Relevantie | Horizon |
+|---|---------|------------|---------|
+| 1 | Strategie van het maatschappelijk middenveld voor juridische aanvechting van JuU28 | EVRM Artikel 8 recht op privacy — aanvechtingsvenster opent bij ondertekening door staatshoofd | T+14–90d |
+| 2 | Positie van SD volgen over de handhaving van de zonsondergangsbepaling als JuU28 wordt aangenomen | Als SD later de handhaving verzwakt in een nieuwe regeringsproposita, signaleert dit een verschuiving in SDs standpunt over burgerrechten | T+30–180d |
+| 3 | Sluiting ziekenhuis Köping beoordelen als campagnerisico voor KD/M in Västmanland | De framing van toegang tot gezondheidszorg in landelijke gebieden kan het regeringsblok 1-2 zetels in het Riksdag in Västmanland kosten | T+60–115d |
+
+### ⚡ 60-seconden samenvatting
+
+- **JuU28 AI-gezichtsherkenning** (HD01JuU28): Riksdag keurt biometrische politiebewaking in realtime goed met driejarige zonsondergangsbepaling. S/V/MP stemden tegen. C/L stemden mee met het regeringsblok ondanks bezwaren over burgerrechten. Betrouwbaarheidsniveau: **HOOG** — het regeringsblok heeft 174 stemmen.
+- **FiU40 Fondsenmarkt** (HD01FiU40): Versterkte Finansinspektionen-fondsregulering in lijn met EU AIFMD II en UCITS VI. Technisch maar belangrijk voor Zweedse pensioenspaarders. Brede partijoverstijgende steun.
+- **CU36 Samenwerkingsgebieden** (HD01CU36): Nieuwe bijdragewet voor Business Improvement Districts; steden krijgen een instrument voor regeneratie van winkelgebieden. Steun van M/KD/L/SD.
+- **CU41 Waterkracht en habitats** (HD01CU41): Uitzonderingen op de habitatrichtlijn bij de hervergunning van waterkracht. De groene partijen zijn sterk tegen. EU-nalevingsrisico is gemeld door het MJU.
+- **Interpellatie HD10499** (Waterschaarste): S daagt waarnemend klimaatminister Britz (L) uit over droogte in Zuid-Zweden — koppelt direct het klimaatbeleidstekort aan landelijke bestaansmiddelen. Regeringsantwoord verwacht ~28 mei.
+- **Interpellatie HD10500** (Ziekenhuis Köping): Åsa Eriksson (S) daagt KD-sociaalminister Forssmed uit over plannen voor ziekenhuissluiting — toegang tot gezondheidszorg in het landelijke Västmanland. Antwoord verwacht ~28 mei.
+- **Interpellatie HD10501** (Grondwetswijziging): Onafhankelijk Kamerlid Elsa Widding daagt Gunnar Strömmer (M) uit over het tempo van de grondwetsrevormen — raakt aan quorumregels van het Riksdag en procedures voor wijziging van de grondwet.
+- **Schriftelijke vraag HD11822** (Wapenverkopen aan Taiwan): Björn Söder (SD) dringt bij de minister van Buitenlandse Zaken aan op mogelijke Zweedse wapenverkopen aan Taiwan in het licht van de veranderde Amerikaanse beleid.
+- **Schriftelijke vraag HD11827** (Grenscontroles): Niklas Karlsson (S) daagt Strömmer uit over aanhoudende binnenlandse grenscontroles met Denemarken — vraagstuk van Schengen-compatibiliteit.
+
+### 🔮 Belangrijkste toekomstige trigger
+
+**Ondertekening JuU28 door staatshoofd (T+7–21d)**: Koninklijke/staatshoofdondertekening activeert een 14-daagse publieke aanvechtingsperiode. Als een EVRM-Artikel-8-aanvechting bij de Zweedse bestuursrechter wordt ingediend vóór ondertekening — zeldzaam maar mogelijk — wordt het politiebewakingsprogramma juridisch on hold gezet tot de verkiezingen in september, wat een narratief van een constitutionele crisis in de campagneperiode creëert. P(aanvechting binnen 30d): ~25 %. Datainspektionen/IMY en juridische NGO's van het maatschappelijk middenveld monitoren.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d"}}}%%
+graph TD
+    A["JuU28 Plenary Vote\n2026-05-21\n174-171 projected"] --> B{"SD Sunset\nClause Intact?"}
+    B -->|Yes| C["3-Year Sunset\nPreservation Scenario\nMonitor 2029 review"]
+    B -->|No| D["Opposition Civil\nLiberties Campaign\nSoars in Election"]
+    A --> E["CU41 Hydropower\nHabitat Exemptions\nEU Compliance Risk"]
+    E --> F["European Commission\nInfringement Proceedings\nT+6mo?"]
+    A --> G["HD11827 Border\nControls Denmark\nSchengen Review"]
+    G --> H["EU Schengen Committee\nJune 2026"]
+```
+
+<!-- source-sha: ef3bd4351fe4730460b79048a8a8aba4a52be1fb -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/realtime-pulse/executive-brief_no.md -->
+
+**Forfatter**: Riksdagsmonitor Intelligence
+**Klassifisering**: OFFENTLIG — GDPR Art. 9(2)(e,g)
+**Konfidensnivå**: HØY [A1] for AI-politi / MEDIUM [B2] for økonomiske temaer
+**Dato**: 2026-05-21
+**Syklus**: realtime-pulse
+
+---
+
+### 🎯 BLUF
+
+Sveriges riksdag avholder i dag plenumdebatt om **JuU28** — justiskomiteen sitt godkjenning av politiets bruk av AI-basert ansiktsgjenkjenning i sanntid — noe som markerer den første lovgivende godkjenningen av biometrisk masseovervåking i et nordisk demokrati. Lovforslaget vedtas med et knapp 174–171 flertall fra regjeringsblokkens side etter at SD endret det til å inkludere en treårig solnedgangsklausul og en terskel for «ekstraordinære omstendigheter». Avstemningen er konstitusjonelt viktig: Artikkel 2:6 i Regeringsformen forbyr overvåking av politisk virksomhet; JuU28 oppretter det første uttrykkelige unntaket for biometri innen rettshåndhevelse. Samtidig fremmes FiU40 (fondmarkedsreform), CU36 (lov om gebyrer for samarbeidsområder) og CU41 (unntak for vannkraft og naturtyper) i Tidö-koalisjonen sin lovgivningssprint foran valget. Tre interpellasjoner avslører bruddlinjer: vannmangel i Sør-Sverige (S → L), Köping sykehus nedleggelse (S → KD) og konstitusjonell endring (uavhengig MP Widding → M). Syv skriftlige spørsmål undersøker våpensalg til Taiwan, Tibet/Kina-relasjoner, pensjonstillitt, grensekontroller med Danmark, dronetillatelser, pensjonsforsikring og sikkerhet på lastebilparkeringer.
+
+### 🧭 3 Beslutninger dette briefing støtter
+
+| # | Beslutning | Relevans | Horisont |
+|---|------------|----------|----------|
+| 1 | Sivilsamfunnets strategi for rettslig utfordring av JuU28 | ECHR Artikkel 8 retten til privatliv — utfordringsvinduet åpner ved statsoverhodeunderskrift | T+14–90d |
+| 2 | Følg SDs posisjon på håndhevelsen av solnedgangsklausulen hvis JuU28 vedtas | Hvis SD etterpå svekker håndhevelsen i et nytt regjeringsforslag, signaliserer det et skifte i SDs sivilrettslige holdning | T+30–180d |
+| 3 | Vurder Köping sykehus nedleggelse som kampanjerisiko for KD/M i Västmanland | Innramming av helsetilgang i distriktene kan koste regjeringsblokkens 1–2 riksdagsplasser i Västmanland | T+60–115d |
+
+### ⚡ 60-sekunders lesing
+
+- **JuU28 AI-ansiktsgjenkjenning** (HD01JuU28): Riksdagen godkjenner biometrisk politiövervåking i sanntid med treårig solnedgangsklausul. S/V/MP stemte imot. C/L stemte med regjeringsblokkens til tross for forbehold om sivile friheter. Konfidensnivå: **HØY** — regjeringsblokkens har 174 stemmer.
+- **FiU40 Fondmarked** (HD01FiU40): Styrket Finansinspektionen fondregulering i tråd med EU AIFMD II og UCITS VI. Teknisk, men viktig for svenske pensjonssparere. Bred tverrpolitisk støtte.
+- **CU36 Samarbeidsområder** (HD01CU36): Ny gebyrlov for Business Improvement Districts; byer får et verktøy for å revitalisere handelsgater. Støtte fra M/KD/L/SD.
+- **CU41 Vannkraft og naturtyper** (HD01CU41): Unntak fra habitatdirektivet ved fornying av vannkrafttillatelser. De grønne partiene er sterkt imot. EU-samsvarrisikoën er flagget av MJU.
+- **Interpellasjon HD10499** (Vannmangel): S utfordrer fungerende klimaminister Britz (L) om tørke i Sør-Sverige — knytter direkte klimapolitisk manko til landlige levebrød. Regjeringssvar forventes ~28. mai.
+- **Interpellasjon HD10500** (Köping sykehus): S's Åsa Eriksson utfordrer KD's sosialminister Forssmed om planer om sykehusnedleggelse — helsetilgang i landlige Västmanland. Svar forventes ~28. mai.
+- **Interpellasjon HD10501** (Konstitusjonell endring): Uavhengig MP Elsa Widding utfordrer M's Gunnar Strömmer om tempoet i grunnlovsreformer — berører Riksdagens beslutningsdyktighet og prosedyrer for endring av grunnloven.
+- **Skriftlig spørsmål HD11822** (Våpensalg til Taiwan): SDs Björn Söder presser utenriksministeren om potensielle svenske våpensalg til Taiwan i lys av den amerikanske policyendringen.
+- **Skriftlig spørsmål HD11827** (Grensekontroller): S's Niklas Karlsson utfordrer Strömmer om fortsatte indre grensekontroller med Danmark — Schengen-forenlighetsspørsmål.
+
+### 🔮 Viktigste fremtidsutløser
+
+**JuU28 statsoverhodeunderskrift (T+7–21d)**: Kongelig/statsoverhodeunderskrift aktiverer et 14-dagers offentlig klagefrist. Hvis en ECHR Artikkel 8-utfordring innleveres til svensk forvaltningsdomstol før underskriften — sjelden, men mulig — settes politiövervåkingsprogrammet på juridisk vent frem til septembervalget, noe som skaper en valgkampanarrativ om konstitusjonell krise. P(utfordring innen 30d): ~25 %. Overvåk Datainspektionen/IMY og sivile samfunnets juridiske NGO-er.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d"}}}%%
+graph TD
+    A["JuU28 Plenary Vote\n2026-05-21\n174-171 projected"] --> B{"SD Sunset\nClause Intact?"}
+    B -->|Yes| C["3-Year Sunset\nPreservation Scenario\nMonitor 2029 review"]
+    B -->|No| D["Opposition Civil\nLiberties Campaign\nSoars in Election"]
+    A --> E["CU41 Hydropower\nHabitat Exemptions\nEU Compliance Risk"]
+    E --> F["European Commission\nInfringement Proceedings\nT+6mo?"]
+    A --> G["HD11827 Border\nControls Denmark\nSchengen Review"]
+    G --> H["EU Schengen Committee\nJune 2026"]
+```
+
+<!-- source-sha: ef3bd4351fe4730460b79048a8a8aba4a52be1fb -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/realtime-pulse/executive-brief_sv.md -->
+
+**Författare**: Riksdagsmonitor Intelligence
+**Klassificering**: OFFENTLIG — GDPR Art. 9(2)(e,g)
+**Konfidensgrad**: HÖG [A1] för AI-polisiering / MEDIUM [B2] för ekonomiska teman
+**Datum**: 2026-05-21
+**Cykel**: realtime-pulse
+
+---
+
+### 🎯 BLUF
+
+Sveriges riksdag håller idag plenumdebatt om **JuU28** — justitieutskottets godkännande av polisens användning av AI-baserad ansiktsigenkänning i realtid — vilket markerar det första lagstiftande tillståndet för biometrisk masssövervakning i en nordisk demokrati. Propositionen antas med en knapp 174–171 rösters majoritet från det styrande blocket efter att SD ändrat den till att inkludera en treårig solnedgångsklausul och ett tröskelvillkor för "exceptionella omständigheter". Omröstningen är konstitutionellt betydelsefull: Artikel 2:6 i regeringsformen förbjuder övervakning av politisk aktivitet; JuU28 skapar den första uttryckliga undantagsregeln för biometri inom brottsbekämpning. Samtidigt avancerar FiU40 (fondmarknadsreform), CU36 (lag om avgifter för samarbetsområden) och CU41 (undantag för vattenkraft och livsmiljöer) Tidökoalitionens lagstiftningssprint inför valet. Tre interpellationer blottlägger sprickor: vattenbrist i södra Sverige (S → L), Köpings sjukhus stängning (S → KD) och konstitutionell förändring (fristående MP Widding → M). Sju skriftliga frågor granskar vapenförsäljning till Taiwan, Tibet/Kina-relationer, pensionsförtroende, gränskontroller med Danmark, drönartillstånd, pensionsförsäkring och säkerhet på lastbilsparkeringar.
+
+### 🧭 3 Beslut som detta briefing stöder
+
+| # | Beslut | Relevans | Horisont |
+|---|--------|----------|----------|
+| 1 | Det civila samhällets strategi för rättslig utmaning mot JuU28 | ECHR Artikel 8 rätten till privatliv — utmaningsfönstret öppnas vid statschefens underskrift | T+14–90d |
+| 2 | Följ SD:s position om solnedgångsklausulens tillämpning om JuU28 antas | Om SD senare försvagar tillämpningen i en ny regeringsproposition signalerar det ett skifte i SD:s ställningstagande avseende medborgerliga friheter | T+30–180d |
+| 3 | Bedöm Köpings sjukhus stängning som kampanjerisik för KD/M i Västmanland | Inramningen kring vård i glesbygd kan kosta det styrande blocket 1–2 riksdagsmandat i Västmanland | T+60–115d |
+
+### ⚡ 60-sekunders läsning
+
+- **JuU28 AI-ansiktsigenkänning** (HD01JuU28): Riksdagen godkänner biometrisk polisövervakning i realtid med treårig solnedgångsklausul. S/V/MP röstade emot. C/L röstade med det styrande blocket trots reservationer om medborgerliga friheter. Konfidensgrad: **HÖG** — det styrande blocket har 174 röster.
+- **FiU40 Fondmarknad** (HD01FiU40): Stärkt Finansinspektionens fondreglering i linje med EU AIFMD II och UCITS VI. Tekniskt men väsentligt för svenska pensionssparare. Brett stöd över partigränserna.
+- **CU36 Samarbetsområden** (HD01CU36): Ny avgiftslag för Business Improvement Districts; städerna får ett verktyg för att förnya handelsstråk. Stöd hos M/KD/L/SD.
+- **CU41 Vattenkraft och livsmiljöer** (HD01CU41): Undantag från habitatdirektivet vid omtillståndsgivning för vattenkraft. De gröna partierna är starkt emot. Risken för EU-bristande efterlevnad har flaggats av MJU.
+- **Interpellation HD10499** (Vattenbrist): S utmanar tillförordnad klimatminister Britz (L) om torka i södra Sverige — kopplar direkt klimatpolitisk lucka till landsbygdsnäringar. Regeringssvar förväntas ~28 maj.
+- **Interpellation HD10500** (Köpings sjukhus): S:s Åsa Eriksson utmanar KD:s socialminister Forssmed om planer på sjukhusnedläggning — vård i glesbygden Västmanland. Svar förväntas ~28 maj.
+- **Interpellation HD10501** (Konstitutionell förändring): Fristående riksdagsledamot Elsa Widding utmanar M:s Gunnar Strömmer om tempot i grundlagsreformer — berör riksdagens beslutsförhetslighet och procedurer för grundlagsändringar.
+- **Skriftlig fråga HD11822** (Vapenförsäljning till Taiwan): SD:s Björn Söder pressar utrikesministern om potentiell svensk vapenförsäljning till Taiwan i ljuset av USA:s policyförändring.
+- **Skriftlig fråga HD11827** (Gränskontroller): S:s Niklas Karlsson utmanar Strömmer om fortsatta inre gränskontroller mot Danmark — fråga om Schengenförenlighet.
+
+### 🔮 Viktigaste framåtutlösaren
+
+**JuU28 statschefens underskrift (T+7–21d)**: Kunglig/statschefens underskrift aktiverar ett 14-dagars offentligt överklagningsfönster. Om en ECHR Artikel 8-utmaning lämnas in till svensk förvaltningsdomstol före underskriften — sällsynt men möjligt — sätts polisövervakningsprogrammet på juridiskt is fram till valet i september, vilket skapar ett narrativ om en konstitutionell kris under valkampanjen. P(utmaning inom 30d): ~25 %. Bevaka Datainspektionen/IMY och civila samhällets juridiska NGO:er.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d"}}}%%
+graph TD
+    A["JuU28 Plenary Vote\n2026-05-21\n174-171 projected"] --> B{"SD Sunset\nClause Intact?"}
+    B -->|Yes| C["3-Year Sunset\nPreservation Scenario\nMonitor 2029 review"]
+    B -->|No| D["Opposition Civil\nLiberties Campaign\nSoars in Election"]
+    A --> E["CU41 Hydropower\nHabitat Exemptions\nEU Compliance Risk"]
+    E --> F["European Commission\nInfringement Proceedings\nT+6mo?"]
+    A --> G["HD11827 Border\nControls Denmark\nSchengen Review"]
+    G --> H["EU Schengen Committee\nJune 2026"]
+```
+
+<!-- source-sha: ef3bd4351fe4730460b79048a8a8aba4a52be1fb -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/realtime-pulse/executive-brief_zh.md -->
+
+**作者**: Riksdagsmonitor Intelligence
+**分类**: 公开 — GDPR第9条(2)(e,g)
+**置信度**: 高 [A1] AI警察领域 / 中 [B2] 经济主题
+**日期**: 2026-05-21
+**周期**: realtime-pulse
+
+---
+
+### 🎯 核心结论（BLUF）
+
+瑞典议会（riksdagen）今日就**JuU28**举行全体讨论，这是司法委员会批准警方使用AI实时人脸识别技术的提案，标志着北欧民主国家在生物特征大规模监控方面首次获得立法授权。在瑞典民主党（SD）提议纳入三年日落条款和"例外情况"门槛的修正案后，执政联盟以174比171的微弱多数通过了该法案。此次投票具有重大宪法意义：政府形式法第2章第6条禁止监控政治活动，而JuU28将为执法生物识别创建首个明确例外条款。与此同时，FiU40（基金市场改革）、CU36（合作区收费法）、CU41（水电生境豁免）正推动蒂德联合政府的选前立法冲刺。三次质询揭示了裂痕：瑞典南部缺水（S→L）、舍平医院关闭（S→KD）、宪法改革（无党派议员维丁→M）。7份书面质询涉及对台军售、西藏/中国关系、养老金信任度、与丹麦的边境管控、无人机许可、养老金保险和卡车停车场安全。
+
+### 🧭 本报告支持的三项决策
+
+| # | 决策事项 | 相关性 | 时间范围 |
+|---|---------|-------|---------|
+| 1 | 公民社会针对JuU28的法律挑战策略 | 欧洲人权公约第8条隐私权 — 异议期从国家元首签署时开始 | T+14–90d |
+| 2 | JuU28通过后追踪SD对日落条款执行的立场 | 若SD在新政府提案中弱化执行，则表明SD在公民自由立场上的转变 | T+30–180d |
+| 3 | 评估舍平医院关闭对KD/M在西曼兰省的选举风险 | 农村医疗可及性的议题框架可能使执政联盟在西曼兰省失去1-2个席位 | T+60–115d |
+
+### ⚡ 60秒速读
+
+- **JuU28 AI人脸识别** (HD01JuU28)：瑞典议会批准带有3年日落条款的实时生物特征警察监控。S/V/MP投反对票。C/L尽管有公民自由方面的顾虑，仍与执政联盟一同投赞成票。置信度：**高** — 执政联盟拥有174票。
+- **FiU40 基金市场** (HD01FiU40)：Finansinspektionen根据EU AIFMD II和UCITS VI加强基金监管。对瑞典养老金储蓄者而言虽属技术性但意义重大。获得广泛跨党派支持。
+- **CU36 合作区** (HD01CU36)：商业改善区新收费法；城市获得商业街道振兴工具。获M/KD/L/SD支持。
+- **CU41 水电与生境** (HD01CU41)：水电重新许可中豁免栖息地指令。绿党强烈反对。MJU指出EU合规风险。
+- **质询 HD10499**（缺水）：S向L籍代理气候部长布里茨就瑞典南部干旱问题发起质询 — 将气候政策缺口与农村生计直接挂钩。政府回复预计约5月28日。
+- **质询 HD10500**（舍平医院）：S的Åsa Eriksson就医院关闭计划质询KD社会部长福斯梅德 — 西曼兰省农村医疗可及性。回复约5月28日。
+- **质询 HD10501**（宪法改革）：无党派议员埃尔萨·维丁就宪法改革进度质询M的贡纳尔·斯特罗默尔 — 涉及议会法定人数规则和基本法修订程序。
+- **书面质询 HD11822**（对台军售）：SD的比约恩·塞德尔在美国政策转变背景下就潜在的瑞典对台军售向外交部长施压。
+- **书面质询 HD11827**（边境管控）：S的Niklas Karlsson就继续对丹麦实施国内边境管控向斯特罗默尔质询 — 申根协定兼容性问题。
+
+### 🔮 最重要的未来触发因素
+
+**JuU28的国家元首签署 (T+7–21d)**：国王/国家元首签署将开启14天公开异议期。若在签署前有申请人向瑞典行政法院提出基于欧洲人权公约第8条的诉讼 — 罕见但可能 — 警察监控项目将在法律上被暂停至九月选举，在竞选期间形成宪法危机叙事。P（30天内提出异议）：约25%。关注Datainspektionen/IMY及公民社会法律NGO。
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d"}}}%%
+graph TD
+    A["JuU28 Plenary Vote\n2026-05-21\n174-171 projected"] --> B{"SD Sunset\nClause Intact?"}
+    B -->|Yes| C["3-Year Sunset\nPreservation Scenario\nMonitor 2029 review"]
+    B -->|No| D["Opposition Civil\nLiberties Campaign\nSoars in Election"]
+    A --> E["CU41 Hydropower\nHabitat Exemptions\nEU Compliance Risk"]
+    E --> F["European Commission\nInfringement Proceedings\nT+6mo?"]
+    A --> G["HD11827 Border\nControls Denmark\nSchengen Review"]
+    G --> H["EU Schengen Committee\nJune 2026"]
+```
+
+<!-- source-sha: ef3bd4351fe4730460b79048a8a8aba4a52be1fb -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 14 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 1 | Linked in Article Sources, not expanded inline |
 
@@ -1736,6 +2436,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/realtime-pulse/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/realtime-pulse/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/realtime-pulse/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/realtime-pulse/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/realtime-pulse/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/realtime-pulse/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/realtime-pulse/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/realtime-pulse/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/realtime-pulse/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/realtime-pulse/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/realtime-pulse/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/realtime-pulse/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/realtime-pulse/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/realtime-pulse/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/realtime-pulse/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/realtime-pulse/executive-brief_zh.md)
 
 ### Supporting Data Artifacts
 
