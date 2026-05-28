@@ -1,0 +1,97 @@
+{
+  "schema_version": "1.0",
+  "cycle": "motions",
+  "analysis_date": "2026-05-28",
+  "generated_at": "2026-05-28T08:30:00Z",
+  "pir_items": [
+    {
+      "pir_id": "PIR-MOT-2026-05-28-001",
+      "statement": "Will Liberalerna file a formal ECHR reservation on Prop 2025/26:267 in JuU's committee report?",
+      "status": "open",
+      "confidence": "MEDIUM",
+      "domain": "JuU/security-law",
+      "source_cycle": "2026-05-28",
+      "monitoring": "JuU committee report (exp. June 2026); L members' public statements on Prop 267",
+      "electoral_relevance": "HIGH — L brand integrity before 2026-09 election"
+    },
+    {
+      "pir_id": "PIR-MOT-2026-05-28-002",
+      "statement": "Will Socialdemokraterna vote with the government or abstain on Prop 2025/26:267 (security threat foreigners)?",
+      "status": "open",
+      "confidence": "MEDIUM",
+      "domain": "JuU/security-law",
+      "source_cycle": "2026-05-28",
+      "monitoring": "S shadow justice minister public statement; S floor vote on Prop 267",
+      "electoral_relevance": "VERY HIGH — determines opposition bloc cohesion"
+    },
+    {
+      "pir_id": "PIR-MOT-2026-05-28-003",
+      "statement": "Will SkU attach a monitoring/evaluation clause to Prop 261 in response to MP's vulnerable-persons demand (HD024191)?",
+      "status": "open",
+      "confidence": "MEDIUM-LOW",
+      "domain": "SkU/folkbokföring",
+      "source_cycle": "2026-05-28",
+      "monitoring": "SkU committee report (exp. June 2026); SkU hearing schedule",
+      "electoral_relevance": "MEDIUM — affects MP's pre-election accountability narrative"
+    },
+    {
+      "pir_id": "PIR-MOT-2026-05-21-001",
+      "statement": "Has KU scheduled a hearing or vote date for Prop 2025/26:258 (labor-org contributions law with C dissent / Lagrådet 'bräckligt' verdict)?",
+      "status": "open",
+      "confidence": "MEDIUM",
+      "domain": "KU/constitutional",
+      "source_cycle": "2026-05-21",
+      "monitoring": "KU calendar; riksdag.se dagordning",
+      "electoral_relevance": "MEDIUM — C's constitutional dissent position"
+    },
+    {
+      "pir_id": "PIR-MOT-2026-05-21-003",
+      "statement": "Has Liberalerna formally stated its position on the ECHR risk assessment in Prop 2025/26:258?",
+      "status": "open",
+      "confidence": "LOW",
+      "domain": "KU/constitutional",
+      "source_cycle": "2026-05-21",
+      "monitoring": "L member statements in KU; L press releases",
+      "electoral_relevance": "MEDIUM"
+    },
+    {
+      "pir_id": "PIR-MOT-2026-05-21-005",
+      "statement": "Has SfU announced the vote date for the migration propositions pack (props 2025/26:262–265)?",
+      "status": "open",
+      "confidence": "MEDIUM",
+      "domain": "SfU/migration",
+      "source_cycle": "2026-05-21",
+      "monitoring": "SfU calendar; riksdag.se dagordning for SfU",
+      "electoral_relevance": "HIGH — major migration legislation vote before summer"
+    },
+    {
+      "pir_id": "PIR-MOT-2026-05-21-002",
+      "statement": "Has the government or KU majority indicated it will pass Prop 258 unchanged despite C's Lagrådet objection?",
+      "status": "open",
+      "confidence": "MEDIUM-HIGH",
+      "domain": "KU/constitutional",
+      "source_cycle": "2026-05-21",
+      "carry_forward_from": "2026-05-21",
+      "monitoring": "KU committee majority report; M/KD/L press statements",
+      "electoral_relevance": "MEDIUM"
+    },
+    {
+      "pir_id": "PIR-MOT-2026-05-21-004",
+      "statement": "Will the government table any amendments to Prop 258 in response to C's Lagrådet ('bräckligt') argument?",
+      "status": "open",
+      "confidence": "LOW",
+      "domain": "KU/constitutional",
+      "source_cycle": "2026-05-21",
+      "carry_forward_from": "2026-05-21",
+      "monitoring": "Government press releases; KU hearing minutes",
+      "electoral_relevance": "LOW-MEDIUM"
+    }
+  ],
+  "pir_summary": {
+    "total": 8,
+    "open": 8,
+    "answered": 0,
+    "new_this_cycle": 3,
+    "carried_forward": 5
+  }
+}
