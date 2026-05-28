@@ -118,3 +118,24 @@
 | FI-10 | C position HD01NU20 | 14d after NU report | Weekly | OPEN |
 | FI-11 | Ministerial responses HD11846–57 | 2026-06-11 | Weekly | OPEN |
 | FI-12 | September polling trend | 2026-06-15 | Monthly | OPEN |
+
+---
+
+## New Indicators Added in Improvement Run (26588891376)
+
+### FI-13: HD01TU17 Entry Into Force — Anti-Spoofing Telecom Rules
+**What to watch**: PTS (Post- och telestyrelsen) technical guidance publication for operators on implementing anti-spoofing obligations under the amended lagen (2022:482)
+**Expected date**: 2026-08-01 (entry into force) — PTS guidance expected 2026-07-01 to 2026-07-15
+**Trigger condition**: PTS issues binding guidance; major operators (Telia, Telenor, Tele2) publish compliance statements
+**Confirms**: EU Kodex transposition complete; anti-telecom-fraud legislative agenda executed on schedule
+**Confidence**: HIGH — legislative process complete; implementation machinery established
+
+### FI-14: HD01TU18 Entry Into Force — Public Sector Interoperability Law
+**What to watch**: DIGG (Myndigheten för digital förvaltning) publication of compliance frameworks and oversight procedures for public authorities under new lag om interoperabilitetskrav
+**Expected date**: 2026-08-15 (entry into force)
+**Trigger condition**: DIGG publishes technical specifications; major authorities (Skatteverket, Försäkringskassan) publish compliance roadmaps
+**Confirms**: Sweden's EU Data Governance Act obligations met; public sector digital modernisation structured phase begins
+**Confidence**: HIGH — no opposition; implementation authority (DIGG) already exists
+
+| FI-13 | HD01TU17 anti-spoofing entry into force | 2026-08-01 | Monthly | OPEN |
+| FI-14 | HD01TU18 interoperability law entry into force | 2026-08-15 | Monthly | OPEN |

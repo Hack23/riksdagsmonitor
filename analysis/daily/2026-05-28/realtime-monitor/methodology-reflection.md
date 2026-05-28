@@ -140,3 +140,55 @@ Per `04-analysis-pipeline.md §Single-agent review substitute`:
 | Devil's Advocate challenge | 5/5 | 4 DA hypotheses with ACH assessment |
 | Source attribution | 4/5 | Admiralty codes throughout; some analyst estimates |
 | **Overall** | **4.4/5** | **Meets AI FIRST quality standard** |
+
+---
+
+
+## Re-run log
+
+| Field | Value |
+|-------|-------|
+| Re-run ID | 26588891376 |
+| Attempt | 1 |
+| Started (UTC) | 2026-05-28T16:57:13Z |
+| Improvement mode | true |
+| Prior run | 26571219628 attempt 1 (2026-05-28T11:20:03Z) |
+| MCP status | ✅ live (16:58Z, latency <100ms) |
+| IMF vintage | WEO-2026-04 (1 month old, not stale) |
+| Pass-2 status | **executed in full** |
+
+### New Documents Discovered
+
+Two new betänkanden published by TU committee at 14:21Z and 14:34Z — after original run's data cutoff:
+
+| dok_id | Title | Published | DIW |
+|--------|-------|-----------|-----|
+| HD01TU17 | Nya regler mot bedrägerier och annat vilseledande genom elektroniska kommunikationstjänster | 2026-05-28T14:21Z | 2.8 |
+| HD01TU18 | Interoperabilitet vid datadelning inom den offentliga förvaltningen | 2026-05-28T14:34Z | 2.4 |
+
+### Artifacts Extended This Run
+
+| Artifact | Action |
+|----------|--------|
+| `documents/hd01tu17-analysis.md` | **New** — created from full-text retrieval |
+| `documents/hd01tu18-analysis.md` | **New** — created from full-text retrieval |
+| `data-download-manifest.md` | Updated: 21→23 documents, 10→12 with full text |
+| `synthesis-summary.md` | Updated: DIW table extended; TU digital cluster added; Mermaid updated |
+| `executive-brief.md` | Updated: BLUF extended with TU documents; decisions table updated; Mermaid updated |
+| `forward-indicators.md` | Updated: FI-13 (TU17 entry-into-force) and FI-14 (TU18 entry-into-force) added |
+| `cross-reference-map.md` | Updated: Digital governance cluster enriched |
+| `README.md` | Updated: 23+2 artifacts documented |
+| `methodology-reflection.md` | Re-run log appended (this entry) |
+
+### Flags Closed
+
+No [unconfirmed] flags introduced in original run required closure.
+
+### Vintage Refresh
+
+IMF WEO-2026-04 vintage confirmed current (1 month old) — no annotation required. No stale data present.
+
+### Quality Delta (Pass-2 vs Pass-1)
+
+Original run: 4.4/5 self-assessed quality.
+Re-run additions: +2 new betänkanden (23 total docs now), digital governance cluster identified (HD01TU17 + HD01TU18 + HD03277), forward indicators extended to 14 items. Revised quality estimate: **4.6/5**.
