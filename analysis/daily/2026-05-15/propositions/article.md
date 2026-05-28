@@ -3,19 +3,17 @@ date: 2026-05-15
 subfolder: propositions
 slug: 2026-05-15-propositions
 source_folder: analysis/daily/2026-05-15/propositions
-generated_at: 2026-05-28T15:56:17.113Z
+generated_at: 2026-05-28T22:29:32.126Z
 language: en
 layout: article
 ---
-## Executive Brief
+## What Happened
 <!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/propositions/executive-brief.md -->
 
-### BLUF
+### Lede
+On 7 May 2026 the Kristersson government tabled three interconnected bills that deepen Sweden's security and control architecture: a national electronic-identification act (Riksdag document #03250 (HD03250)), expanded Skatteverket (Swedish Tax Agency) powers in the population register (HD03261), and tightened powers to deport foreign security threats (HD03267). These complement the migration package launched on 30 April 2026 — abolition of permanent residence permits (HD03262) and a "good character" requirement (HD03264) — which implement the EU asylum and migration pact. Taken together, this represents the most far-reaching reorientation of Swedish migration and identity policy since 2015, with HIGH [B2] potential impact on the 2026 general election campaign.
 
-On 7 May 2026 the Kristersson government tabled three interconnected bills that deepen Sweden's security and control architecture: a national electronic-identification act (HD03250), expanded Skatteverket (Swedish Tax Agency) powers in the population register (HD03261), and tightened powers to deport foreign security threats (HD03267). These complement the migration package launched on 30 April 2026 — abolition of permanent residence permits (HD03262) and a "good character" requirement (HD03264) — which implement the EU asylum and migration pact. Taken together, this represents the most far-reaching reorientation of Swedish migration and identity policy since 2015, with HIGH [B2] potential impact on the 2026 general election campaign.
-
-### Decisions This Brief Supports
-
+### Decisions and confidence context
 1. **Riksdag committees** (TU, SkU, JuU, SfU): Assess consultation responses and coordinate scrutiny of five bills sharing a common security-policy logic.
 2. **Opposition parties** (S, V, MP, C): Formulate alternative motions, identify constitutional risks in HD03267 and GDPR concerns in HD03261.
 3. **Agencies** (Skatteverket, Migrationsverket, NCSC, Säkerhetspolisen/Säpo): Plan implementation, security review, and DPIA.
@@ -77,9 +75,9 @@ Use this guide to read the article as a political-intelligence product rather th
 
 | Icon | Reader need | What you'll get |
 |---|---|---|
-| 📊 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
-| 🧠 | [Synthesis Summary](#rm-synthesis-summary) | evidence-anchored narrative consolidating primary sources into one coherent story line |
-| 🎯 | [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps |
+| 📊 | [Lede and editorial decisions](#rm-what-happened) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
+| 🧠 | [Why It Matters](#rm-why-it-matters) | evidence-anchored narrative consolidating primary sources into one coherent story line |
+| 🎯 | [Key Judgments](#rm-key-findings) | confidence-bearing political-intelligence conclusions and collection gaps |
 | 📈 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals |
 | 👥 | [Stakeholder Perspectives](#rm-stakeholder-perspectives) | winners, losers and undecided actors with stake-weighted positions and pressure points |
 | 🔢 | [Coalition Mathematics](#rm-coalition-mathematics) | parliamentary arithmetic showing exactly who can pass or block this measure and at what margin |
@@ -95,10 +93,10 @@ Use this guide to read the article as a political-intelligence product rather th
 | ⚙️ | [Implementation Feasibility](#rm-implementation-feasibility) | delivery feasibility, capability gaps, timelines and execution risks for the proposed action |
 | 📰 | [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder |
 | 😈 | [Devil's Advocate](#rm-devils-advocate) | alternative hypotheses, steel-manned counter-arguments and the strongest case against the lead reading |
-| 🏷️ | [Classification Results](#rm-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
-| 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
-| 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
-| 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 🏷️ | [Deep Dive: Classification Results](#rm-deep-dive-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
+| 🔀 | [Deep Dive: Cross-Reference Map](#rm-deep-dive-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
+| 🔬 | [Deep Dive: Methodology & Limitations](#rm-deep-dive-methodology--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
+| 📦 | [Deep Dive: Data Download Manifest](#rm-deep-dive-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
 | 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
@@ -114,9 +112,9 @@ Use this guide to read the article as a political-intelligence product rather th
 | 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
-| 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
+| 🏷️ | [Audit appendix](#rm-deep-dive-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
-## Synthesis Summary
+## Why It Matters
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/propositions/synthesis-summary.md -->
 
 ### Lead-story beslut
@@ -180,7 +178,7 @@ Propositionspaketet maj 2026 är den mest signifikanta lagstiftningssatsningen f
 
 **Bedömningskonfidensgrad**: HIGH [B2] — baserat på officiella riksdagspropositioner (dok_id verifierade mot data.riksdagen.se).
 
-## Intelligence Assessment — Key Judgments
+## Key Findings
 <!-- source: intelligence-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/propositions/intelligence-assessment.md -->
 
 ### Nyckeldomslut (Key Judgments)
@@ -1342,7 +1340,7 @@ graph LR
     style H3 fill:#1a1e3d,stroke:#ff006e
 ```
 
-## Classification Results
+## Deep Dive: Classification Results
 <!-- source: classification-results.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/propositions/classification-results.md -->
 
 ### 7-Dimensionell Klassificering per Dokument
@@ -1436,7 +1434,7 @@ quadrantChart
   HD03261 Skatteverket: [0.55, 0.45]
 ```
 
-## Cross-Reference Map
+## Deep Dive: Cross-Reference Map
 <!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/propositions/cross-reference-map.md -->
 
 ### Dokumentkopplingar
@@ -1500,7 +1498,7 @@ graph TD
     style SÄK fill:#1a1e3d,stroke:#ff006e
 ```
 
-## Methodology Reflection & Limitations
+## Deep Dive: Methodology & Limitations
 <!-- source: methodology-reflection.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/propositions/methodology-reflection.md -->
 
 ### ICD 203 Analytisk Kalibrering
@@ -1541,7 +1539,7 @@ graph TD
 | IT-riskmodell | Använd RISC-ramverket från Statskontoret | Medel |
 | Ekonomisk modellering | IMF-data för arbetsmarknadseffekter | Medel |
 
-## Data Download Manifest
+## Deep Dive: Data Download Manifest
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/propositions/data-download-manifest.md -->
 
 ### Documents Analyzed
@@ -1603,12 +1601,10 @@ Statskontoret has published evaluations relevant to Skatteverket administrative 
 <!-- dir: rtl -->
 # الأمن والهوية الرقمية وإصلاحات الهجرة: حزمة الاقتراحات الحكومية مايو 2026
 
-### BLUF
-
+### Lede
 قدّمت حكومة كريسترسون في 7 مايو 2026 ثلاثة مقترحات تشريعية مترابطة تُعمّق بنية الأمن والرقابة السويدية: قانون التعريف الإلكتروني الوطني (HD03250)، وتوسيع صلاحيات دائرة الضرائب في سجلات السكان (HD03261)، وتعزيز صلاحيات ترحيل التهديدات الأمنية الأجنبية (HD03267). وتُكمّل هذه المقترحات حزمة الهجرة المُطلَقة في 30 أبريل 2026 — إلغاء تصاريح الإقامة الدائمة (HD03262) واشتراطات السلوك (HD03264) — التي تُنفّذ ميثاق اللجوء والهجرة الأوروبي. يُمثّل هذا مجتمعاً أشمل إعادة توجيه للسياسة السويدية في مجال الهجرة والهوية منذ عام 2015، مع أهمية انتخابية HIGH [B2] قبيل انتخابات الريكسداغ لعام 2026.
 
-### Decisions This Brief Supports
-
+### Decisions and confidence context
 1. **اللجان البرلمانية** (TU, SkU, JuU, SfU): تقييم ردود الاستشارات وتنسيق النظر في خمسة مقترحات تشترك في منطق سياسة أمنية مشتركة.
 2. **أحزاب المعارضة** (S, V, MP, C): صياغة مقترحات بديلة، وتحديد المخاطر الدستورية في HD03267 وقضايا اللائحة الأوروبية لحماية البيانات في HD03261.
 3. **الوكالات** (Skatteverket, Migrationsverket, NCSC, Säkerhetspolisen): التخطيط للتنفيذ ومراجعة الأمن وتقييم أثر حماية البيانات.
@@ -1658,12 +1654,10 @@ mindmap
 ## Executive Brief Da
 <!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/propositions/executive-brief_da.md -->
 
-### BLUF
-
+### Lede
 Den 7. maj 2026 fremlagde Kristersson-regeringen tre sammenhængende lovforslag, der uddyber den svenske sikkerheds- og kontrolarkitektur: en national e-legitimationslov (HD03250), udvidede beføjelser til Skatteverket inden for folkeregistrering (HD03261) og skærpede muligheder for at udvise udenlandske sikkerhedstrusler (HD03267). Disse supplerer migrations­pakken lanceret den 30. april 2026 — afskaffelse af permanente opholdstilladelser (HD03262) og vandels­krav (HD03264) — som implementerer EU's asyl- og migrationsaftale. Samlet set repræsenterer dette den mest gennemgribende omlægning af svensk migrations- og identitetspolitik siden 2015 med HIGH [B2] valgpolitisk relevans forud for Riksdagsvalget 2026.
 
-### Decisions This Brief Supports
-
+### Decisions and confidence context
 1. **Parlamentariske udvalg** (TU, SkU, JuU, SfU): Vurder høringssvar og koordiner behandling af fem lovforslag med fælles sikkerhedspolitisk logik.
 2. **Oppositionspartier** (S, V, MP, C): Formuler alternative beslutningsforslag, identificer forfatningsrisici i HD03267 og GDPR-spørgsmål i HD03261.
 3. **Myndigheder** (Skatteverket, Migrationsverket, NCSC, Säkerhetspolisen): Planlæg implementering, sikkerhedsgennemgang og DPIA.
@@ -1713,12 +1707,10 @@ mindmap
 ## Executive Brief De
 <!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/propositions/executive-brief_de.md -->
 
-### BLUF
-
+### Lede
 Die Regierung Kristersson legte am 7. Mai 2026 drei zusammenhängende Gesetzesvorlagen vor, die Schwedens Sicherheits- und Kontrollarchitektur vertiefen: ein nationales E-Identifikationsgesetz (HD03250), erweiterte Befugnisse des Skatteverket bei der Einwohnermelderegistrierung (HD03261) und verschärfte Möglichkeiten zur Ausweisung ausländischer Sicherheitsbedrohungen (HD03267). Diese ergänzen das am 30. April 2026 lancierte Migrationspaket — Abschaffung dauerhafter Aufenthaltsgenehmigungen (HD03262) und Anforderungen an einwandfreies Verhalten (HD03264) — das den EU-Asyl- und Migrationspakt umsetzt. Insgesamt stellt dies die umfassendste Neuausrichtung der schwedischen Migrations- und Identitätspolitik seit 2015 dar, mit HIGH [B2] Wahlrelevanz vor den Reichstagswahlen 2026.
 
-### Decisions This Brief Supports
-
+### Decisions and confidence context
 1. **Parlamentsausschüsse** (TU, SkU, JuU, SfU): Bewerten Sie Stellungnahmen und koordinieren Sie die Beratung von fünf Gesetzentwürfen mit gemeinsamer sicherheitspolitischer Logik.
 2. **Oppositionsparteien** (S, V, MP, C): Formulieren Sie alternative Anträge, identifizieren Sie Verfassungsrisiken in HD03267 und DSGVO-Fragen in HD03261.
 3. **Behörden** (Skatteverket, Migrationsverket, NCSC, Säkerhetspolisen): Planen Sie Implementierung, Sicherheitsprüfung und DPIA.
@@ -1768,12 +1760,10 @@ mindmap
 ## Executive Brief En
 <!-- source: executive-brief_en.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/propositions/executive-brief_en.md -->
 
-### BLUF
-
+### Lede
 On 7 May 2026, the Kristersson government presented three interconnected propositions deepening Sweden's security and control architecture: a national e-identification act (HD03250), expanded Swedish Tax Agency powers over civil registration (HD03261), and enhanced powers to expel foreign security threats (HD03267). These complement the migration package launched on 30 April 2026 — abolition of permanent residence permits (HD03262) and conduct requirements (HD03264) — implementing the EU's asylum and migration pact. Together, this represents the most comprehensive reorientation of Swedish migration and identity policy since 2015, with HIGH [B2] electoral significance ahead of the 2026 general election.
 
-### Decisions This Brief Supports
-
+### Decisions and confidence context
 1. **Parliamentary Committees** (TU, SkU, JuU, SfU): Assess consultation responses and coordinate deliberation for five propositions sharing a common security policy logic.
 2. **Opposition Parties** (S, V, MP, C): Formulate alternative motions, identify constitutional risks in HD03267 and GDPR issues in HD03261.
 3. **Agencies** (Skatteverket, Migrationsverket, NCSC, Säkerhetspolisen): Plan implementation, security review, and DPIA.
@@ -1823,12 +1813,10 @@ mindmap
 ## Executive Brief Es
 <!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/propositions/executive-brief_es.md -->
 
-### BLUF
-
+### Lede
 El gobierno Kristersson presentó el 7 de mayo de 2026 tres proposiciones interconectadas que profundizan la arquitectura de seguridad y control de Suecia: una ley nacional de identificación electrónica (HD03250), poderes ampliados de la Agencia Tributaria en el registro civil (HD03261) y capacidades reforzadas para expulsar amenazas de seguridad extranjeras (HD03267). Estas complementan el paquete migratorio lanzado el 30 de abril de 2026 — abolición de permisos de residencia permanentes (HD03262) y requisitos de conducta (HD03264) — que implementa el pacto europeo de asilo y migración. En conjunto, esto representa la reorientación más integral de la política sueca de migración e identidad desde 2015, con relevancia electoral HIGH [B2] ante las elecciones al Riksdag de 2026.
 
-### Decisions This Brief Supports
-
+### Decisions and confidence context
 1. **Comités parlamentarios** (TU, SkU, JuU, SfU): Evaluar respuestas a consultas y coordinar deliberación de cinco proposiciones con lógica de política de seguridad común.
 2. **Partidos de oposición** (S, V, MP, C): Formular mociones alternativas, identificar riesgos constitucionales en HD03267 y cuestiones RGPD en HD03261.
 3. **Agencias** (Skatteverket, Migrationsverket, NCSC, Säkerhetspolisen): Planificar implementación, revisión de seguridad y DPIA.
@@ -1878,12 +1866,10 @@ mindmap
 ## Executive Brief Fi
 <!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/propositions/executive-brief_fi.md -->
 
-### BLUF
-
+### Lede
 Kristersson-hallitus esitti 7. toukokuuta 2026 kolme toisiinsa liittyvää lakiesitystä, jotka syventävät Ruotsin turvallisuus- ja valvonta-arkkitehtuuria: kansallinen sähköisen tunnistamisen laki (HD03250), Verohallinnon laajennetut toimivaltuudet väestökirjanpidossa (HD03261) sekä tehostetut mahdollisuudet karkottaa ulkomaiset turvallisuusuhkat (HD03267). Nämä täydentävät 30. huhtikuuta 2026 käynnistettyä maahanmuuttopakettia — pysyvien oleskelulupien lakkauttaminen (HD03262) ja nuhteettomuusvaatimukset (HD03264) — jotka toteuttavat EU:n turvapaikan ja maahanmuuton paktia. Kokonaisuudessaan tämä edustaa Ruotsin maahanmuutto- ja henkilöllisyyspolitiikan perusteellisinta uudelleensuuntausta vuoden 2015 jälkeen, vaalipoliittinen merkittävyys HIGH [B2] vuoden 2026 valtiopäivävaaleissa.
 
-### Decisions This Brief Supports
-
+### Decisions and confidence context
 1. **Parlamentin valiokunnat** (TU, SkU, JuU, SfU): Arvioi lausuntoyhteenvedot ja koordinoi viiden yhteisellä turvallisuuspoliittisella logiikalla varustetun lakiesityksen käsittely.
 2. **Oppositiopuolueet** (S, V, MP, C): Muotoile vaihtoehtoisia esityksiä, tunnista perustuslailliset riskit HD03267:ssä ja GDPR-kysymykset HD03261:ssä.
 3. **Virastot** (Skatteverket, Migrationsverket, NCSC, Säkerhetspolisen): Suunnittele käyttöönotto, turvallisuustarkastus ja DPIA.
@@ -1933,12 +1919,10 @@ mindmap
 ## Executive Brief Fr
 <!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/propositions/executive-brief_fr.md -->
 
-### BLUF
-
+### Lede
 Le gouvernement Kristersson a présenté le 7 mai 2026 trois propositions interconnectées approfondissant l'architecture sécuritaire et de contrôle suédoise : une loi nationale sur l'e-identification (HD03250), des pouvoirs élargis de l'Agence fiscale en matière d'enregistrement civil (HD03261) et des capacités renforcées d'expulsion des menaces sécuritaires étrangères (HD03267). Celles-ci complètent le paquet migratoire lancé le 30 avril 2026 — abolition des permis de séjour permanents (HD03262) et exigences de moralité (HD03264) — mettant en œuvre le pacte européen sur l'asile et la migration. Ensemble, cela représente la réorientation la plus globale de la politique suédoise en matière de migration et d'identité depuis 2015, avec une pertinence électorale HIGH [B2] avant les élections au Riksdag de 2026.
 
-### Decisions This Brief Supports
-
+### Decisions and confidence context
 1. **Commissions parlementaires** (TU, SkU, JuU, SfU) : Évaluer les réponses aux consultations et coordonner l'examen de cinq propositions partageant une logique de politique sécuritaire commune.
 2. **Partis d'opposition** (S, V, MP, C) : Formuler des motions alternatives, identifier les risques constitutionnels dans HD03267 et les questions RGPD dans HD03261.
 3. **Agences** (Skatteverket, Migrationsverket, NCSC, Säkerhetspolisen) : Planifier l'implémentation, l'audit sécurité et le DPIA.
@@ -1991,12 +1975,10 @@ mindmap
 <!-- dir: rtl -->
 # ביטחון, זהות דיגיטלית ורפורמות הגירה: חבילת הצעות החוק הממשלתית מאי 2026
 
-### BLUF
-
+### Lede
 ממשלת קריסטרסון הגישה ב-7 במאי 2026 שלוש הצעות חוק מקושרות המעמיקות את ארכיטקטורת הביטחון והבקרה של שוודיה: חוק לאומי לזיהוי אלקטרוני (HD03250), הרחבת סמכויות רשות המסים ברישום האוכלוסין (HD03261) וחיזוק יכולות גירוש איומי ביטחון זרים (HD03267). אלה משלימות את חבילת ההגירה שהושקה ב-30 באפריל 2026 — ביטול היתרי שהייה קבועים (HD03262) ודרישות התנהגות (HD03264) — המיישמת את האמנה האירופית בנושא מקלט והגירה. יחד, זהו השינוי המקיף ביותר במדיניות ההגירה והזהות השוודית מאז 2015, עם רלוונטיות בחירותית HIGH [B2] לקראת בחירות הריקסדאג 2026.
 
-### Decisions This Brief Supports
-
+### Decisions and confidence context
 1. **ועדות פרלמנטריות** (TU, SkU, JuU, SfU): הערך תגובות להתייעצויות ותאם דיון בחמש הצעות חוק החולקות לוגיקת מדיניות ביטחון משותפת.
 2. **מפלגות אופוזיציה** (S, V, MP, C): נסח הצעות חלופיות, זהה סיכונים חוקתיים ב-HD03267 ושאלות GDPR ב-HD03261.
 3. **רשויות** (Skatteverket, Migrationsverket, NCSC, Säkerhetspolisen): תכנן יישום, ביקורת ביטחוני ו-DPIA.
@@ -2046,12 +2028,10 @@ mindmap
 ## Executive Brief Ja
 <!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/propositions/executive-brief_ja.md -->
 
-### BLUF
-
+### Lede
 クリスターション政府は2026年5月7日、スウェーデンの安全保障・管理体制を深化させる3つの相互連関した法案を提出した：国家電子ID法（HD03250）、住民登録に関する税務署の権限拡大（HD03261）、外国人安全保障上の脅威に対する追放権限の強化（HD03267）。これらは2026年4月30日に打ち出された移民パッケージ — 永住許可の廃止（HD03262）と品行要件（HD03264）— を補完し、EU難民移民協定を実施するものである。総じて、2015年以降最も包括的なスウェーデン移民・身元確認政策の転換を表し、2026年国会選挙を前に HIGH [B2] の選挙的重要性を持つ。
 
-### Decisions This Brief Supports
-
+### Decisions and confidence context
 1. **議会委員会**（TU, SkU, JuU, SfU）：意見募集への回答を評価し、共通の安全保障政策論理を持つ5法案の審議を調整する。
 2. **野党**（S, V, MP, C）：代替動議を策定し、HD03267の憲法上のリスクおよびHD03261のGDPR問題を特定する。
 3. **機関**（Skatteverket, Migrationsverket, NCSC, Säkerhetspolisen）：実施・安全保障レビュー・DPIAを計画する。
@@ -2101,12 +2081,10 @@ mindmap
 ## Executive Brief Ko
 <!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/propositions/executive-brief_ko.md -->
 
-### BLUF
-
+### Lede
 크리스터손 정부는 2026년 5월 7일 스웨덴의 안보·통제 체계를 심화시키는 3개의 상호연관 법안을 제출했다: 국가 전자신원확인법(HD03250), 주민등록 관련 세무청 권한 확대(HD03261), 외국인 안보 위협 추방 권한 강화(HD03267). 이는 2026년 4월 30일 출범한 이민 패키지 — 영주권 폐지(HD03262) 및 품행 요건(HD03264) — 을 보완하며 EU 망명·이민 협약을 이행하는 것이다. 종합적으로 이는 2015년 이후 스웨덴 이민·신원확인 정책의 가장 포괄적인 전환을 나타내며, 2026년 국회 선거를 앞두고 HIGH [B2]의 선거적 중요성을 갖는다.
 
-### Decisions This Brief Supports
-
+### Decisions and confidence context
 1. **의회 위원회** (TU, SkU, JuU, SfU): 의견 수렴 응답을 평가하고 공통 안보 정책 논리를 가진 5개 법안의 심의를 조율한다.
 2. **야당** (S, V, MP, C): 대안 발의안을 작성하고, HD03267의 헌법적 위험 및 HD03261의 GDPR 문제를 식별한다.
 3. **기관** (Skatteverket, Migrationsverket, NCSC, Säkerhetspolisen): 이행·보안 검토·DPIA를 계획한다.
@@ -2156,12 +2134,10 @@ mindmap
 ## Executive Brief Nl
 <!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/propositions/executive-brief_nl.md -->
 
-### BLUF
-
+### Lede
 De regering-Kristersson presenteerde op 7 mei 2026 drie onderling verbonden wetgevingsvoorstellen die Zweden's veiligheids- en controlearchitectuur verdiepen: een nationale e-identificatiewet (HD03250), uitgebreide bevoegdheden van de Belastingdienst bij de burgerregistratie (HD03261) en versterkte mogelijkheden om buitenlandse veiligheidsrisico's uit te wijzen (HD03267). Deze vullen het op 30 april 2026 gelanceerde migratiepakket aan — afschaffing van permanente verblijfsvergunningen (HD03262) en gedragseisen (HD03264) — dat het EU-asiel- en migratiepact implementeert. Samen vertegenwoordigt dit de meest omvattende heroriëntering van het Zweedse migratie- en identiteitsbeleid sinds 2015, met HIGH [B2] electorale relevantie voor de Riksdag-verkiezingen van 2026.
 
-### Decisions This Brief Supports
-
+### Decisions and confidence context
 1. **Parlementaire commissies** (TU, SkU, JuU, SfU): Beoordeel reacties op consultaties en coördineer beraadslaging van vijf voorstellen met gemeenschappelijke veiligheidsbeleidlogica.
 2. **Oppositiepartijen** (S, V, MP, C): Formuleer alternatieve moties, identificeer constitutionele risico's in HD03267 en AVG-vragen in HD03261.
 3. **Agentschappen** (Skatteverket, Migrationsverket, NCSC, Säkerhetspolisen): Plan implementatie, veiligheidsreview en DPIA.
@@ -2211,12 +2187,10 @@ mindmap
 ## Executive Brief No
 <!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/propositions/executive-brief_no.md -->
 
-### BLUF
-
+### Lede
 Den 7. mai 2026 la Kristersson-regjeringen frem tre sammenkoblede proposisjoner som utdyper den svenske sikkerhets- og kontrollarkitekturen: en nasjonal e-legitimasjonslov (HD03250), utvidede fullmakter til Skatteverket innen folkeregistrering (HD03261) og skjerpede muligheter til å utvise utenlandske sikkerhetstrusler (HD03267). Disse supplerer migrasjonspakken lansert 30. april 2026 — avskaffelse av permanente oppholdstillatelser (HD03262) og vandelskrav (HD03264) — som implementerer EUs asyl- og migrasjonspakt. Samlet representerer dette den mest gjennomgripende omleggingen av svensk migrasjons- og identitetspolitikk siden 2015, med HIGH [B2] valgpolitisk relevans foran stortingsvalget 2026.
 
-### Decisions This Brief Supports
-
+### Decisions and confidence context
 1. **Parlamentariske komiteer** (TU, SkU, JuU, SfU): Vurder høringsinnspill og koordiner behandling av fem proposisjoner med felles sikkerhetspolitisk logikk.
 2. **Opposisjonspartier** (S, V, MP, C): Formuler alternative forslag, identifiser grunnlovsrisikoer i HD03267 og GDPR-spørsmål i HD03261.
 3. **Myndigheter** (Skatteverket, Migrationsverket, NCSC, Säkerhetspolisen): Planlegg implementering, sikkerhetsgjennomgang og DPIA.
@@ -2266,12 +2240,10 @@ mindmap
 ## Executive Brief Sv
 <!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/propositions/executive-brief_sv.md -->
 
-### BLUF
-
+### Lede
 Regeringen Kristersson lade 7 maj 2026 fram tre sammanhängande propositioner som fördjupar den svenska säkerhets- och kontrollarkitekturen: en nationell e-legitimationslag (HD03250), utökade Skatteverkets-befogenheter i folkbokföringen (HD03261) och skärpta möjligheter att utvisa utländska säkerhetshot (HD03267). Dessa kompletterar den 30 april 2026 lanserade migrationspaketen — avskaffande av permanent uppehållstillstånd (HD03262) och krav på vandel (HD03264) — som implementerar EU:s asyl- och migrationspaket. Sammantaget representerar detta den mest genomgripande ominriktningen av svensk migrations- och identitetspolitik sedan 2015, med valrörelsepåverkan HIGH [B2] inför 2026 års riksdagsval.
 
-### Decisions This Brief Supports
-
+### Decisions and confidence context
 1. **Riksdagsutskotten** (TU, SkU, JuU, SfU): Bedöm remissvar och samordna beredning för fem propositioner med gemensam säkerhetspolitisk logik.
 2. **Oppositionspartier** (S, V, MP, C): Formulera alternativa yrkanden, identifiera grundlagsrisker i HD03267 och GDPR-frågor i HD03261.
 3. **Myndigheter** (Skatteverket, Migrationsverket, NCSC, Säkerhetspolisen): Planera implementering, säkerhetsgranskning och DPIA.
@@ -2321,12 +2293,10 @@ mindmap
 ## Executive Brief Zh
 <!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/propositions/executive-brief_zh.md -->
 
-### BLUF
-
+### Lede
 克里斯特松政府于2026年5月7日提交了三项相互关联的法案，深化瑞典安全与管控体系：国家电子身份认证法（HD03250）、税务局在户籍登记方面的扩展权限（HD03261）以及加强驱逐外国安全威胁的能力（HD03267）。这些法案补充了2026年4月30日推出的移民包——废除永久居留许可（HD03262）和行为要求（HD03264）——以落实欧盟庇护与移民协定。综合来看，这是自2015年以来瑞典移民与身份政策最全面的重新定向，在2026年国会选举前具有HIGH [B2]的选举重要性。
 
-### Decisions This Brief Supports
-
+### Decisions and confidence context
 1. **议会委员会**（TU, SkU, JuU, SfU）：评估咨询回应，协调具有共同安全政策逻辑的五项法案审议。
 2. **反对党**（S, V, MP, C）：制定替代动议，识别HD03267中的宪法风险和HD03261中的GDPR问题。
 3. **机构**（Skatteverket, Migrationsverket, NCSC, Säkerhetspolisen）：规划实施、安全审查和DPIA。

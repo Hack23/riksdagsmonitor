@@ -3,15 +3,14 @@ date: 2026-05-15
 subfolder: motions
 slug: 2026-05-15-motions
 source_folder: analysis/daily/2026-05-15/motions
-generated_at: 2026-05-28T15:56:17.103Z
+generated_at: 2026-05-28T22:29:32.112Z
 language: en
 layout: article
 ---
-## Executive Brief
+## What Happened
 <!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/motions/executive-brief.md -->
 
-### 🎯 BLUF
-
+### Lede
 On 13 May 2026 — four months before Sweden's general election — all four opposition parties filed 13 simultaneous motions rejecting the Tidö coalition's four-bill migration restriction package, which would abolish permanent residence permits, tighten return enforcement, strengthen "good character" deportation criteria, and expand detention powers. The cross-party opposition front (S, C, V, MP) signals a fundamental political fault line that will define the 2026 election campaign, with migration policy positioning as the central battleground.
 
 ### 🧭 3 Decisions This Brief Supports
@@ -26,7 +25,7 @@ On 13 May 2026 — four months before Sweden's general election — all four opp
 
 | # | Finding | Evidence | Confidence |
 |---|---------|----------|------------|
-| 1 | Cross-party opposition block on all four migration bills | HD024152-154, 159-161, 167-169, 173, 182 (13 dok_ids) | HIGH [B2] |
+| 1 | Cross-party opposition block on all four migration bills | Riksdag document #024152 (HD024152)-154, 159-161, 167-169, 173, 182 (13 dok_ids) | HIGH [B2] |
 | 2 | S files 6 motions — largest single-party volume | HD024151-155, 162 | VERY HIGH [A1] |
 | 3 | V files most migration motions (4) opposing detention expansion | HD024167-169, 182 | VERY HIGH [A1] |
 | 4 | Election proximity (May 2026, 4 months to election) multiplies policy stakes | 2026-09-13 election date | HIGH [B2] |
@@ -55,9 +54,9 @@ Use this guide to read the article as a political-intelligence product rather th
 
 | Icon | Reader need | What you'll get |
 |---|---|---|
-| 📊 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
-| 🧠 | [Synthesis Summary](#rm-synthesis-summary) | evidence-anchored narrative consolidating primary sources into one coherent story line |
-| 🎯 | [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps |
+| 📊 | [Lede and editorial decisions](#rm-what-happened) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
+| 🧠 | [Why It Matters](#rm-why-it-matters) | evidence-anchored narrative consolidating primary sources into one coherent story line |
+| 🎯 | [Key Judgments](#rm-key-findings) | confidence-bearing political-intelligence conclusions and collection gaps |
 | 📈 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals |
 | 👥 | [Stakeholder Perspectives](#rm-stakeholder-perspectives) | winners, losers and undecided actors with stake-weighted positions and pressure points |
 | 🔢 | [Coalition Mathematics](#rm-coalition-mathematics) | parliamentary arithmetic showing exactly who can pass or block this measure and at what margin |
@@ -73,10 +72,10 @@ Use this guide to read the article as a political-intelligence product rather th
 | ⚙️ | [Implementation Feasibility](#rm-implementation-feasibility) | delivery feasibility, capability gaps, timelines and execution risks for the proposed action |
 | 📰 | [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder |
 | 😈 | [Devil's Advocate](#rm-devils-advocate) | alternative hypotheses, steel-manned counter-arguments and the strongest case against the lead reading |
-| 🏷️ | [Classification Results](#rm-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
-| 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
-| 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
-| 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 🏷️ | [Deep Dive: Classification Results](#rm-deep-dive-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
+| 🔀 | [Deep Dive: Cross-Reference Map](#rm-deep-dive-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
+| 🔬 | [Deep Dive: Methodology & Limitations](#rm-deep-dive-methodology--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
+| 📦 | [Deep Dive: Data Download Manifest](#rm-deep-dive-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
 | 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
@@ -91,9 +90,9 @@ Use this guide to read the article as a political-intelligence product rather th
 | 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
-| 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
+| 🏷️ | [Audit appendix](#rm-deep-dive-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
-## Synthesis Summary
+## Why It Matters
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/motions/synthesis-summary.md -->
 
 ### Lead Judgment
@@ -158,7 +157,7 @@ Sources are primary: all 20 dok_ids verified against riksdag-regering-mcp (datas
 
 ---
 
-## Intelligence Assessment — Key Judgments
+## Key Findings
 <!-- source: intelligence-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/motions/intelligence-assessment.md -->
 
 ### Key Judgments
@@ -1398,7 +1397,7 @@ After weighing the three competing hypotheses:
 
 **Revised synthesis judgment**: The motion batch represents independent-but-aligned opposition responses to an unpopular (among liberal and social-democratic electorates) government migration agenda. Legislative success is unlikely but not negligible (25% rather than 10%). The electoral function serves opposition mobilisation primarily, but with a meaningful risk of government counter-framing.
 
-## Classification Results
+## Deep Dive: Classification Results
 <!-- source: classification-results.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/motions/classification-results.md -->
 
 ### Classification Framework
@@ -1461,7 +1460,7 @@ pie title Motion Policy Domain Distribution
 - Party membership = special category data — all attributions from official parliamentary documents.
 - Data minimisation applied: only dok_id, party, committee, title, and legislative posture stored.
 
-## Cross-Reference Map
+## Deep Dive: Cross-Reference Map
 <!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/motions/cross-reference-map.md -->
 
 ### Proposition-to-Motion Linkage
@@ -1513,7 +1512,7 @@ graph LR
 | HD024160 | C | HD024167 (V) | Prop. 265 — C=ECHR amendment, V=full rejection |
 | HD024151 | S | HD024156 (C) | Both on transparency/ethics — different bills |
 
-## Methodology Reflection & Limitations
+## Deep Dive: Methodology & Limitations
 <!-- source: methodology-reflection.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/motions/methodology-reflection.md -->
 
 ### ICD 203 Compliance Audit
@@ -1575,7 +1574,7 @@ graph LR
 
 This analysis was produced in a single session from raw MCP data and pre-warmed IMF context. Party attribution was verified via text pattern matching due to empty `parti` fields in MCP responses. All 20 documents were individually reviewed. The analysis reflects the analyst's best professional judgment as of 2026-05-15T08:00Z.
 
-## Data Download Manifest
+## Deep Dive: Data Download Manifest
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/motions/data-download-manifest.md -->
 
 > ℹ️ **Data-Only Pipeline**: This script downloads and persists raw data.
@@ -1645,8 +1644,7 @@ subfolder: "motions"
 
 **Forfatter**: James Pether Sörling | **Dato**: 2026-05-15 | **Klassifikation**: OFFENTLIG | **Konfidensgrad**: HØJ [B2]
 
-### 🎯 BLUF
-
+### Lede
 Den 13. maj 2026 — fire måneder inden Sveriges valg — indgav alle fire oppositionspartier 13 samtidige motioner, der afviser Tidö-koalitionens fire-lovs migrationsstramningspakke, som ville afskaffe permanente opholdstilladelser, stramme hjemsendelsen, styrke deportationskriterierne og udvide frihedsberøvelsesmulighederne. Den samlede oppositionsfront (S, C, V, MP) signalerer en grundlæggende politisk skillelinje, der vil definere valgkampen 2026 med migrationspolitik som centralt kampagneemne.
 
 ### 🧭 3 beslutninger dette underlag understøtter
@@ -1680,8 +1678,7 @@ Migrationsmotionerne svarer direkte på fire lovforslag, der udgør Sveriges mes
 
 **Autor**: James Pether Sörling | **Datum**: 2026-05-15 | **Klassifizierung**: ÖFFENTLICH | **Vertraulichkeitsgrad**: HOCH [B2]
 
-### 🎯 BLUF
-
+### Lede
 Am 13. Mai 2026 — vier Monate vor der schwedischen Wahl — reichten alle vier Oppositionsparteien 13 gleichzeitige Anträge ein, die das Vier-Gesetze-Migrationsrestriktionspaket der Tidö-Koalition ablehnen, das unbefristete Aufenthaltsgenehmigungen abschaffen, die Rückführungsdurchsetzung verschärfen, die Ausweisungskriterien für "guten Leumund" stärken und die Abschiebehaftmöglichkeiten erweitern würde. Die gesamte Oppositionsfront (S, C, V, MP) signalisiert eine grundlegende politische Trennlinie, die den Wahlkampf 2026 prägen wird, mit der Migrationspolitik als zentralem Schlachtfeld.
 
 ### 🧭 3 Entscheidungen, die dieser Bericht unterstützt
@@ -1711,8 +1708,7 @@ Am 13. Mai 2026 — vier Monate vor der schwedischen Wahl — reichten alle vier
 
 **Autor**: James Pether Sörling | **Fecha**: 2026-05-15 | **Clasificación**: PÚBLICO | **Nivel de confianza**: ALTO [B2]
 
-### 🎯 BLUF
-
+### Lede
 El 13 de mayo de 2026 — cuatro meses antes de las elecciones suecas — los cuatro partidos de oposición presentaron simultáneamente 13 mociones rechazando el paquete de cuatro leyes de restricciones migratorias de la coalición Tidö, que aboliría los permisos de residencia permanente, endurecería la ejecución de retornos, reforzaría los criterios de deportación por "buena conducta" y ampliaría las posibilidades de detención. El frente de oposición conjunto (S, C, V, MP) señala una línea de fractura política fundamental que definirá la campaña electoral de 2026, con la política migratoria como campo de batalla central.
 
 ### 🧭 3 decisiones que apoya este informe
@@ -1742,8 +1738,7 @@ El 13 de mayo de 2026 — cuatro meses antes de las elecciones suecas — los cu
 
 **Tekijä**: James Pether Sörling | **Päivämäärä**: 2026-05-15 | **Luokittelu**: JULKINEN | **Luotettavuus**: KORKEA [B2]
 
-### 🎯 BLUF
-
+### Lede
 13. toukokuuta 2026 — neljä kuukautta ennen Ruotsin vaaleja — kaikki neljä oppositiopuoluetta jättivät 13 samanaikaista aloitetta, joissa hylätään Tidö-koalition neljän lain maahanmuuttorajoituspaketti, joka poistaisi pysyvät oleskeluluvat, tiukentaisi palauttamista, vahvistaisi karkottamisperusteita ja laajentaisi säilöönottomahdollisuuksia. Yhteinen oppositiorintama (S, C, V, MP) signaloi perustavaa poliittista jakolinjaa, joka tulee määrittämään vuoden 2026 vaalikampanjan, jossa maahanmuuttopolitiikka on keskeinen taistelukenttä.
 
 ### 🧭 3 päätöstä, joita tämä tiivistelmä tukee
@@ -1773,8 +1768,7 @@ El 13 de mayo de 2026 — cuatro meses antes de las elecciones suecas — los cu
 
 **Auteur** : James Pether Sörling | **Date** : 2026-05-15 | **Classification** : PUBLIC | **Niveau de confiance** : ÉLEVÉ [B2]
 
-### 🎯 BLUF
-
+### Lede
 Le 13 mai 2026 — quatre mois avant les élections suédoises — les quatre partis d'opposition ont déposé simultanément 13 motions rejetant le paquet de restrictions migratoires en quatre lois de la coalition Tidö, qui abolirait les permis de séjour permanents, renforcerait l'exécution des retours, durcirait les critères d'expulsion pour "bonne conduite" et élargirait les possibilités de rétention. Le front d'opposition commun (S, C, V, MP) signale une ligne de fracture politique fondamentale qui définira la campagne électorale 2026, avec la politique migratoire comme champ de bataille central.
 
 ### 🧭 3 décisions que ce rapport soutient
@@ -1900,8 +1894,7 @@ subfolder: "motions"
 ## Executive Brief Nl
 <!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/motions/executive-brief_nl.md -->
 
-### 🎯 BLUF
-
+### Lede
 Op 13 mei 2026 — vier maanden voor de Zweedse verkiezingen — dienden alle vier oppositiepartijen gelijktijdig 13 moties in die het vier-wetspakket voor migratiebeperking van de Tidö-coalitie afwijzen, dat permanente verblijfsvergunningen zou afschaffen, de terugkeerhandhaving zou aanscherpen, de uitzetcriteria voor "goed gedrag" zou versterken en de detentiemogelijkheden zou uitbreiden. Het gezamenlijke oppositiefront (S, C, V, MP) signaleert een fundamentele politieke breuklijn die de verkiezingscampagne 2026 zal definiëren, met migratiebeleid als centraal strijdtoneel.
 
 ### 🧭 3 beslissingen die dit rapport ondersteunt
@@ -1931,8 +1924,7 @@ Op 13 mei 2026 — vier maanden voor de Zweedse verkiezingen — dienden alle vi
 
 **Forfatter**: James Pether Sörling | **Dato**: 2026-05-15 | **Klassifisering**: OFFENTLIG | **Konfidensnivå**: HØY [B2]
 
-### 🎯 BLUF
-
+### Lede
 Den 13. mai 2026 — fire måneder før Sveriges riksdagsvalg — leverte alle fire opposisjonspartier 13 samtidige motioner som avviser Tidö-koalisjonens fire-lovs migrasjonsinnstrammingspakke, som ville avvikle permanente oppholdstillatelser, stramme inn tvangsretur, styrke deportasjonskriteriene og utvide interneringshjemlene. Den felles opposisjonsfronten (S, C, V, MP) signaliserer en grunnleggende politisk skillelinje som vil definere valgkampen 2026, med migrasjonspolitikk som sentralt kampanjefelt.
 
 ### 🧭 3 beslutninger dette underlaget støtter
@@ -1962,8 +1954,7 @@ Den 13. mai 2026 — fire måneder før Sveriges riksdagsvalg — leverte alle f
 
 **Författare**: James Pether Sörling | **Datum**: 2026-05-15 | **Klassificering**: OFFENTLIG | **Konfidensgrad**: HÖG [B2]
 
-### 🎯 BLUF
-
+### Lede
 Den 13 maj 2026 — fyra månader före Sveriges riksdagsval — lämnade alla fyra oppositionspartier 13 simultana motioner som avvisar Tidökoalitionens fyra-lagspaketet för migrationsrestriktioner, vilket skulle avskaffa permanenta uppehållstillstånd, skärpa återvändandeverkställigheten, stärka deportationskriterierna för "gott vandel" och utvidga förvarsmöjligheterna. Den övergripande oppositionsfronten (S, C, V, MP) signalerar en grundläggande politisk skiljelinje som kommer att definiera valkampanjen 2026, med migrationspolitiken som centralt slagfält.
 
 ### 🧭 3 beslut detta underlag stöder

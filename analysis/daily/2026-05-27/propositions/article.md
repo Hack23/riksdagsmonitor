@@ -3,11 +3,11 @@ date: 2026-05-27
 subfolder: propositions
 slug: 2026-05-27-propositions
 source_folder: analysis/daily/2026-05-27/propositions
-generated_at: 2026-05-28T15:56:17.622Z
+generated_at: 2026-05-28T22:29:32.719Z
 language: en
 layout: article
 ---
-## Executive Brief
+## What Happened
 <!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-27/propositions/executive-brief.md -->
 
 <!-- SPDX-FileCopyrightText: 2024-2026 Hack23 AB -->
@@ -41,7 +41,7 @@ layout: article
 
 | # | Finding | Confidence | Source |
 |---|---------|------------|--------|
-| 1 | Prop. 2025/26:271 enables home abortions by removing hospital/facility requirement | A2 HIGH | HD03271 §6.1 |
+| 1 | Prop. 2025/26:271 enables home abortions by removing hospital/facility requirement | A2 HIGH | Riksdag document #03271 (HD03271) §6.1 |
 | 2 | Midwives (barnmorskor) to independently handle medical abortions — physician no longer required | A2 HIGH | HD03271 §7 |
 | 3 | Telemedicine and flexible drug dispensing explicitly enabled | A2 HIGH | HD03271 §6.2-6.3 |
 | 4 | 18-week time limit retained — focus is access, not expansion | A2 HIGH | HD03271 §1 proposed text |
@@ -75,8 +75,8 @@ Use this guide to read the article as a political-intelligence product rather th
 
 | Icon | Reader need | What you'll get |
 |---|---|---|
-| 📊 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
-| 🧠 | [Synthesis Summary](#rm-synthesis-summary) | evidence-anchored narrative consolidating primary sources into one coherent story line |
+| 📊 | [Lede and editorial decisions](#rm-what-happened) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
+| 🧠 | [Why It Matters](#rm-why-it-matters) | evidence-anchored narrative consolidating primary sources into one coherent story line |
 | 📈 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals |
 | 👥 | [Stakeholder Perspectives](#rm-stakeholder-perspectives) | winners, losers and undecided actors with stake-weighted positions and pressure points |
 | 🔢 | [Coalition Mathematics](#rm-coalition-mathematics) | parliamentary arithmetic showing exactly who can pass or block this measure and at what margin |
@@ -94,9 +94,9 @@ Use this guide to read the article as a political-intelligence product rather th
 | ⚙️ | [Implementation Feasibility](#rm-implementation-feasibility) | delivery feasibility, capability gaps, timelines and execution risks for the proposed action |
 | 📰 | [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder |
 | 😈 | [Devil's Advocate](#rm-devils-advocate) | alternative hypotheses, steel-manned counter-arguments and the strongest case against the lead reading |
-| 🏷️ | [Political Classification](#rm-political-classification) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
-| 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
-| 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 🏷️ | [Deep Dive: Political Classification](#rm-deep-dive-political-classification) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
+| 🔀 | [Deep Dive: Cross-Reference Map](#rm-deep-dive-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
+| 📦 | [Deep Dive: Data Download Manifest](#rm-deep-dive-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
 | 📝 | [Analysis Index](#rm-analysis-index) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
@@ -113,9 +113,9 @@ Use this guide to read the article as a political-intelligence product rather th
 | 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Lagradet Tracking](#rm-lagradet-tracking) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
-| 🏷️ | [Audit appendix](#rm-political-classification) | classification, cross-reference, methodology and manifest evidence for reviewers |
+| 🏷️ | [Audit appendix](#rm-deep-dive-political-classification) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
-## Synthesis Summary
+## Why It Matters
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-27/propositions/synthesis-summary.md -->
 
 <!-- SPDX-FileCopyrightText: 2024-2026 Hack23 AB -->
@@ -1979,7 +1979,7 @@ For Riksdagsmonitor content, the optimal framing for each language:
 
 ---
 
-## Political Classification
+## Deep Dive: Political Classification
 <!-- source: political-classification.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-27/propositions/political-classification.md -->
 
 <!-- SPDX-FileCopyrightText: 2024-2026 Hack23 AB -->
@@ -2085,7 +2085,7 @@ stateDiagram-v2
 
 ---
 
-## Cross-Reference Map
+## Deep Dive: Cross-Reference Map
 <!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-27/propositions/cross-reference-map.md -->
 
 <!-- SPDX-FileCopyrightText: 2024-2026 Hack23 AB -->
@@ -2158,7 +2158,7 @@ graph LR
 
 ---
 
-## Data Download Manifest
+## Deep Dive: Data Download Manifest
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-27/propositions/data-download-manifest.md -->
 
 > ℹ️ **Data-Only Pipeline**: This script downloads and persists raw data.

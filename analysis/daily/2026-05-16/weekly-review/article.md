@@ -3,11 +3,11 @@ date: 2026-05-16
 subfolder: weekly-review
 slug: 2026-05-16-weekly-review
 source_folder: analysis/daily/2026-05-16/weekly-review
-generated_at: 2026-05-28T15:56:17.150Z
+generated_at: 2026-05-28T22:29:32.170Z
 language: en
 layout: article
 ---
-## Executive Brief
+## What Happened
 <!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-16/weekly-review/executive-brief.md -->
 
 **For**: Political analysts, journalists, democratic accountability observers  
@@ -24,7 +24,7 @@ layout: article
 
 ### 🎯 Priority Intelligence Assessments
 
-#### PIR-1: Constitutional Reform — Transparency Legislation (HD024184)
+#### PIR-1: Constitutional Reform — Transparency Legislation (Riksdag document #024184 (HD024184))
 **Status**: ACTIVE — Centerpartiet challenges prop. 2025/26:258  
 **Assessment**: The C motion HD024184 ("med anledning av prop. 2025/26:258") signals that the cross-bloc parliamentary support the government needs for transparency legislation is *not* secured. C's core objection — that the proposal serves to legitimize undisclosed labor-union-to-party funding while providing only cosmetic transparency — cuts at the government's claim that the legislation advances democratic norms. With KU committee disposition expected before June recess, the motion creates a visible accountability fork: pass the bill without meaningful opposition support, or delay and risk the narrative that transparency reform was performative.
 
@@ -70,9 +70,9 @@ Use this guide to read the article as a political-intelligence product rather th
 
 | Icon | Reader need | What you'll get |
 |---|---|---|
-| 📊 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
-| 🧠 | [Synthesis Summary](#rm-synthesis-summary) | evidence-anchored narrative consolidating primary sources into one coherent story line |
-| 🎯 | [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps |
+| 📊 | [Lede and editorial decisions](#rm-what-happened) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
+| 🧠 | [Why It Matters](#rm-why-it-matters) | evidence-anchored narrative consolidating primary sources into one coherent story line |
+| 🎯 | [Key Judgments](#rm-key-findings) | confidence-bearing political-intelligence conclusions and collection gaps |
 | 📈 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals |
 | 👥 | [Stakeholder Perspectives](#rm-stakeholder-perspectives) | winners, losers and undecided actors with stake-weighted positions and pressure points |
 | 🔢 | [Coalition Mathematics](#rm-coalition-mathematics) | parliamentary arithmetic showing exactly who can pass or block this measure and at what margin |
@@ -88,10 +88,10 @@ Use this guide to read the article as a political-intelligence product rather th
 | ⚙️ | [Implementation Feasibility](#rm-implementation-feasibility) | delivery feasibility, capability gaps, timelines and execution risks for the proposed action |
 | 📰 | [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder |
 | 😈 | [Devil's Advocate](#rm-devils-advocate) | alternative hypotheses, steel-manned counter-arguments and the strongest case against the lead reading |
-| 🏷️ | [Classification Results](#rm-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
-| 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
-| 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
-| 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 🏷️ | [Deep Dive: Classification Results](#rm-deep-dive-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
+| 🔀 | [Deep Dive: Cross-Reference Map](#rm-deep-dive-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
+| 🔬 | [Deep Dive: Methodology & Limitations](#rm-deep-dive-methodology--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
+| 📦 | [Deep Dive: Data Download Manifest](#rm-deep-dive-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
 | 📝 | [Analysis Index](#rm-analysis-index) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Cross Session Intelligence](#rm-cross-session-intelligence) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
@@ -112,9 +112,9 @@ Use this guide to read the article as a political-intelligence product rather th
 | 📝 | [Session Baseline](#rm-session-baseline) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Workflow Audit](#rm-workflow-audit) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
-| 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
+| 🏷️ | [Audit appendix](#rm-deep-dive-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
-## Synthesis Summary
+## Why It Matters
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-16/weekly-review/synthesis-summary.md -->
 
 **Topic cluster**: Constitutional transparency, Russian military escalation, defence modernization  
@@ -206,7 +206,7 @@ timeline
 | Tidö coalition stability | STABLE — no no-confidence signals; opposition in audit mode | Monitor through summer recess |
 | Aid policy accountability | ACTIVE — V interpellations scheduled for week 21 | 2026-05-18 debate |
 
-## Intelligence Assessment — Key Judgments
+## Key Findings
 <!-- source: intelligence-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-16/weekly-review/intelligence-assessment.md -->
 
 ---
@@ -1302,7 +1302,7 @@ The Russian aggression law (HD11813 context) is being covered internationally:
 | Opposition audit mode effectiveness | MEDIUM [B2] | MEDIUM-LOW [C3] | ↓ moderate |
 | Week 20 overall significance | HIGH (8.5 composite) | HIGH (8.0 revised) | ↓ minor |
 
-## Classification Results
+## Deep Dive: Classification Results
 <!-- source: classification-results.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-16/weekly-review/classification-results.md -->
 
 ### Document Classification
@@ -1344,7 +1344,7 @@ The Russian aggression law (HD11813 context) is being covered internationally:
 3. **Voting record for KU34**: Plenary vote in week 21; not yet completed
 4. **Aurora 26 outcome assessment**: Exercise running; final assessment not public
 
-## Cross-Reference Map
+## Deep Dive: Cross-Reference Map
 <!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-16/weekly-review/cross-reference-map.md -->
 
 **Tier-C cross-type synthesis**: Maps this week's documents against sibling analyses from 2026-05-09 to 2026-05-15
@@ -1408,7 +1408,7 @@ graph LR
 | 2026-05-14/committeeReports | ✅ | N/A | MEDIUM |
 | 2026-05-14/interpellations | ✅ | N/A | MEDIUM |
 
-## Methodology Reflection & Limitations
+## Deep Dive: Methodology & Limitations
 <!-- source: methodology-reflection.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-16/weekly-review/methodology-reflection.md -->
 
 **Pass-2 status**: executed in full  
@@ -1459,7 +1459,7 @@ graph LR
 5. Revised scenario probabilities (Scenario B: 25% → 30%; Scenario A: 65% → 60%)
 6. Added information gaps table to intelligence-assessment
 
-## Data Download Manifest
+## Deep Dive: Data Download Manifest
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-16/weekly-review/data-download-manifest.md -->
 
 **Lookback**: 2026-05-09 → 2026-05-16 (7-day window)  

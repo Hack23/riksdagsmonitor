@@ -3,11 +3,11 @@ date: 2026-04-21
 subfolder: committeeReports
 slug: 2026-04-21-committeeReports
 source_folder: analysis/daily/2026-04-21/committeeReports
-generated_at: 2026-05-28T15:56:15.409Z
+generated_at: 2026-05-28T22:29:30.217Z
 language: en
 layout: article
 ---
-## Executive Brief
+## What Happened
 <!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/executive-brief.md -->
 
 | Field | Value |
@@ -139,8 +139,8 @@ Use this guide to read the article as a political-intelligence product rather th
 
 | Icon | Reader need | What you'll get |
 |---|---|---|
-| 📊 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
-| 🧠 | [Synthesis Summary](#rm-synthesis-summary) | evidence-anchored narrative consolidating primary sources into one coherent story line |
+| 📊 | [Lede and editorial decisions](#rm-what-happened) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
+| 🧠 | [Why It Matters](#rm-why-it-matters) | evidence-anchored narrative consolidating primary sources into one coherent story line |
 | 📈 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals |
 | 👥 | [Stakeholder Perspectives](#rm-stakeholder-perspectives) | winners, losers and undecided actors with stake-weighted positions and pressure points |
 | 🔢 | [Coalition Mathematics](#rm-coalition-mathematics) | parliamentary arithmetic showing exactly who can pass or block this measure and at what margin |
@@ -150,10 +150,10 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🧮 | [SWOT Analysis](#rm-swot-analysis) | strengths, weaknesses, opportunities and threats matrix grounded in primary-source evidence |
 | 🛡️ | [Threat Analysis](#rm-threat-analysis) | actor capabilities, intent and threat vectors targeting institutional integrity |
 | 🌍 | [Comparative International](#rm-comparative-international) | peer-country comparisons (Nordic, EU, OECD) showing how similar measures fared elsewhere |
-| 🏷️ | [Classification Results](#rm-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
-| 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
-| 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
-| 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 🏷️ | [Deep Dive: Classification Results](#rm-deep-dive-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
+| 🔀 | [Deep Dive: Cross-Reference Map](#rm-deep-dive-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
+| 🔬 | [Deep Dive: Methodology & Limitations](#rm-deep-dive-methodology--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
+| 📦 | [Deep Dive: Data Download Manifest](#rm-deep-dive-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
 | 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
@@ -169,9 +169,9 @@ Use this guide to read the article as a political-intelligence product rather th
 | 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Historical Baseline](#rm-historical-baseline) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
-| 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
+| 🏷️ | [Audit appendix](#rm-deep-dive-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
-## Synthesis Summary
+## Why It Matters
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/synthesis-summary.md -->
 
 **Documents Analyzed**: 14 committee reports (7 carried over + 7 new including HD01FiU48)  
@@ -3019,7 +3019,7 @@ graph LR
 
 ---
 
-## Classification Results
+## Deep Dive: Classification Results
 <!-- source: classification-results.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/classification-results.md -->
 
 ---
@@ -3105,7 +3105,7 @@ pie title Committee Reports 2026-04-21 by Domain
 
 **Classification Confidence**: 🟩 HIGH — All 17 documents mapped from official *riksdagen.se* document metadata + committee handling cards.
 
-## Cross-Reference Map
+## Deep Dive: Cross-Reference Map
 <!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/cross-reference-map.md -->
 
 ---
@@ -3114,7 +3114,7 @@ pie title Committee Reports 2026-04-21 by Domain
 
 | Betänkande | Upstream proposition / skrivelse | Parallel motions | Downstream vote |
 |-----------|-----------------------------------|------------------|-----------------|
-| **HD01FiU48** | Prop. 2025/26:220 (extra ändringsbudget för 2026) | HD024082 (S), HD024098 (MP) — *counter-motions* | Kammaren 2026-04-23 |
+| **HD01FiU48** | Prop. 2025/26:220 (extra ändringsbudget för 2026) | Riksdag document #024082 (HD024082) (S), HD024098 (MP) — *counter-motions* | Kammaren 2026-04-23 |
 | **HD01SfU22** | Prop. 2025/26:214 (inhibition av verkställighet) | HD02... (V), HD02... (MP) *pending* | Kammaren 2026-04-29 |
 | **HD01KU32** | Prop. 2025/26:109 (*vilande grundlagsändring*) | — | Post-election Riksdag (Sept 2026 +) |
 | **HD01KU33** | Prop. 2025/26:110 (*vilande grundlagsändring*) | — | Post-election Riksdag (Sept 2026 +) |
@@ -3238,7 +3238,7 @@ See [`../motions/cross-reference-map.md`](https://github.com/Hack23/riksdagsmoni
 
 **Next Review**: 2026-04-28 (after kammaren votes on FiU48 + SfU22)
 
-## Methodology Reflection & Limitations
+## Deep Dive: Methodology & Limitations
 <!-- source: methodology-reflection.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/methodology-reflection.md -->
 
 ---
@@ -3389,7 +3389,7 @@ The motions cycle for the prior week (2026-04-14 → 04-17) produced 18 analysis
 
 ---
 
-## Data Download Manifest
+## Deep Dive: Data Download Manifest
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/data-download-manifest.md -->
 
 **Data Sources**: get_betankanden, get_dokument_innehall

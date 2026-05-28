@@ -3,11 +3,11 @@ date: 2026-04-20
 subfolder: motions
 slug: 2026-04-20-motions
 source_folder: analysis/daily/2026-04-20/motions
-generated_at: 2026-05-28T15:56:15.391Z
+generated_at: 2026-05-28T22:29:30.196Z
 language: en
 layout: article
 ---
-## Executive Brief
+## What Happened
 <!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/executive-brief.md -->
 
 | Field | Value |
@@ -29,7 +29,7 @@ Between 2026-04-13 and 2026-04-17 Sweden's four major opposition parties (S, V, 
 
 1. **This is campaign-narrative construction, not coalition rehearsal.** ACH analysis assigns P=0.50 to the campaign-narrative hypothesis vs P=0.35 to coalition-rehearsal. The opposition is locking in timestamped talking points before the summer recess, not preparing to govern.
 
-2. **S is strategically silent on deportation.** S filed counter-motions on reception (HD024080), housing (HD024079), and fuel tax (HD024082) — but **nothing on prop. 2025/26:235** (stricter deportation). This is revealed preference: S has calculated deportation is a losing issue for a centre-left party. The silence fragments the opposition in exactly one place and materially changes post-election coalition calculus.
+2. **S is strategically silent on deportation.** S filed counter-motions on reception (Riksdag document #024080 (HD024080)), housing (HD024079), and fuel tax (HD024082) — but **nothing on prop. 2025/26:235** (stricter deportation). This is revealed preference: S has calculated deportation is a losing issue for a centre-left party. The silence fragments the opposition in exactly one place and materially changes post-election coalition calculus.
 
 3. **V's "universal rejectionist" pattern is the single largest opposition vulnerability.** V filed rejection-structured motions on reception (HD024076), deportation (HD024090), and arms export (HD024091). SD attack ads can weaponise this as "V abandons Ukraine + defends criminals" — a cost of 1–2 polling points if V does not pair each rejection with a concrete positive alternative.
 
@@ -117,8 +117,8 @@ Use this guide to read the article as a political-intelligence product rather th
 
 | Icon | Reader need | What you'll get |
 |---|---|---|
-| 📊 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
-| 🧠 | [Synthesis Summary](#rm-synthesis-summary) | evidence-anchored narrative consolidating primary sources into one coherent story line |
+| 📊 | [Lede and editorial decisions](#rm-what-happened) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
+| 🧠 | [Why It Matters](#rm-why-it-matters) | evidence-anchored narrative consolidating primary sources into one coherent story line |
 | 📈 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals |
 | 👥 | [Stakeholder Perspectives](#rm-stakeholder-perspectives) | winners, losers and undecided actors with stake-weighted positions and pressure points |
 | 🔢 | [Coalition Mathematics](#rm-coalition-mathematics) | parliamentary arithmetic showing exactly who can pass or block this measure and at what margin |
@@ -127,10 +127,10 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🧮 | [SWOT Analysis](#rm-swot-analysis) | strengths, weaknesses, opportunities and threats matrix grounded in primary-source evidence |
 | 🛡️ | [Threat Analysis](#rm-threat-analysis) | actor capabilities, intent and threat vectors targeting institutional integrity |
 | 🌍 | [Comparative International](#rm-comparative-international) | peer-country comparisons (Nordic, EU, OECD) showing how similar measures fared elsewhere |
-| 🏷️ | [Classification Results](#rm-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
-| 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
-| 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
-| 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 🏷️ | [Deep Dive: Classification Results](#rm-deep-dive-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
+| 🔀 | [Deep Dive: Cross-Reference Map](#rm-deep-dive-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
+| 🔬 | [Deep Dive: Methodology & Limitations](#rm-deep-dive-methodology--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
+| 📦 | [Deep Dive: Data Download Manifest](#rm-deep-dive-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
 | 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
@@ -146,9 +146,9 @@ Use this guide to read the article as a political-intelligence product rather th
 | 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Historical Baseline](#rm-historical-baseline) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
-| 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
+| 🏷️ | [Audit appendix](#rm-deep-dive-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
-## Synthesis Summary
+## Why It Matters
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/synthesis-summary.md -->
 
 | Field | Value |
@@ -3202,7 +3202,7 @@ quadrantChart
 
 ---
 
-## Classification Results
+## Deep Dive: Classification Results
 <!-- source: classification-results.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/classification-results.md -->
 
 ---
@@ -3296,7 +3296,7 @@ V and MP both reject prop. 2025/26:228 on arms export regulation, continuing a c
 #### 4. Healthcare Competence — Three-Party Rejection (MEDIUM Confidence 🟧)
 The unusual alignment of S, V, and C against prop. 2025/26:216 (municipal healthcare medical competence) reflects a substantive policy disagreement about regulatory design, not just partisan positioning.
 
-## Cross-Reference Map
+## Deep Dive: Cross-Reference Map
 <!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/cross-reference-map.md -->
 
 ---
@@ -3429,7 +3429,7 @@ The April 14–17 motions build on the April 15–17 batch covered in the previo
 3. **Translation trigger**: These articles will be translated by news-translate workflow into DA, NO, FI, DE, FR, ES, NL, AR, HE, JA, KO, ZH
 4. **CIA Platform connection**: Voting records for these motions will appear at https://hack23.github.io/cia/ when chamber votes occur (June 2026)
 
-## Methodology Reflection & Limitations
+## Deep Dive: Methodology & Limitations
 <!-- source: methodology-reflection.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/methodology-reflection.md -->
 
 | Field | Value |
@@ -3495,7 +3495,7 @@ Checked against ai-driven-analysis-guide v5.1 rules 1–10.
 - No per-document cluster analyses
 - Synthesis at ~100 lines; SWOT at ~126 lines; risk at ~109 lines
 
-## Data Download Manifest
+## Deep Dive: Data Download Manifest
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/data-download-manifest.md -->
 
 ---

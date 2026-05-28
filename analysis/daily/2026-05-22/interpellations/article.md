@@ -3,11 +3,11 @@ date: 2026-05-22
 subfolder: interpellations
 slug: 2026-05-22-interpellations
 source_folder: analysis/daily/2026-05-22/interpellations
-generated_at: 2026-05-28T15:56:17.415Z
+generated_at: 2026-05-28T22:29:32.485Z
 language: en
 layout: article
 ---
-## Executive Brief
+## What Happened
 <!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/interpellations/executive-brief.md -->
 
 **Datum**: 2026-05-22 | **Typ**: Interpellationsdebatt-analys | **Djup**: Hög  
@@ -16,9 +16,8 @@ layout: article
 
 ---
 
-### 🎯 BLUF
-
-Social Democrats filed seven interpellations on 22 May 2026 targeting four Tidögovernment portfolios — a coordinated pre-election accountability strategy with svarsdatum 5 June and 115 days to the election. The most dangerous interpellation for the government is HD10505 (criminal HVB-homes still operating), which puts Social Services Minister Waltersson Grönvall in an accountability bind on Sweden's top electoral issue.
+### Lede
+Social Democrats filed seven interpellations on 22 May 2026 targeting four Tidögovernment portfolios — a coordinated pre-election accountability strategy with svarsdatum 5 June and 115 days to the election. The most dangerous interpellation for the government is Riksdag document #10505 (HD10505) (criminal HVB-homes still operating), which puts Social Services Minister Waltersson Grönvall in an accountability bind on Sweden's top electoral issue.
 
 ### Sammanfattning
 
@@ -67,12 +66,12 @@ Use this guide to read the article as a political-intelligence product rather th
 
 | Icon | Reader need | What you'll get |
 |---|---|---|
-| 📊 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
-| 🧠 | [Synthesis Summary](#rm-synthesis-summary) | evidence-anchored narrative consolidating primary sources into one coherent story line |
+| 📊 | [Lede and editorial decisions](#rm-what-happened) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
+| 🧠 | [Why It Matters](#rm-why-it-matters) | evidence-anchored narrative consolidating primary sources into one coherent story line |
 | 🔮 | [Scenarios](#rm-scenario-analysis) | alternative outcomes with probabilities, triggers, and warning signs |
 | ⚠️ | [Risk assessment](#rm-risk-assessment) | policy, electoral, institutional, communications, and implementation risk register |
-| 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
-| 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 🔬 | [Deep Dive: Methodology & Limitations](#rm-deep-dive-methodology--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
+| 📦 | [Deep Dive: Data Download Manifest](#rm-deep-dive-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
 | 📝 | [Actor Analysis](#rm-actor-analysis) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Civil Society Analysis](#rm-civil-society-analysis) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Coalition Stability](#rm-coalition-stability) | supporting analytical lens with primary-source evidence and audit-traceable citations |
@@ -103,9 +102,9 @@ Use this guide to read the article as a political-intelligence product rather th
 | 📝 | [Strategic Intelligence Brief](#rm-strategic-intelligence-brief) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Timeline Analysis](#rm-timeline-analysis) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
-| 🏷️ | [Audit appendix](#rm-methodology-reflection--limitations) | classification, cross-reference, methodology and manifest evidence for reviewers |
+| 🏷️ | [Audit appendix](#rm-deep-dive-methodology--limitations) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
-## Synthesis Summary
+## Why It Matters
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/interpellations/synthesis-summary.md -->
 
 ### Overview
@@ -842,7 +841,7 @@ Cutting civil society road safety organisations by more than 50% directly contra
 - Jonson's citation of fitness data (or absence)
 - Parliamentary calendar for interpellation debate scheduling (typically within 2-3 weeks of svarsdatum)
 
-## Methodology Reflection & Limitations
+## Deep Dive: Methodology & Limitations
 <!-- source: methodology-reflection.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/interpellations/methodology-reflection.md -->
 
 **Pass-2 status: executed in full**  
@@ -907,7 +906,7 @@ Cutting civil society road safety organisations by more than 50% directly contra
 
 **Analyst note**: This analysis covers the interpellation questions as filed. Material intelligence value will be added when ministerial responses are published by 5 June 2026. A follow-up analysis of ministerial answers is recommended for the week of 9 June 2026.
 
-## Data Download Manifest
+## Deep Dive: Data Download Manifest
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/interpellations/data-download-manifest.md -->
 
 > ℹ️ **Data-Only Pipeline**: This script downloads and persists raw data.
@@ -1592,8 +1591,7 @@ Riksdagens offene Daten. Interpellationen 2025/26:502–508. Eingereicht 2026-05
 
 ---
 
-### 🎯 BLUF
-
+### Lede
 Los Socialdemócratas presentaron siete interpelaciones el 22 de mayo de 2026 dirigidas a cuatro carteras del gobierno Tidö — una estrategia de rendición de cuentas preelectoral coordinada con fecha de respuesta el 5 de junio y 115 días para las elecciones. La interpelación más peligrosa para el gobierno es HD10505 (hogares HVB criminales aún en funcionamiento), que coloca a la Ministra de Servicios Sociales Waltersson Grönvall en un aprieto de rendición de cuentas en el principal tema electoral de Suecia.
 
 ### Resumen
@@ -1703,8 +1701,7 @@ Riksdagenin avoimet tiedot. Interpellaatiot 2025/26:502–508. Jätetty 2026-05-
 
 ---
 
-### 🎯 BLUF
-
+### Lede
 Les Sociaux-démocrates ont déposé sept interpellations le 22 mai 2026 ciblant quatre portefeuilles du gouvernement Tidö — une stratégie de responsabilité pré-électorale coordonnée avec svarsdatum le 5 juin et 115 jours avant les élections. L'interpellation la plus dangereuse pour le gouvernement est HD10505 (maisons HVB criminelles encore en activité), qui place la ministre des Affaires sociales Waltersson Grönvall dans un dilemme de responsabilité sur le principal enjeu électoral suédois.
 
 ### Résumé
@@ -1815,8 +1812,7 @@ HD10507 תוקפת את ההחלטה שהוכרזה ללא הודעה מוקדמ
 
 ---
 
-### 🎯 BLUF
-
+### Lede
 社会民主党（Socialdemokraterna）は2026年5月22日、ティード政権の4閣僚を標的に7件の質問主意書を提出した。6月5日を回答期限とした事前選挙の説明責任戦略であり、選挙まで115日のタイミングで実施された。政府にとって最も危険な質問主意書はHD10505（犯罪的HVBホームが依然として営業中）であり、スウェーデンの最大の選挙争点においてワルテルソン・グリョンヴァル社会大臣を説明責任のジレンマに追い込む。
 
 ### 概要
@@ -1927,8 +1923,7 @@ Riksdagen 공개 데이터. 대정부질문 2025/26:502–508. 2026-05-21 제출
 
 ---
 
-### 🎯 BLUF
-
+### Lede
 De Sociaal-democraten dienden op 22 mei 2026 zeven interpellaties in gericht op vier portefeuilles van het Tidö-kabinet — een gecoördineerde pre-electorale verantwoordingsstrategie met antwoorddatum 5 juni en 115 dagen voor de verkiezingen. De gevaarlijkste interpellatie voor de regering is HD10505 (criminele HVB-huizen nog in bedrijf), die Minister van Sociale Zaken Waltersson Grönvall in een verantwoordingsdilemma plaatst over het hoofdthema in de Zweedse verkiezingscampagne.
 
 ### Samenvatting

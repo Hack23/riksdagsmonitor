@@ -3,17 +3,16 @@ date: 2026-05-21
 subfolder: realtime-pulse
 slug: 2026-05-21-realtime-pulse
 source_folder: analysis/daily/2026-05-21/realtime-pulse
-generated_at: 2026-05-28T15:56:17.377Z
+generated_at: 2026-05-28T22:29:32.443Z
 language: en
 layout: article
 ---
-## Executive Brief
+## What Happened
 <!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/realtime-pulse/executive-brief.md -->
 
 ---
 
-### 🎯 BLUF
-
+### Lede
 Sweden's parliament today holds plenary debate on **JuU28** — the Justice Committee's approval of police use of AI-based real-time facial recognition — marking the first legislative authorisation of biometric mass surveillance in a Nordic democracy. The bill passes with a narrow 174-171 governing-bloc majority after SD amended it to include a three-year sunset clause and an "exceptional circumstances" threshold. The vote is constitutionally significant: Article 2:6 of the Instrument of Government prohibits surveillance of political activity; JuU28 creates the first explicit carve-out for law-enforcement biometrics. Simultaneously, FiU40 (fund market reform), CU36 (area cooperation fee law), and CU41 (hydropower habitat exemptions) advance the Tidö coalition's pre-election legislative sprint. Three interpellations expose fault lines: water scarcity in southern Sweden (S → L), Köping hospital closure (S → KD), and constitutional change (independent MP Widding → M). Seven written questions probe Taiwan arms sales, Tibet/China relations, pension trust, border controls with Denmark, drone permits, pension insurance, and truck-stop safety.
 
 ### 🧭 3 Decisions This Brief Supports
@@ -30,7 +29,7 @@ Sweden's parliament today holds plenary debate on **JuU28** — the Justice Comm
 - **FiU40 Fund Market** (HD01FiU40): Strengthened Finansinspektionen fund regulation aligned with EU AIFMD II and UCITS VI. Technical but significant for Swedish pension savers. Broad cross-party support.
 - **CU36 Area Cooperation** (HD01CU36): New fee law for business-improvement districts; cities gain tool for high-street regeneration. Support across M/KD/L/SD.
 - **CU41 Hydropower Habitats** (HD01CU41): Exemptions from habitat directive for hydropower relicensing. Green parties strongly opposed. EU compliance risk flagged by MJU.
-- **Interpellation HD10499** (Water Scarcity): S challenges acting climate minister Britz (L) on droughts in southern Sweden — directly links climate policy gap to rural livelihoods. Government response expected ~28 May.
+- **Interpellation Riksdag document #10499 (HD10499)** (Water Scarcity): S challenges acting climate minister Britz (L) on droughts in southern Sweden — directly links climate policy gap to rural livelihoods. Government response expected ~28 May.
 - **Interpellation HD10500** (Köping Hospital): S's Åsa Eriksson challenges KD Social Minister Forssmed on hospital closure plans — healthcare access in rural Västmanland. Response expected ~28 May.
 - **Interpellation HD10501** (Constitutional Change): Independent MP Elsa Widding challenges M's Gunnar Strömmer on pace of constitutional reform — touches on Riksdag quorum rules and fundamental law change procedures.
 - **Written Question HD11822** (Taiwan Arms Sales): SD's Björn Söder presses foreign minister on potential Swedish arms sales to Taiwan amid US policy shift.
@@ -58,9 +57,9 @@ Use this guide to read the article as a political-intelligence product rather th
 
 | Icon | Reader need | What you'll get |
 |---|---|---|
-| 📊 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
-| 🧠 | [Synthesis Summary](#rm-synthesis-summary) | evidence-anchored narrative consolidating primary sources into one coherent story line |
-| 🎯 | [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps |
+| 📊 | [Lede and editorial decisions](#rm-what-happened) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
+| 🧠 | [Why It Matters](#rm-why-it-matters) | evidence-anchored narrative consolidating primary sources into one coherent story line |
+| 🎯 | [Key Judgments](#rm-key-findings) | confidence-bearing political-intelligence conclusions and collection gaps |
 | 📈 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals |
 | 👥 | [Stakeholder Perspectives](#rm-stakeholder-perspectives) | winners, losers and undecided actors with stake-weighted positions and pressure points |
 | 🔢 | [Coalition Mathematics](#rm-coalition-mathematics) | parliamentary arithmetic showing exactly who can pass or block this measure and at what margin |
@@ -76,10 +75,10 @@ Use this guide to read the article as a political-intelligence product rather th
 | ⚙️ | [Implementation Feasibility](#rm-implementation-feasibility) | delivery feasibility, capability gaps, timelines and execution risks for the proposed action |
 | 📰 | [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder |
 | 😈 | [Devil's Advocate](#rm-devils-advocate) | alternative hypotheses, steel-manned counter-arguments and the strongest case against the lead reading |
-| 🏷️ | [Classification Results](#rm-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
-| 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
-| 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
-| 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 🏷️ | [Deep Dive: Classification Results](#rm-deep-dive-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
+| 🔀 | [Deep Dive: Cross-Reference Map](#rm-deep-dive-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
+| 🔬 | [Deep Dive: Methodology & Limitations](#rm-deep-dive-methodology--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
+| 📦 | [Deep Dive: Data Download Manifest](#rm-deep-dive-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
 | 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
@@ -94,9 +93,9 @@ Use this guide to read the article as a political-intelligence product rather th
 | 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
-| 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
+| 🏷️ | [Audit appendix](#rm-deep-dive-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
-## Synthesis Summary
+## Why It Matters
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/realtime-pulse/synthesis-summary.md -->
 
 ### Overview
@@ -128,7 +127,7 @@ Reading across today's sibling analyses:
 - **Propositions cycle** (analysis/daily/2026-05-21/propositions/): The migration-security architecture (HD03262 PUT abolition, HD03267 security expulsion) forms a coherent policy cluster with JuU28 — together they constitute the Tidö coalition's "safer Sweden" pre-election security narrative: tighter migration, harder deportation, biometric policing.
 - **Cross-cycle narrative**: The governing bloc is executing a three-pronged pre-election security agenda: (1) Migration restriction (propositions), (2) Biometric policing (JuU28), (3) Honour violence criminalisation (JuU43). The opposition's counter-narrative is: (1) Civil liberties erosion, (2) Hospital closures, (3) Climate neglect. Both narratives are simultaneously visible in today's Riksdag record.
 
-## Intelligence Assessment — Key Judgments
+## Key Findings
 <!-- source: intelligence-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/realtime-pulse/intelligence-assessment.md -->
 
 ### Prior-Cycle PIR Ingestion (Tier-C requirement)
@@ -1453,7 +1452,7 @@ The "coordinated campaign" framing overstates S central headquarters' control of
 
 **Bottom line**: Written questions are doing exactly what they are supposed to do — individual MPs holding ministers accountable in their specific policy areas. The characterisation of this as a "campaign strategy" is reductive.
 
-## Classification Results
+## Deep Dive: Classification Results
 <!-- source: classification-results.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/realtime-pulse/classification-results.md -->
 
 ### Document type distribution
@@ -1498,7 +1497,7 @@ All documents are public parliamentary records — GDPR Article 9(2)(e) (manifes
 
 This analysis is AI-generated political journalism. Under EU AI Act Article 52, transparency obligations apply: this document is machine-generated content subject to editorial review. Classification: GPAI/low-risk system output with human editorial oversight. The underlying subject matter (JuU28 on police AI) is classified in the EU AI Act as HIGH-RISK (real-time biometric surveillance for law enforcement under Annex III).
 
-## Cross-Reference Map
+## Deep Dive: Cross-Reference Map
 <!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/realtime-pulse/cross-reference-map.md -->
 
 ### Intra-day cross-references (today's sibling analyses)
@@ -1558,7 +1557,7 @@ graph LR
     style K fill:#0a0e27,stroke:#ffbe0b,color:#e0e0e0
 ```
 
-## Methodology Reflection & Limitations
+## Deep Dive: Methodology & Limitations
 <!-- source: methodology-reflection.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/realtime-pulse/methodology-reflection.md -->
 
 ### Analysis Methodology
@@ -1591,7 +1590,7 @@ graph LR
 3. **Party reservation text not fully retrieved**: JuU28 committee reservation texts for S/V/MP were partially retrieved via full-text. L and C reservation texts were referenced but not fully quoted.
 4. **No Lagrådet opinion on JuU28**: Betänkande was published 2026-01-19; Lagrådet review status for the underlying proposition not confirmed at time of analysis.
 
-## Data Download Manifest
+## Deep Dive: Data Download Manifest
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/realtime-pulse/data-download-manifest.md -->
 
 **Workflow**: news-realtime-monitor
@@ -1757,8 +1756,7 @@ graph TD
 
 ---
 
-### 🎯 BLUF
-
+### Lede
 Sveriges Riksdag afholder i dag plenardebat om **JuU28** — Retsudvalgets godkendelse af politiets brug af AI-baseret ansigtsgenkendelse i realtid — hvilket markerer den første lovgivningsmæssige godkendelse af biometrisk masseovervågning i et nordisk demokrati. Lovforslaget vedtages med et snævert flertal på 174–171 fra det siddende regeringsblok, efter at SD ændrede det til at inkludere en treårig solnedgangsklausul og en tærskel for "ekstraordinære omstændigheder". Afstemningen er forfatningsmæssigt betydningsfuld: Artikel 2:6 i Regeringsformen forbyder overvågning af politisk aktivitet; JuU28 skaber den første udtrykkelige undtagelse for biometri inden for retshåndhævelse. Samtidig fremrykker FiU40 (fondmarkedsreform), CU36 (lov om gebyrer for samarbejdsområder) og CU41 (undtagelser for vandkraft og naturtyper) Tidö-koalitionens lovgivningssprint forud for valget. Tre forespørgsler blotlægger sprækkerne: vandmangel i Sydsverige (S → L), Köpings sygehuslukning (S → KD) og forfatningsændring (uafhængig MP Widding → M). Syv skriftlige spørgsmål undersøger våbensalg til Taiwan, Tibet/Kina-relationer, pensionsfortrolighed, grænsekontrollen med Danmark, dronetilladelser, pensionsforsikring og sikkerhed på lastbilspladser.
 
 ### 🧭 3 Beslutninger dette briefing understøtter
@@ -1810,8 +1808,7 @@ graph TD
 
 ---
 
-### 🎯 BLUF
-
+### Lede
 Schwedens Reichstag führt heute eine Plenardebatte über **JuU28** — die Zustimmung des Justizausschusses zur Nutzung von KI-basierter Echtzeit-Gesichtserkennung durch die Polizei — was die erste gesetzgeberische Genehmigung biometrischer Massenüberwachung in einer nordischen Demokratie markiert. Das Gesetz wird mit einer knappen 174-171-Regierungsblocksmehrheit angenommen, nachdem SD es um eine dreijährige Verfallsklausel und eine Schwelle für „außergewöhnliche Umstände" ergänzt hat. Die Abstimmung ist verfassungsrechtlich bedeutsam: Artikel 2:6 der Regierungsform verbietet die Überwachung politischer Aktivitäten; JuU28 schafft die erste ausdrückliche Ausnahme für biometrische Strafverfolgung. Gleichzeitig treiben FiU40 (Fondsmarktreform), CU36 (Gesetz über Gebühren für Kooperationsgebiete) und CU41 (Ausnahmen für Wasserkraft und Lebensräume) den Gesetzgebungssprint der Tidö-Koalition vor der Wahl voran. Drei Interpellationen legen Risse offen: Wasserknappheit in Südschweden (S → L), Schließung des Krankenhauses Köping (S → KD) und Verfassungsänderung (unabhängige Abgeordnete Widding → M). Sieben schriftliche Anfragen beleuchten Taiwan-Waffenverkäufe, Tibet/China-Beziehungen, Rentenvertrauen, Grenzkontrollen mit Dänemark, Drohnenerlaubnisse, Rentenversicherung und LKW-Parkplatzsicherheit.
 
 ### 🧭 3 Entscheidungen, die dieser Bericht unterstützt
@@ -1863,8 +1860,7 @@ graph TD
 
 ---
 
-### 🎯 BLUF
-
+### Lede
 El Riksdag sueco celebra hoy un debate plenario sobre **JuU28** — la aprobación por parte de la Comisión de Justicia del uso policial del reconocimiento facial en tiempo real basado en IA — marcando la primera autorización legislativa de vigilancia biométrica masiva en una democracia nórdica. El proyecto de ley se aprueba con una ajustada mayoría de 174–171 del bloque gobernante, después de que SD lo enmendara para incluir una cláusula de extinción de tres años y un umbral de "circunstancias excepcionales". La votación es constitucionalmente significativa: el artículo 2:6 de la Forma de Gobierno prohíbe la vigilancia de actividad política; JuU28 crea la primera exención explícita para la biometría en el ámbito de la aplicación de la ley. Simultáneamente, FiU40 (reforma del mercado de fondos), CU36 (ley de tasas para áreas de cooperación) y CU41 (exenciones de hábitat para hidroeléctrica) impulsan el sprint legislativo preelectoral de la coalición Tidö. Tres interpelaciones exponen líneas de fractura: escasez de agua en el sur de Suecia (S → L), cierre del hospital de Köping (S → KD) y cambio constitucional (la diputada independiente Widding → M). Siete preguntas escritas examinan las ventas de armas a Taiwán, las relaciones Tíbet/China, la confianza en las pensiones, los controles fronterizos con Dinamarca, los permisos de drones, el seguro de pensiones y la seguridad en áreas de descanso para camiones.
 
 ### 🧭 3 Decisiones que apoya este informe
@@ -1916,8 +1912,7 @@ graph TD
 
 ---
 
-### 🎯 BLUF
-
+### Lede
 Ruotsin riksdag käy tänään täysistuntokeskustelun **JuU28**:sta — oikeusvaliokunnan hyväksynnästä poliisin tekoälypohjaisten reaaliaikaisten kasvojentunnistusjärjestelmien käytölle — mikä merkitsee ensimmäistä lainsäädännöllistä lupaa biometriselle joukkojenvalvonnalle pohjoismaisessa demokratiassa. Lakiesitys hyväksytään niukalla 174–171 hallitusblokki-enemmistöllä sen jälkeen, kun SD muutti sen sisältämään kolmivuotisen auringonlaskusäännöksen ja "poikkeuksellisten olosuhteiden" kynnyksen. Äänestys on perustuslaillisesti merkittävä: hallitusmuodon 2 §:n 6 momentti kieltää poliittisen toiminnan valvonnan; JuU28 luo ensimmäisen nimenomaisen poikkeuksen lainvalvonnan biometriikalle. Samalla FiU40 (rahastomarkkinauudistus), CU36 (yhteistoiminta-alueiden maksulaki) ja CU41 (vesivoimaa koskevat elinympäristöpoikkeukset) edistävät Tidö-koalition vaaleja edeltävää lainsäädäntösprinttiä. Kolme kyselytuntia paljastaa halkeamia: vesipula Etelä-Ruotsissa (S → L), Köpingin sairaalan sulkeminen (S → KD) ja perustuslaillinen muutos (riippumaton kansanedustaja Widding → M). Seitsemässä kirjallisessa kysymyksessä tarkastellaan Taiwanin asekauppoja, Tiibet/Kiina-suhteita, eläkeluottamusta, rajatarkastuksia Tanskan kanssa, drone-lupia, eläkevakuutusta ja kuorma-autoparkkialueiden turvallisuutta.
 
 ### 🧭 3 Päätöstä, joita tämä tiedustelutiivistelmä tukee
@@ -1967,8 +1962,7 @@ graph TD
 
 ---
 
-### 🎯 BLUF
-
+### Lede
 Le Riksdag suédois tient aujourd'hui un débat en séance plénière sur **JuU28** — l'approbation par la Commission des affaires juridiques de l'utilisation par la police de la reconnaissance faciale en temps réel basée sur l'IA — marquant la première autorisation législative de surveillance biométrique de masse dans une démocratie nordique. Le projet de loi est adopté avec une étroite majorité de 174–171 du bloc gouvernemental après que le SD l'a amendé pour inclure une clause de caducité de trois ans et un seuil de « circonstances exceptionnelles ». Le vote est constitutionnellement important : l'article 2:6 de la Forme de gouvernement interdit la surveillance des activités politiques ; JuU28 crée la première dérogation explicite pour la biométrie dans l'application des lois. Parallèlement, FiU40 (réforme du marché des fonds), CU36 (loi sur les frais pour les zones de coopération) et CU41 (dérogations pour les habitats hydroélectriques) font avancer le sprint législatif de la coalition Tidö avant les élections. Trois interpellations révèlent des fractures : la pénurie d'eau dans le sud de la Suède (S → L), la fermeture de l'hôpital de Köping (S → KD) et la réforme constitutionnelle (le député indépendant Widding → M). Sept questions écrites portent sur les ventes d'armes à Taïwan, les relations Tibet/Chine, la confiance dans les retraites, les contrôles aux frontières avec le Danemark, les autorisations de drones, l'assurance retraite et la sécurité des aires de repos pour camions.
 
 ### 🧭 3 Décisions soutenues par ce rapport
@@ -2179,8 +2173,7 @@ graph TD
 
 ---
 
-### 🎯 BLUF
-
+### Lede
 Het Zweedse Riksdag houdt vandaag een plenair debat over **JuU28** — de goedkeuring door de Commissie Justitie van het gebruik door de politie van AI-gebaseerde gezichtsherkenning in realtime — wat de eerste wettelijke toestemming voor biometrische massabewaking in een Scandinavische democratie markeert. Het wetsvoorstel wordt aangenomen met een krap meerderheid van 174–171 van het regeringsblok, nadat SD het heeft gewijzigd om een driejarige zonsondergangsbepaling en een drempel voor "uitzonderlijke omstandigheden" op te nemen. De stemming is constitutioneel van belang: Artikel 2:6 van de Regeringsvorm verbiedt bewaking van politieke activiteit; JuU28 creëert de eerste expliciete uitzondering voor biometrie bij de wetshandhaving. Tegelijkertijd bevorderen FiU40 (hervorming fondsenmarkt), CU36 (wet op bijdragen voor samenwerkingsgebieden) en CU41 (uitzonderingen voor waterenergie en habitats) de voorverkiezingswetgevingssprint van de Tidö-coalitie. Drie interpellaties leggen breuklijnen bloot: waterschaarste in Zuid-Zweden (S → L), sluiting van het ziekenhuis in Köping (S → KD) en grondwetswijziging (onafhankelijk Kamerlid Widding → M). Zeven schriftelijke vragen onderzoeken wapenverkopen aan Taiwan, Tibet/China-betrekkingen, pensioenvertrouwen, grenscontroles met Denemarken, dronetoestemmingen, pensioenverzekering en veiligheid op vrachtwagenparkeerplaatsen.
 
 ### 🧭 3 Besluiten die dit briefing ondersteunt
@@ -2232,8 +2225,7 @@ graph TD
 
 ---
 
-### 🎯 BLUF
-
+### Lede
 Sveriges riksdag avholder i dag plenumdebatt om **JuU28** — justiskomiteen sitt godkjenning av politiets bruk av AI-basert ansiktsgjenkjenning i sanntid — noe som markerer den første lovgivende godkjenningen av biometrisk masseovervåking i et nordisk demokrati. Lovforslaget vedtas med et knapp 174–171 flertall fra regjeringsblokkens side etter at SD endret det til å inkludere en treårig solnedgangsklausul og en terskel for «ekstraordinære omstendigheter». Avstemningen er konstitusjonelt viktig: Artikkel 2:6 i Regeringsformen forbyr overvåking av politisk virksomhet; JuU28 oppretter det første uttrykkelige unntaket for biometri innen rettshåndhevelse. Samtidig fremmes FiU40 (fondmarkedsreform), CU36 (lov om gebyrer for samarbeidsområder) og CU41 (unntak for vannkraft og naturtyper) i Tidö-koalisjonen sin lovgivningssprint foran valget. Tre interpellasjoner avslører bruddlinjer: vannmangel i Sør-Sverige (S → L), Köping sykehus nedleggelse (S → KD) og konstitusjonell endring (uavhengig MP Widding → M). Syv skriftlige spørsmål undersøker våpensalg til Taiwan, Tibet/Kina-relasjoner, pensjonstillitt, grensekontroller med Danmark, dronetillatelser, pensjonsforsikring og sikkerhet på lastebilparkeringer.
 
 ### 🧭 3 Beslutninger dette briefing støtter
@@ -2285,8 +2277,7 @@ graph TD
 
 ---
 
-### 🎯 BLUF
-
+### Lede
 Sveriges riksdag håller idag plenumdebatt om **JuU28** — justitieutskottets godkännande av polisens användning av AI-baserad ansiktsigenkänning i realtid — vilket markerar det första lagstiftande tillståndet för biometrisk masssövervakning i en nordisk demokrati. Propositionen antas med en knapp 174–171 rösters majoritet från det styrande blocket efter att SD ändrat den till att inkludera en treårig solnedgångsklausul och ett tröskelvillkor för "exceptionella omständigheter". Omröstningen är konstitutionellt betydelsefull: Artikel 2:6 i regeringsformen förbjuder övervakning av politisk aktivitet; JuU28 skapar den första uttryckliga undantagsregeln för biometri inom brottsbekämpning. Samtidigt avancerar FiU40 (fondmarknadsreform), CU36 (lag om avgifter för samarbetsområden) och CU41 (undantag för vattenkraft och livsmiljöer) Tidökoalitionens lagstiftningssprint inför valet. Tre interpellationer blottlägger sprickor: vattenbrist i södra Sverige (S → L), Köpings sjukhus stängning (S → KD) och konstitutionell förändring (fristående MP Widding → M). Sju skriftliga frågor granskar vapenförsäljning till Taiwan, Tibet/Kina-relationer, pensionsförtroende, gränskontroller med Danmark, drönartillstånd, pensionsförsäkring och säkerhet på lastbilsparkeringar.
 
 ### 🧭 3 Beslut som detta briefing stöder

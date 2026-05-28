@@ -3,11 +3,11 @@ date: 2026-05-18
 subfolder: election-cycle/current/pass1
 slug: 2026-05-18-election-cycle/current/pass1
 source_folder: analysis/daily/2026-05-18/election-cycle/current/pass1
-generated_at: 2026-05-28T15:56:17.186Z
+generated_at: 2026-05-28T22:29:32.210Z
 language: en
 layout: article
 ---
-## Executive Brief
+## What Happened
 <!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-18/election-cycle/current/pass1/executive-brief.md -->
 
 **IMF vintage**: WEO Apr-2026 [horizon:cycle] | **Riksmöte coverage**: 2022/23, 2023/24, 2024/25, 2025/26
@@ -20,7 +20,7 @@ layout: article
 
 - **EU EED transposition published 2026-05-12 (HD01CU30)**: the recast Energy Performance Buildings Directive (EPBD) and the new effective-energy-use target are now in CU's hands as betänkande 2025/26:CU30. This is **late-mandate EU-compliance clearance** — structurally important (long-tail emissions trajectory through 2030/2050) but politically *invisible* in the campaign-narrative. [A1, doc:HD01CU30]
 - **NU21 rural-policy framework (HD01NU21) published 2026-05-12**: "Hela Sverige ska fungera" — opposition-coloured framework processed by Näringsutskottet. Signals **rural-electorate positioning** ahead of the September election; Centerpartiet (C) and Moderaterna (M) both visible on the landsbygd narrative. [A1, doc:HD01NU21]
-- **No new Tidö propositions filed 2026-05-08…13**: Riksdagen `search_dokument doktyp=prop rm=2025/26 sort=datum desc` confirms the latest five (HD03267, HD03261, HD03250, HD03249, HD03248) all stamped 2026-05-06 / 2026-05-07. The 2026-05-10 cycle-apex remains the **terminal legislative spike of the Tidö mandate**. [A1]
+- **No new Tidö propositions filed 2026-05-08…13**: Riksdagen `search_dokument doktyp=prop rm=2025/26 sort=datum desc` confirms the latest five (Riksdag document #03267 (HD03267), HD03261, HD03250, HD03249, HD03248) all stamped 2026-05-06 / 2026-05-07. The 2026-05-10 cycle-apex remains the **terminal legislative spike of the Tidö mandate**. [A1]
 - **Government tempo is now full campaign-mode**: between today and the 2026-06-22 chamber recess, expect *committee processing and beslut* rather than new propositions. The May-2026 daily prop-filing rate (~0.3/day) is well below the cycle median (~0.7/day) — quantitative confirmation of the **legislating → defending the scorecard** transition.
 - **Four private-member motions** (HD10483, HD10484, HD10485, HD10486 — all 2026-05-12) on consent-law application, for-profit elderly care, prostitution-income taxation, and welfare equal pay. *Unlikely* (10–25% [horizon:cycle]) to convert into law before mandate end; classify as *campaign positioning vehicles* from opposition members.
 - **Cycle-rollover window** (`ext/cycle-rollover.md`): **123 days outside** the ±30-day activation predicate (anchor 2026-09-13). Cycle-rollover module remains a **no-op** until 2026-08-14. This is reasserted from the 2026-05-11 brief and remains the operative interpretation. [A1]
@@ -28,8 +28,7 @@ layout: article
 
 ---
 
-### BLUF (Bottom Line Up Front)
-
+### Lede
 The 2022–2026 Tidö mandate ends with a structurally transformed Swedish state — security architecture rebuilt, financial-stability framework rebooted, digital-identity stack codified, and immigration enforcement aligned with Nordic peers. Today, **123 days before the September election**, the Kristersson government is closing its **EU-compliance backlog** quietly through committee processing (HD01CU30 EU EED transposition, NU21 rural framework) rather than new political signalling. *Very likely* (80–90% [horizon:cycle]) that the core security reforms (HD01JuU32, HD03267, HD01JuU34, HD01JuU39) survive the 2026 election regardless of which coalition wins — they have crossed the *path-dependence threshold* where reversal costs exceed maintenance costs. [A2]
 
 This brief assesses the entire 2022–2026 mandate as a single political cycle, terminating in the September 2026 election. Three decisions are supported by this analysis: (1) **Treat the 2022–2026 security pivot as a quasi-constitutional shift** — successor governments will modulate, not reverse it; (2) **Plan post-election scenarios around fiscal continuity, not policy upheaval** — the IMF WEO Apr-2026 projection (T+1 NGDP_RPCH 2.3%, GGXWDG_NGDP 32.6% [A1]) sits below the EU average and gives any winning coalition room to maintain rather than retrench; (3) **Watch the e-ID, financial-crisis-management, and EU EED 2030 implementation in 2027–2028 as the inflection points** — implementation feasibility, not legislative content, decides whether the Tidö legacy is durable. *Roughly even* (40–55% [horizon:cycle]) that all three implementation programmes hit their 2027–2028 milestones.
@@ -99,8 +98,8 @@ Use this guide to read the article as a political-intelligence product rather th
 
 | Icon | Reader need | What you'll get |
 |---|---|---|
-| 📊 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
-| 🧠 | [Synthesis Summary](#rm-synthesis-summary) | evidence-anchored narrative consolidating primary sources into one coherent story line |
+| 📊 | [Lede and editorial decisions](#rm-what-happened) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
+| 🧠 | [Why It Matters](#rm-why-it-matters) | evidence-anchored narrative consolidating primary sources into one coherent story line |
 | 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
@@ -116,7 +115,7 @@ Use this guide to read the article as a political-intelligence product rather th
 | 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 🏷️ | [Audit appendix](#rm-article-sources) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
-## Synthesis Summary
+## Why It Matters
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-18/election-cycle/current/pass1/synthesis-summary.md -->
 
 ### 2026-05-18 Daily Refresh — T-118 to mandate end

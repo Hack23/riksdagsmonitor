@@ -3,16 +3,15 @@ date: 2026-05-21
 subfolder: propositions
 slug: 2026-05-21-propositions
 source_folder: analysis/daily/2026-05-21/propositions
-generated_at: 2026-05-28T15:56:17.365Z
+generated_at: 2026-05-28T22:29:32.430Z
 language: en
 layout: article
 ---
-## Executive Brief
+## What Happened
 <!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/propositions/executive-brief.md -->
 
-### 🎯 BLUF
-
-On 30 April – 7 May 2026 the Kristersson government (Tidö coalition — M, KD, L + SD confidence partner) tabled **10 parliamentary propositions** in a coordinated pre-election legislative sprint. The batch is dominated by two strategic architectures: **(1) a four-proposition migration-security architecture** (HD03267, HD03262, HD03263, HD03265) that dismantles Sweden's permanent-residence pathway, hardens deportation machinery, and creates a fast-track security-threat expulsion procedure — the final phase of Sweden's decade-long convergence toward Nordic restrictive norms; and **(2) a digital governance modernization** (HD03250, HD03261) that establishes a state-issued e-legitimation and expands Skatteverket's population-register enforcement powers. With 115 days to the September 2026 election, the 1.5× DIW multiplier applies across the entire migration cluster. The highest-weight item is HD03262 (PUT abolition + EU Asylum Pact adaptation, estimated DIW ~4.2), which is simultaneously the most constitutionally robust and the most politically charged proposition in the batch.
+### Lede
+On 30 April – 7 May 2026 the Kristersson government (Tidö coalition — M, KD, L + SD confidence partner) tabled **10 parliamentary propositions** in a coordinated pre-election legislative sprint. The batch is dominated by two strategic architectures: **(1) a four-proposition migration-security architecture** (Riksdag document #03267 (HD03267), HD03262, HD03263, HD03265) that dismantles Sweden's permanent-residence pathway, hardens deportation machinery, and creates a fast-track security-threat expulsion procedure — the final phase of Sweden's decade-long convergence toward Nordic restrictive norms; and **(2) a digital governance modernization** (HD03250, HD03261) that establishes a state-issued e-legitimation and expands Skatteverket's population-register enforcement powers. With 115 days to the September 2026 election, the 1.5× DIW multiplier applies across the entire migration cluster. The highest-weight item is HD03262 (PUT abolition + EU Asylum Pact adaptation, estimated DIW ~4.2), which is simultaneously the most constitutionally robust and the most politically charged proposition in the batch.
 
 ```mermaid
 flowchart LR
@@ -95,10 +94,10 @@ Use this guide to read the article as a political-intelligence product rather th
 
 | Icon | Reader need | What you'll get |
 |---|---|---|
-| 📊 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
-| 🎯 | [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps |
+| 📊 | [Lede and editorial decisions](#rm-what-happened) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
+| 🎯 | [Key Judgments](#rm-key-findings) | confidence-bearing political-intelligence conclusions and collection gaps |
 | 🔭 | [Forward indicators](#rm-forward-indicators) | dated watch items that let readers verify or falsify the assessment later |
-| 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📦 | [Deep Dive: Data Download Manifest](#rm-deep-dive-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
 | 📝 | [Civil Liberties Assessment](#rm-civil-liberties-assessment) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Coalition Dynamics](#rm-coalition-dynamics) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Comparative Analysis](#rm-comparative-analysis) | supporting analytical lens with primary-source evidence and audit-traceable citations |
@@ -133,9 +132,9 @@ Use this guide to read the article as a political-intelligence product rather th
 | 📝 | [Stakeholder Analysis](#rm-stakeholder-analysis) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Timeline Milestones](#rm-timeline-milestones) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
-| 🏷️ | [Audit appendix](#rm-data-download-manifest) | classification, cross-reference, methodology and manifest evidence for reviewers |
+| 🏷️ | [Audit appendix](#rm-deep-dive-data-download-manifest) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
-## Intelligence Assessment — Key Judgments
+## Key Findings
 <!-- source: intelligence-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/propositions/intelligence-assessment.md -->
 
 **Intelligence Level**: OPEN SOURCE / PARLIAMENTARY  
@@ -693,7 +692,7 @@ The September 13, 2026 election means:
 
 *Pass 1 — forward intelligence assessment*
 
-## Data Download Manifest
+## Deep Dive: Data Download Manifest
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/propositions/data-download-manifest.md -->
 
 **Workflow**: News: Government Propositions

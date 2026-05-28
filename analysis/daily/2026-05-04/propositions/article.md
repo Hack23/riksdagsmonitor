@@ -3,11 +3,11 @@ date: 2026-05-04
 subfolder: propositions
 slug: 2026-05-04-propositions
 source_folder: analysis/daily/2026-05-04/propositions
-generated_at: 2026-05-28T15:56:16.227Z
+generated_at: 2026-05-28T22:29:31.147Z
 language: en
 layout: article
 ---
-## Executive Brief
+## What Happened
 <!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/propositions/executive-brief.md -->
 
 ### Riksdag Batch 2025/26 | Date: 2026-04-30 | Published: 2026-05-04
@@ -24,7 +24,7 @@ The Swedish government released 8 propositions on 30 April 2026, dominated by a 
 
 ### Priority Intelligence Summary
 
-#### 1. HD03262 — Migration System Fundamental Reform ★★★ CRITICAL
+#### 1. Riksdag document #03262 (HD03262) — Migration System Fundamental Reform ★★★ CRITICAL
 **What**: Eliminates permanent residence permits as a legal category. All protection status becomes time-limited (3 years initially, renewable if protection need persists). Simultaneously transposes EU Migration and Asylum Pact: Asylum Procedures Regulation (APR), Qualification Regulation (QR), Reception Conditions Directive (RCD), Return Directive into Swedish law.
 
 **Why it matters**: This reversal of Sweden's post-WWII approach to asylum — where permanent protection was the norm — has no modern equivalent. The EU pact transposition is legally binding, but Sweden has added domestic restrictions beyond EU minimums. The political architecture is deliberate: EU elements cannot be reversed by a future government without violating EU law, creating a legislative lock-in mechanism.
@@ -76,9 +76,9 @@ Use this guide to read the article as a political-intelligence product rather th
 
 | Icon | Reader need | What you'll get |
 |---|---|---|
-| 📊 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
-| 🧠 | [Synthesis Summary](#rm-synthesis-summary) | evidence-anchored narrative consolidating primary sources into one coherent story line |
-| 🎯 | [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps |
+| 📊 | [Lede and editorial decisions](#rm-what-happened) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
+| 🧠 | [Why It Matters](#rm-why-it-matters) | evidence-anchored narrative consolidating primary sources into one coherent story line |
+| 🎯 | [Key Judgments](#rm-key-findings) | confidence-bearing political-intelligence conclusions and collection gaps |
 | 📈 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals |
 | 👥 | [Stakeholder Perspectives](#rm-stakeholder-perspectives) | winners, losers and undecided actors with stake-weighted positions and pressure points |
 | 🔢 | [Coalition Mathematics](#rm-coalition-mathematics) | parliamentary arithmetic showing exactly who can pass or block this measure and at what margin |
@@ -94,10 +94,10 @@ Use this guide to read the article as a political-intelligence product rather th
 | ⚙️ | [Implementation Feasibility](#rm-implementation-feasibility) | delivery feasibility, capability gaps, timelines and execution risks for the proposed action |
 | 📰 | [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder |
 | 😈 | [Devil's Advocate](#rm-devils-advocate) | alternative hypotheses, steel-manned counter-arguments and the strongest case against the lead reading |
-| 🏷️ | [Classification Results](#rm-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
-| 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
-| 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
-| 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 🏷️ | [Deep Dive: Classification Results](#rm-deep-dive-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
+| 🔀 | [Deep Dive: Cross-Reference Map](#rm-deep-dive-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
+| 🔬 | [Deep Dive: Methodology & Limitations](#rm-deep-dive-methodology--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
+| 📦 | [Deep Dive: Data Download Manifest](#rm-deep-dive-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
 | 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
@@ -112,9 +112,9 @@ Use this guide to read the article as a political-intelligence product rather th
 | 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
-| 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
+| 🏷️ | [Audit appendix](#rm-deep-dive-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
-## Synthesis Summary
+## Why It Matters
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/propositions/synthesis-summary.md -->
 
 ### Date: 2026-05-04 | Riksmöte 2025/26
@@ -177,7 +177,7 @@ HD03251 and HD03260 represent ongoing administrative modernisation of welfare st
 | HD03251 | Healthcare integration agenda | Administrative reform track |
 | HD03260 | EU research regulation | Harmonisation track |
 
-## Intelligence Assessment — Key Judgments
+## Key Findings
 <!-- source: intelligence-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/propositions/intelligence-assessment.md -->
 
 ### Date: 2026-05-04 | Confidence Level: HIGH | Riksdagsmonitor AIR-Format
@@ -2238,7 +2238,7 @@ This analysis steelmans the strongest arguments AGAINST the dominant narrative e
 
 The most important counter-narrative challenge is **Challenge 3**: the enforcement claims around HD03263-65 (return/deportation) are likely to prove hollow against the hard reality of missing bilateral return agreements and persistent court protection of detained individuals. The analysis should note this limitation explicitly in the article narrative.
 
-## Classification Results
+## Deep Dive: Classification Results
 <!-- source: classification-results.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/propositions/classification-results.md -->
 
 ### Date: 2026-05-04 | Riksdagsmonitor Intelligence Classification
@@ -2318,7 +2318,7 @@ The most important counter-narrative challenge is **Challenge 3**: the enforceme
 - Documents with constitutional dimensions: 4/8
 - GDPR special category data risks: 1/8 (HD03251 — healthcare, addressed at framework level not in analysis)
 
-## Cross-Reference Map
+## Deep Dive: Cross-Reference Map
 <!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/propositions/cross-reference-map.md -->
 
 ### Date: 2026-05-04 | Riksdagsmonitor Intelligence
@@ -2405,7 +2405,7 @@ HD03265 (Detention)
 | NATO integration | Mainly defence/security press | Connects to Putin/Ukraine context |
 | Transparency | Primarily political press | Connects to upcoming election campaign finance debate |
 
-## Methodology Reflection & Limitations
+## Deep Dive: Methodology & Limitations
 <!-- source: methodology-reflection.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/propositions/methodology-reflection.md -->
 
 ### Date: 2026-05-04 | Riksdagsmonitor Intelligence
@@ -2491,7 +2491,7 @@ HD03265 (Detention)
 | ECHR outcomes | LOW | Case-specific factors |
 | IMF economic data | HIGH | Direct API retrieval, April 2026 vintage |
 
-## Data Download Manifest
+## Deep Dive: Data Download Manifest
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/propositions/data-download-manifest.md -->
 
 > ℹ️ **Data-Only Pipeline**: This script downloads and persists raw data.

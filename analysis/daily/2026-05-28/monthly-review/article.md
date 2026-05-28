@@ -3,18 +3,18 @@ date: 2026-05-28
 subfolder: monthly-review
 slug: 2026-05-28-monthly-review
 source_folder: analysis/daily/2026-05-28/monthly-review
-generated_at: 2026-05-28T15:56:17.688Z
+generated_at: 2026-05-28T22:29:32.800Z
 language: en
 layout: article
 ---
-## Executive Brief
+## What Happened
 <!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-28/monthly-review/executive-brief.md -->
 
 ---
 
 ### KEY JUDGMENT
 
-Sweden's Tidö government enters the final pre-election quarter (Q3 2026) with a **strong legislative record but contested narrative control**. The May 2026 legislative sprint — three major propositions (HD03275/276/277) plus committee reports on wind power (HD01NU20) and criminal justice (HD01JuU35, HD01MJU27) — demonstrates governing capacity, but each initiative simultaneously opens opposition attack vectors.
+Sweden's Tidö government enters the final pre-election quarter (Q3 2026) with a **strong legislative record but contested narrative control**. The May 2026 legislative sprint — three major propositions (Riksdag document #03275 (HD03275)/276/277) plus committee reports on wind power (HD01NU20) and criminal justice (HD01JuU35, HD01MJU27) — demonstrates governing capacity, but each initiative simultaneously opens opposition attack vectors.
 
 **The central strategic question** for the next 108 days: Can the Tidö government define the September 2026 election on its own terms (security + rule of law + responsible economy), or will the opposition (S-led) reframe it on costs, social welfare erosion, and coalition instability?
 
@@ -112,9 +112,9 @@ Use this guide to read the article as a political-intelligence product rather th
 
 | Icon | Reader need | What you'll get |
 |---|---|---|
-| 📊 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
-| 🧠 | [Synthesis Summary](#rm-synthesis-summary) | evidence-anchored narrative consolidating primary sources into one coherent story line |
-| 🎯 | [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps |
+| 📊 | [Lede and editorial decisions](#rm-what-happened) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
+| 🧠 | [Why It Matters](#rm-why-it-matters) | evidence-anchored narrative consolidating primary sources into one coherent story line |
+| 🎯 | [Key Judgments](#rm-key-findings) | confidence-bearing political-intelligence conclusions and collection gaps |
 | 📈 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals |
 | 👥 | [Stakeholder Perspectives](#rm-stakeholder-perspectives) | winners, losers and undecided actors with stake-weighted positions and pressure points |
 | 🔢 | [Coalition Mathematics](#rm-coalition-mathematics) | parliamentary arithmetic showing exactly who can pass or block this measure and at what margin |
@@ -130,14 +130,14 @@ Use this guide to read the article as a political-intelligence product rather th
 | ⚙️ | [Implementation Feasibility](#rm-implementation-feasibility) | delivery feasibility, capability gaps, timelines and execution risks for the proposed action |
 | 📰 | [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder |
 | 😈 | [Devil's Advocate](#rm-devils-advocate) | alternative hypotheses, steel-manned counter-arguments and the strongest case against the lead reading |
-| 🏷️ | [Classification Results](#rm-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
-| 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
-| 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
-| 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 🏷️ | [Deep Dive: Classification Results](#rm-deep-dive-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
+| 🔀 | [Deep Dive: Cross-Reference Map](#rm-deep-dive-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
+| 🔬 | [Deep Dive: Methodology & Limitations](#rm-deep-dive-methodology--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
+| 📦 | [Deep Dive: Data Download Manifest](#rm-deep-dive-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
-| 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
+| 🏷️ | [Audit appendix](#rm-deep-dive-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
-## Synthesis Summary
+## Why It Matters
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-28/monthly-review/synthesis-summary.md -->
 
 **Coverage window**: 2026-04-28 → 2026-05-28 (riksmöte 2025/26, 30 days)  
@@ -235,7 +235,7 @@ The May 2026 riksmöte session shows exceptionally high legislative velocity —
 - PIR-H: Utbetalningsmyndigheten shutdown (HD03277) — administrative accountability for failed agency creation
 - PIR-I: Municipal wind power veto resolution (HD01NU20) — energy sovereignty governance gap
 
-## Intelligence Assessment — Key Judgments
+## Key Findings
 <!-- source: intelligence-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-28/monthly-review/intelligence-assessment.md -->
 
 **Prior cycle**: `analysis/daily/2026-05-10/monthly-review/intelligence-assessment.md`
@@ -1882,7 +1882,7 @@ At T+108d, Sweden is entering the **critical media narrative-setting phase** (Ju
 | IMF data sufficiency | Low risk | No change; annotation protocol sufficient |
 | HD03275 motivation | Partially accepted | Middle East component may have electoral motivation |
 
-## Classification Results
+## Deep Dive: Classification Results
 <!-- source: classification-results.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-28/monthly-review/classification-results.md -->
 
 ---
@@ -1947,7 +1947,7 @@ No material in this analysis involves classified government information, persona
 | Privacy and PII protection | A.5.34 | ✅ N/A (no PII) |
 | Data retention | A.8.11 | ✅ Permanent |
 
-## Cross-Reference Map
+## Deep Dive: Cross-Reference Map
 <!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-28/monthly-review/cross-reference-map.md -->
 
 **Tier-C requirement**: Must cite ≥1 sibling folder ✅
@@ -2048,7 +2048,7 @@ HD01NU20 is the culmination of a multi-week wind power debate (multiple HD11855-
 #### Fiscal trend  
 HD03275 + HD03277 show the government managing both fiscal expansion (Ukraine/Gaza) and fiscal consolidation (shutting Utbetalningsmyndigheten) simultaneously. Trend: **BALANCED fiscal management** with election-sensitive allocation choices.
 
-## Methodology Reflection & Limitations
+## Deep Dive: Methodology & Limitations
 <!-- source: methodology-reflection.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-28/monthly-review/methodology-reflection.md -->
 
 ---
@@ -2092,7 +2092,7 @@ This analysis is based on:
 - Cached IMF WEO Apr-2026 data (1 month vintage, status: ok)
 - Prior cycle intelligence from 2026-05-10/monthly-review/
 
-**Overall confidence**: MEDIUM-HIGH (A2). Key uncertainty: L threshold status (PIR-A) cannot be assessed without current polling data. SD escalation rate assessment is directional but not quantified.
+**Overall confidence**: MEDIUM-HIGH (A2, high confidence, corroborated by multiple sources). Key uncertainty: L threshold status (PIR-A) cannot be assessed without current polling data. SD escalation rate assessment is directional but not quantified.
 
 ---
 
@@ -2107,7 +2107,7 @@ This analysis is based on:
 - [x] Devil's advocate challenges reviewed
 - [x] Warning intelligence block in intelligence-assessment.md
 
-## Data Download Manifest
+## Deep Dive: Data Download Manifest
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-28/monthly-review/data-download-manifest.md -->
 
 **Workflow**: News: Monthly Review

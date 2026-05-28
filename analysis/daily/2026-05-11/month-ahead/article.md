@@ -3,16 +3,15 @@ date: 2026-05-11
 subfolder: month-ahead
 slug: 2026-05-11-month-ahead
 source_folder: analysis/daily/2026-05-11/month-ahead
-generated_at: 2026-05-28T15:56:16.791Z
+generated_at: 2026-05-28T22:29:31.759Z
 language: en
 layout: article
 ---
-## Executive Brief
+## What Happened
 <!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/month-ahead/executive-brief.md -->
 
-### BLUF (Bottom Line Up Front)
-
-Sweden's Tidö coalition (M-SD-KD-L, 176/349 seats) is executing a pre-election legislative sprint with migration policy as its electoral centrepiece. Five migration propositions filed 2026-04-30 to 2026-05-07 constitute the most substantial restriction of immigration rights since the 2022 Tidö Agreement. The September 13 general election is 125 days away. Coalition arithmetic is stable but L's liberal heritage creates internal tension on permanent residence abolition (HD03262). The risk of pre-election coalition fracture is low [WEP: unlikely, 15%]; the risk of ECHR legal challenges post-passage is high [WEP: probable, 75%].
+### Lede
+Sweden's Tidö coalition (M-SD-KD-L, 176/349 seats) is executing a pre-election legislative sprint with migration policy as its electoral centrepiece. Five migration propositions filed 2026-04-30 to 2026-05-07 constitute the most substantial restriction of immigration rights since the 2022 Tidö Agreement. The September 13 general election is 125 days away. Coalition arithmetic is stable but L's liberal heritage creates internal tension on permanent residence abolition (Riksdag document #03262 (HD03262)). The risk of pre-election coalition fracture is low [WEP: unlikely, 15%]; the risk of ECHR legal challenges post-passage is high [WEP: probable, 75%].
 
 ### Three Priority Intelligence Requirements (PIRs)
 
@@ -49,18 +48,18 @@ Use this guide to read the article as a political-intelligence product rather th
 
 | Icon | Reader need | What you'll get |
 |---|---|---|
-| 📊 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
-| 🧠 | [Synthesis Summary](#rm-synthesis-summary) | evidence-anchored narrative consolidating primary sources into one coherent story line |
-| 🎯 | [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps |
+| 📊 | [Lede and editorial decisions](#rm-what-happened) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
+| 🧠 | [Why It Matters](#rm-why-it-matters) | evidence-anchored narrative consolidating primary sources into one coherent story line |
+| 🎯 | [Key Judgments](#rm-key-findings) | confidence-bearing political-intelligence conclusions and collection gaps |
 | 🔮 | [Scenarios](#rm-scenario-analysis) | alternative outcomes with probabilities, triggers, and warning signs |
 | ⚠️ | [Risk assessment](#rm-risk-assessment) | policy, electoral, institutional, communications, and implementation risk register |
 | 📝 | [PESTLE Analysis](#rm-pestle-analysis) | political, economic, social, technological, legal and environmental drivers shaping the outcome |
 | 📜 | [Historical Parallels](#rm-historical-parallels) | comparable past episodes from Swedish and international politics, with explicit lessons learned |
 | 🌍 | [Comparative International](#rm-comparative-international) | peer-country comparisons (Nordic, EU, OECD) showing how similar measures fared elsewhere |
 | ⚙️ | [Implementation Feasibility](#rm-implementation-feasibility) | delivery feasibility, capability gaps, timelines and execution risks for the proposed action |
-| 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
-| 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
-| 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 🔀 | [Deep Dive: Cross-Reference Map](#rm-deep-dive-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
+| 🔬 | [Deep Dive: Methodology & Limitations](#rm-deep-dive-methodology--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
+| 📦 | [Deep Dive: Data Download Manifest](#rm-deep-dive-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
 | 📝 | [Committee Dynamics](#rm-committee-dynamics) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Document Registry](#rm-document-registry) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Electoral Implications](#rm-electoral-implications) | supporting analytical lens with primary-source evidence and audit-traceable citations |
@@ -87,9 +86,9 @@ Use this guide to read the article as a political-intelligence product rather th
 | 📝 | [Timeline Of Events](#rm-timeline-of-events) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Voting Record Analysis](#rm-voting-record-analysis) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
-| 🏷️ | [Audit appendix](#rm-cross-reference-map) | classification, cross-reference, methodology and manifest evidence for reviewers |
+| 🏷️ | [Audit appendix](#rm-deep-dive-cross-reference-map) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
-## Synthesis Summary
+## Why It Matters
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/month-ahead/synthesis-summary.md -->
 
 **Election proximity**: September 13, 2026 (~125 days) → **1.5× election multiplier active**
@@ -157,7 +156,7 @@ graph TD
 **Source reliability**: [A1] for all Riksdagen propositions (official API), [A2] for IMF WEO (published vintage)
 **Information credibility**: [1] — confirmed legislative texts, government-signed documents
 
-## Intelligence Assessment — Key Judgments
+## Key Findings
 <!-- source: intelligence-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/month-ahead/intelligence-assessment.md -->
 
 **WEP horizon**: month-ahead (T+30/T+60) — confidence degrades to T+60
@@ -517,7 +516,7 @@ Government's fiscal conservatism (spring budget focused on pharmaceutical prepar
 
 *IMF provenance: WEO-2026-04, FM datamapper (fiscal stance); provider: imf.*
 
-## Cross-Reference Map
+## Deep Dive: Cross-Reference Map
 <!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/month-ahead/cross-reference-map.md -->
 
 ### Sibling Folder Cross-References (Tier-C)
@@ -559,7 +558,7 @@ From 2026-05-03/month-ahead PIR set:
 | intelligence-assessment.md | 5 KJs + 5 PIRs + F3EAD | ≥6 | ✓ |
 | comparative-international.md | 5 country comparisons + IMF table | ≥4 | ✓ |
 
-## Methodology Reflection & Limitations
+## Deep Dive: Methodology & Limitations
 <!-- source: methodology-reflection.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/month-ahead/methodology-reflection.md -->
 
 ### Pass 1 Assessment
@@ -579,7 +578,7 @@ From 2026-05-03/month-ahead PIR set:
 4. **No polling data**: Neither Riksdag API nor IMF provides polling data — critical intelligence gap for election scenario analysis
 5. **Riksmöte boundary**: Most interpellationer data is from 2024/25; 2025/26 interpellationer not fully loaded
 
-## Data Download Manifest
+## Deep Dive: Data Download Manifest
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/month-ahead/data-download-manifest.md -->
 
 **IMF Vintage**: WEO-2026-04 (age: 1 month, status: ok) | **Depth**: deep

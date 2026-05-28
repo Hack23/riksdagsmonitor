@@ -3,11 +3,11 @@ date: 2026-05-26
 subfolder: propositions
 slug: 2026-05-26-propositions
 source_folder: analysis/daily/2026-05-26/propositions
-generated_at: 2026-05-28T15:56:17.552Z
+generated_at: 2026-05-28T22:29:32.644Z
 language: en
 layout: article
 ---
-## Executive Brief
+## What Happened
 <!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-26/propositions/executive-brief.md -->
 
 <p align="center"><img src="https://hack23.com/icon-192.png" alt="Hack23 Logo" width="96"/></p>
@@ -23,9 +23,8 @@ layout: article
 
 ---
 
-### 🎯 BLUF (Bottom Line Up Front)
-
-The Tidökoalitionen government (M+SD+KD+L) has submitted a concentrated batch of 10 propositions in the final pre-election legislative sprint, led by two high-salience security measures: **HD03267** (strengthened expulsion powers for foreigners posing qualified security threats, sent to JuU) and **HD03254** (expanded legal framework for operative military cooperation, sent to FöU). Both carry a 1.5× election-proximity DIW multiplier given the September 2026 Riksdag election. Secondary propositions advance the government's digital governance agenda (**HD03250**, state e-ID) and administrative security (**HD03261**, expanded Skatteverket population-registration powers). Collectively, the batch demonstrates the coalition's strategy of delivering on its 2022 Tidöavtalet security commitments while presenting a modernisation narrative ahead of the election.
+### Lede
+The Tidökoalitionen government (M+SD+KD+L) has submitted a concentrated batch of 10 propositions in the final pre-election legislative sprint, led by two high-salience security measures: **Riksdag document #03267 (HD03267)** (strengthened expulsion powers for foreigners posing qualified security threats, sent to JuU) and **HD03254** (expanded legal framework for operative military cooperation, sent to FöU). Both carry a 1.5× election-proximity DIW multiplier given the September 2026 Riksdag election. Secondary propositions advance the government's digital governance agenda (**HD03250**, state e-ID) and administrative security (**HD03261**, expanded Skatteverket population-registration powers). Collectively, the batch demonstrates the coalition's strategy of delivering on its 2022 Tidöavtalet security commitments while presenting a modernisation narrative ahead of the election.
 
 ---
 
@@ -96,9 +95,9 @@ Use this guide to read the article as a political-intelligence product rather th
 
 | Icon | Reader need | What you'll get |
 |---|---|---|
-| 📊 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
-| 🧠 | [Synthesis Summary](#rm-synthesis-summary) | evidence-anchored narrative consolidating primary sources into one coherent story line |
-| 🎯 | [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps |
+| 📊 | [Lede and editorial decisions](#rm-what-happened) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
+| 🧠 | [Why It Matters](#rm-why-it-matters) | evidence-anchored narrative consolidating primary sources into one coherent story line |
+| 🎯 | [Key Judgments](#rm-key-findings) | confidence-bearing political-intelligence conclusions and collection gaps |
 | 📈 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals |
 | 👥 | [Stakeholder Perspectives](#rm-stakeholder-perspectives) | winners, losers and undecided actors with stake-weighted positions and pressure points |
 | 🔢 | [Coalition Mathematics](#rm-coalition-mathematics) | parliamentary arithmetic showing exactly who can pass or block this measure and at what margin |
@@ -114,14 +113,14 @@ Use this guide to read the article as a political-intelligence product rather th
 | ⚙️ | [Implementation Feasibility](#rm-implementation-feasibility) | delivery feasibility, capability gaps, timelines and execution risks for the proposed action |
 | 📰 | [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder |
 | 😈 | [Devil's Advocate](#rm-devils-advocate) | alternative hypotheses, steel-manned counter-arguments and the strongest case against the lead reading |
-| 🏷️ | [Classification Results](#rm-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
-| 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
-| 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
-| 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 🏷️ | [Deep Dive: Classification Results](#rm-deep-dive-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
+| 🔀 | [Deep Dive: Cross-Reference Map](#rm-deep-dive-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
+| 🔬 | [Deep Dive: Methodology & Limitations](#rm-deep-dive-methodology--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
+| 📦 | [Deep Dive: Data Download Manifest](#rm-deep-dive-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
-| 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
+| 🏷️ | [Audit appendix](#rm-deep-dive-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
-## Synthesis Summary
+## Why It Matters
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-26/propositions/synthesis-summary.md -->
 
 **📋 Owner:** CEO | **📅 Date:** 2026-05-26 | **🏷️ Classification:** Public
@@ -182,7 +181,7 @@ The Kyrgyzstan and Uzbekistan partnership agreement ratifications are standard E
 - [x] No banned phrases
 - [x] WEP language used consistently
 
-## Intelligence Assessment — Key Judgments
+## Key Findings
 <!-- source: intelligence-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-26/propositions/intelligence-assessment.md -->
 
 **📋 Owner:** CEO | **📅 Date:** 2026-05-26 | **🏷️ Classification:** Public
@@ -1781,7 +1780,7 @@ The mainstream analytical consensus frames the 2026 spring proposition batch as 
 - [x] No "it is widely believed" or "sources say"
 - [x] Named specific laws and data
 
-## Classification Results
+## Deep Dive: Classification Results
 <!-- source: classification-results.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-26/propositions/classification-results.md -->
 
 **📋 Owner:** CEO | **📅 Date:** 2026-05-26 | **🏷️ Classification:** Public
@@ -1846,7 +1845,7 @@ The mainstream analytical consensus frames the 2026 spring proposition batch as 
 - [x] PESTLE classification complete
 - [x] No placeholders
 
-## Cross-Reference Map
+## Deep Dive: Cross-Reference Map
 <!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-26/propositions/cross-reference-map.md -->
 
 **📋 Owner:** CEO | **📅 Date:** 2026-05-26 | **🏷️ Classification:** Public
@@ -1924,7 +1923,7 @@ graph TD
 - [x] Mermaid network diagram with cyberpunk theming
 - [x] Cross-riksmöte context added
 
-## Methodology Reflection & Limitations
+## Deep Dive: Methodology & Limitations
 <!-- source: methodology-reflection.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-26/propositions/methodology-reflection.md -->
 
 **📋 Owner:** CEO | **📅 Date:** 2026-05-26 | **🏷️ Classification:** Public
@@ -1994,7 +1993,7 @@ The Pass 2 review identified and improved the following:
 - [x] Confidence calibration by domain
 - [x] No self-referential validation ("this analysis is comprehensive")
 
-## Data Download Manifest
+## Deep Dive: Data Download Manifest
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-26/propositions/data-download-manifest.md -->
 
 > ℹ️ **Data-Only Pipeline**: This script downloads and persists raw data.

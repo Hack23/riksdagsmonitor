@@ -3,17 +3,16 @@ date: 2026-04-26
 subfolder: evening-analysis
 slug: 2026-04-26-evening-analysis
 source_folder: analysis/daily/2026-04-26/evening-analysis
-generated_at: 2026-05-28T15:56:15.633Z
+generated_at: 2026-05-28T22:29:30.471Z
 language: en
 layout: article
 ---
-## Executive Brief
+## What Happened
 <!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/evening-analysis/executive-brief.md -->
 
 **Base date**: 2026-04-26 (data: 2026-04-24 lookback)
 
-### 🎯 BLUF
-
+### Lede
 The Riksdag's April 24 tabling wave confirms the Tidö coalition is executing a multi-front pre-election legislative sprint: a landmark new weapons law banning certain semi-automatic hunting rifles (`HD01JuU10`), an elder-care strengthening package (`HD01SoU25`), and a more efficient building-permit framework (`HD01CU24`) will all pass before the September 2026 Riksdag election. Simultaneously, the Riksrevisionen's damning audit of the 2015 Police Reform (`HD01JuU31`) — finding that Polismyndigheten failed to reach the reform's core efficiency and quality goals — creates a narrative liability for the governing coalition at the precise moment it needs to claim delivery credibility on law enforcement. IMF projects Sweden GDP growth at +2.1% (WEO Apr-2026, NGDP_RPCH) in 2026, providing a benign macro backdrop for fiscal commitments embedded in elder-care and policing packages.
 
 ### 🧭 3 Decisions This Brief Supports
@@ -47,9 +46,9 @@ Use this guide to read the article as a political-intelligence product rather th
 
 | Icon | Reader need | What you'll get |
 |---|---|---|
-| 📊 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
-| 🧠 | [Synthesis Summary](#rm-synthesis-summary) | evidence-anchored narrative consolidating primary sources into one coherent story line |
-| 🎯 | [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps |
+| 📊 | [Lede and editorial decisions](#rm-what-happened) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
+| 🧠 | [Why It Matters](#rm-why-it-matters) | evidence-anchored narrative consolidating primary sources into one coherent story line |
+| 🎯 | [Key Judgments](#rm-key-findings) | confidence-bearing political-intelligence conclusions and collection gaps |
 | 📈 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals |
 | 👥 | [Stakeholder Perspectives](#rm-stakeholder-perspectives) | winners, losers and undecided actors with stake-weighted positions and pressure points |
 | 🔢 | [Coalition Mathematics](#rm-coalition-mathematics) | parliamentary arithmetic showing exactly who can pass or block this measure and at what margin |
@@ -65,10 +64,10 @@ Use this guide to read the article as a political-intelligence product rather th
 | ⚙️ | [Implementation Feasibility](#rm-implementation-feasibility) | delivery feasibility, capability gaps, timelines and execution risks for the proposed action |
 | 📰 | [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder |
 | 😈 | [Devil's Advocate](#rm-devils-advocate) | alternative hypotheses, steel-manned counter-arguments and the strongest case against the lead reading |
-| 🏷️ | [Classification Results](#rm-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
-| 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
-| 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
-| 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 🏷️ | [Deep Dive: Classification Results](#rm-deep-dive-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
+| 🔀 | [Deep Dive: Cross-Reference Map](#rm-deep-dive-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
+| 🔬 | [Deep Dive: Methodology & Limitations](#rm-deep-dive-methodology--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
+| 📦 | [Deep Dive: Data Download Manifest](#rm-deep-dive-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
 | 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
@@ -83,9 +82,9 @@ Use this guide to read the article as a political-intelligence product rather th
 | 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
-| 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
+| 🏷️ | [Audit appendix](#rm-deep-dive-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
-## Synthesis Summary
+## Why It Matters
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/evening-analysis/synthesis-summary.md -->
 
 ### Lead story / decision
@@ -143,7 +142,7 @@ Ingesting sibling analyses from `analysis/daily/2026-04-24/`:
 - IMF WEO Apr-2026 CLI: `tsx scripts/imf-fetch.ts weo --country SWE --indicator NGDP_RPCH` [A1]  
 - Sibling analysis reads from `analysis/daily/2026-04-24/` [A1]
 
-## Intelligence Assessment — Key Judgments
+## Key Findings
 <!-- source: intelligence-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/evening-analysis/intelligence-assessment.md -->
 
 ### Key Judgments (KJ)
@@ -1127,7 +1126,7 @@ This analysis systematically challenges the dominant narrative of the evening-an
 
 **Summary**: The devil's advocate analysis most significantly challenges the weapons-law risk framing (should be scored as net positive, not net negative) and the elder-care strength framing (substantively limited reform).
 
-## Classification Results
+## Deep Dive: Classification Results
 <!-- source: classification-results.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/evening-analysis/classification-results.md -->
 
 ### Classification Overview
@@ -1148,7 +1147,7 @@ This analysis systematically challenges the dominant narrative of the evening-an
 | Housing & construction | HD01CU24 |
 | Pre-election delivery | ALL FOUR (concurrent) |
 
-### Secondary documents (HD10448, HD11747-11749)
+### Secondary documents (Riksdag document #10448 (HD10448), HD11747-11749)
 
 | dok_id | Classification | Notes |
 |--------|---------------|-------|
@@ -1174,7 +1173,7 @@ Municipal capacity: C3 (Statskontoret referenced, secondary source)
 
 All documents processed are PUBLIC information under OSL (Offentlighets- och sekretesslagen). No personal data requiring GDPR DPIA short-circuit. Classification: **PUBLIC / No PII / GDPR DPIA not required.**
 
-## Cross-Reference Map
+## Deep Dive: Cross-Reference Map
 <!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/evening-analysis/cross-reference-map.md -->
 
 ### Document Relationship Graph
@@ -1252,7 +1251,7 @@ Economic context embedded in this analysis uses:
 
 Provider: **IMF WEO Apr-2026** (vintage: April 2026 — within 6 months, no annotation required).
 
-## Methodology Reflection & Limitations
+## Deep Dive: Methodology & Limitations
 <!-- source: methodology-reflection.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/evening-analysis/methodology-reflection.md -->
 
 ### Analysis Process Summary
@@ -1321,7 +1320,7 @@ This Evening Analysis was produced using the Riksdagsmonitor Tier-C aggregation 
 - [x] IMF economic context cited in ≥3 artifacts with WEO Apr-2026 provenance
 - [x] Admiralty codes on all evidence claims
 
-## Data Download Manifest
+## Deep Dive: Data Download Manifest
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/evening-analysis/data-download-manifest.md -->
 
 **Workflow**: news-evening-analysis  
@@ -1435,8 +1434,7 @@ title: "السويد — الأمن ورعاية المسنين والإصلاح
 **Konfidensgrad**: HØJ [A1–B2]  
 **Basisdato**: 2026-04-26 (data: 2026-04-24 tilbageblik)
 
-### 🎯 BLUF
-
+### Lede
 Riksdagens tableringsrunde den 24. april bekræfter, at Tidö-koalitionen gennemfører en flerfrontet lovgivningssprint frem mod valget: en epokegørende ny våbenlov, der forbyder visse halvautomatiske jaktrifler (`HD01JuU10`), en ældreomsorgspakke (`HD01SoU25`) og et mere effektivt byggesagsbehandlingsramme (`HD01CU24`) vil alle blive vedtaget inden Riksdag-valget i september 2026. Samtidig skaber Riksrevisionens knusende revision af 2015-politireformen (`HD01JuU31`) — der konstaterer, at Polismyndigheten ikke nåede reformens kernemål vedrørende effektivitet og kvalitet — en troværdighedsforpligtelse for den siddende koalition på præcis det tidspunkt, den har brug for at hævde leveringskredibilitet inden for retshåndhævelse. IMF forventer svensk BNP-vækst på +2,1 % (WEO Apr-2026, NGDP_RPCH) i 2026, hvilket giver en gunstig makrobaggrund for de finansielle forpligtelser, der er indlejret i ældrepleje- og politipakker.
 
 ### 🧭 3 beslutninger dette PM understøtter
@@ -1473,8 +1471,7 @@ HØJ — alle fire primærdokumenter er `bet` (udvalgsrapport = stemmeanbefaling
 **Vertrauensgrad**: HOCH [A1–B2]  
 **Basisdatum**: 2026-04-26 (Daten: Rückblick 2026-04-24)
 
-### 🎯 BLUF
-
+### Lede
 Die Einbringungswelle des Riksdag vom 24. April bestätigt, dass die Tidö-Koalition einen mehrfrontigem Vor-Wahlgesetzgebungssprint durchführt: ein wegweisendes neues Waffengesetz, das bestimmte halbautomatische Jagdgewehre verbietet (`HD01JuU10`), ein Altenpflegepaket (`HD01SoU25`) und ein effizienteres Baugenehmigungsrahmenwerk (`HD01CU24`) werden alle vor der Riksdag-Wahl im September 2026 verabschiedet. Gleichzeitig schafft die vernichtende Prüfung des Riksrevisionen zur Polizeireform von 2015 (`HD01JuU31`) — die feststellt, dass die Polismyndigheten die Kernziele der Reform in Bezug auf Effizienz und Qualität nicht erreicht hat — eine Glaubwürdigkeitsschuld für die regierende Koalition genau zu dem Zeitpunkt, an dem sie Lieferkredibilität im Bereich der Strafverfolgung geltend machen muss. Der IWF prognostiziert für Schweden ein BIP-Wachstum von +2,1 % (WEO Apr-2026, NGDP_RPCH) im Jahr 2026, was einen günstigen makroökonomischen Hintergrund für die in den Alten- und Polizeipaketen eingebetteten finanziellen Zusagen bietet.
 
 ### 🧭 3 Entscheidungen, die dieses PM unterstützt
@@ -1511,8 +1508,7 @@ HOCH — alle vier Primärdokumente sind `bet` (Ausschussbericht = abgestimmte E
 **Nivel de confianza**: ALTO [A1–B2]  
 **Fecha base**: 2026-04-26 (datos: retrospectiva al 2026-04-24)
 
-### 🎯 BLUF
-
+### Lede
 La oleada de presentaciones del Riksdag del 24 de abril confirma que la coalición Tidö ejecuta un sprint legislativo preelectoral en varios frentes: una nueva ley de armas revolucionaria que prohíbe ciertos rifles de caza semiautomáticos (`HD01JuU10`), un paquete de atención a personas mayores (`HD01SoU25`) y un marco más eficiente de permisos de construcción (`HD01CU24`) serán todos aprobados antes de las elecciones del Riksdag en septiembre de 2026. Al mismo tiempo, la devastadora auditoría del Riksrevisionen sobre la reforma policial de 2015 (`HD01JuU31`) — que constata que la Polismyndigheten no alcanzó los objetivos fundamentales de la reforma en materia de eficiencia y calidad — crea una deuda de credibilidad para la coalición gobernante justo cuando necesita demostrar su capacidad de entrega en el ámbito de la aplicación de la ley. El FMI proyecta un crecimiento del PIB sueco de +2,1 % (WEO abr.-2026, NGDP_RPCH) en 2026, lo que proporciona un contexto macro favorable para los compromisos financieros integrados en los paquetes de atención a personas mayores y policiamiento.
 
 ### 🧭 3 decisiones que apoya este PM
@@ -1549,8 +1545,7 @@ ALTA — los cuatro documentos primarios son `bet` (informe de comisión = recom
 **Luottamustaso**: KORKEA [A1–B2]  
 **Peruspäivä**: 2026-04-26 (data: 2026-04-24 taaksepäin)
 
-### 🎯 BLUF
-
+### Lede
 Riksdagin 24. huhtikuun istumisvuoro vahvistaa, että Tidö-koalitio toteuttaa monifrontisen vaalikauden lainsäädäntösprintin: uraauurtava uusi aselaki, joka kieltää tietyt puoliautomaattiset metsästyskiväärit (`HD01JuU10`), vanhustenhoitopaketti (`HD01SoU25`) ja tehokkaampi rakennuslupakehys (`HD01CU24`) tulevat kaikki hyväksytyiksi ennen syyskuun 2026 Riksdag-vaalia. Samaan aikaan Riksrevisionenin tuhoisa tarkastus vuoden 2015 poliisiuudistuksesta (`HD01JuU31`) — joka toteaa, että Polismyndigheten ei saavuttanut uudistuksen keskeisiä tehokkuus- ja laatutavoitteita — luo vastuullisuusvelan hallitsevalle koalitiolle juuri sillä hetkellä, kun sen täytyy todistaa toimitusten uskottavuus lainvalvonnassa. IMF ennustaa Ruotsin BKT:n kasvuksi +2,1 % (WEO Apr-2026, NGDP_RPCH) vuodelle 2026, mikä tarjoaa suotuisan makrotaustan vanhustenhoito- ja poliisipaketteihin sisältyville taloudellisille sitoumuksille.
 
 ### 🧭 3 päätöstä, joita tämä tiedote tukee
@@ -1586,8 +1581,7 @@ KORKEA — kaikki neljä ensisijaista asiakirjaa ovat `bet` (valiokunnan mietint
 **Niveau de confiance** : ÉLEVÉ [A1–B2]  
 **Date de base** : 2026-04-26 (données : recul au 2026-04-24)
 
-### 🎯 BLUF
-
+### Lede
 La vague de dépôts du Riksdag du 24 avril confirme que la coalition Tidö exécute un sprint législatif pré-électoral sur plusieurs fronts : une nouvelle loi révolutionnaire sur les armes interdisant certains fusils de chasse semi-automatiques (`HD01JuU10`), un paquet de soins aux personnes âgées (`HD01SoU25`) et un cadre d'autorisation de construire plus efficace (`HD01CU24`) seront tous adoptés avant les élections du Riksdag en septembre 2026. Simultanément, l'audit dévastateur du Riksrevisionen sur la réforme policière de 2015 (`HD01JuU31`) — constatant que la Polismyndigheten n'a pas atteint les objectifs fondamentaux de la réforme en matière d'efficacité et de qualité — crée un déficit de crédibilité pour la coalition au pouvoir au moment précis où elle doit faire valoir ses capacités de livraison dans le domaine de l'application de la loi. Le FMI projette une croissance du PIB suédois de +2,1 % (WEO avr.-2026, NGDP_RPCH) en 2026, offrant un contexte macro favorable aux engagements financiers intégrés dans les paquets de soins aux personnes âgées et de police.
 
 ### 🧭 3 décisions que ce PM soutient
@@ -1632,8 +1626,7 @@ title: "שוודיה — ביטחון, טיפול בקשישים ורפורמה 
 **רמת ביטחון**: גבוהה [A1–B2]  
 **תאריך בסיס**: 2026-04-26 (נתונים: סקירה לאחור 2026-04-24)
 
-### 🎯 BLUF
-
+### Lede
 גל ההצגות בריקסדאג ב-24 באפריל מאשר שקואליציית טידו מבצעת ספרינט חקיקתי רב-חזיתי לפני הבחירות: חוק נשק חדש פורץ דרך האוסר על רובי ציד מסוימים חצי-אוטומטיים (`HD01JuU10`), חבילת טיפול בקשישים (`HD01SoU25`) ומסגרת אישורי בנייה יעילה יותר (`HD01CU24`) ייאשרו כולם לפני בחירות הריקסדאג בספטמבר 2026. בו-זמנית, הביקורת ההרסנית של Riksrevisionen על רפורמת המשטרה משנת 2015 (`HD01JuU31`) — הקובעת ש-Polismyndigheten לא השיגה את יעדי הרפורמה המרכזיים ביחס ליעילות ולאיכות — יוצרת גירעון אמינות עבור הקואליציה השלטת ברגע שבו היא צריכה להוכיח את יכולת האספקה שלה באכיפת החוק. קרן המטבע הבינלאומית צופה צמיחת תוצר שבדי של +2.1% (WEO אפריל-2026, NGDP_RPCH) ב-2026, המספקת רקע מאקרו נוח להתחייבויות הפיננסיות הטמונות בחבילות טיפול בקשישים ומשטרה.
 
 ### 🧭 3 החלטות שתקציר זה תומך בהן
@@ -1670,8 +1663,7 @@ title: "שוודיה — ביטחון, טיפול בקשישים ורפורמה 
 **信頼度**: 高 [A1–B2]  
 **基準日**: 2026-04-26（データ：2026-04-24の振り返り）
 
-### 🎯 BLUF
-
+### Lede
 4月24日のリクスダーグ（Riksdag）の上程波は、ティードー（Tidö）連立政権が選挙前の多正面立法スプリントを実施していることを確認します：特定の半自動猟銃を禁止する画期的な新銃器法（`HD01JuU10`）、高齢者ケアパッケージ（`HD01SoU25`）、より効率的な建築許可フレームワーク（`HD01CU24`）がすべて2026年9月のリクスダーグ選挙前に可決されます。同時に、リクスレビジョーネン（Riksrevisionen）の2015年警察改革（`HD01JuU31`）に関する壊滅的な監査 — ポリスミンディゲーテン（Polismyndigheten）が改革の効率性・品質に関する核心目標を達成していないと結論付けた — は、法執行における提供信頼性を主張しなければならない正にその瞬間に、与党連立政権に信頼性の負債を生み出しています。IMFは2026年のスウェーデンGDP成長率を+2.1%（WEO 2026年4月、NGDP_RPCH）と予測しており、高齢者ケアおよび警察パッケージに組み込まれた財政コミットメントにとって有利なマクロ環境を提供しています。
 
 ### 🧭 このPMが支援する3つの意思決定
@@ -1708,8 +1700,7 @@ title: "שוודיה — ביטחון, טיפול בקשישים ורפורמה 
 **신뢰도**: 높음 [A1–B2]  
 **기준일**: 2026-04-26 (데이터: 2026-04-24 소급)
 
-### 🎯 BLUF
-
+### Lede
 4월 24일 릭스다그(Riksdag)의 상정 물결은 티데(Tidö) 연립이 선거 전 다각적 입법 스프린트를 수행 중임을 확인합니다: 특정 반자동 사냥총을 금지하는 획기적인 새 총기법(`HD01JuU10`), 노인복지 패키지(`HD01SoU25`), 보다 효율적인 건축 허가 프레임워크(`HD01CU24`)가 모두 2026년 9월 릭스다그 선거 전에 통과됩니다. 동시에, 릭스레비시오넨(Riksrevisionen)의 2015년 경찰 개혁(`HD01JuU31`)에 대한 치명적 감사 — 폴리스민디게텐(Polismyndigheten)이 효율성 및 품질에 관한 개혁의 핵심 목표를 달성하지 못했다고 밝힌 — 는 법집행에서 이행 신뢰도를 주장해야 하는 바로 그 순간에 집권 연립에 신뢰성 부채를 안겨줍니다. IMF는 2026년 스웨덴 GDP 성장률을 +2.1%(WEO 2026년 4월, NGDP_RPCH)로 전망하며, 노인복지 및 경찰 패키지에 내재된 재정적 약속에 유리한 거시 환경을 제공합니다.
 
 ### 🧭 이 PM이 지원하는 3가지 의사결정
@@ -1746,8 +1737,7 @@ title: "שוודיה — ביטחון, טיפול בקשישים ורפורמה 
 **Betrouwbaarheidsniveau**: HOOG [A1–B2]  
 **Basisdatum**: 2026-04-26 (gegevens: terugblik 2026-04-24)
 
-### 🎯 BLUF
-
+### Lede
 De tabelleringsgolf van de Riksdag op 24 april bevestigt dat de Tidö-coalitie een meerfrontige voor-verkiezings wetgevingssprint uitvoert: een baanbrekende nieuwe wapenwet die bepaalde halfautomatische jachtgeweren verbiedt (`HD01JuU10`), een ouderenzorgpakket (`HD01SoU25`) en een efficiënter bouwvergunningskader (`HD01CU24`) worden allemaal vóór de Riksdag-verkiezingen van september 2026 aangenomen. Tegelijkertijd creëert de vernietigende audit van de Riksrevisionen over de politiehervorming van 2015 (`HD01JuU31`) — die vaststelt dat de Polismyndigheten de kerndoelen van de hervorming op het gebied van efficiëntie en kwaliteit niet heeft bereikt — een geloofwaardigheidstekort voor de regerende coalitie op precies het moment dat zij haar leveringscredibiliteit op het gebied van rechtshandhaving moet bewijzen. Het IMF projecteert een Zweedse bbp-groei van +2,1% (WEO apr.-2026, NGDP_RPCH) in 2026, wat een gunstig macro-economisch achtergrond biedt voor de financiële verplichtingen die zijn ingebed in de ouderenzorg- en politiepakketten.
 
 ### 🧭 3 beslissingen die dit PM ondersteunt
@@ -1784,8 +1774,7 @@ HOOG — alle vier primaire documenten zijn `bet` (commissierapport = stemadvies
 **Konfidensnivå**: HØY [A1–B2]  
 **Basisdato**: 2026-04-26 (data: 2026-04-24 tilbakeblikk)
 
-### 🎯 BLUF
-
+### Lede
 Riksdagens bordsettingsbølge den 24. april bekrefter at Tidö-koalisjonen gjennomfører en flerfrontet lovgivningssprint mot valget: en banebrytende ny våpenlov som forbyr visse halvautomatiske jaktrifler (`HD01JuU10`), en eldreomsorgspack (`HD01SoU25`) og et mer effektivt byggesaksbehandlingsrammeverk (`HD01CU24`) vil alle bli vedtatt før Riksdag-valget i september 2026. Samtidig skaper Riksrevisjonens knusende revisjon av 2015-politireformen (`HD01JuU31`) — som konstaterer at Polismyndigheten ikke nådde reformens kjernmål for effektivitet og kvalitet — en troverdighetsforpliktelse for den sittende koalisjonen på nøyaktig det tidspunktet den trenger å hevde leveringskredibilitet innen politiarbeid. IMF forventer svensk BNP-vekst på +2,1 % (WEO Apr-2026, NGDP_RPCH) i 2026, noe som gir en gunstig makrobakgrunn for finansielle forpliktelser innbygd i eldreomsorg og politipakker.
 
 ### 🧭 3 beslutninger dette PM støtter
@@ -1822,8 +1811,7 @@ HØY — alle fire primærdokumenter er `bet` (utvalgsrapport = stemmeanbefaling
 **Konfidensgrad**: HÖG [A1–B2]  
 **Basdatum**: 2026-04-26 (data: 2026-04-24 bakåtblick)
 
-### 🎯 BLUF
-
+### Lede
 Riksdagens tableringssvep den 24 april bekräftar att Tidökoalitionen genomför en flerfrontig förvalslagstiftningssprint: en banbrytande ny vapenlag som förbjuder vissa halvautomatiska jaktgevär (`HD01JuU10`), ett äldreomsorgspaket (`HD01SoU25`) och ett effektivare bygglovsramverk (`HD01CU24`) kommer alla att antas före Riksdagsvalet i september 2026. Samtidigt skapar Riksrevisionens förödande revision av 2015 års polisreform (`HD01JuU31`) — som konstaterar att Polismyndigheten inte uppnådde reformens kärn mål gällande effektivitet och kvalitet — en berättighetsskuld för den styrande koalitionen vid exakt det tillfälle då den behöver hävda leveranskredibilitet inom brottsbekämpning. IMF prognostiserar svensk BNP-tillväxt på +2,1 % (WEO Apr-2026, NGDP_RPCH) för 2026, vilket ger en gynnsam makrobakgrund för de finansiella åtaganden som är inbäddade i äldreomsorgs- och polispaket.
 
 ### 🧭 3 beslut som detta PM stöder

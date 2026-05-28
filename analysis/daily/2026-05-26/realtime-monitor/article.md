@@ -3,11 +3,11 @@ date: 2026-05-26
 subfolder: realtime-monitor
 slug: 2026-05-26-realtime-monitor
 source_folder: analysis/daily/2026-05-26/realtime-monitor
-generated_at: 2026-05-28T15:56:17.560Z
+generated_at: 2026-05-28T22:29:32.652Z
 language: en
 layout: article
 ---
-## Executive Brief
+## What Happened
 <!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-26/realtime-monitor/executive-brief.md -->
 
 ---
@@ -30,7 +30,7 @@ Sweden's Riksdag session of 26 May 2026 — approximately 100 days before the Se
 
 | PIR | Owner | Status |
 |-----|-------|--------|
-| What specific changes does HD03271 introduce to abortlagen? | SoU committee | ❓ Open — full text pending |
+| What specific changes does Riksdag document #03271 (HD03271) introduce to abortlagen? | SoU committee | ❓ Open — full text pending |
 | Will KD suffer electoral backlash from moderate M/L voters? | Electoral tracking | ❓ Open |
 | Will SD support or abstain on abortion law vote? | Coalition dynamics | ❓ Open |
 | What materiel categories does FöU17 authorise for Ukraine? | FöU committee vote | ❓ Open |
@@ -50,9 +50,9 @@ Use this guide to read the article as a political-intelligence product rather th
 
 | Icon | Reader need | What you'll get |
 |---|---|---|
-| 📊 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
-| 🧠 | [Synthesis Summary](#rm-synthesis-summary) | evidence-anchored narrative consolidating primary sources into one coherent story line |
-| 🎯 | [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps |
+| 📊 | [Lede and editorial decisions](#rm-what-happened) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
+| 🧠 | [Why It Matters](#rm-why-it-matters) | evidence-anchored narrative consolidating primary sources into one coherent story line |
+| 🎯 | [Key Judgments](#rm-key-findings) | confidence-bearing political-intelligence conclusions and collection gaps |
 | 📈 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals |
 | 👥 | [Stakeholder Perspectives](#rm-stakeholder-perspectives) | winners, losers and undecided actors with stake-weighted positions and pressure points |
 | 🔢 | [Coalition Mathematics](#rm-coalition-mathematics) | parliamentary arithmetic showing exactly who can pass or block this measure and at what margin |
@@ -68,13 +68,13 @@ Use this guide to read the article as a political-intelligence product rather th
 | ⚙️ | [Implementation Feasibility](#rm-implementation-feasibility) | delivery feasibility, capability gaps, timelines and execution risks for the proposed action |
 | 📰 | [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder |
 | 😈 | [Devil's Advocate](#rm-devils-advocate) | alternative hypotheses, steel-manned counter-arguments and the strongest case against the lead reading |
-| 🏷️ | [Classification Results](#rm-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
-| 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
-| 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
-| 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
-| 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
+| 🏷️ | [Deep Dive: Classification Results](#rm-deep-dive-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
+| 🔀 | [Deep Dive: Cross-Reference Map](#rm-deep-dive-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
+| 🔬 | [Deep Dive: Methodology & Limitations](#rm-deep-dive-methodology--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
+| 📦 | [Deep Dive: Data Download Manifest](#rm-deep-dive-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 🏷️ | [Audit appendix](#rm-deep-dive-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
-## Synthesis Summary
+## Why It Matters
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-26/realtime-monitor/synthesis-summary.md -->
 
 **📋 Owner:** CEO | **📅 Date:** 2026-05-26 | **🏷️ Classification:** Public
@@ -161,7 +161,7 @@ The defence cluster reinforces the government's "strong Sweden" narrative and pr
 
 **Net electoral assessment:** POSSIBLE that today's combined legislative package marginally improves KD's vote share (currently near the 4% threshold) while creating a S electoral gift on reproductive rights. The overall government position remains precarious given ongoing inflation, unemployment concerns, and housing market distress that will dominate media coverage after the initial abortion law news cycle fades (estimated 3–7 day dominant news cycle).
 
-## Intelligence Assessment — Key Judgments
+## Key Findings
 <!-- source: intelligence-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-26/realtime-monitor/intelligence-assessment.md -->
 
 **Method:** Analysis of Competing Hypotheses (ACH) + Key Judgments + PIR Propagation
@@ -1516,7 +1516,7 @@ Quantity ≠ quality. Opposition parties can counter:
 | C3: Ukraine hidden costs underweighted | UNLIKELY (hidden costs) | POSSIBLE | Minor risk elevation |
 | C4: Government record narrative vulnerable | Strong asset | Mixed asset | Meaningful vulnerability |
 
-## Classification Results
+## Deep Dive: Classification Results
 <!-- source: classification-results.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-26/realtime-monitor/classification-results.md -->
 
 ### Document Classification
@@ -1559,7 +1559,7 @@ All political opinion data processed for this analysis is **public domain** (Art
 
 All analysis artifacts in this run: 🟢 **PUBLIC** — suitable for publication on riksdagsmonitor.com under Apache 2.0 license. No personal data requiring special handling.
 
-## Cross-Reference Map
+## Deep Dive: Cross-Reference Map
 <!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-26/realtime-monitor/cross-reference-map.md -->
 
 ---
@@ -1625,7 +1625,7 @@ All analysis artifacts in this run: 🟢 **PUBLIC** — suitable for publication
 
 **Non-duplication contract:** Where the same document appears in sibling folders, this realtime-monitor analysis **adds day-of context** rather than reproducing sibling analysis. Readers should be directed to sibling folders for base document analysis.
 
-## Methodology Reflection & Limitations
+## Deep Dive: Methodology & Limitations
 <!-- source: methodology-reflection.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-26/realtime-monitor/methodology-reflection.md -->
 
 ---
@@ -1709,7 +1709,7 @@ FI-12 (Russian foreign ministry response to FöU17) cannot be monitored via curr
 
 #### Pass 1 complete: ✅ All 23 artifacts written
 
-## Data Download Manifest
+## Deep Dive: Data Download Manifest
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-26/realtime-monitor/data-download-manifest.md -->
 
 **Workflow**: News Realtime Monitor

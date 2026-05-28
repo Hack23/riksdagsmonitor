@@ -3,18 +3,17 @@ date: 2026-05-27
 subfolder: motions
 slug: 2026-05-27-motions
 source_folder: analysis/daily/2026-05-27/motions
-generated_at: 2026-05-28T15:56:17.611Z
+generated_at: 2026-05-28T22:29:32.707Z
 language: en
 layout: article
 ---
-## Executive Brief
+## What Happened
 <!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-27/motions/executive-brief.md -->
 
 ---
 
-### Bottom Line Up Front
-
-Two Miljöpartiet (MP) opposition motions filed 2026-05-22 mount a principled rights-based challenge to two major government propositions advancing on the parliamentary timeline. Motion HD024191 contests Skatteverket's expanded population-registry control powers, warning of harm to homeless and socially vulnerable persons. Motion HD024192 demands outright rejection of child detention provisions in the security-aliens law and calls for an independent evaluation before new restrictions take effect. Both motions will almost certainly be defeated by the governing bloc (M+KD+L+SD), but they frame central human-rights fault lines for the 2026 election.
+### Lede
+Two Miljöpartiet (MP) opposition motions filed 2026-05-22 mount a principled rights-based challenge to two major government propositions advancing on the parliamentary timeline. Motion Riksdag document #024191 (HD024191) contests Skatteverket's expanded population-registry control powers, warning of harm to homeless and socially vulnerable persons. Motion HD024192 demands outright rejection of child detention provisions in the security-aliens law and calls for an independent evaluation before new restrictions take effect. Both motions will almost certainly be defeated by the governing bloc (M+KD+L+SD), but they frame central human-rights fault lines for the 2026 election.
 
 ---
 
@@ -73,9 +72,9 @@ Use this guide to read the article as a political-intelligence product rather th
 
 | Icon | Reader need | What you'll get |
 |---|---|---|
-| 📊 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
-| 🧠 | [Synthesis Summary](#rm-synthesis-summary) | evidence-anchored narrative consolidating primary sources into one coherent story line |
-| 🎯 | [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps |
+| 📊 | [Lede and editorial decisions](#rm-what-happened) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
+| 🧠 | [Why It Matters](#rm-why-it-matters) | evidence-anchored narrative consolidating primary sources into one coherent story line |
+| 🎯 | [Key Judgments](#rm-key-findings) | confidence-bearing political-intelligence conclusions and collection gaps |
 | 📈 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals |
 | 👥 | [Stakeholder Perspectives](#rm-stakeholder-perspectives) | winners, losers and undecided actors with stake-weighted positions and pressure points |
 | 🔢 | [Coalition Mathematics](#rm-coalition-mathematics) | parliamentary arithmetic showing exactly who can pass or block this measure and at what margin |
@@ -91,10 +90,10 @@ Use this guide to read the article as a political-intelligence product rather th
 | ⚙️ | [Implementation Feasibility](#rm-implementation-feasibility) | delivery feasibility, capability gaps, timelines and execution risks for the proposed action |
 | 📰 | [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder |
 | 😈 | [Devil's Advocate](#rm-devils-advocate) | alternative hypotheses, steel-manned counter-arguments and the strongest case against the lead reading |
-| 🏷️ | [Classification Results](#rm-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
-| 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
-| 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
-| 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 🏷️ | [Deep Dive: Classification Results](#rm-deep-dive-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
+| 🔀 | [Deep Dive: Cross-Reference Map](#rm-deep-dive-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
+| 🔬 | [Deep Dive: Methodology & Limitations](#rm-deep-dive-methodology--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
+| 📦 | [Deep Dive: Data Download Manifest](#rm-deep-dive-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
 | 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
@@ -109,9 +108,9 @@ Use this guide to read the article as a political-intelligence product rather th
 | 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
-| 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
+| 🏷️ | [Audit appendix](#rm-deep-dive-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
-## Synthesis Summary
+## Why It Matters
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-27/motions/synthesis-summary.md -->
 
 ---
@@ -147,7 +146,7 @@ The broader pattern: this is the third consecutive riksmöte in which MP has fil
 - **Administrative capacity gaps**: HD024191 identifies a gap in Skatteverket's mandate for edge-case populations
 - **Legislative acceleration risk**: Both motions implicitly criticise the pace and volume of government legislation in 2025/26 spring session
 
-## Intelligence Assessment — Key Judgments
+## Key Findings
 <!-- source: intelligence-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-27/motions/intelligence-assessment.md -->
 
 **Admiralty Codes Applied**: A1–C3 (source reliability × information probability)
@@ -1688,7 +1687,7 @@ The challenges do NOT undermine:
 
 **Overall confidence adjustment**: Reduce confidence in ECHR incompatibility claim for adult detention from LIKELY to POSSIBLE. Maintain LIKELY for child-detention CRC incompatibility. Maintain ALMOST CERTAIN for electoral motivation as co-driver of motions.
 
-## Classification Results
+## Deep Dive: Classification Results
 <!-- source: classification-results.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-27/motions/classification-results.md -->
 
 ---
@@ -1751,7 +1750,7 @@ Processing basis: legitimate political accountability reporting, serving the dem
 
 Both documents retrieved from data.riksdagen.se (official parliamentary data source) via riksdag-regering MCP. Coverage state: `full_text` (live retrieval 2026-05-27). Authenticity: HIGH — official parliamentary API, government-operated, signed metadata.
 
-## Cross-Reference Map
+## Deep Dive: Cross-Reference Map
 <!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-27/motions/cross-reference-map.md -->
 
 ---
@@ -1833,7 +1832,7 @@ gantt
     Potential ECtHR petitions :2028-01-01, 2030-01-01
 ```
 
-## Methodology Reflection & Limitations
+## Deep Dive: Methodology & Limitations
 <!-- source: methodology-reflection.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-27/motions/methodology-reflection.md -->
 
 ---
@@ -1933,7 +1932,7 @@ The Lagrådet's criticism of prop. 2025/26:267 is cited via the motion text (whi
 
 ---
 
-## Data Download Manifest
+## Deep Dive: Data Download Manifest
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-27/motions/data-download-manifest.md -->
 
 > ℹ️ **Data-Only Pipeline**: This script downloads and persists raw data.

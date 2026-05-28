@@ -3,23 +3,22 @@ date: 2026-05-28
 subfolder: election-cycle/next
 slug: 2026-05-28-election-cycle/next
 source_folder: analysis/daily/2026-05-28/election-cycle/next
-generated_at: 2026-05-28T15:56:17.673Z
+generated_at: 2026-05-28T22:29:32.776Z
 language: en
 layout: article
 ---
-## Executive Brief
+## What Happened
 <!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-28/election-cycle/next/executive-brief.md -->
 
 **Horizon**: Post-election 2026–2030 | **Anchor**: September 13, 2026 election | **Assessment**: ROUGHLY EVEN for each major formation
 
-### BLUF
-
+### Lede
 With Sweden's September 13, 2026 election now 107 days away, this brief maps the post-election policy landscape across the two most probable government formations: **Formation B** (S+C government, WEP 40–50%) and **Formation A** (Tidö continuation, WEP 35–45%). The policy reversal risk is high in social policy (abortion, crime) and medium in economic policy (housing, nuclear). Defence, NATO, and cybersecurity are immune to reversal — cross-party consensus locks in NATO commitments regardless of formation.
 
 ### First-100-Days Priority Map by Formation
 
 #### Formation B — S+C Government (Andersson/Demirok)
-1. **Day 1–10**: Abort implementation of HD03271 (abortion restriction); direct Socialstyrelsen to maintain current 22-week threshold pending repeal legislation
+1. **Day 1–10**: Abort implementation of Riksdag document #03271 (HD03271) (abortion restriction); direct Socialstyrelsen to maintain current 22-week threshold pending repeal legislation
 2. **Day 10–20**: Review HD01JuU38 (recidivism) implementation; commission Kriminalvården capacity report before enforcement begins
 3. **Day 20–60**: New housing bill tabled (C's prerequisite: partial rent liberalisation in new-build sector)
 4. **Day 60–100**: Budget revision tabled; S-demanded welfare increases vs C-demanded fiscal neutrality (tension but functional compromise likely)
@@ -44,9 +43,9 @@ Use this guide to read the article as a political-intelligence product rather th
 
 | Icon | Reader need | What you'll get |
 |---|---|---|
-| 📊 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
-| 🧠 | [Synthesis Summary](#rm-synthesis-summary) | evidence-anchored narrative consolidating primary sources into one coherent story line |
-| 🎯 | [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps |
+| 📊 | [Lede and editorial decisions](#rm-what-happened) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
+| 🧠 | [Why It Matters](#rm-why-it-matters) | evidence-anchored narrative consolidating primary sources into one coherent story line |
+| 🎯 | [Key Judgments](#rm-key-findings) | confidence-bearing political-intelligence conclusions and collection gaps |
 | 📈 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals |
 | 👥 | [Stakeholder Perspectives](#rm-stakeholder-perspectives) | winners, losers and undecided actors with stake-weighted positions and pressure points |
 | 🔢 | [Coalition Mathematics](#rm-coalition-mathematics) | parliamentary arithmetic showing exactly who can pass or block this measure and at what margin |
@@ -67,16 +66,16 @@ Use this guide to read the article as a political-intelligence product rather th
 | ⚙️ | [Implementation Feasibility](#rm-implementation-feasibility) | delivery feasibility, capability gaps, timelines and execution risks for the proposed action |
 | 📰 | [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder |
 | 😈 | [Devil's Advocate](#rm-devils-advocate) | alternative hypotheses, steel-manned counter-arguments and the strongest case against the lead reading |
-| 🏷️ | [Classification Results](#rm-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
-| 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
-| 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
+| 🏷️ | [Deep Dive: Classification Results](#rm-deep-dive-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
+| 🔀 | [Deep Dive: Cross-Reference Map](#rm-deep-dive-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
+| 🔬 | [Deep Dive: Methodology & Limitations](#rm-deep-dive-methodology--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📝 | [Analysis Index](#rm-analysis-index) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Reference Analysis Quality](#rm-reference-analysis-quality) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Workflow Audit](#rm-workflow-audit) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
-| 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
+| 🏷️ | [Audit appendix](#rm-deep-dive-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
-## Synthesis Summary
+## Why It Matters
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-28/election-cycle/next/synthesis-summary.md -->
 
 ### The Two Sweden Scenarios
@@ -122,7 +121,7 @@ Regardless of who forms government after September 13, these policies will conti
 → See `scenario-analysis.md` for full outcome tree  
 → See `cross-reference-map.md` for prior cycle connections
 
-## Intelligence Assessment — Key Judgments
+## Key Findings
 <!-- source: intelligence-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-28/election-cycle/next/intelligence-assessment.md -->
 
 ### KEY JUDGMENTS
@@ -1029,7 +1028,7 @@ Both consensus analysis frames the 2026–2030 cycle as primarily domestic: abor
 
 The three counterfactuals collectively warn that: (1) the C pivot to Formation B is not inevitable; (2) Formation B's stability is historically fragile; and (3) external events may override the domestic policy agenda entirely. Strategic decision-makers should model Formation A as a 40% probability scenario, not 35%, and should not dismiss the Formation C (grand coalition) emergency scenario if external geopolitical pressure accelerates.
 
-## Classification Results
+## Deep Dive: Classification Results
 <!-- source: classification-results.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-28/election-cycle/next/classification-results.md -->
 
 ### Formation Classification
@@ -1054,7 +1053,7 @@ The three counterfactuals collectively warn that: (1) the C pivot to Formation B
 | Housing | LIMITED REFORM | C-DRIVEN REFORM | MODERATE REFORM |
 | Climate | NUCLEAR-LED | MIXED PORTFOLIO | NUCLEAR + RENEWABLES |
 
-## Cross-Reference Map
+## Deep Dive: Cross-Reference Map
 <!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-28/election-cycle/next/cross-reference-map.md -->
 
 ### Intra-Run Cross-References
@@ -1102,7 +1101,7 @@ The three counterfactuals collectively warn that: (1) the C pivot to Formation B
 
 *economicProvenance: {provider: imf, dataflow: WEO, vintage: 2026-04, retrieved_at: 2026-05-28}*
 
-## Methodology Reflection & Limitations
+## Deep Dive: Methodology & Limitations
 <!-- source: methodology-reflection.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-28/election-cycle/next/methodology-reflection.md -->
 
 **Pass-2 status: executed in full**

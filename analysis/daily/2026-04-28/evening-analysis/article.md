@@ -3,18 +3,17 @@ date: 2026-04-28
 subfolder: evening-analysis
 slug: 2026-04-28-evening-analysis
 source_folder: analysis/daily/2026-04-28/evening-analysis
-generated_at: 2026-05-28T15:56:15.818Z
+generated_at: 2026-05-28T22:29:30.679Z
 language: en
 layout: article
 ---
-## Executive Brief
+## What Happened
 <!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/evening-analysis/executive-brief.md -->
 
 ---
 
-### 🎯 BLUF
-
-April 28, 2026 marks Sweden's legislative peak of the riksmöte 2025/26: the Tidö coalition simultaneously advanced the EU Banking Package (HD03253), welfare sanctions for prisoners, citizenship tightening (HD01SfU28), CER critical infrastructure resilience law (HD01FöU20), and military cooperation framework (HD01FöU14), while four opposition parties filed coordinated reservations against the Spring Fiscal Bill's GDP forecast of 1.9% growth amid US tariff headwinds. The Social Democrats mounted their most substantive legislative challenge of the year with a direct attack on the government's anti-corruption proposition (HD024099), and three coordinated interpellations targeted railway infrastructure, sickness insurance reform risk, and corporate crime gaps. The day's legislative portfolio reveals a minority coalition executing on all fronts — security, economic, welfare, and criminal justice — to consolidate its pre-election narrative ahead of September 2026.
+### Lede
+April 28, 2026 marks Sweden's legislative peak of the riksmöte 2025/26: the Tidö coalition simultaneously advanced the EU Banking Package (Riksdag document #03253 (HD03253)), welfare sanctions for prisoners, citizenship tightening (HD01SfU28), CER critical infrastructure resilience law (HD01FöU20), and military cooperation framework (HD01FöU14), while four opposition parties filed coordinated reservations against the Spring Fiscal Bill's GDP forecast of 1.9% growth amid US tariff headwinds. The Social Democrats mounted their most substantive legislative challenge of the year with a direct attack on the government's anti-corruption proposition (HD024099), and three coordinated interpellations targeted railway infrastructure, sickness insurance reform risk, and corporate crime gaps. The day's legislative portfolio reveals a minority coalition executing on all fronts — security, economic, welfare, and criminal justice — to consolidate its pre-election narrative ahead of September 2026.
 
 ### 🧭 3 Decisions This Brief Supports
 
@@ -46,9 +45,9 @@ Use this guide to read the article as a political-intelligence product rather th
 
 | Icon | Reader need | What you'll get |
 |---|---|---|
-| 📊 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
-| 🧠 | [Synthesis Summary](#rm-synthesis-summary) | evidence-anchored narrative consolidating primary sources into one coherent story line |
-| 🎯 | [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps |
+| 📊 | [Lede and editorial decisions](#rm-what-happened) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
+| 🧠 | [Why It Matters](#rm-why-it-matters) | evidence-anchored narrative consolidating primary sources into one coherent story line |
+| 🎯 | [Key Judgments](#rm-key-findings) | confidence-bearing political-intelligence conclusions and collection gaps |
 | 📈 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals |
 | 👥 | [Stakeholder Perspectives](#rm-stakeholder-perspectives) | winners, losers and undecided actors with stake-weighted positions and pressure points |
 | 🔢 | [Coalition Mathematics](#rm-coalition-mathematics) | parliamentary arithmetic showing exactly who can pass or block this measure and at what margin |
@@ -64,10 +63,10 @@ Use this guide to read the article as a political-intelligence product rather th
 | ⚙️ | [Implementation Feasibility](#rm-implementation-feasibility) | delivery feasibility, capability gaps, timelines and execution risks for the proposed action |
 | 📰 | [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder |
 | 😈 | [Devil's Advocate](#rm-devils-advocate) | alternative hypotheses, steel-manned counter-arguments and the strongest case against the lead reading |
-| 🏷️ | [Classification Results](#rm-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
-| 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
-| 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
-| 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 🏷️ | [Deep Dive: Classification Results](#rm-deep-dive-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
+| 🔀 | [Deep Dive: Cross-Reference Map](#rm-deep-dive-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
+| 🔬 | [Deep Dive: Methodology & Limitations](#rm-deep-dive-methodology--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
+| 📦 | [Deep Dive: Data Download Manifest](#rm-deep-dive-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
 | 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
@@ -82,9 +81,9 @@ Use this guide to read the article as a political-intelligence product rather th
 | 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
-| 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
+| 🏷️ | [Audit appendix](#rm-deep-dive-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
-## Synthesis Summary
+## Why It Matters
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/evening-analysis/synthesis-summary.md -->
 
 ---
@@ -163,7 +162,7 @@ graph TD
 - `analysis/daily/2026-04-28/interpellations/` — Railway, sickness insurance, corporate crime
 - `analysis/daily/2026-04-28/realtime-pulse/` — Full legislative calendar synthesis
 
-## Intelligence Assessment — Key Judgments
+## Key Findings
 <!-- source: intelligence-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/evening-analysis/intelligence-assessment.md -->
 
 **Confidence Scale**: HIGH (>80%), MODERATE (50-79%), LOW (<50%)
@@ -1408,7 +1407,7 @@ Today's legislative activity produces multiple competing frames across party med
 
 **Summary**: The dominant assessment of an ordered legislative sprint is defensible, but H1 (fragmentation risk) deserves elevated watch status given the convergent S attack pattern and L/SfU28 tension.
 
-## Classification Results
+## Deep Dive: Classification Results
 <!-- source: classification-results.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/evening-analysis/classification-results.md -->
 
 ---
@@ -1460,7 +1459,7 @@ graph LR
     style D fill:#1a1e3d,color:#e0e0e0
 ```
 
-## Cross-Reference Map
+## Deep Dive: Cross-Reference Map
 <!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/evening-analysis/cross-reference-map.md -->
 
 ---
@@ -1559,7 +1558,7 @@ graph TD
     style RP fill:#1a1e3d,color:#00d9ff
 ```
 
-## Methodology Reflection & Limitations
+## Deep Dive: Methodology & Limitations
 <!-- source: methodology-reflection.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/evening-analysis/methodology-reflection.md -->
 
 ---
@@ -1654,7 +1653,7 @@ All five sibling folders were read (executive-brief.md each) and explicitly cite
 | Uncertainty quantification | ✓ | Scenario probabilities + PIR confidence |
 | Consumer orientation | ✓ | Executive brief, 3 Decisions, 60-sec read |
 
-## Data Download Manifest
+## Deep Dive: Data Download Manifest
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/evening-analysis/data-download-manifest.md -->
 
 ---

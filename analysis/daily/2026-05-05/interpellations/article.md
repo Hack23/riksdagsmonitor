@@ -3,18 +3,18 @@ date: 2026-05-05
 subfolder: interpellations
 slug: 2026-05-05-interpellations
 source_folder: analysis/daily/2026-05-05/interpellations
-generated_at: 2026-05-28T15:56:16.303Z
+generated_at: 2026-05-28T22:29:31.237Z
 language: en
 layout: article
 ---
-## Executive Brief
+## What Happened
 <!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/interpellations/executive-brief.md -->
 
 ---
 
 ### ONE-PARAGRAPH INTELLIGENCE SUMMARY
 
-Sweden's parliamentary accountability pulse on 5 May 2026 is dominated by five interpellations that collectively expose three structural fault lines in the Tidö coalition's second term: *infrastructure promise erosion* (Ostlänken rerouting, HD10463), *law-and-order credibility deficit* (gang crime eradication KPI, HD10458), and *state-apparatus politicisation* (agency activism, HD10459). A fourth thread — Sweden's decline in ESA funding (HD10461) — exposes research-industrial policy weakness affecting both civilian and defence-adjacent space infrastructure. A fifth (HD10462) reveals a narrow but tangible healthcare regulation failure in the pesticide-tax legislation. Taken together, the batch indicates an opposition (S and SD from different flanks) executing a sustained accountability offensive targeting government ministers across four portfolios simultaneously.
+Sweden's parliamentary accountability pulse on 5 May 2026 is dominated by five interpellations that collectively expose three structural fault lines in the Tidö coalition's second term: *infrastructure promise erosion* (Ostlänken rerouting, Riksdag document #10463 (HD10463)), *law-and-order credibility deficit* (gang crime eradication KPI, HD10458), and *state-apparatus politicisation* (agency activism, HD10459). A fourth thread — Sweden's decline in ESA funding (HD10461) — exposes research-industrial policy weakness affecting both civilian and defence-adjacent space infrastructure. A fifth (HD10462) reveals a narrow but tangible healthcare regulation failure in the pesticide-tax legislation. Taken together, the batch indicates an opposition (S and SD from different flanks) executing a sustained accountability offensive targeting government ministers across four portfolios simultaneously.
 
 ---
 
@@ -60,9 +60,9 @@ Use this guide to read the article as a political-intelligence product rather th
 
 | Icon | Reader need | What you'll get |
 |---|---|---|
-| 📊 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
-| 🧠 | [Synthesis Summary](#rm-synthesis-summary) | evidence-anchored narrative consolidating primary sources into one coherent story line |
-| 🎯 | [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps |
+| 📊 | [Lede and editorial decisions](#rm-what-happened) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
+| 🧠 | [Why It Matters](#rm-why-it-matters) | evidence-anchored narrative consolidating primary sources into one coherent story line |
+| 🎯 | [Key Judgments](#rm-key-findings) | confidence-bearing political-intelligence conclusions and collection gaps |
 | 📈 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals |
 | 👥 | [Stakeholder Perspectives](#rm-stakeholder-perspectives) | winners, losers and undecided actors with stake-weighted positions and pressure points |
 | 🔢 | [Coalition Mathematics](#rm-coalition-mathematics) | parliamentary arithmetic showing exactly who can pass or block this measure and at what margin |
@@ -78,10 +78,10 @@ Use this guide to read the article as a political-intelligence product rather th
 | ⚙️ | [Implementation Feasibility](#rm-implementation-feasibility) | delivery feasibility, capability gaps, timelines and execution risks for the proposed action |
 | 📰 | [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder |
 | 😈 | [Devil's Advocate](#rm-devils-advocate) | alternative hypotheses, steel-manned counter-arguments and the strongest case against the lead reading |
-| 🏷️ | [Classification Results](#rm-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
-| 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
-| 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
-| 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 🏷️ | [Deep Dive: Classification Results](#rm-deep-dive-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
+| 🔀 | [Deep Dive: Cross-Reference Map](#rm-deep-dive-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
+| 🔬 | [Deep Dive: Methodology & Limitations](#rm-deep-dive-methodology--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
+| 📦 | [Deep Dive: Data Download Manifest](#rm-deep-dive-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
 | 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
@@ -96,9 +96,9 @@ Use this guide to read the article as a political-intelligence product rather th
 | 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
-| 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
+| 🏷️ | [Audit appendix](#rm-deep-dive-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
-## Synthesis Summary
+## Why It Matters
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/interpellations/synthesis-summary.md -->
 
 **Source Count**: 5 primary (full text) + 10 metadata-only interpellations  
@@ -176,7 +176,7 @@ This interpellation is technically narrow but practically significant for Swedis
 
 All full-text interpellations are primary-source parliamentary documents. No secondary source contamination in this analysis cycle.
 
-## Intelligence Assessment — Key Judgments
+## Key Findings
 <!-- source: intelligence-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/interpellations/intelligence-assessment.md -->
 
 **Assessment Type**: Structured Analytical Assessment (SAT)  
@@ -1546,7 +1546,7 @@ If the government means a serious reduction rather than literal eradication, the
 
 4. **SD's actual strategic goal**: HD10459 may be primarily for SD's own voter base (signaling toughness to SD voters who want more state-apparatus reform) rather than actually expecting Slottner to change agency governance.
 
-## Classification Results
+## Deep Dive: Classification Results
 <!-- source: classification-results.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/interpellations/classification-results.md -->
 
 ### Classification Framework
@@ -1610,7 +1610,7 @@ Rationale: Two independently L4-classified documents (HD10463, HD10458) in the s
 
 **HD10462 (L2)**: Strategic only — correctable regulatory anomaly. No constitutional or electoral significance. Include as contextual item.
 
-## Cross-Reference Map
+## Deep Dive: Cross-Reference Map
 <!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/interpellations/cross-reference-map.md -->
 
 ---
@@ -1672,7 +1672,7 @@ HD10459 (SD → KD) is an interpellation *within* the coalition. This is unusual
 
 This could signal the beginning of a pre-election "differentiation" strategy by SD — distancing itself from coalition partners to preserve SD identity ahead of 2026.
 
-## Methodology Reflection & Limitations
+## Deep Dive: Methodology & Limitations
 <!-- source: methodology-reflection.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/interpellations/methodology-reflection.md -->
 
 ---
@@ -1738,7 +1738,7 @@ Netherlands, UK, Denmark, Germany selected for gang crime and infrastructure com
 
 Overall quality assessment: PUBLICATION-READY. The analysis meets the depth standard for a `deep` analysis with 5 primary source documents.
 
-## Data Download Manifest
+## Deep Dive: Data Download Manifest
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/interpellations/data-download-manifest.md -->
 
 **Workflow**: news-interpellations  

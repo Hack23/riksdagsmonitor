@@ -3,17 +3,16 @@ date: 2026-05-20
 subfolder: evening-analysis
 slug: 2026-05-20-evening-analysis
 source_folder: analysis/daily/2026-05-20/evening-analysis
-generated_at: 2026-05-28T15:56:17.258Z
+generated_at: 2026-05-28T22:29:32.303Z
 language: en
 layout: article
 ---
-## Executive Brief
+## What Happened
 <!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/evening-analysis/executive-brief.md -->
 
 ---
 
-### BOTTOM LINE UP FRONT
-
+### Lede
 May 20, 2026 delivered Sweden's most constitutionally significant parliamentary session of the 2025/26 term. Three landmark votes at 16:00 reshaped the Riksdag's legislative record:
 
 **1. CONSTITUTIONAL ABORTION RIGHT (KU34) — FIRST VILANDE ADOPTION**  
@@ -60,9 +59,9 @@ Use this guide to read the article as a political-intelligence product rather th
 
 | Icon | Reader need | What you'll get |
 |---|---|---|
-| 📊 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
-| 🧠 | [Synthesis Summary](#rm-synthesis-summary) | evidence-anchored narrative consolidating primary sources into one coherent story line |
-| 🎯 | [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps |
+| 📊 | [Lede and editorial decisions](#rm-what-happened) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
+| 🧠 | [Why It Matters](#rm-why-it-matters) | evidence-anchored narrative consolidating primary sources into one coherent story line |
+| 🎯 | [Key Judgments](#rm-key-findings) | confidence-bearing political-intelligence conclusions and collection gaps |
 | 📈 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals |
 | 👥 | [Stakeholder Perspectives](#rm-stakeholder-perspectives) | winners, losers and undecided actors with stake-weighted positions and pressure points |
 | 🔢 | [Coalition Mathematics](#rm-coalition-mathematics) | parliamentary arithmetic showing exactly who can pass or block this measure and at what margin |
@@ -78,10 +77,10 @@ Use this guide to read the article as a political-intelligence product rather th
 | ⚙️ | [Implementation Feasibility](#rm-implementation-feasibility) | delivery feasibility, capability gaps, timelines and execution risks for the proposed action |
 | 📰 | [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder |
 | 😈 | [Devil's Advocate](#rm-devils-advocate) | alternative hypotheses, steel-manned counter-arguments and the strongest case against the lead reading |
-| 🏷️ | [Classification Results](#rm-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
-| 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
-| 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
-| 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 🏷️ | [Deep Dive: Classification Results](#rm-deep-dive-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
+| 🔀 | [Deep Dive: Cross-Reference Map](#rm-deep-dive-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
+| 🔬 | [Deep Dive: Methodology & Limitations](#rm-deep-dive-methodology--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
+| 📦 | [Deep Dive: Data Download Manifest](#rm-deep-dive-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
 | 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
@@ -95,9 +94,9 @@ Use this guide to read the article as a political-intelligence product rather th
 | 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
-| 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
+| 🏷️ | [Audit appendix](#rm-deep-dive-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
-## Synthesis Summary
+## Why It Matters
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/evening-analysis/synthesis-summary.md -->
 
 **Subfolder**: evening-analysis  
@@ -153,7 +152,7 @@ May 20, 2026 stands as the most consequential sitting day of the 2025/26 Riksdag
 
 #### Cluster E: Fiscal/Statistical (LOWER SIGNIFICANCE)
 
-**Documents**: HD024185, HD024186 (FiU motions on household debt survey)
+**Documents**: Riksdag document #024185 (HD024185), HD024186 (FiU motions on household debt survey)
 
 **Economic dimension**: The two opposition motions on Prop 2025/26:255 (household debt data collection) reflect different approaches to macroprudential data quality. The proposition allows SCB to conduct sample surveys on household wealth and debt. S and others support expanding data collection. The motions (FiU) suggest some parties want stronger mandatory survey response rates.
 
@@ -190,7 +189,7 @@ May 20, 2026 stands as the most consequential sitting day of the 2025/26 Riksdag
 
 ---
 
-## Intelligence Assessment — Key Judgments
+## Key Findings
 <!-- source: intelligence-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/evening-analysis/intelligence-assessment.md -->
 
 **Prior cycle**: 2026-05-15 evening-analysis PIR registry  
@@ -1486,7 +1485,7 @@ May 20, 2026 establishes the following precedents:
 
 **Implication**: Media and political attention on constitutional symbolism may create a dangerous distraction from operational risks that determine the government's electoral fate.
 
-## Classification Results
+## Deep Dive: Classification Results
 <!-- source: classification-results.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/evening-analysis/classification-results.md -->
 
 **Classification framework**: Swedish parliamentary policy domains (COFOG-aligned)  
@@ -1540,7 +1539,7 @@ May 20, 2026 establishes the following precedents:
 | Contested (S+V+C+MP reservations) | SoU29, SoU30, UbU30 | Major opposition |
 | SD internal tension | KU34 abortion | SD base vs. leadership |
 
-## Cross-Reference Map
+## Deep Dive: Cross-Reference Map
 <!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/evening-analysis/cross-reference-map.md -->
 
 **Type**: Tier-C aggregation — mandatory cross-type citation  
@@ -1603,7 +1602,7 @@ May 20, 2026 establishes the following precedents:
 
 **Pattern 4 — "Constitutional Moment"**: KU34 (realtime-pulse) + HD03258 (propositions) + HD024184 (motions, partial rejection) collectively define a constitutional repositioning. Sweden is rewriting its fundamental rights chapter, transparency architecture, and constitutional norms in a single legislative sprint.
 
-## Methodology Reflection & Limitations
+## Deep Dive: Methodology & Limitations
 <!-- source: methodology-reflection.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/evening-analysis/methodology-reflection.md -->
 
 **Analyst cycle**: Pass 1 + Pass 2 (AI-FIRST compliant)
@@ -1655,7 +1654,7 @@ May 20, 2026 establishes the following precedents:
 
 ---
 
-## Data Download Manifest
+## Deep Dive: Data Download Manifest
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/evening-analysis/data-download-manifest.md -->
 
 **Script**: scripts/download-parliamentary-data.ts  

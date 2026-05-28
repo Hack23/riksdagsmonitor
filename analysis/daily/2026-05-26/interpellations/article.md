@@ -3,18 +3,17 @@ date: 2026-05-26
 subfolder: interpellations
 slug: 2026-05-26-interpellations
 source_folder: analysis/daily/2026-05-26/interpellations
-generated_at: 2026-05-28T15:56:17.537Z
+generated_at: 2026-05-28T22:29:32.627Z
 language: en
 layout: article
 ---
-## Executive Brief
+## What Happened
 <!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-26/interpellations/executive-brief.md -->
 
 ---
 
-### 🎯 BLUF
-
-The Social Democrats filed five coordinated interpellations on 2026-05-26, targeting four government ministers across climate, social insurance, women's welfare and economic inequality — the four most electorally exposed flanks of the Tidö coalition in the final session weeks before summer recess and the September 2026 general election. Acting climate minister Johan Britz (L) faces a dual-interpellation debut from two experienced S parliamentarians (Westlund, Guteland), who demand the government commit publicly to Sweden's legally-adopted 70% transport emissions reduction target for 2030 and explain why the Styrmedelsutredningen is delayed. Concurrently, S MPs target ministers Tenje (M), Waltersson Grönvall (M) and Svantesson (M) on sjukersättning access failures, women's shelter closures, and economic inequality. Miljöpartiet compounds the climate pressure with two further interpellations (HD10510, HD10509) to the same acting minister, creating an unprecedented four-interpellation climate accountability moment for a single acting minister on a single day.
+### Lede
+The Social Democrats filed five coordinated interpellations on 2026-05-26, targeting four government ministers across climate, social insurance, women's welfare and economic inequality — the four most electorally exposed flanks of the Tidö coalition in the final session weeks before summer recess and the September 2026 general election. Acting climate minister Johan Britz (L) faces a dual-interpellation debut from two experienced S parliamentarians (Westlund, Guteland), who demand the government commit publicly to Sweden's legally-adopted 70% transport emissions reduction target for 2030 and explain why the Styrmedelsutredningen is delayed. Concurrently, S MPs target ministers Tenje (M), Waltersson Grönvall (M) and Svantesson (M) on sjukersättning access failures, women's shelter closures, and economic inequality. Miljöpartiet compounds the climate pressure with two further interpellations (Riksdag document #10510 (HD10510), HD10509) to the same acting minister, creating an unprecedented four-interpellation climate accountability moment for a single acting minister on a single day.
 
 ### 🧭 3 Decisions This Brief Supports
 
@@ -75,11 +74,11 @@ Use this guide to read the article as a political-intelligence product rather th
 
 | Icon | Reader need | What you'll get |
 |---|---|---|
-| 📊 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
-| 🎯 | [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps |
+| 📊 | [Lede and editorial decisions](#rm-what-happened) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
+| 🎯 | [Key Judgments](#rm-key-findings) | confidence-bearing political-intelligence conclusions and collection gaps |
 | 👥 | [Stakeholder Perspectives](#rm-stakeholder-perspectives) | winners, losers and undecided actors with stake-weighted positions and pressure points |
-| 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
-| 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 🔬 | [Deep Dive: Methodology & Limitations](#rm-deep-dive-methodology--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
+| 📦 | [Deep Dive: Data Download Manifest](#rm-deep-dive-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
 | 📝 | [Administrative Agencies](#rm-administrative-agencies) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Coalition Dynamics](#rm-coalition-dynamics) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Comparative Context](#rm-comparative-context) | supporting analytical lens with primary-source evidence and audit-traceable citations |
@@ -101,9 +100,9 @@ Use this guide to read the article as a political-intelligence product rather th
 | 📝 | [Policy Domain Social](#rm-policy-domain-social) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Risk Opportunity](#rm-risk-opportunity) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
-| 🏷️ | [Audit appendix](#rm-methodology-reflection--limitations) | classification, cross-reference, methodology and manifest evidence for reviewers |
+| 🏷️ | [Audit appendix](#rm-deep-dive-methodology--limitations) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
-## Intelligence Assessment — Key Judgments
+## Key Findings
 <!-- source: intelligence-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-26/interpellations/intelligence-assessment.md -->
 
 **Artifact**: A06 — intelligence-assessment.md
@@ -540,7 +539,7 @@ Both HD10514 and HD10515 are directed at the same minister (Johan Britz) on the 
 | Future elections voters | Electoral signal | HIGH — themes directly map to 2026 electoral battleground |
 | SCB / Naturvårdsverket | Data providers | NEUTRAL — cited as evidence |
 
-## Methodology Reflection & Limitations
+## Deep Dive: Methodology & Limitations
 <!-- source: methodology-reflection.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-26/interpellations/methodology-reflection.md -->
 
 **Artifact**: C05 — methodology-reflection.md
@@ -643,7 +642,7 @@ This analysis follows:
 - Hack23 ISMS information classification: PUBLIC
 - GDPR-compliant political data processing (no personal data beyond publicly available parliamentary records)
 
-## Data Download Manifest
+## Deep Dive: Data Download Manifest
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-26/interpellations/data-download-manifest.md -->
 
 **Workflow**: News: Interpellation Debates

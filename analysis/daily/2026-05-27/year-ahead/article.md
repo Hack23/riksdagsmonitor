@@ -3,17 +3,16 @@ date: 2026-05-27
 subfolder: year-ahead
 slug: 2026-05-27-year-ahead
 source_folder: analysis/daily/2026-05-27/year-ahead
-generated_at: 2026-05-28T15:56:17.649Z
+generated_at: 2026-05-28T22:29:32.748Z
 language: en
 layout: article
 ---
-## Executive Brief
+## What Happened
 <!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-27/year-ahead/executive-brief.md -->
 
 ---
 
-### Bottom Line Up Front
-
+### Lede
 Sweden enters its most consequential political year since 2022. The September 2026 general election will determine whether the Tidö coalition's four-year experiment in centre-right governance on SD tolerance is renewed, replaced by a Social Democratic-led centre-left government, or superseded by a fragmented parliament requiring unprecedented coalition negotiation. Five structural forces dominate the horizon: **(1)** accelerating criminal justice reform creating a new carceral state; **(2)** persistent unemployment rise (+100,000 since 2022) threatening the economic narrative; **(3)** deepening immigration enforcement reaching democratic legitimacy flashpoints; **(4)** defence capability transformation driven by NATO membership and war in Europe; **(5)** climate policy retreat from international commitments creating regulatory lag.
 
 ---
@@ -26,7 +25,7 @@ Sweden enters its most consequential political year since 2022. The September 20
 | HD01JuU38 | Criminal justice omnibus | HIGH: Prison escape criminalisation; stiffer recidivism penalties |
 | HD01SfU34 | Immigration detention audit | HIGH: National Audit Office criticises detention conditions |
 | HD01UU18 | War materiel regulation modernised | MEDIUM-HIGH: Defence-industrial policy shift |
-| HD03271 | Abortion law change | HIGH: Cross-party flash point in election year |
+| Riksdag document #03271 (HD03271) | Abortion law change | HIGH: Cross-party flash point in election year |
 | HD01KrU9 | Architecture/design/cultural tourism | MEDIUM: Cultural canon signals national identity framing |
 
 ---
@@ -86,9 +85,9 @@ Use this guide to read the article as a political-intelligence product rather th
 
 | Icon | Reader need | What you'll get |
 |---|---|---|
-| 📊 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
-| 🧠 | [Synthesis Summary](#rm-synthesis-summary) | evidence-anchored narrative consolidating primary sources into one coherent story line |
-| 🎯 | [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps |
+| 📊 | [Lede and editorial decisions](#rm-what-happened) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
+| 🧠 | [Why It Matters](#rm-why-it-matters) | evidence-anchored narrative consolidating primary sources into one coherent story line |
+| 🎯 | [Key Judgments](#rm-key-findings) | confidence-bearing political-intelligence conclusions and collection gaps |
 | 📈 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals |
 | 👥 | [Stakeholder Perspectives](#rm-stakeholder-perspectives) | winners, losers and undecided actors with stake-weighted positions and pressure points |
 | 🔢 | [Coalition Mathematics](#rm-coalition-mathematics) | parliamentary arithmetic showing exactly who can pass or block this measure and at what margin |
@@ -107,18 +106,18 @@ Use this guide to read the article as a political-intelligence product rather th
 | ⚙️ | [Implementation Feasibility](#rm-implementation-feasibility) | delivery feasibility, capability gaps, timelines and execution risks for the proposed action |
 | 📰 | [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder |
 | 😈 | [Devil's Advocate](#rm-devils-advocate) | alternative hypotheses, steel-manned counter-arguments and the strongest case against the lead reading |
-| 🏷️ | [Classification Results](#rm-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
-| 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
-| 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
-| 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 🏷️ | [Deep Dive: Classification Results](#rm-deep-dive-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
+| 🔀 | [Deep Dive: Cross-Reference Map](#rm-deep-dive-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
+| 🔬 | [Deep Dive: Methodology & Limitations](#rm-deep-dive-methodology--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
+| 📦 | [Deep Dive: Data Download Manifest](#rm-deep-dive-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
 | 📝 | [Analysis Index](#rm-analysis-index) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Cross Run Diff](#rm-cross-run-diff) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Mcp Reliability Audit](#rm-mcp-reliability-audit) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Reference Analysis Quality](#rm-reference-analysis-quality) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Workflow Audit](#rm-workflow-audit) | supporting analytical lens with primary-source evidence and audit-traceable citations |
-| 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
+| 🏷️ | [Audit appendix](#rm-deep-dive-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
-## Synthesis Summary
+## Why It Matters
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-27/year-ahead/synthesis-summary.md -->
 
 ---
@@ -185,7 +184,7 @@ Primary: Riksdag MCP (riksdag-regering) — 16 documents, 10 full texts, retriev
 Economic: IMF WEO-2026-04 (cached, vintage 1 month, within freshness threshold).  
 No SCB data integrated (year-ahead scope; Swedish macro ground truth supplement deferred to quarterly review).
 
-## Intelligence Assessment — Key Judgments
+## Key Findings
 <!-- source: intelligence-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-27/year-ahead/intelligence-assessment.md -->
 
 **Horizon**: T+365d [horizon:year]  
@@ -1820,7 +1819,7 @@ Riksrevisionen audits are not novel — previous reports on police, Kriminalvår
 | Climate is reputational risk | Climate is not a key swing voter issue | Lower EU infringement electoral impact from MEDIUM to LOW |
 | Abortion bill hurts coalition | May mobilise conservative base | Add 5 % probability weight to Scenario 2 (Tidö Renewal) |
 
-## Classification Results
+## Deep Dive: Classification Results
 <!-- source: classification-results.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-27/year-ahead/classification-results.md -->
 
 **Horizon**: T+365d  
@@ -1880,7 +1879,7 @@ The closing 2025/26 session confirms the dominant policy identity of the Tidö c
 - Cybersecurity centre may generate bipartisan support (rare cross-bloc coalition possible)
 - Climate gap may expose EU compliance risk affecting S, C, MP equally
 
-## Cross-Reference Map
+## Deep Dive: Cross-Reference Map
 <!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-27/year-ahead/cross-reference-map.md -->
 
 **Horizon**: T+365d [horizon:year]  
@@ -1948,7 +1947,7 @@ The closing 2025/26 session confirms the dominant policy identity of the Tidö c
 | Election polling | Monthly-review series | 2026-05-15 estimate | Rolling average; not single poll |
 | Defence budget | Prop. 2025/26:254 | 2026-04-30 | NATO 2 % tracker |
 
-## Methodology Reflection & Limitations
+## Deep Dive: Methodology & Limitations
 <!-- source: methodology-reflection.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-27/year-ahead/methodology-reflection.md -->
 
 ---
@@ -2002,7 +2001,7 @@ Key uncertainties acknowledged throughout artifacts:
 - Full text 100k character limit creates edge cases for large omnibus legislation; future runs should request section-level extraction for JuU-scale documents
 - Year-ahead analysis benefits from SCB quarterly unemployment data to sharpen economic scenarios; recommend pre-caching from SCB MCP before run
 
-## Data Download Manifest
+## Deep Dive: Data Download Manifest
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-27/year-ahead/data-download-manifest.md -->
 
 **Workflow**: News: Year Ahead

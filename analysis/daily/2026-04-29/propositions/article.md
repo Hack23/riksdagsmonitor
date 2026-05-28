@@ -3,19 +3,17 @@ date: 2026-04-29
 subfolder: propositions
 slug: 2026-04-29-propositions
 source_folder: analysis/daily/2026-04-29/propositions
-generated_at: 2026-05-28T15:56:15.943Z
+generated_at: 2026-05-28T22:29:30.822Z
 language: en
 layout: article
 ---
-## Executive Brief
+## What Happened
 <!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/executive-brief.md -->
 
-### 🎯 BLUF
+### Lede
+Regeringen Kristersson presenterade den 28 april 2026 tre propositioner med skilda politiska tyngder: den nationella transportinfrastrukturplanen 2026–2037 (Skr. 2025/26:259, Riksdag document #03259 (HD03259)) avsätter 875 miljarder kronor för investeringar i vägar, järnvägar och sjöfart — ett av de mest omfattande infrastrukturanslag i modern svensk historia. Parallellt regleras receptfria läkemedels rådgivningskrav (Prop. 2025/26:247, HD03247) och kommunala lantmäterimyndigheters it-system (Prop. 2025/26:257, HD03257). Sammantaget demonstrerar dagordningen ett styr- och kontrollmönster: standardisering av kommunal IT-infrastruktur och stärkt läkemedelssäkerhet kombineras med det strategiska ramverket för hållbar rörlighet.
 
-Regeringen Kristersson presenterade den 28 april 2026 tre propositioner med skilda politiska tyngder: den nationella transportinfrastrukturplanen 2026–2037 (Skr. 2025/26:259, HD03259) avsätter 875 miljarder kronor för investeringar i vägar, järnvägar och sjöfart — ett av de mest omfattande infrastrukturanslag i modern svensk historia. Parallellt regleras receptfria läkemedels rådgivningskrav (Prop. 2025/26:247, HD03247) och kommunala lantmäterimyndigheters it-system (Prop. 2025/26:257, HD03257). Sammantaget demonstrerar dagordningen ett styr- och kontrollmönster: standardisering av kommunal IT-infrastruktur och stärkt läkemedelssäkerhet kombineras med det strategiska ramverket för hållbar rörlighet.
-
-### Decisions This Brief Supports
-
+### Decisions and confidence context
 1. **Riksdagsledamöter i TU, SoU och CU** bör prioritera HD03259 för utskottsbehandling omgående — planen styr miljardinvesteringar t.o.m. 2037 med direkta konsekvenser för valkretsar och regionala prioriteringar.
 2. **Kommunstyrelseordföranden och lantmäterimyndigheter** behöver säkerställa att befintliga ärendehanteringssystem uppfyller de nya kraven i HD03257 senast vid ikraftträdandedatum.
 3. **Apoteksaktörer och Socialstyrelsen** bör snarast kartlägga vilka läkemedel som faller under det nya rådgivningskravet i HD03247 och anpassa utbildningsinsatser.
@@ -61,9 +59,9 @@ Use this guide to read the article as a political-intelligence product rather th
 
 | Icon | Reader need | What you'll get |
 |---|---|---|
-| 📊 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
-| 🧠 | [Synthesis Summary](#rm-synthesis-summary) | evidence-anchored narrative consolidating primary sources into one coherent story line |
-| 🎯 | [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps |
+| 📊 | [Lede and editorial decisions](#rm-what-happened) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
+| 🧠 | [Why It Matters](#rm-why-it-matters) | evidence-anchored narrative consolidating primary sources into one coherent story line |
+| 🎯 | [Key Judgments](#rm-key-findings) | confidence-bearing political-intelligence conclusions and collection gaps |
 | 📈 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals |
 | 👥 | [Stakeholder Perspectives](#rm-stakeholder-perspectives) | winners, losers and undecided actors with stake-weighted positions and pressure points |
 | 🔢 | [Coalition Mathematics](#rm-coalition-mathematics) | parliamentary arithmetic showing exactly who can pass or block this measure and at what margin |
@@ -79,10 +77,10 @@ Use this guide to read the article as a political-intelligence product rather th
 | ⚙️ | [Implementation Feasibility](#rm-implementation-feasibility) | delivery feasibility, capability gaps, timelines and execution risks for the proposed action |
 | 📰 | [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder |
 | 😈 | [Devil's Advocate](#rm-devils-advocate) | alternative hypotheses, steel-manned counter-arguments and the strongest case against the lead reading |
-| 🏷️ | [Classification Results](#rm-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
-| 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
-| 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
-| 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 🏷️ | [Deep Dive: Classification Results](#rm-deep-dive-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
+| 🔀 | [Deep Dive: Cross-Reference Map](#rm-deep-dive-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
+| 🔬 | [Deep Dive: Methodology & Limitations](#rm-deep-dive-methodology--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
+| 📦 | [Deep Dive: Data Download Manifest](#rm-deep-dive-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
 | 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
@@ -97,9 +95,9 @@ Use this guide to read the article as a political-intelligence product rather th
 | 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
-| 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
+| 🏷️ | [Audit appendix](#rm-deep-dive-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
-## Synthesis Summary
+## Why It Matters
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/synthesis-summary.md -->
 
 ### Lead Story
@@ -156,7 +154,7 @@ flowchart TD
     style I fill:#1a1e3d,stroke:#00d9ff
 ```
 
-## Intelligence Assessment — Key Judgments
+## Key Findings
 <!-- source: intelligence-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/intelligence-assessment.md -->
 
 ### Key Judgments
@@ -1443,7 +1441,7 @@ flowchart LR
     style ACH3 fill:#1a1e3d,stroke:#00d9ff
 ```
 
-## Classification Results
+## Deep Dive: Classification Results
 <!-- source: classification-results.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/classification-results.md -->
 
 ### 7-Dimension Classification
@@ -1504,7 +1502,7 @@ flowchart LR
     style Rutin fill:#1a1e3d,stroke:#00d9ff
 ```
 
-## Cross-Reference Map
+## Deep Dive: Cross-Reference Map
 <!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/cross-reference-map.md -->
 
 ### Policy Clusters
@@ -1556,7 +1554,7 @@ flowchart LR
 - **Infrastruktur + lantmäteri**: Fastighetssektorn gynnas dubbelt av HD03259 (förbättrade transporter) och HD03257 (effektivare lantmäteribeslut) — koordinerad digital förvaltningsagenda [HD03259][HD03257]
 - **Tidöavtalet-koherens**: Tre propositioner publiceras dagen efter varandra (28 april) — samordnad kommunikationsstrategi från Landsbygds- och infrastrukturdepartementet [HD03257][HD03259]
 
-## Methodology Reflection & Limitations
+## Deep Dive: Methodology & Limitations
 <!-- source: methodology-reflection.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/methodology-reflection.md -->
 
 ### Analytic Standards Audit (ICD 203)
@@ -1632,7 +1630,7 @@ flowchart LR
     style PR fill:#00d9ff,color:#0a0e27
 ```
 
-## Data Download Manifest
+## Deep Dive: Data Download Manifest
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/data-download-manifest.md -->
 
 > ℹ️ **Data-Only Pipeline**: This script downloads and persists raw data.
@@ -1663,8 +1661,7 @@ Data sourced from 2026-04-28 via lookback fallback — check freshness indicator
 <!-- dir: rtl -->
 # الاستثمار في البنية التحتية، وسلامة الأدوية، والتحول الرقمي البلدي: ثلاثة مشاريع قوانين في 28 أبريل 2026
 
-### 🎯 BLUF
-
+### Lede
 قدّمت حكومة كريسترسون في 28 أبريل 2026 ثلاثة مشاريع قوانين ذات أوزان سياسية متباينة: يُخصّص الخطة الوطنية لبنية النقل التحتية 2026–2037 (Skr. 2025/26:259, HD03259) مبلغ 875 مليار كرونة سويدية للاستثمار في الطرق والسكك الحديدية والملاحة البحرية — وهي من أضخم مخصصات البنية التحتية في التاريخ السويدي الحديث. وبالتوازي مع ذلك، تُنظَّم اشتراطات الإرشاد عند شراء الأدوية المتاحة دون وصفة طبية (Prop. 2025/26:247, HD03247)، فضلاً عن أنظمة تقنية المعلومات لدى الجهات البلدية لمساحة الأراضي (Prop. 2025/26:257, HD03257). ويعكس جدول الأعمال بمجمله نمطاً من الحوكمة والرقابة: تُجمَع مبادرة توحيد البنية التحتية لتقنية المعلومات البلدية وتعزيز سلامة الأدوية مع الإطار الاستراتيجي للتنقل المستدام.
 
 ### القرارات التي يدعمها هذا الموجز
@@ -1738,8 +1735,7 @@ style HD03257 fill:#00d9ff,color:#0a0e27
 ## Executive Brief Da
 <!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/executive-brief_da.md -->
 
-### 🎯 BLUF
-
+### Lede
 Regeringen Kristersson fremlagde den 28. april 2026 tre lovforslag med forskellige politiske tyngder: den nationale transportinfrastrukturplan 2026–2037 (Skr. 2025/26:259, HD03259) afsætter 875 milliarder svenske kroner til investeringer i veje, jernbaner og søfart — en af de mest omfattende infrastrukturbevillinger i moderne svensk historie. Parallelt reguleres krav om rådgivning ved køb af håndkøbslægemidler (Prop. 2025/26:247, HD03247) og it-systemer hos kommunale landinspektørmyndigheder (Prop. 2025/26:257, HD03257). Samlet demonstrerer dagsordenen et styre- og kontrolmønster: standardisering af kommunal IT-infrastruktur og styrket lægemiddelsikkerhed kombineres med den strategiske ramme for bæredygtig mobilitet.
 
 ### Beslutninger dette underlag støtter
@@ -1786,8 +1782,7 @@ style HD03257 fill:#00d9ff,color:#0a0e27
 ## Executive Brief De
 <!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/executive-brief_de.md -->
 
-### 🎯 BLUF
-
+### Lede
 Die Regierung Kristersson stellte am 28. April 2026 drei Gesetzentwürfe mit unterschiedlichen politischen Gewichten vor: Der nationale Transportinfrastrukturplan 2026–2037 (Skr. 2025/26:259, HD03259) stellt 875 Milliarden schwedische Kronen für Investitionen in Straßen, Eisenbahnen und Schifffahrt bereit — eine der umfangreichsten Infrastrukturbereitstellungen in der modernen schwedischen Geschichte. Parallel dazu werden die Beratungspflichten bei rezeptfreien Arzneimitteln (Prop. 2025/26:247, HD03247) und IT-Systeme kommunaler Vermessungsbehörden (Prop. 2025/26:257, HD03257) geregelt. Insgesamt zeigt die Tagesordnung ein Steuerungs- und Kontrollmuster: Die Standardisierung kommunaler IT-Infrastruktur und gestärkte Arzneimittelsicherheit werden mit dem strategischen Rahmen für nachhaltige Mobilität kombiniert.
 
 ### Entscheidungen, die dieser Bericht unterstützt
@@ -1834,8 +1829,7 @@ style HD03257 fill:#00d9ff,color:#0a0e27
 ## Executive Brief Es
 <!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/executive-brief_es.md -->
 
-### 🎯 BLUF
-
+### Lede
 El gobierno Kristersson presentó el 28 de abril de 2026 tres proposiciones de ley con diferentes pesos políticos: el plan nacional de transporte e infraestructura 2026–2037 (Skr. 2025/26:259, HD03259) destina 875 000 millones de coronas suecas a inversiones en carreteras, ferrocarriles y transporte marítimo — uno de los presupuestos de infraestructura más amplios de la historia sueca moderna. Paralelamente se regulan los requisitos de asesoramiento en la compra de medicamentos sin receta (Prop. 2025/26:247, HD03247) y los sistemas informáticos de las agencias municipales de catastro (Prop. 2025/26:257, HD03257). En conjunto, la agenda revela un patrón de gobernanza y control: la estandarización de la infraestructura informática municipal y el fortalecimiento de la seguridad farmacéutica se combinan con el marco estratégico para la movilidad sostenible.
 
 ### Decisiones que apoya este informe
@@ -1909,8 +1903,7 @@ FMI WEO abr-2026 para Suecia:
 ## Executive Brief Fi
 <!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/executive-brief_fi.md -->
 
-### 🎯 BLUF
-
+### Lede
 Kristersson-hallitus esitteli 28. huhtikuuta 2026 kolme lakiesitystä eri poliittisin painoarvoin: kansallinen liikenneinfrastruktuurisuunnitelma 2026–2037 (Skr. 2025/26:259, HD03259) varaa 875 miljardia Ruotsin kruunua teiden, rautateiden ja merenkulun investointeihin — yksi nykyaikaisen Ruotsin historian laajimmista infrastruktuurimäärärahoista. Samaan aikaan säännellään apteekissa myytävien lääkkeiden neuvontavaatimuksia (Prop. 2025/26:247, HD03247) ja kunnallisten maanmittausviranomaisten tietojärjestelmiä (Prop. 2025/26:257, HD03257). Kokonaisuudessaan esityslista osoittaa ohjaus- ja valvontamallin: kunnallisen IT-infrastruktuurin standardisointi ja lääketurvallisuuden vahvistaminen yhdistetään kestävän liikkumisen strategiseen viitekehykseen.
 
 ### Päätökset, joita tämä tukee
@@ -1957,8 +1950,7 @@ style HD03257 fill:#00d9ff,color:#0a0e27
 ## Executive Brief Fr
 <!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/executive-brief_fr.md -->
 
-### 🎯 BLUF
-
+### Lede
 Le gouvernement Kristersson a présenté le 28 avril 2026 trois propositions de loi aux enjeux politiques différents : le plan national de transport et d'infrastructure 2026–2037 (Skr. 2025/26:259, HD03259) alloue 875 milliards de couronnes suédoises aux investissements dans les routes, les chemins de fer et la navigation — l'une des plus importantes dotations infrastructurelles de l'histoire moderne de la Suède. Parallèlement sont réglementés les exigences de conseil lors de l'achat de médicaments sans ordonnance (Prop. 2025/26:247, HD03247) et les systèmes informatiques des agences municipales de cadastre (Prop. 2025/26:257, HD03257). Dans l'ensemble, l'ordre du jour révèle un schéma de gouvernance et de contrôle : la standardisation de l'infrastructure informatique municipale et le renforcement de la sécurité pharmaceutique se combinent avec le cadre stratégique pour la mobilité durable.
 
 ### Décisions soutenues par ce bref
@@ -2008,8 +2000,7 @@ style HD03257 fill:#00d9ff,color:#0a0e27
 <!-- dir: rtl -->
 # השקעה בתשתיות, בטיחות תרופות ודיגיטליזציה עירונית: שלושה הצעות חוק ב-28 באפריל 2026
 
-### 🎯 BLUF
-
+### Lede
 ממשלת קריסטרסון הגישה ב-28 באפריל 2026 שלוש הצעות חוק בעלות משקל פוליטי שונה: תכנית התחבורה והתשתיות הלאומית 2026–2037 (Skr. 2025/26:259, HD03259) מקצה 875 מיליארד כתר שוודי להשקעות בכבישים, מסילות ברזל וספנות — אחת מן הקצאות התשתיות הרחבות ביותר בהיסטוריה השוודית המודרנית. במקביל, מוסדרים דרישות הייעוץ לרכישת תרופות ללא מרשם (Prop. 2025/26:247, HD03247) ומערכות מידע של רשויות מדידה עירוניות (Prop. 2025/26:257, HD03257). כמכלול, סדר היום מגלה דפוס ממשל ובקרה: תקנון תשתיות מידע עירוניות ושיפור בטיחות התרופות משולבים עם המסגרת האסטרטגית לניידות בת-קיימא.
 
 ### ההחלטות שמסמך זה תומך בהן
@@ -2056,8 +2047,7 @@ style HD03257 fill:#00d9ff,color:#0a0e27
 ## Executive Brief Ja
 <!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/executive-brief_ja.md -->
 
-### 🎯 BLUF
-
+### Lede
 クリステション政権は2026年4月28日、それぞれ異なる政治的重みを持つ3つの法案を提出しました。国家交通インフラ計画2026–2037（Skr. 2025/26:259, HD03259）は道路・鉄道・海運への投資として8,750億スウェーデンクローナを充当しており、スウェーデン近代史上最大規模のインフラ予算のひとつです。同時に、市販薬の購入時における薬学的助言の義務（Prop. 2025/26:247, HD03247）および自治体測量機関のITシステム（Prop. 2025/26:257, HD03257）も規制されます。全体として、今日の議事日程は統治・管理のパターンを示しています。自治体ITインフラの標準化と医薬品安全の強化が、持続可能なモビリティのための戦略的枠組みと組み合わされています。
 
 ### このブリーフが支援する意思決定
@@ -2131,8 +2121,7 @@ IMF WEO 2026年4月 スウェーデン：
 ## Executive Brief Ko
 <!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/executive-brief_ko.md -->
 
-### 🎯 BLUF
-
+### Lede
 크리스테르손 정부는 2026년 4월 28일 각기 다른 정치적 비중을 지닌 세 가지 법안을 발의하였습니다. 국가 교통인프라 계획 2026–2037(Skr. 2025/26:259, HD03259)은 도로·철도·해운 투자에 8,750억 스웨덴 크로나를 배정하며, 이는 스웨덴 현대사에서 가장 방대한 인프라 예산 중 하나입니다. 아울러 일반의약품 구매 시 약학적 상담 의무(Prop. 2025/26:247, HD03247)와 지자체 측량기관의 IT 시스템(Prop. 2025/26:257, HD03257)도 함께 규제됩니다. 전체적으로 볼 때, 이번 의제는 거버넌스 및 통제 패턴을 드러냅니다. 지자체 IT 인프라 표준화와 의약품 안전 강화가 지속 가능한 이동성을 위한 전략적 틀과 결합됩니다.
 
 ### 이 보고서가 지원하는 결정 사항
@@ -2179,8 +2168,7 @@ style HD03257 fill:#00d9ff,color:#0a0e27
 ## Executive Brief Nl
 <!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/executive-brief_nl.md -->
 
-### 🎯 BLUF
-
+### Lede
 De regering-Kristersson presenteerde op 28 april 2026 drie wetsvoorstellen met uiteenlopend politiek gewicht: het nationaal transportinfrastructuurplan 2026–2037 (Skr. 2025/26:259, HD03259) reserveert 875 miljard Zweedse kronen voor investeringen in wegen, spoorwegen en scheepvaart — een van de omvangrijkste infrastructuurkredieten in de moderne Zweedse geschiedenis. Parallel worden de advieskverplichtingen bij de aankoop van vrij verkrijgbare geneesmiddelen (Prop. 2025/26:247, HD03247) en de IT-systemen van gemeentelijke kadasterinstanties (Prop. 2025/26:257, HD03257) geregeld. Samenhangend toont de agenda een sturing- en controlemechanisme: standaardisering van gemeentelijke IT-infrastructuur en versterkte geneesmiddelenveiligheid worden gecombineerd met het strategisch kader voor duurzame mobiliteit.
 
 ### Besluiten die dit document ondersteunt
@@ -2227,8 +2215,7 @@ style HD03257 fill:#00d9ff,color:#0a0e27
 ## Executive Brief No
 <!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/executive-brief_no.md -->
 
-### 🎯 BLUF
-
+### Lede
 Regjeringen Kristersson la 28. april 2026 frem tre lovforslag med ulik politisk tyngde: den nasjonale transportinfrastrukturplanen 2026–2037 (Skr. 2025/26:259, HD03259) avsetter 875 milliarder svenske kroner til investeringer i veier, jernbaner og sjøfart — et av de mest omfattende infrastrukturbevilgningene i moderne svensk historie. Parallelt reguleres krav om farmaceutisk rådgivning ved kjøp av reseptfrie legemidler (Prop. 2025/26:247, HD03247) og it-systemer hos kommunale landmålerinstanser (Prop. 2025/26:257, HD03257). Samlet demonstrerer dagsordenen et styrings- og kontrollmønster: standardisering av kommunal IT-infrastruktur og styrket legemiddelsikkerhet kombineres med det strategiske rammeverket for bærekraftig mobilitet.
 
 ### Beslutninger dette underlaget støtter
@@ -2275,8 +2262,7 @@ style HD03257 fill:#00d9ff,color:#0a0e27
 ## Executive Brief Sv
 <!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/executive-brief_sv.md -->
 
-### 🎯 BLUF
-
+### Lede
 Regeringen Kristersson presenterade den 28 april 2026 tre propositioner med skilda politiska tyngder: den nationella transportinfrastrukturplanen 2026–2037 (Skr. 2025/26:259, HD03259) avsätter 875 miljarder kronor för investeringar i vägar, järnvägar och sjöfart — ett av de mest omfattande infrastrukturanslag i modern svensk historia. Parallellt regleras receptfria läkemedels rådgivningskrav (Prop. 2025/26:247, HD03247) och kommunala lantmäterimyndigheters it-system (Prop. 2025/26:257, HD03257). Sammantaget demonstrerar dagordningen ett styr- och kontrollmönster: standardisering av kommunal IT-infrastruktur och stärkt läkemedelssäkerhet kombineras med det strategiska ramverket för hållbar rörlighet.
 
 ### Beslut som detta underlag stöder
@@ -2323,8 +2309,7 @@ style HD03257 fill:#00d9ff,color:#0a0e27
 ## Executive Brief Zh
 <!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/executive-brief_zh.md -->
 
-### 🎯 BLUF
-
+### Lede
 克里斯特松政府于2026年4月28日提交了三项政治分量各异的法案：国家交通基础设施计划2026–2037（Skr. 2025/26:259, HD03259）拨款8750亿瑞典克朗用于道路、铁路和航运投资，是瑞典现代史上规模最大的基础设施拨款之一。与此同时，还对非处方药购买时的药学咨询要求（Prop. 2025/26:247, HD03247）和市政测量机构IT系统（Prop. 2025/26:257, HD03257）进行了规范。综合来看，本次议程呈现出一种治理与控制模式：市政IT基础设施标准化与强化药品安全相结合，配以可持续出行战略框架。
 
 ### 本简报所支持的决策

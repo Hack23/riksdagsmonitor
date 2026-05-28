@@ -3,18 +3,17 @@ date: 2026-04-27
 subfolder: monthly-review
 slug: 2026-04-27-monthly-review
 source_folder: analysis/daily/2026-04-27/monthly-review
-generated_at: 2026-05-28T15:56:15.777Z
+generated_at: 2026-05-28T22:29:30.633Z
 language: en
 layout: article
 ---
-## Executive Brief
+## What Happened
 <!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/executive-brief.md -->
 
 **Window**: 2026-03-28 → 2026-04-27 (30 days) | **Riksmöte**: 2025/26
 
-### 🎯 BLUF
-
-The 30-day window 2026-03-28 → 2026-04-27 closes the Tidö coalition's 2025/26 legislative portfolio while simultaneously exposing two new fault lines: **intra-coalition SD-KD energy policy tension** (HD10448) and a **coordinated Social Democratic interpellation campaign** across four ministries. Sweden is now **139 days from election** with the political axis having fully shifted from legislation to implementation risk, accountability pressure, and campaign-narrative positioning.
+### Lede
+The 30-day window 2026-03-28 → 2026-04-27 closes the Tidö coalition's 2025/26 legislative portfolio while simultaneously exposing two new fault lines: **intra-coalition SD-KD energy policy tension** (Riksdag document #10448 (HD10448)) and a **coordinated Social Democratic interpellation campaign** across four ministries. Sweden is now **139 days from election** with the political axis having fully shifted from legislation to implementation risk, accountability pressure, and campaign-narrative positioning.
 
 ### 🧭 3 Decisions This Brief Supports
 
@@ -38,7 +37,7 @@ The 30-day window 2026-03-28 → 2026-04-27 closes the Tidö coalition's 2025/26
 
 ### Confidence label
 
-Overall: **HIGH (A1)** for structural completion picture and SD-KD fault line identification. **MEDIUM (B2)** for forward electoral dynamics (poll lag, opposition strategy adaptation, SD discipline beyond August). **LOW (C3)** for HD03252/HD03253 implementation timelines and SD congress impact.
+Overall: **HIGH (A1, high confidence, corroborated by multiple sources)** for structural completion picture and SD-KD fault line identification. **MEDIUM (B2)** for forward electoral dynamics (poll lag, opposition strategy adaptation, SD discipline beyond August). **LOW (C3)** for HD03252/HD03253 implementation timelines and SD congress impact.
 
 ```mermaid
 %%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "primaryBorderColor": "#ff006e", "lineColor": "#ffbe0b", "secondaryColor": "#1a1e3d", "tertiaryColor": "#0a0e27"}}}%%
@@ -89,9 +88,9 @@ Use this guide to read the article as a political-intelligence product rather th
 
 | Icon | Reader need | What you'll get |
 |---|---|---|
-| 📊 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
-| 🧠 | [Synthesis Summary](#rm-synthesis-summary) | evidence-anchored narrative consolidating primary sources into one coherent story line |
-| 🎯 | [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps |
+| 📊 | [Lede and editorial decisions](#rm-what-happened) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
+| 🧠 | [Why It Matters](#rm-why-it-matters) | evidence-anchored narrative consolidating primary sources into one coherent story line |
+| 🎯 | [Key Judgments](#rm-key-findings) | confidence-bearing political-intelligence conclusions and collection gaps |
 | 📈 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals |
 | 👥 | [Stakeholder Perspectives](#rm-stakeholder-perspectives) | winners, losers and undecided actors with stake-weighted positions and pressure points |
 | 🔢 | [Coalition Mathematics](#rm-coalition-mathematics) | parliamentary arithmetic showing exactly who can pass or block this measure and at what margin |
@@ -107,10 +106,10 @@ Use this guide to read the article as a political-intelligence product rather th
 | ⚙️ | [Implementation Feasibility](#rm-implementation-feasibility) | delivery feasibility, capability gaps, timelines and execution risks for the proposed action |
 | 📰 | [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder |
 | 😈 | [Devil's Advocate](#rm-devils-advocate) | alternative hypotheses, steel-manned counter-arguments and the strongest case against the lead reading |
-| 🏷️ | [Classification Results](#rm-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
-| 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
-| 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
-| 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 🏷️ | [Deep Dive: Classification Results](#rm-deep-dive-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
+| 🔀 | [Deep Dive: Cross-Reference Map](#rm-deep-dive-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
+| 🔬 | [Deep Dive: Methodology & Limitations](#rm-deep-dive-methodology--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
+| 📦 | [Deep Dive: Data Download Manifest](#rm-deep-dive-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
 | 📝 | [Analysis Index](#rm-analysis-index) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Cross Session Intelligence](#rm-cross-session-intelligence) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
@@ -131,9 +130,9 @@ Use this guide to read the article as a political-intelligence product rather th
 | 📝 | [Session Baseline](#rm-session-baseline) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Workflow Audit](#rm-workflow-audit) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
-| 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
+| 🏷️ | [Audit appendix](#rm-deep-dive-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
-## Synthesis Summary
+## Why It Matters
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/synthesis-summary.md -->
 
 **Window**: 2026-03-28 → 2026-04-27 | **Days to election**: 139
@@ -189,13 +188,12 @@ xychart-beta
 
 ---
 
-## Intelligence Assessment — Key Judgments
+## Key Findings
 <!-- source: intelligence-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/intelligence-assessment.md -->
 
 **Standards**: ICD 203 (Analytic Standards) compliance asserted
 
-### Bottom Line Up Front
-
+### Lede
 Sweden is 139 days from the 2026-09-13 election. The Tidö coalition has completed its 2025/26 legislative programme while revealing an unprecedented intra-coalition fault line (SD vs KD on energy). The political landscape has fully transitioned from legislation to implementation risk, accountability pressure, and election-narrative positioning.
 
 ### Key Judgments
@@ -1206,7 +1204,7 @@ The **audit gap may be strategically tolerated**. The Riksrevisionen audit cultu
 
 All three devil's-advocate challenges are assessed as credible alternatives warranting continued monitoring. The main assessments are not overturned but are probability-qualified. The HD10448 rupture scenario remains the highest-consequence outcome even if the devil's advocate has a reasonable probability of being correct.
 
-## Classification Results
+## Deep Dive: Classification Results
 <!-- source: classification-results.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/classification-results.md -->
 
 ### Political Classification (7-Dimension Framework)
@@ -1250,7 +1248,7 @@ pie title Document Priority Tier Distribution
   "Tier 3 Standard" : 4
 ```
 
-## Cross-Reference Map
+## Deep Dive: Cross-Reference Map
 <!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/cross-reference-map.md -->
 
 ### Intra-Document Cross-References
@@ -1315,7 +1313,7 @@ flowchart LR
   classDef inter fill:#1a1e3d,stroke:#ff006e,color:#ff006e
 ```
 
-## Methodology Reflection & Limitations
+## Deep Dive: Methodology & Limitations
 <!-- source: methodology-reflection.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/methodology-reflection.md -->
 
 ### Analytic Standard Applied
@@ -1377,7 +1375,7 @@ This analysis was produced under ICD 203 (Standards of Analytic Production) guid
 
 **Overall assessment**: GOOD — meets ICD 203 requirements; one significant gap (polling) acknowledged and mitigated by scenario uncertainty widening.
 
-## Data Download Manifest
+## Deep Dive: Data Download Manifest
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/data-download-manifest.md -->
 
 **Workflow**: news-monthly-review | **Run ID**: 25006920446 | **UTC**: 2026-04-27T16:30:00Z

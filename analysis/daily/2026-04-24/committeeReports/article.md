@@ -3,15 +3,14 @@ date: 2026-04-24
 subfolder: committeeReports
 slug: 2026-04-24-committeeReports
 source_folder: analysis/daily/2026-04-24/committeeReports
-generated_at: 2026-05-28T15:56:15.530Z
+generated_at: 2026-05-28T22:29:30.360Z
 language: en
 layout: article
 ---
-## Executive Brief
+## What Happened
 <!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/executive-brief.md -->
 
-### 🎯 BLUF
-
+### Lede
 Five committee reports tabled 2026-04-23 cluster along the Tidö coalition's three pre-election signature pillars — **criminal-justice capacity** (`HD01CU25`), **migration enforcement with a research-mobility carve-out** (`HD01SfU23`), and **monetary-institutional stewardship** (`HD01FiU23`) — supplemented by two broad-consensus dossiers on **ILO labour-rights ratification** (`HD01AU15`) and **EV home-charging** (`HD01CU29`). The cluster is a deliberate signalling composition ~5 months before the September 2026 Riksdag election: it lets M/KD/SD claim delivery on law-and-order and migration while L and centrist actors anchor EU-compatible labour and climate wins. Real implementation risk concentrates in `HD01CU25` (Kriminalvården capacity absorption) and `HD01SfU23` (Migrationsverket case-handling bifurcation); reputational risk concentrates in `HD01FiU23` (Riksbank balance-sheet losses and independence narratives).
 
 ### 🧭 3 Decisions This Brief Supports
@@ -75,9 +74,9 @@ Use this guide to read the article as a political-intelligence product rather th
 
 | Icon | Reader need | What you'll get |
 |---|---|---|
-| 📊 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
-| 🧠 | [Synthesis Summary](#rm-synthesis-summary) | evidence-anchored narrative consolidating primary sources into one coherent story line |
-| 🎯 | [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps |
+| 📊 | [Lede and editorial decisions](#rm-what-happened) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
+| 🧠 | [Why It Matters](#rm-why-it-matters) | evidence-anchored narrative consolidating primary sources into one coherent story line |
+| 🎯 | [Key Judgments](#rm-key-findings) | confidence-bearing political-intelligence conclusions and collection gaps |
 | 📈 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals |
 | 👥 | [Stakeholder Perspectives](#rm-stakeholder-perspectives) | winners, losers and undecided actors with stake-weighted positions and pressure points |
 | 🔢 | [Coalition Mathematics](#rm-coalition-mathematics) | parliamentary arithmetic showing exactly who can pass or block this measure and at what margin |
@@ -93,10 +92,10 @@ Use this guide to read the article as a political-intelligence product rather th
 | ⚙️ | [Implementation Feasibility](#rm-implementation-feasibility) | delivery feasibility, capability gaps, timelines and execution risks for the proposed action |
 | 📰 | [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder |
 | 😈 | [Devil's Advocate](#rm-devils-advocate) | alternative hypotheses, steel-manned counter-arguments and the strongest case against the lead reading |
-| 🏷️ | [Classification Results](#rm-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
-| 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
-| 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
-| 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 🏷️ | [Deep Dive: Classification Results](#rm-deep-dive-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
+| 🔀 | [Deep Dive: Cross-Reference Map](#rm-deep-dive-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
+| 🔬 | [Deep Dive: Methodology & Limitations](#rm-deep-dive-methodology--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
+| 📦 | [Deep Dive: Data Download Manifest](#rm-deep-dive-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
 | 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
@@ -111,9 +110,9 @@ Use this guide to read the article as a political-intelligence product rather th
 | 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
-| 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
+| 🏷️ | [Audit appendix](#rm-deep-dive-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
-## Synthesis Summary
+## Why It Matters
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/synthesis-summary.md -->
 
 ### Lead story / decision
@@ -169,14 +168,13 @@ All five items will clear chamber in 2026 before dissolution, but **execution la
 - riksdagen.se/sv/utskotten-och-eu-namnden/ [A1]
 - regeringen.se — Tidöavtalet reference context [A2]
 
-## Intelligence Assessment — Key Judgments
+## Key Findings
 <!-- source: intelligence-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/intelligence-assessment.md -->
 
 **Standards**: ICD 203 (analytic standards); WEP / Kent confidence scale; Admiralty Code on all source citations.
 **Base date**: 2026-04-24.
 
-### Bottom Line Up Front
-
+### Lede
 Tidö has staged its pre-election committee-report cluster with three signature items (CU25 prison capacity, SfU23 migration/researchers, FiU23 Riksbank 2025) and two consensus items (AU15 ILO, CU29 EV charging). Delivery credibility over the next 60–120 days — dominated by the Kriminalvården Q2 capacity report and Migrationsverket dual-track IT milestone — will determine whether this cluster becomes a 2026 campaign asset (~40 % likelihood) or a narrative liability (~40 % combined S2 + S3 likelihood).
 
 ### Key Judgments
@@ -1723,7 +1721,7 @@ Evidence mapped to consistency with each hypothesis (C = consistent, I = inconsi
 - regeringen.se communications trend [A2]
 - Historical Riksdag calendar: [riksdagen.se/kalender](https://www.riksdagen.se/) [A1]
 
-## Classification Results
+## Deep Dive: Classification Results
 <!-- source: classification-results.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/classification-results.md -->
 
 **Method**: 7-dimension classification from `analysis/methodologies/political-classification-guide.md`.
@@ -1784,7 +1782,7 @@ flowchart LR
 - `get_dokument` × 5 (A1), all at https://data.riksdagen.se/dokument/{{dok_id}}
 - Tryckfrihetsförordningen 2 kap 1 § — [riksdagen.se/TF](https://www.riksdagen.se/) (A1)
 
-## Cross-Reference Map
+## Deep Dive: Cross-Reference Map
 <!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/cross-reference-map.md -->
 
 ### Policy clusters
@@ -1862,7 +1860,7 @@ flowchart LR
 
 All cluster references cite `dok_id` + primary URL on data.riksdagen.se, regeringen.se, riksbank.se, or riksdagen.se/SFS (constitutional text).
 
-## Methodology Reflection & Limitations
+## Deep Dive: Methodology & Limitations
 <!-- source: methodology-reflection.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/methodology-reflection.md -->
 
 **Purpose**: run-audit gate per `analysis/methodologies/ai-driven-analysis-guide.md §Methodology Reflection`.
@@ -1977,7 +1975,7 @@ Structured Analytic Techniques used in this run:
 
 This reflection cites: `analysis/methodologies/ai-driven-analysis-guide.md`, `osint-tradecraft-standards.md`, `political-style-guide.md`, and all 15 other artifacts in this folder.
 
-## Data Download Manifest
+## Deep Dive: Data Download Manifest
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/data-download-manifest.md -->
 
 > ℹ️ **Data-Only Pipeline**: This script downloads and persists raw data.

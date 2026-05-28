@@ -3,15 +3,14 @@ date: 2026-05-06
 subfolder: election-cycle/current
 slug: 2026-05-06-election-cycle/current
 source_folder: analysis/daily/2026-05-06/election-cycle/current
-generated_at: 2026-05-28T15:56:16.366Z
+generated_at: 2026-05-28T22:29:31.299Z
 language: en
 layout: article
 ---
-## Executive Brief
+## What Happened
 <!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-06/election-cycle/current/executive-brief.md -->
 
-### 🎯 BLUF
-
+### Lede
 Sweden's Tidö coalition (M+KD+L+SD) completes its final legislative sprint with five major committee reports on 2026-05-06 confirming the mandate's core narrative: **criminal justice delivery, defence modernisation, and welfare targeting** are advancing while **foreign policy stress** (Gaza/Israel, war-crimes accountability) tests coalition cohesion at the worst possible electoral moment. With 130 days to polling day, the mandate scorecard reads: **criminal justice ✓ | defence ✓ | migration ⚠ | welfare partial | fiscal consolidation partial**.
 
 ### 🧭 3 Decisions This Brief Supports
@@ -20,7 +19,7 @@ Sweden's Tidö coalition (M+KD+L+SD) completes its final legislative sprint with
 
 2. **L (Liberalerna) threshold watch**: With L polling at 4.2% (margin 0.2pp above survival threshold), today's social insurance and housing allowance reforms (HD01SfU21, HD01SfU24) may stabilise L's middle-class voter base — monitor polling response.
 
-3. **Gaza/war-crimes risk**: HD10470 (Israel flotilla attack question) and HD11789 (Swedish citizens investigated for war crimes) create political exposure. Coalition communication must differentiate SD's nationalist position from M+KD+L's NATO/rule-of-law framing.
+3. **Gaza/war-crimes risk**: Riksdag document #10470 (HD10470) (Israel flotilla attack question) and HD11789 (Swedish citizens investigated for war crimes) create political exposure. Coalition communication must differentiate SD's nationalist position from M+KD+L's NATO/rule-of-law framing.
 
 ### KEY SIGNALS: 2026-05-06
 
@@ -60,9 +59,9 @@ Use this guide to read the article as a political-intelligence product rather th
 
 | Icon | Reader need | What you'll get |
 |---|---|---|
-| 📊 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
-| 🧠 | [Synthesis Summary](#rm-synthesis-summary) | evidence-anchored narrative consolidating primary sources into one coherent story line |
-| 🎯 | [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps |
+| 📊 | [Lede and editorial decisions](#rm-what-happened) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
+| 🧠 | [Why It Matters](#rm-why-it-matters) | evidence-anchored narrative consolidating primary sources into one coherent story line |
+| 🎯 | [Key Judgments](#rm-key-findings) | confidence-bearing political-intelligence conclusions and collection gaps |
 | 📈 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals |
 | 👥 | [Stakeholder Perspectives](#rm-stakeholder-perspectives) | winners, losers and undecided actors with stake-weighted positions and pressure points |
 | 🔢 | [Coalition Mathematics](#rm-coalition-mathematics) | parliamentary arithmetic showing exactly who can pass or block this measure and at what margin |
@@ -83,10 +82,10 @@ Use this guide to read the article as a political-intelligence product rather th
 | ⚙️ | [Implementation Feasibility](#rm-implementation-feasibility) | delivery feasibility, capability gaps, timelines and execution risks for the proposed action |
 | 📰 | [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder |
 | 😈 | [Devil's Advocate](#rm-devils-advocate) | alternative hypotheses, steel-manned counter-arguments and the strongest case against the lead reading |
-| 🏷️ | [Classification Results](#rm-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
-| 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
-| 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
-| 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 🏷️ | [Deep Dive: Classification Results](#rm-deep-dive-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
+| 🔀 | [Deep Dive: Cross-Reference Map](#rm-deep-dive-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
+| 🔬 | [Deep Dive: Methodology & Limitations](#rm-deep-dive-methodology--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
+| 📦 | [Deep Dive: Data Download Manifest](#rm-deep-dive-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
 | 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
@@ -101,9 +100,9 @@ Use this guide to read the article as a political-intelligence product rather th
 | 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
-| 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
+| 🏷️ | [Audit appendix](#rm-deep-dive-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
-## Synthesis Summary
+## Why It Matters
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-06/election-cycle/current/synthesis-summary.md -->
 
 **Horizon**: T+1460d (4 years) | **Depth multiplier**: 2.5× Tier-C  
@@ -220,7 +219,7 @@ New signals (2026-05-06 vs. 2026-05-05):
 
 **Pass 2 improvements**: Added election proximity multiplier (1.5×) to all DIW scores; inserted Lagrådet confirmation for HD01FöU18; strengthened Statskontoret Kriminalvården reference; clarified L threshold quantification; added cross-reference predecessor link; inserted IMF economicProvenance block with vintage tag.
 
-## Intelligence Assessment — Key Judgments
+## Key Findings
 <!-- source: intelligence-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-06/election-cycle/current/intelligence-assessment.md -->
 
 ### Key Judgments
@@ -1312,7 +1311,7 @@ Each assumption is plausible but not certain. If all three assumptions fail simu
 
 **Pass 2 improvements**: Three full hypotheses with specific source citations (HD01CU25, HD01FöU18, HD01SfU21/24, Statskontoret); three full counterfactual paragraphs meeting the ≥3 requirement; methodological meta-reflection on assumption fragility; academic citation added.
 
-## Classification Results
+## Deep Dive: Classification Results
 <!-- source: classification-results.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-06/election-cycle/current/classification-results.md -->
 
 ### Document Classification
@@ -1360,7 +1359,7 @@ pie title Policy Domain Distribution (by DIW weight)
 
 **Pass 2 improvements**: Added pie chart; separated "governing" from "opposition" initiation; clarified SD-specific vs. bipartisan classification for HD11790, HD11792.
 
-## Cross-Reference Map
+## Deep Dive: Cross-Reference Map
 <!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-06/election-cycle/current/cross-reference-map.md -->
 
 ### Predecessor Citations (Required)
@@ -1414,7 +1413,7 @@ graph LR
 
 **Pass 2 improvements**: Added specific file paths to predecessor citations; created thematic cluster Mermaid diagram; added inter-cycle cross-reference table linking current and next artifacts.
 
-## Methodology Reflection & Limitations
+## Deep Dive: Methodology & Limitations
 <!-- source: methodology-reflection.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-06/election-cycle/current/methodology-reflection.md -->
 
 ### Completeness Audit
@@ -1448,7 +1447,7 @@ This analysis was produced in a single-agent agentic context where a second huma
 - **Statskontoret data**: Referenced via URL citation (`statskontoret.se/utredningar/kriminalvard-kapacitet-2025`) — content not parsed directly; cited from HD01CU25 references.
 - **Lagrådet content**: HD01FöU18 Lagrådet yttrande 2026-02-10 referenced from document metadata; full proportionality note text not parsed.
 
-## Data Download Manifest
+## Deep Dive: Data Download Manifest
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-06/election-cycle/current/data-download-manifest.md -->
 
 **Workflow**: News: Election Cycle | **Run ID**: 25461045016 | **UTC**: 2026-05-06T21:10:00Z  
@@ -1582,8 +1581,7 @@ None identified in this batch.
 **Klassificering**: OFFENTLIG | **Konfidens**: HØJ [Admiralty B2] | **Tid til valg**: T-130 dage  
 **Forfatter**: James Pether Sörling | **Kørsel**: 25461045016 | **IMF-vintage**: WEO apr-2026
 
-### 🎯 BLUF
-
+### Lede
 Sveriges Tidø-koalition (M+KD+L+SD) afslutter sin sidste lovgivningssprint med fem store udvalgsrapporter den 6. maj 2026, som bekræfter mandatets kernefortælling: **strafferet, modernisering af forsvaret og velfærdsselektivitet** skrider fremad, mens **udenrigspolitisk stress** (Gaza/Israel, krigsforbrydelser) tester koalitionens sammenhæng på det værst tænkelige valgøjeblik. Med 130 dage til valgdagen lyder mandatets scorecard: **strafferet ✓ | forsvar ✓ | migration ⚠ | velfærd delvis | finanskonsolidering delvis**.
 
 ### 🧭 3 Beslutninger denne oversigt understøtter
@@ -1634,8 +1632,7 @@ Rød-Grøn: S 96 + V 24 + C 22 + MP 12 = **154 mandater** (intet flertal uden M 
 **Klassifizierung**: ÖFFENTLICH | **Konfidenz**: HOCH [Admiralty B2] | **Zeit bis zur Wahl**: T-130 Tage  
 **Autor**: James Pether Sörling | **Lauf**: 25461045016 | **IMF-Jahrgang**: WEO April 2026
 
-### 🎯 BLUF
-
+### Lede
 Schwedens Tidø-Koalition (M+KD+L+SD) schließt ihren letzten Gesetzgebungssprint mit fünf großen Ausschussberichten am 6. Mai 2026 ab, die die Kernnärrativ des Mandats bestätigen: **Strafrechtsdurchsetzung, Verteidigungsmodernisierung und Wohlfahrtszielgenauigkeit** kommen voran, während **außenpolitischer Stress** (Gaza/Israel, Kriegsverbrechen) die Koalitionskohäsion im denkbar schlechtesten Wahlmoment belastet. Mit 130 Tagen bis zum Wahltag lautet die Mandatsbilanz: **Strafrecht ✓ | Verteidigung ✓ | Migration ⚠ | Wohlfahrt teilweise | Haushaltskonsolidierung teilweise**.
 
 ### 🧭 3 Entscheidungen, die diese Kurzanalyse unterstützt
@@ -1686,8 +1683,7 @@ Rot-Grün: S 96 + V 24 + C 22 + MP 12 = **154 Mandate** (keine Mehrheit ohne M o
 **Clasificación**: PÚBLICO | **Confianza**: ALTA [Admiralty B2] | **Tiempo hasta las elecciones**: T-130 días  
 **Autor**: James Pether Sörling | **Ejecución**: 25461045016 | **Cosecha FMI**: WEO abr. 2026
 
-### 🎯 BLUF
-
+### Lede
 La coalición Tidö de Suecia (M+KD+L+SD) concluye su último sprint legislativo con cinco grandes informes de comisión el 6 de mayo de 2026 que confirman la narrativa central del mandato: **justicia penal, modernización de la defensa y focalización del bienestar** avanzan mientras el **estrés de política exterior** (Gaza/Israel, crímenes de guerra) pone a prueba la cohesión de la coalición en el peor momento electoral posible. Con 130 días para el día de las elecciones, el marcador del mandato es: **justicia penal ✓ | defensa ✓ | migración ⚠ | bienestar parcial | consolidación fiscal parcial**.
 
 ### 🧭 3 Decisiones que apoya esta nota
@@ -1738,8 +1734,7 @@ Rojo-Verde: S 96 + V 24 + C 22 + MP 12 = **154 escaños** (sin mayoría sin M o 
 **Luokitus**: JULKINEN | **Luotettavuus**: KORKEA [Admiralty B2] | **Aika vaaleihin**: T-130 päivää  
 **Tekijä**: James Pether Sörling | **Ajo**: 25461045016 | **IMF-vuosikerta**: WEO huhtikuu 2026
 
-### 🎯 BLUF
-
+### Lede
 Ruotsin Tidö-koalitio (M+KD+L+SD) päättää viimeisen lainsäädäntösprinttinsä viidellä suurella valiokuntaraportilla 6. toukokuuta 2026, vahvistaen toimikauden ydinkertomuksen: **rikosoikeuden toimeenpano, puolustuksen modernisointi ja hyvinvoinnin kohdentaminen** etenevät, kun taas **ulkopoliittinen stressi** (Gaza/Israel, sotarikokset) koettelee koalition yhteenkuuluvuutta pahimmalla mahdollisella vaalihetkellä. Vaalipäivän ollessa 130 päivän päässä toimikauden tuloskortti on: **rikosoikeus ✓ | puolustus ✓ | maahanmuutto ⚠ | hyvinvointi osittain | budjettivakautus osittain**.
 
 ### 🧭 3 Päätöstä, joita tämä tiivistelmä tukee
@@ -1789,8 +1784,7 @@ Puna-Vihreä: S 96 + V 24 + C 22 + MP 12 = **154 paikkaa** (ei enemmistöä ilma
 
 **Auteur** : James Pether Sörling | **Exécution** : 25461045016 | **Millésime FMI** : WEO avr. 2026
 
-### 🎯 BLUF
-
+### Lede
 La coalition Tidö de la Suède (M+KD+L+SD) achève son dernier sprint législatif avec cinq grands rapports de commission le 6 mai 2026, confirmant le récit central du mandat : **la justice pénale, la modernisation de la défense et le ciblage de l'aide sociale** progressent, tandis que **le stress de politique étrangère** (Gaza/Israël, crimes de guerre) met à l'épreuve la cohésion de la coalition au pire moment électoral possible. À 130 jours du scrutin, le bilan du mandat se lit ainsi : **justice pénale ✓ | défense ✓ | migration ⚠ | aide sociale partielle | consolidation budgétaire partielle**.
 
 ### 🧭 3 Décisions que cette note soutient
@@ -1997,8 +1991,7 @@ Rouge-Vert : S 96 + V 24 + C 22 + MP 12 = **154 sièges** (pas de majorité sans
 **Classificatie**: OPENBAAR | **Vertrouwen**: HOOG [Admiralty B2] | **Tijd tot verkiezingen**: T-130 dagen  
 **Auteur**: James Pether Sörling | **Run**: 25461045016 | **IMF-oogst**: WEO apr. 2026
 
-### 🎯 BLUF
-
+### Lede
 Zweden's Tidø-coalitie (M+KD+L+SD) rondt zijn laatste wetgevingssprint af met vijf grote commissierapporten op 6 mei 2026, die het kernnárratio van het mandaat bevestigen: **strafrechthandhaving, defensiemodernisering en welzijnsgerichtheid** boeken vooruitgang terwijl **buitenlandse-beleidsstress** (Gaza/Israël, oorlogsmisdaden) de coalitiesamenhang op het slechtst mogelijke verkiezingsmoment op de proef stelt. Met 130 dagen tot de verkiezingsdag luidt de mandaatbalans: **strafrecht ✓ | defensie ✓ | migratie ⚠ | welzijn gedeeltelijk | begrotingsconsolidatie gedeeltelijk**.
 
 ### 🧭 3 Beslissingen die dit verslag ondersteunt
@@ -2049,8 +2042,7 @@ Rood-Groen: S 96 + V 24 + C 22 + MP 12 = **154 zetels** (geen meerderheid zonder
 **Klassifisering**: OFFENTLIG | **Konfidens**: HØY [Admiralty B2] | **Tid til valg**: T-130 dager  
 **Forfatter**: James Pether Sörling | **Kjøring**: 25461045016 | **IMF-årgång**: WEO apr-2026
 
-### 🎯 BLUF
-
+### Lede
 Sveriges Tidø-koalisjon (M+KD+L+SD) fullfører sin siste lovgivningssprint med fem store utvalgsrapporter 6. mai 2026 som bekrefter mandatets kjernenarrativ: **strafferettslevering, forsvarsmodernisering og velfærdsselektivitet** er i fremgang mens **utenrikspolitisk stress** (Gaza/Israel, krigsforbrytelser) tester koalisjonens samhold på verst mulig valgøyeblikk. Med 130 dager til valgdagen lyder mandatets scorecard: **strafferett ✓ | forsvar ✓ | migrasjon ⚠ | velferd delvis | finanskonsolidering delvis**.
 
 ### 🧭 3 Beslutninger denne oversikten støtter
@@ -2101,8 +2093,7 @@ Rød-Grønn: S 96 + V 24 + C 22 + MP 12 = **154 mandater** (ingen flertall uten 
 **Klassificering**: OFFENTLIG | **Konfidensgrad**: HÖG [Admiralty B2] | **Tid till val**: T-130 dagar  
 **Författare**: James Pether Sörling | **Körning**: 25461045016 | **IMF-årgång**: WEO apr-2026
 
-### 🎯 BLUF
-
+### Lede
 Sveriges Tidö-koalition (M+KD+L+SD) avslutar sin sista lagstiftningssprint med fem stora utskottsbetänkanden den 6 maj 2026 som bekräftar mandatets kärnberättelse: **brottsbekämpning, försvarsmodernisering och välfärdsselektivitet** går framåt medan **utrikespolitisk stress** (Gaza/Israel, krigsbrott) testar koalitionens sammanhållning i värsta möjliga valtid. Med 130 dagar till valdagen lyder mandatresultaten: **brottsbekämpning ✓ | försvar ✓ | migration ⚠ | välfärd delvis | budgetkonsolidering delvis**.
 
 ### 🧭 3 Beslut som denna sammanfattning stöder

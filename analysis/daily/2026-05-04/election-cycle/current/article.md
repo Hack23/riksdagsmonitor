@@ -3,21 +3,19 @@ date: 2026-05-04
 subfolder: election-cycle/current
 slug: 2026-05-04-election-cycle/current
 source_folder: analysis/daily/2026-05-04/election-cycle/current
-generated_at: 2026-05-28T15:56:16.177Z
+generated_at: 2026-05-28T22:29:31.081Z
 language: en
 layout: article
 ---
-## Executive Brief
+## What Happened
 <!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/current/executive-brief.md -->
 
 ---
 
-### BLUF
+### Lede
+Sweden's 2022–2026 mandate is entering its final 132 days: a Tidö coalition of M+KD+L has governed with SD confidence-and-supply support, delivering the deepest shift in Swedish migration policy in a generation (Riksdag document #03262 (HD03262)), reactivating nuclear energy (HD01NU19), and committing to 2.4% GDP defence (NATO 2028 target). The coalition stands at 175 seats — a bare majority — with L at critical threshold risk (32% probability of failing 4%) and MP also facing elimination (38%). Economic recovery is underway: IMF WEO Apr-2026 projects 2.4% GDP growth for 2026, up from the 2024 recession low. The September 2026 election is statistically a coin-flip.
 
-Sweden's 2022–2026 mandate is entering its final 132 days: a Tidö coalition of M+KD+L has governed with SD confidence-and-supply support, delivering the deepest shift in Swedish migration policy in a generation (HD03262), reactivating nuclear energy (HD01NU19), and committing to 2.4% GDP defence (NATO 2028 target). The coalition stands at 175 seats — a bare majority — with L at critical threshold risk (32% probability of failing 4%) and MP also facing elimination (38%). Economic recovery is underway: IMF WEO Apr-2026 projects 2.4% GDP growth for 2026, up from the 2024 recession low. The September 2026 election is statistically a coin-flip.
-
-### Decisions This Brief Supports
-
+### Decisions and confidence context
 1. **Election scenario planning**: Which of 12 post-election scenarios materialises? Coalition arithmetic, formation timeline, SD cabinet question.
 2. **Policy legacy assessment**: Has the Tidö mandate delivered on its 2022 promises? Migration, nuclear, defence, crime, economy.
 3. **Risk identification**: What are the top 5 risks in the remaining 132 days (judicial challenges, economic shocks, coalition fragility)?
@@ -75,15 +73,15 @@ Use this guide to read the article as a political-intelligence product rather th
 
 | Icon | Reader need | What you'll get |
 |---|---|---|
-| 📊 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
-| 🧠 | [Synthesis Summary](#rm-synthesis-summary) | evidence-anchored narrative consolidating primary sources into one coherent story line |
+| 📊 | [Lede and editorial decisions](#rm-what-happened) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
+| 🧠 | [Why It Matters](#rm-why-it-matters) | evidence-anchored narrative consolidating primary sources into one coherent story line |
 | 📝 | [Cycle Trajectory](#rm-cycle-trajectory) | election-cycle trajectory: turning points, polling momentum and coalition realignment paths |
 | ⚠️ | [Risk assessment](#rm-risk-assessment) | policy, electoral, institutional, communications, and implementation risk register |
 | 📝 | [Quantitative SWOT](#rm-quantitative-swot) | weighted, scored SWOT register with explicit confidence ratings and decision implications |
 | 📝 | [Political STRIDE Assessment](#rm-political-stride-assessment) | STRIDE-based threat model adapted to political institutions and democratic processes |
 | 📝 | [Wildcards & Black Swans](#rm-wildcards--black-swans) | low-probability, high-impact disruptive events that could derail the base-case forecast |
 | 📝 | [PESTLE Analysis](#rm-pestle-analysis) | political, economic, social, technological, legal and environmental drivers shaping the outcome |
-| 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
+| 🔀 | [Deep Dive: Cross-Reference Map](#rm-deep-dive-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 📝 | [Actor Assessment](#rm-actor-assessment) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Coalition Dynamics](#rm-coalition-dynamics) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Comparative Context](#rm-comparative-context) | supporting analytical lens with primary-source evidence and audit-traceable citations |
@@ -117,9 +115,9 @@ Use this guide to read the article as a political-intelligence product rather th
 | 📝 | [Timeline Analysis](#rm-timeline-analysis) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Trend Analysis](#rm-trend-analysis) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
-| 🏷️ | [Audit appendix](#rm-cross-reference-map) | classification, cross-reference, methodology and manifest evidence for reviewers |
+| 🏷️ | [Audit appendix](#rm-deep-dive-cross-reference-map) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
-## Synthesis Summary
+## Why It Matters
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/current/synthesis-summary.md -->
 
 **Horizon**: T+1460d (4 years) | **Depth multiplier**: 2.5× Tier-C  
@@ -925,7 +923,7 @@ Black Swans: High-impact events with <5% probability; conceptually imaginable bu
 - C's informal coalition role has maintained some rural environmental standards.
 - Green voters (MP, C-left) are the constituency most likely to swing in a close election — climate salience in late summer 2026 could shift 1–2%.
 
-## Cross-Reference Map
+## Deep Dive: Cross-Reference Map
 <!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/current/cross-reference-map.md -->
 
 **Requirement**: ≥2 year-ahead citations + ≥12 monthly-review citations
@@ -1463,8 +1461,7 @@ Assuming Scenario A1 (most likely):
 
 ---
 
-### BLUF
-
+### Lede
 تدخل الولاية السويدية 2022–2026 أيامها الـ 132 الأخيرة: حكمت ائتلاف تيدو M+KD+L مع دعم الثقة والإمداد من SD، منفّذةً أعمق تحول في سياسة الهجرة السويدية في جيل (HD03262)، وأعادت تنشيط الطاقة النووية (HD01NU19)، وتعهّدت بـ 2.4% من الناتج المحلي الإجمالي للدفاع (هدف الناتو 2028). تمتلك الائتلاف 175 مقعداً — أغلبية ضيقة — مع تعرّض حزب L لخطر حرج عند العتبة (32% احتمال التراجع تحت 4%)، وكذلك مواجهة MP خطر الاستبعاد (38%). التعافي الاقتصادي في مساره: توقّعات صندوق النقد الدولي WEO أبريل-2026 تُسجّل نمواً في الناتج المحلي بنسبة 2.4% لعام 2026، ارتفاعاً من أدنى مستويات الركود عام 2024. انتخابات سبتمبر 2026 هي إحصائياً قرعة.
 
 ### القرارات التي يدعمها هذا التقرير
@@ -1533,8 +1530,7 @@ flowchart LR
 
 ---
 
-### BLUF
-
+### Lede
 Sveriges mandat 2022–2026 er ved at nå sine sidste 132 dage: Tidø-koalitionen M+KD+L har regeret med SD's tillids- og forsyningsstøtte og gennemført det mest vidtgående skift i svensk migrationspolitik i en generation (HD03262), genaktiveret atomkraft (HD01NU19) og forpligtet sig til 2,4 % af BNP til forsvar (NATO 2028-mål). Koalitionen har 175 mandater — et knebent flertal — med L ved kritisk tærskelrisiko (32 % sandsynlighed for at falde under 4 %) og MP der også risikerer elimination (38 %). Genopretning er i gang: IMF WEO apr-2026 forventer 2,4 % BNP-vækst for 2026, op fra recessionslavpunktet i 2024. Valget i september 2026 er statistisk set et møntkast.
 
 ### Beslutninger dette briefing understøtter
@@ -1603,8 +1599,7 @@ flowchart LR
 
 ---
 
-### BLUF
-
+### Lede
 Schwedens Mandat 2022–2026 tritt in seine letzten 132 Tage: Die Tidö-Koalition M+KD+L hat mit SDs Unterstützung durch Vertrauen und Duldung regiert und den tiefgreifendsten Wandel in der schwedischen Migrationspolitik einer Generation durchgesetzt (HD03262), Kernenergie reaktiviert (HD01NU19) und 2,4 % des BIP für die Verteidigung zugesagt (NATO-Ziel 2028). Die Koalition hält 175 Sitze — eine knappe Mehrheit — wobei L an der kritischen Schwellenrisiko steht (32 % Wahrscheinlichkeit, unter 4 % zu fallen) und MP ebenfalls mit Eliminierung konfrontiert ist (38 %). Die wirtschaftliche Erholung ist im Gange: der IWF WEO Apr-2026 prognostiziert 2,4 % BIP-Wachstum für 2026, ein Anstieg vom Rezessionstief 2024. Die Wahl im September 2026 ist statistisch ein Münzwurf.
 
 ### Entscheidungen, die dieser Bericht unterstützt
@@ -1673,8 +1668,7 @@ flowchart LR
 
 ---
 
-### BLUF
-
+### Lede
 El mandato 2022–2026 de Suecia entra en sus últimos 132 días: la coalición Tidö M+KD+L ha gobernado con el apoyo de confianza y suministro de SD, ejecutando el cambio más profundo en la política migratoria sueca en una generación (HD03262), reactivando la energía nuclear (HD01NU19) y comprometiéndose con el 2,4 % del PIB para defensa (objetivo OTAN 2028). La coalición mantiene 175 escaños — una mayoría ajustada — con L en riesgo umbral crítico (32 % de probabilidad de caer por debajo del 4 %) y MP también ante el riesgo de eliminación (38 %). La recuperación económica está en marcha: el IMF WEO abr-2026 proyecta un crecimiento del PIB del 2,4 % para 2026, al alza respecto al mínimo de la recesión de 2024. La elección de septiembre de 2026 es estadísticamente un lanzamiento de moneda.
 
 ### Decisiones que este informe apoya
@@ -1743,8 +1737,7 @@ flowchart LR
 
 ---
 
-### BLUF
-
+### Lede
 Ruotsin vuoden 2022–2026 toimikausi on viimeisissä 132 päivässään: Tidö-koalitio M+KD+L on hallitut SD:n luottamus- ja toimitustukeen nojautuen ja toteuttanut sukupolven merkittävimmän muutoksen Ruotsin maahanmuuttopolitiikassa (HD03262), reaktivoinut ydinvoiman (HD01NU19) ja sitoutunut 2,4 % BKT:stä puolustukseen (NATO:n 2028-tavoite). Koalitiolla on 175 paikkaa — niukka enemmistö — L kriittisen kynnyksen riskillä (32 % todennäköisyys jäädä alle 4 %) ja MP myös eliminoitumisen vaarassa (38 %). Taloudellinen elpyminen on käynnissä: IMF WEO huhtikuu-2026 ennustaa 2,4 % BKT-kasvun vuodelle 2026, nousua vuoden 2024 taantuman pohjasta. Syyskuun 2026 vaalit ovat tilastollisesti kolikonheitto.
 
 ### Päätökset, joita tämä briefing tukee
@@ -1812,8 +1805,7 @@ flowchart LR
 
 ---
 
-### BLUF
-
+### Lede
 Le mandat 2022–2026 de la Suède entre dans ses 132 derniers jours : la coalition Tidö M+KD+L a gouverné avec le soutien de confiance et d'approvisionnement de SD, réalisant le changement le plus profond de la politique migratoire suédoise en une génération (HD03262), réactivant l'énergie nucléaire (HD01NU19) et s'engageant à 2,4 % du PIB pour la défense (objectif OTAN 2028). La coalition détient 175 sièges — une majorité étroite — L étant à risque seuil critique (32 % de probabilité de tomber sous 4 %) et MP également menacé d'élimination (38 %). La reprise économique est en cours : l'IMF WEO avr-2026 projette une croissance du PIB de 2,4 % pour 2026, en hausse par rapport au creux de la récession 2024. L'élection de septembre 2026 est statistiquement un pile ou face.
 
 ### Décisions que ce briefing soutient
@@ -1885,8 +1877,7 @@ flowchart LR
 
 ---
 
-### BLUF
-
+### Lede
 המנדט השבדי 2022–2026 נכנס ל-132 ימיו האחרונים: ממשלת טידו M+KD+L שלטה עם תמיכת הסמכה ואספקה של SD, וביצעה את השינוי העמוק ביותר במדיניות ההגירה השבדית בדור (HD03262), הפעילה מחדש אנרגיה גרעינית (HD01NU19) והתחייבה ל-2.4% מהתמ"ג עבור הגנה (יעד נאט"ו 2028). לקואליציה 175 מושבים — רוב דחוק — כאשר L נמצאת בסיכון קריטי של סף (32% סבירות לנפילה מתחת ל-4%), וגם MP עומדת בפני חיסול (38%). ההתאוששות הכלכלית מתקדמת: IMF WEO אפר-2026 מקרינה 2.4% צמיחה בתמ"ג ל-2026, עלייה ממינימום המיתון ב-2024. בחירות ספטמבר 2026 הן מבחינה סטטיסטית הטלת מטבע.
 
 ### החלטות שתדריך זה תומך בהן
@@ -1955,8 +1946,7 @@ flowchart LR
 
 ---
 
-### BLUF
-
+### Lede
 スウェーデンの2022–2026年マンデートは最後の132日を迎えている。ティドー連立M+KD+LはSDの信任・閣外協力支持のもとで統治し、一世代で最も大きな移民政策の転換（HD03262）、原子力再活性化（HD01NU19）、GDP2.4%の防衛公約（NATO2028目標）を実現した。連立は175議席を保有 — 辛うじての過半数 — Lが閾値リスク（4%を下回る確率32%）、MPも排除リスク（38%）に晒されている。経済回復は進行中：IMF WEO 2026年4月は2026年のGDP成長を2.4%と予測、2024年の不況底から上向き。2026年9月の選挙は統計的にコイントスだ。
 
 ### このブリーフィングが支援する決定
@@ -2025,8 +2015,7 @@ flowchart LR
 
 ---
 
-### BLUF
-
+### Lede
 스웨덴의 2022–2026년 임기는 마지막 132일에 접어들었다: 티되 연립 M+KD+L은 SD의 신임 및 공급 지원으로 통치하며, 한 세대에서 가장 심층적인 스웨덴 이민 정책 전환(HD03262), 핵에너지 재활성화(HD01NU19), GDP의 2.4%를 국방에 약속(NATO 2028 목표)을 달성했다. 연립은 175석을 보유 — 간신히 과반수 — L이 임계 위험 수준(4% 미만 가능성 32%)에, MP도 탈락 위험(38%)에 처해 있다. 경제 회복이 진행 중: IMF WEO 2026년 4월은 2026년 GDP 2.4% 성장을 전망, 2024년 불황 바닥에서 상승. 2026년 9월 선거는 통계적으로 동전 던지기다.
 
 ### 이 브리핑이 지원하는 결정
@@ -2095,8 +2084,7 @@ flowchart LR
 
 ---
 
-### BLUF
-
+### Lede
 Het Zweedse mandaat 2022–2026 treedt zijn laatste 132 dagen in: de Tidö-coalitie M+KD+L heeft geregeerd met de steun van SDs vertrouwen-en-gedoogakkoord, en heeft het meest ingrijpende wijziging van het Zweedse migratiebeleid in een generatie doorgevoerd (HD03262), kernenergie geheractiveerd (HD01NU19) en 2,4 % van het BBP voor defensie toegezegd (NAVO-doel 2028). De coalitie beschikt over 175 zetels — een krappe meerderheid — met L aan kritische drempelrisico (32 % kans om onder 4 % te vallen) en MP ook voor eliminatie (38 %). Het economisch herstel is op gang: het IMF WEO apr-2026 projecteert 2,4 % BBP-groei voor 2026, gestegen van het recessiedieptepunt in 2024. De verkiezing van september 2026 is statistisch een muntgooiing.
 
 ### Beslissingen die dit briefing ondersteunt
@@ -2165,8 +2153,7 @@ flowchart LR
 
 ---
 
-### BLUF
-
+### Lede
 Sveriges mandat 2022–2026 nærmer seg sine siste 132 dager: Tidø-koalisjonen M+KD+L har styrt med SD sin tillits- og forsyningsstøtte, og gjennomført det mest gjennomgripende skiftet i svensk migrasjonspolitikk på en generasjon (HD03262), reaktivert atomkraft (HD01NU19) og forpliktet seg til 2,4 % av BNP til forsvar (NATO 2028-mål). Koalisjonen har 175 mandater — et knapp flertall — med L ved kritisk terskelsrisiko (32 % sannsynlighet for å falle under 4 %) og MP som også risikerer eliminasjon (38 %). Økonomisk bedring er i gang: IMF WEO apr-2026 projiserer 2,4 % BNP-vekst for 2026, opp fra resesjonsbunn i 2024. Valget i september 2026 er statistisk sett et myntkast.
 
 ### Beslutninger dette brifingen støtter
@@ -2235,8 +2222,7 @@ flowchart LR
 
 ---
 
-### BLUF
-
+### Lede
 Sveriges mandatperiod 2022–2026 befinner sig i sina sista 132 dagar: Tidökoalitionen M+KD+L har styrt med SD:s förtroende- och sakpolitikstöd och genomfört den mest genomgripande förändringen av svensk migrationspolitik på en generation (HD03262), återaktiverat kärnkraft (HD01NU19) och åtagit sig 2,4 % av BNP i försvar (NATO:s mål till 2028). Koalitionen har 175 mandat — en knapp majoritet — med L vid kritisk tröskelrisk (32 % sannolikhet att falla under 4 %) och MP som också riskerar utslängning (38 %). Ekonomisk återhämtning pågår: IMF WEO apr-2026 prognostiserar 2,4 % BNP-tillväxt för 2026, upp från recessionsbutten 2024. Valet i september 2026 är statistiskt ett mynt som kastas.
 
 ### Beslut som detta briefing stödjer
@@ -2305,8 +2291,7 @@ flowchart LR
 
 ---
 
-### BLUF
-
+### Lede
 瑞典2022–2026年任期进入最后132天：蒂德联合政府M+KD+L在SD的信任与供给支持下施政，实现了一代人中瑞典移民政策最深刻的转变（HD03262）、重新激活核能（HD01NU19）并承诺将GDP的2.4%用于国防（NATO 2028目标）。联合政府拥有175个席位——勉强过半——L党处于关键门槛风险（32%的概率跌破4%），MP也面临出局风险（38%）。经济复苏进行中：IMF WEO 2026年4月预测2026年GDP增长2.4%，从2024年经济衰退低谷回升。2026年9月的选举在统计上是一枚硬币的两面。
 
 ### 本简报支持的决策

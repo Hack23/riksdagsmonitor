@@ -3,17 +3,16 @@ date: 2026-05-25
 subfolder: evening-analysis
 slug: 2026-05-25-evening-analysis
 source_folder: analysis/daily/2026-05-25/evening-analysis
-generated_at: 2026-05-28T15:56:17.478Z
+generated_at: 2026-05-28T22:29:32.559Z
 language: en
 layout: article
 ---
-## Executive Brief
+## What Happened
 <!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-25/evening-analysis/executive-brief.md -->
 
 ---
 
-### BLUF (Bottom Line Up Front)
-
+### Lede
 The Swedish Riksdag's 2026-05-25 session delivered a major criminal justice reform package (JuU47/48) and the first formal NATO integration review (UU19), while the opposition seeded six strategically targeted accountability narratives. The day's most consequential story — the potential creation of a civilian foreign intelligence agency (UU24) — received the least media coverage despite carrying the highest long-term institutional significance. The women's shelter decline (IP512) is the government's most immediate political liability.
 
 ---
@@ -90,9 +89,9 @@ Use this guide to read the article as a political-intelligence product rather th
 
 | Icon | Reader need | What you'll get |
 |---|---|---|
-| 📊 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
-| 🧠 | [Synthesis Summary](#rm-synthesis-summary) | evidence-anchored narrative consolidating primary sources into one coherent story line |
-| 🎯 | [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps |
+| 📊 | [Lede and editorial decisions](#rm-what-happened) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
+| 🧠 | [Why It Matters](#rm-why-it-matters) | evidence-anchored narrative consolidating primary sources into one coherent story line |
+| 🎯 | [Key Judgments](#rm-key-findings) | confidence-bearing political-intelligence conclusions and collection gaps |
 | 📈 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals |
 | 👥 | [Stakeholder Perspectives](#rm-stakeholder-perspectives) | winners, losers and undecided actors with stake-weighted positions and pressure points |
 | 🔢 | [Coalition Mathematics](#rm-coalition-mathematics) | parliamentary arithmetic showing exactly who can pass or block this measure and at what margin |
@@ -108,14 +107,14 @@ Use this guide to read the article as a political-intelligence product rather th
 | ⚙️ | [Implementation Feasibility](#rm-implementation-feasibility) | delivery feasibility, capability gaps, timelines and execution risks for the proposed action |
 | 📰 | [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder |
 | 😈 | [Devil's Advocate](#rm-devils-advocate) | alternative hypotheses, steel-manned counter-arguments and the strongest case against the lead reading |
-| 🏷️ | [Classification Results](#rm-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
-| 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
-| 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
-| 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 🏷️ | [Deep Dive: Classification Results](#rm-deep-dive-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
+| 🔀 | [Deep Dive: Cross-Reference Map](#rm-deep-dive-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
+| 🔬 | [Deep Dive: Methodology & Limitations](#rm-deep-dive-methodology--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
+| 📦 | [Deep Dive: Data Download Manifest](#rm-deep-dive-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
-| 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
+| 🏷️ | [Audit appendix](#rm-deep-dive-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
-## Synthesis Summary
+## Why It Matters
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-25/evening-analysis/synthesis-summary.md -->
 
 ---
@@ -136,7 +135,7 @@ The **lead story** is `HD01JuU48` — "Ett nytt straffrättsligt påföljdssyste
 | 2 | HD01UU19 | Verksamheten i Nato 2025 | Betänkande UU19 | 8.5/10 | L3 Intelligence-grade |
 | 3 | HD01UU24 | Civil underrättelsetjänst | Betänkande UU24 | 8.0/10 | L2+ Priority |
 | 4 | HD01JuU47 | Nya möjligheter att bekämpa onlinerekrytering | Betänkande JuU47 | 7.5/10 | L2+ Priority |
-| 5 | HD11836 | Anslutning till Atrocity Prevention Coalition for Sudan | Skriftlig fråga | 6.0/10 | L2 Strategic |
+| 5 | Riksdag document #11836 (HD11836) | Anslutning till Atrocity Prevention Coalition for Sudan | Skriftlig fråga | 6.0/10 | L2 Strategic |
 | 6 | HD11837 | Regeringens agerande mot folkhälsoarbete i andra EU-länder | Skriftlig fråga | 5.8/10 | L2 Strategic |
 | 7 | HD10511 | Den ekonomiska politikens fördelningseffekter | Interpellation | 5.5/10 | L2 Strategic |
 | 8 | HD10512 | Socialtjänstens och kvinnojourernas skydd av våldsutsatta | Interpellation | 5.5/10 | L2 Strategic |
@@ -223,7 +222,7 @@ Uncertainty sources:
 - UU24 content inferred from title; full text metadata limited to 952 chars
 - Party vote breakdown for JuU47/JuU48 not yet indexed (documents published today)
 
-## Intelligence Assessment — Key Judgments
+## Key Findings
 <!-- source: intelligence-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-25/evening-analysis/intelligence-assessment.md -->
 
 ---
@@ -1738,7 +1737,7 @@ All Swedish media outlets have structural framing tendencies. Apparent "neutrali
 | H4: UU24 overreach | Partially rejected | MEDIUM | threat-analysis.md |
 | H5: Coordinated opposition | Not rejected | HIGH | media-framing-analysis.md |
 
-## Classification Results
+## Deep Dive: Classification Results
 <!-- source: classification-results.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-25/evening-analysis/classification-results.md -->
 
 ---
@@ -1827,7 +1826,7 @@ All Swedish media outlets have structural framing tendencies. Apparent "neutrali
 | HD11836 | Sudan/atrocity prevention | S | Maria Malmer Stenergard (M) | L2, foreign policy |
 | HD11837 | EU health policy | S | Jakob Forssmed (KD) | L2, EU/health |
 
-## Cross-Reference Map
+## Deep Dive: Cross-Reference Map
 <!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-25/evening-analysis/cross-reference-map.md -->
 
 ---
@@ -1902,7 +1901,7 @@ Prior evening analysis cycles:
 - 2026-05-22: evening-analysis (no open PIRs carried forward)
 - No sibling folder citations from same-day other article types (this is first generation for 2026-05-25 evening-analysis)
 
-## Methodology Reflection & Limitations
+## Deep Dive: Methodology & Limitations
 <!-- source: methodology-reflection.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-25/evening-analysis/methodology-reflection.md -->
 
 **ICD Standard**: ICD 203 (Intelligence Community Directive)
@@ -1933,7 +1932,7 @@ Both analytical passes have been completed for this edition. Pass 1 created all 
 
 ---
 
-## Data Download Manifest
+## Deep Dive: Data Download Manifest
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-25/evening-analysis/data-download-manifest.md -->
 
 **Workflow**: News Evening Analysis

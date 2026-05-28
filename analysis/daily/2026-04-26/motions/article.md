@@ -3,17 +3,16 @@ date: 2026-04-26
 subfolder: motions
 slug: 2026-04-26-motions
 source_folder: analysis/daily/2026-04-26/motions
-generated_at: 2026-05-28T15:56:15.675Z
+generated_at: 2026-05-28T22:29:30.520Z
 language: en
 layout: article
 ---
-## Executive Brief
+## What Happened
 <!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/executive-brief.md -->
 
 ---
 
-### BLUF
-
+### Lede
 Swedish opposition MPs are targeting three distinct government accountability gaps: dangerous workplaces receiving wage subsidies for disabled workers, incarcerated children lacking educational legal safeguards, and a detained Swedish citizen in Burundi. Simultaneously, SD challenges the energy-disinformation narrative used by EU industry and public broadcasters to delegitimise wind energy criticism.
 
 ---
@@ -38,7 +37,7 @@ The dominant intelligence theme: **the opposition is successfully identifying im
 
 ```mermaid
 graph LR
-    A["Opposition 2026-04-24"] --> B1["S: Lönestöd + farlig\narbetsmiljö HD11747"]
+    A["Opposition 2026-04-24"] --> B1["S: Lönestöd + farlig\narbetsmiljö Riksdag document #11747 (HD11747)"]
     A --> B2["S: Barn i kriminalvård\nutbildning HD11749"]
     A --> B3["S: Sahabo i\nBurundi HD11748"]
     A --> B4["SD: Vindkraft\ndesinformation HD10448"]
@@ -64,9 +63,9 @@ Use this guide to read the article as a political-intelligence product rather th
 
 | Icon | Reader need | What you'll get |
 |---|---|---|
-| 📊 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
-| 🧠 | [Synthesis Summary](#rm-synthesis-summary) | evidence-anchored narrative consolidating primary sources into one coherent story line |
-| 🎯 | [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps |
+| 📊 | [Lede and editorial decisions](#rm-what-happened) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
+| 🧠 | [Why It Matters](#rm-why-it-matters) | evidence-anchored narrative consolidating primary sources into one coherent story line |
+| 🎯 | [Key Judgments](#rm-key-findings) | confidence-bearing political-intelligence conclusions and collection gaps |
 | 📈 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals |
 | 👥 | [Stakeholder Perspectives](#rm-stakeholder-perspectives) | winners, losers and undecided actors with stake-weighted positions and pressure points |
 | 🔢 | [Coalition Mathematics](#rm-coalition-mathematics) | parliamentary arithmetic showing exactly who can pass or block this measure and at what margin |
@@ -82,10 +81,10 @@ Use this guide to read the article as a political-intelligence product rather th
 | ⚙️ | [Implementation Feasibility](#rm-implementation-feasibility) | delivery feasibility, capability gaps, timelines and execution risks for the proposed action |
 | 📰 | [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder |
 | 😈 | [Devil's Advocate](#rm-devils-advocate) | alternative hypotheses, steel-manned counter-arguments and the strongest case against the lead reading |
-| 🏷️ | [Classification Results](#rm-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
-| 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
-| 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
-| 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 🏷️ | [Deep Dive: Classification Results](#rm-deep-dive-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
+| 🔀 | [Deep Dive: Cross-Reference Map](#rm-deep-dive-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
+| 🔬 | [Deep Dive: Methodology & Limitations](#rm-deep-dive-methodology--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
+| 📦 | [Deep Dive: Data Download Manifest](#rm-deep-dive-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
 | 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
@@ -100,9 +99,9 @@ Use this guide to read the article as a political-intelligence product rather th
 | 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
-| 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
+| 🏷️ | [Audit appendix](#rm-deep-dive-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
-## Synthesis Summary
+## Why It Matters
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/synthesis-summary.md -->
 
 ---
@@ -196,7 +195,7 @@ graph TD
     style I fill:#4CAF50,color:#FFFFFF
 ```
 
-## Intelligence Assessment — Key Judgments
+## Key Findings
 <!-- source: intelligence-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/intelligence-assessment.md -->
 
 ### Key Judgments (KJ)
@@ -1528,7 +1527,7 @@ graph TD
     style E fill:#4CAF50,color:#FFFFFF
 ```
 
-## Classification Results
+## Deep Dive: Classification Results
 <!-- source: classification-results.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/classification-results.md -->
 
 ### Aggregated 7-Dimension Classification
@@ -1572,7 +1571,7 @@ graph TD
 
 ✅ **Neutrality**: Both S and SD opposition activity documented with equal analytical rigour. Government coalition ministers' accountability positions noted without partisan commentary.
 
-## Cross-Reference Map
+## Deep Dive: Cross-Reference Map
 <!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/cross-reference-map.md -->
 
 **Edge types used**: amends, thematic, coordinated-filing, committee-routed, rebuts
@@ -1629,7 +1628,7 @@ HD11747 + HD11748 + HD11749 all filed by S MPs on the same date (2026-04-24). Th
 `IMR oroar sig → HD11749 (Wallentheim) → Mohamsson svar 2026-05-06 → [escalation] → KU?`
 `Windeurope rapport → SVT/SR rapporterar → HD10448 (Fransson) → Busch svar 2026-05-08`
 
-## Methodology Reflection & Limitations
+## Deep Dive: Methodology & Limitations
 <!-- source: methodology-reflection.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/methodology-reflection.md -->
 
 ---
@@ -1716,7 +1715,7 @@ Per political-style-guide.md §Source Diversity Rule: P0/P1 claims require ≥3 
 
 ---
 
-## Data Download Manifest
+## Deep Dive: Data Download Manifest
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/data-download-manifest.md -->
 
 **Workflow**: news-motions (Opposition Motions)
@@ -1830,8 +1829,7 @@ graph LR
 
 ---
 
-### BLUF
-
+### Lede
 Svenske oppositionspolitikere retter sig mod tre distinkte statslige ansvarsgab: farlige arbejdspladser, der modtager lønsubsidier for handicappede arbejdere, fængslede børn uden juridisk uddannelsesbeskyttelse, og en tilbageholdt svensk statsborger i Burundi. Desuden udfordrer SD energidesinformationsnarrativen, der bruges af EU-industrien og public service til at delegitimere vindkraftkritik.
 
 ---
@@ -1884,8 +1882,7 @@ graph LR
 
 ---
 
-### BLUF
-
+### Lede
 Schwedische Oppositionsabgeordnete zielen auf drei unterschiedliche staatliche Rechenschaftslücken ab: gefährliche Arbeitsplätze, die Lohnzuschüsse für behinderte Arbeitnehmer erhalten, inhaftierte Kinder ohne rechtliche Bildungsschutzmaßnahmen und ein inhaftierter schwedischer Staatsbürger in Burundi. Gleichzeitig hinterfragt die SD die Energiedesinformationserzählung, die von der EU-Industrie und öffentlich-rechtlichen Sendern verwendet wird, um Windenergie-Kritik zu delegitimieren.
 
 ---
@@ -1938,8 +1935,7 @@ graph LR
 
 ---
 
-### BLUF
-
+### Lede
 Diputados de la oposición sueca apuntan a tres brechas distintas en la rendición de cuentas del gobierno: lugares de trabajo peligrosos que reciben subsidios salariales para trabajadores con discapacidad, niños detenidos sin garantías legales de educación y un ciudadano sueco detenido en Burundi. Simultáneamente, el SD cuestiona la narrativa de desinformación energética utilizada por la industria de la UE y los radiodifusores públicos para deslegitimar las críticas a la energía eólica.
 
 ---
@@ -1992,8 +1988,7 @@ graph LR
 
 ---
 
-### BLUF
-
+### Lede
 Ruotsalaiset oppositiokansanedustajat kohdistavat kritiikkinsä kolmeen erilliseen hallituksen vastuuaukkoon: vaarallisiin työpaikkoihin, jotka saavat palkkatukia vammaisille työntekijöille, vankilassa oleviin lapsiin ilman koulutuksen oikeudellisia suojauksia, ja pidätettyyn ruotsalaiseen kansalaiseen Burundissa. SD kyseenalaistaa samanaikaisesti EU-teollisuuden ja julkisen palvelun käyttämän energiadesinformaationarratiivin tuulienergiakritiikkiä vastaan.
 
 ---
@@ -2045,8 +2040,7 @@ graph LR
 
 ---
 
-### BLUF
-
+### Lede
 Des parlementaires de l'opposition suédoise ciblent trois lacunes distinctes dans la responsabilité gouvernementale : des lieux de travail dangereux recevant des subventions salariales pour les travailleurs handicapés, des enfants détenus sans garanties légales en matière d'éducation et un citoyen suédois détenu au Burundi. Simultanément, le SD remet en question le récit sur la désinformation énergétique utilisé par l'industrie européenne et les diffuseurs publics pour délégitimer la critique de l'énergie éolienne.
 
 ---
@@ -2258,8 +2252,7 @@ graph LR
 
 ---
 
-### BLUF
-
+### Lede
 Zweedse oppositieparlementariërs richten zich op drie afzonderlijke hiaten in de overheidsverantwoording: gevaarlijke werkplekken die loonsubsidies ontvangen voor gehandicapte werknemers, gedetineerde kinderen zonder wettelijke onderwijsbescherming en een gedetineerde Zweedse staatsburger in Burundi. Tegelijkertijd daagt de SD het energiedesinformatieverhaal uit dat door de EU-industrie en publieke omroepen wordt gebruikt om windenergie-kritiek te delegitimeren.
 
 ---
@@ -2312,8 +2305,7 @@ graph LR
 
 ---
 
-### BLUF
-
+### Lede
 Svenske opposisjonspolitikere retter seg mot tre distinkte statlige ansvarsgap: farlige arbeidsplasser som mottar lønnstilskudd for funksjonshemmede arbeidere, fengslede barn uten juridiske utdanningsbeskyttelser, og en tilbakeholdt svensk statsborger i Burundi. Samtidig utfordrer SD energidesinformasjonsnarrativen som brukes av EU-industrien og kringkasterne for å delegitimere vindkraftkritikk.
 
 ---
@@ -2366,8 +2358,7 @@ graph LR
 
 ---
 
-### BLUF
-
+### Lede
 Svenska oppositionsledamöter riktar in sig på tre distinkta ansvarsluckor i regeringen: farliga arbetsplatser som tar emot lönebidrag för funktionsnedsatta, frihetsberövade barn som saknar rättsliga utbildningsskydd, och en frihetsberövad svensk medborgare i Burundi. Samtidigt ifrågasätter SD energidesinformationsnarrativet som används av EU-industrin och public service för att delegitimisera vindkraftskritik.
 
 ---

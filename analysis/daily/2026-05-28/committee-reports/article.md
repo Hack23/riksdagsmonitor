@@ -3,17 +3,16 @@ date: 2026-05-28
 subfolder: committee-reports
 slug: 2026-05-28-committee-reports
 source_folder: analysis/daily/2026-05-28/committee-reports
-generated_at: 2026-05-28T15:56:17.658Z
+generated_at: 2026-05-28T22:29:32.759Z
 language: en
 layout: article
 ---
-## Executive Brief
+## What Happened
 <!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-28/committee-reports/executive-brief.md -->
 
 <!-- exec-brief: committee-reports 2026-05-28 | run: 26555699900 | pass: 2 -->
 
-### BLUF
-
+### Lede
 Sweden's parliamentary committees approved five major legislative packages on 27 May 2026, advancing a comprehensive security agenda 108 days before the September 2026 general election. The Försvarsutskottet cleared three cybersecurity laws strengthening the National Cybersecurity Centre (NCSC/FRA) with information-sharing obligations effective 15 July 2026. The Justitieutskottet approved prison-escape criminalisation and tougher recidivism sentencing effective 2 July 2026 — with Miljöpartiet lodging the sole reservation. The Socialförsäkringsutskottet passed a pension-surplus distribution mechanism (unanimous Pension Group agreement) while simultaneously advancing government responses to a critical Riksrevisionen report on migration detention that drew five multi-party reservations. The Kulturutskottet accepted a government communication on architecture/design policy. The Utrikesutskottet committee report on war-materiel regulation (HD01UU18) was downloaded as metadata-only; full analysis deferred pending full text.
 
 **Signal**: The Tidö coalition is consolidating a law-and-order + security portfolio ahead of the election, banking on SD and M core-voter resonance. The migration-detention reservations from S+V+C+MP signal opposition unity on rule-of-law grounds — a fault line that will dominate the final pre-election parliamentary session.
@@ -58,9 +57,9 @@ Use this guide to read the article as a political-intelligence product rather th
 
 | Icon | Reader need | What you'll get |
 |---|---|---|
-| 📊 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
-| 🧠 | [Synthesis Summary](#rm-synthesis-summary) | evidence-anchored narrative consolidating primary sources into one coherent story line |
-| 🎯 | [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps |
+| 📊 | [Lede and editorial decisions](#rm-what-happened) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
+| 🧠 | [Why It Matters](#rm-why-it-matters) | evidence-anchored narrative consolidating primary sources into one coherent story line |
+| 🎯 | [Key Judgments](#rm-key-findings) | confidence-bearing political-intelligence conclusions and collection gaps |
 | 📈 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals |
 | 👥 | [Stakeholder Perspectives](#rm-stakeholder-perspectives) | winners, losers and undecided actors with stake-weighted positions and pressure points |
 | 🔢 | [Coalition Mathematics](#rm-coalition-mathematics) | parliamentary arithmetic showing exactly who can pass or block this measure and at what margin |
@@ -76,14 +75,14 @@ Use this guide to read the article as a political-intelligence product rather th
 | ⚙️ | [Implementation Feasibility](#rm-implementation-feasibility) | delivery feasibility, capability gaps, timelines and execution risks for the proposed action |
 | 📰 | [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder |
 | 😈 | [Devil's Advocate](#rm-devils-advocate) | alternative hypotheses, steel-manned counter-arguments and the strongest case against the lead reading |
-| 🏷️ | [Classification Results](#rm-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
-| 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
-| 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
-| 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 🏷️ | [Deep Dive: Classification Results](#rm-deep-dive-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
+| 🔀 | [Deep Dive: Cross-Reference Map](#rm-deep-dive-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
+| 🔬 | [Deep Dive: Methodology & Limitations](#rm-deep-dive-methodology--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
+| 📦 | [Deep Dive: Data Download Manifest](#rm-deep-dive-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
-| 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
+| 🏷️ | [Audit appendix](#rm-deep-dive-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
-## Synthesis Summary
+## Why It Matters
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-28/committee-reports/synthesis-summary.md -->
 
 <!-- artifact: synthesis-summary | family: A | pass: 2 -->
@@ -219,7 +218,7 @@ mindmap
 | HD01UU18 | Metadata only | A3 | Partial |
 | IMF WEO-2026-04 | Cached; Datamapper unavailable | B2 | Assessed valid |
 
-## Intelligence Assessment — Key Judgments
+## Key Findings
 <!-- source: intelligence-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-28/committee-reports/intelligence-assessment.md -->
 
 <!-- artifact: intelligence-assessment | family: C | pass: 2 -->
@@ -2081,7 +2080,7 @@ flowchart LR
 
 **Conclusion**: H1 and H3 are the most evidentially grounded hypotheses. Security reform is genuine AND electorally exploited. Opposition reservations are principled AND strategically useful. H2 and H4 partial — timing exploitation is real but does not negate substantive legislative merit.
 
-## Classification Results
+## Deep Dive: Classification Results
 <!-- source: classification-results.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-28/committee-reports/classification-results.md -->
 
 <!-- artifact: classification-results | family: A | pass: 2 -->
@@ -2194,7 +2193,7 @@ flowchart TB
 
 **Consensual outlier**: SfU25 (pension) is the sole cross-bloc agreement. The Pension Group institutional architecture succeeds in depoliticising what is otherwise a highly contested domain (welfare state size).
 
-## Cross-Reference Map
+## Deep Dive: Cross-Reference Map
 <!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-28/committee-reports/cross-reference-map.md -->
 
 <!-- artifact: cross-reference-map | family: B | pass: 2 -->
@@ -2268,7 +2267,7 @@ graph LR
 | skr 2025/26:137 | SfU | HD01SfU34 | N/A (communication) |
 | Unknown | UU | HD01UU18 | Unknown |
 
-## Methodology Reflection & Limitations
+## Deep Dive: Methodology & Limitations
 <!-- source: methodology-reflection.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-28/committee-reports/methodology-reflection.md -->
 
 <!-- artifact: methodology-reflection | family: A | pass: 2 -->
@@ -2338,7 +2337,7 @@ Party mentions by count across artifacts (approximate):
 
 3. **HD01UU18 full content access** — the UU krigsmateriel betänkande returned empty fullContent. A direct Riksdag document fetch or retry with extended timeout would allow a complete Family E analysis rather than the metadata-only version filed.
 
-## Data Download Manifest
+## Deep Dive: Data Download Manifest
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-28/committee-reports/data-download-manifest.md -->
 
 **Workflow**: News: Committee Reports

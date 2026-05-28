@@ -3,11 +3,11 @@ date: 2026-05-13
 subfolder: motions
 slug: 2026-05-13-motions
 source_folder: analysis/daily/2026-05-13/motions
-generated_at: 2026-05-28T15:56:16.956Z
+generated_at: 2026-05-28T22:29:31.947Z
 language: en
 layout: article
 ---
-## Executive Brief
+## What Happened
 <!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/motions/executive-brief.md -->
 
 ---
@@ -24,7 +24,7 @@ Sweden's parliamentary opposition filed 19 counter-motions in the week of 2026-0
 
 ### 60-Second Intelligence Bullets
 
-- 🔴 **HD024151** (S, Jennie Nilsson et al.): Rejects prop. 258 on trade-union political transparency — argues it violates association freedom (RF ch. 2) and is disproportionate to stated problem. Characterises the measure as politically targeted against S's funding.
+- 🔴 **Riksdag document #024151 (HD024151)** (S, Jennie Nilsson et al.): Rejects prop. 258 on trade-union political transparency — argues it violates association freedom (RF ch. 2) and is disproportionate to stated problem. Characterises the measure as politically targeted against S's funding.
 - 🟠 **HD024150 + HD024149** (V, Tony Haddou et al.): Reject props. 263 and 264 on deportation strengthening and stricter residence permit conduct requirements — argues these breach ECHR Art. 8 and criminalise poverty.
 - 🟠 **HD024148 + HD024146** (MP + C): Oppose reducing criminal responsibility age to 13 under prop. 246 — argue Sweden would be an outlier in Nordic and European context with no evidence of deterrence effect.
 - 🟡 **Multiple motions on HD024142–HD024147** (V, MP, C, SD, S): Challenge prop. 242 on active forestry regulation — parties split between total rejection (V, MP) and targeted amendments (SD, C, S).
@@ -62,9 +62,9 @@ Use this guide to read the article as a political-intelligence product rather th
 
 | Icon | Reader need | What you'll get |
 |---|---|---|
-| 📊 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
-| 🧠 | [Synthesis Summary](#rm-synthesis-summary) | evidence-anchored narrative consolidating primary sources into one coherent story line |
-| 🎯 | [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps |
+| 📊 | [Lede and editorial decisions](#rm-what-happened) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
+| 🧠 | [Why It Matters](#rm-why-it-matters) | evidence-anchored narrative consolidating primary sources into one coherent story line |
+| 🎯 | [Key Judgments](#rm-key-findings) | confidence-bearing political-intelligence conclusions and collection gaps |
 | 📈 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals |
 | 👥 | [Stakeholder Perspectives](#rm-stakeholder-perspectives) | winners, losers and undecided actors with stake-weighted positions and pressure points |
 | 🔢 | [Coalition Mathematics](#rm-coalition-mathematics) | parliamentary arithmetic showing exactly who can pass or block this measure and at what margin |
@@ -80,10 +80,10 @@ Use this guide to read the article as a political-intelligence product rather th
 | ⚙️ | [Implementation Feasibility](#rm-implementation-feasibility) | delivery feasibility, capability gaps, timelines and execution risks for the proposed action |
 | 📰 | [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder |
 | 😈 | [Devil's Advocate](#rm-devils-advocate) | alternative hypotheses, steel-manned counter-arguments and the strongest case against the lead reading |
-| 🏷️ | [Classification Results](#rm-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
-| 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
-| 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
-| 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 🏷️ | [Deep Dive: Classification Results](#rm-deep-dive-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
+| 🔀 | [Deep Dive: Cross-Reference Map](#rm-deep-dive-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
+| 🔬 | [Deep Dive: Methodology & Limitations](#rm-deep-dive-methodology--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
+| 📦 | [Deep Dive: Data Download Manifest](#rm-deep-dive-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
 | 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
@@ -98,9 +98,9 @@ Use this guide to read the article as a political-intelligence product rather th
 | 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
-| 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
+| 🏷️ | [Audit appendix](#rm-deep-dive-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
-## Synthesis Summary
+## Why It Matters
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/motions/synthesis-summary.md -->
 
 ---
@@ -180,7 +180,7 @@ graph LR
     C -.->|opposes partial| JuU
 ```
 
-## Intelligence Assessment — Key Judgments
+## Key Findings
 <!-- source: intelligence-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/motions/intelligence-assessment.md -->
 
 ---
@@ -1470,7 +1470,7 @@ No firehose, doppelganger, gish gallop, reflexive control, active-measures spill
 
 Three competing hypotheses examined; none rejected outright. Analytical uncertainty is high for HD024127 (PIR-4). Main judgments in `intelligence-assessment.md` reflect this distribution.
 
-## Classification Results
+## Deep Dive: Classification Results
 <!-- source: classification-results.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/motions/classification-results.md -->
 
 ---
@@ -1528,7 +1528,7 @@ Three competing hypotheses examined; none rejected outright. Analytical uncertai
 - Access: No restriction
 - GDPR Art. 9: Named politicians acting in public capacity — lawful under Art. 9(2)(e) + 9(2)(g)
 
-## Cross-Reference Map
+## Deep Dive: Cross-Reference Map
 <!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/motions/cross-reference-map.md -->
 
 ---
@@ -1654,7 +1654,7 @@ flowchart LR
 - [ ] `documents/HD024150-analysis.md`
 - [ ] `documents/HD024149-analysis.md`
 
-## Methodology Reflection & Limitations
+## Deep Dive: Methodology & Limitations
 <!-- source: methodology-reflection.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/motions/methodology-reflection.md -->
 
 ⭐ **ICD 203 Self-Assessment Artifact**
@@ -1722,7 +1722,7 @@ flowchart LR
 
 ### ≥ 3 Improvements Identified
 
-## Data Download Manifest
+## Deep Dive: Data Download Manifest
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/motions/data-download-manifest.md -->
 
 ### Document Download Summary

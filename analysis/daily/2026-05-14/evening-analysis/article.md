@@ -3,25 +3,23 @@ date: 2026-05-14
 subfolder: evening-analysis
 slug: 2026-05-14-evening-analysis
 source_folder: analysis/daily/2026-05-14/evening-analysis
-generated_at: 2026-05-28T15:56:17.012Z
+generated_at: 2026-05-28T22:29:32.009Z
 language: en
 layout: article
 ---
-## Executive Brief
+## What Happened
 <!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/evening-analysis/executive-brief.md -->
 
 ---
 
-### BLUF
-
+### Lede
 Sweden's parliamentary record for 14 May 2026 is defined by three intersecting crises that will shape the September election: a historic constitutional amendment package (*vilande*) protecting abortion rights and enabling citizenship revocation (KU34); a migration policy confrontation between the Tidö coalition and a coordinated S+C+V opposition bloc contesting four migration propositions; and a ministerial accountability crisis over development aid cuts harming children. Together, these issues constitute the policy battlefield for the 2026 election — and the government's choices today will be tested at the ballot box in 127 days.
 
 ---
 
-### Decisions This Brief Supports
-
+### Decisions and confidence context
 1. **Constitutional tracking**: Will the KU34 *vilande* adoption survive the post-election composition change? (65% base case: yes, if current coalition survives; 20% partial; 15% failure)
-2. **Migration litigation risk**: Should legal/compliance teams prepare for ECHR challenge to HD03267 (security deportation) and Lagrådet scrutiny of prop 265 (child detention)?
+2. **Migration litigation risk**: Should legal/compliance teams prepare for ECHR challenge to Riksdag document #03267 (HD03267) (security deportation) and Lagrådet scrutiny of prop 265 (child detention)?
 3. **ODA accountability exposure**: How will Minister Dousa's response to HD10492 (due 2026-05-29) affect the government's human rights credibility before the election?
 
 ---
@@ -76,9 +74,9 @@ Use this guide to read the article as a political-intelligence product rather th
 
 | Icon | Reader need | What you'll get |
 |---|---|---|
-| 📊 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
-| 🧠 | [Synthesis Summary](#rm-synthesis-summary) | evidence-anchored narrative consolidating primary sources into one coherent story line |
-| 🎯 | [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps |
+| 📊 | [Lede and editorial decisions](#rm-what-happened) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
+| 🧠 | [Why It Matters](#rm-why-it-matters) | evidence-anchored narrative consolidating primary sources into one coherent story line |
+| 🎯 | [Key Judgments](#rm-key-findings) | confidence-bearing political-intelligence conclusions and collection gaps |
 | 📈 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals |
 | 👥 | [Stakeholder Perspectives](#rm-stakeholder-perspectives) | winners, losers and undecided actors with stake-weighted positions and pressure points |
 | 🔢 | [Coalition Mathematics](#rm-coalition-mathematics) | parliamentary arithmetic showing exactly who can pass or block this measure and at what margin |
@@ -94,10 +92,10 @@ Use this guide to read the article as a political-intelligence product rather th
 | ⚙️ | [Implementation Feasibility](#rm-implementation-feasibility) | delivery feasibility, capability gaps, timelines and execution risks for the proposed action |
 | 📰 | [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder |
 | 😈 | [Devil's Advocate](#rm-devils-advocate) | alternative hypotheses, steel-manned counter-arguments and the strongest case against the lead reading |
-| 🏷️ | [Classification Results](#rm-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
-| 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
-| 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
-| 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 🏷️ | [Deep Dive: Classification Results](#rm-deep-dive-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
+| 🔀 | [Deep Dive: Cross-Reference Map](#rm-deep-dive-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
+| 🔬 | [Deep Dive: Methodology & Limitations](#rm-deep-dive-methodology--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
+| 📦 | [Deep Dive: Data Download Manifest](#rm-deep-dive-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
 | 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
@@ -112,9 +110,9 @@ Use this guide to read the article as a political-intelligence product rather th
 | 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
-| 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
+| 🏷️ | [Audit appendix](#rm-deep-dive-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
-## Synthesis Summary
+## Why It Matters
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/evening-analysis/synthesis-summary.md -->
 
 **Workflow**: Tier-C Aggregation (news-evening-analysis)  
@@ -220,7 +218,7 @@ Sweden economic baseline (WEO Apr-2026 vintage):
 
 The government's conservative fiscal position provides credibility for its competence narrative, but the ODA cuts have been widely interpreted as fiscal-political rather than strategic — a claim the V interpellations will amplify.
 
-## Intelligence Assessment — Key Judgments
+## Key Findings
 <!-- source: intelligence-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/evening-analysis/intelligence-assessment.md -->
 
 **Review**: Automated; human editorial oversight required before publication
@@ -1294,7 +1292,7 @@ After adversarial stress-testing, the revised confidence levels:
 | ODA accountability failure | HIGH | MEDIUM-HIGH | ↓ slightly |
 | Election proximity amplification | HIGH | HIGH | → |
 
-## Classification Results
+## Deep Dive: Classification Results
 <!-- source: classification-results.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/evening-analysis/classification-results.md -->
 
 ### Source Material Classification
@@ -1330,7 +1328,7 @@ After adversarial stress-testing, the revised confidence levels:
 
 In accordance with Hack23 Open Source Policy: analysis artifacts retained in GitHub repository indefinitely as public parliamentary accountability records.
 
-## Cross-Reference Map
+## Deep Dive: Cross-Reference Map
 <!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/evening-analysis/cross-reference-map.md -->
 
 **Tier-C requirement**: All sibling folder analyses must be cited with specific artifact paths.
@@ -1402,7 +1400,7 @@ In accordance with Hack23 Open Source Policy: analysis artifacts retained in Git
 - [x] interpellations/intelligence-assessment.md — cited
 - [x] interpellations/forward-indicators.md — cited
 
-## Methodology Reflection & Limitations
+## Deep Dive: Methodology & Limitations
 <!-- source: methodology-reflection.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/evening-analysis/methodology-reflection.md -->
 
 ---
@@ -1464,7 +1462,7 @@ Applied comprehensive scenario set per article-types.json "evening-analysis" spe
 - [x] GDPR PII assessment completed
 - [x] AI-FIRST: Pass 2 improvement completed
 
-## Data Download Manifest
+## Deep Dive: Data Download Manifest
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/evening-analysis/data-download-manifest.md -->
 
 ### Document Table

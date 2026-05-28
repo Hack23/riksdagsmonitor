@@ -3,11 +3,11 @@ date: 2026-05-13
 subfolder: interpellations
 slug: 2026-05-13-interpellations
 source_folder: analysis/daily/2026-05-13/interpellations
-generated_at: 2026-05-28T15:56:16.946Z
+generated_at: 2026-05-28T22:29:31.937Z
 language: en
 layout: article
 ---
-## Executive Brief
+## What Happened
 <!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/interpellations/executive-brief.md -->
 
 **BLUF**: Two interpellations submitted to the Tidö government on May 13 expose a governance accountability gap: the Social Democrats challenge Civilminister Erik Slottner (KD) over the stalled municipal equalization reform that has sat unanswered since summer 2024, while Miljöpartiet challenges Acting Climate Minister Johan Britz (L) on the delayed climate adaptation legislation whose consultation closed in October 2025 — seven months ago with no proposition tabled. Both interpellations target a pattern of policy inertia on distributional and environmental equity, with implications for the September 2026 election.
@@ -20,7 +20,7 @@ layout: article
 
 ### 60-Second Read
 
-- **HD10487** (S/Lindh → KD/Slottner): Municipal cost-equalization review was commissioned unanimously in 2022; SOU delivered summer 2024; remiss closed; no government bill. S argues the system is structurally failing small municipalities and rural areas. Questions: Why no proposal? How will the government ensure equitable welfare across all of Sweden?
+- **Riksdag document #10487 (HD10487)** (S/Lindh → KD/Slottner): Municipal cost-equalization review was commissioned unanimously in 2022; SOU delivered summer 2024; remiss closed; no government bill. S argues the system is structurally failing small municipalities and rural areas. Questions: Why no proposal? How will the government ensure equitable welfare across all of Sweden?
 - **HD10488** (MP/Luhr → L/Britz): Climate adaptation inquiry "Bättre förutsättningar för klimatanpassning" delivered 11 legislative change proposals; consultation closed October 17, 2025 — no proposition. MP asks about coastal protection against rising sea levels and state-vs-municipality responsibility. Questions: Why no action? Will the state protect coastal municipalities?
 - **Pattern**: Both interpellations submitted 2026-05-08/12 and forwarded 2026-05-13. Debate expected in Riksdagen (Anmäld 2026-05-18, Sista svarsdatum 2026-05-29).
 - **IMF Context**: Sweden GDP growth WEO-2026-04 vintage — the fiscal space constraints affect the government's willingness to fund new equalization transfers and coastal protection infrastructure.
@@ -64,9 +64,9 @@ Use this guide to read the article as a political-intelligence product rather th
 
 | Icon | Reader need | What you'll get |
 |---|---|---|
-| 📊 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
-| 🧠 | [Synthesis Summary](#rm-synthesis-summary) | evidence-anchored narrative consolidating primary sources into one coherent story line |
-| 🎯 | [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps |
+| 📊 | [Lede and editorial decisions](#rm-what-happened) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
+| 🧠 | [Why It Matters](#rm-why-it-matters) | evidence-anchored narrative consolidating primary sources into one coherent story line |
+| 🎯 | [Key Judgments](#rm-key-findings) | confidence-bearing political-intelligence conclusions and collection gaps |
 | 📈 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals |
 | 👥 | [Stakeholder Perspectives](#rm-stakeholder-perspectives) | winners, losers and undecided actors with stake-weighted positions and pressure points |
 | 🔢 | [Coalition Mathematics](#rm-coalition-mathematics) | parliamentary arithmetic showing exactly who can pass or block this measure and at what margin |
@@ -82,10 +82,10 @@ Use this guide to read the article as a political-intelligence product rather th
 | ⚙️ | [Implementation Feasibility](#rm-implementation-feasibility) | delivery feasibility, capability gaps, timelines and execution risks for the proposed action |
 | 📰 | [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder |
 | 😈 | [Devil's Advocate](#rm-devils-advocate) | alternative hypotheses, steel-manned counter-arguments and the strongest case against the lead reading |
-| 🏷️ | [Classification Results](#rm-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
-| 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
-| 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
-| 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 🏷️ | [Deep Dive: Classification Results](#rm-deep-dive-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
+| 🔀 | [Deep Dive: Cross-Reference Map](#rm-deep-dive-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
+| 🔬 | [Deep Dive: Methodology & Limitations](#rm-deep-dive-methodology--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
+| 📦 | [Deep Dive: Data Download Manifest](#rm-deep-dive-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
 | 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
@@ -100,9 +100,9 @@ Use this guide to read the article as a political-intelligence product rather th
 | 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
-| 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
+| 🏷️ | [Audit appendix](#rm-deep-dive-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
-## Synthesis Summary
+## Why It Matters
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/interpellations/synthesis-summary.md -->
 
 ### Lead Story: Government Accountability Deficit on Welfare and Climate
@@ -166,7 +166,7 @@ quadrantChart
     HD10488: [0.70, 0.68]
 ```
 
-## Intelligence Assessment — Key Judgments
+## Key Findings
 <!-- source: intelligence-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/interpellations/intelligence-assessment.md -->
 
 ### Key Judgments
@@ -1212,7 +1212,7 @@ H2 (Strategic delay) has most consistent evidence | H4 (Fiscal) partially explai
 
 The devil's advocate challenge strengthens rather than undermines the dominant hypothesis: while some complexity is genuine, the documentary record demonstrates that the government has had all the material it needs for a minimum of 8 months (utjämningssystem) and 7 months (klimatanpassning). The zero-sum and legal complexity arguments explain why the government hasn't moved quickly — they do not explain why the government hasn't moved at all.
 
-## Classification Results
+## Deep Dive: Classification Results
 <!-- source: classification-results.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/interpellations/classification-results.md -->
 
 ### 7-Dimension Classification
@@ -1252,7 +1252,7 @@ The devil's advocate challenge strengthens rather than undermines the dominant h
 | HD10487 | L2 Priority | Municipal governance / fiscal equity | PUBLIC | No Art.9 |
 | HD10488 | L2 Priority | Environmental legislation / climate | PUBLIC | No Art.9 |
 
-## Cross-Reference Map
+## Deep Dive: Cross-Reference Map
 <!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/interpellations/cross-reference-map.md -->
 
 ### Policy Clusters
@@ -1305,7 +1305,7 @@ This pattern suggests either: (a) coalition disagreement on distribution formula
 
 No prior interpellations analysis in analysis/daily/ predates this run for this subfolder. This is the initial baseline entry.
 
-## Methodology Reflection & Limitations
+## Deep Dive: Methodology & Limitations
 <!-- source: methodology-reflection.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/interpellations/methodology-reflection.md -->
 
 ### ICD 203 Structured Analytic Technique Audit
@@ -1368,7 +1368,7 @@ The analysis follows standard intelligence neutrality protocol:
 4. No interview-based intelligence available — analysis relies entirely on documentary evidence
 5. Historical parallel selection reflects analyst judgment and may introduce confirmation bias — documented and partially mitigated by Red Team exercise in devils-advocate.md
 
-## Data Download Manifest
+## Deep Dive: Data Download Manifest
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/interpellations/data-download-manifest.md -->
 
 ### Document Table

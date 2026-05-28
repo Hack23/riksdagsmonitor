@@ -3,22 +3,20 @@ date: 2026-05-22
 subfolder: propositions
 slug: 2026-05-22-propositions
 source_folder: analysis/daily/2026-05-22/propositions
-generated_at: 2026-05-28T15:56:17.433Z
+generated_at: 2026-05-28T22:29:32.512Z
 language: en
 layout: article
 ---
-## Executive Brief
+## What Happened
 <!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/propositions/executive-brief.md -->
 
 **Subfolder**: propositions
 
-### BLUF
-
+### Lede
 The Busch government has submitted ten propositions constituting Sweden's most far-reaching migration enforcement overhaul since 1989, abolishing permanent residence permits for non-EU nationals, creating fast-track security deportation, expanding detention powers, and simultaneously building a state digital identity infrastructure and widening Skatteverket's population register surveillance capacity — all with 114 days to the September 2026 election.
 
-### Decisions This Brief Supports
-
-1. **Policy analysts and civil society**: Whether to mobilise legal challenges against HD03262 (permanent residence abolition) under ECHR Art. 8 and EU Directive 2003/109/EC before committee vote.
+### Decisions and confidence context
+1. **Policy analysts and civil society**: Whether to mobilise legal challenges against Riksdag document #03262 (HD03262) (permanent residence abolition) under ECHR Art. 8 and EU Directive 2003/109/EC before committee vote.
 2. **Opposition parties (S, MP, V)**: Whether to attempt a blocking minority strategy in SfU or accept that C will defect to support the government migration cluster.
 3. **Centerpartiet leadership**: Whether to support HD03262 in full, seek amendments limiting scope, or break from the government supply arrangement on this proposition.
 4. **Business community / HR managers**: Timeline for implementation of HD03250 (state e-identity) and whether BankID can remain the primary corporate authentication channel.
@@ -30,9 +28,9 @@ Use this guide to read the article as a political-intelligence product rather th
 
 | Icon | Reader need | What you'll get |
 |---|---|---|
-| 📊 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
-| 🧠 | [Synthesis Summary](#rm-synthesis-summary) | evidence-anchored narrative consolidating primary sources into one coherent story line |
-| 🎯 | [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps |
+| 📊 | [Lede and editorial decisions](#rm-what-happened) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
+| 🧠 | [Why It Matters](#rm-why-it-matters) | evidence-anchored narrative consolidating primary sources into one coherent story line |
+| 🎯 | [Key Judgments](#rm-key-findings) | confidence-bearing political-intelligence conclusions and collection gaps |
 | 📈 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals |
 | 👥 | [Stakeholder Perspectives](#rm-stakeholder-perspectives) | winners, losers and undecided actors with stake-weighted positions and pressure points |
 | 🔢 | [Coalition Mathematics](#rm-coalition-mathematics) | parliamentary arithmetic showing exactly who can pass or block this measure and at what margin |
@@ -47,13 +45,26 @@ Use this guide to read the article as a political-intelligence product rather th
 | ⚙️ | [Implementation Feasibility](#rm-implementation-feasibility) | delivery feasibility, capability gaps, timelines and execution risks for the proposed action |
 | 📰 | [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder |
 | 😈 | [Devil's Advocate](#rm-devils-advocate) | alternative hypotheses, steel-manned counter-arguments and the strongest case against the lead reading |
-| 🏷️ | [Classification Results](#rm-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
-| 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
-| 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 🏷️ | [Deep Dive: Classification Results](#rm-deep-dive-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
+| 🔀 | [Deep Dive: Cross-Reference Map](#rm-deep-dive-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
+| 📦 | [Deep Dive: Data Download Manifest](#rm-deep-dive-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
-| 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
+| 🏷️ | [Audit appendix](#rm-deep-dive-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
-## Synthesis Summary
+## Why It Matters
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/propositions/synthesis-summary.md -->
 
 **Subfolder**: propositions
@@ -148,7 +159,7 @@ The Busch government's legislative batch is coherent in political-electoral logi
 
 **Key Analytical Judgment**: The five migration propositions, taken together, constitute the most significant peacetime alteration of Sweden's migration legal framework since the 1989 Aliens Act. They will be contested in committee, potentially amended by the C demands, and challenged in the European Court of Human Rights and Swedish Administrative Courts post-enactment. The political calculus for the election is clear: the government wants these propositions associated with a "tough but effective" brand in the September 2026 campaign, regardless of whether full implementation is achievable by then.
 
-## Intelligence Assessment — Key Judgments
+## Key Findings
 <!-- source: intelligence-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/propositions/intelligence-assessment.md -->
 
 **Confidence framework**: ICD 203 standards (HIGH/MEDIUM/LOW/VERY LOW)
@@ -1859,7 +1870,7 @@ Revised scenario probabilities incorporating ACH:
 - S4 (Post-election reversal): 10% (unchanged)
 - **Sum**: 100% ✓
 
-## Classification Results
+## Deep Dive: Classification Results
 <!-- source: classification-results.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/propositions/classification-results.md -->
 
 **Dimensions**: Policy Domain · Legal Instrument · Constitutional Salience · GDPR Sensitivity · Implementation Complexity · Reversibility · Controversy Index
@@ -1935,7 +1946,7 @@ Revised scenario probabilities incorporating ACH:
 | HD03262 | No direct, but linkage risk HIGH | Yes (recommended) | — | MEDIUM |
 | HD03251 | Yes (health data) | Yes (mandatory) | Standard health | MEDIUM |
 
-## Cross-Reference Map
+## Deep Dive: Cross-Reference Map
 <!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/propositions/cross-reference-map.md -->
 
 ### Policy Cluster Analysis
@@ -2041,7 +2052,7 @@ timeline
 | HD03258 | LOW | NONE | LOW | NONE | NONE | NONE | LOW | NONE | — | NONE |
 | HD03251 | NONE | NONE | NONE | NONE | NONE | NONE | NONE | NONE | NONE | — |
 
-## Data Download Manifest
+## Deep Dive: Data Download Manifest
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/propositions/data-download-manifest.md -->
 
 > ℹ️ **Data-Only Pipeline**: This script downloads and persists raw data.
@@ -2152,13 +2163,973 @@ New PIRs this cycle:
 - PIR-6 (HIGH): Will C support HD03262 (permanent residence abolition)? — **open**
 - PIR-7 (MEDIUM): FöU timeline for HD03254 military cooperation — **open**
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/propositions/executive-brief_ar.md -->
+
+<!-- dir: rtl -->
+# السويد تُلغي الإقامة الدائمة وتوسّع الترحيل الأمني: مواجهة تشريعية قبيل الانتخابات
+
+**التاريخ**: 2026-05-22
+**المجلد الفرعي**: propositions
+**المؤلف**: James Pether Sörling
+**مستوى الثقة**: مرتفع
+**التصنيف**: عام — المادة 9(2)(هـ)/(ز) من اللائحة الأوروبية لحماية البيانات (GDPR) الأساس القانوني
+
+### الخلاصة التنفيذية
+
+قدّمت حكومة Busch عشر مقترحات تُشكّل أشمل إصلاح لتطبيق قوانين الهجرة في السويد منذ عام 1989: إلغاء تصاريح الإقامة الدائمة لمواطني الدول من خارج الاتحاد الأوروبي، وإنشاء مسار متسريع للترحيل الأمني، وتوسيع صلاحيات الاحتجاز، وبناء بنية تحتية للهوية الرقمية الحكومية في آنٍ واحد، فضلاً عن توسيع قدرات مراقبة سجل السكان لدى Skatteverket — كل ذلك مع بقاء 114 يوماً على انتخابات سبتمبر 2026.
+
+### القرارات التي يدعمها هذا الموجز
+
+1. **المحللون السياسيون ومنظمات المجتمع المدني**: هل ينبغي تعبئة الطعون القانونية ضد HD03262 (إلغاء الإقامة الدائمة) استناداً إلى المادة 8 من الاتفاقية الأوروبية لحقوق الإنسان والتوجيه الأوروبي 2003/109/EC قبل التصويت في اللجنة؟
+2. **أحزاب المعارضة (S، MP، V)**: هل يُحاول اعتماد استراتيجية الأقلية الحاجبة في SfU أم قبول تحول C في التحالف؟
+3. **قيادة Centerpartiet**: هل يُدعم HD03262 كلياً، أم يُسعى للحصول على تعديلات تُقيّد نطاقه، أم يُكسر اتفاق الدعم مع الحكومة على هذا المقترح؟
+4. **قطاع الأعمال ومديرو الموارد البشرية**: الجدول الزمني لتطبيق HD03250 (الهوية الإلكترونية الحكومية) وما إذا كان بإمكان BankID البقاء قناةً رئيسيةً للتحقق من هوية الشركات.
+5. **هيئات التحرير في وسائل الإعلام**: هل يستحق مقترح التعاون العسكري (HD03254) وصف "التكامل الصامت مع الناتو" أم أنه روتيني من الناحية الإجرائية؟
+
+### تحسينات المراجعة الثانية (AI-FIRST)
+
+تعزيز الخلاصة التنفيذية بأسماء القوانين المحددة؛ إضافة مرجع pir-status صريح؛ تدقيق تسميات الثقة؛ إضافة تاريخ المُحفِّز 2026-06-15 لكل قرار؛ التحقق من توافق درجات DIW مع significance-scoring.md؛ إضافة سياق اقتصادي من IMF.
+
+### قراءة في 60 ثانية
+
+- 🔴 **HD03267** (JuU): ترحيل بمسار متسريع تُطلقه SÄPO للتهديدات الأمنية المؤهَّلة يتجاوز محاكم الهجرة العادية — 136.5 DIW (مُطبَّق مضاعف انتخابي)
+- 🔴 **HD03262** (SfU): إلغاء تصاريح الإقامة الدائمة لمواطني الدول خارج الاتحاد الأوروبي؛ تُستحدث تصاريح مؤقتة متعددة السنوات قابلة للسحب — 132 DIW — **أعلى تأثير هيكلي في الحزمة**
+- 🔴 **HD03265** (SfU): سوار إلكتروني وتوسيع طاقة احتجاز ما قبل الترحيل — 124.5 DIW
+- 🔵 **HD03254** (FöU): عمليات مشتركة نوردية-ناتو مُجازة مسبقاً على الأراضي السويدية دون تصويت الريكسداغ لكل عملية — 117 DIW
+- 🟠 **HD03261** (SkU): يحصل Skatteverket على صلاحيات الإسناد المتقاطع للكشف عن غش سجل السكان — 118.5 DIW
+- 🟠 **HD03250** (TU): بديل هوية إلكترونية حكومية لـBankID — 84 DIW — جدول تنفيذ طويل، تبعية عالية لـ Digg
+- 🟡 **HD03258** (KU): الإفصاح عن تمويل الأحزاب السياسية — إصلاح حقيقي لكنه محدود — 74 DIW
+- 🔴 **HD03263** (SfU): وحدات مختصة لتنفيذ الترحيل، تقليص التأخيرات الإجرائية — 108 DIW
+- 🔴 **HD03264** (SfU): معايير السجل الجنائي والسلوك لجميع فئات الإقامة — 102 DIW
+- 🟢 **HD03251** (SoU): رعاية متكاملة للإدمان المتزامن مع الاضطرابات النفسية — 58 DIW
+
+### أبرز مُحفِّز مستقبلي
+
+**موقف C من HD03262 (إلغاء الإقامة الدائمة)** بحلول 2026-06-15: إذا رفض Centerpartiet دعم الإلغاء وأرغم على تعديلات، تتأخر الجداول الزمنية للجان طوال حزمة الهجرة، ويتراجع التموضع الانتخابي لـ M/KD/SD. (PIR-6)
+
+### مستويات الثقة
+
+- التحليل السياسي لحزمة الهجرة: مرتفع — استناداً إلى أنماط التصويت السابقة (SfU 2024/25، نعم 175/لا 174) وتتبع PIR
+- تقييمات طاقة التنفيذ: متوسط — بيانات طاقة الوكالات قديمة بأكثر من 18 شهراً؛ لم تنشر Statskontoret تقييماً محدَّثاً لـ Migrationsverket للفترة 2025–2026
+- السياق الاقتصادي: مرتفع — توقعات صندوق النقد الدولي (WEO) أبريل 2026، ضمن عتبة 6 أشهر
+
+### التصور البياني الرئيسي
+
+```mermaid
+quadrantChart
+  title "مصفوفة أهمية المقترحات (الأثر مقابل البروز الانتخابي)"
+ x-axis بروز انتخابي منخفض --> بروز انتخابي مرتفع
+ y-axis تأثير هيكلي منخفض --> تأثير هيكلي مرتفع
+  quadrant-1 مراقبة
+  quadrant-2 النواة المتنازع عليها
+  quadrant-3 تقني
+  quadrant-4 تموضع
+  HD03267: [0.92, 0.91]
+  HD03262: [0.89, 0.95]
+  HD03265: [0.85, 0.82]
+  HD03263: [0.80, 0.72]
+  HD03264: [0.75, 0.68]
+  HD03261: [0.70, 0.79]
+  HD03254: [0.65, 0.78]
+  HD03250: [0.45, 0.84]
+  HD03258: [0.55, 0.42]
+  HD03251: [0.20, 0.58]
+
+```
+
+<!-- source-sha: 9cdd9bfe0bc226548b5ddf453782f5076880156a -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/propositions/executive-brief_da.md -->
+
+**Dato**: 2026-05-22
+**Undermappe**: propositioner
+**Forfatter**: James Pether Sörling
+**Tillid**: HØJ
+**Klassifikation**: PUBLIC — GDPR Art. 9(2)(e)/(g) retsgrundlag
+
+### Resumé
+
+Busch-regeringen har indsendt ti propositioner, der udgør Sveriges mest vidtgående migrationshåndhævelsesreform siden 1989 — de afskafter permanente opholdstilladelser for ikke-EU-statsborgere, indfører hurtigsporet sikkerhedsdeportering, udvider frihedsberøvelsesbeføjelser og opbygger en statslig digital identitetsinfrastruktur samt udvider Skatteverkets befolkningsregisterovervågning — alt dette med 114 dage til valget i september 2026.
+
+### Beslutninger dette PM understøtter
+
+1. **Politiske analytikere og civilsamfund**: Om retlige udfordringer mod HD03262 (afskaffelse af permanent opholdstilladelse) under EMRK Art. 8 og EU-direktiv 2003/109/EF bør mobiliseres inden udvalgsafstemningen.
+2. **Oppositionspartier (S, MP, V)**: Om en blokerende minoritetsstrategi i SfU skal forsøges, eller om C's koalitionsskifte accepteres.
+3. **Centerpartiets ledelse**: Om HD03262 skal støttes fuldt ud, om ændringer der begrænser omfanget søges, eller om man bryder med regeringens støttearrangement på dette forslag.
+4. **Erhvervsliv og HR-chefer**: Tidslinje for implementering af HD03250 (statslig e-identitet) og om BankID kan forblive den primære virksomhedsautentificeringskanal.
+5. **Medieredaktioner**: Om det militære samarbejdsforslag (HD03254) fortjener rammen "stille NATO-integration" eller er procedurelt rutine.
+
+### Forbedringer i anden omgang (AI-FIRST)
+
+Skærpet resumé med specifikke lovnavne; eksplicit pir-status-reference tilføjet; tillidsnavne justeret; udløsningsdato 2026-06-15 tilføjet for hver beslutning; DIW-scores verificeret mod significance-scoring.md; IMF økonomisk kontekst tilføjet.
+
+### 60-sekunders læsning
+
+- 🔴 **HD03267** (JuU): SÄPO-udløst hurtigsporet deportering for kvalificerede sikkerhedstrusler omgår ordinære migrationsdomstole — 136,5 DIW (valmultiplikator anvendt)
+- 🔴 **HD03262** (SfU): Permanente opholdstilladelser afskaffes for ikke-EU-statsborgere; indfører tilbagekaldelige flerårige midlertidige tilladelser — 132 DIW — **højeste strukturelle påvirkning i batchen**
+- 🔴 **HD03265** (SfU): Elektronisk fodlænke og udvidet kapacitet til frihedsberøvelse forud for deportering — 124,5 DIW
+- 🔵 **HD03254** (FöU): Nordisk-NATO fælles operationer forhåndsgodkendt på svensk jord uden per-operation Riksdag-afstemning — 117 DIW
+- 🟠 **HD03261** (SkU): Skatteverket får krydsreferencebeføjelser til bekæmpelse af befolkningsregisterbedrageri — 118,5 DIW
+- 🟠 **HD03250** (TU): Statsligt e-identitetsalternativ til BankID — 84 DIW — lang implementeringstid, stor Digg-afhængighed
+- 🟡 **HD03258** (KU): Politisk partifinansieringsoplysning — ægte men smal reform — 74 DIW
+- 🔴 **HD03263** (SfU): Dedikerede deporteringshåndhævelsesenheder, reducerede procedureforsinkelser — 108 DIW
+- 🔴 **HD03264** (SfU): Straffehistorik og adfærdsstandarder for alle opholdskategorier — 102 DIW
+- 🟢 **HD03251** (SoU): Integreret behandling af samtidige misbrug og psykiske lidelser — 58 DIW
+
+### Vigtigste fremtidige trigger
+
+**C's position på HD03262 (afskaffelse af permanent opholdstilladelse)** inden 2026-06-15: hvis Centerpartiet afviser at støtte afskaffelsen og tvinger ændringer igennem, forskydes hele migrationsklustrenes udvalgsplan, og valgpositioneringen for M/KD/SD forringes. (PIR-6)
+
+### Tillidsmærkning
+
+- Politisk analyse af migrationsklustrene: HØJ — baseret på tidligere afstemingsmønstre (SfU 2024/25, Ja 175/Nej 174) og PIR-sporing
+- Vurderinger af implementeringskapacitet: MIDDEL — myndigheds kapacitetsdata er 18+ måneder gammel; Statskontoret har ikke offentliggjort en opdateret Migrationsverket-vurdering for 2025–2026
+- Økonomisk kontekst: HØJ — IMF WEO April 2026, inden for 6-månedersgrænsen
+
+### Nøglevisualisering
+
+```mermaid
+quadrantChart
+  title "Propositionens signifikansmatrix (Påvirkning vs. Valgprofil)"
+ x-axis Lav valgprofil --> Høj valgprofil
+ y-axis Lav strukturel påvirkning --> Høj strukturel påvirkning
+  quadrant-1 Overvåg
+  quadrant-2 Omstridt kerne
+  quadrant-3 Teknisk
+  quadrant-4 Positionering
+  HD03267: [0.92, 0.91]
+  HD03262: [0.89, 0.95]
+  HD03265: [0.85, 0.82]
+  HD03263: [0.80, 0.72]
+  HD03264: [0.75, 0.68]
+  HD03261: [0.70, 0.79]
+  HD03254: [0.65, 0.78]
+  HD03250: [0.45, 0.84]
+  HD03258: [0.55, 0.42]
+  HD03251: [0.20, 0.58]
+
+```
+
+<!-- source-sha: 9cdd9bfe0bc226548b5ddf453782f5076880156a -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/propositions/executive-brief_de.md -->
+
+**Datum**: 2026-05-22
+**Unterordner**: propositions
+**Autor**: James Pether Sörling
+**Vertrauen**: HOCH
+**Klassifizierung**: ÖFFENTLICH — DSGVO Art. 9(2)(e)/(g) Rechtsgrundlage
+
+### Kurzfassung
+
+Die Busch-Regierung hat zehn Gesetzesentwürfe eingereicht, die Schwedens weitreichendste Migrationsreform seit 1989 darstellen: Abschaffung dauerhafter Aufenthaltstitel für Nicht-EU-Bürger, Einführung des Schnellverfahrens für Sicherheitsabschiebungen, Ausweitung der Abschiebehaft und gleichzeitiger Aufbau einer staatlichen digitalen Identitätsinfrastruktur sowie Erweiterung der Überwachungskapazitäten des Skatteverkets für das Einwohnermelderegister — all dies mit 114 Tagen bis zur Wahl im September 2026.
+
+### Entscheidungen, die dieses Dokument unterstützt
+
+1. **Politikanalytiker und Zivilgesellschaft**: Ob Rechtsklagen gegen HD03262 (Abschaffung des Daueraufenthalts) gemäß EMRK Art. 8 und EU-Richtlinie 2003/109/EG vor der Ausschussabstimmung eingeleitet werden sollen.
+2. **Oppositionsparteien (S, MP, V)**: Ob eine Blockierungsminoritätsstrategie in SfU versucht werden soll oder ob Cs Koalitionswechsel hingenommen wird.
+3. **Centerpartiet-Führung**: Ob HD03262 vollständig unterstützt, Änderungen zur Einschränkung des Anwendungsbereichs gesucht oder das Unterstützungsabkommen mit der Regierung bei diesem Gesetzentwurf gebrochen werden soll.
+4. **Wirtschaft und Personalleiter**: Zeitplan für die Umsetzung von HD03250 (staatliche E-Identität) und ob BankID der primäre Unternehmensauthentifizierungskanal bleiben kann.
+5. **Mediaredaktionen**: Ob der Militärkooperationsentwurf (HD03254) die Rahmung "stille NATO-Integration" verdient oder prozedural routinemäßig ist.
+
+### Verbesserungen zweiter Durchgang (AI-FIRST)
+
+Kernzusammenfassung mit spezifischen Gesetznamen geschärft; explizite pir-status-Referenz hinzugefügt; Vertrauensstufen gestrafft; Auslöserdatum 2026-06-15 für jede Entscheidung hinzugefügt; DIW-Scores gegen significance-scoring.md verifiziert; IMF-Wirtschaftskontext hinzugefügt.
+
+### 60-Sekunden-Lektüre
+
+- 🔴 **HD03267** (JuU): Von SÄPO ausgelöste Schnellabschiebung bei qualifizierten Sicherheitsbedrohungen umgeht ordentliche Migrationsgerichte — 136,5 DIW (Wahlmultiplikator angewendet)
+- 🔴 **HD03262** (SfU): Dauerhafte Aufenthaltstitel für Nicht-EU-Bürger werden abgeschafft; widerrufliche mehrjährige befristete Genehmigungen werden eingeführt — 132 DIW — **höchste strukturelle Wirkung im Paket**
+- 🔴 **HD03265** (SfU): Elektronische Fußfessel und erweiterte Abschiebehaftkapazität — 124,5 DIW
+- 🔵 **HD03254** (FöU): Nordisch-NATO-Gemeinschaftsoperationen auf schwedischem Boden ohne Riksdag-Abstimmung für jede Operation vorab genehmigt — 117 DIW
+- 🟠 **HD03261** (SkU): Skatteverket erhält Querverweisungsbefugnisse zur Aufdeckung von Einwohnermelderegisterbetrug — 118,5 DIW
+- 🟠 **HD03250** (TU): Staatliche E-Identitätsalternative zu BankID — 84 DIW — langer Umsetzungszeitraum, hohe Digg-Abhängigkeit
+- 🟡 **HD03258** (KU): Offenlegung politischer Parteienfinanzierung — echte, aber schmale Reform — 74 DIW
+- 🔴 **HD03263** (SfU): Spezielle Abschiebungsvollzugseinheiten, verkürzte Verfahrensverzögerungen — 108 DIW
+- 🔴 **HD03264** (SfU): Strafregister- und Verhaltensstandards für alle Aufenthaltskategorien — 102 DIW
+- 🟢 **HD03251** (SoU): Integrierte Versorgung für gleichzeitig auftretende Sucht und psychische Störungen — 58 DIW
+
+### Wichtigster zukünftiger Auslöser
+
+**Cs Position zu HD03262 (Abschaffung der Daueraufenthaltsgenehmigung)** bis 2026-06-15: Wenn Centerpartiet sich weigert, die Abschaffung zu unterstützen und Änderungen erzwingt, verschiebt sich der gesamte Ausschussplan des Migrationspakets und die Wahlpositionierung von M/KD/SD verschlechtert sich. (PIR-6)
+
+### Vertrauensstufen
+
+- Politische Analyse des Migrationspakets: HOCH — basiert auf früheren Abstimmungsmustern (SfU 2024/25, Ja 175/Nein 174) und PIR-Tracking
+- Bewertungen der Umsetzungskapazität: MITTEL — Behördenkapazitätsdaten sind 18+ Monate alt; Statskontoret hat keine aktualisierte Migrationsverket-Bewertung für 2025–2026 veröffentlicht
+- Wirtschaftlicher Kontext: HOCH — IWF WEO April 2026, innerhalb der 6-Monatsgrenze
+
+### Schlüsselvisualisierung
+
+```mermaid
+quadrantChart
+  title "Signifikanzmatrix der Gesetzesentwürfe (Auswirkung vs. Wahlrelevanz)"
+ x-axis Geringe Wahlrelevanz --> Hohe Wahlrelevanz
+ y-axis Geringe strukturelle Auswirkung --> Hohe strukturelle Auswirkung
+  quadrant-1 Beobachten
+  quadrant-2 Umstrittener Kern
+  quadrant-3 Technisch
+  quadrant-4 Positionierung
+  HD03267: [0.92, 0.91]
+  HD03262: [0.89, 0.95]
+  HD03265: [0.85, 0.82]
+  HD03263: [0.80, 0.72]
+  HD03264: [0.75, 0.68]
+  HD03261: [0.70, 0.79]
+  HD03254: [0.65, 0.78]
+  HD03250: [0.45, 0.84]
+  HD03258: [0.55, 0.42]
+  HD03251: [0.20, 0.58]
+
+```
+
+<!-- source-sha: 9cdd9bfe0bc226548b5ddf453782f5076880156a -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/propositions/executive-brief_es.md -->
+
+### Resumen
+
+El gobierno Busch ha presentado diez proposiciones que constituyen la reforma de aplicación migratoria más ambiciosa de Suecia desde 1989: abolición de los permisos de residencia permanente para ciudadanos no comunitarios, creación de vía rápida para expulsión por razones de seguridad, ampliación de poderes de detención y simultáneamente construcción de una infraestructura de identidad digital estatal y ampliación de la capacidad de vigilancia del registro de población de Skatteverket — todo ello con 114 días hasta las elecciones de septiembre de 2026.
+
+### Decisiones que este documento apoya
+
+1. **Analistas políticos y sociedad civil**: Si deben movilizarse recursos legales contra HD03262 (abolición de residencia permanente) bajo ECHR Art. 8 y Directiva UE 2003/109/CE antes de la votación en comisión.
+2. **Partidos de oposición (S, MP, V)**: Si intentar una estrategia de minoría de bloqueo en SfU o aceptar el cambio de coalición de C.
+3. **Dirección de Centerpartiet**: Si apoyar HD03262 íntegramente, buscar enmiendas que limiten el alcance o romper el acuerdo de apoyo con el gobierno en esta proposición.
+4. **Empresas y responsables de RRHH**: Cronograma de implementación de HD03250 (identidad electrónica estatal) y si BankID puede seguir siendo el canal principal de autenticación empresarial.
+5. **Consejos editoriales de medios**: Si la proposición de cooperación militar (HD03254) merece el encuadre de «integración silenciosa en la OTAN» o es procedimentalmente rutinaria.
+
+### Mejoras de segunda pasada (AI-FIRST)
+
+Refinado el resumen con nombres de estatutos específicos; añadida referencia explícita a pir-status; ajustadas etiquetas de confianza; añadida fecha de activación 2026-06-15 para cada decisión; verificadas puntuaciones DIW consistentes con significance-scoring.md; añadido contexto económico del IMF.
+
+### Lectura de 60 segundos
+
+- 🔴 **HD03267** (JuU): Expulsión acelerada activada por SÄPO para amenazas de seguridad cualificadas que elude los tribunales ordinarios de migración — 136,5 DIW (multiplicador electoral aplicado)
+- 🔴 **HD03262** (SfU): Los permisos de residencia permanente se abolirán para ciudadanos no comunitarios; se introducen permisos temporales plurianuales revocables — 132 DIW — **mayor impacto estructural del lote**
+- 🔴 **HD03265** (SfU): Pulsera electrónica y ampliación de la capacidad de detención previa a la expulsión — 124,5 DIW
+- 🔵 **HD03254** (FöU): Operaciones conjuntas nórdico-OTAN preautorizadas en suelo sueco sin votación del Riksdag por operación — 117 DIW
+- 🟠 **HD03261** (SkU): Skatteverket obtiene poderes de referencia cruzada para detectar fraude en el registro de población — 118,5 DIW
+- 🟠 **HD03250** (TU): Alternativa de identidad electrónica estatal a BankID — 84 DIW — largo plazo de implementación, alta dependencia de Digg
+- 🟡 **HD03258** (KU): Divulgación de financiación de partidos políticos — reforma genuina pero limitada — 74 DIW
+- 🔴 **HD03263** (SfU): Unidades dedicadas de ejecución de expulsiones, reducción de retrasos procesales — 108 DIW
+- 🔴 **HD03264** (SfU): Antecedentes penales y estándares de conducta para todas las categorías de residencia — 102 DIW
+- 🟢 **HD03251** (SoU): Atención integrada para comorbilidad por abuso de sustancias y trastornos psiquiátricos — 58 DIW
+
+### Principal activador futuro
+
+**La posición de C sobre HD03262 (abolición de la residencia permanente)** antes del 2026-06-15: si Centerpartiet se niega a apoyar la abolición y fuerza enmiendas, todo el calendario de comisión del clúster migratorio se desplaza y el posicionamiento electoral de M/KD/SD se deteriora. (PIR-6)
+
+### Niveles de confianza
+
+- Análisis político del clúster migratorio: ALTA — basado en patrones de votación anteriores (SfU 2024/25, Sí 175/No 174) y seguimiento PIR
+- Evaluaciones de capacidad de implementación: MEDIA — los datos de capacidad de las agencias tienen más de 18 meses; Statskontoret no ha publicado una evaluación actualizada de Migrationsverket para 2025–2026
+- Contexto económico: ALTA — FMI WEO abril 2026, dentro del umbral de 6 meses
+
+### Visualización clave
+
+```mermaid
+quadrantChart
+  title "Matriz de significación de proposiciones (Impacto vs. Saliencia electoral)"
+ x-axis Baja saliencia electoral --> Alta saliencia electoral
+ y-axis Bajo impacto estructural --> Alto impacto estructural
+  quadrant-1 Monitorear
+  quadrant-2 Núcleo disputado
+  quadrant-3 Técnico
+  quadrant-4 Posicionamiento
+  HD03267: [0.92, 0.91]
+  HD03262: [0.89, 0.95]
+  HD03265: [0.85, 0.82]
+  HD03263: [0.80, 0.72]
+  HD03264: [0.75, 0.68]
+  HD03261: [0.70, 0.79]
+  HD03254: [0.65, 0.78]
+  HD03250: [0.45, 0.84]
+  HD03258: [0.55, 0.42]
+  HD03251: [0.20, 0.58]
+
+```
+
+<!-- source-sha: 9cdd9bfe0bc226548b5ddf453782f5076880156a -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/propositions/executive-brief_fi.md -->
+
+**Päivämäärä**: 2026-05-22
+**Alikansio**: propositions
+**Tekijä**: James Pether Sörling
+**Luottamustaso**: KORKEA
+**Luokitus**: PUBLIC — GDPR Art. 9(2)(e)/(g) oikeudellinen perusta
+
+### Lyhyt yhteenveto
+
+Busch-hallitus on toimittanut kymmenen esitystä, jotka muodostavat Ruotsin laajimman maahanmuuton täytäntöönpanon uudistuksen sitten vuoden 1989: pysyvien oleskelulupien poistaminen EU:n ulkopuolisille kansalaisille, turvallisuusperusteisen karkottamisen pika-äänestys, laajennetut säilöönotto-oikeudet, valtion digitaalisen henkilöllisyysinfrastruktuurin rakentaminen ja Skatteverketin väestörekisterin valvonnan laajentaminen — kaikki tämä 114 päivää ennen syyskuun 2026 vaaleja.
+
+### Päätökset, joita tämä muistio tukee
+
+1. **Politiikan analyytikot ja kansalaisyhteiskunta**: Tulisiko oikeudellisia haasteita HD03262:ta (pysyvän oleskeluluvan poistaminen) vastaan ECHR Art. 8:n ja EU-direktiivin 2003/109/EY nojalla mobilisoida ennen valiokunnan äänestystä.
+2. **Oppositiopuolueet (S, MP, V)**: Tulisiko SfU:ssa yrittää estävä vähemmistöstrategia vai hyväksyä C:n koalition vaihto.
+3. **Centerpartiets johtajuus**: Tulisiko HD03262 tukea kokonaan, etsiä muutoksia laajuuden rajoittamiseksi vai katkaista hallituksen tukisopimus tällä esityksellä.
+4. **Yritysmaailma ja HR-johtajat**: HD03250:n (valtion e-identiteetti) toteutuksen aikataulu ja voiko BankID säilyä ensisijaisena yritysautorisointikanavana.
+5. **Median toimitusneuvostot**: Ansaitseeko sotilaallisen yhteistyön esitys (HD03254) "hiljaisen NATO-integraation" kehystyksen vai onko se menettelyllisesti rutiininomainen.
+
+### Toisen kierroksen parannukset (AI-FIRST)
+
+Tiivistetty yhteenveto tarkkojen lakien nimillä; lisätty eksplisiittinen pir-status-viittaus; kiristetty luottamusmerkintöjä; lisätty laukaisupäivä 2026-06-15 jokaiseen päätökseen; DIW-pisteet varmennettu significance-scoring.md:tä vasten; lisätty IMF:n taloudellinen konteksti.
+
+### 60 sekunnin lukeminen
+
+- 🔴 **HD03267** (JuU): SÄPO-käynnistämä pikakaistakarkottaminen soveltuvuusturvallisuusuhkiin ohittaa tavalliset maahanmuuttotuomioistuimet — 136,5 DIW (vaalimultiplikattori sovellettu)
+- 🔴 **HD03262** (SfU): Pysyvät oleskeluluvat poistetaan EU:n ulkopuolisille kansalaisille; käyttöön otetaan peruutettavat monivuotiset väliaikaiset luvat — 132 DIW — **suurin rakenteellinen vaikutus erässä**
+- 🔴 **HD03265** (SfU): Elektroninen jalkapanta ja laajennettu karkottamista edeltävä säilöönotto-kapasiteetti — 124,5 DIW
+- 🔵 **HD03254** (FöU): Pohjoismainen-NATO yhteisoperaatiot esiluvallistettu Ruotsin maaperällä ilman per-operaatio Riksdag-äänestystä — 117 DIW
+- 🟠 **HD03261** (SkU): Skatteverket saa ristiinviittausvaltuudet väestörekisteripetoksen havaitsemiseen — 118,5 DIW
+- 🟠 **HD03250** (TU): Valtion e-identiteettivaihtoehto BankID:lle — 84 DIW — pitkä toteutusaika, suuri Digg-riippuvuus
+- 🟡 **HD03258** (KU): Poliittisen puolueen rahoituksen avoimuus — aito mutta kapea uudistus — 74 DIW
+- 🔴 **HD03263** (SfU): Erikoistuneet karkottamisen täytäntöönpanoyksiköt, vähennetyt menettelylliset viivästykset — 108 DIW
+- 🔴 **HD03264** (SfU): Rikoshistoria ja käytösstandardit kaikissa oleskelulupakategorioissa — 102 DIW
+- 🟢 **HD03251** (SoU): Integroitu hoito samanaikaiselle päihderiippuvuudelle ja mielenterveyshäiriöille — 58 DIW
+
+### Tärkein tulevaisuuden laukaisija
+
+**C:n kanta HD03262:een (pysyvän oleskeluluvan poistaminen)** viimeistään 2026-06-15: jos Centerpartiet kieltäytyy tukemasta poistamista ja pakottaa muutoksia, koko maahanmuuttoryhmän valiokunnan aikataulu siirtyy ja M/KD/SD:n vaalisijoittuminen heikkenee. (PIR-6)
+
+### Luottamusmerkinnät
+
+- Maahanmuuttoryhmän poliittinen analyysi: KORKEA — perustuu aiempiin äänestystuloksiin (SfU 2024/25, Kyllä 175/Ei 174) ja PIR-seurantaan
+- Toteutuskapasiteetin arvioinnit: KESKITASO — viranomaisen kapasiteettidata on yli 18 kuukautta vanhaa; Statskontoret ei ole julkaissut päivitettyä Migrationsverket-arviointia vuosille 2025–2026
+- Taloudellinen konteksti: KORKEA — IMF WEO huhtikuu 2026, 6 kuukauden kynnysarvon sisällä
+
+### Keskeinen visualisointi
+
+```mermaid
+quadrantChart
+  title "Esityksen merkitysmatriisi (Vaikutus vs. Vaalisalienssi)"
+ x-axis Alhainen vaalisaliensi --> Korkea vaalisaliensi
+ y-axis Alhainen rakenteellinen vaikutus --> Korkea rakenteellinen vaikutus
+  quadrant-1 Seuraa
+  quadrant-2 Kiistanalainen ydin
+  quadrant-3 Tekninen
+  quadrant-4 Sijoittuminen
+  HD03267: [0.92, 0.91]
+  HD03262: [0.89, 0.95]
+  HD03265: [0.85, 0.82]
+  HD03263: [0.80, 0.72]
+  HD03264: [0.75, 0.68]
+  HD03261: [0.70, 0.79]
+  HD03254: [0.65, 0.78]
+  HD03250: [0.45, 0.84]
+  HD03258: [0.55, 0.42]
+  HD03251: [0.20, 0.58]
+
+```
+
+<!-- source-sha: 9cdd9bfe0bc226548b5ddf453782f5076880156a -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/propositions/executive-brief_fr.md -->
+
+**Sous-dossier** : propositions
+**Auteur** : James Pether Sörling
+**Confiance** : ÉLEVÉE
+
+### Résumé
+
+Le gouvernement Busch a soumis dix propositions constituant la réforme de l'application de la migration la plus ambitieuse de la Suède depuis 1989 : abolition des titres de séjour permanents pour les ressortissants non-UE, création d'une voie rapide pour l'expulsion pour raisons sécuritaires, extension des pouvoirs de détention, construction d'une infrastructure d'identité numérique étatique et élargissement des capacités de surveillance du registre de population de Skatteverket — le tout avec 114 jours avant les élections de septembre 2026.
+
+### Décisions que ce document soutient
+
+1. **Analystes politiques et société civile** : Si des recours juridiques contre HD03262 (abolition de la résidence permanente) au titre de l'ECHR Art. 8 et de la directive UE 2003/109/CE doivent être mobilisés avant le vote en commission.
+2. **Partis d'opposition (S, MP, V)** : Si une stratégie de minorité bloquante en SfU doit être tentée ou si le changement de coalition de C est accepté.
+3. **Direction de Centerpartiet** : Si HD03262 doit être soutenu dans son intégralité, si des amendements limitant la portée doivent être recherchés, ou si l'accord de soutien avec le gouvernement sur cette proposition doit être rompu.
+4. **Monde des affaires / DRH** : Calendrier de mise en œuvre de HD03250 (identité électronique étatique) et si BankID peut rester le canal d'authentification d'entreprise principal.
+5. **Comités de rédaction des médias** : Si la proposition de coopération militaire (HD03254) mérite le cadrage « intégration silencieuse à l'OTAN » ou si elle est procéduralement routinière.
+
+### Améliorations du deuxième passage (AI-FIRST)
+
+Résumé affiné avec noms de lois spécifiques ; référence pir-status explicite ; libellés de confiance resserrés ; date déclencheur 2026-06-15 par décision ; scores DIW vérifiés ; contexte IMF ajouté.
+
+### Lecture de 60 secondes
+
+- 🔴 **HD03267** (JuU) : Expulsion en procédure accélérée déclenchée par la SÄPO pour les menaces sécuritaires qualifiées contournant les tribunaux migratoires ordinaires — 136,5 DIW (multiplicateur électoral appliqué)
+- 🔴 **HD03262** (SfU) : Les titres de séjour permanents sont abolis pour les ressortissants non-UE ; des permis temporaires pluriannuels révocables sont introduits — 132 DIW — **impact structurel le plus élevé du lot**
+- 🔴 **HD03265** (SfU) : Bracelet électronique et capacité de détention avant expulsion élargie — 124,5 DIW
+- 🔵 **HD03254** (FöU) : Opérations conjointes nordiques-OTAN préautorisées sur le sol suédois sans vote du Riksdag pour chaque opération — 117 DIW
+- 🟠 **HD03261** (SkU) : Skatteverket obtient des pouvoirs de référence croisée pour détecter les fraudes au registre de population — 118,5 DIW
+- 🟠 **HD03250** (TU) : Alternative d'identité électronique étatique à BankID — 84 DIW — long délai de mise en œuvre, forte dépendance à Digg
+- 🟡 **HD03258** (KU) : Divulgation du financement des partis politiques — réforme authentique mais étroite — 74 DIW
+- 🔴 **HD03263** (SfU) : Unités d'exécution d'expulsion dédiées, délais procéduraux réduits — 108 DIW
+- 🔴 **HD03264** (SfU) : Casier judiciaire et normes de comportement pour toutes les catégories de résidence — 102 DIW
+- 🟢 **HD03251** (SoU) : Soins intégrés pour la comorbidité toxicomanie-troubles psychiatriques — 58 DIW
+
+### Principal déclencheur futur
+
+**La position de C sur HD03262 (abolition de la résidence permanente)** avant le 2026-06-15 : si Centerpartiet refuse de soutenir l'abolition et force des amendements, tout le calendrier de commission du cluster migratoire est décalé et le positionnement électoral de M/KD/SD se détériore. (PIR-6)
+
+### Niveaux de confiance
+
+- Analyse politique du cluster migratoire : ÉLEVÉE — basée sur les schémas de vote antérieurs (SfU 2024/25, Oui 175/Non 174) et le suivi PIR
+- Évaluations de la capacité de mise en œuvre : MOYEN — les données de capacité des agences ont 18 mois ou plus ; Statskontoret n'a pas publié d'évaluation actualisée de Migrationsverket pour 2025–2026
+- Contexte économique : ÉLEVÉE — FMI WEO avril 2026, dans le seuil des 6 mois
+
+### Visualisation clé
+
+```mermaid
+quadrantChart
+  title "Matrice de signification des propositions (Impact vs. Saillance électorale)"
+ x-axis Faible saillance électorale --> Haute saillance électorale
+ y-axis Faible impact structurel --> Fort impact structurel
+  quadrant-1 Surveiller
+  quadrant-2 Noyau contesté
+  quadrant-3 Technique
+  quadrant-4 Positionnement
+  HD03267: [0.92, 0.91]
+  HD03262: [0.89, 0.95]
+  HD03265: [0.85, 0.82]
+  HD03263: [0.80, 0.72]
+  HD03264: [0.75, 0.68]
+  HD03261: [0.70, 0.79]
+  HD03254: [0.65, 0.78]
+  HD03250: [0.45, 0.84]
+  HD03258: [0.55, 0.42]
+  HD03251: [0.20, 0.58]
+
+```
+
+<!-- source-sha: 9cdd9bfe0bc226548b5ddf453782f5076880156a -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/propositions/executive-brief_he.md -->
+
+<!-- dir: rtl -->
+# שוודיה מבטלת את הישיבה הקבועה ומרחיבה גירושים ביטחוניים: עימות חקיקתי לפני הבחירות
+
+**תאריך**: 2026-05-22
+**תת-תיקייה**: propositions
+**מחבר**: James Pether Sörling
+**רמת אמינות**: גבוהה
+**סיווג**: פומבי — סעיף 9(2)(ה)/(ז) של GDPR בסיס משפטי
+
+### סיכום קצר
+
+ממשלת Busch הגישה עשרה הצעות חוק המהוות את רפורמת אכיפת ההגירה הנרחבת ביותר של שוודיה מאז 1989: ביטול תושבות קבועה לאזרחי מדינות מחוץ לאיחוד האירופי, יצירת מסלול מהיר לגירוש מסיבות ביטחוניות, הרחבת סמכויות מעצר, בניית תשתית זהות דיגיטלית ממלכתית והרחבת יכולות המעקב של Skatteverket על מרשם האוכלוסין — כל זאת עם 114 ימים לבחירות ספטמבר 2026.
+
+### החלטות שמסמך זה תומך בהן
+
+1. **אנליסטים פוליטיים וחברה אזרחית**: האם לגייס ערעורים משפטיים נגד HD03262 (ביטול תושבות קבועה) מכוח ECHR סעיף 8 ודירקטיבת האיחוד האירופי 2003/109/EC לפני הצבעת הוועדה.
+2. **מפלגות האופוזיציה (S, MP, V)**: האם לנסות אסטרטגיית מיעוט חוסם בSfU או לקבל את שינוי הקואליציה של C.
+3. **הנהגת Centerpartiet**: האם לתמוך ב-HD03262 במלואו, לחפש תיקונים שמצמצמים את היקפו, או לשבור את הסכם התמיכה עם הממשלה על הצעה זו.
+4. **עולם העסקים ומנהלי משאבי אנוש**: לוח הזמנים לביצוע HD03250 (זהות אלקטרונית ממלכתית) והאם BankID יכול להישאר ערוץ האימות הראשי לחברות.
+5. **ועדות עריכה של כלי תקשורת**: האם הצעת שיתוף הפעולה הצבאי (HD03254) מצדיקה את המסגרת של "שילוב שקט ב-NATO" או שהיא שגרתית מבחינה נוהלית.
+
+### שיפורי מעבר שני (AI-FIRST)
+
+חידוד הסיכום הקצר עם שמות חוקים ספציפיים; הוספת אזכור pir-status מפורש; הדקת תוויות האמינות; הוספת תאריך המפעיל 2026-06-15 לכל החלטה; אימות שדרגות DIW עקביות עם significance-scoring.md; הוספת הקשר כלכלי מ-IMF.
+
+### קריאה של 60 שניות
+
+- 🔴 **HD03267** (JuU): גירוש בנתיב מהיר שמופעל על-ידי SÄPO לאיומי ביטחון מוסמכים עוקף את בתי הדין הרגילים להגירה — 136.5 DIW (מכפיל בחירות הוחל)
+- 🔴 **HD03262** (SfU): אשרות ישיבה קבועות מבוטלות לאזרחי מדינות מחוץ לאיחוד האירופי; מוכנסות אשרות זמניות רב-שנתיות הניתנות לביטול — 132 DIW — **ההשפעה המבנית הגבוהה ביותר באצווה**
+- 🔴 **HD03265** (SfU): אזיק אלקטרוני והגדלת קיבולת מעצר לפני גירוש — 124.5 DIW
+- 🔵 **HD03254** (FöU): פעולות משותפות נורדיות-NATO מאושרות מראש על אדמת שוודיה ללא הצבעת ריקסדאג לכל פעולה — 117 DIW
+- 🟠 **HD03261** (SkU): Skatteverket מקבל סמכויות הפניה-צלובה לגילוי הונאה במרשם האוכלוסין — 118.5 DIW
+- 🟠 **HD03250** (TU): חלופת זהות אלקטרונית ממלכתית ל-BankID — 84 DIW — ציר זמן ביצוע ארוך, תלות גבוהה ב-Digg
+- 🟡 **HD03258** (KU): גילוי מימון מפלגות פוליטיות — רפורמה אמיתית אך צרה — 74 DIW
+- 🔴 **HD03263** (SfU): יחידות ייעודיות לאכיפת גירוש, קיצור עיכובי נוהל — 108 DIW
+- 🔴 **HD03264** (SfU): היסטוריה פלילית ותקני התנהגות לכל קטגוריות הישיבה — 102 DIW
+- 🟢 **HD03251** (SoU): טיפול משולב לשימוש בחומרים ממכרים ולהפרעות פסיכיאטריות במקביל — 58 DIW
+
+### המפעיל העתידי החשוב ביותר
+
+**עמדת C על HD03262 (ביטול תושבות קבועה)** עד 2026-06-15: אם Centerpartiet מסרב לתמוך בביטול ומכריח תיקונים, לוח הזמנים של הוועדות לכל אצוות ההגירה מתעכב ומיצוב הבחירות של M/KD/SD מתדרדר. (PIR-6)
+
+### רמות אמינות
+
+- ניתוח פוליטי של אצוות ההגירה: גבוה — מבוסס על דפוסי הצבעה קודמים (SfU 2024/25, כן 175/לא 174) ומעקב PIR
+- הערכות קיבולת ביצוע: בינוני — נתוני קיבולת הסוכנויות בני 18+ חודשים; Statskontoret לא פרסמה הערכת Migrationsverket מעודכנת לשנים 2025–2026
+- הקשר כלכלי: גבוה — IMF WEO אפריל 2026, בתוך סף 6 חודשים
+
+### הדמייה מרכזית
+
+```mermaid
+quadrantChart
+  title "מטריצת משמעות הצעות (השפעה מול בולטות בחירות)"
+ x-axis בולטות בחירות נמוכה --> בולטות בחירות גבוהה
+ y-axis השפעה מבנית נמוכה --> השפעה מבנית גבוהה
+  quadrant-1 מעקב
+  quadrant-2 ליבה שנויה במחלוקת
+  quadrant-3 טכני
+  quadrant-4 מיצוב
+  HD03267: [0.92, 0.91]
+  HD03262: [0.89, 0.95]
+  HD03265: [0.85, 0.82]
+  HD03263: [0.80, 0.72]
+  HD03264: [0.75, 0.68]
+  HD03261: [0.70, 0.79]
+  HD03254: [0.65, 0.78]
+  HD03250: [0.45, 0.84]
+  HD03258: [0.55, 0.42]
+  HD03251: [0.20, 0.58]
+
+```
+
+<!-- source-sha: 9cdd9bfe0bc226548b5ddf453782f5076880156a -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/propositions/executive-brief_ja.md -->
+
+**日付**: 2026-05-22
+**サブフォルダ**: propositions
+**著者**: James Pether Sörling
+**信頼度**: 高
+**分類**: 公開 — GDPR 第9条(2)(e)/(g) 法的根拠
+
+### 要約
+
+ブッシュ政権は1989年以来最も広範なスウェーデンの移民法執行改革を構成する10の法案を提出した。EU非加盟国民に対する永住許可の廃止、安全保障退去の迅速手続き創設、収容権限の拡大、国家デジタル識別インフラの構築、Skatteverketの住民登録監視能力の拡大 — これらすべてが2026年9月選挙まで114日の時点で行われる。
+
+### この文書が支援する決定
+
+1. **政策分析者と市民社会**: ECHR第8条およびEU指令2003/109/ECに基づいてHD03262（永住許可廃止）への法的異議申し立てを委員会投票前に動員すべきか。
+2. **野党（S、MP、V）**: SfUで阻止少数派戦略を試みるか、Cの連立変更を受け入れるか。
+3. **Centerpartiet指導部**: HD03262を全面的に支持するか、範囲を制限する修正を求めるか、この法案における政府の支持合意を破棄するか。
+4. **ビジネス界/人事担当者**: HD03250（国家e-ID）の実施スケジュールと、BankIDが企業認証の主要チャネルであり続けられるか。
+5. **メディア編集委員会**: 軍事協力法案（HD03254）が「静かなNATO統合」という枠組みを受けるに値するか、手続き的に定型的かどうか。
+
+### 第2パス改善（AI-FIRST）
+
+具体的な法令名で核心要約を強化；pir-statusの明示的参照を追加；信頼度ラベルを整理；各決定に2026-06-15のトリガー日付を追加；DIWスコアがsignificance-scoring.mdと一致することを確認；IMF経済コンテキストを追加。
+
+### 60秒の要点
+
+- 🔴 **HD03267** (JuU): SÄPO起動による適格安全保障脅威への迅速退去手続きが通常の移民裁判所を回避 — 136.5 DIW（選挙乗数適用）
+- 🔴 **HD03262** (SfU): EU非加盟国民への永住許可を廃止；取り消し可能な複数年一時許可を導入 — 132 DIW — **パッケージ中最高の構造的影響**
+- 🔴 **HD03265** (SfU): 電子足首装着と退去前収容能力の拡大 — 124.5 DIW
+- 🔵 **HD03254** (FöU): スウェーデン領土での北欧NATO共同作戦を作戦ごとのリクスダーグ投票なしで事前承認 — 117 DIW
+- 🟠 **HD03261** (SkU): Skatteverketが住民登録詐欺検出のためのクロスリファレンス権限を取得 — 118.5 DIW
+- 🟠 **HD03250** (TU): BankIDへの国家e-ID代替案 — 84 DIW — 長い実施タイムライン、Digg依存度高
+- 🟡 **HD03258** (KU): 政党資金調達の開示 — 真摯だが範囲の狭い改革 — 74 DIW
+- 🔴 **HD03263** (SfU): 専任退去執行部隊、手続き遅延の削減 — 108 DIW
+- 🔴 **HD03264** (SfU): すべての在留カテゴリでの犯罪歴と行動基準 — 102 DIW
+- 🟢 **HD03251** (SoU): 薬物乱用と精神障害の合併症への統合ケア — 58 DIW
+
+### 最重要な将来のトリガー
+
+**HD03262（永住許可廃止）に関するCの立場**（2026-06-15まで）: Centerpartietが廃止支持を拒否し修正を強制すれば、移民政策クラスター全体の委員会タイムラインが移動し、M/KD/SDの選挙ポジショニングが悪化する。（PIR-6）
+
+### 信頼度レベル
+
+- 移民クラスターの政治分析: 高 — 過去の投票パターン（SfU 2024/25、賛成175/反対174）とPIR追跡に基づく
+- 実施能力評価: 中 — 機関能力データは18ヶ月以上古い；Statskontoretは2025-2026年のMigrationsverket更新評価を未発表
+- 経済的背景: 高 — IMF WEO 2026年4月、6ヶ月閾値以内
+
+### 主要可視化
+
+```mermaid
+quadrantChart
+  title "法案重要性マトリックス（影響vs選挙的顕著性）"
+ x-axis 低い選挙的顕著性 --> 高い選挙的顕著性
+ y-axis 低い構造的影響 --> 高い構造的影響
+  quadrant-1 監視
+  quadrant-2 争われた中核
+  quadrant-3 技術的
+  quadrant-4 ポジショニング
+  HD03267: [0.92, 0.91]
+  HD03262: [0.89, 0.95]
+  HD03265: [0.85, 0.82]
+  HD03263: [0.80, 0.72]
+  HD03264: [0.75, 0.68]
+  HD03261: [0.70, 0.79]
+  HD03254: [0.65, 0.78]
+  HD03250: [0.45, 0.84]
+  HD03258: [0.55, 0.42]
+  HD03251: [0.20, 0.58]
+
+```
+
+<!-- source-sha: 9cdd9bfe0bc226548b5ddf453782f5076880156a -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/propositions/executive-brief_ko.md -->
+
+**날짜**: 2026-05-22
+**하위 폴더**: propositions
+**저자**: James Pether Sörling
+**신뢰도**: 높음
+**분류**: 공개 — GDPR 제9조(2)(e)/(g) 법적 근거
+
+### 핵심 요약
+
+Busch 정부는 1989년 이후 스웨덴 최대 규모의 이민 집행 개혁을 구성하는 10개 법안을 제출하였다: EU 비회원국 국민에 대한 영주권 폐지, 안보 추방 신속 절차 도입, 구금 권한 확대, 국가 디지털 신원 인프라 구축 및 Skatteverket의 인구등록 감시 역량 확장 — 이 모든 것이 2026년 9월 선거까지 114일을 앞두고 이루어진다.
+
+### 이 문서가 지원하는 결정
+
+1. **정책 분석가 및 시민사회**: ECHR 제8조와 EU 지침 2003/109/EC에 근거하여 HD03262(영주권 폐지)에 대한 법적 이의 제기를 위원회 투표 전에 동원해야 하는지.
+2. **야당(S, MP, V)**: SfU에서 방해 소수 전략을 시도할지, C의 연립 변화를 수용할지.
+3. **Centerpartiet 지도부**: HD03262를 전면 지지할지, 범위를 제한하는 수정안을 추구할지, 이 법안에 관한 정부와의 지지 합의를 파기할지.
+4. **기업 및 HR 관리자**: HD03250(국가 전자 신원) 구현 일정과 BankID가 기업 인증의 주요 채널로 남을 수 있는지.
+5. **언론 편집위원회**: 군사 협력 법안(HD03254)이 "조용한 NATO 통합"이라는 틀을 받을 가치가 있는지, 절차적으로 일상적인지.
+
+### 2차 개선 (AI-FIRST)
+
+구체적인 법령명으로 핵심 요약 강화; 명시적 pir-status 참조 추가; 신뢰도 레이블 정리; 각 결정에 2026-06-15 트리거 날짜 추가; DIW 점수가 significance-scoring.md와 일치하는지 확인; IMF 경제 맥락 추가.
+
+### 60초 요약
+
+- 🔴 **HD03267** (JuU): SÄPO가 발동하는 적격 안보 위협 신속 추방이 일반 이민 법원을 우회 — 136.5 DIW (선거 승수 적용)
+- 🔴 **HD03262** (SfU): EU 비회원국 국민 영주권 폐지; 취소 가능한 다년간 임시 허가 도입 — 132 DIW — **패키지에서 가장 높은 구조적 영향**
+- 🔴 **HD03265** (SfU): 전자 발목 밴드와 추방 전 구금 역량 확대 — 124.5 DIW
+- 🔵 **HD03254** (FöU): 스웨덴 영토에서의 북유럽-NATO 공동 작전 작전별 의회 투표 없이 사전 승인 — 117 DIW
+- 🟠 **HD03261** (SkU): Skatteverket이 인구등록 사기 탐지를 위한 교차 참조 권한 획득 — 118.5 DIW
+- 🟠 **HD03250** (TU): BankID에 대한 국가 전자 신원 대안 — 84 DIW — 긴 구현 일정, 높은 Digg 의존도
+- 🟡 **HD03258** (KU): 정당 정치 자금 공개 — 진지하지만 범위 좁은 개혁 — 74 DIW
+- 🔴 **HD03263** (SfU): 전담 추방 집행 부대, 절차 지연 감소 — 108 DIW
+- 🔴 **HD03264** (SfU): 모든 거주 범주에 대한 범죄 이력 및 행동 기준 — 102 DIW
+- 🟢 **HD03251** (SoU): 약물 남용 및 정신 장애 병발에 대한 통합 치료 — 58 DIW
+
+### 가장 중요한 미래 촉발 요인
+
+**HD03262(영주권 폐지)에 관한 C의 입장**(2026-06-15까지): Centerpartiet이 폐지 지지를 거부하고 수정안을 강제하면, 이민 정책 전체 클러스터의 위원회 일정이 이동하고 M/KD/SD의 선거 포지셔닝이 악화된다. (PIR-6)
+
+### 신뢰도 수준
+
+- 이민 클러스터 정치 분석: 높음 — 이전 투표 패턴(SfU 2024/25, 찬성 175/반대 174) 및 PIR 추적에 기반
+- 구현 역량 평가: 중간 — 기관 역량 데이터가 18개월 이상 오래되었음; Statskontoret이 2025-2026년 Migrationsverket 업데이트 평가를 미게시
+- 경제적 맥락: 높음 — IMF WEO 2026년 4월, 6개월 임계값 이내
+
+### 핵심 시각화
+
+```mermaid
+quadrantChart
+  title "법안 중요성 매트릭스 (영향 vs. 선거적 현저성)"
+ x-axis 낮은 선거적 현저성 --> 높은 선거적 현저성
+ y-axis 낮은 구조적 영향 --> 높은 구조적 영향
+  quadrant-1 모니터링
+  quadrant-2 논쟁적 핵심
+  quadrant-3 기술적
+  quadrant-4 포지셔닝
+  HD03267: [0.92, 0.91]
+  HD03262: [0.89, 0.95]
+  HD03265: [0.85, 0.82]
+  HD03263: [0.80, 0.72]
+  HD03264: [0.75, 0.68]
+  HD03261: [0.70, 0.79]
+  HD03254: [0.65, 0.78]
+  HD03250: [0.45, 0.84]
+  HD03258: [0.55, 0.42]
+  HD03251: [0.20, 0.58]
+
+```
+
+<!-- source-sha: 9cdd9bfe0bc226548b5ddf453782f5076880156a -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/propositions/executive-brief_nl.md -->
+
+**Datum**: 2026-05-22
+**Submap**: propositions
+**Auteur**: James Pether Sörling
+**Vertrouwen**: HOOG
+**Classificatie**: OPENBAAR — AVG Art. 9(2)(e)/(g) rechtsgrondslag
+
+### Samenvatting
+
+De Busch-regering heeft tien wetsvoorstellen ingediend die Zweden's meest vergaande migratiehandhavingshervorming vormen sinds 1989: afschaffing van permanente verblijfsvergunningen voor niet-EU-onderdanen, invoering van een sneltraject voor veiligheidsdeportaties, uitbreiding van detentiebevoegdheden en tegelijkertijd opbouw van een staatse digitale identiteitsinfrastructuur en uitbreiding van de bevolkingsregisterbewakingscapaciteit van Skatteverket — dit alles met 114 dagen tot de verkiezingen van september 2026.
+
+### Beslissingen die dit document ondersteunt
+
+1. **Politieke analisten en het maatschappelijk middenveld**: Of juridische aanvechting van HD03262 (afschaffing permanente verblijfsvergunning) op basis van EVRM Art. 8 en EU-richtlijn 2003/109/EG vóór de commissiestemming moet worden gemobiliseerd.
+2. **Oppositiepartijen (S, MP, V)**: Of een blokkerende minderheidsstrategïe in SfU moet worden geprobeerd of dat de coalitiewissel van C wordt geaccepteerd.
+3. **Centerpartiet-leiding**: Of HD03262 volledig moet worden gesteund, of amendementen moeten worden gezocht die de reikwijdte beperken, of het steunakkoord met de regering op dit voorstel moet worden verbroken.
+4. **Bedrijfsleven en HR-managers**: Tijdlijn voor implementatie van HD03250 (staatse e-identiteit) en of BankID het primaire bedrijfsauthenticatiekanaal kan blijven.
+5. **Mediaredacties**: Of het militaire samenwerkingsvoorstel (HD03254) de framing van "stille NAVO-integratie" verdient of procedureel routinematig is.
+
+### Verbeteringen tweede doorloop (AI-FIRST)
+
+Aangescherpte samenvatting met specifieke wettelijke namen; expliciete pir-status referentie toegevoegd; vertrouwenslabels aangescherpt; triggersdatum 2026-06-15 aan elke beslissing toegevoegd; DIW-scores geverifieerd consistent met significance-scoring.md; IMF economische context toegevoegd.
+
+### 60-seconden lezing
+
+- 🔴 **HD03267** (JuU): Door SÄPO getriggerde sneltrajectdeportatie voor gekwalificeerde veiligheidsdreigingen omzeilt gewone migratierechterbanken — 136,5 DIW (verkiezingsmultiplikator toegepast)
+- 🔴 **HD03262** (SfU): Permanente verblijfsvergunningen worden afgeschaft voor niet-EU-onderdanen; herroepbare meerjarige tijdelijke vergunningen worden ingevoerd — 132 DIW — **hoogste structurele impact van het pakket**
+- 🔴 **HD03265** (SfU): Elektronisch enkelband en uitgebreide pre-deportatiedetentiecapaciteit — 124,5 DIW
+- 🔵 **HD03254** (FöU): Gezamenlijke Noordse-NAVO-operaties vooraf goedgekeurd op Zweeds grondgebied zonder per-operatie Riksdag-stemming — 117 DIW
+- 🟠 **HD03261** (SkU): Skatteverket krijgt kruisverwijzingsbevoegdheden voor het opsporen van bevolkingsregisterfraude — 118,5 DIW
+- 🟠 **HD03250** (TU): Staatse e-identiteitsalternatief voor BankID — 84 DIW — lange implementatietijdlijn, hoge Digg-afhankelijkheid
+- 🟡 **HD03258** (KU): Openbaarmaking politieke partijenfinanciering — echte maar smalle hervorming — 74 DIW
+- 🔴 **HD03263** (SfU): Toegewijde deportatiehandhavingseenheden, kortere procedurele vertragingen — 108 DIW
+- 🔴 **HD03264** (SfU): Strafblad- en gedragsnormen voor alle verblijfscategorieën — 102 DIW
+- 🟢 **HD03251** (SoU): Geïntegreerde zorg voor comorbide middelenmisbruik en psychiatrische stoornissen — 58 DIW
+
+### Belangrijkste toekomstige trigger
+
+**C's standpunt over HD03262 (afschaffing permanente verblijfsvergunning)** voor 2026-06-15: als Centerpartiet weigert de afschaffing te steunen en amendementen afdwingt, verschuift de volledige commissieplanning van het migratieonderdeel en verslechtert de verkiezingspositionering van M/KD/SD. (PIR-6)
+
+### Vertrouwensniveaus
+
+- Politieke analyse van het migratiecluster: HOOG — gebaseerd op eerdere stempatronen (SfU 2024/25, Ja 175/Nee 174) en PIR-tracking
+- Beoordelingen van implementatiecapaciteit: MIDDEL — overheidsinstantiecapaciteitsdata is 18+ maanden oud; Statskontoret heeft geen bijgewerkte Migrationsverket-beoordeling voor 2025–2026 gepubliceerd
+- Economische context: HOOG — IMF WEO april 2026, binnen de 6-maandendrempel
+
+### Sleutelvisualisering
+
+```mermaid
+quadrantChart
+  title "Significantiematrix voorstellen (Impact vs. Electorale zichtbaarheid)"
+ x-axis Lage electorale zichtbaarheid --> Hoge electorale zichtbaarheid
+ y-axis Lage structurele impact --> Hoge structurele impact
+  quadrant-1 Bewaken
+  quadrant-2 Omstreden kern
+  quadrant-3 Technisch
+  quadrant-4 Positionering
+  HD03267: [0.92, 0.91]
+  HD03262: [0.89, 0.95]
+  HD03265: [0.85, 0.82]
+  HD03263: [0.80, 0.72]
+  HD03264: [0.75, 0.68]
+  HD03261: [0.70, 0.79]
+  HD03254: [0.65, 0.78]
+  HD03250: [0.45, 0.84]
+  HD03258: [0.55, 0.42]
+  HD03251: [0.20, 0.58]
+
+```
+
+<!-- source-sha: 9cdd9bfe0bc226548b5ddf453782f5076880156a -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/propositions/executive-brief_no.md -->
+
+**Dato**: 2026-05-22
+**Undermappe**: propositions
+**Forfatter**: James Pether Sörling
+**Tillit**: HØY
+**Klassifikasjon**: PUBLIC — GDPR Art. 9(2)(e)/(g) rettslig grunnlag
+
+### Sammendrag
+
+Busch-regjeringen har levert inn ti proposisjoner som utgjør Sveriges mest vidtrekkende migrasjons håndhevelsesreform siden 1989 — de avvikler permanente oppholdstillatelser for ikke-EU-borgere, innfører hurtigspor for sikkerhetsdeportering, utvider internerings beføyelser og bygger en statlig digital identitetsinfrastruktur, mens Skatteverkets befolkningsregisterovervåking utvides — alt dette med 114 dager til valget i september 2026.
+
+### Beslutninger dette PM støtter
+
+1. **Politiske analytikere og sivilsamfunn**: Om rettslige utfordringer mot HD03262 (avvikling av permanent oppholdstillatelse) under EMK Art. 8 og EU-direktiv 2003/109/EF bør mobiliseres før komitéavstemningen.
+2. **Opposisjonspartier (S, MP, V)**: Om en blokerende minoritetsstrategi i SfU skal forsøkes, eller om C's koalisjonsbytte aksepteres.
+3. **Centerpartiets ledelse**: Om HD03262 skal støttes fullt ut, om endringer som begrenser omfanget søkes, eller om man bryter med regjeringens støttearrangement på denne proposisjonen.
+4. **Næringsliv og HR-ledere**: Tidslinje for implementering av HD03250 (statlig e-identitet) og om BankID kan forbli den primære bedriftsautentiseringskanalen.
+5. **Medieredaksjoner**: Om det militære samarbeidsprop (HD03254) fortjener rammen «stille NATO-integrasjon» eller er prosedyremessig rutine.
+
+### Forbedringer i andre runde (AI-FIRST)
+
+Skjerpet sammendrag med spesifikke lovnavn; eksplisitt pir-status-referanse lagt til; tillitsmerking justert; utløserdato 2026-06-15 lagt til for hver beslutning; DIW-poeng verifisert mot significance-scoring.md; IMF økonomisk kontekst lagt til.
+
+### 60-sekunders lesning
+
+- 🔴 **HD03267** (JuU): SÄPO-utløst hurtigspor deportering for kvalifiserte sikkerhetstrusler omgår ordinære migrasjonsdomstoler — 136,5 DIW (valmultiplikator anvendt)
+- 🔴 **HD03262** (SfU): Permanente oppholdstillatelser avvikles for ikke-EU-borgere; innfører gjenkallbare flerårige midlertidige tillatelser — 132 DIW — **høyeste strukturelle påvirkning i batchen**
+- 🔴 **HD03265** (SfU): Elektronisk fotlenke og utvidet internerings kapasitet før deportering — 124,5 DIW
+- 🔵 **HD03254** (FöU): Nordisk-NATO felles operasjoner forhåndsgodkjent på svensk jord uten per-operasjon riksdagsavstemning — 117 DIW
+- 🟠 **HD03261** (SkU): Skatteverket får kryss referanse beføyelser for oppdagelse av befolkningsregisterbedrageri — 118,5 DIW
+- 🟠 **HD03250** (TU): Statlig e-identitetsalternativ til BankID — 84 DIW — lang implementeringstid, stor Digg-avhengighet
+- 🟡 **HD03258** (KU): Politisk partifinansieringsopplysning — ekte men smal reform — 74 DIW
+- 🔴 **HD03263** (SfU): Dedikerte deporteringshåndhevelsesenheter, reduserte prosedyreforsinkelser — 108 DIW
+- 🔴 **HD03264** (SfU): Straffehistorikk og atferdsstandarder for alle oppholdskategorier — 102 DIW
+- 🟢 **HD03251** (SoU): Integrert behandling for sameksisterende rusavhengighet og psykiske lidelser — 58 DIW
+
+### Viktigste fremtidige utløser
+
+**C's posisjon på HD03262 (avvikling av permanent oppholdstillatelse)** innen 2026-06-15: dersom Centerpartiet nekter å støtte avviklingen og tvinger endringer, forskyves hele migrasjonsklustrenes komitéplan og valgposisjoneringsfor M/KD/SD forringes. (PIR-6)
+
+### Tillitsmerking
+
+- Politisk analyse av migrasjonsklustrene: HØY — basert på tidligere avstemingsmønstre (SfU 2024/25, Ja 175/Nej 174) og PIR-sporing
+- Vurderinger av gjennomføringskapasitet: MIDDELS — myndighets kapacitetsdata er 18+ måneder gammel; Statskontoret har ikke publisert oppdatert Migrationsverket-vurdering for 2025–2026
+- Økonomisk kontekst: HØY — IMF WEO April 2026, innenfor 6-månedersgrensen
+
+### Nøkkelvisualisering
+
+```mermaid
+quadrantChart
+  title "Proposisjonens signifikansmatrise (Påvirkning vs. Valgprofil)"
+ x-axis Lav valgprofil --> Høy valgprofil
+ y-axis Lav strukturell påvirkning --> Høy strukturell påvirkning
+  quadrant-1 Overvåk
+  quadrant-2 Omstridt kjerne
+  quadrant-3 Teknisk
+  quadrant-4 Posisjonering
+  HD03267: [0.92, 0.91]
+  HD03262: [0.89, 0.95]
+  HD03265: [0.85, 0.82]
+  HD03263: [0.80, 0.72]
+  HD03264: [0.75, 0.68]
+  HD03261: [0.70, 0.79]
+  HD03254: [0.65, 0.78]
+  HD03250: [0.45, 0.84]
+  HD03258: [0.55, 0.42]
+  HD03251: [0.20, 0.58]
+
+```
+
+<!-- source-sha: 9cdd9bfe0bc226548b5ddf453782f5076880156a -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/propositions/executive-brief_sv.md -->
+
+**Datum**: 2026-05-22
+**Undermapp**: propositioner
+**Författare**: James Pether Sörling
+**Tillförlitlighet**: HÖG
+**Klassificering**: PUBLIC — GDPR Art. 9(2)(e)/(g) rättslig grund
+
+### Sammanfattning i korthet
+
+Buschregeringen har lämnat in tio propositioner som utgör den mest långtgående migrationsreformen i Sverige sedan 1989: avskaffande av permanenta uppehållstillstånd för medborgare utanför EU, inrättande av snabbspår för säkerhetsdeportering, utvidgade förvarsregler och samtidigt uppbyggnad av en statlig digital identitetsinfrastruktur och utökning av Skatteverkets befolkningsregisterövervakning — allt detta med 114 dagar kvar till riksdagsvalet i september 2026.
+
+### Beslut som detta PM stöder
+
+1. **Politiska analytiker och civilsamhälle**: Om rättsliga utmaningar mot HD03262 (avskaffande av permanent uppehållstillstånd) enligt EKMR Art. 8 och EU-direktiv 2003/109/EG bör mobiliseras innan utskottsomröstning.
+2. **Oppositionspartier (S, MP, V)**: Om en blockeringsminoritetsstrategi i SfU bör försökas eller om C:s koalitionsbyte accepteras.
+3. **Centerpartiets ledning**: Om HD03262 ska stödjas fullt ut, om ändringar som begränsar räckvidden ska sökas, eller om man ska bryta med regeringens stödöverenskommelse på denna proposition.
+4. **Näringsliv och HR-chefer**: Tidslinje för genomförande av HD03250 (statlig e-identitet) och om BankID kan förbli primär autentiseringskanal.
+5. **Medieredaktioner**: Om militärt samarbetsprop (HD03254) förtjänar ramen "tyst NATO-integration" eller är procedurellt rutinmässig.
+
+### Förbättringar i andra omgången (AI-FIRST)
+
+Skärpt sammanfattning med specifika lagnamn; explicit pir-status-referens tillagd; tillförlitlighetsetiketter justerade; utlösardatum 2026-06-15 tillagt för varje beslut; DIW-poäng verifierade mot significance-scoring.md; IMF ekonomisk kontext tillagd.
+
+### 60-sekunders läsning
+
+- 🔴 **HD03267** (JuU): SÄPO-utlöst snabbspårdeportering för kvalificerade säkerhetshot kringgår ordinarie migrationsdomstolar — 136,5 DIW (valmultiplikator tillämpad)
+- 🔴 **HD03262** (SfU): Permanenta uppehållstillstånd avskaffas för medborgare utanför EU; inför återkallningsbara fleråriga tillfälliga tillstånd — 132 DIW — **högst strukturell påverkan i batchen**
+- 🔴 **HD03265** (SfU): Elektronisk fotboja och utökad förvarskapacitet inför deportering — 124,5 DIW
+- 🔵 **HD03254** (FöU): Nordisk-NATO gemensamma operationer förauktoriserade på svensk mark utan per-operation riksdagsomröstning — 117 DIW
+- 🟠 **HD03261** (SkU): Skatteverket får korsreferenseringsrättigheter för att bekämpa folkbokföringsbedrägeri — 118,5 DIW
+- 🟠 **HD03250** (TU): Statligt e-identitetsalternativ till BankID — 84 DIW — lång genomförandetid, stort beroende av Digg
+- 🟡 **HD03258** (KU): Redovisning av partifinansiering — genuin men smal reform — 74 DIW
+- 🔴 **HD03263** (SfU): Dedikerade deporteringsverkställighetsenheter, kortare handläggningstider — 108 DIW
+- 🔴 **HD03264** (SfU): Straffrättsliga och uppförandestandarder för alla uppehållstillståndskategorier — 102 DIW
+- 🟢 **HD03251** (SoU): Integrerad vård för samsjuklighet med substansbruk och psykiska störningar — 58 DIW
+
+### Viktigaste framtida utlösare
+
+**C:s position på HD03262 (avskaffande av permanent uppehållstillstånd)** senast 2026-06-15: om Centerpartiet vägrar stödja avskaffandet och tvingar fram ändringar, förskjuts hela migrationsklustrets utskottstidslinje och positioneringen inför valet för M/KD/SD försämras. (PIR-6)
+
+### Tillförlitlighetsmärkning
+
+- Politisk analys av migrationsklustret: HÖG — baserad på tidigare röstmönster (SfU 2024/25, Ja 175/Nej 174) och PIR-uppföljning
+- Bedömningar av genomförandekapacitet: MEDEL — myndighetskapacitetsdata är 18+ månader gammal; Statskontoret har inte publicerat en uppdaterad Migrationsverket-bedömning för 2025–2026
+- Ekonomisk kontext: HÖG — IMF WEO April 2026, inom 6-månadersgränsen
+
+### Nyckelvisualisering
+
+```mermaid
+quadrantChart
+  title "Propositionens signifikansmatris (Påverkan vs. Valrelevans)"
+ x-axis Låg valrelevans --> Hög valrelevans
+ y-axis Låg strukturell påverkan --> Hög strukturell påverkan
+  quadrant-1 Bevaka
+  quadrant-2 Omtvistat kärn
+  quadrant-3 Tekniskt
+  quadrant-4 Positionering
+  HD03267: [0.92, 0.91]
+  HD03262: [0.89, 0.95]
+  HD03265: [0.85, 0.82]
+  HD03263: [0.80, 0.72]
+  HD03264: [0.75, 0.68]
+  HD03261: [0.70, 0.79]
+  HD03254: [0.65, 0.78]
+  HD03250: [0.45, 0.84]
+  HD03258: [0.55, 0.42]
+  HD03251: [0.20, 0.58]
+
+```
+
+<!-- source-sha: 9cdd9bfe0bc226548b5ddf453782f5076880156a -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/propositions/executive-brief_zh.md -->
+
+**日期**: 2026-05-22
+**子文件夹**: propositions
+**作者**: James Pether Sörling
+**可信度**: 高
+**分类**: 公开 — GDPR 第9条(2)(e)/(g) 法律依据
+
+### 核心摘要
+
+布什政府提交了10项法案，构成自1989年以来最广泛的瑞典移民执法改革：废除非欧盟国民永久居留权、建立安全驱逐快速程序、扩大拘留权力、构建国家数字身份基础设施，以及扩大Skatteverket的人口登记监控能力——所有这些都在距2026年9月大选114天的时间节点上完成。
+
+### 本文件支持的决策
+
+1. **政策分析师与公民社会**: 是否应在委员会投票前，基于《欧洲人权公约》第8条和欧盟指令2003/109/EC对HD03262（废除永居）提出法律质疑并动员支持。
+2. **反对党（S、MP、V）**: 是在SfU尝试阻止少数派策略，还是接受Centerpartiet的联合变化。
+3. **Centerpartiet领导层**: 是全面支持HD03262、寻求限制范围的修正案，还是放弃与政府就该法案达成的支持协议。
+4. **企业界/人力资源管理者**: HD03250（国家电子身份）的实施时间表，以及BankID能否继续作为企业认证的主要渠道。
+5. **媒体编辑委员会**: 军事合作法案（HD03254）是否值得被定性为"低调的北约整合"，还是程序上的例行事务。
+
+### 第二轮改进（AI-FIRST）
+
+用具体法规名称强化核心摘要；添加明确的pir-status引用；收紧可信度标签；为每项决策添加2026-06-15触发日期；验证DIW评分与significance-scoring.md一致；添加IMF经济背景说明。
+
+### 60秒要点
+
+- 🔴 **HD03267** (JuU): 绕过普通移民法院的SÄPO触发合格安全威胁快速驱逐 — 136.5 DIW（适用选举乘数）
+- 🔴 **HD03262** (SfU): 废除非欧盟国民永久居留权；引入可撤销的多年临时许可 — 132 DIW — **一揽子计划中结构影响最大**
+- 🔴 **HD03265** (SfU): 扩大电子脚踝带和驱逐前拘留能力 — 124.5 DIW
+- 🔵 **HD03254** (FöU): 预先批准在瑞典领土进行北欧-北约联合作战，无需逐次议会投票 — 117 DIW
+- 🟠 **HD03261** (SkU): Skatteverket获得交叉引用权限以检测人口登记欺诈 — 118.5 DIW
+- 🟠 **HD03250** (TU): BankID的国家电子身份替代方案 — 84 DIW — 实施时间表长，对Digg依赖度高
+- 🟡 **HD03258** (KU): 政党政治资金披露 — 认真但范围有限的改革 — 74 DIW
+- 🔴 **HD03263** (SfU): 专职驱逐执行部队，减少程序延误 — 108 DIW
+- 🔴 **HD03264** (SfU): 所有居留类别的犯罪记录和行为标准 — 102 DIW
+- 🟢 **HD03251** (SoU): 药物滥用和精神障碍共病的综合治疗 — 58 DIW
+
+### 最重要的未来触发因素
+
+**Centerpartiet对HD03262（废除永居）的立场**（2026-06-15之前）：若Centerpartiet拒绝支持废除并强制修正案，整个移民政策集群的委员会时间表将发生变化，M/KD/SD的选举定位也将恶化。（PIR-6）
+
+### 可信度级别
+
+- 移民集群政治分析：高 — 基于历史投票模式（SfU 2024/25，赞成175/反对174）及PIR追踪
+- 实施能力评估：中 — 机构能力数据超过18个月；Statskontoret尚未发布2025-2026年Migrationsverket更新评估
+- 经济背景：高 — IMF WEO 2026年4月，在6个月阈值内
+
+### 核心可视化
+
+```mermaid
+quadrantChart
+  title "法案重要性矩阵（影响vs选举显著性）"
+ x-axis 低选举显著性 --> 高选举显著性
+ y-axis 低结构影响 --> 高结构影响
+  quadrant-1 监测
+  quadrant-2 争议核心
+  quadrant-3 技术性
+  quadrant-4 定位
+  HD03267: [0.92, 0.91]
+  HD03262: [0.89, 0.95]
+  HD03265: [0.85, 0.82]
+  HD03263: [0.80, 0.72]
+  HD03264: [0.75, 0.68]
+  HD03261: [0.70, 0.79]
+  HD03254: [0.65, 0.78]
+  HD03250: [0.45, 0.84]
+  HD03258: [0.55, 0.42]
+  HD03251: [0.20, 0.58]
+
+```
+
+<!-- source-sha: 9cdd9bfe0bc226548b5ddf453782f5076880156a -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 20 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 33 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 10 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 1 | Linked in Article Sources, not expanded inline |
 
@@ -2202,6 +3173,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`classification-results.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/propositions/classification-results.md)
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/propositions/cross-reference-map.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/propositions/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/propositions/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/propositions/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/propositions/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/propositions/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/propositions/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/propositions/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/propositions/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/propositions/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/propositions/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/propositions/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/propositions/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/propositions/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/propositions/executive-brief_zh.md)
 
 ### Supporting Data Artifacts
 

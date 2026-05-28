@@ -3,11 +3,11 @@ date: 2026-05-20
 subfolder: realtime-pulse
 slug: 2026-05-20-realtime-pulse
 source_folder: analysis/daily/2026-05-20/realtime-pulse
-generated_at: 2026-05-28T15:56:17.307Z
+generated_at: 2026-05-28T22:29:32.362Z
 language: en
 layout: article
 ---
-## Executive Brief
+## What Happened
 <!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/realtime-pulse/executive-brief.md -->
 
 **Article date**: 2026-05-20  
@@ -16,8 +16,7 @@ layout: article
 
 ---
 
-### 🎯 BLUF
-
+### Lede
 Sweden's Riksdag is today voting on the most constitutionally significant legislation of the 2022-2026 term: a three-component constitutional amendment (bet HD01KU34, KU, prop 2025/26:78) enshrining the right to abortion in Regeringsformen — supported by M, SD, S, KD, and L in an unusual cross-party supermajority. On the same afternoon, the Riksdag adopts the government's most contested domestic reform: a welfare benefit cap (bidragstak) and activity requirements (SoU29/30, props 2025/26:200-201) over full opposition from S, V, C, and MP. With 116 days to the September 2026 election, today defines both the government's legacy and the campaign battlefronts. [Confidence: A2 · committee documentation certain; vote results pending]
 
 **Three decisions this brief supports**:
@@ -79,9 +78,9 @@ Use this guide to read the article as a political-intelligence product rather th
 
 | Icon | Reader need | What you'll get |
 |---|---|---|
-| 📊 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
-| 🧠 | [Synthesis Summary](#rm-synthesis-summary) | evidence-anchored narrative consolidating primary sources into one coherent story line |
-| 🎯 | [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps |
+| 📊 | [Lede and editorial decisions](#rm-what-happened) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
+| 🧠 | [Why It Matters](#rm-why-it-matters) | evidence-anchored narrative consolidating primary sources into one coherent story line |
+| 🎯 | [Key Judgments](#rm-key-findings) | confidence-bearing political-intelligence conclusions and collection gaps |
 | 📈 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals |
 | 👥 | [Stakeholder Perspectives](#rm-stakeholder-perspectives) | winners, losers and undecided actors with stake-weighted positions and pressure points |
 | 🔢 | [Coalition Mathematics](#rm-coalition-mathematics) | parliamentary arithmetic showing exactly who can pass or block this measure and at what margin |
@@ -97,10 +96,10 @@ Use this guide to read the article as a political-intelligence product rather th
 | ⚙️ | [Implementation Feasibility](#rm-implementation-feasibility) | delivery feasibility, capability gaps, timelines and execution risks for the proposed action |
 | 📰 | [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder |
 | 😈 | [Devil's Advocate](#rm-devils-advocate) | alternative hypotheses, steel-manned counter-arguments and the strongest case against the lead reading |
-| 🏷️ | [Classification Results](#rm-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
-| 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
-| 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
-| 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 🏷️ | [Deep Dive: Classification Results](#rm-deep-dive-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
+| 🔀 | [Deep Dive: Cross-Reference Map](#rm-deep-dive-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
+| 🔬 | [Deep Dive: Methodology & Limitations](#rm-deep-dive-methodology--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
+| 📦 | [Deep Dive: Data Download Manifest](#rm-deep-dive-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
 | 📝 | [Coalition Dynamics](#rm-coalition-dynamics) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Economic Dimension](#rm-economic-dimension) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Electoral Implications](#rm-electoral-implications) | supporting analytical lens with primary-source evidence and audit-traceable citations |
@@ -131,9 +130,9 @@ Use this guide to read the article as a political-intelligence product rather th
 | 📝 | [Stakeholder Mapping](#rm-stakeholder-mapping) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Strategic Implications](#rm-strategic-implications) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
-| 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
+| 🏷️ | [Audit appendix](#rm-deep-dive-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
-## Synthesis Summary
+## Why It Matters
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/realtime-pulse/synthesis-summary.md -->
 
 **Subfolder**: realtime-pulse  
@@ -206,7 +205,7 @@ May 20, 2026 marks one of the Swedish Riksdag's most constitutionally significan
 
 Drawing on today's sibling analyses to provide integrated picture:
 
-**From propositions analysis**: Migration/security legislation cluster (HD03267 et al.) advances alongside today's constitutional amendments — Sweden's rights architecture is being simultaneously expanded (abortion) and conditioned (citizenship revocation, association restrictions). The dual trajectory reflects the Tidö coalition's "rights-selective" approach: expand protections where there's cross-party consensus, restrict where national security or integration concerns dominate.
+**From propositions analysis**: Migration/security legislation cluster (Riksdag document #03267 (HD03267) et al.) advances alongside today's constitutional amendments — Sweden's rights architecture is being simultaneously expanded (abortion) and conditioned (citizenship revocation, association restrictions). The dual trajectory reflects the Tidö coalition's "rights-selective" approach: expand protections where there's cross-party consensus, restrict where national security or integration concerns dominate.
 
 **From committeeReports analysis**: JuU36 (strengthened security legislation) and today's JuU43 (honor violence) together form a criminal justice reform cluster. The committee pattern shows consistent government-SD-KD-L-M majority with S/V/C/MP opposition on social policy, but unusual cross-party consensus on security and rights protections.
 
@@ -252,7 +251,7 @@ Drawing on today's sibling analyses to provide integrated picture:
 | Electoral implications | Analytical inference from 116-day countdown | MODERATE |
 | EU-nämnden FAC agenda | Calendar event | MODERATE |
 
-## Intelligence Assessment — Key Judgments
+## Key Findings
 <!-- source: intelligence-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/realtime-pulse/intelligence-assessment.md -->
 
 ---
@@ -2382,7 +2381,7 @@ For each dominant hypothesis, this analysis generates a competing hypothesis and
 
 *Evidence: HD01KU34, HD01SoU29, HD01SoU30, HD01JuU43. Methodology: ACH framework per intelligence-assessment.md; analysis/methodologies/ach-framework.md.*
 
-## Classification Results
+## Deep Dive: Classification Results
 <!-- source: classification-results.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/realtime-pulse/classification-results.md -->
 
 ---
@@ -2476,7 +2475,7 @@ graph LR
 
 *Sources: HD01KU34, HD01SoU29, HD01SoU30, HD01JuU43. Methodology: analysis/methodologies/political-classification-guide.md.*
 
-## Cross-Reference Map
+## Deep Dive: Cross-Reference Map
 <!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/realtime-pulse/cross-reference-map.md -->
 
 **Type**: Tier-C aggregation — mandatory sibling folder cross-references
@@ -2563,7 +2562,7 @@ This realtime-pulse analysis integrates findings from ALL four same-day sibling 
 | EU/international | — | — | — | HD10493 | **FAC Handel** |
 | Electoral positioning | All | All | All | All | **All** |
 
-## Methodology Reflection & Limitations
+## Deep Dive: Methodology & Limitations
 <!-- source: methodology-reflection.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/realtime-pulse/methodology-reflection.md -->
 
 **Pass-2 status: executed in full**
@@ -2615,7 +2614,7 @@ This realtime-pulse analysis was produced for riksmöte 2026-05-20 as a Tier-C a
 3. **Opinion polling**: No fresh poll data available at analysis time. Polling context based on pre-compaction research summary.
 4. **Municipal implementation details**: No SKR or municipal communications available yet on SoU29/30 implementation plans.
 
-## Data Download Manifest
+## Deep Dive: Data Download Manifest
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/realtime-pulse/data-download-manifest.md -->
 
 **Subfolder**: realtime-pulse  
@@ -3003,8 +3002,7 @@ The closest electoral analogue in Swedish history: **1980 nuclear power referend
 
 ---
 
-### 🎯 BLUF
-
+### Lede
 يصوت الريكسداج السويدي اليوم على أهم تشريع دستوري في الفترة 2022-2026: تعديل دستوري ثلاثي المكونات (bet HD01KU34، KU، prop 2025/26:78) يُرسّخ حق الإجهاض في Regeringsformen — بدعم من M وSD وS وKD وL في أغلبية فائقة نادرة تتجاوز الكتل الحزبية. في الفترة ذاتها من اليوم، يتبنى الريكسداج أكثر الإصلاحات الداخلية إثارةً للجدل: سقف المزايا الاجتماعية (bidragstak) ومتطلبات النشاط (SoU29/30، props 2025/26:200-201) في مواجهة معارضة كاملة من S وV وC وMP. مع مرور 116 يومًا على انتخابات 13 سبتمبر 2026، تحدد تصويتات اليوم إرث الحكومة وخطوط المعركة الانتخابية. [الثقة: A2 · وثائق اللجان مؤكدة؛ نتائج التصويت معلقة]
 
 **ثلاثة قرارات يدعمها هذا التقرير**:
@@ -3073,8 +3071,7 @@ The closest electoral analogue in Swedish history: **1980 nuclear power referend
 
 ---
 
-### 🎯 BLUF
-
+### Lede
 Sveriges Riksdag stemmer i dag om den forfatningsmæssigt mest betydningsfulde lovgivning i perioden 2022–2026: en tredelt grundlovsændring (bet HD01KU34, KU, prop 2025/26:78), der indfører retten til abort i Regeringsformen — støttet af M, SD, S, KD og L i et usædvanligt tværblokflertal. Samme eftermiddag vedtager Riksdagen regeringens mest omstridte indenrigspolitiske reform: et velfærdsydelsesloft (bidragstak) og aktivitetskrav (SoU29/30, props 2025/26:200-201) mod samlet opposition fra S, V, C og MP. Med 116 dage til valget den 13. september 2026 definerer dagens afstemninger både regeringens arv og kampagnens fronter. [Konfidens: A2 · udvalgsdokumentation sikker; afstemningsresultater afventer]
 
 **Tre beslutninger dette briefing understøtter**:
@@ -3143,8 +3140,7 @@ Velfærdsreformen tilføjer endnu et definerende valgkampspørgsmål: bidragstak
 
 ---
 
-### 🎯 BLUF
-
+### Lede
 Der schwedische Riksdag stimmt heute über die verfassungsrechtlich bedeutsamste Gesetzgebung der Legislaturperiode 2022–2026 ab: eine dreigliedrige Verfassungsänderung (bet HD01KU34, KU, prop 2025/26:78), die das Recht auf Abtreibung in der Regeringsformen verankert — getragen von M, SD, S, KD und L in einer ungewöhnlichen parteienübergreifenden Supermehrheit. Am selben Nachmittag verabschiedet der Riksdag die umstrittenste Inlandspolitik der Regierung: eine Sozialleistungsobergrenze (bidragstak) und Aktivierungsanforderungen (SoU29/30, props 2025/26:200-201) gegen den geschlossenen Widerstand von S, V, C und MP. Mit 116 Tagen bis zur Wahl am 13. September 2026 definieren die heutigen Abstimmungen sowohl das Erbe der Regierung als auch die Kampflinien des Wahlkampfs. [Konfidenz: A2 · Ausschussdokumentation sicher; Abstimmungsergebnisse ausstehend]
 
 **Drei Entscheidungen, die dieses Briefing unterstützt**:
@@ -3213,8 +3209,7 @@ Die Sozialreform fügt eine zweite definierende Wahlfrage hinzu: bidragstak und 
 
 ---
 
-### 🎯 BLUF
-
+### Lede
 El Riksdag sueco vota hoy sobre la legislación constitucionalmente más significativa del período 2022-2026: una enmienda constitucional de tres componentes (bet HD01KU34, KU, prop 2025/26:78) que consagra el derecho al aborto en la Regeringsformen — respaldada por M, SD, S, KD y L en una supermayoría transpartidista inusual. La misma tarde, el Riksdag adopta la reforma interna más controvertida del gobierno: un tope de prestaciones sociales (bidragstak) y requisitos de actividad (SoU29/30, props 2025/26:200-201) contra la oposición total de S, V, C y MP. Con 116 días para las elecciones del 13 de septiembre de 2026, las votaciones de hoy definen tanto el legado del gobierno como los frentes de batalla de la campaña. [Confianza: A2 · documentación del comité segura; resultados de la votación pendientes]
 
 **Tres decisiones que respalda este informe**:
@@ -3283,8 +3278,7 @@ La reforma social añade una segunda pregunta electoral definitoria: bidragstak 
 
 ---
 
-### 🎯 BLUF
-
+### Lede
 Ruotsin riksdag äänestää tänään vuosien 2022–2026 vaalikauden perustuslaillisesti merkittävimmästä lainsäädännöstä: kolmiosaisesta perustuslainmuutoksesta (bet HD01KU34, KU, prop 2025/26:78), joka kirjaa aborttioikeuden hallitusmuotoon (Regeringsformen) — M:n, SD:n, S:n, KD:n ja L:n tukemana harvinaisena yli puoluerajojen ulottuvana enemmistönä. Samana iltapäivänä riksdag hyväksyy hallituksen kiistanalaisimman sisäpoliittisen uudistuksen: sosiaaliturvakatot (bidragstak) ja aktivointivelvoitteet (SoU29/30, props 2025/26:200-201) S:n, V:n, C:n ja MP:n täyttä vastustusta vastaan. Syyskuun 13. päivän 2026 vaaleihin on 116 päivää, ja tämänpäiväiset äänestykset määrittävät sekä hallituksen perinnön että vaalikampanjan taistelukenttien. [Luottamus: A2 · valiokunta-asiakirjat varmoja; äänestystulokset odottavat]
 
 **Kolme päätöstä, joita tämä tiedote tukee**:
@@ -3352,8 +3346,7 @@ Hyvinvointiuudistus lisää toisen määrittävän vaaliongelman: bidragstak ja 
 
 ---
 
-### 🎯 BLUF
-
+### Lede
 Le Riksdag suédois vote aujourd'hui sur la législation la plus importante sur le plan constitutionnel de la période 2022-2026 : un amendement constitutionnel en trois volets (bet HD01KU34, KU, prop 2025/26:78) inscrivant le droit à l'avortement dans la Regeringsformen — soutenu par M, SD, S, KD et L dans une supermajorité transpartisane inhabituelle. Le même après-midi, le Riksdag adopte la réforme intérieure la plus contestée du gouvernement : un plafond d'allocations sociales (bidragstak) et des exigences d'activité (SoU29/30, props 2025/26:200-201) face à l'opposition totale de S, V, C et MP. Avec 116 jours avant l'élection du 13 septembre 2026, les votes d'aujourd'hui définissent à la fois l'héritage du gouvernement et les lignes de bataille de la campagne. [Confiance : A2 · documentation du comité certaine ; résultats du vote en attente]
 
 **Trois décisions que ce bref soutient** :
@@ -3425,8 +3418,7 @@ La réforme sociale ajoute une deuxième question électorale déterminante : bi
 
 ---
 
-### 🎯 BLUF
-
+### Lede
 הרייקסדאג השוודי מצביע היום על החקיקה החשובה ביותר מבחינה חוקתית של הכהונה 2022–2026: תיקון חוקתי בן שלושה מרכיבים (bet HD01KU34, KU, prop 2025/26:78) המעגן את זכות ההפלה ב-Regeringsformen — בתמיכת M, SD, S, KD ו-L ברוב-על חוצה-מפלגות יוצא דופן. באותו אחר-צהריים, הרייקסדאג מאמץ את הרפורמה הפנים-מדינית השנויה ביותר במחלוקת: תקרת הגמלאות (bidragstak) ודרישות פעילות (SoU29/30, props 2025/26:200-201) כנגד התנגדות מלאה של S, V, C ו-MP. עם 116 ימים לבחירות של 13 בספטמבר 2026, הצבעות היום מגדירות את מורשת הממשלה ואת חזיתות הקמפיין. [אמינות: A2 · תיעוד ועדה ודאי; תוצאות הצבעה ממתינות]
 
 **שלושה החלטות שתדריך זה תומך בהן**:
@@ -3495,8 +3487,7 @@ La réforme sociale ajoute une deuxième question électorale déterminante : bi
 
 ---
 
-### 🎯 BLUF
-
+### Lede
 スウェーデンのリクスダーグは本日、2022年〜2026年任期において最も憲法的に重大な立法について投票を行います。三要素憲法改正（bet HD01KU34、KU、prop 2025/26:78）は中絶権を統治形式（Regeringsformen）に明記するものであり、M、SD、S、KD、Lが異例の超党派超多数で支持しています。同じ午後、リクスダーグは政府の最も論争的な内政改革を採択します：福祉給付上限（bidragstak）と活動要件（SoU29/30、props 2025/26:200-201）で、S、V、C、MPは全面反対しています。2026年9月13日の選挙まで116日という状況で、本日の採決は政府の遺産とキャンペーンの戦線を決定づけます。[信頼度：A2 · 委員会文書確実；投票結果待ち]
 
 **このブリーフィングが支援する三つの決定**:
@@ -3565,8 +3556,7 @@ La réforme sociale ajoute une deuxième question électorale déterminante : bi
 
 ---
 
-### 🎯 BLUF
-
+### Lede
 스웨덴 릭스다그는 오늘 2022-2026 임기 중 헌법적으로 가장 중요한 입법에 대해 투표합니다. 세 가지 요소로 구성된 헌법 개정안(bet HD01KU34, KU, prop 2025/26:78)은 낙태권을 통치 형식(Regeringsformen)에 명기하며, M, SD, S, KD, L이 이례적인 초당파 초다수로 지지하고 있습니다. 같은 오후, 릭스다그는 정부의 가장 논란 많은 국내 개혁을 채택합니다: S, V, C, MP의 전면 반대에 맞선 복지 급여 상한(bidragstak)과 활동 요건(SoU29/30, props 2025/26:200-201). 2026년 9월 13일 선거까지 116일이 남은 가운데, 오늘의 투표는 정부의 유산과 선거 캠페인의 전선을 규정합니다. [신뢰도: A2 · 위원회 문서 확실; 투표 결과 대기]
 
 **이 브리핑이 지원하는 세 가지 결정**:
@@ -3635,8 +3625,7 @@ La réforme sociale ajoute une deuxième question électorale déterminante : bi
 
 ---
 
-### 🎯 BLUF
-
+### Lede
 De Zweedse Riksdag stemt vandaag over de constitutioneel meest significante wetgeving van de periode 2022-2026: een driedelig grondwettelijk amendement (bet HD01KU34, KU, prop 2025/26:78) dat het recht op abortus verankert in de Regeringsformen — gesteund door M, SD, S, KD en L in een ongebruikelijke transpartijdige supermeerderheid. Diezelfde middag neemt de Riksdag de meest betwiste binnenlandse hervorming van de regering aan: een uitkeringsplafond (bidragstak) en activiteitsverplichtingen (SoU29/30, props 2025/26:200-201) tegen de volledige oppositie van S, V, C en MP. Met 116 dagen tot de verkiezingen van 13 september 2026 bepalen de stemmingen van vandaag zowel het erfgoed van de regering als de campagnefronten. [Vertrouwen: A2 · commissiedocumentatie zeker; stemresultaten verwacht]
 
 **Drie beslissingen die dit briefing ondersteunt**:
@@ -3705,8 +3694,7 @@ De sociale hervorming voegt een tweede bepalende verkiezingsvraag toe: bidragsta
 
 ---
 
-### 🎯 BLUF
-
+### Lede
 Sveriges Riksdag stemmer i dag over den forfatningsmessig mest betydningsfulle lovgivningen i perioden 2022–2026: en trekomponents grunnlovsendring (bet HD01KU34, KU, prop 2025/26:78) som grunnlovsfester retten til abort i Regeringsformen — støttet av M, SD, S, KD og L i et uvanlig tverrblokkflertall. Samme ettermiddag vedtar Riksdagen regjeringens mest omstridte innenrikspolitiske reform: et velferdsstønadstak (bidragstak) og aktivitetskrav (SoU29/30, props 2025/26:200-201) mot samlet opposisjon fra S, V, C og MP. Med 116 dager til valget 13. september 2026 definerer dagens votering både regjeringens arv og kampanjens frontlinjer. [Konfidens: A2 · utvalgsunderlag sikkert; voteringsresultater avventes]
 
 **Tre beslutninger dette brifingen støtter**:
@@ -3775,8 +3763,7 @@ Velferdsreformen legger til et annet definerende valgspørsmål: bidragstak og a
 
 ---
 
-### 🎯 BLUF
-
+### Lede
 Sveriges riksdag röstar idag om den konstitutionellt mest betydelsefulla lagstiftningen under mandatperioden 2022–2026: en trekomponents grundlagsändring (bet HD01KU34, KU, prop 2025/26:78) som inskrivet aborträtten i Regeringsformen — stödd av M, SD, S, KD och L i en ovanlig tvärblockmajoritet. Samma eftermiddag antar Riksdagen regeringens mest omtvistade inrikespolitiska reform: ett bidragstak och aktivitetskrav (SoU29/30, props 2025/26:200-201) mot full opposition från S, V, C och MP. Med 116 dagar kvar till valet den 13 september 2026 sätter dagens omröstningar ramen för både regeringens arv och kampanjens slagfält. [Konfidensgrad: A2 · utskottsdokumentation säker; röstresultat avvaktas]
 
 **Tre beslut som detta briefing stöder**:
@@ -3845,8 +3832,7 @@ Välfärdsreformen tillför en andra definierande valfråga: bidrags­tak och ak
 
 ---
 
-### 🎯 BLUF
-
+### Lede
 瑞典议会（Riksdag）今日就2022-2026届任期内宪法意义最为重大的立法进行投票：一项三要素宪法修正案（bet HD01KU34，KU，prop 2025/26:78），将堕胎权载入《政府形式法》（Regeringsformen）——由M、SD、S、KD和L组成的罕见跨党派超级多数联合支持。同日下午，议会通过政府最具争议的国内改革：福利待遇上限（bidragstak）和活动要求（SoU29/30，props 2025/26:200-201），遭到S、V、C和MP的全面反对。距2026年9月13日大选还有116天，今日投票将决定政府的历史遗产和竞选战线。[置信度：A2 · 委员会文件确定；投票结果待定]
 
 **本简报支持的三项决策**：

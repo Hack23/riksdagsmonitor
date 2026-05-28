@@ -3,11 +3,11 @@ date: 2026-05-14
 subfolder: realtime-pulse
 slug: 2026-05-14-realtime-pulse
 source_folder: analysis/daily/2026-05-14/realtime-pulse
-generated_at: 2026-05-28T15:56:17.054Z
+generated_at: 2026-05-28T22:29:32.056Z
 language: en
 layout: article
 ---
-## Executive Brief
+## What Happened
 <!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/realtime-pulse/executive-brief.md -->
 
 **Prepared for**: Senior political analyst, editorial team  
@@ -40,7 +40,7 @@ Five concurrent parliamentary developments on 14 May 2026 mark one of the most d
 **Event**: S + C + V filed 15 coordinated motions on same day as key government migration proposals. The scale and coordination is unusual — parties typically file motions over several days.
 
 **Assessment**: Government's M+SD+KD majority (176/349; majority of 1) is stable on migration. Opposition cannot block these propositions. However:
-- C's motion on child detention (HD024160) has 40–55% probability of partial government acceptance based on Lagrådet CRC critique
+- C's motion on child detention (Riksdag document #024160 (HD024160)) has 40–55% probability of partial government acceptance based on Lagrådet CRC critique
 - S's HD024153 (permanent residence restoration) represents a strategic repositioning that government will attack as inconsistent (S led 2015/16 tightening)
 - Coordinated filing signals these motions are election-platform documents, not legislative blocking instruments
 
@@ -108,9 +108,9 @@ Use this guide to read the article as a political-intelligence product rather th
 
 | Icon | Reader need | What you'll get |
 |---|---|---|
-| 📊 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
-| 🧠 | [Synthesis Summary](#rm-synthesis-summary) | evidence-anchored narrative consolidating primary sources into one coherent story line |
-| 🎯 | [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps |
+| 📊 | [Lede and editorial decisions](#rm-what-happened) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
+| 🧠 | [Why It Matters](#rm-why-it-matters) | evidence-anchored narrative consolidating primary sources into one coherent story line |
+| 🎯 | [Key Judgments](#rm-key-findings) | confidence-bearing political-intelligence conclusions and collection gaps |
 | 📈 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals |
 | 👥 | [Stakeholder Perspectives](#rm-stakeholder-perspectives) | winners, losers and undecided actors with stake-weighted positions and pressure points |
 | 🔢 | [Coalition Mathematics](#rm-coalition-mathematics) | parliamentary arithmetic showing exactly who can pass or block this measure and at what margin |
@@ -126,10 +126,10 @@ Use this guide to read the article as a political-intelligence product rather th
 | ⚙️ | [Implementation Feasibility](#rm-implementation-feasibility) | delivery feasibility, capability gaps, timelines and execution risks for the proposed action |
 | 📰 | [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder |
 | 😈 | [Devil's Advocate](#rm-devils-advocate) | alternative hypotheses, steel-manned counter-arguments and the strongest case against the lead reading |
-| 🏷️ | [Classification Results](#rm-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
-| 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
-| 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
-| 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 🏷️ | [Deep Dive: Classification Results](#rm-deep-dive-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
+| 🔀 | [Deep Dive: Cross-Reference Map](#rm-deep-dive-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
+| 🔬 | [Deep Dive: Methodology & Limitations](#rm-deep-dive-methodology--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
+| 📦 | [Deep Dive: Data Download Manifest](#rm-deep-dive-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
 | 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
@@ -144,9 +144,9 @@ Use this guide to read the article as a political-intelligence product rather th
 | 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
-| 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
+| 🏷️ | [Audit appendix](#rm-deep-dive-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
-## Synthesis Summary
+## Why It Matters
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/realtime-pulse/synthesis-summary.md -->
 
 **Tier-C aggregation** | **Article type**: realtime-pulse | **Subfolder**: realtime-pulse  
@@ -315,7 +315,7 @@ Three interpellations were answered in chamber debate this afternoon, extending 
 
 **Revised analytical confidence**: The four-pillar structure (Constitutional/Migration/Security-Digital/Foreign Policy) remains valid. The afternoon debates add a fifth implicit dimension: **Intra-coalition accountability**, where coalition partners use parliamentary tools against each other's portfolios for electoral differentiation. This is consistent with the 122-day countdown to September 13, 2026.
 
-## Intelligence Assessment — Key Judgments
+## Key Findings
 <!-- source: intelligence-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/realtime-pulse/intelligence-assessment.md -->
 
 **Analytic Standard**: ICD 203 Equivalent (Swedish Political Intelligence)  
@@ -1941,7 +1941,7 @@ Counterpoint:
 | HD10492 answer = electoral material | Dousa may offer partial commitment | Upgrade H2 scenario probability |
 | HD03267 ECHR risk is primary threat | Lagrådet critical yttrande base rate lower | Revise R-01 to 25–35% |
 
-## Classification Results
+## Deep Dive: Classification Results
 <!-- source: classification-results.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/realtime-pulse/classification-results.md -->
 
 **Operator**: news-realtime-monitor workflow  
@@ -2014,7 +2014,7 @@ Priority matrix: U1×D1 = immediate full analysis required; U4×D4 = monitoring 
 | S migration repositioning | Monitoring | Priority Alpha | HD024153 — first explicit S motion against permanent permit abolition; strategic signal |
 | C child detention | Standard | Priority Alpha | Lagrådet CRC critique + coordinated filing = highest single-issue concession probability this session |
 
-## Cross-Reference Map
+## Deep Dive: Cross-Reference Map
 <!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/realtime-pulse/cross-reference-map.md -->
 
 **Purpose**: Map intelligence relationships between today's realtime-pulse developments and prior cycle analyses in sibling folders.  
@@ -2095,7 +2095,7 @@ This realtime-pulse analysis aggregates intelligence from:
 | PIR carry-forward | 6 | All open PIRs from sibling analyses |
 | Lagrådet linkage | 2 | HD03267 (open); HD03250 (completed) |
 
-## Methodology Reflection & Limitations
+## Deep Dive: Methodology & Limitations
 <!-- source: methodology-reflection.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/realtime-pulse/methodology-reflection.md -->
 
 ---
@@ -2149,7 +2149,7 @@ This realtime-pulse analysis aggregates intelligence from:
 
 ---
 
-## Data Download Manifest
+## Deep Dive: Data Download Manifest
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/realtime-pulse/data-download-manifest.md -->
 
 **Workflow**: news-realtime-monitor  

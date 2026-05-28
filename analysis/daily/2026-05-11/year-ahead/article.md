@@ -3,14 +3,14 @@ date: 2026-05-11
 subfolder: year-ahead
 slug: 2026-05-11-year-ahead
 source_folder: analysis/daily/2026-05-11/year-ahead
-generated_at: 2026-05-28T15:56:16.835Z
+generated_at: 2026-05-28T22:29:31.810Z
 language: en
 layout: article
 ---
-## Executive Brief
+## What Happened
 <!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/year-ahead/executive-brief.md -->
 
-> **Bottom line**: Sweden's 365-day political horizon is dominated by three interlocking dynamics: (i) the **constitutional-rights consolidation** triggered by KU34's grundlagsskyddad aborträtt paired with restrictions on freedom of association and citizenship; (ii) the **migration-enforcement architecture** finalising in SfU through prop. 2025/26:263 (återvändande) + 2025/26:264 (vandel), against which Vänsterpartiet motions HD024149/HD024150 have placed the strongest Lagrådet-aligned legal challenge of the cycle; and (iii) the **2026-09-13 election** at T+125 days, after which the next coalition (4 viable configurations) will own the BP 26/27 budget, the state-eID rollout, and the durability of the security architecture passed in JuU/SfU during spring 2026.
+> **Bottom line**: Sweden's 365-day political horizon is dominated by three interlocking dynamics: (i) the **constitutional-rights consolidation** triggered by KU34's grundlagsskyddad aborträtt paired with restrictions on freedom of association and citizenship; (ii) the **migration-enforcement architecture** finalising in SfU through prop. 2025/26:263 (återvändande) + 2025/26:264 (vandel), against which Vänsterpartiet motions Riksdag document #024149 (HD024149)/HD024150 have placed the strongest Lagrådet-aligned legal challenge of the cycle; and (iii) the **2026-09-13 election** at T+125 days, after which the next coalition (4 viable configurations) will own the BP 26/27 budget, the state-eID rollout, and the durability of the security architecture passed in JuU/SfU during spring 2026.
 
 ### Five judgments at 365 days
 
@@ -65,9 +65,9 @@ Use this guide to read the article as a political-intelligence product rather th
 
 | Icon | Reader need | What you'll get |
 |---|---|---|
-| 📊 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
-| 🧠 | [Synthesis Summary](#rm-synthesis-summary) | evidence-anchored narrative consolidating primary sources into one coherent story line |
-| 🎯 | [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps |
+| 📊 | [Lede and editorial decisions](#rm-what-happened) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
+| 🧠 | [Why It Matters](#rm-why-it-matters) | evidence-anchored narrative consolidating primary sources into one coherent story line |
+| 🎯 | [Key Judgments](#rm-key-findings) | confidence-bearing political-intelligence conclusions and collection gaps |
 | 📈 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals |
 | 👥 | [Stakeholder Perspectives](#rm-stakeholder-perspectives) | winners, losers and undecided actors with stake-weighted positions and pressure points |
 | 🔢 | [Coalition Mathematics](#rm-coalition-mathematics) | parliamentary arithmetic showing exactly who can pass or block this measure and at what margin |
@@ -86,10 +86,10 @@ Use this guide to read the article as a political-intelligence product rather th
 | ⚙️ | [Implementation Feasibility](#rm-implementation-feasibility) | delivery feasibility, capability gaps, timelines and execution risks for the proposed action |
 | 📰 | [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder |
 | 😈 | [Devil's Advocate](#rm-devils-advocate) | alternative hypotheses, steel-manned counter-arguments and the strongest case against the lead reading |
-| 🏷️ | [Classification Results](#rm-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
-| 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
-| 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
-| 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 🏷️ | [Deep Dive: Classification Results](#rm-deep-dive-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
+| 🔀 | [Deep Dive: Cross-Reference Map](#rm-deep-dive-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
+| 🔬 | [Deep Dive: Methodology & Limitations](#rm-deep-dive-methodology--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
+| 📦 | [Deep Dive: Data Download Manifest](#rm-deep-dive-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
 | 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
@@ -104,9 +104,9 @@ Use this guide to read the article as a political-intelligence product rather th
 | 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
-| 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
+| 🏷️ | [Audit appendix](#rm-deep-dive-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
-## Synthesis Summary
+## Why It Matters
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/year-ahead/synthesis-summary.md -->
 
 ### 1. Strategic narrative
@@ -197,7 +197,7 @@ Confidence ladder recalibrated: T+125 election anchor unchanged but T+365 fiscal
 
 _Pass-2 critical re-read complete; deltas integrated above._
 
-## Intelligence Assessment — Key Judgments
+## Key Findings
 <!-- source: intelligence-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/year-ahead/intelligence-assessment.md -->
 
 **Convention**: WEP confidence ladder applied per claim; Kent estimative-language probability terms in parentheses where appropriate.
@@ -2192,7 +2192,7 @@ Counter-thesis added: 'Tidö coalition holds through 2030' — argued via KD-lea
 
 _Pass-2 critical re-read complete; deltas integrated above._
 
-## Classification Results
+## Deep Dive: Classification Results
 <!-- source: classification-results.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/year-ahead/classification-results.md -->
 
 | dok_id | Hack23 ISMS-PUBLIC class | NIST CSF 2.0 mapping | Long-horizon relevance |
@@ -2230,7 +2230,7 @@ Reclassified HD01MJU23 (climate) from STRATEGIC→SIGNIFICANT after EU Parliamen
 
 _Pass-2 critical re-read complete; deltas integrated above._
 
-## Cross-Reference Map
+## Deep Dive: Cross-Reference Map
 <!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/year-ahead/cross-reference-map.md -->
 
 ### Same-day siblings (2026-05-11)
@@ -2317,7 +2317,7 @@ Cross-link added: KU34§2 ↔ HD024150 V-motion ↔ Lagrådet 2026-04-08 yttrand
 
 _Pass-2 critical re-read complete; deltas integrated above._
 
-## Methodology Reflection & Limitations
+## Deep Dive: Methodology & Limitations
 <!-- source: methodology-reflection.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/year-ahead/methodology-reflection.md -->
 
 ### What I did
@@ -2357,7 +2357,7 @@ _Pass-2 critical re-read complete; deltas integrated above._
 | Geopolitical wildcards | MEDIUM (intelligence assessments) |
 | Long-horizon (T+365 d) policy outcomes | MEDIUM |
 
-## Data Download Manifest
+## Deep Dive: Data Download Manifest
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/year-ahead/data-download-manifest.md -->
 
 > This manifest documents all data inputs to the year-ahead analysis. Combines the parliamentary auto-fetch with manual enrichment outputs.
