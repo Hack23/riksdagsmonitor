@@ -284,7 +284,7 @@ steps:
       default-analysis-depth: deep
 engine:
   id: copilot
-  model: claude-sonnet-4.6
+  model: claude-opus-4.8
 ---
 
 # 📈 Monthly Review

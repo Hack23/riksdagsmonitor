@@ -16,10 +16,13 @@
   <img src="https://img.shields.io/badge/Review-Quarterly-orange?style=for-the-badge" alt="Review Cycle"/>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 7.5 | **📅 Last Updated:** 2026-05-06 (UTC)
+**📋 Document Owner:** CEO | **📄 Version:** 7.6 | **📅 Last Updated:** 2026-05-28 (UTC)
 **🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-08-05
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
+> **🆕 What changed since last review (v7.5 → v7.6, 2026-05-28):**
+> - 🤖 **Model split:** the 13 analysis/article-generating news workflows now run on **`claude-opus-4.8`** (released after `claude-opus-4.7`) for strongest reasoning across the 23-artifact pipeline; the high-volume **`news-translate`** workflow stays on **`claude-sonnet-4.6`** for translation fan-out throughput. Updated the engine narrative, Stage-6 diagram label, and recompiled all 14 `.lock.yml` siblings via `gh aw compile`.
+>
 > **🆕 What changed since last review (v7.4 → v7.5, 2026-05-06):**
 > - 🏛️ Reconciled document with **v0.8.76** — confirmed 51 workflow files (22 standard `.yml` + 14 agentic `.md` + 14 compiled `.lock.yml` + 1 README).
 > - 🧠 Added §"Political Intelligence Validation Pipeline" documenting: `generate-political-intelligence.ts`, `validate-methodology-reflection.ts`, `validate-quality-scores.cjs`, `validate-article.ts`, and analysis-gate enforcement (checks 1-9b).
@@ -734,14 +737,14 @@ flowchart TD
 
 ### 🤖 Stage 6: Agentic News Generation
 
-Fourteen agentic workflows use the `gh-aw` (GitHub Agentic Workflows) framework with `claude-sonnet-4.6` to generate political-intelligence content following OSINT/INTOP editorial standards and the 23-artifact analysis baseline.
+Fourteen agentic workflows use the `gh-aw` (GitHub Agentic Workflows) framework to generate political-intelligence content following OSINT/INTOP editorial standards and the 23-artifact analysis baseline. The **13 analysis/article-generating workflows run on `claude-opus-4.8`** (strongest reasoning for the analysis pipeline), while the high-volume **`news-translate` workflow stays on `claude-sonnet-4.6`** for translation-fan-out throughput.
 
 ```mermaid
 flowchart TD
     subgraph "📰 News Generation Pipeline"
         Trigger[⏰ Scheduled / Manual] --> PreAnalysis[📊 Pre-Article Analysis]
         PreAnalysis --> Download[📥 Download Riksdag Data]
-        Download --> AIAnalysis[🤖 AI Analysis - Claude Sonnet 4.6]
+        Download --> AIAnalysis[🤖 AI Analysis - Claude Opus 4.8]
         AIAnalysis --> Generate[📝 Generate Article]
         Generate --> QualityCheck[✅ Quality Validation]
         QualityCheck --> Translate[🌍 Multi-Language Translation]

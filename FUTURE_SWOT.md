@@ -263,7 +263,7 @@ quadrantChart
 
 ### AI Model Trajectory
 
-**Current Foundation (2026):** Anthropic Claude Opus 4.7 via Amazon Bedrock
+**Current Foundation (2026):** Anthropic Claude Opus 4.8 via Amazon Bedrock
 - Minor model updates expected every ~2.3 months (Opus 4.8, 4.9, 5.0...)
 - Major version upgrades annually (Opus 5.0 in 2027, 6.0 in 2028, etc.)
 
@@ -271,7 +271,7 @@ quadrantChart
 
 | Year | Expected Model | Capability Level | Impact on Riksdagsmonitor |
 |------|---------------|------------------|---------------------------|
-| 2026 | Opus 4.7-4.9 | Advanced reasoning, 200K context | Multi-modal news generation, 14-language support |
+| 2026 | Opus 4.8-4.9 | Advanced reasoning, 200K context | Multi-modal news generation, 14-language support |
 | 2027 | Opus 5.x | Enhanced agentic, tool use | Autonomous political analysis, real-time fact-checking |
 | 2028 | Opus 6.x | Multi-modal native, 1M+ context | Video generation, comprehensive knowledge synthesis |
 | 2029 | Opus 7.x / Competitors | Near-expert reasoning | Predictive policy impact, automated investigative journalism |

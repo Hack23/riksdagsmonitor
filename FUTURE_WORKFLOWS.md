@@ -54,7 +54,7 @@ This document projects the evolution of Riksdagsmonitor's CI/CD and automation w
 
 | Year | AI Capability | CI/CD Impact |
 | --- | --- | --- |
-| **2026** | Claude Opus 4.7; GitHub Copilot agents; code generation | AI-assisted code review, test generation, documentation; Copilot agent-managed issues and PRs |
+| **2026** | Claude Opus 4.8; GitHub Copilot agents; code generation | AI-assisted code review, test generation, documentation; Copilot agent-managed issues and PRs |
 | **2027** | Multi-modal LLMs; extended context windows | AI-generated integration tests from requirements; visual regression testing with AI |
 | **2028** | Specialized models; reasoning chains | Intelligent test prioritization; AI-driven deployment risk assessment |
 | **2029** | Autonomous AI agents | Self-healing CI pipelines; autonomous dependency management |
@@ -193,7 +193,7 @@ flowchart TB
 | Unit Tests | 2890 (Vitest) |
 | Language Support | 14 languages (incl. RTL) |
 | Deployment | Dual: AWS S3/CloudFront + GitHub Pages |
-| AI Content | 14 agentic workflows (Claude Opus 4.7) |
+| AI Content | 14 agentic workflows (Claude Opus 4.8) |
 | Security Compliance | ISO 27001, NIST CSF 2.0, CIS Controls v8.1 |
 
 ---
@@ -642,7 +642,7 @@ flowchart TD
 
 | Year | Total Workflows | AI Model | Key Capability |
 | --- | --- | --- | --- |
-| 2026 | 47–50 | Opus 4.7–4.9 | Agentic news generation |
+| 2026 | 47–50 | Opus 4.8–4.9 | Agentic news generation |
 | 2027 | 50–55 | Opus 5.x | Predictive analytics |
 | 2028 | 55–65 | Opus 6.x | Multi-modal content |
 | 2029 | 65–75 | Opus 7.x | Autonomous pipeline |
