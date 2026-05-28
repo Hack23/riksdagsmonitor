@@ -20,6 +20,7 @@ Sweden's Tidökoalition government submitted three propositions on 28 May 2026, 
 - **Wind power (HD01NU20)**: NU committee report on municipal wind-power permissions — outcome determines if Sweden can accelerate renewable build-out needed for industrial electrification.
 - **Utbetalningsmyndigheten (HD03277)**: Government proposes dissolving the payment agency's transaction account system — administrative reform with anti-fraud dimensions. Links to broader welfare fraud debate.
 - **EU Inc. subsidiarity (HD01CU44)**: Constitutional committee (CU) issued subsidiarity review of proposed EU 28th-regime company law — Sweden protecting national corporate law framework.
+- **TU digital cluster** *(new — discovered 16:58Z)*: HD01TU17 (Betänkande TU17) adopts anti-spoofing telecom rules effective 1 August 2026 — closes number-spoofing fraud vector used in bank fraud/vishing. HD01TU18 (Betänkande TU18) creates Sweden's first interoperability data-sharing law for public administration effective 15 August 2026. Both 2026-06-10 Riksdag decision, cross-party consensus, EU implementation.
 - **Opposition signals**: S MPs filed questions on DG appointments (HD11850), mineral strategy (HD11852), and permit processes (HD10520); SD filed on migration amnesty (HD10521) and foreign investment screening (HD11849).
 
 ## Top Forward Trigger
