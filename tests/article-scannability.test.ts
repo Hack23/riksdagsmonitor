@@ -120,6 +120,14 @@ describe('Article Scannability Transforms', () => {
       expect(result).not.toContain('<details');
     });
 
+    it('escapes residual markup in the disclosure summary', () => {
+      const html = '<h2 id="rm-doc">Document Analysis <script</h2><p>x</p>';
+      const result = transformProgressiveDisclosure(html);
+      // Incomplete tag left by tag-stripping must be neutralised, not emitted raw.
+      expect(result).toContain('<summary>Document Analysis &lt;script</summary>');
+      expect(result).not.toContain('<summary>Document Analysis <script');
+    });
+
     it('handles Swedish headings', () => {
       const html = '<h2 id="rm-dok">Dokumentanalys</h2><p>Innehåll</p>';
       const result = transformProgressiveDisclosure(html);
@@ -148,6 +156,13 @@ describe('Article Scannability Transforms', () => {
       const html = '<h2 id="rm-a">A</h2><p>X</p><h2 id="rm-b">B</h2><p>Y</p>';
       const result = generateArticleToc(html, 'sv');
       expect(result).toContain('Innehåll');
+    });
+
+    it('escapes residual markup in TOC link text', () => {
+      const html = '<h2 id="rm-a">Section <script</h2><p>X</p><h2 id="rm-b">Section B</h2><p>Y</p>';
+      const result = generateArticleToc(html, 'en');
+      expect(result).toContain('Section &lt;script');
+      expect(result).not.toContain('Section <script');
     });
   });
 

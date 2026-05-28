@@ -205,63 +205,66 @@
 }
 
 /* ─── Dark Mode ────────────────────────────────────────────────────── */
+/* Scoped to html:not([data-theme="light"]) so a forced light theme always
+   cancels these OS-dark overrides, matching the theme-toggle behaviour used
+   elsewhere in the stylesheet. */
 @media (prefers-color-scheme: dark) {
-  .rm-confidence--high {
+  html:not([data-theme="light"]) .rm-confidence--high {
     background-color: rgba(30, 126, 52, 0.2);
     color: #6fcf97;
     border-color: rgba(111, 207, 151, 0.4);
   }
 
-  .rm-confidence--medium {
+  html:not([data-theme="light"]) .rm-confidence--medium {
     background-color: rgba(179, 90, 0, 0.2);
     color: #ffb74d;
     border-color: rgba(255, 183, 77, 0.4);
   }
 
-  .rm-confidence--low {
+  html:not([data-theme="light"]) .rm-confidence--low {
     background-color: rgba(198, 40, 40, 0.2);
     color: #ef5350;
     border-color: rgba(239, 83, 80, 0.4);
   }
 
-  .rm-admiralty {
+  html:not([data-theme="light"]) .rm-admiralty {
     background-color: var(--badge-bg, #333);
     color: var(--text-color, #f0f0f0);
     border-color: var(--border-color, rgba(0, 204, 102, 0.3));
   }
 
-  .rm-timeline--urgent {
+  html:not([data-theme="light"]) .rm-timeline--urgent {
     background-color: rgba(198, 40, 40, 0.2);
     color: #ef5350;
     border-color: rgba(239, 83, 80, 0.4);
   }
 
-  .rm-timeline--near {
+  html:not([data-theme="light"]) .rm-timeline--near {
     background-color: rgba(179, 90, 0, 0.2);
     color: #ffb74d;
     border-color: rgba(255, 183, 77, 0.4);
   }
 
-  .rm-timeline--horizon {
+  html:not([data-theme="light"]) .rm-timeline--horizon {
     background-color: rgba(21, 101, 192, 0.2);
     color: #64b5f6;
     border-color: rgba(100, 181, 246, 0.4);
   }
 
-  .rm-article-toc a.rm-toc-active {
+  html:not([data-theme="light"]) .rm-article-toc a.rm-toc-active {
     background-color: var(--badge-bg, #333);
     border-inline-start-color: var(--primary-color, #00cc66);
   }
 
-  details.rm-disclosure > summary {
+  html:not([data-theme="light"]) .rm-article-body details.rm-disclosure > summary {
     background: var(--badge-bg, #333);
   }
 
-  details.rm-disclosure > summary:hover {
+  html:not([data-theme="light"]) .rm-article-body details.rm-disclosure > summary:hover {
     background: var(--section-border, #444);
   }
 
-  .rm-methodology-footer {
+  html:not([data-theme="light"]) .rm-methodology-footer {
     background: var(--badge-bg, #333);
     border-color: var(--card-border, rgba(0, 204, 102, 0.3));
   }

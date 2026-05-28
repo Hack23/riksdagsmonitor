@@ -16,6 +16,23 @@
  */
 
 import type { Language } from '../types/language.js';
+import { escapeHtml, decodeHtmlEntities } from '../html-utils.js';
+
+// ─── Heading Text Extraction ──────────────────────────────────────────────────
+
+/**
+ * Extract human-readable plain text from a heading's inner HTML.
+ *
+ * Tags are stripped, then HTML entities are decoded so callers receive the
+ * literal heading text (e.g. for pattern matching). Re-insertion into HTML
+ * contexts (TOC links, disclosure summaries) MUST go through {@link escapeHtml}
+ * so that any residual markup — including incomplete tags such as a trailing
+ * `<script` left behind by the tag-stripping regex — is neutralised without
+ * double-encoding pre-existing entities.
+ */
+function headingPlainText(innerHtml: string): string {
+  return decodeHtmlEntities(innerHtml.replace(/<[^>]*>/g, '')).trim();
+}
 
 // ─── Admiralty Code Lookup ────────────────────────────────────────────────────
 
@@ -55,16 +72,21 @@ function admiraltyTooltip(code: string): string {
 // ─── Confidence Chip Transform ────────────────────────────────────────────────
 
 /**
- * Detect confidence labels (HIGH, MEDIUM, LOW) in rendered text and wrap
- * them in styled chip spans. Only matches whole-word occurrences that appear
- * after contextual keywords (confidence, assessment, rating, etc.) or inside
- * parentheses following a letter-digit Admiralty code pattern.
+ * Detect standalone confidence labels (HIGH, MEDIUM, LOW) anywhere in the
+ * rendered text and wrap them in styled chip spans.
  *
- * Pattern: "HIGH (A2)" or "CONFIDENCE: HIGH" or "confidence HIGH"
+ * Matching is whole-word and case-insensitive. An Admiralty code in
+ * parentheses immediately following the label (e.g. `"HIGH (A2)"`) is
+ * permitted but **not** required — the lookahead is optional, so any
+ * standalone occurrence is wrapped regardless of surrounding context.
+ *
+ * Because matching is context-free, this transform must only run on
+ * intelligence article bodies where HIGH/MEDIUM/LOW denote confidence
+ * ratings, not on arbitrary prose.
  */
 export function transformConfidenceChips(html: string): string {
-  // Match "HIGH", "MEDIUM", "LOW" when preceded by known context words or
-  // inside parenthetical Admiralty notation like "(B2)"
+  // Match standalone "HIGH", "MEDIUM", "LOW" (whole-word, case-insensitive),
+  // optionally trailed by parenthetical Admiralty notation like "(B2)".
   return html.replace(
     /\b(HIGH|MEDIUM|LOW)\b(?=\s*(?:\([A-F][1-6]\))?)/gi,
     (match) => {
@@ -150,7 +172,7 @@ export function transformProgressiveDisclosure(html: string): string {
 
   let m: RegExpExecArray | null;
   while ((m = h2Regex.exec(html)) !== null) {
-    const title = m[2].replace(/<[^>]+>/g, '').trim();
+    const title = headingPlainText(m[2]);
     const shouldDisclose = PROGRESSIVE_DISCLOSURE_HEADINGS.some((re) => re.test(title));
     if (shouldDisclose) {
       disclosureMatches.push({ fullH2: m[0], title, startIndex: m.index });
@@ -168,7 +190,7 @@ export function transformProgressiveDisclosure(html: string): string {
     const endIndex = nextH2Match ? nextH2Match.index : result.length;
 
     const sectionContent = result.slice(afterH2, endIndex);
-    const wrappedSection = `<details class="rm-disclosure"><summary>${match.title}</summary><div class="rm-disclosure-content">${match.fullH2}${sectionContent}</div></details>`;
+    const wrappedSection = `<details class="rm-disclosure"><summary>${escapeHtml(match.title)}</summary><div class="rm-disclosure-content">${match.fullH2}${sectionContent}</div></details>`;
     result = result.slice(0, match.startIndex) + wrappedSection + result.slice(endIndex);
   }
 
@@ -205,7 +227,7 @@ export function generateArticleToc(bodyHtml: string, lang: Language): string {
 
   while ((match = headingRegex.exec(bodyHtml)) !== null) {
     const id = match[1];
-    const text = match[2].replace(/<[^>]+>/g, '').trim();
+    const text = headingPlainText(match[2]);
     if (id && text) {
       entries.push({ id, text });
     }
@@ -215,7 +237,7 @@ export function generateArticleToc(bodyHtml: string, lang: Language): string {
 
   const tocTitle = TOC_TITLE_I18N[lang] ?? 'Contents';
   const items = entries
-    .map((e) => `<li><a href="#${e.id}">${e.text}</a></li>`)
+    .map((e) => `<li><a href="#${escapeHtml(e.id)}">${escapeHtml(e.text)}</a></li>`)
     .join('\n');
 
   return `<nav class="rm-article-toc" aria-label="${tocTitle}">
@@ -246,9 +268,9 @@ const METHODOLOGY_I18N: Partial<Record<Language, {
     admiraltyLabel: 'Admiralty Code',
     admiraltyDesc: 'NATO standard: Source reliability (A–F) × Information credibility (1–6). A1 = completely reliable, confirmed. F6 = cannot be judged.',
     sourcesLabel: 'Source Verification',
-    sourcesDesc: 'All claims cite official Swedish government publications (Riksdagen, Regeringen) accessible via public APIs.',
+    sourcesDesc: 'Claims are drawn primarily from official Swedish government publications (Riksdagen, Regeringen) and other public datasets, accessed via public APIs.',
     freshnessLabel: 'Data Freshness',
-    freshnessDesc: 'Analysis generated from data retrieved within 24 hours of publication timestamp.',
+    freshnessDesc: 'Analysis is generated from recently retrieved data, typically within 24 hours of the publication timestamp.',
   },
   sv: {
     title: 'Bedömningsmetodik',
@@ -257,9 +279,9 @@ const METHODOLOGY_I18N: Partial<Record<Language, {
     admiraltyLabel: 'Amiralitetskod',
     admiraltyDesc: 'NATO-standard: Källtillförlitlighet (A–F) × Informationstrovärdighet (1–6). A1 = helt tillförlitlig, bekräftad. F6 = kan ej bedömas.',
     sourcesLabel: 'Källverifiering',
-    sourcesDesc: 'Alla påståenden refererar till officiella svenska myndighetspublikationer (Riksdagen, Regeringen) tillgängliga via offentliga API:er.',
+    sourcesDesc: 'Påståenden bygger huvudsakligen på officiella svenska myndighetspublikationer (Riksdagen, Regeringen) och andra offentliga dataset, åtkomliga via offentliga API:er.',
     freshnessLabel: 'Dataaktualitet',
-    freshnessDesc: 'Analys genererad från data hämtad inom 24 timmar från publiceringstidsstämpel.',
+    freshnessDesc: 'Analysen genereras från nyligen hämtad data, vanligtvis inom 24 timmar från publiceringstidsstämpeln.',
   },
 };
 
