@@ -30,7 +30,7 @@ export const CHROME: ReaderGuideChrome = {
 
 export const ENTRIES: Record<string, ReaderGuideEntryI18n> = {
   'executive-brief.md': {
-    label: 'Lede und redaktionelle Entscheidungen',
+    label: 'Aufmacher und redaktionelle Entscheidungen',
     readerValue: 'schnelle Antwort auf was geschah, warum es wichtig ist, wer verantwortlich ist und der nächste datierte Auslöser',
   },
   'intelligence-assessment.md': {

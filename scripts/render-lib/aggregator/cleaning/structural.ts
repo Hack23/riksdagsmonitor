@@ -85,13 +85,62 @@ export function stripInlineReaderGuide(body: string): string {
 }
 
 /**
+ * First-use annotation state for {@link normalizeNarrativeTerminology}.
+ *
+ * The confidence-code gloss and the Riksdag-document-id contextualization are
+ * *first-use only* — they must be emitted at most once per rendered article,
+ * not once per artifact body. The aggregator calls
+ * {@link normalizeNarrativeTerminology} separately for every artifact (see
+ * `aggregate.ts`), so the flags cannot live as function-local state: they would
+ * reset for each file and re-emit the annotation in every artifact that matches.
+ * The caller therefore owns one state object for the whole article and threads
+ * it through every call.
+ */
+export interface NarrativeNormalizationState {
+  confidenceExplained: boolean;
+  firstDocContextualized: boolean;
+}
+
+/** Fresh per-article first-use state (all flags unset). */
+export function createNarrativeNormalizationState(): NarrativeNormalizationState {
+  return { confidenceExplained: false, firstDocContextualized: false };
+}
+
+/**
  * Apply reader-facing narrative terminology normalization:
  * - replace BLUF headings with journalistic lede wording
  * - rename decision-support heading to plain-language wording
  * - explain confidence code notation at first mention
  * - contextualize the first `HDxxxxx` token as a Riksdag document id
+ *
+ * **Language scope.** Every rewrite below injects English copy (`Lede`,
+ * `Decisions and confidence context`, `… confidence, corroborated by multiple
+ * sources`, `Riksdag document #…`). Source analysis artifacts are authored in
+ * English and only English bodies flow through the aggregator, so the rewrites
+ * are gated to `lang === 'en'`. For any other language the body is returned
+ * untouched to avoid injecting English strings into otherwise localized prose
+ * (e.g. a translated `executive-brief_<lang>.md`).
+ *
+ * **First-use scope.** `confidenceExplained` / `firstDocContextualized` live on
+ * the caller-supplied {@link NarrativeNormalizationState} so the first-use
+ * annotations fire once per *article*, not once per artifact body.
+ *
+ * **Document-id scope.** Only the `HD` prefix is contextualized because it is
+ * the sole *bare* Riksdag document-identifier token used in these artifacts
+ * (matching `BILL_ID_RE` in `seo/brief-extractor.ts`, e.g. `HD03271`). Other
+ * Riksdag references — propositions, motions, interpellations, written
+ * questions, committee reports, public inquiries (`prop. 2025/26:267`,
+ * `MOT 2023/24:1234`, `IP 2023/24:567`) — appear as session-scoped
+ * `YYYY/NN:NNN` references whose trailing number is not a global document id,
+ * so framing them as `Riksdag document #…` would be incorrect.
  */
-export function normalizeNarrativeTerminology(body: string): string {
+export function normalizeNarrativeTerminology(
+  body: string,
+  state: NarrativeNormalizationState = createNarrativeNormalizationState(),
+  lang: string = 'en',
+): string {
+  if (lang !== 'en') return body;
+
   let out = body.replace(
     /^(#{2,6})\s*(?:🎯\s*)?(?:BLUF(?:\s*\(Bottom Line Up Front\))?|Bottom Line Up Front)\s*$/gim,
     '$1 Lede',
@@ -101,10 +150,9 @@ export function normalizeNarrativeTerminology(body: string): string {
     '$1 Decisions and confidence context',
   );
 
-  let confidenceExplained = false;
   out = out.replace(/\b(HIGH|MEDIUM|LOW)\s*\(([A-C]\d)\)/g, (match, band: string, code: string) => {
-    if (confidenceExplained) return match;
-    confidenceExplained = true;
+    if (state.confidenceExplained) return match;
+    state.confidenceExplained = true;
     const explanation =
       band === 'HIGH'
         ? 'high confidence, corroborated by multiple sources'
@@ -114,10 +162,9 @@ export function normalizeNarrativeTerminology(body: string): string {
     return `${band} (${code}, ${explanation})`;
   });
 
-  let firstDocContextualized = false;
   out = out.replace(/\b(HD(\d{5,}))\b/g, (match, fullId: string, numericId: string) => {
-    if (firstDocContextualized) return match;
-    firstDocContextualized = true;
+    if (state.firstDocContextualized) return match;
+    state.firstDocContextualized = true;
     return `Riksdag document #${numericId} (${fullId})`;
   });
 

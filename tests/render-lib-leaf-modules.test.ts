@@ -40,6 +40,7 @@ import {
 import {
   cleanArtifactBody,
   collapseRepeatedFooterBlocks,
+  createNarrativeNormalizationState,
   dedupeAdjacentDuplicateLines,
   demoteHeadings,
   normalizeNarrativeTerminology,
@@ -1604,6 +1605,33 @@ describe('aggregator/cleaning/structural — dedupeAdjacentDuplicateLines', () =
     expect(out).toContain('Riksdag document #03271 (HD03271)');
     expect(out).toContain('MEDIUM (C2)');
     expect(out).not.toContain('BLUF');
+  });
+
+  it('normalizeNarrativeTerminology threads first-use state across artifact bodies (once per article)', () => {
+    const state = createNarrativeNormalizationState();
+    const first = normalizeNarrativeTerminology('- HIGH (B2) for HD03271.', state);
+    const second = normalizeNarrativeTerminology('- HIGH (B3) for HD03275.', state);
+    // First artifact gets the gloss + document contextualization.
+    expect(first).toContain('HIGH (B2, high confidence, corroborated by multiple sources)');
+    expect(first).toContain('Riksdag document #03271 (HD03271)');
+    // Second artifact must NOT re-emit the first-use annotations.
+    expect(second).toContain('HIGH (B3)');
+    expect(second).not.toContain('corroborated by multiple sources');
+    expect(second).toContain('HD03275');
+    expect(second).not.toContain('Riksdag document #03275');
+  });
+
+  it('normalizeNarrativeTerminology leaves non-English bodies untouched', () => {
+    const body = [
+      '## 🎯 BLUF',
+      '',
+      '- HIGH (B2) för HD03271.',
+    ].join('\n');
+    const out = normalizeNarrativeTerminology(body, createNarrativeNormalizationState(), 'sv');
+    expect(out).toBe(body);
+    expect(out).not.toContain('Lede');
+    expect(out).not.toContain('corroborated by multiple sources');
+    expect(out).not.toContain('Riksdag document');
   });
 
   it('collapses two identical adjacent classification rows', () => {
