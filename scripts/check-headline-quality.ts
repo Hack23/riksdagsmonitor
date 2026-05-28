@@ -52,7 +52,23 @@
 import { readdirSync, readFileSync, statSync } from 'node:fs';
 import { join, relative } from 'node:path';
 
-import { prettifyFallbackTitle } from './render-lib/aggregator/order.js';
+/**
+ * Plain slug → Title-Case prettifier for a single path segment.
+ *
+ * Rule E detects H1s that merely echo the subfolder slug, so it must
+ * compare against the *bare* slug-to-title-case label (e.g.
+ * `propositions` → `Propositions`). It deliberately does NOT reuse the
+ * renderer's `prettifyFallbackTitle`, whose curated category map turns
+ * `propositions` into an engaging headline (`Government Bills — …`) and
+ * would stop Rule E from flagging the lazy bare-slug H1.
+ */
+function prettifySlugSegment(segment: string): string {
+  return segment
+    .split(/[-_]/)
+    .filter(Boolean)
+    .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+    .join(' ');
+}
 
 // ─────────────────────────────────────────────────────────────────────────
 // Rule A — Untranslated Swedish in EN H1
@@ -241,14 +257,14 @@ export function subfolderFromBriefPath(filepath: string): string | null {
 
 /**
  * Build the prettified label for a multi-segment subfolder path. Joins
- * each path segment via `prettifyFallbackTitle` so `election-cycle/current`
+ * each path segment via `prettifySlugSegment` so `election-cycle/current`
  * → `Election Cycle Current`.
  */
 export function prettifySubfolderPath(subfolder: string): string {
   return subfolder
     .split('/')
     .filter(Boolean)
-    .map((seg) => prettifyFallbackTitle(seg))
+    .map((seg) => prettifySlugSegment(seg))
     .join(' ');
 }
 
@@ -269,7 +285,7 @@ export function matchesPrettifiedSubfolder(h1: string, subfolder: string | null)
   const segments = subfolder.split('/').filter(Boolean);
   const leaf = segments[segments.length - 1];
   if (!leaf) return false;
-  const leafLabel = normaliseHeadlineForCompare(prettifyFallbackTitle(leaf));
+  const leafLabel = normaliseHeadlineForCompare(prettifySlugSegment(leaf));
   return Boolean(leafLabel) && headline === leafLabel;
 }
 
