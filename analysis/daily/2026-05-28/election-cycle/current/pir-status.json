@@ -1,0 +1,49 @@
+{
+  "schema_version": "1.0",
+  "cycle": "election-cycle/current",
+  "date": "2026-05-28",
+  "subfolder": "election-cycle/current",
+  "pirs": [
+    {
+      "id": "PIR-1",
+      "priority": "HIGH",
+      "description": "SVT/Sifo poll June 3-7 — first post-plenary debate poll; critical for L and MP threshold monitoring",
+      "status": "OPEN",
+      "expected_resolution": "2026-06-07",
+      "trigger": "L below 4.5% or MP below 4.5%"
+    },
+    {
+      "id": "PIR-2",
+      "priority": "HIGH",
+      "description": "C-party announcement on government cooperation preference (expected July 2026)",
+      "status": "OPEN",
+      "expected_resolution": "2026-07-15",
+      "trigger": "Formal C-party statement on coalition preference"
+    },
+    {
+      "id": "PIR-3",
+      "priority": "MEDIUM",
+      "description": "Riksbank June 19 rate decision — economic stimulus signal",
+      "status": "OPEN",
+      "expected_resolution": "2026-06-19",
+      "trigger": "Rate cut below 2.25% current level"
+    },
+    {
+      "id": "PIR-4",
+      "priority": "MEDIUM",
+      "description": "Women's rights organisational march sizes and media amplification (June-August 2026)",
+      "status": "OPEN",
+      "expected_resolution": "2026-08-31",
+      "trigger": "March attendance exceeds 50,000 (Stockholm)"
+    },
+    {
+      "id": "PIR-5",
+      "priority": "LOW",
+      "description": "Finland NATO eFP operational start date (implementation monitoring)",
+      "status": "OPEN",
+      "expected_resolution": "2026-10-01",
+      "trigger": "Försvarsmakten operational declaration"
+    }
+  ],
+  "generated_at": "2026-05-28T00:00:00Z"
+}
