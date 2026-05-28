@@ -32,7 +32,7 @@ export const CHROME: ReaderGuideChrome = {
 
 export const ENTRIES: Record<string, ReaderGuideEntryI18n> = {
   'executive-brief.md': {
-    label: 'BLUF ja toimitukselliset päätökset',
+    label: 'Lede ja toimitukselliset päätökset',
     readerValue: 'nopea vastaus siihen mitä tapahtui, miksi sillä on väliä, kuka on vastuussa ja seuraava päivätty laukaisin',
   },
   'intelligence-assessment.md': {

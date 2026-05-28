@@ -33,6 +33,7 @@ import { buildGithubBlobUrl } from '../url-helpers.js';
 import { buildArticleKeywords } from '../article-seo.js';
 import {
   cleanArtifactBody,
+  normalizeNarrativeTerminology,
   rewriteRelativeLinks,
 } from './cleaning/structural.js';
 import { buildFrontMatter } from './frontmatter.js';
@@ -142,7 +143,9 @@ export function aggregateAnalysis(input: AggregationInput): AggregationResult {
       return;
     }
     const raw = fs.readFileSync(abs, 'utf8');
-    const clean = rewriteRelativeLinks(cleanArtifactBody(raw), subfolderRepoRelPath);
+    const clean = normalizeNarrativeTerminology(
+      rewriteRelativeLinks(cleanArtifactBody(raw), subfolderRepoRelPath),
+    );
     if (!clean) {
       cleanedToEmpty.add(fileName);
       return;

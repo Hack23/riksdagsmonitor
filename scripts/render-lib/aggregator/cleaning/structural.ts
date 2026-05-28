@@ -84,6 +84,46 @@ export function stripInlineReaderGuide(body: string): string {
   );
 }
 
+/**
+ * Apply reader-facing narrative terminology normalization:
+ * - replace BLUF headings with journalistic lede wording
+ * - rename decision-support heading to plain-language wording
+ * - explain confidence code notation at first mention
+ * - contextualize the first `HDxxxxx` token as a Riksdag document id
+ */
+export function normalizeNarrativeTerminology(body: string): string {
+  let out = body.replace(
+    /^(#{2,6})\s*(?:🎯\s*)?(?:BLUF(?:\s*\(Bottom Line Up Front\))?|Bottom Line Up Front)\s*$/gim,
+    '$1 Lede',
+  );
+  out = out.replace(
+    /^(#{2,6})\s*Decisions This Brief Supports\s*$/gim,
+    '$1 Decisions and confidence context',
+  );
+
+  let confidenceExplained = false;
+  out = out.replace(/\b(HIGH|MEDIUM|LOW)\s*\(([A-C]\d)\)/g, (match, band: string, code: string) => {
+    if (confidenceExplained) return match;
+    confidenceExplained = true;
+    const explanation =
+      band === 'HIGH'
+        ? 'high confidence, corroborated by multiple sources'
+        : band === 'MEDIUM'
+          ? 'medium confidence, partial corroboration'
+          : 'low confidence, limited corroboration';
+    return `${band} (${code}, ${explanation})`;
+  });
+
+  let firstDocContextualized = false;
+  out = out.replace(/\b(HD(\d{5,}))\b/g, (match, fullId: string, numericId: string) => {
+    if (firstDocContextualized) return match;
+    firstDocContextualized = true;
+    return `Riksdag document #${numericId} (${fullId})`;
+  });
+
+  return out;
+}
+
 // Re-exported from dedicated deduplication module (extracted for ≤200 LOC constraint).
 export { dedupeAdjacentDuplicateLines, collapseRepeatedFooterBlocks } from './deduplication.js';
 
