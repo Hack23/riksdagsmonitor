@@ -1,0 +1,23 @@
+{
+  "dok_id": "HD01UU18",
+  "titel": "Ett modernt och anpassat regelverk för krigsmateriel",
+  "datum": "2026-05-27",
+  "rm": "2025/26",
+  "organ": "UU",
+  "summary": "",
+  "url": "https://data.riksdagen.se/dokument/HD01UU18.html",
+  "mcpCoverageState": "metadata_only",
+  "mcpProvenance": {
+    "provider": "riksdag-regering",
+    "endpoint": "http://host.docker.internal:8080/mcp/riksdag-regering",
+    "tool": "get_betankanden",
+    "query": {
+      "limit": 20,
+      "rm": "2025/26"
+    },
+    "resultCount": 20,
+    "coverageState": "metadata_only",
+    "retrieval": "live",
+    "retrievedAt": "2026-05-28T05:09:45.150Z"
+  }
+}
