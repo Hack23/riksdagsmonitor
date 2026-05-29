@@ -1,0 +1,41 @@
+{
+  "schema_version": "1.0",
+  "cycle": "motions",
+  "date": "2026-05-29",
+  "subfolder": "motions",
+  "generated_at": "2026-05-29T08:31:59Z",
+  "inherited_from": null,
+  "pirs": [
+    {
+      "pir_id": "PIR-MOTIONS-OPPOSITION-STRATEGY",
+      "statement": "What is the opposition's strategic intent in late-mandate follow-up motions on government security and control bills?",
+      "trigger": "Two or more coordinated opposition Foljdmotioner with shared signatories and a unifying frame in one pre-recess window.",
+      "status": "answered",
+      "confidence": "MEDIUM",
+      "answer_summary": "HD024191 and HD024192 form a coordinated two-front MP rights offensive (shared signatories Hirvonen, Westerlund, Seye Larsen; common control-creep frame), functioning as pre-election positional/campaign-record signalling rather than majority-seeking (KJ-1). Intent confidence MEDIUM-HIGH after devil's-advocate challenge.",
+      "evidence_refs": ["HD024191", "HD024192", "intelligence-assessment.md", "devils-advocate.md"],
+      "horizon": "election-day",
+      "admiralty_grade": "B2"
+    },
+    {
+      "pir_id": "PIR-RULE-OF-LAW-TRAJECTORY",
+      "statement": "Are Swedish security and administrative bills shifting evidentiary and detention norms, and who is contesting the shift?",
+      "trigger": "Independent retrieval of prop 2025/26:267 and the Lagradet yttrande confirming lowered beviskrav and removed detention cap.",
+      "status": "open",
+      "confidence": "MEDIUM",
+      "evidence_refs": ["HD024192", "documents/HD024192-analysis.md"],
+      "horizon": "2026-06-30",
+      "admiralty_grade": "C3"
+    },
+    {
+      "pir_id": "PIR-COALITION-SIGNAL-2026",
+      "statement": "What do these motions reveal about left-bloc coalition formation before the 2026 general election?",
+      "trigger": "Committee reservation language on SkU30/JuU45 showing whether S adopts or distances from the MP rights frame.",
+      "status": "open",
+      "confidence": "LOW",
+      "evidence_refs": ["HD024191", "HD024192", "coalition-mathematics.md"],
+      "horizon": "2026-09-13",
+      "admiralty_grade": "C3"
+    }
+  ]
+}
