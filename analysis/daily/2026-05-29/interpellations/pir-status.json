@@ -1,0 +1,53 @@
+{
+  "schema_version": "1.0",
+  "cycle": "interpellations",
+  "date": "2026-05-29",
+  "subfolder": "interpellations",
+  "pirs": [
+    {
+      "pir_id": "PIR-INT-01",
+      "statement": "Will Wykman (M) commit to extending bank-fraud protection to SMEs and/or to bank-fraud transparency, and will SD escalate energy accountability on Vattenfall?",
+      "status": "open",
+      "confidence": "MEDIUM",
+      "collection_trigger": "Interpellation answers due 2026-06-12 (HD10527, HD10528, HD10522); SD follow-on filings",
+      "escalation_threshold": "Explicit refusal of SME parity/transparency, or repeat SD energy filing indicating genuine intra-Tido friction",
+      "probability_positive": 0.4,
+      "evidence_confidence": "B2"
+    },
+    {
+      "pir_id": "PIR-INT-02",
+      "statement": "Will Britz (L) announce concrete bruksort/omstallning or a-kassa measures, or defend the 1 Oct 2025 reform unchanged?",
+      "status": "open",
+      "confidence": "MEDIUM",
+      "collection_trigger": "Interpellation answers due 2026-06-12 (HD10523, HD10524, HD10525); autumn budget signals",
+      "escalation_threshold": "Pure reform defence with no new measures sustains the labour-cluster campaign theme",
+      "probability_positive": 0.35,
+      "evidence_confidence": "B2"
+    },
+    {
+      "pir_id": "PIR-INT-03",
+      "statement": "Will the government (Slottner, KD) commit to a municipal fiscal-equalisation review?",
+      "status": "open",
+      "confidence": "LOW",
+      "collection_trigger": "Interpellation answer due 2026-06-12 (HD10526)",
+      "escalation_threshold": "Refusal sustains the rural cost-shift attack; commitment defuses it",
+      "probability_positive": 0.3,
+      "evidence_confidence": "B3"
+    },
+    {
+      "pir_id": "PIR-INT-04",
+      "statement": "Does the a-kassa taper measurably shift costs onto municipal forsorjningsstod, and will full text be retrieved for the two metadata-only documents?",
+      "status": "open",
+      "confidence": "MEDIUM",
+      "collection_trigger": "Full-text retrieval for HD10525/HD10526 by 2026-06-05; Socialstyrelsen/SKR data 2026-07; possible Statskontoret evaluation",
+      "escalation_threshold": "Measurable rise in municipal welfare spend validates the cost-shifting hypothesis",
+      "probability_positive": 0.45,
+      "evidence_confidence": "B2"
+    }
+  ],
+  "carry_forward_from_previous": [],
+  "next_review": "2026-06-12",
+  "next_review_date": "2026-06-12",
+  "generated_at": "2026-05-29T07:49:31Z",
+  "run_id": "interpellations-2026-05-29"
+}

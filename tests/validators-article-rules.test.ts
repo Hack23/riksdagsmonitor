@@ -90,8 +90,8 @@ describe('article rules — landmarks', () => {
     expect(labels).toEqual(
       expect.arrayContaining([
         'Reader Intelligence Guide',
-        '## Executive Brief section',
-        'BLUF heading inside the executive brief',
+        '## What Happened (Executive Brief) section',
+        'BLUF/Lede heading inside the executive brief',
         'Article Sources appendix',
       ]),
     );

@@ -1,0 +1,23 @@
+{
+  "dok_id": "HD10525",
+  "titel": "Regeringens arbete i ILO",
+  "datum": "2026-05-29",
+  "rm": "2025/26",
+  "parti": "S",
+  "summary": "Interpellation 2025/26:525 Regeringens arbete i ILO\n av  Adrian Magnusson (S)\n till Arbetsmarknadsminister och vikarierande klimat- och miljöminister Johan Britz (L)\n ILO (International Labour Organisation) bildades i kölvattnet av första världskriget i en tid när internationellt samarbete blev allt viktigare. Sverige var",
+  "url": "https://data.riksdagen.se/dokument/HD10525.html",
+  "mcpCoverageState": "metadata_only",
+  "mcpProvenance": {
+    "provider": "riksdag-regering",
+    "endpoint": "http://host.docker.internal:8080/mcp/riksdag-regering",
+    "tool": "get_interpellationer",
+    "query": {
+      "limit": 20,
+      "rm": "2025/26"
+    },
+    "resultCount": 20,
+    "coverageState": "metadata_only",
+    "retrieval": "live",
+    "retrievedAt": "2026-05-29T07:51:11.525Z"
+  }
+}

@@ -40,7 +40,7 @@ export const MIN_BLUF_EVIDENCE_ANCHORS = 1;
  * independently of any aggregation step.
  */
 export function extractBluf(article: string): string | null {
-  const m = article.match(/^#{2,6}\s+(?:[^\n]*?\s)?BLUF\b[^\n]*\n+([\s\S]*?)(?=\n#{1,6}\s|\n*$)/im);
+  const m = article.match(/^#{2,6}\s+(?:[^\n]*?\s)?(?:BLUF|Lede)\b[^\n]*\n+([\s\S]*?)(?=\n#{1,6}\s|\n*$)/im);
   if (!m) return null;
   const paragraph = m[1]!.split(/\n\n+/).map((p) => p.trim()).find((p) => p.length > 0 && !/^[#|>*<]/.test(p));
   return paragraph ?? null;

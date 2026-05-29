@@ -1,0 +1,23 @@
+{
+  "dok_id": "HD10526",
+  "titel": "Ett reformerat utjämningssystem för en jämlik välfärd",
+  "datum": "2026-05-29",
+  "rm": "2025/26",
+  "parti": "S",
+  "summary": "Interpellation 2025/26:526 Ett reformerat utjämningssystem för en jämlik välfärd\n av  Eva Lindh (S)\n till Civilminister Erik Slottner (KD)\n Den svenska välfärdsmodellen bygger på en enkel men avgörande princip: Människor ska kunna lita på att samhället finns där oavsett vem man är eller var i landet man bor. Barn ska få",
+  "url": "https://data.riksdagen.se/dokument/HD10526.html",
+  "mcpCoverageState": "metadata_only",
+  "mcpProvenance": {
+    "provider": "riksdag-regering",
+    "endpoint": "http://host.docker.internal:8080/mcp/riksdag-regering",
+    "tool": "get_interpellationer",
+    "query": {
+      "limit": 20,
+      "rm": "2025/26"
+    },
+    "resultCount": 20,
+    "coverageState": "metadata_only",
+    "retrieval": "live",
+    "retrievedAt": "2026-05-29T07:51:11.525Z"
+  }
+}
