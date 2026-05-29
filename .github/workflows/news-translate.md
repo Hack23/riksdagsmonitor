@@ -1,6 +1,6 @@
 ---
 name: "News: Translate Executive Briefs"
-description: "Translates `analysis/daily/**/executive-brief.md` (English source produced by per-type news workflows) into the 13 non-English target languages as sibling `executive-brief_<lang>.md` files. Runs three times daily and picks up at most `max_briefs` (default 1) sources per run, **greenfield-first** — sources with one or more missing target files always win batch slots over drift-only sources. Pass 2 is **validator-first**: the bash validator does all structural parity at near-zero model-token cost and the agent only reads back the files it flags, keeping effective-token usage under the Copilot per-session cap after run #26633644372 aborted with a 429 effective-token error before completing the second source — see `07-commit-and-pr.md §Deadline enforcement`. See `TRANSLATION_GUIDE.md §Executive Brief Markdown Translations` for the authoritative content contract."
+description: "Translates `analysis/daily/**/executive-brief.md` (English source produced by per-type news workflows) into the 13 non-English target languages as sibling `executive-brief_<lang>.md` files. Runs three times daily and picks up at most `max_briefs` (default 1) sources × `max_langs` (default 7) languages per run, **greenfield-first** — sources with one or more missing target files always win batch slots over drift-only sources, and within a source the still-needed languages are translated missing-first then drift up to `max_langs` (remaining languages drain in later runs). Pass 2 is **validator-first**: the bash validator does all structural parity at near-zero model-token cost and the agent only reads back the files it flags. The per-run `max_langs` language cap plus validator-first Pass 2 keep the session's weighted effective-token usage under the Copilot per-session cap after run #26641603577 aborted with a 429 (27.0M / 25M weighted) before shipping its PR — see `07-commit-and-pr.md §Deadline enforcement`. See `TRANSLATION_GUIDE.md §Executive Brief Markdown Translations` for the authoritative content contract."
 strict: false
 imports:
   - ../prompts/00-base-contract.md
@@ -32,6 +32,10 @@ on:
         description: 'Maximum number of source executive-brief.md files to translate this run (range 1–7; default 1). Hard cap: 7 (keeps under safe-outputs 100-file ceiling with 13 languages = 91 files). Lowered from 3 to 1 after run #26633644372 exceeded the Copilot effective-token cap before completing source #2.'
         required: false
         default: '1'
+      max_langs:
+        description: 'Maximum number of target languages to translate per run (range 1–13; default 7). The agent writes one full file per language in a single Copilot session, so the session''s weighted effective-token total scales with the language count. Translating all 13 languages of one source in a single run pushed run #26641603577 to 27.0M weighted effective tokens (> the 25M Copilot per-session cap) and the 429 fired before the PR safe-output — shipping nothing. The worklist builder selects the missing/drifted languages **greenfield-first** and caps them at this value; remaining languages are picked up by the next scheduled run because the source stays classified MISSING/DRIFT until every requested language is present and current. Raise toward 13 only for small briefs or when catching up; lower it if large briefs still approach the cap.'
+        required: false
+        default: '7'
       force_retranslate:
         description: 'When true, ignore the `<!-- source-sha: ... -->` drift check and re-translate every matching source. Use sparingly — drains the safe-outputs file budget fast.'
         required: false
@@ -305,6 +309,7 @@ steps:
       SUBFOLDER_INPUT: ${{ github.event.inputs.subfolder }}
       LANGUAGES_INPUT: ${{ github.event.inputs.languages }}
       MAX_BRIEFS_INPUT: ${{ github.event.inputs.max_briefs }}
+      MAX_LANGS_INPUT: ${{ github.event.inputs.max_langs }}
       FORCE_RETRANSLATE: ${{ github.event.inputs.force_retranslate }}
     run: |
       set -euo pipefail
@@ -327,6 +332,20 @@ steps:
         MAX_BRIEFS=1
       fi
       echo "Max source briefs this run: $MAX_BRIEFS"
+
+      # Resolve per-run language cap (1–13 hard range; default 7). The agent
+      # writes one full file per language in a single Copilot session, so the
+      # session's weighted effective-token total scales with this count.
+      # Translating all 13 languages of one source in a single run pushed run
+      # #26641603577 to 27.0M weighted effective tokens (> the 25M cap) and the
+      # 429 fired before the PR safe-output. The batching block below caps the
+      # languages handled per run to this value, greenfield-first.
+      MAX_LANGS="${MAX_LANGS_INPUT:-7}"
+      if ! [[ "$MAX_LANGS" =~ ^([1-9]|1[0-3])$ ]]; then
+        echo "::warning::max_langs '$MAX_LANGS' out of range; clamping to 7"
+        MAX_LANGS=7
+      fi
+      echo "Max target languages this run: $MAX_LANGS"
 
       # Discover candidate sources.
       ROOT="analysis/daily"
@@ -465,8 +484,58 @@ steps:
       done
 
       WORKLIST_JOINED=$(printf '%s\n' "${WORK[@]}" | paste -sd ',' -)
-      emit_bundle "$WORKLIST_JOINED" "$LANGS" "$MAX_BRIEFS" "$MISSING_COUNT" "$DRIFT_COUNT"
-      echo "✅ Selected ${#WORK[@]} source brief(s) for translation into [$LANGS]"
+
+      # --- Per-run language batching (effective-token control) ---
+      # Across the selected batch, collect the requested languages that still
+      # NEED work — missing target file first (greenfield), then drift — in the
+      # canonical order of $LANGS, and translate at most $MAX_LANGS of them this
+      # run. This bounds the number of full files the agent writes in one
+      # Copilot session (the dominant driver of the weighted effective-token
+      # total that aborted run #26641603577 with a 429 before the PR shipped).
+      # The remaining languages are picked up by the next scheduled run because
+      # every selected source stays classified MISSING/DRIFT until all requested
+      # languages are present and current.
+      NEED_MISSING=()
+      NEED_DRIFT=()
+      for L in "${LANG_LIST[@]}"; do
+        L_MISSING=0
+        L_DRIFT=0
+        for SRC in "${WORK[@]}"; do
+          DIR=$(dirname "$SRC")
+          SRC_SHA=$(git log -1 --format=%H -- "$SRC" 2>/dev/null || echo "")
+          TGT="$DIR/executive-brief_${L}.md"
+          if [ ! -s "$TGT" ]; then
+            L_MISSING=1
+            continue
+          fi
+          if [ "${FORCE_RETRANSLATE:-false}" = "true" ]; then
+            L_DRIFT=1
+          elif [ -n "$SRC_SHA" ] && ! grep -q "<!-- source-sha: $SRC_SHA -->" "$TGT" 2>/dev/null; then
+            L_DRIFT=1
+          fi
+        done
+        if [ "$L_MISSING" -eq 1 ]; then
+          NEED_MISSING+=("$L")
+        elif [ "$L_DRIFT" -eq 1 ]; then
+          NEED_DRIFT+=("$L")
+        fi
+      done
+      NEED_LANGS=("${NEED_MISSING[@]}" "${NEED_DRIFT[@]}")
+      # Fallback: if nothing was flagged as needing work (edge case), fall back
+      # to the full requested list so the run never emits an empty language set.
+      if [ "${#NEED_LANGS[@]}" -eq 0 ]; then
+        NEED_LANGS=("${LANG_LIST[@]}")
+      fi
+      RUN_LANG_LIST=()
+      for L in "${NEED_LANGS[@]}"; do
+        RUN_LANG_LIST+=("$L")
+        if [ "${#RUN_LANG_LIST[@]}" -ge "$MAX_LANGS" ]; then break; fi
+      done
+      RUN_LANGS=$(IFS=','; echo "${RUN_LANG_LIST[*]}")
+      echo "Per-run language batch (cap $MAX_LANGS): [$RUN_LANGS] of requested [$LANGS]"
+
+      emit_bundle "$WORKLIST_JOINED" "$RUN_LANGS" "$MAX_BRIEFS" "$MISSING_COUNT" "$DRIFT_COUNT"
+      echo "✅ Selected ${#WORK[@]} source brief(s) for translation into [$RUN_LANGS]"
       echo "   (greenfield=$WORK_MISSING / drift-fix=$WORK_DRIFT;  total backlog: MISSING=$MISSING_COUNT DRIFT=$DRIFT_COUNT)"
       echo "   Worklist file (agent reads this): $WORKLIST_FILE"
       printf '   %s\n' "${WORK[@]}"
@@ -485,13 +554,13 @@ This workflow is the **sole writer** of `analysis/daily/$DATE/$SUB/executive-bri
 ## Pipeline
 
 1. **Wall-clock checkpoint (mandatory)** — as the **very first bash call** in this run, record `JOB_START=$(date +%s)` and export it. After every source completes Pass 2, re-read `NOW=$(date +%s)` and compute `ELAPSED_MIN=$(( (NOW - JOB_START) / 60 ))`; print it. If `ELAPSED_MIN >= 35`, stop selecting new sources and proceed directly to the validate → stage → commit → `safeoutputs___create_pull_request` flow regardless of remaining `$TRANSLATION_WORKLIST` entries. If `ELAPSED_MIN >= 42`, **halt all translation work immediately** and execute the [`07-commit-and-pr.md §Emergency deadline order of operations`](../prompts/07-commit-and-pr.md) bash block to ship a partial PR before Timer A (60-min job `timeout-minutes`) and Timer B (~60-min Copilot API session) fire. A partial PR is always better than zero output — see run [#26633644372](https://github.com/Hack23/riksdagsmonitor/actions/runs/26633644372), where source #2 failed with `CAPIError: 429 Maximum effective tokens exceeded`.
-2. The `Build executive-brief translation work list` pre-flight step has already exported four env vars into the agent sandbox: **`$TRANSLATION_WORKLIST`** (comma-separated repo-relative paths — read this verbatim, or parse the same content line-by-line from the file at **`$EXEC_BRIEF_WORKLIST_FILE`** at `${GITHUB_WORKSPACE}/.exec-brief-worklist.txt`), **`$TRANSLATION_LANGS`** (comma-separated language codes — honours operator-supplied `inputs.languages` after preset expansion), **`$MAX_BRIEFS`** / **`$MAX_BRIEFS_RESOLVED`** (1–7, clamp-applied), and the audit counters **`$MISSING_COUNT`** / **`$DRIFT_COUNT`**. **Do not re-scan the filesystem** to rebuild this list — the pre-flight step has already honoured `inputs.article_date`, `inputs.subfolder`, `inputs.languages`, `inputs.max_briefs`, and `inputs.force_retranslate`. The selector is **greenfield-first**: sources with one or more missing target files (`MISSING`) always win the `max_briefs` batch slots over sources that only need drift-fixes (`DRIFT`); `DRIFT` is only consulted when `MISSING` is empty. If `$TRANSLATION_WORKLIST` is empty (so `$MISSING_COUNT=0` **and** `$DRIFT_COUNT=0`), nothing is pending — proceed to improvement-mode (re-validate every existing translation against the current `<!-- source-sha: ... -->` trailer and fix any drift the validator flags). If still nothing changes after improvement-mode, follow `07-commit-and-pr.md §No-op policy`.
+2. The `Build executive-brief translation work list` pre-flight step has already exported four env vars into the agent sandbox: **`$TRANSLATION_WORKLIST`** (comma-separated repo-relative paths — read this verbatim, or parse the same content line-by-line from the file at **`$EXEC_BRIEF_WORKLIST_FILE`** at `${GITHUB_WORKSPACE}/.exec-brief-worklist.txt`), **`$TRANSLATION_LANGS`** (comma-separated language codes — this is the **per-run language batch**, already capped at `inputs.max_langs` (default 7) and pre-selected **greenfield-first** from the languages that still need work; translate **exactly and only** these codes — do not expand to the full 13-language set), **`$MAX_BRIEFS`** / **`$MAX_BRIEFS_RESOLVED`** (1–7, clamp-applied), and the audit counters **`$MISSING_COUNT`** / **`$DRIFT_COUNT`**. **Do not re-scan the filesystem** to rebuild this list — the pre-flight step has already honoured `inputs.article_date`, `inputs.subfolder`, `inputs.languages`, `inputs.max_briefs`, `inputs.max_langs`, and `inputs.force_retranslate`. Languages omitted from `$TRANSLATION_LANGS` this run are intentionally deferred to the next scheduled run (the source stays MISSING/DRIFT until all requested languages are present and current) — this per-run cap is what keeps the session under the Copilot weighted effective-token cap that aborted run [#26641603577](https://github.com/Hack23/riksdagsmonitor/actions/runs/26641603577). The selector is **greenfield-first**: sources with one or more missing target files (`MISSING`) always win the `max_briefs` batch slots over sources that only need drift-fixes (`DRIFT`); `DRIFT` is only consulted when `MISSING` is empty. If `$TRANSLATION_WORKLIST` is empty (so `$MISSING_COUNT=0` **and** `$DRIFT_COUNT=0`), nothing is pending — proceed to improvement-mode (re-validate every existing translation against the current `<!-- source-sha: ... -->` trailer and fix any drift the validator flags). If still nothing changes after improvement-mode, follow `07-commit-and-pr.md §No-op policy`.
 3. For each source path in `$TRANSLATION_WORKLIST` (or each line of `$EXEC_BRIEF_WORKLIST_FILE`):
    1. **Pass 1 — translate**: Read the source `executive-brief.md` in full **once**. For every language in `TRANSLATION_LANGS`, produce `analysis/daily/$DATE/$SUB/executive-brief_<lang>.md` following the TRANSLATION_GUIDE rules — **write each file with one `edit` tool call per language** (never via `python3`, `bash` heredocs, or shell redirection — see `01-bash-and-shell-safety.md §File creation & overwrite strategy`). Apply the per-language tone register from TRANSLATION_GUIDE **at write time** (so Pass 2 never needs a full re-read just to adjust register), and for `ar`/`he` start the file with `<!-- dir: rtl -->`. Preserve every verbatim block (YAML, HTML comments except `source-sha`, `dok_id` codes, Mermaid DSL bodies, code fences, URLs, file paths, evidence-anchor canonical column values). Translate every always-translate block (prose, headings, list items, table cell text, image alt-text, BLUF, decisions, link text). **Do not** read a freshly written translation back into model context to "confirm" it — the validator in Pass 2 is the authoritative gate.
-   2. **Pass 2 — validate-first & targeted refine**: This is the **primary token-efficiency control**. Run `npx tsx scripts/validate-executive-brief-translations.ts --source <source>` in the runtime shell. That validator already performs every structural-parity check at near-zero model-token cost: heading / table-row / code-fence / Mermaid-block count parity, `dok_id` and URL set equality, banned-English-phrase detection (`Executive Brief`, `Decisions`, `Confidence`, `BLUF`, …), the `<!-- dir: rtl -->` marker for `ar`/`he`, and the `<!-- source-sha: -->` trailer. **Do not read passing translations back into model context** — reading all 13 files back in full is exactly what drove run [#26633644372](https://github.com/Hack23/riksdagsmonitor/actions/runs/26633644372) to `7.6M` effective tokens and a `429 Maximum effective tokens exceeded` abort. Only read back (and re-translate / fix) the specific `executive-brief_<lang>.md` files the validator reports as failing, then re-run the validator until it is clean for the requested languages.
+   2. **Pass 2 — validate-first & targeted refine**: This is the **primary token-efficiency control**. Run `npx tsx scripts/validate-executive-brief-translations.ts --source <source> --lang "$TRANSLATION_LANGS"` in the runtime shell (the `--lang` scope restricts validation to this run's language batch so deferred languages are not reported as missing). That validator already performs every structural-parity check at near-zero model-token cost: heading / table-row / code-fence / Mermaid-block count parity, `dok_id` and URL set equality, banned-English-phrase detection (`Executive Brief`, `Decisions`, `Confidence`, `BLUF`, …), the `<!-- dir: rtl -->` marker for `ar`/`he`, and the `<!-- source-sha: -->` trailer. **Do not read passing translations back into model context** — reading every target file back in full is exactly what drove run [#26633644372](https://github.com/Hack23/riksdagsmonitor/actions/runs/26633644372) to `7.6M` effective tokens and a `429 Maximum effective tokens exceeded` abort. Only read back (and re-translate / fix) the specific `executive-brief_<lang>.md` files the validator reports as failing, then re-run the validator until it is clean for the requested languages.
    3. **Append the source-revision marker**: compute `SRC_SHA=$(git log -1 --format=%H -- <source>)` in the runtime shell. Use the `edit` tool to add or replace the final `<!-- source-sha: $SRC_SHA -->` line at the end of every translation file (consistent with the file-write contract — no `>>` or `echo`). This is the drift signal future runs use to decide whether to retranslate.
    4. **Title post-processing**: run `npx tsx scripts/postprocess-translated-brief.ts analysis/daily/$DATE/$SUB/executive-brief_*.md` to re-apply the renderer's `cleanArticleTitle` pipeline on every translated H1. This strips locale-specific boilerplate prefixes (`Exekutiv sammanfattning — `, `Zusammenfassung — `, `执行摘要：…`) and trailing date suffixes that the Pass 1 translation may have left in place. The helper only rewrites when the cleaned title differs from the source; it never falls back to a BLUF synthesis. Verify the script reports `✓` or `✏️` for every file (no `✗`).
-   5. **Final validate**: re-run `npx tsx scripts/validate-executive-brief-translations.ts --source <source>` (when available) to confirm the title post-processing in sub-step 4 did not break parity, or fall back to the structural sanity checks listed in TRANSLATION_GUIDE §Acceptance checklist. Fix any failures by re-translating only the offending language (read back only that file). Do not commit a file that fails validation.
+   5. **Final validate**: re-run `npx tsx scripts/validate-executive-brief-translations.ts --source <source> --lang "$TRANSLATION_LANGS"` (when available) to confirm the title post-processing in sub-step 4 did not break parity, or fall back to the structural sanity checks listed in TRANSLATION_GUIDE §Acceptance checklist. Fix any failures by re-translating only the offending language (read back only that file). Do not commit a file that fails validation.
    6. **Re-evaluate the wall-clock checkpoint** (from step 1) before starting the next source. Never start a new source after `ELAPSED_MIN >= 35`.
 4. Stage every newly written / refreshed `executive-brief_<lang>.md` file. **Do not** touch `executive-brief.md` itself, any HTML under `news/`, any file under `analysis/daily/*/article.md`, or any non-translation file.
 5. Call `safeoutputs___create_pull_request` **exactly once** covering the whole batch, **by agent minute 42 at the latest** (hard deadline 45 per `07-commit-and-pr.md §Deadline enforcement`). The branch prefix `news/translate/briefs/` is enforced by the safe-outputs config (`07-commit-and-pr.md`).
@@ -501,7 +570,8 @@ This workflow is the **sole writer** of `analysis/daily/$DATE/$SUB/executive-bri
 - `article_date` — optional. Restrict scanning to a single date folder.
 - `subfolder` — optional. Restrict scanning to a single document type folder.
 - `languages` — default `all-extra` (= `sv,da,no,fi,de,fr,es,nl,ar,he,ja,ko,zh`). Aliases: `nordic-extra`, `eu-extra`, `cjk`, `rtl`, `all-extra`. Comma list also accepted.
-- `max_briefs` — default `1`, range `1–7`. Caps the number of **source** files processed in this run; total file output = `max_briefs × |languages|` (≤ 91 for the default 13-language target, safely under the 100-file safe-outputs cap). The default was lowered from 3 to 1 after run #26633644372 hit the Copilot effective-token limit before finishing source #2.
+- `max_briefs` — default `1`, range `1–7`. Caps the number of **source** files processed in this run; total file output = `max_briefs × |TRANSLATION_LANGS|` (≤ `7 × 7 = 49` at the defaults, safely under the 100-file safe-outputs cap). The default was lowered from 3 to 1 after run #26633644372 hit the Copilot effective-token limit before finishing source #2.
+- `max_langs` — default `7`, range `1–13`. Caps the number of **target languages** translated this run. The builder pre-selects the still-needed languages **greenfield-first** (missing files first, then drift) and truncates to this many. Translating all 13 in one Copilot session pushed run #26641603577 to 27.0M weighted effective tokens (> the 25M cap), aborting before the PR shipped; deferred languages are filled by the next scheduled run. Raise toward 13 for small briefs / catch-up; lower it if large briefs still approach the cap.
 - `force_retranslate` — default `false`. When `true`, every requested language is rewritten even if the `<!-- source-sha: -->` marker matches.
 - `analysis_depth` — default `standard`. Echoed into the validator output for parity with content workflows; does not change translation behaviour.
 
@@ -511,15 +581,16 @@ This workflow is the **sole writer** of `analysis/daily/$DATE/$SUB/executive-bri
 |----------|-------|--------|
 | Average source size | ~650 words (range 232–2040) | `wc -w` over `analysis/daily/**/executive-brief.md` |
 | Per-language Pass 1 write + validator gate | ~45–75 s | Sonnet-class translation budget; Pass 2 is bash-validated, not re-read into context |
-| Per-source wall time (13 languages, sequential) | ~13–20 min | derived |
-| Default `max_briefs` | 1 source | keeps effective-token usage under Copilot's per-session cap while preserving PR headroom |
-| Per-source token sink (pre-fix) | ~3.8M effective tokens | run #26633644372 burned 7.6M on ~1.5 sources, dominated by Pass 2 reading all 13 files back into context |
-| Primary token lever | validator-first Pass 2 | structural parity moved to the bash validator; only validator-flagged files are read back |
-| Per-run file output | 1 × 13 = **13 files** | well under safe-outputs `max-patch-files: 100` |
-| Daily throughput (3 runs) | up to 3 sources / **39 files** | raise `max_briefs` once the validator-first token footprint is measured below the cap |
-| Current backlog drain (≥159 untranslated sources) | ~27 days at default settings, greenfield-first | linear |
+| Per-source wall time (≤`max_langs` languages, sequential) | ~8–15 min at `max_langs=7` | derived |
+| Default `max_briefs` / `max_langs` | 1 source / 7 languages | keeps the weighted effective-token total under Copilot's per-session cap while preserving PR headroom |
+| Per-session token driver | turn count ≈ languages translated | each language adds Pass-1/validator turns; the full per-turn tool-schema context (github + data MCP servers) is re-sent every turn, so cumulative weighted tokens scale ~linearly with the language count |
+| Run #26641603577 (pre-fix) | 13 langs → 27.0M weighted / 25M cap → 429 before PR | gh-aw raw 7.67M; the weighted metric is ~3.5× raw and exceeded the cap; **no PR shipped** |
+| Primary token levers | validator-first Pass 2 **+ `max_langs` per-run language cap** | structural parity stays in the bash validator; the language cap bounds the per-session turn count / output |
+| Per-run file output | `max_briefs × max_langs` = `1 × 7` = **7 files** (default) | well under safe-outputs `max-patch-files: 100` |
+| Daily throughput (3 runs) | up to **21 language-files / day** at defaults | raise `max_briefs` / `max_langs` once the per-session footprint is measured comfortably below the cap |
+| Current backlog drain (≥159 untranslated sources) | greenfield-first, oldest source + missing languages first | linear |
 
-If a run is behind schedule at agent minute 30 with translations still pending, the agent MUST trim `max_briefs` downward (drop the last selected source) rather than skip the Pass 2 validator gate — quality over completeness. A partial PR is always better than missing Timer A (job `timeout-minutes: 60`). The default `max_briefs=1` was set after run [#26633644372](https://github.com/Hack23/riksdagsmonitor/actions/runs/26633644372) repeatedly hit `CAPIError: 429 Maximum effective tokens exceeded` while attempting source #2; the validator-first Pass 2 above removes the read-back token sink that caused it.
+If a run is behind schedule at agent minute 30 with translations still pending, the agent MUST trim `max_briefs` downward (drop the last selected source) rather than skip the Pass 2 validator gate — quality over completeness. A partial PR is always better than missing Timer A (job `timeout-minutes: 60`). The default `max_briefs=1` was set after run [#26633644372](https://github.com/Hack23/riksdagsmonitor/actions/runs/26633644372) repeatedly hit `CAPIError: 429 Maximum effective tokens exceeded` while attempting source #2; the validator-first Pass 2 above removes the read-back token sink, and the `max_langs=7` per-run language cap (added after run [#26641603577](https://github.com/Hack23/riksdagsmonitor/actions/runs/26641603577)) bounds the per-session turn count so the weighted effective-token total stays under the 25M cap and the PR safe-output is reached.
 
 ## Rules specific to this workflow
 
