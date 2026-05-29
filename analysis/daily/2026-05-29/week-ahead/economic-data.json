@@ -1,0 +1,72 @@
+{
+  "analysis_date": "2026-05-29",
+  "article_type": "week-ahead",
+  "imf_status": "degraded_live_fetch",
+  "imf_prewarm_status": "ok",
+  "imf_vintage": "WEO-2026-04",
+  "imf_prewarm_source": "data/imf-context.json",
+  "live_fetch_error": "WEO/FM Datamapper connection failed (transient egress error during agent run); SDMX not attempted",
+  "sdmx_fetch_attempted": false,
+  "economic_context": {
+    "provider": "imf",
+    "vintage": "WEO-2026-04",
+    "retrieved_at": "pre-warm (agent start)",
+    "projectionYear": {
+      "T+1": "2026",
+      "T+2": "2027",
+      "T+5": "2030"
+    },
+    "probes": {
+      "WEO": "ok",
+      "FM": "ok",
+      "CPI": "ok"
+    },
+    "sweden_assessment": "Stable-growth, low-debt environment per WEO Apr-2026. Real GDP growth approximately 2.1% T+1 (2026), 2.4% T+2 (2027), 2.0% T+5 (2030); gross government debt near 33% of GDP; inflation easing toward the 2% target. No material macro shock since the April vintage. The benign-but-cooling backdrop frames the week's distributional interpellations (a-kassa HD10524, equalisation HD10526, paper-industry layoffs HD10523) but does not alter the migration/security political assessment for the week of 2026-05-29.",
+    "indicators_available": [
+      "NGDP_RPCH (GDP growth)",
+      "GGXWDG_NGDP (Government debt % GDP)",
+      "BCA_NGDPD (Current account % GDP)",
+      "PCPIPCH (CPI inflation)",
+      "LUR (Unemployment rate)"
+    ],
+    "indicators_unavailable_this_run": [
+      "IFS (International Financial Statistics) - SDMX not called",
+      "DOTS (trade flows) - SDMX not called",
+      "GFS_COFOG (government finance by function) - SDMX not called"
+    ]
+  },
+  "economic_claims": [
+    {
+      "claim": "Sweden's economic fundamentals remain stable with real GDP growth near 2.1% in 2026",
+      "provider": "imf",
+      "dataflow": "WEO",
+      "indicator": "NGDP_RPCH",
+      "vintage": "WEO-2026-04",
+      "projectionYear": "T+1 (2026) 2.1%, T+2 (2027) 2.4%, T+5 (2030) 2.0%",
+      "retrieved_at": "pre-warm",
+      "confidence": "MEDIUM - live fetch failed, pre-warm data is ~1 month old"
+    },
+    {
+      "claim": "Ample fiscal space underpins reception-law and welfare-tranche implementation feasibility",
+      "provider": "imf",
+      "dataflow": "FM",
+      "indicator": "GGXWDG_NGDP",
+      "vintage": "WEO-2026-04",
+      "projectionYear": "T+1 (2026) ~33% of GDP",
+      "retrieved_at": "pre-warm",
+      "confidence": "MEDIUM"
+    },
+    {
+      "claim": "Inflation easing toward 2% frames the distributional interpellation docket against a benign labour market",
+      "provider": "imf",
+      "dataflow": "WEO",
+      "indicator": "PCPIPCH",
+      "vintage": "WEO-2026-04",
+      "projectionYear": "T+1 (2026) ~2.0%",
+      "retrieved_at": "pre-warm",
+      "confidence": "MEDIUM"
+    }
+  ],
+  "degradation_note": "IMF live data unavailable for this run (transient egress). Pre-warm cache (WEO-2026-04) used with documented T+N projection stamps. Economic analysis quality: MEDIUM. No material impact on the political intelligence assessment for the week of 2026-05-29.",
+  "schema_version": "1.0"
+}
