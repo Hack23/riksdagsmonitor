@@ -191,10 +191,44 @@ describe('Article Scannability Transforms', () => {
       const html = '<h2 id="rm-section-a">Section A</h2><p>A</p><h2 id="rm-section-b">Section B</h2><p>B</p><h2 id="rm-section-c">Section C</h2><p>C</p>';
       const result = generateArticleToc(html, 'en');
       expect(result).toContain('class="rm-article-toc"');
+      expect(result).toContain('class="rm-article-toc-container"');
       expect(result).toContain('Contents');
       expect(result).toContain('href="#rm-section-a"');
-      expect(result).toContain('>Section A</a>');
-      expect(result).toContain('>Section B</a>');
+      expect(result).toContain('>Section A</span>');
+      expect(result).toContain('>Section B</span>');
+    });
+
+    it('wraps the TOC in a collapsible sidebar disclosure', () => {
+      const html = '<h2 id="rm-a">A</h2><p>X</p><h2 id="rm-b">B</h2><p>Y</p>';
+      const result = generateArticleToc(html, 'en');
+      expect(result).toContain('<aside class="rm-article-toc-container"');
+      expect(result).toContain('<details class="rm-article-toc-details" open>');
+      expect(result).toContain('class="rm-article-toc-summary"');
+      expect(result).toContain('class="rm-article-toc-list"');
+    });
+
+    it('assigns canonical icons and reading-depth layers from the section id', () => {
+      const html = [
+        '<h2 id="rm-what-happened">What Happened</h2><p>X</p>',
+        '<h2 id="rm-risk-assessment-7">Risk Assessment</h2><p>Y</p>',
+        '<h2 id="rm-threat-analysis">Threat Analysis</h2><p>Z</p>',
+      ].join('');
+      const result = generateArticleToc(html, 'en');
+      // L1 quick read for the lead section, with its icon.
+      expect(result).toContain('data-layer="quick"');
+      expect(result).toContain('📰');
+      // Trailing -<n> dedup suffix is normalized → risk-assessment (L2 analysis).
+      expect(result).toContain('rm-toc-layer--analysis');
+      expect(result).toContain('⚠️');
+      // Threat analysis is an L3 intelligence/deep-dive section.
+      expect(result).toContain('rm-toc-layer--intelligence');
+      expect(result).toContain('🛡️');
+    });
+
+    it('falls back to a default icon for unknown dynamic sections', () => {
+      const html = '<h2 id="rm-quux-unknown">Quux</h2><p>X</p><h2 id="rm-b">B</h2><p>Y</p>';
+      const result = generateArticleToc(html, 'en');
+      expect(result).toContain('📌');
     });
 
     it('returns empty string for single-section articles', () => {
@@ -207,6 +241,13 @@ describe('Article Scannability Transforms', () => {
       const html = '<h2 id="rm-a">A</h2><p>X</p><h2 id="rm-b">B</h2><p>Y</p>';
       const result = generateArticleToc(html, 'sv');
       expect(result).toContain('Innehåll');
+    });
+
+    it('localizes the layer badge label for non-English languages', () => {
+      const html = '<h2 id="rm-what-happened">A</h2><p>X</p><h2 id="rm-b">B</h2><p>Y</p>';
+      const result = generateArticleToc(html, 'sv');
+      // Swedish layer name for the quick-read layer.
+      expect(result).toContain('Snabbläsning');
     });
 
     it('escapes residual markup in TOC link text', () => {

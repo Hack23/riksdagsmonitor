@@ -87,64 +87,193 @@
   border: 1px solid #90caf9;
 }
 
-/* ─── Sticky Article TOC ───────────────────────────────────────────── */
-.rm-article-toc {
-  position: sticky;
-  top: 1rem;
-  max-height: calc(100vh - 2rem);
-  overflow-y: auto;
-  padding: var(--spacing-md, 1rem);
-  margin-bottom: var(--spacing-lg, 1.5rem);
-  background: var(--card-bg, #ffffff);
-  border: 1px solid var(--card-border, #dee2e6);
-  border-radius: var(--border-radius, 8px);
-  font-size: var(--font-size-sm, 0.875rem);
+/* ─── Article Layout: Sidebar TOC + Content ────────────────────────── */
+/* On wide viewports the article becomes a two-column grid: a sticky
+   left-hand table of contents and the main prose column. On narrow
+   viewports it collapses to a single column with a collapsible TOC. */
+.rm-article-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(1rem, 2.5vw, 2rem);
+  align-items: start;
 }
 
-.rm-article-toc-title {
+@media (min-width: 1024px) {
+  .rm-article--with-toc .rm-article-layout {
+    grid-template-columns: minmax(13rem, 17rem) minmax(0, 1fr);
+  }
+}
+
+.rm-article-content {
+  min-width: 0; /* allow flex/grid children (tables, pre) to shrink */
+}
+
+/* ─── Sidebar Table of Contents ────────────────────────────────────── */
+.rm-article-toc-container {
+  margin: 0 0 var(--spacing-lg, 1.5rem);
+}
+
+@media (min-width: 1024px) {
+  .rm-article--with-toc .rm-article-toc-container {
+    position: sticky;
+    top: 1rem;
+    align-self: start;
+    max-height: calc(100vh - 2rem);
+    overflow-y: auto;
+    margin-bottom: 0;
+    overscroll-behavior: contain;
+  }
+}
+
+.rm-article-toc-details {
+  border: 1px solid color-mix(in srgb, var(--primary-cyan, #00d9ff) 22%, transparent);
+  border-radius: var(--border-radius, 12px);
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--primary-cyan, #00d9ff) 7%, transparent), transparent 7rem),
+    color-mix(in srgb, var(--mid-bg, #1a1e3d) 55%, transparent);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+}
+
+.rm-article-toc-summary {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
   font-weight: 700;
-  margin-bottom: 0.5rem;
   font-size: var(--font-size-sm, 0.875rem);
-  color: var(--text-secondary, #4a4a4a);
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.06em;
+  color: var(--primary-cyan, #00d9ff);
+  list-style: none;
+  border-radius: var(--border-radius, 12px);
 }
 
-.rm-article-toc ol {
+.rm-article-toc-summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Rotating disclosure caret built from a pseudo-element so it works without
+   a JS dependency and respects RTL via the logical-property reflection. */
+.rm-article-toc-summary::after {
+  content: "▸";
+  margin-inline-start: auto;
+  font-size: 0.85em;
+  transition: transform 0.2s ease;
+}
+
+.rm-article-toc-details[open] > .rm-article-toc-summary::after {
+  transform: rotate(90deg);
+}
+
+.rm-toc-summary-icon {
+  font-size: 1.05em;
+  line-height: 1;
+}
+
+.rm-article-toc {
+  padding: 0 0.5rem 0.75rem;
+  font-size: var(--font-size-sm, 0.875rem);
+}
+
+.rm-article-toc-list {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.rm-article-toc li {
-  margin-bottom: 0.25rem;
+.rm-article-toc-list li {
+  margin: 0;
 }
 
 .rm-article-toc a {
-  display: block;
-  padding: 0.25rem 0.5rem;
-  border-radius: var(--border-radius-sm, 4px);
-  color: var(--text-color, #1a1a1a);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.6rem;
+  border-radius: var(--border-radius-sm, 6px);
+  color: color-mix(in srgb, var(--light-text, #e0e0e0) 88%, transparent);
   text-decoration: none;
-  transition: background-color 0.15s ease;
+  line-height: 1.35;
+  transition: background-color 0.15s ease, color 0.15s ease;
   border-inline-start: 2px solid transparent;
 }
 
-.rm-article-toc a:hover {
-  background-color: var(--badge-bg, #f8f9fa);
+.rm-toc-icon {
+  flex: 0 0 auto;
+  font-size: 1em;
+  line-height: 1;
+}
+
+.rm-toc-text {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.rm-toc-layer {
+  flex: 0 0 auto;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 0.05rem 0.3rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  opacity: 0.85;
+}
+
+.rm-toc-layer--quick {
+  color: var(--accent-green, #4caf50);
+  border-color: color-mix(in srgb, var(--accent-green, #4caf50) 45%, transparent);
+  background: color-mix(in srgb, var(--accent-green, #4caf50) 14%, transparent);
+}
+
+.rm-toc-layer--analysis {
+  color: var(--primary-cyan, #00d9ff);
+  border-color: color-mix(in srgb, var(--primary-cyan, #00d9ff) 45%, transparent);
+  background: color-mix(in srgb, var(--primary-cyan, #00d9ff) 14%, transparent);
+}
+
+.rm-toc-layer--intelligence {
+  color: var(--primary-magenta, #ff006e);
+  border-color: color-mix(in srgb, var(--primary-magenta, #ff006e) 45%, transparent);
+  background: color-mix(in srgb, var(--primary-magenta, #ff006e) 14%, transparent);
+}
+
+.rm-article-toc a:hover,
+.rm-article-toc a:focus-visible {
+  background-color: color-mix(in srgb, var(--primary-cyan, #00d9ff) 12%, transparent);
+  color: #ffffff;
+  outline: none;
 }
 
 .rm-article-toc a.rm-toc-active {
-  background-color: var(--badge-bg, #f8f9fa);
-  border-inline-start-color: var(--primary-color, #006633);
+  background-color: color-mix(in srgb, var(--primary-cyan, #00d9ff) 16%, transparent);
+  border-inline-start-color: var(--primary-cyan, #00d9ff);
+  color: #ffffff;
   font-weight: 600;
 }
 
-/* Mobile: disable sticky positioning and height constraints */
-@media (max-width: 767px) {
-  .rm-article-toc {
-    position: static;
-    max-height: none;
+/* Light theme: lean on the semantic theme tokens for legible contrast. */
+html[data-theme="light"] .rm-article-toc a {
+  color: var(--text-color, #1a1a1a);
+}
+
+html[data-theme="light"] .rm-article-toc a:hover,
+html[data-theme="light"] .rm-article-toc a:focus-visible,
+html[data-theme="light"] .rm-article-toc a.rm-toc-active {
+  color: var(--primary-color, #006633);
+}
+
+@media (prefers-color-scheme: light) {
+  html:not([data-theme="dark"]) .rm-article-toc a {
+    color: var(--text-color, #1a1a1a);
+  }
+
+  html:not([data-theme="dark"]) .rm-article-toc a:hover,
+  html:not([data-theme="dark"]) .rm-article-toc a:focus-visible,
+  html:not([data-theme="dark"]) .rm-article-toc a.rm-toc-active {
+    color: var(--primary-color, #006633);
   }
 }
 
@@ -251,11 +380,6 @@
     border-color: rgba(100, 181, 246, 0.4);
   }
 
-  html:not([data-theme="light"]) .rm-article-toc a.rm-toc-active {
-    background-color: var(--badge-bg, #333);
-    border-inline-start-color: var(--primary-color, #00cc66);
-  }
-
   html:not([data-theme="light"]) .rm-article-body details.rm-disclosure > summary {
     background: var(--badge-bg, #333);
   }
@@ -271,10 +395,13 @@
 }
 
 /* ─── RTL Support ──────────────────────────────────────────────────── */
-[dir="rtl"] .rm-article-toc a {
-  border-inline-start: 2px solid transparent;
+/* The TOC uses logical properties (border-inline-start, margin-inline-start)
+   throughout, so layout mirrors automatically under [dir="rtl"]. The
+   disclosure caret is flipped so it still opens "outward" toward the text. */
+[dir="rtl"] .rm-article-toc-summary::after {
+  content: "◂";
 }
 
-[dir="rtl"] .rm-article-toc a.rm-toc-active {
-  border-inline-start-color: var(--primary-color, #006633);
+[dir="rtl"] .rm-article-toc-details[open] > .rm-article-toc-summary::after {
+  transform: rotate(-90deg);
 }
