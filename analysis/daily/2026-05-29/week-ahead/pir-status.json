@@ -1,0 +1,86 @@
+{
+  "analysis_date": "2026-05-29",
+  "article_type": "week-ahead",
+  "prior_cycle_source": "analysis/daily/2026-05-22/week-ahead/pir-status.json",
+  "pirs": [
+    {
+      "id": "PIR-WA-03",
+      "question": "Will Lagrådet issue a blocking or critical opinion on the migration cluster, re-scoped to HD01SfU35 (En ny mottagandelag) reception-law proportionality?",
+      "status": "OPEN",
+      "priority": "HIGH",
+      "opened": "2026-05-22",
+      "last_updated": "2026-05-29",
+      "carried_forward": true,
+      "evidence_this_cycle": "Re-scoped from HD03262 to the reception law HD01SfU35. No Lagrådsyttrande citing proportionalitet observed in the document chain as of 2026-05-29. Reception control (mandatory accommodation/movement) is the most Lagrådet-vulnerable provision.",
+      "close_condition": "Lagrådet publishes an opinion on HD01SfU35, or the chamber decision occurs with no opinion published",
+      "collection_method": "Monitor data.riksdagen.se for HD01SfU35 lagrådsremiss/yttrande",
+      "target_resolution": "2026-06-05"
+    },
+    {
+      "id": "PIR-WA-04",
+      "question": "Will L or C file a substantive civil-liberties reservation on the security-tooling track, re-scoped to HD01JuU33 (cross-border e-evidence)?",
+      "status": "OPEN",
+      "priority": "HIGH",
+      "opened": "2026-05-22",
+      "last_updated": "2026-05-29",
+      "carried_forward": true,
+      "evidence_this_cycle": "Re-scoped from JuU28 to HD01JuU33. No public L/C statement on HD01JuU33 as of analysis date. Friction scenario S2 assessed at 32%. L reservation behaviour is the decisive cohesion observable.",
+      "close_condition": "JuU committee report/chamber vote completed; reservation/särskilt yttrande text published",
+      "collection_method": "riksdagen.se JuU committee records",
+      "target_resolution": "2026-06-05"
+    },
+    {
+      "id": "PIR-WA-05",
+      "question": "What is the current Migrationsverket case/reception backlog, as the reception-law implementation-feasibility constraint?",
+      "status": "OPEN",
+      "priority": "MEDIUM",
+      "opened": "2026-05-22",
+      "last_updated": "2026-05-29",
+      "carried_forward": true,
+      "evidence_this_cycle": "No May 2026 figure published. Reception-law operability depends on this capacity (see implementation-feasibility.md). Statskontoret 2024 context indicated a large standing caseload.",
+      "close_condition": "Migrationsverket publishes May/June 2026 statistics",
+      "collection_method": "migrationsverket.se statistics publications",
+      "target_resolution": "2026-06-29"
+    },
+    {
+      "id": "PIR-WA-06",
+      "question": "Does the autumn 2026 campaign frame become migration/order or economy/fairness?",
+      "status": "OPEN",
+      "priority": "HIGH",
+      "opened": "2026-05-29",
+      "last_updated": "2026-05-29",
+      "carried_forward": false,
+      "evidence_this_cycle": "Opposition interpellation docket (HD10524 a-kassa, HD10526 equalisation, HD10523 layoffs) signals a deliberate distributional-fairness frame; government finishes on migration/security. Frame dominance unresolved.",
+      "close_condition": "Dominant issue salience observable in late-June/July media",
+      "collection_method": "Media salience monitoring; party manifesto launches",
+      "target_resolution": "2026-07-31"
+    },
+    {
+      "id": "PIR-WA-07",
+      "question": "Will any spring contested bill slip past recess into the campaign period unresolved?",
+      "status": "OPEN",
+      "priority": "MEDIUM",
+      "opened": "2026-05-29",
+      "last_updated": "2026-05-29",
+      "carried_forward": false,
+      "evidence_this_cycle": "Heavy final-week docket (six committee reports on 2026-05-29). Slippage scenario S3 assessed at 13%. Calendar API degraded, raising residual uncertainty.",
+      "close_condition": "Recess begins with the spring docket cleared or with identified slippage",
+      "collection_method": "riksmöte calendar and chamber decision records",
+      "target_resolution": "2026-06-22"
+    },
+    {
+      "id": "PIR-WA-08",
+      "question": "What transition timeline does HD01SfU35 set, and does reception-law execution extend past the 2026-09-13 election?",
+      "status": "OPEN",
+      "priority": "MEDIUM",
+      "opened": "2026-05-29",
+      "last_updated": "2026-05-29",
+      "carried_forward": false,
+      "evidence_this_cycle": "Reception-law implementation timeline not yet disclosed; likely extends past the election, making it a transition-of-power variable.",
+      "close_condition": "HD01SfU35 implementation/transition schedule published",
+      "collection_method": "Statute text and Migrationsverket implementation guidance",
+      "target_resolution": "2026-08-31"
+    }
+  ],
+  "schema_version": "1.0"
+}
