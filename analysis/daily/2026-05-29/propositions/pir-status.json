@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.0",
+  "cycle": "propositions",
+  "date": "2026-05-29",
+  "subfolder": "propositions",
+  "generated_at": "2026-05-29T00:00:00Z",
+  "pirs": [
+    {
+      "pir_id": "PIR-1",
+      "statement": "Is HD03130 a binding legislative decision or a take-note accountability report, and what is its decision pathway?",
+      "status": "answered",
+      "confidence": "HIGH",
+      "answer_summary": "HD03130 is a skrivelse (Skr. 2025/26:130) — a take-note accountability report on the AP buffer funds referred to Finansutskottet. The Riksdag notes it rather than legislating; no binding substantive vote occurs."
+    },
+    {
+      "pir_id": "PIR-2",
+      "statement": "Does the AP-funds report carry electoral salience for the September 2026 Riksdag election?",
+      "status": "open",
+      "confidence": "MEDIUM"
+    },
+    {
+      "pir_id": "PIR-3",
+      "statement": "What is the disinformation and communication-risk exposure around the report's 2025 results?",
+      "status": "open",
+      "confidence": "MEDIUM"
+    },
+    {
+      "pir_id": "PIR-4",
+      "statement": "Will structural reform (AP1-AP4 consolidation) or an ESG-holdings controversy attach to the report this cycle?",
+      "status": "open",
+      "confidence": "LOW"
+    }
+  ]
+}
