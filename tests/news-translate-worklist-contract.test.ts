@@ -122,17 +122,22 @@ describe("news-translate worklist propagation to agent sandbox", () => {
   it("caps the per-run language batch via max_langs (effective-token control)", () => {
     // Run #26641603577 aborted with a 429 weighted-effective-token error
     // because all 13 languages of one source were translated in a single
-    // Copilot session. The builder must expose a max_langs input, resolve
-    // it (default 7), and truncate the still-needed languages to it before
-    // emitting TRANSLATION_LANGS.
-    // 1. workflow_dispatch input exists with default '7'.
+    // Copilot session — but the dominant cost was the fixed per-turn tool
+    // schema (github toolsets:[all] + three data-MCP servers) re-sent every
+    // turn, not the language count itself. With that dead-weight surface
+    // stripped (the agent only uses bash/edit/safe-outputs), a full
+    // 13-language source fits under the cap, so the default returns to 13.
+    // The builder must still expose a max_langs input, resolve it, and
+    // truncate the still-needed languages to it before emitting
+    // TRANSLATION_LANGS.
+    // 1. workflow_dispatch input exists.
     expect(TRANSLATE_MD).toMatch(/max_langs:/);
     expect(TRANSLATE_LOCK).toMatch(/max_langs:/);
     // 2. The builder forwards the input into the step env and resolves it.
     expect(TRANSLATE_MD).toMatch(
       /MAX_LANGS_INPUT:\s*\$\{\{\s*github\.event\.inputs\.max_langs\s*\}\}/,
     );
-    expect(TRANSLATE_MD).toMatch(/MAX_LANGS="\$\{MAX_LANGS_INPUT:-7\}"/);
+    expect(TRANSLATE_MD).toMatch(/MAX_LANGS="\$\{MAX_LANGS_INPUT:-13\}"/);
     // 3. The capped batch (RUN_LANGS) — not the full requested $LANGS — is
     //    what gets emitted as the run's TRANSLATION_LANGS.
     expect(TRANSLATE_MD).toMatch(/RUN_LANG_LIST\b/);
