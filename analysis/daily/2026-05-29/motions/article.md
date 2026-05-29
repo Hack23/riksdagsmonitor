@@ -3,7 +3,7 @@ date: 2026-05-29
 subfolder: motions
 slug: 2026-05-29-motions
 source_folder: analysis/daily/2026-05-29/motions
-generated_at: 2026-05-29T08:52:58.001Z
+generated_at: 2026-05-29T10:25:40.102Z
 language: en
 layout: article
 ---
@@ -2277,7 +2277,7 @@ This generated report reconciles the analysis folder with the article projection
 |---|---:|---|
 | Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 2 | Expanded under `## Per-document intelligence` immediately after significance scoring |
-| Supporting data artifacts | 3 | Linked in Article Sources, not expanded inline |
+| Supporting data artifacts | 1 | Linked in Article Sources, not expanded inline |
 
 **Absent canonical ordered slots (no alias variant on disk)**: `cycle-trajectory.md`, `parliamentary-season.md`, `quantitative-swot.md`, `political-stride-assessment.md`, `wildcards-blackswans.md`, `pestle-analysis.md`, `horizon-pir-rollforward.md`
 
@@ -2319,5 +2319,3 @@ Each section above projects one analysis artifact. The full audited markdown is 
 These machine-readable artifacts are linked for auditability and are not expanded inline, preserving the reader-facing narrative order:
 
 - [`pir-status.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-29/motions/pir-status.json)
-- [`documents/hd024191.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-29/motions/documents/hd024191.json)
-- [`documents/hd024192.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-29/motions/documents/hd024192.json)
