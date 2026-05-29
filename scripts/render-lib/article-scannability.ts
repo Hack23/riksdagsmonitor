@@ -17,6 +17,7 @@
 
 import type { Language } from '../types/language.js';
 import { escapeHtml, decodeHtmlEntities } from '../html-utils.js';
+import { localizedSectionTitle } from './section-title-i18n.js';
 
 // ─── Heading Text Extraction ──────────────────────────────────────────────────
 
@@ -488,9 +489,15 @@ export function generateArticleToc(bodyHtml: string, lang: Language): string {
       const { icon, layer } = sectionMetaForId(e.id);
       const layerName = LAYER_NAME_I18N[layer][lang] ?? LAYER_NAME_I18N[layer]['en']!;
       const badge = LAYER_BADGE[layer];
+      // Localise the TOC entry text by its language-stable section id so
+      // navigation chrome reads in the article's own language. The English
+      // body heading itself is intentionally left unchanged; fall back to the
+      // heading text for sections without a curated localisation.
+      const localized = localizedSectionTitle(normalizeSlug(e.id), lang);
+      const text = localized ?? e.text;
       return `<li data-layer="${layer}"><a href="#${escapeHtml(e.id)}">` +
         `<span class="rm-toc-icon" aria-hidden="true">${icon}</span> ` +
-        `<span class="rm-toc-text">${escapeHtml(e.text)}</span>` +
+        `<span class="rm-toc-text">${escapeHtml(text)}</span>` +
         `<span class="rm-toc-layer rm-toc-layer--${layer}" title="${escapeHtml(layerName)}" aria-label="${escapeHtml(layerName)}">${badge}</span>` +
         `</a></li>`;
     })
