@@ -283,8 +283,188 @@ const TOC_TITLE_I18N: Partial<Record<Language, string>> = {
 };
 
 /**
- * Generate a sticky in-article table of contents from H2 headings.
- * Returns an HTML string for the TOC nav element.
+ * Reading-depth layers used to group TOC entries, mirroring the layered
+ * intelligence-product structure: a fast top-line read (`quick`/L1), the core
+ * analytical lenses (`analysis`/L2), and the specialist deep-dive / appendix
+ * material (`intelligence`/L3). The layer is rendered as a compact badge so
+ * readers can navigate by depth, and as a `data-layer` attribute for styling.
+ */
+type TocLayer = 'quick' | 'analysis' | 'intelligence';
+
+const LAYER_BADGE: Record<TocLayer, string> = {
+  quick: 'L1',
+  analysis: 'L2',
+  intelligence: 'L3',
+};
+
+/**
+ * Short localized names for each reading-depth layer. Used for the accessible
+ * `aria-label`/`title` on the layer badge so the cryptic `L1`/`L2`/`L3` codes
+ * carry meaning in every supported language. English is the fallback.
+ */
+const LAYER_NAME_I18N: Record<TocLayer, Partial<Record<Language, string>>> = {
+  quick: {
+    en: 'Quick read', sv: 'Snabbläsning', da: 'Hurtig læsning', no: 'Hurtiglesing',
+    fi: 'Pikaluku', de: 'Kurzüberblick', fr: 'Lecture rapide', es: 'Lectura rápida',
+    nl: 'Snel lezen', ar: 'قراءة سريعة', he: 'קריאה מהירה', ja: 'クイックリード',
+    ko: '빠른 읽기', zh: '快速阅读',
+  },
+  analysis: {
+    en: 'Analysis', sv: 'Analys', da: 'Analyse', no: 'Analyse', fi: 'Analyysi',
+    de: 'Analyse', fr: 'Analyse', es: 'Análisis', nl: 'Analyse', ar: 'تحليل',
+    he: 'ניתוח', ja: '分析', ko: '분석', zh: '分析',
+  },
+  intelligence: {
+    en: 'Deep dive', sv: 'Fördjupning', da: 'Dybdegående', no: 'Fordypning',
+    fi: 'Syväluotaus', de: 'Vertiefung', fr: 'Analyse approfondie', es: 'Análisis profundo',
+    nl: 'Verdieping', ar: 'تحليل معمق', he: 'צלילה לעומק', ja: '詳細分析',
+    ko: '심층 분석', zh: '深入分析',
+  },
+};
+
+/**
+ * Canonical section → emoji icon and reading-depth layer map, keyed by the
+ * **normalized slug** (heading `id` with the `rm-` prefix and any trailing
+ * `-<n>` de-duplication suffix removed). Section `id`s are stable across all
+ * 14 languages (assigned from the canonical English scaffold), so this map
+ * gives every TOC entry a meaningful icon and layer regardless of the article
+ * language — even when the heading text itself is translated.
+ */
+const SECTION_META: Record<string, { icon: string; layer: TocLayer }> = {
+  // ── Phase A — Lead & headline judgments (L1 quick read) ──────────────
+  'executive-brief': { icon: '📋', layer: 'quick' },
+  'what-happened': { icon: '📰', layer: 'quick' },
+  'why-it-matters': { icon: '🎯', layer: 'quick' },
+  'key-findings': { icon: '🔑', layer: 'quick' },
+  'key-takeaways': { icon: '🔑', layer: 'quick' },
+  'synthesis-summary': { icon: '🔗', layer: 'quick' },
+  'thematic-synthesis': { icon: '🔗', layer: 'quick' },
+  'integrated-intelligence-picture': { icon: '🧠', layer: 'quick' },
+  'intelligence-assessment': { icon: '🧠', layer: 'quick' },
+  'key-judgments': { icon: '⚖️', layer: 'quick' },
+  'key-judgements': { icon: '⚖️', layer: 'quick' },
+  'reader-guide': { icon: '🧭', layer: 'quick' },
+  // ── Phase B/C — Evidence, actors & political arithmetic (L2) ─────────
+  'significance-scoring': { icon: '⭐', layer: 'analysis' },
+  'significance': { icon: '⭐', layer: 'analysis' },
+  'significance-assessment': { icon: '⭐', layer: 'analysis' },
+  'political-significance': { icon: '⭐', layer: 'analysis' },
+  'electoral-significance': { icon: '⭐', layer: 'analysis' },
+  'per-document-intelligence': { icon: '📄', layer: 'analysis' },
+  'document-summary': { icon: '📄', layer: 'analysis' },
+  'document-metadata': { icon: '📄', layer: 'analysis' },
+  'key-provisions': { icon: '📑', layer: 'analysis' },
+  'stakeholder-perspectives': { icon: '👥', layer: 'analysis' },
+  'stakeholder-impact': { icon: '👥', layer: 'analysis' },
+  'key-actors': { icon: '🎭', layer: 'analysis' },
+  'coalition-mathematics': { icon: '🤝', layer: 'analysis' },
+  'voter-segmentation': { icon: '🗳️', layer: 'analysis' },
+  // ── Phase D — Forward trajectory (L2) ────────────────────────────────
+  'forward-indicators': { icon: '🔭', layer: 'analysis' },
+  'top-forward-trigger': { icon: '🔭', layer: 'analysis' },
+  'scenario-analysis': { icon: '🔮', layer: 'analysis' },
+  'election-2026-analysis': { icon: '🗳️', layer: 'analysis' },
+  'election-cycle-analysis': { icon: '🗳️', layer: 'analysis' },
+  'cycle-trajectory': { icon: '📈', layer: 'analysis' },
+  'parliamentary-season': { icon: '📅', layer: 'analysis' },
+  // ── Phase E — Risk, threat & strategic posture (L2/L3) ───────────────
+  'risk-assessment': { icon: '⚠️', layer: 'analysis' },
+  'risk-register': { icon: '⚠️', layer: 'analysis' },
+  'sensitivity-analysis': { icon: '🎚️', layer: 'analysis' },
+  'swot-analysis': { icon: '📊', layer: 'analysis' },
+  'quantitative-swot': { icon: '📊', layer: 'analysis' },
+  'threat-analysis': { icon: '🛡️', layer: 'intelligence' },
+  'political-stride-assessment': { icon: '🛡️', layer: 'intelligence' },
+  'wildcards--black-swans': { icon: '🦢', layer: 'intelligence' },
+  'wildcards-blackswans': { icon: '🦢', layer: 'intelligence' },
+  'pestle-analysis': { icon: '🌍', layer: 'intelligence' },
+  // ── Phase F — Context & narrative environment (L3) ───────────────────
+  'historical-parallels': { icon: '📜', layer: 'intelligence' },
+  'comparative-international': { icon: '🌐', layer: 'intelligence' },
+  'implementation-feasibility': { icon: '🏗️', layer: 'intelligence' },
+  'media-framing-analysis': { icon: '📡', layer: 'intelligence' },
+  // ── Phase G — Critique (L3) ──────────────────────────────────────────
+  'devils-advocate': { icon: '😈', layer: 'intelligence' },
+  // ── Phase H — Audit appendix & deep dives (L3) ───────────────────────
+  'deep-dive-classification-results': { icon: '🗂️', layer: 'intelligence' },
+  'classification-results': { icon: '🗂️', layer: 'intelligence' },
+  'political-classification': { icon: '🗂️', layer: 'intelligence' },
+  'deep-dive-cross-reference-map': { icon: '🔗', layer: 'intelligence' },
+  'cross-reference-map': { icon: '🔗', layer: 'intelligence' },
+  'cross-references': { icon: '🔗', layer: 'intelligence' },
+  'deep-dive-methodology--limitations': { icon: '🔬', layer: 'intelligence' },
+  'methodology-reflection': { icon: '🔬', layer: 'intelligence' },
+  'deep-dive-data-download-manifest': { icon: '📥', layer: 'intelligence' },
+  'data-download-manifest': { icon: '📥', layer: 'intelligence' },
+  'full-text-fetch-outcomes': { icon: '📃', layer: 'intelligence' },
+  'analysis-artifact-coverage-report': { icon: '✅', layer: 'intelligence' },
+  'source-assessment': { icon: '📚', layer: 'intelligence' },
+  'sources': { icon: '📚', layer: 'intelligence' },
+};
+
+/**
+ * Keyword → icon/layer fallbacks applied when a slug is not in
+ * {@link SECTION_META} (e.g. dynamic per-document or per-theme headings such
+ * as `theme-3-...`). Ordered most-specific first; the first matching keyword
+ * wins. Keyed on substrings of the normalized slug, so they remain effective
+ * even for numbered or suffixed variants.
+ */
+const SECTION_KEYWORD_FALLBACKS: ReadonlyArray<readonly [RegExp, { icon: string; layer: TocLayer }]> = [
+  [/deep-dive/, { icon: '🔬', layer: 'intelligence' }],
+  [/threat|stride/, { icon: '🛡️', layer: 'intelligence' }],
+  [/risk/, { icon: '⚠️', layer: 'analysis' }],
+  [/scenario|wildcard|black-swan/, { icon: '🔮', layer: 'intelligence' }],
+  [/swot|strength|weakness|opportunit/, { icon: '📊', layer: 'analysis' }],
+  [/election|electoral|vote|voter/, { icon: '🗳️', layer: 'analysis' }],
+  [/coalition/, { icon: '🤝', layer: 'analysis' }],
+  [/stakeholder|actor/, { icon: '👥', layer: 'analysis' }],
+  [/forward|indicator|trigger/, { icon: '🔭', layer: 'analysis' }],
+  [/significance|score/, { icon: '⭐', layer: 'analysis' }],
+  [/media|framing|narrative/, { icon: '📡', layer: 'intelligence' }],
+  [/histor/, { icon: '📜', layer: 'intelligence' }],
+  [/comparativ|international/, { icon: '🌐', layer: 'intelligence' }],
+  [/feasibil|implementation/, { icon: '🏗️', layer: 'intelligence' }],
+  [/methodolog|limitation/, { icon: '🔬', layer: 'intelligence' }],
+  [/manifest|download/, { icon: '📥', layer: 'intelligence' }],
+  [/source|reference/, { icon: '📚', layer: 'intelligence' }],
+  [/theme|document|provision|dok/, { icon: '📄', layer: 'analysis' }],
+  [/summary|synthesis|brief|finding|judgment|judgement/, { icon: '🔑', layer: 'quick' }],
+];
+
+/** Default icon/layer for sections that match neither the map nor a keyword. */
+const SECTION_META_DEFAULT: { icon: string; layer: TocLayer } = { icon: '📌', layer: 'analysis' };
+
+/**
+ * Normalize a heading `id` to its canonical slug by stripping the `rm-`
+ * prefix and any trailing `-<digits>` de-duplication suffix appended by the
+ * slug generator (e.g. `rm-risk-assessment-7` → `risk-assessment`).
+ */
+function normalizeSlug(id: string): string {
+  return id.replace(/^rm-/, '').replace(/-\d+$/, '');
+}
+
+/** Resolve the icon + reading-depth layer for a heading `id`. */
+function sectionMetaForId(id: string): { icon: string; layer: TocLayer } {
+  const slug = normalizeSlug(id);
+  const direct = SECTION_META[slug];
+  if (direct) return direct;
+  for (const [pattern, meta] of SECTION_KEYWORD_FALLBACKS) {
+    if (pattern.test(slug)) return meta;
+  }
+  return SECTION_META_DEFAULT;
+}
+
+/**
+ * Generate a sticky sidebar table of contents from H2 headings.
+ *
+ * The TOC is rendered as a collapsible `<details>` (open on desktop, easily
+ * collapsed on mobile) inside an `<aside>` so it can sit in a sticky left
+ * column next to the article body. Each entry carries a semantic icon and a
+ * reading-depth layer badge (L1 quick / L2 analysis / L3 deep dive) derived
+ * from the language-stable section `id`, giving readers a fast visual map of
+ * the article in any of the 14 supported languages.
+ *
+ * Returns an empty string for very short articles (fewer than two H2s).
  */
 export function generateArticleToc(bodyHtml: string, lang: Language): string {
   const headingRegex = /<h2[^>]*id="([^"]*)"[^>]*>([\s\S]*?)<\/h2>/gi;
@@ -301,17 +481,31 @@ export function generateArticleToc(bodyHtml: string, lang: Language): string {
 
   if (entries.length < 2) return ''; // Don't show TOC for very short articles
 
-  const tocTitle = TOC_TITLE_I18N[lang] ?? 'Contents';
+  const tocTitle = TOC_TITLE_I18N[lang] ?? TOC_TITLE_I18N['en']!;
+
   const items = entries
-    .map((e) => `<li><a href="#${escapeHtml(e.id)}">${escapeHtml(e.text)}</a></li>`)
+    .map((e) => {
+      const { icon, layer } = sectionMetaForId(e.id);
+      const layerName = LAYER_NAME_I18N[layer][lang] ?? LAYER_NAME_I18N[layer]['en']!;
+      const badge = LAYER_BADGE[layer];
+      return `<li data-layer="${layer}"><a href="#${escapeHtml(e.id)}">` +
+        `<span class="rm-toc-icon" aria-hidden="true">${icon}</span> ` +
+        `<span class="rm-toc-text">${escapeHtml(e.text)}</span>` +
+        `<span class="rm-toc-layer rm-toc-layer--${layer}" title="${escapeHtml(layerName)}" aria-label="${escapeHtml(layerName)}">${badge}</span>` +
+        `</a></li>`;
+    })
     .join('\n');
 
-  return `<nav class="rm-article-toc" aria-label="${tocTitle}">
-<p class="rm-article-toc-title">${tocTitle}</p>
-<ol>
+  return `<aside class="rm-article-toc-container" aria-labelledby="rm-article-toc-heading">
+<details class="rm-article-toc-details" open>
+<summary class="rm-article-toc-summary" id="rm-article-toc-heading"><span class="rm-toc-summary-icon" aria-hidden="true">📑</span> ${escapeHtml(tocTitle)}</summary>
+<nav class="rm-article-toc" aria-label="${escapeHtml(tocTitle)}">
+<ol class="rm-article-toc-list">
 ${items}
 </ol>
-</nav>`;
+</nav>
+</details>
+</aside>`;
 }
 
 // ─── Methodology Footer ───────────────────────────────────────────────────────

@@ -635,9 +635,32 @@ export async function renderArticleHtml(input: RenderArticleInput): Promise<stri
     canonicalPath: input.canonicalPath,
   });
 
+  // Article content column (everything after the header). When a TOC is
+  // present this is placed in the second grid column next to the sticky
+  // sidebar; otherwise it sits directly in the article card.
+  const contentHtml = `        <div class="rm-article-body">
+${leadHtml}
+        </div>
+${readerNavigationHtml}${politicalContextHtml}${restHtml ? `
+        <div class="rm-article-body rm-article-body-rest">
+${restHtml}
+        </div>` : ''}
+${analysisArtifactsHtml}${methodsReferenceHtml}${methodologyFooterHtml}`;
+
+  // With a TOC, lay out a two-column grid (sticky sidebar TOC + content).
+  // Without one, keep the simple single-column flow.
+  const bodyLayoutHtml = tocHtml
+    ? `        <div class="rm-article-layout">
+${tocHtml}
+          <div class="rm-article-content">
+${contentHtml}
+          </div>
+        </div>`
+    : contentHtml;
+
   return `${chrome.head}
 ${chrome.headerHtml}
-      <article class="rm-article rm-article-type-${escapeHtml(articleType.type)}" data-article-type="${escapeHtml(articleType.type)}" lang="${LANGUAGE_META[input.lang].hreflang}">
+      <article class="rm-article rm-article-type-${escapeHtml(articleType.type)}${tocHtml ? ' rm-article--with-toc' : ''}" data-article-type="${escapeHtml(articleType.type)}" lang="${LANGUAGE_META[input.lang].hreflang}">
         <header class="rm-article-header">
           <p class="rm-article-eyebrow"><span class="rm-icon" aria-hidden="true">${articleTypeIcon(articleType.type)}</span> ${escapeHtml(localizedArticleTypeLabel)}</p>
           <h1>${escapeHtml(title)}</h1>
@@ -652,15 +675,7 @@ ${chrome.headerHtml}
             <li><span class="rm-icon" aria-hidden="true">🔗</span> ${escapeHtml(LANGUAGE_META[input.lang].translations.articleTrustTraceable)}</li>
           </ul>
         </header>
-${tocHtml}
-        <div class="rm-article-body">
-${leadHtml}
-        </div>
-${readerNavigationHtml}${politicalContextHtml}${restHtml ? `
-        <div class="rm-article-body rm-article-body-rest">
-${restHtml}
-        </div>` : ''}
-${analysisArtifactsHtml}${methodsReferenceHtml}${methodologyFooterHtml}
+${bodyLayoutHtml}
       </article>${tocHtml ? `
       <script>
         (function(){var t=document.querySelector('.rm-article-toc');if(!t)return;var links=t.querySelectorAll('a[href^="#"]');var ids=[];links.forEach(function(a){ids.push(a.getAttribute('href').slice(1));});if(!ids.length||!('IntersectionObserver' in window))return;var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){links.forEach(function(a){a.classList.toggle('rm-toc-active',a.getAttribute('href')==='#'+e.target.id);});};});},{rootMargin:'-80px 0px -60% 0px',threshold:0});ids.forEach(function(id){var el=document.getElementById(id);if(el)obs.observe(el);});})();
