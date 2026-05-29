@@ -1487,7 +1487,15 @@ describe('render-lib — renderArticleHtml (end-to-end)', () => {
       artifactsUsed: ['executive-brief.md', 'risk-assessment.md'],
     });
     expect(html.startsWith('<!DOCTYPE html>')).toBe(true);
-    expect(html).toContain('<article class="rm-article rm-article-type-propositions"');
+    // The wrapper always carries `rm-article` + the `rm-article-type-<id>`
+    // class. A two-section article (Executive Brief + Risk Assessment)
+    // clears the ≥2-heading TOC threshold (see article-scannability.test.ts),
+    // so the wrapper also gains the `rm-article--with-toc` modifier. Match
+    // the type class while tolerating that optional, intended modifier
+    // instead of pinning the closing quote directly after the type slug.
+    expect(html).toMatch(
+      /<article class="rm-article rm-article-type-propositions( rm-article--with-toc)?"/,
+    );
     expect(html).toContain('data-article-type="propositions"');
     expect(html).toContain('<p class="rm-article-eyebrow"><span class="rm-icon" aria-hidden="true">📜</span> Propositions</p>');
     expect(html).toContain('<h1>Propositions 2099-01-01</h1>');
