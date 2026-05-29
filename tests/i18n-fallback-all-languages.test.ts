@@ -322,7 +322,7 @@ describe('buildSeoDescription — all 14 languages respect budgets', () => {
       expect(desc.length, `${lang} description empty`).toBeGreaterThan(0);
     });
 
-    it(`${lang}: returns empty string for empty description (fallback-safe)`, () => {
+    it(`${lang}: synthesises a non-empty fallback from the title for an empty description`, () => {
       const desc = buildSeoDescription({
         title: SAMPLE_TITLES[lang],
         description: '',
@@ -331,7 +331,10 @@ describe('buildSeoDescription — all 14 languages respect budgets', () => {
         articleTypeLabel: articleTypeLabel('propositions', lang, 'Propositions'),
         articleTypeId: 'propositions',
       });
-      expect(desc).toBe('');
+      // Empty description must never ship `content=""` — fall back to the
+      // story title (verbatim here as the sample titles fit every budget).
+      expect(desc.length, `${lang} description empty`).toBeGreaterThan(0);
+      expect(desc).toBe(SAMPLE_TITLES[lang]);
     });
   }
 

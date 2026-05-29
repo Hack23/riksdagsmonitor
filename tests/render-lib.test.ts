@@ -725,7 +725,7 @@ describe('render-lib — article SEO metadata', () => {
     expect(de.keywords).not.toContain('political intelligence');
   });
 
-  it('cleans malformed HTML fragments without synthesizing a fixed meta description', () => {
+  it('cleans malformed HTML fragments and falls back to the story title instead of an empty meta description', () => {
     const seo = buildArticleSeoMetadata({
       title: 'Riksdagen granskar vårbudgeten',
       description: '<div dir="rtl">',
@@ -736,10 +736,17 @@ describe('render-lib — article SEO metadata', () => {
       lang: 'sv',
     });
 
+    // The malformed fragment strips to empty; rather than ship
+    // `<meta name="description" content="">` (flagged "description
+    // missing" by SEO crawlers) the builder now synthesises a non-empty,
+    // story-specific description from the article H1 — never a fixed
+    // boilerplate string and never the article-type label when a title
+    // is present.
     expect(seo.description).not.toContain('<div');
-    expect(seo.description).toBe('');
+    expect(seo.description).toBe('Riksdagen granskar vårbudgeten');
     expect(seo.description).not.toContain('Motioner');
     expect(seo.description).not.toContain('(sv).');
+    expect(seo.description.length).toBeGreaterThan(0);
     expect(seo.description.length).toBeLessThanOrEqual(200);
   });
 

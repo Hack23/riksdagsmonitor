@@ -50,6 +50,52 @@ describe('chrome.ts — FAQPage auto-emission', () => {
   });
 });
 
+describe('chrome.ts — meta description never empty (SEO guard)', () => {
+  it('falls back to the page title when description is an empty string', () => {
+    const chrome = buildChrome({
+      lang: 'en',
+      title: 'Riksdag Advances Counter-Drone Defence Package',
+      description: '',
+      canonicalPath: 'news/breaking.html',
+    });
+    expect(chrome.head).toContain(
+      '<meta name="description" content="Riksdag Advances Counter-Drone Defence Package">',
+    );
+    expect(chrome.head).not.toContain('<meta name="description" content="">');
+  });
+
+  it('falls back to the page title when description is whitespace only', () => {
+    const chrome = buildChrome({
+      lang: 'sv',
+      title: 'Riksdagen samlas',
+      description: '   ',
+      canonicalPath: 'news/index_sv.html',
+      ogType: 'website',
+    });
+    expect(chrome.head).toContain(
+      '<meta name="description" content="Riksdagen samlas">',
+    );
+    expect(chrome.head).toContain(
+      '<meta property="og:description" content="Riksdagen samlas">',
+    );
+    expect(chrome.head).toContain(
+      '<meta name="twitter:description" content="Riksdagen samlas">',
+    );
+  });
+
+  it('keeps a supplied non-empty description unchanged', () => {
+    const chrome = buildChrome({
+      lang: 'en',
+      title: 'Test',
+      description: 'A real, descriptive SERP summary.',
+      canonicalPath: 'test.html',
+    });
+    expect(chrome.head).toContain(
+      '<meta name="description" content="A real, descriptive SERP summary.">',
+    );
+  });
+});
+
 describe('chrome.ts — WebPage speakable merge', () => {
   it('merges speakable into an existing WebPage node without duplication', () => {
     const existingWebPage = {

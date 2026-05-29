@@ -103,6 +103,20 @@ export function renderChromeHead(opts: ChromeOptions): string {
   const published = opts.publishedIso ?? new Date().toISOString();
   const modified = opts.modifiedIso ?? published;
 
+  // Defence-in-depth SEO guarantee: every page that flows through the
+  // shared chrome MUST ship a non-empty `<meta name="description">` (and
+  // the mirrored `og:`/`twitter:` description). A blank or whitespace-only
+  // `opts.description` — e.g. an article with empty front-matter or a
+  // news-index whose `subtitle` is missing for a locale — would otherwise
+  // emit `content=""`, which crawlers report as "description missing".
+  // Fall back to the page title so the tag is always populated and
+  // relevant; the title is itself synthesised non-empty upstream
+  // (see `buildSeoTitle`).
+  const description =
+    opts.description && opts.description.trim().length > 0
+      ? opts.description
+      : opts.title;
+
   const autoJsonLd: unknown[] = [];
   if (opts.faqItems && opts.faqItems.length >= 2) {
     autoJsonLd.push({
@@ -188,7 +202,7 @@ export function renderChromeHead(opts: ChromeOptions): string {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>${escapedBrandedTitle}</title>
-    <meta name="description" content="${escapeHtml(opts.description)}">
+    <meta name="description" content="${escapeHtml(description)}">
     <meta name="keywords" content="${escapeHtml(keywords)}">
     <meta name="news_keywords" content="${escapeHtml(keywords)}">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -217,7 +231,7 @@ ${pagerLinksHtml}
     <meta property="og:type" content="${ogType}">
     <meta property="og:site_name" content="Riksdagsmonitor">
     <meta property="og:title" content="${escapedBrandedTitle}">
-    <meta property="og:description" content="${escapeHtml(opts.description)}">
+    <meta property="og:description" content="${escapeHtml(description)}">
     <meta property="og:url" content="${BASE_URL}/${opts.canonicalPath}">
     <meta property="og:locale" content="${meta.locale}">
 ${alternateLocalesHtml}
@@ -232,7 +246,7 @@ ${articleMetaBlock}
     <meta name="twitter:site" content="@riksdagsmonitor">
     <meta name="twitter:creator" content="@hack23ab">
     <meta name="twitter:title" content="${escapedBrandedTitle}">
-    <meta name="twitter:description" content="${escapeHtml(opts.description)}">
+    <meta name="twitter:description" content="${escapeHtml(description)}">
     <meta name="twitter:image" content="${BASE_URL}/images/og-image.webp">
     <meta name="twitter:image:alt" content="Riksdagsmonitor ${escapedTitle}">
 

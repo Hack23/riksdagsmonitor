@@ -268,4 +268,30 @@ describe('buildSeoDescription — 14-language matrix never overshoots hardMax', 
     });
     expect(result.length).toBeLessThanOrEqual(200);
   });
+
+  it('synthesises a non-empty description from the title when description is empty', () => {
+    const result = buildSeoDescription({
+      title: 'Sweden Passes Counter-Drone Defence Package',
+      description: '',
+      lang: 'en',
+      date: '2026-04-03',
+      articleTypeLabel: 'Breaking News',
+      articleTypeId: 'breaking',
+    });
+    expect(result.length).toBeGreaterThan(0);
+    expect(result).toContain('Sweden Passes Counter-Drone Defence Package');
+  });
+
+  it('synthesises from the localized article-type label when both description and title are empty', () => {
+    const result = buildSeoDescription({
+      title: '   ',
+      description: '   ',
+      lang: 'sv',
+      date: '2026-04-03',
+      articleTypeLabel: 'Lagförslag',
+      articleTypeId: 'propositions',
+    });
+    expect(result.length).toBeGreaterThan(0);
+    expect(result).toBe('Lagförslag');
+  });
 });

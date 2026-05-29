@@ -655,7 +655,19 @@ export function buildSeoTitle(input: ArticleSeoMetadataInput): string {
 export function buildSeoDescription(input: ArticleSeoMetadataInput): string {
   const base = stripDescriptionMarkup(input.description);
   const { hardMax } = descriptionWindowForLanguage(input.lang);
-  if (base.length === 0) return base;
+  if (base.length === 0) {
+    // Empty / missing `description` front-matter — synthesise a non-empty,
+    // story-relevant SERP description so the page never ships
+    // `<meta name="description" content="">` (flagged "description missing"
+    // by SEO crawlers). Mirror the empty-title cascade in `buildSeoTitle`:
+    // reuse the executive-brief H1 (already localized and story-specific),
+    // falling back to the localized article-type label when the title is
+    // also empty. Both inputs are already in the page's own language, so
+    // no EN tokens leak under a non-EN `<html lang>`.
+    const synthesised =
+      collapseWhitespace(stripEmptyBrackets(input.title)) || input.articleTypeLabel;
+    return truncateWithinBudget(synthesised, hardMax);
+  }
   return truncateWithinBudget(base, hardMax);
 }
 
