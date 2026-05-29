@@ -62,14 +62,6 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.COPILOT_MCP_GITHUB_PERSONAL_ACCESS_TOKEN || secrets.GITHUB_TOKEN }}
 
-      # safe_outputs fetch-depth is now controlled natively by each news-*.md
-      # `checkout: { fetch-depth: 0 }` frontmatter declaration (gh-aw v0.76.0+
-      # `pkg/workflow/compiler_safe_outputs_steps.go` propagates the value via
-      # `NewCheckoutManager(data.CheckoutConfigs).GetDefaultCheckoutOverride()`).
-      # No post-compile patch step is required. The
-      # `tests/safeoutputs-fetch-depth.test.ts` regression suite asserts every
-      # compiled news-*.lock.yml has fetch-depth: 0 on its safe_outputs Checkouts.
-
       - name: Enforce PAT fallback coverage (workflow_run triggers ↮ news-*.md)
         # Drift detector: every news-*.md `name:` must appear in the
         # `workflow_run.workflows:` list AND in the slug_for_name() case map
