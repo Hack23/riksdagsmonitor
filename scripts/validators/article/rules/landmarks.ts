@@ -32,13 +32,13 @@ export const REQUIRED_LANDMARKS: ReadonlyArray<{
     code: 'missing-reader-guide',
   },
   {
-    pattern: /^##\s+Executive Brief\s*$/m,
-    label: '## Executive Brief section',
+    pattern: /^##\s+(?:What Happened|Executive Brief)\s*$/m,
+    label: '## What Happened (Executive Brief) section',
     code: 'missing-executive-brief',
   },
   {
-    pattern: /^#{2,6}\s+(?:[^\n]*?\s)?BLUF\b/im,
-    label: 'BLUF heading inside the executive brief',
+    pattern: /^#{2,6}\s+(?:[^\n]*?\s)?(?:BLUF|Lede)\b/im,
+    label: 'BLUF/Lede heading inside the executive brief',
     code: 'missing-bluf',
   },
   {

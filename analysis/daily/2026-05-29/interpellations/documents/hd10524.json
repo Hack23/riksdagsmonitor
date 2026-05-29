@@ -1,0 +1,25 @@
+{
+  "dok_id": "HD10524",
+  "titel": "Förändrad a-kassa",
+  "datum": "2026-05-29",
+  "rm": "2025/26",
+  "parti": "S",
+  "summary": "Interpellation 2025/26:524 Förändrad a-kassa\n av  Jim Svensk Larm (S)\n till Arbetsmarknadsminister och vikarierande klimat- och miljöminister Johan Britz (L)\n Den 1 oktober 2025 förändrade regeringen a-kassan, vilket resulterade i en snabb avtrappning från 100 dagar. Den här förändringen skedde samtidigt som arbetslösheten",
+  "url": "https://data.riksdagen.se/dokument/HD10524.html",
+  "mcpCoverageState": "full_text",
+  "mcpProvenance": {
+    "provider": "riksdag-regering",
+    "endpoint": "http://host.docker.internal:8080/mcp/riksdag-regering",
+    "tool": "get_dokument_innehall",
+    "query": {
+      "dok_id": "HD10524",
+      "include_full_text": true
+    },
+    "resultCount": 1,
+    "coverageState": "full_text",
+    "retrieval": "live",
+    "retrievedAt": "2026-05-29T07:51:11.889Z"
+  },
+  "fullContent": "5291318\r\n HD10524\r\n 2025/26\r\n 524\r\n ip\r\n \r\n ip\r\n Interpellation 2025/26:524 av Jim Svensk Larm (S)\r\n Interpellation\r\n Interpellationsdebatt\r\n S\r\n S\r\n Arbetsmarknadsminister och vikarierande klimat- och miljöminister Johan Britz\r\n 524\r\n 0\r\n 2026-05-29 00:00:00\r\n 2026-05-29 08:38:52\r\n 2026-05-29 00:00:00\r\n Förändrad a-kassa\r\n Jim Svensk Larm (S)\r\n Skickad\r\n html\r\n \r\n Frips\r\n ef0ea937-4b5c-47b9-affc-6b9bb0cca92f\r\n https://data.riksdagen.se/dokument/HD10524/text\r\n https://data.riksdagen.se/dokument/HD10524\r\n https://data.riksdagen.se/dokumentstatus/HD10524\r\n <h2>Interpellation 2025/26:524 Förändrad a-kassa</h2>\r\n<p class=\"Av\">av <i>Jim Svensk Larm (S)</i></p>\r\n<p class=\"Till\">till Arbetsmarknadsminister och vikarierande klimat- och miljöminister Johan Britz (L)</p>\r\n<p>&nbsp;</p>\r\n<p>Den 1 oktober 2025 förändrade regeringen a-kassan, vilket resulterade i en snabb avtrappning från 100 dagar. Den här förändringen skedde samtidigt som arbetslösheten var på en fortsatt hög nivå och varslen fortsatte att komma.</p><p>Med anledning av&#160;ovanstående vill jag fråga arbetsmarknadsminister och vikarierande klimat- och miljöminister Johan Britz&#58;</p><p>&#160;</p><ol><li>Avser ministern&#160;att vidta några åtgärder för att avskaffa avtrappningen i ersättning för a-kassan?</li><li>Avser ministern&#160;att utreda hur en ökad avtrappning av ersättningen riskerar att öka kostnader för andra myndigheter när familjer behöver fortsatt stöd?</li></ol>\r\n\r\n\r\n\r\nINL\r\nInlämnad\r\n2026-05-28 00:00:00\r\ninträffat\r\n0\r\nbehandling\r\n\r\n\r\nÖverlämnad\r\nÖverlämnad\r\n2026-05-29 00:00:00\r\nplanerat\r\n0\r\nbehandling\r\n\r\n\r\nANM\r\nAnmäld\r\n2026-06-01 00:00:00\r\nplanerat\r\n0\r\nbehandling\r\n\r\n\r\nSISVA\r\nSista svarsdatum\r\n2026-06-12 00:00:00\r\nplanerat\r\n0\r\nbehandling\r\n\r\n\r\n\r\n\r\n0397205342021\r\nArbetsmarknadsminister och vikarierande klimat- och miljöminister Johan Britz\r\nL\r\n1\r\nbesvaradav\r\n\r\n\r\n0397205342021\r\nArbetsmarknadsminister och vikarierande klimat- och miljöminister Johan Britz\r\nL\r\n1\r\nstalldtill\r\n\r\n\r\n0822010116020\r\nJim Svensk Larm\r\nS\r\n1\r\nundertecknare\r\n\r\n\r\n\r\n\r\nstatustext\r\nstatustext\r\nInterpellationen är inlämnad\r\nHD10524\r\n2026-05-29 09:37:21\r\n\r\n\r\n\r\n\r\nHD10524\r\nJim Svensk Larm (S)\r\nip_202526__524.pdf\r\n75833\r\npdf\r\nFörändrad a-kassa\r\nhttps://data.riksdagen.se/fil/E20FBD5E-4ED3-48E2-B9F9-56D67F5F5D0C",
+  "contentFetched": true
+}
