@@ -3,7 +3,7 @@ date: 2026-05-20
 subfolder: committeeReports
 slug: 2026-05-20-committeeReports
 source_folder: analysis/daily/2026-05-20/committeeReports
-generated_at: 2026-05-29T19:05:09.687Z
+generated_at: 2026-05-29T21:31:17.070Z
 language: en
 layout: article
 ---

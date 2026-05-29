@@ -3,7 +3,7 @@ date: 2026-05-07
 subfolder: year-ahead
 slug: 2026-05-07-year-ahead
 source_folder: analysis/daily/2026-05-07/year-ahead
-generated_at: 2026-05-29T19:05:08.864Z
+generated_at: 2026-05-29T21:31:16.311Z
 language: en
 layout: article
 ---
