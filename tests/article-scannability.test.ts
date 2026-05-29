@@ -256,6 +256,44 @@ describe('Article Scannability Transforms', () => {
       expect(result).toContain('Section &lt;script');
       expect(result).not.toContain('Section <script');
     });
+
+    it('localizes TOC entry text by language-stable section id for non-English', () => {
+      const html = [
+        '<h2 id="rm-what-happened">What Happened</h2><p>X</p>',
+        '<h2 id="rm-risk-assessment-7">Risk Assessment</h2><p>Y</p>',
+        '<h2 id="rm-deep-dive-cross-reference-map">Deep Dive: Cross-Reference Map</h2><p>Z</p>',
+      ].join('');
+      const result = generateArticleToc(html, 'sv');
+      // Journalist label, reused-artifact title, and Deep Dive section all localise.
+      expect(result).toContain('>Vad som hände</span>');
+      expect(result).toContain('>Riskbedömning</span>');
+      expect(result).toContain('>Fördjupning: Korsreferenskarta</span>');
+      // The original English heading text must not leak into the TOC.
+      expect(result).not.toContain('>What Happened</span>');
+      expect(result).not.toContain('>Risk Assessment</span>');
+    });
+
+    it('keeps English TOC entry text byte-identical to the body heading', () => {
+      const html = [
+        '<h2 id="rm-what-happened">What Happened</h2><p>X</p>',
+        '<h2 id="rm-risk-assessment-7">Risk Assessment</h2><p>Y</p>',
+      ].join('');
+      const result = generateArticleToc(html, 'en');
+      expect(result).toContain('>What Happened</span>');
+      expect(result).toContain('>Risk Assessment</span>');
+    });
+
+    it('reuses the reader-guide per-document label for the per-document section', () => {
+      const html = '<h2 id="rm-per-document-intelligence">Per-document intelligence</h2><p>X</p><h2 id="rm-b">B</h2><p>Y</p>';
+      const result = generateArticleToc(html, 'sv');
+      expect(result).toContain('>Dokumentspecifik underrättelse</span>');
+    });
+
+    it('falls back to the heading text for sections without a curated localisation', () => {
+      const html = '<h2 id="rm-quux-unknown">Quux</h2><p>X</p><h2 id="rm-b">B</h2><p>Y</p>';
+      const result = generateArticleToc(html, 'fr');
+      expect(result).toContain('>Quux</span>');
+    });
   });
 
   describe('renderMethodologyFooter', () => {
