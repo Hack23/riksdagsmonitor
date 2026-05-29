@@ -16,6 +16,12 @@
 - **Cross-reference baseline** — Every `dok_id` cited here must resolve via `get_dokument`; every MP reference must carry an `intressent_id`
 - **MCP tools** — `get_calendar_events`, `search_dokument`, `search_voteringar`, `search_anforanden`, `get_betankanden`, `get_propositioner`, `get_motioner`, `get_fragor`, `get_interpellationer`, `search_regering`
 
+> **📅 Calendar sourcing (degraded-source guard)** — The raw `get_calendar_events` MCP tool is **brittle**: when `data.riksdagen.se/kalender/` serves an HTML error page the server still returns a *successful* result with an empty `events: []` array plus an `error`/`rawHtml` sentinel, which silently reads as a legitimate zero-event window. **Do not** treat an empty `get_calendar_events` result as ground truth. Prefer, in order:
+> 1. The pre-warmed artifact **`data/runtime/calendar-status.json`** (written by the `news-prewarm` action) — check its `status` (`ok`/`error`) and `path` (`mcp-primary`/`web-fallback`/`none`) fields.
+> 2. The resilient CLI **`scripts/calendar-fetch.ts --from <YYYY-MM-DD> --to <YYYY-MM-DD>`**, which falls back from MCP to the public-page scraper and reports `status`/`path` honestly.
+>
+> If both report `status: error` / `path: none`, record the calendar as a **DATA GAP** (`[DATA GAP: calendar source degraded]`) and log it in `mcp-reliability-audit.md §Failure analysis` — never fabricate a zero-sitting week.
+
 ---
 
 <!-- TEMPLATE_CONTRACT_V1 -->
@@ -76,7 +82,7 @@ ANTI-TEMPLATE — DO NOT:
 
 ## 1️⃣ Kammaren (Plenary Sittings)
 
-> Record each sitting separately. Populate from `get_calendar_events` (org=kammaren) and `search_dokument`.
+> Record each sitting separately. Populate from `get_calendar_events` (org=kammaren) and `search_dokument` — see the **📅 Calendar sourcing** guard above; prefer `data/runtime/calendar-status.json` / `scripts/calendar-fetch.ts` over the raw tool.
 
 ### Sitting 1 — `[REQUIRED: date]`
 
@@ -106,7 +112,7 @@ ANTI-TEMPLATE — DO NOT:
 
 ## 2️⃣ Utskott (Committee) Sessions
 
-> Populate from `get_calendar_events` (org=UTSK), `get_betankanden`, and direct committee-page queries.
+> Populate from `get_calendar_events` (org=UTSK), `get_betankanden`, and direct committee-page queries — see the **📅 Calendar sourcing** guard above; prefer `data/runtime/calendar-status.json` / `scripts/calendar-fetch.ts` over the raw tool.
 
 | Utskott | Datum | Tid | Typ (beslutsmöte/sammanträde) | Dagordning | Antagna betänkanden | Ordförande | Party | Source |
 |---------|:-----:|:---:|:-----------------------------:|------------|:-------------------:|------------|:-----:|--------|

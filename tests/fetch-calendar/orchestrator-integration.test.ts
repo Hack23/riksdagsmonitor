@@ -138,6 +138,47 @@ describe('fetchCalendarWithFallback', () => {
     expect(callCount).toBeGreaterThanOrEqual(2);
   });
 
+  it('triggers web fallback when MCP returns the degraded-kalender sentinel', async () => {
+    // The riksdag-regering server wraps an upstream HTML outage in a
+    // "successful" tool result with an empty events array plus an `error`
+    // sentinel. The orchestrator must treat this as a primary failure and
+    // fall back to the public-page scraper instead of recording a fake
+    // zero-event window as a successful mcp-primary result.
+    const sentinel = {
+      count: 0,
+      events: [],
+      rawHtml: '<script>window.location…</script>',
+      error: 'Riksdagens kalender-API returnerade HTML istället för JSON.',
+    };
+    const webHtml = `
+      <article class="calendar-item" data-akt="debatt" data-organ="UU">
+        <time datetime="2026-04-28T13:00:00">13.00</time>
+        <h2>Utrikespolitik</h2>
+      </article>
+    `;
+
+    const fetchFn = vi.fn(async (url: RequestInfo | URL) => {
+      const hostname = (() => { try { return new URL(String(url)).hostname; } catch { return ''; } })();
+      if (hostname === 'mcp.test') {
+        return new Response(JSON.stringify({
+          jsonrpc: '2.0',
+          id: 1,
+          result: { content: [{ text: JSON.stringify(sentinel) }] },
+        }), { status: 200, headers: { 'Content-Type': 'application/json' } });
+      }
+      return new Response(webHtml, { status: 200, headers: { 'Content-Type': 'text/html' } });
+    }) as unknown as typeof fetch;
+
+    const config = makeConfig({ fetchFn, sleepFn });
+    const result = await fetchCalendarWithFallback('2026-04-28', '2026-05-04', config);
+
+    expect(result.manifest.path).toBe('web-fallback');
+    expect(result.manifest.primaryError).toMatch(/degraded|HTML/i);
+    expect(result.events).toHaveLength(1);
+    expect(result.events[0]?.source).toBe('web-fallback');
+    expect(result.events[0]?.org).toBe('UU');
+  });
+
   it('retries MCP on network error before falling back', async () => {
     const webHtml = `
       <article class="calendar-item" data-akt="votering" data-organ="FiU">

@@ -172,4 +172,48 @@ describe('callMcpCalendarEvents', () => {
     const result = await callMcpCalendarEvents('2026-04-28', '2026-05-04', config);
     expect(result).toEqual([]);
   });
+
+  it('throws CalendarMcpError(html) on the degraded-kalender sentinel in content text', async () => {
+    // The server wraps an upstream HTML error in a "successful" envelope whose
+    // empty events array must NOT be read as a legitimate zero-event window.
+    const sentinel = {
+      count: 0,
+      events: [],
+      rawHtml: '<script>window.location…</script>',
+      error: 'Riksdagens kalender-API returnerade HTML istället för JSON.',
+    };
+    const config = {
+      mcpUrl: 'https://mcp.test/mcp',
+      timeout: 3_000,
+      fetchFn: jsonFetch({
+        jsonrpc: '2.0',
+        id: 1,
+        result: { content: [{ text: JSON.stringify(sentinel) }] },
+      }),
+    };
+
+    await expect(
+      callMcpCalendarEvents('2026-04-28', '2026-05-04', config),
+    ).rejects.toMatchObject({ kind: 'html' });
+  });
+
+  it('throws CalendarMcpError(html) on a degraded sentinel in a direct result (no content wrapper)', async () => {
+    const config = {
+      mcpUrl: 'https://mcp.test/mcp',
+      timeout: 3_000,
+      fetchFn: jsonFetch({
+        jsonrpc: '2.0',
+        id: 1,
+        result: {
+          count: 0,
+          events: [],
+          error: 'Riksdagens kalender-API returnerade HTML istället för JSON.',
+        },
+      }),
+    };
+
+    await expect(
+      callMcpCalendarEvents('2026-04-28', '2026-05-04', config),
+    ).rejects.toMatchObject({ kind: 'html' });
+  });
 });
