@@ -1,0 +1,25 @@
+{
+  "dok_id": "HD01CU44",
+  "titel": "Subsidiaritetsprövning av kommissionens förslag till förordning om den 28:e ordningens bolagsregelverk ”EU Inc.”",
+  "datum": "2026-05-28",
+  "rm": "2025/26",
+  "organ": "CU",
+  "summary": "",
+  "url": "https://data.riksdagen.se/dokument/HD01CU44.html",
+  "mcpCoverageState": "full_text",
+  "mcpProvenance": {
+    "provider": "riksdag-regering",
+    "endpoint": "http://host.docker.internal:8080/mcp/riksdag-regering",
+    "tool": "get_dokument_innehall",
+    "query": {
+      "dok_id": "HD01CU44",
+      "include_full_text": true
+    },
+    "resultCount": 1,
+    "coverageState": "full_text",
+    "retrieval": "live",
+    "retrievedAt": "2026-05-29T06:19:02.531Z"
+  },
+  "contentFetched": true,
+  "fullContent": "5283608\r\n HD01CU44\r\n 2025/26\r\n CU44\r\n bet\r\n utl\r\n bet\r\n Utlåtande 2025/26:CU44\r\n Utlåtande\r\n Debatt om förslag\r\n \r\n CU\r\n \r\n 44\r\n 0\r\n 2026-05-28 00:00:00\r\n 2026-05-28 15:36:20\r\n 2026-05-28 10:52:21\r\n Subsidiaritetsprövning av kommissionens förslag till förordning om den 28:e ordningens bolagsregelverk ”EU Inc.”\r\n \r\n planerat\r\n \r\n \r\n Brus\r\n 372db11c-07a9-4600-8dbe-671937aef0c9\r\n https://data.riksdagen.se/dokument/HD01CU44/text\r\n https://data.riksdagen.se/dokument/HD01CU44\r\n https://data.riksdagen.se/dokumentstatus/HD01CU44\r\n https://data.riksdagen.se/utskottsforslag/HD01CU44\r\n <h2>Subsidiaritetsprövning av kommissionens förslag till förordning om den 28:e ordningens bolagsregelverk ”EU Inc.”</h2>\r\nDokumentet är inte publicerat\r\n\r\n\r\n\r\nUBE\r\nBeredning\r\n2026-05-28 00:00:00\r\ninträffat\r\n0\r\n\r\n\r\n\r\nJUS\r\nJustering\r\n2026-06-04 00:00:00\r\nplanerat\r\n0\r\n\r\n\r\n\r\nTRY\r\nTrycklov\r\n2026-06-04 00:00:00\r\nplanerat\r\n0\r\n\r\n\r\n\r\n\r\n\r\nstatustext\r\nstatustext\r\nUtskottet arbetar med ärendet\r\nHD01CU44\r\n2026-05-29 00:36:01"
+}

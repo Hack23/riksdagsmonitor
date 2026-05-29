@@ -1,0 +1,59 @@
+{
+  "schema_version": "1.0",
+  "cycle": "committeeReports",
+  "date": "2026-05-29",
+  "subfolder": "committeeReports",
+  "generated_at": "2026-05-29T00:00:00Z",
+  "pirs": [
+    {
+      "pir_id": "PIR-NU20-VOTE",
+      "statement": "What is the recorded chamber vote and final reservation alignment on HD01NU20 (wind-power revenue sharing)?",
+      "status": "open",
+      "confidence": "HIGH",
+      "trigger": "Chamber vote posted on riksdagen.se",
+      "horizon": "T+72h",
+      "admiralty_grade": "B2",
+      "evidence_refs": ["HD01NU20"]
+    },
+    {
+      "pir_id": "PIR-UbU23-VOTE",
+      "statement": "What is the recorded vote and any concession on the HD01UbU23 knowledge-school curricula implementation timeline?",
+      "status": "open",
+      "confidence": "HIGH",
+      "trigger": "Chamber vote posted on riksdagen.se",
+      "horizon": "T+72h",
+      "admiralty_grade": "B2",
+      "evidence_refs": ["HD01UbU23"]
+    },
+    {
+      "pir_id": "PIR-JuU35-MAJORITY",
+      "statement": "Does the qualified-majority threshold under RF 10 kap. hold for HD01JuU35, and what is the recorded Socialdemokraterna position?",
+      "status": "open",
+      "confidence": "MEDIUM",
+      "trigger": "Recorded qualified-majority vote on HD01JuU35",
+      "horizon": "T+7d",
+      "admiralty_grade": "C3",
+      "evidence_refs": ["HD01JuU35"]
+    },
+    {
+      "pir_id": "PIR-IMPL-CAPACITY",
+      "statement": "Are Skolverket, Kriminalvarden and DIGG resourced to deliver the curricula, foreign-facility and interoperability reforms?",
+      "status": "open",
+      "confidence": "MEDIUM",
+      "trigger": "Agency planning or budget signals",
+      "horizon": "T+30d",
+      "admiralty_grade": "C3",
+      "evidence_refs": ["HD01UbU23", "HD01JuU35", "HD01TU18"]
+    },
+    {
+      "pir_id": "PIR-CU44-EU",
+      "statement": "Do peer national parliaments join the HD01CU44 subsidiarity objection to the EU Inc. company-law proposal?",
+      "status": "open",
+      "confidence": "LOW",
+      "trigger": "EU national-parliament reasoned opinions filed",
+      "horizon": "T+90d",
+      "admiralty_grade": "D3",
+      "evidence_refs": ["HD01CU44"]
+    }
+  ]
+}
