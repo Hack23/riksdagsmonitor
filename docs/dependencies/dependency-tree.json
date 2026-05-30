@@ -1,5 +1,5 @@
 {
-  "version": "0.9.40",
+  "version": "1.0.0",
   "name": "riksdagsmonitor",
   "dependencies": {
     "@eslint/js": {
@@ -8,7 +8,7 @@
       "overridden": false,
       "dependencies": {
         "eslint": {
-          "version": "10.4.0"
+          "version": "10.4.1"
         }
       }
     },
@@ -2045,8 +2045,8 @@
       }
     },
     "eslint": {
-      "version": "10.4.0",
-      "resolved": "https://registry.npmjs.org/eslint/-/eslint-10.4.0.tgz",
+      "version": "10.4.1",
+      "resolved": "https://registry.npmjs.org/eslint/-/eslint-10.4.1.tgz",
       "overridden": false,
       "dependencies": {
         "@eslint-community/eslint-utils": {
@@ -2060,7 +2060,7 @@
               "overridden": false
             },
             "eslint": {
-              "version": "10.4.0"
+              "version": "10.4.1"
             }
           }
         },
@@ -2108,8 +2108,8 @@
           }
         },
         "@eslint/plugin-kit": {
-          "version": "0.7.1",
-          "resolved": "https://registry.npmjs.org/@eslint/plugin-kit/-/plugin-kit-0.7.1.tgz",
+          "version": "0.7.2",
+          "resolved": "https://registry.npmjs.org/@eslint/plugin-kit/-/plugin-kit-0.7.2.tgz",
           "overridden": false,
           "dependencies": {
             "@eslint/core": {
@@ -5327,7 +5327,7 @@
                   "version": "4.4.3"
                 },
                 "eslint": {
-                  "version": "10.4.0"
+                  "version": "10.4.1"
                 },
                 "ts-api-utils": {
                   "version": "2.5.0"
@@ -5354,7 +5354,7 @@
               }
             },
             "eslint": {
-              "version": "10.4.0"
+              "version": "10.4.1"
             },
             "ignore": {
               "version": "7.0.5",
@@ -5402,7 +5402,7 @@
               "version": "4.4.3"
             },
             "eslint": {
-              "version": "10.4.0"
+              "version": "10.4.1"
             },
             "typescript": {
               "version": "6.0.3"
@@ -5487,7 +5487,7 @@
               "version": "8.60.0"
             },
             "eslint": {
-              "version": "10.4.0"
+              "version": "10.4.1"
             },
             "typescript": {
               "version": "6.0.3"
@@ -5495,7 +5495,7 @@
           }
         },
         "eslint": {
-          "version": "10.4.0"
+          "version": "10.4.1"
         },
         "typescript": {
           "version": "6.0.3"
