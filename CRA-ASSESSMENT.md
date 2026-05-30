@@ -284,12 +284,12 @@ Reference: [🌐 ISMS Transparency Plan](https://github.com/Hack23/ISMS-PUBLIC/b
 *Supports CRA Article 28 - EU Declaration of Conformity*
 
 **🏢 Manufacturer:** Hack23 AB, Gothenburg, Sweden
-**📦 Product:** Riksdagsmonitor v0.4.1
+**📦 Product:** Riksdagsmonitor v0.9.40
 **📋 CRA Compliance:** Self-assessment documentation supporting CRA essential cybersecurity requirements evaluation
 **🔍 Assessment:** Self-assessment documentation per Article 24 (non-commercial OSS with standard classification)
 **📊 Standards:** ISO/IEC 27001 security framework + OWASP web security guidelines + NIST SSDF secure development
 
-**📅 Date & Signature:** 2026-02-24 — James Sörling, CEO Hack23 AB
+**📅 Date & Signature:** 2026-05-06 — James Sörling, CEO Hack23 AB
 
 **📂 Technical Documentation:** This assessment + evidence bundle supports CRA Annex V technical documentation requirements
 
@@ -321,9 +321,9 @@ Riksdagsmonitor's static site architecture provides inherent security benefits:
 
 | 👤 **Role** | 📝 **Name** | 📅 **Date** | ✍️ **Assessment Attestation** |
 |------------|-------------|-------------|-------------------------------|
-| 🔒 **CRA Security Assessment** | James Sörling | 2026-02-24 | Essential requirements documented with comprehensive evidence |
-| 🎯 **Product Responsibility** | James Sörling | 2026-02-24 | Technical documentation complete and publicly accessible |
-| ⚖️ **Legal Compliance Review** | James Sörling | 2026-02-24 | EU regulatory documentation requirements satisfied |
+| 🔒 **CRA Security Assessment** | James Sörling | 2026-05-06 | Essential requirements documented with comprehensive evidence |
+| 🎯 **Product Responsibility** | James Sörling | 2026-05-06 | Technical documentation complete and publicly accessible |
+| ⚖️ **Legal Compliance Review** | James Sörling | 2026-05-06 | EU regulatory documentation requirements satisfied |
 
 **📊 CRA Assessment Status:** SELF_ASSESSMENT_DOCUMENTED
 
