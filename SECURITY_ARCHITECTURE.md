@@ -2231,7 +2231,7 @@ However, Hack23 AB voluntarily maps to NIS2 requirements as a **best practice an
 | **Art. 21(2)(c)** | Business continuity including backup management, disaster recovery, crisis management | Dual-deployment (CloudFront + GitHub Pages). S3 multi-region replication. RTO <30s (origin), <15min (DNS). BCPPlan.md | BCPPlan.md, AWS multi-region S3 config, Route 53 health checks | COMPLIANT |
 | **Art. 21(2)(d)** | Supply chain security including third-party services | Dependabot monitors all npm dependencies. GitHub Actions third-party action pinning. step-security/harden-runner. Third Party Management Policy (ISMS-PUBLIC) | Third_Party_Management.md, Dependabot config, pinned action SHAs | COMPLIANT |
 | **Art. 21(2)(e)** | Security in network and information systems acquisition, development and maintenance | Secure development policy (ISMS-PUBLIC). CodeQL SAST in every PR. SLSA provenance. Dependency review gates | Secure_Development_Policy.md, GitHub Actions YAML, SLSA attestation | COMPLIANT |
-| **Art. 21(2)(f)** | Policies and procedures to assess effectiveness of measures | OpenSSF Scorecard monthly monitoring (8.2/10). Security metrics tracked (MTTP, scan pass rates). Annual security architecture review | OpenSSF Scorecard badge, Security_Metrics.md (ISMS-PUBLIC), version history | COMPLIANT |
+| **Art. 21(2)(f)** | Policies and procedures to assess effectiveness of measures | OpenSSF Scorecard monthly monitoring (8.2/10). Security metrics tracked (MTTP, scan pass rates). Annual security architecture review | OpenSSF Scorecard badge, Security_Metrics.md (ISMS-PUBLIC), Git commit history | COMPLIANT |
 | **Art. 21(2)(g)** | Basic cyber hygiene practices and cybersecurity training | CEO maintains up-to-date security knowledge. ISMS documentation current. All ISMS policies reviewed annually. GitHub security advisories reviewed weekly | Policy review dates in ISMS, security training evidence | COMPLIANT |
 | **Art. 21(2)(h)** | Cryptography policies including encryption | Cryptography Policy (ISMS-PUBLIC). TLS 1.3 enforced. HSTS preloaded. SHA-256 for integrity. Sigstore for signing. No weak ciphers | Cryptography_Policy.md, CloudFront TLS configuration, HSTS header | COMPLIANT |
 | **Art. 21(2)(i)** | Human resources security, access control, and asset management | Single-person company. All access controlled via GitHub and AWS IAM. Asset Register maintained (ISMS-PUBLIC). Access Control Policy | Access_Control_Policy.md, Asset_Register.md, GitHub access controls | COMPLIANT |
@@ -2436,8 +2436,8 @@ The primary residual risks are LLM02 (output handling) mitigated by human review
 
 | Oversight Activity | Frequency | Evidence | Owner |
 |-------------------|-----------|----------|-------|
-| Security architecture review | Annual | Version history in SECURITY_ARCHITECTURE.md | CEO |
-| Threat model review | Quarterly | THREAT_MODEL.md version history | CEO |
+| Security architecture review | Annual | Git commit history (SECURITY_ARCHITECTURE.md) | CEO |
+| Threat model review | Quarterly | Git commit history (THREAT_MODEL.md) | CEO |
 | ISMS policy review | Annual | Policy documents with review dates | CEO |
 | Risk register update | Quarterly | Risk_Register.md (ISMS-PUBLIC) | CEO |
 | OpenSSF Scorecard | Monthly | GitHub badge, score history | Automated |
@@ -3091,7 +3091,7 @@ Security classification: **PUBLIC / High Integrity / Medium-High Availability**.
 
 ## 🕵️ Political Intelligence Security Surface (v0.9.40)
 
-> **Added:** v2.4 (2026-05-06) — Previously backlog item from the [documentation-portfolio-audit-2026-05-03](analysis/audits/documentation-portfolio-audit-2026-05-03.md). This section documents the security controls governing the AI-driven political intelligence analysis pipeline.
+> This section documents the security controls governing the AI-driven political intelligence analysis pipeline.
 
 ### Overview
 

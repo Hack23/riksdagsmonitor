@@ -369,9 +369,9 @@ Riksdagsmonitor maintains a comprehensive data architecture integrating 50+ year
 
 ---
 
-## 2. CIA Data Subsystems (15 Subsystems)
+## 2. CIA Data Subsystems (15 Subsystems → 19 Analytical Products)
 
-> **Note (v1.1, 2026-04-20):** The prior framing of "19 Products" has been retired. The current repository materialises **15 subsystems** under `cia-data/`, each backed by one or more CSV extracts and (where applicable) a JSON Schema under `schemas/`. The subsystem list below is the canonical, filesystem-verified inventory.
+> The CIA data layer is organised along two complementary axes. **15 subsystems** correspond to the 15 top-level data domains materialised under `cia-data/` (`anomaly`, `coalition`, `committee`, `distribution`, `election`, `election-cycle`, `ministry`, `parties`, `party`, `percentile`, `politician`, `pre-election`, `risk`, `seasonal`, `voting`), each backed by one or more CSV extracts and, where applicable, a JSON Schema under `schemas/`. Those subsystems surface as **19 user-facing analytical products** — 4 intelligence dashboards + 10 Top-10 rankings + 5 advanced analytics — enumerated below. Both counts are filesystem-verified against the current repository.
 
 ### 2.1 Intelligence Dashboards (4 Products)
 
