@@ -56,7 +56,7 @@
     "prebuild": "npx tsx scripts/optimize-images.ts && npx tsx scripts/generate-article-types-doc.ts && npx tsx scripts/copy-vendor-mermaid.ts --quiet && npx tsx scripts/build-csv-contracts-fixture.ts && npx tsx scripts/aggregate-analysis.ts --all --quiet && npx tsx scripts/render-articles.ts --all --lang all --quiet && npx tsx scripts/generate-news-indexes/index.ts && npx tsx scripts/extract-news-metadata.ts && npx tsx scripts/generate-sitemap-html.ts && npx tsx scripts/generate-political-intelligence.ts && npx tsx scripts/generate-rss.ts && npx tsx scripts/generate-sitemap.ts && npx tsx scripts/normalize-static-html-chrome.ts && npx tsx scripts/backfill-translated-chrome.ts && npx tsx scripts/strip-legacy-chrome-script-tags.ts && npx tsx scripts/fix-hreflang.ts --write",
     "build": "vite build",
     "build:lib": "tsc -p tsconfig.lib.json && tsc -p tsconfig.npm-scripts.json",
-    "postbuild": "cp rss.xml dist/rss.xml && cp sitemap.xml dist/sitemap.xml && cp -r cia-data dist/cia-data && cp manifest.json dist/manifest.json",
+    "postbuild": "cp rss.xml dist/rss.xml && (cp rss_*.xml dist/ 2>/dev/null; exit 0) && cp sitemap.xml dist/sitemap.xml && cp -r cia-data dist/cia-data && cp manifest.json dist/manifest.json",
     "preview": "vite preview",
     "test": "NODE_OPTIONS='--max-old-space-size=2048' vitest run",
     "test:watch": "vitest",
