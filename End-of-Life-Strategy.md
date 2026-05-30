@@ -11,25 +11,14 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/>
-  <img src="https://img.shields.io/badge/Version-1.4-555?style=for-the-badge" alt="Version"/>
-  <img src="https://img.shields.io/badge/Effective-2026--04--20-success?style=for-the-badge" alt="Effective Date"/>
+  <img src="https://img.shields.io/badge/Version-1.5-555?style=for-the-badge" alt="Version"/>
+  <img src="https://img.shields.io/badge/Effective-2026--05--28-success?style=for-the-badge" alt="Effective Date"/>
   <img src="https://img.shields.io/badge/Review-Annual-orange?style=for-the-badge" alt="Review Cycle"/>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 1.4 | **📅 Last Updated:** 2026-04-20 (UTC)  
-**🔄 Review Cycle:** Annual | **⏰ Next Review:** 2027-04-20  
+**📋 Document Owner:** CEO | **📄 Version:** 1.5 | **📅 Last Updated:** 2026-05-28 (UTC)  
+**🔄 Review Cycle:** Annual | **⏰ Next Review:** 2027-05-28  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
-
-> **🆕 What changed since last review (v1.3 → v1.4, 2026-04-20):**
-> - 📈 **IMF data integration** added per [ADR 0001](docs/adr/0001-adopt-imf-data-alongside-world-bank.md) (alongside SCB and World Bank). **EOL risk assessment: LOW.** IMF is consumed via the **pure-TypeScript client `scripts/imf-client.ts`** (no runtime dependency on any external MCP package, no Python / uvx / third-party container). Upstream protocols are both stable and long-lived: **SDMX 3.0** (ISO 17369 international standard, backward-compatible versioning) and the **IMF Datamapper JSON v1** public endpoint (`www.imf.org/external/datamapper/api/v1`). No new third-party npm dependencies were introduced — the client uses only the existing Node.js `fetch` stdlib and existing dev/test tooling, so IMF adds **no new EOL pressure** beyond what is already tracked for Node.js, TypeScript, and Vitest. If either transport is ever deprecated by the IMF, the client pattern mirrors `scripts/world-bank-client.ts` and can be repointed without affecting the downstream data contract (Economic Data Contract v2.0).
->
-> **🆕 What changed since last review (v1.2 → v1.3, 2026-04-20):**
-> - Confirmed runtime alignment with **Node.js ≥26** (`engines.node` in `package.json`); Node 26 LTS upgrade window now the imminent transition target.
-> - Locked current EOL/support horizons for the toolchain powering Riksdagsmonitor `v0.8.48`: **TypeScript 6.x**, **Vite 8.x**, **Vitest 4.x**, **ESLint 10.x**, **Cypress 15.x**, **Playwright 1.59.x**, **typedoc 0.28.x**, **happy-dom 20.x**, **knip 6.x**, **ajv 8.x**, **htmlhint 1.9.x**.
-> - Peer-dependency runtime surface (optional to consumers of the npm package): **Chart.js ^4**, **chartjs-plugin-annotation ^3**, **D3 ^7**, **papaparse ^5**.
-> - Added **npm package deprecation policy**: public API contract lives in exported subpaths `./`, `./shared`, `./shared/*`, `./cia/*`, `./dashboards/*`, `./ui/*`. Breaking changes require a major SemVer bump, a 2-release deprecation window with `@deprecated` JSDoc, and a migration note in `RELEASE_PROCESS.md`.
-> - Confirmed **SLSA provenance** (`npm publish --provenance`) attestations accompany every published version and are verifiable via `npm provenance verify`.
-> - Aligned with [Hack23 ISMS-PUBLIC Open_Source_Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Open_Source_Policy.md) and [Secure_Development_Policy §6 "Dependency Management"](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md).
 
 ---
 
@@ -125,18 +114,18 @@ This allows early detection of breaking changes in Node.js alpha while keeping p
 |----------|-----------|----------------|----------|-----------------|
 | **Runtime** | [Node.js 26](https://nodejs.org/) | 26.x | **April 2029** (Maintenance end) | Node.js 27 LTS (2027) |
 | **Package Manager** | [npm](https://www.npmjs.com/) | Bundled with Node.js | Follows Node.js | Follows Node.js upgrades |
-| **Language** | [TypeScript](https://www.typescriptlang.org/) | 6.0.2 | Active (quarterly releases) | Track latest stable |
-| **Build Tool** | [Vite](https://vite.dev/) | 8.0.3 | Active | Track latest major |
-| **Transpiler** | [tsx](https://tsx.is/) | 4.21.0 | Active | Track latest stable |
+| **Language** | [TypeScript](https://www.typescriptlang.org/) | 6.0.3 | Active (quarterly releases) | Track latest stable |
+| **Build Tool** | [Vite](https://vite.dev/) | 8.0.14 | Active | Track latest major |
+| **Transpiler** | [tsx](https://tsx.is/) | 4.22.3 | Active | Track latest stable |
 
 ### Testing Framework
 
 | Category | Technology | Current Version | EOL Date | Replacement Path |
 |----------|-----------|----------------|----------|-----------------|
-| **Unit Testing** | [Vitest](https://vitest.dev/) | 4.1.2 | Active (follows Vite) | Track with Vite major versions |
-| **E2E Testing** | [Cypress](https://www.cypress.io/) | 15.13.0 | Active | Track latest stable |
-| **Coverage** | [@vitest/coverage-v8](https://vitest.dev/) | 4.1.2 | Active | Track with Vitest |
-| **DOM Simulation** | [happy-dom](https://github.com/nicedayfor/happy-dom) | 20.8.9 | Active | Track latest stable |
+| **Unit Testing** | [Vitest](https://vitest.dev/) | 4.1.7 | Active (follows Vite) | Track with Vite major versions |
+| **E2E Testing** | [Cypress](https://www.cypress.io/) | 15.16.0 | Active | Track latest stable |
+| **Coverage** | [@vitest/coverage-v8](https://vitest.dev/) | 4.1.7 | Active | Track with Vitest |
+| **DOM Simulation** | [happy-dom](https://github.com/nicedayfor/happy-dom) | 20.9.0 | Active | Track latest stable |
 
 ### Runtime Dependencies (Browser)
 
@@ -146,18 +135,17 @@ This allows early detection of breaking changes in Node.js alpha while keeping p
 | **Chart Annotations** | [chartjs-plugin-annotation](https://www.chartjs.org/chartjs-plugin-annotation/) | 3.1.0 | Active | Follows Chart.js |
 | **Data Visualisation** | [D3.js](https://d3js.org/) | 7.9.0 | Active | Track latest major |
 | **CSV Parsing** | [PapaParse](https://www.papaparse.com/) | 5.5.3 | Active | Track latest stable |
-| **JSON Validation** | [Ajv](https://ajv.js.org/) | 8.18.0 | Active | Track latest stable |
+| **JSON Validation** | [Ajv](https://ajv.js.org/) | 8.20.0 | Active | Track latest stable |
 | **JSON Formats** | [ajv-formats](https://ajv.js.org/) | 3.0.1 | Active | Follows Ajv |
 
 ### Development & Quality Tools
 
 | Category | Technology | Current Version | EOL Date | Replacement Path |
 |----------|-----------|----------------|----------|-----------------|
-| **Linting** | [ESLint](https://eslint.org/) | 10.1.0 | Active | Track latest major |
+| **Linting** | [ESLint](https://eslint.org/) | 10.4.1 | Active | Track latest major |
 | **HTML Linting** | [HTMLHint](https://htmlhint.com/) | 1.9.2 | Active | Track latest stable |
-| **Dead Code** | [knip](https://knip.dev/) | 6.1.1 | Active | Track latest stable |
-| **API Docs** | [TypeDoc](https://typedoc.org/) | 0.28.18 | Active | Track latest stable |
-| **SRI Generation** | [vite-plugin-sri-gen](https://www.npmjs.com/package/vite-plugin-sri-gen) | 1.3.2 | Active | Track latest stable |
+| **Dead Code** | [knip](https://knip.dev/) | 6.14.2 | Active | Track latest stable |
+| **API Docs** | [TypeDoc](https://typedoc.org/) | 0.28.19 | Active | Track latest stable |
 
 ---
 
@@ -165,11 +153,11 @@ This allows early detection of breaking changes in Node.js alpha while keeping p
 
 | TypeScript | Release Date | Status | Support Until |
 |-----------|-------------|--------|---------------|
-| **6.0.2** | Mar 2026 | ✅ **Active — in use** | Until 7.0 release (~12 months) |
+| **6.0.3** | Mar 2026 | ✅ **Active — in use** | Until 7.0 release (~12 months) |
 | 5.9.x | Feb 2026 | Previous stable | Limited — security patches only |
 | 5.8.x | Dec 2025 | End of life | ❌ No support |
 
-> **Note:** TypeScript 6.0 is a major release with breaking changes including deprecated `baseUrl` option (still functional, silenced via `ignoreDeprecations: "6.0"`), stricter module resolution in bundler mode, and removal of implicit `global` namespace. The project uses `@typescript-eslint 8.58.0` which supports `typescript >=4.8.4 <6.1.0`.
+> **Note:** TypeScript 6.0 is a major release with breaking changes including deprecated `baseUrl` option (still functional, silenced via `ignoreDeprecations: "6.0"`), stricter module resolution in bundler mode, and removal of implicit `global` namespace. The project uses `@typescript-eslint 8.60.0` which supports `typescript >=4.8.4 <6.1.0`.
 
 ### TypeScript Upgrade Policy
 
@@ -350,7 +338,7 @@ Riksdagsmonitor outputs **static HTML5, CSS3, and ES2020+ JavaScript**. Browser 
 | Node.js 24 → 25 | Very Low | < 1 day | 🟢 Very Low |
 | Node.js 25 → 26 (✅ completed) | Very Low | < 1 day | 🟢 Very Low |
 | Node.js 26 → 27 (new schedule) | Low | 1–2 days | 🟢 Low |
-| Vite 7 → next major | Medium | 2–5 days | 🟡 Medium |
+| Vite 8 → next major | Medium | 2–5 days | 🟡 Medium |
 | TypeScript 5 → 6 | Low | < 1 day | 🟢 Very Low (completed) |
 | TypeScript 6 → 7 | Low–Medium | 1–3 days | 🟢 Low |
 | Chart.js 4 → 5 | Medium | 3–5 days | 🟡 Medium |
@@ -431,8 +419,8 @@ The ongoing maintenance strategy aligns with Hack23 AB's [ISMS-PUBLIC framework]
 **✅ Approved by:** James Pether Sörling, CEO  
 **📤 Distribution:** Public  
 **🏷️ Classification:** [![Confidentiality: Public](https://img.shields.io/badge/C-Public-lightgrey?style=flat-square&logo=shield&logoColor=black)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#confidentiality-levels) [![Integrity: Moderate](https://img.shields.io/badge/I-Moderate-yellow?style=flat-square&logo=check-circle&logoColor=black)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#integrity-levels) [![Availability: Standard](https://img.shields.io/badge/A-Standard-lightgreen?style=flat-square&logo=server&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#availability-levels)  
-**📅 Effective Date:** 2026-03-18  
-**⏰ Next Review:** 2027-03-18  
+**📅 Effective Date:** 2026-05-28  
+**⏰ Next Review:** 2027-05-28  
 **🎯 Framework Compliance:** [![ISO 27001](https://img.shields.io/badge/ISO_27001-2022_Aligned-blue?style=flat-square&logo=iso&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) [![NIST CSF 2.0](https://img.shields.io/badge/NIST_CSF-2.0_Aligned-green?style=flat-square&logo=nist&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) [![CIS Controls](https://img.shields.io/badge/CIS_Controls-v8.1_Aligned-orange?style=flat-square&logo=cisecurity&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md)
 
 
