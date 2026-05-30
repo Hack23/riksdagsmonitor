@@ -3025,22 +3025,22 @@ Statskontoret ingestion introduces a public-data trust boundary for Swedish agen
 
 ## 📊 SCB Integration — STRIDE Threats
 
-> **Effective:** 2026-05-30 · **Classification:** Public · **Entry point:** `scripts/scb-fetch.ts` · **Client:** `scripts/scb-client.ts` / `scripts/scb-context.ts` · **Sources:** third-party MCP relay `https://scb-mcp.onrender.com/mcp` (primary) and the SCB Open Data API `www.scb.se` (direct fallback) · **Cache:** `analysis/data/scb/`.
+> **Effective:** 2026-05-30 · **Classification:** Public · **Entry point:** `scripts/scb-fetch.ts` · **Client:** `scripts/scb-client.ts` / `scripts/scb-context.ts` · **Sources:** AWF MCP gateway route to the `scb` MCP server (primary) and direct MCP relay `https://scb-mcp.onrender.com/mcp` (`DIRECT_SCB_SERVER_URL` fallback) · **Cache:** `analysis/data/scb/`.
 
-SCB (Statistics Sweden) supplies the Swedish-specific ground-truth statistics layer (population, labour, economy, public finance). The integration is unique among data sources because its primary transport is a **community-hosted Model Context Protocol relay on Render** rather than a first-party SCB endpoint — a deliberate supply-chain trust boundary that is mitigated by a direct-API fallback and provenance discipline.
+SCB (Statistics Sweden) supplies the Swedish-specific ground-truth statistics layer (population, labour, economy, public finance). The integration is entirely MCP-based: inside the AWF sandbox it routes through the **MCP gateway** (`host.docker.internal:<port>/mcp/scb`); outside the sandbox it falls back to the **community-hosted MCP relay on Render** (`https://scb-mcp.onrender.com/mcp`). There is no direct SCB REST/PXWeb HTTP client — the trust boundary is between the two MCP transport paths, mitigated by cache-first/optional-enrichment semantics and provenance discipline.
 
 | ID | Asset / flow | STRIDE | Threat | Likelihood | Impact | Mitigations |
 |---|---|---|---|---|---|---|
-| T-SCB-01 | `scb-mcp.onrender.com` MCP relay | Spoofing | Third-party relay impersonated or DNS/TLS-intercepted, returning forged table data | LOW | HIGH | HTTPS-only egress; allow-list `scb-mcp.onrender.com` + `www.scb.se`; direct SCB Open Data API fallback (`DIRECT_SCB_SERVER_URL` bypass); source URL + table id recorded in provenance. |
-| T-SCB-02 | JSON-stat / PXWeb payload | Tampering | Relay or upstream mutates statistic values, footnotes, or contents codes | LOW | HIGH | Direct-API cross-check path; typed client contract checks; persisted raw/derived artifacts with `.meta.json` sidecars; reviewer diff inspection on persisted `analysis/data/scb/`. |
+| T-SCB-01 | `scb-mcp.onrender.com` MCP relay | Spoofing | Third-party relay impersonated or DNS/TLS-intercepted, returning forged table data | LOW | HIGH | HTTPS-only egress; allow-list `scb-mcp.onrender.com`; `DIRECT_SCB_SERVER_URL` selects the direct MCP relay when AWF gateway is unavailable; source URL + table id recorded in provenance. |
+| T-SCB-02 | JSON-stat / PXWeb payload | Tampering | Relay or upstream mutates statistic values, footnotes, or contents codes | LOW | HIGH | Typed MCP client contract checks; persisted raw/derived artifacts with `.meta.json` sidecars; reviewer diff inspection on persisted `analysis/data/scb/`. |
 | T-SCB-03 | Table-cell mapping | Information integrity | Variable/value-code drift maps wrong dimension (region, period, contents) to a cell | MEDIUM | MEDIUM | Metadata fetched per table before query; value-code validation; unit tests for SCB client parsing; omit context rather than emit unmapped figures. |
 | T-SCB-04 | SCB citation in article | Repudiation | Article cites "SCB reports X" without table id / vintage → unauditable claim | MEDIUM | MEDIUM | Provenance block records `mcpTool`, table id, `fetchedAt`; ECONOMIC_DATA_CONTRACT vintage discipline applies to the Swedish ground-truth layer. |
-| T-SCB-05 | Relay / API availability | Denial of service | Render relay cold-start or SCB API timeout blocks enrichment | MEDIUM | LOW | 15s timeout (`DEFAULT_TIMEOUT`); cache-first reuse; optional-enrichment semantics; automatic direct-API fallback when relay degraded. |
+| T-SCB-05 | MCP relay availability | Denial of service | Render relay cold-start or MCP timeout blocks enrichment | MEDIUM | LOW | 15s timeout (`DEFAULT_TIMEOUT`); cache-first reuse; optional-enrichment semantics; retry with backoff (`DEFAULT_MAX_RETRIES`). |
 | T-SCB-06 | `tsx scripts/scb-fetch.ts` | Elevation of privilege | Supply-chain tampering of fetch/parse path | LOW | HIGH | Script in-repo; reviewed; no dynamic eval; dependencies pinned in npm lock/SBOM; harden-runner egress audit. |
 
 ### SCB residual risk
 
-- **Residual risk:** LOW-MEDIUM integrity risk concentrated in the third-party MCP relay; mitigated by the direct SCB Open Data API fallback and provenance sidecars.
+- **Residual risk:** LOW-MEDIUM integrity risk concentrated in the third-party MCP relay; mitigated by cache-first/optional-enrichment semantics and provenance sidecars.
 - **Privacy:** no PII; public aggregate national statistics only.
 - **CIA:** Public / High Integrity / Medium Availability (optional enrichment).
 

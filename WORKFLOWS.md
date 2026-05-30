@@ -1663,7 +1663,7 @@ flowchart TB
 - [SWOT.md](SWOT.md) — Strategic analysis
 - [CRA-ASSESSMENT.md](CRA-ASSESSMENT.md) — EU Cyber Resilience Act conformity
 - [FUTURE_WORKFLOWS.md](FUTURE_WORKFLOWS.md) — Future workflow projections
-- [AGENTS.md](AGENTS.md) — Custom agent reference (24 agents)
+- [AGENTS.md](AGENTS.md) — Custom agent reference (23 agents)
 - [SKILLS.md](SKILLS.md) — Skill definitions (92 skills)
 
 ### External Tools

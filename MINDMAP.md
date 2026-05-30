@@ -82,7 +82,7 @@ mindmap
       Future Roadmap
     📦 Platform v0.9.40
       7,500+ Tests (237 files)
-      24 Agents · 93 Skills
+      23 Agents · 94 Skills
       14 Languages
       8 MCP Servers
 ```
