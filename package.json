@@ -1,6 +1,6 @@
 {
   "name": "riksdagsmonitor",
-  "version": "0.9.40",
+  "version": "0.9.41",
   "type": "module",
   "description": "Swedish Parliament (Riksdag) intelligence platform — TypeScript utilities for political data visualization, dashboards, and open data analysis with Chart.js and D3.js",
   "main": "dist/lib/shared/index.js",

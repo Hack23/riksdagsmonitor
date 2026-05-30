@@ -11,13 +11,13 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/>
-  <img src="https://img.shields.io/badge/Version-1.4-555?style=for-the-badge" alt="Version"/>
-  <img src="https://img.shields.io/badge/Effective-2026--05--06-success?style=for-the-badge" alt="Effective Date"/>
+  <img src="https://img.shields.io/badge/Version-1.5-555?style=for-the-badge" alt="Version"/>
+  <img src="https://img.shields.io/badge/Effective-2026--05--30-success?style=for-the-badge" alt="Effective Date"/>
   <img src="https://img.shields.io/badge/Review-Quarterly-orange?style=for-the-badge" alt="Review Cycle"/>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 1.4 | **📅 Last Updated:** 2026-05-06 (UTC)  
-**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-08-03  
+**📋 Document Owner:** CEO | **📄 Version:** 1.5 | **📅 Last Updated:** 2026-05-30 (UTC)  
+**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-08-30  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
 ---
@@ -35,7 +35,7 @@
 This SWOT analysis evaluates Riksdagsmonitor's strategic position as a Swedish Parliament intelligence platform. The analysis identifies internal strengths and weaknesses alongside external opportunities and threats, providing a foundation for strategic decision-making aligned with Hack23 AB's Information Security Management System (ISMS).
 
 **Key Findings:**
-- **Dominant Strengths:** 50+ years of comprehensive political data, 14-language support, 19 CIA intelligence products, modern static architecture, 7,500+ tests (v0.9.40)
+- **Dominant Strengths:** 50+ years of comprehensive political data, 14-language support, 19 CIA intelligence products, modern static architecture, 7,560+ tests (v0.9.41)
 - **Critical Weaknesses:** Single developer dependency, no monetization model, limited marketing reach
 - **Major Opportunities:** Nordic expansion, EU Parliament integration, API monetization, international partnerships
 - **Significant Threats:** Competitive platforms, regulatory uncertainty, technical evolution, market dynamics
@@ -1009,8 +1009,8 @@ The path forward requires strategic focus, disciplined execution, and continued 
 **✅ Approved by:** James Pether Sörling, CEO  
 **📤 Distribution:** Public  
 **🏷️ Classification:** [![Confidentiality: Public](https://img.shields.io/badge/C-Public-lightgrey?style=flat-square)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#confidentiality-levels)  
-**📅 Effective Date:** 2026-02-15  
-**⏰ Next Review:** 2026-05-15  
+**📅 Effective Date:** 2026-05-30  
+**⏰ Next Review:** 2026-08-30  
 **🎯 Framework Compliance:** [![ISO 27001](https://img.shields.io/badge/ISO_27001-2022_Aligned-blue?style=flat-square&logo=iso&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) [![NIST CSF 2.0](https://img.shields.io/badge/NIST_CSF-2.0_Aligned-green?style=flat-square&logo=nist&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) [![CIS Controls](https://img.shields.io/badge/CIS_Controls-v8.1_Aligned-orange?style=flat-square&logo=cisecurity&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md)
 
 ---

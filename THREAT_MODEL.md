@@ -11,13 +11,13 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/>
-  <img src="https://img.shields.io/badge/Version-1.3-555?style=for-the-badge" alt="Version"/>
-  <img src="https://img.shields.io/badge/Effective-2026--05--06-success?style=for-the-badge" alt="Effective Date"/>
+  <img src="https://img.shields.io/badge/Version-1.4-555?style=for-the-badge" alt="Version"/>
+  <img src="https://img.shields.io/badge/Effective-2026--05--30-success?style=for-the-badge" alt="Effective Date"/>
   <img src="https://img.shields.io/badge/Review-Quarterly-orange?style=for-the-badge" alt="Review Cycle"/>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 1.3 | **📅 Last Updated:** 2026-05-06 (UTC)
-**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-08-06
+**📋 Document Owner:** CEO | **📄 Version:** 1.4 | **📅 Last Updated:** 2026-05-30 (UTC)
+**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-08-30
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
 ---
@@ -2339,7 +2339,7 @@ Following [Hack23 AB Workshop Framework](https://github.com/Hack23/ISMS-PUBLIC/b
 | **CVE Database (NVD)** | Vulnerability disclosures | Daily | Dependabot + manual review | Free |
 | **Swedish CERT-SE** | National threat intelligence | Ad-hoc | Email alerts | Free |
 
-**Next Review:** 2026-05-15 (Quarterly schedule)
+**Next Review:** 2026-08-30 (Quarterly schedule)
 
 ---
 
@@ -2942,11 +2942,11 @@ Riksdagsmonitor-specific security practices for civic transparency platforms.
 ## 📋 Document Control
 
 **📋 Document Owner:** James Pether Sörling, CEO & CISO  
-**📄 Version:** 1.3
-**📅 Last Updated:** 2026-05-06 (UTC)
+**📄 Version:** 1.4
+**📅 Last Updated:** 2026-05-30 (UTC)
 **✅ Approved by:** James Pether Sörling, CEO  
 **🔄 Review Cycle:** Quarterly
-**⏰ Next Review:** 2026-08-06
+**⏰ Next Review:** 2026-08-30
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807)  
 **📤 Distribution:** Public  
 **🏷️ Classification:** [![Confidentiality: Public](https://img.shields.io/badge/C-Public-lightgrey?style=flat-square)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#confidentiality-levels) [![Integrity: High](https://img.shields.io/badge/I-High-orange?style=flat-square)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#integrity-levels) [![Availability: High](https://img.shields.io/badge/A-High-orange?style=flat-square)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#availability-levels)
