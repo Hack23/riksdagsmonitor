@@ -148,6 +148,11 @@ export function selectReaderGuideArtifacts(available: ReadonlySet<string> | read
     const base = file.includes('/') ? file.slice(file.lastIndexOf('/') + 1) : file;
     if (base === 'README.md') return false;
     if (/^article(?:\.[a-z-]+)?\.md$/i.test(base)) return false;
+    // Localized executive-brief translation carriers are derivative of
+    // `executive-brief.md` (which already represents the lead). They are
+    // not independent analytical sections, so they must never appear as
+    // Reader Intelligence Guide navigation rows.
+    if (/^executive-brief_[a-z-]+\.md$/i.test(base)) return false;
     return true;
   };
 

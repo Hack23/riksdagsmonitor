@@ -230,6 +230,14 @@ function resolveArtifactList(rc: RenderCase): readonly string[] {
         if (rel === 'pass1' || rel.startsWith('pass1/')) continue;
         walk(full, rel);
       } else if (/\.(md|json)$/i.test(e.name) && !/^article(?:\.[a-z-]+)?\.md$/i.test(e.name)) {
+        // Skip localized executive-brief translation carriers
+        // (`executive-brief_<lang>.md`). They are translations of the
+        // English `executive-brief.md` — consumed by the SEO cascade and
+        // the localized on-page lead — not independent analytical
+        // artifacts, so they must not appear in the Reader Intelligence
+        // Guide, the Article Sources provenance grid, or JSON-LD
+        // `isBasedOn`.
+        if (/^executive-brief_[a-z-]+\.md$/i.test(e.name)) continue;
         out.push(rel);
       }
     }

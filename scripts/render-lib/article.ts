@@ -77,6 +77,7 @@ import {
 } from './article-aside.js';
 import { enrichArticleMarkdownWithPoliticalContext } from './political-context.js';
 import { applyScannabilityTransforms, transformProgressiveDisclosure } from './article-scannability.js';
+import { localizeExecutiveBriefLead } from './article-brief-lead.js';
 
 /**
  * CSS selectors identifying the voice-assistant TTS-readable regions of
@@ -544,7 +545,12 @@ export async function renderArticleHtml(input: RenderArticleInput): Promise<stri
   const modifiedIso = new Date().toISOString();
   const articleType = { type: articleTypeId, label: localizedArticleTypeLabel };
 
-  const cleanedContent = stripBodyDuplicateSections(parsed.content);
+  const cleanedContent = localizeExecutiveBriefLead({
+    content: stripBodyDuplicateSections(parsed.content),
+    lang: input.lang,
+    localizedBriefMarkdown: input.localizedBriefMarkdown,
+    subfolderRepoRelPath: input.subfolderRepoRelPath,
+  });
 
   const enrichedContent = enrichArticleMarkdownWithPoliticalContext(cleanedContent, input.lang);
 

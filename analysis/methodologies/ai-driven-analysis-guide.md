@@ -208,6 +208,21 @@ Before article aggregation, every workflow must seed the story metadata that wil
 3. Add `## 🌐 14-Language SEO Metadata Seeds` to the executive brief when the workflow has enough evidence. Fill all 14 rows with short localized title angles, description angles and keyword seeds. If a language cannot be human-quality localized, write the English story topic plus the language label and mark it `[machine-assisted — verify]`; do not leave it blank.
 4. Pass 2 must read every language row back and confirm that the title/description is **contextual** (policy object, actor, consequence) rather than a date-stuffed duplicate.
 
+> **The H1 is doing triple duty.** The `executive-brief.md` H1 and BLUF are not "just SEO". The renderer derives the page `<title>`, `<meta description>`, OG/Twitter cards and Schema.org `headline` from them **and** the brief body is now the **on-page lead** a reader meets first. For a localized page the renderer uses `executive-brief_<lang>.md` as the lead (localized if it exists, English otherwise — the same cascade as `<title>`/`<meta description>`), so the localized H1/BLUF must read as a finished, reader-attracting opening in that language, not a literal calque of the English. Write each H1 to earn the click and the first 10 seconds of reading attention.
+
+#### 🪝 Headline tradecraft (write the title to be clicked, not just indexed)
+
+Pass-1 may write a serviceable H1; Pass-2 must sharpen it. A strong title is **specific, consequential and curiosity-opening** without being clickbait:
+
+- **Lead with the named actor and an active, concrete verb** — "Busch government tightens migration detention" beats "New propositions submitted".
+- **Name the stake / so-what** — quantify or sharpen the consequence ("…risking ECHR Article 8 review", "…shifting 12% of the housing budget").
+- **Front-load the highest-DIW finding**, never the document count or the date. The title must match the #1 finding the lede and significance scoring agree on.
+- **Stay inside the SERP-safe envelope** — 50–70 characters renders without truncation (the renderer trims long H1s at a word boundary and strips trailing connectors, so a title that *needs* its tail to make sense will lose meaning at ~70 chars).
+- **No date-stuffing, no admin metadata, no template scaffolding** (`REPLACE THIS H1`, `Executive Brief`, classification badges) — those are stripped/flagged and produce duplicate-looking SERP entries.
+- **Localize the angle, not the words** — each non-English title row should carry the same actor/verb/stake in idiomatic phrasing; a reader scanning the SV or JA page should feel the headline was written for them.
+
+Mini self-check (apply to every language row in Pass-2): *Does it name an actor? An active verb? A concrete stake? Would a non-expert understand the so-what in one read? Is it ≤ 70 chars and free of dates/admin text?* Any "no" forces a rewrite.
+
 Minimum row schema:
 
 ```markdown
@@ -406,7 +421,7 @@ Score your own output against this rubric before commit:
 
 #### Article and SEO handoff
 
-Before running `scripts/aggregate-analysis.ts`, ensure `executive-brief.md` has a publishable H1 and BLUF that can become `<title>` and `<meta description>` without repair: actor-first, active verb, no literal date, no admin metadata, 55–70 character title target and 140–200 character one-sentence description target. `synthesis-summary.md §Narrative Direction & Article Decision` should agree with that H1/BLUF so `article.md` reads as one coherent intelligence article.
+Before running `scripts/aggregate-analysis.ts`, ensure `executive-brief.md` has a publishable H1 and BLUF that can become `<title>` and `<meta description>` without repair: actor-first, active verb, no literal date, no admin metadata, 55–70 character title target and 140–200 character one-sentence description target. `synthesis-summary.md §Narrative Direction & Article Decision` should agree with that H1/BLUF so `article.md` reads as one coherent intelligence article. Apply the same bar to every `executive-brief_<lang>.md`: its H1/BLUF is the localized page's **on-page lead** (the first thing a SV/DE/JA/AR reader sees) as well as that page's localized `<title>`/`<meta description>` — so each localized brief must open with the same reader-attracting, actor-and-stake headline in idiomatic prose, never a literal calque. Run the 🪝 Headline-tradecraft self-check (Step 2B) against every language before aggregation.
 
 
 Read every file you produced in Steps 3–5. For each one, **improve every section**:
