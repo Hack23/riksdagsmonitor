@@ -7,6 +7,7 @@
  */
 
 import type { MCPTransportClient } from '../transport/jsonrpc.js';
+import { isDegradedKalenderSentinel } from '../../fetch-calendar/mcp/errors.js';
 
 /**
  * Fetch parliamentary calendar events between two dates, optionally
@@ -32,12 +33,8 @@ export async function fetchCalendarEvents(
 
   const response = await transport.request('get_calendar_events', params);
 
-  const errorText = response['error'];
-  const rawHtml = response['rawHtml'];
-  const isDegraded =
-    (typeof errorText === 'string' && errorText.trim().length > 0) ||
-    (typeof rawHtml === 'string' && rawHtml.trim().length > 0);
-  if (isDegraded) {
+  if (isDegradedKalenderSentinel(response)) {
+    const errorText = response['error'];
     throw new Error(
       `get_calendar_events degraded: ${typeof errorText === 'string' ? errorText : 'upstream HTML error from data.riksdagen.se/kalender/'}`,
     );

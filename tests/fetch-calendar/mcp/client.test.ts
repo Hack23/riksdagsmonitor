@@ -216,4 +216,81 @@ describe('callMcpCalendarEvents', () => {
       callMcpCalendarEvents('2026-04-28', '2026-05-04', config),
     ).rejects.toMatchObject({ kind: 'html' });
   });
+
+  it('throws CalendarMcpError(json) when content text is malformed JSON', async () => {
+    const config = {
+      mcpUrl: 'https://mcp.test/mcp',
+      timeout: 3_000,
+      fetchFn: jsonFetch({
+        jsonrpc: '2.0',
+        id: 1,
+        result: { content: [{ text: '{not valid json' }] },
+      }),
+    };
+
+    await expect(
+      callMcpCalendarEvents('2026-04-28', '2026-05-04', config),
+    ).rejects.toMatchObject({ kind: 'json' });
+  });
+
+  it('includes rawHtml in responseText when sentinel has rawHtml', async () => {
+    const rawHtml = '<script>window.location="/"</script>';
+    const sentinel = {
+      count: 0,
+      events: [],
+      rawHtml,
+      error: 'Riksdagens kalender-API returnerade HTML.',
+    };
+    const config = {
+      mcpUrl: 'https://mcp.test/mcp',
+      timeout: 3_000,
+      fetchFn: jsonFetch({
+        jsonrpc: '2.0',
+        id: 1,
+        result: { content: [{ text: JSON.stringify(sentinel) }] },
+      }),
+    };
+
+    await expect(
+      callMcpCalendarEvents('2026-04-28', '2026-05-04', config),
+    ).rejects.toMatchObject({ kind: 'html', responseText: rawHtml });
+  });
+
+  it('includes the error string in the thrown message for degraded sentinel', async () => {
+    const errorMsg = 'Riksdagens kalender-API returnerade HTML istället för JSON.';
+    const sentinel = { count: 0, events: [], error: errorMsg };
+    const config = {
+      mcpUrl: 'https://mcp.test/mcp',
+      timeout: 3_000,
+      fetchFn: jsonFetch({
+        jsonrpc: '2.0',
+        id: 1,
+        result: { content: [{ text: JSON.stringify(sentinel) }] },
+      }),
+    };
+
+    await expect(
+      callMcpCalendarEvents('2026-04-28', '2026-05-04', config),
+    ).rejects.toThrow(errorMsg);
+  });
+
+  it('throws CalendarMcpError(html) on a rawHtml-only sentinel (no error field)', async () => {
+    const config = {
+      mcpUrl: 'https://mcp.test/mcp',
+      timeout: 3_000,
+      fetchFn: jsonFetch({
+        jsonrpc: '2.0',
+        id: 1,
+        result: {
+          count: 0,
+          events: [],
+          rawHtml: '<!DOCTYPE html><html><body>503 Service Unavailable</body></html>',
+        },
+      }),
+    };
+
+    await expect(
+      callMcpCalendarEvents('2026-04-28', '2026-05-04', config),
+    ).rejects.toMatchObject({ kind: 'html' });
+  });
 });
