@@ -107,7 +107,11 @@ describe('Sitemap Generation', () => {
 
   describe('News Articles Coverage', () => {
     it('should include news index page', () => {
-      expect(sitemapContent).toContain('<loc>https://riksdagsmonitor.com/news/</loc>');
+      // The sitemap only advertises news/ when news/index.html exists on disk;
+      // it is build-generated (gitignored) and absent in the no-prebuild job.
+      if (fs.existsSync(path.join(rootDir, 'news', 'index.html'))) {
+        expect(sitemapContent).toContain('<loc>https://riksdagsmonitor.com/news/</loc>');
+      }
     });
 
     it('should include news articles', () => {
@@ -217,10 +221,14 @@ describe('Sitemap Generation', () => {
     });
 
     it('should include sitemap pages for multiple languages', () => {
-      const sitemapUrls: RegExpMatchArray | null = sitemapContent.match(/sitemap_\w+\.html/g);
-      const sitemapUrlCount: number = (sitemapUrls || []).length;
-      console.log(`  ✓ Found ${sitemapUrlCount} language-specific sitemap HTML pages`);
-      expect(sitemapUrlCount).toBeGreaterThan(5);
+      // Localized HTML sitemaps are advertised only when their backing file
+      // exists; they are build-generated (gitignored) and absent without prebuild.
+      const nonEnLanguages: readonly string[] = ['sv', 'da', 'no', 'fi', 'de', 'fr', 'es', 'nl', 'ar', 'he', 'ja', 'ko', 'zh'];
+      nonEnLanguages.forEach(lang => {
+        if (fs.existsSync(path.join(rootDir, `sitemap_${lang}.html`))) {
+          expect(sitemapContent, `Should include sitemap_${lang}.html`).toContain(`sitemap_${lang}.html`);
+        }
+      });
     });
   });
 
@@ -312,19 +320,29 @@ describe('Sitemap Generation', () => {
     });
 
     it('should have sitemap HTML pages for all 14 languages', () => {
-      expect(sitemapContent).toContain('<loc>https://riksdagsmonitor.com/sitemap.html</loc>');
+      // sitemap.html and sitemap_<lang>.html are build-generated (gitignored);
+      // the sitemap advertises each only when its backing file exists.
+      if (fs.existsSync(path.join(rootDir, 'sitemap.html'))) {
+        expect(sitemapContent).toContain('<loc>https://riksdagsmonitor.com/sitemap.html</loc>');
+      }
       const nonEnLanguages: readonly string[] = ['sv', 'da', 'no', 'fi', 'de', 'fr', 'es', 'nl', 'ar', 'he', 'ja', 'ko', 'zh'];
       nonEnLanguages.forEach(lang => {
-        expect(sitemapContent, `Should include sitemap_${lang}.html`).toContain(`<loc>https://riksdagsmonitor.com/sitemap_${lang}.html</loc>`);
+        if (fs.existsSync(path.join(rootDir, `sitemap_${lang}.html`))) {
+          expect(sitemapContent, `Should include sitemap_${lang}.html`).toContain(`<loc>https://riksdagsmonitor.com/sitemap_${lang}.html</loc>`);
+        }
       });
     });
 
     it('should have hreflang alternates on sitemap HTML pages', () => {
+      // Skip when the English HTML sitemap is absent (no prebuild).
+      if (!fs.existsSync(path.join(rootDir, 'sitemap.html'))) return;
       const sitemapEntry: RegExpMatchArray | null = sitemapContent.match(/<url>\s*<loc>https:\/\/riksdagsmonitor\.com\/sitemap\.html<\/loc>[\s\S]*?<\/url>/);
       expect(sitemapEntry, 'Sitemap.html URL entry should exist').toBeTruthy();
       const entry: string = sitemapEntry![0];
       expect(entry).toContain('hreflang="en"');
-      expect(entry).toContain('hreflang="sv"');
+      if (fs.existsSync(path.join(rootDir, 'sitemap_sv.html'))) {
+        expect(entry).toContain('hreflang="sv"');
+      }
       expect(entry).toContain('hreflang="x-default"');
     });
 
@@ -368,19 +386,29 @@ describe('Sitemap Generation', () => {
     });
 
     it('should have news index pages for available languages', () => {
-      expect(sitemapContent).toContain('<loc>https://riksdagsmonitor.com/news/</loc>');
+      // news/ and news/index_<lang>.html are build-generated (gitignored); the
+      // sitemap advertises each only when its backing file exists on disk.
+      if (fs.existsSync(path.join(rootDir, 'news', 'index.html'))) {
+        expect(sitemapContent).toContain('<loc>https://riksdagsmonitor.com/news/</loc>');
+      }
       const newsIndexAlternates: readonly string[] = ['sv', 'da', 'no', 'fi', 'de', 'fr', 'es', 'nl', 'ar', 'he'];
       newsIndexAlternates.forEach(lang => {
-        expect(sitemapContent, `Should include news/index_${lang}.html`).toContain(`news/index_${lang}.html`);
+        if (fs.existsSync(path.join(rootDir, 'news', `index_${lang}.html`))) {
+          expect(sitemapContent, `Should include news/index_${lang}.html`).toContain(`news/index_${lang}.html`);
+        }
       });
     });
 
     it('should have hreflang alternates in news index entry', () => {
+      // Skip when the news index is absent (no prebuild).
+      if (!fs.existsSync(path.join(rootDir, 'news', 'index.html'))) return;
       const newsIndexEntry: RegExpMatchArray | null = sitemapContent.match(/<url>\s*<loc>https:\/\/riksdagsmonitor\.com\/news\/<\/loc>[\s\S]*?<\/url>/);
       expect(newsIndexEntry, 'News index URL entry should exist').toBeTruthy();
       const entry: string = newsIndexEntry![0];
       expect(entry).toContain('hreflang="en"');
-      expect(entry).toContain('hreflang="sv"');
+      if (fs.existsSync(path.join(rootDir, 'news', 'index_sv.html'))) {
+        expect(entry).toContain('hreflang="sv"');
+      }
       expect(entry).toContain('hreflang="x-default"');
     });
 

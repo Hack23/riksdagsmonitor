@@ -75,8 +75,15 @@ describe('Sitemap Generation', () => {
 
     it('should include sitemap HTML pages', () => {
       const xml = module.generateSitemap();
+      // The English HTML sitemap is always advertised (legacy contract).
       expect(xml).toContain('sitemap.html');
-      expect(xml).toContain('sitemap_sv.html');
+      // Localized HTML sitemaps are advertised only when their file exists on
+      // disk; in the unit-test job (no prebuild) they may be absent.
+      for (const lang of ['sv', 'de', 'no']) {
+        if (fs.existsSync(`sitemap_${lang}.html`)) {
+          expect(xml).toContain(`sitemap_${lang}.html`);
+        }
+      }
     });
 
     it('should include xhtml namespace for hreflang', () => {
@@ -104,6 +111,44 @@ describe('Sitemap Generation', () => {
     it('should include news index pages', () => {
       const xml = module.generateSitemap();
       expect(xml).toContain('news/');
+    });
+
+    it('should include all 14 news index languages when they exist', () => {
+      const xml = module.generateSitemap();
+      // ja/ko/zh were previously omitted from the hardcoded list.
+      for (const lang of ['sv', 'da', 'no', 'fi', 'de', 'fr', 'es', 'nl', 'ar', 'he', 'ja', 'ko', 'zh']) {
+        if (fs.existsSync(`news/index_${lang}.html`)) {
+          expect(xml).toContain(`news/index_${lang}.html`);
+        }
+      }
+    });
+
+    it('should include localized rss feeds that exist on disk', () => {
+      const xml = module.generateSitemap();
+      // English rss.xml is gitignored and only present after prebuild, so the
+      // existence-checked sitemap advertises it only when the file exists.
+      if (fs.existsSync('rss.xml')) {
+        expect(xml).toContain('https://riksdagsmonitor.com/rss.xml');
+      }
+      for (const lang of ['sv', 'de', 'no', 'ja', 'ko', 'zh']) {
+        if (fs.existsSync(`rss_${lang}.xml`)) {
+          expect(xml).toContain(`https://riksdagsmonitor.com/rss_${lang}.xml`);
+        }
+      }
+    });
+
+    it('should only reference URLs whose backing files exist', () => {
+      const xml = module.generateSitemap();
+      // Every localized rss feed URL in the sitemap must have a real file.
+      const rssLocs = [...xml.matchAll(/<loc>https:\/\/riksdagsmonitor\.com\/(rss_[a-z-]+\.xml)<\/loc>/g)];
+      for (const m of rssLocs) {
+        expect(fs.existsSync(m[1]!)).toBe(true);
+      }
+      // Every localized news index URL must have a real file.
+      const newsLocs = [...xml.matchAll(/<loc>https:\/\/riksdagsmonitor\.com\/news\/(index_[a-z-]+\.html)<\/loc>/g)];
+      for (const m of newsLocs) {
+        expect(fs.existsSync(`news/${m[1]!}`)).toBe(true);
+      }
     });
   });
 
