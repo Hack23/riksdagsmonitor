@@ -20,36 +20,6 @@
 **🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-08-05
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
-> **🆕 What changed since last review (v7.5 → v7.6, 2026-05-28):**
-> - 🤖 **Model split:** the 13 analysis/article-generating news workflows now run on **`claude-opus-4.8`** (released after `claude-opus-4.7`) for strongest reasoning across the 23-artifact pipeline; the high-volume **`news-translate`** workflow stays on **`claude-sonnet-4.6`** for translation fan-out throughput. Updated the engine narrative, Stage-6 diagram label, and recompiled all 14 `.lock.yml` siblings via `gh aw compile`.
->
-> **🆕 What changed since last review (v7.4 → v7.5, 2026-05-06):**
-> - 🏛️ Reconciled document with **v0.8.76** — confirmed 51 workflow files (22 standard `.yml` + 14 agentic `.md` + 14 compiled `.lock.yml` + 1 README).
-> - 🧠 Added §"Political Intelligence Validation Pipeline" documenting: `generate-political-intelligence.ts`, `validate-methodology-reflection.ts`, `validate-quality-scores.cjs`, `validate-article.ts`, and analysis-gate enforcement (checks 1-9b).
-> - 📦 Documented analysis-gate as a CI/CD concern: every agentic workflow MUST pass 23-artifact gate before article rendering.
-> - 📋 Updated prebuild chain to current 13-step sequence (added `generate-article-types-doc`, `copy-vendor-mermaid`, `aggregate-analysis`, `render-articles`, `normalize-static-html-chrome`, `backfill-translated-chrome`, `strip-legacy-chrome-script-tags`).
-> - 🌐 Added parliamentary data download scripts: `download-parliamentary-data.ts`, `fetch-voting-records.ts`, `fetch-calendar.ts`, `fetch-statskontoret.ts`, `fetch-rir-followups.ts`.
->
-> **🆕 What changed since last review (v7.3 → v7.4, 2026-05-05):**
-> - ♻️ Reconciled this document with the current `package.json` toolchain: TypeScript 6.0.3, Vite 8.0.10, Vitest 4.1.5, Cypress 15.14.2, and the current 3,319-test baseline observed in `npm test`.
-> - 🤖 Corrected the agentic-news engine and workflow narrative to **14 workflows** using `claude-sonnet-4.6`, the 23-artifact baseline, nested election-cycle folders, and all-language article rendering via `render-articles.ts --all --lang all`.
->
-> **🆕 What changed since last review (v7.2 → v7.3, 2026-05-02):**
-> - 🔮 **Long-horizon forward-look pipelines** added: `news-quarter-ahead` (90d, × 1.7), `news-year-ahead` (365d, × 2.0), and `news-election-cycle` (1460d, × 2.5). Workflow count is now **14 agentic** (was 11) bringing total workflow files to **50** (22 `.yml` + 14 `.md` + 14 `.lock.yml`).
-> - Added §6.2 "Long-Horizon Forward-Look Pipelines" with Mermaid flowchart + sequence diagrams for each new horizon, ISMS control mapping table, and KPI definitions.
-> - Updated all inventory tables, counts, and diagram labels to reflect 14 agentic workflows.
->
-> **🆕 What changed since last review (v7.1 → v7.2, 2026-04-20):**
-> - 📈 **IMF** added as a third primary economic-data source for agentic news workflows (alongside SCB MCP and World Bank MCP) per [ADR 0001](docs/adr/0001-adopt-imf-data-alongside-world-bank.md). IMF is consumed via the **pure-TypeScript client `scripts/imf-client.ts`** invoked by workflows through the `bash` tool — **intentionally not an MCP server** (no Python/uvx, SBOM-covered via npm). Egress allowlist extended with `data.imf.org`, `api.imf.org`, `www.imf.org` (Squid + iptables). The count of **MCP servers is unchanged**. Forward-looking workflows (`news-week-ahead`, `news-month-ahead`, `news-weekly-review`, `news-monthly-review`) now use IMF WEO/Fiscal Monitor projections as the primary source for look-ahead framing.
->
-> **🆕 What changed since last review (v7.0 → v7.1, 2026-04-20):**
-> - **Factual correction:** total workflow-file count under `.github/workflows/` is **43** (not 45 or 48). The breakdown is **21 standard `.yml` workflows + 11 agentic Markdown sources (`.md`) + 11 compiled `.lock.yml` siblings**. All inventory tables and narrative text below have been reconciled with `ls .github/workflows/`.
-> - Added previously unlisted workflow: **`agentics-maintenance.yml`** (agent platform hygiene, scheduled maintenance of agentic environment).
-> - Realigned categorisation: `compile-agentic-workflows.yml` is a standard `.yml` **build tool**, not an agentic workflow — moved into the "Automation & Tooling" category.
-> - Reconfirmed that the **five-layer safe-output security model** and **egress firewall (Squid proxy + iptables allow-list)** wrap every `news-*` agentic workflow, per [gh-aw-safe-outputs](.github/skills/gh-aw-safe-outputs/) and [gh-aw-firewall](.github/skills/gh-aw-firewall/) skills.
-> - All `uses:` references remain SHA-pinned; `step-security/harden-runner` is applied across all workflows; deployment uses **AWS OIDC only** (no long-lived secrets) via `id-token: write`.
-> - Added explicit ISMS control mapping to [Secure_Development_Policy §10](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md), ISO 27001:2022 Annex A.5.30/A.8.8/A.8.28/A.8.30, NIST CSF 2.0 GV.SC/PR.PS/DE.CM/RS.AN, CIS Controls v8.1 #4/#16, and [AI_Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/AI_Policy.md) for agentic workloads.
-
 ---
 
 ## 📊 Workflow Status Badges

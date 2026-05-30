@@ -20,33 +20,6 @@
 **🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-08-06
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
-> **🆕 What changed since last review (v1.2 → v1.3, 2026-05-06):**
-> - 🔄 **Reconciled threat model with Riksdagsmonitor `v0.8.76`** and the live 14-workflow agentic news architecture using **Claude Sonnet 4.6** (not the earlier 11-workflow / Opus baseline).
-> - 🕵️ **Added political-intelligence trust boundaries (TB-PI-1..3)** for the trusted template/methodology control plane, analysis-gate structural validation, and safe-output PR boundary.
-> - 🛡️ **Expanded LLM / agentic threat coverage** to explicitly cover template poisoning, methodology drift, analysis-gate bypass attempts, evidence-citation forgery, and horizon-stratification confusion.
-> - 🔒 **Aligned mitigations with SECURITY_ARCHITECTURE.md v2.4**: 23 required artifacts, analysis gate checks 1–9b, methodology-reflection validator, five-layer safe-output model, Squid + iptables egress firewall, and human-review gate.
->
-> **🆕 What changed since last review (v1.1 → v1.2, 2026-04-20):**
-> - 📈 **IMF elevated to a primary external economic data source** (parity with SCB and World Bank) per [ADR 0001](docs/adr/0001-adopt-imf-data-alongside-world-bank.md). Existing row **TB-6a** covers the `imf-ts-client` data flow in detail; this revision additionally: (a) adds IMF to the **Critical Assets** inventory under "Parliamentary Data / Economic Context", (b) notes two IMF-specific residual risks — **projection-vintage confusion** (WEO vintage drift: an old WEO dataset cited as current; mitigated by `projectionVintage` sidecar + Economic Data Contract v2.0 field) and **cache poisoning of `analysis/data/imf/`** (mitigated by `.meta.json` integrity sidecars, SBOM-covered schema validation, and Git-tracked diffs under PR review), and (c) adds an **"IMF upstream / transport adversary"** row to the Threat Agent Classification Framework (low likelihood; controls already enumerated in TB-6a).
->
-> **🆕 What changed since last review (v1.0 → v1.1, 2026-04-20):**
-> - Full **STRIDE pass** re-executed over the current architecture of Riksdagsmonitor `v0.8.76`:
->   - **Spoofing:** GitHub OIDC federation to AWS (no long-lived keys); npm provenance attestations; MCP server TLS + token-scoped auth.
->   - **Tampering:** SRI on all static assets via `vite-plugin-sri-gen@1.3.2`; Git signed commits; immutable S3 object versioning + CloudFront origin signing; schema-validated CIA data ingestion (`validate-against-cia-schemas`); translation integrity via `validate-translations`.
->   - **Repudiation:** GitHub audit log + CloudTrail; signed releases; SLSA L3 provenance on npm; Actions run logs retained.
->   - **Information Disclosure:** Public classification by design, but secrets scanning, CodeQL, Dependabot alerts, and `step-security/harden-runner` guard against accidental exfiltration from build runners.
->   - **Denial of Service:** CloudFront absorbs L3/L7 volumetrics; WAF rate-limiting; dual-region failover; GitHub Pages DR tier; npm package remains available independently of web tier.
->   - **Elevation of Privilege:** Least-privilege `permissions:` on every workflow; PR-gated merges; five-layer safe-output validation for agentic workflows; reviewer approval for every agentic-generated PR.
-> - **New threat category — Agentic / LLM-specific:**
->   - Prompt injection via upstream political-content sources → mitigated by MCP-side input sanitisation, system-prompt hardening, and safe-outputs schema validation.
->   - Tool-call exfiltration attempts → mitigated by Squid proxy + iptables egress allow-list.
->   - Model-generated misinformation → mitigated by human-review gate (layer 4 of safe-outputs), source citation enforcement, and the AI FIRST quality principle.
->   - Covered by [OWASP LLM Security Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/OWASP_LLM_Security_Policy.md) and [AI_Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/AI_Policy.md).
-> - **New threat category — Supply-chain on MCP servers:** SBOM checks for `@jarib/pxweb-mcp`, `worldbank-mcp`, and the hosted `riksdag-regering` endpoint; version pinning; OpenSSF Scorecard on dependencies where available.
-> - **Data poisoning on CIA upstream repo:** schema validation + diff review gates on every `update-cia-csv-data.yml` auto-PR.
-> - MITRE ATT&CK references integrated: T1195 (Supply Chain Compromise), T1566 (Phishing — N/A no users), T1078 (Valid Accounts — OIDC-only mitigates), T1486 (Data Encrypted for Impact — immutable backups mitigate), plus ATLAS AML.T0051 (LLM Prompt Injection) and AML.T0053 (LLM Plugin Compromise).
-> - Compliance mapping: ISO 27001:2022 Annex A.5.7/A.8.8/A.8.28, NIST CSF 2.0 ID.RA/DE.AE/RS.AN, CIS Controls v8.1 #16/#18, NIS2 Art. 21, EU CRA Annex I §(3).
-
 ---
 
 ## 🎯 Purpose & Scope

@@ -20,26 +20,6 @@
 **🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-08-03  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
-> **🆕 What changed since last review (v1.3 → v1.4, 2026-05-06):**
-> - 📈 **Strengths (new S9):** Political Intelligence Methodology — 18 methodologies, 39 templates, analysis gate checks 1-9b, AI-FIRST 2-iteration model, 23-artifact structure (Families A-D: 9+2+5+7), horizon stratification (T+72h → T+1460d).
-> - 📈 **S7 updated:** 24 agents (was 13), 93 skills (was 41), 14 agentic news workflows (was 11).
-> - 📈 **S4 updated:** Vite 8.0.10 (was Vite 7).
-> - 📊 **Executive Summary updated:** v0.8.76, 3,319+ tests.
-> - ⚠️ **W5 updated:** 14 agentic news workflows now in production (was 10).
->
-> **🆕 What changed since last review (v1.1 → v1.2, 2026-04-20):**
-> - 📈 **Strengths (new):** IMF added as a third primary economic-data source with T+5 projections; pure-TypeScript client (`scripts/imf-client.ts`) fully covered by the npm SBOM — **no Python / uvx / third-party MCP** supply-chain surface; three-source economic posture (SCB + World Bank + IMF) mitigates any single upstream outage or vintage lag. Per [ADR 0001](docs/adr/0001-adopt-imf-data-alongside-world-bank.md).
-> - 🚀 **Opportunities (new):** IMF WEO / Fiscal Monitor projections unlock forward-looking news products (`week-ahead`, `month-ahead`, `weekly-review`, `monthly-review`) with credible official macro/fiscal outlooks through 2031.
-> - ⚠️ **Threats (new):** IMF-origin DNS hijack or TLS MITM against `data.imf.org` / `api.imf.org` / `www.imf.org`; IMF public rate-limit saturation (~10 req/5s); stale WEO vintage misattribution in generated articles (mitigated via `projectionVintage` sidecar in `.meta.json` and Economic Data Contract v2.0 field enforcement); cache poisoning of `analysis/data/imf/`.
-> - 📚 Upstream data-source list updated to **(Riksdagen, Regeringen, SCB, World Bank, IMF)**.
->
-> **🆕 What changed since last review (v1.0 → v1.1, 2026-04-20):**
-> - **Strengths (expanded):** `v0.8.48` shipped to npm with SLSA provenance; dual-distribution model (static site + public npm package); **2,669 files** across 14 languages including RTL (HE, AR); **15 CIA data subsystems**; **14 agentic news workflows** under five-layer safe-output control; OpenSSF Best Practices badge #12069; OpenSSF Scorecard transparency; AI FIRST quality process (minimum-2-iteration rule); full OIDC CI/CD with zero long-lived AWS credentials; 24 Copilot agents + 91 skills driving automation leverage.
-> - **Weaknesses (expanded):** single-person company (CEO is sole owner of `Hack23/riksdagsmonitor` — key-person risk); dependency on a narrow set of upstream data sources (Riksdagen, Regeringen, SCB, World Bank, IMF); Swedish-first editorial posture requires translation quality gates for 13 non-Swedish locales; agentic news generation depends on LLM availability and prompt hygiene.
-> - **Opportunities (expanded):** positioning as the reference open-transparency platform for EU member-state parliaments (NIS2 tailwind); `riksdagsmonitor` npm package creates a developer-ecosystem moat for third-party dashboards and research; cross-referenced publication with Citizen Intelligence Agency (CIA) platform; multi-language reach into global journalist and research markets; EU CRA and AI Act compliance as competitive differentiation.
-> - **Threats (expanded):** disinformation / counter-narrative campaigns targeting article integrity; upstream data-source schema changes or de-platforming; Swedish legal landscape around political speech; supply-chain attacks on MCP servers or npm dependencies; prompt-injection attacks on agentic workflows (mitigated by the five-layer safe-outputs model and egress firewall); LLM provider outages or policy shifts affecting news generation cadence.
-> - Compliance mapping: ISO 27001:2022 A.5.2/A.5.29, NIST CSF 2.0 GV.OV/ID.RA, CIS Controls v8.1 #14 (security awareness/SWOT review), ENISA good-practice for OSS projects.
-
 ---
 
 ## 🎯 Purpose

@@ -20,45 +20,6 @@
 **🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-08-06  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
-> **🆕 What changed since last review (v2.5 → v2.6, 2026-05-28):**
-> - 🤖 **Agentic engine model:** the 13 analysis/article-generating news workflows now run on **`claude-opus-4.8`** (the successor to `claude-opus-4.7`); the high-volume **`news-translate`** workflow stays on **`claude-sonnet-4.6`**. Updated the Multi-Language Content Architecture diagram's source-generation label accordingly.
->
-> **🆕 What changed since last review (v2.4 → v2.5, 2026-05-06):**
-> - 📦 Aligned to **package v0.8.76**: TypeScript 6.0.3, **Vite 8.0.10**, **Vitest 4.1.5**, Node.js ≥26 baseline, `"type": "module"`. Subpath exports (`./`, `./shared`, `./shared/*`, `./cia/*`, `./dashboards/*`, `./ui/*`) and explicit `sideEffects` (browser CIA entry + register-globals) documented in the Tech Stack and Container views.
-> - 🧠 Surfaced two new **bounded contexts** in Container/Component views: `scripts/political-intelligence/` (catalog + daily-streams + i18n + render leaves) and `scripts/agentic/` (analysis-gate checks 1–9b, typed `ArtifactDefinition` inventory of **23 artifacts** across Families A–E, with vitest coverage split across `tests/agentic/gate-checks/`, `tests/agentic/gate-shared/`, and `tests/agentic/analysis-gate-integration.test.ts`).
-> - 🧩 Expanded **render-lib component breakdown** to its true sub-tree: `aggregator/` (incl. `cleaning/`, `seo/`, frontmatter/per-document/sources-appendix/order/pipeline), `chrome/` (head/header/footer/helpers/types façade), `markdown/` (mermaid canonical theme + preprocess, sanitize-schema, rehype-slug-prefixed, rehype-wrap-tables, pipeline).
-> - 🌍 Consolidated the **economic + administrative TypeScript-client landscape**: IMF (`scripts/imf-*.ts`), SCB (`scripts/scb-*.ts`), World Bank (`scripts/world-bank-*.ts`), Riksbank (`scripts/riksbank-fetch.ts`), Statskontoret (`scripts/statskontoret-*.ts` + `scripts/fetch-statskontoret.ts`), RiR (`scripts/rir-followups-client.ts` + `scripts/fetch-rir-followups.ts`), parliamentary-data (`scripts/parliamentary-data/` with data-downloader/data-persistence/pdf-converter and `scripts/download-parliamentary-data.ts` / `fetch-voting-records.ts` / `fetch-calendar.ts`).
-> - 📚 Added **"## 🧠 Political Intelligence Architecture"** section: 18-methodology framework (`analysis/methodologies/`), 39-template catalog (`analysis/templates/`), 7-band horizon stratification (T+72h … T+1460d / election) as an architectural pattern, AI-FIRST 2-pass iteration as a quality constraint, OSINT tradecraft, classification/SWOT/threat/PESTLE/scenario template roles, election-cycle and coalition-mathematics templates.
-> - 🗂️ Documented **dashboard containers** explicitly: `scripts/coalition-dashboard.ts` + `scripts/coalition-dashboard/`, `scripts/committees-dashboard.ts` + `scripts/committees-dashboard/`, plus `politician-dashboard.html` × 14 languages.
-> - 🧪 Verified **schema governance pipeline**: `sync-cia-schemas.ts` → `validate-against-cia-schemas.ts` → `check-cia-schema-updates.ts` → `generate-types-from-cia-schemas.ts`, sourcing from `schemas/cia/` plus root schemas (`article-types.schema.json`, `pir-status.schema.json`, `rir-followups-schema.json`).
-> - 🔌 MCP integration section affirmed at **8 MCP servers**; explicit reminder that **IMF is a pure-TypeScript client (not MCP)** — npm-SBOM-covered, allowlisted hosts `data.imf.org`, `api.imf.org`, `www.imf.org`.
-> - ⚙️ ESLint baseline (`no-explicit-any` = error, `no-unused-vars` = error) + typed `DashboardGlobals` (`src/browser/shared/global-libs.ts`) noted as architectural quality gates.
->
-> **🆕 What changed since last review (v2.3 → v2.4, 2026-05-05):**
-> - 📰 Replaced legacy `generate-daily-news.js` architecture references with the current GitHub Agentic Workflows newsroom: 14 `news-*.md` sources, 14 compiled `.lock.yml` files, 23-artifact analysis folders, deterministic `aggregate-analysis.ts`, and sanitized `render-articles.ts` output for all 14 languages.
-> - 🧩 Updated component/container views to reflect the TypeScript browser modules, local Chart.js/D3/Papa Parse assets, IMF TypeScript client, SCB/World Bank MCP servers, and nested election-cycle article paths.
->
-> **🆕 What changed since last review (v2.2 → v2.3, 2026-05-03):**
-> - 🔄 **Drift reconciliation** with `.github/workflows/README.md` and live label set: GitHub Actions surface is now **50 files** total (**22 standard `.yml` + 14 agentic `.md` sources + 14 compiled `.lock.yml`** siblings); **14 agentic news workflows** orchestrated via the five-layer safe-output security model and Squid + iptables egress firewall (was 43 / 21 / 11 / 11 in v2.2).
-> - 📚 Added the **Documentation Portfolio Matrix** section (acceptance criterion #2 of the documentation-refresh issue) cross-linking every top-level architecture / ISMS / operational document to its ISMS-PUBLIC authority root and current owner / version / next-review date.
-> - 🛡️ Reaffirmed **MCP Gateway v0.3.1** schema constraint: workflow frontmatter MUST NOT include `engine.mcp.session-timeout` (rejected as unknown additional property by the gateway) — see `.github/copilot-instructions.md`.
-> - 📋 Inventory-pass evidence committed under [`analysis/audits/documentation-portfolio-audit-2026-05-03.md`](analysis/audits/documentation-portfolio-audit-2026-05-03.md).
->
-> **🆕 What changed since last review (v2.1 → v2.2, 2026-04-20):**
-> - 📈 **IMF added as third primary economic-data source** (alongside SCB and World Bank) per [ADR 0001](docs/adr/0001-adopt-imf-data-alongside-world-bank.md) (accepted 2026-04-20) and **Economic Data Contract v2.0**. IMF is consumed via the **pure-TypeScript** client `scripts/imf-client.ts` (Datamapper JSON + SDMX 3.0 transports); it is **intentionally not an MCP server** — no Python/uvx, fully covered by the npm SBOM, so the **8 MCP servers** count is unchanged. Allowlisted hosts: `data.imf.org`, `api.imf.org`, `www.imf.org`. Cache under `analysis/data/imf/{indicator}/{country}.json` with `.meta.json` sidecars.
->
-> **🆕 What changed since last review (v2.0 → v2.1, 2026-04-20):**
-> - 📦 Release `v0.8.48` published on **npm as `riksdagsmonitor`** with `provenance:true` (SLSA attestations). Public subpath exports: `./`, `./shared`, `./shared/*`, `./cia/*`, `./dashboards/*`, `./ui/*`.
-> - 🧠 Runtime baseline tightened to **Node.js ≥25**; toolchain bumped to TypeScript 6.0.3, Vite 8.0.9, Vitest 4.1.4, ESLint 10.2.1, Cypress 15.14.0 (optional), Playwright 1.59.1, typedoc 0.28.19, happy-dom 20.9.0, knip 6.5.0, ajv 8.18.0.
-> - 🗂️ CIA data now spans **15 subsystems** under `cia-data/` (anomaly, coalition, committee, distribution, election, election-cycle, ministry, parties, party, percentile, politician, pre-election, risk, seasonal, voting). Prior "19 products" framing has been retired in favour of subsystem count.
-> - 🌍 Content footprint: **14 languages** (EN, SV, DA, NB (`_no`), DE, ES, FI, FR, HE RTL, AR RTL, JA, KO, NL, ZH) • **2,669 files** under `news/`.
-> - 🤖 GitHub Actions surface: **50 files** total (22 standard `.yml`, 14 agentic `.md` sources, 14 compiled `.lock.yml` siblings). Fourteen agentic news workflows orchestrated via the five-layer safe-output security model and egress firewall (Squid + iptables). _(Current live inventory; see `.github/workflows/README.md`.)_
-> - 🧩 Copilot ecosystem: **24 custom agents** under `.github/agents/`, **91 skills** under `.github/skills/`, **8 MCP servers** (`riksdag-regering`, `scb`, `world-bank`, `github` insiders, `filesystem`, `memory`, `sequential-thinking`, `playwright`) wired via `.github/copilot-mcp.json`.
-> - ☁️ Production distribution: AWS CloudFront + S3 dual-region (us-east-1 primary, eu-west-1 replica) via OIDC-only deploy; GitHub Pages (`hack23.github.io`) as DR fallback.
-> - 🛡️ Integrity: SRI enabled via `vite-plugin-sri-gen@1.3.2`; all Actions SHA-pinned; `step-security/harden-runner` across workflows; CodeQL, Dependabot, dependency-review, Scorecards, Secret Scanning, OpenSSF Best Practices #12069 active.
-> - 🏷️ Classification confirmed: **Public / Integrity High / Availability High**, RTO 1–4h, RPO 4–24h, Financial Impact Low (<$500/day).
-> - 🔗 Authoritative ISMS root: [Hack23 ISMS-PUBLIC](https://github.com/Hack23/ISMS-PUBLIC) — Information_Security_Policy, Secure_Development_Policy, CLASSIFICATION, Threat_Modeling, Change_Management, Vulnerability_Management, Open_Source_Policy, AI_Policy, Access_Control_Policy, Cryptography_Policy, Incident_Response_Plan, Security_Metrics, STYLE_GUIDE.
-
 ---
 
 ## 📚 Architecture Documentation Map

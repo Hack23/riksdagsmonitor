@@ -21,35 +21,6 @@
 **🔄 Review Cycle:** Annual | **⏰ Next Review:** 2027-05-06  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
-> **🆕 What changed since last review (v2.3 → v2.4, 2026-05-06):**
-> - 📌 **Reconciliation with Riksdagsmonitor `v0.8.76`** (was `v0.8.48` baseline). All version-specific control narratives below remain valid; the additions in this revision document the **political-intelligence security surface** that was previously listed as a backlog item in the [`documentation-portfolio-audit-2026-05-03.md`](analysis/audits/documentation-portfolio-audit-2026-05-03.md) follow-up.
-> - 🆕 **New §"Political Intelligence Security Surface"** (see end of this document) covering: (a) the **39 analysis templates** under `analysis/templates/*.md` and **18 methodologies** under `analysis/methodologies/*.md` consumed by AI agents, treated as a **trusted control plane** — version-controlled, PR-reviewed, and validated by the analysis gate; (b) the **analysis gate (checks 1–9b)** — implemented in [`scripts/agentic/analysis-gate.ts`](scripts/agentic/analysis-gate.ts) and specified in [`.github/prompts/05-analysis-gate.md`](.github/prompts/05-analysis-gate.md) — documented as a **structural-integrity security control** with explicit bypass-resistance properties (typed checks, recursive scan, fail-closed default); (c) the **methodology-reflection validator** in [`scripts/validate-methodology-reflection.ts`](scripts/validate-methodology-reflection.ts) as an **integrity-of-process control**; (d) **political classification** as a data-governance control bound to the [`CLASSIFICATION.md`](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) framework; (e) **OSINT tradecraft compliance** as an operational control; (f) **horizon stratification** as a data-flow boundary that limits which upstream classes may inform which forecast band.
-> - 🆕 **Five-layer safe-output security model** documented in detail (sanitisation → schema-validate → policy-check → human-review → merge), including bypass-resistance assessment and explicit per-layer failure modes; cross-referenced from [`THREAT_MODEL.md`](THREAT_MODEL.md) row TB-PI series.
-> - 🛡️ **External data-provider trust model** consolidated into a single table covering **IMF (TS client)**, **SCB MCP**, **World Bank MCP**, **Riksdag API**, **Riksbank**, **Statskontoret**, **Riksrevisionen** — with cache-integrity, schema-validation, and `.meta.json` tamper-evidence rows.
-> - 🔒 **Compliance mapping reconfirmed** for v0.8.76: ISO 27001:2022 Annex A.5/A.8 (full), NIST CSF 2.0 GV/ID/PR/DE/RS/RC, CIS Controls v8.1 (#1–#18 applicable subset), GDPR Art. 32, NIS2 Art. 21, EU CRA Annex I (essential-requirement coverage tracked in [`CRA-ASSESSMENT.md`](CRA-ASSESSMENT.md) v1.4).
-> - 📋 No control changes; this is a **documentation-only** reconciliation. Code paths, egress allow-lists, MCP server set (8), agent count (24), skill count (91), and workflow set (50 files = 22 standard `.yml` + 14 agentic `.md` + 14 compiled `.lock.yml`) are unchanged from v2.3.
->
-> **🆕 What changed since last review (v2.2 → v2.3, 2026-05-03):**
-> - 🔄 **Drift reconciliation** with `.github/workflows/README.md`: agentic workflow count updated to **14 agentic news workflows** (was 11) wrapped in the same five-layer safe-outputs validator and Squid + iptables egress firewall. Total GitHub Actions surface is now **50 files** (22 standard `.yml` + 14 agentic `.md` + 14 compiled `.lock.yml`).
-> - 🛡️ Reaffirmed **MCP Gateway v0.3.1** schema constraint: workflow frontmatter MUST NOT include `engine.mcp.session-timeout` (rejected as unknown additional property by the gateway) — this is a hard control surface item.
-> - 📋 See [`analysis/audits/documentation-portfolio-audit-2026-05-03.md`](analysis/audits/documentation-portfolio-audit-2026-05-03.md) for the full inventory pass and follow-up backlog (full STRIDE coverage of the agentic-workflow attack surface remains a backlog item).
->
-> **🆕 What changed since last review (v2.1 → v2.2, 2026-04-20):**
-> - 📈 **IMF added as a third primary external economic data provider** (alongside SCB MCP and World Bank MCP) per [ADR 0001](docs/adr/0001-adopt-imf-data-alongside-world-bank.md) — see the **External Data Providers** table and **Egress Allowlist** section below. IMF is consumed via the **pure-TypeScript client `scripts/imf-client.ts`** (Datamapper JSON + SDMX 3.0) — *not* an MCP server; **8 MCP servers** count is unchanged. Allowlisted egress hosts extended with `data.imf.org`, `api.imf.org`, `www.imf.org`. Upstream-integrity controls: `DatamapperResponse` schema validation (shape + finite-numeric + year parse-guard), `.meta.json` tamper-evident sidecars under `analysis/data/imf/{indicator}/{country}.json` (recording `mcpTool: imf-ts-client`, `projectionVintage`, fetch timestamp). Cross-reference: [THREAT_MODEL.md TB-6a](THREAT_MODEL.md).
->
-> **🆕 What changed since last review (v2.0 → v2.1, 2026-04-20):**
-> - Refreshed **defense-in-depth layer inventory** for Riksdagsmonitor `v0.8.48`:
->   - **Edge:** AWS CloudFront + WAF, TLS 1.3 preferred (1.2 min), HSTS, dual-region (us-east-1 primary, eu-west-1 replica).
->   - **Content Integrity:** Subresource Integrity via `vite-plugin-sri-gen@1.3.2`, strict Content-Security-Policy, immutable content hashing.
->   - **Code:** CodeQL (javascript-typescript), ESLint 10.2.1, htmlhint 1.9.2, TypeScript 6.0.3 strict mode, secret scanning, knip 6.5.0 dead-code detection.
->   - **Supply chain:** Dependabot, `actions/dependency-review-action`, OpenSSF Scorecard, **npm publish with `--provenance` (SLSA attestations)**, SHA-pinning on every `uses:` reference.
->   - **Pipeline:** `step-security/harden-runner` with egress audit, AWS OIDC (no long-lived keys), least-privilege `permissions:` per workflow, SLSA Build L3 via GitHub-hosted runners.
->   - **Agentic workloads (new category):** 14 agentic news workflows wrapped in the **five-layer safe-outputs** validator (sanitisation → schema-validate → policy-check → human-review → merge) behind a **Squid proxy + iptables egress firewall** (allow-list only to riksdagen.se, regeringen.se, scb.se, worldbank.org, **data.imf.org, api.imf.org, www.imf.org**, github.com, MCP endpoints). _(Updated in v2.3 from the 11-agentic figure originally published with v2.1; see `.github/workflows/README.md` for the live inventory.)_
-> - Added **MCP security posture**: 8 MCP servers defined in `.github/copilot-mcp.json` — `riksdag-regering` (HTTPS `riksdag-regering-ai.onrender.com/mcp`), `scb` (local `@jarib/pxweb-mcp@2.0.0` → `api.scb.se/OV0104/v2beta`), `world-bank` (local `worldbank-mcp@1.0.1`), `github` (HTTPS `api.githubcopilot.com/mcp/insiders`), `filesystem`, `memory`, `sequential-thinking`, `playwright` (headless).
-> - Added **24 Copilot agents** (`.github/agents/`) and **91 skills** (`.github/skills/`) under security review; each agent's tool allow-list is explicit and audited.
-> - OpenSSF Best Practices project #12069 confirmed active; Scorecard badge present.
-> - Compliance mapping reconfirmed: ISO 27001:2022 Annex A.5/A.8 (full), NIST CSF 2.0 GV/ID/PR/DE/RS/RC, CIS Controls v8.1 (#1–#18 applicable subset), GDPR Art. 32, NIS2 Art. 21, EU CRA Annex I.
-
 ---
 
 ## 📚 Related Architecture Documentation
@@ -3036,13 +3007,6 @@ Riksdagsmonitor's overall security posture as of 2026-02-25:
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807)  
 **📤 Distribution:** Public  
 **🏷️ Classification:** [![Confidentiality: Public](https://img.shields.io/badge/C-Public-lightgrey?style=flat-square)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#confidentiality-levels) [![Integrity: High](https://img.shields.io/badge/I-High-orange?style=flat-square)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#integrity-levels) [![Availability: High](https://img.shields.io/badge/A-High-orange?style=flat-square)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#availability-levels)
-
-**Version History:**
-- v2.4 (2026-05-06): v0.8.76 reconciliation — added Political Intelligence Security Surface, Five-Layer Safe-Output detail, External Data Provider Trust Model, STRIDE threat-boundary additions for political intelligence
-- v2.3 (2026-05-03): Drift reconciliation with workflows README (14 agentic workflows), MCP Gateway v0.3.1 schema constraint
-- v2.2 (2026-04-20): IMF added as third external economic data provider, MCP security posture, 24 agents + 91 skills under review
-- v2.1 (2026-02-25): Added NIS2 mapping, OWASP LLM Top 10, ISO 27001 SoA, NIST CSF Govern function, CIS Controls IG classification, supply chain security, content integrity, credential lifecycle, and security KPIs sections
-- v2.0 (2026-02-20): Major revision with STRIDE analysis, 6-layer defense model, compliance framework mappings
 
 ### **Framework Compliance**
 

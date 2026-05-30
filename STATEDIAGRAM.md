@@ -20,20 +20,6 @@
 **🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-08-06  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
-> **🆕 What changed since last review (v1.1 → v1.2, 2026-05-06):**
-> - Added **analysis artifact lifecycle** state diagram (empty → populated → gate-checked → passed → consumed) documenting the 23-artifact analysis folder lifecycle.
-> - Added **analysis gate check** state machine (check-1 through check-9b) per `scripts/agentic/analysis-gate.ts`.
-> - Added **political intelligence states** (collection → processing → analysis → dissemination → feedback).
-> - Anchored to current toolchain: Node.js ≥26, TypeScript 6.0.3, Vite 8.0.10, Vitest 4.1.5, Cypress 15.14.2.
-> - Verified all existing state diagrams: news article lifecycle, agentic workflow states, CIA data refresh, release pipeline, incident state machine, npm package lifecycle.
->
-> **🆕 What changed since last review (v1.0 → v1.1, 2026-04-20):**
-> - Refreshed lifecycle state machines for: (a) **news articles** (draft → safe-output validation → translator fan-out across 14 languages → merged → published → superseded/retired); (b) **agentic workflow runs** (queued → running → safe-output-validation → reviewer-PR → merged/rolled-back); (c) **CIA data refresh** (scheduled → download → schema-validate → diff → auto-PR → merge → deploy); (d) **release pipeline** (tag → build → provenance-attest → npm publish → S3 sync → CloudFront invalidation); (e) **translation states** across 14 locales including RTL (HE, AR).
-> - Added state diagrams for **npm package lifecycle** (unpublished → published-with-provenance → deprecated → security-advisory → superseded) aligned with `End-of-Life-Strategy.md`.
-> - Added **incident state machine**: detected → triaged → contained → eradicated → recovered → post-mortem, mapped to [Incident_Response_Plan](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Incident_Response_Plan.md).
-> - Anchored to current toolchain: Node.js ≥26, TypeScript 6.0.3, Vite 8.0.10, Vitest 4.1.5, Cypress 15.14.2, Playwright 1.52.0.
-> - Compliance mapping: ISO 27001:2022 A.5.24/A.5.26, NIST CSF 2.0 RS.AN/RS.MI/RC.RP, CIS Controls v8.1 #17, NIS2 Art. 21, EU CRA Annex I §2.
-
 ---
 
 ## Executive Summary

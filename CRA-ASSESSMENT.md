@@ -20,22 +20,6 @@
 **🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-08-06
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
-> **🆕 What changed since last review (v1.3 → v1.4, 2026-05-06):**
-> - 🔄 **Reconciled CRA technical file with Riksdagsmonitor `v0.8.76`** and the 14-workflow Claude Sonnet 4.6 agentic news architecture documented in [SECURITY_ARCHITECTURE.md](SECURITY_ARCHITECTURE.md) v2.4 and [THREAT_MODEL.md](THREAT_MODEL.md) v1.3.
-> - 🛡️ **Expanded CRA Annex I evidence for AI-generated content controls**: 23 required analysis artifacts, analysis gate checks 1–9b, methodology-reflection validator, five-layer safe-output model, Squid + iptables egress firewall, branch protection, and mandatory human PR review.
-> - 📦 **No SBOM scope change**: all added controls are documentation and in-repository TypeScript / Markdown governance surfaces; no new dependencies, external MCP packages, or credentials were introduced.
->
-> **🆕 What changed since last review (v1.2 → v1.3, 2026-04-20):**
-> - 📈 **IMF Open Data added as a primary upstream economic data source** (sibling to SCB and World Bank) per [ADR 0001](docs/adr/0001-adopt-imf-data-alongside-world-bank.md). CRA essential-requirement impact: (a) **SBOM (Annex I Part II § 1)** — IMF is consumed via the pure-TypeScript client `scripts/imf-client.ts` (no Python / uvx / third-party MCP), so it is **fully covered by the existing npm SBOM** with no out-of-band supplement needed; `package.json` `x-external-mcp` stays empty. (b) **Confidentiality & integrity (Annex I § 1.3)** — TLS/HTTPS in transit to `data.imf.org`, `api.imf.org`, `www.imf.org`; `DatamapperResponse` schema validation with finite-numeric and year parse-guards; tamper-evident cache sidecars (`.meta.json`) under `analysis/data/imf/`. (c) **Vulnerability / incident handling (Annex I § 2)** — upstream IMF outage or data-poisoning is treated as a data-quality incident (graceful fallback to cached snapshots; RCA path defined in [BCPPlan.md](BCPPlan.md)).
->
-> **🆕 What changed since last review (v1.1 → v1.2, 2026-04-20):**
-> - Refreshed CRA self-assessment for Riksdagsmonitor `v0.8.76` including the **newly-added public `riksdagsmonitor` npm package distribution channel** (subpath exports `./`, `./shared`, `./shared/*`, `./cia/*`, `./dashboards/*`, `./ui/*`, SLSA provenance via `npm publish --provenance`).
-> - Reaffirmed **vulnerability-handling SLAs**: **Critical 24h / High 7d / Medium 30d / Low 90d**, aligned with [Vulnerability_Management](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Vulnerability_Management.md) and CRA Annex I §(3)(k).
-> - Mapped current control surface to **CRA Annex I essential requirements**: secure by design (SRI, CSP, HSTS, strict TypeScript), secure by default (no optional insecure modes), authentication & access control (OIDC-only for CI/CD, no end-user accounts on the static site), confidentiality & integrity (SRI + schema validation), availability (dual-region + GitHub Pages DR), minimisation of attack surfaces (static content), auditability (CloudTrail, GitHub audit log, Actions logs), security update mechanism (GitHub releases + `npm update`), known-vulnerability handling (Dependabot + CodeQL + OpenSSF Scorecard), SBOM (generated at release time).
-> - Confirmed **CE-conformity documentation path**: public SECURITY_ARCHITECTURE.md, THREAT_MODEL.md, BCPPlan.md, WORKFLOWS.md, DATA_MODEL.md, and this file form the CRA technical file.
-> - Added **agentic / LLM-component assessment**: agentic workflows are part of the product's security surface; controls listed in SECURITY_ARCHITECTURE.md §Agentic, policy rooted in [AI_Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/AI_Policy.md) and [OWASP_LLM_Security_Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/OWASP_LLM_Security_Policy.md).
-> - Compliance anchors: EU CRA (Regulation (EU) 2024/2847), ISO 27001:2022 A.8.8/A.8.28/A.8.29, NIST CSF 2.0 ID.RA/PR.PS/DE.CM/RS.MI, NIS2 Art. 21, GDPR Art. 32.
-
 ---
 
 ## 🎯 **Purpose Statement**
