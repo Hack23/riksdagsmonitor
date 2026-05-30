@@ -11,24 +11,13 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/>
-  <img src="https://img.shields.io/badge/Version-1.2-555?style=for-the-badge" alt="Version"/>
-  <img src="https://img.shields.io/badge/Effective-2026--04--20-success?style=for-the-badge" alt="Effective Date"/>
+  <img src="https://img.shields.io/badge/Version-1.3-555?style=for-the-badge" alt="Version"/>
+  <img src="https://img.shields.io/badge/Effective-2026--05--28-success?style=for-the-badge" alt="Effective Date"/>
   <img src="https://img.shields.io/badge/Review-Annual-orange?style=for-the-badge" alt="Review Cycle"/>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 1.2 | **📅 Last Updated:** 2026-04-20 (UTC)  
-**🔄 Review Cycle:** Annual | **⏰ Next Review:** 2027-04-20
-
-> **🆕 What changed since last review (v1.1 → v1.2, 2026-04-20):**
-> - 📈 **IMF** added as a third primary economic-data source alongside SCB and World Bank per [ADR 0001](docs/adr/0001-adopt-imf-data-alongside-world-bank.md). **Cost impact: $0 incremental spend** — IMF public endpoints (`data.imf.org`, `api.imf.org`, `www.imf.org`) require no API key, no subscription, and the existing ~10 req/5s rate limit is tolerated by the client's 3× back-off. No new managed services, no new container hosting (IMF is a **pure-TypeScript client** under `scripts/imf-client.ts`, not an MCP server — no additional Render/Fly/container cost). SBOM coverage is provided by the existing npm package-lock.json, so no additional SBOM tooling is needed. Egress minute usage on GitHub Actions runners is negligible (< 1 s per fetch).
->
-> **🆕 What changed since last review (v1.0 → v1.1, 2026-04-20):**
-> - Refreshed **dual-deployment cost model** for the current architecture: AWS CloudFront + S3 dual-region (us-east-1 primary, eu-west-1 replica) for production; GitHub Pages (`hack23.github.io`) as $0 DR tier; public `riksdagsmonitor` npm package hosted on the npm registry at $0 to Hack23 (provenance attestations included).
-> - Expected monthly infrastructure cost remains **<$500/day financial impact** and typically **well under $50/month steady-state** for the static-site footprint (CloudFront + S3 + Route53 + minimal Lambda@Edge if used).
-> - Security-investment analysis: **$0 incremental cost** — all tooling (GitHub Advanced Security, CodeQL, Dependabot, OpenSSF Scorecard, OpenSSF Best Practices #12069, `step-security/harden-runner`, secret scanning) is included with public-repository GitHub, plus free tiers of SAST/SCA via Actions.
-> - Confirmed **OIDC-only AWS access** (no long-lived access keys held by the org) — reduces credential-compromise insurance exposure and operational toil.
-> - Financial impact classification reconfirmed at **Low (<$500/day)** per [CLASSIFICATION](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md).
-> - Aligned with ISO 27001:2022 A.5.30 (ICT readiness), NIST CSF 2.0 GV.OV (oversight), CIS Controls v8.1 #1 (asset inventory & cost), EU CRA Annex I §(3)(c) (availability).
+**📋 Document Owner:** CEO | **📄 Version:** 1.3 | **📅 Last Updated:** 2026-05-28 (UTC)  
+**🔄 Review Cycle:** Annual | **⏰ Next Review:** 2027-05-28
 
 ---
 
@@ -105,7 +94,6 @@ Riksdagsmonitor uses a **dual-deployment architecture** with AWS CloudFront + S3
 | **CI/CD Hardening** | [step-security/harden-runner](https://github.com/step-security/harden-runner) | $0.00 | [Secure Development Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md) |
 | **HTML Validation** | [HTMLHint](https://htmlhint.com/) | $0.00 | [Secure Development Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md) |
 | **Dead Code Detection** | [knip](https://knip.dev/) | $0.00 | [Secure Development Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md) |
-| **SRI Hash Generation** | [vite-plugin-sri-gen](https://www.npmjs.com/package/vite-plugin-sri-gen) | $0.00 | [Secure Development Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md) |
 | **Unit Testing** | [Vitest](https://vitest.dev/) | $0.00 | [Secure Development Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md) |
 | **E2E Testing** | [Cypress](https://www.cypress.io/) (OSS) | $0.00 | [Secure Development Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md) |
 | **Performance Monitoring** | [Lighthouse CI](https://github.com/GoogleChrome/lighthouse-ci) | $0.00 | Quality gates |
@@ -238,8 +226,8 @@ Riksdagsmonitor uses a **dual-deployment architecture** with AWS CloudFront + S3
 **✅ Approved by:** James Pether Sörling, CEO  
 **📤 Distribution:** Public  
 **🏷️ Classification:** [![Confidentiality: Public](https://img.shields.io/badge/C-Public-lightgrey?style=flat-square&logo=shield&logoColor=black)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#confidentiality-levels) [![Integrity: Moderate](https://img.shields.io/badge/I-Moderate-yellow?style=flat-square&logo=check-circle&logoColor=black)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#integrity-levels) [![Availability: Standard](https://img.shields.io/badge/A-Standard-lightgreen?style=flat-square&logo=server&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#availability-levels)  
-**📅 Effective Date:** 2026-03-12  
-**⏰ Next Review:** 2027-03-12  
+**📅 Effective Date:** 2026-05-28  
+**⏰ Next Review:** 2027-05-28  
 **🎯 Framework Compliance:** [![ISO 27001](https://img.shields.io/badge/ISO_27001-2022_Aligned-blue?style=flat-square&logo=iso&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) [![NIST CSF 2.0](https://img.shields.io/badge/NIST_CSF-2.0_Aligned-green?style=flat-square&logo=nist&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) [![CIS Controls](https://img.shields.io/badge/CIS_Controls-v8.1_Aligned-orange?style=flat-square&logo=cisecurity&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md)
 
 

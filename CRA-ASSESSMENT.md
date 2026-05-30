@@ -20,22 +20,6 @@
 **🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-08-06
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
-> **🆕 What changed since last review (v1.3 → v1.4, 2026-05-06):**
-> - 🔄 **Reconciled CRA technical file with Riksdagsmonitor `v0.8.76`** and the 14-workflow Claude Sonnet 4.6 agentic news architecture documented in [SECURITY_ARCHITECTURE.md](SECURITY_ARCHITECTURE.md) v2.4 and [THREAT_MODEL.md](THREAT_MODEL.md) v1.3.
-> - 🛡️ **Expanded CRA Annex I evidence for AI-generated content controls**: 23 required analysis artifacts, analysis gate checks 1–9b, methodology-reflection validator, five-layer safe-output model, Squid + iptables egress firewall, branch protection, and mandatory human PR review.
-> - 📦 **No SBOM scope change**: all added controls are documentation and in-repository TypeScript / Markdown governance surfaces; no new dependencies, external MCP packages, or credentials were introduced.
->
-> **🆕 What changed since last review (v1.2 → v1.3, 2026-04-20):**
-> - 📈 **IMF Open Data added as a primary upstream economic data source** (sibling to SCB and World Bank) per [ADR 0001](docs/adr/0001-adopt-imf-data-alongside-world-bank.md). CRA essential-requirement impact: (a) **SBOM (Annex I Part II § 1)** — IMF is consumed via the pure-TypeScript client `scripts/imf-client.ts` (no Python / uvx / third-party MCP), so it is **fully covered by the existing npm SBOM** with no out-of-band supplement needed; `package.json` `x-external-mcp` stays empty. (b) **Confidentiality & integrity (Annex I § 1.3)** — TLS/HTTPS in transit to `data.imf.org`, `api.imf.org`, `www.imf.org`; `DatamapperResponse` schema validation with finite-numeric and year parse-guards; tamper-evident cache sidecars (`.meta.json`) under `analysis/data/imf/`. (c) **Vulnerability / incident handling (Annex I § 2)** — upstream IMF outage or data-poisoning is treated as a data-quality incident (graceful fallback to cached snapshots; RCA path defined in [BCPPlan.md](BCPPlan.md)).
->
-> **🆕 What changed since last review (v1.1 → v1.2, 2026-04-20):**
-> - Refreshed CRA self-assessment for Riksdagsmonitor `v0.8.76` including the **newly-added public `riksdagsmonitor` npm package distribution channel** (subpath exports `./`, `./shared`, `./shared/*`, `./cia/*`, `./dashboards/*`, `./ui/*`, SLSA provenance via `npm publish --provenance`).
-> - Reaffirmed **vulnerability-handling SLAs**: **Critical 24h / High 7d / Medium 30d / Low 90d**, aligned with [Vulnerability_Management](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Vulnerability_Management.md) and CRA Annex I §(3)(k).
-> - Mapped current control surface to **CRA Annex I essential requirements**: secure by design (SRI, CSP, HSTS, strict TypeScript), secure by default (no optional insecure modes), authentication & access control (OIDC-only for CI/CD, no end-user accounts on the static site), confidentiality & integrity (SRI + schema validation), availability (dual-region + GitHub Pages DR), minimisation of attack surfaces (static content), auditability (CloudTrail, GitHub audit log, Actions logs), security update mechanism (GitHub releases + `npm update`), known-vulnerability handling (Dependabot + CodeQL + OpenSSF Scorecard), SBOM (generated at release time).
-> - Confirmed **CE-conformity documentation path**: public SECURITY_ARCHITECTURE.md, THREAT_MODEL.md, BCPPlan.md, WORKFLOWS.md, DATA_MODEL.md, and this file form the CRA technical file.
-> - Added **agentic / LLM-component assessment**: agentic workflows are part of the product's security surface; controls listed in SECURITY_ARCHITECTURE.md §Agentic, policy rooted in [AI_Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/AI_Policy.md) and [OWASP_LLM_Security_Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/OWASP_LLM_Security_Policy.md).
-> - Compliance anchors: EU CRA (Regulation (EU) 2024/2847), ISO 27001:2022 A.8.8/A.8.28/A.8.29, NIST CSF 2.0 ID.RA/PR.PS/DE.CM/RS.MI, NIS2 Art. 21, GDPR Art. 32.
-
 ---
 
 ## 🎯 **Purpose Statement**
@@ -165,7 +149,7 @@ The following Hack23 AB projects demonstrate completed CRA assessments:
 |----------------------|-------------------------|---------------------|
 | 🎨 **Product Architecture** *(Annex V § 2.1)* | Static HTML/CSS website with C4 architecture model. Deployed on AWS CloudFront (us-east-1 primary, eu-west-1 replica) with GitHub Pages DR. 14-language support, Chart.js/D3.js dashboards | [ARCHITECTURE.md](ARCHITECTURE.md) + [SECURITY_ARCHITECTURE.md](SECURITY_ARCHITECTURE.md) + [MINDMAP.md](MINDMAP.md) |
 | 📦 **SBOM & Components** *(Annex I § 1.1)* | npm package management with package-lock.json. Dependabot automated dependency scanning. OpenSSF Scorecard monitoring. **News pipeline additions (2026 Q1):** `unified`, `remark-parse`, `remark-gfm`, `remark-rehype`, `rehype-raw`, `rehype-sanitize`, `rehype-slug`, `rehype-autolink-headings`, `rehype-stringify`, `gray-matter` — all npm-managed, version-pinned in `package-lock.json`, Dependabot-grouped under `dependencies`. `mermaid` loaded as ESM from the same package for client-side diagram rendering (strict-mode; no `eval`). | [package.json](package.json) + [Dependabot Config](https://github.com/Hack23/riksdagsmonitor/blob/main/.github/dependabot.yml) + [OpenSSF Scorecard](https://scorecard.dev/viewer/?uri=github.com/Hack23/riksdagsmonitor) |
-| 🔐 **Cybersecurity Controls** *(Annex I § 1.2)* | Static site architecture (no server-side execution), HTTPS-only via CloudFront/GitHub Pages, CSP headers, SRI for CDN assets, SHA-pinned GitHub Actions, step-security/harden-runner. **News pipeline additions:** `rehype-sanitize` allow-list enforced at the trust boundary between AI-authored markdown and published HTML; Mermaid rendered in `securityLevel: 'strict'` (no eval, no click handlers); SHA-256 manifest in `.manifest.json` sibling to each `article.md` for tamper detection. **Agentic control-plane additions (v0.8.76):** 23 required analysis artifacts, analysis gate checks 1–9b, methodology-reflection validator, safe-output PR boundary, Squid + iptables egress firewall. | [SECURITY_ARCHITECTURE.md](SECURITY_ARCHITECTURE.md) §Political Intelligence Security Surface + [THREAT_MODEL.md](THREAT_MODEL.md) TB-PI series |
+| 🔐 **Cybersecurity Controls** *(Annex I § 1.2)* | Static site architecture (no server-side execution), HTTPS-only via CloudFront/GitHub Pages, CSP headers, SRI for CDN assets, SHA-pinned GitHub Actions, step-security/harden-runner. **News pipeline additions:** `rehype-sanitize` allow-list enforced at the trust boundary between AI-authored markdown and published HTML; Mermaid rendered in `securityLevel: 'strict'` (no eval, no click handlers); SHA-256 manifest in `.manifest.json` sibling to each `article.md` for tamper detection. **Agentic control-plane additions (v0.9.40):** 23 required analysis artifacts, analysis gate checks 1–9b, methodology-reflection validator, safe-output PR boundary, Squid + iptables egress firewall. | [SECURITY_ARCHITECTURE.md](SECURITY_ARCHITECTURE.md) §Political Intelligence Security Surface + [THREAT_MODEL.md](THREAT_MODEL.md) TB-PI series |
 | 🛡️ **Supply Chain Security** *(Annex I § 1.3)* | SHA-pinned GitHub Actions, Dependabot automation, OpenSSF Scorecard monitoring, CodeQL analysis, dependency review workflow, step-security/harden-runner egress auditing | [WORKFLOWS.md](WORKFLOWS.md) + [OpenSSF Scorecard](https://scorecard.dev/viewer/?uri=github.com/Hack23/riksdagsmonitor) |
 | 🔄 **Update Mechanism** *(Annex I § 1.4)* | Automated CI/CD pipeline via GitHub Actions with security scanning (CodeQL, dependency review), dual deployment (S3 + GitHub Pages), version management via release workflow | [WORKFLOWS.md](WORKFLOWS.md) + [Release Workflow](https://github.com/Hack23/riksdagsmonitor/blob/main/.github/workflows/release.yml) |
 | 📊 **Security Monitoring** *(Annex I § 1.5)* | GitHub Security Dashboard (code scanning, secret scanning, Dependabot alerts), Lighthouse CI performance monitoring, uptime monitoring, AWS CloudWatch/CloudFront metrics | [SECURITY_ARCHITECTURE.md](SECURITY_ARCHITECTURE.md) + [WORKFLOWS.md](WORKFLOWS.md) |
@@ -243,7 +227,7 @@ Reference: [🛠️ Secure Development Policy](https://github.com/Hack23/ISMS-PU
 
 | 🧪 Control | 🎯 Requirement | ✅ Implementation | 📋 Evidence |
 |-------------|---------------|------------------|-------------|
-| 🧪 Unit Testing | Comprehensive test coverage | ✅ Implemented | [Vitest](https://github.com/Hack23/riksdagsmonitor/actions/workflows/javascript-testing.yml) — 1700+ tests across 43 test files |
+| 🧪 Unit Testing | Comprehensive test coverage | ✅ Implemented | [Vitest](https://github.com/Hack23/riksdagsmonitor/actions/workflows/javascript-testing.yml) — 7,500+ tests across 237 test files |
 | 🌐 E2E Testing | Critical user journeys validated | ✅ Implemented | [Cypress E2E](https://github.com/Hack23/riksdagsmonitor/actions/workflows/javascript-testing.yml) — Multi-language homepage, dashboard, accessibility |
 | 🔍 SAST Scanning | Zero critical/high vulnerabilities | ✅ Implemented | [CodeQL Analysis](https://github.com/Hack23/riksdagsmonitor/security/code-scanning) |
 | 📦 SCA Scanning | Zero critical unresolved dependencies | ✅ Implemented | [Dependabot Alerts](https://github.com/Hack23/riksdagsmonitor/security/dependabot) + [Dependency Review](https://github.com/Hack23/riksdagsmonitor/blob/main/.github/workflows/dependency-review.yml) |
@@ -300,12 +284,12 @@ Reference: [🌐 ISMS Transparency Plan](https://github.com/Hack23/ISMS-PUBLIC/b
 *Supports CRA Article 28 - EU Declaration of Conformity*
 
 **🏢 Manufacturer:** Hack23 AB, Gothenburg, Sweden
-**📦 Product:** Riksdagsmonitor v0.4.1
+**📦 Product:** Riksdagsmonitor v0.9.40
 **📋 CRA Compliance:** Self-assessment documentation supporting CRA essential cybersecurity requirements evaluation
 **🔍 Assessment:** Self-assessment documentation per Article 24 (non-commercial OSS with standard classification)
 **📊 Standards:** ISO/IEC 27001 security framework + OWASP web security guidelines + NIST SSDF secure development
 
-**📅 Date & Signature:** 2026-02-24 — James Sörling, CEO Hack23 AB
+**📅 Date & Signature:** 2026-05-06 — James Sörling, CEO Hack23 AB
 
 **📂 Technical Documentation:** This assessment + evidence bundle supports CRA Annex V technical documentation requirements
 
@@ -337,9 +321,9 @@ Riksdagsmonitor's static site architecture provides inherent security benefits:
 
 | 👤 **Role** | 📝 **Name** | 📅 **Date** | ✍️ **Assessment Attestation** |
 |------------|-------------|-------------|-------------------------------|
-| 🔒 **CRA Security Assessment** | James Sörling | 2026-02-24 | Essential requirements documented with comprehensive evidence |
-| 🎯 **Product Responsibility** | James Sörling | 2026-02-24 | Technical documentation complete and publicly accessible |
-| ⚖️ **Legal Compliance Review** | James Sörling | 2026-02-24 | EU regulatory documentation requirements satisfied |
+| 🔒 **CRA Security Assessment** | James Sörling | 2026-05-06 | Essential requirements documented with comprehensive evidence |
+| 🎯 **Product Responsibility** | James Sörling | 2026-05-06 | Technical documentation complete and publicly accessible |
+| ⚖️ **Legal Compliance Review** | James Sörling | 2026-05-06 | EU regulatory documentation requirements satisfied |
 
 **📊 CRA Assessment Status:** SELF_ASSESSMENT_DOCUMENTED
 

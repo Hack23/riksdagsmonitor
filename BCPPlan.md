@@ -11,25 +11,14 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/>
-  <img src="https://img.shields.io/badge/Version-1.2-555?style=for-the-badge" alt="Version"/>
-  <img src="https://img.shields.io/badge/Effective-2026--04--20-success?style=for-the-badge" alt="Effective Date"/>
+  <img src="https://img.shields.io/badge/Version-1.3-555?style=for-the-badge" alt="Version"/>
+  <img src="https://img.shields.io/badge/Effective-2026--05--28-success?style=for-the-badge" alt="Effective Date"/>
   <img src="https://img.shields.io/badge/Review-Quarterly-orange?style=for-the-badge" alt="Review Cycle"/>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 1.2 | **📅 Last Updated:** 2026-04-20 (UTC)  
-**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-07-20  
+**📋 Document Owner:** CEO | **📄 Version:** 1.3 | **📅 Last Updated:** 2026-05-28 (UTC)  
+**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-08-28  
 **📌 Classification:** Public
-
-> **🆕 What changed since last review (v1.1 → v1.2, 2026-04-20):**
-> - 📈 **IMF** added as a third primary economic data source (alongside SCB and World Bank) per [ADR 0001](docs/adr/0001-adopt-imf-data-alongside-world-bank.md). **BIA impact:** IMF is an *optional enrichment* — IMF unavailability (DNS, TLS, rate-limit, upstream outage at `data.imf.org` / `api.imf.org` / `www.imf.org`) **does not block core site availability** and does not affect the stated RTO (1–4h) or RPO (4–24h). Degraded state: forward-looking articles (`week-ahead`, `month-ahead`, `weekly-review`, `monthly-review`) fall back to the most recent cached snapshot under `analysis/data/imf/{indicator}/{country}.json` (with `.meta.json` `projectionVintage`), or omit the macro/fiscal projection section entirely. **Data-poisoning RCA scope extended** to include upstream IMF vintage confusion and IMF cache tampering — mitigations via `DatamapperResponse` schema validation, `projectionVintage` sidecar enforcement (Economic Data Contract v2.0), and integrity checks in `scripts/imf-client.ts`.
->
-> **🆕 What changed since last review (v1.0 → v1.1, 2026-04-20):**
-> - Reaffirmed **RTO 1–4h / RPO 4–24h** in line with the Public / Integrity High / Availability High classification for Riksdagsmonitor `v0.8.48`.
-> - Documented **multi-region AWS failover** (us-east-1 primary → eu-west-1 replica via S3 cross-region replication and CloudFront origin failover) and **GitHub Pages (`hack23.github.io`) as tertiary DR** — cost of DR tier 3 is $0.
-> - Added RCA section template aligned with **Data-Poisoning incident playbook** (schema-validation drift, agentic safe-output bypass attempt, CIA source repo compromise) — mapped to [Incident_Response_Plan](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Incident_Response_Plan.md) and [Threat_Modeling](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Threat_Modeling.md).
-> - Single-person-company adaptations explicitly recorded: CEO is sole incident commander; on-call via GitHub Mobile notifications + email; key-person risk mitigated by full automation, provenance attestations, and public ISMS transparency.
-> - Added **npm package BC**: even if the web tier is unavailable, the published `riksdagsmonitor` npm package remains downloadable from the public npm registry and mirrored on `unpkg` / `jsDelivr`.
-> - Compliance mapping: ISO 27001:2022 A.5.29/A.5.30, NIST CSF 2.0 RC.RP/RC.CO/RC.IM, CIS Controls v8.1 #11, NIS2 Art. 21(2)(c), EU CRA Annex I §(3)(c).
 
 ---
 
@@ -952,8 +941,8 @@ Updates: Follow https://github.com/Hack23/riksdagsmonitor/issues
 **✅ Approved by:** James Pether Sörling, CEO  
 **📤 Distribution:** Public  
 **🏷️ Classification:** [![Confidentiality: Public](https://img.shields.io/badge/C-Public-lightgrey?style=flat-square)](#)  
-**📅 Effective Date:** 2026-02-25  
-**⏰ Next Review:** 2026-05-25  
+**📅 Effective Date:** 2026-05-28  
+**⏰ Next Review:** 2026-08-28  
 **🎯 Framework Compliance:** [![ISO 27001](https://img.shields.io/badge/ISO_27001-2022_Aligned-blue?style=flat-square&logo=iso&logoColor=white)](#) [![NIST CSF 2.0](https://img.shields.io/badge/NIST_CSF-2.0_Aligned-green?style=flat-square&logo=nist&logoColor=white)](#) [![CIS Controls](https://img.shields.io/badge/CIS_Controls-v8.1_Aligned-orange?style=flat-square&logo=cisecurity&logoColor=white)](#)
 
 

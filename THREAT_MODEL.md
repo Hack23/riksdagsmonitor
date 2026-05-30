@@ -11,41 +11,14 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/>
-  <img src="https://img.shields.io/badge/Version-1.3-555?style=for-the-badge" alt="Version"/>
-  <img src="https://img.shields.io/badge/Effective-2026--05--06-success?style=for-the-badge" alt="Effective Date"/>
+  <img src="https://img.shields.io/badge/Version-1.5-555?style=for-the-badge" alt="Version"/>
+  <img src="https://img.shields.io/badge/Effective-2026--05--30-success?style=for-the-badge" alt="Effective Date"/>
   <img src="https://img.shields.io/badge/Review-Quarterly-orange?style=for-the-badge" alt="Review Cycle"/>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 1.3 | **📅 Last Updated:** 2026-05-06 (UTC)
-**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-08-06
+**📋 Document Owner:** CEO | **📄 Version:** 1.5 | **📅 Last Updated:** 2026-05-30 (UTC)
+**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-08-30
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
-
-> **🆕 What changed since last review (v1.2 → v1.3, 2026-05-06):**
-> - 🔄 **Reconciled threat model with Riksdagsmonitor `v0.8.76`** and the live 14-workflow agentic news architecture using **Claude Sonnet 4.6** (not the earlier 11-workflow / Opus baseline).
-> - 🕵️ **Added political-intelligence trust boundaries (TB-PI-1..3)** for the trusted template/methodology control plane, analysis-gate structural validation, and safe-output PR boundary.
-> - 🛡️ **Expanded LLM / agentic threat coverage** to explicitly cover template poisoning, methodology drift, analysis-gate bypass attempts, evidence-citation forgery, and horizon-stratification confusion.
-> - 🔒 **Aligned mitigations with SECURITY_ARCHITECTURE.md v2.4**: 23 required artifacts, analysis gate checks 1–9b, methodology-reflection validator, five-layer safe-output model, Squid + iptables egress firewall, and human-review gate.
->
-> **🆕 What changed since last review (v1.1 → v1.2, 2026-04-20):**
-> - 📈 **IMF elevated to a primary external economic data source** (parity with SCB and World Bank) per [ADR 0001](docs/adr/0001-adopt-imf-data-alongside-world-bank.md). Existing row **TB-6a** covers the `imf-ts-client` data flow in detail; this revision additionally: (a) adds IMF to the **Critical Assets** inventory under "Parliamentary Data / Economic Context", (b) notes two IMF-specific residual risks — **projection-vintage confusion** (WEO vintage drift: an old WEO dataset cited as current; mitigated by `projectionVintage` sidecar + Economic Data Contract v2.0 field) and **cache poisoning of `analysis/data/imf/`** (mitigated by `.meta.json` integrity sidecars, SBOM-covered schema validation, and Git-tracked diffs under PR review), and (c) adds an **"IMF upstream / transport adversary"** row to the Threat Agent Classification Framework (low likelihood; controls already enumerated in TB-6a).
->
-> **🆕 What changed since last review (v1.0 → v1.1, 2026-04-20):**
-> - Full **STRIDE pass** re-executed over the current architecture of Riksdagsmonitor `v0.8.76`:
->   - **Spoofing:** GitHub OIDC federation to AWS (no long-lived keys); npm provenance attestations; MCP server TLS + token-scoped auth.
->   - **Tampering:** SRI on all static assets via `vite-plugin-sri-gen@1.3.2`; Git signed commits; immutable S3 object versioning + CloudFront origin signing; schema-validated CIA data ingestion (`validate-against-cia-schemas`); translation integrity via `validate-translations`.
->   - **Repudiation:** GitHub audit log + CloudTrail; signed releases; SLSA L3 provenance on npm; Actions run logs retained.
->   - **Information Disclosure:** Public classification by design, but secrets scanning, CodeQL, Dependabot alerts, and `step-security/harden-runner` guard against accidental exfiltration from build runners.
->   - **Denial of Service:** CloudFront absorbs L3/L7 volumetrics; WAF rate-limiting; dual-region failover; GitHub Pages DR tier; npm package remains available independently of web tier.
->   - **Elevation of Privilege:** Least-privilege `permissions:` on every workflow; PR-gated merges; five-layer safe-output validation for agentic workflows; reviewer approval for every agentic-generated PR.
-> - **New threat category — Agentic / LLM-specific:**
->   - Prompt injection via upstream political-content sources → mitigated by MCP-side input sanitisation, system-prompt hardening, and safe-outputs schema validation.
->   - Tool-call exfiltration attempts → mitigated by Squid proxy + iptables egress allow-list.
->   - Model-generated misinformation → mitigated by human-review gate (layer 4 of safe-outputs), source citation enforcement, and the AI FIRST quality principle.
->   - Covered by [OWASP LLM Security Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/OWASP_LLM_Security_Policy.md) and [AI_Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/AI_Policy.md).
-> - **New threat category — Supply-chain on MCP servers:** SBOM checks for `@jarib/pxweb-mcp`, `worldbank-mcp`, and the hosted `riksdag-regering` endpoint; version pinning; OpenSSF Scorecard on dependencies where available.
-> - **Data poisoning on CIA upstream repo:** schema validation + diff review gates on every `update-cia-csv-data.yml` auto-PR.
-> - MITRE ATT&CK references integrated: T1195 (Supply Chain Compromise), T1566 (Phishing — N/A no users), T1078 (Valid Accounts — OIDC-only mitigates), T1486 (Data Encrypted for Impact — immutable backups mitigate), plus ATLAS AML.T0051 (LLM Prompt Injection) and AML.T0053 (LLM Plugin Compromise).
-> - Compliance mapping: ISO 27001:2022 Annex A.5.7/A.8.8/A.8.28, NIST CSF 2.0 ID.RA/DE.AE/RS.AN, CIS Controls v8.1 #16/#18, NIS2 Art. 21, EU CRA Annex I §(3).
 
 ---
 
@@ -75,14 +48,14 @@ This threat model demonstrates **🛡️ cybersecurity consulting expertise** th
 **Included Systems:**
 
 - 🌐 Static HTML/CSS website (14-language support: Swedish, English, Danish, Norwegian, Finnish, German, French, Spanish, Dutch, Arabic, Hebrew, Japanese, Korean, Chinese)
-- 📊 Chart.js/D3.js interactive dashboards (4 functional: Overview, Party Performance, Ministry Activity, Legislative Timeline; 5 placeholders)
+- 📊 Chart.js/D3.js interactive dashboards (all functional: overview, party performance, committee network, coalition, election-cycle, risk, anomaly detection, seasonal patterns, pre-election, ministry, politician)
 - ☁️ AWS CloudFront CDN + S3 storage (us-east-1 primary, eu-west-1 replica)
 - 🔀 Route 53 DNS configuration with health checks
 - 🔄 GitHub Pages disaster recovery (automatic failover)
-- 🤖 14 AI agentic news workflows using Claude Sonnet 4.6; each enforces **analysis → analysis gate → render → safe-output PR** with 23 required analysis artifacts before article generation. Examples:
-  - **news-evening-analysis**: 18:00 UTC Mon-Fri, 16:00 UTC Sat
-  - **news-realtime-monitor**: 10:00+14:00 UTC Mon-Fri, 12:00 UTC weekends
-  - **news-translate**: out-of-band fan-out from rendered EN+SV to 12 other languages
+- 🤖 14 AI agentic news workflows. The **13 analysis/article workflows use Claude Opus 4.8** (reasoning model) and the high-volume **news-translate fan-out uses Claude Sonnet 4.6** (faster model). Each analysis/article workflow enforces **analysis → analysis gate → render → safe-output PR** with 23 required analysis artifacts before article generation. Examples:
+  - **news-evening-analysis**: 18:00 UTC Mon-Fri, 16:00 UTC Sat (Claude Opus 4.8)
+  - **news-realtime-monitor**: 10:00+14:00 UTC Mon-Fri, 12:00 UTC weekends (Claude Opus 4.8)
+  - **news-translate**: out-of-band fan-out from rendered EN+SV to 12 other languages (Claude Sonnet 4.6)
 - 🔌 riksdag-regering-mcp server (32 tools for Swedish political data)
 - 🏭 CI/CD security pipeline (GitHub Actions with OIDC)
 - 📦 Dependency management and supply chain (Chart.js, D3.js, Vite, npm, GitHub Actions)
@@ -109,7 +82,7 @@ Additionally aligned with [Hack23 AI Policy](https://github.com/Hack23/ISMS-PUBL
 
 ### **📊 Executive Summary**
 
-This threat model systematically analyzes security for Riksdagsmonitor using thematic Hack23 structure, identifies 52 threats across 6 STRIDE categories + 18 AI-specific threats (OWASP LLM Top 10), and documents comprehensive mitigations aligned with Hack23 AB's ISMS.
+This threat model systematically analyzes security for Riksdagsmonitor using thematic Hack23 structure, identifies 52 threats across 6 STRIDE categories + 18 AI-specific threats (OWASP LLM Top 10), and documents comprehensive mitigations aligned with Hack23 AB's ISMS. Five **external data-integration trust boundaries** (IMF, Statskontoret, SCB, World Bank, Riksrevisionen) receive dedicated STRIDE addenda in the integration sections at the end of this document.
 
 **Key Findings:**
 - **Critical-Risk Threats:** 0 (All critical threats mitigated)
@@ -212,7 +185,7 @@ Following [Hack23 AB Asset-Centric Threat Modeling](https://github.com/Hack23/IS
 | **🧠 Source Code & Algorithms** | Dashboard visualization logic, Chart.js/D3.js integrations, AI workflow orchestration | IP theft, malicious injection, supply chain attacks | Private repo access controls, dependency scanning (Dependabot + CodeQL), GPG commit signing | [![Operational Excellence](https://img.shields.io/badge/Value-Operational_Excellence-blue?style=flat-square)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) | $15,000 |
 | **🌐 Riksdagsmonitor Brand** | Market reputation, stakeholder trust, search engine positioning | Domain hijacking, phishing, brand impersonation, SEO poisoning | Domain monitoring, HTTPS enforcement, DNSSEC, HSTS preload, trademark registration | [![Risk Reduction](https://img.shields.io/badge/Value-Risk_Reduction-green?style=flat-square)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) | $20,000 |
 | **☁️ Infrastructure Config** | AWS CloudFront, S3, Route 53 security baseline; GitHub Actions secrets | Infrastructure compromise, misconfiguration, credential exposure | IAM least privilege, OIDC (no long-lived keys), AWS Config rules, secret scanning | [![Security Excellence](https://img.shields.io/badge/Value-Security_Excellence-purple?style=flat-square)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) | $25,000 |
-| **🤖 AI News Content** | Automated journalism credibility; trusted source for Swedish political analysis | Prompt injection, hallucination, bias, misinformation | Claude Sonnet 4.6 with Anthropic guardrails, riksdag-regering-mcp validation, mandatory PR review, fact-checking protocol | [![Innovation Enablement](https://img.shields.io/badge/Value-Innovation_Enablement-lightblue?style=flat-square)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) | $50,000 |
+| **🤖 AI News Content** | Automated journalism credibility; trusted source for Swedish political analysis | Prompt injection, hallucination, bias, misinformation | Claude Opus 4.8 with Anthropic guardrails, riksdag-regering-mcp validation, mandatory PR review, fact-checking protocol | [![Innovation Enablement](https://img.shields.io/badge/Value-Innovation_Enablement-lightblue?style=flat-square)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) | $50,000 |
 
 **Total Asset Value (Annual Cost Avoidance):** **$180,000**
 
@@ -226,7 +199,7 @@ Crown Jewels are the top 5 highest-value assets that adversaries most desire and
 | **👑 #2** | 📊 **Dashboard Data Accuracy** | CIA platform data pipeline integrity and Chart.js/D3.js visualizations; primary channel for political transparency; 14-language real-time display | **HIGH** — Data accuracy is core mission; CSP/SRI protect against XSS/CDN tampering | High: Corrupted dashboards erode public trust, could misrepresent party standings or vote outcomes | **HIGH — SRI hashes, CSP, dual-region** |
 | **👑 #3** | 🌍 **Multi-Language Content** | 14-language factual consistency (SV, EN, DA, NO, FI, DE, FR, ES, NL, AR, HE, JA, KO, ZH); translation divergence enables targeted disinformation campaigns in specific languages | **HIGH** — RTL (Arabic/Hebrew) harder to validate; targeted manipulation of specific language communities | High: Language-specific manipulation could spread unchecked; undermines trust of multilingual audience | **HIGH — TRANSLATION_GUIDE.md, Playwright RTL testing** |
 | **👑 #4** | 🔑 **CI/CD Pipeline Security** | GitHub Actions OIDC, supply chain integrity, SHA-pinned actions, SLSA attestations; compromise enables persistent content injection with no trust boundary to stop it | **HIGH** — Supply chain attacks (SolarWinds-pattern) increasingly common against civic platforms | Catastrophic: Persistent backdoor in CI/CD bypasses all publication controls; could inject malicious HTML into all pages | **CRITICAL — OIDC, SHA-pinning, branch protection** |
-| **👑 #5** | 📰 **News Article Credibility** | AI-generated (Claude Sonnet 4.6) daily political news accuracy; journalistic credibility for Swedish parliamentary and government activity reporting | **MEDIUM-HIGH** — Prompt injection, hallucination; AI-generated political misinformation campaigns | High: Fabricated parliamentary data damages reputation, could be amplified by external media; EU AI Act liability | **HIGH — Mandatory PR review, dok_id validation** |
+| **👑 #5** | 📰 **News Article Credibility** | AI-generated (Claude Opus 4.8) daily political news accuracy; journalistic credibility for Swedish parliamentary and government activity reporting | **MEDIUM-HIGH** — Prompt injection, hallucination; AI-generated political misinformation campaigns | High: Fabricated parliamentary data damages reputation, could be amplified by external media; EU AI Act liability | **HIGH — Mandatory PR review, dok_id validation** |
 
 **Crown Jewel Protection Strategy:**
 - 🔐 **Defense-in-Depth:** Every Crown Jewel has ≥3 overlapping controls (no single point of failure)
@@ -254,7 +227,7 @@ Complete asset inventory with classifications:
 | **ASSET-004** | GitHub Repository | Infrastructure | PUBLIC/HIGH/CRITICAL | HIGH | CEO | GitHub.com |
 | **ASSET-005** | AWS Infrastructure (S3, CloudFront, Route 53) | Infrastructure | INTERNAL/HIGH/CRITICAL | HIGH | CEO | AWS (us-east-1, eu-west-1) |
 | **ASSET-006** | GitHub Actions Secrets (AWS OIDC) | Credentials | CONFIDENTIAL/CRITICAL/HIGH | CRITICAL | CEO | GitHub Secrets |
-| **ASSET-007** | AI Workflows (Claude Sonnet 4.6) | Application | PUBLIC/HIGH/MEDIUM | HIGH | CEO | GitHub Actions |
+| **ASSET-007** | AI Workflows (Claude Opus 4.8 + Sonnet 4.6) | Application | PUBLIC/HIGH/MEDIUM | HIGH | CEO | GitHub Actions |
 | **ASSET-008** | riksdag-regering-mcp Server | Integration | PUBLIC/HIGH/HIGH | HIGH | CEO | Render.com |
 | **ASSET-009** | Domain Name (riksdagsmonitor.com) | Infrastructure | PUBLIC/HIGH/CRITICAL | CRITICAL | CEO | Route 53 |
 | **ASSET-010** | Brand & Reputation | Intangible | PUBLIC/HIGH/MEDIUM | HIGH | CEO | N/A |
@@ -287,7 +260,7 @@ graph TB
     
     subgraph External2["🔴 External Data Sources"]
         MCP[🔌 riksdag-regering-mcp<br/>32 Political Tools<br/>Render.com]
-        Claude[🤖 Claude Sonnet 4.6<br/>AI Content Generation<br/>GitHub Copilot API]
+        Claude[🤖 Claude Opus 4.8<br/>AI Content Generation<br/>GitHub Copilot API]
         RiksdagAPI[🏛️ data.riksdagen.se<br/>Swedish Parliament Open Data]
     end
     
@@ -330,7 +303,7 @@ graph TB
 | **TB-6: GitHub Actions → MCP** | Political data queries | **S**: Server impersonation, **T**: Data manipulation, **I**: Stale data | HTTPS-only, Freshness validation, Cross-verification |
 | **TB-6a: Agentic workflows → IMF (TypeScript client, no MCP)** | Macro/fiscal/monetary queries to `data.imf.org` / `api.imf.org` / `www.imf.org` issued directly from `scripts/imf-client.ts` and the `scripts/imf-fetch.ts` CLI (invoked by agentic workflows through the `bash` tool). No Python/`uvx` runtime; client is npm-only. | **S**: IMF origin DNS hijack or TLS MITM on workflow egress; **T**: Tampering of IMF JSON responses in transit or at rest under `analysis/data/imf/`; **I**: Stale / mis-vintaged WEO projections cited as current values; **D**: IMF rate-limit (~10 req / 5 s) causing workflow failure | HTTPS / TLS 1.3 with GitHub-runner root-CA trust store; firewall allowlist scoped to `data.imf.org` / `api.imf.org` / `www.imf.org` only; response schema validation in `imf-client.ts` (`DatamapperResponse` shape, numeric finite-check, year parse-guard); cached responses under `analysis/data/imf/{indicator}/{country}.json` with sidecar `.meta.json` stamping `mcpTool: imf-ts-client` + `projectionVintage`; built-in 3× 429 back-off (1 s → 2 s → 4 s) plus `compare` subcommand batching multi-country in one Datamapper call; no additional third-party code paths (client is part of the npm SBOM) |
 | **TB-PI-1: Git repository → AI agent prompt context** | 39 templates in `analysis/templates/*.md`, 18 methodologies in `analysis/methodologies/*.md`, and prompt modules under `.github/prompts/` shape AI political-intelligence output | **T**: template or methodology poisoning; **R**: unaudited prompt changes; **I**: biased instructions embedded in trusted control plane | Git review, branch protection, Change Management CEO approval for agent/MCP control-plane changes, documented ownership, no runtime write access by read-only agent phase |
-| **TB-PI-2: AI agent → Analysis artifacts** | Claude Sonnet 4.6 writes 23 required analysis artifacts plus per-document Family E files under `analysis/daily/...` | **T**: fabricated citations or significance scores; **I**: hallucinated political claims; **R**: insufficient evidence trail | Analysis gate checks 1–9b, recursive stub detection, evidence-citation enforcement, `dok_id` validation, methodology-reflection validator, AI FIRST pass-2 evidence |
+| **TB-PI-2: AI agent → Analysis artifacts** | Claude Opus 4.8 writes 23 required analysis artifacts plus per-document Family E files under `analysis/daily/...` | **T**: fabricated citations or significance scores; **I**: hallucinated political claims; **R**: insufficient evidence trail | Analysis gate checks 1–9b, recursive stub detection, evidence-citation enforcement, `dok_id` validation, methodology-reflection validator, AI FIRST pass-2 evidence |
 | **TB-PI-3: Analysis artifacts → Safe-output PR** | Validated artifacts are rendered into article content and submitted via safe-output PR path | **T**: malicious HTML/Markdown payload; **I**: prompt-injection residue; **E**: tool-call exfiltration attempt during generation | `rehype-sanitize` allow-list, Mermaid strict security mode, schema validation, policy check, human review, Squid + iptables egress allow-list, branch protection |
 | **TB-7: Browser → CDN (Chart.js/D3.js)** | External library loading | **T**: Supply chain attack, **I**: XSS injection | SRI hashes, CSP, Trusted CDN (jsDelivr) |
 
@@ -341,11 +314,11 @@ graph TB
     subgraph "🌐 Presentation Layer"
         HTML[📄 Static HTML<br/>14 Languages<br/>Responsive Design]
         CSS[🎨 CSS Styles<br/>Cyberpunk Theme<br/>RTL Support]
-        Dashboard[📊 Dashboards<br/>Chart.js + D3.js<br/>4 Functional, 5 Placeholders]
+        Dashboard[📊 Dashboards<br/>Chart.js + D3.js<br/>All Functional, Lazy-loaded]
     end
     
     subgraph "⚙️ CI/CD Layer"
-        Workflow1[🗞️ 14 news workflows<br/>analysis→gate→render→safe-output PR<br/>Claude Sonnet 4.6]
+        Workflow1[🗞️ 14 news workflows<br/>analysis→gate→render→safe-output PR<br/>Claude Opus 4.8]
         Workflow2[🌆 news-evening-analysis<br/>18:00 UTC Mon-Fri<br/>16:00 UTC Sat]
         Workflow3[⚡ news-realtime-monitor<br/>10:00+14:00 UTC Mon-Fri<br/>12:00 UTC weekends]
         Workflow4[🌍 news-translate<br/>Out-of-band<br/>EN+SV → 12 languages]
@@ -476,7 +449,7 @@ graph LR
 | **DoS** | Workflow quota exhaustion | MEDIUM (3) | MEDIUM (5) | 1.5 | GitHub quota monitoring, rate limiting, graceful degradation | **LOW** |
 | **Elevation of Privilege** | Workflow gains excessive permissions | LOW (2) | HIGH (8) | 1.6 | Least privilege IAM, scoped tokens, permission reviews | **LOW** |
 
-#### ⚙️ Process: AI News Generator (Claude Sonnet 4.6 + MCP)
+#### ⚙️ Process: AI News Generator (Claude Opus 4.8 + MCP)
 | STRIDE Category | Threat | Likelihood | Impact | Risk Score | Mitigation | Residual Risk |
 |-----------------|--------|-----------|--------|-----------|-----------|--------------|
 | **Spoofing** | Fake MCP server returns fabricated data | LOW (2) | CRITICAL (10) | 2.0 | HTTPS-only, server health monitoring, cross-verification | **LOW** |
@@ -1042,7 +1015,7 @@ graph TB
     Goal[🎯 Publish Fabricated Parliamentary Data<br/>Undermine democratic transparency]
     
     subgraph "Attack Path 1: Exploit LLM Hallucination [60% probability]"
-        A1[Trigger Low-Confidence AI State<br/>Ambiguous query to Claude Sonnet 4.6<br/>35% hallucination rate]
+        A1[Trigger Low-Confidence AI State<br/>Ambiguous query to Claude Opus 4.8<br/>35% hallucination rate]
         A2[Generate Non-Existent Vote Results<br/>Fabricate 175-174 vote margin<br/>80% plausibility]
         A3[Invent Fake Document IDs<br/>Create dok_id like H901FiU99<br/>90% passes initial review if no validation]
         
@@ -1602,7 +1575,7 @@ This section provides comprehensive AI security analysis per [Hack23 AI Policy](
 
 **Riksdagsmonitor LLM Application Classification:**
 - **System:** AI-powered news generation for Swedish political transparency
-- **Model:** Claude Sonnet 4.6 (Anthropic via GitHub Copilot)
+- **Model:** Claude Opus 4.8 (analysis + EN/SV articles) and Claude Sonnet 4.6 (translation fan-out) — both Anthropic via GitHub Copilot
 - **Risk Classification:** ⚠️ **LIMITED RISK** per EU AI Act Article 6
 - **Data Classification:** 🔓 **Public** (Swedish Riksdag open data only)
 - **Human Oversight:** ✅ **Required** (mandatory PR review before publication)
@@ -1675,7 +1648,7 @@ This section provides comprehensive AI security analysis per [Hack23 AI Policy](
 
 **Riksdagsmonitor Exposure**: 🟦 **NOT APPLICABLE**
 
-**Rationale**: Claude Sonnet 4.6 is a third-party model (Anthropic). Hack23 does not train or fine-tune models.
+**Rationale**: Claude Opus 4.8 is a third-party model (Anthropic). Hack23 does not train or fine-tune models.
 
 **Vendor Risk Assessment**: ✅ Completed
 - Anthropic AI supplier assessment per [Third Party Management Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Third_Party_Management.md)
@@ -1730,7 +1703,7 @@ This section provides comprehensive AI security analysis per [Hack23 AI Policy](
 **Attack Vectors**:
 1. **Compromised MCP Server**: riksdag-regering-mcp server on Render.com
 2. **GitHub Actions Dependencies**: actions/setup-node, actions/checkout, etc.
-3. **Claude Sonnet 4.6 API**: Anthropic API via GitHub Copilot
+3. **Claude Opus 4.8 API**: Anthropic API via GitHub Copilot
 4. **npm Dependencies**: Vite, Chart.js, D3.js build dependencies
 
 **Current Controls**: ✅ Implemented
@@ -1764,7 +1737,7 @@ This section provides comprehensive AI security analysis per [Hack23 AI Policy](
 
 **Attack Vectors**:
 1. **Prompt Leakage**: System instructions revealed in generated articles
-2. **Training Data Extraction**: Memorized personal data from Claude Sonnet 4.6 training
+2. **Training Data Extraction**: Memorized personal data from Claude Opus 4.8 training
 3. **Context Window Leakage**: Previous conversation data exposed
 
 **Current Controls**: ✅ Implemented
@@ -1887,7 +1860,7 @@ This section provides comprehensive AI security analysis per [Hack23 AI Policy](
 
 **Riksdagsmonitor Exposure**: 🟦 **NOT APPLICABLE**
 
-**Rationale**: Claude Sonnet 4.6 is a third-party API service (Anthropic). Hack23 does not host or own the model.
+**Rationale**: Claude Opus 4.8 is a third-party API service (Anthropic). Hack23 does not host or own the model.
 
 **Vendor Risk Assessment**: ✅ Completed
 - Anthropic responsible for model security
@@ -1923,22 +1896,29 @@ This section provides comprehensive AI security analysis per [Hack23 AI Policy](
 
 ---
 
-### 2.9 🤖 AI Model Card: Claude Sonnet 4.6
+### 2.9 🤖 AI Model Card: Claude Opus 4.8 (primary) + Claude Sonnet 4.6 (translation)
 
 **Per [Hack23 AI Policy § 4.3](https://github.com/Hack23/ISMS-PUBLIC/blob/main/AI_Policy.md)**, all LLM applications MUST maintain model cards documenting capabilities, limitations, and security characteristics.
 
+> **Dual-model architecture.** Riksdagsmonitor runs **two** Anthropic models through the GitHub Copilot API:
+> - **Claude Opus 4.8** — the reasoning model that drives the **13 analysis/article workflows** and the full 23-artifact analysis pipeline (`engine.model: claude-opus-4.8`). It carries the integrity-critical workload: source synthesis, significance scoring, evidence citation, and English/Swedish article drafting.
+> - **Claude Sonnet 4.6** — the faster model used **only** for the high-volume **news-translate** fan-out (`engine.model: claude-sonnet-4.6`), translating rendered EN+SV articles into the 12 remaining languages.
+>
+> Sonnet 4.6 was the repo-wide baseline through v0.74.3; the analysis/article pipeline was promoted to the Opus reasoning model to strengthen factual grounding and reduce overreliance (LLM09) risk. GPT-5.4 / GPT-5.4-mini eligibility is resolved upstream but not yet A/B-tested on this repository.
+
 #### Model Information
 
-| Attribute | Value |
-|-----------|-------|
-| **Model Name** | Claude Sonnet 4.6 (Anthropic) |
-| **Access Method** | GitHub Copilot API (indirect via GitHub) |
-| **Model Type** | Large Language Model (LLM) - Transformer architecture |
-| **Context Window** | 200,000 tokens (~150,000 words) |
-| **Training Cutoff** | April 2026 (estimated based on Sonnet 4.x release cycle) |
-| **Languages Supported** | 14 primary languages (en, sv, da, no, fi, de, fr, es, nl, ar, he, ja, ko, zh) + 90+ total |
-| **Deployment** | Cloud API (Anthropic infrastructure via GitHub) |
-| **Usage Classification** | ⚠️ **Limited Risk** per EU AI Act Article 6 |
+| Attribute | Claude Opus 4.8 (analysis + EN/SV articles) | Claude Sonnet 4.6 (translation fan-out) |
+|-----------|---------------------------------------------|------------------------------------------|
+| **Model Name** | Claude Opus 4.8 (Anthropic) | Claude Sonnet 4.6 (Anthropic) |
+| **Access Method** | GitHub Copilot API (indirect via GitHub) | GitHub Copilot API (indirect via GitHub) |
+| **Model Type** | Large Language Model (LLM) — Transformer reasoning model | Large Language Model (LLM) — Transformer architecture |
+| **Context Window** | 200,000 tokens (~150,000 words) | 200,000 tokens (~150,000 words) |
+| **Training Cutoff** | 2026 (vendor-managed; not relied upon — all facts grounded via MCP) | 2026 (vendor-managed) |
+| **Workflows** | 13 analysis/article workflows (news-evening-analysis, news-realtime-monitor, news-motions, news-committee-reports, news-propositions, news-interpellations, weekly/monthly review + 5 forward-horizon workflows) | 1 workflow (news-translate) |
+| **Languages Supported** | 14 primary languages (en, sv, da, no, fi, de, fr, es, nl, ar, he, ja, ko, zh) + 90+ total | 14 primary languages + 90+ total |
+| **Deployment** | Cloud API (Anthropic infrastructure via GitHub) | Cloud API (Anthropic infrastructure via GitHub) |
+| **Usage Classification** | ⚠️ **Limited Risk** per EU AI Act Article 6 | ⚠️ **Limited Risk** per EU AI Act Article 6 |
 
 #### Intended Use Cases
 
@@ -1959,15 +1939,16 @@ This section provides comprehensive AI security analysis per [Hack23 AI Policy](
 #### Known Capabilities
 
 **Strengths**:
-1. **Multilingual Excellence**: Native-level Swedish, strong Nordic languages (DA, NO, FI)
-2. **Structured Output**: JSON, HTML, Markdown generation with consistent formatting
-3. **Context Understanding**: 200K token window enables full Riksdag document analysis
-4. **Factual Grounding**: Strong performance with factual queries when given proper context
-5. **Citation Capability**: Able to include document IDs and source references
+1. **Reasoning Depth**: Opus 4.8 is a reasoning model — stronger multi-step source synthesis, significance scoring, and evidence-chaining than the prior Sonnet baseline
+2. **Multilingual Excellence**: Native-level Swedish, strong Nordic languages (DA, NO, FI); Sonnet 4.6 handles the translation fan-out
+3. **Structured Output**: JSON, HTML, Markdown generation with consistent formatting
+4. **Context Understanding**: 200K token window enables full Riksdag document analysis
+5. **Factual Grounding**: Strong performance with factual queries when given proper MCP-sourced context
+6. **Citation Capability**: Able to include document IDs and source references
 
-**Weaknesses**:
-1. **Hallucination Risk**: 35% estimated hallucination rate on low-confidence queries
-2. **Date Sensitivity**: Training cutoff (April 2026) limits real-time Swedish political events
+**Weaknesses** (conservative posture retained regardless of model uplift):
+1. **Hallucination Risk**: Non-zero hallucination on low-confidence queries; Opus 4.8 reduces but does not eliminate it — overreliance (LLM09) remains the highest-priority AI risk and is mitigated by mandatory `dok_id` validation and PR review
+2. **Date Sensitivity**: Vendor training cutoff limits real-time Swedish political events; mitigated by always grounding facts through the riksdag-regering-mcp server rather than model memory
 3. **Non-Determinism**: Same prompt may yield different outputs across invocations
 4. **Prompt Injection**: Vulnerable to indirect prompt injection via document titles
 5. **Bias Potential**: Training data bias toward Western media sources and English-language content
@@ -2047,9 +2028,10 @@ This section provides comprehensive AI security analysis per [Hack23 AI Policy](
 #### Maintenance & Monitoring
 
 **Model Version Management**:
-- ✅ Claude Sonnet 4.6 explicitly specified in workflow YAML
+- ✅ `engine.model` pinned per workflow: `claude-opus-4.8` (13 analysis/article workflows), `claude-sonnet-4.6` (news-translate)
+- ✅ Compiled `.lock.yml` files version-control the exact engine/model selection (reviewable in PRs)
 - ✅ GitHub Copilot API versioning (GitHub-managed)
-- ⚠️ No automated model update testing
+- ⚠️ No automated model update testing (GPT-5.4 / GPT-5.4-mini A/B test pending)
 - ⚠️ No model deprecation alerting
 
 **Performance Monitoring**:
@@ -2088,10 +2070,10 @@ This section provides comprehensive AI security analysis per [Hack23 AI Policy](
 #### Updates & Deprecation
 
 **Model Lifecycle**:
-- **Current Version**: Claude Sonnet 4.6 (deployed 2026-04)
-- **Expected Lifespan**: 12-18 months (until Claude Sonnet successor release)
+- **Current Versions**: Claude Opus 4.8 (analysis/articles) + Claude Sonnet 4.6 (translation) — Opus promoted from the Sonnet repo-wide baseline after v0.74.3
+- **Expected Lifespan**: 12–18 months per model (until Anthropic successor release)
 - **Deprecation Policy**: 90-day notice before model version changes
-- **Migration Plan**: Test new model versions on staging branch before production
+- **Migration Plan**: Test new model versions on a branch before production; GPT-5.4 / GPT-5.4-mini eligibility resolved upstream, A/B test pending
 
 **Security Patch Management**:
 - Anthropic-managed security patches (vendor responsibility)
@@ -2185,13 +2167,18 @@ graph TB
 
 #### Threat Surface: Interactive JavaScript Dashboards
 
-**4 Functional Dashboards:**
+**Functional Dashboards (Chart.js / D3.js, lazy-loaded ES modules):**
 1. **Overview Dashboard** - General political metrics (Chart.js)
 2. **Party Performance Dashboard** - Coalition analysis (D3.js)
-3. **Ministry Activity Dashboard** - Government activity tracking (Chart.js)
-4. **Legislative Timeline** - Bill progression visualization (D3.js)
-
-**5 Placeholder Dashboards:** Design-only (no JavaScript execution risk)
+3. **Committee Network Dashboard** - Committee performance and network analysis
+4. **Coalition Dashboard** - Coalition dynamics tracking
+5. **Election Cycle Dashboard** - Election-cycle analysis
+6. **Risk Dashboard** - Risk scoring and alerts
+7. **Anomaly Detection Dashboard** - Behavioural anomaly detection (timeline, Z-score, type, frequency charts)
+8. **Seasonal Patterns Dashboard** - Quarterly activity with Z-score anomaly detection
+9. **Pre-Election Monitoring Dashboard** - Pre-election trend analysis
+10. **Ministry Dashboard** - Government/ministry activity tracking
+11. **Politician Dashboard** - Individual MP profiles and metrics
 
 #### Dashboard-Specific Threats:
 
@@ -2361,7 +2348,7 @@ Following [Hack23 AB Workshop Framework](https://github.com/Hack23/ISMS-PUBLIC/b
 | **CVE Database (NVD)** | Vulnerability disclosures | Daily | Dependabot + manual review | Free |
 | **Swedish CERT-SE** | National threat intelligence | Ad-hoc | Email alerts | Free |
 
-**Next Review:** 2026-05-15 (Quarterly schedule)
+**Next Review:** 2026-08-30 (Quarterly schedule)
 
 ---
 
@@ -2747,7 +2734,7 @@ graph TB
 > **Severity:** HIGH  
 > **Detection:** PR reviewer post-publication (within 6 hours)  
 > **Description:** AI-generated article reported incorrect vote margin (175-174) for motion H901:23. Actual margin was 176-173.  
-> **Root Cause:** AI hallucination (Claude Sonnet 4.6 non-determinism). Document ID was correct (H901:23), but vote arithmetic was fabricated.
+> **Root Cause:** AI hallucination (Claude Opus 4.8 non-determinism). Document ID was correct (H901:23), but vote arithmetic was fabricated.
 > **Impact:** Misinformation visible to ~500 users before correction. No external media amplification.  
 > **Corrective Actions:**
 > - Article removed within 4 hours of detection
@@ -2964,11 +2951,11 @@ Riksdagsmonitor-specific security practices for civic transparency platforms.
 ## 📋 Document Control
 
 **📋 Document Owner:** James Pether Sörling, CEO & CISO  
-**📄 Version:** 1.3
-**📅 Last Updated:** 2026-05-06 (UTC)
+**📄 Version:** 1.5
+**📅 Last Updated:** 2026-05-30 (UTC)
 **✅ Approved by:** James Pether Sörling, CEO  
 **🔄 Review Cycle:** Quarterly
-**⏰ Next Review:** 2026-08-06
+**⏰ Next Review:** 2026-08-30
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807)  
 **📤 Distribution:** Public  
 **🏷️ Classification:** [![Confidentiality: Public](https://img.shields.io/badge/C-Public-lightgrey?style=flat-square)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#confidentiality-levels) [![Integrity: High](https://img.shields.io/badge/I-High-orange?style=flat-square)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#integrity-levels) [![Availability: High](https://img.shields.io/badge/A-High-orange?style=flat-square)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#availability-levels)
@@ -3033,6 +3020,75 @@ Statskontoret ingestion introduces a public-data trust boundary for Swedish agen
 - **Privacy:** no PII or credentials; public authority and aggregate budget data only.
 - **CIA:** Public / High Integrity / Medium-High Availability for derived article context.
 
+
+---
+
+## 📊 SCB Integration — STRIDE Threats
+
+> **Effective:** 2026-05-30 · **Classification:** Public · **Entry point:** `scripts/scb-fetch.ts` · **Client:** `scripts/scb-client.ts` / `scripts/scb-context.ts` · **Sources:** AWF MCP gateway route to the `scb` MCP server (primary) and direct MCP relay `https://scb-mcp.onrender.com/mcp` (`DIRECT_SCB_SERVER_URL` fallback) · **Cache:** `analysis/data/scb/`.
+
+SCB (Statistics Sweden) supplies the Swedish-specific ground-truth statistics layer (population, labour, economy, public finance). The integration is entirely MCP-based: inside the AWF sandbox it routes through the **MCP gateway** (`host.docker.internal:<port>/mcp/scb`); outside the sandbox it falls back to the **community-hosted MCP relay on Render** (`https://scb-mcp.onrender.com/mcp`). There is no direct SCB REST/PXWeb HTTP client — the trust boundary is between the two MCP transport paths, mitigated by cache-first/optional-enrichment semantics and provenance discipline.
+
+| ID | Asset / flow | STRIDE | Threat | Likelihood | Impact | Mitigations |
+|---|---|---|---|---|---|---|
+| T-SCB-01 | `scb-mcp.onrender.com` MCP relay | Spoofing | Third-party relay impersonated or DNS/TLS-intercepted, returning forged table data | LOW | HIGH | HTTPS-only egress; allow-list `scb-mcp.onrender.com`; `DIRECT_SCB_SERVER_URL` selects the direct MCP relay when AWF gateway is unavailable; source URL + table id recorded in provenance. |
+| T-SCB-02 | JSON-stat / PXWeb payload | Tampering | Relay or upstream mutates statistic values, footnotes, or contents codes | LOW | HIGH | Typed MCP client contract checks; persisted raw/derived artifacts with `.meta.json` sidecars; reviewer diff inspection on persisted `analysis/data/scb/`. |
+| T-SCB-03 | Table-cell mapping | Information integrity | Variable/value-code drift maps wrong dimension (region, period, contents) to a cell | MEDIUM | MEDIUM | Metadata fetched per table before query; value-code validation; unit tests for SCB client parsing; omit context rather than emit unmapped figures. |
+| T-SCB-04 | SCB citation in article | Repudiation | Article cites "SCB reports X" without table id / vintage → unauditable claim | MEDIUM | MEDIUM | Provenance block records `mcpTool`, table id, `fetchedAt`; ECONOMIC_DATA_CONTRACT vintage discipline applies to the Swedish ground-truth layer. |
+| T-SCB-05 | MCP relay availability | Denial of service | Render relay cold-start or MCP timeout blocks enrichment | MEDIUM | LOW | 15s timeout (`DEFAULT_TIMEOUT`); cache-first reuse; optional-enrichment semantics; retry with backoff (`DEFAULT_MAX_RETRIES`). |
+| T-SCB-06 | `tsx scripts/scb-fetch.ts` | Elevation of privilege | Supply-chain tampering of fetch/parse path | LOW | HIGH | Script in-repo; reviewed; no dynamic eval; dependencies pinned in npm lock/SBOM; harden-runner egress audit. |
+
+### SCB residual risk
+
+- **Residual risk:** LOW-MEDIUM integrity risk concentrated in the third-party MCP relay; mitigated by cache-first/optional-enrichment semantics and provenance sidecars.
+- **Privacy:** no PII; public aggregate national statistics only.
+- **CIA:** Public / High Integrity / Medium Availability (optional enrichment).
+
+---
+
+## 🌍 World Bank Integration — STRIDE Threats
+
+> **Effective:** 2026-05-30 · **Classification:** Public · **Client:** `scripts/world-bank-client.ts` / `scripts/world-bank-context.ts` · **Consumer:** `scripts/populate-analysis-data.ts` · **Source:** `https://api.worldbank.org/v2` (unauthenticated REST) · **Hub:** [`analysis/worldbank/README.md`](analysis/worldbank/README.md) · [`analysis/worldbank/indicator-policy-mapping.md`](analysis/worldbank/indicator-policy-mapping.md).
+
+The World Bank integration is **scope-restricted by contract**: it supplies only the governance, environment, social and demographic residue that the IMF does not publish (e.g. Worldwide Governance Indicators, `source=75`). It is never used for economic context — that role is canonical to the IMF. The dominant risk is therefore *contract violation* (misuse as an economic source) as much as classic data-integrity threats.
+
+| ID | Asset / flow | STRIDE | Threat | Likelihood | Impact | Mitigations |
+|---|---|---|---|---|---|---|
+| T-WB-01 | `api.worldbank.org/v2` egress | Spoofing | DNS/TLS interception returns forged indicator series | LOW | MEDIUM | HTTPS-only egress; allow-list `api.worldbank.org`; source URL + indicator code recorded in provenance. |
+| T-WB-02 | Indicator series payload | Tampering | Upstream or in-transit mutation of governance/environment values | LOW | MEDIUM | TLS transport; typed client contract checks; persisted artifacts with provenance sidecars; reviewer diff inspection. |
+| T-WB-03 | Indicator-class selection | Information integrity | World Bank figure used for **economic** context, violating the canonical IMF-first rule | MEDIUM | HIGH | `indicator-policy-mapping.md` restricts allowed classes (governance/environment/social/demographic); ECONOMIC_DATA_CONTRACT bans WB economic claims; lint/tests enforce. |
+| T-WB-04 | WB citation in article | Repudiation | Article cites WB indicator without code/vintage/source → unauditable | LOW | MEDIUM | Provenance block records indicator code + `fetchedAt`; footer attribution template. |
+| T-WB-05 | API availability | Denial of service | World Bank API timeout blocks enrichment | LOW | LOW | Cache-first; optional-enrichment semantics; article can omit residue context rather than fail. |
+| T-WB-06 | `world-bank-client.ts` fetch path | Elevation of privilege | Supply-chain tampering of fetch/parse path | LOW | MEDIUM | Script in-repo; reviewed; no dynamic eval; dependencies pinned in npm lock/SBOM; harden-runner egress audit. |
+
+### World Bank residual risk
+
+- **Residual risk:** LOW; the binding control is the canonical IMF-first contract that confines World Bank to non-economic residue.
+- **Privacy:** no PII; public country-level indicators only.
+- **CIA:** Public / High Integrity / Low-Medium Availability (optional residue enrichment).
+
+---
+
+## 🔍 Riksrevisionen (RiR) Follow-up Integration — STRIDE Threats
+
+> **Effective:** 2026-05-30 · **Classification:** Public · **Entry point:** `scripts/fetch-rir-followups.ts` · **Client:** `scripts/rir-followups-client.ts` · **Source:** Riksdag/Regeringen via the `riksdag-regering-mcp` server (`doktyp=skr` skrivelse responses to RiR audit reports) · **Store:** `data/rir-followups.json` (schema: `schemas/rir-followups-schema.json`).
+
+The RiR follow-up tracker matches government *skrivelse* responses against National Audit Office (Riksrevisionen) reports to surface oversight accountability — including overdue-response alerts. Because it generates accountability claims about whether the government acted on audit findings, the integrity of the report↔skrivelse matching and the deadline arithmetic are the principal threats.
+
+| ID | Asset / flow | STRIDE | Threat | Likelihood | Impact | Mitigations |
+|---|---|---|---|---|---|---|
+| T-RIR-01 | `riksdag-regering-mcp` `doktyp=skr` query | Spoofing | MCP relay impersonated or returns forged skrivelse documents | LOW | HIGH | HTTPS-only egress; allow-list `riksdag-regering-ai.onrender.com`; dok_id recorded in `data/rir-followups.json`; same trust boundary controls as the core MCP server. |
+| T-RIR-02 | `data/rir-followups.json` | Tampering | Follow-up status (open/responded/overdue) altered to misstate government accountability | LOW | HIGH | JSON Schema validation (`schemas/rir-followups-schema.json`); committed artifact reviewed in PR diffs; provenance includes source dok_id and `fetchedAt`. |
+| T-RIR-03 | Report↔skrivelse matching | Information integrity | Wrong skrivelse matched to a RiR report → false "responded/ignored" claim | MEDIUM | HIGH | Deterministic matching keyed on report reference; schema-validated linkage; unit/regression tests; human review before publication. |
+| T-RIR-04 | Deadline computation | Information integrity | Mis-calculated follow-up window emits false overdue/compliant alert | MEDIUM | MEDIUM | Documented 4-month statutory window; date arithmetic under test; alert thresholds reviewed. |
+| T-RIR-05 | RiR/Riksdag accountability citation | Repudiation | Article asserts government "failed to respond" without source dok_id/date | MEDIUM | MEDIUM | Provenance block records dok_id, response date, status; ISMS editorial review for accountability claims. |
+| T-RIR-06 | Source availability | Denial of service | Riksdag MCP/API unavailable blocks follow-up refresh | MEDIUM | LOW | Cache-first reuse of `data/rir-followups.json`; optional-enrichment semantics; stale-data annotation. |
+
+### RiR residual risk
+
+- **Residual risk:** LOW-MEDIUM; matching and deadline integrity are the binding risks, mitigated by schema validation, tests and mandatory human review of accountability claims.
+- **Privacy:** no PII; public audit reports and government documents only.
+- **CIA:** Public / High Integrity / Medium Availability.
 
 ---
 

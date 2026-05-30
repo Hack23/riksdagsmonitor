@@ -11,44 +11,14 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/>
-  <img src="https://img.shields.io/badge/Version-7.5-555?style=for-the-badge" alt="Version"/>
-  <img src="https://img.shields.io/badge/Updated-2026--05--06-success?style=for-the-badge" alt="Last Updated"/>
+  <img src="https://img.shields.io/badge/Version-7.6-555?style=for-the-badge" alt="Version"/>
+  <img src="https://img.shields.io/badge/Updated-2026--05--28-success?style=for-the-badge" alt="Last Updated"/>
   <img src="https://img.shields.io/badge/Review-Quarterly-orange?style=for-the-badge" alt="Review Cycle"/>
 </p>
 
 **📋 Document Owner:** CEO | **📄 Version:** 7.6 | **📅 Last Updated:** 2026-05-28 (UTC)
 **🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-08-05
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
-
-> **🆕 What changed since last review (v7.5 → v7.6, 2026-05-28):**
-> - 🤖 **Model split:** the 13 analysis/article-generating news workflows now run on **`claude-opus-4.8`** (released after `claude-opus-4.7`) for strongest reasoning across the 23-artifact pipeline; the high-volume **`news-translate`** workflow stays on **`claude-sonnet-4.6`** for translation fan-out throughput. Updated the engine narrative, Stage-6 diagram label, and recompiled all 14 `.lock.yml` siblings via `gh aw compile`.
->
-> **🆕 What changed since last review (v7.4 → v7.5, 2026-05-06):**
-> - 🏛️ Reconciled document with **v0.8.76** — confirmed 51 workflow files (22 standard `.yml` + 14 agentic `.md` + 14 compiled `.lock.yml` + 1 README).
-> - 🧠 Added §"Political Intelligence Validation Pipeline" documenting: `generate-political-intelligence.ts`, `validate-methodology-reflection.ts`, `validate-quality-scores.cjs`, `validate-article.ts`, and analysis-gate enforcement (checks 1-9b).
-> - 📦 Documented analysis-gate as a CI/CD concern: every agentic workflow MUST pass 23-artifact gate before article rendering.
-> - 📋 Updated prebuild chain to current 13-step sequence (added `generate-article-types-doc`, `copy-vendor-mermaid`, `aggregate-analysis`, `render-articles`, `normalize-static-html-chrome`, `backfill-translated-chrome`, `strip-legacy-chrome-script-tags`).
-> - 🌐 Added parliamentary data download scripts: `download-parliamentary-data.ts`, `fetch-voting-records.ts`, `fetch-calendar.ts`, `fetch-statskontoret.ts`, `fetch-rir-followups.ts`.
->
-> **🆕 What changed since last review (v7.3 → v7.4, 2026-05-05):**
-> - ♻️ Reconciled this document with the current `package.json` toolchain: TypeScript 6.0.3, Vite 8.0.10, Vitest 4.1.5, Cypress 15.14.2, and the current 3,319-test baseline observed in `npm test`.
-> - 🤖 Corrected the agentic-news engine and workflow narrative to **14 workflows** using `claude-sonnet-4.6`, the 23-artifact baseline, nested election-cycle folders, and all-language article rendering via `render-articles.ts --all --lang all`.
->
-> **🆕 What changed since last review (v7.2 → v7.3, 2026-05-02):**
-> - 🔮 **Long-horizon forward-look pipelines** added: `news-quarter-ahead` (90d, × 1.7), `news-year-ahead` (365d, × 2.0), and `news-election-cycle` (1460d, × 2.5). Workflow count is now **14 agentic** (was 11) bringing total workflow files to **50** (22 `.yml` + 14 `.md` + 14 `.lock.yml`).
-> - Added §6.2 "Long-Horizon Forward-Look Pipelines" with Mermaid flowchart + sequence diagrams for each new horizon, ISMS control mapping table, and KPI definitions.
-> - Updated all inventory tables, counts, and diagram labels to reflect 14 agentic workflows.
->
-> **🆕 What changed since last review (v7.1 → v7.2, 2026-04-20):**
-> - 📈 **IMF** added as a third primary economic-data source for agentic news workflows (alongside SCB MCP and World Bank MCP) per [ADR 0001](docs/adr/0001-adopt-imf-data-alongside-world-bank.md). IMF is consumed via the **pure-TypeScript client `scripts/imf-client.ts`** invoked by workflows through the `bash` tool — **intentionally not an MCP server** (no Python/uvx, SBOM-covered via npm). Egress allowlist extended with `data.imf.org`, `api.imf.org`, `www.imf.org` (Squid + iptables). The count of **MCP servers is unchanged**. Forward-looking workflows (`news-week-ahead`, `news-month-ahead`, `news-weekly-review`, `news-monthly-review`) now use IMF WEO/Fiscal Monitor projections as the primary source for look-ahead framing.
->
-> **🆕 What changed since last review (v7.0 → v7.1, 2026-04-20):**
-> - **Factual correction:** total workflow-file count under `.github/workflows/` is **43** (not 45 or 48). The breakdown is **21 standard `.yml` workflows + 11 agentic Markdown sources (`.md`) + 11 compiled `.lock.yml` siblings**. All inventory tables and narrative text below have been reconciled with `ls .github/workflows/`.
-> - Added previously unlisted workflow: **`agentics-maintenance.yml`** (agent platform hygiene, scheduled maintenance of agentic environment).
-> - Realigned categorisation: `compile-agentic-workflows.yml` is a standard `.yml` **build tool**, not an agentic workflow — moved into the "Automation & Tooling" category.
-> - Reconfirmed that the **five-layer safe-output security model** and **egress firewall (Squid proxy + iptables allow-list)** wrap every `news-*` agentic workflow, per [gh-aw-safe-outputs](.github/skills/gh-aw-safe-outputs/) and [gh-aw-firewall](.github/skills/gh-aw-firewall/) skills.
-> - All `uses:` references remain SHA-pinned; `step-security/harden-runner` is applied across all workflows; deployment uses **AWS OIDC only** (no long-lived secrets) via `id-token: write`.
-> - Added explicit ISMS control mapping to [Secure_Development_Policy §10](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md), ISO 27001:2022 Annex A.5.30/A.8.8/A.8.28/A.8.30, NIST CSF 2.0 GV.SC/PR.PS/DE.CM/RS.AN, CIS Controls v8.1 #4/#16, and [AI_Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/AI_Policy.md) for agentic workloads.
 
 ---
 
@@ -89,7 +59,7 @@ This document provides comprehensive documentation of the CI/CD workflows implem
 
 The project has been migrated from JavaScript to **TypeScript** (31 modules in `src/browser/`) with all workflows updated accordingly. TypeScript compilation is handled by Vite (esbuild) for browser bundles and Node 26's native type-stripping for scripts.
 
-**Total Workflow Files: 50** (22 standard YAML + 14 agentic `.md` sources + 14 compiled `.lock.yml`). Each agentic workflow consists of a source `.md` file and its compiled `.lock.yml` counterpart, yielding **36 distinct workflows** (22 standard + 14 agentic).
+**Total Workflow Files: 54** (26 standard YAML + 14 agentic `.md` sources + 14 compiled `.lock.yml`). Each agentic workflow consists of a source `.md` file and its compiled `.lock.yml` counterpart, yielding **40 distinct workflows** (26 standard + 14 agentic).
 **Security Compliance: 100%** (all actions SHA-pinned, harden-runner enabled)
 
 ## 🔐 ISMS Policy Alignment
@@ -182,9 +152,9 @@ graph LR
 | --- | --- | --- |
 | Node.js | 26 | Runtime (native TypeScript strip-types) |
 | TypeScript | 6.0.3 | Type system |
-| Vite | 8.0.10 | Build toolchain (esbuild) |
-| Vitest | 4.1.5 | Unit testing (3,319 tests) |
-| Cypress | 15.14.2 | E2E testing (optional dependency) |
+| Vite | 8.0.14 | Build toolchain (esbuild) |
+| Vitest | 4.1.7 | Unit testing (7,500+ tests) |
+| Cypress | 15.16.0 | E2E testing (optional dependency) |
 | TypeDoc | 0.28.18 | API documentation |
 | ESLint | 10.x | Linting (flat config) |
 
@@ -235,7 +205,7 @@ flowchart TD
 
 ## 🔄 Workflow Overview
 
-The Riksdagsmonitor project uses **50 workflow files** (22 standard `.yml` + 14 agentic `.lock.yml` + 14 agentic `.md` sources) organized into 5 functional categories:
+The Riksdagsmonitor project uses **54 workflow files** (26 standard `.yml` + 14 agentic `.lock.yml` + 14 agentic `.md` sources) organized into 5 functional categories:
 
 ```mermaid
 graph TB
@@ -385,7 +355,7 @@ flowchart TB
         direction TB
         PR --> UnitTests[🧪 TypeScript & JS Testing]
         UnitTests --> TypeCheck[TSC Type Check]
-        UnitTests --> Vitest[Vitest 3319 Tests]
+        UnitTests --> Vitest[Vitest 7500+ Tests]
         UnitTests --> CypressE2E[Cypress E2E]
         PR --> DashboardE2E[🖥️ Dashboard E2E]
         PR --> HomepageE2E[🏠 Homepage E2E]
@@ -454,7 +424,7 @@ flowchart TB
 | **HTMLHint Validation** | Zero errors | quality-checks.yml | Required ✅ |
 | **Link Integrity** | Zero broken internal links | quality-checks.yml | Required ✅ |
 | **Knip Dead Code (files/deps/dups)** | Zero unused files, deps, binaries, or duplicate exports | knip.yml | Required ✅ |
-| **Unit Test Pass Rate** | 100% (3,319 tests) | javascript-testing.yml | Required ✅ |
+| **Unit Test Pass Rate** | 100% (7,500+ tests) | javascript-testing.yml | Required ✅ |
 | **CodeQL SAST** | No critical/high | codeql.yml | Required ✅ |
 | **Dependency Vulnerabilities** | No critical/high | dependency-review.yml | Required ✅ |
 | **Translation Completeness** | All 14 languages valid | translation-validation.yml | Required ✅ |
@@ -627,7 +597,7 @@ flowchart TD
 - `tsconfig.scripts.json` — validates `scripts/**/*.ts` + `tests/**/*.ts`
 - Both use `noEmit: true` (Vite/esbuild handles actual compilation)
 
-**Test Coverage:** 3,319 unit tests (Vitest) + Happy-DOM environment for browser modules + V8 coverage provider
+**Test Coverage:** 7,500+ unit tests (Vitest) + Happy-DOM environment for browser modules + V8 coverage provider
 
 ---
 
@@ -1350,11 +1320,11 @@ flowchart LR
 
 ---
 
-## 🔧 Complete Workflow Inventory (50 Files — 22 standard `.yml` + 14 agentic `.md` + 14 compiled `.lock.yml`)
+## 🔧 Complete Workflow Inventory (54 Files — 26 standard `.yml` + 14 agentic `.md` + 14 compiled `.lock.yml`)
 
-> **Verification:** `ls .github/workflows/` yields 50 workflow files (51 entries including the directory README.md). This matches 22 standard workflow files + 14 agentic Markdown sources + 14 corresponding compiled lock files. Badges and PR checks are driven by the 22 standard `.yml` plus the 14 compiled `.lock.yml` (GitHub Actions only executes the compiled artifacts).
+> **Verification:** `ls .github/workflows/` yields 54 workflow files (55 entries including the directory README.md). This matches 26 standard workflow files + 14 agentic Markdown sources + 14 corresponding compiled lock files. Badges and PR checks are driven by the 26 standard `.yml` plus the 14 compiled `.lock.yml` (GitHub Actions only executes the compiled artifacts).
 
-### 🔐 Security & Compliance (5 workflows)
+### 🔐 Security & Compliance (6 workflows)
 
 | # | Workflow | File | Trigger | ISMS Controls |
 | --- | --- | --- | --- | --- |
@@ -1363,8 +1333,9 @@ flowchart LR
 | 1.3 | ⭐ OpenSSF Scorecard | `scorecards.yml` | Push to main, Weekly | A.5.36, DE.CM-6, CIS 16.2 |
 | 1.4 | 🏷️ Setup Labels | `setup-labels.yml` | Manual dispatch | A.5.37, PR.IP-1 |
 | 1.5 | 🏷️ PR Labeler | `labeler.yml` | Pull requests | A.5.37, PR.IP-1 |
+| 1.6 | 🕷️ ZAP DAST Scan | `zap-scan.yml` | Weekly schedule, manual dispatch | A.8.29, DE.CM-8, CIS 18 |
 
-### 🧪 Testing & Validation (8 workflows)
+### 🧪 Testing & Validation (10 workflows)
 
 | # | Workflow | File | Trigger | Coverage |
 | --- | --- | --- | --- | --- |
@@ -1376,6 +1347,8 @@ flowchart LR
 | 2.6 | 🖥️ Test Dashboard | `test-dashboard.yml` | Push/PR (src/browser) | Dashboard Cypress E2E |
 | 2.7 | 🏠 Test Homepage | `test-homepage.yml` | Push/PR (src/browser) | Homepage Cypress E2E |
 | 2.8 | 📰 Test News | `test-news.yml` | Push/PR (news) | News pages Cypress E2E |
+| 2.9 | 🌍 Executive Brief Translation Checks | `exec-brief-translation-checks.yml` | Pull requests | Structural-parity + file-ownership merge gate for the executive-brief translation pipeline |
+| 2.10 | 🔤 Test Article Headers | `test-article-headers.yml` | Manual dispatch | Audits rendered `<head>` metadata (title/description/keywords + OpenGraph/Twitter) via the shared `computeArticleHeadMetadata` composer |
 
 ### 📊 CIA Data Pipeline (1 workflow)
 
@@ -1414,19 +1387,21 @@ flowchart LR
 | 5.13 | 📆 News Year Ahead | `news-year-ahead.md` | `news-year-ahead.lock.yml` | Tier-C aggregation × 2.0: 365-day annual outlook anchored in IMF WEO Apr/Oct vintage |
 | 5.14 | 🗳️ News Election Cycle | `news-election-cycle.md` | `news-election-cycle.lock.yml` | Tier-C aggregation × 2.5: full 4-year mandate; dispatch-only until runtime measured |
 
-### 🛠️ Automation & Tooling (2 workflows)
+### 🛠️ Automation & Tooling (4 workflows)
 
 | # | Workflow | File | Trigger | Purpose |
 | --- | --- | --- | --- | --- |
-| 5.13 | 🔧 Compile Agentic Workflows | `compile-agentic-workflows.yml` | Push/PR touching `news-*.md`, manual | Compile `.md` sources → `.lock.yml` via `gh-aw` compiler; enforces firewall + safe-outputs + SHA-pinning policy |
-| 5.14 | 🧹 Agentics Maintenance | `agentics-maintenance.yml` | Scheduled + manual | Scheduled hygiene of agentic environment: stale branch cleanup, secret rotation hooks, runtime-cache eviction, agent-config validation |
+| 6.1 | 🔧 Compile Agentic Workflows | `compile-agentic-workflows.yml` | Push/PR touching `news-*.md`, manual | Compile `.md` sources → `.lock.yml` via `gh-aw` compiler; enforces firewall + safe-outputs + SHA-pinning policy |
+| 6.2 | 🧹 Agentics Maintenance | `agentics-maintenance.yml` | Scheduled + manual | Scheduled hygiene of agentic environment: stale branch cleanup, secret rotation hooks, runtime-cache eviction, agent-config validation |
+| 6.3 | ♻️ Regenerate Articles | `regenerate-articles.yml` | Manual dispatch | Deterministic (no-AI) rebuild of every `article.md` (via aggregate-analysis) and every `news/*.html` page (via render-articles, all 14 languages) from the current `analysis/daily/` tree; commits directly to `main` |
+| 6.4 | 🤝 News Host-side PAT PR Fallback | `news-pat-pr-fallback.yml` | `workflow_run` after each `news-*` workflow | Single host-side recovery path for all 14 news workflows: replays the sandbox commit-handoff bundle under a host PAT to open/refresh the PR when the in-sandbox safe-outputs push could not deliver |
 
 ### 📡 Monitoring & Infrastructure (2 workflows)
 
 | # | Workflow | File | Trigger | Purpose |
 | --- | --- | --- | --- | --- |
-| 6.1 | 📡 Uptime Monitor | `uptime-monitor.yml` | Every 15 minutes | Site availability checks |
-| 6.2 | 🤖 Copilot Setup Steps | `copilot-setup-steps.yml` | Push, manual | Agent environment setup |
+| 7.1 | 📡 Uptime Monitor | `uptime-monitor.yml` | Every 15 minutes | Site availability checks |
+| 7.2 | 🤖 Copilot Setup Steps | `copilot-setup-steps.yml` | Push, manual | Agent environment setup |
 
 ---
 
@@ -1649,7 +1624,7 @@ flowchart TB
 
 | Metric | Target | Actual | Status |
 | --- | --- | --- | --- |
-| Test Count | > 1000 | **3,319** | ✅ |
+| Test Count | > 1000 | **7,500+** | ✅ |
 | Test Pass Rate | 100% | **100%** | ✅ |
 | TypeScript Errors | 0 | **0** | ✅ |
 | ESLint Errors | 0 | **0** | ✅ |
@@ -1688,8 +1663,8 @@ flowchart TB
 - [SWOT.md](SWOT.md) — Strategic analysis
 - [CRA-ASSESSMENT.md](CRA-ASSESSMENT.md) — EU Cyber Resilience Act conformity
 - [FUTURE_WORKFLOWS.md](FUTURE_WORKFLOWS.md) — Future workflow projections
-- [AGENTS.md](AGENTS.md) — Custom agent reference (14 agents)
-- [SKILLS.md](SKILLS.md) — Skill definitions (91 skills)
+- [AGENTS.md](AGENTS.md) — Custom agent reference (23 agents)
+- [SKILLS.md](SKILLS.md) — Skill definitions (92 skills)
 
 ### External Tools
 - [step-security/harden-runner](https://github.com/step-security/harden-runner) — Workflow security

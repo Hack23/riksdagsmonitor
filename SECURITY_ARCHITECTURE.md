@@ -21,35 +21,6 @@
 **🔄 Review Cycle:** Annual | **⏰ Next Review:** 2027-05-06  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
-> **🆕 What changed since last review (v2.3 → v2.4, 2026-05-06):**
-> - 📌 **Reconciliation with Riksdagsmonitor `v0.8.76`** (was `v0.8.48` baseline). All version-specific control narratives below remain valid; the additions in this revision document the **political-intelligence security surface** that was previously listed as a backlog item in the [`documentation-portfolio-audit-2026-05-03.md`](analysis/audits/documentation-portfolio-audit-2026-05-03.md) follow-up.
-> - 🆕 **New §"Political Intelligence Security Surface"** (see end of this document) covering: (a) the **39 analysis templates** under `analysis/templates/*.md` and **18 methodologies** under `analysis/methodologies/*.md` consumed by AI agents, treated as a **trusted control plane** — version-controlled, PR-reviewed, and validated by the analysis gate; (b) the **analysis gate (checks 1–9b)** — implemented in [`scripts/agentic/analysis-gate.ts`](scripts/agentic/analysis-gate.ts) and specified in [`.github/prompts/05-analysis-gate.md`](.github/prompts/05-analysis-gate.md) — documented as a **structural-integrity security control** with explicit bypass-resistance properties (typed checks, recursive scan, fail-closed default); (c) the **methodology-reflection validator** in [`scripts/validate-methodology-reflection.ts`](scripts/validate-methodology-reflection.ts) as an **integrity-of-process control**; (d) **political classification** as a data-governance control bound to the [`CLASSIFICATION.md`](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) framework; (e) **OSINT tradecraft compliance** as an operational control; (f) **horizon stratification** as a data-flow boundary that limits which upstream classes may inform which forecast band.
-> - 🆕 **Five-layer safe-output security model** documented in detail (sanitisation → schema-validate → policy-check → human-review → merge), including bypass-resistance assessment and explicit per-layer failure modes; cross-referenced from [`THREAT_MODEL.md`](THREAT_MODEL.md) row TB-PI series.
-> - 🛡️ **External data-provider trust model** consolidated into a single table covering **IMF (TS client)**, **SCB MCP**, **World Bank MCP**, **Riksdag API**, **Riksbank**, **Statskontoret**, **Riksrevisionen** — with cache-integrity, schema-validation, and `.meta.json` tamper-evidence rows.
-> - 🔒 **Compliance mapping reconfirmed** for v0.8.76: ISO 27001:2022 Annex A.5/A.8 (full), NIST CSF 2.0 GV/ID/PR/DE/RS/RC, CIS Controls v8.1 (#1–#18 applicable subset), GDPR Art. 32, NIS2 Art. 21, EU CRA Annex I (essential-requirement coverage tracked in [`CRA-ASSESSMENT.md`](CRA-ASSESSMENT.md) v1.4).
-> - 📋 No control changes; this is a **documentation-only** reconciliation. Code paths, egress allow-lists, MCP server set (8), agent count (24), skill count (91), and workflow set (50 files = 22 standard `.yml` + 14 agentic `.md` + 14 compiled `.lock.yml`) are unchanged from v2.3.
->
-> **🆕 What changed since last review (v2.2 → v2.3, 2026-05-03):**
-> - 🔄 **Drift reconciliation** with `.github/workflows/README.md`: agentic workflow count updated to **14 agentic news workflows** (was 11) wrapped in the same five-layer safe-outputs validator and Squid + iptables egress firewall. Total GitHub Actions surface is now **50 files** (22 standard `.yml` + 14 agentic `.md` + 14 compiled `.lock.yml`).
-> - 🛡️ Reaffirmed **MCP Gateway v0.3.1** schema constraint: workflow frontmatter MUST NOT include `engine.mcp.session-timeout` (rejected as unknown additional property by the gateway) — this is a hard control surface item.
-> - 📋 See [`analysis/audits/documentation-portfolio-audit-2026-05-03.md`](analysis/audits/documentation-portfolio-audit-2026-05-03.md) for the full inventory pass and follow-up backlog (full STRIDE coverage of the agentic-workflow attack surface remains a backlog item).
->
-> **🆕 What changed since last review (v2.1 → v2.2, 2026-04-20):**
-> - 📈 **IMF added as a third primary external economic data provider** (alongside SCB MCP and World Bank MCP) per [ADR 0001](docs/adr/0001-adopt-imf-data-alongside-world-bank.md) — see the **External Data Providers** table and **Egress Allowlist** section below. IMF is consumed via the **pure-TypeScript client `scripts/imf-client.ts`** (Datamapper JSON + SDMX 3.0) — *not* an MCP server; **8 MCP servers** count is unchanged. Allowlisted egress hosts extended with `data.imf.org`, `api.imf.org`, `www.imf.org`. Upstream-integrity controls: `DatamapperResponse` schema validation (shape + finite-numeric + year parse-guard), `.meta.json` tamper-evident sidecars under `analysis/data/imf/{indicator}/{country}.json` (recording `mcpTool: imf-ts-client`, `projectionVintage`, fetch timestamp). Cross-reference: [THREAT_MODEL.md TB-6a](THREAT_MODEL.md).
->
-> **🆕 What changed since last review (v2.0 → v2.1, 2026-04-20):**
-> - Refreshed **defense-in-depth layer inventory** for Riksdagsmonitor `v0.8.48`:
->   - **Edge:** AWS CloudFront + WAF, TLS 1.3 preferred (1.2 min), HSTS, dual-region (us-east-1 primary, eu-west-1 replica).
->   - **Content Integrity:** Subresource Integrity via `vite-plugin-sri-gen@1.3.2`, strict Content-Security-Policy, immutable content hashing.
->   - **Code:** CodeQL (javascript-typescript), ESLint 10.2.1, htmlhint 1.9.2, TypeScript 6.0.3 strict mode, secret scanning, knip 6.5.0 dead-code detection.
->   - **Supply chain:** Dependabot, `actions/dependency-review-action`, OpenSSF Scorecard, **npm publish with `--provenance` (SLSA attestations)**, SHA-pinning on every `uses:` reference.
->   - **Pipeline:** `step-security/harden-runner` with egress audit, AWS OIDC (no long-lived keys), least-privilege `permissions:` per workflow, SLSA Build L3 via GitHub-hosted runners.
->   - **Agentic workloads (new category):** 14 agentic news workflows wrapped in the **five-layer safe-outputs** validator (sanitisation → schema-validate → policy-check → human-review → merge) behind a **Squid proxy + iptables egress firewall** (allow-list only to riksdagen.se, regeringen.se, scb.se, worldbank.org, **data.imf.org, api.imf.org, www.imf.org**, github.com, MCP endpoints). _(Updated in v2.3 from the 11-agentic figure originally published with v2.1; see `.github/workflows/README.md` for the live inventory.)_
-> - Added **MCP security posture**: 8 MCP servers defined in `.github/copilot-mcp.json` — `riksdag-regering` (HTTPS `riksdag-regering-ai.onrender.com/mcp`), `scb` (local `@jarib/pxweb-mcp@2.0.0` → `api.scb.se/OV0104/v2beta`), `world-bank` (local `worldbank-mcp@1.0.1`), `github` (HTTPS `api.githubcopilot.com/mcp/insiders`), `filesystem`, `memory`, `sequential-thinking`, `playwright` (headless).
-> - Added **24 Copilot agents** (`.github/agents/`) and **91 skills** (`.github/skills/`) under security review; each agent's tool allow-list is explicit and audited.
-> - OpenSSF Best Practices project #12069 confirmed active; Scorecard badge present.
-> - Compliance mapping reconfirmed: ISO 27001:2022 Annex A.5/A.8 (full), NIST CSF 2.0 GV/ID/PR/DE/RS/RC, CIS Controls v8.1 (#1–#18 applicable subset), GDPR Art. 32, NIS2 Art. 21, EU CRA Annex I.
-
 ---
 
 ## 📚 Related Architecture Documentation
@@ -183,12 +154,12 @@ Riksdagsmonitor security architecture is governed by and aligned with Hack23 AB'
 - Monitor Swedish Riksdag political activity
 - Provide real-time intelligence on 349 MPs
 - Track coalition stability and election predictions
-- Deliver 9 dashboard sections with CIA platform data (4 functional: committee, coalition, election-cycle, risk/anomaly; 5 placeholders: party, seasonal, pre-election, ministry, anomaly detection)
+- Deliver functional CIA-platform dashboards: committee, coalition, election-cycle, risk, anomaly detection, party, seasonal, pre-election, ministry, and politician analyses
 - OSINT-powered political transparency
 
 **Scope:**
 - Web application with HTML/CSS/JavaScript (Chart.js, D3.js)
-- 9 dashboard sections (4 functional with 150KB+ JavaScript, 5 placeholders with HTML structure only)
+- Functional dashboards bundled by Vite into hashed ES modules, lazy-loaded via `IntersectionObserver` (Chart.js, D3.js)
 - Multi-language support (14 languages)
 - CIA data integration with local CSV caching
 - AWS CloudFront + S3 hosting infrastructure (Primary)
@@ -398,7 +369,7 @@ Referrer-Policy: strict-origin-when-cross-origin
 Permissions-Policy: geolocation=(), microphone=(), camera=()
 ```
 
-**Note:** CSP includes `'unsafe-inline'` for Chart.js/D3.js inline styles and large inline dashboard script (946 lines). The `connect-src` directive includes `https://raw.githubusercontent.com` to allow fetching CIA CSV data from the cia repository. Security headers are configured via AWS CloudFront Response Headers Policy for the primary deployment. GitHub Pages disaster recovery inherits default GitHub Pages security headers. Future enhancement: nonce-based CSP for stricter inline script control (roadmap: 2027). Chart.js, D3.js, chartjs-plugin-annotation **and Mermaid** are hosted locally on CloudFront (`js/lib/`) rather than via external CDN, eliminating external script dependencies (CI-enforced by [`tests/no-external-cdn.test.ts`](tests/no-external-cdn.test.ts)).
+**Note:** CSP `style-src` includes `'unsafe-inline'` for Chart.js/D3.js inline styles; `script-src` uses `'self'` plus per-script `sha256` hashes for the small bootstrap snippets (no `'unsafe-inline'` for scripts). The `connect-src` directive includes `https://raw.githubusercontent.com` to allow fetching CIA CSV data from the cia repository. Security headers are configured via AWS CloudFront Response Headers Policy for the primary deployment. GitHub Pages disaster recovery inherits default GitHub Pages security headers. Chart.js, D3.js, chartjs-plugin-annotation **and Mermaid** are hosted locally on CloudFront (`js/lib/`) rather than via external CDN, eliminating external script dependencies (CI-enforced by [`tests/no-external-cdn.test.ts`](tests/no-external-cdn.test.ts)).
 
 **Control Mapping:**
 - ISO 27001: A.13.1 Network Security Management
@@ -409,15 +380,9 @@ Permissions-Policy: geolocation=(), microphone=(), camera=()
 
 **Web Application Security:**
 - **Client-Side JavaScript:** Chart.js and D3.js for interactive dashboards
-  - 3 external JS files loaded: `scripts/coalition-dashboard.js` (33KB), `scripts/committees-dashboard.js` (39KB), `js/election-cycle-dashboard.js` (46KB) ≈118KB
-  - 1 large inline script (946 lines, ~32KB) handling risk dashboard only (includes one anomaly chart within risk dashboard)
-  - 5 placeholder dashboard sections with HTML structure but no JavaScript initialization (future implementation):
-    - Party Performance Dashboard
-    - Seasonal Patterns Dashboard
-    - Pre-Election Monitoring Dashboard
-    - Ministry Dashboard
-    - Anomaly Detection Dashboard (standalone section with timeline/heatmap/distribution charts - distinct from single anomaly chart in risk dashboard)
-  - Total: ~150KB active JavaScript code (118KB external + 32KB inline; source size, transfer size smaller when compressed)
+  - All dashboards are functional TypeScript modules under `src/browser/dashboards/`, bundled by Vite into hashed ES modules and lazy-loaded on demand via an `IntersectionObserver` — each module's `import()` fires only when its container scrolls into view
+  - The homepage (`src/browser/main.ts`) registers 11 specialised dashboards; the CIA Intelligence Dashboard page (`dashboard/index*.html`) is orchestrated by `src/browser/cia/dashboard-init.ts`
+  - No inline application scripts and no HTML-only placeholder sections remain — every dashboard section initialises real JavaScript
 - **XSS Mitigation:** Content Security Policy (CSP) headers with script-src restrictions
 - **Input Sanitization:** CIA CSV data is subjected to best-effort, non-blocking schema validation during CI/data-integration workflows (e.g., `.github/workflows/validate-cia-data.yml`); validation failures currently surface as warnings rather than blocking publication, and client-side code then parses this CSV (D3 CSV utilities/custom parsers) and applies basic sanity checks prior to rendering via Chart.js/D3.js
 - **External Dependencies:**
@@ -432,20 +397,18 @@ Permissions-Policy: geolocation=(), microphone=(), camera=()
 - **No Server-Side Code:** Static hosting eliminates injection vulnerabilities
 
 **Dashboard Security:**
-- **9 Dashboard Sections (4 functional, 5 placeholders):**
+- **Functional Dashboard Modules (all initialise Chart.js / D3.js):**
 
-**Functional Dashboards (4):**
-1. **Committee Dashboard** (`scripts/committees-dashboard.js` 39KB) ✅
-2. **Coalition Dashboard** (`scripts/coalition-dashboard.js` 33KB) ✅
-3. **Election Cycle Dashboard** (`js/election-cycle-dashboard.js` 46KB) ✅
-4. **Risk Dashboard** (inline script ~32KB, includes one anomaly detection chart) ✅
-
-**Placeholder Dashboard Sections (5 - HTML structure only, no JavaScript):**
-5. **Party Performance Dashboard** - Canvas elements present, awaiting JS implementation
-6. **Seasonal Patterns Dashboard** - Canvas elements present, awaiting JS implementation
-7. **Pre-Election Monitoring Dashboard** - Canvas elements present, awaiting JS implementation
-8. **Ministry Dashboard** - Canvas elements present, awaiting JS implementation
-9. **Anomaly Detection Dashboard** - Standalone section with multiple canvas elements (anomaly-timeline-chart, zscore-distribution-chart, anomaly-type-chart, quarterly-frequency-chart), distinct from the single anomaly chart within risk dashboard, awaiting JS implementation
+1. **Committee Dashboard** (`src/browser/dashboards/committees-dashboard.ts`) ✅
+2. **Coalition Dashboard** (`src/browser/dashboards/coalition-dashboard.ts` + `coalition-loader.ts`) ✅
+3. **Election Cycle Dashboard** (`src/browser/dashboards/election-cycle.ts`) ✅
+4. **Risk Dashboard** (`src/browser/dashboards/risk-dashboard.ts`) ✅
+5. **Anomaly Detection Dashboard** (`src/browser/dashboards/anomaly-detection.ts` — standalone timeline, Z-score distribution, type, and quarterly-frequency charts) ✅
+6. **Party Performance Dashboard** (`src/browser/dashboards/party-dashboard.ts`) ✅
+7. **Seasonal Patterns Dashboard** (`src/browser/dashboards/seasonal-patterns.ts`) ✅
+8. **Pre-Election Monitoring Dashboard** (`src/browser/dashboards/pre-election.ts`) ✅
+9. **Ministry Dashboard** (`src/browser/dashboards/ministry-dashboard.ts`) ✅
+10. **Politician Dashboard** (`src/browser/dashboards/politician-dashboard.ts`) ✅
 
 **Dependency Management:**
 - Chart.js, D3.js, chartjs-plugin-annotation, chartjs-adapter-date-fns, and Papa Parse hosted locally on CloudFront/S3 (js/lib/); versions reviewed manually at least quarterly and after critical CVE disclosures
@@ -966,7 +929,7 @@ graph TB
 | **Permissions Policy** | Disable geolocation, microphone, camera | Minimize browser permissions | ✅ Active |
 | **Subresource Integrity** | Planned: SHA-384 hashes for third-party/CDN assets and critical local libraries | Verify resource integrity | 🔄 Planned |
 
-**Note:** CSP includes `'unsafe-inline'` for Chart.js/D3.js compatibility. Future roadmap (2027): Implement nonce-based CSP for stricter inline script control.
+**Note:** CSP `style-src` includes `'unsafe-inline'` for Chart.js/D3.js inline styles; `script-src` uses `'self'` plus per-script `sha256` hashes (no `'unsafe-inline'` for scripts).
 
 **ISO 27001:** A.14.2 (Security in development and support)  
 **NIST CSF 2.0:** PR.IP-12 (Vulnerability management plan)  
@@ -2260,7 +2223,7 @@ However, Hack23 AB voluntarily maps to NIS2 requirements as a **best practice an
 | **Art. 21(2)(c)** | Business continuity including backup management, disaster recovery, crisis management | Dual-deployment (CloudFront + GitHub Pages). S3 multi-region replication. RTO <30s (origin), <15min (DNS). BCPPlan.md | BCPPlan.md, AWS multi-region S3 config, Route 53 health checks | COMPLIANT |
 | **Art. 21(2)(d)** | Supply chain security including third-party services | Dependabot monitors all npm dependencies. GitHub Actions third-party action pinning. step-security/harden-runner. Third Party Management Policy (ISMS-PUBLIC) | Third_Party_Management.md, Dependabot config, pinned action SHAs | COMPLIANT |
 | **Art. 21(2)(e)** | Security in network and information systems acquisition, development and maintenance | Secure development policy (ISMS-PUBLIC). CodeQL SAST in every PR. SLSA provenance. Dependency review gates | Secure_Development_Policy.md, GitHub Actions YAML, SLSA attestation | COMPLIANT |
-| **Art. 21(2)(f)** | Policies and procedures to assess effectiveness of measures | OpenSSF Scorecard monthly monitoring (8.2/10). Security metrics tracked (MTTP, scan pass rates). Annual security architecture review | OpenSSF Scorecard badge, Security_Metrics.md (ISMS-PUBLIC), version history | COMPLIANT |
+| **Art. 21(2)(f)** | Policies and procedures to assess effectiveness of measures | OpenSSF Scorecard monthly monitoring (8.2/10). Security metrics tracked (MTTP, scan pass rates). Annual security architecture review | OpenSSF Scorecard badge, Security_Metrics.md (ISMS-PUBLIC), Git commit history | COMPLIANT |
 | **Art. 21(2)(g)** | Basic cyber hygiene practices and cybersecurity training | CEO maintains up-to-date security knowledge. ISMS documentation current. All ISMS policies reviewed annually. GitHub security advisories reviewed weekly | Policy review dates in ISMS, security training evidence | COMPLIANT |
 | **Art. 21(2)(h)** | Cryptography policies including encryption | Cryptography Policy (ISMS-PUBLIC). TLS 1.3 enforced. HSTS preloaded. SHA-256 for integrity. Sigstore for signing. No weak ciphers | Cryptography_Policy.md, CloudFront TLS configuration, HSTS header | COMPLIANT |
 | **Art. 21(2)(i)** | Human resources security, access control, and asset management | Single-person company. All access controlled via GitHub and AWS IAM. Asset Register maintained (ISMS-PUBLIC). Access Control Policy | Access_Control_Policy.md, Asset_Register.md, GitHub access controls | COMPLIANT |
@@ -2465,8 +2428,8 @@ The primary residual risks are LLM02 (output handling) mitigated by human review
 
 | Oversight Activity | Frequency | Evidence | Owner |
 |-------------------|-----------|----------|-------|
-| Security architecture review | Annual | Version history in SECURITY_ARCHITECTURE.md | CEO |
-| Threat model review | Quarterly | THREAT_MODEL.md version history | CEO |
+| Security architecture review | Annual | Git commit history (SECURITY_ARCHITECTURE.md) | CEO |
+| Threat model review | Quarterly | Git commit history (THREAT_MODEL.md) | CEO |
 | ISMS policy review | Annual | Policy documents with review dates | CEO |
 | Risk register update | Quarterly | Risk_Register.md (ISMS-PUBLIC) | CEO |
 | OpenSSF Scorecard | Monthly | GitHub badge, score history | Automated |
@@ -3037,13 +3000,6 @@ Riksdagsmonitor's overall security posture as of 2026-02-25:
 **📤 Distribution:** Public  
 **🏷️ Classification:** [![Confidentiality: Public](https://img.shields.io/badge/C-Public-lightgrey?style=flat-square)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#confidentiality-levels) [![Integrity: High](https://img.shields.io/badge/I-High-orange?style=flat-square)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#integrity-levels) [![Availability: High](https://img.shields.io/badge/A-High-orange?style=flat-square)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#availability-levels)
 
-**Version History:**
-- v2.4 (2026-05-06): v0.8.76 reconciliation — added Political Intelligence Security Surface, Five-Layer Safe-Output detail, External Data Provider Trust Model, STRIDE threat-boundary additions for political intelligence
-- v2.3 (2026-05-03): Drift reconciliation with workflows README (14 agentic workflows), MCP Gateway v0.3.1 schema constraint
-- v2.2 (2026-04-20): IMF added as third external economic data provider, MCP security posture, 24 agents + 91 skills under review
-- v2.1 (2026-02-25): Added NIS2 mapping, OWASP LLM Top 10, ISO 27001 SoA, NIST CSF Govern function, CIS Controls IG classification, supply chain security, content integrity, credential lifecycle, and security KPIs sections
-- v2.0 (2026-02-20): Major revision with STRIDE analysis, 6-layer defense model, compliance framework mappings
-
 ### **Framework Compliance**
 
 **🎯 Framework Alignment:**  
@@ -3125,9 +3081,9 @@ Security classification: **PUBLIC / High Integrity / Medium-High Availability**.
 
 ---
 
-## 🕵️ Political Intelligence Security Surface (v0.8.76)
+## 🕵️ Political Intelligence Security Surface (v0.9.40)
 
-> **Added:** v2.4 (2026-05-06) — Previously backlog item from the [documentation-portfolio-audit-2026-05-03](analysis/audits/documentation-portfolio-audit-2026-05-03.md). This section documents the security controls governing the AI-driven political intelligence analysis pipeline.
+> This section documents the security controls governing the AI-driven political intelligence analysis pipeline.
 
 ### Overview
 
@@ -3253,7 +3209,7 @@ flowchart TD
 |-------|---------|-------------------|--------------|
 | **1. Sanitisation** | `rehype-sanitize` allow-list blocks `<script>`, `<iframe>`, inline event handlers, `javascript:` URIs | Allow-list approach (not deny-list); Mermaid rendered in `securityLevel: 'strict'` | Malicious HTML stripped silently |
 | **2. Schema Validation** | YAML front-matter schema; artifact file structure; 23-file completeness | Typed TypeScript validators; JSON schema | Workflow fails with validation error |
-| **3. Policy Check** | Analysis gate (checks 1–9b); methodology-reflection validator | Fail-closed; 76 unit tests; no partial pass | Workflow fails — no PR created |
+| **3. Policy Check** | Analysis gate (checks 1–9b); methodology-reflection validator | Fail-closed; 88 unit tests; no partial pass | Workflow fails — no PR created |
 | **4. Human Review** | Mandatory PR approval by repository maintainer | Branch protection rule; `CODEOWNERS`; cannot self-approve | PR blocked until approved |
 | **5. Merge & Deploy** | Signed commits; CI must pass; deploy via OIDC (no stored creds) | GitHub branch protection; SLSA provenance | Merge blocked if CI fails |
 

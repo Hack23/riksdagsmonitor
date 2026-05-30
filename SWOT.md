@@ -11,34 +11,14 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/>
-  <img src="https://img.shields.io/badge/Version-1.4-555?style=for-the-badge" alt="Version"/>
-  <img src="https://img.shields.io/badge/Effective-2026--05--06-success?style=for-the-badge" alt="Effective Date"/>
+  <img src="https://img.shields.io/badge/Version-1.6-555?style=for-the-badge" alt="Version"/>
+  <img src="https://img.shields.io/badge/Effective-2026--05--30-success?style=for-the-badge" alt="Effective Date"/>
   <img src="https://img.shields.io/badge/Review-Quarterly-orange?style=for-the-badge" alt="Review Cycle"/>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 1.4 | **📅 Last Updated:** 2026-05-06 (UTC)  
-**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-08-03  
+**📋 Document Owner:** CEO | **📄 Version:** 1.6 | **📅 Last Updated:** 2026-05-30 (UTC)  
+**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-08-30  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
-
-> **🆕 What changed since last review (v1.3 → v1.4, 2026-05-06):**
-> - 📈 **Strengths (new S9):** Political Intelligence Methodology — 18 methodologies, 39 templates, analysis gate checks 1-9b, AI-FIRST 2-iteration model, 23-artifact structure (Families A-D: 9+2+5+7), horizon stratification (T+72h → T+1460d).
-> - 📈 **S7 updated:** 24 agents (was 13), 93 skills (was 41), 14 agentic news workflows (was 11).
-> - 📈 **S4 updated:** Vite 8.0.10 (was Vite 7).
-> - 📊 **Executive Summary updated:** v0.8.76, 3,319+ tests.
-> - ⚠️ **W5 updated:** 14 agentic news workflows now in production (was 10).
->
-> **🆕 What changed since last review (v1.1 → v1.2, 2026-04-20):**
-> - 📈 **Strengths (new):** IMF added as a third primary economic-data source with T+5 projections; pure-TypeScript client (`scripts/imf-client.ts`) fully covered by the npm SBOM — **no Python / uvx / third-party MCP** supply-chain surface; three-source economic posture (SCB + World Bank + IMF) mitigates any single upstream outage or vintage lag. Per [ADR 0001](docs/adr/0001-adopt-imf-data-alongside-world-bank.md).
-> - 🚀 **Opportunities (new):** IMF WEO / Fiscal Monitor projections unlock forward-looking news products (`week-ahead`, `month-ahead`, `weekly-review`, `monthly-review`) with credible official macro/fiscal outlooks through 2031.
-> - ⚠️ **Threats (new):** IMF-origin DNS hijack or TLS MITM against `data.imf.org` / `api.imf.org` / `www.imf.org`; IMF public rate-limit saturation (~10 req/5s); stale WEO vintage misattribution in generated articles (mitigated via `projectionVintage` sidecar in `.meta.json` and Economic Data Contract v2.0 field enforcement); cache poisoning of `analysis/data/imf/`.
-> - 📚 Upstream data-source list updated to **(Riksdagen, Regeringen, SCB, World Bank, IMF)**.
->
-> **🆕 What changed since last review (v1.0 → v1.1, 2026-04-20):**
-> - **Strengths (expanded):** `v0.8.48` shipped to npm with SLSA provenance; dual-distribution model (static site + public npm package); **2,669 files** across 14 languages including RTL (HE, AR); **15 CIA data subsystems**; **14 agentic news workflows** under five-layer safe-output control; OpenSSF Best Practices badge #12069; OpenSSF Scorecard transparency; AI FIRST quality process (minimum-2-iteration rule); full OIDC CI/CD with zero long-lived AWS credentials; 24 Copilot agents + 91 skills driving automation leverage.
-> - **Weaknesses (expanded):** single-person company (CEO is sole owner of `Hack23/riksdagsmonitor` — key-person risk); dependency on a narrow set of upstream data sources (Riksdagen, Regeringen, SCB, World Bank, IMF); Swedish-first editorial posture requires translation quality gates for 13 non-Swedish locales; agentic news generation depends on LLM availability and prompt hygiene.
-> - **Opportunities (expanded):** positioning as the reference open-transparency platform for EU member-state parliaments (NIS2 tailwind); `riksdagsmonitor` npm package creates a developer-ecosystem moat for third-party dashboards and research; cross-referenced publication with Citizen Intelligence Agency (CIA) platform; multi-language reach into global journalist and research markets; EU CRA and AI Act compliance as competitive differentiation.
-> - **Threats (expanded):** disinformation / counter-narrative campaigns targeting article integrity; upstream data-source schema changes or de-platforming; Swedish legal landscape around political speech; supply-chain attacks on MCP servers or npm dependencies; prompt-injection attacks on agentic workflows (mitigated by the five-layer safe-outputs model and egress firewall); LLM provider outages or policy shifts affecting news generation cadence.
-> - Compliance mapping: ISO 27001:2022 A.5.2/A.5.29, NIST CSF 2.0 GV.OV/ID.RA, CIS Controls v8.1 #14 (security awareness/SWOT review), ENISA good-practice for OSS projects.
 
 ---
 
@@ -55,7 +35,7 @@
 This SWOT analysis evaluates Riksdagsmonitor's strategic position as a Swedish Parliament intelligence platform. The analysis identifies internal strengths and weaknesses alongside external opportunities and threats, providing a foundation for strategic decision-making aligned with Hack23 AB's Information Security Management System (ISMS).
 
 **Key Findings:**
-- **Dominant Strengths:** 50+ years of comprehensive political data, 14-language support, 19 CIA intelligence products, modern static architecture, 3,319+ tests (v0.8.76)
+- **Dominant Strengths:** 50+ years of comprehensive political data, 14-language support, 19 CIA intelligence products, multi-source economic & governance data fusion (IMF · World Bank · SCB · Statskontoret · Riksrevisionen), AI newsroom on Claude Opus 4.8 (Sonnet 4.6 for translation), modern static architecture, 7,560+ tests (v0.9.41)
 - **Critical Weaknesses:** Single developer dependency, no monetization model, limited marketing reach
 - **Major Opportunities:** Nordic expansion, EU Parliament integration, API monetization, international partnerships
 - **Significant Threats:** Competitive platforms, regulatory uncertainty, technical evolution, market dynamics
@@ -189,7 +169,7 @@ quadrantChart
 - `cia-data/` directory with complete export files
 - `scripts/load-cia-stats.js` and `scripts/update-stats-from-cia.js`
 - `.github/workflows/update-cia-stats.yml` (daily automated workflow)
-- 5 functional interactive dashboards (seasonal patterns, politician profiles, anomaly detection, party performance, pre-election monitoring)
+- 11 functional interactive dashboards (seasonal patterns, politician profiles, anomaly detection, party performance, pre-election monitoring, coalition, committees, ministry, risk, election-cycle)
 
 **Strategic Value:** Leverages mature OSINT platform (15+ years development) without reinventing analysis capabilities.
 
@@ -204,7 +184,7 @@ quadrantChart
 - **Inherent Security:** No server-side code execution, no database vulnerabilities
 - **Global Performance:** CloudFront distribution with multi-region S3 replication
 - **99.998% Availability:** AWS SLA-backed infrastructure with automated failover
-- **Build System:** Vite 8.0.10 with ES modules, code splitting, tree-shaking
+- **Build System:** Vite 8.0.14 with ES modules, code splitting, tree-shaking
 - **Single-Source-of-Truth Articles:** `scripts/aggregate-analysis.ts` concatenates `analysis/daily/$DATE/$SUB/*.md` into a canonical `article.md`; `scripts/render-articles.ts` + `scripts/render-lib/` emits sanitised HTML via `unified → remark → rehype → rehype-sanitize`. No HTML scaffolding, no `AI_MUST_REPLACE` markers, every claim traceable back to a committed analysis file.
 
 **Evidence:**
@@ -231,7 +211,7 @@ quadrantChart
 
 **Evidence:**
 - `SECURITY_ARCHITECTURE.md` (comprehensive security controls)
-- `THREAT_MODEL.md` v1.2 (STRIDE analysis, MITRE ATT&CK, 18 AI threats)
+- `THREAT_MODEL.md` v1.5 (STRIDE analysis, MITRE ATT&CK, 18 AI threats, 5 data-integration STRIDE addenda)
 - `WORKFLOWS.md` (CI/CD security documentation)
 - [Hack23 Public ISMS](https://github.com/Hack23/ISMS-PUBLIC) (35+ policy documents)
 - OpenSSF Scorecard badge (public security metrics)
@@ -260,19 +240,20 @@ quadrantChart
 
 ---
 
-### S7: GitHub Copilot Agent Ecosystem (24 Agents)
+### S7: GitHub Copilot Agent Ecosystem (23 Agents)
 
-**Description:** Comprehensive set of 24 specialized GitHub Copilot agents (14 persona + 9 workflow-specialist + 1 developer-instructions) for security, documentation, quality, frontend, intelligence, and operations.
+**Description:** Comprehensive set of 23 specialized GitHub Copilot agents (14 persona + 8 workflow-specialist + 1 developer-instructions) for security, documentation, quality, frontend, intelligence, and operations.
 
 **Competitive Advantage:**
-- **24 Specialized Agents:** security-architect, documentation-architect, quality-engineer, frontend-specialist, isms-compliance-manager, deployment-specialist, intelligence-operative, task-agent, ui-enhancement-specialist, data-pipeline-specialist, data-visualization-specialist, content-generator, devops-engineer, news-journalist + 9 workflow-specialist agents + shared developer instructions
-- **93 Skills:** Complete skill library covering ISMS, political intelligence, security, development, UI/UX, testing, data integration, and GitHub Agentic Workflows
+- **23 Specialized Agents:** security-architect, documentation-architect, quality-engineer, frontend-specialist, isms-compliance-manager, deployment-specialist, intelligence-operative, task-agent, ui-enhancement-specialist, data-pipeline-specialist, data-visualization-specialist, content-generator, devops-engineer, news-journalist + 8 workflow-specialist agents + shared developer instructions
+- **92 Skills:** Complete skill library covering ISMS, political intelligence, security, development, UI/UX, testing, data integration, and GitHub Agentic Workflows
+- **Dual-Model AI Newsroom:** Claude Opus 4.8 powers the 13 analysis/article workflows (reasoning-grade 23-artifact pipeline); Claude Sonnet 4.6 powers the 14-language news-translate fan-out
 - **Automated Workflows:** AI-powered content generation, quality checks, security scanning
 - **ISMS Compliance:** All agents follow Hack23 secure development standards
 
 **Evidence:**
 - `AGENTS.md` (comprehensive agent documentation)
-- `SKILLS.md` (93 specialized skills)
+- `SKILLS.md` (92 specialized skills)
 - `.github/agents/` (agent configuration files)
 - `.github/skills/` (skill libraries)
 - Active agentic workflows: 14 workflows in production — news-evening-analysis, news-realtime-monitor, news-motions, news-committee-reports, news-weekly-review, news-monthly-review, news-week-ahead, news-month-ahead, news-propositions, news-interpellations, news-quarter-ahead, news-year-ahead, news-election-cycle, plus news-translate
@@ -283,17 +264,17 @@ quadrantChart
 
 ### S8: Interactive Data Visualizations (Chart.js/D3.js)
 
-**Description:** 5 functional interactive intelligence dashboards built with Chart.js 4 and D3.js 7, providing advanced political analytics.
+**Description:** 11 functional interactive intelligence dashboards built with Chart.js 4 and D3.js 7, providing advanced political analytics.
 
 **Competitive Advantage:**
-- **5 Functional Dashboards:** Seasonal activity patterns, politician profiles, anomaly detection, party performance, pre-election monitoring
+- **11 Functional Dashboards:** Seasonal patterns, politician profiles, anomaly detection, party performance, pre-election monitoring, coalition, committees, ministry, risk, election-cycle, and party analytics
 - **Advanced Visualizations:** Heat maps, time series, Z-score analysis, ranking charts, historical trend lines
-- **Performance Optimized:** Local-first data loading, 1-hour caching, lazy loading
+- **Performance Optimized:** Local-first data loading, 1-hour caching, lazy loading via IntersectionObserver
 - **Accessible:** WCAG 2.1 AA compliant, keyboard navigation, screen reader support
 
 **Evidence:**
-- `dashboard/` directory with 5 HTML dashboard files
-- `js/` directory with 8 dashboard modules (~150KB custom code)
+- `dashboard/` directory with 14 localized HTML dashboard pages (one per language)
+- `src/browser/dashboards/` with 11 lazy-loaded dashboard modules (Vite-bundled to `js/`)
 - Chart.js 4 and D3.js 7 hosted on CloudFront
 - `cia-data/` with complete CSV exports for dashboards
 
@@ -301,26 +282,48 @@ quadrantChart
 
 ---
 
-### S9: Political Intelligence Methodology (18 Methods + 39 Templates)
+### S9: Political Intelligence Methodology (20 Methods + 40 Templates)
 
-**Description:** Comprehensive political intelligence framework with 18 methodologies, 39 analysis templates, automated quality gate (checks 1-9b), AI-FIRST 2-iteration model, and 23-artifact structure with horizon stratification.
+**Description:** Comprehensive political intelligence framework with 20 methodologies, 40 analysis templates, automated quality gate (checks 1-9b), AI-FIRST 2-iteration model, and 23-artifact structure with horizon stratification.
 
 **Competitive Advantage:**
-- **18 Methodologies:** AI-driven analysis, OSINT tradecraft, political risk, SWOT/STRIDE frameworks, electoral domain, synthesis, IMF/World Bank indicator mapping
-- **39 Templates:** Covering intelligence assessment, risk, threat, PESTLE, scenario analysis, election forecasting, coalition mathematics, stakeholder impact, and quality audits
+- **20 Methodologies:** AI-driven analysis, OSINT tradecraft, political risk, SWOT/STRIDE frameworks, electoral domain, synthesis, IMF/World Bank/SCB indicator mapping
+- **40 Templates:** Covering intelligence assessment, risk, threat, PESTLE, scenario analysis, election forecasting, coalition mathematics, stakeholder impact, and quality audits
 - **23-Artifact Structure:** Families A-D (Core Synthesis 9 + Structural Metadata 2 + Strategic Extensions 5 + Electoral Lenses 7) enforced per analysis run
 - **Horizon Stratification:** T+72h / T+7d / T+30d / T+90d / T+365d / T+1460d / election with per-band confidence language
 - **Analysis Gate:** Automated checks 1-9b block publication of sub-standard output
 - **AI-FIRST:** Minimum 2-iteration quality model — Pass 1 creates, Pass 2 reads back and improves
 
 **Evidence:**
-- `analysis/methodologies/` (18 methodology files)
-- `analysis/templates/` (39 template files)
+- `analysis/methodologies/` (20 methodology files)
+- `analysis/templates/` (40 template files)
 - `.github/prompts/05-analysis-gate.md` (gate enforcement)
 - `.github/prompts/04-analysis-pipeline.md` (artifact catalogue)
 - `analysis/article-types.json` (horizon registry)
 
 **Strategic Value:** Establishes industrial-grade intelligence production standards that ensure every published article is backed by structured, repeatable, auditable analysis — a unique differentiator against ad-hoc competitors.
+
+---
+
+### S10: Multi-Source Economic & Governance Data Fusion
+
+**Description:** Five governed external data integrations fused under a canonical-source contract, giving every analysis grounded macroeconomic, fiscal, governance and audit-accountability context that pure parliamentary trackers lack.
+
+**Competitive Advantage:**
+- **IMF (canonical economics):** WEO/FM Datamapper + SDMX 3.0 dataflows; every economic claim cites an IMF vintage first
+- **World Bank (non-economic residue):** Worldwide Governance Indicators, environment, social and demographic series the IMF does not publish — contractually barred from economic use
+- **SCB (Swedish ground truth):** national statistics via the SCB Open Data API with a community-hosted MCP relay primary path and direct-API fallback
+- **Statskontoret (agency structure & budget):** public agency headcount and budget-outturn workbooks
+- **Riksrevisionen (audit accountability):** RiR follow-up tracker matching government *skrivelse* responses to audit reports, surfacing overdue-response alerts
+- **Provenance discipline:** vintage labels, source ids, `.meta.json` sidecars and the `ECONOMIC_DATA_CONTRACT.md` banned-phrase list enforce auditable, non-misleading claims
+
+**Evidence:**
+- `scripts/imf-context.ts`, `scripts/world-bank-context.ts`, `scripts/scb-context.ts`, `scripts/statskontoret-fetch.ts`, `scripts/rir-followups-client.ts`
+- `.github/aw/ECONOMIC_DATA_CONTRACT.md` (canonical-source rule + provenance schema)
+- `analysis/imf/`, `analysis/worldbank/`, `analysis/data/scb/`, `analysis/statskontoret/`, `data/rir-followups.json`
+- `THREAT_MODEL.md` v1.5 (per-integration STRIDE addenda for all five sources)
+
+**Strategic Value:** Converts Riksdagsmonitor from a parliamentary-document tracker into a fully contextual political-economic intelligence platform — economic, fiscal and audit grounding that competitors cannot easily replicate.
 
 ---
 
@@ -774,7 +777,7 @@ quadrantChart
 - **Documentation Overhead:** Comprehensive docs require significant effort
 
 **Mitigations:**
-- **GitHub Copilot Agents:** Automate development tasks (24 agents)
+- **GitHub Copilot Agents:** Automate development tasks (23 agents)
 - **Simple Architecture:** Static site minimizes maintenance overhead
 - **Open Source Model:** Invite community contributions
 - **Sustainable Scope:** Focus on high-value features, avoid feature creep
@@ -1029,8 +1032,8 @@ The path forward requires strategic focus, disciplined execution, and continued 
 **✅ Approved by:** James Pether Sörling, CEO  
 **📤 Distribution:** Public  
 **🏷️ Classification:** [![Confidentiality: Public](https://img.shields.io/badge/C-Public-lightgrey?style=flat-square)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#confidentiality-levels)  
-**📅 Effective Date:** 2026-02-15  
-**⏰ Next Review:** 2026-05-15  
+**📅 Effective Date:** 2026-05-30  
+**⏰ Next Review:** 2026-08-30  
 **🎯 Framework Compliance:** [![ISO 27001](https://img.shields.io/badge/ISO_27001-2022_Aligned-blue?style=flat-square&logo=iso&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) [![NIST CSF 2.0](https://img.shields.io/badge/NIST_CSF-2.0_Aligned-green?style=flat-square&logo=nist&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) [![CIS Controls](https://img.shields.io/badge/CIS_Controls-v8.1_Aligned-orange?style=flat-square&logo=cisecurity&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md)
 
 ---

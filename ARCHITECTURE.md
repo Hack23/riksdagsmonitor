@@ -11,53 +11,14 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/>
-  <img src="https://img.shields.io/badge/Version-2.5-555?style=for-the-badge" alt="Version"/>
-  <img src="https://img.shields.io/badge/Effective-2026--05--06-success?style=for-the-badge" alt="Effective Date"/>
+  <img src="https://img.shields.io/badge/Version-2.6-555?style=for-the-badge" alt="Version"/>
+  <img src="https://img.shields.io/badge/Effective-2026--05--28-success?style=for-the-badge" alt="Effective Date"/>
   <img src="https://img.shields.io/badge/Review-Quarterly-orange?style=for-the-badge" alt="Review Cycle"/>
 </p>
 
 **📋 Document Owner:** CEO | **📄 Version:** 2.6 | **📅 Last Updated:** 2026-05-28 (UTC)
 **🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-08-06  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
-
-> **🆕 What changed since last review (v2.5 → v2.6, 2026-05-28):**
-> - 🤖 **Agentic engine model:** the 13 analysis/article-generating news workflows now run on **`claude-opus-4.8`** (the successor to `claude-opus-4.7`); the high-volume **`news-translate`** workflow stays on **`claude-sonnet-4.6`**. Updated the Multi-Language Content Architecture diagram's source-generation label accordingly.
->
-> **🆕 What changed since last review (v2.4 → v2.5, 2026-05-06):**
-> - 📦 Aligned to **package v0.8.76**: TypeScript 6.0.3, **Vite 8.0.10**, **Vitest 4.1.5**, Node.js ≥26 baseline, `"type": "module"`. Subpath exports (`./`, `./shared`, `./shared/*`, `./cia/*`, `./dashboards/*`, `./ui/*`) and explicit `sideEffects` (browser CIA entry + register-globals) documented in the Tech Stack and Container views.
-> - 🧠 Surfaced two new **bounded contexts** in Container/Component views: `scripts/political-intelligence/` (catalog + daily-streams + i18n + render leaves) and `scripts/agentic/` (analysis-gate checks 1–9b, typed `ArtifactDefinition` inventory of **23 artifacts** across Families A–E, with vitest coverage split across `tests/agentic/gate-checks/`, `tests/agentic/gate-shared/`, and `tests/agentic/analysis-gate-integration.test.ts`).
-> - 🧩 Expanded **render-lib component breakdown** to its true sub-tree: `aggregator/` (incl. `cleaning/`, `seo/`, frontmatter/per-document/sources-appendix/order/pipeline), `chrome/` (head/header/footer/helpers/types façade), `markdown/` (mermaid canonical theme + preprocess, sanitize-schema, rehype-slug-prefixed, rehype-wrap-tables, pipeline).
-> - 🌍 Consolidated the **economic + administrative TypeScript-client landscape**: IMF (`scripts/imf-*.ts`), SCB (`scripts/scb-*.ts`), World Bank (`scripts/world-bank-*.ts`), Riksbank (`scripts/riksbank-fetch.ts`), Statskontoret (`scripts/statskontoret-*.ts` + `scripts/fetch-statskontoret.ts`), RiR (`scripts/rir-followups-client.ts` + `scripts/fetch-rir-followups.ts`), parliamentary-data (`scripts/parliamentary-data/` with data-downloader/data-persistence/pdf-converter and `scripts/download-parliamentary-data.ts` / `fetch-voting-records.ts` / `fetch-calendar.ts`).
-> - 📚 Added **"## 🧠 Political Intelligence Architecture"** section: 18-methodology framework (`analysis/methodologies/`), 39-template catalog (`analysis/templates/`), 7-band horizon stratification (T+72h … T+1460d / election) as an architectural pattern, AI-FIRST 2-pass iteration as a quality constraint, OSINT tradecraft, classification/SWOT/threat/PESTLE/scenario template roles, election-cycle and coalition-mathematics templates.
-> - 🗂️ Documented **dashboard containers** explicitly: `scripts/coalition-dashboard.ts` + `scripts/coalition-dashboard/`, `scripts/committees-dashboard.ts` + `scripts/committees-dashboard/`, plus `politician-dashboard.html` × 14 languages.
-> - 🧪 Verified **schema governance pipeline**: `sync-cia-schemas.ts` → `validate-against-cia-schemas.ts` → `check-cia-schema-updates.ts` → `generate-types-from-cia-schemas.ts`, sourcing from `schemas/cia/` plus root schemas (`article-types.schema.json`, `pir-status.schema.json`, `rir-followups-schema.json`).
-> - 🔌 MCP integration section affirmed at **8 MCP servers**; explicit reminder that **IMF is a pure-TypeScript client (not MCP)** — npm-SBOM-covered, allowlisted hosts `data.imf.org`, `api.imf.org`, `www.imf.org`.
-> - ⚙️ ESLint baseline (`no-explicit-any` = error, `no-unused-vars` = error) + typed `DashboardGlobals` (`src/browser/shared/global-libs.ts`) noted as architectural quality gates.
->
-> **🆕 What changed since last review (v2.3 → v2.4, 2026-05-05):**
-> - 📰 Replaced legacy `generate-daily-news.js` architecture references with the current GitHub Agentic Workflows newsroom: 14 `news-*.md` sources, 14 compiled `.lock.yml` files, 23-artifact analysis folders, deterministic `aggregate-analysis.ts`, and sanitized `render-articles.ts` output for all 14 languages.
-> - 🧩 Updated component/container views to reflect the TypeScript browser modules, local Chart.js/D3/Papa Parse assets, IMF TypeScript client, SCB/World Bank MCP servers, and nested election-cycle article paths.
->
-> **🆕 What changed since last review (v2.2 → v2.3, 2026-05-03):**
-> - 🔄 **Drift reconciliation** with `.github/workflows/README.md` and live label set: GitHub Actions surface is now **50 files** total (**22 standard `.yml` + 14 agentic `.md` sources + 14 compiled `.lock.yml`** siblings); **14 agentic news workflows** orchestrated via the five-layer safe-output security model and Squid + iptables egress firewall (was 43 / 21 / 11 / 11 in v2.2).
-> - 📚 Added the **Documentation Portfolio Matrix** section (acceptance criterion #2 of the documentation-refresh issue) cross-linking every top-level architecture / ISMS / operational document to its ISMS-PUBLIC authority root and current owner / version / next-review date.
-> - 🛡️ Reaffirmed **MCP Gateway v0.3.1** schema constraint: workflow frontmatter MUST NOT include `engine.mcp.session-timeout` (rejected as unknown additional property by the gateway) — see `.github/copilot-instructions.md`.
-> - 📋 Inventory-pass evidence committed under [`analysis/audits/documentation-portfolio-audit-2026-05-03.md`](analysis/audits/documentation-portfolio-audit-2026-05-03.md).
->
-> **🆕 What changed since last review (v2.1 → v2.2, 2026-04-20):**
-> - 📈 **IMF added as third primary economic-data source** (alongside SCB and World Bank) per [ADR 0001](docs/adr/0001-adopt-imf-data-alongside-world-bank.md) (accepted 2026-04-20) and **Economic Data Contract v2.0**. IMF is consumed via the **pure-TypeScript** client `scripts/imf-client.ts` (Datamapper JSON + SDMX 3.0 transports); it is **intentionally not an MCP server** — no Python/uvx, fully covered by the npm SBOM, so the **8 MCP servers** count is unchanged. Allowlisted hosts: `data.imf.org`, `api.imf.org`, `www.imf.org`. Cache under `analysis/data/imf/{indicator}/{country}.json` with `.meta.json` sidecars.
->
-> **🆕 What changed since last review (v2.0 → v2.1, 2026-04-20):**
-> - 📦 Release `v0.8.48` published on **npm as `riksdagsmonitor`** with `provenance:true` (SLSA attestations). Public subpath exports: `./`, `./shared`, `./shared/*`, `./cia/*`, `./dashboards/*`, `./ui/*`.
-> - 🧠 Runtime baseline tightened to **Node.js ≥25**; toolchain bumped to TypeScript 6.0.3, Vite 8.0.9, Vitest 4.1.4, ESLint 10.2.1, Cypress 15.14.0 (optional), Playwright 1.59.1, typedoc 0.28.19, happy-dom 20.9.0, knip 6.5.0, ajv 8.18.0.
-> - 🗂️ CIA data now spans **15 subsystems** under `cia-data/` (anomaly, coalition, committee, distribution, election, election-cycle, ministry, parties, party, percentile, politician, pre-election, risk, seasonal, voting). Prior "19 products" framing has been retired in favour of subsystem count.
-> - 🌍 Content footprint: **14 languages** (EN, SV, DA, NB (`_no`), DE, ES, FI, FR, HE RTL, AR RTL, JA, KO, NL, ZH) • **2,669 files** under `news/`.
-> - 🤖 GitHub Actions surface: **50 files** total (22 standard `.yml`, 14 agentic `.md` sources, 14 compiled `.lock.yml` siblings). Fourteen agentic news workflows orchestrated via the five-layer safe-output security model and egress firewall (Squid + iptables). _(Current live inventory; see `.github/workflows/README.md`.)_
-> - 🧩 Copilot ecosystem: **24 custom agents** under `.github/agents/`, **91 skills** under `.github/skills/`, **8 MCP servers** (`riksdag-regering`, `scb`, `world-bank`, `github` insiders, `filesystem`, `memory`, `sequential-thinking`, `playwright`) wired via `.github/copilot-mcp.json`.
-> - ☁️ Production distribution: AWS CloudFront + S3 dual-region (us-east-1 primary, eu-west-1 replica) via OIDC-only deploy; GitHub Pages (`hack23.github.io`) as DR fallback.
-> - 🛡️ Integrity: SRI enabled via `vite-plugin-sri-gen@1.3.2`; all Actions SHA-pinned; `step-security/harden-runner` across workflows; CodeQL, Dependabot, dependency-review, Scorecards, Secret Scanning, OpenSSF Best Practices #12069 active.
-> - 🏷️ Classification confirmed: **Public / Integrity High / Availability High**, RTO 1–4h, RPO 4–24h, Financial Impact Low (<$500/day).
-> - 🔗 Authoritative ISMS root: [Hack23 ISMS-PUBLIC](https://github.com/Hack23/ISMS-PUBLIC) — Information_Security_Policy, Secure_Development_Policy, CLASSIFICATION, Threat_Modeling, Change_Management, Vulnerability_Management, Open_Source_Policy, AI_Policy, Access_Control_Policy, Cryptography_Policy, Incident_Response_Plan, Security_Metrics, STYLE_GUIDE.
 
 ---
 
@@ -360,7 +321,7 @@ The Component diagram zooms into containers to show their internal structure and
 ```mermaid
 graph TD
     subgraph "HTML Pages"
-        Index[index.html<br/>Component: Main Page<br/>English + 4 Functional Dashboards<br/>946 lines inline script]
+        Index[index.html<br/>Component: Main Page<br/>English + lazy-loaded dashboards<br/>Vite ES modules]
         LangSV[index_sv.html<br/>Component: Swedish Page<br/>Coalition Dashboard]
         LangDA[index_da.html<br/>Component: Danish Page<br/>Coalition Dashboard]
         LangNO[index_no.html<br/>Component: Norwegian Page<br/>Coalition Dashboard]
@@ -368,15 +329,15 @@ graph TD
     end
     
     subgraph "JavaScript Dashboards"
-        InlineScript[Inline Dashboard Script<br/>Component: Risk Detection<br/>946 lines<br/>Risk + Anomaly Detection]
+        InlineScript[risk-dashboard.js + anomaly-detection.js<br/>Component: Risk and Anomaly<br/>Lazy-loaded ESM modules]
         
-        CommitteeDash[committees-dashboard.js<br/>Component: Committee Analysis<br/>39KB - Committee performance]
+        CommitteeDash[committees-dashboard.ts<br/>Component: Committee Analysis<br/>Committee performance and network]
         
-        CoalitionDash[coalition-dashboard.js<br/>Component: Coalition Analysis<br/>33KB - Coalition dynamics]
+        CoalitionDash[coalition-dashboard.ts<br/>Component: Coalition Analysis<br/>Coalition dynamics]
         
-        ElectionDash[election-cycle-dashboard.js<br/>Component: Election Analysis<br/>46KB - Election cycle tracking]
+        ElectionDash[election-cycle.ts<br/>Component: Election Analysis<br/>Election-cycle tracking]
         
-        Placeholders[5 Placeholder Sections<br/>Component: Future Dashboards<br/>Party, Seasonal, Pre-Election,<br/>Ministry, Anomaly Detection<br/>HTML only, no JS]
+        Placeholders[5 Specialised Dashboards<br/>Component: Functional Dashboards<br/>Party, Seasonal, Pre-Election,<br/>Ministry, Politician<br/>Lazy-loaded ESM modules]
     end
     
     subgraph "Data Transformation"
@@ -442,7 +403,7 @@ graph TD
     style CommitteeDash fill:#2196f3,color:#ffffff
     style CoalitionDash fill:#2196f3,color:#ffffff
     style ElectionDash fill:#2196f3,color:#ffffff
-    style Placeholders fill:#9e9e9e,color:#000000
+    style Placeholders fill:#4caf50,color:#000000
     style CSS fill:#00bcd4,color:#000000
     style Chart fill:#ff9800,color:#000000
     style D3 fill:#ff9800,color:#000000
@@ -452,7 +413,7 @@ graph TD
 ### Component Details
 
 #### HTML Pages (14 Languages)
-- **index.html** - English main page with 4 functional dashboards
+- **index.html** - English main page; lazy-loads all specialised dashboard modules
 - **index_sv.html** - Swedish version (coalition dashboard)
 - **index_da.html** - Danish version (coalition dashboard)
 - **index_no.html** - Norwegian version (coalition dashboard)
@@ -468,16 +429,17 @@ graph TD
 - **index_zh.html** - Chinese version
 
 #### Dashboard Components
-1. **Inline Script (946 lines)** - Risk detection and anomaly detection
-2. **committees-dashboard.js (39KB)** - Committee performance analysis
-3. **coalition-dashboard.js (33KB)** - Coalition dynamics tracking
-4. **election-cycle-dashboard.js (46KB)** - Election cycle analysis
-5. **5 Placeholder Sections** - Future dashboards (HTML structure only, no JS implementation yet)
-   - Party Performance Dashboard
-   - Seasonal Trends Dashboard
-   - Pre-Election Monitoring Dashboard
-   - Ministry Performance Dashboard
-   - Advanced Anomaly Detection Dashboard
+
+All dashboards are functional TypeScript modules under `src/browser/dashboards/`, bundled by Vite and lazy-loaded on demand via an `IntersectionObserver` — each module's `import()` fires only when its container scrolls into view. The homepage (`src/browser/main.ts`) registers 11 specialised dashboards; the CIA Intelligence Dashboard page (`dashboard/index*.html`) is orchestrated by `src/browser/cia/dashboard-init.ts`.
+
+1. **risk-dashboard.ts / anomaly-detection.ts** - Risk scoring and behavioural anomaly detection
+2. **committees-dashboard.ts** - Committee performance and network analysis
+3. **coalition-dashboard.ts / coalition-loader.ts** - Coalition dynamics tracking
+4. **election-cycle.ts / pre-election.ts** - Election-cycle and pre-election analysis
+5. **party-dashboard.ts** - Party performance analysis
+6. **seasonal-patterns.ts** - Seasonal activity patterns with Z-score anomaly detection
+7. **ministry-dashboard.ts** - Ministry performance analysis
+8. **politician-dashboard.ts** - Individual MP profiles and metrics
 
 #### Scripts and Utilities
 - **scripts/aggregate-analysis.ts** - Recursively regenerates `analysis/daily/**/article.md` from analysis artifacts
@@ -1203,7 +1165,7 @@ The `scripts/render-lib/` directory was split (Round-4) from a single 960-LOC mo
 | **barrel** | `scripts/render-lib/index.ts` | Thin re-export of every public symbol from the leaves above. Downstream code imports from the barrel only. |
 | **translate** | `news-translate` workflow (out-of-band) | Produce the 12 non-EN/SV variants from the rendered EN+SV HTML. |
 
-The 6-module split reduces worst-case import-time cost for tests: tests that only exercise the aggregator can skip the `unified`/`remark`/`rehype` dependency graph (~40 ms saved per test-file cold start). Test coverage is validated both via the barrel (`tests/render-lib.test.ts`, 57 tests) and via direct leaf imports (`tests/render-lib-architecture.test.ts`, 25 tests) — the architecture test file proves no public-API drift exists between the barrel and the leaves.
+The 6-module split reduces worst-case import-time cost for tests: tests that only exercise the aggregator can skip the `unified`/`remark`/`rehype` dependency graph (~40 ms saved per test-file cold start). Test coverage is validated both via the barrel (`tests/render-lib.test.ts`, 137 tests) and via direct leaf imports (`tests/render-lib-architecture.test.ts`, 38 tests) — the architecture test file proves no public-API drift exists between the barrel and the leaves.
 
 
 #### Sanitiser Trust Boundary
@@ -1236,7 +1198,7 @@ The citation chain is encoded in JSON-LD `NewsArticle.about` and `NewsArticle.ci
 
 #### C4 Component view — `scripts/render-lib/` (true sub-tree)
 
-The `render-lib` barrel (`scripts/render-lib/index.ts`) re-exports across four leaf-trees. The internal layout below is the **true** filesystem at v0.8.76 — consumers still import only from the barrel.
+The `render-lib` barrel (`scripts/render-lib/index.ts`) re-exports across four leaf-trees. The internal layout below is the **true** filesystem at v0.9.40 — consumers still import only from the barrel.
 
 ```mermaid
 graph LR
@@ -1723,14 +1685,14 @@ graph TB
 | **HTMLHint** | Latest | HTML validation | Industry standard validator | MIT |
 | **Linkinator** | v6 | Link checking | Reliable, actively maintained | Apache-2.0 |
 | **npm** | Latest | Package management | JavaScript dependency management | Artistic-2.0 |
-| **Vite** | v8.0.10 | Build tool | Fast build times, optimized output | MIT |
-| **Vitest** | v4.1.5 | Unit / integration test runner | Vite-native, ESM-first, watch mode | MIT |
+| **Vite** | v8.0.14 | Build tool | Fast build times, optimized output | MIT |
+| **Vitest** | v4.1.7 | Unit / integration test runner | Vite-native, ESM-first, watch mode | MIT |
 | **TypeScript** | v6.0.3 | Source language | Strict typing across `src/`, `scripts/`, `tests/` | Apache-2.0 |
 | **Node.js** | ≥26 | Runtime baseline | Native TypeScript loader, ESM, modern fetch | MIT |
 
 ### External Dependencies
 
-> **📦 Public npm package surface (v0.8.76):** `riksdagsmonitor` exports the typed subpaths `./`, `./shared`, `./shared/*`, `./cia/*`, `./dashboards/*`, `./ui/*` (`package.json` `exports` map). `"type": "module"` (pure ESM). `"sideEffects"` is restricted to `./dist/lib/shared/register-globals.js` and `./src/browser/cia-entry.ts` so tree-shaking works for downstream consumers. **ESLint baseline**: `no-explicit-any` = error and `no-unused-vars` = error are enforced repository-wide; the typed `DashboardGlobals` interface (`src/browser/shared/global-libs.ts`) replaces `any` for Chart.js / D3 / PapaParse browser globals.
+> **📦 Public npm package surface (v0.9.40):** `riksdagsmonitor` exports the typed subpaths `./`, `./shared`, `./shared/*`, `./cia/*`, `./dashboards/*`, `./ui/*` (`package.json` `exports` map). `"type": "module"` (pure ESM). `"sideEffects"` is restricted to `./dist/lib/shared/register-globals.js` and `./src/browser/cia-entry.ts` so tree-shaking works for downstream consumers. **ESLint baseline**: `no-explicit-any` = error and `no-unused-vars` = error are enforced repository-wide; the typed `DashboardGlobals` interface (`src/browser/shared/global-libs.ts`) replaces `any` for Chart.js / D3 / PapaParse browser globals.
 
 | Dependency | Type | Risk Level | Mitigation | Update Strategy |
 |------------|------|------------|------------|-----------------|
@@ -1956,7 +1918,7 @@ git push origin main
 
 Riksdagsmonitor leverages GitHub Copilot with Model Context Protocol (MCP) servers for advanced political intelligence analysis and automation.
 
-> **🔢 Server count (v0.8.76):** **8 MCP servers** are wired via `.github/copilot-mcp.json`: `riksdag-regering`, `scb`, `world-bank`, `github` (insiders), `filesystem`, `memory`, `sequential-thinking`, `playwright`. The IMF integration is **intentionally not** an MCP server — it ships as the pure-TypeScript client `scripts/imf-client.ts` (Datamapper JSON v1 + SDMX 3.0), fully covered by the npm SBOM, with allowlisted egress hosts `data.imf.org`, `api.imf.org`, `www.imf.org`. Same pattern is used for SCB (`scripts/scb-client.ts`), World Bank (`scripts/world-bank-client.ts`), Riksbank (`scripts/riksbank-fetch.ts`), Statskontoret (`scripts/statskontoret-client.ts`), RiR (`scripts/rir-followups-client.ts`), and parliamentary-data downloads when invoked from build-time scripts.
+> **🔢 Server count (v0.9.40):** **8 MCP servers** are wired via `.github/copilot-mcp.json`: `riksdag-regering`, `scb`, `world-bank`, `github` (insiders), `filesystem`, `memory`, `sequential-thinking`, `playwright`. The IMF integration is **intentionally not** an MCP server — it ships as the pure-TypeScript client `scripts/imf-client.ts` (Datamapper JSON v1 + SDMX 3.0), fully covered by the npm SBOM, with allowlisted egress hosts `data.imf.org`, `api.imf.org`, `www.imf.org`. Same pattern is used for SCB (`scripts/scb-client.ts`), World Bank (`scripts/world-bank-client.ts`), Riksbank (`scripts/riksbank-fetch.ts`), Statskontoret (`scripts/statskontoret-client.ts`), RiR (`scripts/rir-followups-client.ts`), and parliamentary-data downloads when invoked from build-time scripts.
 
 #### Schema governance pipeline (`schemas/` + `scripts/`)
 
@@ -1965,7 +1927,7 @@ Schema drift between the upstream CIA platform and Riksdagsmonitor's typed surfa
 ```mermaid
 flowchart LR
     Sync[scripts/sync-cia-schemas.ts<br/>pulls upstream schemas/cia/]
-    Validate[scripts/validate-against-cia-schemas.ts<br/>ajv 8.18.0 schema validation]
+    Validate[scripts/validate-against-cia-schemas.ts<br/>ajv 8.20.0 schema validation]
     Check[scripts/check-cia-schema-updates.ts<br/>diff vs. last sync, exit 1 on drift]
     GenTypes[scripts/generate-types-from-cia-schemas.ts<br/>emits .d.ts for ./cia/* subpath]
     Schemas[(schemas/)<br/>article-types.schema.json<br/>pir-status.schema.json<br/>rir-followups-schema.json<br/>cia/*.schema.json]

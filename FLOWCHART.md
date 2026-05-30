@@ -20,26 +20,6 @@
 **🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-08-06  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
-> **🆕 What changed since last review (v1.2 → v1.3, 2026-05-06):**
-> - Added **Political Intelligence Generation Flow** (§16): documents `generate-political-intelligence.ts` pipeline with catalog, daily-streams, i18n, and render stages.
-> - Added **Analysis Gate Validation Flow** (§17): documents the 9-check (1–9b) analysis gate in `scripts/agentic/analysis-gate.ts` validating 23 artifacts across Families A–D.
-> - Added **Parliamentary Data Download Flow** (§18): documents `download-parliamentary-data.ts`, `fetch-voting-records.ts`, and `fetch-calendar.ts` pipelines.
-> - Updated Process Inventory tables with political intelligence, analysis gate, and parliamentary data processes.
-> - Package version aligned to 0.8.76; 51 workflow files (22 standard + 14 agentic .md + 14 compiled .lock.yml + 1 README).
->
-> **🆕 What changed since last review (v1.1 → v1.2, 2026-04-20):**
-> - 📈 Added **IMF** to the agentic news-pipeline fan-out as a third primary economic data source alongside SCB and World Bank, per [ADR 0001](docs/adr/0001-adopt-imf-data-alongside-world-bank.md). IMF is reached via the **IMF TypeScript client `scripts/imf-client.ts` invoked through the bash tool** — *pure-TS, no MCP* — so the MCP server count is unchanged.
->
-> **🆕 What changed since last review (v1.0 → v1.1, 2026-04-20):**
-> - Flowcharts re-aligned with the current build pipeline: `prebuild` chain is **`generate-news-indexes` → `extract-news-metadata` → `generate-sitemap-html` → `generate-rss` → `generate-sitemap`**; `postbuild` copies `rss.xml`, `sitemap.xml`, and `cia-data/` into `dist/`. Library build is a two-pass `tsc -p tsconfig.lib.json && tsc -p tsconfig.npm-scripts.json`.
-> - Added agentic news pipeline flow: trigger → MCP tool calls (riksdag-regering / scb / world-bank) + **IMF TypeScript client (bash tool, no MCP)** → draft → **five-layer safe-output validation** → reviewer PR → merge → rebuild & deploy.
-> - CIA data pipeline flow updated for the **15 subsystems** (anomaly, coalition, committee, distribution, election, election-cycle, ministry, parties, party, percentile, politician, pre-election, risk, seasonal, voting) and schema-validation scripts (`sync-cia-schemas`, `validate-against-cia-schemas`, `check-cia-schema-updates`, `generate-types-from-cia-schemas`).
-> - Translation validation flow reflects **14-language** coverage including RTL (HE, AR) — driven by `validate-translations` under `translation-validation.yml` in CI.
-> - Deploy-to-S3 flow clarified as **OIDC-only** (no long-lived AWS keys): GitHub → `sts:AssumeRoleWithWebIdentity` → `GithubWorkFlowRole` → S3 sync (us-east-1 primary, eu-west-1 replica) → CloudFront invalidation.
-> - Uptime + Lighthouse monitoring flow anchored to `uptime-monitor.yml` (every 15 min) and `lighthouse-ci.yml` (push/PR + weekly).
-> - SRI + CSP + HSTS integrity chain flow updated for `vite-plugin-sri-gen@1.3.2`.
-> - Compliance callouts added: ISO 27001:2022 A.8.28/A.8.30, NIST CSF 2.0 PR.PS/DE.CM, CIS Controls v8.1 #4/#16, [Secure_Development_Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md), [AI_Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/AI_Policy.md).
-
 ---
 
 ## 🎯 Purpose
