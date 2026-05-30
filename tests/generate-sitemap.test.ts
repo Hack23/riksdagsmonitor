@@ -75,8 +75,15 @@ describe('Sitemap Generation', () => {
 
     it('should include sitemap HTML pages', () => {
       const xml = module.generateSitemap();
+      // The English HTML sitemap is always advertised (legacy contract).
       expect(xml).toContain('sitemap.html');
-      expect(xml).toContain('sitemap_sv.html');
+      // Localized HTML sitemaps are advertised only when their file exists on
+      // disk; in the unit-test job (no prebuild) they may be absent.
+      for (const lang of ['sv', 'de', 'no']) {
+        if (fs.existsSync(`sitemap_${lang}.html`)) {
+          expect(xml).toContain(`sitemap_${lang}.html`);
+        }
+      }
     });
 
     it('should include xhtml namespace for hreflang', () => {
@@ -118,7 +125,11 @@ describe('Sitemap Generation', () => {
 
     it('should include localized rss feeds that exist on disk', () => {
       const xml = module.generateSitemap();
-      expect(xml).toContain('https://riksdagsmonitor.com/rss.xml');
+      // English rss.xml is gitignored and only present after prebuild, so the
+      // existence-checked sitemap advertises it only when the file exists.
+      if (fs.existsSync('rss.xml')) {
+        expect(xml).toContain('https://riksdagsmonitor.com/rss.xml');
+      }
       for (const lang of ['sv', 'de', 'no', 'ja', 'ko', 'zh']) {
         if (fs.existsSync(`rss_${lang}.xml`)) {
           expect(xml).toContain(`https://riksdagsmonitor.com/rss_${lang}.xml`);
