@@ -12,6 +12,7 @@
 import { describe, it, expect } from 'vitest';
 import {
   isHtmlErrorResponse,
+  isDegradedKalenderSentinel,
   CalendarMcpError,
   HTML_PREFIX_RE,
 } from '../../../scripts/fetch-calendar.js';
@@ -80,6 +81,65 @@ describe('HTML_PREFIX_RE (regex guard against future drift)', () => {
     expect(HTML_PREFIX_RE.test('')).toBe(false);
     expect(HTML_PREFIX_RE.test('hello world')).toBe(false);
     expect(HTML_PREFIX_RE.test('error: 503')).toBe(false);
+  });
+});
+
+describe('isDegradedKalenderSentinel', () => {
+  it('returns true when an upstream error string is present', () => {
+    expect(
+      isDegradedKalenderSentinel({
+        count: 0,
+        events: [],
+        error: 'Riksdagens kalender-API returnerade HTML istället för JSON.',
+      }),
+    ).toBe(true);
+  });
+
+  it('returns true when a rawHtml field is present', () => {
+    expect(
+      isDegradedKalenderSentinel({ count: 0, events: [], rawHtml: '<script>…</script>' }),
+    ).toBe(true);
+  });
+
+  it('returns true when both error and rawHtml are present', () => {
+    expect(
+      isDegradedKalenderSentinel({
+        count: 0,
+        events: [],
+        error: 'API degraded',
+        rawHtml: '<!DOCTYPE html><html></html>',
+        notice: 'API:et fungerar inte korrekt för närvarande.',
+        suggestions: ['Försök igen senare'],
+      }),
+    ).toBe(true);
+  });
+
+  it('returns true for rawHtml-only sentinel without error field', () => {
+    expect(
+      isDegradedKalenderSentinel({ count: 0, events: [], rawHtml: '<html><body>503</body></html>' }),
+    ).toBe(true);
+  });
+
+  it('returns false for a legitimate empty calendar window', () => {
+    expect(isDegradedKalenderSentinel({ count: 0, events: [] })).toBe(false);
+    expect(isDegradedKalenderSentinel({ kalender: [] })).toBe(false);
+  });
+
+  it('returns false when error/rawHtml are empty or whitespace', () => {
+    expect(isDegradedKalenderSentinel({ events: [], error: '' })).toBe(false);
+    expect(isDegradedKalenderSentinel({ events: [], rawHtml: '   ' })).toBe(false);
+  });
+
+  it('returns false when error/rawHtml are non-string types', () => {
+    expect(isDegradedKalenderSentinel({ events: [], error: null })).toBe(false);
+    expect(isDegradedKalenderSentinel({ events: [], rawHtml: 0 })).toBe(false);
+    expect(isDegradedKalenderSentinel({ events: [], error: undefined })).toBe(false);
+    expect(isDegradedKalenderSentinel({ events: [], rawHtml: true })).toBe(false);
+    expect(isDegradedKalenderSentinel({ events: [], error: [] })).toBe(false);
+  });
+
+  it('returns false for an empty object', () => {
+    expect(isDegradedKalenderSentinel({})).toBe(false);
   });
 });
 

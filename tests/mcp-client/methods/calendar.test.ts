@@ -78,4 +78,81 @@ describe('methods/calendar — fetchCalendarEvents', () => {
     const events = await client.fetchCalendarEvents('2026-02-10', '2026-02-17');
     expect(events).toEqual([]);
   });
+
+  it('should throw when the server returns the degraded-kalender sentinel', async () => {
+    // Upstream data.riksdagen.se/kalender/ served HTML: the MCP server wraps
+    // this in a "successful" result with an empty events array plus an error
+    // field. Returning [] would mask the outage, so the method must throw.
+    global.fetch = vi.fn(() =>
+      Promise.resolve({
+        ok: true,
+        json: () =>
+          Promise.resolve({
+            jsonrpc: '2.0',
+            id: 1,
+            result: {
+              content: [
+                {
+                  text: JSON.stringify({
+                    count: 0,
+                    events: [],
+                    rawHtml: '<script>…</script>',
+                    error: 'Riksdagens kalender-API returnerade HTML istället för JSON.',
+                  }),
+                },
+              ],
+            },
+          }),
+      }),
+    ) as unknown as typeof global.fetch;
+
+    await expect(
+      client.fetchCalendarEvents('2026-02-10', '2026-02-17'),
+    ).rejects.toThrow(/degraded/i);
+  });
+
+  it('should throw when the server returns a rawHtml-only sentinel (no error field)', async () => {
+    global.fetch = vi.fn(() =>
+      Promise.resolve({
+        ok: true,
+        json: () =>
+          Promise.resolve({
+            jsonrpc: '2.0',
+            id: 1,
+            result: {
+              count: 0,
+              events: [],
+              rawHtml: '<!DOCTYPE html><html><body>503</body></html>',
+            },
+          }),
+      }),
+    ) as unknown as typeof global.fetch;
+
+    await expect(
+      client.fetchCalendarEvents('2026-02-10', '2026-02-17'),
+    ).rejects.toThrow(/degraded/i);
+  });
+
+  it('should include the upstream error message in the thrown error', async () => {
+    const errorMsg = 'Riksdagens kalender-API returnerade HTML istället för JSON.';
+    global.fetch = vi.fn(() =>
+      Promise.resolve({
+        ok: true,
+        json: () =>
+          Promise.resolve({
+            jsonrpc: '2.0',
+            id: 1,
+            result: {
+              count: 0,
+              events: [],
+              error: errorMsg,
+            },
+          }),
+      }),
+    ) as unknown as typeof global.fetch;
+
+    await expect(
+      client.fetchCalendarEvents('2026-02-10', '2026-02-17'),
+    ).rejects.toThrow(errorMsg);
+  });
 });
