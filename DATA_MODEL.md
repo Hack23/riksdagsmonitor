@@ -455,7 +455,7 @@ Riksdagsmonitor maintains a comprehensive data architecture integrating 50+ year
 | `risk_level` | VARCHAR(20) | Risk classification |
 | `productivity_matrix` | VARCHAR(50) | Productivity classification |
 
-**Dashboard Integration**: Ministry Dashboard (placeholder)  
+**Dashboard Integration**: Ministry Dashboard  
 **Visualizations**:
 - Ministry effectiveness radar chart
 - Decision impact heatmap (D3.js)
@@ -490,7 +490,7 @@ Riksdagsmonitor maintains a comprehensive data architecture integrating 50+ year
 | `risk_forecast_category` | VARCHAR(50) | Risk forecast level |
 | `forecast_confidence` | VARCHAR(20) | Confidence level (low, moderate, high) |
 
-**Dashboard Integration**: Election Cycle Dashboard (`js/election-cycle-dashboard.js`)  
+**Dashboard Integration**: Election Cycle Dashboard (`src/browser/dashboards/election-cycle.ts`)  
 **Visualizations**:
 - Multi-cycle performance timeline (Chart.js)
 - Party tier distribution (D3.js)
@@ -828,7 +828,7 @@ Riksdagsmonitor maintains a comprehensive data architecture integrating 50+ year
 - **19 LOW/NORMAL** (normal activity)
 - **Most extreme**: 2006 Q1 document anomaly (Z = +10.97)
 
-**Dashboard Integration**: Anomaly Detection Dashboard (`index.html`, inline script)  
+**Dashboard Integration**: Anomaly Detection Dashboard (`src/browser/dashboards/anomaly-detection.ts`)  
 **Visualizations**:
 - Anomaly timeline (Chart.js)
 - Z-score distribution (histogram)
@@ -2383,18 +2383,23 @@ document.querySelectorAll('.dashboard').forEach(el => {
 
 **Split Points**:
 ```
-js/election-cycle-dashboard.js   (46KB)
-js/party-dashboard.js            (TBD)
-js/seasonal-patterns-dashboard.js (TBD)
-scripts/committees-dashboard.js   (39KB)
-scripts/coalition-dashboard.js    (33KB)
+src/browser/dashboards/election-cycle.ts
+src/browser/dashboards/party-dashboard.ts
+src/browser/dashboards/seasonal-patterns.ts
+src/browser/dashboards/committees-dashboard.ts
+src/browser/dashboards/coalition-dashboard.ts
+src/browser/dashboards/ministry-dashboard.ts
+src/browser/dashboards/anomaly-detection.ts
+src/browser/dashboards/risk-dashboard.ts
+src/browser/dashboards/pre-election.ts
+src/browser/dashboards/politician-dashboard.ts
 ```
 
 **Loading Strategy**:
 ```javascript
 // Dynamic import per dashboard
 if (document.getElementById('election-cycle-dashboard')) {
-  import('./js/election-cycle-dashboard.js')
+  import('./dashboards/election-cycle.js')
     .then(module => module.init())
     .catch(err => console.error('Failed to load dashboard', err));
 }

@@ -48,7 +48,7 @@ This threat model demonstrates **🛡️ cybersecurity consulting expertise** th
 **Included Systems:**
 
 - 🌐 Static HTML/CSS website (14-language support: Swedish, English, Danish, Norwegian, Finnish, German, French, Spanish, Dutch, Arabic, Hebrew, Japanese, Korean, Chinese)
-- 📊 Chart.js/D3.js interactive dashboards (4 functional: Overview, Party Performance, Ministry Activity, Legislative Timeline; 5 placeholders)
+- 📊 Chart.js/D3.js interactive dashboards (all functional: overview, party performance, committee network, coalition, election-cycle, risk, anomaly detection, seasonal patterns, pre-election, ministry, politician)
 - ☁️ AWS CloudFront CDN + S3 storage (us-east-1 primary, eu-west-1 replica)
 - 🔀 Route 53 DNS configuration with health checks
 - 🔄 GitHub Pages disaster recovery (automatic failover)
@@ -314,7 +314,7 @@ graph TB
     subgraph "🌐 Presentation Layer"
         HTML[📄 Static HTML<br/>14 Languages<br/>Responsive Design]
         CSS[🎨 CSS Styles<br/>Cyberpunk Theme<br/>RTL Support]
-        Dashboard[📊 Dashboards<br/>Chart.js + D3.js<br/>4 Functional, 5 Placeholders]
+        Dashboard[📊 Dashboards<br/>Chart.js + D3.js<br/>All Functional, Lazy-loaded]
     end
     
     subgraph "⚙️ CI/CD Layer"
@@ -2158,13 +2158,18 @@ graph TB
 
 #### Threat Surface: Interactive JavaScript Dashboards
 
-**4 Functional Dashboards:**
+**Functional Dashboards (Chart.js / D3.js, lazy-loaded ES modules):**
 1. **Overview Dashboard** - General political metrics (Chart.js)
 2. **Party Performance Dashboard** - Coalition analysis (D3.js)
-3. **Ministry Activity Dashboard** - Government activity tracking (Chart.js)
-4. **Legislative Timeline** - Bill progression visualization (D3.js)
-
-**5 Placeholder Dashboards:** Design-only (no JavaScript execution risk)
+3. **Committee Network Dashboard** - Committee performance and network analysis
+4. **Coalition Dashboard** - Coalition dynamics tracking
+5. **Election Cycle Dashboard** - Election-cycle analysis
+6. **Risk Dashboard** - Risk scoring and alerts
+7. **Anomaly Detection Dashboard** - Behavioural anomaly detection (timeline, Z-score, type, frequency charts)
+8. **Seasonal Patterns Dashboard** - Quarterly activity with Z-score anomaly detection
+9. **Pre-Election Monitoring Dashboard** - Pre-election trend analysis
+10. **Ministry Dashboard** - Government/ministry activity tracking
+11. **Politician Dashboard** - Individual MP profiles and metrics
 
 #### Dashboard-Specific Threats:
 

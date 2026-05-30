@@ -154,12 +154,12 @@ Riksdagsmonitor security architecture is governed by and aligned with Hack23 AB'
 - Monitor Swedish Riksdag political activity
 - Provide real-time intelligence on 349 MPs
 - Track coalition stability and election predictions
-- Deliver 9 dashboard sections with CIA platform data (4 functional: committee, coalition, election-cycle, risk/anomaly; 5 placeholders: party, seasonal, pre-election, ministry, anomaly detection)
+- Deliver functional CIA-platform dashboards: committee, coalition, election-cycle, risk, anomaly detection, party, seasonal, pre-election, ministry, and politician analyses
 - OSINT-powered political transparency
 
 **Scope:**
 - Web application with HTML/CSS/JavaScript (Chart.js, D3.js)
-- 9 dashboard sections (4 functional with 150KB+ JavaScript, 5 placeholders with HTML structure only)
+- Functional dashboards bundled by Vite into hashed ES modules, lazy-loaded via `IntersectionObserver` (Chart.js, D3.js)
 - Multi-language support (14 languages)
 - CIA data integration with local CSV caching
 - AWS CloudFront + S3 hosting infrastructure (Primary)
@@ -369,7 +369,7 @@ Referrer-Policy: strict-origin-when-cross-origin
 Permissions-Policy: geolocation=(), microphone=(), camera=()
 ```
 
-**Note:** CSP includes `'unsafe-inline'` for Chart.js/D3.js inline styles and large inline dashboard script (946 lines). The `connect-src` directive includes `https://raw.githubusercontent.com` to allow fetching CIA CSV data from the cia repository. Security headers are configured via AWS CloudFront Response Headers Policy for the primary deployment. GitHub Pages disaster recovery inherits default GitHub Pages security headers. Future enhancement: nonce-based CSP for stricter inline script control (roadmap: 2027). Chart.js, D3.js, chartjs-plugin-annotation **and Mermaid** are hosted locally on CloudFront (`js/lib/`) rather than via external CDN, eliminating external script dependencies (CI-enforced by [`tests/no-external-cdn.test.ts`](tests/no-external-cdn.test.ts)).
+**Note:** CSP `style-src` includes `'unsafe-inline'` for Chart.js/D3.js inline styles; `script-src` uses `'self'` plus per-script `sha256` hashes for the small bootstrap snippets (no `'unsafe-inline'` for scripts). The `connect-src` directive includes `https://raw.githubusercontent.com` to allow fetching CIA CSV data from the cia repository. Security headers are configured via AWS CloudFront Response Headers Policy for the primary deployment. GitHub Pages disaster recovery inherits default GitHub Pages security headers. Chart.js, D3.js, chartjs-plugin-annotation **and Mermaid** are hosted locally on CloudFront (`js/lib/`) rather than via external CDN, eliminating external script dependencies (CI-enforced by [`tests/no-external-cdn.test.ts`](tests/no-external-cdn.test.ts)).
 
 **Control Mapping:**
 - ISO 27001: A.13.1 Network Security Management
@@ -380,15 +380,9 @@ Permissions-Policy: geolocation=(), microphone=(), camera=()
 
 **Web Application Security:**
 - **Client-Side JavaScript:** Chart.js and D3.js for interactive dashboards
-  - 3 external JS files loaded: `scripts/coalition-dashboard.js` (33KB), `scripts/committees-dashboard.js` (39KB), `js/election-cycle-dashboard.js` (46KB) ≈118KB
-  - 1 large inline script (946 lines, ~32KB) handling risk dashboard only (includes one anomaly chart within risk dashboard)
-  - 5 placeholder dashboard sections with HTML structure but no JavaScript initialization (future implementation):
-    - Party Performance Dashboard
-    - Seasonal Patterns Dashboard
-    - Pre-Election Monitoring Dashboard
-    - Ministry Dashboard
-    - Anomaly Detection Dashboard (standalone section with timeline/heatmap/distribution charts - distinct from single anomaly chart in risk dashboard)
-  - Total: ~150KB active JavaScript code (118KB external + 32KB inline; source size, transfer size smaller when compressed)
+  - All dashboards are functional TypeScript modules under `src/browser/dashboards/`, bundled by Vite into hashed ES modules and lazy-loaded on demand via an `IntersectionObserver` — each module's `import()` fires only when its container scrolls into view
+  - The homepage (`src/browser/main.ts`) registers 11 specialised dashboards; the CIA Intelligence Dashboard page (`dashboard/index*.html`) is orchestrated by `src/browser/cia/dashboard-init.ts`
+  - No inline application scripts and no HTML-only placeholder sections remain — every dashboard section initialises real JavaScript
 - **XSS Mitigation:** Content Security Policy (CSP) headers with script-src restrictions
 - **Input Sanitization:** CIA CSV data is subjected to best-effort, non-blocking schema validation during CI/data-integration workflows (e.g., `.github/workflows/validate-cia-data.yml`); validation failures currently surface as warnings rather than blocking publication, and client-side code then parses this CSV (D3 CSV utilities/custom parsers) and applies basic sanity checks prior to rendering via Chart.js/D3.js
 - **External Dependencies:**
@@ -403,20 +397,18 @@ Permissions-Policy: geolocation=(), microphone=(), camera=()
 - **No Server-Side Code:** Static hosting eliminates injection vulnerabilities
 
 **Dashboard Security:**
-- **9 Dashboard Sections (4 functional, 5 placeholders):**
+- **Functional Dashboard Modules (all initialise Chart.js / D3.js):**
 
-**Functional Dashboards (4):**
-1. **Committee Dashboard** (`scripts/committees-dashboard.js` 39KB) ✅
-2. **Coalition Dashboard** (`scripts/coalition-dashboard.js` 33KB) ✅
-3. **Election Cycle Dashboard** (`js/election-cycle-dashboard.js` 46KB) ✅
-4. **Risk Dashboard** (inline script ~32KB, includes one anomaly detection chart) ✅
-
-**Placeholder Dashboard Sections (5 - HTML structure only, no JavaScript):**
-5. **Party Performance Dashboard** - Canvas elements present, awaiting JS implementation
-6. **Seasonal Patterns Dashboard** - Canvas elements present, awaiting JS implementation
-7. **Pre-Election Monitoring Dashboard** - Canvas elements present, awaiting JS implementation
-8. **Ministry Dashboard** - Canvas elements present, awaiting JS implementation
-9. **Anomaly Detection Dashboard** - Standalone section with multiple canvas elements (anomaly-timeline-chart, zscore-distribution-chart, anomaly-type-chart, quarterly-frequency-chart), distinct from the single anomaly chart within risk dashboard, awaiting JS implementation
+1. **Committee Dashboard** (`src/browser/dashboards/committees-dashboard.ts`) ✅
+2. **Coalition Dashboard** (`src/browser/dashboards/coalition-dashboard.ts` + `coalition-loader.ts`) ✅
+3. **Election Cycle Dashboard** (`src/browser/dashboards/election-cycle.ts`) ✅
+4. **Risk Dashboard** (`src/browser/dashboards/risk-dashboard.ts`) ✅
+5. **Anomaly Detection Dashboard** (`src/browser/dashboards/anomaly-detection.ts` — standalone timeline, Z-score distribution, type, and quarterly-frequency charts) ✅
+6. **Party Performance Dashboard** (`src/browser/dashboards/party-dashboard.ts`) ✅
+7. **Seasonal Patterns Dashboard** (`src/browser/dashboards/seasonal-patterns.ts`) ✅
+8. **Pre-Election Monitoring Dashboard** (`src/browser/dashboards/pre-election.ts`) ✅
+9. **Ministry Dashboard** (`src/browser/dashboards/ministry-dashboard.ts`) ✅
+10. **Politician Dashboard** (`src/browser/dashboards/politician-dashboard.ts`) ✅
 
 **Dependency Management:**
 - Chart.js, D3.js, chartjs-plugin-annotation, chartjs-adapter-date-fns, and Papa Parse hosted locally on CloudFront/S3 (js/lib/); versions reviewed manually at least quarterly and after critical CVE disclosures
@@ -937,7 +929,7 @@ graph TB
 | **Permissions Policy** | Disable geolocation, microphone, camera | Minimize browser permissions | ✅ Active |
 | **Subresource Integrity** | Planned: SHA-384 hashes for third-party/CDN assets and critical local libraries | Verify resource integrity | 🔄 Planned |
 
-**Note:** CSP includes `'unsafe-inline'` for Chart.js/D3.js compatibility. Future roadmap (2027): Implement nonce-based CSP for stricter inline script control.
+**Note:** CSP `style-src` includes `'unsafe-inline'` for Chart.js/D3.js inline styles; `script-src` uses `'self'` plus per-script `sha256` hashes (no `'unsafe-inline'` for scripts).
 
 **ISO 27001:** A.14.2 (Security in development and support)  
 **NIST CSF 2.0:** PR.IP-12 (Vulnerability management plan)  

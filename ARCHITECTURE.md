@@ -321,7 +321,7 @@ The Component diagram zooms into containers to show their internal structure and
 ```mermaid
 graph TD
     subgraph "HTML Pages"
-        Index[index.html<br/>Component: Main Page<br/>English + 4 Functional Dashboards<br/>946 lines inline script]
+        Index[index.html<br/>Component: Main Page<br/>English + lazy-loaded dashboards<br/>Vite ES modules]
         LangSV[index_sv.html<br/>Component: Swedish Page<br/>Coalition Dashboard]
         LangDA[index_da.html<br/>Component: Danish Page<br/>Coalition Dashboard]
         LangNO[index_no.html<br/>Component: Norwegian Page<br/>Coalition Dashboard]
@@ -329,15 +329,15 @@ graph TD
     end
     
     subgraph "JavaScript Dashboards"
-        InlineScript[Inline Dashboard Script<br/>Component: Risk Detection<br/>946 lines<br/>Risk + Anomaly Detection]
+        InlineScript[risk-dashboard.js + anomaly-detection.js<br/>Component: Risk and Anomaly<br/>Lazy-loaded ESM modules]
         
-        CommitteeDash[committees-dashboard.js<br/>Component: Committee Analysis<br/>39KB - Committee performance]
+        CommitteeDash[committees-dashboard.ts<br/>Component: Committee Analysis<br/>Committee performance and network]
         
-        CoalitionDash[coalition-dashboard.js<br/>Component: Coalition Analysis<br/>33KB - Coalition dynamics]
+        CoalitionDash[coalition-dashboard.ts<br/>Component: Coalition Analysis<br/>Coalition dynamics]
         
-        ElectionDash[election-cycle-dashboard.js<br/>Component: Election Analysis<br/>46KB - Election cycle tracking]
+        ElectionDash[election-cycle.ts<br/>Component: Election Analysis<br/>Election-cycle tracking]
         
-        Placeholders[5 Placeholder Sections<br/>Component: Future Dashboards<br/>Party, Seasonal, Pre-Election,<br/>Ministry, Anomaly Detection<br/>HTML only, no JS]
+        Placeholders[5 Specialised Dashboards<br/>Component: Functional Dashboards<br/>Party, Seasonal, Pre-Election,<br/>Ministry, Politician<br/>Lazy-loaded ESM modules]
     end
     
     subgraph "Data Transformation"
@@ -403,7 +403,7 @@ graph TD
     style CommitteeDash fill:#2196f3,color:#ffffff
     style CoalitionDash fill:#2196f3,color:#ffffff
     style ElectionDash fill:#2196f3,color:#ffffff
-    style Placeholders fill:#9e9e9e,color:#000000
+    style Placeholders fill:#4caf50,color:#000000
     style CSS fill:#00bcd4,color:#000000
     style Chart fill:#ff9800,color:#000000
     style D3 fill:#ff9800,color:#000000
@@ -413,7 +413,7 @@ graph TD
 ### Component Details
 
 #### HTML Pages (14 Languages)
-- **index.html** - English main page with 4 functional dashboards
+- **index.html** - English main page; lazy-loads all specialised dashboard modules
 - **index_sv.html** - Swedish version (coalition dashboard)
 - **index_da.html** - Danish version (coalition dashboard)
 - **index_no.html** - Norwegian version (coalition dashboard)
@@ -429,16 +429,17 @@ graph TD
 - **index_zh.html** - Chinese version
 
 #### Dashboard Components
-1. **Inline Script (946 lines)** - Risk detection and anomaly detection
-2. **committees-dashboard.js (39KB)** - Committee performance analysis
-3. **coalition-dashboard.js (33KB)** - Coalition dynamics tracking
-4. **election-cycle-dashboard.js (46KB)** - Election cycle analysis
-5. **5 Placeholder Sections** - Future dashboards (HTML structure only, no JS implementation yet)
-   - Party Performance Dashboard
-   - Seasonal Trends Dashboard
-   - Pre-Election Monitoring Dashboard
-   - Ministry Performance Dashboard
-   - Advanced Anomaly Detection Dashboard
+
+All dashboards are functional TypeScript modules under `src/browser/dashboards/`, bundled by Vite and lazy-loaded on demand via an `IntersectionObserver` — each module's `import()` fires only when its container scrolls into view. The homepage (`src/browser/main.ts`) registers 11 specialised dashboards; the CIA Intelligence Dashboard page (`dashboard/index*.html`) is orchestrated by `src/browser/cia/dashboard-init.ts`.
+
+1. **risk-dashboard.ts / anomaly-detection.ts** - Risk scoring and behavioural anomaly detection
+2. **committees-dashboard.ts** - Committee performance and network analysis
+3. **coalition-dashboard.ts / coalition-loader.ts** - Coalition dynamics tracking
+4. **election-cycle.ts / pre-election.ts** - Election-cycle and pre-election analysis
+5. **party-dashboard.ts** - Party performance analysis
+6. **seasonal-patterns.ts** - Seasonal activity patterns with Z-score anomaly detection
+7. **ministry-dashboard.ts** - Ministry performance analysis
+8. **politician-dashboard.ts** - Individual MP profiles and metrics
 
 #### Scripts and Utilities
 - **scripts/aggregate-analysis.ts** - Recursively regenerates `analysis/daily/**/article.md` from analysis artifacts
