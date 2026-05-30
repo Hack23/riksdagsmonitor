@@ -272,7 +272,7 @@ quadrantChart
 - **Accessible:** WCAG 2.1 AA compliant, keyboard navigation, screen reader support
 
 **Evidence:**
-- `dashboard/` directory with 5 HTML dashboard files
+- `dashboard/` directory with 14 localized HTML dashboard pages (one per language)
 - `src/browser/dashboards/` with 11 functional dashboard modules (Vite-bundled to `js/`)
 - Chart.js 4 and D3.js 7 hosted on CloudFront
 - `cia-data/` with complete CSV exports for dashboards
