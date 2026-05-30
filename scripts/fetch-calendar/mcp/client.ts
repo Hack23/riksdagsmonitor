@@ -12,7 +12,7 @@
  */
 
 import type { CalendarFetchConfig } from '../types.js';
-import { CalendarMcpError, isHtmlErrorResponse } from './errors.js';
+import { CalendarMcpError, isDegradedKalenderSentinel, isHtmlErrorResponse } from './errors.js';
 
 export const DEFAULT_MCP_URL =
   process.env['MCP_SERVER_URL'] ?? 'https://riksdag-regering-ai.onrender.com/mcp';
@@ -125,9 +125,27 @@ export async function callMcpCalendarEvents(
         'json',
       );
     }
+    // The server wraps an upstream HTML error in a "successful" envelope with
+    // an empty events array — detect it so the orchestrator falls back to the
+    // web scraper instead of trusting a fake zero-event window.
+    if (isDegradedKalenderSentinel(inner)) {
+      throw new CalendarMcpError(
+        `MCP kalender API degraded: ${String(inner['error'] ?? 'upstream HTML error')}`,
+        'html',
+        typeof inner['rawHtml'] === 'string' ? inner['rawHtml'] : undefined,
+      );
+    }
     const events = inner['kalender'] ?? inner['events'];
     if (Array.isArray(events)) return events as unknown[];
     return [];
+  }
+
+  if (isDegradedKalenderSentinel(result)) {
+    throw new CalendarMcpError(
+      `MCP kalender API degraded: ${String(result['error'] ?? 'upstream HTML error')}`,
+      'html',
+      typeof result['rawHtml'] === 'string' ? result['rawHtml'] : undefined,
+    );
   }
 
   const direct = result['kalender'] ?? result['events'];

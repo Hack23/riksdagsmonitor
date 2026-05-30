@@ -32,6 +32,7 @@ export type {
 export {
   CalendarMcpError,
   HTML_PREFIX_RE,
+  isDegradedKalenderSentinel,
   isHtmlErrorResponse,
 } from './fetch-calendar/mcp/errors.js';
 export { callMcpCalendarEvents } from './fetch-calendar/mcp/client.js';
