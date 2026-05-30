@@ -80,8 +80,8 @@ mindmap
       Threat Model
       Workflows Documentation
       Future Roadmap
-    📦 Platform v0.8.76
-      3,319+ Tests (84 files)
+    📦 Platform v0.9.40
+      7,500+ Tests (237 files)
       24 Agents · 93 Skills
       14 Languages
       8 MCP Servers

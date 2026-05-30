@@ -3089,7 +3089,7 @@ Security classification: **PUBLIC / High Integrity / Medium-High Availability**.
 
 ---
 
-## 🕵️ Political Intelligence Security Surface (v0.8.76)
+## 🕵️ Political Intelligence Security Surface (v0.9.40)
 
 > **Added:** v2.4 (2026-05-06) — Previously backlog item from the [documentation-portfolio-audit-2026-05-03](analysis/audits/documentation-portfolio-audit-2026-05-03.md). This section documents the security controls governing the AI-driven political intelligence analysis pipeline.
 
@@ -3217,7 +3217,7 @@ flowchart TD
 |-------|---------|-------------------|--------------|
 | **1. Sanitisation** | `rehype-sanitize` allow-list blocks `<script>`, `<iframe>`, inline event handlers, `javascript:` URIs | Allow-list approach (not deny-list); Mermaid rendered in `securityLevel: 'strict'` | Malicious HTML stripped silently |
 | **2. Schema Validation** | YAML front-matter schema; artifact file structure; 23-file completeness | Typed TypeScript validators; JSON schema | Workflow fails with validation error |
-| **3. Policy Check** | Analysis gate (checks 1–9b); methodology-reflection validator | Fail-closed; 76 unit tests; no partial pass | Workflow fails — no PR created |
+| **3. Policy Check** | Analysis gate (checks 1–9b); methodology-reflection validator | Fail-closed; 88 unit tests; no partial pass | Workflow fails — no PR created |
 | **4. Human Review** | Mandatory PR approval by repository maintainer | Branch protection rule; `CODEOWNERS`; cannot self-approve | PR blocked until approved |
 | **5. Merge & Deploy** | Signed commits; CI must pass; deploy via OIDC (no stored creds) | GitHub branch protection; SLSA provenance | Merge blocked if CI fails |
 

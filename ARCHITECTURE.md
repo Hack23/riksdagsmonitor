@@ -11,8 +11,8 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/>
-  <img src="https://img.shields.io/badge/Version-2.5-555?style=for-the-badge" alt="Version"/>
-  <img src="https://img.shields.io/badge/Effective-2026--05--06-success?style=for-the-badge" alt="Effective Date"/>
+  <img src="https://img.shields.io/badge/Version-2.6-555?style=for-the-badge" alt="Version"/>
+  <img src="https://img.shields.io/badge/Effective-2026--05--28-success?style=for-the-badge" alt="Effective Date"/>
   <img src="https://img.shields.io/badge/Review-Quarterly-orange?style=for-the-badge" alt="Review Cycle"/>
 </p>
 
@@ -1164,7 +1164,7 @@ The `scripts/render-lib/` directory was split (Round-4) from a single 960-LOC mo
 | **barrel** | `scripts/render-lib/index.ts` | Thin re-export of every public symbol from the leaves above. Downstream code imports from the barrel only. |
 | **translate** | `news-translate` workflow (out-of-band) | Produce the 12 non-EN/SV variants from the rendered EN+SV HTML. |
 
-The 6-module split reduces worst-case import-time cost for tests: tests that only exercise the aggregator can skip the `unified`/`remark`/`rehype` dependency graph (~40 ms saved per test-file cold start). Test coverage is validated both via the barrel (`tests/render-lib.test.ts`, 57 tests) and via direct leaf imports (`tests/render-lib-architecture.test.ts`, 25 tests) — the architecture test file proves no public-API drift exists between the barrel and the leaves.
+The 6-module split reduces worst-case import-time cost for tests: tests that only exercise the aggregator can skip the `unified`/`remark`/`rehype` dependency graph (~40 ms saved per test-file cold start). Test coverage is validated both via the barrel (`tests/render-lib.test.ts`, 137 tests) and via direct leaf imports (`tests/render-lib-architecture.test.ts`, 38 tests) — the architecture test file proves no public-API drift exists between the barrel and the leaves.
 
 
 #### Sanitiser Trust Boundary
@@ -1197,7 +1197,7 @@ The citation chain is encoded in JSON-LD `NewsArticle.about` and `NewsArticle.ci
 
 #### C4 Component view — `scripts/render-lib/` (true sub-tree)
 
-The `render-lib` barrel (`scripts/render-lib/index.ts`) re-exports across four leaf-trees. The internal layout below is the **true** filesystem at v0.8.76 — consumers still import only from the barrel.
+The `render-lib` barrel (`scripts/render-lib/index.ts`) re-exports across four leaf-trees. The internal layout below is the **true** filesystem at v0.9.40 — consumers still import only from the barrel.
 
 ```mermaid
 graph LR
@@ -1684,14 +1684,14 @@ graph TB
 | **HTMLHint** | Latest | HTML validation | Industry standard validator | MIT |
 | **Linkinator** | v6 | Link checking | Reliable, actively maintained | Apache-2.0 |
 | **npm** | Latest | Package management | JavaScript dependency management | Artistic-2.0 |
-| **Vite** | v8.0.10 | Build tool | Fast build times, optimized output | MIT |
-| **Vitest** | v4.1.5 | Unit / integration test runner | Vite-native, ESM-first, watch mode | MIT |
+| **Vite** | v8.0.14 | Build tool | Fast build times, optimized output | MIT |
+| **Vitest** | v4.1.7 | Unit / integration test runner | Vite-native, ESM-first, watch mode | MIT |
 | **TypeScript** | v6.0.3 | Source language | Strict typing across `src/`, `scripts/`, `tests/` | Apache-2.0 |
 | **Node.js** | ≥26 | Runtime baseline | Native TypeScript loader, ESM, modern fetch | MIT |
 
 ### External Dependencies
 
-> **📦 Public npm package surface (v0.8.76):** `riksdagsmonitor` exports the typed subpaths `./`, `./shared`, `./shared/*`, `./cia/*`, `./dashboards/*`, `./ui/*` (`package.json` `exports` map). `"type": "module"` (pure ESM). `"sideEffects"` is restricted to `./dist/lib/shared/register-globals.js` and `./src/browser/cia-entry.ts` so tree-shaking works for downstream consumers. **ESLint baseline**: `no-explicit-any` = error and `no-unused-vars` = error are enforced repository-wide; the typed `DashboardGlobals` interface (`src/browser/shared/global-libs.ts`) replaces `any` for Chart.js / D3 / PapaParse browser globals.
+> **📦 Public npm package surface (v0.9.40):** `riksdagsmonitor` exports the typed subpaths `./`, `./shared`, `./shared/*`, `./cia/*`, `./dashboards/*`, `./ui/*` (`package.json` `exports` map). `"type": "module"` (pure ESM). `"sideEffects"` is restricted to `./dist/lib/shared/register-globals.js` and `./src/browser/cia-entry.ts` so tree-shaking works for downstream consumers. **ESLint baseline**: `no-explicit-any` = error and `no-unused-vars` = error are enforced repository-wide; the typed `DashboardGlobals` interface (`src/browser/shared/global-libs.ts`) replaces `any` for Chart.js / D3 / PapaParse browser globals.
 
 | Dependency | Type | Risk Level | Mitigation | Update Strategy |
 |------------|------|------------|------------|-----------------|
@@ -1917,7 +1917,7 @@ git push origin main
 
 Riksdagsmonitor leverages GitHub Copilot with Model Context Protocol (MCP) servers for advanced political intelligence analysis and automation.
 
-> **🔢 Server count (v0.8.76):** **8 MCP servers** are wired via `.github/copilot-mcp.json`: `riksdag-regering`, `scb`, `world-bank`, `github` (insiders), `filesystem`, `memory`, `sequential-thinking`, `playwright`. The IMF integration is **intentionally not** an MCP server — it ships as the pure-TypeScript client `scripts/imf-client.ts` (Datamapper JSON v1 + SDMX 3.0), fully covered by the npm SBOM, with allowlisted egress hosts `data.imf.org`, `api.imf.org`, `www.imf.org`. Same pattern is used for SCB (`scripts/scb-client.ts`), World Bank (`scripts/world-bank-client.ts`), Riksbank (`scripts/riksbank-fetch.ts`), Statskontoret (`scripts/statskontoret-client.ts`), RiR (`scripts/rir-followups-client.ts`), and parliamentary-data downloads when invoked from build-time scripts.
+> **🔢 Server count (v0.9.40):** **8 MCP servers** are wired via `.github/copilot-mcp.json`: `riksdag-regering`, `scb`, `world-bank`, `github` (insiders), `filesystem`, `memory`, `sequential-thinking`, `playwright`. The IMF integration is **intentionally not** an MCP server — it ships as the pure-TypeScript client `scripts/imf-client.ts` (Datamapper JSON v1 + SDMX 3.0), fully covered by the npm SBOM, with allowlisted egress hosts `data.imf.org`, `api.imf.org`, `www.imf.org`. Same pattern is used for SCB (`scripts/scb-client.ts`), World Bank (`scripts/world-bank-client.ts`), Riksbank (`scripts/riksbank-fetch.ts`), Statskontoret (`scripts/statskontoret-client.ts`), RiR (`scripts/rir-followups-client.ts`), and parliamentary-data downloads when invoked from build-time scripts.
 
 #### Schema governance pipeline (`schemas/` + `scripts/`)
 
@@ -1926,7 +1926,7 @@ Schema drift between the upstream CIA platform and Riksdagsmonitor's typed surfa
 ```mermaid
 flowchart LR
     Sync[scripts/sync-cia-schemas.ts<br/>pulls upstream schemas/cia/]
-    Validate[scripts/validate-against-cia-schemas.ts<br/>ajv 8.18.0 schema validation]
+    Validate[scripts/validate-against-cia-schemas.ts<br/>ajv 8.20.0 schema validation]
     Check[scripts/check-cia-schema-updates.ts<br/>diff vs. last sync, exit 1 on drift]
     GenTypes[scripts/generate-types-from-cia-schemas.ts<br/>emits .d.ts for ./cia/* subpath]
     Schemas[(schemas/)<br/>article-types.schema.json<br/>pir-status.schema.json<br/>rir-followups-schema.json<br/>cia/*.schema.json]

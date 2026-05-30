@@ -35,7 +35,7 @@
 This SWOT analysis evaluates Riksdagsmonitor's strategic position as a Swedish Parliament intelligence platform. The analysis identifies internal strengths and weaknesses alongside external opportunities and threats, providing a foundation for strategic decision-making aligned with Hack23 AB's Information Security Management System (ISMS).
 
 **Key Findings:**
-- **Dominant Strengths:** 50+ years of comprehensive political data, 14-language support, 19 CIA intelligence products, modern static architecture, 3,319+ tests (v0.8.76)
+- **Dominant Strengths:** 50+ years of comprehensive political data, 14-language support, 19 CIA intelligence products, modern static architecture, 7,500+ tests (v0.9.40)
 - **Critical Weaknesses:** Single developer dependency, no monetization model, limited marketing reach
 - **Major Opportunities:** Nordic expansion, EU Parliament integration, API monetization, international partnerships
 - **Significant Threats:** Competitive platforms, regulatory uncertainty, technical evolution, market dynamics
@@ -184,7 +184,7 @@ quadrantChart
 - **Inherent Security:** No server-side code execution, no database vulnerabilities
 - **Global Performance:** CloudFront distribution with multi-region S3 replication
 - **99.998% Availability:** AWS SLA-backed infrastructure with automated failover
-- **Build System:** Vite 8.0.10 with ES modules, code splitting, tree-shaking
+- **Build System:** Vite 8.0.14 with ES modules, code splitting, tree-shaking
 - **Single-Source-of-Truth Articles:** `scripts/aggregate-analysis.ts` concatenates `analysis/daily/$DATE/$SUB/*.md` into a canonical `article.md`; `scripts/render-articles.ts` + `scripts/render-lib/` emits sanitised HTML via `unified → remark → rehype → rehype-sanitize`. No HTML scaffolding, no `AI_MUST_REPLACE` markers, every claim traceable back to a committed analysis file.
 
 **Evidence:**
