@@ -89,6 +89,41 @@ describe('stripEmbeddedLocalizedBriefSections', () => {
     expect(stripEmbeddedLocalizedBriefSections(body)).toContain('Plain English lead.');
     expect(stripEmbeddedLocalizedBriefSections(body)).not.toMatch(/## Executive Brief/);
   });
+
+  it('strips a stray `## Executive Brief En` carrier (executive-brief_en.md) so it never leaks into the TOC', () => {
+    const body = [
+      '## What Happened',
+      '',
+      'Canonical English lead.',
+      '',
+      '## Executive Brief En',
+      '<!-- source: executive-brief_en.md -->',
+      '',
+      '### Summary',
+      '',
+      'Stray English carrier body.',
+      '',
+      '## Risk Assessment',
+      '',
+      'Body.',
+      '',
+    ].join('\n');
+    const out = stripEmbeddedLocalizedBriefSections(body);
+    expect(out).not.toMatch(/## Executive Brief En/);
+    expect(out).not.toContain('Stray English carrier body.');
+    // Canonical lead and analytical section survive.
+    expect(out).toContain('## What Happened');
+    expect(out).toContain('Canonical English lead.');
+    expect(out).toContain('## Risk Assessment');
+  });
+
+  it('preserves the legacy unsuffixed `## Executive Brief` lead heading (no language suffix)', () => {
+    const body = '## Executive Brief\n\nEnglish legacy lead.\n\n## Risk Assessment\n\nBody.\n';
+    const out = stripEmbeddedLocalizedBriefSections(body);
+    expect(out).toContain('## Executive Brief');
+    expect(out).toContain('English legacy lead.');
+    expect(out).toContain('## Risk Assessment');
+  });
 });
 
 describe('localizeExecutiveBriefLead', () => {
@@ -102,6 +137,36 @@ describe('localizeExecutiveBriefLead', () => {
     expect(out).toContain("Sweden's Busch government submitted seven propositions.");
     expect(out).not.toMatch(/## Executive Brief/);
     expect(out).not.toContain('Busch-regeringen lämnade sju propositioner.');
+  });
+
+  it('English: also strips a stray `## Executive Brief En` carrier while keeping the canonical lead', () => {
+    const body = [
+      '## What Happened',
+      '',
+      "Sweden's Busch government submitted seven propositions.",
+      '',
+      '## Executive Brief En',
+      '',
+      '### Summary',
+      '',
+      'Stray English carrier body.',
+      '',
+      '## Risk Assessment',
+      '',
+      'Three measures carry constitutional review risk.',
+      '',
+    ].join('\n');
+    const out = localizeExecutiveBriefLead({
+      content: body,
+      lang: 'en',
+      localizedBriefMarkdown: undefined,
+      subfolderRepoRelPath: 'analysis/daily/2026-05-20/propositions',
+    });
+    expect(out).not.toMatch(/## Executive Brief/);
+    expect(out).not.toContain('Stray English carrier body.');
+    expect(out).toContain('## What Happened');
+    expect(out).toContain("Sweden's Busch government submitted seven propositions.");
+    expect(out).toContain('## Risk Assessment');
   });
 
   it('non-English with a brief: swaps the lead body to localized prose under the stable H2', () => {

@@ -54,14 +54,22 @@ import {
 } from './aggregator/cleaning/structural.js';
 
 /**
- * Title-cased single-segment language codes for the 13 non-English
- * locales, matching `prettifyFallbackTitle('executive-brief_<lang>.md')`
- * in `aggregator/order.ts` (e.g. `sv` → `Sv`, `no` → `No`, `zh` → `Zh`).
- * English is excluded — its brief renders as `## What Happened`, never as
- * a `## Executive Brief <Lang>` carrier.
+ * Title-cased single-segment language codes for **all 14** locales,
+ * matching `prettifyFallbackTitle('executive-brief_<lang>.md')` in
+ * `aggregator/order.ts` (e.g. `sv` → `Sv`, `no` → `No`, `zh` → `Zh`,
+ * `en` → `En`).
+ *
+ * English (`En`) is intentionally included: the canonical English brief
+ * renders as the `## What Happened` lead (or the legacy `## Executive
+ * Brief` heading with **no** language suffix), so a suffixed `## Executive
+ * Brief En` heading is always a stray `executive-brief_en.md` carrier — it
+ * must be stripped just like the 13 localized carriers. Without it, an
+ * `executive-brief_en.md` artifact (e.g. when aggregating a single language
+ * in isolation) leaks an `Executive Brief En` heading into the rendered
+ * TOC. The `\b` boundary after the suffix means the legacy unsuffixed
+ * `## Executive Brief` lead is never matched.
  */
 const LOCALIZED_BRIEF_TITLE_SUFFIXES: readonly string[] = LANGUAGES
-  .filter((l) => l !== 'en')
   .map((l) => l.charAt(0).toUpperCase() + l.slice(1));
 
 /**
@@ -70,6 +78,8 @@ const LOCALIZED_BRIEF_TITLE_SUFFIXES: readonly string[] = LANGUAGES
  * next `<h2>`. Mirrors the line-anchored sweep used by
  * `stripBodyDuplicateSections` so `###`/`# `/code-fence lines inside the
  * section are consumed while the next `## ` boundary stops the match.
+ * The required `<Lang>` suffix means the canonical unsuffixed
+ * `## Executive Brief` lead heading is preserved.
  */
 const EMBEDDED_BRIEF_SECTION_RE = new RegExp(
   String.raw`^##\s+Executive Brief (?:${LOCALIZED_BRIEF_TITLE_SUFFIXES.join('|')})\b[^\n]*\n(?:(?!^##\s)[^\n]*\n?)*`,
