@@ -1,15 +1,17 @@
 /**
  * @module Infrastructure/Rss/Scanner
  * @category Intelligence Operations / Supporting Infrastructure
- * @name News article scanner — English-primary with hreflang alternates
+ * @name News article scanner — language-aware with hreflang alternates
  *
  * @description
  * Scans `news/` (top level only — does **not** recurse into date-partitioned
  * subdirectories, matching legacy behaviour), groups files by base slug,
- * keeps only those that have an English variant, builds the alternate-
- * language map for hreflang link tags, sorts by pub date descending, and
- * caps at `MAX_ITEMS` (50). Returns the list ready to be rendered into
- * RSS `<item>` blocks.
+ * keeps only those that have a variant in the requested feed language
+ * (defaulting to English), builds the alternate-language map for hreflang
+ * link tags, sorts by pub date descending, and caps at `MAX_ITEMS` (50).
+ * Title/description are read from the per-language article HTML so each
+ * localized feed carries localized item metadata. Returns the list ready
+ * to be rendered into RSS `<item>` blocks.
  *
  * Round-6 split: extracted from `scripts/generate-rss.ts`.
  *
@@ -47,10 +49,20 @@ export interface RssArticle {
 }
 
 /**
- * Get news articles for RSS feed, primarily English with multi-language alternates.
+ * Get news articles for an RSS feed in the requested `feedLang`.
+ *
+ * Each returned item is anchored on the article variant that actually
+ * exists in `feedLang` (so the `<link>`/`<guid>` always point at a real
+ * file) and carries the localized title/description extracted from that
+ * variant's HTML. Article groups without a `feedLang` variant are
+ * skipped. The other language variants present for the same base slug
+ * become the `alternateLanguages` hreflang siblings.
+ *
+ * Defaults to English (`'en'`) so the legacy `rss.xml` output is
+ * unchanged.
  */
-export function getRssArticles(): RssArticle[] {
-  console.log('📰 Scanning news directory for RSS articles...');
+export function getRssArticles(feedLang: Language = 'en'): RssArticle[] {
+  console.log(`📰 Scanning news directory for RSS articles (${feedLang})...`);
 
   if (!fs.existsSync(NEWS_DIR)) {
     console.warn('⚠️ News directory not found');
@@ -77,15 +89,17 @@ export function getRssArticles(): RssArticle[] {
   const articles: RssArticle[] = [];
 
   for (const [baseSlug, langMap] of articleGroups) {
-    const enFile = langMap.get('en');
-    if (!enFile) continue;
+    const primaryFile = langMap.get(feedLang);
+    // Only emit an item when the requested language variant exists on
+    // disk — guarantees the feed never links to a missing page.
+    if (!primaryFile) continue;
 
-    const filePath = path.join(NEWS_DIR, enFile);
+    const filePath = path.join(NEWS_DIR, primaryFile);
     const meta = extractArticleMeta(filePath);
 
     const alternates: Array<{ lang: Language; href: string }> = [];
     for (const [lang, altFile] of langMap) {
-      if (lang !== 'en') {
+      if (lang !== feedLang) {
         alternates.push({
           lang,
           href: `${BASE_URL}/news/${altFile}`,
@@ -94,13 +108,13 @@ export function getRssArticles(): RssArticle[] {
     }
 
     articles.push({
-      file: enFile,
+      file: primaryFile,
       title: meta.title,
       description: meta.description,
-      link: `${BASE_URL}/news/${enFile}`,
+      link: `${BASE_URL}/news/${primaryFile}`,
       pubDate: meta.pubDate,
       baseSlug,
-      lang: 'en',
+      lang: feedLang,
       author: meta.author,
       category: meta.category,
       alternateLanguages: alternates,
@@ -109,7 +123,7 @@ export function getRssArticles(): RssArticle[] {
 
   articles.sort((a, b) => new Date(b.pubDate).getTime() - new Date(a.pubDate).getTime());
 
-  console.log(`  Found ${articles.length} English articles with multi-language alternates`);
+  console.log(`  Found ${articles.length} ${feedLang} articles with multi-language alternates`);
 
   return articles.slice(0, MAX_ITEMS);
 }

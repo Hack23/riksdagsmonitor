@@ -16,10 +16,13 @@
  * @license Apache-2.0
  */
 
+import type { Language } from '../../types/language.js';
+
 import { getRssArticles } from '../scanner.js';
 import { escapeXml } from '../escape.js';
 import { hreflangCode } from '../hreflang.js';
 import { getBySubfolder } from '../../render-lib/article-types.js';
+import { LANGUAGE_META } from '../../sitemap-html/i18n.js';
 
 const BASE_URL = 'https://riksdagsmonitor.com';
 
@@ -32,13 +35,51 @@ function subfolderFromBaseSlug(baseSlug: string): string | null {
   return m ? m[1]! : null;
 }
 
-/**
- * Generate RSS 2.0 XML feed.
- */
-export function generateRss(): string {
-  console.log('🔨 Generating RSS feed...');
+/** Localized channel title/description/self-href for one feed language. */
+interface ChannelStrings {
+  title: string;
+  description: string;
+  language: string;
+  selfHref: string;
+}
 
-  const articles = getRssArticles();
+/**
+ * Resolve the localized channel strings for a feed language. English
+ * keeps its established branded title/description verbatim so the legacy
+ * `rss.xml` output is byte-stable; every other language reuses the
+ * localized strings already maintained in `LANGUAGE_META`.
+ */
+function channelStrings(feedLang: Language): ChannelStrings {
+  if (feedLang === 'en') {
+    return {
+      title: 'Riksdagsmonitor - Swedish Parliament Intelligence',
+      description:
+        'Real-time monitoring, analysis, and intelligence from the Swedish Parliament (Riksdag) and Government. Covering legislative activity, voting patterns, coalition dynamics, and election forecasts.',
+      language: 'en',
+      selfHref: `${BASE_URL}/rss.xml`,
+    };
+  }
+
+  const meta = LANGUAGE_META[feedLang];
+  const t = meta.translations;
+  return {
+    title: `Riksdagsmonitor — ${t.newsAnalysis} (${meta.nativeName})`,
+    description: t.newsDesc,
+    language: meta.hreflang,
+    selfHref: `${BASE_URL}/rss_${feedLang}.xml`,
+  };
+}
+
+/**
+ * Generate RSS 2.0 XML feed for the requested `feedLang` (defaults to
+ * English). The channel header is localized via `LANGUAGE_META` and each
+ * item carries the localized title/description of its language variant.
+ */
+export function generateRss(feedLang: Language = 'en'): string {
+  console.log(`🔨 Generating RSS feed (${feedLang})...`);
+
+  const channel = channelStrings(feedLang);
+  const articles = getRssArticles(feedLang);
   const now = new Date().toUTCString();
 
   const lastBuildDate = articles.length > 0
@@ -51,10 +92,10 @@ export function generateRss(): string {
      xmlns:dc="http://purl.org/dc/elements/1.1/"
      xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Riksdagsmonitor - Swedish Parliament Intelligence</title>
+    <title>${escapeXml(channel.title)}</title>
     <link>${BASE_URL}</link>
-    <description>Real-time monitoring, analysis, and intelligence from the Swedish Parliament (Riksdag) and Government. Covering legislative activity, voting patterns, coalition dynamics, and election forecasts.</description>
-    <language>en</language>
+    <description>${escapeXml(channel.description)}</description>
+    <language>${channel.language}</language>
     <lastBuildDate>${lastBuildDate}</lastBuildDate>
     <pubDate>${lastBuildDate}</pubDate>
     <ttl>60</ttl>
@@ -71,7 +112,7 @@ export function generateRss(): string {
       <height>144</height>
       <description>Riksdagsmonitor - Swedish Parliament Intelligence Platform</description>
     </image>
-    <atom:link href="${BASE_URL}/rss.xml" rel="self" type="application/rss+xml"/>`;
+    <atom:link href="${channel.selfHref}" rel="self" type="application/rss+xml"/>`;
 
   const channelCategories = [
     'Swedish Politics', 'Parliament', 'Riksdag', 'Political Intelligence',
@@ -98,7 +139,7 @@ export function generateRss(): string {
       <guid isPermaLink="true">${escapeXml(article.link)}</guid>
       <dc:creator>${escapeXml(article.author)}</dc:creator>
       <category>${escapeXml(categoryLabel)}</category>
-      <atom:link href="${escapeXml(article.link)}" rel="alternate" type="text/html" hreflang="en"/>`;
+      <atom:link href="${escapeXml(article.link)}" rel="alternate" type="text/html" hreflang="${hreflangCode(feedLang)}"/>`;
 
     for (const alt of article.alternateLanguages) {
       xml += `

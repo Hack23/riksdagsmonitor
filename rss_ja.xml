@@ -1,0 +1,1185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+     xmlns:atom="http://www.w3.org/2005/Atom"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Riksdagsmonitor — ニュース＆分析 (日本語)</title>
+    <link>https://riksdagsmonitor.com</link>
+    <description>スウェーデン議会と政府からの最新の政治ニュース、分析、アップデート。</description>
+    <language>ja</language>
+    <lastBuildDate>Fri, 29 May 2026 00:00:00 GMT</lastBuildDate>
+    <pubDate>Fri, 29 May 2026 00:00:00 GMT</pubDate>
+    <ttl>60</ttl>
+    <copyright>Copyright 2026 Hack23 AB. Licensed under Apache-2.0.</copyright>
+    <managingEditor>info@hack23.com (Hack23 AB)</managingEditor>
+    <webMaster>info@hack23.com (Hack23 AB)</webMaster>
+    <generator>Riksdagsmonitor RSS Generator v1.0</generator>
+    <docs>https://www.rssboard.org/rss-specification</docs>
+    <image>
+      <url>https://riksdagsmonitor.com/images/android-chrome-512x512.png</url>
+      <title>Riksdagsmonitor</title>
+      <link>https://riksdagsmonitor.com</link>
+      <width>144</width>
+      <height>144</height>
+      <description>Riksdagsmonitor - Swedish Parliament Intelligence Platform</description>
+    </image>
+    <atom:link href="https://riksdagsmonitor.com/rss_ja.xml" rel="self" type="application/rss+xml"/>
+    <category>Swedish Politics</category>
+    <category>Parliament</category>
+    <category>Riksdag</category>
+    <category>Political Intelligence</category>
+    <category>Election Analysis</category>
+    <category>Legislative Monitoring</category>
+    <item>
+      <title>Energy and Schools Split the Riksdag While…</title>
+      <link>https://riksdagsmonitor.com/news/2026-05-29-committee-reports-ja.html</link>
+      <description>Seven committee reports reached the Riksdag floor on 2026-05-28, and the political energy concentrated on exactly two…</description>
+      <pubDate>Fri, 29 May 2026 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://riksdagsmonitor.com/news/2026-05-29-committee-reports-ja.html</guid>
+      <dc:creator>James Pether Sörling, CISSP, CISM</dc:creator>
+      <category>📊 Committee Reports</category>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-29-committee-reports-ja.html" rel="alternate" type="text/html" hreflang="ja"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-29-committee-reports-ar.html" rel="alternate" type="text/html" hreflang="ar"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-29-committee-reports-da.html" rel="alternate" type="text/html" hreflang="da"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-29-committee-reports-de.html" rel="alternate" type="text/html" hreflang="de"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-29-committee-reports-en.html" rel="alternate" type="text/html" hreflang="en"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-29-committee-reports-es.html" rel="alternate" type="text/html" hreflang="es"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-29-committee-reports-fi.html" rel="alternate" type="text/html" hreflang="fi"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-29-committee-reports-fr.html" rel="alternate" type="text/html" hreflang="fr"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-29-committee-reports-he.html" rel="alternate" type="text/html" hreflang="he"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-29-committee-reports-ko.html" rel="alternate" type="text/html" hreflang="ko"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-29-committee-reports-nl.html" rel="alternate" type="text/html" hreflang="nl"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-29-committee-reports-no.html" rel="alternate" type="text/html" hreflang="nb"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-29-committee-reports-sv.html" rel="alternate" type="text/html" hreflang="sv"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-29-committee-reports-zh.html" rel="alternate" type="text/html" hreflang="zh"/>
+    </item>
+    <item>
+      <title>Opposition Presses Tidö Ministers on Jobs…</title>
+      <link>https://riksdagsmonitor.com/news/2026-05-29-interpellations-ja.html</link>
+      <description>Seven interpellations submitted to the Riksdag on 2026-05-29 form a coherent, pre-election opposition accountability…</description>
+      <pubDate>Fri, 29 May 2026 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://riksdagsmonitor.com/news/2026-05-29-interpellations-ja.html</guid>
+      <dc:creator>James Pether Sörling, CISSP, CISM</dc:creator>
+      <category>❓ Interpellations</category>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-29-interpellations-ja.html" rel="alternate" type="text/html" hreflang="ja"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-29-interpellations-ar.html" rel="alternate" type="text/html" hreflang="ar"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-29-interpellations-da.html" rel="alternate" type="text/html" hreflang="da"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-29-interpellations-de.html" rel="alternate" type="text/html" hreflang="de"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-29-interpellations-en.html" rel="alternate" type="text/html" hreflang="en"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-29-interpellations-es.html" rel="alternate" type="text/html" hreflang="es"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-29-interpellations-fi.html" rel="alternate" type="text/html" hreflang="fi"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-29-interpellations-fr.html" rel="alternate" type="text/html" hreflang="fr"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-29-interpellations-he.html" rel="alternate" type="text/html" hreflang="he"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-29-interpellations-ko.html" rel="alternate" type="text/html" hreflang="ko"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-29-interpellations-nl.html" rel="alternate" type="text/html" hreflang="nl"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-29-interpellations-no.html" rel="alternate" type="text/html" hreflang="nb"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-29-interpellations-sv.html" rel="alternate" type="text/html" hreflang="sv"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-29-interpellations-zh.html" rel="alternate" type="text/html" hreflang="zh"/>
+    </item>
+    <item>
+      <title>Sweden&#039;s Greens Open a Two-Front Rights…</title>
+      <link>https://riksdagsmonitor.com/news/2026-05-29-motions-ja.html</link>
+      <description>Miljöpartiet is using the final pre-recess legislative window to build a documented rights-and-rule-of-law record…</description>
+      <pubDate>Fri, 29 May 2026 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://riksdagsmonitor.com/news/2026-05-29-motions-ja.html</guid>
+      <dc:creator>James Pether Sörling, CISSP, CISM</dc:creator>
+      <category>📝 Motions</category>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-29-motions-ja.html" rel="alternate" type="text/html" hreflang="ja"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-29-motions-ar.html" rel="alternate" type="text/html" hreflang="ar"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-29-motions-da.html" rel="alternate" type="text/html" hreflang="da"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-29-motions-de.html" rel="alternate" type="text/html" hreflang="de"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-29-motions-en.html" rel="alternate" type="text/html" hreflang="en"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-29-motions-es.html" rel="alternate" type="text/html" hreflang="es"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-29-motions-fi.html" rel="alternate" type="text/html" hreflang="fi"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-29-motions-fr.html" rel="alternate" type="text/html" hreflang="fr"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-29-motions-he.html" rel="alternate" type="text/html" hreflang="he"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-29-motions-ko.html" rel="alternate" type="text/html" hreflang="ko"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-29-motions-nl.html" rel="alternate" type="text/html" hreflang="nl"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-29-motions-no.html" rel="alternate" type="text/html" hreflang="nb"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-29-motions-sv.html" rel="alternate" type="text/html" hreflang="sv"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-29-motions-zh.html" rel="alternate" type="text/html" hreflang="zh"/>
+    </item>
+    <item>
+      <title>Government Lays Two Trillion Kronor of…</title>
+      <link>https://riksdagsmonitor.com/news/2026-05-29-propositions-ja.html</link>
+      <description>The Government has submitted its statutory annual accountability report on the AP pension buffer funds — Skr.</description>
+      <pubDate>Fri, 29 May 2026 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://riksdagsmonitor.com/news/2026-05-29-propositions-ja.html</guid>
+      <dc:creator>James Pether Sörling, CISSP, CISM</dc:creator>
+      <category>📜 Propositions</category>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-29-propositions-ja.html" rel="alternate" type="text/html" hreflang="ja"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-29-propositions-ar.html" rel="alternate" type="text/html" hreflang="ar"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-29-propositions-da.html" rel="alternate" type="text/html" hreflang="da"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-29-propositions-de.html" rel="alternate" type="text/html" hreflang="de"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-29-propositions-en.html" rel="alternate" type="text/html" hreflang="en"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-29-propositions-es.html" rel="alternate" type="text/html" hreflang="es"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-29-propositions-fi.html" rel="alternate" type="text/html" hreflang="fi"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-29-propositions-fr.html" rel="alternate" type="text/html" hreflang="fr"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-29-propositions-he.html" rel="alternate" type="text/html" hreflang="he"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-29-propositions-ko.html" rel="alternate" type="text/html" hreflang="ko"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-29-propositions-nl.html" rel="alternate" type="text/html" hreflang="nl"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-29-propositions-no.html" rel="alternate" type="text/html" hreflang="nb"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-29-propositions-sv.html" rel="alternate" type="text/html" hreflang="sv"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-29-propositions-zh.html" rel="alternate" type="text/html" hreflang="zh"/>
+    </item>
+    <item>
+      <title>Riksdag Caps Pre-Recess Week with New…</title>
+      <link>https://riksdagsmonitor.com/news/2026-05-29-week-ahead-ja.html</link>
+      <description>In the final full sitting week before summer recess and 107 days before the 2026-09-13 election, the Riksdag debates…</description>
+      <pubDate>Fri, 29 May 2026 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://riksdagsmonitor.com/news/2026-05-29-week-ahead-ja.html</guid>
+      <dc:creator>James Pether Sörling, CISSP, CISM</dc:creator>
+      <category>📅 Week Ahead</category>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-29-week-ahead-ja.html" rel="alternate" type="text/html" hreflang="ja"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-29-week-ahead-ar.html" rel="alternate" type="text/html" hreflang="ar"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-29-week-ahead-da.html" rel="alternate" type="text/html" hreflang="da"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-29-week-ahead-de.html" rel="alternate" type="text/html" hreflang="de"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-29-week-ahead-en.html" rel="alternate" type="text/html" hreflang="en"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-29-week-ahead-es.html" rel="alternate" type="text/html" hreflang="es"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-29-week-ahead-fi.html" rel="alternate" type="text/html" hreflang="fi"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-29-week-ahead-fr.html" rel="alternate" type="text/html" hreflang="fr"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-29-week-ahead-he.html" rel="alternate" type="text/html" hreflang="he"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-29-week-ahead-ko.html" rel="alternate" type="text/html" hreflang="ko"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-29-week-ahead-nl.html" rel="alternate" type="text/html" hreflang="nl"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-29-week-ahead-no.html" rel="alternate" type="text/html" hreflang="nb"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-29-week-ahead-sv.html" rel="alternate" type="text/html" hreflang="sv"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-29-week-ahead-zh.html" rel="alternate" type="text/html" hreflang="zh"/>
+    </item>
+    <item>
+      <title>Sweden Tightens Security Laws and Migration…</title>
+      <link>https://riksdagsmonitor.com/news/2026-05-28-committee-reports-ja.html</link>
+      <description>Sweden&#039;s parliamentary committees approved five major legislative packages on 27 May 2026, advancing a comprehensive…</description>
+      <pubDate>Thu, 28 May 2026 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://riksdagsmonitor.com/news/2026-05-28-committee-reports-ja.html</guid>
+      <dc:creator>James Pether Sörling, CISSP, CISM</dc:creator>
+      <category>📊 Committee Reports</category>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-committee-reports-ja.html" rel="alternate" type="text/html" hreflang="ja"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-committee-reports-ar.html" rel="alternate" type="text/html" hreflang="ar"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-committee-reports-da.html" rel="alternate" type="text/html" hreflang="da"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-committee-reports-de.html" rel="alternate" type="text/html" hreflang="de"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-committee-reports-en.html" rel="alternate" type="text/html" hreflang="en"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-committee-reports-es.html" rel="alternate" type="text/html" hreflang="es"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-committee-reports-fi.html" rel="alternate" type="text/html" hreflang="fi"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-committee-reports-fr.html" rel="alternate" type="text/html" hreflang="fr"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-committee-reports-he.html" rel="alternate" type="text/html" hreflang="he"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-committee-reports-ko.html" rel="alternate" type="text/html" hreflang="ko"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-committee-reports-nl.html" rel="alternate" type="text/html" hreflang="nl"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-committee-reports-no.html" rel="alternate" type="text/html" hreflang="nb"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-committee-reports-sv.html" rel="alternate" type="text/html" hreflang="sv"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-committee-reports-zh.html" rel="alternate" type="text/html" hreflang="zh"/>
+    </item>
+    <item>
+      <title>Tidö Coalition Closes Mandate with Criminal…</title>
+      <link>https://riksdagsmonitor.com/news/2026-05-28-election-cycle-current-ja.html</link>
+      <description>Sweden&#039;s Tidö coalition (M+KD+L, supported by SD) enters the final 107 days of its mandate with a dense legislative…</description>
+      <pubDate>Thu, 28 May 2026 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://riksdagsmonitor.com/news/2026-05-28-election-cycle-current-ja.html</guid>
+      <dc:creator>James Pether Sörling, CISSP, CISM</dc:creator>
+      <category>Political Intelligence</category>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-election-cycle-current-ja.html" rel="alternate" type="text/html" hreflang="ja"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-election-cycle-current-ar.html" rel="alternate" type="text/html" hreflang="ar"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-election-cycle-current-da.html" rel="alternate" type="text/html" hreflang="da"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-election-cycle-current-de.html" rel="alternate" type="text/html" hreflang="de"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-election-cycle-current-en.html" rel="alternate" type="text/html" hreflang="en"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-election-cycle-current-es.html" rel="alternate" type="text/html" hreflang="es"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-election-cycle-current-fi.html" rel="alternate" type="text/html" hreflang="fi"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-election-cycle-current-fr.html" rel="alternate" type="text/html" hreflang="fr"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-election-cycle-current-he.html" rel="alternate" type="text/html" hreflang="he"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-election-cycle-current-ko.html" rel="alternate" type="text/html" hreflang="ko"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-election-cycle-current-nl.html" rel="alternate" type="text/html" hreflang="nl"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-election-cycle-current-no.html" rel="alternate" type="text/html" hreflang="nb"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-election-cycle-current-sv.html" rel="alternate" type="text/html" hreflang="sv"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-election-cycle-current-zh.html" rel="alternate" type="text/html" hreflang="zh"/>
+    </item>
+    <item>
+      <title>Sweden Post-September 2026: Coalition…</title>
+      <link>https://riksdagsmonitor.com/news/2026-05-28-election-cycle-next-ja.html</link>
+      <description>With Sweden&#039;s September 13, 2026 election now 107 days away, this brief maps the post-election policy landscape across…</description>
+      <pubDate>Thu, 28 May 2026 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://riksdagsmonitor.com/news/2026-05-28-election-cycle-next-ja.html</guid>
+      <dc:creator>James Pether Sörling, CISSP, CISM</dc:creator>
+      <category>Political Intelligence</category>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-election-cycle-next-ja.html" rel="alternate" type="text/html" hreflang="ja"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-election-cycle-next-ar.html" rel="alternate" type="text/html" hreflang="ar"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-election-cycle-next-da.html" rel="alternate" type="text/html" hreflang="da"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-election-cycle-next-de.html" rel="alternate" type="text/html" hreflang="de"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-election-cycle-next-en.html" rel="alternate" type="text/html" hreflang="en"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-election-cycle-next-es.html" rel="alternate" type="text/html" hreflang="es"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-election-cycle-next-fi.html" rel="alternate" type="text/html" hreflang="fi"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-election-cycle-next-fr.html" rel="alternate" type="text/html" hreflang="fr"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-election-cycle-next-he.html" rel="alternate" type="text/html" hreflang="he"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-election-cycle-next-ko.html" rel="alternate" type="text/html" hreflang="ko"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-election-cycle-next-nl.html" rel="alternate" type="text/html" hreflang="nl"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-election-cycle-next-no.html" rel="alternate" type="text/html" hreflang="nb"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-election-cycle-next-sv.html" rel="alternate" type="text/html" hreflang="sv"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-election-cycle-next-zh.html" rel="alternate" type="text/html" hreflang="zh"/>
+    </item>
+    <item>
+      <title>Sweden&#039;s Parliamentary Week in Review…</title>
+      <link>https://riksdagsmonitor.com/news/2026-05-28-evening-analysis-ja.html</link>
+      <description>Sweden ends the parliamentary week of 2026-05-28 with an unusual density of legislative output: three government…</description>
+      <pubDate>Thu, 28 May 2026 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://riksdagsmonitor.com/news/2026-05-28-evening-analysis-ja.html</guid>
+      <dc:creator>James Pether Sörling, CISSP, CISM</dc:creator>
+      <category>🌆 Evening Analysis</category>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-evening-analysis-ja.html" rel="alternate" type="text/html" hreflang="ja"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-evening-analysis-ar.html" rel="alternate" type="text/html" hreflang="ar"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-evening-analysis-da.html" rel="alternate" type="text/html" hreflang="da"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-evening-analysis-de.html" rel="alternate" type="text/html" hreflang="de"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-evening-analysis-en.html" rel="alternate" type="text/html" hreflang="en"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-evening-analysis-es.html" rel="alternate" type="text/html" hreflang="es"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-evening-analysis-fi.html" rel="alternate" type="text/html" hreflang="fi"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-evening-analysis-fr.html" rel="alternate" type="text/html" hreflang="fr"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-evening-analysis-he.html" rel="alternate" type="text/html" hreflang="he"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-evening-analysis-ko.html" rel="alternate" type="text/html" hreflang="ko"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-evening-analysis-nl.html" rel="alternate" type="text/html" hreflang="nl"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-evening-analysis-no.html" rel="alternate" type="text/html" hreflang="nb"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-evening-analysis-sv.html" rel="alternate" type="text/html" hreflang="sv"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-evening-analysis-zh.html" rel="alternate" type="text/html" hreflang="zh"/>
+    </item>
+    <item>
+      <title>Opposition Launches Pre-Election…</title>
+      <link>https://riksdagsmonitor.com/news/2026-05-28-interpellations-ja.html</link>
+      <description>The Swedish Social Democrats (S) and Miljöpartiet (MP) filed 20 interpellations during 2026-05-21 to 2026-05-28, in…</description>
+      <pubDate>Thu, 28 May 2026 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://riksdagsmonitor.com/news/2026-05-28-interpellations-ja.html</guid>
+      <dc:creator>James Pether Sörling, CISSP, CISM</dc:creator>
+      <category>❓ Interpellations</category>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-interpellations-ja.html" rel="alternate" type="text/html" hreflang="ja"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-interpellations-ar.html" rel="alternate" type="text/html" hreflang="ar"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-interpellations-da.html" rel="alternate" type="text/html" hreflang="da"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-interpellations-de.html" rel="alternate" type="text/html" hreflang="de"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-interpellations-en.html" rel="alternate" type="text/html" hreflang="en"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-interpellations-es.html" rel="alternate" type="text/html" hreflang="es"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-interpellations-fi.html" rel="alternate" type="text/html" hreflang="fi"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-interpellations-fr.html" rel="alternate" type="text/html" hreflang="fr"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-interpellations-he.html" rel="alternate" type="text/html" hreflang="he"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-interpellations-ko.html" rel="alternate" type="text/html" hreflang="ko"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-interpellations-nl.html" rel="alternate" type="text/html" hreflang="nl"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-interpellations-no.html" rel="alternate" type="text/html" hreflang="nb"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-interpellations-sv.html" rel="alternate" type="text/html" hreflang="sv"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-interpellations-zh.html" rel="alternate" type="text/html" hreflang="zh"/>
+    </item>
+    <item>
+      <title>Sweden&#039;s Tidö government enters the final…</title>
+      <link>https://riksdagsmonitor.com/news/2026-05-28-monthly-review-ja.html</link>
+      <description>Sweden&#039;s Tidö government enters the final pre-election quarter (Q3 2026) with a strong legislative record but…</description>
+      <pubDate>Thu, 28 May 2026 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://riksdagsmonitor.com/news/2026-05-28-monthly-review-ja.html</guid>
+      <dc:creator>James Pether Sörling, CISSP, CISM</dc:creator>
+      <category>📈 Monthly Review</category>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-monthly-review-ja.html" rel="alternate" type="text/html" hreflang="ja"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-monthly-review-ar.html" rel="alternate" type="text/html" hreflang="ar"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-monthly-review-da.html" rel="alternate" type="text/html" hreflang="da"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-monthly-review-de.html" rel="alternate" type="text/html" hreflang="de"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-monthly-review-en.html" rel="alternate" type="text/html" hreflang="en"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-monthly-review-es.html" rel="alternate" type="text/html" hreflang="es"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-monthly-review-fi.html" rel="alternate" type="text/html" hreflang="fi"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-monthly-review-fr.html" rel="alternate" type="text/html" hreflang="fr"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-monthly-review-he.html" rel="alternate" type="text/html" hreflang="he"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-monthly-review-ko.html" rel="alternate" type="text/html" hreflang="ko"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-monthly-review-nl.html" rel="alternate" type="text/html" hreflang="nl"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-monthly-review-no.html" rel="alternate" type="text/html" hreflang="nb"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-monthly-review-sv.html" rel="alternate" type="text/html" hreflang="sv"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-monthly-review-zh.html" rel="alternate" type="text/html" hreflang="zh"/>
+    </item>
+    <item>
+      <title>幹部向け情報要約 — 野党動議 — Riksdagsmonitor</title>
+      <link>https://riksdagsmonitor.com/news/2026-05-28-motions-ja.html</link>
+      <description>分類: 公開 日付: 2026-05-28 作成対象: 編集・情報管理部門</description>
+      <pubDate>Thu, 28 May 2026 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://riksdagsmonitor.com/news/2026-05-28-motions-ja.html</guid>
+      <dc:creator>James Pether Sörling, CISSP, CISM</dc:creator>
+      <category>📝 Motions</category>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-motions-ja.html" rel="alternate" type="text/html" hreflang="ja"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-motions-ar.html" rel="alternate" type="text/html" hreflang="ar"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-motions-da.html" rel="alternate" type="text/html" hreflang="da"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-motions-de.html" rel="alternate" type="text/html" hreflang="de"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-motions-en.html" rel="alternate" type="text/html" hreflang="en"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-motions-es.html" rel="alternate" type="text/html" hreflang="es"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-motions-fi.html" rel="alternate" type="text/html" hreflang="fi"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-motions-fr.html" rel="alternate" type="text/html" hreflang="fr"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-motions-he.html" rel="alternate" type="text/html" hreflang="he"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-motions-ko.html" rel="alternate" type="text/html" hreflang="ko"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-motions-nl.html" rel="alternate" type="text/html" hreflang="nl"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-motions-no.html" rel="alternate" type="text/html" hreflang="nb"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-motions-sv.html" rel="alternate" type="text/html" hreflang="sv"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-motions-zh.html" rel="alternate" type="text/html" hreflang="zh"/>
+    </item>
+    <item>
+      <title>Swedish Government Propositions</title>
+      <link>https://riksdagsmonitor.com/news/2026-05-28-propositions-ja.html</link>
+      <description>The Swedish government has submitted two propositions to the Riksdag. The first — Prop. 2025/26:271 &quot;En förändrad…</description>
+      <pubDate>Thu, 28 May 2026 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://riksdagsmonitor.com/news/2026-05-28-propositions-ja.html</guid>
+      <dc:creator>James Pether Sörling, CISSP, CISM</dc:creator>
+      <category>📜 Propositions</category>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-propositions-ja.html" rel="alternate" type="text/html" hreflang="ja"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-propositions-ar.html" rel="alternate" type="text/html" hreflang="ar"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-propositions-da.html" rel="alternate" type="text/html" hreflang="da"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-propositions-de.html" rel="alternate" type="text/html" hreflang="de"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-propositions-en.html" rel="alternate" type="text/html" hreflang="en"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-propositions-es.html" rel="alternate" type="text/html" hreflang="es"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-propositions-fi.html" rel="alternate" type="text/html" hreflang="fi"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-propositions-fr.html" rel="alternate" type="text/html" hreflang="fr"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-propositions-he.html" rel="alternate" type="text/html" hreflang="he"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-propositions-ko.html" rel="alternate" type="text/html" hreflang="ko"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-propositions-nl.html" rel="alternate" type="text/html" hreflang="nl"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-propositions-no.html" rel="alternate" type="text/html" hreflang="nb"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-propositions-sv.html" rel="alternate" type="text/html" hreflang="sv"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-propositions-zh.html" rel="alternate" type="text/html" hreflang="zh"/>
+    </item>
+    <item>
+      <title>Sweden&#039;s Riksdag Acts on Ukraine Support…</title>
+      <link>https://riksdagsmonitor.com/news/2026-05-28-realtime-monitor-ja.html</link>
+      <description>Sweden&#039;s Tidökoalition government submitted three propositions on 28 May 2026, headlined by an extra supplementary…</description>
+      <pubDate>Thu, 28 May 2026 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://riksdagsmonitor.com/news/2026-05-28-realtime-monitor-ja.html</guid>
+      <dc:creator>James Pether Sörling, CISSP, CISM</dc:creator>
+      <category>🚨 Realtime Monitor</category>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-realtime-monitor-ja.html" rel="alternate" type="text/html" hreflang="ja"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-realtime-monitor-ar.html" rel="alternate" type="text/html" hreflang="ar"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-realtime-monitor-da.html" rel="alternate" type="text/html" hreflang="da"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-realtime-monitor-de.html" rel="alternate" type="text/html" hreflang="de"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-realtime-monitor-en.html" rel="alternate" type="text/html" hreflang="en"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-realtime-monitor-es.html" rel="alternate" type="text/html" hreflang="es"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-realtime-monitor-fi.html" rel="alternate" type="text/html" hreflang="fi"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-realtime-monitor-fr.html" rel="alternate" type="text/html" hreflang="fr"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-realtime-monitor-he.html" rel="alternate" type="text/html" hreflang="he"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-realtime-monitor-ko.html" rel="alternate" type="text/html" hreflang="ko"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-realtime-monitor-nl.html" rel="alternate" type="text/html" hreflang="nl"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-realtime-monitor-no.html" rel="alternate" type="text/html" hreflang="nb"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-realtime-monitor-sv.html" rel="alternate" type="text/html" hreflang="sv"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-28-realtime-monitor-zh.html" rel="alternate" type="text/html" hreflang="zh"/>
+    </item>
+    <item>
+      <title>Sweden&#039;s Riksdag on 26 May 2026 approved…</title>
+      <link>https://riksdagsmonitor.com/news/2026-05-27-committee-reports-ja.html</link>
+      <description>Sweden&#039;s Riksdag on 26 May 2026 approved two landmark defence measures — endorsing 103 billion SEK in Ukraine military…</description>
+      <pubDate>Wed, 27 May 2026 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://riksdagsmonitor.com/news/2026-05-27-committee-reports-ja.html</guid>
+      <dc:creator>James Pether Sörling, CISSP, CISM</dc:creator>
+      <category>📊 Committee Reports</category>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-committee-reports-ja.html" rel="alternate" type="text/html" hreflang="ja"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-committee-reports-ar.html" rel="alternate" type="text/html" hreflang="ar"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-committee-reports-da.html" rel="alternate" type="text/html" hreflang="da"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-committee-reports-de.html" rel="alternate" type="text/html" hreflang="de"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-committee-reports-en.html" rel="alternate" type="text/html" hreflang="en"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-committee-reports-es.html" rel="alternate" type="text/html" hreflang="es"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-committee-reports-fi.html" rel="alternate" type="text/html" hreflang="fi"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-committee-reports-fr.html" rel="alternate" type="text/html" hreflang="fr"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-committee-reports-he.html" rel="alternate" type="text/html" hreflang="he"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-committee-reports-ko.html" rel="alternate" type="text/html" hreflang="ko"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-committee-reports-nl.html" rel="alternate" type="text/html" hreflang="nl"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-committee-reports-no.html" rel="alternate" type="text/html" hreflang="nb"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-committee-reports-sv.html" rel="alternate" type="text/html" hreflang="sv"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-committee-reports-zh.html" rel="alternate" type="text/html" hreflang="zh"/>
+    </item>
+    <item>
+      <title>Swedish Election Cycle 2022-2026 (Current…</title>
+      <link>https://riksdagsmonitor.com/news/2026-05-27-election-cycle-current-ja.html</link>
+      <description>Sweden&#039;s 2022-2026 Tidö mandate is concluding with a highly charged legislative sprint that includes the country&#039;s…</description>
+      <pubDate>Wed, 27 May 2026 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://riksdagsmonitor.com/news/2026-05-27-election-cycle-current-ja.html</guid>
+      <dc:creator>James Pether Sörling, CISSP, CISM</dc:creator>
+      <category>Political Intelligence</category>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-election-cycle-current-ja.html" rel="alternate" type="text/html" hreflang="ja"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-election-cycle-current-ar.html" rel="alternate" type="text/html" hreflang="ar"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-election-cycle-current-da.html" rel="alternate" type="text/html" hreflang="da"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-election-cycle-current-de.html" rel="alternate" type="text/html" hreflang="de"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-election-cycle-current-en.html" rel="alternate" type="text/html" hreflang="en"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-election-cycle-current-es.html" rel="alternate" type="text/html" hreflang="es"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-election-cycle-current-fi.html" rel="alternate" type="text/html" hreflang="fi"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-election-cycle-current-fr.html" rel="alternate" type="text/html" hreflang="fr"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-election-cycle-current-he.html" rel="alternate" type="text/html" hreflang="he"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-election-cycle-current-ko.html" rel="alternate" type="text/html" hreflang="ko"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-election-cycle-current-nl.html" rel="alternate" type="text/html" hreflang="nl"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-election-cycle-current-no.html" rel="alternate" type="text/html" hreflang="nb"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-election-cycle-current-sv.html" rel="alternate" type="text/html" hreflang="sv"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-election-cycle-current-zh.html" rel="alternate" type="text/html" hreflang="zh"/>
+    </item>
+    <item>
+      <title>Sweden Post-Election Mandate 2026-2030…</title>
+      <link>https://riksdagsmonitor.com/news/2026-05-27-election-cycle-next-ja.html</link>
+      <description>Sweden faces a historically open electoral outcome on September 13, 2026. The next four-year mandate will be shaped by…</description>
+      <pubDate>Wed, 27 May 2026 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://riksdagsmonitor.com/news/2026-05-27-election-cycle-next-ja.html</guid>
+      <dc:creator>James Pether Sörling, CISSP, CISM</dc:creator>
+      <category>Political Intelligence</category>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-election-cycle-next-ja.html" rel="alternate" type="text/html" hreflang="ja"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-election-cycle-next-ar.html" rel="alternate" type="text/html" hreflang="ar"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-election-cycle-next-da.html" rel="alternate" type="text/html" hreflang="da"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-election-cycle-next-de.html" rel="alternate" type="text/html" hreflang="de"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-election-cycle-next-en.html" rel="alternate" type="text/html" hreflang="en"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-election-cycle-next-es.html" rel="alternate" type="text/html" hreflang="es"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-election-cycle-next-fi.html" rel="alternate" type="text/html" hreflang="fi"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-election-cycle-next-fr.html" rel="alternate" type="text/html" hreflang="fr"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-election-cycle-next-he.html" rel="alternate" type="text/html" hreflang="he"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-election-cycle-next-ko.html" rel="alternate" type="text/html" hreflang="ko"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-election-cycle-next-nl.html" rel="alternate" type="text/html" hreflang="nl"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-election-cycle-next-no.html" rel="alternate" type="text/html" hreflang="nb"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-election-cycle-next-sv.html" rel="alternate" type="text/html" hreflang="sv"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-election-cycle-next-zh.html" rel="alternate" type="text/html" hreflang="zh"/>
+    </item>
+    <item>
+      <title>Riksdag Advances Cybersecurity Centre…</title>
+      <link>https://riksdagsmonitor.com/news/2026-05-27-evening-analysis-ja.html</link>
+      <description>Sweden&#039;s Riksdag approved three landmark committee reports on 27 May 2026: legislation creating a statutory National…</description>
+      <pubDate>Wed, 27 May 2026 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://riksdagsmonitor.com/news/2026-05-27-evening-analysis-ja.html</guid>
+      <dc:creator>James Pether Sörling, CISSP, CISM</dc:creator>
+      <category>🌆 Evening Analysis</category>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-evening-analysis-ja.html" rel="alternate" type="text/html" hreflang="ja"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-evening-analysis-ar.html" rel="alternate" type="text/html" hreflang="ar"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-evening-analysis-da.html" rel="alternate" type="text/html" hreflang="da"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-evening-analysis-de.html" rel="alternate" type="text/html" hreflang="de"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-evening-analysis-en.html" rel="alternate" type="text/html" hreflang="en"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-evening-analysis-es.html" rel="alternate" type="text/html" hreflang="es"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-evening-analysis-fi.html" rel="alternate" type="text/html" hreflang="fi"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-evening-analysis-fr.html" rel="alternate" type="text/html" hreflang="fr"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-evening-analysis-he.html" rel="alternate" type="text/html" hreflang="he"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-evening-analysis-ko.html" rel="alternate" type="text/html" hreflang="ko"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-evening-analysis-nl.html" rel="alternate" type="text/html" hreflang="nl"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-evening-analysis-no.html" rel="alternate" type="text/html" hreflang="nb"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-evening-analysis-sv.html" rel="alternate" type="text/html" hreflang="sv"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-evening-analysis-zh.html" rel="alternate" type="text/html" hreflang="zh"/>
+    </item>
+    <item>
+      <title>Opposition Mounts Pre-Election Pressure on…</title>
+      <link>https://riksdagsmonitor.com/news/2026-05-27-interpellations-ja.html</link>
+      <description>Seven interpellations filed 21–26 May 2026 expose a coordinated Social Democrat and Miljöpartiet pre-election campaign…</description>
+      <pubDate>Wed, 27 May 2026 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://riksdagsmonitor.com/news/2026-05-27-interpellations-ja.html</guid>
+      <dc:creator>James Pether Sörling, CISSP, CISM</dc:creator>
+      <category>❓ Interpellations</category>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-interpellations-ja.html" rel="alternate" type="text/html" hreflang="ja"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-interpellations-ar.html" rel="alternate" type="text/html" hreflang="ar"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-interpellations-da.html" rel="alternate" type="text/html" hreflang="da"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-interpellations-de.html" rel="alternate" type="text/html" hreflang="de"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-interpellations-en.html" rel="alternate" type="text/html" hreflang="en"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-interpellations-es.html" rel="alternate" type="text/html" hreflang="es"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-interpellations-fi.html" rel="alternate" type="text/html" hreflang="fi"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-interpellations-fr.html" rel="alternate" type="text/html" hreflang="fr"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-interpellations-he.html" rel="alternate" type="text/html" hreflang="he"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-interpellations-ko.html" rel="alternate" type="text/html" hreflang="ko"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-interpellations-nl.html" rel="alternate" type="text/html" hreflang="nl"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-interpellations-no.html" rel="alternate" type="text/html" hreflang="nb"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-interpellations-sv.html" rel="alternate" type="text/html" hreflang="sv"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-interpellations-zh.html" rel="alternate" type="text/html" hreflang="zh"/>
+    </item>
+    <item>
+      <title>野党動議、2026年5月27日 — Riksdagsmonitor</title>
+      <link>https://riksdagsmonitor.com/news/2026-05-27-motions-ja.html</link>
+      <description>2026年5月22日に提出されたMiljöpartiet（MP）の2件の野党動議は、議会プロセスで進行中の2つの主要な政府提案に対する原則的な権利ベースの挑戦を構成する。</description>
+      <pubDate>Wed, 27 May 2026 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://riksdagsmonitor.com/news/2026-05-27-motions-ja.html</guid>
+      <dc:creator>James Pether Sörling, CISSP, CISM</dc:creator>
+      <category>📝 Motions</category>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-motions-ja.html" rel="alternate" type="text/html" hreflang="ja"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-motions-ar.html" rel="alternate" type="text/html" hreflang="ar"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-motions-da.html" rel="alternate" type="text/html" hreflang="da"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-motions-de.html" rel="alternate" type="text/html" hreflang="de"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-motions-en.html" rel="alternate" type="text/html" hreflang="en"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-motions-es.html" rel="alternate" type="text/html" hreflang="es"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-motions-fi.html" rel="alternate" type="text/html" hreflang="fi"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-motions-fr.html" rel="alternate" type="text/html" hreflang="fr"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-motions-he.html" rel="alternate" type="text/html" hreflang="he"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-motions-ko.html" rel="alternate" type="text/html" hreflang="ko"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-motions-nl.html" rel="alternate" type="text/html" hreflang="nl"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-motions-no.html" rel="alternate" type="text/html" hreflang="nb"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-motions-sv.html" rel="alternate" type="text/html" hreflang="sv"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-motions-zh.html" rel="alternate" type="text/html" hreflang="zh"/>
+    </item>
+    <item>
+      <title>スウェーデンのKD主導政権が中絶法を近代化 — 2027年から在宅中絶と助産師の独立</title>
+      <link>https://riksdagsmonitor.com/news/2026-05-27-propositions-ja.html</link>
+      <description>スウェーデンの中道右派ティドー政権は、KDの保健大臣ヤコブ・フォルスメドのもと、52年前の中絶法（1974:595）を近代化するため、2026年5月26日にProp. 2025/26:271を提出しました。</description>
+      <pubDate>Wed, 27 May 2026 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://riksdagsmonitor.com/news/2026-05-27-propositions-ja.html</guid>
+      <dc:creator>James Pether Sörling, CISSP, CISM</dc:creator>
+      <category>📜 Propositions</category>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-propositions-ja.html" rel="alternate" type="text/html" hreflang="ja"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-propositions-ar.html" rel="alternate" type="text/html" hreflang="ar"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-propositions-da.html" rel="alternate" type="text/html" hreflang="da"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-propositions-de.html" rel="alternate" type="text/html" hreflang="de"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-propositions-en.html" rel="alternate" type="text/html" hreflang="en"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-propositions-es.html" rel="alternate" type="text/html" hreflang="es"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-propositions-fi.html" rel="alternate" type="text/html" hreflang="fi"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-propositions-fr.html" rel="alternate" type="text/html" hreflang="fr"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-propositions-he.html" rel="alternate" type="text/html" hreflang="he"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-propositions-ko.html" rel="alternate" type="text/html" hreflang="ko"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-propositions-nl.html" rel="alternate" type="text/html" hreflang="nl"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-propositions-no.html" rel="alternate" type="text/html" hreflang="nb"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-propositions-sv.html" rel="alternate" type="text/html" hreflang="sv"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-propositions-zh.html" rel="alternate" type="text/html" hreflang="zh"/>
+    </item>
+    <item>
+      <title>スウェーデン議会（Riksdag）は2026-05-27に同時並行の治安法制クラスターと…</title>
+      <link>https://riksdagsmonitor.com/news/2026-05-27-realtime-monitor-ja.html</link>
+      <description>スウェーデン議会（Riksdag）は2026-05-27に同時並行の治安法制クラスターと社会民主党の価値観質問攻勢を審議し、これらが2026年9月の選挙戦場を定義する。</description>
+      <pubDate>Wed, 27 May 2026 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://riksdagsmonitor.com/news/2026-05-27-realtime-monitor-ja.html</guid>
+      <dc:creator>James Pether Sörling, CISSP, CISM</dc:creator>
+      <category>🚨 Realtime Monitor</category>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-realtime-monitor-ja.html" rel="alternate" type="text/html" hreflang="ja"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-realtime-monitor-ar.html" rel="alternate" type="text/html" hreflang="ar"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-realtime-monitor-da.html" rel="alternate" type="text/html" hreflang="da"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-realtime-monitor-de.html" rel="alternate" type="text/html" hreflang="de"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-realtime-monitor-en.html" rel="alternate" type="text/html" hreflang="en"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-realtime-monitor-es.html" rel="alternate" type="text/html" hreflang="es"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-realtime-monitor-fi.html" rel="alternate" type="text/html" hreflang="fi"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-realtime-monitor-fr.html" rel="alternate" type="text/html" hreflang="fr"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-realtime-monitor-he.html" rel="alternate" type="text/html" hreflang="he"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-realtime-monitor-ko.html" rel="alternate" type="text/html" hreflang="ko"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-realtime-monitor-nl.html" rel="alternate" type="text/html" hreflang="nl"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-realtime-monitor-no.html" rel="alternate" type="text/html" hreflang="nb"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-realtime-monitor-sv.html" rel="alternate" type="text/html" hreflang="sv"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-realtime-monitor-zh.html" rel="alternate" type="text/html" hreflang="zh"/>
+    </item>
+    <item>
+      <title>Year Ahead: June 2026–June 2027</title>
+      <link>https://riksdagsmonitor.com/news/2026-05-27-year-ahead-ja.html</link>
+      <description>Sweden enters its most consequential political year since 2022. The September 2026 general election will determine…</description>
+      <pubDate>Wed, 27 May 2026 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://riksdagsmonitor.com/news/2026-05-27-year-ahead-ja.html</guid>
+      <dc:creator>James Pether Sörling, CISSP, CISM</dc:creator>
+      <category>🛰️ Year Ahead</category>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-year-ahead-ja.html" rel="alternate" type="text/html" hreflang="ja"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-year-ahead-ar.html" rel="alternate" type="text/html" hreflang="ar"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-year-ahead-da.html" rel="alternate" type="text/html" hreflang="da"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-year-ahead-de.html" rel="alternate" type="text/html" hreflang="de"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-year-ahead-en.html" rel="alternate" type="text/html" hreflang="en"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-year-ahead-es.html" rel="alternate" type="text/html" hreflang="es"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-year-ahead-fi.html" rel="alternate" type="text/html" hreflang="fi"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-year-ahead-fr.html" rel="alternate" type="text/html" hreflang="fr"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-year-ahead-he.html" rel="alternate" type="text/html" hreflang="he"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-year-ahead-ko.html" rel="alternate" type="text/html" hreflang="ko"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-year-ahead-nl.html" rel="alternate" type="text/html" hreflang="nl"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-year-ahead-no.html" rel="alternate" type="text/html" hreflang="nb"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-year-ahead-sv.html" rel="alternate" type="text/html" hreflang="sv"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-27-year-ahead-zh.html" rel="alternate" type="text/html" hreflang="zh"/>
+    </item>
+    <item>
+      <title>Sweden&#039;s Riksdag justice and foreign…</title>
+      <link>https://riksdagsmonitor.com/news/2026-05-26-committee-reports-ja.html</link>
+      <description>Sweden&#039;s Riksdag justice and foreign affairs committees release four landmark reports in a single cycle: online gang…</description>
+      <pubDate>Tue, 26 May 2026 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://riksdagsmonitor.com/news/2026-05-26-committee-reports-ja.html</guid>
+      <dc:creator>James Pether Sörling, CISSP, CISM</dc:creator>
+      <category>📊 Committee Reports</category>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-26-committee-reports-ja.html" rel="alternate" type="text/html" hreflang="ja"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-26-committee-reports-ar.html" rel="alternate" type="text/html" hreflang="ar"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-26-committee-reports-da.html" rel="alternate" type="text/html" hreflang="da"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-26-committee-reports-de.html" rel="alternate" type="text/html" hreflang="de"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-26-committee-reports-en.html" rel="alternate" type="text/html" hreflang="en"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-26-committee-reports-es.html" rel="alternate" type="text/html" hreflang="es"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-26-committee-reports-fi.html" rel="alternate" type="text/html" hreflang="fi"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-26-committee-reports-fr.html" rel="alternate" type="text/html" hreflang="fr"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-26-committee-reports-he.html" rel="alternate" type="text/html" hreflang="he"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-26-committee-reports-ko.html" rel="alternate" type="text/html" hreflang="ko"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-26-committee-reports-nl.html" rel="alternate" type="text/html" hreflang="nl"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-26-committee-reports-no.html" rel="alternate" type="text/html" hreflang="nb"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-26-committee-reports-sv.html" rel="alternate" type="text/html" hreflang="sv"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-26-committee-reports-zh.html" rel="alternate" type="text/html" hreflang="zh"/>
+    </item>
+    <item>
+      <title>Sweden&#039;s Pre-Election Legislative Sprint…</title>
+      <link>https://riksdagsmonitor.com/news/2026-05-26-evening-analysis-ja.html</link>
+      <description>Sweden&#039;s parliamentary session of 26 May 2026 crystallises the defining tension of the pre-election political moment…</description>
+      <pubDate>Tue, 26 May 2026 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://riksdagsmonitor.com/news/2026-05-26-evening-analysis-ja.html</guid>
+      <dc:creator>James Pether Sörling, CISSP, CISM</dc:creator>
+      <category>🌆 Evening Analysis</category>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-26-evening-analysis-ja.html" rel="alternate" type="text/html" hreflang="ja"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-26-evening-analysis-ar.html" rel="alternate" type="text/html" hreflang="ar"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-26-evening-analysis-da.html" rel="alternate" type="text/html" hreflang="da"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-26-evening-analysis-de.html" rel="alternate" type="text/html" hreflang="de"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-26-evening-analysis-en.html" rel="alternate" type="text/html" hreflang="en"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-26-evening-analysis-es.html" rel="alternate" type="text/html" hreflang="es"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-26-evening-analysis-fi.html" rel="alternate" type="text/html" hreflang="fi"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-26-evening-analysis-fr.html" rel="alternate" type="text/html" hreflang="fr"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-26-evening-analysis-he.html" rel="alternate" type="text/html" hreflang="he"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-26-evening-analysis-ko.html" rel="alternate" type="text/html" hreflang="ko"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-26-evening-analysis-nl.html" rel="alternate" type="text/html" hreflang="nl"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-26-evening-analysis-no.html" rel="alternate" type="text/html" hreflang="nb"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-26-evening-analysis-sv.html" rel="alternate" type="text/html" hreflang="sv"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-26-evening-analysis-zh.html" rel="alternate" type="text/html" hreflang="zh"/>
+    </item>
+    <item>
+      <title>Social Democrats Launch Pre-Recess…</title>
+      <link>https://riksdagsmonitor.com/news/2026-05-26-interpellations-ja.html</link>
+      <description>The Social Democrats filed five coordinated interpellations on 2026-05-26, targeting four government ministers across…</description>
+      <pubDate>Tue, 26 May 2026 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://riksdagsmonitor.com/news/2026-05-26-interpellations-ja.html</guid>
+      <dc:creator>James Pether Sörling, CISSP, CISM</dc:creator>
+      <category>❓ Interpellations</category>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-26-interpellations-ja.html" rel="alternate" type="text/html" hreflang="ja"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-26-interpellations-ar.html" rel="alternate" type="text/html" hreflang="ar"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-26-interpellations-da.html" rel="alternate" type="text/html" hreflang="da"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-26-interpellations-de.html" rel="alternate" type="text/html" hreflang="de"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-26-interpellations-en.html" rel="alternate" type="text/html" hreflang="en"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-26-interpellations-es.html" rel="alternate" type="text/html" hreflang="es"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-26-interpellations-fi.html" rel="alternate" type="text/html" hreflang="fi"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-26-interpellations-fr.html" rel="alternate" type="text/html" hreflang="fr"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-26-interpellations-he.html" rel="alternate" type="text/html" hreflang="he"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-26-interpellations-ko.html" rel="alternate" type="text/html" hreflang="ko"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-26-interpellations-nl.html" rel="alternate" type="text/html" hreflang="nl"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-26-interpellations-no.html" rel="alternate" type="text/html" hreflang="nb"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-26-interpellations-sv.html" rel="alternate" type="text/html" hreflang="sv"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-26-interpellations-zh.html" rel="alternate" type="text/html" hreflang="zh"/>
+    </item>
+    <item>
+      <title>Swedish Opposition Motions: Children&#039;s…</title>
+      <link>https://riksdagsmonitor.com/news/2026-05-26-motions-ja.html</link>
+      <description>Two Miljöpartiet (MP) committee motions filed 2026-05-22 oppose specific provisions of government propositions…</description>
+      <pubDate>Tue, 26 May 2026 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://riksdagsmonitor.com/news/2026-05-26-motions-ja.html</guid>
+      <dc:creator>James Pether Sörling, CISSP, CISM</dc:creator>
+      <category>📝 Motions</category>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-26-motions-ja.html" rel="alternate" type="text/html" hreflang="ja"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-26-motions-ar.html" rel="alternate" type="text/html" hreflang="ar"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-26-motions-da.html" rel="alternate" type="text/html" hreflang="da"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-26-motions-de.html" rel="alternate" type="text/html" hreflang="de"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-26-motions-en.html" rel="alternate" type="text/html" hreflang="en"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-26-motions-es.html" rel="alternate" type="text/html" hreflang="es"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-26-motions-fi.html" rel="alternate" type="text/html" hreflang="fi"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-26-motions-fr.html" rel="alternate" type="text/html" hreflang="fr"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-26-motions-he.html" rel="alternate" type="text/html" hreflang="he"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-26-motions-ko.html" rel="alternate" type="text/html" hreflang="ko"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-26-motions-nl.html" rel="alternate" type="text/html" hreflang="nl"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-26-motions-no.html" rel="alternate" type="text/html" hreflang="nb"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-26-motions-sv.html" rel="alternate" type="text/html" hreflang="sv"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-26-motions-zh.html" rel="alternate" type="text/html" hreflang="zh"/>
+    </item>
+    <item>
+      <title>Sweden&#039;s security crackdown: government…</title>
+      <link>https://riksdagsmonitor.com/news/2026-05-26-propositions-ja.html</link>
+      <description>The Tidökoalitionen government (M+SD+KD+L) has submitted a concentrated batch of 10 propositions in the final…</description>
+      <pubDate>Tue, 26 May 2026 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://riksdagsmonitor.com/news/2026-05-26-propositions-ja.html</guid>
+      <dc:creator>James Pether Sörling, CISSP, CISM</dc:creator>
+      <category>📜 Propositions</category>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-26-propositions-ja.html" rel="alternate" type="text/html" hreflang="ja"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-26-propositions-ar.html" rel="alternate" type="text/html" hreflang="ar"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-26-propositions-da.html" rel="alternate" type="text/html" hreflang="da"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-26-propositions-de.html" rel="alternate" type="text/html" hreflang="de"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-26-propositions-en.html" rel="alternate" type="text/html" hreflang="en"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-26-propositions-es.html" rel="alternate" type="text/html" hreflang="es"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-26-propositions-fi.html" rel="alternate" type="text/html" hreflang="fi"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-26-propositions-fr.html" rel="alternate" type="text/html" hreflang="fr"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-26-propositions-he.html" rel="alternate" type="text/html" hreflang="he"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-26-propositions-ko.html" rel="alternate" type="text/html" hreflang="ko"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-26-propositions-nl.html" rel="alternate" type="text/html" hreflang="nl"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-26-propositions-no.html" rel="alternate" type="text/html" hreflang="nb"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-26-propositions-sv.html" rel="alternate" type="text/html" hreflang="sv"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-26-propositions-zh.html" rel="alternate" type="text/html" hreflang="zh"/>
+    </item>
+    <item>
+      <title>Sweden&#039;s Riksdag session delivered the most…</title>
+      <link>https://riksdagsmonitor.com/news/2026-05-26-realtime-monitor-ja.html</link>
+      <description>Sweden&#039;s Riksdag session of 26 May 2026 — approximately 100 days before the September general election — delivered the…</description>
+      <pubDate>Tue, 26 May 2026 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://riksdagsmonitor.com/news/2026-05-26-realtime-monitor-ja.html</guid>
+      <dc:creator>James Pether Sörling, CISSP, CISM</dc:creator>
+      <category>🚨 Realtime Monitor</category>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-26-realtime-monitor-ja.html" rel="alternate" type="text/html" hreflang="ja"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-26-realtime-monitor-ar.html" rel="alternate" type="text/html" hreflang="ar"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-26-realtime-monitor-da.html" rel="alternate" type="text/html" hreflang="da"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-26-realtime-monitor-de.html" rel="alternate" type="text/html" hreflang="de"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-26-realtime-monitor-en.html" rel="alternate" type="text/html" hreflang="en"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-26-realtime-monitor-es.html" rel="alternate" type="text/html" hreflang="es"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-26-realtime-monitor-fi.html" rel="alternate" type="text/html" hreflang="fi"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-26-realtime-monitor-fr.html" rel="alternate" type="text/html" hreflang="fr"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-26-realtime-monitor-he.html" rel="alternate" type="text/html" hreflang="he"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-26-realtime-monitor-ko.html" rel="alternate" type="text/html" hreflang="ko"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-26-realtime-monitor-nl.html" rel="alternate" type="text/html" hreflang="nl"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-26-realtime-monitor-no.html" rel="alternate" type="text/html" hreflang="nb"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-26-realtime-monitor-sv.html" rel="alternate" type="text/html" hreflang="sv"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-26-realtime-monitor-zh.html" rel="alternate" type="text/html" hreflang="zh"/>
+    </item>
+    <item>
+      <title>Five Riksdag committees approved nine…</title>
+      <link>https://riksdagsmonitor.com/news/2026-05-25-committee-reports-ja.html</link>
+      <description>Five Riksdag committees approved nine betänkanden on 2026-05-22 — anchored by SfU37, which schedules the most…</description>
+      <pubDate>Mon, 25 May 2026 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://riksdagsmonitor.com/news/2026-05-25-committee-reports-ja.html</guid>
+      <dc:creator>James Pether Sörling, CISSP, CISM</dc:creator>
+      <category>📊 Committee Reports</category>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-25-committee-reports-ja.html" rel="alternate" type="text/html" hreflang="ja"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-25-committee-reports-ar.html" rel="alternate" type="text/html" hreflang="ar"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-25-committee-reports-da.html" rel="alternate" type="text/html" hreflang="da"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-25-committee-reports-de.html" rel="alternate" type="text/html" hreflang="de"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-25-committee-reports-en.html" rel="alternate" type="text/html" hreflang="en"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-25-committee-reports-es.html" rel="alternate" type="text/html" hreflang="es"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-25-committee-reports-fi.html" rel="alternate" type="text/html" hreflang="fi"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-25-committee-reports-fr.html" rel="alternate" type="text/html" hreflang="fr"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-25-committee-reports-he.html" rel="alternate" type="text/html" hreflang="he"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-25-committee-reports-ko.html" rel="alternate" type="text/html" hreflang="ko"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-25-committee-reports-nl.html" rel="alternate" type="text/html" hreflang="nl"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-25-committee-reports-no.html" rel="alternate" type="text/html" hreflang="nb"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-25-committee-reports-sv.html" rel="alternate" type="text/html" hreflang="sv"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-25-committee-reports-zh.html" rel="alternate" type="text/html" hreflang="zh"/>
+    </item>
+    <item>
+      <title>The Swedish Riksdag&#039;s 2026-05-25 session…</title>
+      <link>https://riksdagsmonitor.com/news/2026-05-25-evening-analysis-ja.html</link>
+      <description>The Swedish Riksdag&#039;s 2026-05-25 session delivered a major criminal justice reform package (JuU47/48) and the first…</description>
+      <pubDate>Mon, 25 May 2026 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://riksdagsmonitor.com/news/2026-05-25-evening-analysis-ja.html</guid>
+      <dc:creator>James Pether Sörling, CISSP, CISM</dc:creator>
+      <category>🌆 Evening Analysis</category>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-25-evening-analysis-ja.html" rel="alternate" type="text/html" hreflang="ja"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-25-evening-analysis-ar.html" rel="alternate" type="text/html" hreflang="ar"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-25-evening-analysis-da.html" rel="alternate" type="text/html" hreflang="da"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-25-evening-analysis-de.html" rel="alternate" type="text/html" hreflang="de"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-25-evening-analysis-en.html" rel="alternate" type="text/html" hreflang="en"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-25-evening-analysis-es.html" rel="alternate" type="text/html" hreflang="es"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-25-evening-analysis-fi.html" rel="alternate" type="text/html" hreflang="fi"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-25-evening-analysis-fr.html" rel="alternate" type="text/html" hreflang="fr"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-25-evening-analysis-he.html" rel="alternate" type="text/html" hreflang="he"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-25-evening-analysis-ko.html" rel="alternate" type="text/html" hreflang="ko"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-25-evening-analysis-nl.html" rel="alternate" type="text/html" hreflang="nl"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-25-evening-analysis-no.html" rel="alternate" type="text/html" hreflang="nb"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-25-evening-analysis-sv.html" rel="alternate" type="text/html" hreflang="sv"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-25-evening-analysis-zh.html" rel="alternate" type="text/html" hreflang="zh"/>
+    </item>
+    <item>
+      <title>Significance: HIGH — four interpellations…</title>
+      <link>https://riksdagsmonitor.com/news/2026-05-25-interpellations-ja.html</link>
+      <description>Significance: HIGH — four interpellations spanning climate governance, economic justice, and social protection; all…</description>
+      <pubDate>Mon, 25 May 2026 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://riksdagsmonitor.com/news/2026-05-25-interpellations-ja.html</guid>
+      <dc:creator>James Pether Sörling, CISSP, CISM</dc:creator>
+      <category>❓ Interpellations</category>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-25-interpellations-ja.html" rel="alternate" type="text/html" hreflang="ja"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-25-interpellations-ar.html" rel="alternate" type="text/html" hreflang="ar"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-25-interpellations-da.html" rel="alternate" type="text/html" hreflang="da"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-25-interpellations-de.html" rel="alternate" type="text/html" hreflang="de"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-25-interpellations-en.html" rel="alternate" type="text/html" hreflang="en"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-25-interpellations-es.html" rel="alternate" type="text/html" hreflang="es"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-25-interpellations-fi.html" rel="alternate" type="text/html" hreflang="fi"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-25-interpellations-fr.html" rel="alternate" type="text/html" hreflang="fr"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-25-interpellations-he.html" rel="alternate" type="text/html" hreflang="he"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-25-interpellations-ko.html" rel="alternate" type="text/html" hreflang="ko"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-25-interpellations-nl.html" rel="alternate" type="text/html" hreflang="nl"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-25-interpellations-no.html" rel="alternate" type="text/html" hreflang="nb"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-25-interpellations-sv.html" rel="alternate" type="text/html" hreflang="sv"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-25-interpellations-zh.html" rel="alternate" type="text/html" hreflang="zh"/>
+    </item>
+    <item>
+      <title>Swedish Security Expansion: Opposition Bloc…</title>
+      <link>https://riksdagsmonitor.com/news/2026-05-25-motions-ja.html</link>
+      <description>Eight opposition motions filed 2026-05-18 to 2026-05-25 systematically challenge the government&#039;s security agenda. The…</description>
+      <pubDate>Mon, 25 May 2026 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://riksdagsmonitor.com/news/2026-05-25-motions-ja.html</guid>
+      <dc:creator>James Pether Sörling, CISSP, CISM</dc:creator>
+      <category>📝 Motions</category>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-25-motions-ja.html" rel="alternate" type="text/html" hreflang="ja"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-25-motions-ar.html" rel="alternate" type="text/html" hreflang="ar"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-25-motions-da.html" rel="alternate" type="text/html" hreflang="da"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-25-motions-de.html" rel="alternate" type="text/html" hreflang="de"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-25-motions-en.html" rel="alternate" type="text/html" hreflang="en"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-25-motions-es.html" rel="alternate" type="text/html" hreflang="es"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-25-motions-fi.html" rel="alternate" type="text/html" hreflang="fi"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-25-motions-fr.html" rel="alternate" type="text/html" hreflang="fr"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-25-motions-he.html" rel="alternate" type="text/html" hreflang="he"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-25-motions-ko.html" rel="alternate" type="text/html" hreflang="ko"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-25-motions-nl.html" rel="alternate" type="text/html" hreflang="nl"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-25-motions-no.html" rel="alternate" type="text/html" hreflang="nb"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-25-motions-sv.html" rel="alternate" type="text/html" hreflang="sv"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-25-motions-zh.html" rel="alternate" type="text/html" hreflang="zh"/>
+    </item>
+    <item>
+      <title>Sweden&#039;s Pre-Election Legislative Surge…</title>
+      <link>https://riksdagsmonitor.com/news/2026-05-25-propositions-ja.html</link>
+      <description>Sweden&#039;s Tidö coalition (M + KD + L, SD support) has tabled eight propositions establishing a pre-election legislative…</description>
+      <pubDate>Mon, 25 May 2026 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://riksdagsmonitor.com/news/2026-05-25-propositions-ja.html</guid>
+      <dc:creator>James Pether Sörling, CISSP, CISM</dc:creator>
+      <category>📜 Propositions</category>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-25-propositions-ja.html" rel="alternate" type="text/html" hreflang="ja"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-25-propositions-ar.html" rel="alternate" type="text/html" hreflang="ar"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-25-propositions-da.html" rel="alternate" type="text/html" hreflang="da"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-25-propositions-de.html" rel="alternate" type="text/html" hreflang="de"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-25-propositions-en.html" rel="alternate" type="text/html" hreflang="en"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-25-propositions-es.html" rel="alternate" type="text/html" hreflang="es"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-25-propositions-fi.html" rel="alternate" type="text/html" hreflang="fi"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-25-propositions-fr.html" rel="alternate" type="text/html" hreflang="fr"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-25-propositions-he.html" rel="alternate" type="text/html" hreflang="he"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-25-propositions-ko.html" rel="alternate" type="text/html" hreflang="ko"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-25-propositions-nl.html" rel="alternate" type="text/html" hreflang="nl"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-25-propositions-no.html" rel="alternate" type="text/html" hreflang="nb"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-25-propositions-sv.html" rel="alternate" type="text/html" hreflang="sv"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-25-propositions-zh.html" rel="alternate" type="text/html" hreflang="zh"/>
+    </item>
+    <item>
+      <title>Sweden Insulates NATO Policy as Opposition…</title>
+      <link>https://riksdagsmonitor.com/news/2026-05-25-realtime-monitor-ja.html</link>
+      <description>Sweden&#039;s parliament on 2026-05-25 enacted four security and justice measures while the Social Democrats deployed a…</description>
+      <pubDate>Mon, 25 May 2026 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://riksdagsmonitor.com/news/2026-05-25-realtime-monitor-ja.html</guid>
+      <dc:creator>James Pether Sörling, CISSP, CISM</dc:creator>
+      <category>🚨 Realtime Monitor</category>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-25-realtime-monitor-ja.html" rel="alternate" type="text/html" hreflang="ja"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-25-realtime-monitor-ar.html" rel="alternate" type="text/html" hreflang="ar"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-25-realtime-monitor-da.html" rel="alternate" type="text/html" hreflang="da"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-25-realtime-monitor-de.html" rel="alternate" type="text/html" hreflang="de"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-25-realtime-monitor-en.html" rel="alternate" type="text/html" hreflang="en"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-25-realtime-monitor-es.html" rel="alternate" type="text/html" hreflang="es"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-25-realtime-monitor-fi.html" rel="alternate" type="text/html" hreflang="fi"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-25-realtime-monitor-fr.html" rel="alternate" type="text/html" hreflang="fr"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-25-realtime-monitor-he.html" rel="alternate" type="text/html" hreflang="he"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-25-realtime-monitor-ko.html" rel="alternate" type="text/html" hreflang="ko"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-25-realtime-monitor-nl.html" rel="alternate" type="text/html" hreflang="nl"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-25-realtime-monitor-no.html" rel="alternate" type="text/html" hreflang="nb"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-25-realtime-monitor-sv.html" rel="alternate" type="text/html" hreflang="sv"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-25-realtime-monitor-zh.html" rel="alternate" type="text/html" hreflang="zh"/>
+    </item>
+    <item>
+      <title>Swedish Riksdag Weekly Review, Week of 23…</title>
+      <link>https://riksdagsmonitor.com/news/2026-05-23-weekly-review-ja.html</link>
+      <description>Sweden&#039;s Riksdag closed the week of 22 May 2026 with a substantial legislative harvest spanning national security, tax…</description>
+      <pubDate>Sat, 23 May 2026 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://riksdagsmonitor.com/news/2026-05-23-weekly-review-ja.html</guid>
+      <dc:creator>James Pether Sörling, CISSP, CISM</dc:creator>
+      <category>🔄 Weekly Review</category>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-23-weekly-review-ja.html" rel="alternate" type="text/html" hreflang="ja"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-23-weekly-review-ar.html" rel="alternate" type="text/html" hreflang="ar"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-23-weekly-review-da.html" rel="alternate" type="text/html" hreflang="da"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-23-weekly-review-de.html" rel="alternate" type="text/html" hreflang="de"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-23-weekly-review-en.html" rel="alternate" type="text/html" hreflang="en"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-23-weekly-review-es.html" rel="alternate" type="text/html" hreflang="es"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-23-weekly-review-fi.html" rel="alternate" type="text/html" hreflang="fi"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-23-weekly-review-fr.html" rel="alternate" type="text/html" hreflang="fr"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-23-weekly-review-he.html" rel="alternate" type="text/html" hreflang="he"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-23-weekly-review-ko.html" rel="alternate" type="text/html" hreflang="ko"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-23-weekly-review-nl.html" rel="alternate" type="text/html" hreflang="nl"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-23-weekly-review-no.html" rel="alternate" type="text/html" hreflang="nb"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-23-weekly-review-sv.html" rel="alternate" type="text/html" hreflang="sv"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-23-weekly-review-zh.html" rel="alternate" type="text/html" hreflang="zh"/>
+    </item>
+    <item>
+      <title>スウェーデン、AI顔認証法を可決：リクスダーグが5つの委員会報告を審議</title>
+      <link>https://riksdagsmonitor.com/news/2026-05-22-committee-reports-ja.html</link>
+      <description>司法委員会（JuU）は、PolismyndighetenおよびSÄPOがリアルタイムAI顔認証を法執行に展開する権限を付与する政府法案を支持した。これはスウェーデンで最も重要な生体認証監視立法である。</description>
+      <pubDate>Fri, 22 May 2026 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://riksdagsmonitor.com/news/2026-05-22-committee-reports-ja.html</guid>
+      <dc:creator>James Pether Sörling, CISSP, CISM</dc:creator>
+      <category>📊 Committee Reports</category>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-22-committee-reports-ja.html" rel="alternate" type="text/html" hreflang="ja"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-22-committee-reports-ar.html" rel="alternate" type="text/html" hreflang="ar"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-22-committee-reports-da.html" rel="alternate" type="text/html" hreflang="da"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-22-committee-reports-de.html" rel="alternate" type="text/html" hreflang="de"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-22-committee-reports-en.html" rel="alternate" type="text/html" hreflang="en"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-22-committee-reports-es.html" rel="alternate" type="text/html" hreflang="es"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-22-committee-reports-fi.html" rel="alternate" type="text/html" hreflang="fi"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-22-committee-reports-fr.html" rel="alternate" type="text/html" hreflang="fr"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-22-committee-reports-he.html" rel="alternate" type="text/html" hreflang="he"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-22-committee-reports-ko.html" rel="alternate" type="text/html" hreflang="ko"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-22-committee-reports-nl.html" rel="alternate" type="text/html" hreflang="nl"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-22-committee-reports-no.html" rel="alternate" type="text/html" hreflang="nb"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-22-committee-reports-sv.html" rel="alternate" type="text/html" hreflang="sv"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-22-committee-reports-zh.html" rel="alternate" type="text/html" hreflang="zh"/>
+    </item>
+    <item>
+      <title>スウェーデン議会週が教育改革と安全保障討論を届ける：選挙運動最終スプリント</title>
+      <link>https://riksdagsmonitor.com/news/2026-05-22-evening-analysis-ja.html</link>
+      <description>スウェーデン議会（リクスダーグ）は2026年5月22日、2025/26会期における最大の1日あたり委員会成果を達成する：2026年7月実施に向けて予定された3部構成の教育改革パッケージ（携帯電話禁止UbU22、職業試験UbU27、証拠に基…</description>
+      <pubDate>Fri, 22 May 2026 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://riksdagsmonitor.com/news/2026-05-22-evening-analysis-ja.html</guid>
+      <dc:creator>James Pether Sörling, CISSP, CISM</dc:creator>
+      <category>🌆 Evening Analysis</category>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-22-evening-analysis-ja.html" rel="alternate" type="text/html" hreflang="ja"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-22-evening-analysis-ar.html" rel="alternate" type="text/html" hreflang="ar"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-22-evening-analysis-da.html" rel="alternate" type="text/html" hreflang="da"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-22-evening-analysis-de.html" rel="alternate" type="text/html" hreflang="de"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-22-evening-analysis-en.html" rel="alternate" type="text/html" hreflang="en"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-22-evening-analysis-es.html" rel="alternate" type="text/html" hreflang="es"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-22-evening-analysis-fi.html" rel="alternate" type="text/html" hreflang="fi"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-22-evening-analysis-fr.html" rel="alternate" type="text/html" hreflang="fr"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-22-evening-analysis-he.html" rel="alternate" type="text/html" hreflang="he"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-22-evening-analysis-ko.html" rel="alternate" type="text/html" hreflang="ko"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-22-evening-analysis-nl.html" rel="alternate" type="text/html" hreflang="nl"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-22-evening-analysis-no.html" rel="alternate" type="text/html" hreflang="nb"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-22-evening-analysis-sv.html" rel="alternate" type="text/html" hreflang="sv"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-22-evening-analysis-zh.html" rel="alternate" type="text/html" hreflang="zh"/>
+    </item>
+    <item>
+      <title>社会民主党が7件の質問主意書で選挙前の説明責任を強化 — Riksdagsmonitor</title>
+      <link>https://riksdagsmonitor.com/news/2026-05-22-interpellations-ja.html</link>
+      <description>社会民主党（Socialdemokraterna）は2026年5月22日、ティード政権の4閣僚を標的に7件の質問主意書を提出した。6月5日を回答期限とした事前選挙の説明責任戦略であり、選挙まで115日のタイミングで実施された。</description>
+      <pubDate>Fri, 22 May 2026 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://riksdagsmonitor.com/news/2026-05-22-interpellations-ja.html</guid>
+      <dc:creator>James Pether Sörling, CISSP, CISM</dc:creator>
+      <category>❓ Interpellations</category>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-22-interpellations-ja.html" rel="alternate" type="text/html" hreflang="ja"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-22-interpellations-ar.html" rel="alternate" type="text/html" hreflang="ar"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-22-interpellations-da.html" rel="alternate" type="text/html" hreflang="da"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-22-interpellations-de.html" rel="alternate" type="text/html" hreflang="de"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-22-interpellations-en.html" rel="alternate" type="text/html" hreflang="en"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-22-interpellations-es.html" rel="alternate" type="text/html" hreflang="es"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-22-interpellations-fi.html" rel="alternate" type="text/html" hreflang="fi"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-22-interpellations-fr.html" rel="alternate" type="text/html" hreflang="fr"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-22-interpellations-he.html" rel="alternate" type="text/html" hreflang="he"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-22-interpellations-ko.html" rel="alternate" type="text/html" hreflang="ko"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-22-interpellations-nl.html" rel="alternate" type="text/html" hreflang="nl"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-22-interpellations-no.html" rel="alternate" type="text/html" hreflang="nb"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-22-interpellations-sv.html" rel="alternate" type="text/html" hreflang="sv"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-22-interpellations-zh.html" rel="alternate" type="text/html" hreflang="zh"/>
+    </item>
+    <item>
+      <title>Tidö政権の2026年春後半の立法攻勢は、安全保障、移民、民主主義的ガバナンスの各分野…</title>
+      <link>https://riksdagsmonitor.com/news/2026-05-22-motions-ja.html</link>
+      <description>Tidö政権の2026年春後半の立法攻勢は、安全保障、移民、民主主義的ガバナンスの各分野で協調した反対に直面している。Vänsterpartietが最も積極的な挑戦者（2026年5月21日だけで4件の動議を提出）であり、SとCは移民・透明…</description>
+      <pubDate>Fri, 22 May 2026 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://riksdagsmonitor.com/news/2026-05-22-motions-ja.html</guid>
+      <dc:creator>James Pether Sörling, CISSP, CISM</dc:creator>
+      <category>📝 Motions</category>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-22-motions-ja.html" rel="alternate" type="text/html" hreflang="ja"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-22-motions-ar.html" rel="alternate" type="text/html" hreflang="ar"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-22-motions-da.html" rel="alternate" type="text/html" hreflang="da"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-22-motions-de.html" rel="alternate" type="text/html" hreflang="de"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-22-motions-en.html" rel="alternate" type="text/html" hreflang="en"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-22-motions-es.html" rel="alternate" type="text/html" hreflang="es"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-22-motions-fi.html" rel="alternate" type="text/html" hreflang="fi"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-22-motions-fr.html" rel="alternate" type="text/html" hreflang="fr"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-22-motions-he.html" rel="alternate" type="text/html" hreflang="he"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-22-motions-ko.html" rel="alternate" type="text/html" hreflang="ko"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-22-motions-nl.html" rel="alternate" type="text/html" hreflang="nl"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-22-motions-no.html" rel="alternate" type="text/html" hreflang="nb"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-22-motions-sv.html" rel="alternate" type="text/html" hreflang="sv"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-22-motions-zh.html" rel="alternate" type="text/html" hreflang="zh"/>
+    </item>
+    <item>
+      <title>スウェーデン、永住許可を廃止し安全保障退去を拡大：選挙前の立法決着</title>
+      <link>https://riksdagsmonitor.com/news/2026-05-22-propositions-ja.html</link>
+      <description>ブッシュ政権は1989年以来最も広範なスウェーデンの移民法執行改革を構成する10の法案を提出した。EU非加盟国民に対する永住許可の廃止、安全保障退去の迅速手続き創設、収容権限の拡大、国家デジタル識別インフラの構築、Skatteverket…</description>
+      <pubDate>Fri, 22 May 2026 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://riksdagsmonitor.com/news/2026-05-22-propositions-ja.html</guid>
+      <dc:creator>James Pether Sörling, CISSP, CISM</dc:creator>
+      <category>📜 Propositions</category>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-22-propositions-ja.html" rel="alternate" type="text/html" hreflang="ja"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-22-propositions-ar.html" rel="alternate" type="text/html" hreflang="ar"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-22-propositions-da.html" rel="alternate" type="text/html" hreflang="da"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-22-propositions-de.html" rel="alternate" type="text/html" hreflang="de"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-22-propositions-en.html" rel="alternate" type="text/html" hreflang="en"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-22-propositions-es.html" rel="alternate" type="text/html" hreflang="es"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-22-propositions-fi.html" rel="alternate" type="text/html" hreflang="fi"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-22-propositions-fr.html" rel="alternate" type="text/html" hreflang="fr"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-22-propositions-he.html" rel="alternate" type="text/html" hreflang="he"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-22-propositions-ko.html" rel="alternate" type="text/html" hreflang="ko"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-22-propositions-nl.html" rel="alternate" type="text/html" hreflang="nl"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-22-propositions-no.html" rel="alternate" type="text/html" hreflang="nb"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-22-propositions-sv.html" rel="alternate" type="text/html" hreflang="sv"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-22-propositions-zh.html" rel="alternate" type="text/html" hreflang="zh"/>
+    </item>
+    <item>
+      <title>スウェーデン国会、夏季休会前に市民的自由への挑戦の中で安全保障法を推進</title>
+      <link>https://riksdagsmonitor.com/news/2026-05-22-realtime-monitor-ja.html</link>
+      <description>スウェーデン国会 Riksdag は 2026 年 5 月 22 日に調整された春季末の立法パッケージを審議している。最大の注目信号は、安全保障上の脅威となる外国人に関する政府提案（prop. 2025/26:267）に対する MP…</description>
+      <pubDate>Fri, 22 May 2026 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://riksdagsmonitor.com/news/2026-05-22-realtime-monitor-ja.html</guid>
+      <dc:creator>James Pether Sörling, CISSP, CISM</dc:creator>
+      <category>🚨 Realtime Monitor</category>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-22-realtime-monitor-ja.html" rel="alternate" type="text/html" hreflang="ja"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-22-realtime-monitor-ar.html" rel="alternate" type="text/html" hreflang="ar"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-22-realtime-monitor-da.html" rel="alternate" type="text/html" hreflang="da"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-22-realtime-monitor-de.html" rel="alternate" type="text/html" hreflang="de"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-22-realtime-monitor-en.html" rel="alternate" type="text/html" hreflang="en"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-22-realtime-monitor-es.html" rel="alternate" type="text/html" hreflang="es"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-22-realtime-monitor-fi.html" rel="alternate" type="text/html" hreflang="fi"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-22-realtime-monitor-fr.html" rel="alternate" type="text/html" hreflang="fr"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-22-realtime-monitor-he.html" rel="alternate" type="text/html" hreflang="he"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-22-realtime-monitor-ko.html" rel="alternate" type="text/html" hreflang="ko"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-22-realtime-monitor-nl.html" rel="alternate" type="text/html" hreflang="nl"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-22-realtime-monitor-no.html" rel="alternate" type="text/html" hreflang="nb"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-22-realtime-monitor-sv.html" rel="alternate" type="text/html" hreflang="sv"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-22-realtime-monitor-zh.html" rel="alternate" type="text/html" hreflang="zh"/>
+    </item>
+    <item>
+      <title>Sweden&#039;s Pre-Election Legislative Sprint…</title>
+      <link>https://riksdagsmonitor.com/news/2026-05-22-week-ahead-ja.html</link>
+      <description>Week 22 (2026-05-22–29) marks Sweden&#039;s most consequential pre-summer legislative burst: the Justice Committee&#039;s JuU28…</description>
+      <pubDate>Fri, 22 May 2026 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://riksdagsmonitor.com/news/2026-05-22-week-ahead-ja.html</guid>
+      <dc:creator>James Pether Sörling, CISSP, CISM</dc:creator>
+      <category>📅 Week Ahead</category>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-22-week-ahead-ja.html" rel="alternate" type="text/html" hreflang="ja"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-22-week-ahead-ar.html" rel="alternate" type="text/html" hreflang="ar"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-22-week-ahead-da.html" rel="alternate" type="text/html" hreflang="da"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-22-week-ahead-de.html" rel="alternate" type="text/html" hreflang="de"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-22-week-ahead-en.html" rel="alternate" type="text/html" hreflang="en"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-22-week-ahead-es.html" rel="alternate" type="text/html" hreflang="es"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-22-week-ahead-fi.html" rel="alternate" type="text/html" hreflang="fi"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-22-week-ahead-fr.html" rel="alternate" type="text/html" hreflang="fr"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-22-week-ahead-he.html" rel="alternate" type="text/html" hreflang="he"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-22-week-ahead-ko.html" rel="alternate" type="text/html" hreflang="ko"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-22-week-ahead-nl.html" rel="alternate" type="text/html" hreflang="nl"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-22-week-ahead-no.html" rel="alternate" type="text/html" hreflang="nb"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-22-week-ahead-sv.html" rel="alternate" type="text/html" hreflang="sv"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-22-week-ahead-zh.html" rel="alternate" type="text/html" hreflang="zh"/>
+    </item>
+    <item>
+      <title>スウェーデン国会（リクスダーグ）委員会報告書、2026年5月21日</title>
+      <link>https://riksdagsmonitor.com/news/2026-05-21-committee-reports-ja.html</link>
+      <description>スウェーデン国会（リクスダーグ）は2026年5月20日に12件の委員会報告書を公表し、2025/26年会期の選挙前スプリントで最も実質的な1日の成果となった。</description>
+      <pubDate>Thu, 21 May 2026 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://riksdagsmonitor.com/news/2026-05-21-committee-reports-ja.html</guid>
+      <dc:creator>James Pether Sörling, CISSP, CISM</dc:creator>
+      <category>📊 Committee Reports</category>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-21-committee-reports-ja.html" rel="alternate" type="text/html" hreflang="ja"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-21-committee-reports-ar.html" rel="alternate" type="text/html" hreflang="ar"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-21-committee-reports-da.html" rel="alternate" type="text/html" hreflang="da"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-21-committee-reports-de.html" rel="alternate" type="text/html" hreflang="de"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-21-committee-reports-en.html" rel="alternate" type="text/html" hreflang="en"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-21-committee-reports-es.html" rel="alternate" type="text/html" hreflang="es"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-21-committee-reports-fi.html" rel="alternate" type="text/html" hreflang="fi"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-21-committee-reports-fr.html" rel="alternate" type="text/html" hreflang="fr"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-21-committee-reports-he.html" rel="alternate" type="text/html" hreflang="he"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-21-committee-reports-ko.html" rel="alternate" type="text/html" hreflang="ko"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-21-committee-reports-nl.html" rel="alternate" type="text/html" hreflang="nl"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-21-committee-reports-no.html" rel="alternate" type="text/html" hreflang="nb"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-21-committee-reports-sv.html" rel="alternate" type="text/html" hreflang="sv"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-21-committee-reports-zh.html" rel="alternate" type="text/html" hreflang="zh"/>
+    </item>
+    <item>
+      <title>分類: 公開OSINT · 信頼レベル: 高 · 著者…</title>
+      <link>https://riksdagsmonitor.com/news/2026-05-21-evening-analysis-ja.html</link>
+      <description>最重要: JuU28 — 警察によるリアルタイムAI顔認識。スウェーデンは警察生体認証を明示的に立法するEU加盟国の一つとなる。ECHR第8条とEU AI規則カテゴリ1高リスクへの影響。DIW 4.5（選挙接近係数1.5×適用）。</description>
+      <pubDate>Thu, 21 May 2026 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://riksdagsmonitor.com/news/2026-05-21-evening-analysis-ja.html</guid>
+      <dc:creator>James Pether Sörling, CISSP, CISM</dc:creator>
+      <category>🌆 Evening Analysis</category>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-21-evening-analysis-ja.html" rel="alternate" type="text/html" hreflang="ja"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-21-evening-analysis-ar.html" rel="alternate" type="text/html" hreflang="ar"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-21-evening-analysis-da.html" rel="alternate" type="text/html" hreflang="da"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-21-evening-analysis-de.html" rel="alternate" type="text/html" hreflang="de"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-21-evening-analysis-en.html" rel="alternate" type="text/html" hreflang="en"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-21-evening-analysis-es.html" rel="alternate" type="text/html" hreflang="es"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-21-evening-analysis-fi.html" rel="alternate" type="text/html" hreflang="fi"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-21-evening-analysis-fr.html" rel="alternate" type="text/html" hreflang="fr"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-21-evening-analysis-he.html" rel="alternate" type="text/html" hreflang="he"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-21-evening-analysis-ko.html" rel="alternate" type="text/html" hreflang="ko"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-21-evening-analysis-nl.html" rel="alternate" type="text/html" hreflang="nl"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-21-evening-analysis-no.html" rel="alternate" type="text/html" hreflang="nb"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-21-evening-analysis-sv.html" rel="alternate" type="text/html" hreflang="sv"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-21-evening-analysis-zh.html" rel="alternate" type="text/html" hreflang="zh"/>
+    </item>
+    <item>
+      <title>スウェーデン国会（リクスダーグ）質問書、2026年5月21日</title>
+      <link>https://riksdagsmonitor.com/news/2026-05-21-interpellations-ja.html</link>
+      <description>2025/26年会期のリクスメーテで提出された20件の質問書は、野党の選挙前説明責任攻勢を結晶化している。最も重要なシグナルは：(1) 南スウェーデンの水不足危機に関連した具体的な気候適応政策への議会の要求の高まり；(2) L…</description>
+      <pubDate>Thu, 21 May 2026 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://riksdagsmonitor.com/news/2026-05-21-interpellations-ja.html</guid>
+      <dc:creator>James Pether Sörling, CISSP, CISM</dc:creator>
+      <category>❓ Interpellations</category>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-21-interpellations-ja.html" rel="alternate" type="text/html" hreflang="ja"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-21-interpellations-ar.html" rel="alternate" type="text/html" hreflang="ar"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-21-interpellations-da.html" rel="alternate" type="text/html" hreflang="da"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-21-interpellations-de.html" rel="alternate" type="text/html" hreflang="de"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-21-interpellations-en.html" rel="alternate" type="text/html" hreflang="en"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-21-interpellations-es.html" rel="alternate" type="text/html" hreflang="es"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-21-interpellations-fi.html" rel="alternate" type="text/html" hreflang="fi"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-21-interpellations-fr.html" rel="alternate" type="text/html" hreflang="fr"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-21-interpellations-he.html" rel="alternate" type="text/html" hreflang="he"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-21-interpellations-ko.html" rel="alternate" type="text/html" hreflang="ko"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-21-interpellations-nl.html" rel="alternate" type="text/html" hreflang="nl"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-21-interpellations-no.html" rel="alternate" type="text/html" hreflang="nb"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-21-interpellations-sv.html" rel="alternate" type="text/html" hreflang="sv"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-21-interpellations-zh.html" rel="alternate" type="text/html" hreflang="zh"/>
+    </item>
+    <item>
+      <title>SはMP拡充要求の中で借入監視を拒否 — 提案255で野党が分裂</title>
+      <link>https://riksdagsmonitor.com/news/2026-05-21-motions-ja.html</link>
+      <description>S (HD024185) はGDPR/プライバシーを根拠に提案255の完全否決を要求; MP (HD024186) は家計債務サンプリング枠組みを受け入れるが、企業債務とリクスバンク分析の追加を要求。</description>
+      <pubDate>Thu, 21 May 2026 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://riksdagsmonitor.com/news/2026-05-21-motions-ja.html</guid>
+      <dc:creator>James Pether Sörling, CISSP, CISM</dc:creator>
+      <category>📝 Motions</category>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-21-motions-ja.html" rel="alternate" type="text/html" hreflang="ja"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-21-motions-ar.html" rel="alternate" type="text/html" hreflang="ar"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-21-motions-da.html" rel="alternate" type="text/html" hreflang="da"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-21-motions-de.html" rel="alternate" type="text/html" hreflang="de"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-21-motions-en.html" rel="alternate" type="text/html" hreflang="en"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-21-motions-es.html" rel="alternate" type="text/html" hreflang="es"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-21-motions-fi.html" rel="alternate" type="text/html" hreflang="fi"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-21-motions-fr.html" rel="alternate" type="text/html" hreflang="fr"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-21-motions-he.html" rel="alternate" type="text/html" hreflang="he"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-21-motions-ko.html" rel="alternate" type="text/html" hreflang="ko"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-21-motions-nl.html" rel="alternate" type="text/html" hreflang="nl"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-21-motions-no.html" rel="alternate" type="text/html" hreflang="nb"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-21-motions-sv.html" rel="alternate" type="text/html" hreflang="sv"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-21-motions-zh.html" rel="alternate" type="text/html" hreflang="zh"/>
+    </item>
+    <item>
+      <title>2026年4月30日～5月7日、クリスターソン政権（ティード連合 — M、KD、L</title>
+      <link>https://riksdagsmonitor.com/news/2026-05-21-propositions-ja.html</link>
+      <description>2026年4月30日～5月7日、クリスターソン政権（ティード連合 — M、KD、L + SD支持党）は10件の議会法案を調整済み立法スプリントで提出した。</description>
+      <pubDate>Thu, 21 May 2026 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://riksdagsmonitor.com/news/2026-05-21-propositions-ja.html</guid>
+      <dc:creator>James Pether Sörling, CISSP, CISM</dc:creator>
+      <category>📜 Propositions</category>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-21-propositions-ja.html" rel="alternate" type="text/html" hreflang="ja"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-21-propositions-ar.html" rel="alternate" type="text/html" hreflang="ar"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-21-propositions-da.html" rel="alternate" type="text/html" hreflang="da"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-21-propositions-de.html" rel="alternate" type="text/html" hreflang="de"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-21-propositions-en.html" rel="alternate" type="text/html" hreflang="en"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-21-propositions-es.html" rel="alternate" type="text/html" hreflang="es"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-21-propositions-fi.html" rel="alternate" type="text/html" hreflang="fi"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-21-propositions-fr.html" rel="alternate" type="text/html" hreflang="fr"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-21-propositions-he.html" rel="alternate" type="text/html" hreflang="he"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-21-propositions-ko.html" rel="alternate" type="text/html" hreflang="ko"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-21-propositions-nl.html" rel="alternate" type="text/html" hreflang="nl"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-21-propositions-no.html" rel="alternate" type="text/html" hreflang="nb"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-21-propositions-sv.html" rel="alternate" type="text/html" hreflang="sv"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-21-propositions-zh.html" rel="alternate" type="text/html" hreflang="zh"/>
+    </item>
+    <item>
+      <title>スウェーデン議会がAI警察監視を採決：選挙115日前の憲法的瞬間</title>
+      <link>https://riksdagsmonitor.com/news/2026-05-21-realtime-pulse-ja.html</link>
+      <description>スウェーデン議会（リクスダーグ）は本日、JuU28に関する本会議討論を実施する。</description>
+      <pubDate>Thu, 21 May 2026 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://riksdagsmonitor.com/news/2026-05-21-realtime-pulse-ja.html</guid>
+      <dc:creator>James Pether Sörling, CISSP, CISM</dc:creator>
+      <category>Political Intelligence</category>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-21-realtime-pulse-ja.html" rel="alternate" type="text/html" hreflang="ja"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-21-realtime-pulse-ar.html" rel="alternate" type="text/html" hreflang="ar"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-21-realtime-pulse-da.html" rel="alternate" type="text/html" hreflang="da"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-21-realtime-pulse-de.html" rel="alternate" type="text/html" hreflang="de"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-21-realtime-pulse-en.html" rel="alternate" type="text/html" hreflang="en"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-21-realtime-pulse-es.html" rel="alternate" type="text/html" hreflang="es"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-21-realtime-pulse-fi.html" rel="alternate" type="text/html" hreflang="fi"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-21-realtime-pulse-fr.html" rel="alternate" type="text/html" hreflang="fr"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-21-realtime-pulse-he.html" rel="alternate" type="text/html" hreflang="he"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-21-realtime-pulse-ko.html" rel="alternate" type="text/html" hreflang="ko"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-21-realtime-pulse-nl.html" rel="alternate" type="text/html" hreflang="nl"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-21-realtime-pulse-no.html" rel="alternate" type="text/html" hreflang="nb"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-21-realtime-pulse-sv.html" rel="alternate" type="text/html" hreflang="sv"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-21-realtime-pulse-zh.html" rel="alternate" type="text/html" hreflang="zh"/>
+    </item>
+    <item>
+      <title>スウェーデン、5つの主要法案の成立に向けてセキュリティ強化と食料備蓄規制を引き締め</title>
+      <link>https://riksdagsmonitor.com/news/2026-05-20-committeeReports-ja.html</link>
+      <description>Riksdag（スウェーデン議会）の各委員会は2026年5月19日、国家安全保障インフラ、食料安全保障、住宅市場革新、社会保険改革、学校安全に関する9件のbetänkandenを提出しました。</description>
+      <pubDate>Wed, 20 May 2026 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://riksdagsmonitor.com/news/2026-05-20-committeeReports-ja.html</guid>
+      <dc:creator>James Pether Sörling, CISSP, CISM</dc:creator>
+      <category>Political Intelligence</category>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-20-committeeReports-ja.html" rel="alternate" type="text/html" hreflang="ja"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-20-committeeReports-ar.html" rel="alternate" type="text/html" hreflang="ar"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-20-committeeReports-da.html" rel="alternate" type="text/html" hreflang="da"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-20-committeeReports-de.html" rel="alternate" type="text/html" hreflang="de"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-20-committeeReports-en.html" rel="alternate" type="text/html" hreflang="en"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-20-committeeReports-es.html" rel="alternate" type="text/html" hreflang="es"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-20-committeeReports-fi.html" rel="alternate" type="text/html" hreflang="fi"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-20-committeeReports-fr.html" rel="alternate" type="text/html" hreflang="fr"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-20-committeeReports-he.html" rel="alternate" type="text/html" hreflang="he"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-20-committeeReports-ko.html" rel="alternate" type="text/html" hreflang="ko"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-20-committeeReports-nl.html" rel="alternate" type="text/html" hreflang="nl"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-20-committeeReports-no.html" rel="alternate" type="text/html" hreflang="nb"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-20-committeeReports-sv.html" rel="alternate" type="text/html" hreflang="sv"/>
+      <atom:link href="https://riksdagsmonitor.com/news/2026-05-20-committeeReports-zh.html" rel="alternate" type="text/html" hreflang="zh"/>
+    </item>
+  </channel>
+</rss>
