@@ -8,9 +8,9 @@ import fs from 'fs';
 
 /** Shape of the generate-rss module */
 interface GenerateRssModule {
-  readonly generateRss: () => string;
+  readonly generateRss: (lang?: string) => string;
   readonly validateRss: (xml: string) => boolean;
-  readonly getRssArticles: () => Array<{
+  readonly getRssArticles: (lang?: string) => Array<{
     file: string;
     title: string;
     description: string;
@@ -300,6 +300,57 @@ describe('RSS Feed Generation', () => {
     it('should throw for empty feed', () => {
       const emptyRss = '<?xml version="1.0"?><rss version="2.0"><channel><title>Test</title><link>test</link><description>test</description></channel></rss>';
       expect(() => module.validateRss(emptyRss)).toThrow('No items in RSS feed');
+    });
+  });
+
+  describe('localized feeds', () => {
+    it('English feed keeps the branded channel title and en language', () => {
+      expect(rssContent).toContain('<title>Riksdagsmonitor - Swedish Parliament Intelligence</title>');
+      expect(rssContent).toContain('<language>en</language>');
+      expect(rssContent).toContain('href="https://riksdagsmonitor.com/rss.xml" rel="self"');
+    });
+
+    it('Swedish feed localizes title, description, language and self link', () => {
+      const sv = module.generateRss('sv');
+      expect(() => module.validateRss(sv)).not.toThrow();
+      expect(sv).toContain('<title>Riksdagsmonitor — Nyheter &amp; Analys (Svenska)</title>');
+      expect(sv).toContain('<language>sv</language>');
+      expect(sv).toContain('href="https://riksdagsmonitor.com/rss_sv.xml" rel="self"');
+      // Localized channel description sourced from LANGUAGE_META.
+      expect(sv).toMatch(/<description>[^<]*riksdag[^<]*<\/description>/i);
+    });
+
+    it('German feed localizes the channel header', () => {
+      const de = module.generateRss('de');
+      expect(de).toContain('<title>Riksdagsmonitor — Nachrichten &amp; Analyse (Deutsch)</title>');
+      expect(de).toContain('<language>de</language>');
+      expect(de).toContain('href="https://riksdagsmonitor.com/rss_de.xml" rel="self"');
+    });
+
+    it('Norwegian feed uses BCP-47 hreflang "nb" for <language>', () => {
+      const no = module.generateRss('no');
+      expect(no).toContain('<language>nb</language>');
+      expect(no).toContain('href="https://riksdagsmonitor.com/rss_no.xml" rel="self"');
+    });
+
+    it('localized item link/guid point at the requested language variant', () => {
+      const sv = module.generateRss('sv');
+      // Primary item link must be the -sv.html variant, never -en.html.
+      expect(sv).toMatch(/<link>https:\/\/riksdagsmonitor\.com\/news\/[^<]+-sv\.html<\/link>/);
+      expect(sv).toMatch(/<guid isPermaLink="true">https:\/\/riksdagsmonitor\.com\/news\/[^<]+-sv\.html<\/guid>/);
+      // The primary self-hreflang for items is the feed language.
+      expect(sv).toContain('rel="alternate" type="text/html" hreflang="sv"');
+    });
+
+    it('getRssArticles(lang) anchors items on that language variant', () => {
+      const svArticles = module.getRssArticles('sv');
+      expect(svArticles.length).toBeGreaterThan(0);
+      for (const a of svArticles) {
+        expect(a.lang).toBe('sv');
+        expect(a.file.endsWith('-sv.html')).toBe(true);
+        expect(a.link.endsWith('-sv.html')).toBe(true);
+        expect(a.alternateLanguages.every((alt) => alt.lang !== 'sv')).toBe(true);
+      }
     });
   });
 });
