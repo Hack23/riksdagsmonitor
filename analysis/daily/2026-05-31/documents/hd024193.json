@@ -1,0 +1,25 @@
+{
+  "dok_id": "HD024193",
+  "titel": "Motionen utgår",
+  "datum": "2026-05-29",
+  "rm": "2025/26",
+  "organ": "",
+  "summary": "Motion till riksdagen\n 2025/26:4193\n Motionen utgår.",
+  "url": "https://data.riksdagen.se/dokument/HD024193.html",
+  "mcpCoverageState": "full_text",
+  "mcpProvenance": {
+    "provider": "riksdag-regering",
+    "endpoint": "http://host.docker.internal:8080/mcp/riksdag-regering",
+    "tool": "get_dokument_innehall",
+    "query": {
+      "dok_id": "HD024193",
+      "include_full_text": true
+    },
+    "resultCount": 1,
+    "coverageState": "full_text",
+    "retrieval": "live",
+    "retrievedAt": "2026-05-31T13:10:45.106Z"
+  },
+  "fullContent": "5291425\r\n HD024193\r\n 2025/26\r\n 4193\r\n mot\r\n \r\n mot\r\n Motion 2025/26:4193\r\n Motion\r\n Motion\r\n \r\n \r\n \r\n 4193\r\n 0\r\n 2026-05-29 00:00:00\r\n 2026-05-29 15:12:53\r\n 2026-05-29 00:00:00\r\n Motionen utgår\r\n \r\n Utgången\r\n html\r\n \r\n \r\n \r\n https://data.riksdagen.se/dokument/HD024193/text\r\n https://data.riksdagen.se/dokument/HD024193\r\n https://data.riksdagen.se/dokumentstatus/HD024193\r\n <p>Motion till riksdagen<br />2025/26:4193</p><p>Motionen utgår.</p>\r\n\r\n\r\n\r\nUTG\r\nUtgången\r\n2026-05-29 00:00:00\r\ninträffat\r\n0\r\nbehandling\r\n\r\n\r\nINL\r\nInlämnad\r\n2026-05-29 14:12:36\r\ninträffat\r\n0\r\nbehandling\r\n\r\n\r\n\r\n\r\nstatustext\r\nstatustext\r\nMotionen behandlas inte\r\nHD024193\r\n2026-05-30 00:39:36",
+  "contentFetched": true
+}

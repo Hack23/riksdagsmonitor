@@ -1,0 +1,23 @@
+{
+  "dok_id": "HD11860",
+  "titel": "Apoteksmarknaden",
+  "datum": "2026-05-29",
+  "rm": "2025/26",
+  "parti": "S",
+  "summary": "Fråga 2025/26:860 Apoteksmarknaden\n av  Agneta Nilsson (S)\n till Socialminister Jakob Forssmed (KD)\n Apoteken är en central del av svensk hälso-och sjukvård och ska präglas av trygghet, tillgänglighet och högt förtroende.\n Sedan apoteksmarknaden avreglerades 2009 har den samhälleliga kontrollen minskat, vilket har lett",
+  "url": "https://data.riksdagen.se/dokument/HD11860.html",
+  "mcpCoverageState": "metadata_only",
+  "mcpProvenance": {
+    "provider": "riksdag-regering",
+    "endpoint": "http://host.docker.internal:8080/mcp/riksdag-regering",
+    "tool": "get_fragor",
+    "query": {
+      "limit": 30,
+      "rm": "2025/26"
+    },
+    "resultCount": 30,
+    "coverageState": "metadata_only",
+    "retrieval": "live",
+    "retrievedAt": "2026-05-31T13:10:18.038Z"
+  }
+}

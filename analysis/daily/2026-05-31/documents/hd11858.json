@@ -1,0 +1,23 @@
+{
+  "dok_id": "HD11858",
+  "titel": "Förbud mot pälsdjursfarmning",
+  "datum": "2026-05-29",
+  "rm": "2025/26",
+  "parti": "V",
+  "summary": "Fråga 2025/26:858 Förbud mot pälsdjursfarmning\n av  Kajsa Fredholm (V)\n till Landsbygdsminister Peter Kullgren (KD)\n En statlig utredning om pälsdjursfarmning har nu presenterats, och därmed finns det ett fullständigt underlag för att gå vidare med lagstiftning om förbud i frågan. Under många år har det funnits omfattande",
+  "url": "https://data.riksdagen.se/dokument/HD11858.html",
+  "mcpCoverageState": "metadata_only",
+  "mcpProvenance": {
+    "provider": "riksdag-regering",
+    "endpoint": "http://host.docker.internal:8080/mcp/riksdag-regering",
+    "tool": "get_fragor",
+    "query": {
+      "limit": 30,
+      "rm": "2025/26"
+    },
+    "resultCount": 30,
+    "coverageState": "metadata_only",
+    "retrieval": "live",
+    "retrievedAt": "2026-05-31T13:10:18.038Z"
+  }
+}
