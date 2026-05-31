@@ -156,6 +156,30 @@ echo "⏱  agent_minute=$ELAPSED_MIN  remaining_to_pr_deadline=$REMAINING_MIN mi
 
 Call `safeoutputs___create_pull_request` before `agent_minute = 45`. Timer A and Timer B both fire at ~60 min from job start; the safe-outputs runner job needs the remaining slack.
 
+### Mandatory mid-run checkpoint
+
+> 🔴 **At agent_minute 20, run this checkpoint unconditionally.** This prevents the catastrophic failure mode where the agent consumes its entire token budget on data gathering and analysis without ever reaching the PR stage.
+
+```bash
+AGENT_START_EPOCH="$(cat /tmp/gh-aw/agent-start.epoch 2>/dev/null || date -u +%s)"
+NOW_EPOCH="$(date -u +%s)"
+ELAPSED_MIN=$(( (NOW_EPOCH - AGENT_START_EPOCH) / 60 ))
+echo "🔴 MID-RUN CHECKPOINT at agent_minute=$ELAPSED_MIN"
+if [ "$ELAPSED_MIN" -ge 20 ]; then
+  ANALYSIS_DIR="analysis/daily/$ARTICLE_DATE/$SUBFOLDER"
+  ARTIFACT_COUNT=$(find "$ANALYSIS_DIR" -name '*.md' 2>/dev/null | wc -l)
+  echo "📊 Artifacts on disk: $ARTIFACT_COUNT"
+  if [ "$ARTIFACT_COUNT" -eq 0 ]; then
+    echo "⚠️ WARNING: 20+ minutes elapsed with ZERO artifacts. COMPRESS SCOPE NOW."
+    echo "   → Skip remaining data downloads"
+    echo "   → Write minimal analysis artifacts immediately"
+    echo "   → Target PR by agent_minute 35"
+  fi
+fi
+```
+
+**If agent_minute ≥ 35 and no files exist under `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/`:** STOP all work. Write a minimal `data-download-manifest.md` documenting what was attempted, commit it, and call `safeoutputs___create_pull_request` with label `partial`. Do not attempt further analysis. A one-file PR documenting the failure is infinitely better than zero output.
+
 ## Self-check (before issuing a `bash` call)
 
 1. `command` and `description` both present and non-empty.

@@ -293,13 +293,17 @@ The noop message **must** include which condition above applies and why improvem
 
 ## Deadline enforcement
 
-Two independent timers can kill a run silently (gh-aw v0.74.3). Plan for the **shortest** of the two.
+> 🔴 **THE SINGLE MOST CRITICAL SECTION IN THIS DOCUMENT.** Failing to produce a safe output wastes the entire run (all tokens, all compute, all analysis). Three timers can kill the session:
+
+Three independent timers can kill a run silently (gh-aw v0.74.3). Plan for the **shortest** of the three.
 
 > **Timer A — Job `timeout-minutes` (60 min)**: every news workflow declares `timeout-minutes: 60`. The clock starts at job start (before Copilot begins) and includes host-side setup/sandbox/MCP initialization. After 60 minutes GitHub Actions kills the runner unconditionally — no retry, no save, no PR.
 >
 > **Timer B — Copilot API session (~60 min)**: the Copilot API session is bound to the `github.token` baked in at step start. That token expires at approximately **60 minutes** and is never refreshed mid-run (gh-aw issue #24920). After that point every tool call fails silently — the agent appears to run but makes no progress and the PR is never created.
+>
+> **Timer C — Token budget (~25M tokens)**: the agent session has a finite token budget. Complex analysis with many MCP calls, large file reads, and extensive tool outputs can exhaust this budget in 20–30 minutes. When tokens are exhausted, the session terminates immediately with NO opportunity for cleanup — the PR is never created. **This is the most common cause of "agent succeeded but no safe outputs" failures.**
 
-Timers A and B are intentionally aligned at ~60 min. Issue the PR before either fires.
+Timers A, B, and C are independent. The token budget (Timer C) often fires first on complex analysis runs. Issue the PR before ANY timer fires.
 
 ### PR-creation windows
 
@@ -309,13 +313,23 @@ Timers A and B are intentionally aligned at ~60 min. Issue the PR before either 
 
 The agent-minute-45 hard deadline reserves job-level headroom for host-side setup variance plus staging, `git commit`, and the safeoutputs round-trip before Timer A and Timer B fire. Schedule no analysis or article work after the PR call — the agent's remaining job is to exit cleanly while the safe-outputs runner publishes the PR. Equally, finish with iterated AI-FIRST output: minimum 2 complete passes is mandatory (see `.github/copilot-instructions.md §AI FIRST Quality Principle`).
 
+### Token-budget awareness
+
+The token budget is the most unpredictable timer. To avoid exhaustion before PR creation:
+
+1. **Minimize unnecessary output**: avoid printing large file contents to stdout when not needed for analysis.
+2. **Batch MCP calls**: combine related queries rather than making many small calls.
+3. **Limit file read size**: use targeted reads (specific sections) instead of reading entire large files.
+4. **Check time frequently**: run the `agent_minute` check at EVERY phase boundary — if you're past minute 20 with no artifacts, you're likely consuming tokens faster than expected.
+5. **Err on the side of early PR**: when in doubt about remaining budget, commit and PR immediately. A partial PR can always be improved by a re-run.
+
 ### If the run exceeds its hard deadline with no safe-output call yet
 
 1. **Stop** analysis / article work immediately — no more `edit` tool calls, no more Pass 2 improvements.
 2. **Stage** whatever exists on disk (analysis artifacts and any rendered `news/*.html`). Leave `pass1/` unstaged.
 3. **Commit** with message prefixed `[early-pr]` to signal partial content.
 4. **Call** `safeoutputs___create_pull_request` once with label `partial`. A partial analysis is always better than zero output.
-5. If `safeoutputs___create_pull_request` returns an error, exit — Timer A or Timer B is firing. Document the incident in the next run's methodology-reflection.
+5. If `safeoutputs___create_pull_request` returns an error, call `safeoutputs___noop` with a message explaining the timeout. NEVER exit without at least attempting one safe-output call.
 
 A single PR is the only PR. Creating it early always beats losing all work to a timer expiry.
 
