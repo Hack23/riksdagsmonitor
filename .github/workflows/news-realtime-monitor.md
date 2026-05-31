@@ -182,7 +182,7 @@ tools:
   edit:
   web-fetch:
   cache-memory:
-    key: news-${{ github.workflow }}-${{ inputs.article_date || 'today' }}
+    key: news-realtime-monitor-${{ inputs.article_date || 'today' }}
     retention-days: 14
 
 safe-outputs:

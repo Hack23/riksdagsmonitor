@@ -180,7 +180,7 @@ tools:
   edit:
   web-fetch:
   cache-memory:
-    key: news-${{ github.workflow }}-${{ inputs.article_date || 'today' }}-${{ inputs.cycle_anchor || 'both' }}
+    key: news-election-cycle-${{ inputs.article_date || 'today' }}-${{ inputs.cycle_anchor || 'both' }}
     retention-days: 30
 
 safe-outputs:
