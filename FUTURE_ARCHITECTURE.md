@@ -558,7 +558,7 @@ C4Component
 
 ## 4. 🤖 AI Enhancement Roadmap (Amazon Bedrock)
 
-### 4.1 Phase 1: Enhanced Journalism (2026 Q2-Q3)
+### 4.1 Phase 1: Enhanced Journalism (H3 — 2028+)
 
 **Objective:** Automate daily news generation from Swedish Parliament activity using **Amazon Bedrock** exclusively for all AI operations.
 
@@ -597,7 +597,7 @@ C4Component
 - ✅ **Model flexibility** - Claude Opus 4.8, Llama 4 405B, Nova Premier via unified API
 - ✅ **Automatic scaling** - Serverless capacity management, no provisioning
 
-### 4.2 Phase 2: Predictive Analytics (2026 Q4-2027 Q1)
+### 4.2 Phase 2: Predictive Analytics (H3 — 2028 Q4–2029 Q1)
 
 **Objective:** Implement election forecasting and coalition modeling using **AWS SageMaker Serverless Inference** and **Amazon Bedrock**.
 
@@ -643,7 +643,7 @@ C4Component
 - ✅ **Serverless Endpoints** - SageMaker Serverless Inference endpoints
 - ✅ **Auto-Scaling** - Automatic capacity management, zero idle costs
 
-### 4.3 Phase 3: Semantic Intelligence (2027 Q2-Q4)
+### 4.3 Phase 3: Semantic Intelligence (H3 — 2029 Q2–Q4)
 
 **Objective:** Implement knowledge graphs and semantic search using **Amazon Neptune Serverless** and **Amazon Bedrock Knowledge Bases**.
 

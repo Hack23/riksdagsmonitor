@@ -672,7 +672,7 @@ mindmap
   root((🦾 Agentic AI<br/>Autonomous Operations))
     🟢 v1.x Seed Agents Today
       14 gh-aw newsroom workflows
-      Single-pass analysis aggregate render PR
+      Multi-pass analysis aggregate render PR
       Claude Opus 4.8 plus Sonnet 4.6
       Human merges every pull request
     🔵 v2.0 Coordinated Build-Time Crew
