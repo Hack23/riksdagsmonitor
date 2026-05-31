@@ -1006,7 +1006,7 @@ gh-aw provides two built-in memory mechanisms (prefer these over `@modelcontextp
 
 | Mechanism | Persistence | Scope | Use Case |
 |-----------|------------|-------|----------|
-| `cache-memory:` | GitHub Actions cache, ~7-14 days | Per-workflow or shared via key | Session state, intermediate results, cross-run context |
+| `cache-memory:` | GitHub Actions cache, configurable via `retention-days` (eviction-dependent) | Per-workflow or shared via key | Session state, intermediate results, cross-run context |
 | `cache:` | GitHub Actions cache | Per-workflow | Dependencies, build artifacts |
 
 **Recommended: `cache-memory:`** for cross-run context:

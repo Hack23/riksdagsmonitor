@@ -229,7 +229,7 @@ tools:
   agentic-workflows: true    # Workflow introspection (status, compile, logs, audit, checks)
   bash: true                 # Shell command execution
   playwright:                # Browser automation (optional, for visual validation)
-  cache-memory:              # Session state persisted via GitHub Actions cache (~7-14 days)
+  cache-memory:              # Session state persisted via GitHub Actions cache (retention configured per workflow)
     key: news-${{ github.workflow }}-${{ inputs.article_date || 'today' }}
     retention-days: 14
 ```

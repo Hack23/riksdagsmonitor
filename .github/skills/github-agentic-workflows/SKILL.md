@@ -677,7 +677,7 @@ Track metrics over time using memory:
 ```
 
 **Memory Types:**
-- **cache-memory**: 7-14 day retention (GitHub Actions cache)
+- **cache-memory**: Configurable retention via `retention-days` (GitHub Actions cache, eviction-dependent availability)
 
 **Use Cases:**
 - Incremental data processing
