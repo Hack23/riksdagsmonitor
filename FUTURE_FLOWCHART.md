@@ -609,7 +609,7 @@ Compliance is a **gate in every horizon**, mapped to ISO 27001:2022, NIST CSF 2.
 flowchart TD
     START[AI-assisted process invoked] --> PUB{Public data only?}
     PUB -->|No| REJECT[Reject — policy violation]
-    PUB -->|Yes| LAWFUL{GDPR Art. 9 lawful basis<br/>9(2)(e) public / 9(2)(g) public interest}
+    PUB -->|Yes| LAWFUL{"GDPR Art. 9 lawful basis<br/>9(2)(e) public / 9(2)(g) public interest"}
     LAWFUL -->|None| REJECT
     LAWFUL -->|Established| NEUTRAL{Party neutrality maintained?}
     NEUTRAL -->|Skewed| REBAL[Rebalance + document] --> NEUTRAL

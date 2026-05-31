@@ -1,32 +1,61 @@
 <p align="center">
-  <img src="public/logo.png" alt="Riksdagsmonitor" width="160" />
+  <img src="https://hack23.com/icon-192.png" alt="Hack23 Logo" width="192" height="192">
 </p>
 
-<h1 align="center">🔮 Riksdagsmonitor — Future Data Model</h1>
-
-<p align="center"><em>Three-horizon data architecture for transparent, evidence-based Swedish political intelligence.</em></p>
+<h1 align="center">📊 Riksdagsmonitor — Future Data Architecture Model</h1>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Version-3.0-blue" alt="Version 3.0" />
-  <img src="https://img.shields.io/badge/Effective-2026--05--31-green" alt="Effective 2026-05-31" />
-  <img src="https://img.shields.io/badge/Review-Annual-orange" alt="Annual Review" />
-  <img src="https://img.shields.io/badge/Classification-Public-brightgreen" alt="Public" />
-  <img src="https://img.shields.io/badge/Data-Public%20Sources%20Only-success" alt="Public Sources Only" />
+  <strong>🔮 Three-Horizon Evolution: Static JSON/CSV → Richer Static Pre-Compute → AWS Serverless Intelligence</strong><br>
+  <em>🎯 Neptune Graph · Aurora Serverless v2 · OpenSearch Vector · Bedrock Knowledge Bases · API Gateway · Cognito</em>
 </p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/>
+  <img src="https://img.shields.io/badge/Version-3.0-555?style=for-the-badge" alt="Version"/>
+  <img src="https://img.shields.io/badge/Effective-2026--05--31-success?style=for-the-badge" alt="Effective Date"/>
+  <img src="https://img.shields.io/badge/Review-Annual-orange?style=for-the-badge" alt="Review Cycle"/>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Horizon-2026--2037-blueviolet?style=flat-square" alt="Horizon"/>
+  <img src="https://img.shields.io/badge/GDPR_Art._9-9(2)(e)_·_9(2)(g)-darkblue?style=flat-square" alt="GDPR Article 9"/>
+  <img src="https://img.shields.io/badge/Public_Data_Only-Neutral-success?style=flat-square" alt="Public Data Only"/>
+</p>
+
+<h3 align="center">🏆 Evidence & Compliance Badges</h3>
+
+<p align="center">
+  <a href="https://api.securityscorecards.dev/projects/github.com/Hack23/riksdagsmonitor"><img src="https://api.securityscorecards.dev/projects/github.com/Hack23/riksdagsmonitor/badge" alt="OpenSSF Scorecard"/></a>
+  <a href="https://slsa.dev"><img src="https://slsa.dev/images/gh-badge-level3.svg" alt="SLSA 3"/></a>
+  <a href="https://sonarcloud.io/dashboard?id=Hack23_riksdagsmonitor"><img src="https://sonarcloud.io/api/project_badges/measure?project=Hack23_riksdagsmonitor&metric=alert_status" alt="Quality Gate"/></a>
+  <a href="https://app.fossa.com/projects/git%2Bgithub.com%2FHack23%2Friksdagsmonitor"><img src="https://app.fossa.com/api/projects/git%2Bgithub.com%2FHack23%2Friksdagsmonitor.svg?type=shield" alt="FOSSA"/></a>
+</p>
+
+**📋 Document Owner:** CEO | **📄 Version:** 3.0 | **📅 Last Updated:** 2026-05-31 (UTC)  
+**🔄 Review Cycle:** Annual | **⏰ Next Review:** 2027-05-31  
+**🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
 ---
 
-## 📑 Architecture Documentation Map
+## 📚 Architecture Documentation Map
 
-| Document | Scope | Horizon |
-|----------|-------|---------|
-| [ARCHITECTURE.md](ARCHITECTURE.md) | Current system architecture | v1.x (now) |
-| [DATA_MODEL.md](DATA_MODEL.md) | Current data model & entities | v1.x (now) |
-| [FUTURE_ARCHITECTURE.md](FUTURE_ARCHITECTURE.md) | Target system architecture | v2.0 → v3.0+ |
-| **FUTURE_DATA_MODEL.md** *(this doc)* | **Target data architecture across three horizons** | **v1.x → v2.0 → v3.0+** |
-| [FUTURE_SECURITY_ARCHITECTURE.md](FUTURE_SECURITY_ARCHITECTURE.md) | Target security controls | v2.0 → v3.0+ |
-| [FUTURE_THREAT_MODEL.md](FUTURE_THREAT_MODEL.md) | Target threat model | v2.0 → v3.0+ |
-| [FUTURE_DATA_MODEL.md](FUTURE_DATA_MODEL.md) ↔ [DATA_MODEL.md](DATA_MODEL.md) | Forward/back alignment | continuity |
+| Document | Type | Description |
+|----------|------|-------------|
+| [Architecture](ARCHITECTURE.md) | 🏛️ Current | C4 model showing system structure |
+| [Data Model](DATA_MODEL.md) | 📊 Current | Data entities and relationships |
+| [Flowcharts](FLOWCHART.md) | 🔄 Current | Process flows and pipelines |
+| [State Diagrams](STATEDIAGRAM.md) | 🔄 Current | System state transitions |
+| [Mindmap](MINDMAP.md) | 🗺️ Current | System conceptual map |
+| [SWOT](SWOT.md) | 💼 Current | Strategic analysis |
+| [Future Architecture](FUTURE_ARCHITECTURE.md) | 🏗️ Future | System evolution roadmap |
+| **[Future Data Model](FUTURE_DATA_MODEL.md)** | 📊 **Future** | **Enhanced data architecture (this doc)** |
+| [Future Flowcharts](FUTURE_FLOWCHART.md) | 🔄 Future | Advanced process flows |
+| [Future State Diagrams](FUTURE_STATEDIAGRAM.md) | 🔄 Future | Advanced state management |
+| [Future Mindmap](FUTURE_MINDMAP.md) | 🗺️ Future | Future capability map |
+| [Future SWOT](FUTURE_SWOT.md) | 💼 Future | Strategic outlook |
+| [Security Architecture](SECURITY_ARCHITECTURE.md) | 🛡️ Security | Defense-in-depth controls |
+| [Future Security Architecture](FUTURE_SECURITY_ARCHITECTURE.md) | 🛡️ Future | Security roadmap |
+| [Threat Model](THREAT_MODEL.md) | 🎯 Security | STRIDE analysis |
 
 ---
 
