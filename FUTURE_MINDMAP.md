@@ -90,12 +90,13 @@ Four **invariants** survive every horizon: public-data-only, political neutralit
 11. [Theme — Governance / Ethics / GDPR](#11-️-theme--governance--ethics--gdpr)
 12. [Theme — Ecosystem &amp; Expansion](#12--theme--ecosystem--expansion)
 13. [AI / LLM Capability-Evolution (2026–2037)](#13--ai--llm-capability-evolution-20262037)
-14. [Agentic AI &amp; Autonomous Multi-Agent Operations](#-theme--agentic-ai--autonomous-multi-agent-operations-what-future-ai-agents-unlock)
-15. [Sustainability, Growth &amp; Audience Expansion](#-theme--sustainability-growth--audience-expansion)
-16. [SWOT → Future Coverage Crosswalk](#-swot--future-coverage-crosswalk)
-17. [Capability Matrix (horizon-aligned)](#-capability-matrix-horizon-aligned)
-18. [Stakeholder Value &amp; Roadmap Risk](#-stakeholder-value-by-horizon)
-19. [IMF Data-Sources Future Surface](#-evolving-the-current-imf-mindmap-toward-the-future-data-sources-surface)
+14. [Political-Intelligence Capability Catalog (to 2037) — master OSINT/INTOP map](#-theme--political-intelligence-capability-catalog-to-2037--the-master-osintintop-map)
+15. [Agentic AI &amp; Autonomous Multi-Agent Operations](#-theme--agentic-ai--autonomous-multi-agent-operations-what-future-ai-agents-unlock)
+16. [Sustainability, Growth &amp; Audience Expansion](#-theme--sustainability-growth--audience-expansion)
+17. [SWOT → Future Coverage Crosswalk](#-swot--future-coverage-crosswalk)
+18. [Capability Matrix (horizon-aligned)](#-capability-matrix-horizon-aligned)
+19. [Stakeholder Value &amp; Roadmap Risk](#-stakeholder-value-by-horizon)
+20. [IMF Data-Sources Future Surface](#-evolving-the-current-imf-mindmap-toward-the-future-data-sources-surface)
 
 ---
 
@@ -660,6 +661,232 @@ graph LR
 ```
 
 **Governance note.** Each annual model adoption is a [Change Management](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Change_Management.md) event: competitor benchmarking, neutrality/bias evaluation, and human-in-the-loop sign-off precede production use. Paradigm-shift contingencies (quantum/neuromorphic) are tracked as architecture-accommodation requirements, not committed deliverables.
+
+---
+
+## 🛰️ Theme — Political-Intelligence Capability Catalog (to 2037) — the master OSINT/INTOP map
+
+> **Why this section exists.** Sections 6–9 describe tradecraft, party analytics and AI by *theme*. This section is the **single authoritative capability catalog** an intelligence operative would demand: it names every OSINT / INTOP / political-intelligence capability the platform must field by 2037, organises them along the **classic intelligence cycle** (Direction → Collection → Processing → Analysis → Production → Dissemination → Feedback), maps each to a horizon, names the AI method that unlocks it, and states the **operational benefit (why it matters for democratic accountability)**. It is the master that the sibling [`FUTURE_ARCHITECTURE.md`](FUTURE_ARCHITECTURE.md), [`FUTURE_WORKFLOWS.md`](FUTURE_WORKFLOWS.md), [`FUTURE_DATA_MODEL.md`](FUTURE_DATA_MODEL.md), [`FUTURE_FLOWCHART.md`](FUTURE_FLOWCHART.md), [`FUTURE_STATEDIAGRAM.md`](FUTURE_STATEDIAGRAM.md), [`FUTURE_SWOT.md`](FUTURE_SWOT.md), [`FUTURE_THREAT_MODEL.md`](FUTURE_THREAT_MODEL.md) and [`FUTURE_SECURITY_ARCHITECTURE.md`](FUTURE_SECURITY_ARCHITECTURE.md) each realise in their own idiom.
+
+**Gap honesty — what today's stack does *not* yet do.** The v1.x newsroom already fields ~24 analysis artifacts (F3EAD, ICD 203, ACH, Admiralty grading, PIR roll-forward, calibrated WEP forecasting, DISARM media-framing). That is a strong *single-source, build-time, document-centric* baseline. The capabilities below are the **deliberate gaps** an operative would flag: **multi-INT fusion** (we read documents, not the money/lobbying/social context around them), **entity resolution across registries**, **indications-and-warning tripwires**, **agent-based wargaming**, **continuous calibration**, **foreign-interference (FIMI) early-warning**, **content provenance / deepfake defence**, and **runtime estimative products**. Closing them is the visionary spine of v2.0 → v3.0+.
+
+### PI.0 The intelligence cycle as the platform's operating loop
+
+```mermaid
+graph LR
+    DIR["🎯 Direction<br/>PIRs and tripwires"]:::g --> COL["📡 Collection<br/>Multi-INT fusion"]:::b
+    COL --> PROC["⚙️ Processing<br/>Extraction and provenance"]:::p
+    PROC --> ANA["🧠 Analysis<br/>SAT + forecasting + I&amp;W"]:::o
+    ANA --> PROD["📑 Production<br/>Estimative products"]:::r
+    PROD --> DIS["📣 Dissemination<br/>COP and briefings"]:::w
+    DIS --> FB["🔁 Feedback<br/>Calibration and PIR roll-forward"]:::s
+    FB --> DIR
+    classDef g fill:#4caf50,stroke:#2e7d32,color:#000000;
+    classDef b fill:#42a5f5,stroke:#1565c0,color:#000000;
+    classDef p fill:#ab47bc,stroke:#6a1b9a,color:#ffffff;
+    classDef o fill:#ffa726,stroke:#e65100,color:#000000;
+    classDef r fill:#ef5350,stroke:#b71c1c,color:#ffffff;
+    classDef w fill:#26c6da,stroke:#00838f,color:#000000;
+    classDef s fill:#ffd54f,stroke:#f57f17,color:#000000;
+```
+
+**Ethics rail (binds every capability below).** All capabilities operate on **public political behaviour only** — votes, speeches, documents, declared interests, public financial disclosures, public discourse. No private-life surveillance, no citizen profiling, no psyops. Political opinions are GDPR Article 9 special-category data (lawful bases 9(2)(e) manifestly-public / 9(2)(g) substantial-public-interest). Every externally visible judgment is human-signed per the [Hack23 AI Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/AI_Policy.md).
+
+### PI.1 Pillar — Collection &amp; Multi-INT Fusion 📡 (close the single-source gap)
+
+```mermaid
+mindmap
+  root((📡 Collection and<br/>Multi-INT Fusion))
+    🔵 v2.0 Build-Time Fusion
+      Cross-source entity resolution registries
+      Lobbying and revolving-door mapping
+      Declared-interest versus vote conflict screening
+      Party-funding and campaign-finance tracing
+      Procurement and public-spend anomaly screening
+    🟣 v3.0 Runtime Fusion
+      OSINT plus FININT plus GEOINT plus ECONINT mesh
+      Privacy-bounded SOCMINT discourse listening
+      EU transparency register cross-walk
+      Court and agency decision ingestion
+    🌟 2032 to 2037 Always-On Fusion
+      Continuous multi-parliament collection mesh
+      Tip-and-cue automated re-tasking
+      Federated Nordic and EU evidence pool
+    ⚖️ Collection Rails
+      Public sources only no scraping of private data
+      Provenance tag on every collected item
+      Admiralty source grading at intake
+```
+
+**Operative benefit.** Documents alone show *what* an MP did; fusion shows *why it may matter* — the donor, the prior employer, the lobby meeting, the constituency money flow. Triangulation across independent source families is the single biggest jump in judgment confidence and the strongest defence against being spun by any one source.
+
+### PI.2 Pillar — Processing &amp; Provenance ⚙️ (make every claim verifiable and tamper-evident)
+
+```mermaid
+mindmap
+  root((⚙️ Processing and<br/>Provenance))
+    🔵 v2.0 Build-Time
+      Multilingual entity event relation extraction
+      Temporal knowledge-graph construction
+      Source-graded evidence ledger Admiralty
+      Citation-grounded claim binding dok_id
+    🟣 v3.0 Runtime
+      Content provenance and C2PA credentials
+      Deepfake and synthetic-media detection
+      Cross-language coreference resolution
+      Streaming event extraction from live feeds
+    🌟 2032 to 2037
+      Self-verifying provenance chain end to end
+      Cryptographic evidence chain-of-custody
+    ⚖️ Processing Rails
+      No claim without a primary-source anchor
+      Reproducible extraction same input same output
+      Vintage discipline on every dated fact
+```
+
+**Operative benefit.** In an era of synthetic media and information laundering, *provenance is the product*. A judgment is only as trustworthy as its weakest evidence link; tamper-evident chain-of-custody and deepfake screening let the platform refuse to cite what it cannot verify — and prove it later.
+
+### PI.3 Pillar — Analysis &amp; Tradecraft AI 🧠 (the "much more intelligence" the brief asks for)
+
+```mermaid
+mindmap
+  root((🧠 Analysis and<br/>Tradecraft AI))
+    🔵 v2.0 Build-Time Tradecraft
+      Structured Analytic Techniques at scale
+      ACH with Bayesian hypothesis updating
+      Argument-mining claim evidence warrant
+      Narrative and framing lifecycle tracking
+      Stance and issue-position drift per actor
+      Influence and power-broker network analytics
+      Anomaly explanation not just detection
+    🟣 v3.0 Runtime Analysis
+      Calibrated probabilistic forecasting engine
+      Indications and Warning tripwire system
+      Causal inference policy-impact modelling
+      Agent-based legislative simulation wargaming
+      FIMI and coordinated-inauthentic-behaviour detection
+      Leadership analysis public statements only
+    🌟 2032 to 2037 Autonomous Analysis
+      Generative scenario and wildcard synthesis
+      Graph-neural influence prediction
+      Neuro-symbolic explainable judgments
+      Continuous self-calibrating forecasts
+    ⚖️ Analysis Rails
+      ICD 203 analytic integrity on every product
+      Party-symmetry neutrality arithmetic
+      Documented uncertainty and confidence bands
+      Red-team and devils-advocate built in
+```
+
+**Operative benefit.** This pillar converts evidence into *decision-relevant judgment*. Indications-and-Warning tripwires turn the platform from a rear-view mirror into an early-warning radar (government collapse, snap election, coalition rupture, budget crisis, integrity scandal). Calibrated forecasting plus continuous Brier scoring means the platform earns trust by being *measurably* right over time, not merely confident.
+
+### PI.4 Pillar — Production &amp; Dissemination 📣 (turn analysis into products people can act on)
+
+```mermaid
+mindmap
+  root((📣 Production and<br/>Dissemination))
+    🔵 v2.0 Static Products
+      Neutral actor and party scorecards
+      Evidence-graded static intelligence briefs
+      Coalition-math and landscape dashboards
+    🟣 v3.0 Runtime Products
+      Common Operating Picture live dashboard
+      Estimative product NIE-style key judgments
+      Autonomous Riksdag Daily Brief
+      Personalized PIR-driven briefings
+      Tip-and-cue watchlist alerting
+      Conversational intelligence analyst agentic RAG
+      Counter-disinformation rapid-response briefs
+    🌟 2032 to 2037 Decision Support
+      Election-night live intelligence cell
+      Real-time democracy-health index
+      Cross-parliament comparative COP
+    ⚖️ Dissemination Rails
+      Human signs every published judgment
+      Confidence and source grade shown to reader
+      Equal treatment of all parties in every product
+      No personalized political targeting of citizens
+```
+
+**Operative benefit.** Raw analysis that nobody reads at the right moment is wasted. A Common Operating Picture and tip-and-cue alerting put the *right judgment in front of the right citizen, journalist or researcher at the decision-relevant moment* — while neutrality rails and visible confidence grades keep the product a transparency tool, never a persuasion weapon.
+
+### PI.5 Pillar — Direction, Feedback &amp; Assurance ⚖️ (steer the loop and prove integrity)
+
+```mermaid
+mindmap
+  root((⚖️ Direction Feedback<br/>and Assurance))
+    🔵 v2.0
+      PIR generation and roll-forward
+      Calibration ledger automation Brier scoring
+      Neutrality and bias-symmetry auditing
+      Reproducibility and full audit trail
+    🟣 v3.0
+      Continuous I&amp;W tripwire re-tasking
+      Adversarial red-team of the pipeline itself
+      Counter-AI prompt-injection and poisoning defence
+      Analytic-integrity ICD 203 and 206 scoring
+    🌟 2032 to 2037
+      Self-auditing assurance-by-construction
+      Federated calibration across parliaments
+    ⚖️ Assurance Rails
+      Every inference human-accountable
+      Kill-switch and least-privilege agent scoping
+      No autonomous partisan or psyops action
+```
+
+**Operative benefit.** Direction and feedback are what separate an *intelligence organisation* from a content firehose. Auto-generated PIRs focus collection on what actually matters; continuous calibration and adversarial self-testing keep the platform honest; counter-AI defences protect the integrity of judgments against actors who would poison or prompt-inject the analytic pipeline.
+
+### PI.6 Capability → Horizon → AI-Method → Benefit crosswalk (the operative's master table)
+
+> Legend: 🔵 v2.0 static-deep (2026–2027) · 🟣 v3.0 serverless runtime (2028–2031) · 🌟 autonomous era (2032–2037). Every row is a **target**, governed by the AI Policy, on public data, neutral across parties.
+
+| # | Capability | Pillar | Horizon | AI method / unlock | Operative benefit (why) |
+|:-:|-----------|--------|:------:|--------------------|-------------------------|
+| C1 | Cross-source entity resolution | Collection | 🔵 | Record-linkage + embedding similarity | One actor → full footprint across registries |
+| C2 | Lobbying &amp; revolving-door mapping | Collection | 🔵 | Graph extraction + temporal joins | Exposes hidden influence channels |
+| C3 | Declared-interest vs vote conflict screen | Collection | 🔵 | Rule + LLM reconciliation | Surfaces potential conflicts, neutrally |
+| C4 | Party-funding / campaign-finance tracing | Collection | 🔵→🟣 | Financial-document IE | Follow-the-money accountability |
+| C5 | Procurement / public-spend anomaly screen | Collection | 🔵→🟣 | Outlier detection + XAI | Corruption indicators on agencies |
+| C6 | Multi-INT fusion mesh (OSINT+FININT+GEOINT+ECONINT) | Collection | 🟣 | Multi-source fusion + Neptune graph | Triangulated high-confidence judgments |
+| C7 | Privacy-bounded SOCMINT listening | Collection | 🟣 | Aggregate stance/salience models | Links elite behaviour to public salience |
+| C8 | Content provenance &amp; C2PA credentials | Processing | 🟣 | Provenance signing + verification | Tamper-evident evidence |
+| C9 | Deepfake / synthetic-media detection | Processing | 🟣 | Multimodal forensics models | Refuse to cite what cannot be verified |
+| C10 | Multilingual entity/event/relation extraction | Processing | 🔵 | Transformer IE over 14 langs | Machine-readable knowledge graph |
+| C11 | Temporal knowledge-graph reasoning | Processing→Analysis | 🟣 | Neptune + GNN | Reason over evolving networks |
+| C12 | Structured-Analytic-Technique automation | Analysis | 🔵 | LLM-orchestrated ACH/KAC/Premortem | ICD 203-grade rigour at scale |
+| C13 | Calibrated probabilistic forecasting engine | Analysis | 🟣 | Ensemble + Brier calibration | Measurably-right, trust-earning forecasts |
+| C14 | Indications &amp; Warning tripwire system | Analysis | 🟣 | Indicator models + thresholds | Early-warning radar, not rear-view mirror |
+| C15 | Causal policy-impact inference | Analysis | 🟣 | Diff-in-diff / synthetic control | Did the law actually change outcomes |
+| C16 | Agent-based legislative wargaming | Analysis | 🟣→🌟 | Multi-agent simulation | Stress-test coalition/vote scenarios |
+| C17 | Argument-mining &amp; rhetoric analysis | Analysis | 🔵 | Claim-evidence-warrant extraction | Detect spin and logical fallacy |
+| C18 | Narrative / framing lifecycle tracking | Analysis | 🔵 | DISARM TTP + topic dynamics | See how frames originate and mutate |
+| C19 | Influence / power-broker network analytics | Analysis | 🔵→🟣 | Centrality + diffusion + GNN | Identify kingmakers and brokers |
+| C20 | FIMI / coordinated-inauthentic-behaviour detection | Analysis | 🟣 | Network + behavioural anomaly | Foreign-interference early-warning |
+| C21 | Common Operating Picture (live) | Dissemination | 🟣 | Real-time fusion + streaming | Right judgment at decision moment |
+| C22 | Estimative products (NIE-style key judgments) | Production | 🟣 | RAG + SAT synthesis | Confidence-scored standing estimates |
+| C23 | Autonomous Riksdag Daily Brief | Production | 🟣 | Bedrock agents + RAG | PDB-style daily situational product |
+| C24 | Tip-and-cue watchlist alerting | Dissemination | 🟣 | I&amp;W + EventBridge | Never miss a tracked actor/issue move |
+| C25 | Conversational intelligence analyst | Dissemination | 🟣 | Agentic RAG over corpus | Ask-anything grounded answers |
+| C26 | Election-night / crisis live cell | Dissemination | 🌟 | Streaming + live forecasting | High-tempo real-time intelligence |
+| C27 | Real-time democracy-health index | Production | 🌟 | Composite indicator model | Single neutral accountability barometer |
+| C28 | PIR auto-generation &amp; roll-forward at scale | Direction | 🔵→🟣 | LLM requirement synthesis | Focus collection on what matters |
+| C29 | Continuous calibration &amp; self-improvement | Feedback | 🟣→🌟 | Online Brier feedback loop | Forecasts improve provably over time |
+| C30 | Neutrality / bias-symmetry auditing AI | Assurance | 🔵 | Per-party arithmetic verification | Structural impartiality, not hope |
+| C31 | Adversarial red-team of the pipeline | Assurance | 🟣 | Automated attack generation | Find blind spots before adversaries |
+| C32 | Counter-AI integrity defence | Assurance | 🟣 | Prompt-injection / poisoning guards | Protect judgments from manipulation |
+
+### PI.7 Maturity arc — where each pillar lives by year
+
+```mermaid
+timeline
+    title Political-Intelligence Capability Maturity (2026 to 2037)
+    2026 to 2027 v2.0 Static-Deep : Entity resolution and conflict screening : SAT automation and argument mining : Narrative tracking and influence networks : Neutrality auditing and PIR roll-forward
+    2028 to 2029 v3.0 Runtime : Multi-INT fusion mesh and provenance : Calibrated forecasting and I and W tripwires : Conversational analyst and Daily Brief : FIMI detection and counter-AI defence
+    2030 to 2031 v3.0 Mature : Causal policy-impact inference : Agent-based wargaming : Common Operating Picture : Estimative NIE-style products
+    2032 to 2037 Autonomous : Always-on multi-parliament fusion : Generative scenario synthesis : Election-night live cell : Real-time democracy-health index
+```
+
+**The single-sentence vision.** By 2037 Riksdagsmonitor evolves from an *AI newsroom that explains yesterday* into a *governed, neutral, public-source political-intelligence service that warns about tomorrow* — fusing many open-source intelligence families, reasoning with calibrated tradecraft, and proving its own integrity on every judgment, for any citizen, in 14+ languages.
 
 ---
 

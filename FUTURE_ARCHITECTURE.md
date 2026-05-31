@@ -143,6 +143,7 @@ graph LR
 **🟣 Horizon 3 — v3.0+ AWS Serverless AI (2028–2037)**
 3. [Future C4 Architecture Models (AWS Serverless)](#3-️-future-c4-architecture-models-aws-serverless)
 4. [AI Enhancement Roadmap (Amazon Bedrock)](#4--ai-enhancement-roadmap-amazon-bedrock)
+4A. [Political-Intelligence Capability Architecture (OSINT/INTOP, to 2037)](#4a-️-political-intelligence-capability-architecture-osintintop-to-2037)
 5. [Scalability Improvements](#5--scalability-improvements)
 6. [AWS Serverless Architecture Evolution](#6-️-aws-serverless-architecture-evolution)
 7. [Advanced Features Roadmap](#7--advanced-features-roadmap)
@@ -712,6 +713,143 @@ C4Component
 - ✅ **Amazon Lex** - Conversational AI with automatic speech recognition
 - ✅ **AppSync Real-Time** - Push notifications via GraphQL subscriptions
 - ✅ **Amplify Mobile SDK** - Native voice interfaces in iOS/Android apps
+
+---
+
+## 4A. 🛰️ Political-Intelligence Capability Architecture (OSINT/INTOP, to 2037)
+
+> **Master catalog:** the capabilities below are the architecture realisation of [`FUTURE_MINDMAP.md` §Political-Intelligence Capability Catalog](FUTURE_MINDMAP.md#-theme--political-intelligence-capability-catalog-to-2037--the-master-osintintop-map). Sections 3–4 describe the *generic* AWS serverless platform and the Bedrock content/predictive roadmap; this section describes the **intelligence-specific** layers an operative requires — multi-INT collection &amp; fusion, processing &amp; provenance, an analytic-tradecraft engine (SAT + forecasting + I&W), production/dissemination, and assurance/counter-AI — and maps each to named managed services. Everything operates on **public** data under GDPR Art. 9 bases 9(2)(e)/9(2)(g) with human-in-the-loop sign-off.
+
+### 4A.1 Why a dedicated intelligence architecture (the gap)
+
+The v1.x/v2.0 newsroom is a **single-source, document-centric, build-time** pipeline. It reads parliamentary documents superbly but does not (yet) **fuse** them with the financial, lobbying, procurement and discourse context around them; does not run **indications-and-warning tripwires**; cannot **wargame** coalition dynamics; and produces **point-in-time articles** rather than **standing estimative products**. Horizon 3 closes those gaps by adding five intelligence-specific architectural layers on top of the serverless substrate from §3.
+
+### 4A.2 Intelligence-layer container view (Horizon 3, 2028–2031)
+
+```mermaid
+graph TB
+    subgraph DIR["🎯 Direction (Step Functions)"]
+        PIR["PIR engine<br/>auto-generate + roll-forward"]
+        TRIP["Tripwire registry<br/>I&amp;W thresholds"]
+    end
+    subgraph COL["📡 Collection & Fusion (Lambda + Kinesis)"]
+        ER["Entity-resolution<br/>service"]
+        FIN["FININT ingest<br/>funding · lobbying · procurement"]
+        SOC["SOCMINT ingest<br/>privacy-bounded"]
+        FUSE["Multi-INT fusion<br/>graph builder"]
+    end
+    subgraph PROC["⚙️ Processing & Provenance (Lambda)"]
+        IE["Entity/event/relation<br/>extraction (Bedrock)"]
+        PROV["Provenance + C2PA<br/>signing/verify"]
+        DF["Deepfake / synthetic<br/>media detector"]
+    end
+    subgraph ANA["🧠 Analytic Engine (Bedrock Agents + SageMaker)"]
+        SAT["SAT orchestrator<br/>ACH · KAC · premortem"]
+        FCAST["Calibrated forecasting<br/>+ Brier feedback"]
+        IW["I&amp;W evaluator"]
+        WAR["Agent-based<br/>wargaming sim"]
+        FIMI["FIMI / CIB<br/>detector"]
+    end
+    subgraph PROD["📑 Production & Dissemination (API Gateway + AppSync)"]
+        COP["Common Operating<br/>Picture"]
+        NIE["Estimative products<br/>NIE-style"]
+        BRIEF["Daily Brief +<br/>PIR briefings"]
+        CHAT["Conversational<br/>analyst (RAG)"]
+        ALERT["Tip-and-cue<br/>alerting"]
+    end
+    subgraph ASR["⚖️ Assurance & Counter-AI (Bedrock Guardrails)"]
+        NEU["Neutrality / bias<br/>symmetry auditor"]
+        RED["Pipeline red-team"]
+        CAI["Counter-AI<br/>injection/poison guard"]
+        HITL["Human-in-the-loop<br/>sign-off"]
+    end
+    DIR --> COL --> PROC --> ANA --> PROD
+    ANA --> ASR
+    PROD --> ASR
+    ASR --> HITL
+    IW --> TRIP
+    FCAST --> PIR
+
+    style DIR fill:#e8f5e9,stroke:#2e7d32,color:#000000
+    style COL fill:#e3f2fd,stroke:#1565c0,color:#000000
+    style PROC fill:#f3e5f5,stroke:#6a1b9a,color:#000000
+    style ANA fill:#fff3e0,stroke:#e65100,color:#000000
+    style PROD fill:#fce4ec,stroke:#b71c1c,color:#000000
+    style ASR fill:#fffde7,stroke:#f57f17,color:#000000
+```
+
+### 4A.3 Capability → AWS service mapping
+
+| Layer | Capability | Primary managed service(s) | Notes |
+|-------|-----------|----------------------------|-------|
+| Collection | Entity resolution across registries | Lambda + Neptune + OpenSearch (embedding match) | Record-linkage; provenance-tagged |
+| Collection | FININT (funding/lobbying/procurement) | Lambda ingest + Aurora + S3 | Public registers only |
+| Collection | Multi-INT fusion graph | Neptune Serverless | OSINT+FININT+GEOINT+ECONINT mesh |
+| Collection | Privacy-bounded SOCMINT | Lambda + Comprehend (aggregate) | No individual profiling; aggregate stance/salience |
+| Processing | Entity/event/relation extraction | Bedrock (Claude) + Comprehend | 14-language IE |
+| Processing | Content provenance + C2PA | Lambda + KMS signing + S3 Object Lock | Tamper-evident chain-of-custody |
+| Processing | Deepfake / synthetic-media detection | SageMaker Serverless Inference | Refuse-to-cite gate |
+| Analysis | SAT automation (ACH/KAC/premortem) | Bedrock Agents | ICD 203-graded |
+| Analysis | Calibrated forecasting + Brier loop | SageMaker + Timestream | Continuous calibration ledger |
+| Analysis | Indications &amp; Warning tripwires | Lambda + EventBridge + Timestream | Threshold/anomaly evaluators |
+| Analysis | Agent-based wargaming | Step Functions + Bedrock Agents | Coalition/vote simulation |
+| Analysis | FIMI / CIB detection | Neptune + SageMaker | Coordinated-inauthentic-behaviour graph signals |
+| Production | Common Operating Picture | AppSync subscriptions + DynamoDB | Live fused situational view |
+| Production | Estimative products (NIE) | Bedrock + Knowledge Bases | Standing key-judgment products |
+| Dissemination | Conversational analyst (RAG) | Bedrock Agents + Knowledge Bases | Citation-grounded |
+| Dissemination | Tip-and-cue alerting | EventBridge + SNS/AppSync | Watchlist-driven |
+| Assurance | Neutrality / bias auditor | Lambda + Bedrock Guardrails | Per-party arithmetic symmetry |
+| Assurance | Pipeline red-team | Step Functions (scheduled) | Adversarial self-test |
+| Assurance | Counter-AI integrity guard | Bedrock Guardrails + WAF + input validation | Prompt-injection / data-poisoning defence |
+
+### 4A.4 Component view — Indications &amp; Warning (I&W) tripwire engine
+
+The I&W engine is the architectural heart of the "warns about tomorrow" vision: a set of explainable indicator models whose threshold crossings re-task collection (tip-and-cue) and emit confidence-scored warnings for human review.
+
+```mermaid
+graph LR
+    subgraph IN["📥 Indicator Inputs (public)"]
+        VT["Vote cohesion /<br/>rebellion deltas"]
+        AT["Attendance /<br/>quorum signals"]
+        CAL["Calendar /<br/>agenda shifts"]
+        ECON["IMF/SCB<br/>economic stress"]
+        DISC["SOCMINT<br/>salience spikes"]
+    end
+    subgraph EVAL["⚙️ Tripwire Evaluators (Lambda)"]
+        T1["Government-collapse<br/>indicator"]
+        T2["Snap-election<br/>indicator"]
+        T3["Coalition-rupture<br/>indicator"]
+        T4["Budget-crisis<br/>indicator"]
+        T5["Integrity-incident<br/>indicator"]
+    end
+    subgraph OUT["📣 Warning Products"]
+        W["Confidence-scored<br/>warning"]
+        RT["Re-task collection<br/>(tip-and-cue)"]
+        H["Human analyst<br/>review + sign-off"]
+    end
+    IN --> EVAL --> OUT
+    W --> H
+    RT --> IN
+
+    style IN fill:#e3f2fd,stroke:#1565c0,color:#000000
+    style EVAL fill:#fff3e0,stroke:#e65100,color:#000000
+    style OUT fill:#fce4ec,stroke:#b71c1c,color:#000000
+```
+
+**Architectural fitness controls (intelligence-specific).**
+- 🔒 **No claim without provenance** — every analytic input carries an Admiralty grade + source anchor before it can enter the I&W or forecasting engines.
+- ⚖️ **Neutrality gate in CI/CD** — bias-symmetry auditor runs before any product is published; a party-asymmetry failure blocks release.
+- 🧪 **Calibration as a release metric** — forecasting endpoints are scored on rolling Brier/calibration; degraded calibration triggers retrain (see [`FUTURE_STATEDIAGRAM.md`](FUTURE_STATEDIAGRAM.md)).
+- 🛡️ **Counter-AI by construction** — Bedrock Guardrails + WAF + strict input validation defend the analytic pipeline from prompt-injection and data-poisoning (see [`FUTURE_THREAT_MODEL.md`](FUTURE_THREAT_MODEL.md) and [`FUTURE_SECURITY_ARCHITECTURE.md`](FUTURE_SECURITY_ARCHITECTURE.md)).
+
+### 4A.5 Intelligence-capability phasing to 2037
+
+| Phase | Period | Intelligence capability milestone |
+|-------|--------|-----------------------------------|
+| Static fusion seeds | 2026–2027 (H2) | Build-time entity resolution, conflict screening, SAT automation, influence networks, neutrality auditing |
+| Runtime fusion + warning | 2028–2029 (H3) | Multi-INT fusion mesh, provenance/deepfake gates, calibrated forecasting, I&W tripwires, conversational analyst, FIMI detection |
+| Estimative + simulation | 2030–2031 (H3) | Causal policy-impact inference, agent-based wargaming, Common Operating Picture, NIE-style estimative products |
+| Autonomous intelligence | 2032–2037 | Always-on multi-parliament fusion, generative scenario synthesis, election-night live cell, real-time democracy-health index |
 
 ---
 

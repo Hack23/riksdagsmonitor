@@ -652,6 +652,86 @@ flowchart TD
 
 ---
 
+## 🛰️ Political-Intelligence Workflow Suite (OSINT/INTOP, to 2037)
+
+> **Master catalog:** these workflows operationalise [`FUTURE_MINDMAP.md` §Political-Intelligence Capability Catalog](FUTURE_MINDMAP.md#-theme--political-intelligence-capability-catalog-to-2037--the-master-osintintop-map) and the architecture in [`FUTURE_ARCHITECTURE.md` §4A](FUTURE_ARCHITECTURE.md#4a-️-political-intelligence-capability-architecture-osintintop-to-2037). The phase roadmap above is platform-centric; this section is **tradecraft-centric** — it names the *new intelligence workflows* an operative needs and the gh-aw / Step-Functions pipelines that deliver them, all on **public data** with human-in-the-loop sign-off.
+
+### The intelligence cycle as a workflow chain
+
+```mermaid
+graph LR
+    A["🎯 Direction<br/>pir-generation"]:::g --> B["📡 Collection<br/>multi-int-fusion"]:::b
+    B --> C["⚙️ Processing<br/>provenance-grading"]:::p
+    C --> D["🧠 Analysis<br/>sat + forecast + i&amp;w"]:::o
+    D --> E["📑 Production<br/>estimative-brief"]:::r
+    E --> F["📣 Dissemination<br/>cop + tip-and-cue"]:::c
+    F --> G["🔁 Feedback<br/>calibration-ledger"]:::s
+    G --> A
+    classDef g fill:#198754,color:#fff;
+    classDef b fill:#0d6efd,color:#fff;
+    classDef p fill:#6f42c1,color:#fff;
+    classDef o fill:#fd7e14,color:#fff;
+    classDef r fill:#dc3545,color:#fff;
+    classDef c fill:#0dcaf0,color:#000;
+    classDef s fill:#ffc107,color:#000;
+```
+
+### New intelligence workflows by horizon
+
+| Workflow (proposed) | Capability (catalog ref) | Horizon | Trigger | Output product |
+|---------------------|--------------------------|:------:|---------|----------------|
+| `intel-entity-resolution` | C1 cross-source entity resolution | 🔵 v2.0 | weekly + on new MP/registry data | resolved-actor graph (static) |
+| `intel-conflict-screen` | C3 declared-interest vs vote | 🔵 v2.0 | on votering publish | neutral conflict-screen scorecard |
+| `intel-influence-network` | C19 power-broker analytics | 🔵 v2.0 | weekly | influence/brokerage graph |
+| `intel-narrative-tracker` | C18 framing lifecycle | 🔵 v2.0 | daily | narrative-evolution timeline |
+| `intel-sat-orchestrator` | C12 SAT automation (ACH/KAC/premortem) | 🔵→🟣 | per analysis run | ICD 203-graded SAT bundle |
+| `intel-multi-int-fusion` | C6 fusion mesh | 🟣 v3.0 | streaming | fused situational graph |
+| `intel-provenance-gate` | C8/C9 provenance + deepfake | 🟣 v3.0 | on every evidence intake | refuse-to-cite gate verdict |
+| `intel-forecast-calibrate` | C13/C29 calibrated forecasting | 🟣 v3.0 | nightly + on event | forecast + Brier-scored calibration |
+| `intel-warning-tripwire` | C14 I&W tripwires | 🟣 v3.0 | continuous (EventBridge) | confidence-scored warnings |
+| `intel-fimi-watch` | C20 FIMI/CIB detection | 🟣 v3.0 | continuous | foreign-interference alert |
+| `intel-wargame-sim` | C16 agent-based wargaming | 🟣→🌟 | on coalition/budget event | scenario-tree with probabilities |
+| `intel-daily-brief` | C23 autonomous Daily Brief | 🟣 v3.0 | 06:00 daily | PDB-style brief (14 langs) |
+| `intel-estimative` | C22 NIE-style key judgments | 🟣 v3.0 | on standing PIR | confidence-scored estimate |
+| `intel-cop-stream` | C21 Common Operating Picture | 🟣→🌟 | streaming | live COP dashboard feed |
+| `intel-democracy-index` | C27 democracy-health index | 🌟 2032+ | weekly | neutral composite barometer |
+| `intel-neutrality-audit` | C30 bias-symmetry auditor | 🔵 (all) | pre-publish gate | party-symmetry pass/fail |
+| `intel-redteam` | C31 pipeline red-team | 🟣 v3.0 | scheduled | adversarial findings |
+| `intel-counter-ai-guard` | C32 counter-AI integrity | 🟣 v3.0 | per inference | injection/poison verdict |
+
+### Maturity model — intelligence-cycle overlay
+
+The platform maturity levels (above) gain an explicit **intelligence-cycle** reading:
+
+```mermaid
+graph LR
+    subgraph "🟢 L1 2026 Report"
+        M1["Build-time articles<br/>document-centric"]
+    end
+    subgraph "🔵 L2 2027 Fuse & Reason"
+        M2["Entity resolution<br/>SAT automation<br/>influence networks<br/>neutrality auditing"]
+    end
+    subgraph "🟣 L3 2028-29 Warn"
+        M3["Multi-INT fusion<br/>calibrated forecasting<br/>I&amp;W tripwires<br/>FIMI detection"]
+    end
+    subgraph "🟠 L4 2030-31 Estimate"
+        M4["Causal inference<br/>agent wargaming<br/>Common Operating Picture<br/>NIE-style products"]
+    end
+    subgraph "🔴 L5 2032+ Autonomous"
+        M5["Always-on fusion<br/>election-night cell<br/>democracy-health index<br/>multi-parliament COP"]
+    end
+    M1 --> M2 --> M3 --> M4 --> M5
+    style M1 fill:#198754,color:#fff
+    style M2 fill:#0d6efd,color:#fff
+    style M3 fill:#6f42c1,color:#fff
+    style M4 fill:#fd7e14,color:#fff
+    style M5 fill:#dc3545,color:#fff
+```
+
+**Governance rails (every intelligence workflow).** Public sources only; provenance + Admiralty grade on intake; ICD 203 analytic-integrity scoring; party-neutrality gate before publish; calibrated, documented uncertainty; counter-AI guard on every inference; and a **human signs every externally visible judgment** per the [Hack23 AI Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/AI_Policy.md). No workflow may take a partisan action, profile a citizen, or publish an unverified claim.
+
+---
+
 ## 📈 Technology Evolution Roadmap
 
 ### Build & Runtime
