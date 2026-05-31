@@ -4,62 +4,17 @@ Disallow: /cia-data/
 Disallow: /.git/
 Disallow: /.github/
 
+# Block source Markdown files (not intended for browsers)
+Disallow: /*.md$
+Disallow: /*.en.md$
+
+# Block analysis source directories (article.md, data files)
+Disallow: /analysis/
+
+# Block metadata and build artifacts
+Disallow: /news/metadata/
+
 Sitemap: https://riksdagsmonitor.com/sitemap.xml
 
 # RSS Feed
 # https://riksdagsmonitor.com/rss.xml
-
-# Allow all search engines to crawl the site
-User-agent: Googlebot
-Allow: /
-Disallow: /cia-data/
-Disallow: /.git/
-Disallow: /.github/
-Crawl-delay: 0
-
-User-agent: Bingbot
-Allow: /
-Disallow: /cia-data/
-Disallow: /.git/
-Disallow: /.github/
-Crawl-delay: 0
-
-User-agent: DuckDuckBot
-Allow: /
-Disallow: /cia-data/
-Disallow: /.git/
-Disallow: /.github/
-Crawl-delay: 0
-
-User-agent: Slurp
-Allow: /
-Disallow: /cia-data/
-Disallow: /.git/
-Disallow: /.github/
-Crawl-delay: 0
-
-User-agent: Baiduspider
-Allow: /
-Disallow: /cia-data/
-Disallow: /.git/
-Disallow: /.github/
-Crawl-delay: 1
-
-# Social Media Bots
-User-agent: facebookexternalhit
-Allow: /
-Disallow: /cia-data/
-Disallow: /.git/
-Disallow: /.github/
-
-User-agent: Twitterbot
-Allow: /
-Disallow: /cia-data/
-Disallow: /.git/
-Disallow: /.github/
-
-User-agent: LinkedInBot
-Allow: /
-Disallow: /cia-data/
-Disallow: /.git/
-Disallow: /.github/
