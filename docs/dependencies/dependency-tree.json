@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0",
+  "version": "1.0.1",
   "name": "riksdagsmonitor",
   "dependencies": {
     "@eslint/js": {
@@ -2853,8 +2853,8 @@
       }
     },
     "knip": {
-      "version": "6.14.2",
-      "resolved": "https://registry.npmjs.org/knip/-/knip-6.14.2.tgz",
+      "version": "6.15.0",
+      "resolved": "https://registry.npmjs.org/knip/-/knip-6.15.0.tgz",
       "overridden": false,
       "dependencies": {
         "fdir": {
@@ -2905,8 +2905,8 @@
           "version": "1.2.8"
         },
         "oxc-parser": {
-          "version": "0.130.0",
-          "resolved": "https://registry.npmjs.org/oxc-parser/-/oxc-parser-0.130.0.tgz",
+          "version": "0.133.0",
+          "resolved": "https://registry.npmjs.org/oxc-parser/-/oxc-parser-0.133.0.tgz",
           "overridden": false,
           "dependencies": {
             "@oxc-parser/binding-android-arm-eabi": {},
@@ -2923,13 +2923,13 @@
             "@oxc-parser/binding-linux-riscv64-musl": {},
             "@oxc-parser/binding-linux-s390x-gnu": {},
             "@oxc-parser/binding-linux-x64-gnu": {
-              "version": "0.130.0",
-              "resolved": "https://registry.npmjs.org/@oxc-parser/binding-linux-x64-gnu/-/binding-linux-x64-gnu-0.130.0.tgz",
+              "version": "0.133.0",
+              "resolved": "https://registry.npmjs.org/@oxc-parser/binding-linux-x64-gnu/-/binding-linux-x64-gnu-0.133.0.tgz",
               "overridden": false
             },
             "@oxc-parser/binding-linux-x64-musl": {
-              "version": "0.130.0",
-              "resolved": "https://registry.npmjs.org/@oxc-parser/binding-linux-x64-musl/-/binding-linux-x64-musl-0.130.0.tgz",
+              "version": "0.133.0",
+              "resolved": "https://registry.npmjs.org/@oxc-parser/binding-linux-x64-musl/-/binding-linux-x64-musl-0.133.0.tgz",
               "overridden": false
             },
             "@oxc-parser/binding-openharmony-arm64": {},
@@ -2938,15 +2938,15 @@
             "@oxc-parser/binding-win32-ia32-msvc": {},
             "@oxc-parser/binding-win32-x64-msvc": {},
             "@oxc-project/types": {
-              "version": "0.130.0",
-              "resolved": "https://registry.npmjs.org/@oxc-project/types/-/types-0.130.0.tgz",
+              "version": "0.133.0",
+              "resolved": "https://registry.npmjs.org/@oxc-project/types/-/types-0.133.0.tgz",
               "overridden": false
             }
           }
         },
         "oxc-resolver": {
-          "version": "11.19.1",
-          "resolved": "https://registry.npmjs.org/oxc-resolver/-/oxc-resolver-11.19.1.tgz",
+          "version": "11.20.0",
+          "resolved": "https://registry.npmjs.org/oxc-resolver/-/oxc-resolver-11.20.0.tgz",
           "overridden": false,
           "dependencies": {
             "@oxc-resolver/binding-android-arm-eabi": {},
@@ -2963,19 +2963,18 @@
             "@oxc-resolver/binding-linux-riscv64-musl": {},
             "@oxc-resolver/binding-linux-s390x-gnu": {},
             "@oxc-resolver/binding-linux-x64-gnu": {
-              "version": "11.19.1",
-              "resolved": "https://registry.npmjs.org/@oxc-resolver/binding-linux-x64-gnu/-/binding-linux-x64-gnu-11.19.1.tgz",
+              "version": "11.20.0",
+              "resolved": "https://registry.npmjs.org/@oxc-resolver/binding-linux-x64-gnu/-/binding-linux-x64-gnu-11.20.0.tgz",
               "overridden": false
             },
             "@oxc-resolver/binding-linux-x64-musl": {
-              "version": "11.19.1",
-              "resolved": "https://registry.npmjs.org/@oxc-resolver/binding-linux-x64-musl/-/binding-linux-x64-musl-11.19.1.tgz",
+              "version": "11.20.0",
+              "resolved": "https://registry.npmjs.org/@oxc-resolver/binding-linux-x64-musl/-/binding-linux-x64-musl-11.20.0.tgz",
               "overridden": false
             },
             "@oxc-resolver/binding-openharmony-arm64": {},
             "@oxc-resolver/binding-wasm32-wasi": {},
             "@oxc-resolver/binding-win32-arm64-msvc": {},
-            "@oxc-resolver/binding-win32-ia32-msvc": {},
             "@oxc-resolver/binding-win32-x64-msvc": {}
           }
         },
@@ -5127,8 +5126,8 @@
       }
     },
     "tsx": {
-      "version": "4.22.3",
-      "resolved": "https://registry.npmjs.org/tsx/-/tsx-4.22.3.tgz",
+      "version": "4.22.4",
+      "resolved": "https://registry.npmjs.org/tsx/-/tsx-4.22.4.tgz",
       "overridden": false,
       "dependencies": {
         "esbuild": {
@@ -5679,7 +5678,7 @@
           "version": "0.2.16"
         },
         "tsx": {
-          "version": "4.22.3"
+          "version": "4.22.4"
         },
         "yaml": {
           "version": "2.9.0"

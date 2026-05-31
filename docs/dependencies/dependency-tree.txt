@@ -1,4 +1,4 @@
-riksdagsmonitor@1.0.0 /home/runner/work/riksdagsmonitor/riksdagsmonitor
+riksdagsmonitor@1.0.1 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 ├─┬ @eslint/js@10.0.1
 │ └── eslint@10.4.1 deduped
 ├─┬ @types/d3@7.4.3
@@ -563,7 +563,7 @@ riksdagsmonitor@1.0.0 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ │ │ └── safe-buffer@5.1.2
 │ │ └── util-deprecate@1.0.2
 │ └── setimmediate@1.0.5
-├─┬ knip@6.14.2
+├─┬ knip@6.15.0
 │ ├─┬ fdir@6.5.0
 │ │ └── picomatch@4.0.4 deduped
 │ ├─┬ formatly@0.3.0
@@ -573,49 +573,48 @@ riksdagsmonitor@1.0.0 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ │ └── resolve-pkg-maps@1.0.0
 │ ├── jiti@2.7.0 deduped
 │ ├── minimist@1.2.8 deduped
-│ ├─┬ oxc-parser@0.130.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-android-arm-eabi@0.130.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-android-arm64@0.130.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-darwin-arm64@0.130.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-darwin-x64@0.130.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-freebsd-x64@0.130.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-linux-arm-gnueabihf@0.130.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-linux-arm-musleabihf@0.130.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-linux-arm64-gnu@0.130.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-linux-arm64-musl@0.130.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-linux-ppc64-gnu@0.130.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-linux-riscv64-gnu@0.130.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-linux-riscv64-musl@0.130.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-linux-s390x-gnu@0.130.0
-│ │ ├── @oxc-parser/binding-linux-x64-gnu@0.130.0
-│ │ ├── @oxc-parser/binding-linux-x64-musl@0.130.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-openharmony-arm64@0.130.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-wasm32-wasi@0.130.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-win32-arm64-msvc@0.130.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-win32-ia32-msvc@0.130.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-win32-x64-msvc@0.130.0
-│ │ └── @oxc-project/types@0.130.0
-│ ├─┬ oxc-resolver@11.19.1
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-resolver/binding-android-arm-eabi@11.19.1
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-resolver/binding-android-arm64@11.19.1
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-resolver/binding-darwin-arm64@11.19.1
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-resolver/binding-darwin-x64@11.19.1
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-resolver/binding-freebsd-x64@11.19.1
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-resolver/binding-linux-arm-gnueabihf@11.19.1
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-resolver/binding-linux-arm-musleabihf@11.19.1
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-resolver/binding-linux-arm64-gnu@11.19.1
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-resolver/binding-linux-arm64-musl@11.19.1
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-resolver/binding-linux-ppc64-gnu@11.19.1
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-resolver/binding-linux-riscv64-gnu@11.19.1
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-resolver/binding-linux-riscv64-musl@11.19.1
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-resolver/binding-linux-s390x-gnu@11.19.1
-│ │ ├── @oxc-resolver/binding-linux-x64-gnu@11.19.1
-│ │ ├── @oxc-resolver/binding-linux-x64-musl@11.19.1
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-resolver/binding-openharmony-arm64@11.19.1
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-resolver/binding-wasm32-wasi@11.19.1
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-resolver/binding-win32-arm64-msvc@11.19.1
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-resolver/binding-win32-ia32-msvc@11.19.1
-│ │ └── UNMET OPTIONAL DEPENDENCY @oxc-resolver/binding-win32-x64-msvc@11.19.1
+│ ├─┬ oxc-parser@0.133.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-android-arm-eabi@0.133.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-android-arm64@0.133.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-darwin-arm64@0.133.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-darwin-x64@0.133.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-freebsd-x64@0.133.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-linux-arm-gnueabihf@0.133.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-linux-arm-musleabihf@0.133.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-linux-arm64-gnu@0.133.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-linux-arm64-musl@0.133.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-linux-ppc64-gnu@0.133.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-linux-riscv64-gnu@0.133.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-linux-riscv64-musl@0.133.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-linux-s390x-gnu@0.133.0
+│ │ ├── @oxc-parser/binding-linux-x64-gnu@0.133.0
+│ │ ├── @oxc-parser/binding-linux-x64-musl@0.133.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-openharmony-arm64@0.133.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-wasm32-wasi@0.133.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-win32-arm64-msvc@0.133.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-win32-ia32-msvc@0.133.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-win32-x64-msvc@0.133.0
+│ │ └── @oxc-project/types@0.133.0
+│ ├─┬ oxc-resolver@11.20.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-resolver/binding-android-arm-eabi@11.20.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-resolver/binding-android-arm64@11.20.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-resolver/binding-darwin-arm64@11.20.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-resolver/binding-darwin-x64@11.20.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-resolver/binding-freebsd-x64@11.20.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-resolver/binding-linux-arm-gnueabihf@11.20.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-resolver/binding-linux-arm-musleabihf@11.20.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-resolver/binding-linux-arm64-gnu@11.20.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-resolver/binding-linux-arm64-musl@11.20.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-resolver/binding-linux-ppc64-gnu@11.20.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-resolver/binding-linux-riscv64-gnu@11.20.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-resolver/binding-linux-riscv64-musl@11.20.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-resolver/binding-linux-s390x-gnu@11.20.0
+│ │ ├── @oxc-resolver/binding-linux-x64-gnu@11.20.0
+│ │ ├── @oxc-resolver/binding-linux-x64-musl@11.20.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-resolver/binding-openharmony-arm64@11.20.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-resolver/binding-wasm32-wasi@11.20.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-resolver/binding-win32-arm64-msvc@11.20.0
+│ │ └── UNMET OPTIONAL DEPENDENCY @oxc-resolver/binding-win32-x64-msvc@11.20.0
 │ ├── picomatch@4.0.4
 │ ├── smol-toml@1.6.1
 │ ├── strip-json-comments@5.0.3
@@ -1163,7 +1162,7 @@ riksdagsmonitor@1.0.0 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │   ├── minimist@1.2.8 deduped
 │   └─┬ rxjs@7.8.2
 │     └── tslib@2.8.1
-├─┬ tsx@4.22.3
+├─┬ tsx@4.22.4
 │ ├── esbuild@0.28.0 deduped
 │ └── UNMET OPTIONAL DEPENDENCY fsevents@~2.3.3
 ├─┬ typedoc-plugin-mdn-links@5.1.1
@@ -1307,7 +1306,7 @@ riksdagsmonitor@1.0.0 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ ├── UNMET OPTIONAL DEPENDENCY sugarss@^5.0.0
 │ ├── terser@5.47.1 deduped
 │ ├── tinyglobby@0.2.16 deduped
-│ ├── tsx@4.22.3 deduped
+│ ├── tsx@4.22.4 deduped
 │ └── yaml@2.9.0 deduped
 ├─┬ vitest@4.1.7
 │ ├── UNMET OPTIONAL DEPENDENCY @edge-runtime/vm@*
