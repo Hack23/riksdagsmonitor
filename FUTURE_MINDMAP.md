@@ -11,7 +11,7 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/>
-  <img src="https://img.shields.io/badge/Version-3.0-555?style=for-the-badge" alt="Version"/>
+  <img src="https://img.shields.io/badge/Version-3.1-555?style=for-the-badge" alt="Version"/>
   <img src="https://img.shields.io/badge/Effective-2026--05--31-success?style=for-the-badge" alt="Effective Date"/>
   <img src="https://img.shields.io/badge/Review-Quarterly-orange?style=for-the-badge" alt="Review Cycle"/>
 </p>
@@ -23,7 +23,7 @@
   <img src="https://img.shields.io/badge/Neutrality-All_Parties_Equal-1565c0?style=flat-square" alt="Neutrality"/>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 3.0 | **📅 Last Updated:** 2026-05-31 (UTC)  
+**📋 Document Owner:** CEO | **📄 Version:** 3.1 | **📅 Last Updated:** 2026-05-31 (UTC)  
 **🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-08-31  
 **🏢 Owner:** Hack23 AB (Org.nr 559534-7807) | **🏷️ Classification:** Public
 
@@ -50,6 +50,8 @@ Riksdagsmonitor's conceptual surface expands along **three horizons** that separ
 - **🟣 Horizon 3 (v3.0+, 2028–2037) — all-in AWS serverless.** AI becomes a **run-time interlocutor**: Amazon Bedrock conversational intelligence and Agents, Bedrock Knowledge Bases / RAG over the 109k-document corpus, API Gateway public API economy, Cognito personalization, predictive analytics/forecasting, semantic search with a Neptune knowledge graph, Nordic + EU parliament expansion, and Kinesis real-time streaming — with **zero infrastructure to manage**.
 
 Four **invariants** survive every horizon: public-data-only, political neutrality, GDPR Article 9 lawful bases (9(2)(e), 9(2)(g)), and Hack23 ISMS alignment (ISO 27001 / NIST CSF 2.0 / CIS v8.1). The [AI Model Evolution](#13--ai--llm-capability-evolution-20262037) curve (2026–2037) is mapped not only to DevSecOps but to concrete intelligence unlocks at each generation. All future figures are **targets**, never claimed as achieved.
+
+> 🆕 **v3.1 — post-2.0+ closure pass.** This revision was produced as a *final review against [SWOT.md](SWOT.md)* to guarantee every weakness, opportunity and improvement area has an explicit home on the future mindmaps. It adds three sections: an [Agentic AI &amp; Autonomous Multi-Agent Operations](#-theme--agentic-ai--autonomous-multi-agent-operations-what-future-ai-agents-unlock) theme that maps *what future AI agents really make possible* (closing W1/W5 and amplifying O7), a [Sustainability, Growth &amp; Audience Expansion](#-theme--sustainability-growth--audience-expansion) theme (closing W2/W3 and opening O4/O5/O6), and a fully-traceable [SWOT → Future Coverage Crosswalk](#-swot--future-coverage-crosswalk) that confirms **all 27 SWOT items (S1–S10, W1–W5, O1–O7, T1–T5) are addressed** across the three horizons.
 
 ## 📚 Architecture Documentation Map
 
@@ -88,9 +90,12 @@ Four **invariants** survive every horizon: public-data-only, political neutralit
 11. [Theme — Governance / Ethics / GDPR](#11-️-theme--governance--ethics--gdpr)
 12. [Theme — Ecosystem &amp; Expansion](#12--theme--ecosystem--expansion)
 13. [AI / LLM Capability-Evolution (2026–2037)](#13--ai--llm-capability-evolution-20262037)
-14. [Capability Matrix (horizon-aligned)](#-capability-matrix-horizon-aligned)
-15. [Stakeholder Value &amp; Roadmap Risk](#-stakeholder-value-by-horizon)
-16. [IMF Data-Sources Future Surface](#-evolving-the-current-imf-mindmap-toward-the-future-data-sources-surface)
+14. [Agentic AI &amp; Autonomous Multi-Agent Operations](#-theme--agentic-ai--autonomous-multi-agent-operations-what-future-ai-agents-unlock)
+15. [Sustainability, Growth &amp; Audience Expansion](#-theme--sustainability-growth--audience-expansion)
+16. [SWOT → Future Coverage Crosswalk](#-swot--future-coverage-crosswalk)
+17. [Capability Matrix (horizon-aligned)](#-capability-matrix-horizon-aligned)
+18. [Stakeholder Value &amp; Roadmap Risk](#-stakeholder-value-by-horizon)
+19. [IMF Data-Sources Future Surface](#-evolving-the-current-imf-mindmap-toward-the-future-data-sources-surface)
 
 ---
 
@@ -658,6 +663,165 @@ graph LR
 
 ---
 
+## 🦾 Theme — Agentic AI &amp; Autonomous Multi-Agent Operations (what future AI agents unlock)
+
+The single biggest *visionary* lever after v2.0+ is not a bigger model — it is **agency**: many specialised, governed AI agents that plan, use tools (MCP), verify each other, and run the platform under human-in-the-loop oversight rather than under a single person's manual workload. This theme answers the question *"what is really possible with future AI agents?"* and is the direct mitigation for the single-developer bus factor (SWOT **W1**) and manual content load (**W5**), while amplifying AI-enhanced analytics (**O7**). Today's 14 `gh-aw` build-time workflows are the *seed*; the maps below show the autonomous, multi-agent organisation they grow into.
+
+```mermaid
+mindmap
+  root((🦾 Agentic AI<br/>Autonomous Operations))
+    🟢 v1.x Seed Agents Today
+      14 gh-aw newsroom workflows
+      Single-pass analysis aggregate render PR
+      Claude Opus 4.8 plus Sonnet 4.6
+      Human merges every pull request
+    🔵 v2.0 Coordinated Build-Time Crew
+      Editor agent commissions and outlines
+      Researcher agent pulls MCP evidence
+      Fact-checker agent verifies dok_id and votes
+      Neutrality-auditor agent flags partisan drift
+      Translator agent 14 languages back-translation
+      Reviewer agent gates before human merge
+    🟣 v3.0 Run-Time Bedrock Agents
+      Bedrock Agents multi-step tool use
+      Agentic RAG over 109000 documents
+      Agent-to-agent A2A handoff protocol
+      MCP tool ecosystem as agent skills
+      Always-on chamber-watch streaming agent
+      Self-verifying citation loop
+    🌟 2031 to 2037 Autonomous Org
+      Agent swarm cross-parliament coverage
+      Self-healing pipelines and dependency agents
+      Continuous assurance-by-construction
+      Human sets intent agents execute and prove
+    ⚖️ Agent Governance Rails
+      Human-in-the-loop sign-off on every write
+      Bedrock Guardrails neutrality and safety
+      Full audit trail and reproducibility
+      Kill-switch and least-privilege scoping
+      No autonomous partisan or psyops action
+```
+
+**The multi-agent newsroom (v2.0 → v3.0).** The leap is from *one generalist workflow* to a **division of labour** of cooperating specialist agents, each with a narrow remit and an explicit verification duty toward the others. A *neutrality-auditor* agent and a *fact-checker* agent are first-class members — not afterthoughts — so quality and impartiality are enforced structurally, not by hope.
+
+```mermaid
+mindmap
+  root((🤖 Future Agent Roles<br/>Closing W1 and W5))
+    🛠️ Platform-Sustaining Agents W1
+      Dependency-update and patch agent
+      Security-triage and CodeQL-fix agent
+      Test-generation and coverage agent
+      Refactor and tech-debt agent
+      Docs-sync agent keeps portfolio current
+      Bus-factor goal repo runs without one person
+    📝 Content and Intelligence Agents W5 O7
+      Multilingual newsroom crew 14 languages
+      Evidence-grading and source-Admiralty agent
+      Forecasting and scenario-tree agent
+      Devil's-advocate and red-team agent
+      Anomaly-watch agent on votes and attendance
+    📣 Growth and Outreach Agents W3
+      SEO and discoverability agent
+      Social-syndication draft agent human-approved
+      Partnership-lead research agent O4
+      Civic-education lesson drafting agent O5
+      Business-policy alert drafting agent O6
+    🔒 Trust and Assurance Agents
+      Neutrality-auditor agent all parties equal
+      Privacy and GDPR Article 9 guard agent
+      Provenance and vintage-discipline agent
+      Reproducibility and audit-log agent
+```
+
+**Why this is realistic, not hype.** Every agent above is a *governed automation of work the project already does by hand* — dependency bumps, translation, evidence grading, SEO, partnership outreach. Future model generations (see [§13](#13--ai--llm-capability-evolution-20262037)) raise reliability and tool-use depth; the [Hack23 AI Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/AI_Policy.md) keeps a human accountable for every externally-visible action. Outreach and social agents **draft**; a human **publishes**. No agent ever takes a partisan action, profiles a citizen, or publishes unverified claims — the four invariants bind agents exactly as they bind humans.
+
+---
+
+## 🌱 Theme — Sustainability, Growth &amp; Audience Expansion
+
+A future map that only deepens analytics but ignores *sustainability and reach* leaves SWOT **W2** (no revenue), **W3** (limited marketing), **O4** (research partnerships), **O5** (civic-education market) and **O6** (business intelligence) unaddressed. This theme gives each a concrete home, sequenced low-risk-first: audience and credibility on the static substrate (v2.0), monetisation and segment products on the serverless substrate (v3.0).
+
+```mermaid
+mindmap
+  root((🌱 Sustainability Growth<br/>and Audience))
+    💸 Revenue and Sustainability W2
+      v2.0 grants and co-funding Vinnova EU
+      v3.0 freemium API researcher tier
+      v3.0 developer pro and enterprise tiers
+      Break-even target ARR not yet achieved
+      Funds contributor hire reduces W1
+    📣 Marketing and Reach W3
+      Content marketing daily AI articles as funnel
+      SEO structured data and RSS syndication
+      Newsroom output is the marketing engine
+      Social and media outreach human-approved
+      Open-source visibility and OpenSSF badges
+    🎓 Research Partnerships O4
+      University and think-tank collaborations
+      Bulk export and reproducible datasets
+      Co-publication and citation-ready evidence
+      Institutional data subscriptions target
+    🏫 Civic-Education Market O5
+      Reading-level-adapted explainers
+      Teacher resources and lesson modules
+      How-Parliament-works interactive guides
+      NGO and school distribution partners
+    🏢 Business Intelligence O6
+      Industry policy-monitoring dashboards
+      Legislative-change alerting via API
+      Stakeholder and committee mapping
+      Regulatory early-warning reports
+    🤝 Community and Bus-Factor W1
+      Contributor onboarding and good-first-issues
+      Comprehensive docs portfolio
+      Agent-assisted maintenance see Agentic theme
+      Foundation-model governance long-term
+```
+
+**Sequencing logic.** Audience, credibility and grant funding are built on the **low-cost static** substrate in v2.0 — the autonomous newsroom *is* the marketing flywheel (every cited, neutral, multilingual article is discoverable SEO surface and a reason to cite the platform). Paid segment products (research, civic-education, business-intelligence) land in v3.0 once the [API economy](#12--theme--ecosystem--expansion), Cognito identity and metering exist. Crucially, **monetisation never gates citizen access**: the public static tier and 14-language newsroom stay free forever; paid tiers sell *scale, automation and bespoke segments*, not democratic transparency itself.
+
+**Neutrality &amp; ethics rail.** Growth must not compromise impartiality. Business-intelligence and outreach products use the *same* symmetric, source-cited methodology as the public site; the platform sells *access and tooling*, never favourable framing. No client — commercial, academic or political — can purchase editorial influence, and no audience-growth tactic may rely on partisan targeting.
+
+---
+
+## ✅ SWOT → Future Coverage Crosswalk
+
+> **Final-review traceability.** This table closes the loop on the originating request — *"Is every opportunity, weakness and improvement area in SWOT.md addressed in the future architectures &amp; mindmaps?"* Every one of the 27 [SWOT.md](SWOT.md) items maps to a concrete future home (this mindmap, [FUTURE_SWOT.md](FUTURE_SWOT.md), [FUTURE_ARCHITECTURE.md](FUTURE_ARCHITECTURE.md)) and the horizon that delivers it. All targets remain **targets**, never claimed as achieved.
+
+| SWOT item | Future home (this doc / portfolio) | Horizon |
+|-----------|-------------------------------------|---------|
+| **S1** 50+ yr data | [§5 Data &amp; Sources](#5--theme--data--sources), [§16 IMF surface](#-evolving-the-current-imf-mindmap-toward-the-future-data-sources-surface) | leveraged all |
+| **S2** 14 languages | [§10 Multilingual &amp; Accessibility](#10--theme--multilingual--accessibility) | leveraged all |
+| **S3** CIA integration | [§5 Data](#5--theme--data--sources), [§12 Ecosystem](#12--theme--ecosystem--expansion) | leveraged all |
+| **S4** Static architecture | [§3 v2.0](#3--horizon-2--v20-static-deepening-20262027), [§9 Platform](#9-️-theme--platform--aws-serverless) | v1.x→v3.0 |
+| **S5** Transparent ISMS | [§11 Governance](#11-️-theme--governance--ethics--gdpr) | leveraged all |
+| **S6** riksdag-regering-mcp | [§5 Data](#5--theme--data--sources), [§8 AI](#8--theme--ai--bedrock-capabilities) | leveraged all |
+| **S7** Agent ecosystem | [§14 Agentic AI](#-theme--agentic-ai--autonomous-multi-agent-operations-what-future-ai-agents-unlock) | v2.0→vision |
+| **S8** Visualizations | [§3 v2.0](#3--horizon-2--v20-static-deepening-20262027), [§7 Party Analytics](#7-️-theme--party--coalition-analytics) | v2.0→v3.0 |
+| **S9** Tradecraft methodology | [§6 OSINT/INTOP](#6-️-theme--osint--intop-tradecraft) | leveraged all |
+| **S10** Economic data fusion | [§5 Data](#5--theme--data--sources), [§16 IMF surface](#-evolving-the-current-imf-mindmap-toward-the-future-data-sources-surface) | leveraged all |
+| **W1** Single-developer | [§14 Agentic AI](#-theme--agentic-ai--autonomous-multi-agent-operations-what-future-ai-agents-unlock) (platform-sustaining agents), [§15 community](#-theme--sustainability-growth--audience-expansion) | v2.0→vision |
+| **W2** No revenue | [§15 Revenue](#-theme--sustainability-growth--audience-expansion), [§12 API economy](#12--theme--ecosystem--expansion) | v2.0→v3.0 |
+| **W3** Limited marketing | [§15 Marketing &amp; Reach](#-theme--sustainability-growth--audience-expansion) | v2.0 |
+| **W4** Static limitations | [§4 v3.0 Serverless](#4-️-horizon-3--v30-aws-serverless-20282037), [§9 Platform](#9-️-theme--platform--aws-serverless) | v3.0 |
+| **W5** Manual content | [§14 Agentic AI](#-theme--agentic-ai--autonomous-multi-agent-operations-what-future-ai-agents-unlock) (content crew) | v2.0→v3.0 |
+| **O1** Nordic expansion | [§12 Ecosystem](#12--theme--ecosystem--expansion), [§4 v3.0](#4-️-horizon-3--v30-aws-serverless-20282037) | v3.0 |
+| **O2** EU Parliament | [§12 Ecosystem](#12--theme--ecosystem--expansion), [§4 v3.0](#4-️-horizon-3--v30-aws-serverless-20282037) | v3.0 |
+| **O3** API monetization | [§12 API economy](#12--theme--ecosystem--expansion), [§15 Revenue](#-theme--sustainability-growth--audience-expansion) | v3.0 |
+| **O4** Research partnerships | [§15 Research Partnerships](#-theme--sustainability-growth--audience-expansion) | v2.0→v3.0 |
+| **O5** Civic-education market | [§15 Civic-Education](#-theme--sustainability-growth--audience-expansion) | v2.0→v3.0 |
+| **O6** Business intelligence | [§15 Business Intelligence](#-theme--sustainability-growth--audience-expansion) | v3.0 |
+| **O7** AI predictive analytics | [§8 AI/Bedrock](#8--theme--ai--bedrock-capabilities), [§14 Agentic AI](#-theme--agentic-ai--autonomous-multi-agent-operations-what-future-ai-agents-unlock) | v3.0→vision |
+| **T1** Competing platforms | [§7 Party Analytics](#7-️-theme--party--coalition-analytics), [§15 differentiation](#-theme--sustainability-growth--audience-expansion) | all |
+| **T2** EU CRA burden | [§11 Governance](#11-️-theme--governance--ethics--gdpr) (ISMS mapping) | all |
+| **T3** Riksdag API changes | [§5 Data](#5--theme--data--sources) (provenance &amp; fallback) | all |
+| **T4** Market consolidation | [§15 niche focus](#-theme--sustainability-growth--audience-expansion), [§11 Governance](#11-️-theme--governance--ethics--gdpr) | all |
+| **T5** Budget sustainability | [§15 Revenue &amp; community](#-theme--sustainability-growth--audience-expansion), [⚠️ Roadmap Risk](#️-roadmap-risk--uncertainty) | all |
+
+**Coverage verdict.** All 10 strengths are explicitly leveraged, all 5 weaknesses have a named mitigation horizon, all 7 opportunities have a delivery theme, and all 5 threats have a mitigating stance — with the previously-thin items (**W1, W3, O4, O5, O6**) now given first-class mindmap treatment in §14–§15. The deeper strategic numbers (pricing, ARR targets, stakeholder power–interest, competitive landscape) live in [FUTURE_SWOT.md](FUTURE_SWOT.md); the architectural realisation lives in [FUTURE_ARCHITECTURE.md](FUTURE_ARCHITECTURE.md).
+
+---
+
 ## 🎯 Stakeholder Value by Horizon
 
 Capability only matters if it reaches stakeholders. This map shows what each audience gains as the platform crosses horizons — keeping the democratic-accountability mission central.
@@ -744,6 +908,7 @@ Future values are **targets**, not current achievements. Current-state values mi
 | **Architecture** | Static HTML/CSS + CDN | Static, deepened | AWS serverless migration | Fully serverless multi-region |
 | **Delivery** | Pre-rendered pages | Pre-rendered, richer | Conversational + API + pages | Real-time streaming intelligence |
 | **AI Role** | Build-time author | Deeper build-time author | Run-time Bedrock assistant | Autonomous, assurance-built-in |
+| **Agent Autonomy** | 14 single-pass workflows | Coordinated build-time crew | Run-time Bedrock multi-agent | Self-healing autonomous org |
 | **AI Models** | Opus 4.8 generation | Opus 5.x | Opus 6.x–8.x | Pre-AGI → AGI |
 | **Party Analytics** | Baseline dashboards | Party-focused expansion | Predictive coalition models | Cross-parliament predictive |
 | **Search** | Keyword/static | Faceted + graded | Semantic + knowledge graph | Conversational omnisearch |
@@ -752,6 +917,8 @@ Future values are **targets**, not current achievements. Current-state values mi
 | **Data Latency** | Daily batch | Daily, validated | Near-real-time | Sub-second streaming |
 | **API** | None | None (static) | API Gateway public API | API economy with tiers |
 | **Identity** | None | None | Cognito personalization | Identity-aware federation |
+| **Revenue** | None (volunteer) | Grants / co-funding | Freemium + tiered API | Sustainable API economy |
+| **Audience / Reach** | Organic + newsroom | SEO + partnerships + civic-ed | Segment products (research/BI) | Cross-parliament reach |
 | **Compliance** | ISO/NIST/CIS aligned | + WCAG 2.2 target | + NIS2 / CRA attestation | Continuous compliance |
 | **Ethics Rails** | Public-data, neutral | Unchanged invariant | Unchanged invariant | Unchanged invariant |
 
