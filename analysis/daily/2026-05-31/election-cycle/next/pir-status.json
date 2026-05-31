@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.0",
+  "cycle": "election-cycle/next",
+  "date": "2026-05-31",
+  "subfolder": "election-cycle/next",
+  "generated_at": "2026-05-31T00:00:00Z",
+  "inherited_from": "analysis/daily/2026-05-27/year-ahead/pir-status.json",
+  "pirs": [
+    {
+      "pir_id": "PIR-FORMATION-NEXT-2026",
+      "statement": "Which coalition-formation path (continuity Tidö, broad-centre realignment, S-led minority, or hung/caretaker) will the 2026-09-13 result most plausibly open for the 2026–2030 mandate, given a ~176/173 starting arithmetic and L/MP threshold risk?",
+      "trigger": "Any pre-poll bloc-defection signal or a published party red-line that closes one formation branch.",
+      "status": "open",
+      "confidence": "MEDIUM",
+      "horizon": "election-day",
+      "inherits_from": ["PIR-COHESION-2026"],
+      "evidence_refs": ["HD01SfU35", "HD024194"],
+      "admiralty_grade": "B2"
+    },
+    {
+      "pir_id": "PIR-THRESHOLD-NEXT-2026",
+      "statement": "Will both small governing partners (L and MP) clear the 4% spärr at the 2026-09-13 poll, since a single threshold failure collapses one or more of the four formation scenarios for the next mandate?",
+      "trigger": "Any L or MP polling print below 4.0% inside the IMF-benign macro window.",
+      "status": "open",
+      "confidence": "MEDIUM",
+      "horizon": "2026-09-13",
+      "inherits_from": ["PIR-COHESION-2026"],
+      "evidence_refs": ["HD01UbU25", "HD01UU10"],
+      "admiralty_grade": "B3"
+    },
+    {
+      "pir_id": "PIR-MACRO-NEXT-2026",
+      "statement": "Will the macro backdrop entering the next mandate (IMF WEO Apr-2026 ~2.1% T+1 growth, ~34% gross debt T+1) stay benign enough that economic competence does NOT become the formation-decisive cleavage of the 2026–2030 government?",
+      "trigger": "IMF-divergent CPI or unemployment breakout before the poll; a-kassa/pension salience HD10524/HD03130.",
+      "status": "open",
+      "confidence": "MEDIUM",
+      "horizon": "2026-09-13",
+      "inherits_from": ["PIR-LABOUR-MACRO-2026"],
+      "evidence_refs": ["HD10524", "HD03130"],
+      "admiralty_grade": "B3"
+    },
+    {
+      "pir_id": "PIR-MANDATE-DELIVERY-NEXT-2026",
+      "statement": "Which inherited delivery files (equalisation HD10526, municipal health HD01SoU32, young offenders HD01JuU37) will most constrain the policy space of whichever 2026–2030 government forms?",
+      "trigger": "Statskontoret or agency report documenting a structural implementation gap the next government must inherit.",
+      "status": "open",
+      "confidence": "MEDIUM",
+      "horizon": "2030-mandate",
+      "inherits_from": ["PIR-DELIVERY-2026", "PIR-EQUALISATION-2026"],
+      "evidence_refs": ["HD10526", "HD01SoU32", "HD01JuU37"],
+      "admiralty_grade": "C3"
+    }
+  ],
+  "prior_cycle_ingestion": {
+    "note": "Carried-forward from prior-cycle year-ahead (2026-05-27 and same-date 2026-05-31): the four standing PIRs (cohesion, labour-macro, equalisation, delivery) roll forward and are re-cast as FORWARD coalition-formation questions for the post-2026 (2026–2030) mandate. No prior PIR was answered or superseded; the next-anchor inverts them from retrospective scorecard to prospective formation drivers.",
+    "predecessor_path": "analysis/daily/2026-05-27/year-ahead/"
+  }
+}
