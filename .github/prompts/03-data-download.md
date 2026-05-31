@@ -158,7 +158,7 @@ npx tsx scripts/download-parliamentary-data.ts \
   2>&1 | tee /tmp/pipeline-output.log
 ```
 
-File-budget constraint: safe-outputs `create_pull_request` hard-caps at **100 files** (E003). With 23 core artifacts + README + article.md + per-document analyses + HTML + JSON, `--limit 20` keeps the total under 80. Cap document-type workflows at `--limit 20`. Aggregation workflows may use `--limit 30` because they produce fewer per-document files.
+File-budget constraint: safe-outputs `create_pull_request` hard-caps at **200 files** (E003). With 23 core artifacts + README + article.md + per-document analyses + HTML + JSON, `--limit 20` keeps the total well under 180. Cap document-type workflows at `--limit 20`. Aggregation workflows may use `--limit 30` because they produce fewer per-document files.
 
 **Aggregation** workflows (evening-analysis, week-ahead, month-ahead, weekly-review, monthly-review, realtime-monitor):
 

@@ -31,11 +31,11 @@ on:
         required: false
         default: deep
 
-# Full git history needed by safe_outputs Checkout so the agent's git bundle can
-# apply cleanly even when main advances during the agent run. gh-aw v0.76.0 honours
-# `checkout.fetch-depth` for safe_outputs PR/push Checkouts (see compiler_safe_outputs_steps.go).
+# Shallow checkout (fetch-depth: 1) for fast safe_outputs Checkout. The prerequisite step
+# fetches GITHUB_SHA on demand for bundle-apply, making full-history clones unnecessary.
+# gh-aw v0.76.0+ honours `checkout.fetch-depth` (see compiler_safe_outputs_steps.go).
 checkout:
-  fetch-depth: 0
+  fetch-depth: 1
 
 permissions:
   contents: read
@@ -258,7 +258,7 @@ safe-outputs:
     # GitHub raw content
     - raw.githubusercontent.com
   max-patch-size: 10240
-  max-patch-files: 100
+  max-patch-files: 200
   create-pull-request:
     labels: [agentic-news, analysis-data]
     draft: false
