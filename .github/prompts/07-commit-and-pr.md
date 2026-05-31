@@ -149,6 +149,10 @@ Every news workflow declares `tools.cache-memory:` keyed by `news-${{ github.wor
 2. After a successful Pass 1 (or after the analysis gate passes), copy the produced `.md` artifacts back to `/tmp/gh-aw/cache-memory/$ARTICLE_DATE/$SUBFOLDER/` so they are available for persistence if the workflow later fails during PR publication or another post-agent stage.
 3. The agent only writes to `/tmp/gh-aw/cache-memory/`; no safe-output call persists cache-memory. The compiled workflow's cache-update step runs only after a successful agent job (`needs.agent.result == 'success'`), so recovery is reliable for **post-agent failures** (PR-publication problems) but **not** for agent-job failures or timeouts.
 
+**Checkout settings:** `fetch-depth: 1` is sufficient for `cache-memory`. gh-aw manages a self-contained git repo inside `/tmp/gh-aw/cache-memory/` independently of the main workspace. No special `checkout.fetch:` or `fetch-depth: 0` setting is required. The `actions/checkout` step's global git config (user identity) is inherited automatically.
+
+**Resilience:** The compiled `Commit cache-memory changes` step has `continue-on-error: true` so a corrupted or missing `.git` directory from a restored cache never fails the agent job. The subsequent `Check cache-memory git integrity` step (which also has `continue-on-error: true`) detects and reseeds the git repo so the artifact upload always succeeds.
+
 Cache-memory is a recovery mechanism for the next run, not a substitute for committing real files on disk under `analysis/daily/`.
 
 ## PR creation resilience (`fallback-as-issue`, `if-no-changes`, host-side PAT fallback)

@@ -62,6 +62,29 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.COPILOT_MCP_GITHUB_PERSONAL_ACCESS_TOKEN || secrets.GITHUB_TOKEN }}
 
+      - name: Patch compiled lock files (cache-memory commit resilience)
+        # gh-aw compiler emits "Commit cache-memory changes" without
+        # continue-on-error, but the step can transiently fail when a
+        # restored Actions cache contains a corrupted/missing .git directory.
+        # The sibling "Check cache-memory git integrity" step already has
+        # continue-on-error: true — this patch brings the commit step into
+        # parity so a corrupted-cache restore never fails the agent job.
+        run: |
+          python3 -c "
+          import glob
+          OLD = '      - name: Commit cache-memory changes\n        if: always()\n        env:'
+          NEW = '      - name: Commit cache-memory changes\n        if: always()\n        continue-on-error: true\n        env:'
+          for path in sorted(glob.glob('.github/workflows/*.lock.yml')):
+              with open(path) as fh: content = fh.read()
+              if OLD in content:
+                  with open(path, 'w') as fh: fh.write(content.replace(OLD, NEW))
+                  print(f'  patched  {path}')
+              elif 'Commit cache-memory changes' not in content:
+                  print(f'  skip     {path}')
+              else:
+                  print(f'  ok       {path}')
+          "
+
       - name: Enforce PAT fallback coverage (workflow_run triggers ↮ news-*.md)
         # Drift detector: every news-*.md `name:` must appear in the
         # `workflow_run.workflows:` list AND in the slug_for_name() case map

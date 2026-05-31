@@ -1128,6 +1128,7 @@ jobs:
           fi
       - name: Commit cache-memory changes
         if: always()
+        continue-on-error: true
         env:
           GH_AW_CACHE_DIR: /tmp/gh-aw/cache-memory
         run: bash "${RUNNER_TEMP}/gh-aw/actions/commit_cache_memory_git.sh"
