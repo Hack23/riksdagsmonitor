@@ -649,6 +649,51 @@ flowchart LR
 
 ---
 
+## 🛰️ Political-Intelligence Capability Threat Analysis (Counter-AI · FIMI · Analytic Integrity)
+
+Fielding the [Political-Intelligence Capability Catalog](FUTURE_MINDMAP.md#-theme--political-intelligence-capability-catalog-to-2037--the-master-osintintop-map) (C1–C32) creates a **new, high-value attack surface**: an adversary who can corrupt the intelligence pipeline can launder a manipulated judgment through the platform's own credibility. These threats are distinct from generic web threats — they target **analytic integrity**, **calibration**, **neutrality** and **provenance**. The catalog's assurance pillar (C26–C32) exists specifically to counter them.
+
+### **STRIDE per intelligence-capability component**
+
+| Component | Threat (STRIDE) | Scenario | Counter-capability |
+|-----------|-----------------|----------|--------------------|
+| Multi-INT fusion graph (C6) | **T**ampering | Poisoned edge fabricates a person↔funding link | C8 evidence anchor (no edge without graded `dok_id`); human-review hold |
+| Entity resolution (C1) | **S**poofing | Adversary games identifiers to merge/split entities | Deterministic-key + embedding agreement; confidence floor; audit log |
+| I&W tripwires (C14) | **D**enial of warning | Flood of decoy signals desensitizes thresholds / hides real event | Adaptive thresholds, anomaly-on-anomaly, human triage gate |
+| Forecasting + calibration (C13/C29) | **T**ampering / **R**epudiation | Skewed training data degrades Brier; later denial of bias | Immutable calibration ledger; rolling Brier as release gate; assumption logs |
+| FIMI early-warning (C20) | **I**nformation disclosure / abuse | Mission-creep toward citizen profiling; false attribution | Hard ethics gate, aggregate-only, advisory-not-accusatory, no profiling |
+| SAT / estimative engine (C11/C22) | **T**ampering | Prompt-injection steers ACH toward a predetermined conclusion | C26 injection screening; devil's-advocate pass; ICD-203 + human sign-off |
+| Provenance / C2PA (C8/C9) | **S**poofing | Forged content credential passes synthetic evidence as authentic | KMS-signed manifests; deepfake detector; refuse-to-cite on failure |
+| Neutrality gate (C31) | **E**levation / bias injection | Asymmetric output ships, eroding party-neutrality | CI party-symmetry audit; block-on-asymmetry; dual-control override |
+
+### **Priority intelligence-integrity scenarios**
+
+| ID | Scenario | Impact | Detection | Planned control |
+|----|----------|--------|-----------|----------------|
+| **PI-T1** | **Analytic-pipeline data poisoning** — adversary seeds public-looking sources to bias fusion/forecasting | Critical — manipulated judgments gain platform credibility | Hard — inputs look legitimate | Source-grading floor, provenance, outlier detection on ingest, calibration drift alarms |
+| **PI-T2** | **Prompt-injection of the SAT/estimative agent** via crafted document text | Critical — steered "reasoned" conclusion | Hard — looks like grounded analysis | C26 injection screening, Bedrock Guardrails, tool-permission minimization, human sign-off |
+| **PI-T3** | **Provenance forgery / deepfake evidence** cited in a briefing | High — false evidence in the record | Medium — manifest + detector checks | C2PA verification, KMS signing, synthetic-media detector, refuse-to-cite |
+| **PI-T4** | **Neutrality subversion** — gradual asymmetric framing across products | Critical — destroys institutional trust | Very Hard — gradual drift | C31 party-symmetry CI gate, longitudinal symmetry monitoring, dual review |
+| **PI-T5** | **Warning suppression / decoy flooding** of I&W tripwires | High — real coalition/vote event missed | Medium — signal-rate anomalies | Adaptive thresholds, redundancy across indicators, human-on-the-loop |
+| **PI-T6** | **Calibration gaming** — manipulate which questions resolve to inflate apparent accuracy | High — misleading trust signal | Hard — statistically subtle | Pre-registered questions, immutable ledger, independent resolution criteria |
+| **PI-T7** | **FIMI targeting the platform itself** — adversary narratives crafted to trigger false advisories | High — platform amplifies adversary frame | Hard — designed to look organic | Attribution-confidence floors, ethics gate, human framing, advisory-only output |
+
+### **Mapping to standards**
+
+| Scenario | STRIDE | MITRE ATT&CK / ATLAS | OWASP LLM Top 10 |
+|----------|--------|----------------------|------------------|
+| PI-T1 poisoning | Tampering | ATLAS: ML Supply-Chain / Data Poisoning | LLM03 Training-Data Poisoning |
+| PI-T2 injection | Tampering / EoP | ATLAS: LLM Prompt Injection | LLM01 Prompt Injection |
+| PI-T3 provenance forgery | Spoofing | T1565 Data Manipulation | LLM08 Excessive Agency (citation) |
+| PI-T4 neutrality | Repudiation / bias | — (governance) | LLM09 Overreliance |
+| PI-T5 warning suppression | DoS | T1499 Endpoint DoS (signal) | LLM04 Model DoS |
+| PI-T6 calibration gaming | Repudiation | — (integrity) | LLM09 Overreliance |
+| PI-T7 FIMI targeting | Information abuse | DISARM TTPs | LLM09 Overreliance |
+
+**Governing principle.** Every intelligence-capability threat is met by an **integrity-by-construction** control, not by trust in the model: evidence anchoring, immutable calibration, provenance signing, neutrality-as-a-CI-gate, and a mandatory human-on-the-loop before any estimative product is published. See [`FUTURE_SECURITY_ARCHITECTURE.md`](FUTURE_SECURITY_ARCHITECTURE.md) for the corresponding controls.
+
+---
+
 ## 🔄 Continuous Future Threat Assessment
 
 ### **Assessment Lifecycle for Future Features**

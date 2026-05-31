@@ -88,6 +88,7 @@ A standing **AI/LLM Model Evolution Lifecycle (2026–2037)** state machine tran
 - **Cross-Horizon**
   - [16. AI/LLM Model Evolution Lifecycle (2026–2037)](#16--aillm-model-evolution-lifecycle-20262037)
   - [17. IMF Cache → Aurora Lifecycle Evolution](#17--imf-cache--aurora-lifecycle-evolution)
+  - [18. 🛰️ Political-Intelligence Capability State Machines (to 2037)](#18-️-political-intelligence-capability-state-machines-to-2037)
 - [Future State Summary](#-future-state-summary)
 - [ISMS Control Mapping](#-isms-control-mapping)
 - [Document Control](#-document-control)
@@ -988,6 +989,132 @@ stateDiagram-v2
 ```
 
 **Canonical rule.** Every economic claim in a Riksdagsmonitor article cites an IMF dataflow first; World Bank citations are reserved for governance, environment and social residue (the classes IMF does not publish). SCB is the Swedish-specific ground-truth layer. See [`ECONOMIC_DATA_CONTRACT.md`](.github/aw/ECONOMIC_DATA_CONTRACT.md) v2.1 for the banned-phrase list and vintage discipline (> 6 mo → annotation).
+
+---
+
+## 18. 🛰️ Political-Intelligence Capability State Machines (to 2037)
+
+These lifecycles operationalize the [Political-Intelligence Capability Catalog](FUTURE_MINDMAP.md#-theme--political-intelligence-capability-catalog-to-2037--the-master-osintintop-map) (C1–C32). They add the **continuous, runtime** state machines the current build-time pipeline lacks: indications &amp; warning, forecast calibration, influence early-warning and cross-source entity resolution. Each terminates in a **human-on-the-loop** gate; none can reach a published state without an evidence anchor and a party-symmetry check.
+
+### 18.1 Indications & Warning tripwire lifecycle (C14)
+
+```mermaid
+stateDiagram-v2
+    [*] --> Monitoring
+    Monitoring --> Watch: indicator approaches threshold
+    Watch --> Monitoring: relaxes
+    Watch --> Elevated: threshold breached
+    Elevated --> High: multiple indicators breach
+    Elevated --> Triage: human review
+    High --> Triage: human review
+    Triage --> FalseAlarm: not significant
+    Triage --> Confirmed: warning valid
+    FalseAlarm --> Tuning: adjust threshold
+    Tuning --> Monitoring
+    Confirmed --> Retasking: re-task fusion plus forecast
+    Retasking --> Briefed: warning note issued
+    Briefed --> Monitoring: event window closes
+    Briefed --> [*]
+
+    note right of Triage
+        Human-on-the-loop mandatory.
+        WEP probability attached (ICD-203).
+    end note
+```
+
+### 18.2 Forecast calibration lifecycle (C13 / C29)
+
+```mermaid
+stateDiagram-v2
+    [*] --> Open
+    Open --> AssumptionsChecked: KAC pass
+    Open --> Rejected: KAC fail
+    AssumptionsChecked --> Forecast: ensemble produces p plus WEP
+    Forecast --> Published: assumptions disclosed
+    Published --> AwaitingResolution
+    AwaitingResolution --> Scored: event resolves
+    Scored --> Calibrated: Brier within band
+    Scored --> Drifting: Brier degrades
+    Drifting --> Retraining: re-weight ensemble
+    Retraining --> Open
+    Calibrated --> Open: roll question forward
+    Rejected --> [*]
+
+    note right of Scored
+        Calibration ledger updated.
+        Rolling Brier is a release metric.
+    end note
+```
+
+### 18.3 FIMI / influence early-warning lifecycle (C20) — aggregate, non-accusatory
+
+```mermaid
+stateDiagram-v2
+    [*] --> Listening
+    Listening --> FrameDetected: narrative frame emerges
+    FrameDetected --> Listening: isolated, no coordination
+    FrameDetected --> CoordinationSuspected: network-level signal
+    CoordinationSuspected --> EthicsGate: privacy plus profiling check
+    EthicsGate --> Halted: profiling risk
+    EthicsGate --> AttributionAssessed: aggregate-only confirmed
+    AttributionAssessed --> Advisory: low/med confidence, WEP
+    Advisory --> HumanFraming: analyst contextualizes
+    HumanFraming --> Briefed: contextual, not accusatory
+    Briefed --> Listening
+    Halted --> Listening
+    Briefed --> [*]
+
+    note right of EthicsGate
+        No citizen profiling.
+        Aggregate public discourse only.
+    end note
+```
+
+### 18.4 Cross-source entity-resolution lifecycle (C1)
+
+```mermaid
+stateDiagram-v2
+    [*] --> Ingested
+    Ingested --> Normalized: provenance stamped
+    Normalized --> Matching: deterministic plus embedding
+    Matching --> Ambiguous: confidence below cut
+    Matching --> Resolved: confidence above cut
+    Ambiguous --> HumanReview
+    HumanReview --> Resolved: adjudicated
+    HumanReview --> Distinct: kept separate
+    Resolved --> Linked: canonical ID assigned
+    Linked --> Monitoring: watch for new links
+    Monitoring --> Matching: new source arrives
+    Distinct --> [*]
+
+    note right of HumanReview
+        Public records only.
+        No private-life inference.
+    end note
+```
+
+### 18.5 Estimative-product publication lifecycle (C22)
+
+```mermaid
+stateDiagram-v2
+    [*] --> Drafting
+    Drafting --> SATReview: ACH plus devil's advocate
+    SATReview --> NeutralityAudit: key judgments drafted
+    NeutralityAudit --> Rework: party-asymmetry found
+    Rework --> SATReview
+    NeutralityAudit --> ICDCheck: symmetric
+    ICDCheck --> Rework: uncertainty or sources weak
+    ICDCheck --> SignOff: ICD-203 compliant
+    SignOff --> Published: human analyst signs
+    Published --> Tracked: judgments logged for scoring
+    Tracked --> [*]
+
+    note right of ICDCheck
+        Sources characterized,
+        confidence expressed,
+        assumptions distinguished.
+    end note
+```
 
 ---
 

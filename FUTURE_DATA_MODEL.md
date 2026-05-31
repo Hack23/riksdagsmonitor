@@ -784,6 +784,175 @@ graph TD
 
 The serverless tier is **eventually consistent** with the static SoR. The hydration contract (§5) guarantees: (a) the static artifact version is stamped on every hydrated record; (b) API responses expose `as_of` vintage; (c) parity diffs run continuously in CI. No write path exists that bypasses the static SoR — the database cannot drift from the public record.
 
+### 4.11 Political-Intelligence Capability Data Structures (OSINT/INTOP, to 2037)
+
+> **Master catalog:** these schemas back the capabilities in [`FUTURE_MINDMAP.md` §Political-Intelligence Capability Catalog](FUTURE_MINDMAP.md#-theme--political-intelligence-capability-catalog-to-2037--the-master-osintintop-map) and the architecture in [`FUTURE_ARCHITECTURE.md` §4A](FUTURE_ARCHITECTURE.md#4a-️-political-intelligence-capability-architecture-osintintop-to-2037). They extend the H2 OSINT structures (§3.5) with the **fusion, warning, forecasting and provenance** entities the current model does not yet carry. Every record is provenance-stamped and reproducible from public sources; every analytic record carries Admiralty grading and documented uncertainty.
+
+#### 4.11.1 Resolved-entity (cross-source entity resolution — C1)
+
+```json
+{
+  "schema": "intel-resolved-entity@3.0",
+  "canonical_id": "person:0123",
+  "labels": ["Förnamn Efternamn"],
+  "links": [
+    { "source": "riksdag", "ref": "intressent_0123", "confidence": 0.99 },
+    { "source": "lobby-register", "ref": "org-2231", "confidence": 0.82, "relation": "former-employee" },
+    { "source": "company-register", "ref": "orgnr-556xxx", "confidence": 0.71, "relation": "board-member" }
+  ],
+  "resolution_method": "embedding-match + deterministic-keys",
+  "source_grading": { "reliability": "B", "credibility": "2" },
+  "as_of": "2028-09-01",
+  "ethics": "public-records-only; no private-life data"
+}
+```
+
+#### 4.11.2 Multi-INT fusion edge (C6)
+
+```json
+{
+  "schema": "intel-fusion-edge@3.0",
+  "from": "person:0123",
+  "to": "org:2231",
+  "int_families": ["OSINT", "FININT"],
+  "relation": "received-funding-while-voting-on-related-bill",
+  "evidence": [
+    { "type": "vote", "dok_id": "H802Vot44", "grade": "A1" },
+    { "type": "funding-disclosure", "ref": "party-fin-2027", "grade": "B2" }
+  ],
+  "salience": 0.74,
+  "neutrality_note": "Descriptive correlation on public records; not an allegation of wrongdoing.",
+  "as_of": "2028-10-01"
+}
+```
+
+#### 4.11.3 Indications &amp; Warning indicator (C14)
+
+```json
+{
+  "schema": "intel-iw-indicator@3.0",
+  "tripwire": "coalition-rupture",
+  "indicators": [
+    { "name": "govt-bloc-cohesion-delta", "value": -0.18, "threshold": -0.15, "breached": true },
+    { "name": "confidence-motion-filed", "value": 1, "threshold": 1, "breached": true }
+  ],
+  "warning_level": "elevated",
+  "probability": { "point": 0.42, "band": "roughly even", "wep_lexicon": "ICD-203" },
+  "evidence_dok_ids": ["H802Vot44", "H802Mot201"],
+  "recommended_retasking": ["intel-multi-int-fusion", "intel-forecast-calibrate"],
+  "human_review": "required",
+  "as_of": "2029-02-14T09:00:00Z"
+}
+```
+
+#### 4.11.4 Forecast + calibration record (C13 / C29)
+
+```json
+{
+  "schema": "intel-forecast@3.0",
+  "question_id": "PIR-2029-coalition-after-budget",
+  "forecast": { "p": 0.38, "band": "unlikely", "horizon_days": 90 },
+  "method": "ensemble (gradient-boost + LLM-scenario)",
+  "assumptions_checked": ["KAC-passed"],
+  "calibration": { "rolling_brier": 0.14, "n_resolved": 47, "trend": "improving" },
+  "resolved": null,
+  "as_of": "2029-03-01"
+}
+```
+
+#### 4.11.5 FIMI / coordinated-inauthentic-behaviour signal (C20)
+
+```json
+{
+  "schema": "intel-fimi-signal@3.0",
+  "narrative_id": "frame:2029-energy-cost",
+  "disarm_ttps": ["T0049.003", "T0017"],
+  "amplification": { "coordinated_accounts_est": 0, "method": "aggregate-network-only", "individual_profiling": false },
+  "attribution_confidence": { "band": "low", "wep_lexicon": "ICD-203" },
+  "evidence": [{ "type": "public-discourse-aggregate", "grade": "C3" }],
+  "ethics": "aggregate public discourse only; no citizen profiling; advisory, not accusatory",
+  "as_of": "2029-04-10"
+}
+```
+
+#### 4.11.6 Estimative product (NIE-style key judgment — C22)
+
+```json
+{
+  "schema": "intel-estimative@3.0",
+  "title": "Government durability through 2026 budget cycle",
+  "key_judgments": [
+    { "kj": "Government likely survives the budget vote.", "confidence": "moderate", "p": 0.66, "dissent": "minority view: snap election if SD defects" }
+  ],
+  "icd203_compliance": { "sources_characterized": true, "uncertainty_expressed": true, "assumptions_distinguished": true },
+  "neutrality_audit": "party-symmetry-passed",
+  "evidence_dok_ids": ["H802Vot44", "H802Bet12"],
+  "human_signoff": "analyst-id",
+  "as_of": "2029-05-01"
+}
+```
+
+#### 4.11.7 Provenance / content-credential record (C8 / C9)
+
+```json
+{
+  "schema": "intel-provenance@3.0",
+  "asset_id": "evidence-9f2a",
+  "origin": { "source": "riksdag", "url": "https://data.riksdagen.se/...", "fetched_at": "2029-01-02T08:00:00Z" },
+  "c2pa": { "signed": true, "kms_key": "alias/intel-provenance", "manifest_hash": "sha256:..." },
+  "synthetic_media_check": { "ran": true, "verdict": "authentic", "model": "df-detector-v3" },
+  "chain_of_custody": ["fetch", "extract", "grade", "embed"],
+  "refuse_to_cite": false
+}
+```
+
+#### 4.11.8 Capability-entity ERD (Horizon 3)
+
+```mermaid
+erDiagram
+    RESOLVED_ENTITY ||--o{ FUSION_EDGE : participates
+    FUSION_EDGE }o--|| PROVENANCE : "anchored by"
+    IW_INDICATOR ||--o{ FORECAST : "re-tasks"
+    FORECAST ||--o{ ESTIMATIVE : "feeds"
+    ESTIMATIVE }o--|| PROVENANCE : "cites"
+    FIMI_SIGNAL }o--|| PROVENANCE : "evidenced by"
+    RESOLVED_ENTITY {
+        string canonical_id PK
+        string source_grading
+        date as_of
+    }
+    FUSION_EDGE {
+        string from FK
+        string to FK
+        float salience
+    }
+    IW_INDICATOR {
+        string tripwire
+        string warning_level
+        float probability
+    }
+    FORECAST {
+        string question_id PK
+        float p
+        float rolling_brier
+    }
+    ESTIMATIVE {
+        string title
+        string neutrality_audit
+        string human_signoff
+    }
+    FIMI_SIGNAL {
+        string narrative_id PK
+        string attribution_confidence
+    }
+    PROVENANCE {
+        string asset_id PK
+        bool refuse_to_cite
+    }
+```
+
+**Data-governance rails.** All capability entities inherit the §10 GDPR Article 9 posture (lawful bases 9(2)(e)/9(2)(g)), the §3.5.5 evidence-and-provenance invariant (no analytic record without a `dok_id`/primary-source anchor + Admiralty grade), and the §4.10 consistency contract (serverless stores never drift from the public static SoR). FININT/SOCMINT entities carry an explicit `ethics` field asserting **public-records-only, aggregate, non-accusatory** processing with **no citizen profiling**.
+
 ---
 
 ## 5. Source Ingestion & Integration

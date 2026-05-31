@@ -455,6 +455,70 @@ graph TB
 
 ---
 
+### 3.5 🛰️ Intelligence-Integrity & Counter-AI Controls (OSINT/INTOP, to 2037)
+
+Fielding the [Political-Intelligence Capability Catalog](FUTURE_MINDMAP.md#-theme--political-intelligence-capability-catalog-to-2037--the-master-osintintop-map) (C1–C32) makes **analytic integrity** a first-class security property. The threats in [`FUTURE_THREAT_MODEL.md` §Political-Intelligence Capability Threat Analysis](FUTURE_THREAT_MODEL.md#️-political-intelligence-capability-threat-analysis-counter-ai--fimi--analytic-integrity) (PI-T1…PI-T7) are countered here by **integrity-by-construction**: nothing reaches a published judgment without an evidence anchor, a provenance check, a neutrality gate and a human sign-off. These controls realize the catalog's assurance pillar (C26–C32).
+
+#### 3.5.1 Control set
+
+| # | Control | Counters | Mechanism (Horizon) |
+|---|---------|----------|---------------------|
+| **II-1 Evidence-anchor gate** | Every analytic record must carry a graded `dok_id`/primary-source ref or it is rejected | PI-T1, PI-T3 | CI hard-fail today (H1); runtime gate on fusion/estimative writes (H3) |
+| **II-2 Provenance &amp; content credentials** | C2PA-sign evidence; verify on cite; detect synthetic media | PI-T3 | KMS-signed manifests, S3 Object Lock, deepfake detector, **refuse-to-cite** on failure (H3) |
+| **II-3 Prompt-injection &amp; poisoning defense** | Screen inputs to SAT/estimative agents; isolate untrusted document text | PI-T1, PI-T2 | Bedrock Guardrails, input sanitization, retrieval allow-listing, tool-permission minimization (H3) |
+| **II-4 Party-symmetry / neutrality gate** | Block asymmetric framing before publish | PI-T4 | CI neutrality audit (H1→H2); longitudinal symmetry monitoring + dual-control override (H3) |
+| **II-5 Calibration-as-release-metric** | Forecast products gated on rolling Brier; immutable, pre-registered questions | PI-T6 | Append-only calibration ledger; release blocked on drift; independent resolution criteria (H2→H3) |
+| **II-6 I&W integrity** | Protect tripwires from decoy flooding / warning suppression | PI-T5 | Adaptive thresholds, redundant indicators, anomaly-on-anomaly, human triage (H3) |
+| **II-7 FIMI ethics gate** | Aggregate-only, no citizen profiling, advisory-not-accusatory | PI-T7 | Hard ethics gate in pipeline; attribution-confidence floors; human framing (H3) |
+| **II-8 Human-on-the-loop sign-off** | No estimative/warning product auto-publishes | PI-T2, PI-T4, PI-T7 | Mandatory analyst sign-off state (see [`FUTURE_STATEDIAGRAM.md` §18](FUTURE_STATEDIAGRAM.md#18-️-political-intelligence-capability-state-machines-to-2037)) |
+| **II-9 Tradecraft auditability** | ICD-203 compliance + reproducibility logged per product | PI-T2, PI-T6 | Assumption logs, source characterization, audit trail, GDPR Art. 9 basis stamped |
+
+#### 3.5.2 Control architecture
+
+```mermaid
+flowchart TD
+    SRC[Public sources] --> ING[Ingest plus provenance sign<br/>II-2]
+    ING --> POIS{Poisoning plus injection screen<br/>II-3}
+    POIS -->|Reject| QUAR[Quarantine plus alert]
+    POIS -->|Clean| EVID{Evidence-anchor gate<br/>II-1}
+    EVID -->|No dok_id| DROP[Reject record]
+    EVID -->|Anchored| ANAL[SAT plus forecast engine]
+    ANAL --> CAL{Calibration gate<br/>II-5}
+    CAL -->|Drift| HOLD[Hold for retrain]
+    CAL -->|OK| NEUT{Neutrality gate<br/>II-4}
+    NEUT -->|Asymmetric| REWORK[Rebalance]
+    NEUT -->|Symmetric| SIGN[Human sign-off<br/>II-8 plus II-9]
+    SIGN --> PUB[Publish plus audit trail]
+    REWORK --> ANAL
+
+    style POIS fill:#ff006e,color:#ffffff
+    style EVID fill:#ff006e,color:#ffffff
+    style CAL fill:#ff006e,color:#ffffff
+    style NEUT fill:#ff006e,color:#ffffff
+    style SIGN fill:#9c27b0,color:#ffffff
+    style PUB fill:#4caf50,color:#000000
+    style DROP fill:#f44336,color:#ffffff
+    style QUAR fill:#f44336,color:#ffffff
+```
+
+#### 3.5.3 Framework mapping
+
+| Control | ISO 27001:2022 | NIST CSF 2.0 | OWASP LLM |
+|---------|----------------|--------------|-----------|
+| II-1 Evidence anchor | A.5.34 (PII), A.8.28 (secure coding) | PR.DS, GV.OC | LLM09 Overreliance |
+| II-2 Provenance | A.8.24 (crypto), A.5.33 (records) | PR.DS-6 (integrity) | LLM08 |
+| II-3 Injection defense | A.8.28, A.8.16 (monitoring) | DE.CM, PR.PS | LLM01 / LLM03 |
+| II-4 Neutrality gate | A.5.1 (policies), A.8.29 (testing) | GV.OC, GV.RR | LLM09 |
+| II-5 Calibration | A.8.16, A.5.36 (compliance) | ID.IM, DE.AE | LLM09 |
+| II-6 I&W integrity | A.8.16 (monitoring), A.5.7 (threat intelligence) | DE.CM, DE.AE | LLM04 / LLM10 |
+| II-7 FIMI ethics | A.5.34, A.18 (privacy) | GV.OC, ID.RA | — |
+| II-8 Human-on-the-loop | A.5.4 (mgmt responsibilities) | GV.RR-1 | LLM08 Excessive Agency |
+| II-9 Tradecraft auditability | A.5.33 (records), A.8.15 (logging) | GV.RR, PR.PS | LLM08 / LLM09 |
+
+**Governing principle.** Security for a political-intelligence capability is not perimeter defense alone — it is **integrity of the analytic product**. Controls II-1…II-9 ensure that even a fully compromised model or a poisoned source cannot launder a manipulated, biased, or unevidenced judgment through the platform's credibility. Every gate is fail-closed; every published product is reproducible, neutral, evidence-anchored and human-accountable under the [Hack23 AI Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/AI_Policy.md).
+
+---
+
 ## 4. 🚀 Implementation Roadmap
 
 ### 4.1 Timeline Overview
