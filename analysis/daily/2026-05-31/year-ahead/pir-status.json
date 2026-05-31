@@ -1,0 +1,57 @@
+{
+  "schema_version": "1.0",
+  "cycle": "year-ahead",
+  "date": "2026-05-31",
+  "subfolder": "year-ahead",
+  "generated_at": "2026-05-31T00:00:00Z",
+  "pirs": [
+    {
+      "pir_id": "PIR-COHESION-2026",
+      "statement": "Will the governing bloc (M/KD/L + SD support) maintain voting cohesion on values files (migration HD01SfU35, citizenship HD024194) through the 2026-09-13 election?",
+      "status": "open",
+      "confidence": "MEDIUM",
+      "horizon": "election",
+      "priority": 1,
+      "linked_dok_ids": ["HD01SfU35", "HD024194"],
+      "indicators": ["I1", "I2", "I3"],
+      "rationale": "Cohesion is the arithmetic survival condition for the ~176-seat majority; defection triggers S3 fracture."
+    },
+    {
+      "pir_id": "PIR-LABOUR-MACRO-2026",
+      "statement": "Will a labour-market or macro shock (unemployment rising above ~9% from ~8.3% T+1, or GDP undershoot vs IMF WEO ~2.1% T+1) reframe the campaign toward economic competence (S2)?",
+      "status": "open",
+      "confidence": "MEDIUM",
+      "horizon": "quarter",
+      "priority": 2,
+      "linked_dok_ids": ["HD10524", "HD03130"],
+      "indicators": ["I5", "I6"],
+      "rationale": "Highest-leverage synthesis-breaker (wildcard W1); IMF live degraded, figures vintage-pinned."
+    },
+    {
+      "pir_id": "PIR-EQUALISATION-2026",
+      "statement": "Will the municipal equalisation (HD10526) and elder-care (HD01SoU32) reforms become a decisive fairness/competence cleavage in the campaign?",
+      "status": "open",
+      "confidence": "MEDIUM",
+      "horizon": "year",
+      "priority": 3,
+      "linked_dok_ids": ["HD10526", "HD01SoU32"],
+      "indicators": ["I9"],
+      "rationale": "Opposition-favourable framing axis; tests welfare-signalling opportunity vs delivery-gap weakness."
+    },
+    {
+      "pir_id": "PIR-DELIVERY-2026",
+      "statement": "Will agency capacity (Polismyndigheten, Migrationsverket, municipalities) deliver the crime/care/migration reforms, or will implementation gaps produce exploitable delivery failures (T4)?",
+      "status": "open",
+      "confidence": "MEDIUM",
+      "horizon": "year",
+      "priority": 4,
+      "linked_dok_ids": ["HD01JuU37", "HD01SfU35", "HD01SoU32"],
+      "indicators": ["I12"],
+      "rationale": "Statskontoret myndighetsanalys is the natural evaluator; capacity is the binding constraint, not legislative will."
+    }
+  ],
+  "prior_cycle_ingestion": {
+    "note": "Carried-forward from prior-cycle year-ahead (2026-05-27): cohesion and macro PIRs roll forward as PIR-COHESION-2026 and PIR-LABOUR-MACRO-2026; no prior PIR answered or superseded this cycle.",
+    "predecessor_path": "analysis/daily/2026-05-27/year-ahead/"
+  }
+}
