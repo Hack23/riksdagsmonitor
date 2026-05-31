@@ -172,7 +172,7 @@ tools:
   edit:
   web-fetch:
   cache-memory:
-    key: news-${{ github.workflow }}-${{ inputs.article_date || 'today' }}
+    key: news-week-ahead-${{ inputs.article_date || 'today' }}
     retention-days: 14
 
 safe-outputs:
