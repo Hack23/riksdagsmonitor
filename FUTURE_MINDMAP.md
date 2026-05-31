@@ -5,26 +5,51 @@
 <h1 align="center">🚀 Riksdagsmonitor — Future Mindmap</h1>
 
 <p align="center">
-  <strong>🗺️ Future Capability Map for Democratic Intelligence Evolution</strong><br>
-  <em>🎯 AI Analytics · Nordic Expansion · Real-Time Intelligence · API Platform</em>
+  <strong>🗺️ Capability-Expansion Conceptual Map for Democratic Intelligence Evolution</strong><br>
+  <em>🎯 Static v1.x · Party-Focused v2.0 · AWS-Serverless &amp; Bedrock v3.0+ · Nordic &amp; EU Expansion</em>
 </p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/>
-  <img src="https://img.shields.io/badge/Version-2.0-555?style=for-the-badge" alt="Version"/>
-  <img src="https://img.shields.io/badge/Effective-2026--02--24-success?style=for-the-badge" alt="Effective Date"/>
+  <img src="https://img.shields.io/badge/Version-3.0-555?style=for-the-badge" alt="Version"/>
+  <img src="https://img.shields.io/badge/Effective-2026--05--31-success?style=for-the-badge" alt="Effective Date"/>
   <img src="https://img.shields.io/badge/Review-Quarterly-orange?style=for-the-badge" alt="Review Cycle"/>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 2.0 | **📅 Last Updated:** 2026-02-24 (UTC)  
-**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-05-20  
-**🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
+<p align="center">
+  <img src="https://img.shields.io/badge/Horizon-2026--2037-blueviolet?style=flat-square" alt="Horizon"/>
+  <img src="https://img.shields.io/badge/Data-Public_Only-informational?style=flat-square" alt="Public Data Only"/>
+  <img src="https://img.shields.io/badge/GDPR-Art._9(2)(e)%2F(g)-darkgreen?style=flat-square" alt="GDPR Lawful Basis"/>
+  <img src="https://img.shields.io/badge/Neutrality-All_Parties_Equal-1565c0?style=flat-square" alt="Neutrality"/>
+</p>
+
+**📋 Document Owner:** CEO | **📄 Version:** 3.0 | **📅 Last Updated:** 2026-05-31 (UTC)  
+**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-08-31  
+**🏢 Owner:** Hack23 AB (Org.nr 559534-7807) | **🏷️ Classification:** Public
 
 ---
 
 ## 🎯 Purpose
 
-This document provides future-state conceptual mindmaps for Riksdagsmonitor, visualizing the planned evolution from a static Swedish Parliament monitoring website to a comprehensive AI-powered democratic intelligence platform. Building on the current [Mindmap](MINDMAP.md), these diagrams illustrate the 3-11 year roadmap (2026-2037).
+This document provides **future-state capability-expansion mindmaps** for Riksdagsmonitor, visualizing how the platform's conceptual surface grows from a static Swedish-Parliament intelligence website into a serverless, AI-native democratic-intelligence platform. It builds directly on the freshly-refreshed current-state [Mindmap](MINDMAP.md) and structures conceptual growth across **three horizons** spanning the 10-year look-ahead **2026–2037**:
+
+1. **v1.x baseline** — the *accurate current state* we build upon: 14-language static HTML/CSS, autonomous AI newsroom, CIA-platform + open-data integration, structured tradecraft (ACH, SWOT, PESTLE, STRIDE).
+2. **v2.0 (2026–2027) static** — *go deeper without migrating*: party-focused political-landscape dashboards, advanced OSINT/INTOP quality, richer multilingual intelligence products, accessibility and performance — all on the **retained static architecture**.
+3. **v3.0+ (2028–2037) AWS serverless** — *the strategic platform leap*: Amazon Bedrock conversational intelligence, Bedrock Knowledge Bases / RAG, API Gateway public API economy, Cognito personalization, predictive analytics, semantic search & knowledge graph, Nordic + EU parliament expansion, and real-time streaming intelligence.
+
+Every roadmap claim is tied to a concrete capability, a named AWS service, an MCP server, or a dok-level data source. Future targets are labelled **targets**, never claimed as already achieved. All horizons preserve the platform's democratic-ethics, GDPR Article 9, neutrality and public-data-only guardrails.
+
+> 🔭 **Companion forward-looking docs:** [Future Architecture](FUTURE_ARCHITECTURE.md) · [Future Data Model](FUTURE_DATA_MODEL.md) · [Future Flowchart](FUTURE_FLOWCHART.md) · [Future State Diagram](FUTURE_STATEDIAGRAM.md) · [Future SWOT](FUTURE_SWOT.md) · [Future Security Architecture](FUTURE_SECURITY_ARCHITECTURE.md)
+
+## 📋 Executive Summary
+
+Riksdagsmonitor's conceptual surface expands along **three horizons** that separate *analytical depth* from *architectural substrate*:
+
+- **🟢 Horizon 1 (v1.x, shipped)** — a 14-language static HTML/CSS intelligence site with an autonomous AI newsroom (14 gh-aw workflows, Claude Opus 4.8 + Sonnet 4.6), CIA-platform and open-data integration, and structured tradecraft (ACH, SWOT, PESTLE, STRIDE). This is the proven base, not a placeholder.
+- **🔵 Horizon 2 (v2.0, 2026–2027) — keep static, go deeper.** The architecture does **not** migrate. Investment concentrates on **party-focused landscape dashboards** (cohesion, coalition dynamics, bloc alignment, party-vs-party), **advanced OSINT/INTOP quality** (network/temporal/geospatial patterns, anomaly detection, source-graded evidence, INTOP scorecards), richer multilingual products, and WCAG 2.2 / performance. AI stays a **build-time author**.
+- **🟣 Horizon 3 (v3.0+, 2028–2037) — all-in AWS serverless.** AI becomes a **run-time interlocutor**: Amazon Bedrock conversational intelligence and Agents, Bedrock Knowledge Bases / RAG over the 109k-document corpus, API Gateway public API economy, Cognito personalization, predictive analytics/forecasting, semantic search with a Neptune knowledge graph, Nordic + EU parliament expansion, and Kinesis real-time streaming — with **zero infrastructure to manage**.
+
+Four **invariants** survive every horizon: public-data-only, political neutrality, GDPR Article 9 lawful bases (9(2)(e), 9(2)(g)), and Hack23 ISMS alignment (ISO 27001 / NIST CSF 2.0 / CIS v8.1). The [AI Model Evolution](#13--ai--llm-capability-evolution-20262037) curve (2026–2037) is mapped not only to DevSecOps but to concrete intelligence unlocks at each generation. All future figures are **targets**, never claimed as achieved.
 
 ## 📚 Architecture Documentation Map
 
@@ -43,795 +68,757 @@ This document provides future-state conceptual mindmaps for Riksdagsmonitor, vis
 | [📊 Future Data Model](FUTURE_DATA_MODEL.md) | 🔮 Data | Enhanced data architecture plans |
 | [🔄 Future Flowchart](FUTURE_FLOWCHART.md) | 🔮 Processes | Improved process workflows |
 | [📈 Future State Diagram](FUTURE_STATEDIAGRAM.md) | 🔮 States | Advanced state management |
-| **[🧠 Future Mindmap](FUTURE_MINDMAP.md)** | **🔮 Concepts** | **Capability expansion plans** |
+| **[🧠 Future Mindmap](FUTURE_MINDMAP.md)** | **🔮 Concepts** | **Capability expansion plans (this doc)** |
 | [💼 Future SWOT](FUTURE_SWOT.md) | 🔮 Strategy | Future strategic opportunities |
 
 ---
 
-## 1. 🏗️ Platform Evolution Mindmap (2026-2037)
+## 📑 Table of Contents
+
+1. [Three-Horizon Capability Evolution (master map)](#1--three-horizon-capability-evolution-master-map)
+2. [Horizon 1 — v1.x Baseline Capabilities](#2--horizon-1--v1x-baseline-capabilities)
+3. [Horizon 2 — v2.0 Static Deepening (2026–2027)](#3--horizon-2--v20-static-deepening-20262027)
+4. [Horizon 3 — v3.0+ AWS Serverless (2028–2037)](#4-️-horizon-3--v30-aws-serverless-20282037)
+5. [Theme — Data &amp; Sources](#5--theme--data--sources)
+6. [Theme — OSINT / INTOP Tradecraft](#6-️-theme--osint--intop-tradecraft)
+7. [Theme — Party &amp; Coalition Analytics](#7-️-theme--party--coalition-analytics)
+8. [Theme — AI / Bedrock Capabilities](#8--theme--ai--bedrock-capabilities)
+9. [Theme — Platform / AWS Serverless](#9-️-theme--platform--aws-serverless)
+10. [Theme — Multilingual &amp; Accessibility](#10--theme--multilingual--accessibility)
+11. [Theme — Governance / Ethics / GDPR](#11-️-theme--governance--ethics--gdpr)
+12. [Theme — Ecosystem &amp; Expansion](#12--theme--ecosystem--expansion)
+13. [AI / LLM Capability-Evolution (2026–2037)](#13--ai--llm-capability-evolution-20262037)
+14. [Capability Matrix (horizon-aligned)](#-capability-matrix-horizon-aligned)
+15. [Stakeholder Value &amp; Roadmap Risk](#-stakeholder-value-by-horizon)
+16. [IMF Data-Sources Future Surface](#-evolving-the-current-imf-mindmap-toward-the-future-data-sources-surface)
+
+---
+
+## 1. 🗺️ Three-Horizon Capability Evolution (master map)
+
+The master mindmap frames the whole roadmap as three concentric horizons. Horizon 1 is shipped (v1.x); Horizon 2 deepens the **static** platform; Horizon 3 is the **strategic AWS-serverless** leap. Read inner-to-outer as time and capability both expand.
 
 ```mermaid
 mindmap
-  root((🚀 Riksdagsmonitor<br/>Future Platform))
-    🤖 AI Intelligence Layer
-      GPT-5 Content Generation
-        Multi-Modal Articles
-        Real-Time Fact-Checking
-        Automated Translation 30+ Languages
-      Predictive Analytics
-        Election Forecasting
-        Vote Prediction Models
-        Coalition Probability
-      Knowledge Graphs
-        Neo4j Political Network
-        109K+ Documents Indexed
-        Entity Relationship Mining
-      Privacy-Preserving AI
-        Federated Learning
-        Differential Privacy
-        On-Device Inference
-    🌍 Nordic Expansion
-      Danish Folketing
-        Folketing API Integration
-        Danish Political Parties
-      Norwegian Storting
-        Storting API Integration
-        Norwegian Committees
-      Finnish Eduskunta
-        Eduskunta API Integration
-        Finnish Electoral System
-      EU Parliament
-        705 MEPs Tracked
-        21 Swedish MEPs
-        Cross-Parliament Analysis
-    📊 Advanced Analytics
-      Real-Time Streaming
-        Apache Kafka Pipelines
-        Sub-Second Latency
-        Live Parliamentary Feeds
-      Semantic Search
-        Vector Embeddings
-        Natural Language Queries
-        Pinecone Vector DB
-      Comparative Analytics
-        Cross-Country Benchmarks
-        Policy Impact Assessment
-        Legislative Productivity
-    💰 Revenue Models
-      Freemium API
-        Free Tier for Researchers
-        Pro Tier for Business
-        Enterprise Custom Analysis
-      Research Partnerships
-        University Collaborations
-        Think Tank Subscriptions
-        Joint Publications
-      Business Intelligence
-        Corporate Policy Monitoring
-        Regulatory Tracking
-        Industry Dashboards
-    🔒 Security Evolution
-      Zero Trust Architecture
-        Service Mesh Security
-        API Gateway Auth
-        Mutual TLS
-      Advanced Threat Detection
-        AI-Powered SIEM
-        Behavioral Analytics
-        Automated Response
-      Compliance Expansion
-        EU CRA Compliance
-        NIS2 Directive
-        DORA Requirements
-    🤖 AI/LLM Evolution
-      Anthropic Opus 4.8 to AGI
-        Minor Updates Every 2.3 Months
-        Major Versions Annually
-        Multi-Model Strategy
-      Competitor Monitoring
-        OpenAI GPT Series
-        Google Gemini Series
-        Meta Llama Open Source
-        EU Sovereign AI Models
-      AGI Transition 2033-2037
-        Autonomous Analysis
-        Global Coverage 195 Parliaments
-        Real-Time Democracy Index
+  root((🚀 Riksdagsmonitor<br/>Capability Horizons))
+    🟢 Horizon 1 v1.x Baseline
+      Static HTML CSS 14 languages
+      Autonomous AI newsroom gh-aw
+      CIA platform plus open data
+      Structured tradecraft ACH SWOT PESTLE STRIDE
+      CloudFront S3 multi-region plus Pages DR
+    🔵 Horizon 2 v2.0 Static 2026 to 2027
+      Party-focused landscape dashboards
+      Advanced OSINT INTOP quality
+      Richer multilingual intelligence products
+      Accessibility WCAG 2.2 and performance
+      Static architecture retained no migration
+    🟣 Horizon 3 v3.0 plus Serverless 2028 to 2037
+      Amazon Bedrock conversational intelligence
+      Bedrock Knowledge Bases RAG over corpus
+      API Gateway public API economy
+      Cognito identity and personalization
+      Predictive analytics and forecasting
+      Semantic search and knowledge graph
+      Nordic plus EU parliament expansion
+      Real-time streaming intelligence
+    ⚖️ Invariants Across All Horizons
+      Public data only
+      Political neutrality all parties equal
+      GDPR Article 9 2 e and 2 g lawful bases
+      Transparent methodology and uncertainty
+      Hack23 ISMS ISO 27001 NIST CSF CIS
 ```
+
+**Reading guide.** Horizon boundaries are capability gates, not hard dates — v2.0 features may ship continuously through 2026–2027 while v3.0 foundations (Bedrock evaluation, Knowledge-Base prototyping) begin in parallel. The four **invariants** are non-negotiable constraints that survive every architectural change.
 
 ---
 
-## 2. 🤖 AI Capabilities Mindmap (2026-2028)
+## 2. 🟢 Horizon 1 — v1.x Baseline Capabilities
+
+This is the *accurate current state* the future is built upon. It is intentionally detailed so the deltas in Horizons 2 and 3 are unambiguous. Cross-reference [MINDMAP.md](MINDMAP.md) §1–§5 for the matching current-state surface.
 
 ```mermaid
 mindmap
-  root((🤖 AI Capabilities))
-    📝 Content Generation
-      Text Generation
-        Swedish Political Context
-        14 to 30+ Languages
-        Schema.org Integration
-      Image Generation
-        Infographics
-        Data Visualizations
-        Political Portraits
-      Audio Generation
-        Multi-Language TTS
-        Podcast Episodes
-        Debate Summaries
-      Video Generation
-        Animated Charts
-        Political Explainers
-        Debate Highlights
-    📊 Predictive Models
-      Election Forecasting
-        Monte Carlo Simulations
-        Confidence Intervals
-        Historical Backtesting
-      Vote Prediction
-        DW-NOMINATE Ideal Points
-        Party Discipline Analysis
-        Coalition Pressure
-      Policy Impact
-        Economic Modeling
-        Social Impact Assessment
-        International Comparison
-    🧠 Knowledge Management
-      Semantic Search
-        Natural Language Queries
-        Multi-Language Search
-        Context-Aware Results
-      Knowledge Graph
-        349 MPs Network
-        109K+ Documents
-        1M+ Relationships
-      Fact Verification
-        Automated Fact-Checking
-        Source Attribution
-        Confidence Scoring
-    ⚖️ AI Ethics
-      Transparency
-        Explainable AI
-        Open-Source Models
-        Methodology Publication
-      Fairness
-        Bias Detection
-        Political Neutrality
-        Diverse Training Data
-      Privacy
-        No User Tracking
-        On-Device Processing
-        GDPR Compliance
+  root((🟢 v1.x Baseline<br/>Shipped Today))
+    🌐 Delivery Surface
+      Static HTML5 and CSS3 cyberpunk theme
+      14 languages including RTL Arabic Hebrew
+      WCAG 2.1 AA accessibility
+      No JS frameworks for content
+      Dashboards lazy-loaded TypeScript modules
+        Chart.js and D3.js
+        ~11 functional dashboards
+        Party ministry anomaly seasonal pre-election politician
+    🤖 Autonomous AI Newsroom
+      14 agentic workflows gh-aw
+      Claude Opus 4.8 generation
+      Claude Sonnet 4.6 translation
+      Zero human editors
+      Daily articles in 14 languages
+    📡 Data Foundation
+      349 current MPs
+      2494 historical politicians 1971 to 2024
+      3.5M plus votes
+      109000 plus documents
+      Riksdagen API Regeringen g0v SCB IMF World Bank
+      CIA platform JSON and CSV exports
+    🧠 MCP Tooling
+      riksdag-regering HTTP
+      scb local
+      world-bank local
+      imf TypeScript client
+      github filesystem memory sequential-thinking playwright
+    🔍 Structured Tradecraft
+      ACH competing hypotheses
+      SWOT and PESTLE
+      STRIDE political threat modeling
+      Political-risk scoring
+      OSINT and INTOP scorecards
+    ☁️ Hosting and CI CD
+      AWS CloudFront edge
+      Multi-region S3 us-east-1 plus eu-west-1
+      GitHub Pages disaster recovery
+      GitHub Actions build and deploy
 ```
+
+**Baseline takeaway.** v1.x already proves the hard parts: autonomous multilingual generation, public-data discipline, and structured analytic tradecraft. Horizon 2 raises *analytic depth and party focus*; Horizon 3 changes the *delivery substrate* from pre-rendered artifacts to managed serverless + AI services.
 
 ---
 
-## 3. 🌐 Integration Ecosystem Mindmap
+## 3. 🔵 Horizon 2 — v2.0 Static Deepening (2026–2027)
+
+**Strategic choice: keep the static architecture, go deeper.** No migration in this horizon — every output remains a pre-rendered, CDN-served static artifact. Investment concentrates on party-focused analytics, OSINT/INTOP quality, multilingual richness, accessibility and performance.
 
 ```mermaid
 mindmap
-  root((🌐 Integration<br/>Ecosystem))
-    📡 Data Sources
-      Swedish Riksdag API
-        Votes and Motions
-        MP Biographical Data
-        Committee Documents
-      Government Sources
-        Propositions
-        SOU Reports
-        Budget Data
-      Nordic Parliaments
-        Denmark Folketing
-        Norway Storting
-        Finland Eduskunta
-      International
-        EU Parliament
-        World Bank
-        OECD Statistics
-    🔧 Technology Stack
-      Frontend
-        HTML5 Semantic Markup
-        CSS3 Custom Properties
-        Chart.js 4 and D3.js 7
-        TensorFlow.js Client-Side
-      Backend Services
-        AWS Lambda at Edge
-        API Gateway
-        Serverless Functions
-      Data Layer
-        PostgreSQL Multi-Country
-        Neo4j Knowledge Graph
-        Pinecone Vector DB
-        TimescaleDB Time-Series
-      AI Services
-        OpenAI GPT-5
-        Stability AI SDXL
-        ElevenLabs TTS
-        Whisper STT
-    🏗️ Infrastructure
-      Current AWS
-        CloudFront CDN
-        S3 Multi-Region
-        Route 53 DNS
-      Future Additions
-        ECS Fargate Containers
-        Aurora PostgreSQL
-        ElastiCache Redis
-        SQS Message Queues
-      Monitoring
-        CloudWatch Metrics
-        X-Ray Tracing
-        GuardDuty Threats
+  root((🔵 v2.0 Static<br/>2026 to 2027))
+    🏛️ Party-Focused Landscape Dashboards
+      Party cohesion and discipline scoring
+      Coalition dynamics and bloc alignment
+      Party-vs-party comparison views
+      Agenda and issue-salience tracking
+      Government-vs-opposition divergence
+      Rebel-vote and defection detection
+    🕵️ Advanced OSINT and INTOP
+      Network analysis co-sponsorship and committees
+      Temporal pattern detection
+      Geospatial valkrets patterns
+      Anomaly detection on voting and attendance
+      Source-graded evidence Admiralty scale
+      INTOP scorecards per actor
+    🌍 Richer Multilingual Products
+      Expanded glossary political terminology
+      Cultural-context adaptation per language
+      Per-language structured data Schema.org
+      Back-translation quality checks
+    ♿ Accessibility and Performance
+      WCAG 2.2 AA target
+      Core Web Vitals all green
+      Logical-property RTL refinement
+      Progressive enhancement static-first
+    🏗️ Architecture Stance
+      Static HTML CSS retained
+      AI confined to build and newsroom pipeline
+      Outputs remain static artifacts
+      CloudFront S3 plus Pages DR unchanged
 ```
+
+**v2.0 vs v3.0 distinction.** In v2.0 the AI is a *build-time* author — it deepens analysis but the citizen still consumes a static page. In v3.0 the AI becomes a *run-time* interlocutor: citizens query a conversational assistant backed by Bedrock and Knowledge Bases, and developers consume a live API. v2.0 lowers analytical risk and cost while compounding domain depth that v3.0 later exposes interactively.
 
 ---
 
-## 4. 📅 Timeline Mindmap
+## 4. 🏗️ Horizon 3 — v3.0+ AWS Serverless (2028–2037)
+
+**Strategic choice: all-in AWS serverless.** Full migration to managed compute and managed AI — **no Kubernetes, no containers to operate**. AWS Well-Architected aligned, multi-region resilient. The static corpus becomes a queryable, conversational, programmable intelligence platform.
 
 ```mermaid
 mindmap
-  root((📅 Roadmap<br/>2026-2037))
-    2026 Phase 1
-      AI News Generation v2
-      Election Forecast MVP
-      API Platform Beta
-      30+ Language Support
-      Opus 4.8-4.9 Integration
-    2027 Phase 2
-      Knowledge Graph Launch
-      Semantic Search
-      Voice Assistant
-      Personalized Feeds
-      Danish Parliament
-      Opus 5.x Upgrade
-    2028 Phase 3
-      Real-Time Streaming
-      Norwegian Parliament
-      Finnish Parliament
-      Video Generation
-      Business Intelligence
-      Opus 6.x Multi-Modal Native
-    2029-2030 Phase 4
-      EU Parliament Full
-      API Monetization
-      Research Platform
-      Mobile App
-      Opus 7-8.x Near-Expert AI
-    2031-2033 Phase 5
-      Global Parliament Network
-      Privacy-Preserving AI
-      Decentralized Architecture
-      Community Governance
-      Pre-AGI Systems Integration
-    2034-2037 Phase 6
-      AGI-Enhanced Platform
-      195 Parliament Coverage
-      Real-Time Democracy Index
-      Autonomous Intelligence
-      Post-AGI Transformation
+  root((🏗️ v3.0 plus Serverless<br/>2028 to 2037))
+    🤖 Amazon Bedrock Intelligence
+      Conversational political-intelligence assistant
+      Bedrock Agents for multi-step analysis
+      Foundation-model choice and routing
+      Guardrails for neutrality and safety
+    📚 Knowledge Bases and RAG
+      RAG over 109000 plus documents
+      Citation-grounded answers
+      Vector index OpenSearch Serverless
+      Freshness from daily ingestion
+    🚪 API Gateway Public API Economy
+      REST and GraphQL political-intelligence API
+      Usage plans and throttling
+      Free researcher tier
+      Pro and enterprise tiers
+    🔐 Cognito Identity and Personalization
+      Sign-in for saved views and alerts
+      API-consumer identity and keys
+      Preference and topic subscriptions
+      Privacy-preserving no political profiling
+    📈 Predictive Analytics and Forecasting
+      Seat-projection and coalition probability
+      Vote-outcome prediction
+      Monte Carlo with confidence intervals
+      Historical backtesting transparency
+    🔎 Semantic Search and Knowledge Graph
+      Natural-language multilingual queries
+      Neptune Serverless political graph
+      Entity-relationship mining
+      Graph-plus-vector hybrid retrieval
+    🌍 Nordic and EU Expansion
+      Folketing Storting Eduskunta
+      EU Parliament 705 MEPs
+      Cross-parliament comparison
+      Federated multi-country corpus
+    ⚡ Real-Time Streaming Intelligence
+      Kinesis parliamentary feeds
+      EventBridge event routing
+      Step Functions orchestration
+      Sub-second live updates
+    🧱 Managed Serverless Substrate
+      Lambda compute
+      DynamoDB and Aurora Serverless v2
+      Timestream time-series
+      Zero infrastructure to manage
 ```
 
----
-
-## 📋 Capability Matrix
-
-| Capability | Current State | 2027 Target | 2030 Vision | 2034 Target | 2037 Vision |
-|------------|--------------|-------------|-------------|-------------|-------------|
-| **Languages** | 14 | 30+ | 50+ | 100+ | All UN languages |
-| **Parliaments** | 1 (Sweden) | 3 (Nordic) | 10+ (Global) | 50+ | 195 (Global) |
-| **AI Models** | Opus 4.8 generation | Opus 5.x predictive | Opus 8.x multi-modal | Pre-AGI systems | AGI-enhanced |
-| **Search** | Keyword | Semantic | Knowledge graph | Autonomous discovery | Omniscient index |
-| **Data Latency** | Daily batch | Hourly | Real-time | Sub-second | Predictive |
-| **Revenue** | None | API beta | Multi-stream | Enterprise platform | Global SaaS |
-| **Users** | Organic | 10K+ monthly | 100K+ monthly | 1M+ monthly | 10M+ monthly |
-| **AI Updates** | Opus 4.8 | Minor every 2.3mo | Major annually | Continuous evolution | AGI integration |
+**Horizon-3 grounding.** Each branch names the concrete AWS service that realises it — Bedrock (assistant + agents + guardrails), OpenSearch Serverless (vectors), Neptune Serverless (graph), API Gateway (API economy), Cognito (identity), Kinesis/EventBridge/Step Functions (streaming), DynamoDB/Aurora Serverless v2/Timestream (state). Migration is incremental: read-paths move to serverless behind CloudFront before any write-path, preserving the v1.x DR posture during cutover.
 
 ---
 
-## 📚 Architecture Documentation Map
+## 5. 📡 Theme — Data & Sources
 
-| Document | Focus | Description |
-|----------|-------|-------------|
-| [🏛️ Architecture](ARCHITECTURE.md) | 🏗️ C4 Models | System context, containers, components |
-| [📊 Data Model](DATA_MODEL.md) | 📊 Data | Entity relationships and data dictionary |
-| [🔄 Flowchart](FLOWCHART.md) | 🔄 Processes | Business and data flow diagrams |
-| [📈 State Diagram](STATEDIAGRAM.md) | 📈 States | System state transitions and lifecycles |
-| [🧠 Mindmap](MINDMAP.md) | 🧠 Concepts | System conceptual relationships |
-| [💼 SWOT](SWOT.md) | 💼 Strategy | Strategic analysis and positioning |
-| [🛡️ Security Architecture](SECURITY_ARCHITECTURE.md) | 🔒 Security | Current security controls and design |
-| [🚀 Future Security](FUTURE_SECURITY_ARCHITECTURE.md) | 🔮 Security | Planned security improvements |
-| [🎯 Threat Model](THREAT_MODEL.md) | 🎯 Threats | STRIDE/MITRE ATT&CK analysis |
-| [🚀 Future Architecture](FUTURE_ARCHITECTURE.md) | 🔮 Evolution | Architectural evolution roadmap |
-| [📊 Future Data Model](FUTURE_DATA_MODEL.md) | 🔮 Data | Enhanced data architecture plans |
-| [🔄 Future Flowchart](FUTURE_FLOWCHART.md) | 🔮 Processes | Improved process workflows |
-| [📈 Future State Diagram](FUTURE_STATEDIAGRAM.md) | 🔮 States | Advanced state management |
-| **[🧠 Future Mindmap](FUTURE_MINDMAP.md)** | **🔮 Concepts** | **Capability expansion plans** |
-| [💼 Future SWOT](FUTURE_SWOT.md) | 🔮 Strategy | Future strategic opportunities |
-
----
-
----
-
-## 5. 🔒 Future Security Capability Evolution
+How the data surface widens across horizons: from Swedish open data + CIA exports (v1.x), to richer party-graded evidence (v2.0), to a federated Nordic/EU corpus with streaming ingestion (v3.0).
 
 ```mermaid
 mindmap
-  root((Security Evolution))
-    Zero Trust Architecture
-      Identity Verification
-        MFA for all admin ops
-        FIDO2 hardware keys
-        Passwordless auth
-      Network Micro-segmentation
-        Service mesh mTLS
-        API gateway enforcement
-        East-west traffic control
-      Device Trust
-        Managed runner attestation
-        Build environment verification
-        Supply chain trust
-    SIEM Integration
-      Log Aggregation
-        GitHub audit logs
-        CloudFront access logs
-        Build pipeline events
-      Correlation Rules
-        Anomaly detection
-        Behavioral baselines
-        Threat intelligence feeds
-      Automated Response
-        Auto-revoke credentials
-        Auto-block suspicious IPs
-        Auto-create incident tickets
-    Threat Intelligence
-      External Feeds
-        CVE NVD integration
-        GitHub Advisory Database
-        CISA KEV catalog
-      Internal Intelligence
-        Riksdagsmonitor threat model
-        Historical incident data
-        Attack pattern library
-      Proactive Hunting
-        Scheduled threat hunts
-        MITRE ATT&CK coverage
-        Red team exercises
-    Advanced Scanning
-      DAST Dynamic Testing
-        OWASP ZAP automation
-        Authenticated scanning
-        API fuzzing
-      SAST Enhancements
-        CodeQL custom queries
-        Semgrep rules
-        IaC scanning
-      SCA Improvements
-        SBOM generation
-        License compliance
-        Transitive dependencies
-    Compliance Automation
-      Continuous Compliance
-        ISO 27001 controls monitor
-        NIS2 requirements tracking
-        CIS Controls dashboard
-      Evidence Collection
-        Automated audit reports
-        Control effectiveness metrics
-        Risk register updates
-      Certification Readiness
-        ISO 27001 certification path
-        SOC 2 Type II preparation
-        NIS2 compliance attestation
+  root((📡 Data and Sources<br/>Evolution))
+    🟢 v1.x Foundation
+      Riksdagen open data votes motions ledamoter
+      Regeringen via g0v
+      SCB Swedish ground truth
+      IMF primary economic WEO FM IFS
+      World Bank non-economic residue
+      CIA platform JSON and CSV
+    🔵 v2.0 Deepening
+      Source-graded evidence Admiralty scale
+      Cross-validation IMF vs SCB delta checks
+      Committee-aligned spending GFS_COFOG
+      Provenance metadata per claim
+    🟣 v3.0 Federation and Streaming
+      Folketing Storting Eduskunta open data
+      EU Parliament open data 705 MEPs
+      Kinesis real-time parliamentary feeds
+      Knowledge-Base ingestion pipeline
+      Vector and graph indexed corpus
+    ⚖️ Provenance Discipline
+      Economic claim cites IMF dataflow first
+      Vintage annotation when older than 6 months
+      Public-data-only no leaked or private data
+      Primary-source URL or dok_id per claim
 ```
+
+**Source canon.** The economic-data contract (`ECONOMIC_DATA_CONTRACT.md` v2.1) survives every horizon: IMF is primary for economics, World Bank is reserved for governance/environment/social residue, SCB is Swedish ground truth, and Riksdag open data is parliamentary primary. v3.0 adds federated Nordic/EU sources without weakening provenance rules.
 
 ---
 
-## 6. 🌍 Multi-Language Content Strategy
+## 6. 🕵️ Theme — OSINT / INTOP Tradecraft
+
+Tradecraft maturity is the spine of the product. v1.x applies structured techniques in the newsroom; v2.0 productises them into dashboards and scorecards; v3.0 makes them conversational and predictive.
 
 ```mermaid
 mindmap
-  root((14-Language Strategy))
-    Current Languages
-      Germanic Group
-        English EN source
-        Swedish SV primary
-        German DE
-        Dutch NL
-        Norwegian NO
-        Danish DA
-      Romance Group
-        French FR
-        Spanish ES
-      Nordic
-        Finnish FI
-      Asian Languages
-        Japanese JA
-        Korean KO
-        Chinese ZH
-      RTL Languages
-        Arabic AR
-        Hebrew HE
-    Translation Pipeline
-      Source Control
-        English master content
-        Version-controlled strings
-        Context annotations
-      Automated Translation
-        LLM-based translation
-        Political terminology glossary
-        Cultural context adaptation
-      Quality Assurance
-        Native speaker review
-        Back-translation check
-        Terminology consistency
-    SEO Strategy
-      Technical SEO
-        Hreflang implementation
-        Canonical URLs per language
-        Sitemap per language
-      Content SEO
-        Swedish political terms
-        Riksdag-specific vocabulary
-        Local search intent
-      Structured Data
-        Schema.org NewsArticle
-        Breadcrumbs per language
-        Organization markup
-    Future Expansion
-      Phase 1 Additions
-        Polish PL
-        Romanian RO
-        Czech CS
-      Phase 2 Additions
-        Turkish TR
-        Hindi HI
-        Portuguese PT
-      Phase 3 Goal
-        All 24 EU languages
-        UN official languages
-        100+ language target
-    Accessibility
-      Screen Reader Support
-        ARIA labels translated
-        Alt text in all languages
-        Semantic HTML5 structure
-      RTL Layout
-        CSS logical properties
-        Bidirectional text handling
-        Mirror layout for AR HE
-      Font Strategy
-        System font stacks
-        Unicode coverage
-        CJK character support
+  root((🕵️ OSINT and INTOP<br/>Tradecraft))
+    🧩 Structured Techniques
+      ACH competing hypotheses
+      SWOT and PESTLE scanning
+      Devil's advocacy and red team
+      Attack-tree and STRIDE political variants
+    🔗 Network and Pattern Analysis
+      Co-sponsorship networks
+      Committee-membership graphs
+      Centrality bridging and clustering
+      Temporal and geospatial patterns
+    📑 Evidence and Sourcing
+      Admiralty source grading
+      Confidence scoring and uncertainty
+      Citation-grounded claims
+      INTOP scorecards per actor
+    🟢 v1.x newsroom-applied
+    🔵 v2.0 dashboard-productised
+    🟣 v3.0 conversational and predictive
+      Bedrock-assisted hypothesis testing
+      Automated fact-checking with citations
+      Predictive coalition and vote models
 ```
+
+**Ethics rail.** Tradecraft is applied to **public political behaviour only** — votes, speeches, documents, declared affiliations. No surveillance, no private-life profiling, no psyops framing. The platform exposes accountability evidence; it never weaponises it.
 
 ---
 
-## 7. 🤖 Intelligence Analysis Capabilities
+## 7. 🏛️ Theme — Party & Coalition Analytics
+
+The headline v2.0 investment. Party-focused analytics turn raw votes into landscape understanding: cohesion, bloc alignment, coalition viability and agenda movement.
 
 ```mermaid
 mindmap
-  root((Intelligence Analysis))
-    Natural Language Processing
-      Swedish Political NLP
-        Named entity recognition
-        Political party detection
-        Legislative term extraction
-      Sentiment Analysis
-        Party sentiment tracking
-        Public opinion correlation
-        Media coverage analysis
-      Topic Modeling
-        LDA topic extraction
-        Policy area clustering
-        Temporal topic trends
-    Pattern Detection
-      Voting Pattern Analysis
-        Party cohesion scores
-        Cross-party coalitions
-        Rebel vote detection
-      Legislative Patterns
-        Bill success prediction
-        Amendment frequency
-        Committee bottlenecks
-      Network Analysis
-        Co-sponsorship networks
-        Committee membership graphs
-        Cross-party relationships
-    Predictive Analytics
-      Election Forecasting
-        Seat projection models
-        Coalition probability
-        Monte Carlo simulation
-      Policy Impact Prediction
-        Economic impact models
-        Historical precedent matching
-        Stakeholder response prediction
-      Trend Forecasting
-        Issue salience tracking
-        Policy momentum indicators
-        Media cycle correlation
-    Knowledge Graph
-      Entities
-        349 Riksdag members
-        8 political parties
-        17 committees
-        Swedish government agencies
-      Relationships
-        Voting alignments
-        Committee memberships
-        Sponsorship connections
-        Career histories
-      Querying
-        SPARQL endpoint
-        Natural language queries
-        Graph visualization
-    ML Models
-      Supervised Learning
-        Vote outcome prediction
-        Bill passage likelihood
-        Speaker classification
-      Unsupervised Learning
-        Anomaly detection
-        Behavior clustering
-        Issue grouping
-      Reinforcement Learning
-        Adaptive content selection
-        Personalized news ranking
-        A/B test optimization
+  root((🏛️ Party and Coalition<br/>Analytics))
+    📊 Party Behaviour
+      Cohesion and discipline scores
+      Rebel-vote and defection detection
+      Attendance and productivity
+      Agenda and issue-salience tracking
+    🤝 Coalition Dynamics
+      Bloc alignment government vs opposition
+      Coalition viability and stability
+      Cross-party alignment matrices
+      Alternative-coalition scenarios
+    ⚖️ Comparison Views
+      Party-vs-party head to head
+      Historical drift 1971 to today
+      Constituency valkrets breakdowns
+    🟢 v1.x baseline dashboards
+    🔵 v2.0 party-focused expansion
+      Deeper cohesion analytics
+      Coalition-math visualizations
+    🟣 v3.0 predictive coalition intelligence
+      Seat-projection models
+      Coalition-probability forecasting
+      Conversational what-if scenarios
 ```
+
+**Neutrality guarantee.** Party analytics treat all eight Riksdag parties identically — same metrics, same methodology, same uncertainty disclosure. Comparison views are symmetric and never editorialise a "winner".
 
 ---
 
-## 8. 📊 Future Compliance Capabilities
+## 8. 🤖 Theme — AI / Bedrock Capabilities
+
+AI moves from build-time author (v1.x/v2.0) to run-time intelligence (v3.0). Amazon Bedrock anchors the v3.0 conversational and RAG capabilities.
 
 ```mermaid
 mindmap
-  root((Compliance Evolution))
-    ISO 27001 Certification
-      Gap Analysis
-        Current controls mapped
-        Missing controls identified
-        Remediation roadmap
-      Internal Audit
-        Annual audit schedule
-        Evidence repository
-        Non-conformity tracking
-      Certification Process
-        External auditor selection
-        Stage 1 documentation audit
-        Stage 2 implementation audit
-    Automated SoA Tracking
-      Control Monitoring
-        Real-time control status
-        Automated evidence collection
-        Control effectiveness metrics
-      Compliance Dashboard
-        ISO 27001 coverage gauge
-        NIST CSF function scores
-        CIS Controls IG progress
-      Reporting
-        Board-level summaries
-        Technical control reports
-        Trend analysis over time
-    NIS2 Compliance
-      Incident Reporting
-        72h notification process
-        Competent authority contacts
-        Incident classification matrix
-      Risk Management
-        Annual risk assessments
-        Supply chain risk reviews
-        Business continuity tests
-      Board Accountability
-        CEO security training
-        Board approval of security
-        Personal liability tracking
-    CRA Conformity
-      Self-Assessment
-        Annex I mapping complete
-        Annex V documentation
-        Declaration of conformity
-      Vulnerability Handling
-        CVE disclosure process
-        90-day disclosure timeline
-        Coordinated disclosure
-      Post-Market Surveillance
-        Ongoing vulnerability monitoring
-        Security update process
-        End-of-life planning
-    GDPR Alignment
-      Privacy by Design
-        No personal data collected
-        Anonymous analytics only
-        Data minimization principle
-      Data Subject Rights
-        No PII processed
-        Public data only
-        Transparency reports
-      Processor Agreements
-        GitHub DPA in place
-        AWS DPA in place
-        Anthropic DPA review
+  root((🤖 AI and Bedrock<br/>Capabilities))
+    🟢 v1.x Build-Time AI
+      Claude Opus 4.8 generation
+      Claude Sonnet 4.6 translation
+      gh-aw agentic workflows
+      Outputs are static artifacts
+    🔵 v2.0 Deeper Build-Time AI
+      Higher-quality structured analysis
+      Multilingual product enrichment
+      Automated evidence grading
+    🟣 v3.0 Run-Time Bedrock AI
+      Conversational intelligence assistant
+      Bedrock Agents multi-step analysis
+      Knowledge Bases RAG citation-grounded
+      Guardrails neutrality and safety
+      Foundation-model routing and choice
+    🔮 Forecasting and Verification
+      Election and vote forecasting
+      Real-time fact-checking
+      Confidence-scored predictions
+    ⚖️ AI Governance
+      Hack23 AI Policy human-in-the-loop
+      Explainable and transparent methods
+      Bias detection and neutrality checks
+      No user political profiling
 ```
+
+**Bedrock rationale.** Managed foundation models with built-in Guardrails let Riksdagsmonitor add conversational and predictive intelligence without operating model infrastructure — consistent with the zero-infrastructure serverless strategy and the AI Policy's human-in-the-loop and transparency requirements.
 
 ---
 
-## 9. 🌟 Future User Experience Capabilities
+## 9. 🏗️ Theme — Platform / AWS Serverless
+
+The substrate change defining Horizon 3. Each capability maps to a named, managed AWS service; nothing requires servers, clusters or containers to operate.
 
 ```mermaid
 mindmap
-  root((UX Evolution))
-    Personalization
-      User Preferences
-        Language preference memory
-        Party filter settings
-        Topic subscriptions
-        Dashboard customization
-      Content Recommendations
-        ML-based article ranking
-        Related content suggestions
-        Trending topics display
-      Notification System
-        Email newsletters
-        Push notifications
-        RSS feed support
-    Accessibility Improvements
-      WCAG 2.2 AA Compliance
-        Color contrast audits
-        Keyboard navigation
-        Focus management
-        Skip links
-      Screen Reader Support
-        ARIA landmarks
-        Live regions for updates
-        Descriptive alt text
-      Motor Accessibility
-        Large click targets
-        No hover-only interactions
-        Timeout accommodations
-    Search and Discovery
-      Semantic Search
-        Natural language queries
-        Swedish language support
-        Fuzzy matching
-      Faceted Filtering
-        By party
-        By committee
-        By date range
-        By document type
-      Search Result Quality
-        Relevance scoring
-        Snippet previews
-        Related document linking
-    Data Visualization
-      Interactive Charts
-        Drill-down capability
-        Time series animation
-        Comparison overlays
-      Network Graphs
-        Party relationship maps
-        Committee overlap viz
-        Voting coalition display
-      Geographic Visualization
-        Constituency maps
-        Regional voting patterns
-        Valkrets breakdowns
-    Mobile Experience
-      Progressive Web App
-        Offline capability
-        App-like navigation
-        Home screen install
-      Responsive Design
-        Mobile-first approach
-        Touch gesture support
-        Adaptive image loading
-      Performance
-        Sub-3s load on 3G
-        Core Web Vitals green
-        Lazy loading images
+  root((🏗️ Platform and<br/>AWS Serverless))
+    🧱 Compute and Orchestration
+      Lambda functions
+      Step Functions workflows
+      EventBridge event bus
+    🗄️ Data Stores
+      DynamoDB key-value
+      Aurora Serverless v2 relational
+      Neptune Serverless graph
+      OpenSearch Serverless vector and search
+      Timestream time-series
+    🚪 Edge and API
+      API Gateway REST and GraphQL
+      CloudFront retained at edge
+      Cognito identity and authorization
+    🤖 Managed AI
+      Amazon Bedrock models and Agents
+      Bedrock Knowledge Bases RAG
+      Bedrock Guardrails
+    ⚡ Streaming
+      Kinesis data streams
+      Real-time parliamentary feeds
+    🟢 v1.x CloudFront S3 plus Pages DR
+    🔵 v2.0 same static substrate
+    🟣 v3.0 full serverless migration
+      Zero infrastructure to manage
+      AWS Well-Architected aligned
+      Multi-region resilience
 ```
+
+**Migration discipline.** The v1.x static site and GitHub Pages DR remain the resilience floor during cutover. Read paths migrate first behind CloudFront; identity, write paths and streaming follow once Cognito and observability are proven.
 
 ---
 
-## 10. ⚙️ Future Operational Capabilities
+## 10. 🌍 Theme — Multilingual & Accessibility
+
+A first-class, cross-horizon concern. v1.x ships 14 languages and WCAG 2.1 AA; v2.0 deepens quality and targets WCAG 2.2; v3.0 makes multilingual *interactive* via conversational and semantic search.
 
 ```mermaid
 mindmap
-  root((Operational Excellence))
-    SRE Practices
-      Service Level Objectives
-        99.9% availability SLO
-        Sub-3s page load SLO
-        Daily content update SLO
-        Zero data integrity issues
-      Error Budget Management
-        Error budget tracking
-        Budget-based feature gates
-        Reliability vs velocity
-      Toil Reduction
-        Automation of repetitive tasks
-        Runbook automation
-        Self-healing systems
-    Observability
-      Metrics
-        CloudWatch custom metrics
-        Build success rates
-        API call volumes
-        Cache hit ratios
-      Logging
-        Structured JSON logs
-        Log aggregation pipeline
-        Search and alerting
-      Tracing
-        Distributed trace IDs
-        Pipeline execution tracing
-        User journey tracing
-      Alerting
-        PagerDuty integration
-        Alert fatigue management
-        Runbook links in alerts
-    Chaos Engineering
-      Failure Injection
-        S3 origin failure simulation
-        CDN outage testing
-        API timeout injection
-        Network partition testing
-      Resilience Validation
-        Failover time measurement
-        Recovery procedure testing
-        Data integrity verification
-      GameDay Exercises
-        Quarterly chaos days
-        Documented scenarios
-        Post-game lessons
-    Infrastructure as Code
-      Terraform Modules
-        AWS CloudFront module
-        S3 multi-region module
-        Route 53 module
-        IAM role module
-      State Management
-        Remote state in S3
-        State locking DynamoDB
-        Drift detection
-      GitOps Workflow
-        IaC in version control
-        PR-based changes
-        Automated apply pipeline
-    Continuous Deployment
-      Pipeline Maturity
-        Current: Manual approval
-        Target: Automated canary
-        Vision: Progressive delivery
-      Deployment Strategies
-        Blue-green deployments
-        Canary releases
-        Feature flags
-      Rollback Automation
-        Automated smoke tests
-        One-click rollback
-        Automatic rollback on error
+  root((🌍 Multilingual and<br/>Accessibility))
+    🗣️ Language Coverage
+      14 languages today
+      Germanic Romance Nordic Asian RTL
+      English source Swedish primary
+      Expansion targets EU and UN languages
+    🔁 Translation Pipeline
+      Version-controlled source strings
+      Political terminology glossary
+      LLM translation Sonnet 4.6
+      Back-translation quality checks
+    ♿ Accessibility
+      WCAG 2.1 AA today
+      WCAG 2.2 AA target v2.0
+      RTL logical properties
+      Screen-reader and keyboard support
+    ⚡ Performance
+      Core Web Vitals green
+      Static-first progressive enhancement
+      Lazy-loaded dashboard modules
+    🟢 v1.x 14 languages static
+    🔵 v2.0 richer products WCAG 2.2
+    🟣 v3.0 multilingual conversational and semantic search
 ```
+
+**Accessibility as ethics.** Multilingual + accessible delivery is part of the democratic mission — intelligence that citizens cannot read or perceive does not strengthen accountability. This theme is never deprioritised by the serverless migration.
 
 ---
 
-## Updated Capability Matrix
+## 11. ⚖️ Theme — Governance / Ethics / GDPR
 
-| Capability | Current State | 2027 Target | 2030 Vision | 2034 Target | 2037 Vision |
-|------------|--------------|-------------|-------------|-------------|-------------|
-| **Languages** | 14 | 30+ | 50+ | 100+ | All UN languages |
-| **Parliaments** | 1 Sweden | 3 Nordic | 10+ Global | 50+ | 195 Global |
-| **AI Models** | Opus 4.8 | Opus 5.x | Opus 8.x | Pre-AGI | AGI-enhanced |
-| **Search** | Keyword | Semantic | Knowledge graph | Autonomous | Omniscient index |
-| **Data Latency** | Daily batch | Hourly | Real-time | Sub-second | Predictive |
-| **Revenue** | None | API beta | Multi-stream | Enterprise | Global SaaS |
-| **Users** | Organic | 10K+ monthly | 100K+ monthly | 1M+ monthly | 10M+ monthly |
-| **Security** | IG1/IG2 | Zero Trust | SIEM | Automated IR | AI-driven |
-| **Compliance** | ISO aligned | ISO certified | NIS2 attested | SOC2 Type II | Continuous |
-| **UX** | Static HTML | PWA basics | Personalized | Adaptive AI | Immersive |
-| **Infra** | GitHub Pages | IaC v1 | Kubernetes | Multi-cloud | Edge compute |
-| **Observability** | Basic alerts | SLOs defined | Full trace | AIOps | Predictive |
+The guardrail theme. These controls are invariant across all three horizons and gate every new capability.
+
+```mermaid
+mindmap
+  root((⚖️ Governance Ethics<br/>and GDPR))
+    🔐 Data Protection
+      Public data only
+      No hacked leaked or private data
+      Data minimization and purpose limitation
+      Storage limitation and integrity
+    📜 GDPR Article 9
+      Political opinion special category
+      Lawful basis 9 2 e publicly made
+      Lawful basis 9 2 g substantial public interest
+      DPIA for high-risk processing
+    🟦 Neutrality
+      Equal treatment all parties
+      Transparent methodology
+      Documented uncertainty
+      No psyops no propaganda
+    🛡️ ISMS Alignment
+      ISO 27001 2022
+      NIST CSF 2.0
+      CIS Controls v8.1
+      NIS2 and EU CRA where applicable
+    🤖 AI Governance
+      Hack23 AI Policy
+      Human-in-the-loop oversight
+      Explainability and bias checks
+      No user political profiling
+```
+
+**Cross-link.** This theme operationalises the [Future Security Architecture](FUTURE_SECURITY_ARCHITECTURE.md) and [Threat Model](THREAT_MODEL.md), and inherits the Hack23 ISMS policies linked in the footer. v3.0 personalization (Cognito) is explicitly constrained: identity enables saved views and alerts, never political-profile inference.
+
+---
+
+## 12. 🌐 Theme — Ecosystem & Expansion
+
+How Riksdagsmonitor grows outward — into Nordic and EU parliaments, a public API economy, and the wider Hack23 ecosystem.
+
+```mermaid
+mindmap
+  root((🌐 Ecosystem and<br/>Expansion))
+    🌍 Geographic Expansion
+      Sweden today
+      Nordic Folketing Storting Eduskunta
+      EU Parliament 705 MEPs
+      Cross-parliament comparative analysis
+    🔌 API Economy
+      API Gateway public API
+      Free researcher tier
+      Pro and enterprise tiers
+      Knowledge-Base backed answers
+    🤝 Hack23 Ecosystem
+      Citizen Intelligence Agency engine
+      EU Parliament Monitor
+      European Parliament MCP
+      Shared ISMS and tradecraft
+    🎓 Stakeholders
+      Citizens and journalists
+      Researchers and think tanks
+      Developers and integrators
+      Civil-society accountability
+    🟢 v1.x Sweden static
+    🔵 v2.0 deeper Swedish coverage
+    🟣 v3.0 federated multi-country and API
+```
+
+**Expansion principle.** Geographic and API expansion reuse the same tradecraft, neutrality and provenance rules. The European Parliament MCP and EU Parliament Monitor are existing Hack23 assets that de-risk the v3.0 cross-parliament leap.
+
+---
+
+## 13. 🤖 AI / LLM Capability-Evolution (2026–2037)
+
+Major AI model upgrades are assumed **annually**, with competitor releases (OpenAI, Google, Meta, EU sovereign AI) evaluated at each cycle, and the architecture explicitly designed to accommodate paradigm shifts (quantum AI, neuromorphic computing). All adoption is governed by the [Hack23 AI Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/AI_Policy.md) with human-in-the-loop oversight.
+
+### 13.1 AI Model Evolution Table (DevSecOps & development perspective)
+
+| Year | AI Model | DevSecOps Capability Evolution |
+|------|----------|--------------------------------|
+| 2026 | Opus 4.6–4.9 | 🟢 AI-assisted code review, automated test generation, agentic CI/CD workflows |
+| 2027 | Opus 5.x | 🔵 Predictive vulnerability detection, intelligent dependency management |
+| 2028 | Opus 6.x | 🟣 Multi-modal security analysis (code + architecture + runtime), automated threat modeling |
+| 2029 | Opus 7.x | 🟠 Autonomous security pipeline orchestration, self-healing build systems |
+| 2030 | Opus 8.x | 🔴 Near-expert automated security review, AI-driven architecture validation |
+| 2031–2033 | Opus 9–10.x / Pre-AGI | ⚪ Autonomous secure development lifecycle management |
+| 2034–2037 | AGI / Post-AGI | ⭐ Transformative software engineering with built-in security assurance |
+
+### 13.2 Translating the AI Curve into Product & Intelligence Unlocks
+
+The same model generations unlock product, data and tradecraft capability — not only DevSecOps. The mindmap below maps each AI generation to the **intelligence** it enables.
+
+```mermaid
+mindmap
+  root((🤖 AI Model Evolution<br/>to Capability Unlocks))
+    2026 Opus 4.6 to 4.9 Green
+      Build-time newsroom generation 14 languages
+      AI-assisted code review and test generation
+      Agentic gh-aw workflows
+      Product unlock party-focused static dashboards
+    2027 Opus 5.x Blue
+      Predictive vulnerability detection
+      Intelligent dependency management
+      Intelligence unlock early forecasting prototypes
+      Deeper OSINT evidence grading
+    2028 Opus 6.x Purple
+      Multi-modal analysis code architecture runtime
+      Automated threat modeling
+      Platform unlock Bedrock conversational assistant
+      Knowledge Bases RAG go-live
+    2029 Opus 7.x Orange
+      Autonomous pipeline orchestration
+      Self-healing build systems
+      Intelligence unlock real-time fact-checking
+      Nordic parliament onboarding
+    2030 Opus 8.x Red
+      Near-expert automated security review
+      AI-driven architecture validation
+      Intelligence unlock mature election forecasting
+      Semantic search and knowledge graph maturity
+    2031 to 2033 Opus 9 to 10 Pre-AGI White
+      Autonomous secure development lifecycle
+      Federated EU and Nordic corpus
+      Predictive coalition intelligence at scale
+    2034 to 2037 AGI Post-AGI Star
+      Transformative engineering with built-in assurance
+      Autonomous cross-parliament analysis
+      Visionary global democratic-intelligence reach
+```
+
+### 13.3 Capability-Unlock Crosswalk
+
+```mermaid
+graph LR
+    A[2026 Opus 4.6-4.9<br/>Build-time author]:::g --> B[2027 Opus 5.x<br/>Predictive prototypes]:::b
+    B --> C[2028 Opus 6.x<br/>Bedrock run-time AI]:::p
+    C --> D[2029 Opus 7.x<br/>Autonomous orchestration]:::o
+    D --> E[2030 Opus 8.x<br/>Near-expert review]:::r
+    E --> F[2031-2033 Pre-AGI<br/>Autonomous SDLC]:::w
+    F --> G[2034-2037 AGI<br/>Transformative assurance]:::s
+    classDef g fill:#4caf50,stroke:#2e7d32,color:#000000;
+    classDef b fill:#42a5f5,stroke:#1565c0,color:#000000;
+    classDef p fill:#ab47bc,stroke:#6a1b9a,color:#000000;
+    classDef o fill:#ffa726,stroke:#e65100,color:#000000;
+    classDef r fill:#ef5350,stroke:#b71c1c,color:#000000;
+    classDef w fill:#eceff1,stroke:#546e7a,color:#000000;
+    classDef s fill:#ffd54f,stroke:#f57f17,color:#000000;
+```
+
+**Governance note.** Each annual model adoption is a [Change Management](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Change_Management.md) event: competitor benchmarking, neutrality/bias evaluation, and human-in-the-loop sign-off precede production use. Paradigm-shift contingencies (quantum/neuromorphic) are tracked as architecture-accommodation requirements, not committed deliverables.
+
+---
+
+## 🎯 Stakeholder Value by Horizon
+
+Capability only matters if it reaches stakeholders. This map shows what each audience gains as the platform crosses horizons — keeping the democratic-accountability mission central.
+
+```mermaid
+mindmap
+  root((🎯 Stakeholder Value<br/>by Horizon))
+    🏛️ Citizens and Voters
+      v1.x readable static intelligence 14 languages
+      v2.0 clearer party and coalition picture
+      v3.0 ask-anything conversational assistant
+    📰 Journalists
+      v1.x daily AI articles to cite
+      v2.0 source-graded evidence and scorecards
+      v3.0 real-time fact-checking and API queries
+    🎓 Researchers and Think Tanks
+      v1.x open historical dataset 1971 to 2024
+      v2.0 network and pattern analytics
+      v3.0 knowledge-graph and bulk API access
+    👨‍💻 Developers and Integrators
+      v1.x open-source repo and MCP servers
+      v2.0 richer static data artifacts
+      v3.0 API Gateway tiers and Cognito keys
+    🤝 Civil Society and Accountability
+      v1.x transparent neutral methodology
+      v2.0 deeper oversight of party behaviour
+      v3.0 cross-parliament comparative accountability
+```
+
+## ⚠️ Roadmap Risk & Uncertainty
+
+A future map must surface its own risks. These are the dominant uncertainties on the path to v3.0, each paired with a mitigating stance already embedded in the roadmap.
+
+```mermaid
+mindmap
+  root((⚠️ Roadmap Risk<br/>and Mitigation))
+    🧱 Migration Risk
+      Static-to-serverless cutover complexity
+      Mitigation read-paths first then writes
+      Mitigation Pages DR retained as floor
+    💸 Cost and Sustainability
+      Bedrock and serverless run-time cost
+      Mitigation usage tiers and caching
+      Mitigation v2.0 stays low-cost static
+    🤖 AI Reliability
+      Hallucination and bias risk
+      Mitigation RAG citation-grounding
+      Mitigation Guardrails and human-in-the-loop
+    📜 Regulatory
+      GDPR Article 9 and NIS2 and CRA
+      Mitigation public-data-only invariant
+      Mitigation DPIA and continuous compliance
+    ⚖️ Neutrality and Trust
+      Perceived partisanship risk
+      Mitigation symmetric metrics all parties
+      Mitigation transparent methodology and uncertainty
+    🌍 Expansion Complexity
+      Multi-country data heterogeneity
+      Mitigation reuse EU Parliament MCP assets
+      Mitigation provenance discipline preserved
+```
+
+### ISMS Control Mapping (roadmap → controls)
+
+| Roadmap element | ISO 27001:2022 | NIST CSF 2.0 | CIS v8.1 | Guardrail |
+|-----------------|----------------|--------------|----------|-----------|
+| Serverless migration (v3.0) | A.8.25 Secure development | PR.PS | CIS 16 | Read-path-first cutover, Pages DR floor |
+| Bedrock / RAG assistant | A.5.23 Cloud services | GV.SC / ID.RA | CIS 15 | Guardrails + human-in-the-loop (AI Policy) |
+| Cognito personalization | A.5.15 Access control | PR.AA | CIS 5, 6 | No political profiling, least privilege |
+| API Gateway economy | A.8.26 App security req. | PR.PS / DE.CM | CIS 16 | Usage plans, throttling, key scoping |
+| Streaming ingestion | A.8.16 Monitoring | DE.CM / DE.AE | CIS 8 | Provenance + vintage discipline |
+| Cross-parliament data | A.5.34 Privacy & PII | GV.OC | CIS 3 | Public-data-only, GDPR Art. 9 bases |
+
+**Risk posture.** The roadmap is deliberately *staged* so analytical value (v2.0) lands on the low-risk static substrate before the higher-risk serverless leap (v3.0). Every new capability inherits the same four invariants, and security/privacy controls are mapped continuously per the [Future Security Architecture](FUTURE_SECURITY_ARCHITECTURE.md) and [Threat Model](THREAT_MODEL.md).
+
+---
+
+## 📋 Capability Matrix (horizon-aligned)
+
+Future values are **targets**, not current achievements. Current-state values mirror [MINDMAP.md](MINDMAP.md) and [ARCHITECTURE.md](ARCHITECTURE.md).
+
+| Capability | 🟢 v1.x Current | 🔵 v2.0 Target 2026–2027 | 🟣 v3.0 Target 2028–2030 | 🌟 2031–2037 Vision |
+|------------|-----------------|--------------------------|--------------------------|---------------------|
+| **Architecture** | Static HTML/CSS + CDN | Static, deepened | AWS serverless migration | Fully serverless multi-region |
+| **Delivery** | Pre-rendered pages | Pre-rendered, richer | Conversational + API + pages | Real-time streaming intelligence |
+| **AI Role** | Build-time author | Deeper build-time author | Run-time Bedrock assistant | Autonomous, assurance-built-in |
+| **AI Models** | Opus 4.8 generation | Opus 5.x | Opus 6.x–8.x | Pre-AGI → AGI |
+| **Party Analytics** | Baseline dashboards | Party-focused expansion | Predictive coalition models | Cross-parliament predictive |
+| **Search** | Keyword/static | Faceted + graded | Semantic + knowledge graph | Conversational omnisearch |
+| **Languages** | 14 | 14, richer quality | 14 + EU expansion | EU + UN languages target |
+| **Parliaments** | 1 (Sweden) | 1 (deeper) | + Nordic + EU | Federated multi-country |
+| **Data Latency** | Daily batch | Daily, validated | Near-real-time | Sub-second streaming |
+| **API** | None | None (static) | API Gateway public API | API economy with tiers |
+| **Identity** | None | None | Cognito personalization | Identity-aware federation |
+| **Compliance** | ISO/NIST/CIS aligned | + WCAG 2.2 target | + NIS2 / CRA attestation | Continuous compliance |
+| **Ethics Rails** | Public-data, neutral | Unchanged invariant | Unchanged invariant | Unchanged invariant |
+
+---
+
+## 🌐 Evolving the Current IMF Mindmap toward the Future Data-Sources Surface
+
+*Baseline: the **already-implemented** IMF subtree is documented in [`MINDMAP.md`](MINDMAP.md) §IMF. The mindmap below extends that baseline with future capabilities (commercial-provider redundancy, websocket feeds, cross-validation worker) without removing today's pure-TS client foundation.*
+
+> **Authoritative hub:** [`analysis/imf/README.md`](analysis/imf/README.md) · [`analysis/imf/agentic-integration.md`](analysis/imf/agentic-integration.md) · [`analysis/imf/indicators-inventory.json`](analysis/imf/indicators-inventory.json) · [`analysis/imf/data-dictionary.md`](analysis/imf/data-dictionary.md) · [`.github/aw/ECONOMIC_DATA_CONTRACT.md`](.github/aw/ECONOMIC_DATA_CONTRACT.md)
+
+```mermaid
+mindmap
+  root((Riksdagsmonitor Data Sources))
+    IMF PRIMARY ECONOMIC
+      WEO
+        NGDP_RPCH real GDP growth T plus 5 projections
+        PCPIPCH CPI inflation
+        LUR unemployment rate
+        GGXWDG_NGDP general government debt percent GDP
+        BCA_NGDPD current account percent GDP
+      Fiscal Monitor FM
+        Cyclically-adjusted balance
+        Primary balance
+        EDP-consistent debt
+      IFS
+        Monthly CPI
+        Policy rates
+        Reserves
+      BOP
+        Balance of payments quarterly
+      DOTS
+        Bilateral trade flows monthly
+      GFS_COFOG
+        02 Defence FoU
+        07 Health SoU
+        09 Education UbU
+        10 Social protection SfU
+      PCPS
+        Commodity benchmarks
+      ER
+        SEK exchange rates daily
+      MFS_IR and MFS_PR
+        Monetary survey
+    World Bank NON-ECONOMIC RESIDUE
+      WGI Governance CC RL VA GE RQ PV
+      Environment CO2 renewables forest
+      Social residue education participation
+      Defence depth MS MIL historicals
+    SCB SWEDISH GROUND TRUTH
+      AKU monthly labour
+      KPI monthly inflation
+      Regional and municipal
+      Budget execution
+    Riksdag Open Data PARLIAMENTARY PRIMARY
+      Documents mot prop bet skr
+      Voteringar
+      Anforanden
+      Ledamoter
+    Future v3.0 Additions
+      Nordic and EU open data federation
+      Kinesis streaming ingestion
+      Knowledge-Base RAG index
+      Cross-validation worker IMF vs SCB
+```
+
+**Canonical rule.** Every economic claim in a Riksdagsmonitor article cites an IMF dataflow first; World Bank citations are reserved for governance, environment and social residue (the classes IMF does not publish). SCB is the Swedish-specific ground truth layer. See `ECONOMIC_DATA_CONTRACT.md` v2.1 for the banned-phrase list and vintage discipline (>6 mo → annotation). v3.0 federation and streaming extend, but never relax, this provenance discipline.
 
 ---
 
@@ -848,13 +835,21 @@ mindmap
 | [🧠 Mindmap](MINDMAP.md) | 🧠 Concepts | Current system conceptual relationships |
 | **[🧠 Future Mindmap](FUTURE_MINDMAP.md)** | **🔮 Concepts** | **Capability expansion plans (this document)** |
 | [💼 SWOT](SWOT.md) | 💼 Strategy | Strategic analysis and positioning |
+| [💼 Future SWOT](FUTURE_SWOT.md) | 🔮 Strategy | Future strategic opportunities |
 | [🛡️ Security Architecture](SECURITY_ARCHITECTURE.md) | 🔒 Security | Current security controls and design |
+| [🚀 Future Security](FUTURE_SECURITY_ARCHITECTURE.md) | 🔮 Security | Planned security improvements |
 | [🎯 Threat Model](THREAT_MODEL.md) | 🎯 Threats | STRIDE/MITRE ATT&CK analysis |
 | [🚀 Future Architecture](FUTURE_ARCHITECTURE.md) | 🔮 Evolution | Architectural evolution roadmap |
+| [📊 Future Data Model](FUTURE_DATA_MODEL.md) | 🔮 Data | Enhanced data architecture plans |
+| [🔄 Future Flowchart](FUTURE_FLOWCHART.md) | 🔮 Processes | Improved process workflows |
+| [📈 Future State Diagram](FUTURE_STATEDIAGRAM.md) | 🔮 States | Advanced state management |
 
 ### Hack23 ISMS Policies
 
-- [🛡️ Secure Development Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md) — Architecture documentation requirements
+- [🛡️ Information Security Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Information_Security_Policy.md) — Top-level governance
+- [🧪 Secure Development Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md) — Architecture documentation requirements
+- [🤖 AI Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/AI_Policy.md) — AI usage and human-in-the-loop governance
+- [🔄 Change Management](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Change_Management.md) — Model-adoption and migration change control
 - [🏷️ Classification Framework](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) — CIA triad classification
 
 ---
@@ -863,70 +858,9 @@ mindmap
 **✅ Approved by:** James Pether Sörling, CEO  
 **📤 Distribution:** Public  
 **🏷️ Classification:** [![Confidentiality: Public](https://img.shields.io/badge/C-Public-lightgrey?style=flat-square)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#confidentiality-levels)  
-**📅 Effective Date:** 2026-02-25  
-**⏰ Next Review:** 2026-05-25  
+**📅 Effective Date:** 2026-05-31  
+**⏰ Next Review:** 2026-08-31  
 **🎯 Framework Compliance:** [![ISO 27001](https://img.shields.io/badge/ISO_27001-2022_Aligned-blue?style=flat-square&logo=iso&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) [![NIST CSF 2.0](https://img.shields.io/badge/NIST_CSF-2.0_Aligned-green?style=flat-square&logo=nist&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) [![CIS Controls](https://img.shields.io/badge/CIS_Controls-v8.1_Aligned-orange?style=flat-square&logo=cisecurity&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md)
-
-
----
-
-## 🌐 Evolving the Current IMF Mindmap toward the Future Data-Sources Surface
-
-*Baseline: the **already-implemented** IMF subtree is documented in [`MINDMAP.md`](MINDMAP.md) §IMF. The mindmap below extends that baseline with future capabilities (commercial-provider redundancy, websocket feeds, cross-validation worker) without removing today's pure-TS client foundation.*
-
-> **Authoritative hub:** [`analysis/imf/README.md`](analysis/imf/README.md) · [`analysis/imf/agentic-integration.md`](analysis/imf/agentic-integration.md) · [`analysis/imf/indicators-inventory.json`](analysis/imf/indicators-inventory.json) · [`analysis/imf/data-dictionary.md`](analysis/imf/data-dictionary.md) · [`.github/aw/ECONOMIC_DATA_CONTRACT.md`](.github/aw/ECONOMIC_DATA_CONTRACT.md)
-
-```mermaid
-mindmap
-  root((Riksdagsmonitor Data Sources))
-    IMF [PRIMARY ECONOMIC]
-      WEO
-        NGDP_RPCH (real GDP growth, T+5 projections)
-        PCPIPCH (CPI inflation)
-        LUR (unemployment rate)
-        GGXWDG_NGDP (general government debt %GDP)
-        BCA_NGDPD (current account %GDP)
-      Fiscal Monitor (FM)
-        Cyclically-adjusted balance
-        Primary balance
-        EDP-consistent debt
-      IFS
-        Monthly CPI
-        Policy rates
-        Reserves
-      BOP
-        Balance of payments quarterly
-      DOTS
-        Bilateral trade flows monthly
-      GFS_COFOG
-        02 Defence (FöU)
-        07 Health (SoU)
-        09 Education (UbU)
-        10 Social protection (SfU)
-      PCPS
-        Commodity benchmarks
-      ER
-        SEK exchange rates daily
-      MFS_IR / MFS_PR
-        Monetary survey
-    World Bank [NON-ECONOMIC RESIDUE]
-      WGI Governance (CC.EST, RL.EST, VA.EST, GE.EST, RQ.EST, PV.EST)
-      Environment (CO2, renewables, forest)
-      Social residue (education participation)
-      Defence depth (MS.MIL.* historicals)
-    SCB [SWEDISH GROUND TRUTH]
-      AKU monthly labour
-      KPI monthly inflation
-      Regional / municipal
-      Budget execution
-    Riksdag Open Data [PARLIAMENTARY PRIMARY]
-      Documents (mot, prop, bet, skr)
-      Voteringar
-      Anföranden
-      Ledamöter
-```
-
-**Canonical rule.** Every economic claim in a Riksdagsmonitor article cites an IMF dataflow first; World Bank citations are reserved for governance, environment and social residue (the classes IMF does not publish). SCB is the Swedish-specific ground truth layer. See `ECONOMIC_DATA_CONTRACT.md` v2.1 for the banned-phrase list and vintage discipline (>6 mo → annotation).
 
 ---
 
