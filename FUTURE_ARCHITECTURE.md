@@ -5,14 +5,14 @@
 <h1 align="center">🚀 Riksdagsmonitor — Future Architecture</h1>
 
 <p align="center">
-  <strong>🏗️ AWS Serverless Evolution: Zero-Infrastructure AI-Enhanced Political Intelligence</strong><br>
-  <em>🎯 Amazon Bedrock · Serverless First · AWS Well-Architected</em>
+  <strong>🧭 Three Horizons: Static Baseline → Static-Enhanced → AWS Serverless AI</strong><br>
+  <em>🎯 v1.x Today · v2.0 Keep Static, Go Deeper · v3.0+ Amazon Bedrock Serverless</em>
 </p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/>
-  <img src="https://img.shields.io/badge/Version-2.0-555?style=for-the-badge" alt="Version"/>
-  <img src="https://img.shields.io/badge/Effective-2026--02--24-success?style=for-the-badge" alt="Effective Date"/>
+  <img src="https://img.shields.io/badge/Version-3.0-555?style=for-the-badge" alt="Version"/>
+  <img src="https://img.shields.io/badge/Effective-2026--05--31-success?style=for-the-badge" alt="Effective Date"/>
   <img src="https://img.shields.io/badge/Review-Quarterly-orange?style=for-the-badge" alt="Review Cycle"/>
 </p>
 
@@ -25,15 +25,23 @@
   <a href="https://app.fossa.com/projects/git%2Bgithub.com%2FHack23%2Friksdagsmonitor"><img src="https://app.fossa.com/api/projects/git%2Bgithub.com%2FHack23%2Friksdagsmonitor.svg?type=shield" alt="FOSSA"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 2.0 | **📅 Last Updated:** 2026-02-24 (UTC)  
-**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-05-20  
+**📋 Document Owner:** CEO | **📄 Version:** 3.0 | **📅 Last Updated:** 2026-05-31 (UTC)  
+**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-08-31  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
 ---
 
 ## 🎯 Purpose
 
-> *"At Hack23 AB, we have made a strategic decision to build our future on AWS serverless architecture. This means zero infrastructure management, no Kubernetes, no containers to maintain—just pure serverless compute, managed AI services, and AWS's deep expertise in security and compliance. By standardizing entirely on AWS, we eliminate operational complexity and leverage Amazon Bedrock for all AI capabilities. This document openly shares our AWS-first roadmap for transforming Riksdagsmonitor into an AI-enhanced political intelligence platform built on the most mature serverless ecosystem in the industry."*
+This document is the **strategic architecture roadmap** for Riksdagsmonitor, organised around **three architectural horizons**. It is deliberately honest about what exists today versus what is aspirational, and labels every future target as a *target* — never as an achieved metric.
+
+| Horizon | Version | Window | Thesis |
+|---------|---------|--------|--------|
+| **🟢 Horizon 1** | **v1.x** | Today (2026) | **Static baseline** — pre-rendered HTML/CSS, 14 languages, AWS CloudFront + S3, autonomous AI newsroom in the build pipeline. Proven, cheap, near-zero attack surface. |
+| **🔵 Horizon 2** | **v2.0** | 2026–2027 | **Keep static, go deeper** — same zero-backend delivery model, but richer party-focused dashboards and advanced OSINT/INTOP analytics. AI stays in the *build/newsroom* pipeline; every published artifact remains a static file. |
+| **🟣 Horizon 3** | **v3.0+** | 2028–2037 | **All-in AWS serverless** — Lambda, Amazon Bedrock (+ Agents & Knowledge Bases), API Gateway, Cognito, DynamoDB, Aurora Serverless v2, Neptune Serverless, OpenSearch Serverless, Timestream, Step Functions, EventBridge. Zero infrastructure, Well-Architected, multi-region. |
+
+> *"At Hack23 AB, we have made a strategic decision to build our future on AWS serverless architecture. This means zero infrastructure management, no Kubernetes, no containers to maintain—just pure serverless compute, managed AI services, and AWS's deep expertise in security and compliance. By standardizing entirely on AWS, we eliminate operational complexity and leverage Amazon Bedrock for all AI capabilities. But we get there deliberately: we will exhaust the value of the static model first, because the cheapest, safest political-intelligence platform is one with no servers to attack. This document openly shares our staged roadmap — static today, static-but-deeper tomorrow, serverless AI thereafter."*
 >
 > — **James Pether Sörling, CEO, Hack23 AB**
 
@@ -61,96 +69,119 @@
 
 ## 📊 Executive Summary
 
-This document outlines the comprehensive architectural evolution roadmap for Riksdagsmonitor over the next 3-11 years (2026-2037). The vision transforms the platform from a static HTML/CSS website into an **AI-enhanced political intelligence platform** built entirely on **AWS serverless architecture** with **zero infrastructure management**.
+This document outlines the architectural evolution of Riksdagsmonitor across **three horizons (2026–2037)**. We do **not** jump straight to the cloud: the roadmap deliberately extracts maximum value from the current static model before committing to a serverless backend.
 
-**AWS Serverless Strategy:**
+### 🧭 The Three Horizons at a Glance
+
+```mermaid
+graph LR
+    H1["🟢 Horizon 1 — v1.x<br/>Static Baseline (Today)<br/>HTML/CSS · 14 langs · CloudFront+S3<br/>AI newsroom in build pipeline"]
+    H2["🔵 Horizon 2 — v2.0<br/>Static-Enhanced (2026–2027)<br/>Party & OSINT dashboards<br/>Same zero-backend delivery"]
+    H3["🟣 Horizon 3 — v3.0+<br/>AWS Serverless AI (2028–2037)<br/>Bedrock · Lambda · API Gateway<br/>Public political-intelligence API"]
+
+    H1 --> H2 --> H3
+
+    style H1 fill:#4caf50,stroke:#2e7d32,color:#000000
+    style H2 fill:#2196f3,stroke:#1565c0,color:#000000
+    style H3 fill:#9c27b0,stroke:#6a1b9a,color:#ffffff
+```
+
+**Horizon 1 — v1.x Static Baseline (Today):** A pre-rendered HTML/CSS website in 14 languages, served from AWS CloudFront + multi-region S3 with GitHub Pages disaster recovery. An autonomous AI newsroom (gh-aw agentic workflows, Claude Opus 4.8 authoring / Sonnet 4.6 translation) produces evidence-graded analysis artifacts that are aggregated and rendered to static news pages. No backend, no login, near-zero attack surface.
+
+**Horizon 2 — v2.0 Keep Static, Go Deeper (2026–2027):** We retain the entire static delivery model and instead deepen the *analysis*: party-focused dashboards (cohesion, coalition dynamics, bloc alignment, party-vs-party, agenda tracking) and advanced OSINT/INTOP tradecraft (network, temporal and geospatial analysis, anomaly detection, source-graded evidence, scorecards). AI remains confined to the build/newsroom pipeline — every published artifact is still a static file behind the CDN.
+
+**Horizon 3 — v3.0+ AWS Serverless AI (2028–2037):** Once the static model is exhausted, we migrate to a **pure AWS serverless** backend with **zero infrastructure management** — no Kubernetes, no containers, no EC2. Amazon Bedrock provides all runtime AI (incl. Agents and Knowledge Bases for RAG); Lambda + API Gateway expose a public political-intelligence API; data lives in Aurora Serverless v2, DynamoDB, Neptune Serverless, OpenSearch Serverless and Timestream.
+
+**AWS Serverless Strategy (Horizon 3):**
 - ☁️ **Single Cloud Provider** - AWS only per [Hack23 ISMS SUPPLIER.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/SUPPLIER.md)
-- 🤖 **Amazon Bedrock First** - All AI via Bedrock (Claude Opus 4.8, Llama 4 405B, Nova Premier) - bleeding-edge models only
-- ⚡ **Pure Serverless** - AWS Lambda, AppSync, Step Functions, EventBridge for all compute
+- 🤖 **Amazon Bedrock First** - All runtime AI via Bedrock (frontier Claude Opus, Llama, Nova) — bleeding-edge models only
+- ⚡ **Pure Serverless** - AWS Lambda, API Gateway, Step Functions, EventBridge for all compute
 - 🔄 **Automatic Scaling** - Scale from zero to millions based on demand
 - 🏗️ **AWS Well-Architected** - Operational Excellence, Security, Reliability, Performance, Cost Optimization
 
-**Strategic Vision:**
-- 🤖 **AI-Enhanced Journalism** - Multi-modal content via Amazon Bedrock (text, audio, video)
-- 📊 **Predictive Analytics** - Election forecasting with SageMaker Serverless Inference
-- 🧠 **Semantic Intelligence** - Knowledge graphs (Neptune Serverless) + vector search (Bedrock Knowledge Bases)
-- 🌐 **Geographic Expansion** - Nordic countries (DK, NO, FI), EU Parliament
-- 📱 **Native Mobile Apps** - iOS/Android with AWS AppSync + Amplify
-- 🔌 **Public API** - GraphQL API via AWS AppSync for external integrations
-
-**AWS Serverless Foundation Stack:**
+**AWS Serverless Foundation Stack (Horizon 3):**
 
 | Layer | AWS Services | Purpose |
 |-------|-------------|----------|
-| **AI/ML** | Amazon Bedrock, SageMaker Serverless | Claude Opus 4.8, Llama 4 405B, Nova Premier |
+| **AI/ML** | Amazon Bedrock, Bedrock Agents, SageMaker Serverless | Frontier Claude Opus, Llama, Nova; election forecasting |
 | **Compute** | AWS Lambda (Python, Node.js) | Serverless functions |
-| **API** | AWS AppSync (GraphQL), API Gateway | API management |
+| **API** | Amazon API Gateway, AppSync (GraphQL) | Public political-intelligence API |
+| **Identity** | Amazon Cognito | API auth, tiered access |
 | **Data** | Aurora Serverless v2, DynamoDB | Relational + NoSQL |
-| **Search** | OpenSearch Serverless, Bedrock KB | Full-text + vector search |
-| **Graph** | Neptune Serverless | Entity relationships |
+| **Search** | OpenSearch Serverless, Bedrock Knowledge Bases | Full-text + vector/RAG search |
+| **Graph** | Neptune Serverless | Entity & coalition relationship networks |
 | **Time-Series** | Timestream | Historical trends, forecasting |
 | **Storage** | S3, CloudFront | Object storage + CDN |
-| **Orchestration** | Step Functions, EventBridge | Workflow automation |
+| **Orchestration** | Step Functions, EventBridge, Kinesis | Workflow + streaming automation |
 
 **Key Milestones:**
-- **2026 Q2-Q3:** Amazon Bedrock integration for AI journalism (Claude Opus 4.8 - current SOTA)
-- **2026 Q4-2027 Q1:** AWS Lambda + AppSync for serverless GraphQL API
-- **2027 Q2-Q4:** Neptune Serverless + Bedrock Knowledge Bases for semantic search
-- **2028+:** AWS Amplify mobile apps + public API via AppSync
-- **2029-2030:** Opus 7.x-8.x integration, near-expert political analysis, 50+ language support
-- **2031-2033:** Pre-AGI architecture adaptation, global parliament coverage (50+ parliaments)
-- **2034-2037:** AGI-era platform evolution, 195 parliament network, real-time democracy index
+- **2026 Q2–Q3:** Horizon 2 — party-focused dashboard suite + OSINT/INTOP analytics (still static)
+- **2026 Q4–2027 Q1:** Horizon 2 — network/temporal/geospatial analysis, anomaly detection, source-graded scorecards
+- **2028:** Horizon 3 begins — Amazon Bedrock runtime integration, Lambda + API Gateway serverless API
+- **2029–2030:** Frontier model integration, near-expert political analysis, expanded language support
+- **2031–2033:** Pre-AGI architecture adaptation, multi-parliament coverage
+- **2034–2037:** AGI-era platform evolution, real-time democracy index
 
-**Current State (2026 Q1):**
-- ✅ Static HTML/CSS website (14 languages)
-- ✅ 5 Chart.js/D3.js dashboards
-- ✅ 50+ years data (2,494 politicians, 3.5M+ votes)
-- ✅ AWS CloudFront + S3 (current hosting)
+**Current State (2026 Q2 — Horizon 1, achieved):**
+- ✅ Static HTML/CSS website (14 languages, WCAG 2.1 AA, cyberpunk theme, no JS frameworks)
+- ✅ 11 lazy-loaded TypeScript dashboards (Chart.js / D3.js, IntersectionObserver)
+- ✅ 50+ years of data (349 current MPs, 2,494 historical politicians 1971–2024, 3.5M+ votes, 109,000+ documents)
+- ✅ AWS CloudFront (600+ edge locations) + S3 (us-east-1 primary, eu-west-1 replica) + GitHub Pages DR
+- ✅ Autonomous AI newsroom (gh-aw, Claude Opus 4.8 / Sonnet 4.6 translation, 14 languages)
 - ✅ ISMS compliant (ISO 27001, NIST CSF 2.0, CIS Controls)
 
 ---
 
 ## 📋 Table of Contents
 
-1. [Current State Baseline](#1-current-state-baseline)
-2. [Future C4 Architecture Models (AWS Serverless)](#2-future-c4-architecture-models-aws-serverless)
-3. [AI Enhancement Roadmap (Amazon Bedrock)](#3-ai-enhancement-roadmap-amazon-bedrock)
-4. [Scalability Improvements](#4-scalability-improvements)
-5. [AWS Serverless Architecture Evolution](#5-aws-serverless-architecture-evolution)
-6. [Advanced Features Roadmap](#6-advanced-features-roadmap)
-7. [Migration Strategy (AWS-Only)](#7-migration-strategy-aws-only)
-8. [Risk Assessment (AWS-Specific)](#8-risk-assessment-aws-specific)
-9. [Success Metrics](#9-success-metrics)
-10. [Timeline & Milestones](#10-timeline--milestones)
-11. [Related Documentation](#11-related-documentation)
+**🟢 Horizon 1 — v1.x Static Baseline**
+1. [Horizon 1 — v1.x Static Baseline (Today)](#1--horizon-1--v1x-static-baseline-today)
+
+**🔵 Horizon 2 — v2.0 Static-Enhanced (2026–2027)**
+2. [Horizon 2 — v2.0 Keep Static, Go Deeper](#2--horizon-2--v20-keep-static-go-deeper-20262027)
+
+**🟣 Horizon 3 — v3.0+ AWS Serverless AI (2028–2037)**
+3. [Future C4 Architecture Models (AWS Serverless)](#3-️-future-c4-architecture-models-aws-serverless)
+4. [AI Enhancement Roadmap (Amazon Bedrock)](#4--ai-enhancement-roadmap-amazon-bedrock)
+5. [Scalability Improvements](#5--scalability-improvements)
+6. [AWS Serverless Architecture Evolution](#6-️-aws-serverless-architecture-evolution)
+7. [Advanced Features Roadmap](#7--advanced-features-roadmap)
+8. [Migration Strategy (AWS-Only)](#8--migration-strategy-aws-only)
+9. [Risk Assessment (AWS-Specific)](#9-️-risk-assessment-aws-specific)
+10. [Success Metrics](#10--success-metrics)
+11. [Timeline & Milestones](#11--timeline--milestones)
+12. [Related Documentation](#12--related-documentation)
+
+**📐 Cross-Cutting (Horizon 3 detail)** — Well-Architected · Security Services · Multi-Region · Resilience Hub · Enterprise Integration · IMF Integration
 
 ---
 
-## 1. 🔍 Current State Baseline
+## 1. 🟢 Horizon 1 — v1.x Static Baseline (Today)
 
-### 1.1 Current Architecture (2026 Q1)
+### 1.1 Current Architecture (2026 Q2)
 
 **Technology Stack:**
-- **Frontend:** Static HTML5/CSS3, JavaScript (Chart.js 4.4.1, D3.js 7, Papa Parse 5.5.3)
-- **Build System:** Vite 7 (ES modules, code splitting)
-- **Testing:** Vitest (2890 unit tests), Cypress (E2E)
-- **Hosting:** AWS CloudFront (primary CDN) + S3 (origin)
-- **Data Sources:** CIA platform, riksdag-regering-mcp (32 tools), Swedish open data APIs
-- **Languages:** 14 languages (EN, SV, DA, NO, FI, DE, FR, ES, NL, AR, HE, JA, KO, ZH)
+- **Frontend:** Static HTML5/CSS3, TypeScript-compiled dashboards (Chart.js 4.4.1, D3.js 7, Papa Parse 5.5.3) — **no JS framework**
+- **Build System:** Vite 7 (ES modules, code splitting), 11 dashboards lazy-loaded via `IntersectionObserver`
+- **Testing:** Vitest (2,890 unit tests), Cypress (E2E)
+- **Hosting:** AWS CloudFront (600+ edge locations) + S3 (us-east-1 primary, eu-west-1 replica) + GitHub Pages disaster recovery
+- **Data Sources:** Riksdagen API (data.riksdagen.se), Regeringen (via g0v.se), SCB (PxWeb v2), **IMF (primary economic — `scripts/imf-client.ts`)**, World Bank (non-economic only), CIA platform exports
+- **Newsroom:** gh-aw agentic workflows (Node 26) — Claude Opus 4.8 authoring, Sonnet 4.6 translation
+- **Languages:** 14 languages (EN, SV, DA, NO, FI, DE, FR, ES, NL, AR, HE, JA, KO, ZH), WCAG 2.1 AA
 
 **Current Capabilities:**
 - ✅ 349 current MPs with performance metrics
-- ✅ 2,494 historical politicians (1971-2024)
+- ✅ 2,494 historical politicians (1971–2024)
 - ✅ 3.5+ million votes analyzed
 - ✅ 109,000+ documents processed
-- ✅ 5 interactive dashboards (seasonal patterns, politician rankings, pre-election monitoring, party performance, anomaly detection)
-- ✅ Real-time statistics from CIA production database (daily updates)
+- ✅ 11 interactive lazy-loaded dashboards (party performance, politician rankings, seasonal/temporal patterns, pre-election monitoring, anomaly detection, voting cohesion, committee activity, and more)
+- ✅ Daily statistics refresh from CIA platform exports
 
 **Architecture Strengths:**
-- 🟢 **Simple infrastructure** - Static hosting on CloudFront + S3
-- 🟢 **High availability** - 99.9% CloudFront SLA + S3 11 9's durability
-- 🟢 **Simple security model** - Client-side rendering, minimal attack surface
-- 🟢 **AWS foundation** - CloudFront + S3 deployment
+- 🟢 **Simple infrastructure** - Static hosting on CloudFront + multi-region S3
+- 🟢 **High availability** - 99.9% CloudFront SLA + S3 11 9's durability + GitHub Pages DR
+- 🟢 **Minimal attack surface** - No backend, no login, client-side rendering only
+- 🟢 **AWS foundation** - CloudFront + S3, ready to extend to serverless in Horizon 3
 - 🟢 **ISMS compliant** - ISO 27001, NIST CSF 2.0, CIS Controls
 
 **Current Characteristics:**
@@ -180,13 +211,183 @@ news/$DATE-$SUB-{en,sv}.html            (2 languages per CI run)
 news/$DATE-$SUB-{da,nb,fi,de,fr,es,nl,ar,he,ja,ko,zh}.html   (12 more)
 ```
 
-This replaces the previous scaffold-and-fill approach: there are no `<!-- AI_MUST_REPLACE: … -->` markers, no per-type generator classes, and no template placeholders. The pipeline is the **baseline** that the AWS Serverless future state in §2–§7 migrates away from.
+This is the **baseline** that Horizon 2 deepens *without changing the delivery model*, and that the Horizon 3 AWS Serverless future state in §3–§11 eventually migrates to a backend.
 
 ---
 
-## 2. 🏗️ Future C4 Architecture Models (AWS Serverless)
+## 2. 🔵 Horizon 2 — v2.0 Keep Static, Go Deeper (2026–2027)
 
-### 2.1 Context Diagram - Future State (2026-2028)
+> **Thesis:** The single biggest near-term win is **not** a backend — it is *better analysis*. Horizon 2 keeps the entire static delivery model of Horizon 1 (pre-rendered HTML/CSS, CloudFront + S3, no login, no servers) and invests instead in **party-focused dashboards** and **advanced OSINT/INTOP tradecraft**. AI remains confined to the build/newsroom pipeline; every published artifact is still a static file behind the CDN. This is the cheapest, safest way to deepen Riksdagsmonitor's intelligence value before taking on serverless operational complexity.
+
+### 2.1 What Changes — and What Deliberately Does Not
+
+| Dimension | Horizon 1 (v1.x today) | Horizon 2 (v2.0) | Horizon 3 (v3.0+) |
+|-----------|------------------------|------------------|-------------------|
+| **Delivery** | Static HTML/CSS on CDN | **Unchanged** — static HTML/CSS on CDN | AWS serverless backend |
+| **Backend** | None | **None** (deliberate) | Lambda + API Gateway |
+| **AI placement** | Build/newsroom pipeline | Build/newsroom pipeline (deeper analytics) | Runtime via Amazon Bedrock |
+| **Dashboards** | 11 general dashboards | + Party cohesion, coalition, bloc, party-vs-party, agenda | Interactive API-backed views |
+| **OSINT depth** | Source-graded articles | + Network / temporal / geospatial / anomaly detection | + RAG, conversational queries |
+| **Attack surface** | Near-zero | **Near-zero (unchanged)** | Managed AWS controls |
+| **Cost model** | CDN + CI only | CDN + CI only | Pay-per-request serverless |
+
+### 2.2 Context Diagram — Static-Enhanced (v2.0)
+
+```mermaid
+C4Context
+    title Horizon 2 — Riksdagsmonitor Static-Enhanced Context (v2.0, 2026-2027)
+
+    Person(citizen, "Citizens & Voters", "14 languages, WCAG 2.1 AA, no login")
+    Person(journalist, "Journalists & Researchers", "Party dashboards, OSINT scorecards, CSV export")
+    Person(analyst, "Political Analysts", "Network / temporal / geospatial intelligence views")
+
+    System(riksdag, "Riksdagsmonitor (Static)", "Pre-rendered HTML/CSS + lazy-loaded TS dashboards on CloudFront + S3")
+
+    System_Ext(newsroom, "AI Newsroom (build-time)", "gh-aw agentic workflows · Claude Opus 4.8 / Sonnet 4.6")
+    System_Ext(riksdag_api, "Riksdagen API", "data.riksdagen.se open data")
+    System_Ext(regeringen, "Regeringen (g0v.se)", "Government documents")
+    System_Ext(scb, "SCB PxWeb v2", "Swedish official statistics")
+    System_Ext(imf, "IMF (primary economic)", "Datamapper + SDMX 3.0 · scripts/imf-client.ts")
+    System_Ext(worldbank, "World Bank (non-economic)", "Governance, social, environment")
+
+    Rel(citizen, riksdag, "HTTPS via CloudFront")
+    Rel(journalist, riksdag, "Dashboards + CSV download")
+    Rel(analyst, riksdag, "OSINT/INTOP analytic pages")
+
+    Rel(newsroom, riksdag, "Commits static artifacts (article.md → HTML)")
+    Rel(newsroom, riksdag_api, "Fetch votes, MPs, documents")
+    Rel(newsroom, regeringen, "Fetch government docs")
+    Rel(newsroom, scb, "Fetch statistics")
+    Rel(newsroom, imf, "Fetch economic indicators (primary)")
+    Rel(newsroom, worldbank, "Fetch non-economic indicators")
+
+    UpdateLayoutConfig($c4ShapeInRow="3", $c4BoundaryInRow="1")
+```
+
+### 2.3 Container Diagram — Static-Enhanced (v2.0)
+
+**Architecture:** Identical zero-backend delivery to Horizon 1. The *only* growth is in the build pipeline (more analysis artifacts, more dashboard bundles) and in the static assets served. There is still **no runtime compute** — every box below is either a build-time job or a static file on the CDN.
+
+```mermaid
+C4Container
+    title Horizon 2 — Riksdagsmonitor Static-Enhanced Containers (v2.0)
+
+    Person(user, "Users", "Browser only — no login")
+
+    System_Boundary(edge, "Delivery Edge (unchanged from v1.x)") {
+        Container(cloudfront, "CloudFront", "Global CDN (600+ edge)", "TLS, caching, OAC to S3")
+        Container(s3, "S3 Static Origin", "us-east-1 primary + eu-west-1 replica", "HTML, CSS, JS bundles, CSV, JSON")
+        Container(pages, "GitHub Pages", "Disaster Recovery origin", "Failover static mirror")
+    }
+
+    System_Boundary(site, "Static Site (pre-rendered)") {
+        Container(html, "HTML/CSS Pages", "14 languages, cyberpunk theme", "index, dashboards, news, intelligence")
+        Container(dash, "Dashboard Bundles", "TypeScript + Chart.js/D3.js", "Lazy-loaded via IntersectionObserver")
+        Container(party, "Party Dashboards (NEW)", "TS modules", "Cohesion, coalition, bloc, party-vs-party, agenda")
+        Container(osint, "OSINT/INTOP Views (NEW)", "TS + D3.js", "Network, temporal, geospatial, anomaly, scorecards")
+        Container(data, "Data Files", "CSV / JSON", "MPs, votes, documents, indicators")
+    }
+
+    System_Boundary(build, "Build Pipeline (CI — no runtime compute)") {
+        Container(newsroom, "AI Newsroom", "gh-aw + Node 26", "Authors evidence-graded analysis artifacts")
+        Container(aggregate, "aggregate-analysis.ts", "Node script", "Concat artifacts → article.md + SHA-256 manifest")
+        Container(render, "render-articles.ts", "Node + rehype", "Markdown → sanitised HTML")
+        Container(etl, "Data ETL", "Node scripts", "imf-client.ts, SCB, Riksdagen → CSV/JSON")
+    }
+
+    System_Ext(sources, "Open Data Sources", "Riksdagen, Regeringen, SCB, IMF, World Bank")
+
+    Rel(user, cloudfront, "HTTPS")
+    Rel(cloudfront, s3, "Origin fetch (OAC)")
+    Rel(cloudfront, pages, "DR failover")
+    Rel(s3, html, "Serves")
+    Rel(s3, dash, "Serves")
+    Rel(s3, party, "Serves")
+    Rel(s3, osint, "Serves")
+    Rel(s3, data, "Serves")
+
+    Rel(newsroom, sources, "Fetch (build-time)")
+    Rel(etl, sources, "Fetch (build-time)")
+    Rel(newsroom, aggregate, "Artifacts")
+    Rel(aggregate, render, "article.md")
+    Rel(render, html, "Static HTML")
+    Rel(etl, data, "CSV/JSON")
+    Rel(render, s3, "Deploy")
+    Rel(etl, s3, "Deploy")
+
+    UpdateLayoutConfig($c4ShapeInRow="3", $c4BoundaryInRow="1")
+```
+
+### 2.4 Party-Focused Dashboard Suite (v2.0)
+
+All of these are **client-side TypeScript dashboards** rendered from pre-computed CSV/JSON — no backend queries.
+
+| Dashboard | Intelligence Question | Primary Evidence |
+|-----------|----------------------|------------------|
+| **Party Cohesion** | How often do a party's MPs vote together? | Vote records per `dok_id`, party whip deviations |
+| **Coalition Dynamics** | Which parties co-vote, and is it strengthening? | Pairwise co-vote matrices over time |
+| **Bloc Alignment** | Is the left/right bloc structure holding? | Bloc-level agreement indices |
+| **Party-vs-Party** | Head-to-head agreement/conflict on issues | Issue-tagged vote divergence |
+| **Agenda Tracking** | What is each party pushing this session? | Motion/interpellation volume by policy area |
+
+### 2.5 Advanced OSINT / INTOP Analytics (v2.0)
+
+Structured intelligence tradecraft applied to **public** data only, fully within Hack23 ISMS and GDPR Art. 9 lawful bases 9(2)(e)/9(2)(g):
+
+- **Network analysis** — co-sponsorship, co-voting and committee-membership graphs (centrality, clustering, bridging actors)
+- **Temporal analysis** — agenda shifts, attendance/discipline trends, pre-election behavioural drift
+- **Geospatial analysis** — valkrets-level (constituency) patterns and regional alignment
+- **Anomaly detection** — statistical outliers in voting, attendance and document activity, with explainable flags
+- **Source-graded evidence** — every claim tied to a `dok_id`, named actor, vote count, or primary-source URL; reliability grading per editorial standards
+- **Scorecards** — attendance, voting discipline, productivity and committee contribution, neutral across all parties
+
+```mermaid
+graph TB
+    subgraph SRC["📥 Build-Time Inputs (public data)"]
+        V["Vote records<br/>3.5M+ votes"]
+        D["Documents<br/>109,000+"]
+        M["MP registry<br/>349 current / 2,494 historical"]
+    end
+    subgraph PROC["⚙️ CI Analytics (Node scripts, no runtime)"]
+        NET["Network graphs<br/>centrality / clustering"]
+        TMP["Temporal trends<br/>agenda / discipline"]
+        ANO["Anomaly detection<br/>explainable flags"]
+    end
+    subgraph OUT["🖥️ Static OSINT Views (TS + D3.js)"]
+        SC["Neutral scorecards"]
+        GV["Graph visualisations"]
+        TL["Temporal timelines"]
+    end
+
+    V --> NET
+    V --> ANO
+    D --> TMP
+    M --> NET
+    NET --> GV
+    TMP --> TL
+    ANO --> SC
+
+    style SRC fill:#e3f2fd,stroke:#1565c0,color:#000000
+    style PROC fill:#fff3e0,stroke:#e65100,color:#000000
+    style OUT fill:#e8f5e9,stroke:#2e7d32,color:#000000
+```
+
+### 2.6 Why Stay Static Through 2027
+
+- 🛡️ **Security** — no backend means no API to exploit, no auth to breach, no injection surface; ISMS attack surface stays near-zero
+- 💰 **Cost** — CDN + CI only; no per-request compute or database spend
+- ⚡ **Performance** — pre-rendered pages, global edge caching, instant first paint
+- 🔁 **Reversibility** — every analytic improvement is a committed static asset; trivially auditable and rollback-safe
+- 🤖 **AI value captured early** — frontier models already power the *build-time* newsroom and analytics; we do not need runtime AI to deepen intelligence
+
+---
+
+## 3. 🏗️ Future C4 Architecture Models (AWS Serverless)
+
+> **🟣 Horizon 3 (v3.0+, 2028–2037).** Everything from §3 onward describes the **post-static** serverless backend. It is activated only after Horizon 2 has exhausted the value of the static model. Until then, these are *targets*, not deployed systems.
+
+
+### 3.1 Context Diagram - Future State (2026-2028)
 
 **Vision:** Transform Riksdagsmonitor into a multi-country political intelligence platform with AI-enhanced analysis and real-time monitoring, built entirely on AWS serverless services.
 
@@ -219,7 +420,7 @@ C4Context
     UpdateLayoutConfig($c4ShapeInRow="3", $c4BoundaryInRow="1")
 ```
 
-### 2.2 Container Diagram - AWS Serverless Future State (2027-2028)
+### 3.2 Container Diagram - AWS Serverless Future State (2027-2028)
 
 **Architecture:** Pure AWS serverless with zero infrastructure management—no Kubernetes, no containers, no EC2 instances. Enhanced with AWS WAF, KMS encryption, and multi-region deployment.
 
@@ -298,7 +499,7 @@ C4Container
     UpdateLayoutConfig($c4ShapeInRow="3", $c4BoundaryInRow="1")
 ```
 
-### 2.3 Component Diagram - AI Content Engine (Amazon Bedrock)
+### 3.3 Component Diagram - AI Content Engine (Amazon Bedrock)
 
 **Focus:** AI-powered content generation using Amazon Bedrock for all AI operations—no direct OpenAI/Anthropic API calls.
 
@@ -355,9 +556,9 @@ C4Component
 
 ---
 
-## 3. 🤖 AI Enhancement Roadmap (Amazon Bedrock)
+## 4. 🤖 AI Enhancement Roadmap (Amazon Bedrock)
 
-### 3.1 Phase 1: Enhanced Journalism (2026 Q2-Q3)
+### 4.1 Phase 1: Enhanced Journalism (H3 — 2028+)
 
 **Objective:** Automate daily news generation from Swedish Parliament activity using **Amazon Bedrock** exclusively for all AI operations.
 
@@ -396,7 +597,7 @@ C4Component
 - ✅ **Model flexibility** - Claude Opus 4.8, Llama 4 405B, Nova Premier via unified API
 - ✅ **Automatic scaling** - Serverless capacity management, no provisioning
 
-### 3.2 Phase 2: Predictive Analytics (2026 Q4-2027 Q1)
+### 4.2 Phase 2: Predictive Analytics (H3 — 2028 Q4–2029 Q1)
 
 **Objective:** Implement election forecasting and coalition modeling using **AWS SageMaker Serverless Inference** and **Amazon Bedrock**.
 
@@ -442,7 +643,7 @@ C4Component
 - ✅ **Serverless Endpoints** - SageMaker Serverless Inference endpoints
 - ✅ **Auto-Scaling** - Automatic capacity management, zero idle costs
 
-### 3.3 Phase 3: Semantic Intelligence (2027 Q2-Q4)
+### 4.3 Phase 3: Semantic Intelligence (H3 — 2029 Q2–Q4)
 
 **Objective:** Implement knowledge graphs and semantic search using **Amazon Neptune Serverless** and **Amazon Bedrock Knowledge Bases**.
 
@@ -481,7 +682,7 @@ C4Component
 - ✅ **Fully Managed** - Zero database administration, automatic backups
 - ✅ **AWS-Native** - IAM integration, VPC isolation, CloudWatch monitoring
 
-### 3.4 Phase 4: Conversational AI (2028+)
+### 4.4 Phase 4: Conversational AI (2028+)
 
 **Objective:** Deploy conversational interfaces using **Amazon Bedrock** and **AWS AppSync real-time subscriptions**.
 
@@ -514,9 +715,9 @@ C4Component
 
 ---
 
-## 4. 🌐 Scalability Improvements
+## 5. 🌐 Scalability Improvements
 
-### 4.1 Geographic Expansion
+### 5.1 Geographic Expansion
 
 **Phase 1: Nordic Expansion (2027-2028)**
 
@@ -538,7 +739,7 @@ C4Component
 - **Data Source:** [EU Parliament Open Data Portal](https://data.europarl.europa.eu/)
 - **AWS Integration:** Lambda + EventBridge (hourly polling)
 
-### 4.2 Language Scaling
+### 5.2 Language Scaling
 
 **Current:** 14 languages  
 **Future (2027-2028):** 30+ languages via **Amazon Bedrock Claude Opus 5.x**
@@ -553,7 +754,7 @@ C4Component
 - ✅ **Fallback:** Amazon Translate Neural (99 languages, fast batch translation)
 - ✅ **Quality Control:** Bedrock Claude Opus 5.x (translation validation)
 
-### 4.3 Data Scaling
+### 5.3 Data Scaling
 
 **Historical Depth:**
 - **Current:** 1971-2024 (50+ years)
@@ -579,9 +780,9 @@ C4Component
 
 ---
 
-## 5. 🏗️ AWS Serverless Architecture Evolution
+## 6. 🏗️ AWS Serverless Architecture Evolution
 
-### 5.1 Migration Phases (Current Static → AWS Serverless)
+### 6.1 Migration Phases (Current Static → AWS Serverless)
 
 **Current Architecture (2026 Q1):**
 ```
@@ -635,7 +836,7 @@ Amplify Hosting (SSR) → CloudFront
                         EventBridge → Scheduled workflows
 ```
 
-### 5.2 AWS Serverless Technology Stack
+### 6.2 AWS Serverless Technology Stack
 
 **Compute:**
 | Current | Future | Rationale |
@@ -685,9 +886,9 @@ Amplify Hosting (SSR) → CloudFront
 
 ---
 
-## 6. 📱 Advanced Features Roadmap
+## 7. 📱 Advanced Features Roadmap
 
-### 6.1 Native Mobile Apps (AWS Amplify)
+### 7.1 Native Mobile Apps (AWS Amplify)
 
 **Technology Stack:**
 - **iOS:** Swift + SwiftUI + Amplify iOS SDK
@@ -701,7 +902,7 @@ Amplify Hosting (SSR) → CloudFront
 - 🔐 **Authentication** - Amazon Cognito (social login, MFA)
 - 📊 **Custom Dashboards** - User-configurable views (stored in DynamoDB)
 
-### 6.2 Public API (AWS AppSync GraphQL)
+### 7.2 Public API (AWS AppSync GraphQL)
 
 **API Features:**
 - 🔌 **GraphQL API** - AWS AppSync with real-time subscriptions
@@ -715,7 +916,7 @@ Amplify Hosting (SSR) → CloudFront
 - Batch operations for researchers
 - GraphQL introspection for discoverability
 
-### 6.3 Data Export & Integrations
+### 7.3 Data Export & Integrations
 
 **Features:**
 - 📥 **Bulk Export** - Athena queries on S3 data lake (CSV, JSON, Parquet)
@@ -725,9 +926,9 @@ Amplify Hosting (SSR) → CloudFront
 
 ---
 
-## 7. 🔄 Migration Strategy (AWS-Only)
+## 8. 🔄 Migration Strategy (AWS-Only)
 
-### 7.1 Migration Phases
+### 8.1 Migration Phases
 
 **Phase 1: Foundation (2026 Q2-Q3)**
 - Deploy Lambda functions (Python) for basic API operations
@@ -759,7 +960,7 @@ Amplify Hosting (SSR) → CloudFront
 - Test push notifications via Amazon SNS
 - Launch mobile apps on App Store + Google Play
 
-### 7.2 Rollback Strategy
+### 8.2 Rollback Strategy
 
 **Always maintain static site as fallback:**
 - ✅ **Dual Deployment** - Continue CloudFront + S3 static hosting
@@ -769,9 +970,9 @@ Amplify Hosting (SSR) → CloudFront
 
 ---
 
-## 8. ⚠️ Risk Assessment (AWS-Specific)
+## 9. ⚠️ Risk Assessment (AWS-Specific)
 
-### 8.1 Technical Risks
+### 9.1 Technical Risks
 
 | Risk | Likelihood | Impact | Mitigation |
 |------|------------|--------|------------|
@@ -781,7 +982,7 @@ Amplify Hosting (SSR) → CloudFront
 | **Aurora Serverless Pauses** | MEDIUM | LOW | Min capacity 0.5 ACU (faster wake-up), read replicas for queries |
 | **AWS Service Limits** | LOW | HIGH | Request limit increases proactively, monitor Service Quotas |
 
-### 8.2 AWS-Specific Risks
+### 9.2 AWS-Specific Risks
 
 | Risk | Likelihood | Impact | Mitigation |
 |------|------------|--------|------------|
@@ -792,9 +993,9 @@ Amplify Hosting (SSR) → CloudFront
 
 ---
 
-## 9. 📊 Success Metrics
+## 10. 📊 Success Metrics
 
-### 9.1 Technical Metrics
+### 10.1 Technical Metrics
 
 | Metric | Current (2026 Q1) | Target (2028) | Measurement |
 |--------|-------------------|---------------|-------------|
@@ -806,9 +1007,9 @@ Amplify Hosting (SSR) → CloudFront
 
 ---
 
-## 10. 📅 Timeline & Milestones
+## 11. 📅 Timeline & Milestones
 
-### 10.1 Detailed Implementation Timeline
+### 11.1 Detailed Implementation Timeline
 
 ```mermaid
 gantt
@@ -847,7 +1048,7 @@ gantt
     Bedrock Agents (Multi-Agent Systems)       :2029-04-01, 90d
 ```
 
-### 10.2 Key Milestones
+### 11.2 Key Milestones
 
 **2026:**
 - ✅ **Q2:** Lambda + Aurora Serverless deployed, API foundation ready
@@ -874,7 +1075,7 @@ gantt
 
 ---
 
-## 10.3 AWS Well-Architected Framework Alignment
+## 11.3 AWS Well-Architected Framework Alignment
 
 ### 🏗️ Well-Architected Pillars Integration
 
@@ -1221,7 +1422,7 @@ graph TB
 
 ---
 
-## 10.4 AWS Security Services Integration
+## 11.4 AWS Security Services Integration
 
 ### 🛡️ Comprehensive Security Architecture
 
@@ -1431,7 +1632,7 @@ flowchart LR
 
 ---
 
-## 10.5 Multi-Region Strategy
+## 11.5 Multi-Region Strategy
 
 ### 🌍 Global Resilience Architecture
 
@@ -1600,7 +1801,7 @@ graph TB
 
 ---
 
-## 10.6 AWS Resilience Hub Integration
+## 11.6 AWS Resilience Hub Integration
 
 ### 🔧 Operational Readiness Automation
 
@@ -1722,7 +1923,7 @@ graph TB
 
 ---
 
-## 10.7 Enterprise Integration
+## 11.7 Enterprise Integration
 
 ### 🔌 SIEM & Security Tool Integration
 
@@ -1879,7 +2080,7 @@ graph TB
 
 ---
 
-## 11. 📚 Related Documentation
+## 12. 📚 Related Documentation
 
 <div class="documentation-map">
 
@@ -1932,9 +2133,9 @@ graph TB
 </div>
 
 **📌 Documentation Navigation Tips:**
-- Start with **[Current Architecture](ARCHITECTURE.md)** to understand v1.0 baseline
+- Start with **[Current Architecture](ARCHITECTURE.md)** to understand the v1.x static baseline (Horizon 1)
 - Review **[Security Architecture](SECURITY_ARCHITECTURE.md)** for current security posture
-- Read **this document (Future Architecture)** for AWS serverless roadmap
+- Read **this document (Future Architecture)** for the three-horizon roadmap (static → static-enhanced → AWS serverless)
 - Check **[Future Security Architecture](FUTURE_SECURITY_ARCHITECTURE.md)** for security evolution
 - Explore **[Agents](AGENTS.md)** and **[Skills](SKILLS.md)** for GitHub Copilot capabilities
 
@@ -1942,7 +2143,7 @@ graph TB
 
 ## 🎯 Conclusion
 
-Riksdagsmonitor's future architecture represents a strategic evolution from a static HTML/CSS transparency platform to a hybrid intelligent system combining GitHub Copilot agentic orchestration with AWS serverless data infrastructure. This transformation advances the platform's mission of democratic accountability through enhanced automation, scalability, and intelligence while maintaining the security-first principles established in our ISMS framework.
+Riksdagsmonitor's future architecture is a **deliberately staged, three-horizon evolution** — not a single leap to the cloud. **Horizon 1 (v1.x)** is the proven static baseline shipping today: pre-rendered HTML/CSS in 14 languages on CloudFront + multi-region S3, with an autonomous AI newsroom in the build pipeline. **Horizon 2 (v2.0, 2026–2027)** keeps that zero-backend delivery model unchanged and instead *deepens the intelligence* — party-focused dashboards and advanced OSINT/INTOP analytics — capturing the bulk of near-term value at near-zero attack surface and cost. **Horizon 3 (v3.0+, 2028–2037)** migrates to a pure AWS serverless backend (Amazon Bedrock, Lambda, API Gateway, Aurora Serverless v2, Neptune, OpenSearch, Timestream) only once the static model is exhausted, exposing a public political-intelligence API. Every horizon preserves the security-first principles of our ISMS, neutrality across all parties, and GDPR Article 9 discipline for political data.
 
 **Key Architectural Achievements**: The hybrid architecture preserves riksdagsmonitor's sophisticated 14-agent GitHub Copilot ecosystem (content-generator, news-journalist, intelligence-operative) as the primary orchestration layer, while introducing AWS serverless services (Aurora Serverless v2, DynamoDB, Neptune Serverless, OpenSearch Serverless) as the scalable data backend. This design leverages the strengths of both platforms: agents provide specialized domain expertise and safe-outputs workflows, while AWS delivers multi-region reliability, enterprise-grade security services (GuardDuty, Security Hub, WAF), and unlimited data processing capacity. The 4-phase enhancement roadmap (Enhanced Journalism 2026, Predictive Analytics 2027, Semantic Intelligence 2028, Conversational AI 2029+) introduces progressively advanced capabilities using bleeding-edge AI models (Claude Opus 4.8 for 2026, Opus 5.x for 2027-2028, Opus 6.0 for 2028+) delivered through Amazon Bedrock's unified interface.
 
@@ -1953,6 +2154,32 @@ Riksdagsmonitor's future architecture represents a strategic evolution from a st
 **Path Forward**: Success depends on disciplined execution of the technical roadmap, continuous security validation per ISO 27001/NIST CSF 2.0/CIS Controls frameworks, and preservation of the agentic orchestration architecture that distinguishes riksdagsmonitor from conventional platforms. The hybrid model positions riksdagsmonitor as a reference implementation for intelligent civic technology, demonstrating how advanced AI agents and cloud infrastructure combine to serve democratic transparency at scale. Future enhancements will extend geographic coverage to Nordic parliaments (Denmark, Norway, Finland), expand language support to 30+ languages via Bedrock's multilingual capabilities, and deepen intelligence analysis through SageMaker election forecasting models. The architecture provides a sustainable foundation for riksdagsmonitor's evolution as Sweden's premier political accountability platform for the next decade.
 
 ### 🤖 AI/LLM Evolution Architecture Strategy (2026-2037)
+
+**AI Model Evolution — DevSecOps & Development Perspective (verbatim, 2026–2037):**
+
+| Year | AI Model | DevSecOps Capability Evolution |
+|------|----------|--------------------------------|
+| 2026 | Opus 4.6–4.9 | 🟢 AI-assisted code review, automated test generation, agentic CI/CD workflows |
+| 2027 | Opus 5.x | 🔵 Predictive vulnerability detection, intelligent dependency management |
+| 2028 | Opus 6.x | 🟣 Multi-modal security analysis (code + architecture + runtime), automated threat modeling |
+| 2029 | Opus 7.x | 🟠 Autonomous security pipeline orchestration, self-healing build systems |
+| 2030 | Opus 8.x | 🔴 Near-expert automated security review, AI-driven architecture validation |
+| 2031–2033 | Opus 9–10.x / Pre-AGI | ⚪ Autonomous secure development lifecycle management |
+| 2034–2037 | AGI / Post-AGI | ⭐ Transformative software engineering with built-in security assurance |
+
+**Same AI curve, translated into Riksdagsmonitor product / OSINT / data terms:**
+
+| Year | AI Model | What it unlocks for political intelligence |
+|------|----------|--------------------------------------------|
+| 2026 | Opus 4.6–4.9 | 🟢 Build-time newsroom (Horizon 1/2): evidence-graded articles, 14-language translation, source-graded OSINT scorecards |
+| 2027 | Opus 5.x | 🔵 Deeper static analytics (Horizon 2): coalition/cohesion modelling, anomaly detection, predictive party-agenda signals |
+| 2028 | Opus 6.x | 🟣 Bedrock runtime (Horizon 3 start): RAG over 109,000+ docs, multi-modal briefings, knowledge-graph reasoning over coalition networks |
+| 2029 | Opus 7.x | 🟠 Conversational political-intelligence API: natural-language queries against votes/documents via Bedrock Agents |
+| 2030 | Opus 8.x | 🔴 Near-expert autonomous forecasting: election scenarios, coalition-formation probabilities, neutral cross-party analysis |
+| 2031–2033 | Opus 9–10.x / Pre-AGI | ⚪ Multi-parliament federation: comparative Nordic/EU analysis on a shared data mesh |
+| 2034–2037 | AGI / Post-AGI | ⭐ Real-time democracy index with human-in-the-loop governance, full ISMS/GDPR oversight on every inference |
+
+> ⚖️ **Governance guardrail.** Every AI generation above operates strictly on **public** data, with neutrality across all parties, documented uncertainty, and human-in-the-loop oversight per the [Hack23 AI Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/AI_Policy.md). Future capabilities are **targets**, never achieved metrics, and political opinions are treated as GDPR Article 9 special-category data (lawful bases 9(2)(e)/9(2)(g)).
 
 **Anthropic Opus Model Cadence:**
 - **Minor updates:** Every ~2.3 months (Opus 4.8, 4.9, 5.0...) — backward-compatible, incremental capability improvements
@@ -1984,8 +2211,8 @@ Riksdagsmonitor's future architecture represents a strategic evolution from a st
 **✅ Approved by:** James Pether Sörling, CEO  
 **📤 Distribution:** Public  
 **🏷️ Classification:** [![Confidentiality: Public](https://img.shields.io/badge/C-Public-lightgrey?style=flat-square)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#confidentiality-levels)  
-**📅 Effective Date:** 2026-02-24  
-**⏰ Next Review:** 2026-05-20  
+**📅 Effective Date:** 2026-05-31  
+**⏰ Next Review:** 2026-08-31  
 **🎯 Framework Compliance:** [![ISO 27001](https://img.shields.io/badge/ISO_27001-2022_Aligned-blue?style=flat-square&logo=iso&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) [![NIST CSF 2.0](https://img.shields.io/badge/NIST_CSF-2.0_Aligned-green?style=flat-square&logo=nist&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) [![CIS Controls](https://img.shields.io/badge/CIS_Controls-v8.1_Aligned-orange?style=flat-square&logo=cisecurity&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) [![AWS Well-Architected](https://img.shields.io/badge/AWS-Well_Architected-FF9900?style=flat-square&logo=amazon-aws&logoColor=white)](https://aws.amazon.com/architecture/well-architected/)
 
 

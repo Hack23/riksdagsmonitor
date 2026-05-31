@@ -896,8 +896,8 @@ graph TB
 
 ---
 
-**📋 Document Owner:** CEO | **📄 Version:** 3.0 | **📅 Last Updated:** 2026-03-27 (UTC)
-**🔄 Review Cycle:** Annual | **⏰ Next Review:** 2027-03-27
+**📋 Document Owner:** CEO | **📄 Version:** 6.0 | **📅 Last Updated:** 2026-05-02 (UTC)
+**🔄 Review Cycle:** Annual | **⏰ Next Review:** 2027-05-02
 **🏢 Classification:** Public | **🏛️ Owner:** Hack23 AB (Org.nr 5595347807)
 
 

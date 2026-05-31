@@ -5,20 +5,29 @@
 <h1 align="center">🚀 Riksdagsmonitor — Future Flowchart Architecture</h1>
 
 <p align="center">
-  <strong>🔄 Advanced Process Flows: From Static Website to AI-Powered Intelligence Platform</strong><br>
-  <em>🎯 Multi-Modal AI · Real-Time Analytics · Predictive Democracy · Knowledge Graphs</em>
+  <strong>🔄 Process & Data-Flow Evolution: From Agentic Static Newsroom to AWS-Serverless Intelligence Platform</strong><br>
+  <em>🎯 Build-Time OSINT · Party Landscape Analytics · Bedrock RAG · Predictive Democracy · Real-Time Fusion</em>
 </p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/>
-  <img src="https://img.shields.io/badge/Version-2.0-555?style=for-the-badge" alt="Version"/>
-  <img src="https://img.shields.io/badge/Effective-2026--02--24-success?style=for-the-badge" alt="Effective Date"/>
+  <img src="https://img.shields.io/badge/Version-3.0-555?style=for-the-badge" alt="Version"/>
+  <img src="https://img.shields.io/badge/Effective-2026--05--31-success?style=for-the-badge" alt="Effective Date"/>
   <img src="https://img.shields.io/badge/Review-Quarterly-orange?style=for-the-badge" alt="Review Cycle"/>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 2.0 | **📅 Last Updated:** 2026-02-24 (UTC)  
-**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-05-24  
-**🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
+<p align="center">
+  <img src="https://img.shields.io/badge/Horizon-2026→2037-blueviolet?style=flat-square" alt="Horizon"/>
+  <img src="https://img.shields.io/badge/v1.x-Static_Agentic_Newsroom-4caf50?style=flat-square" alt="v1"/>
+  <img src="https://img.shields.io/badge/v2.0-Static_Deepening-2196f3?style=flat-square" alt="v2"/>
+  <img src="https://img.shields.io/badge/v3.0+-AWS_Serverless-ff9800?style=flat-square" alt="v3"/>
+  <img src="https://img.shields.io/badge/Data-Public_Only-success?style=flat-square" alt="Public Data"/>
+  <img src="https://img.shields.io/badge/GDPR-Art._9(2)(e)%2F(g)-blue?style=flat-square" alt="GDPR"/>
+</p>
+
+**📋 Document Owner:** CEO | **📄 Version:** 3.0 | **📅 Last Updated:** 2026-05-31 (UTC)  
+**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-08-31  
+**🏢 Owner:** Hack23 AB (Org.nr 559534-7807) | **🏷️ Classification:** Public
 
 ---
 
@@ -28,13 +37,14 @@
 |----------|------|-------------|
 | [Architecture](ARCHITECTURE.md) | 🏛️ Current | C4 model showing system structure |
 | [Data Model](DATA_MODEL.md) | 📊 Current | Data entities and relationships |
-| [Flowcharts](FLOWCHART.md) | 🔄 Current | Process flows and pipelines |
+| [Flowcharts](FLOWCHART.md) | 🔄 Current | Process flows and pipelines (this doc's baseline) |
 | [State Diagrams](STATEDIAGRAM.md) | 🔄 Current | System state transitions |
 | [Mindmap](MINDMAP.md) | 🗺️ Current | System conceptual map |
 | [SWOT](SWOT.md) | 💼 Current | Strategic analysis |
+| [Workflows](WORKFLOWS.md) | 🔧 Current | CI/CD automation and pipelines |
 | [Future Architecture](FUTURE_ARCHITECTURE.md) | 🏗️ Future | System evolution roadmap |
 | [Future Data Model](FUTURE_DATA_MODEL.md) | 📊 Future | Enhanced data architecture |
-| **[Future Flowcharts](FUTURE_FLOWCHART.md)** | 🔄 **Future** | **Advanced process flows (this doc)** |
+| **[Future Flowcharts](FUTURE_FLOWCHART.md)** | 🔄 **Future** | **Advanced process & data flows (this doc)** |
 | [Future State Diagrams](FUTURE_STATEDIAGRAM.md) | 🔄 Future | Advanced state management |
 | [Future Mindmap](FUTURE_MINDMAP.md) | 🗺️ Future | Future capability map |
 | [Future SWOT](FUTURE_SWOT.md) | 💼 Future | Strategic outlook |
@@ -46,1370 +56,783 @@
 
 ## 🎯 Executive Summary
 
-This document outlines the future process flows and workflows for Riksdagsmonitor over the next 3-11 years (2026-2037). The roadmap focuses on **AI-enhanced content generation**, **predictive analytics**, **semantic search**, and **real-time intelligence** capabilities that transform the platform from a static Swedish Parliament monitoring website into an advanced democratic intelligence system.
+This document maps the **process and data-flow evolution** of Riksdagsmonitor across three horizons (2026–2037). It is the forward-looking sibling of [`FLOWCHART.md`](FLOWCHART.md): every future flow is built **on top of the production v1.x baseline** documented there — the autonomous agentic newsroom, the multi-provider data fetch/persist layer, the analysis-gate quality wall, and the multi-region static deploy.
 
-**Strategic Vision:**
-- 🤖 **AI-Enhanced News Generation** - Multi-modal content with GPT-5, Stability AI, ElevenLabs (2026+)
-- 📊 **Predictive Analytics** - Election forecasting, vote prediction with TensorFlow.js (2026-2028)
-- 🧠 **Semantic Search & Knowledge Graphs** - Neo4j-powered relationships across 109K+ documents (2027+)
-- 🎤 **Voice & Personalization** - Voice assistants, personalized feeds, recommendation engines (2027-2028)
-- 🌊 **Real-Time Streaming** - Kafka/Flink pipelines for live parliamentary monitoring (2028+)
-- 🔒 **Privacy-Preserving AI** - Federated learning, differential privacy (2028+)
+The roadmap deliberately **separates the static-deepening near term from the serverless long term**, so investment stays grounded:
+
+| Horizon | Window | Architecture | Process centre of gravity |
+|---------|--------|--------------|---------------------------|
+| 🟢 **v1.x baseline** | shipped (2026) | Static HTML/CSS · 14 agentic workflows · CloudFront + multi-region S3 + GitHub Pages DR | Build-time: gh-aw → analysis artifacts → gate → render → translate → deploy |
+| 🔵 **v2.0** | 2026–2027 | **Still static** — deeper precompute | Build-time **party-landscape dashboards** + **OSINT products** (network / temporal / anomaly / source-grading / INTOP) baked into static HTML |
+| 🟠 **v3.0+** | 2028–2037 | **AWS serverless** (Lambda · Step Functions · EventBridge · Kinesis · Bedrock · API Gateway · Cognito) | Runtime: conversational intelligence, RAG semantic search, predictive forecasting, real-time fusion, personalization, public API |
+
+**Strategic process vision:**
+- 🟢 **Agentic newsroom hardening** — keep zero-human-editor pipeline; tighten the analysis gate and provenance (2026)
+- 🔵 **Static OSINT precompute** — move network/temporal/anomaly analytics to *build time*; render party-focused landscape dashboards & INTOP scorecards as static artifacts (2026–2027)
+- 🟠 **Bedrock runtime flows** — multi-modal generation, real-time fact-checking and Knowledge-Bases RAG over the 109K+ document corpus (2028+)
+- 🟠 **Predictive pipelines** — Step-Functions election & vote forecasting with calibrated uncertainty (2028+)
+- 🟠 **Streaming fusion** — Kinesis + EventBridge real-time parliamentary monitoring and multi-source data fusion (2029+)
+- 🟠 **API economy & personalization** — API Gateway public political-intelligence API + Cognito personalized feeds (2029+)
+- 🛡️ **Guardrails throughout** — public data only, GDPR Art. 9(2)(e)/(g), party neutrality, no surveillance/psyops, human-on-the-loop governance per [AI Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/AI_Policy.md)
+
+> ⚠️ **Targets, not achievements.** All metrics below the v1.x baseline are **roadmap targets**, explicitly labelled, never presented as already delivered.
 
 ---
 
 ## 📋 Table of Contents
 
-1. [AI-Enhanced News Generation Flows](#1-ai-enhanced-news-generation-flows)
-2. [Predictive Analytics Workflows](#2-predictive-analytics-workflows)
-3. [Semantic Search & Knowledge Graph Flows](#3-semantic-search--knowledge-graph-flows)
-4. [Advanced User Journeys](#4-advanced-user-journeys)
-5. [Advanced Data Pipeline Flows](#5-advanced-data-pipeline-flows)
-6. [AI Model Training & Deployment Flows](#6-ai-model-training--deployment-flows)
-7. [Community Collaboration Flows](#7-community-collaboration-flows)
-8. [ISMS Compliance & Security Flows](#8-isms-compliance--security-flows)
-9. [Performance & Scalability Considerations](#9-performance--scalability-considerations)
-10. [Related Documentation](#10-related-documentation)
+1. [Three-Horizon Process Evolution](#1--three-horizon-process-evolution)
+2. [v1.x Baseline Flows (Build the Future On This)](#2--v1x-baseline-flows-build-the-future-on-this)
+3. [v2.0 Static-Deepening Flows (2026–2027)](#3--v20-static-deepening-flows-20262027)
+4. [v3.0+ AWS-Serverless Runtime Flows (2028–2037)](#4--v30-aws-serverless-runtime-flows-20282037)
+5. [ISMS & AI-Policy Compliance Flows](#5-️-isms--ai-policy-compliance-flows)
+6. [AI Model Lifecycle & Evolution Flows](#6--ai-model-lifecycle--evolution-flows)
+7. [Performance & Cost-Optimization Flows](#7--performance--cost-optimization-flows)
+8. [IMF Economic-Dataflow Evolution](#8--imf-economic-dataflow-evolution)
+9. [Document Control](#-document-control)
+10. [Related Documentation](#-related-documentation)
 
 ---
 
-## 1. 🤖 AI-Enhanced News Generation Flows
+## 1. 🧭 Three-Horizon Process Evolution
 
-### 1.1 Multi-Modal Content Generation (2026+)
+The platform's process architecture migrates along one axis — **where computation happens** — while the democratic-ethics guardrails stay constant. v1.x and v2.0 compute everything at **build time** and ship immutable static artifacts; v3.0+ moves compute to **managed serverless runtime** without ever introducing a server to patch.
 
-**Objective:** Generate comprehensive news articles in 14 languages (expanding to 30+) using AI, with text, images, audio, and video content from Swedish Parliament data.
+```mermaid
+flowchart LR
+    subgraph H1["🟢 v1.x Baseline — Static Agentic Newsroom (2026)"]
+        direction TB
+        B1[gh-aw agentic workflows] --> B2[Analysis artifacts + gate]
+        B2 --> B3[Article render + 14-lang translate]
+        B3 --> B4[Multi-region static deploy]
+    end
+
+    subgraph H2["🔵 v2.0 — Static Deepening (2026–2027)"]
+        direction TB
+        V1[Build-time OSINT precompute<br/>network · temporal · anomaly] --> V2[Party-landscape dashboards]
+        V2 --> V3[Source-grading + INTOP scorecards]
+        V3 --> V4[Static HTML artifacts<br/>no runtime backend]
+    end
+
+    subgraph H3["🟠 v3.0+ — AWS Serverless (2028–2037)"]
+        direction TB
+        S1[API Gateway + Cognito] --> S2[Lambda + Step Functions]
+        S2 --> S3[Bedrock + Knowledge Bases RAG]
+        S3 --> S4[Kinesis streaming + EventBridge fusion]
+    end
+
+    H1 --> H2 --> H3
+
+    style B1 fill:#4caf50,color:#000000
+    style B4 fill:#4caf50,color:#000000
+    style V1 fill:#2196f3,color:#ffffff
+    style V4 fill:#2196f3,color:#ffffff
+    style S1 fill:#ff9800,color:#000000
+    style S4 fill:#ff9800,color:#000000
+```
+
+**Horizon decision gates** — promotion to the next horizon is conditional, not calendar-driven:
 
 ```mermaid
 flowchart TD
-    A[Start: Riksdag Event Detected] --> B{Event Type?}
-    
-    B -->|New Motion| C[Fetch from riksdag-regering-mcp]
-    B -->|Vote Result| D[Fetch Vote Data]
-    B -->|Budget Release| E[Fetch Budget Data]
-    B -->|Committee Report| F[Fetch Report Data]
-    
-    C --> G[Extract Structured Data]
-    D --> G
-    E --> G
-    F --> G
-    
-    G --> H[Content Generation GPT-5]
-    H --> I{Quality Check >0.8?}
-    
-    I -->|No| J[Refine Prompt]
-    J --> H
-    
-    I -->|Yes| K[Multi-Language Translation]
-    K --> L[14 Languages: EN, SV, DA, NO, FI, DE, FR, ES, NL, AR, HE, JA, KO, ZH]
-    
-    L --> M[Generate Images: Stability AI SDXL 3.0]
-    M --> N[Generate Audio: ElevenLabs TTS]
-    N --> O[Generate Video: Runway Gen-3 Alpha]
-    
-    O --> P[Quality Validation Pipeline]
-    P --> Q{All Content Valid?}
-    
-    Q -->|No| R[Flag for Human Review]
-    R --> S[Manual Correction]
-    S --> P
-    
-    Q -->|Yes| T[Create Git Branch]
-    T --> U[Commit Multi-Language Files]
-    U --> V[Create Pull Request]
-    
-    V --> W[Automated CI/CD Tests]
-    W --> X{Tests Pass?}
-    
-    X -->|No| Y[Rollback & Alert]
-    X -->|Yes| Z[Deploy to AWS CloudFront + GitHub Pages]
-    
-    Z --> AA[End: Content Live in 14 Languages]
-    
-    style A fill:#4caf50,color:#000000
-    style H fill:#9c27b0,color:#ffffff
-    style K fill:#ff9800,color:#000000
-    style M fill:#e91e63,color:#ffffff
-    style N fill:#00bcd4,color:#000000
-    style O fill:#f44336,color:#ffffff
-    style Z fill:#4caf50,color:#000000
-    style AA fill:#4caf50,color:#000000
+    G0[v1.x in production] --> G1{Static precompute<br/>covers party + OSINT needs<br/>at acceptable build time?}
+    G1 -->|Yes — stay static| G2[v2.0: deepen static OSINT]
+    G1 -->|Build time > budget OR<br/>real-time demand proven| G3{Serverless ROI &<br/>governance ready?}
+    G2 --> G3
+    G3 -->|No| G2
+    G3 -->|Yes — DPIA + cost model approved| G4[v3.0+: AWS serverless runtime]
+
+    style G0 fill:#4caf50,color:#000000
+    style G2 fill:#2196f3,color:#ffffff
+    style G4 fill:#ff9800,color:#000000
+    style G3 fill:#9c27b0,color:#ffffff
 ```
-
-**Key Technologies:**
-- **GPT-5** (OpenAI) - Advanced language model for Swedish political context
-- **Stability AI SDXL 3.0** - High-quality image generation (charts, infographics, portraits)
-- **ElevenLabs TTS** - Multi-language audio narration with Swedish voice models
-- **Runway Gen-3 Alpha** - Video generation for complex political visualizations
-- **riksdag-regering-mcp** - MCP server with 32 specialized tools for data fetching
-
-**Quality Thresholds:**
-- GPT-5 confidence: >0.8 for factual accuracy
-- Image quality: Human review for political portraits (bias mitigation)
-- Audio naturalness: MOS (Mean Opinion Score) >4.0/5.0
-- Video coherence: Manual approval for first 100 videos, then automated
-
-**Error Handling:**
-- Retry with refined prompts (max 3 attempts)
-- Fallback to human-written templates
-- Quality alerts to content team via GitHub Issues
 
 ---
 
-### 1.2 Real-Time Fact-Checking Flow (2027+)
+## 2. 🟢 v1.x Baseline Flows (Build the Future On This)
 
-**Objective:** Provide real-time fact-checking during parliamentary debates with AI-powered verification against historical data and trusted sources.
+These flows are **in production today** and refreshed to match [`FLOWCHART.md`](FLOWCHART.md). Every later horizon extends — never replaces — them.
+
+### 2.1 Agentic Newsroom Pipeline (gh-aw → artifacts → article → deploy)
+
+**Objective:** zero-human-editor publication of intelligence articles in 14 languages, gated by the [`analysis gate`](FLOWCHART.md#17--analysis-gate-validation-flow).
 
 ```mermaid
 flowchart TD
-    A[Start: Live Debate Stream] --> B[Speech-to-Text: Whisper Large v3]
-    B --> C[Extract Claims]
-    C --> D{Factual Claim?}
-    
-    D -->|No| E[Skip - Opinion/Prediction]
-    D -->|Yes| F[Query Knowledge Graph Neo4j]
-    
-    F --> G[Search 109K+ Historical Documents]
-    G --> H[Query World Bank API]
-    H --> I[Query Swedish Statistics SCB]
-    I --> J[Query EU Open Data]
-    
-    J --> K[Aggregate Evidence]
-    K --> L[GPT-5 Fact-Check Analysis]
-    L --> M{Verdict?}
-    
-    M -->|True| N[Display: ✅ Verified]
-    M -->|False| O[Display: ❌ False - Show Correction]
-    M -->|Misleading| P[Display: ⚠️ Misleading - Context Needed]
-    M -->|Unverifiable| Q[Display: ❓ Unverifiable - Insufficient Data]
-    
-    N --> R[Real-Time Dashboard Update]
-    O --> R
-    P --> R
-    Q --> R
-    
-    R --> S{Debate Ongoing?}
-    S -->|Yes| B
-    S -->|No| T[Generate Debate Summary]
-    
-    T --> U[Export to Multi-Language News]
-    U --> V[End: Fact-Check Report Published]
-    
-    style A fill:#4caf50,color:#000000
-    style B fill:#00bcd4,color:#000000
-    style L fill:#9c27b0,color:#ffffff
-    style N fill:#4caf50,color:#000000
-    style O fill:#f44336,color:#ffffff
-    style P fill:#ff9800,color:#000000
-    style V fill:#4caf50,color:#000000
+    CRON[⏰ Scheduled gh-aw workflow<br/>14 agentic workflows] --> MCPI[Initialize MCP clients]
+    MCPI --> FETCH[Multi-provider data fetch]
+
+    FETCH --> RR[riksdag-regering MCP<br/>32+ tools]
+    FETCH --> SCB[scb MCP — PxWeb v2]
+    FETCH --> WB[world-bank MCP — WGI / non-econ]
+    FETCH --> IMF[imf TS client via bash<br/>WEO / FM / IFS — primary economic]
+    FETCH --> CIA[CIA platform JSON/CSV export]
+
+    RR --> AGG[Context aggregation + dedup + relevance]
+    SCB --> AGG
+    WB --> AGG
+    IMF --> AGG
+    CIA --> AGG
+
+    AGG --> ARTI[Produce analysis artifacts<br/>9 core / 14 Tier-C in analysis/daily/DATE/]
+    ARTI --> GATE{Analysis Gate<br/>single blocking wall}
+    GATE -->|Fail| BLOCK[Block + open issue<br/>no publication]
+    GATE -->|Pass| GEN[Claude Opus 4.8<br/>article composition]
+    GEN --> QC{Quality + evidence<br/>citations valid?}
+    QC -->|No| RETRY[Refine prompt] --> GEN
+    QC -->|Yes| RENDER[Template HTML render]
+    RENDER --> TRANS[14-language translation<br/>Sonnet 4.6]
+    TRANS --> SEO[Schema.org + hreflang + OG tags]
+    SEO --> COMMIT[Git commit + signed provenance]
+    COMMIT --> CI[CI/CD: HTMLHint · ESLint · Vitest · Cypress]
+    CI --> DEPLOY[Multi-region static deploy]
+    DEPLOY --> LIVE[📰 Live in 14 languages]
+
+    style CRON fill:#2196f3,color:#ffffff
+    style GATE fill:#ff006e,color:#ffffff
+    style BLOCK fill:#f44336,color:#ffffff
+    style GEN fill:#9c27b0,color:#ffffff
+    style LIVE fill:#4caf50,color:#000000
 ```
 
-**Key Technologies:**
-- **Whisper Large v3** - OpenAI's speech recognition (Swedish language model)
-- **Neo4j Knowledge Graph** - 109K+ documents indexed with relationships
-- **GPT-5** - Claim extraction and verification reasoning
-- **World Bank API** - Economic data validation
-- **Swedish Statistics (SCB)** - Official government statistics
+### 2.2 Build-Time Political-Intelligence & Analysis-Gate Flow
 
-**Performance Requirements:**
-- Latency: <10 seconds from claim to verdict
-- Accuracy: >90% precision (manual validation against fact-checkers)
-- Coverage: 80% of factual claims identified (recall)
-
-**Privacy & Ethics:**
-- No tracking of individual viewers
-- Transparent methodology page
-- Human oversight for controversial claims
-- Appeals process for disputed verdicts
-
----
-
-## 2. 📊 Predictive Analytics Workflows
-
-### 2.1 Election Forecasting Pipeline (2026-2028)
-
-**Objective:** Predict Swedish election outcomes using historical data, polling, economic indicators, and machine learning models.
+**Objective:** horizon-stratified intelligence products precompiled before each static build.
 
 ```mermaid
 flowchart TD
-    A[Start: Election Cycle] --> B[Data Collection Phase]
-    
-    B --> C[Historical Elections: 50+ Years]
-    B --> D[Current Polls: Novus, Sifo, Demoskop]
-    B --> E[Economic Indicators: SCB, World Bank]
-    B --> F[Social Media Sentiment: Twitter/X API]
-    B --> G[Parliamentary Activity: riksdag-regering-mcp]
-    
-    C --> H[Data Preprocessing Pipeline]
-    D --> H
-    E --> H
-    F --> H
-    G --> H
-    
-    H --> I[Feature Engineering]
-    I --> J[TensorFlow.js Model Training]
-    J --> K{Model Performance?}
-    
-    K -->|R² < 0.85| L[Hyperparameter Tuning]
-    L --> J
-    
-    K -->|R² >= 0.85| M[Monte Carlo Simulation: 10,000 Runs]
-    M --> N[Generate Prediction Intervals]
-    
-    N --> O[Party Seat Distribution]
-    O --> P[Coalition Probability Matrix]
-    P --> Q[Prime Minister Likelihood]
-    
-    Q --> R[D3.js Interactive Dashboard]
-    R --> S[Confidence Intervals Display]
-    S --> T{User Adjustments?}
-    
-    T -->|Yes| U[User Scenario Builder]
-    U --> M
-    
-    T -->|No| V[Export Predictions: JSON + CSV]
-    V --> W[Multi-Language Report Generation]
-    
-    W --> X{Election Date?}
-    X -->|>30 Days| Y[Update Weekly]
-    X -->|<30 Days| Z[Update Daily]
-    X -->|Election Day| AA[Live Results Comparison]
-    
-    Y --> B
-    Z --> B
-    AA --> AB[Post-Election Analysis]
-    
-    AB --> AC[Model Accuracy Report]
-    AC --> AD[Retrain for Next Cycle]
-    AD --> AE[End: Archive & Publish Learnings]
-    
-    style A fill:#4caf50,color:#000000
-    style J fill:#9c27b0,color:#ffffff
-    style M fill:#ff9800,color:#000000
-    style R fill:#00bcd4,color:#000000
-    style AE fill:#4caf50,color:#000000
+    T[generate-political-intelligence.ts] --> CAT[catalog.ts<br/>article-types.json registry]
+    CAT --> STR[daily-streams.ts<br/>active streams per horizon]
+    STR --> HZ{Horizon stratification}
+    HZ --> H72[T+72h]
+    HZ --> H7[T+7d]
+    HZ --> H30[T+30d]
+    HZ --> H90[T+90d]
+    HZ --> H365[T+365d]
+    HZ --> H1460[T+1460d election cycle]
+
+    H72 --> GATE{Analysis Gate<br/>9 checks · artifact existence,<br/>evidence, Pass-2, cross-refs}
+    H7 --> GATE
+    H30 --> GATE
+    H90 --> GATE
+    H365 --> GATE
+    H1460 --> GATE
+
+    GATE -->|Fail| STOP[❌ Block pipeline]
+    GATE -->|Pass| I18N[i18n/ — 14-language translation]
+    I18N --> RND[render/ — template HTML]
+    RND --> OUT[political-intelligence*.html<br/>14 variants]
+
+    style T fill:#2196f3,color:#ffffff
+    style GATE fill:#ff006e,color:#ffffff
+    style STOP fill:#f44336,color:#ffffff
+    style OUT fill:#4caf50,color:#000000
 ```
 
-**Key Technologies:**
-- **TensorFlow.js** - Client-side ML for interactive predictions
-- **Monte Carlo Simulation** - 10,000 runs for uncertainty quantification
-- **D3.js** - Interactive visualization of seat distributions
-- **Python (scikit-learn)** - Backend model training with XGBoost/Random Forest
-- **riksdag-regering-mcp** - Historical voting data (1971-present)
+### 2.3 Data Fetch & Persist Flow (multi-provider, provenance-tagged)
 
-**Model Features (50+ Variables):**
-- Historical election results (seats, votes, turnout)
-- Polling averages (last 90 days, weighted by recency)
-- Economic indicators (GDP growth, unemployment, inflation)
-- Government approval ratings
-- Parliamentary activity (motions, votes, committee work)
-- Social media sentiment scores
-- Demographic shifts (age, urban/rural, immigration)
+```mermaid
+flowchart LR
+    TRIG[download-parliamentary-data.ts<br/>+ fetch-voting-records.ts<br/>+ fetch-calendar.ts] --> SRC{Source}
+    SRC -->|Propositions / motions / betänkanden| RIKS[(data.riksdagen.se)]
+    SRC -->|Government docs| G0V[(Regeringen via g0v.se)]
+    SRC -->|Statistics| SCB[(SCB PxWeb v2)]
+    SRC -->|Economic primary| IMF[(IMF SDMX 3.0 + Datamapper)]
+    SRC -->|Governance / environment| WB[(World Bank)]
+    SRC -->|Aggregated political engine| CIA[(CIA platform export)]
 
-**Confidence Intervals:**
-- 90% confidence: ±10 seats for major parties
-- 95% confidence: ±15 seats for major parties
-- Coalition probabilities: >0.8 threshold for "likely"
+    RIKS --> VAL[Validate + transform]
+    G0V --> VAL
+    SCB --> VAL
+    IMF --> VAL
+    WB --> VAL
+    CIA --> VAL
+    VAL --> PROV[Attach provenance + freshness + SHA-256]
+    PROV --> PERSIST[(data/ + analysis/data/ JSON + meta)]
+    PERSIST --> READY[Ready for analysis + dashboard build]
 
-**Ethical Considerations:**
-- Transparent methodology (open-source models)
-- Clear uncertainty communication (avoid false precision)
-- No prediction on election day (avoid voter influence)
-- Post-election accuracy reporting
+    style TRIG fill:#2196f3,color:#ffffff
+    style IMF fill:#0a4f8f,color:#ffffff
+    style PERSIST fill:#ff9800,color:#000000
+    style READY fill:#4caf50,color:#000000
+```
 
----
-
-### 2.2 Vote Prediction Workflow (2027+)
-
-**Objective:** Predict how individual MPs will vote on upcoming bills based on historical voting patterns, party discipline, and ideological positioning.
+### 2.4 Dashboard Build Flow (lazy-loaded TypeScript modules)
 
 ```mermaid
 flowchart TD
-    A[Start: Bill Introduced] --> B[Fetch Bill Text: riksdag-regering-mcp]
-    B --> C[Extract Policy Dimensions]
-    C --> D[Classify: Economic, Social, Foreign Policy, etc.]
-    
-    D --> E[Query Historical Votes: Last 10 Years]
-    E --> F[Build MP Voting Matrix: 349 MPs × 50K+ Votes]
-    
-    F --> G[Calculate Ideal Points: DW-NOMINATE]
-    G --> H[Party Discipline Analysis]
-    H --> I[Coalition Pressure Assessment]
-    
-    I --> J[GPT-5 Bill Summary & Ideology Scoring]
-    J --> K[TensorFlow.js Neural Network]
-    K --> L{Prediction Confidence?}
-    
-    L -->|< 0.7| M[Uncertain - Multiple Scenarios]
-    L -->|>= 0.7| N[High Confidence Prediction]
-    
-    M --> O[Show Probability Distribution]
-    N --> O
-    
-    O --> P[Interactive Voting Map: D3.js]
-    P --> Q{Actual Vote Occurred?}
-    
-    Q -->|No| R[Wait for Vote]
-    Q -->|Yes| S[Compare: Predicted vs. Actual]
-    
-    S --> T[Calculate Accuracy Metrics]
-    T --> U{Accuracy > 85%?}
-    
-    U -->|No| V[Model Retraining Triggered]
-    V --> K
-    
-    U -->|Yes| W[Update Confidence Scores]
-    W --> X[Store Prediction & Result]
-    X --> Y[End: Feed into Future Models]
-    
-    style A fill:#4caf50,color:#000000
-    style G fill:#ff9800,color:#000000
-    style K fill:#9c27b0,color:#ffffff
-    style P fill:#00bcd4,color:#000000
-    style Y fill:#4caf50,color:#000000
+    DATA[(Persisted JSON: 349 MPs · 2,494 historical ·<br/>3.5M+ votes · 109K+ docs)] --> TS[TypeScript dashboard modules<br/>Chart.js / D3.js]
+    TS --> BUILD[Vite build — code-split per dashboard]
+    BUILD --> LAZY[Lazy-loaded bundles<br/>~11 functional dashboards]
+    LAZY --> A11Y[WCAG 2.1 AA pass + cyberpunk theme]
+    A11Y --> STATIC[Static HTML + hashed assets]
+    STATIC --> DEPLOY[Deploy step]
+
+    style DATA fill:#ff9800,color:#000000
+    style STATIC fill:#4caf50,color:#000000
+    style A11Y fill:#9c27b0,color:#ffffff
 ```
 
-**Key Technologies:**
-- **DW-NOMINATE** - Ideal point estimation (political science standard)
-- **TensorFlow.js** - Neural network for vote prediction
-- **GPT-5** - Bill text analysis and ideology scoring
-- **D3.js** - Interactive vote visualization
-- **riksdag-regering-mcp** - Historical voting data (50K+ votes)
-
-**Model Inputs:**
-- Historical voting record (349 MPs × 50K+ votes)
-- Party affiliation and leadership positions
-- Committee memberships
-- Bill policy dimensions (economic left-right, social, foreign policy)
-- Coalition status (government vs. opposition)
-- Constituency characteristics (urban/rural, demographics)
-- Social media positions (if publicly stated)
-
-**Accuracy Targets:**
-- Overall accuracy: >85% for individual votes
-- Government party votes: >90% (high party discipline)
-- Opposition votes: >80% (more variation)
-- Abstentions: >70% (harder to predict)
-
-**Ethical Considerations:**
-- Predictions published after vote (no pressure on MPs)
-- Transparency about uncertainty
-- No personalized targeting of MPs
-- Respect for democratic process
-
----
-
-## 3. 🧠 Semantic Search & Knowledge Graph Flows
-
-### 3.1 Semantic Search Pipeline (2027+)
-
-**Objective:** Enable natural language queries across 109K+ documents with GPT-5-powered understanding and vector embeddings.
+### 2.5 Multi-Region Static Deploy & Disaster-Recovery Flow
 
 ```mermaid
 flowchart TD
-    A[Start: User Query - Natural Language] --> B[Query Preprocessing]
-    B --> C[Intent Classification: GPT-5]
-    C --> D{Query Type?}
-    
-    D -->|Document Search| E[Vector Embeddings: text-embedding-3-large]
-    D -->|Factual Question| F[Knowledge Graph Query: Neo4j Cypher]
-    D -->|Comparison| G[Multi-Document Analysis]
-    D -->|Timeline| H[Temporal Query Builder]
-    
-    E --> I[Search Pinecone Vector DB]
-    I --> J[Retrieve Top 50 Documents]
-    
-    F --> K[Neo4j Graph Traversal]
-    K --> L[Extract Relationships]
-    
-    G --> M[Parallel Document Fetching]
-    M --> N[GPT-5 Comparison Analysis]
-    
-    H --> O[Time-Series Data Extraction]
-    O --> P[D3.js Timeline Visualization]
-    
-    J --> Q[Re-Ranking: GPT-5]
-    L --> Q
-    N --> Q
-    P --> Q
-    
-    Q --> R[Top 10 Results + Explanations]
-    R --> S[Multi-Language Display]
-    S --> T{User Satisfied?}
-    
-    T -->|No| U[Query Refinement Suggestions]
-    U --> A
-    
-    T -->|Yes| V[Store Query & Results]
-    V --> W[Update Recommendation Model]
-    W --> X[Generate Related Queries]
-    
-    X --> Y[End: Display Results + Related Searches]
-    
-    style A fill:#4caf50,color:#000000
-    style C fill:#9c27b0,color:#ffffff
-    style I fill:#ff9800,color:#000000
-    style K fill:#00bcd4,color:#000000
-    style Q fill:#9c27b0,color:#ffffff
-    style Y fill:#4caf50,color:#000000
+    MERGE[Merge to main] --> CIGATE[CI security gate<br/>CodeQL · Dependabot · SLSA · Sigstore]
+    CIGATE --> OK{All gates green?}
+    OK -->|No| HALT[Halt + alert]
+    OK -->|Yes| S3P[(S3 primary — us-east-1)]
+    S3P --> REPL[(S3 replica — eu-west-1)]
+    S3P --> CF[CloudFront invalidation]
+    REPL --> CF
+    CF --> PROD[🌐 riksdagsmonitor.com live]
+    PROD --> HEALTH{Origin healthy?}
+    HEALTH -->|Degraded| DR[Fail over to GitHub Pages DR]
+    HEALTH -->|Healthy| DONE[Serving from edge]
+    DR --> DONE
+
+    style MERGE fill:#2196f3,color:#ffffff
+    style HALT fill:#f44336,color:#ffffff
+    style PROD fill:#4caf50,color:#000000
+    style DR fill:#ff9800,color:#000000
 ```
-
-**Key Technologies:**
-- **GPT-5** - Intent classification, re-ranking, explanations
-- **text-embedding-3-large** - OpenAI's 3072-dimensional embeddings
-- **Pinecone** - Vector database for semantic search (109K+ documents)
-- **Neo4j** - Knowledge graph for relationship queries
-- **D3.js** - Timeline and relationship visualizations
-
-**Search Capabilities:**
-- **Semantic Search**: "What are the government's plans for climate change?" (not keyword matching)
-- **Factual Questions**: "How many times has MP X voted against their party?"
-- **Comparisons**: "Compare budget proposals from 2023 vs. 2024"
-- **Timelines**: "Show all votes on immigration policy in the last 5 years"
-- **Relationships**: "Which MPs co-sponsor motions with MP X?"
-
-**Performance Requirements:**
-- Query latency: <2 seconds (p95)
-- Relevance: >80% of users satisfied (user feedback)
-- Multi-language: Same query in 14 languages returns same results
-
-**Privacy:**
-- No user query logging (ephemeral search)
-- Differential privacy for aggregated analytics
-- GDPR-compliant (no personal data)
 
 ---
 
-### 3.2 Knowledge Graph Construction (2027-2028)
+## 3. 🔵 v2.0 Static-Deepening Flows (2026–2027)
 
-**Objective:** Build a comprehensive knowledge graph of Swedish parliamentary data with automated relationship extraction.
+> **Strategic choice: stay static.** v2.0 introduces **no runtime backend**. Every new capability is **precomputed at build time** and rendered into immutable HTML/CSS. The wins are deeper party analytics and higher-grade OSINT, not new infrastructure. AI generations of this window (Opus 4.6–4.9 → 5.x) primarily sharpen the *agentic build pipeline*.
+
+### 3.1 Party-Focused Political-Landscape Dashboard Build
+
+**Objective:** turn the persisted corpus into party-centric landscape dashboards — cohesion, coalition dynamics, bloc alignment, party-vs-party comparison, agenda tracking — all computed offline.
 
 ```mermaid
 flowchart TD
-    A[Start: Data Sources] --> B[109K+ Documents from CIA Platform]
-    A --> C[349 MPs: Biographical Data]
-    A --> D[8 Parties: Historical Context]
-    A --> E[15 Committees: Jurisdictions]
-    A --> F[50+ Years: Election Results]
-    
-    B --> G[Document Preprocessing Pipeline]
-    G --> H[Named Entity Recognition: GPT-5]
-    H --> I[Relationship Extraction]
-    
-    C --> J[MP Profile Entities]
-    D --> K[Party Entities]
-    E --> L[Committee Entities]
-    F --> M[Election Entities]
-    
-    I --> N{Relationship Type?}
-    
-    N -->|Co-sponsorship| O[MP-MP: Co-sponsors]
-    N -->|Authorship| P[MP-Document: Authored]
-    N -->|Voting| Q[MP-Vote: Voted]
-    N -->|Committee| R[MP-Committee: Member]
-    N -->|Party| S[MP-Party: Affiliated]
-    N -->|Cites| T[Document-Document: Cites]
-    
-    J --> U[Neo4j Node Creation]
-    K --> U
-    L --> U
-    M --> U
-    
-    O --> V[Neo4j Relationship Creation]
-    P --> V
-    Q --> V
-    R --> V
-    S --> V
-    T --> V
-    
-    U --> W[Graph Validation]
-    V --> W
-    
-    W --> X{Validation Passed?}
-    X -->|No| Y[Manual Correction Queue]
-    Y --> U
-    
-    X -->|Yes| Z[Index for Graph Queries]
-    Z --> AA[Compute Centrality Metrics]
-    AA --> AB[PageRank for Influential MPs]
-    AB --> AC[Community Detection: Louvain Algorithm]
-    
-    AC --> AD[D3.js Force-Directed Graph Visualization]
-    AD --> AE[Interactive Exploration Interface]
-    AE --> AF{User Feedback?}
-    
-    AF -->|Errors Reported| AG[Incremental Corrections]
-    AG --> W
-    
-    AF -->|No Issues| AH[End: Knowledge Graph Live]
-    
-    style A fill:#4caf50,color:#000000
-    style H fill:#9c27b0,color:#ffffff
-    style U fill:#00bcd4,color:#000000
-    style V fill:#00bcd4,color:#000000
-    style AD fill:#e91e63,color:#ffffff
-    style AH fill:#4caf50,color:#000000
+    CORPUS[(Persisted corpus: votes · speeches · motions · members)] --> COH[Compute party-cohesion index<br/>Rice index per voting block]
+    CORPUS --> BLOC[Compute bloc alignment<br/>government vs opposition matrices]
+    CORPUS --> COAL[Coalition-dynamics model<br/>agreement / defection rates]
+    CORPUS --> AGENDA[Agenda tracking<br/>topic share per party over time]
+
+    COH --> AGG[Aggregate party-landscape dataset]
+    BLOC --> AGG
+    COAL --> AGG
+    AGENDA --> AGG
+    AGG --> NEU{Neutrality lint<br/>equal coverage per party?}
+    NEU -->|Imbalanced| FIXN[Rebalance + flag] --> AGG
+    NEU -->|Balanced| RENDER[Render party-landscape dashboards<br/>Chart.js / D3.js static]
+    RENDER --> I18N[14-language labels]
+    I18N --> OUT[Static party-landscape HTML]
+
+    style CORPUS fill:#ff9800,color:#000000
+    style NEU fill:#ff006e,color:#ffffff
+    style OUT fill:#4caf50,color:#000000
+    style AGG fill:#9c27b0,color:#ffffff
 ```
 
-**Key Technologies:**
-- **Neo4j** - Graph database (349 MPs, 109K+ documents, 1M+ relationships)
-- **GPT-5** - Named entity recognition and relationship extraction
-- **Louvain Algorithm** - Community detection (political factions)
-- **PageRank** - Influential MP identification
-- **D3.js** - Force-directed graph visualization
+### 3.2 Build-Time OSINT Computation Pipeline (network · temporal · anomaly)
 
-**Graph Schema:**
-- **Nodes**: MPs (349), Parties (8), Committees (15), Documents (109K+), Votes (50K+)
-- **Relationships**: Co-sponsors, Authored, Voted, Member, Affiliated, Cites, Amends
-
-**Use Cases:**
-- "Who are the most influential MPs in climate policy?" (PageRank + topic filtering)
-- "Show me all MPs who co-sponsor with MP X" (1-hop graph traversal)
-- "Which documents cite this budget proposal?" (reverse citation search)
-- "Detect political factions beyond party lines" (community detection)
-
-**Data Quality:**
-- Manual validation: First 1,000 relationships (95% accuracy target)
-- Automated validation: Consistency checks (e.g., MP can't vote before election)
-- User feedback: Report errors via GitHub Issues
-
----
-
-## 4. 🎤 Advanced User Journeys
-
-### 4.1 Personalized News Feed (2027+)
-
-**Objective:** Provide personalized political news based on user interests, reading history, and explicit preferences without invasive tracking.
+**Objective:** move structured tradecraft (network analysis, temporal/seasonal patterns, anomaly detection) from ad-hoc analysis into a **repeatable build-time pipeline** whose outputs are graded and rendered statically.
 
 ```mermaid
 flowchart TD
-    A[Start: User Visits Website] --> B{User Logged In?}
-    
-    B -->|No| C[Show Generic News Feed]
-    C --> D[Top Stories: All Parties]
-    
-    B -->|Yes| E[Load User Preference Profile]
-    E --> F{Preferences Set?}
-    
-    F -->|No| G[Onboarding: Select Interests]
-    G --> H[Choose Topics: Economy, Social, Foreign Policy, etc.]
-    H --> I[Choose Parties: Follow or Mute]
-    I --> J[Choose Committees: Focus Areas]
-    J --> K[Save Preferences: Local Storage + Server]
-    
-    F -->|Yes| L[Fetch Reading History: Last 30 Days]
-    L --> M[Implicit Signals: Clicks, Time Spent, Shares]
-    
-    K --> N[Build User Profile Vector]
-    M --> N
-    
-    N --> O[TensorFlow.js Recommendation Model]
-    O --> P[Content Similarity Matching]
-    P --> Q[Diversity Optimization: Avoid Echo Chamber]
-    
-    Q --> R{Filter Bubble Risk?}
-    R -->|High| S[Inject Diverse Content: 20%]
-    R -->|Low| T[Proceed with Recommendations]
-    
-    S --> U[Final News Feed Ranking]
-    T --> U
-    
-    U --> V[Multi-Language Display]
-    V --> W[Personalized Dashboard]
-    W --> X{User Interaction?}
-    
-    X -->|Click Article| Y[Update Preference Weights]
-    X -->|Skip| Z[Decrease Relevance Score]
-    X -->|Share| AA[Strong Positive Signal]
-    X -->|Dismiss| AB[Negative Signal]
-    
-    Y --> AC[Real-Time Model Update]
-    Z --> AC
-    AA --> AC
-    AB --> AC
-    
-    AC --> AD{Daily Summary Request?}
-    AD -->|Yes| AE[Generate Personalized Digest]
-    AD -->|No| AF[Continue Browsing]
-    
-    AE --> AG[Email/Push Notification]
-    AF --> X
-    AG --> AH[End: User Engaged]
-    
-    style A fill:#4caf50,color:#000000
-    style O fill:#9c27b0,color:#ffffff
-    style Q fill:#ff9800,color:#000000
-    style W fill:#00bcd4,color:#000000
-    style AH fill:#4caf50,color:#000000
+    IN[(Corpus + provenance)] --> NET[Network analysis<br/>co-sponsorship + co-voting graph<br/>centrality · clustering · bridging]
+    IN --> TEMP[Temporal analysis<br/>seasonal cadence · trend breaks]
+    IN --> ANOM[Anomaly detection<br/>voting defection · attendance outliers]
+
+    NET --> SCORE[Apply OSINT source-grading<br/>A–F reliability × 1–6 credibility]
+    TEMP --> SCORE
+    ANOM --> SCORE
+    SCORE --> ACH{ACH check<br/>≥3 competing hypotheses<br/>per anomaly}
+    ACH -->|Unsupported| DROP[Drop / downgrade claim]
+    ACH -->|Supported with dok_id evidence| PROD[OSINT product dataset]
+    PROD --> VIZ[Render network/temporal/anomaly dashboards]
+    VIZ --> OUTO[Static OSINT HTML artifacts]
+
+    style IN fill:#ff9800,color:#000000
+    style SCORE fill:#9c27b0,color:#ffffff
+    style ACH fill:#ff006e,color:#ffffff
+    style DROP fill:#f44336,color:#ffffff
+    style OUTO fill:#4caf50,color:#000000
 ```
 
-**Key Technologies:**
-- **TensorFlow.js** - Recommendation engine (client-side for privacy)
-- **Local Storage** - User preferences stored client-side (no server tracking)
-- **Diversity Optimization** - Avoid echo chambers (20% diverse content injection)
-- **A/B Testing** - Compare personalized vs. generic feeds (engagement metrics)
+### 3.3 Source-Grading & INTOP Scorecard Flow
 
-**Privacy-First Design:**
-- **No User Tracking**: Preferences stored locally (browser local storage + encrypted server backup)
-- **Opt-In**: Personalization disabled by default, explicit consent required
-- **Transparency**: "Why this article?" explanations for each recommendation
-- **Data Portability**: Export/import preferences (JSON format)
-- **Deletion**: One-click preference reset
+**Objective:** produce evidence-graded INTOP (intelligence-operations) scorecards where every metric ties to a `dok_id`, vote count, or named actor.
 
-**Recommendation Model:**
-- Content-based filtering (article topics, parties, MPs)
-- Collaborative filtering (users with similar interests)
-- Diversity penalty (Maximal Marginal Relevance algorithm)
-- Recency boost (recent articles prioritized)
+```mermaid
+flowchart LR
+    CLAIM[Candidate claim / metric] --> EV{Evidence present?<br/>dok_id · vote count · named actor · primary URL}
+    EV -->|No| REJ[Reject — generic statement]
+    EV -->|Yes| GRADE[Assign source grade<br/>reliability + credibility]
+    GRADE --> UNC[Attach uncertainty band]
+    UNC --> CARD[Compose INTOP scorecard cell]
+    CARD --> AUDIT[Append to data-source audit trail]
+    AUDIT --> STATIC[Render static scorecard]
 
-**Metrics:**
-- User engagement: >30% increase in time on site
-- Diversity: >20% of feed contains non-preferred topics
-- Satisfaction: >4.0/5.0 user rating
+    style CLAIM fill:#2196f3,color:#ffffff
+    style REJ fill:#f44336,color:#ffffff
+    style GRADE fill:#9c27b0,color:#ffffff
+    style STATIC fill:#4caf50,color:#000000
+```
+
+### 3.4 v2.0 Build Sequence (end-to-end, still no runtime backend)
+
+```mermaid
+sequenceDiagram
+    participant W as gh-aw workflow
+    participant D as Data fetch layer
+    participant O as OSINT precompute
+    participant P as Party-landscape compute
+    participant G as Analysis gate
+    participant R as Renderer (14 lang)
+    participant S as Static deploy
+
+    W->>D: Fetch + persist (provenance-tagged)
+    D-->>W: Versioned JSON corpus
+    W->>O: Run network/temporal/anomaly + source-grading
+    W->>P: Compute cohesion/coalition/bloc/agenda
+    O-->>G: OSINT products (graded)
+    P-->>G: Party-landscape datasets (neutrality-checked)
+    G->>G: 9-check validation + Pass-2 evidence
+    alt Gate fails
+        G-->>W: Block + open issue
+    else Gate passes
+        G->>R: Approved datasets
+        R->>S: Static HTML/CSS artifacts
+        S-->>W: Deployed to CloudFront + S3 (+ GH Pages DR)
+    end
+```
+
+**v2.0 outcome:** richer intelligence, **identical hosting model**. Build time grows; attack surface does not. When build time exceeds budget *or* real-time demand is proven, the horizon-gate (§1) authorizes the v3.0 serverless move.
 
 ---
 
-### 4.2 Voice Assistant Interaction (2027-2028)
+## 4. 🟠 v3.0+ AWS-Serverless Runtime Flows (2028–2037)
 
-**Objective:** Enable hands-free interaction with Riksdagsmonitor using voice commands and natural language understanding.
+> **Strategic choice: all-in managed serverless.** No Kubernetes, no containers, no servers to patch — only Lambda, Step Functions, EventBridge, Kinesis, Bedrock, API Gateway, Cognito, DynamoDB, Aurora Serverless v2, Neptune Serverless, OpenSearch Serverless, and Timestream. AWS Well-Architected aligned, multi-region resilient. AI generations Opus 6.x→AGI unlock conversational, predictive, and self-improving runtime flows.
+
+### 4.1 Public Political-Intelligence API Request Flow (API Gateway · Lambda · Cognito)
 
 ```mermaid
 flowchart TD
-    A[Start: User Voice Command] --> B[Audio Capture: Microphone]
-    B --> C[Speech-to-Text: Whisper Large v3]
-    C --> D[Language Detection: 14 Languages]
-    
-    D --> E{Query Intent?}
-    
-    E -->|Search| F[Semantic Search Pipeline]
-    E -->|Summary| G[Document Summarization: GPT-5]
-    E -->|Navigation| H[Voice Navigation Commands]
-    E -->|Playback| I[Audio Content Playback]
-    
-    F --> J[Retrieve Results]
-    G --> K[Generate Summary]
-    H --> L[Navigate to Section]
-    I --> M[Stream Audio via ElevenLabs]
-    
-    J --> N[Text Response Generation: GPT-5]
-    K --> N
-    L --> N
-    M --> O[End: Audio Playback Complete]
-    
-    N --> P[Text-to-Speech: ElevenLabs]
-    P --> Q[Voice Response Playback]
-    Q --> R{User Follow-Up?}
-    
-    R -->|Yes| S[Multi-Turn Conversation]
-    S --> C
-    
-    R -->|No| T[End: Conversation Complete]
-    
-    style A fill:#4caf50,color:#000000
-    style C fill:#00bcd4,color:#000000
-    style N fill:#9c27b0,color:#ffffff
-    style P fill:#00bcd4,color:#000000
-    style T fill:#4caf50,color:#000000
+    USER[API consumer / citizen app] --> APIGW[Amazon API Gateway]
+    APIGW --> AUTH{Cognito authorizer}
+    AUTH -->|Anonymous public tier| RL1[Rate-limit: public quota]
+    AUTH -->|Authenticated| RL2[Rate-limit: tiered quota]
+    RL1 --> LMB[Lambda resolver]
+    RL2 --> LMB
+    LMB --> CACHE{Edge / DynamoDB cache hit?}
+    CACHE -->|Yes| RESP[Return cached response]
+    CACHE -->|No| DATA[Query Aurora SLv2 / Neptune / OpenSearch]
+    DATA --> SHAPE[Shape + redact to public-data policy]
+    SHAPE --> AUDIT[Emit access log → audit trail]
+    AUDIT --> RESP
+    RESP --> USER
+
+    style USER fill:#2196f3,color:#ffffff
+    style AUTH fill:#9c27b0,color:#ffffff
+    style SHAPE fill:#ff006e,color:#ffffff
+    style RESP fill:#4caf50,color:#000000
 ```
 
-**Key Technologies:**
-- **Whisper Large v3** - OpenAI's speech recognition (Swedish, English, 12 others)
-- **ElevenLabs TTS** - High-quality voice synthesis (Swedish voices)
-- **GPT-5** - Natural language understanding and response generation
-- **Web Speech API** - Browser-based audio capture
-
-**Voice Commands:**
-- "What are the latest news from Riksdagen?" → Search + TTS response
-- "Summarize motion 2024:1234" → Document summary + audio playback
-- "How did my MP vote on climate policy?" → Vote lookup + TTS response
-- "Navigate to budget dashboard" → Voice navigation
-- "Play the news about healthcare" → Audio content streaming
-
-**Accessibility Benefits:**
-- Visually impaired users (screen reader alternative)
-- Hands-free operation (multitasking)
-- Learning disabilities (audio-first experience)
-- Language learners (pronunciation practice)
-
-**Privacy:**
-- Audio processing client-side (no server upload)
-- Voice data never stored (ephemeral)
-- Opt-in feature (explicit consent)
-
----
-
-## 5. 🌊 Advanced Data Pipeline Flows
-
-### 5.1 Real-Time Streaming Pipeline (2028+)
-
-**Objective:** Process live parliamentary events with sub-second latency using streaming architecture.
+### 4.2 Bedrock Multi-Modal Generation + Real-Time Fact-Checking
 
 ```mermaid
 flowchart TD
-    A[Start: Live Event Sources] --> B[Riksdag API WebSocket]
-    A --> C[Swedish Radio API]
-    A --> D[Riksdagen.se Scraper]
-    A --> E[Twitter/X Stream: #Riksdagen]
-    
-    B --> F[Apache Kafka Topic: riksdag-events]
-    C --> F
-    D --> F
-    E --> F
-    
-    F --> G[Apache Flink Stream Processing]
-    G --> H[Windowing: 10-Second Tumbling Windows]
-    
-    H --> I{Event Type?}
-    
-    I -->|Vote| J[Vote Aggregation]
-    I -->|Speech| K[Real-Time Transcription]
-    I -->|Document| L[Document Indexing]
-    I -->|Social Media| M[Sentiment Analysis]
-    
-    J --> N[Update Vote Dashboard: Real-Time]
-    K --> O[Live Debate Feed]
-    L --> P[Search Index Update: Elasticsearch]
-    M --> Q[Social Media Sentiment Widget]
-    
-    N --> R[TimescaleDB: Time-Series Storage]
-    O --> R
-    P --> R
-    Q --> R
-    
-    R --> S[D3.js Real-Time Visualization]
-    S --> T[WebSocket Push to Clients]
-    T --> U[Browser Update: <1s Latency]
-    
-    U --> V{Error Detected?}
-    V -->|Yes| W[Kafka Dead Letter Queue]
-    V -->|No| X[Continue Processing]
-    
-    W --> Y[Manual Review Queue]
-    X --> Z{Session Active?}
-    
-    Z -->|Yes| A
-    Z -->|No| AA[End: Archive Stream Data]
-    
-    style A fill:#4caf50,color:#000000
-    style G fill:#ff9800,color:#000000
-    style S fill:#00bcd4,color:#000000
-    style T fill:#9c27b0,color:#ffffff
-    style AA fill:#4caf50,color:#000000
+    EVT[EventBridge: parliamentary event] --> SF[Step Functions orchestration]
+    SF --> EXTRACT[Lambda: extract structured data]
+    EXTRACT --> BR[Amazon Bedrock<br/>multi-modal content generation]
+    BR --> DRAFT[Draft article + media]
+    DRAFT --> FC[Real-time fact-check Lambda]
+    FC --> KB[(Bedrock Knowledge Bases<br/>RAG over corpus)]
+    KB --> VERDICT{Claims grounded in<br/>primary sources?}
+    VERDICT -->|Unsupported| CORRECT[Bedrock self-correction loop] --> FC
+    VERDICT -->|Grounded| GUARD{Bedrock Guardrails<br/>neutrality + GDPR Art.9}
+    GUARD -->|Violation| HOLD[Hold for human-on-the-loop review]
+    GUARD -->|Pass| PUB[Publish + translate 14+ langs]
+    PUB --> APIDX[Index into OpenSearch + Knowledge Base]
+
+    style EVT fill:#2196f3,color:#ffffff
+    style BR fill:#9c27b0,color:#ffffff
+    style VERDICT fill:#ff006e,color:#ffffff
+    style HOLD fill:#ff9800,color:#000000
+    style PUB fill:#4caf50,color:#000000
 ```
 
-**Key Technologies:**
-- **Apache Kafka** - Distributed event streaming (1M+ messages/day)
-- **Apache Flink** - Stream processing with exactly-once semantics
-- **TimescaleDB** - Time-series database for historical analytics
-- **WebSocket** - Real-time browser updates (<1s latency)
-- **Elasticsearch** - Real-time search index updates
+### 4.3 Bedrock Knowledge-Bases RAG Semantic-Search Flow
 
-**Performance Requirements:**
-- **Latency**: <1 second from event to browser display
-- **Throughput**: 10K events/second during peak (parliamentary sessions)
-- **Durability**: 99.999% message delivery (exactly-once semantics)
-- **Retention**: 7 days in Kafka, 10 years in TimescaleDB
+```mermaid
+sequenceDiagram
+    participant U as User / agent
+    participant GW as API Gateway
+    participant L as Lambda (query)
+    participant EMB as Bedrock embeddings
+    participant OS as OpenSearch Serverless (vector)
+    participant KB as Bedrock Knowledge Base
+    participant FM as Bedrock foundation model
 
-**Use Cases:**
-- Live vote results as they happen
-- Real-time debate transcription
-- Social media sentiment during sessions
-- Breaking news alerts
+    U->>GW: Natural-language political query
+    GW->>L: Authorized request (Cognito)
+    L->>EMB: Embed query
+    EMB-->>L: Query vector
+    L->>OS: k-NN retrieve top passages (109K+ docs)
+    OS-->>L: Ranked passages + dok_id citations
+    L->>KB: Assemble grounded context
+    KB->>FM: Generate answer with citations
+    FM-->>L: Answer + source spans + uncertainty
+    L-->>GW: Cited, neutral response
+    GW-->>U: Answer (every claim → primary source)
+```
 
-**Scalability:**
-- Kafka partitions: 10 (scale to 100 as needed)
-- Flink parallelism: 8 task managers (auto-scaling)
-- TimescaleDB sharding: By date (monthly chunks)
-
----
-
-### 5.2 Multi-Source Data Fusion (2028+)
-
-**Objective:** Integrate data from multiple Nordic parliaments (Sweden, Denmark, Norway, Finland) for comparative analysis.
+### 4.4 Predictive Election & Vote-Forecasting Pipeline (Step Functions)
 
 ```mermaid
 flowchart TD
-    A[Start: Multi-Country Data Collection] --> B[Swedish Riksdag API]
-    A --> C[Danish Folketing API]
-    A --> D[Norwegian Storting API]
-    A --> E[Finnish Eduskunta API]
-    
-    B --> F[Extract: Votes, Motions, MPs]
-    C --> G[Extract: Debates, Legislation, Committees]
-    D --> H[Extract: Budget, Voting Records]
-    E --> I[Extract: Parliamentary Questions]
-    
-    F --> J[Schema Normalization]
-    G --> J
-    H --> J
-    I --> J
-    
-    J --> K{Data Format?}
-    
-    K -->|XML| L[Parse XML: lxml]
-    K -->|JSON| M[Parse JSON: Native]
-    K -->|HTML| N[Scrape HTML: BeautifulSoup]
-    K -->|PDF| O[Extract PDF: PyPDF2 + GPT-5]
-    
-    L --> P[Unified Data Model]
-    M --> P
-    N --> P
-    O --> P
-    
-    P --> Q[Entity Resolution: MPs]
-    Q --> R[Deduplication: Same Person, Different Names]
-    R --> S[Translation: 4 Languages → English Pivot]
-    
-    S --> T[Cross-Country Alignment]
-    T --> U{Alignment Confidence?}
-    
-    U -->|< 0.8| V[Manual Review Queue]
-    V --> T
-    
-    U -->|>= 0.8| W[Store in Unified Database]
-    W --> X[PostgreSQL: Multi-Country Schema]
-    
-    X --> Y[Comparative Analytics Engine]
-    Y --> Z[Cross-Country Comparison Dashboard]
-    Z --> AA[D3.js Visualization: 4-Country Heatmap]
-    
-    AA --> AB{User Query?}
-    AB -->|Yes| AC[Generate Comparative Report]
-    AB -->|No| AD[End: Data Fusion Complete]
-    
-    AC --> AE[GPT-5: Multi-Language Report]
-    AE --> AD
-    
-    style A fill:#4caf50,color:#000000
-    style J fill:#ff9800,color:#000000
-    style S fill:#00bcd4,color:#000000
-    style Y fill:#9c27b0,color:#ffffff
-    style AD fill:#4caf50,color:#000000
+    TRIG[Scheduled / event trigger] --> ING[Ingest features<br/>votes · polls · IMF macro · agenda]
+    ING --> FE[Feature engineering Lambda]
+    FE --> MODEL[Bedrock + custom models<br/>election & vote forecasting]
+    MODEL --> CAL[Calibrate uncertainty<br/>scenario tree per horizon]
+    CAL --> WEP{Word-of-estimative-probability<br/>ceiling per horizon band}
+    WEP -->|Exceeds ceiling for horizon| DOWN[Downgrade confidence]
+    WEP -->|Within band| SCEN[Emit 4-scenario + wildcard set]
+    DOWN --> SCEN
+    SCEN --> PIR[Roll forward PIRs to longer horizons]
+    PIR --> STORE[(Timestream + DynamoDB)]
+    STORE --> PUBF[Publish forecast products + API]
+
+    style TRIG fill:#2196f3,color:#ffffff
+    style MODEL fill:#9c27b0,color:#ffffff
+    style WEP fill:#ff006e,color:#ffffff
+    style PUBF fill:#4caf50,color:#000000
 ```
 
-**Key Technologies:**
-- **Multi-API Integration**: 4 Nordic parliaments (different API standards)
-- **Schema Normalization**: Unified data model for cross-country comparison
-- **Entity Resolution**: GPT-5 for matching MPs/parties across countries
-- **Translation**: Multi-language support (Swedish, Danish, Norwegian, Finnish, English)
-- **PostgreSQL**: Unified database with country-specific schemas
+### 4.5 Real-Time Streaming & Multi-Source Data Fusion
 
-**Comparative Metrics:**
-- Voting patterns: Agreement/disagreement across countries
-- Legislative productivity: Bills passed per session
-- Committee effectiveness: Time to decision
-- Gender/age diversity: Comparative demographics
-- Budget priorities: Spending allocations by category
+```mermaid
+flowchart LR
+    SRC1[Riksdagen live feed] --> KIN[Amazon Kinesis streams]
+    SRC2[Regeringen updates] --> KIN
+    SRC3[SCB / IMF releases] --> KIN
+    SRC4[CIA platform deltas] --> KIN
+    KIN --> KDA[Kinesis Data Analytics<br/>windowed enrichment]
+    KDA --> FUSE[Fusion Lambda<br/>entity resolution + dedup]
+    FUSE --> EB[EventBridge bus]
+    EB --> R1[Trigger fact-check]
+    EB --> R2[Update forecasts]
+    EB --> R3[Refresh dashboards / API cache]
+    R1 --> STORE[(Aurora SLv2 · Neptune · OpenSearch · Timestream)]
+    R2 --> STORE
+    R3 --> STORE
 
-**Challenges:**
-- API rate limits (respectful scraping)
-- Data format inconsistencies (XML vs. JSON vs. HTML)
-- Language variations (Danish/Norwegian/Swedish similarities, Finnish distinct)
-- Missing data handling (not all countries publish same data)
+    style KIN fill:#ff9800,color:#000000
+    style FUSE fill:#9c27b0,color:#ffffff
+    style EB fill:#2196f3,color:#ffffff
+    style STORE fill:#4caf50,color:#000000
+```
 
----
-
-## 6. 🤖 AI Model Training & Deployment Flows
-
-### 6.1 Continuous Model Improvement (2027+)
-
-**Objective:** Implement continuous learning for AI models with A/B testing, monitoring, and gradual rollout.
+### 4.6 Personalized Feed Flow (Cognito identity, privacy-preserving)
 
 ```mermaid
 flowchart TD
-    A[Start: New Model Version] --> B[Model Training: Offline]
-    B --> C[Validation Dataset Testing]
-    C --> D{Performance Improvement?}
-    
-    D -->|< 5%| E[Reject Model Version]
-    D -->|>= 5%| F[Shadow Mode Deployment]
-    
-    E --> G[Analyze Failure]
-    G --> H[Feature Engineering Iteration]
-    H --> B
-    
-    F --> I[Run in Parallel: No User Impact]
-    I --> J[Collect Performance Metrics: 7 Days]
-    J --> K{Real-World Performance?}
-    
-    K -->|Worse| L[Rollback to Previous Model]
-    K -->|Better| M[A/B Testing Phase]
-    
-    L --> G
-    
-    M --> N[Traffic Split: 5% New Model, 95% Old Model]
-    N --> O[Monitor Key Metrics]
-    O --> P{User Satisfaction Delta?}
-    
-    P -->|Negative| Q[Stop Rollout]
-    P -->|Neutral| R[Increase Traffic: 10%]
-    P -->|Positive| S[Increase Traffic: 25%]
-    
-    Q --> L
-    R --> T[Monitor for 3 Days]
-    S --> U[Monitor for 5 Days]
-    
-    T --> V{Still Neutral?}
-    U --> W{Still Positive?}
-    
-    V -->|No| L
-    V -->|Yes| X[Increase Traffic: 50%]
-    
-    W -->|No| L
-    W -->|Yes| Y[Full Rollout: 100%]
-    
-    X --> Z[Monitor for 7 Days]
-    Z --> AA{Any Issues?}
-    
-    AA -->|Yes| L
-    AA -->|No| Y
-    
-    Y --> AB[Archive Old Model]
-    AB --> AC[Update Documentation]
-    AC --> AD[Announce to Users]
-    AD --> AE[End: New Model Live]
-    
-    style A fill:#4caf50,color:#000000
-    style B fill:#9c27b0,color:#ffffff
-    style M fill:#ff9800,color:#000000
-    style Y fill:#4caf50,color:#000000
-    style AE fill:#4caf50,color:#000000
+    LOGIN[User sign-in via Cognito] --> CONSENT{Explicit consent<br/>GDPR Art. 9}
+    CONSENT -->|Declined| ANON[Serve neutral default feed]
+    CONSENT -->|Granted| PREF[Store minimal preferences<br/>data minimisation]
+    PREF --> RECO[Bedrock recommendation<br/>topic / committee / region]
+    RECO --> NEU{Neutrality filter<br/>no partisan amplification}
+    NEU -->|Skew detected| REBAL[Rebalance feed] --> RECO
+    NEU -->|Balanced| FEED[Personalized intelligence feed]
+    ANON --> FEED
+    FEED --> RIGHTS[Honour access / erasure rights]
+
+    style LOGIN fill:#2196f3,color:#ffffff
+    style CONSENT fill:#ff006e,color:#ffffff
+    style NEU fill:#ff006e,color:#ffffff
+    style FEED fill:#4caf50,color:#000000
 ```
 
-**Key Technologies:**
-- **Feature Flags**: LaunchDarkly or custom implementation for gradual rollout
-- **A/B Testing**: Statistical significance testing (p-value < 0.05)
-- **Monitoring**: Prometheus + Grafana for real-time metrics
-- **Rollback**: Automated rollback triggers on performance degradation
-
-**Key Metrics:**
-- Accuracy: Prediction correctness
-- Latency: Response time (p95, p99)
-- User Satisfaction: Explicit feedback (thumbs up/down)
-- Engagement: Click-through rate, time on page
-
-**Rollout Stages:**
-1. **Shadow Mode** (0% user traffic): 7 days validation
-2. **Canary** (5% traffic): 3 days monitoring
-3. **Gradual Rollout** (10%, 25%, 50%): Progressive increases
-4. **Full Rollout** (100%): After all stages pass
-
-**Automated Rollback Triggers:**
-- Error rate increase >10%
-- Latency increase >50% (p95)
-- User satisfaction drop >5%
-- Manual override (emergency)
-
----
-
-### 6.2 Federated Learning for Privacy (2028+)
-
-**Objective:** Train AI models on decentralized user data without centralizing sensitive information, using differential privacy.
+### 4.7 Continuous Model Improvement + Federated Learning
 
 ```mermaid
 flowchart TD
-    A[Start: Federated Learning Round] --> B[Central Server: Model Initialization]
-    B --> C[Distribute Model to Clients]
-    
-    C --> D[Client 1: Browser]
-    C --> E[Client 2: Browser]
-    C --> F[Client N: Browser]
-    
-    D --> G[Local Data: Reading History]
-    E --> H[Local Data: Preferences]
-    F --> I[Local Data: Interactions]
-    
-    G --> J[Local Model Training: TensorFlow.js]
-    H --> K[Local Model Training: TensorFlow.js]
-    I --> L[Local Model Training: TensorFlow.js]
-    
-    J --> M[Differential Privacy: Noise Injection]
-    K --> N[Differential Privacy: Noise Injection]
-    L --> O[Differential Privacy: Noise Injection]
-    
-    M --> P[Upload Encrypted Gradients: Only]
-    N --> Q[Upload Encrypted Gradients: Only]
-    O --> R[Upload Encrypted Gradients: Only]
-    
-    P --> S[Central Server: Secure Aggregation]
-    Q --> S
-    R --> S
-    
-    S --> T[Aggregate Gradients: Weighted Average]
-    T --> U[Update Global Model]
-    U --> V{Convergence?}
-    
-    V -->|No| W[Next Training Round]
-    W --> C
-    
-    V -->|Yes| X[Validate Global Model]
-    X --> Y{Performance Acceptable?}
-    
-    Y -->|No| Z[Increase Rounds or Clients]
-    Z --> B
-    
-    Y -->|Yes| AA[Deploy Updated Model]
-    AA --> AB[Distribute to All Clients]
-    AB --> AC[End: Privacy-Preserving Model Updated]
-    
-    style A fill:#4caf50,color:#000000
-    style M fill:#ff9800,color:#000000
-    style N fill:#ff9800,color:#000000
-    style O fill:#ff9800,color:#000000
-    style S fill:#9c27b0,color:#ffffff
-    style AC fill:#4caf50,color:#000000
+    SIG[Signals: corrections · gate fails · user feedback] --> EVAL[Bedrock model evaluation harness]
+    EVAL --> FED{Federated / privacy-preserving<br/>training applicable?}
+    FED -->|Yes| LOCAL[Local gradient aggregation<br/>differential privacy noise]
+    FED -->|No| CENTRAL[Centralised eval set<br/>public data only]
+    LOCAL --> CAND[Candidate model]
+    CENTRAL --> CAND
+    CAND --> SHADOW[Shadow run 7 days<br/>parallel to production]
+    SHADOW --> QG{Quality gate pass?}
+    QG -->|No| ROLLBACK[Retain current model]
+    QG -->|Yes| ROLLOUT[Gradual rollout 5%→25%→100%]
+    ROLLOUT --> DOC[Update model-card + docs]
+
+    style SIG fill:#2196f3,color:#ffffff
+    style FED fill:#ff006e,color:#ffffff
+    style SHADOW fill:#9c27b0,color:#ffffff
+    style ROLLOUT fill:#4caf50,color:#000000
+    style ROLLBACK fill:#ff9800,color:#000000
 ```
 
-**Key Technologies:**
-- **Federated Learning**: Google's Federated Learning framework
-- **Differential Privacy**: ε-differential privacy (ε = 1.0 for strong privacy)
-- **Secure Aggregation**: Encrypted gradient uploads (no raw data)
-- **TensorFlow.js**: Client-side model training (in-browser)
-
-**Privacy Guarantees:**
-- **No Raw Data Upload**: Only model updates (gradients) sent to server
-- **Differential Privacy**: Noise injection (ε = 1.0) prevents individual inference
-- **Secure Aggregation**: Encrypted gradients aggregated without decryption
-- **K-Anonymity**: Minimum 100 clients per round (k = 100)
-
-**Use Cases:**
-- Personalized recommendations without centralized user data
-- User behavior modeling (reading patterns, preferences)
-- Content quality feedback (implicit signals)
-
-**Performance Trade-offs:**
-- Training time: 10x slower than centralized learning
-- Model accuracy: -5% vs. centralized (acceptable for privacy gain)
-- Communication overhead: 100MB per round per client (WiFi recommended)
-
-**Ethical Considerations:**
-- Transparent privacy policy (explain federated learning)
-- Opt-in only (explicit consent required)
-- Data minimization (only necessary gradients)
-- Auditable (privacy audits by third parties)
-
----
-
-## 7. 🤝 Community Collaboration Flows
-
-### 7.1 Crowdsourced Fact-Checking (2027+)
-
-**Objective:** Enable community-driven fact-checking with consensus voting, expert review, and gamification.
+### 4.8 Crowdsourced Fact-Checking Flow (human-in-the-loop)
 
 ```mermaid
 flowchart TD
-    A[Start: User Flags Content] --> B{Flag Reason?}
-    
-    B -->|Factual Error| C[Submit Correction with Sources]
-    B -->|Bias| D[Submit Bias Report with Evidence]
-    B -->|Misleading| E[Submit Context/Clarification]
-    B -->|Spam/Abuse| F[Report to Moderators]
-    
-    C --> G[Community Review Queue]
-    D --> G
-    E --> G
-    F --> H[Moderator Review: Immediate]
-    
-    G --> I[Display to Reviewers: Random 5]
-    I --> J[Reviewer 1: Vote + Rationale]
-    I --> K[Reviewer 2: Vote + Rationale]
-    I --> L[Reviewer 3: Vote + Rationale]
-    I --> M[Reviewer 4: Vote + Rationale]
-    I --> N[Reviewer 5: Vote + Rationale]
-    
-    J --> O[Aggregate Votes]
-    K --> O
-    L --> O
-    M --> O
-    N --> O
-    
-    O --> P{Consensus Reached?}
-    
-    P -->|< 60% Agreement| Q[Escalate to Expert Panel]
-    P -->|>= 60% Agreement| R[Consensus Decision]
-    
-    Q --> S[Expert Review: Domain Specialists]
-    S --> T[Expert Verdict + Explanation]
-    T --> U[Final Decision: Expert Authority]
-    
-    R --> V{Consensus Type?}
-    V -->|Approve Correction| W[Update Content]
-    V -->|Reject Flag| X[No Action]
-    V -->|Needs More Info| Y[Request Additional Evidence]
-    
-    U --> Z{Expert Verdict?}
-    Z -->|Correction Valid| W
-    Z -->|Flag Invalid| X
-    Z -->|Inconclusive| Y
-    
-    W --> AA[Publish Updated Content]
-    AA --> AB[Notify Original Flaggers]
-    AB --> AC[Reward Points: Successful Flag]
-    
-    X --> AD[Notify Flaggers: Rejected]
-    Y --> AE[Community Discussion Thread]
-    AE --> G
-    
-    AC --> AF[Leaderboard Update]
-    AF --> AG[End: Community Contribution Recorded]
-    
-    style A fill:#4caf50,color:#000000
-    style O fill:#ff9800,color:#000000
-    style S fill:#9c27b0,color:#ffffff
-    style AA fill:#4caf50,color:#000000
-    style AG fill:#4caf50,color:#000000
+    PUBL[Published claim] --> SUBMIT[Contributor submits challenge<br/>via Cognito-auth portal]
+    SUBMIT --> SPAM{Anti-abuse + reputation check}
+    SPAM -->|Reject| DENY[Discard]
+    SPAM -->|Accept| TRIAGE[Bedrock triage<br/>cluster + evidence-match]
+    TRIAGE --> EVID{Primary-source evidence?}
+    EVID -->|No| CLOSE[Close — insufficient evidence]
+    EVID -->|Yes| REVIEW[Human-on-the-loop adjudication]
+    REVIEW --> DECIDE{Upheld?}
+    DECIDE -->|Yes| CORRECT[Issue correction + audit entry]
+    DECIDE -->|No| EXPLAIN[Document rationale]
+    CORRECT --> KBUPD[Update Knowledge Base + reputation]
+
+    style PUBL fill:#2196f3,color:#ffffff
+    style EVID fill:#ff006e,color:#ffffff
+    style REVIEW fill:#9c27b0,color:#ffffff
+    style CORRECT fill:#4caf50,color:#000000
+    style DENY fill:#f44336,color:#ffffff
 ```
-
-**Key Technologies:**
-- **Blockchain (Optional)**: Immutable audit trail for fact-check decisions
-- **Reputation System**: Stack Overflow-style points and badges
-- **Expert Panel**: Domain specialists (political scientists, journalists, data analysts)
-- **Consensus Algorithm**: Weighted voting (reputation-based)
-
-**Review Process:**
-- **Community Review**: 5 random reviewers (reputation >100 points)
-- **Consensus Threshold**: 60% agreement (3 out of 5 votes)
-- **Expert Escalation**: Controversial cases (< 60% consensus)
-- **Final Authority**: Expert panel for complex disputes
-
-**Gamification:**
-- **Points**: +10 for successful flag, +5 for helpful review, -5 for rejected flag
-- **Badges**: Fact-Checker (10 successful flags), Expert Reviewer (100 reviews), Top Contributor (1,000 points)
-- **Leaderboard**: Monthly rankings with recognition
-
-**Quality Controls:**
-- **Reviewer Selection**: Random sampling to prevent gaming
-- **Reputation Weighting**: Higher reputation = higher vote weight
-- **Expert Oversight**: Spot-checks on 10% of community decisions
-- **Appeals Process**: Users can appeal rejected flags
-
-**Ethical Considerations:**
-- **Transparency**: All decisions publicly visible with rationale
-- **No Censorship**: Focus on corrections, not removals
-- **Diversity**: Ensure reviewer diversity (political balance)
-- **No Harassment**: Anti-brigading measures
 
 ---
 
-## 8. 🛡️ ISMS Compliance & Security Flows
+## 5. 🛡️ ISMS & AI-Policy Compliance Flows
 
-### 8.1 AI Policy Compliance Workflow (2026+)
+Compliance is a **gate in every horizon**, mapped to ISO 27001:2022, NIST CSF 2.0 and CIS Controls v8.1, under [Hack23 ISMS-PUBLIC](https://github.com/Hack23/ISMS-PUBLIC).
 
-**Objective:** Ensure all AI systems comply with Hack23 AB's AI Policy and Secure Development Policy.
+### 5.1 AI-Policy Compliance Workflow (all horizons)
 
 ```mermaid
 flowchart TD
-    A[Start: New AI Feature Proposal] --> B[AI Impact Assessment: AIA]
-    B --> C{Risk Level?}
-    
-    C -->|High Risk| D[Full AI Audit Required]
-    C -->|Medium Risk| E[Standard Review]
-    C -->|Low Risk| F[Self-Assessment]
-    
-    D --> G[Audit Team: Security, Legal, Ethics]
-    E --> H[Security Team Review]
-    F --> I[Developer Self-Certification]
-    
-    G --> J[Review AI Policy Checklist]
-    H --> J
-    I --> J
-    
-    J --> K{Compliance Verified?}
-    
-    K -->|No| L[Document Non-Compliance]
-    L --> M[Remediation Plan]
-    M --> N[Implement Controls]
-    N --> J
-    
-    K -->|Yes| O[Document Compliance]
-    O --> P[AI System Classification]
-    P --> Q{System Type?}
-    
-    Q -->|Generative AI| R[Content Moderation Required]
-    Q -->|Predictive AI| S[Explainability Required]
-    Q -->|Recommendation AI| T[Bias Testing Required]
-    
-    R --> U[Implement Safety Controls]
-    S --> V[Implement Explainability Features]
-    T --> W[Implement Fairness Metrics]
-    
-    U --> X[Continuous Monitoring Setup]
-    V --> X
-    W --> X
-    
-    X --> Y[Deploy to Production]
-    Y --> Z[Quarterly Compliance Review]
-    Z --> AA{Still Compliant?}
-    
-    AA -->|No| L
-    AA -->|Yes| AB[Renew Certification]
-    AB --> AC[End: AI System Compliant]
-    
-    style A fill:#4caf50,color:#000000
-    style D fill:#f44336,color:#ffffff
-    style J fill:#ff9800,color:#000000
-    style X fill:#9c27b0,color:#ffffff
-    style AC fill:#4caf50,color:#000000
+    START[AI-assisted process invoked] --> PUB{Public data only?}
+    PUB -->|No| REJECT[Reject — policy violation]
+    PUB -->|Yes| LAWFUL{"GDPR Art. 9 lawful basis<br/>9(2)(e) public / 9(2)(g) public interest"}
+    LAWFUL -->|None| REJECT
+    LAWFUL -->|Established| NEUTRAL{Party neutrality maintained?}
+    NEUTRAL -->|Skewed| REBAL[Rebalance + document] --> NEUTRAL
+    NEUTRAL -->|Balanced| EVID{Evidence standard met?<br/>dok_id / vote / named actor}
+    EVID -->|No| BLOCKE[Block — generic claim]
+    EVID -->|Yes| HITL{High-risk processing?}
+    HITL -->|Yes| DPIA[Run DPIA + human-on-the-loop]
+    HITL -->|No| LOG[Log decision + provenance]
+    DPIA --> LOG
+    LOG --> APPROVE[✅ Proceed]
+
+    style START fill:#2196f3,color:#ffffff
+    style REJECT fill:#f44336,color:#ffffff
+    style BLOCKE fill:#f44336,color:#ffffff
+    style DPIA fill:#9c27b0,color:#ffffff
+    style APPROVE fill:#4caf50,color:#000000
 ```
 
-**Key Policies:**
-- **Hack23 AI Policy**: [ISMS-PUBLIC/AI_Policy.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/AI_Policy.md)
-- **Secure Development Policy**: [ISMS-PUBLIC/Secure_Development_Policy.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md)
-- **AI Risk Classification**: High, Medium, Low (based on EU AI Act)
+### 5.2 Control Mapping (process → framework)
 
-**Compliance Checklist:**
-- ✅ Transparency: Users informed about AI usage
-- ✅ Explainability: AI decisions can be explained
-- ✅ Bias Testing: Fairness metrics monitored
-- ✅ Data Privacy: GDPR-compliant, differential privacy
-- ✅ Human Oversight: Human-in-the-loop for high-risk decisions
-- ✅ Security: AI models protected from adversarial attacks
-- ✅ Documentation: AI system documentation maintained
-
-**Risk Levels:**
-- **High Risk**: Election prediction, vote prediction (impacts democracy)
-- **Medium Risk**: News generation, fact-checking (content moderation)
-- **Low Risk**: Semantic search, personalization (minimal impact)
+| Future process flow | ISO 27001:2022 | NIST CSF 2.0 | CIS v8.1 |
+|---------------------|----------------|--------------|----------|
+| Agentic newsroom + analysis gate | A.8.25 secure SDLC, A.8.28 secure coding | PR.PS, DE.CM | 16 App Security |
+| Multi-provider data fetch + provenance | A.5.34 privacy, A.8.12 data leakage | ID.AM, PR.DS | 3 Data Protection |
+| Bedrock generation + Guardrails | A.5.23 cloud services | GV.SC, PR.AA | 4 Secure Config |
+| API Gateway + Cognito | A.8.3 access, A.8.5 auth | PR.AA, PR.AC | 6 Access Control |
+| Streaming fusion + audit trail | A.8.15 logging, A.8.16 monitoring | DE.CM, RS.AN | 8 Audit Log Mgmt |
+| Federated learning + DP | A.5.34 privacy, A.8.11 data masking | PR.DS, GV.RM | 3 Data Protection |
+| Model lifecycle + rollback | A.8.32 change mgmt | ID.IM, PR.PS | 4 Secure Config |
 
 ---
 
-## 9. ⚡ Performance & Scalability Considerations
+## 6. 🤖 AI Model Lifecycle & Evolution Flows
 
-### 9.1 Performance Benchmarks
-
-**Client-Side Performance:**
-- Time to Interactive (TTI): <3 seconds (p95)
-- First Contentful Paint (FCP): <1.5 seconds (p95)
-- Largest Contentful Paint (LCP): <2.5 seconds (p95)
-- Cumulative Layout Shift (CLS): <0.1
-- TensorFlow.js inference: <100ms (p95)
-
-**Server-Side Performance:**
-- API response time: <200ms (p95)
-- Database query time: <50ms (p95)
-- Kafka throughput: 10K messages/second
-- Flink processing latency: <1 second
-- GPT-5 API latency: <2 seconds (p95)
-
-**Scalability Targets:**
-- Concurrent users: 100K (peak load)
-- Requests per second: 10K (CDN-accelerated)
-- Database size: 1TB (PostgreSQL + TimescaleDB)
-- Knowledge graph: 10M nodes, 100M relationships (Neo4j)
-- Vector database: 1M documents (Pinecone)
-
-### 9.2 Cost Optimization
-
-**Cloud Costs (Monthly Estimates):**
-- AWS CloudFront: $500 (600+ edge locations)
-- AWS S3: $100 (multi-region storage)
-- GPT-5 API: $2,000 (100K requests/day)
-- Pinecone: $500 (1M vectors)
-- Neo4j Aura: $300 (10M nodes)
-- Kafka/Flink: $1,000 (managed service)
-- **Total**: ~$5,000/month (2027 estimate)
-
-**Optimization Strategies:**
-- CDN caching (99% hit rate target)
-- Client-side AI (TensorFlow.js reduces server costs)
-- Batch processing (off-peak GPT-5 usage)
-- Data compression (gzip, Brotli)
-- Query optimization (database indexes, caching)
-
----
-
-## 10. 📚 Related Documentation
-
-### Current State Documentation
-- **[ARCHITECTURE.md](ARCHITECTURE.md)** - Current system architecture (C4 model)
-- **[SECURITY_ARCHITECTURE.md](SECURITY_ARCHITECTURE.md)** - Current security controls
-- **[DATA_MODEL.md](DATA_MODEL.md)** - Current data structures (if exists)
-
-### Future Vision Documentation
-- **[FUTURE_SECURITY_ARCHITECTURE.md](FUTURE_SECURITY_ARCHITECTURE.md)** - Security evolution roadmap
-- **[FUTURE_ARCHITECTURE.md](FUTURE_ARCHITECTURE.md)** - Architectural vision (if exists)
-- **[FUTURE_DATA_MODEL.md](FUTURE_DATA_MODEL.md)** - Data model evolution (if exists)
-
-### ISMS & Compliance
-- **[Hack23 ISMS-PUBLIC](https://github.com/Hack23/ISMS-PUBLIC/)** - Information Security Management System
-- **[AI Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/AI_Policy.md)** - AI governance and ethics
-- **[Secure Development Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md)** - SDLC security
-- **[Classification Framework](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md)** - Data and system classification
-
-### CIA Platform Reference
-- **[CIA FUTURE_FLOWCHART.md](https://github.com/Hack23/cia/blob/master/FUTURE_FLOWCHART.md)** - Parent platform flowcharts
-- **[CIA Platform](https://www.hack23.com/cia)** - Citizen Intelligence Agency (data source)
-
-### External Standards
-- **[EU AI Act](https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai)** - European AI regulation
-- **[GDPR](https://gdpr.eu/)** - General Data Protection Regulation
-- **[ISO 27001](https://www.iso.org/isoiec-27001-information-security.html)** - Information security standard
-- **[NIST AI RMF](https://www.nist.gov/itl/ai-risk-management-framework)** - AI risk management framework
-
----
-
-## 11. 🤖 AI/LLM Evolution Flow (2026-2037)
-
-### AI Model Lifecycle Management
+### 6.1 AI Model Lifecycle Management (continuous evaluation → rollout)
 
 ```mermaid
 graph TD
-    subgraph "Continuous Model Evaluation (Every ~2.3 Months)"
-        A[New Model Release<br/>Opus 4.8, 4.9, 5.0...] --> B{Benchmark Against<br/>Current Model}
-        B -->|Superior| C[Shadow Testing<br/>7-Day Parallel Run]
-        B -->|Equal/Inferior| D[Document Results<br/>Continue Current Model]
-        C --> E{Quality Gate<br/>Pass?}
-        E -->|Yes| F[Gradual Rollout<br/>5% → 25% → 100%]
-        E -->|No| G[Rollback<br/>Retain Current Model]
-        F --> H[Full Deployment<br/>Update Documentation]
+    subgraph EVAL["Continuous Model Evaluation (~quarterly cadence)"]
+        A[New model release<br/>Opus 4.8 → 5.x → 6.x …] --> B{Benchmark vs current}
+        B -->|Superior| C[Shadow test — 7-day parallel run]
+        B -->|Equal/Inferior| D[Document + keep current]
+        C --> E{Quality gate pass?}
+        E -->|Yes| F[Gradual rollout 5%→25%→100%]
+        E -->|No| G[Rollback + retain current]
+        F --> H[Full deploy + update model-card]
     end
-    
-    subgraph "Annual Major Version Upgrade"
-        I[Major Version Release<br/>Opus 5.0, 6.0, 7.0...] --> J{Architecture<br/>Compatible?}
-        J -->|Yes| K[Feature Expansion<br/>Enable New Capabilities]
-        J -->|No| L[Platform Adaptation<br/>Architecture Update]
-        K --> M[Integration Testing<br/>All 14 Languages]
+
+    subgraph MAJOR["Annual Major Upgrade"]
+        I[Major version<br/>Opus 5.0 / 6.0 / 7.0 …] --> J{Architecture compatible?}
+        J -->|Yes| K[Enable new capabilities]
+        J -->|No| L[Adapt platform + re-test]
+        K --> M[Integration test — 14+ languages]
         L --> M
-        M --> N[Production Deployment<br/>With Feature Flags]
+        M --> N[Deploy behind feature flags]
     end
-    
-    subgraph "Competitor Evaluation (Quarterly)"
-        O[Review Competitors<br/>OpenAI, Google, Meta, EU AI] --> P{Better Model<br/>Available?}
-        P -->|Yes| Q[Multi-Model Strategy<br/>Via Amazon Bedrock]
-        P -->|No| R[Continue Current<br/>Provider Strategy]
-        Q --> S[A/B Test Models<br/>Compare Quality]
-        S --> T[Select Best Model<br/>Per Task Type]
+
+    subgraph COMP["Competitor Evaluation (quarterly)"]
+        O[Review OpenAI · Google · Meta · EU sovereign AI] --> P{Better per-task model?}
+        P -->|Yes| Q[Multi-model via Amazon Bedrock]
+        P -->|No| R[Keep provider strategy]
+        Q --> S[A/B test per task type]
     end
-    
-    subgraph "AGI Transition Planning (2033-2037)"
-        U[AGI Capability<br/>Assessment] --> V{AGI Level<br/>Reached?}
-        V -->|Yes| W[Autonomous Mode<br/>With Human Oversight]
-        V -->|Partial| X[Enhanced Mode<br/>Expanded Capabilities]
-        V -->|No| Y[Continue Evolution<br/>Annual Major Upgrades]
-        W --> Z[Global Platform<br/>195 Parliaments]
-        X --> Y
+
+    subgraph PARA["Paradigm-Shift Watch (2031–2037)"]
+        U[Quantum / neuromorphic / AGI signal] --> V{Paradigm shift viable?}
+        V -->|Yes| W[Autonomous mode + human oversight]
+        V -->|Partial| X[Enhanced mode]
+        V -->|No| Y[Continue annual upgrades]
     end
-    
+
     H --> I
     N --> O
-    T --> U
-    
+    S --> U
+
     style A fill:#00d9ff,color:#000000
     style I fill:#ff006e,color:#ffffff
     style O fill:#ffbe0b,color:#000000
     style U fill:#9c27b0,color:#ffffff
 ```
 
-### AI Model Evolution Timeline
+### 6.2 AI Model Evolution Timeline — DevSecOps Capability (verbatim)
 
-| Year | Model Version | Update Cadence | Key Workflow Changes |
-|------|--------------|----------------|---------------------|
-| 2026 | Opus 4.8-4.9 | Minor ~2.3mo, Major annual | News generation v2, 14 languages |
-| 2027 | Opus 5.x | Minor ~2.3mo, Major annual | Predictive analytics, semantic search |
-| 2028 | Opus 6.x | Minor ~2.3mo, Major annual | Multi-modal generation, real-time streams |
-| 2029 | Opus 7.x | Minor ~2.3mo, Major annual | Autonomous pipeline, mobile app |
-| 2030 | Opus 8.x | Minor ~2.3mo, Major annual | Near-expert analysis, 50+ languages |
-| 2031-2033 | Opus 9-10.x | Accelerating cadence | Pre-AGI capabilities, global coverage |
-| 2034-2037 | Post-Opus / AGI | Continuous evolution | Transformative platform, 195 parliaments |
+> **Assumptions:** major AI-model upgrades land roughly annually; competitors (OpenAI, Google, Meta, EU sovereign AI) are re-evaluated at each release; the architecture is built to absorb paradigm shifts (quantum AI, neuromorphic computing); all transitions are governed by the [Hack23 AI Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/AI_Policy.md).
+
+| Year | AI Model | DevSecOps Capability Evolution |
+|------|----------|--------------------------------|
+| 2026 | Opus 4.6–4.9 | 🟢 AI-assisted code review, automated test generation, agentic CI/CD workflows |
+| 2027 | Opus 5.x | 🔵 Predictive vulnerability detection, intelligent dependency management |
+| 2028 | Opus 6.x | 🟣 Multi-modal security analysis (code + architecture + runtime), automated threat modeling |
+| 2029 | Opus 7.x | 🟠 Autonomous security pipeline orchestration, self-healing build systems |
+| 2030 | Opus 8.x | 🔴 Near-expert automated security review, AI-driven architecture validation |
+| 2031–2033 | Opus 9–10.x / Pre-AGI | ⚪ Autonomous secure development lifecycle management |
+| 2034–2037 | AGI / Post-AGI | ⭐ Transformative software engineering with built-in security assurance |
+
+### 6.3 The Same AI Curve, Translated into Process Terms
+
+Each model generation unlocks a concrete change in **where and how the platform processes political intelligence**:
+
+| Year | AI Model | Process / Data-Flow Unlock (OSINT · party analytics · forecasting) |
+|------|----------|--------------------------------------------------------------------|
+| 2026 | Opus 4.6–4.9 | 🟢 v1.x agentic newsroom hardened; analysis-gate Pass-2 automation; 14-language translation throughput |
+| 2027 | Opus 5.x | 🔵 v2.0 build-time OSINT precompute (network/temporal/anomaly) becomes reliable; party-landscape datasets auto-graded |
+| 2028 | Opus 6.x | 🟣 v3.0 Bedrock multi-modal generation + real-time fact-check loop; RAG over 109K+ docs goes live |
+| 2029 | Opus 7.x | 🟠 Autonomous streaming-fusion orchestration; self-correcting forecast pipelines; personalized feeds |
+| 2030 | Opus 8.x | 🔴 Near-expert election/vote forecasting with calibrated uncertainty; conversational intelligence assistant |
+| 2031–2033 | Opus 9–10.x / Pre-AGI | ⚪ Federated/Nordic & EU-parliament expansion; cross-jurisdiction data fusion at scale |
+| 2034–2037 | AGI / Post-AGI | ⭐ Transformative democratic-intelligence flows with built-in neutrality & privacy assurance |
+
+```mermaid
+flowchart LR
+    Y26[2026 Opus 4.x<br/>🟢 Static agentic newsroom] --> Y27[2027 Opus 5.x<br/>🔵 Static OSINT precompute]
+    Y27 --> Y28[2028 Opus 6.x<br/>🟣 Bedrock RAG + fact-check]
+    Y28 --> Y29[2029 Opus 7.x<br/>🟠 Streaming fusion]
+    Y29 --> Y30[2030 Opus 8.x<br/>🔴 Calibrated forecasting]
+    Y30 --> Y33[2031–33 Pre-AGI<br/>⚪ Nordic/EU federation]
+    Y33 --> Y37[2034–37 AGI<br/>⭐ Transformative flows]
+
+    style Y26 fill:#4caf50,color:#000000
+    style Y27 fill:#2196f3,color:#ffffff
+    style Y28 fill:#9c27b0,color:#ffffff
+    style Y29 fill:#ff9800,color:#000000
+    style Y30 fill:#f44336,color:#ffffff
+    style Y33 fill:#eceff1,color:#000000
+    style Y37 fill:#ffd700,color:#000000
+```
+
+---
+
+## 7. ⚡ Performance & Cost-Optimization Flows
+
+> All numbers are **roadmap targets**, not achieved metrics.
+
+### 7.1 Performance Targets by Horizon
+
+| Metric | v1.x (today) | v2.0 target | v3.0+ target |
+|--------|--------------|-------------|--------------|
+| LCP (p95) | < 2.5 s | < 2.0 s | < 1.8 s (edge) |
+| Build time (full) | minutes | minutes (heavier precompute) | n/a (runtime) |
+| API response (p95) | n/a (static) | n/a (static) | < 200 ms |
+| RAG semantic query (p95) | n/a | n/a | < 800 ms |
+| Streaming fusion latency | n/a | n/a | < 2 s end-to-end |
+| Forecast refresh | daily build | daily build | event-driven (minutes) |
+
+### 7.2 Cost-Optimization Decision Flow
+
+```mermaid
+flowchart TD
+    REQ[New capability requested] --> STATIC{Can it be precomputed<br/>at build time?}
+    STATIC -->|Yes| BUILD[Render static — near-zero runtime cost]
+    STATIC -->|No| RUNTIME{Real-time demand proven?}
+    RUNTIME -->|No| DEFER[Defer — keep static]
+    RUNTIME -->|Yes| SERVERLESS[Serverless — pay-per-use Lambda]
+    SERVERLESS --> CACHE[Cache aggressively<br/>edge + DynamoDB TTL]
+    CACHE --> BATCH[Batch Bedrock calls off-peak]
+    BATCH --> BUDGET{Within cost budget?}
+    BUDGET -->|No| TUNE[Tune model tier / quotas] --> BUDGET
+    BUDGET -->|Yes| SHIP[Ship + monitor cost telemetry]
+
+    style REQ fill:#2196f3,color:#ffffff
+    style BUILD fill:#4caf50,color:#000000
+    style DEFER fill:#ff9800,color:#000000
+    style SHIP fill:#4caf50,color:#000000
+```
+
+**Optimization levers:** static-first default · CloudFront cache (99% hit-rate target) · Bedrock model-tier selection per task · off-peak batch generation · Brotli/gzip compression · serverless scale-to-zero · vintage-aware data caching (avoid redundant IMF/SCB fetches).
+
+---
+
+## 8. 🌐 IMF Economic-Dataflow Evolution
+
+*Baseline: the **already-implemented** IMF pipeline is documented in [`FLOWCHART.md`](FLOWCHART.md#-imf-economic-data-pipeline-current-state). The diagram below layers future gates (vintage-age UI badge, provider-mix telemetry, RAG-indexed economic provenance) onto today's pure-TypeScript client without changing the canonical IMF-first rule.*
+
+> **Authoritative hub:** [`analysis/imf/README.md`](analysis/imf/README.md) · [`analysis/imf/agentic-integration.md`](analysis/imf/agentic-integration.md) · [`analysis/imf/indicators-inventory.json`](analysis/imf/indicators-inventory.json) · [`analysis/imf/data-dictionary.md`](analysis/imf/data-dictionary.md) · [`.github/aw/ECONOMIC_DATA_CONTRACT.md`](.github/aw/ECONOMIC_DATA_CONTRACT.md) v2.1
+
+```mermaid
+flowchart LR
+    classDef primary fill:#0a4f8f,color:#fff,stroke:#00d9ff,stroke-width:2px
+    classDef secondary fill:#3a3a3a,color:#ddd,stroke:#888
+    classDef gate fill:#ff006e,color:#fff,stroke:#fff
+    classDef future fill:#9c27b0,color:#fff,stroke:#fff
+
+    Start([news-* / forecast workflow]) --> Domain{Identify economic class}
+    Domain -->|Macro · Fiscal · Monetary · External · Trade| IMF[(IMF SDMX 3.0 + Datamapper<br/>scripts/imf-client.ts)]:::primary
+    Domain -->|Governance / Environment / Social residue| WB[(World Bank)]:::secondary
+    Domain -->|Swedish monthly / regional| SCB[(SCB PxWeb v2)]:::secondary
+
+    IMF --> Vintage{Vintage > 6 months?}:::gate
+    Vintage -->|Yes| Annotate[Annotate stale + downgrade confidence]
+    Vintage -->|No| Cache[Cache: vintage-tagged · SHA-256 pinned]
+    Annotate --> Cache
+    Cache --> Provenance[Emit economicProvenance<br/>provider · dataflow · indicator · vintage]
+    WB --> Cache
+    SCB --> Cache
+
+    Provenance --> Compose[Article / forecast composition]
+    Compose --> Lint{IMF-first lint}:::gate
+    Lint -->|WB economic citation w/o IMF cross-ref| Reject([Block — open issue])
+    Lint -->|Pass| Publish([Publish])
+
+    Publish --> FutBadge[v2.0: vintage-age UI badge<br/>+ provider-mix telemetry]:::future
+    Publish --> FutRAG[v3.0+: index economicProvenance<br/>into Bedrock Knowledge Base]:::future
+
+    style Start fill:#2196f3,color:#ffffff
+    style Publish fill:#4caf50,color:#000000
+```
+
+### Provider decision matrix
+
+| Indicator class | Primary | Secondary | Why |
+|---|---|---|---|
+| Macro (GDP, growth, unemployment, inflation, fiscal balance, debt, current account) | **IMF WEO + Fiscal Monitor** | SCB (Sweden monthly) | Freshness + T+5 projections; SNA 2008 / GFSM 2014 / BPM6 comparability |
+| Bilateral trade flows | **IMF DOTS** | — | Partner-country dimension, monthly cadence |
+| Monthly inflation, policy rates | **IMF IFS / MFS_IR** | SCB / Riksbank | Standardised cross-country |
+| Government spending by function (defence/health/education/social protection) | **IMF GFS_COFOG** | — | Committee-aligned (FöU/SoU/UbU/SfU) |
+| Commodity prices, exchange rates | **IMF PCPS / ER** | — | Canonical benchmarks |
+| Governance (CC.EST, RL.EST, VA.EST, GE.EST, RQ.EST, PV.EST) | **World Bank WGI** | — | IMF has no equivalent |
+| Environment (CO2, renewables, forest, water) | **World Bank** | — | IMF has no equivalent |
+| Social/education residue (literacy, school participation, gender ratios) | **World Bank** | GFS_COFOG 09 | IMF has no equivalent |
+| Defence spending depth (long historicals) | **World Bank MS.MIL.*** | GFS_COFOG 02 | WB deeper history |
+| Swedish ground truth (monthly labour, regional, budget execution) | **SCB** | — | National statistics authority |
+
+**Canonical rule (unchanged across horizons).** Every economic claim cites an IMF dataflow first; World Bank citations are reserved for governance, environment and social residue; SCB is the Swedish-specific ground-truth layer. In v3.0+, this same provenance is **indexed into the Bedrock Knowledge Base** so RAG answers inherit the IMF-first discipline. See `ECONOMIC_DATA_CONTRACT.md` v2.1 for the banned-phrase list and vintage discipline (>6 mo → annotation).
 
 ---
 
@@ -1419,20 +842,50 @@ graph TD
 
 | Version | Date | Changes | Author |
 |---------|------|---------|--------|
-| 1.0 | 2026-02-15 | Initial creation with 10+ comprehensive flowcharts | Hack23 Documentation Team |
+| 1.0 | 2026-02-15 | Initial creation with 10+ comprehensive future flowcharts | Hack23 Documentation Team |
 | 2.0 | 2026-02-24 | Extended to 2037 vision, AI/LLM evolution flow, AGI planning | Hack23 Documentation Team |
+| 3.0 | 2026-05-31 | Full refresh & re-alignment to v1.0.x baseline ([FLOWCHART.md](FLOWCHART.md)); restructured into three explicit horizons (v1.x static agentic newsroom → v2.0 static deepening → v3.0+ AWS serverless); added build-time OSINT/party-landscape & INTOP flows; AWS-serverless runtime flows (API Gateway, Lambda, Step Functions, EventBridge, Kinesis, **Bedrock**, **Knowledge Bases RAG**, **Cognito**); AI Model Evolution table verbatim + process translation; refreshed IMF dataflow evolution | Hack23 Intelligence-Operative Agent |
 
 **Review Schedule:**
-- Quarterly review (Q2, Q4 annually)
-- Updated as new features reach implementation milestones
-- Aligned with FUTURE_SECURITY_ARCHITECTURE.md updates
+- Quarterly review aligned with FUTURE_ARCHITECTURE.md and FUTURE_SECURITY_ARCHITECTURE.md
+- Updated as capabilities reach implementation milestones and horizon-gates are crossed
 
 **Classification:** Public  
 **Distribution:** Unrestricted  
 **Repository:** https://github.com/Hack23/riksdagsmonitor  
 **Path:** /FUTURE_FLOWCHART.md  
 **Format:** Markdown with Mermaid diagrams  
-**Next Review:** 2026-05-24
+**Next Review:** 2026-08-31
+
+---
+
+## 📚 Related Documentation
+
+### Current State (baseline this doc builds on)
+- **[FLOWCHART.md](FLOWCHART.md)** — current process flows & pipelines (direct baseline)
+- **[ARCHITECTURE.md](ARCHITECTURE.md)** — current system architecture (C4 model)
+- **[DATA_MODEL.md](DATA_MODEL.md)** — current data structures
+- **[STATEDIAGRAM.md](STATEDIAGRAM.md)** — current state transitions
+- **[WORKFLOWS.md](WORKFLOWS.md)** — CI/CD automation
+- **[SECURITY_ARCHITECTURE.md](SECURITY_ARCHITECTURE.md)** — current security controls
+
+### Future Vision (sibling FUTURE_* docs)
+- **[FUTURE_ARCHITECTURE.md](FUTURE_ARCHITECTURE.md)** — architectural evolution roadmap
+- **[FUTURE_DATA_MODEL.md](FUTURE_DATA_MODEL.md)** — enhanced data architecture
+- **[FUTURE_STATEDIAGRAM.md](FUTURE_STATEDIAGRAM.md)** — advanced state management
+- **[FUTURE_MINDMAP.md](FUTURE_MINDMAP.md)** — future capability map
+- **[FUTURE_SWOT.md](FUTURE_SWOT.md)** — strategic outlook
+- **[FUTURE_SECURITY_ARCHITECTURE.md](FUTURE_SECURITY_ARCHITECTURE.md)** — security evolution roadmap
+
+### ISMS & Compliance
+- **[Hack23 ISMS-PUBLIC](https://github.com/Hack23/ISMS-PUBLIC/)** — Information Security Management System
+- **[AI Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/AI_Policy.md)** — AI governance and ethics
+- **[Secure Development Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md)** — SDLC security
+- **[Classification Framework](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md)** — data and system classification
+
+### CIA Platform & Standards
+- **[CIA Platform](https://www.hack23.com/cia)** — Citizen Intelligence Agency (data source)
+- **[EU AI Act](https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai)** · **[GDPR](https://gdpr.eu/)** · **[ISO 27001](https://www.iso.org/isoiec-27001-information-security.html)** · **[NIST AI RMF](https://www.nist.gov/itl/ai-risk-management-framework)**
 
 ---
 
@@ -1454,62 +907,9 @@ graph TD
 **✅ Approved by:** James Pether Sörling, CEO  
 **📤 Distribution:** Public  
 **🏷️ Classification:** [![Confidentiality: Public](https://img.shields.io/badge/C-Public-lightgrey?style=flat-square)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#confidentiality-levels)  
-**📅 Effective Date:** 2026-02-24  
-**⏰ Next Review:** 2026-05-24  
+**📅 Effective Date:** 2026-05-31  
+**⏰ Next Review:** 2026-08-31  
 **🎯 Framework Compliance:** [![ISO 27001](https://img.shields.io/badge/ISO_27001-2022_Aligned-blue?style=flat-square&logo=iso&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) [![NIST CSF 2.0](https://img.shields.io/badge/NIST_CSF-2.0_Aligned-green?style=flat-square&logo=nist&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) [![CIS Controls](https://img.shields.io/badge/CIS_Controls-v8.1_Aligned-orange?style=flat-square&logo=cisecurity&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md)
-
-
----
-
-## 🌐 Evolving the Current IMF Dataflow toward the Future Pipeline
-
-*Baseline: the **already-implemented** IMF dataflow is documented in [`FLOWCHART.md`](FLOWCHART.md) §IMF. The diagram below shows how that baseline evolves with additional gates (vintage age UI badge, provider-mix telemetry) layered on top of today's client.*
-
-> **Authoritative hub:** [`analysis/imf/README.md`](analysis/imf/README.md) · [`analysis/imf/agentic-integration.md`](analysis/imf/agentic-integration.md) · [`analysis/imf/indicators-inventory.json`](analysis/imf/indicators-inventory.json) · [`analysis/imf/data-dictionary.md`](analysis/imf/data-dictionary.md) · [`.github/aw/ECONOMIC_DATA_CONTRACT.md`](.github/aw/ECONOMIC_DATA_CONTRACT.md)
-
-```mermaid
-flowchart LR
-    classDef primary fill:#0a4f8f,color:#fff,stroke:#00d9ff,stroke-width:2px
-    classDef secondary fill:#3a3a3a,color:#ddd,stroke:#888
-    classDef gate fill:#ff006e,color:#fff,stroke:#fff
-
-    Start([news-* workflow trigger]) --> Domain{Identify economic class}
-    Domain -->|Macro · Fiscal · Monetary · External · Trade| IMF[(IMF SDMX 3.0 + Datamapper REST)]:::primary
-    Domain -->|Governance / Environment / Social residue| WB[(World Bank API)]:::secondary
-    Domain -->|Swedish-specific monthly / regional| SCB[(SCB PxWeb v2)]:::secondary
-
-    IMF --> Vintage{Vintage > 6 months?}:::gate
-    Vintage -->|Yes| Annotate[Annotate as stale + downgrade confidence]
-    Vintage -->|No| Cache[Cache: vintage-tagged · SHA-256 pinned]
-    Annotate --> Cache
-    Cache --> Provenance[Emit economicProvenance: {provider:imf, dataflow, indicator, vintage}]
-    WB --> Cache
-    SCB --> Cache
-
-    Provenance --> Compose[Article composition]
-    Compose --> Lint{IMF-first lint}:::gate
-    Lint -->|WB economic citation w/o IMF cross-ref| Reject([Block — open issue])
-    Lint -->|Pass| Publish([Publish article])
-```
-
-### Provider decision matrix
-
-
-| Indicator class | Primary | Secondary | Why |
-|---|---|---|---|
-| Macro (GDP, growth, unemployment, inflation, fiscal balance, debt, current account) | **IMF WEO + Fiscal Monitor** | SCB (Sweden monthly) | Freshness + T+5 projections; SNA 2008 / GFSM 2014 / BPM6 cross-country comparability |
-| Bilateral trade flows | **IMF DOTS** | — | Partner-country dimension, monthly cadence |
-| Monthly inflation, policy rates | **IMF IFS / MFS_IR** | SCB / Riksbank | Standardised cross-country |
-| Government spending by function (defence/health/education/social protection) | **IMF GFS_COFOG** | — | Committee-aligned (FöU/SoU/UbU/SfU) |
-| Commodity prices, exchange rates | **IMF PCPS / ER** | — | Canonical benchmarks |
-| Governance (CC.EST, RL.EST, VA.EST, GE.EST, RQ.EST, PV.EST) | **World Bank WGI** | — | IMF has no equivalent |
-| Environment (CO2, renewables, forest, water) | **World Bank** | — | IMF has no equivalent |
-| Social/education residue (literacy, school participation, gender ratios) | **World Bank** | GFS_COFOG 09 | IMF has no equivalent |
-| Defence spending depth (long historicals) | **World Bank MS.MIL.*** | GFS_COFOG 02 | WB deeper history |
-| Swedish ground truth (monthly labour, regional, budget execution) | **SCB** | — | National statistics authority |
-
-
-**Canonical rule.** Every economic claim in a Riksdagsmonitor article cites an IMF dataflow first; World Bank citations are reserved for governance, environment and social residue (the classes IMF does not publish). SCB is the Swedish-specific ground truth layer. See `ECONOMIC_DATA_CONTRACT.md` v2.1 for the banned-phrase list and vintage discipline (>6 mo → annotation).
 
 ---
 

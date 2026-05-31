@@ -11,16 +11,16 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/Owner-Security_Architect-0A66C2?style=for-the-badge" alt="Owner"/>
-  <img src="https://img.shields.io/badge/Version-2.0-555?style=for-the-badge" alt="Version"/>
-  <img src="https://img.shields.io/badge/Effective-2026--02--24-success?style=for-the-badge" alt="Effective Date"/>
+  <img src="https://img.shields.io/badge/Version-2.1-555?style=for-the-badge" alt="Version"/>
+  <img src="https://img.shields.io/badge/Effective-2026--05--31-success?style=for-the-badge" alt="Effective Date"/>
   <img src="https://img.shields.io/badge/Review-Quarterly-orange?style=for-the-badge" alt="Review Cycle"/>
   <a href="https://www.bestpractices.dev/projects/12069"><img src="https://www.bestpractices.dev/projects/12069/badge" alt="OpenSSF Best Practices"/></a>
 </p>
 
 ---
 
-**Document Version:** 2.0  
-**Last Updated:** 2026-02-24  
+**Document Version:** 2.1  
+**Last Updated:** 2026-05-31  
 **Classification:** Public  
 **Owner:** Hack23 AB (Org.nr 5595347807)  
 **Review Cycle:** Quarterly
@@ -934,7 +934,7 @@ This Future Security Architecture demonstrates Hack23 AB's commitment to **proac
 <p align="center">
   <strong>Document Control</strong><br>
   Repository: <a href="https://github.com/Hack23/riksdagsmonitor">https://github.com/Hack23/riksdagsmonitor</a><br>
-  Path: /FUTURE_SECURITY_ARCHITECTURE.md | Classification: Public | Next Review: 2026-05-24<br>
+  Path: /FUTURE_SECURITY_ARCHITECTURE.md | Classification: Public | Next Review: 2026-08-31<br>
   Change Management: Requires Security Architect approval for major revisions
 </p>
 
