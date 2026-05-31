@@ -1,6 +1,6 @@
 ---
 name: "News: Translate Executive Briefs"
-description: "Translates `analysis/daily/**/executive-brief.md` (English source produced by per-type news workflows) into the 13 non-English target languages as sibling `executive-brief_<lang>.md` files. Runs three times daily and picks up at most `max_briefs` (default 1) sources × `max_langs` (default 13) languages per run, **greenfield-first** — sources with one or more missing target files always win batch slots over drift-only sources, and within a source the still-needed languages are translated missing-first then drift up to `max_langs` (remaining languages drain in later runs). Pass 2 is **validator-first**: the bash validator does all structural parity at near-zero model-token cost and the agent only reads back the files it flags. This workflow only uses bash/edit/safe-outputs — its MCP/tool surface is deliberately minimal so the per-turn tool-schema context (the ~3.5× weighting driver that aborted run #26641603577 at 27.0M / 25M weighted) no longer dominates; wall-clock (Timer A/B) and the 100-file safe-outputs cap, not the token budget, are now the governing limits — see `07-commit-and-pr.md §Deadline enforcement`. See `TRANSLATION_GUIDE.md §Executive Brief Markdown Translations` for the authoritative content contract."
+description: "Translates `analysis/daily/**/executive-brief.md` (English source produced by per-type news workflows) into the 13 non-English target languages as sibling `executive-brief_<lang>.md` files. Runs three times daily and picks up at most `max_briefs` (default 1) sources × `max_langs` (default 13) languages per run, **greenfield-first** — sources with one or more missing target files always win batch slots over drift-only sources, and within a source the still-needed languages are translated missing-first then drift up to `max_langs` (remaining languages drain in later runs). Pass 2 is **validator-first**: the bash validator does all structural parity at near-zero model-token cost and the agent only reads back the files it flags. This workflow only uses bash/edit/safe-outputs — its MCP/tool surface is deliberately minimal so the per-turn tool-schema context (the ~3.5× weighting driver that aborted run #26641603577 at 27.0M / 25M weighted) no longer dominates; wall-clock (Timer A/B) and the 200-file safe-outputs cap, not the token budget, are now the governing limits — see `07-commit-and-pr.md §Deadline enforcement`. See `TRANSLATION_GUIDE.md §Executive Brief Markdown Translations` for the authoritative content contract."
 strict: false
 imports:
   - ../prompts/00-base-contract.md
@@ -29,7 +29,7 @@ on:
         required: false
         default: all-extra
       max_briefs:
-        description: 'Maximum number of source executive-brief.md files to translate this run (range 1–7; default 1). Hard cap: 7 (keeps under safe-outputs 100-file ceiling with 13 languages = 91 files). Lowered from 3 to 1 after run #26633644372 exceeded the Copilot effective-token cap before completing source #2.'
+        description: 'Maximum number of source executive-brief.md files to translate this run (range 1–7; default 1). Hard cap: 7 (keeps under safe-outputs 200-file ceiling with 13 languages = 91 files). Lowered from 3 to 1 after run #26633644372 exceeded the Copilot effective-token cap before completing source #2.'
         required: false
         default: '1'
       max_langs:
@@ -267,7 +267,7 @@ safe-outputs:
     # GitHub raw content
     - raw.githubusercontent.com
   max-patch-size: 10240
-  max-patch-files: 100
+  max-patch-files: 200
   create-pull-request:
     labels: [agentic-news, translation, executive-brief]
     draft: false
@@ -565,7 +565,7 @@ This workflow is the **sole writer** of `analysis/daily/$DATE/$SUB/executive-bri
 - `article_date` — optional. Restrict scanning to a single date folder.
 - `subfolder` — optional. Restrict scanning to a single document type folder.
 - `languages` — default `all-extra` (= `sv,da,no,fi,de,fr,es,nl,ar,he,ja,ko,zh`). Aliases: `nordic-extra`, `eu-extra`, `cjk`, `rtl`, `all-extra`. Comma list also accepted.
-- `max_briefs` — default `1`, range `1–7`. Caps the number of **source** files processed in this run; total file output = `max_briefs × |TRANSLATION_LANGS|` (= `1 × 13 = 13` at the defaults; hard-cap worst case `7 × 13 = 91`, safely under the 100-file safe-outputs cap). The default was lowered from 3 to 1 after run #26633644372 hit the Copilot effective-token limit before finishing source #2.
+- `max_briefs` — default `1`, range `1–7`. Caps the number of **source** files processed in this run; total file output = `max_briefs × |TRANSLATION_LANGS|` (= `1 × 13 = 13` at the defaults; hard-cap worst case `7 × 13 = 91`, safely under the 200-file safe-outputs cap). The default was lowered from 3 to 1 after run #26633644372 hit the Copilot effective-token limit before finishing source #2.
 - `max_langs` — default `13` (= a full source in one run), range `1–13`. Caps the number of **target languages** translated this run. The builder pre-selects the still-needed languages **greenfield-first** (missing files first, then drift) and truncates to this many. Run #26641603577 hit 27.0M weighted effective tokens (> the 25M cap) at 13 languages, but that was while the heavy `github toolsets:[all]` + three data-MCP server schemas were re-sent every turn; that dead-weight surface has been removed (this workflow only uses bash/edit/safe-outputs), collapsing the per-turn footprint so a full 13-language source now fits in one run. Lower this first if an unusually large brief approaches the cap.
 - `force_retranslate` — default `false`. When `true`, every requested language is rewritten even if the `<!-- source-sha: -->` marker matches.
 - `analysis_depth` — default `standard`. Echoed into the validator output for parity with content workflows; does not change translation behaviour.
@@ -581,8 +581,8 @@ This workflow is the **sole writer** of `analysis/daily/$DATE/$SUB/executive-bri
 | Per-session token driver | per-turn tool-schema surface × turn count | **before the fix** the dominant cost was the fixed per-turn schema (github `toolsets:[all]` + three data-MCP servers) re-sent every turn — the ~3.5× weighting multiplier. The translate agent calls none of those tools, so the surface was stripped to bash/edit/safe-outputs (+ one riksdag health-gate tool); the per-turn footprint now collapses toward the raw token count |
 | Run #26641603577 (pre-fix) | 13 langs → 27.0M weighted / 25M cap → 429 before PR | gh-aw raw 7.67M; the weighted metric was ~3.5× raw and exceeded the cap — driven by the dead-weight per-turn schema, now removed; **no PR shipped** |
 | Primary token levers | **strip unused per-turn MCP/tool schema** + validator-first Pass 2 | removing the data-MCP servers + github `toolsets:[all]` cuts the fixed per-turn cost so the 25M cap stops being the limiter; structural parity stays in the bash validator |
-| Per-run file output | `max_briefs × max_langs` = `1 × 13` = **13 files** (default) | well under safe-outputs `max-patch-files: 100` |
-| Daily throughput (3 runs) | up to **39 language-files / day** at defaults | wall-clock (Timer A/B) and the 100-file cap, not the token budget, are now the governing limits |
+| Per-run file output | `max_briefs × max_langs` = `1 × 13` = **13 files** (default) | well under safe-outputs `max-patch-files: 200` |
+| Daily throughput (3 runs) | up to **39 language-files / day** at defaults | wall-clock (Timer A/B) and the 200-file cap, not the token budget, are now the governing limits |
 | Current backlog drain (≥159 untranslated sources) | greenfield-first, oldest source + missing languages first | linear |
 
 If a run is behind schedule at agent minute 30 with translations still pending, the agent MUST trim `max_briefs` downward (drop the last selected source) rather than skip the Pass 2 validator gate — quality over completeness. A partial PR is always better than missing Timer A (job `timeout-minutes: 60`). The default `max_briefs=1` was set after run [#26633644372](https://github.com/Hack23/riksdagsmonitor/actions/runs/26633644372) repeatedly hit `CAPIError: 429 Maximum effective tokens exceeded` while attempting source #2; the validator-first Pass 2 above removes the read-back token sink, and stripping the unused per-turn MCP/tool schema (github `toolsets:[all]` + the scb/world-bank data servers — none of which this workflow ever calls) collapses the fixed per-turn cost that drove the ~3.5× weighting, so the weighted effective-token total stays under the 25M cap and the PR safe-output is reached even at the default 13-language batch.
@@ -592,7 +592,7 @@ If a run is behind schedule at agent minute 30 with translations still pending, 
 - **Never** generate original analysis or write files outside `analysis/daily/**/executive-brief_<lang>.md`.
 - **Never** modify the English source `executive-brief.md` — it is owned by per-type news workflows.
 - **Validate every translation** with `scripts/validate-executive-brief-translations.ts` before commit. Re-translate (do not commit) any file that fails.
-- Keep the PR under the safe-outputs 100-file cap. The default `max_briefs=1` × 13 languages = 13 files leaves ample headroom; the hard cap `max_briefs=7` × 13 = 91 stays under 100. The previous default of 3 was reduced after run [#26633644372](https://github.com/Hack23/riksdagsmonitor/actions/runs/26633644372) hit the Copilot effective-token cap before the PR call.
+- Keep the PR under the safe-outputs 200-file cap. The default `max_briefs=1` × 13 languages = 13 files leaves ample headroom; the hard cap `max_briefs=7` × 13 = 91 stays well under 200. The previous default of 3 was reduced after run [#26633644372](https://github.com/Hack23/riksdagsmonitor/actions/runs/26633644372) hit the Copilot effective-token cap before the PR call.
 - **Per-language idempotency, not workflow-level no-op**:
   - The pre-flight selector is **greenfield-first**: it classifies every candidate source as `MISSING` (≥1 requested language file absent or empty) or `DRIFT` (every requested language file present but ≥1 has a stale `<!-- source-sha: -->` trailer), then fills the `max_briefs` batch slots with `MISSING` sources oldest-first and only falls back to `DRIFT` once `MISSING` is empty. Drift-fix work **never** displaces an untranslated brief while the backlog still has missing files.
   - A target language is skipped *for that language only* when **all three** hold:

@@ -255,7 +255,7 @@ safe-outputs:
     # GitHub raw content
     - raw.githubusercontent.com
   max-patch-size: 10240
-  max-patch-files: 100
+  max-patch-files: 200
   create-pull-request:
     labels: [agentic-news, analysis-data]
     draft: false
@@ -301,9 +301,9 @@ Generates deep political intelligence analysis **and** renders the HTML article 
 
 > 🟡 **Plan to call `safeoutputs___create_pull_request` by agent minute 42 (hard deadline 45)** to reserve job-level headroom for setup variance and the safe-outputs runner. See `00-base-contract.md §Session timing` and `07-commit-and-pr.md §Deadline enforcement`.
 >
-> **AI-FIRST target**: Pass 2 is mandatory. Complete agent-phase analysis/rendering by agent minute 40 so the PR opens before the agent-minute-45 cutoff. Compress scope before skipping iterations — keep `--limit 10` for document-type workflows (well under the 100-file PR cap given 14 HTML take 14 slots) while keeping 1:1 per-document coverage for every `dok_id` in the manifest (`05-analysis-gate.md` check 2). Scheduled runs use `analysis_depth=deep`; reserve `comprehensive` for manual `workflow_dispatch` backfills.
+> **AI-FIRST target**: Pass 2 is mandatory. Complete agent-phase analysis/rendering by agent minute 40 so the PR opens before the agent-minute-45 cutoff. Compress scope before skipping iterations — keep `--limit 10` for document-type workflows (well under the 200-file PR cap given 14 HTML take 14 slots) while keeping 1:1 per-document coverage for every `dok_id` in the manifest (`05-analysis-gate.md` check 2). Scheduled runs use `analysis_depth=deep`; reserve `comprehensive` for manual `workflow_dispatch` backfills.
 >
-> ⚠️ **HARD FILE LIMIT (100 files)**: the safe-outputs handler hard-rejects PRs with > 100 files (E003). Run the 100-file guard from `07-commit-and-pr.md` before calling `safeoutputs___create_pull_request`. Budget: 23 core artifacts + README + article.md + ≤ 10 per-document analyses + 14 HTML + pir-status.json ≈ 50 files. Cap downloads at 10 documents when rendering all 14 languages. When staged > 90, unstage `documents/` first then JSON files until under budget.
+> ⚠️ **HARD FILE LIMIT (200 files)**: the safe-outputs handler hard-rejects PRs with > 200 files (E003). Run the 200-file guard from `07-commit-and-pr.md` before calling `safeoutputs___create_pull_request`. Budget: 23 core artifacts + README + article.md + ≤ 10 per-document analyses + 14 HTML + pir-status.json ≈ 50 files. Cap downloads at 10 documents when rendering all 14 languages. When staged > 180, unstage `documents/` first then JSON files until under budget.
 
 **Single run** (produces all 23 analysis artifacts + aggregated article.md + 14 HTML files, target ~42 agent minutes in a 60-min job):
 
