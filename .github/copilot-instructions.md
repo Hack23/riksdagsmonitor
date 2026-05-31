@@ -165,8 +165,9 @@ tools:
   agentic-workflows: true # Workflow introspection (status, compile, logs, audit, checks)
   bash: true              # Shell commands
   playwright:             # Browser automation (where needed)
-  repo-memory:            # Persistent memory across runs
-    branch-name: memory/news-generation
+  cache-memory:           # Session state persisted via GitHub Actions cache (~7-14 days)
+    key: news-${{ github.workflow }}-${{ inputs.article_date || 'today' }}
+    retention-days: 14
 ```
 
 ### MCP Server Configuration (All Workflows)

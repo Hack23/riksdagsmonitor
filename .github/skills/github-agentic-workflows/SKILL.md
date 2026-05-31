@@ -665,9 +665,6 @@ tools:
   github:
   cache-memory:
     id: metrics-tracking
-  repo-memory:
-    id: historical-data
-    branch: data/metrics
 ---
 
 Track metrics over time using memory:
@@ -680,8 +677,7 @@ Track metrics over time using memory:
 ```
 
 **Memory Types:**
-- **cache-memory**: 7-day retention (GitHub Actions cache)
-- **repo-memory**: Unlimited retention (Git branch)
+- **cache-memory**: 7-14 day retention (GitHub Actions cache)
 
 **Use Cases:**
 - Incremental data processing
@@ -897,21 +893,6 @@ Load previous data from cache-memory.
 Update calculations.
 Store results back to cache-memory.
 ```
-
-#### Repo Memory (Unlimited retention)
-
-```yaml
-tools:
-  repo-memory:
-    id: long-term-metrics
-    branch: data/metrics
-```
-
-**Features:**
-- Permanent Git branch storage
-- Automatic conflict resolution
-- Full Git history
-- Accessible at `/tmp/gh-aw/repo-memory-{id}/`
 
 ### Concurrency Control
 

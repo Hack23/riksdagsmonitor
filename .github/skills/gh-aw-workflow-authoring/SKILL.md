@@ -1002,22 +1002,19 @@ Stagger schedules to avoid resource contention. Use `timeout-minutes: 5` for qui
 
 ### Cross-Run Memory Patterns
 
-gh-aw provides three built-in memory mechanisms (prefer these over `@modelcontextprotocol/server-memory` which is ephemeral per run):
+gh-aw provides two built-in memory mechanisms (prefer these over `@modelcontextprotocol/server-memory` which is ephemeral per run):
 
 | Mechanism | Persistence | Scope | Use Case |
 |-----------|------------|-------|----------|
-| `repo-memory:` | Git-backed, permanent | Cross-workflow via shared branch | Shared state across workflows (e.g., dedup indexes, quality scores) |
-| `cache-memory:` | GitHub Actions cache, ~7 days | Per-workflow or shared via key | Session state, intermediate results |
+| `cache-memory:` | GitHub Actions cache, ~7-14 days | Per-workflow or shared via key | Session state, intermediate results, cross-run context |
 | `cache:` | GitHub Actions cache | Per-workflow | Dependencies, build artifacts |
 
-**Recommended: `repo-memory:`** for cross-workflow context:
+**Recommended: `cache-memory:`** for cross-run context:
 ```yaml
 tools:
-  repo-memory:
-    branch-name: memory/my-project
-    allowed-extensions: [".md", ".json"]
-    max-file-size: 10240
-    max-file-count: 100
+  cache-memory:
+    key: news-${{ github.workflow }}-${{ inputs.article_date || 'today' }}
+    retention-days: 14
 ```
 
 **Avoid:** `@modelcontextprotocol/server-memory` — dies when the process ends, lost every run. Also skip `@modelcontextprotocol/server-sequential-thinking` — Claude has native CoT reasoning; it wastes context tokens.

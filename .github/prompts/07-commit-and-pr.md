@@ -151,7 +151,7 @@ Every news workflow declares `tools.cache-memory:` keyed by `news-${{ github.wor
 
 **Checkout settings:** `fetch-depth: 1` is sufficient for `cache-memory`. gh-aw manages a self-contained git repo inside `/tmp/gh-aw/cache-memory/` independently of the main workspace. No special `checkout.fetch:` or `fetch-depth: 0` setting is required. The `actions/checkout` step's global git config (user identity) is inherited automatically.
 
-**Resilience:** The compiled `Commit cache-memory changes` step has `continue-on-error: true` so a corrupted or missing `.git` directory from a restored cache never fails the agent job. The subsequent `Check cache-memory git integrity` step (which also has `continue-on-error: true`) detects and reseeds the git repo so the artifact upload always succeeds.
+**Resilience:** The compiled `Commit cache-memory changes` and `Check cache-memory git integrity` steps run with `if: always()`. If a corrupted or missing `.git` directory from a restored cache causes a transient failure, the subsequent integrity-check step detects and reseeds the git repo so the artifact upload can still succeed. Cache-memory failures should not block article generation — the primary output is always committed to `analysis/daily/`.
 
 Cache-memory is a recovery mechanism for the next run, not a substitute for committing real files on disk under `analysis/daily/`.
 

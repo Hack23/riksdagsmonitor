@@ -229,12 +229,9 @@ tools:
   agentic-workflows: true    # Workflow introspection (status, compile, logs, audit, checks)
   bash: true                 # Shell command execution
   playwright:                # Browser automation (optional, for visual validation)
-  repo-memory:               # Persistent memory across workflow runs
-    branch-name: memory/news-generation
-    allowed-extensions: [".md", ".json"]
-    max-file-size: 51200
-    max-file-count: 50
-    max-patch-size: 51200
+  cache-memory:              # Session state persisted via GitHub Actions cache (~7-14 days)
+    key: news-${{ github.workflow }}-${{ inputs.article_date || 'today' }}
+    retention-days: 14
 ```
 
 ### Available `agentic-workflows:` Tools

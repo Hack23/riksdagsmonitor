@@ -97,7 +97,7 @@ Print `agent_minute` (helper in [`01-bash-and-shell-safety.md §Time-budget self
 | Aggregate + render all 14 languages | **36 – 40** | Blocked at minute 40 → commit analysis-only and PR anyway. |
 | Stage + commit + sandbox handoff + PR | **40 – 42** | Hard deadline **45**. |
 
-No per-phase checkpoint PRs. No repo-memory push steps.
+No per-phase checkpoint PRs. No unnecessary memory push steps.
 
 ## Output contract
 

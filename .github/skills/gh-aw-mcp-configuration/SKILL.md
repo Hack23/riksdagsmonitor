@@ -1792,7 +1792,7 @@ For Copilot coding agent sessions (not agentic workflows), MCP servers are confi
 - [ ] Version MCP server APIs
 - [ ] Implement graceful degradation
 - [ ] Use timeout for all MCP operations
-- [ ] **Prefer `repo-memory:` and `cache-memory:` over `@modelcontextprotocol/server-memory`** — gh-aw native tools are persistent across runs; generic MCP memory is ephemeral per process
+- [ ] **Prefer `cache-memory:` over `@modelcontextprotocol/server-memory`** — gh-aw native cache-memory is persistent across runs (~7-14 days); generic MCP memory is ephemeral per process
 - [ ] **Skip `@modelcontextprotocol/server-sequential-thinking`** — modern LLMs (Claude Opus 4.8, GPT-5) have native CoT; it wastes context tokens
 
 ---
