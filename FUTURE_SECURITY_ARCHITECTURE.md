@@ -510,8 +510,10 @@ flowchart TD
 | II-3 Injection defense | A.8.28, A.8.16 (monitoring) | DE.CM, PR.PS | LLM01 / LLM03 |
 | II-4 Neutrality gate | A.5.1 (policies), A.8.29 (testing) | GV.OC, GV.RR | LLM09 |
 | II-5 Calibration | A.8.16, A.5.36 (compliance) | ID.IM, DE.AE | LLM09 |
+| II-6 I&W integrity | A.8.16 (monitoring), A.5.7 (threat intelligence) | DE.CM, DE.AE | LLM04 / LLM10 |
 | II-7 FIMI ethics | A.5.34, A.18 (privacy) | GV.OC, ID.RA | — |
 | II-8 Human-on-the-loop | A.5.4 (mgmt responsibilities) | GV.RR-1 | LLM08 Excessive Agency |
+| II-9 Tradecraft auditability | A.5.33 (records), A.8.15 (logging) | GV.RR, PR.PS | LLM08 / LLM09 |
 
 **Governing principle.** Security for a political-intelligence capability is not perimeter defense alone — it is **integrity of the analytic product**. Controls II-1…II-9 ensure that even a fully compromised model or a poisoned source cannot launder a manipulated, biased, or unevidenced judgment through the platform's credibility. Every gate is fail-closed; every published product is reproducible, neutral, evidence-anchored and human-accountable under the [Hack23 AI Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/AI_Policy.md).
 
