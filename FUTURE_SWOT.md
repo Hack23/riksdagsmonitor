@@ -101,13 +101,14 @@ The strategy encoded here is **explicitly two-stage**:
 10. [AWS Vendor Lock-in vs Zero-Infra Trade-off](#-aws-vendor-lock-in-vs-zero-infrastructure-trade-off)
 11. [Risk Register Tie-ins](#-risk-register-tie-ins)
 12. [AI-Disruption: Opportunities & Threats](#-ai-disruption-opportunities--threats)
-13. [AI/LLM Strategic-Evolution (2026–2037)](#-aillm-strategic-evolution-20262037)
-14. [Risk-Adjusted Opportunity Scoring](#-risk-adjusted-opportunity-scoring)
-15. [SWOT Strategic Position Matrix](#-swot-strategic-position-matrix)
-16. [Strategic Action Matrix & Roadmap](#-strategic-action-matrix--roadmap)
-17. [IMF / Economic-Context Future SWOT](#-evolving-the-current-imf-strengths-into-the-future-pestle--swot)
-18. [Related Documents](#-related-documents)
-19. [Hack23 Ecosystem](#-hack23-ecosystem)
+13. [Political-Intelligence Capability SWOT (OSINT/INTOP)](#️-political-intelligence-capability-swot-osintintop-to-2037)
+14. [AI/LLM Strategic-Evolution (2026–2037)](#-aillm-strategic-evolution-20262037)
+15. [Risk-Adjusted Opportunity Scoring](#-risk-adjusted-opportunity-scoring)
+16. [SWOT Strategic Position Matrix](#-swot-strategic-position-matrix)
+17. [Strategic Action Matrix & Roadmap](#-strategic-action-matrix--roadmap)
+18. [IMF / Economic-Context Future SWOT](#-evolving-the-current-imf-strengths-into-the-future-pestle--swot)
+19. [Related Documents](#-related-documents)
+20. [Hack23 Ecosystem](#-hack23-ecosystem)
 
 ---
 
@@ -610,6 +611,54 @@ AI is simultaneously the platform's largest opportunity surface and its sharpest
 | **Regulation** | Compliance leadership as differentiator | Shifting EU AI Act obligations | Proactive transparency, audit-ready docs |
 
 **Governing rule (constant across all horizons):** AI **augments** democratic accountability under human governance; it is **never** used for surveillance, persuasion operations, or partisan advantage. Every economic claim still cites an IMF vintage first; every political claim still ties to `dok_id`, named actor, or vote count. Neutrality and GDPR Art. 9 lawful bases (9(2)(e) publicly made, 9(2)(g) substantial public interest) are non-negotiable.
+
+---
+
+## 🛰️ Political-Intelligence Capability SWOT (OSINT/INTOP, to 2037)
+
+This SWOT scores the strategic position of the platform **as a political-intelligence capability**, against the [Political-Intelligence Capability Catalog](FUTURE_MINDMAP.md#-theme--political-intelligence-capability-catalog-to-2037--the-master-osintintop-map) (C1–C32). The framing question for an intelligence operative is blunt: *with these capabilities fielded, what edge do we hold — and what is the strategic cost of NOT building them?*
+
+### 💪 Strengths (from fielding C1–C32)
+
+| # | Strength | Capability | Why it matters |
+|---|----------|-----------|----------------|
+| S1 | **Reproducible, evidence-anchored tradecraft** — every judgment traces to a `dok_id` and Admiralty grade | C8, C22 | Defensible against legal challenge and accusations of bias; unique versus opaque commercial analytics |
+| S2 | **Multi-INT fusion over a single public ground-truth** | C1, C6 | Connections (vote × funding × lobbying) no single-source competitor can see |
+| S3 | **Continuous indications &amp; warning**, not just retrospective reporting | C14 | Shifts product from *history* to *foresight* — the highest-value intelligence good |
+| S4 | **Calibrated, scored forecasting** (rolling Brier as a release metric) | C13, C29 | Trust compounds: a publicly-calibrated forecaster is rare and hard to copy |
+| S5 | **Structured-analytic-technique automation at scale** (ACH, devil's advocate, ICD-203) | C11, C22 | Institutional-grade rigor at marginal cost; resists single-analyst bias |
+| S6 | **Counter-AI &amp; provenance defense built-in** (C2PA, injection screening, neutrality gate) | C26–C32 | Integrity becomes a moat as synthetic media floods the information space |
+
+### 🔻 Weaknesses (capability-program risks)
+
+| # | Weakness | Mitigation |
+|---|----------|-----------|
+| W1 | Fusion &amp; entity-resolution accuracy bounded by public-record quality and identifier gaps | Confidence-scored links, human-review hold-queue, never publish ambiguous links |
+| W2 | Calibration needs **resolved events** to mature — cold-start on rare events (coalition collapse) | Ensemble + scenario LLM priors; widen WEP bands when n is low |
+| W3 | FIMI detection risks false positives and ethics exposure | Aggregate-only, no citizen profiling, advisory-not-accusatory, hard ethics gate |
+| W4 | Operating the full intelligence cycle continuously raises compute &amp; token cost | Horizon-phased rollout; serverless scale-to-zero; tripwire-gated retasking |
+
+### 🚀 Opportunities
+
+| # | Opportunity | Capability |
+|---|-------------|-----------|
+| O1 | Become the **reference open political-intelligence capability** for Nordic/EU democracies | C1–C32 |
+| O2 | **Estimative products &amp; warning feeds** as a premium, defensible API tier | C14, C22 |
+| O3 | **Election &amp; coalition foresight** with published calibration as a category-defining product | C13 |
+| O4 | **Counter-FIMI early-warning** positions the platform as democratic-resilience infrastructure | C20 |
+| O5 | Cross-parliament fusion (EU/Nordic) creates a comparative-intelligence dataset nobody else holds | C6 |
+
+### ⚠️ Threats (including the cost of NOT building these)
+
+| # | Threat | If we DON'T field the capability |
+|---|--------|----------------------------------|
+| T1 | Adversarial **FIMI &amp; synthetic media** swamp the public record | Without C8/C9/C20 the platform cites poisoned evidence and loses trust |
+| T2 | **Prompt-injection / data-poisoning** of the analytic pipeline | Without C26–C28 an attacker steers published judgments |
+| T3 | Competitors ship opaque "AI predictions" first | Without calibrated C13 we cede the foresight market to unaccountable actors |
+| T4 | Perceived partisanship destroys credibility | Without the C31 party-symmetry gate one asymmetric output ends institutional trust |
+| T5 | Regulatory scrutiny of political-data AI | Without C30 audit-trails and ICD-203 discipline, compliance becomes existential |
+
+**Strategic verdict.** The catalog converts a respected *transparency publisher* into a *political-intelligence capability*. The defining moat is **integrity-by-construction** (evidence, calibration, neutrality, provenance) — the one thing well-funded commercial and adversarial actors find hardest to fake. Not building these is not "staying simple"; it is conceding foresight and information-integrity ground to actors who will not honor the same guardrails.
 
 ---
 
