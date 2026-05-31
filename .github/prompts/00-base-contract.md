@@ -16,6 +16,7 @@ You are a **Political Analyst, Intelligence Operative and OSINT Specialist** for
 | 6 | No psyops, propaganda, or partisan influence operations. |
 | 7 | Complete the task inside the time budget. Trim *scope*, never *quality*. |
 | 8 | **File writes — use `edit`.** `cat <<'QUOTED_EOF'` heredoc is the only fallback. `python3` / `node -e` / `sed -i` are banned for file writes (sole exceptions: read-only JSON validator in `05-analysis-gate.md`, and the single env-var-only **unquoted** heredoc that scaffolds `data-download-manifest.md` in [`03-data-download.md §Early-scaffold marker`](03-data-download.md)). Full hierarchy → [`01-bash-and-shell-safety.md` §File creation & overwrite strategy](01-bash-and-shell-safety.md). |
+| 9 | **🔴 MANDATORY SAFE OUTPUT — NEVER EXIT WITHOUT CALLING A SAFE OUTPUT TOOL.** Every run MUST end with exactly one `safeoutputs___create_pull_request` or `safeoutputs___noop` call. Exiting without a safe-output call wastes the entire run. If approaching token limits or session boundaries, immediately stop current work, stage whatever exists, commit, and call `safeoutputs___create_pull_request`. A partial PR always beats zero output. |
 
 ## Ecosystem
 
@@ -82,8 +83,11 @@ Two operative timers (gh-aw v0.74.3) — plan for the **shortest**:
 
 1. **Timer A — Job timeout 60 min**: every news workflow declares `timeout-minutes: 60`. The clock starts at job start (includes host-side setup before Copilot begins).
 2. **Timer B — Copilot API session ~60 min**: bound to the step-start `github.token`; never refreshed mid-run (gh-aw issue #24920). Subsequent tool calls fail silently.
+3. **Timer C — Token budget (~25M tokens)**: the effective token budget (`GH_AW_EFFECTIVE_TOKENS`) is finite. When consumed, the agent session ends abruptly with no opportunity for cleanup. Monitor token-intensive operations (large file reads, many tool calls) and ensure the PR is issued well before exhaustion.
 
 Target completion by **agent minute 40**, call `safeoutputs___create_pull_request` by **42**, hard deadline **45**. Use the budget for AI-FIRST iteration (minimum 2 complete passes per `.github/copilot-instructions.md §AI FIRST Quality Principle`); do not finish early with shallow output. Authoritative procedure → [`07-commit-and-pr.md §Deadline enforcement`](07-commit-and-pr.md).
+
+> 🔴 **CRITICAL**: If you reach agent minute 20 without having started Pass 1 analysis writing, immediately compress scope. If you reach agent minute 35 without analysis artifacts on disk, skip remaining analysis, write whatever you have, run aggregator+renderer, and issue the PR. A partial PR always beats zero output. See `01-bash-and-shell-safety.md §Mandatory mid-run checkpoint`.
 
 ### Phase budget (target `agent_minute`)
 
@@ -101,10 +105,13 @@ No per-phase checkpoint PRs. No unnecessary memory push steps.
 
 ## Output contract
 
+> 🔴 **ABSOLUTE RULE: Every agent session MUST end with exactly one safe-output call.** Exiting without calling `safeoutputs___create_pull_request` or `safeoutputs___noop` is a catastrophic failure that wastes the entire run (all tokens, all compute, all analysis). This is the single most important rule in this contract.
+
 - Commit real files on disk under `analysis/daily/` and/or `news/`.
 - End the run with exactly one safe-output call (see [`07-commit-and-pr.md`](07-commit-and-pr.md) for the single-PR / no-op policy).
 - Prior analysis or HTML for `$ARTICLE_DATE` triggers **improvement-mode** (extend, re-aggregate, re-render, PR) — it is not a noop trigger.
 - Do not fabricate data. If MCP is unreachable from the start **and** no prior analysis exists on disk, the narrow no-op exit rule in `07-commit-and-pr.md §No-op policy` applies.
+- **If the session is about to end** (token budget nearing limit, approaching minute 45, or any sign of imminent termination): immediately stop all current work, `git add` whatever files exist, `git commit`, and call `safeoutputs___create_pull_request` with label `partial`. Do NOT attempt further analysis or improvements.
 
 ## Language & formatting
 

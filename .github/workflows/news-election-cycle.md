@@ -343,6 +343,8 @@ Non-English HTML pages are produced via the **localized executive-brief cascade*
 ## Time budget
 
 > 🟡 **Plan to call `safeoutputs___create_pull_request` by agent minute 42 (hard deadline 45)** to reserve job-level headroom for setup variance and the safe-outputs runner. See `00-base-contract.md §Session timing` and `07-commit-and-pr.md §Deadline enforcement`.
+>
+> 🔴 **Token budget awareness**: This workflow uses `claude-opus-4.8` which consumes tokens rapidly on complex analysis. The 25M token budget can be exhausted in ~20 minutes of intensive MCP querying + large file writes. **Check `agent_minute` before EVERY phase transition. If agent_minute ≥ 20 and zero analysis artifacts exist on disk, immediately compress scope to a minimal viable set and target PR by minute 35.**
 
 This workflow runs at the **upper limit** of the 60-minute job envelope. Initially gated `workflow_dispatch`-only until runtime is measured over 4–6 manual runs.
 
