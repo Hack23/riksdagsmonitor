@@ -599,6 +599,145 @@ flowchart TD
 
 ---
 
+## 4A. 🛰️ Political-Intelligence Cycle Process Flows (OSINT/INTOP, to 2037)
+
+> These flows realize the [Political-Intelligence Capability Catalog](FUTURE_MINDMAP.md#-theme--political-intelligence-capability-catalog-to-2037--the-master-osintintop-map) (C1–C32) as the **intelligence cycle** — Direction → Collection → Processing → Analysis → Production → Dissemination → Feedback. The current platform runs a strong **single-source, build-time, document-centric** version of this cycle; the flows below add the **fusion, warning, continuous-calibration and counter-AI** loops that are missing today. Every loop keeps a **human-on-the-loop checkpoint**, an **evidence/provenance anchor**, and a **party-symmetry/neutrality gate** before anything is published.
+
+### 4A.1 Master intelligence-cycle loop
+
+```mermaid
+flowchart LR
+    DIR[🎯 Direction<br/>PIRs and tripwires] --> COL[📡 Collection<br/>multi-source OSINT]
+    COL --> PROC[⚙️ Processing<br/>entity-resolve plus provenance]
+    PROC --> FUSE[🔗 Fusion<br/>multi-INT graph]
+    FUSE --> ANAL[🧠 Analysis<br/>SAT plus forecasting]
+    ANAL --> PROD[📝 Production<br/>estimative products]
+    PROD --> NEUT{Neutrality plus<br/>evidence gate}
+    NEUT -->|Fail| ANAL
+    NEUT -->|Pass| DISS[📤 Dissemination<br/>COP plus briefings]
+    DISS --> FB[🔄 Feedback<br/>calibration plus retasking]
+    FB --> DIR
+
+    style DIR fill:#9c27b0,color:#ffffff
+    style FUSE fill:#2196f3,color:#ffffff
+    style NEUT fill:#ff006e,color:#ffffff
+    style DISS fill:#4caf50,color:#000000
+    style FB fill:#ff9800,color:#000000
+```
+
+### 4A.2 Multi-INT fusion &amp; entity-resolution flow (C1 / C6)
+
+```mermaid
+flowchart TD
+    SRC[Public sources<br/>riksdag plus registers plus discourse] --> NORM[Normalize plus stamp provenance]
+    NORM --> ER{Entity match?<br/>deterministic plus embedding}
+    ER -->|Ambiguous| HOLD[Hold for human review]
+    ER -->|Resolved| CANON[Canonical entity ID]
+    CANON --> EDGE[Build fusion edge<br/>plus Admiralty grade]
+    EDGE --> GRADE{Evidence-anchored?<br/>dok_id present}
+    GRADE -->|No| DROP[Reject — no analytic record]
+    GRADE -->|Yes| GRAPH[Multi-INT fusion graph]
+    GRAPH --> SAL[Salience plus neutrality note]
+    SAL --> COP[Common Operating Picture]
+
+    style SRC fill:#2196f3,color:#ffffff
+    style ER fill:#ff006e,color:#ffffff
+    style GRADE fill:#ff006e,color:#ffffff
+    style DROP fill:#f44336,color:#ffffff
+    style COP fill:#4caf50,color:#000000
+```
+
+### 4A.3 Indications &amp; Warning tripwire flow (C14)
+
+```mermaid
+flowchart TD
+    STREAM[Continuous public-data stream] --> IND[Compute indicators<br/>cohesion, motions, calendar]
+    IND --> TW{Threshold breached?}
+    TW -->|No| STREAM
+    TW -->|Yes| LEVEL[Set warning level<br/>watch / elevated / high]
+    LEVEL --> WEP[Attach calibrated probability<br/>ICD-203 lexicon]
+    WEP --> HUM{Human triage}
+    HUM -->|False alarm| TUNE[Tune threshold plus log]
+    HUM -->|Confirm| RETASK[Re-task fusion plus forecasting]
+    RETASK --> BRIEF[Warning note to watchers]
+    TUNE --> STREAM
+
+    style STREAM fill:#2196f3,color:#ffffff
+    style TW fill:#ff006e,color:#ffffff
+    style HUM fill:#9c27b0,color:#ffffff
+    style BRIEF fill:#4caf50,color:#000000
+```
+
+### 4A.4 Forecasting &amp; continuous-calibration loop (C13 / C29)
+
+```mermaid
+flowchart TD
+    PIR[Forecasting question / PIR] --> ASSUME[Key-assumptions check]
+    ASSUME --> MODEL[Ensemble forecast<br/>stats plus LLM scenarios]
+    MODEL --> WEPF[Express as WEP plus point p]
+    WEPF --> PUBF[Publish forecast plus assumptions]
+    PUBF --> WAIT[Await resolution]
+    WAIT --> RES{Event resolved?}
+    RES -->|No| WAIT
+    RES -->|Yes| SCORE[Brier-score plus update ledger]
+    SCORE --> CAL{Calibration drifting?}
+    CAL -->|Yes| RETRAIN[Retrain plus re-weight ensemble]
+    CAL -->|No| PIR
+    RETRAIN --> PIR
+
+    style PIR fill:#9c27b0,color:#ffffff
+    style RES fill:#ff006e,color:#ffffff
+    style SCORE fill:#2196f3,color:#ffffff
+    style CAL fill:#ff006e,color:#ffffff
+    style RETRAIN fill:#ff9800,color:#000000
+```
+
+### 4A.5 FIMI / influence early-warning flow (C20) — aggregate, non-accusatory
+
+```mermaid
+flowchart TD
+    DISC[Aggregate public discourse] --> FRAME[Detect narrative frames<br/>DISARM TTPs]
+    FRAME --> COORD{Coordination signal?<br/>network-level only}
+    COORD -->|No| LOG[Log frame, no alert]
+    COORD -->|Yes| ATTR[Attribution confidence<br/>low/med, WEP-qualified]
+    ATTR --> ETH{Ethics gate<br/>no citizen profiling}
+    ETH -->|Fail| HALT[Halt — privacy breach risk]
+    ETH -->|Pass| ADV[Advisory signal to analysts]
+    ADV --> HUM[Human-on-the-loop framing]
+    HUM --> BRIEFF[Contextual briefing, not accusation]
+
+    style DISC fill:#2196f3,color:#ffffff
+    style COORD fill:#ff006e,color:#ffffff
+    style ETH fill:#ff006e,color:#ffffff
+    style HALT fill:#f44336,color:#ffffff
+    style BRIEFF fill:#4caf50,color:#000000
+```
+
+### 4A.6 Counter-AI &amp; analytic-integrity gate (C26–C32)
+
+```mermaid
+flowchart TD
+    IN[AI-assisted analytic step] --> INJ{Prompt-injection /<br/>poisoning screen}
+    INJ -->|Detected| QUAR[Quarantine input plus alert]
+    INJ -->|Clean| PROV{Provenance plus C2PA valid?}
+    PROV -->|No| REFUSE[Refuse to cite]
+    PROV -->|Yes| SAT[SAT-assisted reasoning<br/>ACH plus devil's advocate]
+    SAT --> SYM{Party-symmetry audit}
+    SYM -->|Asymmetric| REWORK[Rebalance plus re-review]
+    SYM -->|Symmetric| ICD{ICD-203 compliance?}
+    ICD -->|No| REWORK
+    ICD -->|Yes| SIGN[Human sign-off plus publish]
+
+    style IN fill:#2196f3,color:#ffffff
+    style INJ fill:#ff006e,color:#ffffff
+    style PROV fill:#ff006e,color:#ffffff
+    style SYM fill:#ff006e,color:#ffffff
+    style REFUSE fill:#f44336,color:#ffffff
+    style SIGN fill:#4caf50,color:#000000
+```
+
+---
+
 ## 5. 🛡️ ISMS & AI-Policy Compliance Flows
 
 Compliance is a **gate in every horizon**, mapped to ISO 27001:2022, NIST CSF 2.0 and CIS Controls v8.1, under [Hack23 ISMS-PUBLIC](https://github.com/Hack23/ISMS-PUBLIC).
