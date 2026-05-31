@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0",
+  "cycle": "week-ahead",
+  "date": "2026-05-31",
+  "subfolder": "week-ahead",
+  "generated_at": "2026-05-31T00:00:00Z",
+  "pirs": [
+    {
+      "pir_id": "PIR-MIGRATION-IMPL",
+      "statement": "What implementation guidance does Migrationsverket issue ahead of the 2026-10-01 reception-law (HD01SfU35) entry into force?",
+      "status": "open",
+      "confidence": "MEDIUM"
+    },
+    {
+      "pir_id": "PIR-COALITION-MARGIN",
+      "statement": "What is the recorded vote split on the citizenship re-vote (HD024194) under Riksdagsordningen 9:15, and what does it reveal about the working majority?",
+      "status": "open",
+      "confidence": "MEDIUM"
+    },
+    {
+      "pir_id": "PIR-WELFARE-FRAME",
+      "statement": "Does the opposition operationalise the IVO/Riksrevisionen oversight findings (HD01SoU28) into a campaign delivery-failure frame within the month?",
+      "status": "open",
+      "confidence": "LOW"
+    },
+    {
+      "pir_id": "PIR-RIGHTS-CHALLENGE",
+      "statement": "Do proportionality reservations on the reception law (HD01SfU35) area-restriction provisions mature into legal or EU-law challenge?",
+      "status": "open",
+      "confidence": "MEDIUM"
+    }
+  ]
+}
