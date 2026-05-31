@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.0",
+  "cycle": "election-cycle/current",
+  "date": "2026-05-31",
+  "subfolder": "election-cycle/current",
+  "generated_at": "2026-05-31T00:00:00Z",
+  "inherited_from": "analysis/daily/2026-05-27/year-ahead/pir-status.json",
+  "pirs": [
+    {
+      "pir_id": "PIR-COHESION-CYCLE-2026",
+      "statement": "Will the Tidö bloc (M/KD/L + SD support) hold voting cohesion on confidence-adjacent and values files (migration HD01SfU35, citizenship HD024194) through the 2026-09-13 terminal event of the mandate?",
+      "trigger": "Any L or KD defection on a confidence-adjacent division before the September poll.",
+      "status": "open",
+      "confidence": "MEDIUM",
+      "horizon": "election-day",
+      "inherits_from": ["PIR-COHESION-2026"],
+      "evidence_refs": ["HD01SfU35", "HD024194"],
+      "admiralty_grade": "B2"
+    },
+    {
+      "pir_id": "PIR-LABOUR-MACRO-CYCLE-2026",
+      "statement": "Will a labour-market or macro shock (GDP undershoot vs IMF WEO Apr-2026 ~2.1% T+1, or a-kassa/pension salience HD10524/HD03130) reframe the cycle verdict toward economic competence?",
+      "trigger": "IMF-divergent CPI print or unemployment breakout before the poll.",
+      "status": "open",
+      "confidence": "MEDIUM",
+      "horizon": "2026-09-13",
+      "inherits_from": ["PIR-LABOUR-MACRO-2026"],
+      "evidence_refs": ["HD10524", "HD03130"],
+      "admiralty_grade": "B3"
+    },
+    {
+      "pir_id": "PIR-EQUALISATION-CYCLE-2026",
+      "statement": "Will municipal equalisation (HD10526) and municipal health strain (HD01SoU32) become the decisive fairness/delivery cleavage of the mandate verdict?",
+      "trigger": "New municipal deficit reports or coalition resistance attributable to HD10526.",
+      "status": "open",
+      "confidence": "MEDIUM",
+      "horizon": "2026-09-13",
+      "inherits_from": ["PIR-EQUALISATION-2026"],
+      "evidence_refs": ["HD10526", "HD01SoU32"],
+      "admiralty_grade": "B3"
+    },
+    {
+      "pir_id": "PIR-DELIVERY-CYCLE-2026",
+      "statement": "Will agency capacity (Polismyndigheten, Migrationsverket, municipalities) convert the mandate's legislative throughput (HD01JuU37, HD01SfU35, HD01SoU32) into demonstrable delivery, or will implementation gaps falsify the delivery claim?",
+      "trigger": "Statskontoret or agency report documenting an implementation miss on a flagship statute.",
+      "status": "open",
+      "confidence": "MEDIUM",
+      "horizon": "2026-09-13",
+      "inherits_from": ["PIR-DELIVERY-2026"],
+      "evidence_refs": ["HD01JuU37", "HD01SfU35", "HD01SoU32"],
+      "admiralty_grade": "C3"
+    }
+  ],
+  "prior_cycle_ingestion": {
+    "note": "Carried-forward from prior-cycle year-ahead (2026-05-27 and same-date 2026-05-31): all four standing PIRs (cohesion, labour-macro, equalisation, delivery) roll forward into the cycle frame with election-band horizons. No prior PIR was answered or superseded this cycle.",
+    "predecessor_path": "analysis/daily/2026-05-27/year-ahead/"
+  }
+}
