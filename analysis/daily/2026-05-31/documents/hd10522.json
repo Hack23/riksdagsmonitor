@@ -1,0 +1,25 @@
+{
+  "dok_id": "HD10522",
+  "titel": "Styrningen av Vattenfall",
+  "datum": "2026-05-29",
+  "rm": "2025/26",
+  "parti": "SD",
+  "summary": "Interpellation 2025/26:522 Styrningen av Vattenfall\n av  Tobias Andersson (SD)\n till Finansminister Elisabeth Svantesson (M)\n Vattenfall och dess verksamhet har varit en följetång för Tidöpartierna under mandatperioden. Framgången för de stora omläggningarna av energipolitiken är direkt beroende av Vattenfalls verksamhet.",
+  "url": "https://data.riksdagen.se/dokument/HD10522.html",
+  "mcpCoverageState": "full_text",
+  "mcpProvenance": {
+    "provider": "riksdag-regering",
+    "endpoint": "http://host.docker.internal:8080/mcp/riksdag-regering",
+    "tool": "get_dokument_innehall",
+    "query": {
+      "dok_id": "HD10522",
+      "include_full_text": true
+    },
+    "resultCount": 1,
+    "coverageState": "full_text",
+    "retrieval": "live",
+    "retrievedAt": "2026-05-31T13:10:44.483Z"
+  },
+  "fullContent": "5291316\r\n HD10522\r\n 2025/26\r\n 522\r\n ip\r\n \r\n ip\r\n Interpellation 2025/26:522 av Tobias Andersson (SD)\r\n Interpellation\r\n Interpellationsdebatt\r\n SD\r\n SD\r\n Finansminister Elisabeth Svantesson (M)\r\n 522\r\n 0\r\n 2026-05-29 00:00:00\r\n 2026-05-29 08:34:35\r\n 2026-05-29 00:00:00\r\n Styrningen av Vattenfall\r\n Tobias Andersson (SD)\r\n Skickad\r\n html\r\n \r\n Frips\r\n 3d1ad805-6e15-43ed-9d49-7dfeb61f296c\r\n https://data.riksdagen.se/dokument/HD10522/text\r\n https://data.riksdagen.se/dokument/HD10522\r\n https://data.riksdagen.se/dokumentstatus/HD10522\r\n <h2>Interpellation 2025/26:522 Styrningen av Vattenfall</h2>\r\n<p class=\"Av\">av <i>Tobias Andersson (SD)</i></p>\r\n<p class=\"Till\">till Finansminister Elisabeth Svantesson (M)</p>\r\n<p>&nbsp;</p>\r\n<p>Vattenfall och dess verksamhet har varit en följetång för Tidöpartierna under mandatperioden. Framgången för de stora omläggningarna av energipolitiken är direkt beroende av Vattenfalls verksamhet. Trots det upplever många väljare att Vattenfall lever&#160;sitt eget liv utan att agera i linje med den politiska viljan för energipolitiken som manifesterade sig på valdagen. </p><p>Kritiken jag möter bland våra väljare är blandad och berör allt från bonussystem och VD-lön till lovordande av havsvindkraft och tempot i kärnkraftsprojektet. </p><p>Med anledning av ovanstående önskar jag fråga finansminister Elisabeth Svantesson&#160;följande&#58; </p><p>&#160;</p><p>Avser ministern att se över styrningen av Vattenfall för att säkerställa ett effektivt genomförande av regeringens energipoiltik? </p>\r\n\r\n\r\n\r\nINL\r\nInlämnad\r\n2026-05-28 00:00:00\r\ninträffat\r\n0\r\nbehandling\r\n\r\n\r\nÖverlämnad\r\nÖverlämnad\r\n2026-05-29 00:00:00\r\ninträffat\r\n0\r\nbehandling\r\n\r\n\r\nANM\r\nAnmäld\r\n2026-06-01 00:00:00\r\nplanerat\r\n0\r\nbehandling\r\n\r\n\r\nSISVA\r\nSista svarsdatum\r\n2026-06-12 00:00:00\r\nplanerat\r\n0\r\nbehandling\r\n\r\n\r\n\r\n\r\n086684470825\r\nTobias Andersson\r\nSD\r\n1\r\nundertecknare\r\n\r\n\r\n0899112324519\r\nFinansminister Elisabeth Svantesson\r\nM\r\n1\r\nbesvaradav\r\n\r\n\r\n0899112324519\r\nFinansminister Elisabeth Svantesson\r\nM\r\n1\r\nstalldtill\r\n\r\n\r\n\r\n\r\nstatustext\r\nstatustext\r\nInterpellationen är inlämnad\r\nHD10522\r\n2026-05-29 08:37:09\r\n\r\n\r\n\r\n\r\nHD10522\r\nTobias Andersson (SD)\r\nip_202526__522.pdf\r\n76703\r\npdf\r\nStyrningen av Vattenfall\r\nhttps://data.riksdagen.se/fil/E922F45A-C99F-4D93-A8B5-593C6CC1D60C",
+  "contentFetched": true
+}

@@ -1,0 +1,42 @@
+{
+  "schema_version": "1.0",
+  "cycle": "month-ahead",
+  "subfolder": "month-ahead",
+  "date": "2026-05-31",
+  "generated_at": "2026-05-31T13:20:00Z",
+  "pirs": [
+    {
+      "pir_id": "PIR-migration-outcome",
+      "question": "Do HD01SfU35 and HD024194 pass during the June sitting weeks, and with what intra-bloc cohesion?",
+      "status": "answered",
+      "confidence": "HIGH",
+      "answer_summary": "Trajectory resolves to decision: both very likely to pass on the SD-backed majority; cohesion question rolled into PIR-coalition-cohesion.",
+      "horizon": "month",
+      "linked_documents": ["HD01SfU35", "HD024194"]
+    },
+    {
+      "pir_id": "PIR-coalition-cohesion",
+      "question": "Does L signal public differentiation on any migration vote before recess?",
+      "status": "open",
+      "confidence": "MEDIUM",
+      "horizon": "month",
+      "linked_documents": ["HD024194", "HD01SfU35"]
+    },
+    {
+      "pir_id": "PIR-distributive-salience",
+      "question": "Do a-kassa and equalisation themes gain measurable campaign traction after their June defeats?",
+      "status": "open",
+      "confidence": "MEDIUM",
+      "horizon": "month",
+      "linked_documents": ["HD10524", "HD10526"]
+    },
+    {
+      "pir_id": "PIR-integrity-narrative",
+      "question": "Does the share-dealing/jäv motion move trust metrics during the closing session?",
+      "status": "open",
+      "confidence": "LOW",
+      "horizon": "month",
+      "linked_documents": ["HD10529", "HD01SoU28"]
+    }
+  ]
+}

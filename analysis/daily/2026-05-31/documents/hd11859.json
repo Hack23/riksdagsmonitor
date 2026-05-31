@@ -1,0 +1,23 @@
+{
+  "dok_id": "HD11859",
+  "titel": "Fastighetsägares ansvar för säkerhet ",
+  "datum": "2026-05-29",
+  "rm": "2025/26",
+  "parti": "SD",
+  "summary": "Fråga 2025/26:859 Fastighetsägares ansvar för säkerhet  av  Roger Hedlund (SD)\n till Infrastruktur- och bostadsminister Andreas Carlson (KD)\n Den situation som nu beskrivs på Gävle centralstation, där personal utsätts för hot, spottning och trakasserier och där en butik nu tvingats stänga, är oacceptabel.\n En butik på Gävle",
+  "url": "https://data.riksdagen.se/dokument/HD11859.html",
+  "mcpCoverageState": "metadata_only",
+  "mcpProvenance": {
+    "provider": "riksdag-regering",
+    "endpoint": "http://host.docker.internal:8080/mcp/riksdag-regering",
+    "tool": "get_fragor",
+    "query": {
+      "limit": 30,
+      "rm": "2025/26"
+    },
+    "resultCount": 30,
+    "coverageState": "metadata_only",
+    "retrieval": "live",
+    "retrievedAt": "2026-05-31T13:10:18.038Z"
+  }
+}
