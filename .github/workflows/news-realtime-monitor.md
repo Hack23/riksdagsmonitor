@@ -267,7 +267,7 @@ safe-outputs:
     # GitHub raw content
     - raw.githubusercontent.com
   max-patch-size: 10240
-  max-patch-files: 200
+  max-patch-files: 100
   create-pull-request:
     labels: [agentic-news, analysis-data]
     draft: false

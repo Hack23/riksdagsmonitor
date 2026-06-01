@@ -267,7 +267,7 @@ safe-outputs:
     # GitHub raw content
     - raw.githubusercontent.com
   max-patch-size: 10240
-  max-patch-files: 200
+  max-patch-files: 100
   create-pull-request:
     labels: [agentic-news, translation, executive-brief]
     draft: false
@@ -581,8 +581,8 @@ This workflow is the **sole writer** of `analysis/daily/$DATE/$SUB/executive-bri
 | Per-session token driver | per-turn tool-schema surface × turn count | **before the fix** the dominant cost was the fixed per-turn schema (github `toolsets:[all]` + three data-MCP servers) re-sent every turn — the ~3.5× weighting multiplier. The translate agent calls none of those tools, so the surface was stripped to bash/edit/safe-outputs (+ one riksdag health-gate tool); the per-turn footprint now collapses toward the raw token count |
 | Run #26641603577 (pre-fix) | 13 langs → 27.0M weighted / 25M cap → 429 before PR | gh-aw raw 7.67M; the weighted metric was ~3.5× raw and exceeded the cap — driven by the dead-weight per-turn schema, now removed; **no PR shipped** |
 | Primary token levers | **strip unused per-turn MCP/tool schema** + validator-first Pass 2 | removing the data-MCP servers + github `toolsets:[all]` cuts the fixed per-turn cost so the 25M cap stops being the limiter; structural parity stays in the bash validator |
-| Per-run file output | `max_briefs × max_langs` = `1 × 13` = **13 files** (default) | well under safe-outputs `max-patch-files: 200` |
-| Daily throughput (3 runs) | up to **39 language-files / day** at defaults | wall-clock (Timer A/B) and the 200-file cap, not the token budget, are now the governing limits |
+| Per-run file output | `max_briefs × max_langs` = `1 × 13` = **13 files** (default) | well under safe-outputs `max-patch-files: 100` |
+| Daily throughput (3 runs) | up to **39 language-files / day** at defaults | wall-clock (Timer A/B) and the 100-file cap, not the token budget, are now the governing limits |
 | Current backlog drain (≥159 untranslated sources) | greenfield-first, oldest source + missing languages first | linear |
 
 If a run is behind schedule at agent minute 30 with translations still pending, the agent MUST trim `max_briefs` downward (drop the last selected source) rather than skip the Pass 2 validator gate — quality over completeness. A partial PR is always better than missing Timer A (job `timeout-minutes: 60`). The default `max_briefs=1` was set after run [#26633644372](https://github.com/Hack23/riksdagsmonitor/actions/runs/26633644372) repeatedly hit `CAPIError: 429 Maximum effective tokens exceeded` while attempting source #2; the validator-first Pass 2 above removes the read-back token sink, and stripping the unused per-turn MCP/tool schema (github `toolsets:[all]` + the scb/world-bank data servers — none of which this workflow ever calls) collapses the fixed per-turn cost that drove the ~3.5× weighting, so the weighted effective-token total stays under the 25M cap and the PR safe-output is reached even at the default 13-language batch.

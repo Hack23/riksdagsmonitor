@@ -55,31 +55,33 @@ The dedicated **`news-translate`** workflow owns markdown translation only: each
    | Rendered articles (all 14 languages) | `news/$ARTICLE_DATE-$SUBFOLDER-{en,sv,da,no,fi,de,fr,es,nl,ar,he,ja,ko,zh}.html` |
    | News-translate executive-brief translations (only from `news-translate.md`) | `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/executive-brief_<lang>.md` |
 
-   Stage `documents/*.md` selectively — keep the total ≤ 180 files (see step 2). Skip `analysis/daily/**/pass1/` entirely; it is a local gate-evidence snapshot (`04-analysis-pipeline.md`), not a deliverable.
+   Stage `documents/*.md` selectively — keep the total ≤ 100 files (see step 2). Skip `analysis/daily/**/pass1/` entirely; it is a local gate-evidence snapshot (`04-analysis-pipeline.md`), not a deliverable.
 
-2. **200-file guard (non-negotiable).** Run this snippet before calling safeoutputs. The safe-outputs handler hard-rejects PRs with > 200 files (E003); the guard uses a 180-file threshold to leave headroom for metadata the handler may add.
+2. **100-file guard (non-negotiable).** STRICT FILE BUDGET: max 100 files changed per PR.
+   If your current patch would exceed 100 files, emit `OVER FILE BUDGET` and reduce scope before calling safeoutputs.
+   The run must make exactly one safeoutputs___create_pull_request call per run.
 
    ```bash
    set -euo pipefail
    STAGED_COUNT=$(git diff --cached --name-only | wc -l | tr -d '[:space:]')
-   echo "📊 Staged file count: $STAGED_COUNT (limit: 180)"
-   if [ "$STAGED_COUNT" -gt 180 ]; then
-     echo "⚠️ OVER FILE BUDGET ($STAGED_COUNT > 180). Unstaging documents/ ..."
+   echo "📊 Staged file count: $STAGED_COUNT (limit: 100)"
+   if [ "$STAGED_COUNT" -gt 100 ]; then
+     echo "⚠️ OVER FILE BUDGET ($STAGED_COUNT > 100). Unstaging documents/ ..."
      git reset HEAD -- "analysis/daily/$ARTICLE_DATE/$SUBFOLDER/documents/" 2>/dev/null || true
      STAGED_COUNT=$(git diff --cached --name-only | wc -l | tr -d '[:space:]')
      echo "📊 After unstaging documents/: $STAGED_COUNT files"
-     if [ "$STAGED_COUNT" -gt 180 ]; then
-       echo "❌ STILL OVER BUDGET ($STAGED_COUNT > 180). Unstaging all JSON files..."
+     if [ "$STAGED_COUNT" -gt 100 ]; then
+       echo "❌ STILL OVER BUDGET ($STAGED_COUNT > 100). Unstaging all JSON files..."
        git diff --cached --name-only | grep '\.json$' | xargs -r git reset HEAD -- || true
        STAGED_COUNT=$(git diff --cached --name-only | wc -l | tr -d '[:space:]')
        echo "📊 After unstaging JSON: $STAGED_COUNT files"
      fi
-     if [ "$STAGED_COUNT" -gt 180 ]; then
-       echo "❌ FATAL: Cannot reduce staged files below 180 (currently $STAGED_COUNT). Aborting."
+     if [ "$STAGED_COUNT" -gt 100 ]; then
+       echo "❌ FATAL: Cannot reduce staged files below 100 (currently $STAGED_COUNT). Aborting."
        exit 1
      fi
    fi
-   echo "✅ File budget OK: $STAGED_COUNT ≤ 180"
+   echo "✅ File budget OK: $STAGED_COUNT ≤ 100"
    ```
 
    Skipping this step makes `create_pull_request` fail with E003 and wastes the run.
@@ -199,7 +201,7 @@ Use the template below verbatim, replacing `$…` placeholders with run-observab
 | Longest evidence chain | $LONGEST_CHAIN_LEN hops |
 | Executive-brief languages produced | $BRIEF_LANG_COUNT / 14 |
 | Dashboard charts rendered | $CHART_COUNT |
-| Files staged | $STAGED_FILE_COUNT / 180 |
+| Files staged | $STAGED_FILE_COUNT / 100 |
 
 ## 🧠 Analysis artifacts
 
