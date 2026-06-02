@@ -1,0 +1,14 @@
+# Riksdagsmonitor robots.txt
+# Allow all crawlers to access the site, but exclude auto-generated
+# API documentation pages (JSDoc) that lack meta descriptions and
+# provide no user-facing value for search engine indexing.
+
+User-agent: *
+Allow: /
+
+# Exclude JSDoc-generated API documentation (no meta descriptions,
+# not user-facing content — flagged as high-severity SEO errors).
+Disallow: /docs/api/
+
+# Sitemap location
+Sitemap: https://riksdagsmonitor.hack23.com/sitemap.xml

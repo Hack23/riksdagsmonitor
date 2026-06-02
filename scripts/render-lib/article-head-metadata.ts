@@ -256,9 +256,16 @@ export function computeArticleHeadMetadata(input: ArticleHeadMetadataInput): Art
   const rawTitle = briefTitle && briefTitle.length > 0
     ? briefTitle
     : (fmTitleRaw.length > 0 ? fmTitleRaw : fallbackTitle);
+  // Fallback description: prefer fm.description when available; when
+  // absent, synthesise a date-aware fallback that differentiates pages
+  // (the generic literal 'Riksdagsmonitor political intelligence report.'
+  // was duplicated across hundreds of pages, triggering SEO penalties).
+  const fmDescription = typeof fm.description === 'string' && fm.description.trim().length > 0
+    ? fm.description.trim()
+    : '';
   const rawDescription = briefDescription && briefDescription.length > 0
     ? briefDescription
-    : String(fm.description ?? 'Riksdagsmonitor political intelligence report.');
+    : (fmDescription.length > 0 ? fmDescription : `${rawTitle} — ${date}. Riksdagsmonitor.`);
   const rawKeywords = typeof fm.keywords === 'string' ? fm.keywords : undefined;
   const articleType = inferArticleType(input.canonicalPath, rawTitle);
   const localizedArticleTypeLabel = articleTypeLabel(articleType.type, input.lang, articleType.label);

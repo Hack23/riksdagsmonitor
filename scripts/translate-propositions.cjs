@@ -467,15 +467,24 @@ function translateFile(sourceFile, outputDir, targetLang) {
   const trans = translations[targetLang];
   const meta = langMeta[targetLang];
   
+  // Extract date from filename (e.g. "2026-02-18-government-propositions-en.html")
+  // to differentiate titles/descriptions across dates.
+  const dateMatch = path.basename(sourceFile).match(/(\d{4}-\d{2}-\d{2})/);
+  const articleDate = dateMatch ? dateMatch[1] : '';
+  const dateStampedTitle = articleDate ? `${trans.title} — ${articleDate}` : trans.title;
+  const dateStampedDescription = articleDate
+    ? `${trans.description} (${articleDate})`
+    : trans.description;
+  
   let translated = content;
   
   translated = translated.replace('<html lang="en">', `<html lang="${targetLang}"${meta.dir === 'rtl' ? ' dir="rtl"' : ''}>`);
   
-  translated = translated.replace(/<title>.*?<\/title>/, `<title>${trans.title}</title>`);
+  translated = translated.replace(/<title>.*?<\/title>/, `<title>${dateStampedTitle}</title>`);
   
   translated = translated.replace(
     /<meta name="description" content=".*?">/,
-    `<meta name="description" content="${trans.description}">`
+    `<meta name="description" content="${dateStampedDescription}">`
   );
   
   translated = translated.replace(
@@ -602,8 +611,7 @@ function translateFile(sourceFile, outputDir, targetLang) {
   translated = translated.replace(/<strong>Document References:<\/strong>/, `<strong>${trans.docRefs}:</strong>`);
   translated = translated.replace(/← Back to News/, trans.backToNews);
   
-  const dateMatch = path.basename(sourceFile).match(/(\d{4}-\d{2}-\d{2})/);
-  const datePattern = dateMatch ? dateMatch[1] : '2026-02-18';
+  const datePattern = articleDate || '2026-02-18';
   
   const removeEnActivePattern = new RegExp(`(<a href="${datePattern}-government-propositions-en\\.html" class="lang-link) active"`, 'g');
   translated = translated.replace(

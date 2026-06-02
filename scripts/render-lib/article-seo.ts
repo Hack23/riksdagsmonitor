@@ -24,6 +24,7 @@ import {
   expandCommitteeDomains,
 } from './aggregator/seo/sv-keyword-mappings.js';
 import { RIKSDAG_COMMITTEE_CODES } from './aggregator/seo/brief-extractor.js';
+import { ARTICLE_TYPE_LABEL_I18N } from './article-type-i18n.js';
 
 const KEYWORD_MAX = 24;
 
@@ -528,6 +529,111 @@ export interface ArticleSeoMetadata {
 }
 
 /**
+ * Collect ALL localized article-type labels (all types × all languages) into
+ * a normalised lower-case `Set`. Used by {@link isTitleGenericCategoryLabel}
+ * to detect when a title is just the bare category name (which causes
+ * thousands of duplicate-title SEO errors across the 14-language matrix).
+ */
+const ALL_CATEGORY_LABELS: Set<string> = (() => {
+  const s = new Set<string>();
+  for (const typeMap of Object.values(ARTICLE_TYPE_LABEL_I18N)) {
+    for (const label of Object.values(typeMap)) {
+      s.add((label as string).toLowerCase());
+    }
+  }
+  return s;
+})();
+
+/**
+ * Generic "weekly/this-week/this-period" suffixes that appear in translated
+ * category titles (e.g. "Propositions: Policy Priorities This Week"). When
+ * a title is the category label followed by one of these generic suffixes,
+ * it is still a category-level title that produces duplicates across dates.
+ */
+const GENERIC_TEMPORAL_SUFFIXES_RE =
+  /(?:\s*[:\-–—]\s*(?:policy\s+priorities|political\s+priorities|politiske\s+prioriteringer|politiska\s+prioriteringar|politische\s+priorit(?:ä|ae)ten|priorités\s+politiques|prioridades\s+pol[ií]ticas|politieke\s+prioriteiten|سياسات|עדיפויות|政策|정책)\s*(?:this|denne|denna|diese[r]?|cette|esta|deze|هذا|הזה|今|이번)\s*(?:week|uge|vecka|woche|semaine|semana|week|الأسبوع|שבוע|週|주).*)$/i;
+
+/**
+ * Detect if a title is just a generic/category label (or a generic
+ * category + temporal-suffix pattern) that will collide with every other
+ * article of the same type across different dates. When detected, the
+ * caller should inject the article date to differentiate.
+ */
+export function isTitleGenericCategoryLabel(title: string, articleTypeLabel: string): boolean {
+  const normalised = title.toLowerCase().trim();
+  const labelNorm = articleTypeLabel.toLowerCase().trim();
+  // Exact match: title IS just the bare category label.
+  if (normalised === labelNorm) return true;
+  // Title starts with the category label and is followed by a generic
+  // temporal suffix (covers "Propositions: Policy Priorities This Week" etc.)
+  if (normalised.startsWith(labelNorm) && GENERIC_TEMPORAL_SUFFIXES_RE.test(normalised)) {
+    return true;
+  }
+  // Title is any known category label from ANY language (covers cross-lang leaks).
+  if (ALL_CATEGORY_LABELS.has(normalised)) return true;
+  return false;
+}
+
+/**
+ * Synthesise a description from title + article-type + date when the
+ * resolved description is empty. Ensures every page has a non-empty,
+ * unique, story-relevant description.
+ */
+function synthesiseDescriptionFromContext(
+  titleFragment: string,
+  input: ArticleSeoMetadataInput,
+): string {
+  const parts: string[] = [];
+  if (titleFragment.length > 0) parts.push(titleFragment);
+  if (input.articleTypeLabel && !titleFragment.toLowerCase().includes(input.articleTypeLabel.toLowerCase())) {
+    parts.push(input.articleTypeLabel);
+  }
+  if (input.date) parts.push(input.date);
+  parts.push('Riksdagsmonitor');
+  return parts.join(' — ');
+}
+
+/**
+ * Enrich a short description that falls below the per-language `softMin`
+ * by appending contextual info (article-type, date, title fragment). The
+ * enrichment is additive — the original description is preserved as the
+ * leading text, with contextual padding appended after a separator.
+ */
+function enrichShortDescription(
+  base: string,
+  input: ArticleSeoMetadataInput,
+  softMin: number,
+  hardMax: number,
+): string {
+  // If it's an admin-byline leak (ultra-short, looks like a field label),
+  // discard it entirely and synthesise from scratch.
+  if (base.length < 20 && /^[\p{L}\p{Emoji_Presentation}]*\s*[：:]\s*$/u.test(base)) {
+    const synthesised =
+      collapseWhitespace(stripEmptyBrackets(input.title)) || input.articleTypeLabel;
+    return synthesiseDescriptionFromContext(synthesised, input);
+  }
+  // Already above softMin after stripping — return as-is.
+  if (base.length >= softMin) return base;
+  // Append contextual padding to cross softMin.
+  const extras: string[] = [];
+  if (input.articleTypeLabel && !base.toLowerCase().includes(input.articleTypeLabel.toLowerCase())) {
+    extras.push(input.articleTypeLabel);
+  }
+  if (input.date && !base.includes(input.date)) {
+    extras.push(input.date);
+  }
+  const titleSnippet = collapseWhitespace(stripEmptyBrackets(input.title));
+  if (titleSnippet.length > 0 && !base.toLowerCase().includes(titleSnippet.toLowerCase().slice(0, 30))) {
+    extras.push(titleSnippet);
+  }
+  if (extras.length === 0) return base;
+  const enriched = `${base} — ${extras.join('. ')}.`;
+  // Don't overshoot hardMax.
+  if (enriched.length > hardMax) return enriched.slice(0, hardMax - 1).trim() + '…';
+  return enriched;
+}
+
+/**
  * Build the SERP `<title>`. The executive-brief H1 — which the cascade
  * has already localized into 14 languages — IS the SERP title. Per
  * `seo-metadata-contract.md` §2.1, the title is **always** sourced
@@ -582,11 +688,20 @@ export function buildSeoTitle(input: ArticleSeoMetadataInput): string {
   // Pre-process: strip empty-bracket placeholders (e.g. `Next Mandate 2026-2030 ( )`
   // from upstream brief generators that fail to substitute coalition-name
   // placeholders) before any length / truncation logic runs.
-  const base = collapseWhitespace(stripEmptyBrackets(input.title));
+  let base = collapseWhitespace(stripEmptyBrackets(input.title));
   if (base.length === 0) {
-    // Empty title — synthesise from article-type label + brand.
-    const fallback = `${input.articleTypeLabel}${SITE_SUFFIX}`;
+    // Empty title — synthesise from article-type label + date + brand.
+    const fallback = `${input.articleTypeLabel} — ${input.date}${SITE_SUFFIX}`;
     return truncateWithinBudget(fallback, serpTitleBudget);
+  }
+  // De-duplicate generic/category-only titles by injecting the date.
+  // When the title is identical to the articleTypeLabel (or matches a
+  // known generic pattern like "Government Propositions: Policy Priorities
+  // This Week" translated across 14 langs) the page will collide with
+  // every other article of the same type. Differentiating by date ensures
+  // unique SERP titles across the 14×N date matrix.
+  if (isTitleGenericCategoryLabel(base, input.articleTypeLabel)) {
+    base = `${base} — ${input.date}`;
   }
   // Avoid duplicating the brand when the H1 already mentions it.
   if (/riksdagsmonitor/i.test(base)) {
@@ -654,7 +769,7 @@ export function buildSeoTitle(input: ArticleSeoMetadataInput): string {
 
 export function buildSeoDescription(input: ArticleSeoMetadataInput): string {
   const base = stripDescriptionMarkup(input.description);
-  const { hardMax } = descriptionWindowForLanguage(input.lang);
+  const { softMin, hardMax } = descriptionWindowForLanguage(input.lang);
   if (base.length === 0) {
     // Empty / missing `description` front-matter — synthesise a non-empty,
     // story-relevant SERP description so the page never ships
@@ -666,7 +781,15 @@ export function buildSeoDescription(input: ArticleSeoMetadataInput): string {
     // no EN tokens leak under a non-EN `<html lang>`.
     const synthesised =
       collapseWhitespace(stripEmptyBrackets(input.title)) || input.articleTypeLabel;
-    return truncateWithinBudget(synthesised, hardMax);
+    return truncateWithinBudget(synthesiseDescriptionFromContext(synthesised, input), hardMax);
+  }
+  // Enforce softMin: when the resolved description is below the per-language
+  // soft minimum, it will appear as "short" in SEO audits and search engines
+  // may replace it with auto-generated snippets. Pad with contextual info
+  // (article-type + date + title fragment) to cross the threshold.
+  if (base.length < softMin) {
+    const enriched = enrichShortDescription(base, input, softMin, hardMax);
+    return truncateWithinBudget(enriched, hardMax);
   }
   return truncateWithinBudget(base, hardMax);
 }
