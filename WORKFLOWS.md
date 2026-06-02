@@ -1537,6 +1537,162 @@ flowchart TB
 
 ---
 
+## 🏗️ gh-aw (GitHub Agentic Workflows) Security Architecture
+
+> **Reference:** [gh-aw Architecture](https://github.github.com/gh-aw/introduction/architecture/) · [SECURITY_ARCHITECTURE.md § Five-Layer Safe-Output Model](SECURITY_ARCHITECTURE.md#-five-layer-safe-output-security-model-detailed)
+
+All 14 agentic workflows in this repository execute within the **gh-aw** runtime — GitHub's purpose-built security substrate for AI-powered automation. gh-aw enforces a **three-layer defense-in-depth** model that contains agent actions within strict trust boundaries.
+
+### 🏛️ Three-Layer Trust Model
+
+```mermaid
+flowchart TB
+    subgraph L1["🔒 Layer 1: Substrate-Level Trust<br/>(Infrastructure — enforced by gh-aw runtime)"]
+        direction LR
+        AWF["🧱 Agent Workflow Firewall<br/>(iptables + Squid proxy)"]
+        MCP_GW["🐳 MCP Gateway<br/>(Docker container isolation)"]
+        API_P["🔌 API Proxy<br/>(token-scoped access)"]
+        VM["🖥️ Runner VM<br/>(ephemeral, kernel-hardened)"]
+    end
+
+    subgraph L2["⚙️ Layer 2: Configuration-Level Trust<br/>(Compile-time — enforced by gh aw compile)"]
+        direction LR
+        SCHEMA["📋 Schema Validation<br/>(workflow structure)"]
+        SHA["📌 Action SHA Pinning<br/>(immutable references)"]
+        SCAN["🔍 Security Scanners<br/>(actionlint, zizmor, poutine)"]
+        STRICT["🔐 Strict Mode<br/>(expression allowlisting)"]
+    end
+
+    subgraph L3["🛡️ Layer 3: Plan-Level Trust<br/>(Runtime — enforced per execution)"]
+        direction LR
+        SO["📤 SafeOutputs<br/>(buffered writes)"]
+        TD["🕵️ Threat Detection<br/>(AI-powered analysis)"]
+        CS["🧹 Content Sanitisation<br/>(@mention, URI, tag filters)"]
+        SR["🔑 Secret Redaction<br/>(pre-upload scan)"]
+    end
+
+    L1 --> L2 --> L3
+
+    style L1 fill:#1a237e,color:#fff,stroke:#0d47a1,stroke-width:2px
+    style L2 fill:#004d40,color:#fff,stroke:#00695c,stroke-width:2px
+    style L3 fill:#b71c1c,color:#fff,stroke:#c62828,stroke-width:2px
+```
+
+### 🧱 Layer 1: Substrate-Level Trust (Infrastructure)
+
+The gh-aw runtime provides hardware-enforced isolation for every agentic workflow run:
+
+| Component | Icon | Function | Riksdagsmonitor Usage |
+|-----------|------|----------|----------------------|
+| **Runner VM** | 🖥️ | Ephemeral GitHub Actions VM with kernel-level isolation; destroyed after each run | All 14 agentic workflows execute in fresh VMs |
+| **Agent Workflow Firewall (AWF)** | 🧱 | `iptables` redirects all HTTP/HTTPS through a Squid proxy with domain allowlist; non-allowlisted traffic is DROPped | 17 allowlisted domains (see [Network egress allow-list](#network-egress-allow-list-applies-to-every-agentic-workflow)) |
+| **MCP Gateway** | 🐳 | Each MCP server runs in an isolated Docker container; tool allowlisting; per-container network controls; secrets injected via env vars only | `scb` and `world-bank` servers in `node:26-alpine` containers |
+| **API Proxy** | 🔌 | Token-scoped access to GitHub APIs; prevents privilege escalation via stolen tokens | Agentic workflows get read-only repo + PR write only |
+
+### ⚙️ Layer 2: Configuration-Level Trust (Compile-Time)
+
+The `gh aw compile` command enforces security at compilation time:
+
+| Control | Icon | What It Enforces | Riksdagsmonitor Implementation |
+|---------|------|-----------------|-------------------------------|
+| **Schema Validation** | 📋 | Workflow YAML structure must conform to gh-aw schema (permissions, triggers, steps) | `compile-agentic-workflows.yml` validates all 14 `.md` sources |
+| **Expression Allowlisting** | 🔐 | Only safe expression patterns allowed in workflow definitions | Strict mode enabled; no `${{ }}` in shell commands |
+| **Action SHA Pinning** | 📌 | All `uses:` references pinned to immutable commit SHAs (not tags) | 100% SHA-pinned across all 54 workflow files |
+| **Security Scanners** | 🔍 | `actionlint`, `zizmor`, `poutine` run during compilation | Integrated into the compile workflow quality gate |
+| **Prompt Module Size Cap** | 📏 | No single prompt module may exceed 550 lines | Enforced by compile workflow (prevents prompt injection via oversized modules) |
+
+### 🛡️ Layer 3: Plan-Level Trust (Runtime)
+
+Runtime controls that govern what the AI agent can actually do:
+
+| Control | Icon | Mechanism | Riksdagsmonitor Implementation |
+|---------|------|-----------|-------------------------------|
+| **SafeOutputs** | 📤 | Agent job has **read-only** permissions; all writes buffered as artifacts; separate detection job analyzes before execution | Five-layer validator: sanitise → schema → policy → human review → merge |
+| **Threat Detection Pipeline** | 🕵️ | Separate job downloads agent artifacts; AI security agent analyzes for secret leaks, malicious patches, policy violations; blocking verdict gates output jobs | Analysis gate (checks 1–9b) + methodology-reflection validator |
+| **Content Sanitisation** | 🧹 | `@mention` neutralisation, bot trigger protection, XML/HTML tag conversion, URI filtering (HTTPS-only from trusted domains), content size limits (0.5 MB / 65k lines) | `rehype-sanitize` allow-list + Mermaid `securityLevel: 'strict'` |
+| **Integrity Filtering** | 🔒 | Controls which GitHub content the agent can access based on author trust and merge status | Repository scoped — merged > approved > unapproved |
+| **Secret Redaction** | 🔑 | Automatic scanning of `/tmp/gh-aw` for secrets before artifact upload; partial visibility (first 3 chars + `***`) | Enforced by gh-aw runtime for all 14 workflows |
+
+### 🔄 SafeOutputs Execution Flow
+
+```mermaid
+sequenceDiagram
+    participant Agent as 🤖 AI Agent (read-only)
+    participant Buffer as 📦 Artifact Buffer
+    participant Detect as 🕵️ Threat Detection Job
+    participant Gate as ⛔ Analysis Gate
+    participant Output as 📤 Safe Output Jobs
+    participant Human as 👤 Human Reviewer
+
+    Agent->>Buffer: Write analysis artifacts + article
+    Note over Agent,Buffer: Agent has NO write permissions<br/>All output buffered as workflow artifacts
+
+    Buffer->>Detect: Download artifacts for analysis
+    Detect->>Detect: AI security scan (secret leaks, malicious patches)
+    Detect->>Gate: Structural validation (checks 1–9b)
+
+    alt Detection PASS + Gate PASS
+        Gate->>Output: Authorize safe output execution
+        Output->>Output: create_pull_request (sanitised content)
+        Output->>Human: PR ready for review
+        Human->>Human: Approve or reject
+    else Detection FAIL or Gate FAIL
+        Gate--xOutput: ❌ Blocked — no PR created
+        Note over Gate,Output: Fail-closed: entire workflow fails
+    end
+```
+
+### 🌐 gh-aw Security Components Applied to Riksdagsmonitor
+
+```mermaid
+flowchart LR
+    subgraph "14 Agentic News Workflows"
+        W1["news-propositions"]
+        W2["news-motions"]
+        W3["news-committee-reports"]
+        W4["… + 11 more"]
+    end
+
+    subgraph "gh-aw Security Substrate"
+        FW["🧱 AWF<br/>Squid + iptables<br/>17 domains allowed"]
+        MCP["🐳 MCP Gateway<br/>3 containerised servers"]
+        SO["📤 SafeOutputs<br/>5-layer validator"]
+        TD["🕵️ Threat Detection<br/>AI + structural gates"]
+        SR["🔑 Secret Redaction<br/>Pre-upload scan"]
+    end
+
+    subgraph "Riksdagsmonitor Controls"
+        AG["⛔ Analysis Gate<br/>Checks 1–9b"]
+        MR["📊 Methodology<br/>Reflection Validator"]
+        PR["👤 Human PR Review<br/>CODEOWNERS"]
+    end
+
+    W1 & W2 & W3 & W4 --> FW
+    FW --> MCP
+    MCP --> SO
+    SO --> TD
+    TD --> AG
+    AG --> MR
+    MR --> PR
+
+    style FW fill:#1a237e,color:#fff
+    style MCP fill:#004d40,color:#fff
+    style SO fill:#b71c1c,color:#fff
+    style TD fill:#e65100,color:#fff
+    style SR fill:#4a148c,color:#fff
+    style AG fill:#880e4f,color:#fff
+```
+
+### 📊 gh-aw Security Layer Summary
+
+| Layer | Trust Boundary | Enforced By | Bypass Resistance | ISMS Mapping |
+|-------|---------------|-------------|-------------------|--------------|
+| **🔒 L1: Substrate** | Infrastructure | gh-aw runtime (VM + kernel + AWF + MCP Gateway) | Hardware isolation; iptables DROP rules; container sandboxing | ISO A.8.22 (Network segregation), NIST PR.AC-5, CIS #13 |
+| **⚙️ L2: Configuration** | Compilation | `gh aw compile` + security scanners | Schema validation; SHA immutability; scanner verdicts | ISO A.8.28 (Secure coding), NIST PR.DS-6, CIS #16.6 |
+| **🛡️ L3: Plan** | Runtime | SafeOutputs + threat detection + sanitisation | Permission separation; AI-powered analysis; fail-closed gates | ISO A.8.25 (SDLC), NIST DE.CM-4, CIS #16.10 |
+
+---
+
 ## 📊 ISMS Compliance Mapping
 
 ### ISO 27001:2022 Controls
@@ -1651,6 +1807,7 @@ flowchart TB
 - [GitHub Actions](https://docs.github.com/en/actions)
 - [GitHub Copilot Agents](https://docs.github.com/en/copilot/concepts/agents)
 - [GitHub Agentic Workflows](https://github.com/github/gh-aw)
+- [gh-aw Security Architecture](https://github.github.com/gh-aw/introduction/architecture/)
 
 ### Related Documentation
 - [ARCHITECTURE.md](ARCHITECTURE.md) — C4 architecture models
@@ -1674,8 +1831,8 @@ flowchart TB
 
 ---
 
-**📋 Document Owner:** CEO | **📄 Version:** 7.5 | **📅 Last Updated:** 2026-05-06 (UTC)
-**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-08-05
+**📋 Document Owner:** CEO | **📄 Version:** 7.6 | **📅 Last Updated:** 2026-06-02 (UTC)
+**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-09-02
 **🏢 Classification:** Public | **🏛️ Owner:** Hack23 AB (Org.nr 5595347807)
 
 ---
