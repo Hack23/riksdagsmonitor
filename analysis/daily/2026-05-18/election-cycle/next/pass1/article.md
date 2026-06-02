@@ -3,7 +3,7 @@ date: 2026-05-18
 subfolder: election-cycle/next/pass1
 slug: 2026-05-18-election-cycle/next/pass1
 source_folder: analysis/daily/2026-05-18/election-cycle/next/pass1
-generated_at: 2026-05-30T15:52:29.764Z
+generated_at: 2026-06-02T22:19:10.359Z
 language: en
 layout: article
 ---
