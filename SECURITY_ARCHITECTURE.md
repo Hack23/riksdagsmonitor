@@ -17,8 +17,8 @@
   <a href="https://www.bestpractices.dev/projects/12069"><img src="https://www.bestpractices.dev/projects/12069/badge" alt="OpenSSF Best Practices"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 2.4 | **📅 Last Updated:** 2026-05-06 (UTC)  
-**🔄 Review Cycle:** Annual | **⏰ Next Review:** 2027-05-06  
+**📋 Document Owner:** CEO | **📄 Version:** 2.5 | **📅 Last Updated:** 2026-06-02 (UTC)  
+**🔄 Review Cycle:** Annual | **⏰ Next Review:** 2027-06-02  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
 ---
@@ -54,6 +54,7 @@
 | CRA Conformity Assessment Process | CRA self-assessment template | [CRA_Conformity_Assessment_Process.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CRA_Conformity_Assessment_Process.md) |
 | Threat Modeling Policy | STRIDE/MITRE ATT&CK methodology | [Threat_Modeling.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Threat_Modeling.md) |
 | Classification Framework | CIA triad, RTO/RPO | [CLASSIFICATION.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) |
+| gh-aw Architecture | Three-layer agentic workflow security model | [gh-aw Architecture](https://github.github.com/gh-aw/introduction/architecture/) |
 
 ---
 
@@ -105,6 +106,10 @@
 - [📊 Monitoring & Analytics](#-monitoring--analytics)
 - [🔄 Security Operations](#-security-operations)
 - [💰 Security Investment](#-security-investment)
+- [🕵️ Political Intelligence Security Surface](#-political-intelligence-security-surface-v0940)
+- [🏗️ gh-aw Platform Security Architecture (Three-Layer Model)](#️-gh-aw-platform-security-architecture-three-layer-model)
+- [🔐 Five-Layer Safe-Output Security Model (Detailed)](#-five-layer-safe-output-security-model-detailed)
+- [🌐 External Data Provider Trust Model](#-external-data-provider-trust-model-consolidated)
 - [📝 Conclusion](#-conclusion)
 - [📋 Document Control](#-document-control)
 
@@ -3186,11 +3191,194 @@ AI-generated content must comply with OSINT operational standards:
 
 ---
 
+## 🏗️ gh-aw Platform Security Architecture (Three-Layer Model)
+
+> **Reference:** [gh-aw Architecture Documentation](https://github.github.com/gh-aw/introduction/architecture/) · [WORKFLOWS.md § gh-aw Security Architecture](WORKFLOWS.md#️-gh-aw-github-agentic-workflows-security-architecture)
+
+Riksdagsmonitor's 14 agentic news workflows execute within **GitHub Agentic Workflows (gh-aw)** — a purpose-built security runtime that enforces defense-in-depth through three independently enforceable trust layers. Each layer operates autonomously: a compromise of one layer does not bypass the protections of subsequent layers.
+
+### 🔒 Layer 1: Substrate-Level Trust (Infrastructure Isolation)
+
+The gh-aw substrate provides hardware-enforced security boundaries that no agent code can override:
+
+```mermaid
+flowchart TD
+    subgraph VM["🖥️ Ephemeral Runner VM"]
+        subgraph Container["🐳 Agent Container (chroot)"]
+            AGENT["🤖 AI Agent Process"]
+            FS["📁 Read-only Filesystem"]
+        end
+        subgraph AWF["🧱 Agent Workflow Firewall"]
+            IPTABLES["iptables (REDIRECT → Squid)"]
+            SQUID["Squid Proxy (domain allowlist)"]
+        end
+        subgraph MCPGW["🐳 MCP Gateway"]
+            MCP1["riksdag-regering<br/>(HTTP hosted)"]
+            MCP2["scb<br/>(node:26-alpine)"]
+            MCP3["world-bank<br/>(node:26-alpine)"]
+        end
+        PROXY["🔌 API Proxy<br/>(token-scoped)"]
+    end
+
+    AGENT -->|"HTTP/HTTPS"| IPTABLES
+    IPTABLES -->|"redirect"| SQUID
+    SQUID -->|"allowlisted only"| INTERNET["🌐 Internet<br/>(17 domains)"]
+    SQUID -->|"non-allowlisted"| DROP["❌ DROP"]
+    AGENT -->|"MCP calls"| MCPGW
+    AGENT -->|"GitHub API"| PROXY
+
+    style VM fill:#e3f2fd,stroke:#1565c0,stroke-width:2px
+    style AWF fill:#1a237e,color:#fff
+    style Container fill:#e8f5e9,stroke:#2e7d32
+    style DROP fill:#b71c1c,color:#fff
+```
+
+| Component | Security Function | Enforcement Mechanism |
+|-----------|------------------|----------------------|
+| 🖥️ **Ephemeral Runner VM** | Complete isolation per workflow run; no state persists between runs | GitHub-managed infrastructure; VM destroyed after run completes |
+| 🧱 **Agent Workflow Firewall (AWF)** | Network containment — all egress filtered through domain allowlist | `iptables` REDIRECT rules route HTTP(S) through Squid proxy; `DROP` policy for non-matching traffic |
+| 🐳 **MCP Gateway** | Tool isolation — each MCP server runs in a separate Docker container with its own network namespace | Per-container: tool allowlisting, network controls, secret injection via environment variables only |
+| 🔌 **API Proxy** | Token scoping — GitHub API access limited to declared permissions | Token automatically scoped to workflow-declared `permissions:` block; no privilege escalation possible |
+
+**Riksdagsmonitor substrate configuration:**
+- **17 allowlisted egress domains** (see [`WORKFLOWS.md` § Network egress allow-list](WORKFLOWS.md#network-egress-allow-list-applies-to-every-agentic-workflow))
+- **3 containerised MCP servers** (`riksdag-regering` via HTTP, `scb` + `world-bank` in `node:26-alpine` containers)
+- **5 gh-aw built-in tools** (`github`, `agentic-workflows`, `bash`, `playwright`, `repo-memory`)
+- **Read-only filesystem** for the agent process; writes only through SafeOutputs artifact buffer
+
+### ⚙️ Layer 2: Configuration-Level Trust (Compile-Time Enforcement)
+
+Security enforced during `gh aw compile` before any workflow can execute:
+
+```mermaid
+flowchart LR
+    MD[".md source<br/>(human-authored)"] -->|"gh aw compile"| VALIDATE
+
+    subgraph VALIDATE["⚙️ Compile-Time Security Checks"]
+        S1["📋 Schema Validation<br/>(structure, permissions, triggers)"]
+        S2["🔐 Expression Safety<br/>(allowlisted patterns only)"]
+        S3["📌 SHA Pinning<br/>(immutable action refs)"]
+        S4["🔍 Scanner Suite<br/>(actionlint + zizmor + poutine)"]
+        S5["📏 Size Cap<br/>(≤ 550 lines per prompt)"]
+    end
+
+    VALIDATE -->|"pass"| LOCK[".lock.yml<br/>(hardened, executable)"]
+    VALIDATE -->|"fail"| REJECT["❌ Compilation rejected"]
+
+    style VALIDATE fill:#004d40,color:#fff
+    style REJECT fill:#b71c1c,color:#fff
+```
+
+| Control | What It Prevents | Detection Method |
+|---------|-----------------|-----------------|
+| 📋 **Schema Validation** | Malformed workflows, excessive permissions, unsafe trigger patterns | JSON Schema validation against gh-aw workflow specification |
+| 🔐 **Expression Allowlisting** | Template injection via `${{ }}` in shell commands | Static analysis of all expression usage; only safe patterns permitted |
+| 📌 **Action SHA Pinning** | Supply chain attacks via tag-mutable action references | All `uses:` directives must reference full commit SHA (40 hex chars) |
+| 🔍 **Security Scanners** | Known workflow anti-patterns, vulnerable configurations | `actionlint` (syntax + security), `zizmor` (GitHub-specific), `poutine` (supply chain) |
+| 📏 **Prompt Module Size Cap** | Prompt injection via oversized modules; unreviewed content | Hard 550-line limit per `.github/prompts/*.md` file |
+| 🔄 **Lock File Integrity** | Manual tampering with compiled workflows | `.lock.yml` regenerated from `.md` on every compile; manual edits overwritten |
+
+**Riksdagsmonitor compile-time controls:**
+- All 14 agentic workflows compiled via [`compile-agentic-workflows.yml`](.github/workflows/compile-agentic-workflows.yml)
+- 100% action SHA pinning across all 54 workflow files
+- Prompt modules capped at 550 lines (enforced in CI)
+- PR-gated: `.lock.yml` diff reviewed alongside `.md` source changes
+
+### 🛡️ Layer 3: Plan-Level Trust (Runtime Execution Controls)
+
+Controls that govern what the AI agent can accomplish during execution:
+
+```mermaid
+flowchart TD
+    subgraph AGENT_JOB["🤖 Agent Job (read-only permissions)"]
+        AGENT["AI Agent"] -->|"produces"| ARTIFACTS["📦 Buffered Artifacts"]
+    end
+
+    subgraph DETECTION["🕵️ Threat Detection Job (separate)"]
+        DL["Download artifacts"]
+        AI_SCAN["AI security analysis<br/>(secret leaks, malicious patches)"]
+        CONTENT["Content sanitisation<br/>(@mention, URI, HTML tags)"]
+        SECRETS["Secret redaction scan"]
+        DL --> AI_SCAN --> CONTENT --> SECRETS
+    end
+
+    subgraph SAFE_OUTPUTS["📤 Safe Output Jobs"]
+        PR_CREATE["create_pull_request"]
+        COMMENT["add_comment"]
+        ISSUE["create_issue"]
+    end
+
+    ARTIFACTS -->|"workflow artifacts"| DL
+    SECRETS -->|"PASS verdict"| SAFE_OUTPUTS
+    SECRETS -->|"FAIL verdict"| BLOCKED["❌ All outputs blocked"]
+
+    style AGENT_JOB fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px
+    style DETECTION fill:#fff3e0,stroke:#e65100,stroke-width:2px
+    style SAFE_OUTPUTS fill:#e3f2fd,stroke:#1565c0,stroke-width:2px
+    style BLOCKED fill:#b71c1c,color:#fff
+```
+
+#### 📤 SafeOutputs — Permission Separation
+
+| Principle | Implementation |
+|-----------|---------------|
+| **Agent has no write permissions** | Agent job's `permissions:` block is read-only; cannot push commits, create PRs, or modify issues directly |
+| **Writes are buffered** | All agent output stored as workflow artifacts (not direct GitHub API calls) |
+| **Separate execution context** | Safe output jobs (`create_pull_request`, `add_comment`, `create_issue`) run in distinct jobs with write permissions |
+| **Threat detection gates outputs** | Detection job must pass before any safe output job can execute |
+
+#### 🕵️ Threat Detection Pipeline
+
+| Check | What It Detects | Action on Detection |
+|-------|----------------|---------------------|
+| 🔑 **Secret leak scanning** | API keys, tokens, credentials in agent output | Block all safe outputs; redact detected secrets |
+| 🐛 **Malicious patch detection** | Code changes that introduce vulnerabilities or backdoors | Block PR creation; alert maintainers |
+| 📜 **Policy violation** | Output exceeds size limits, contains prohibited content, violates content policy | Block affected outputs |
+| 🏷️ **@mention neutralisation** | Agent output containing GitHub `@username` mentions that could spam users | Convert `@user` → `@​user` (zero-width space injection) |
+| 🔗 **URI filtering** | Non-HTTPS URLs, untrusted domain links | Strip or convert to safe references |
+| 🏷️ **Bot trigger protection** | Content that could trigger other bots/automations (e.g., `/deploy`, `@dependabot merge`) | Neutralise command patterns |
+
+#### 🔒 Integrity Filtering
+
+Controls which existing GitHub content the agent can read, based on trust level:
+
+| Trust Level | Content Access | Example |
+|-------------|---------------|---------|
+| **Merged** (highest) | Full access | Merged PR content, main branch files |
+| **Approved** | Read access | Approved but unmerged PR content |
+| **Unapproved** | Restricted | Pending PR content — limited context |
+| **None** | Blocked | External/unknown source content |
+
+#### 🔑 Secret Redaction
+
+Pre-upload scanning of the `/tmp/gh-aw` working directory:
+- Automatic detection of known secret patterns (API keys, tokens, passwords)
+- Partial visibility format: first 3 characters + `***` (e.g., `ghp***`)
+- Scanning occurs **before** artifact upload — secrets never reach artifact storage
+- Applied to all 14 agentic workflow runs automatically
+
+### 📊 gh-aw + Riksdagsmonitor Combined Security Posture
+
+The following table maps how gh-aw's three-layer model integrates with Riksdagsmonitor's own security controls to create a comprehensive defense:
+
+| gh-aw Layer | gh-aw Control | Riksdagsmonitor Extension | Combined Effect |
+|-------------|---------------|---------------------------|-----------------|
+| 🔒 L1 Substrate | AWF egress firewall | 17-domain allowlist (political data sources only) | Agent cannot exfiltrate data to arbitrary hosts |
+| 🔒 L1 Substrate | MCP container isolation | 3 containerised servers (scb, world-bank, riksdag) | Tool compromise contained to single container |
+| ⚙️ L2 Config | Schema validation | `compile-agentic-workflows.yml` CI gate | Invalid workflows cannot reach `main` branch |
+| ⚙️ L2 Config | SHA pinning | 100% pinning + Dependabot version updates | No supply chain tag-swap attacks possible |
+| 🛡️ L3 Plan | SafeOutputs | Five-layer output validator (checks 1–9b + methodology reflection) | AI output structurally validated before PR creation |
+| 🛡️ L3 Plan | Threat detection | Analysis gate + OSINT tradecraft compliance | Domain-specific validation beyond generic security |
+| 🛡️ L3 Plan | Content sanitisation | `rehype-sanitize` + Mermaid `strict` mode + URI filtering | No XSS, no script injection, no malicious links |
+| 🛡️ L3 Plan | Secret redaction | Automatic pre-upload scan | No credentials leaked in analysis artifacts or articles |
+
+---
+
 ## 🔐 Five-Layer Safe-Output Security Model (Detailed)
 
-> **Cross-reference:** [THREAT_MODEL.md](THREAT_MODEL.md) §TB-PI series · [`.github/workflows/README.md`](.github/workflows/README.md)
+> **Cross-reference:** [THREAT_MODEL.md](THREAT_MODEL.md) §TB-PI series · [`.github/workflows/README.md`](.github/workflows/README.md) · [gh-aw Architecture](https://github.github.com/gh-aw/introduction/architecture/)
 
-The five-layer model governs all 14 agentic news workflows. Each layer is independent — a bypass of one layer does not compromise the subsequent layers.
+The five-layer model governs all 14 agentic news workflows. Each layer is independent — a bypass of one layer does not compromise the subsequent layers. This model **extends** gh-aw's Layer 3 (Plan-Level Trust) with domain-specific political intelligence validation.
 
 ```mermaid
 flowchart TD
