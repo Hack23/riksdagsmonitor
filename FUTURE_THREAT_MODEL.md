@@ -11,9 +11,11 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/>
-  <img src="https://img.shields.io/badge/Version-2.0-555?style=for-the-badge" alt="Version"/>
-  <img src="https://img.shields.io/badge/Effective-2026--05--31-success?style=for-the-badge" alt="Effective Date"/>
+  <img src="https://img.shields.io/badge/Version-2.1-555?style=for-the-badge" alt="Version"/>
+  <img src="https://img.shields.io/badge/Effective-2026--06--02-success?style=for-the-badge" alt="Effective Date"/>
   <img src="https://img.shields.io/badge/Review-Quarterly-orange?style=for-the-badge" alt="Review Cycle"/>
+  <img src="https://img.shields.io/badge/Threats-F1--F21-critical?style=for-the-badge" alt="Threat Scenarios"/>
+  <img src="https://img.shields.io/badge/Controls-FUT--001_to_FUT--032-brightgreen?style=for-the-badge" alt="Security Controls"/>
 </p>
 
 <p align="center">
@@ -22,10 +24,12 @@
   <img src="https://img.shields.io/badge/H2-Static_Deepening-2196f3?style=flat-square" alt="Horizon 2"/>
   <img src="https://img.shields.io/badge/H3-AWS_Serverless_AI-ff9800?style=flat-square" alt="Horizon 3"/>
   <img src="https://img.shields.io/badge/Data-Public_Only-success?style=flat-square" alt="Public Data Only"/>
+  <img src="https://img.shields.io/badge/🗳️_Democratic-Integrity_Protected-blueviolet?style=flat-square" alt="Democratic Integrity"/>
+  <img src="https://img.shields.io/badge/🔒_GDPR-Art_9_Compliant-blue?style=flat-square" alt="GDPR Art. 9"/>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 2.0 | **📅 Last Updated:** 2026-05-31 (UTC)  
-**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-08-31  
+**📋 Document Owner:** CEO | **📄 Version:** 2.1 | **📅 Last Updated:** 2026-06-02 (UTC)  
+**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-09-02  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
 ---
@@ -33,6 +37,18 @@
 ## 🎯 Purpose & Scope
 
 Establish a forward-looking threat model for **Riksdagsmonitor's three-horizon architecture evolution (2026–2037)**, covering new capabilities and expanded attack surfaces across the planned roadmap. This document complements the current [THREAT_MODEL.md](./THREAT_MODEL.md) by analyzing threats specific to planned features that do not yet exist in production, and is the security counterpart to the strategy expressed in [FUTURE_ARCHITECTURE.md](./FUTURE_ARCHITECTURE.md), [FUTURE_DATA_MODEL.md](./FUTURE_DATA_MODEL.md), [FUTURE_FLOWCHART.md](./FUTURE_FLOWCHART.md), [FUTURE_STATEDIAGRAM.md](./FUTURE_STATEDIAGRAM.md), [FUTURE_SWOT.md](./FUTURE_SWOT.md), [FUTURE_MINDMAP.md](./FUTURE_MINDMAP.md), [FUTURE_SECURITY_ARCHITECTURE.md](./FUTURE_SECURITY_ARCHITECTURE.md) and [FUTURE_WORKFLOWS.md](./FUTURE_WORKFLOWS.md).
+
+**📐 Coverage dimensions (v2.1):**
+
+| Category | Scenarios | Controls | Diagrams |
+|----------|:---------:|:--------:|:--------:|
+| 🔧 **Technical Security** (STRIDE, ATT&CK) | F1–F12 | FUT-001–FUT-022 | 4 mermaid diagrams |
+| 🗳️ **Democratic Integrity & Accountability** | F13–F16 | FUT-023–FUT-027 | 2 mermaid diagrams |
+| 🔒 **Privacy & GDPR (H3)** | F17–F18 | FUT-028–FUT-029 | 1 mermaid diagram |
+| 🔗 **Supply Chain & AI Governance** | F19–F21 | FUT-030–FUT-032 | 1 mermaid diagram |
+| 🌍 **Geopolitical & FIMI** | Cross-cutting | Source-grading, FIMI detection | 1 mermaid diagram |
+| 🤖 **AI/LLM (OWASP Top 10)** | Cross-cutting | Model-level controls | — |
+| 🕵️ **Political-Intelligence Capabilities** | PI-T1–PI-T7 | Integrity-by-construction | — |
 
 ### **🧭 The Three Horizons (threat-model framing)**
 
@@ -69,6 +85,41 @@ Aligned with [Hack23 AB Threat Modeling Policy](https://github.com/Hack23/ISMS-P
 | **Conversational AI (Bedrock Agents, Lex, Transcribe/Polly)** | H3 | 2028+ | Chatbot, voice interface, personal briefings, multi-agent autonomous tasks | Agentic excessive agency, indirect prompt injection via voice, tool-chaining abuse, hallucinated political guidance |
 | **Multi-Region Resilience (Aurora Global, DynamoDB Global, S3 CRR, Route 53)** | H3 | 2028+ | Active-passive multi-region failover, global tables, cross-region replication | Failover/route hijack, replication tampering, split-brain integrity, regional IAM drift |
 | **Nordic & EU Federation (DK/NO/FI + EU Parliament)** | H3 | 2027–2030 | Shared data-mesh comparative analysis across parliaments | Cross-jurisdiction data-integrity, source-spoofing, federation trust-boundary attacks |
+
+### **📅 Threat Landscape Evolution Timeline**
+
+```mermaid
+timeline
+    title Riksdagsmonitor Threat Landscape Evolution (2026–2037)
+    section 🟢 H1 — Static Baseline (Today)
+        2024-2026 : Supply-chain & CI/CD compromise
+                  : Prompt injection in agentic workflows
+                  : Content integrity attacks
+                  : GitHub Actions credential theft
+    section 🔵 H2 — Static Deepening (2026–2027)
+        2026 Q2 : Pipeline cache poisoning
+               : Multi-workflow AI orchestration abuse
+               : 🗳️ Neutrality erosion via AI drift (F13)
+               : 🔗 MCP ecosystem compromise (F21)
+        2026 Q3 : Translation manipulation (14 languages)
+               : 📊 Election forecast weaponization (F14)
+               : Real-time data manipulation
+        2026 Q4 : Nordic federation trust attacks
+               : Cross-platform data integrity
+               : 🌍 FIMI information laundering (F16)
+    section 🟠 H3 — AWS Serverless AI (2027–2037)
+        2027 : 🔒 GDPR Art. 9 scope expansion (F17)
+             : Cloud IAM & identity attacks
+             : SQL/NoSQL injection
+        2028 : RAG/Knowledge-Base poisoning
+             : 🧠 Foundation model regression (F19)
+             : Agentic excessive agency
+             : 📱 Mobile API abuse
+        2029-2037 : ⚖️ EU AI Act compliance (F20)
+                  : Multi-region failover hijack
+                  : Post-quantum cryptographic transition
+                  : AGI-era governance challenges
+```
 
 ---
 
@@ -694,6 +745,419 @@ Fielding the [Political-Intelligence Capability Catalog](FUTURE_MINDMAP.md#-them
 
 ---
 
+## 🗳️ Democratic Integrity & Accountability Threats
+
+> *The platform's mission is democratic transparency — any threat that subverts, distorts, or undermines public accountability is existential regardless of technical sophistication.*
+
+Riksdagsmonitor occupies a unique position: a **neutral, AI-powered democratic-intelligence platform** whose outputs influence citizen understanding of parliamentary proceedings. This creates a category of threats distinct from generic cybersecurity — threats to **democratic processes, institutional trust, and political neutrality** that no standard web-security framework adequately covers.
+
+### **🏛️ Democratic Threat Landscape**
+
+```mermaid
+flowchart TB
+    subgraph DEMOCRATIC_THREATS["🗳️ Democratic Integrity Threats"]
+        direction TB
+        DT1["🎭 Neutrality Subversion<br/>Asymmetric framing across parties"]
+        DT2["📊 Forecast Weaponization<br/>Biased predictions influence voters"]
+        DT3["🗞️ Information Laundering<br/>Adversary narratives gain platform credibility"]
+        DT4["🔇 Accountability Suppression<br/>Hide/downplay political misconduct"]
+        DT5["⚡ Election-Window Exploitation<br/>Time-critical attacks during campaigns"]
+        DT6["🌐 Cross-Border Influence<br/>Foreign interference via federation"]
+    end
+
+    subgraph DEMOCRATIC_CONTROLS["🛡️ Democratic Safeguards"]
+        direction TB
+        DC1["⚖️ Party-Symmetry CI Gate<br/>Automated neutrality enforcement"]
+        DC2["📏 Calibration Ledger<br/>Immutable forecast accuracy tracking"]
+        DC3["🔍 Source-Grade Floor<br/>Minimum evidence threshold"]
+        DC4["👁️ Human-on-the-Loop<br/>Mandatory editorial oversight"]
+        DC5["🚫 Election Cooling Period<br/>Restricted AI during election silence"]
+        DC6["🤝 Federation Trust Boundaries<br/>Per-source integrity verification"]
+    end
+
+    subgraph DEMOCRATIC_ACTORS["👥 Democratic Threat Actors"]
+        direction TB
+        DA1["🏛️ State-Sponsored IO<br/>Foreign influence operations"]
+        DA2["🎪 Domestic Political Operatives<br/>Partisan manipulation attempts"]
+        DA3["🤖 Autonomous AI Agents<br/>Unintended bias amplification"]
+        DA4["📰 Disinformation Networks<br/>Coordinated inauthentic behavior"]
+    end
+
+    DA1 --> DT3
+    DA1 --> DT6
+    DA2 --> DT1
+    DA2 --> DT4
+    DA3 --> DT1
+    DA3 --> DT2
+    DA4 --> DT3
+    DA4 --> DT5
+
+    DT1 -.->|mitigated by| DC1
+    DT2 -.->|mitigated by| DC2
+    DT3 -.->|mitigated by| DC3
+    DT4 -.->|mitigated by| DC4
+    DT5 -.->|mitigated by| DC5
+    DT6 -.->|mitigated by| DC6
+
+    style DEMOCRATIC_THREATS fill:#fff3e0,stroke:#e65100,color:#000
+    style DEMOCRATIC_CONTROLS fill:#e8f5e9,stroke:#2e7d32,color:#000
+    style DEMOCRATIC_ACTORS fill:#fce4ec,stroke:#c62828,color:#000
+```
+
+### **Scenario F13: Gradual Neutrality Erosion via AI Drift**
+
+| Attribute | Detail |
+|-----------|--------|
+| **🎭 Threat Agent** | Autonomous AI drift (unintentional), sophisticated insider, domestic political operative |
+| **⚔️ Attack Vector** | Subtle, consistent asymmetry in AI-generated content: tone, coverage depth, or framing favors one bloc over another across hundreds of articles over weeks/months |
+| **🎯 Target** | The platform's core neutrality invariant — equal treatment of all 8 Riksdag parties |
+| **💥 Impact** | Institutional credibility destroyed; platform becomes a perceived partisan tool; cited in political campaigns as evidence of bias |
+| **📊 Likelihood** | Medium-High (LLM training biases are well-documented; drift is natural without active correction) |
+| **⚠️ Risk Score** | **9.0/10 CRITICAL** |
+| **🗂️ MITRE ATT&CK** | [T1659 Content Injection](https://attack.mitre.org/techniques/T1659/) (adapted: content bias injection) |
+| **🛡️ Planned Controls** | FUT-023: Party-symmetry CI gate (automated), FUT-024: longitudinal sentiment-balance monitoring, dual-review for cross-party articles, mandatory bloc-parity metrics in every weekly review |
+
+### **Scenario F14: Election-Period Forecast Manipulation**
+
+| Attribute | Detail |
+|-----------|--------|
+| **🎭 Threat Agent** | Election interference actor, nation-state information operation |
+| **⚔️ Attack Vector** | Timing-aware attack: manipulate SageMaker forecast inputs or translation pipeline during the 30-day pre-election window when media amplification is maximal |
+| **🎯 Target** | Published seat/coalition predictions, pre-election news coverage, voter information pages |
+| **💥 Impact** | Biased forecasts amplified by media; potential violation of Swedish election silence conventions; voter behavior influence; legal/regulatory consequences |
+| **📊 Likelihood** | Medium (high-value target with clear temporal window) |
+| **⚠️ Risk Score** | **8.8/10 CRITICAL** |
+| **🗂️ MITRE ATT&CK** | [T1565 Data Manipulation](https://attack.mitre.org/techniques/T1565/), [T1583.006 Web Services](https://attack.mitre.org/techniques/T1583/006/) |
+| **🛡️ Planned Controls** | FUT-025: Election cooling-period protocol (restricted AI autonomy, mandatory human approval for all election-relevant content), elevated monitoring, cross-validation with SCB/Valmyndigheten, explicit uncertainty disclosure |
+
+### **Scenario F15: Democratic Accountability Suppression**
+
+| Attribute | Detail |
+|-----------|--------|
+| **🎭 Threat Agent** | Domestic political operative, insider threat, sophisticated lobbyist |
+| **⚔️ Attack Vector** | Manipulate content pipeline to suppress, delay, or downplay politically inconvenient information (votes, motions, committee decisions) while amplifying favorable narratives |
+| **🎯 Target** | News article generation, politician profile pages, voting record displays |
+| **💥 Impact** | Platform becomes complicit in accountability evasion; undermines democratic oversight function; erosion of public trust |
+| **📊 Likelihood** | Low-Medium (requires insider access or pipeline compromise) |
+| **⚠️ Risk Score** | **7.5/10 HIGH** |
+| **🗂️ MITRE ATT&CK** | [T1565.001 Stored Data Manipulation](https://attack.mitre.org/techniques/T1565/001/), [T1070 Indicator Removal](https://attack.mitre.org/techniques/T1070/) |
+| **🛡️ Planned Controls** | FUT-026: Completeness audit (automated check that all Riksdag decisions/votes are covered), source-of-record reconciliation with riksdagen.se, time-to-publish SLA monitoring, dual-control on content deletion |
+
+### **Scenario F16: Information Laundering via Platform Credibility**
+
+| Attribute | Detail |
+|-----------|--------|
+| **🎭 Threat Agent** | Foreign information operation (FIMI), coordinated inauthentic network |
+| **⚔️ Attack Vector** | Seed manipulated data into upstream sources (Riksdag API responses, government press releases via g0v.se, foreign parliament feeds) knowing Riksdagsmonitor will automatically ingest, validate, and republish — laundering disinformation through the platform's trusted reputation |
+| **🎯 Target** | External data ingestion paths: Riksdag API, Regeringen/g0v.se, SCB, IMF, Nordic/EU parliament feeds |
+| **💥 Impact** | Platform amplifies state-sponsored disinformation with the credibility of "independently verified" parliamentary analysis |
+| **📊 Likelihood** | Low-Medium (requires compromising or spoofing upstream government sources) |
+| **⚠️ Risk Score** | **8.0/10 HIGH** |
+| **🗂️ MITRE ATT&CK** | [T1199 Trusted Relationship](https://attack.mitre.org/techniques/T1199/), [T1659 Content Injection](https://attack.mitre.org/techniques/T1659/) |
+| **🛡️ Planned Controls** | FUT-027: Multi-source cross-validation (never rely on single source), anomaly detection on ingest deltas, provenance chain verification, source-grading with confidence floors, human escalation for statistically improbable data changes |
+
+---
+
+## 🔒 Privacy, GDPR & Data Protection Threats
+
+> *Horizon 3 introduces the platform's first authenticated user tier — transforming privacy from a non-concern to a critical obligation.*
+
+### **🔐 Privacy Threat Landscape (H3)**
+
+```mermaid
+flowchart LR
+    subgraph USER_DATA["👤 H3 User Data at Risk"]
+        UD1["🔍 Saved Searches<br/>Reveal political interests"]
+        UD2["🔔 Alert Subscriptions<br/>Track political monitoring"]
+        UD3["📊 Personalization<br/>Behavioral profile"]
+        UD4["💬 Chat History<br/>Political questions asked"]
+    end
+
+    subgraph GDPR_THREATS["⚠️ Privacy Threats"]
+        GT1["📋 Art. 9 Violation<br/>Special-category data exposure"]
+        GT2["🕵️ Profiling Risk<br/>Political opinion inference"]
+        GT3["🌍 Cross-Border Transfer<br/>Multi-region data residency"]
+        GT4["🗑️ Erasure Complexity<br/>Right-to-be-forgotten across replicas"]
+        GT5["🔗 Linkage Attack<br/>De-anonymization via query patterns"]
+    end
+
+    subgraph PRIVACY_CONTROLS["🛡️ Privacy Controls"]
+        PC1["📝 DPIA Mandatory<br/>Before Cognito launch"]
+        PC2["🔒 Data Minimization<br/>No opinions stored server-side"]
+        PC3["🏠 EU Data Residency<br/>eu-west-1 primary"]
+        PC4["⏱️ Auto-Purge<br/>Configurable retention"]
+        PC5["🎭 Pseudonymization<br/>Query-level privacy"]
+    end
+
+    UD1 --> GT1
+    UD2 --> GT2
+    UD3 --> GT5
+    UD4 --> GT1
+
+    GT1 -.->|mitigated by| PC1
+    GT2 -.->|mitigated by| PC2
+    GT3 -.->|mitigated by| PC3
+    GT4 -.->|mitigated by| PC4
+    GT5 -.->|mitigated by| PC5
+
+    style USER_DATA fill:#e3f2fd,stroke:#1565c0,color:#000
+    style GDPR_THREATS fill:#ffebee,stroke:#c62828,color:#000
+    style PRIVACY_CONTROLS fill:#e8f5e9,stroke:#2e7d32,color:#000
+```
+
+### **Scenario F17: Political-Opinion Inference from Usage Patterns (H3)**
+
+| Attribute | Detail |
+|-----------|--------|
+| **🎭 Threat Agent** | Data breach attacker, insider, law enforcement overreach |
+| **⚔️ Attack Vector** | Aggregate saved searches, alert patterns, and chatbot questions to infer a user's political opinions — GDPR Article 9 special-category data — without explicit consent for that processing purpose |
+| **🎯 Target** | Cognito user profiles + associated DynamoDB/Aurora query history |
+| **💥 Impact** | Violation of GDPR Art. 9 (processing special-category data without lawful basis); regulatory fines up to 4% annual turnover; chilling effect on civic engagement |
+| **📊 Likelihood** | Medium (inference is technically straightforward once data is collected) |
+| **⚠️ Risk Score** | **8.5/10 CRITICAL** |
+| **🗂️ MITRE ATT&CK** | [T1530 Data from Cloud Storage](https://attack.mitre.org/techniques/T1530/), [T1213 Data from Information Repositories](https://attack.mitre.org/techniques/T1213/) |
+| **🛡️ Planned Controls** | FUT-028: Privacy-by-design architecture (no server-side political-opinion storage), client-side encryption for saved queries, aggregate-only analytics, automated data minimization, DPIA gate before any new data collection, privacy-preserving personalization (on-device ML) |
+
+### **Scenario F18: Cross-Region Data Residency Violation (H3)**
+
+| Attribute | Detail |
+|-----------|--------|
+| **🎭 Threat Agent** | Configuration error, multi-region replication misconfiguration |
+| **⚔️ Attack Vector** | DynamoDB Global Tables or Aurora Global replication copies EU citizen data to non-adequate jurisdictions (e.g., us-east-1) without proper safeguards |
+| **🎯 Target** | User personal data in DynamoDB/Aurora replicas |
+| **💥 Impact** | GDPR Chapter V violation (international transfer without adequacy/safeguards); Schrems II implications |
+| **📊 Likelihood** | Low (requires misconfiguration, but multi-region is complex) |
+| **⚠️ Risk Score** | **6.5/10 MEDIUM** |
+| **🗂️ MITRE ATT&CK** | [T1537 Transfer Data to Cloud Account](https://attack.mitre.org/techniques/T1537/) |
+| **🛡️ Planned Controls** | FUT-029: Geo-fenced replication (user PII stays in eu-west-1), AWS Config rules enforcing data residency, SCP preventing PII table replication to non-EU regions, automated compliance drift detection |
+
+---
+
+## 🔗 Supply Chain & AI Model Governance Threats
+
+> *The platform's AI supply chain extends beyond npm packages to foundation models, training data, and MCP tool ecosystems — each a potential vector for subtle, high-impact compromise.*
+
+### **🏭 AI Supply Chain Threat Model**
+
+```mermaid
+flowchart TD
+    subgraph AI_SUPPLY_CHAIN["🤖 AI Supply Chain Attack Surface"]
+        direction TB
+        SC1["🧠 Foundation Model Updates<br/>Behavioral regression on upgrade"]
+        SC2["📦 MCP Server Dependencies<br/>Tool-level supply chain"]
+        SC3["📚 Training Data Provenance<br/>Poisoned public datasets"]
+        SC4["🔧 Prompt Template Integrity<br/>Workflow instruction tampering"]
+        SC5["🌐 External API Dependencies<br/>Riksdag/SCB/IMF availability"]
+    end
+
+    subgraph GOVERNANCE_THREATS["⚖️ AI Governance Threats"]
+        direction TB
+        AG1["📜 EU AI Act Non-Compliance<br/>Regulatory classification change"]
+        AG2["🎯 Model Behavior Drift<br/>Post-update output degradation"]
+        AG3["🔄 Vendor Lock-In Exploitation<br/>AWS service discontinuation"]
+        AG4["📊 Transparency Debt<br/>Unexplainable model decisions"]
+    end
+
+    subgraph SUPPLY_CONTROLS["🛡️ Supply Chain Controls"]
+        direction TB
+        SCC1["📌 Model Version Pinning<br/>+ regression testing"]
+        SCC2["🔐 SLSA Level 3<br/>Build provenance"]
+        SCC3["✅ Output Regression Suite<br/>Golden-set validation"]
+        SCC4["📋 AI Model Cards<br/>Transparency documentation"]
+        SCC5["🔄 Multi-Model Fallback<br/>Provider redundancy"]
+    end
+
+    SC1 --> AG2
+    SC2 --> AG1
+    SC3 --> AG2
+    SC4 --> AG1
+    SC5 --> AG3
+
+    AG1 -.->|mitigated by| SCC4
+    AG2 -.->|mitigated by| SCC1
+    AG2 -.->|mitigated by| SCC3
+    AG3 -.->|mitigated by| SCC5
+    AG4 -.->|mitigated by| SCC4
+
+    style AI_SUPPLY_CHAIN fill:#fff3e0,stroke:#e65100,color:#000
+    style GOVERNANCE_THREATS fill:#fce4ec,stroke:#c62828,color:#000
+    style SUPPLY_CONTROLS fill:#e8f5e9,stroke:#2e7d32,color:#000
+```
+
+### **Scenario F19: Foundation Model Behavioral Regression**
+
+| Attribute | Detail |
+|-----------|--------|
+| **🎭 Threat Agent** | Model provider (unintentional), adversary targeting model training |
+| **⚔️ Attack Vector** | A Claude or Bedrock model update introduces subtle behavioral changes: different political framing, altered fact-selection preferences, or degraded neutrality in Swedish-language outputs |
+| **🎯 Target** | All AI-generated content (14 news workflows, translation, analysis) |
+| **💥 Impact** | Gradual quality/neutrality degradation across all outputs; potentially undetected for days if regression is subtle |
+| **📊 Likelihood** | Medium (model updates are frequent; political-content testing is specialized) |
+| **⚠️ Risk Score** | **7.0/10 HIGH** |
+| **🗂️ MITRE ATT&CK** | [T1195.003 Compromise Hardware Supply Chain](https://attack.mitre.org/techniques/T1195/003/) (adapted: model supply chain) |
+| **🛡️ Planned Controls** | FUT-030: Model regression test suite (golden-set political content), automated neutrality scoring on model upgrade, staged rollout (canary → full), model version pinning with explicit upgrade gates |
+
+### **Scenario F20: EU AI Act Regulatory Reclassification**
+
+| Attribute | Detail |
+|-----------|--------|
+| **🎭 Threat Agent** | Regulatory environment change |
+| **⚔️ Attack Vector** | EU AI Act enforcement classifies the platform's election forecasting or political analysis as "high-risk AI" (Annex III, Category 8: administration of justice/democratic processes), triggering mandatory conformity assessment, transparency obligations, and human-oversight requirements |
+| **🎯 Target** | Platform operational model, AI governance framework, compliance posture |
+| **💥 Impact** | Mandatory conformity assessment, potential operational restrictions during compliance period, significant documentation/audit requirements |
+| **📊 Likelihood** | Medium (political-analysis AI is an emerging regulatory gray area) |
+| **⚠️ Risk Score** | **6.5/10 MEDIUM** |
+| **🗂️ MITRE ATT&CK** | N/A (regulatory threat) |
+| **🛡️ Planned Controls** | FUT-031: Proactive EU AI Act alignment (maintain documentation as if high-risk), model cards per Bedrock model, human-oversight architecture already designed, transparency reports, regular legal-counsel review of classification guidance |
+
+### **Scenario F21: MCP Tool Ecosystem Compromise**
+
+| Attribute | Detail |
+|-----------|--------|
+| **🎭 Threat Agent** | Supply-chain attacker, compromised open-source maintainer |
+| **⚔️ Attack Vector** | Compromise an MCP server dependency (riksdag-regering, scb, world-bank, or upstream npm packages) to inject malicious tool responses into agentic workflows |
+| **🎯 Target** | 14 agentic news workflows consuming MCP tool responses as trusted inputs |
+| **💥 Impact** | Poisoned data flows through multiple workflows, generating and publishing manipulated content at scale |
+| **📊 Likelihood** | Low-Medium (MCP ecosystem is young, rapidly evolving, less audited than mature npm packages) |
+| **⚠️ Risk Score** | **7.5/10 HIGH** |
+| **🗂️ MITRE ATT&CK** | [T1195.001 Compromise Software Dependencies and Development Tools](https://attack.mitre.org/techniques/T1195/001/) |
+| **🛡️ Planned Controls** | FUT-032: MCP server integrity verification (SHA-pinned versions, SBOM tracking), response schema validation, anomaly detection on MCP responses, sandboxed tool execution, SLSA Level 3 provenance for all build inputs |
+
+---
+
+## 🌍 Geopolitical & Information Environment Threats
+
+> *As Riksdagsmonitor expands to Nordic and EU parliaments, it enters a contested information environment where state-level actors actively seek to undermine democratic institutions.*
+
+### **🗺️ Geopolitical Threat Landscape**
+
+```mermaid
+flowchart TB
+    subgraph GEO_CONTEXT["🌍 Geopolitical Context (2026–2037)"]
+        direction LR
+        GC1["🇷🇺 Hybrid Warfare<br/>Information operations<br/>targeting Nordic democracies"]
+        GC2["🇨🇳 Influence Operations<br/>United Front Work targeting<br/>diaspora communities"]
+        GC3["🏴 Non-State FIMI<br/>Coordinated inauthentic<br/>behavior networks"]
+        GC4["🤖 AI-Powered IO<br/>Synthetic media &<br/>automated propaganda"]
+    end
+
+    subgraph PLATFORM_EXPOSURE["📡 Platform Exposure Points"]
+        direction LR
+        PE1["🌐 14-Language Surface<br/>Each language = unique<br/>disinformation vector"]
+        PE2["🔮 Forecast Outputs<br/>Election predictions as<br/>influence leverage"]
+        PE3["🤝 Federation Trust<br/>Nordic/EU data mesh<br/>as attack vector"]
+        PE4["📊 Credibility Capital<br/>Platform trust as<br/>laundering vehicle"]
+    end
+
+    subgraph GEO_DEFENSES["🛡️ Geopolitical Defenses"]
+        direction LR
+        GD1["🔍 FIMI Detection (C20)<br/>Early-warning indicators"]
+        GD2["📏 Source Grading<br/>Confidence-floor enforcement"]
+        GD3["🌐 Per-Language Review<br/>Native-speaker verification"]
+        GD4["⚖️ Advisory-Only Output<br/>No accusatory attribution"]
+    end
+
+    GC1 --> PE3
+    GC1 --> PE1
+    GC2 --> PE1
+    GC3 --> PE4
+    GC4 --> PE2
+
+    PE1 -.->|defended by| GD3
+    PE2 -.->|defended by| GD2
+    PE3 -.->|defended by| GD1
+    PE4 -.->|defended by| GD4
+
+    style GEO_CONTEXT fill:#ffebee,stroke:#b71c1c,color:#000
+    style PLATFORM_EXPOSURE fill:#fff3e0,stroke:#e65100,color:#000
+    style GEO_DEFENSES fill:#e8f5e9,stroke:#1b5e20,color:#000
+```
+
+### **Language-Specific Threat Vectors**
+
+The 14-language surface creates **asymmetric verification challenges**: content in languages without native-speaker review capacity (Arabic, Chinese, Japanese, Korean, Hebrew) presents higher manipulation risk.
+
+| Language Tier | Languages | Verification Capacity | Manipulation Risk | Control |
+|--------------|-----------|----------------------|-------------------|---------|
+| **🟢 Tier 1 — Native Review** | Swedish (sv), English (en) | Full native review | Low | Direct editorial oversight |
+| **🟡 Tier 2 — Accessible Review** | Norwegian (no), Danish (da), Finnish (fi), German (de), French (fr), Spanish (es), Dutch (nl) | Accessible via Nordic/EU network | Medium | Back-translation + network review |
+| **🔴 Tier 3 — Limited Review** | Arabic (ar), Hebrew (he), Japanese (ja), Korean (ko), Chinese (zh) | Limited native review capacity | High | Enhanced back-translation, automated semantic-similarity scoring, community verification pipeline |
+
+---
+
+## 📊 Consolidated Future Security Control Requirements (Extended)
+
+### **Additional Controls for Democratic & Privacy Threats**
+
+| Control ID | Control Name | Threat Addressed | STRIDE Coverage | Implementation Target | Priority |
+|-----------|-------------|-----------------|-----------------|----------------------|----------|
+| **FUT-023** | Party-Symmetry CI Gate (automated neutrality audit) | F13: Neutrality Erosion | T, R | Q2 2026 | 🔴 Critical |
+| **FUT-024** | Longitudinal Sentiment-Balance Monitoring | F13: Neutrality Erosion | T | Q3 2026 | 🔴 Critical |
+| **FUT-025** | Election Cooling-Period Protocol | F14: Election Manipulation | T, D | Q3 2026 | 🔴 Critical |
+| **FUT-026** | Completeness Audit (Riksdag decision coverage) | F15: Accountability Suppression | R, I | Q2 2026 | 🟡 High |
+| **FUT-027** | Multi-Source Cross-Validation on Ingest | F16: Information Laundering | S, T | Q2 2026 | 🔴 Critical |
+| **FUT-028** | Privacy-by-Design Architecture (no opinion storage) | F17: Political-Opinion Inference | I | 2027 Q3 | 🔴 Critical |
+| **FUT-029** | Geo-Fenced Replication (EU PII residency) | F18: Data Residency Violation | I | 2027 Q4 | 🟡 High |
+| **FUT-030** | Model Regression Test Suite (golden-set) | F19: Model Behavioral Regression | T | Q2 2026 | 🟡 High |
+| **FUT-031** | Proactive EU AI Act Alignment | F20: Regulatory Reclassification | — | Q4 2026 | 🟡 High |
+| **FUT-032** | MCP Server Integrity Verification (SHA-pinned) | F21: MCP Ecosystem Compromise | S, T | Q2 2026 | 🔴 Critical |
+
+### **Extended STRIDE → Control Mapping (Democratic & Privacy)**
+
+| STRIDE Category | Democratic/Privacy Primary Control | Secondary Control | Monitoring |
+|-----------------|-----------------------------------|-------------------|------------|
+| **Spoofing** | Multi-source cross-validation (FUT-027) | MCP integrity verification (FUT-032) | Source-grade monitoring, ingest anomaly alerts |
+| **Tampering** | Party-symmetry CI gate (FUT-023), model regression suite (FUT-030) | Election cooling protocol (FUT-025) | Longitudinal sentiment monitoring (FUT-024) |
+| **Repudiation** | Completeness audit (FUT-026) | Immutable calibration ledger | Decision-coverage gap alerts |
+| **Info Disclosure** | Privacy-by-design (FUT-028), geo-fenced replication (FUT-029) | Data minimization, auto-purge | Privacy-impact continuous assessment |
+| **DoS** | Election cooling protocol (FUT-025) | Rate limiting, human-escalation gates | Election-window monitoring escalation |
+| **Elevation** | EU AI Act alignment (FUT-031) | Neutrality-as-governance | Regulatory landscape scanning |
+
+---
+
+## 📈 Extended Risk Assessment — Democratic & Governance Threats
+
+| Threat | Horizon | Likelihood (1-5) | Impact (1-5) | Risk Score | Treatment |
+|--------|:-------:|:-----------------:|:------------:|:----------:|-----------|
+| Gradual neutrality erosion via AI drift | H2 | 4 | 5 | **20 CRITICAL** | MITIGATE (FUT-023, FUT-024) |
+| Election-period forecast manipulation | H2/H3 | 3 | 5 | **15 CRITICAL** | MITIGATE (FUT-025) |
+| Democratic accountability suppression | H2 | 2 | 5 | **10 CRITICAL** | MITIGATE (FUT-026) |
+| Information laundering via platform credibility | H2 | 2 | 4 | **8 HIGH** | MITIGATE (FUT-027) |
+| Political-opinion inference from usage | H3 | 3 | 4 | **12 HIGH** | MITIGATE (FUT-028) |
+| Cross-region data residency violation | H3 | 1 | 4 | **4 MEDIUM** | MITIGATE (FUT-029) |
+| Foundation model behavioral regression | H2 | 3 | 3 | **9 HIGH** | MITIGATE (FUT-030) |
+| EU AI Act regulatory reclassification | H3 | 3 | 3 | **9 HIGH** | MITIGATE (FUT-031) |
+| MCP tool ecosystem compromise | H2 | 2 | 4 | **8 HIGH** | MITIGATE (FUT-032) |
+
+### **🎯 Risk Heat Map — All Future Threats**
+
+```mermaid
+quadrantChart
+    title Future Threat Risk Heat Map
+    x-axis "Low Likelihood" --> "High Likelihood"
+    y-axis "Low Impact" --> "High Impact"
+    quadrant-1 "🔴 Critical — Immediate Action"
+    quadrant-2 "🟡 High — Plan Mitigation"
+    quadrant-3 "🟢 Low — Monitor"
+    quadrant-4 "🟡 Medium — Assess Controls"
+    "Neutrality Erosion (F13)": [0.75, 0.95]
+    "Election Manipulation (F14)": [0.60, 0.90]
+    "Vote Data Tampering (F1)": [0.55, 0.92]
+    "Agent Excessive Agency (F8)": [0.40, 0.90]
+    "IAM Escalation (F7)": [0.35, 0.92]
+    "RAG Poisoning (F5)": [0.55, 0.80]
+    "Forecast Manipulation (F9)": [0.55, 0.80]
+    "Information Laundering (F16)": [0.40, 0.78]
+    "Accountability Suppression (F15)": [0.35, 0.85]
+    "Model Regression (F19)": [0.55, 0.60]
+    "MCP Compromise (F21)": [0.40, 0.72]
+    "API Abuse (F10)": [0.55, 0.45]
+    "Data Residency (F18)": [0.20, 0.65]
+    "EU AI Act (F20)": [0.55, 0.55]
+```
+
+---
+
 ## 🔄 Continuous Future Threat Assessment
 
 ### **Assessment Lifecycle for Future Features**
@@ -784,14 +1248,22 @@ Scores split by horizon. **H2** threats can materialise 2026–2027 while the pl
 ## 📋 Document Control
 
 **📋 Document Owner:** James Pether Sörling, CEO & CISO  
-**📄 Version:** 2.0  
-**📅 Last Updated:** 2026-05-31 (UTC)  
+**📄 Version:** 2.1  
+**📅 Last Updated:** 2026-06-02 (UTC)  
 **✅ Approved by:** James Pether Sörling, CEO  
 **🔄 Review Cycle:** Quarterly (Feb, May, Aug, Nov)  
-**⏰ Next Review:** 2026-08-31  
+**⏰ Next Review:** 2026-09-02  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807)  
 **📤 Distribution:** Public  
 **🏷️ Classification:** [![Confidentiality: Public](https://img.shields.io/badge/C-Public-lightgrey?style=flat-square)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#confidentiality-levels) [![Integrity: High](https://img.shields.io/badge/I-High-orange?style=flat-square)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#integrity-levels) [![Availability: High](https://img.shields.io/badge/A-High-orange?style=flat-square)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#availability-levels)
+
+### **Revision History**
+
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 2.1 | 2026-06-02 | James Pether Sörling | Added Democratic Integrity & Accountability Threats (F13-F16); Privacy/GDPR threats (F17-F18); Supply Chain & AI Governance threats (F19-F21); Geopolitical & FIMI section; extended controls FUT-023–FUT-032; risk heat map; language-specific threat vectors table; 5 new mermaid diagrams |
+| 2.0 | 2026-05-31 | James Pether Sörling | Major expansion: Three-Horizon framework, Crown Jewel analysis, Attack Trees, Kill Chain mapping, OWASP LLM Top 10, Political-Intelligence capabilities |
+| 1.0 | 2026-04-15 | James Pether Sörling | Initial future threat model with STRIDE and basic scenarios |
 
 ### **Framework Compliance**
 
