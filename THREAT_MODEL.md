@@ -11,20 +11,20 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/>
-  <img src="https://img.shields.io/badge/Version-1.5-555?style=for-the-badge" alt="Version"/>
-  <img src="https://img.shields.io/badge/Effective-2026--05--30-success?style=for-the-badge" alt="Effective Date"/>
+  <img src="https://img.shields.io/badge/Version-2.0-555?style=for-the-badge" alt="Version"/>
+  <img src="https://img.shields.io/badge/Effective-2026--06--02-success?style=for-the-badge" alt="Effective Date"/>
   <img src="https://img.shields.io/badge/Review-Quarterly-orange?style=for-the-badge" alt="Review Cycle"/>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 1.5 | **📅 Last Updated:** 2026-05-30 (UTC)
-**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-08-30
+**📋 Document Owner:** CEO | **📄 Version:** 2.0 | **📅 Last Updated:** 2026-06-02 (UTC)
+**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-09-02
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
 ---
 
 ## 🎯 Purpose & Scope
 
-Establish a comprehensive threat model for **Riksdagsmonitor**, a democratic transparency platform monitoring Swedish Parliament (Riksdag) and Government (Regeringen) activity. This systematic threat analysis integrates multiple frameworks—STRIDE, MITRE ATT&CK, Attack Trees, and OWASP LLM Top 10—to ensure proactive security through structured analysis of the static website infrastructure with interactive Chart.js/D3.js dashboards and AI-powered content generation workflows.
+Establish a comprehensive threat model for **Riksdagsmonitor**, a democratic transparency platform monitoring Swedish Parliament (Riksdag) and Government (Regeringen) activity. This systematic threat analysis integrates multiple frameworks—STRIDE, MITRE ATT&CK, Attack Trees, OWASP LLM Top 10, and **GitHub Agentic Workflows (gh-aw) Defense-in-Depth Security Architecture**—to ensure proactive security through structured analysis of the static website infrastructure with interactive Chart.js/D3.js dashboards and AI-powered content generation workflows leveraging gh-aw's five-layer security model.
 
 ### **🌟 Transparency Commitment**
 
@@ -42,6 +42,8 @@ This threat model demonstrates **🛡️ cybersecurity consulting expertise** th
 - **🎯 Scenario-centric modeling:** Real-world attack simulation for civic platforms with AI content generation
 - **⚖️ Risk-centric assessment:** Business impact quantification and democratic accountability
 - **🤖 OWASP LLM Top 10:** AI/LLM-specific threat assessment for agentic news generation
+- **🛡️ GitHub Agentic Workflows (gh-aw):** Five-layer defense-in-depth security architecture (Substrate → Configuration → Plan → SafeOutputs → Network Firewall)
+- **🇪🇺 EU AI Act:** Transparency obligations and human oversight for AI-generated political content
 
 ### **🔍 Scope Definition**
 
@@ -82,7 +84,7 @@ Additionally aligned with [Hack23 AI Policy](https://github.com/Hack23/ISMS-PUBL
 
 ### **📊 Executive Summary**
 
-This threat model systematically analyzes security for Riksdagsmonitor using thematic Hack23 structure, identifies 52 threats across 6 STRIDE categories + 18 AI-specific threats (OWASP LLM Top 10), and documents comprehensive mitigations aligned with Hack23 AB's ISMS. Five **external data-integration trust boundaries** (IMF, Statskontoret, SCB, World Bank, Riksrevisionen) receive dedicated STRIDE addenda in the integration sections at the end of this document.
+This threat model systematically analyzes security for Riksdagsmonitor using thematic Hack23 structure, identifies 52 threats across 6 STRIDE categories + 18 AI-specific threats (OWASP LLM Top 10), documents the **GitHub Agentic Workflows (gh-aw) five-layer defense-in-depth security architecture**, and documents comprehensive mitigations aligned with Hack23 AB's ISMS. Five **external data-integration trust boundaries** (IMF, Statskontoret, SCB, World Bank, Riksrevisionen) receive dedicated STRIDE addenda in the integration sections at the end of this document.
 
 **Key Findings:**
 - **Critical-Risk Threats:** 0 (All critical threats mitigated)
@@ -90,6 +92,8 @@ This threat model systematically analyzes security for Riksdagsmonitor using the
 - **Medium-Risk Threats:** 8 (Controls in place, continuous monitoring)
 - **Low-Risk Threats:** 42 (Accepted with controls)
 - **AI-Specific Threats:** 18 (OWASP LLM Top 10 coverage)
+- **gh-aw Security Layers:** 5 (Substrate, Configuration, Plan, SafeOutputs, Network Firewall)
+- **Democratic Integrity Threats:** 12 (Swedish political context + civic technology scenarios)
 - **Attack Trees:** 9 attack trees (3 dedicated + 6 embedded scenarios)
 - **MITRE ATT&CK Techniques:** 23 mapped
 - **Residual Risk:** LOW (3.2/10.0) - Acceptable for public civic transparency platform
@@ -2085,7 +2089,238 @@ This section provides comprehensive AI security analysis per [Hack23 AI Policy](
 
 ---
 
-## 🌐 Frontend-Specific Security Architecture
+## 🤖 GitHub Agentic Workflows (gh-aw) Security Architecture
+
+> **🔑 Per Hack23 AI Policy and OWASP LLM Security Policy** — Riksdagsmonitor leverages GitHub Agentic Workflows (gh-aw) for AI-powered content generation. The gh-aw platform provides a **five-layer defense-in-depth security architecture** that forms the core runtime trust model for all AI agent operations.
+
+### **🏗️ gh-aw Five-Layer Security Model**
+
+```mermaid
+graph TB
+    subgraph "Layer 5: Network Firewall 🔥"
+        AWF[Agent Workflow Firewall<br/>🐳 Docker + iptables + Squid]
+        Allowlist[Domain Allowlist<br/>🌐 Controlled Egress]
+        Chroot[Chroot Mode<br/>🔒 Host Binary Isolation]
+    end
+
+    subgraph "Layer 4: SafeOutputs 🛡️"
+        Buffer[Write Buffer<br/>📦 Artifact Storage]
+        Filter[Deterministic Filters<br/>🔍 Content Validation]
+        SecretDetect[Secret Leak Detection<br/>🔐 Pre-externalization Scan]
+        Sanitize[Output Sanitization<br/>🧹 XSS/Injection Prevention]
+    end
+
+    subgraph "Layer 3: Plan-Level Trust 📋"
+        Stages[Stage Decomposition<br/>📊 Workflow Segmentation]
+        ReadOnly[Read-Only Agent Execution<br/>👁️ No Direct Writes]
+        ToolFilter[Tool Allowlisting<br/>🔧 MCP Tool Filtering]
+    end
+
+    subgraph "Layer 2: Configuration Trust ⚙️"
+        Declarative[Declarative Config<br/>📝 Actions Steps + YAML]
+        TokenDist[Token Distribution<br/>🎫 Scoped Permissions]
+        NetworkPolicy[Network Policies<br/>🌐 Egress Rules]
+    end
+
+    subgraph "Layer 1: Substrate Trust 🏛️"
+        VM[VM/Kernel Isolation<br/>🖥️ Hardware-backed]
+        Container[Container Isolation<br/>🐳 Process Separation]
+        CPU[CPU/MMU/Memory<br/>💻 Hardware Enforcement]
+        APIProxy[API Proxy<br/>🔀 Request Mediation]
+    end
+
+    AWF --> Buffer
+    Buffer --> Stages
+    Stages --> Declarative
+    Declarative --> VM
+
+    style AWF fill:#e91e63,color:#fff
+    style Buffer fill:#9c27b0,color:#fff
+    style Stages fill:#3f51b5,color:#fff
+    style Declarative fill:#009688,color:#fff
+    style VM fill:#4caf50,color:#fff
+```
+
+### **🔐 gh-aw Security Controls & Threat Mitigations**
+
+| Security Layer | Control | Threat Mitigated | OWASP LLM Ref |
+|---|---|---|---|
+| 🏛️ **Substrate** | VM/container isolation | Agent escape, lateral movement | LLM09 |
+| 🏛️ **Substrate** | API Proxy mediation | Unauthorized API access | LLM06 |
+| 🏛️ **Substrate** | MCP Gateway sandboxing | Tool exploitation, sandbox escape | LLM09 |
+| ⚙️ **Configuration** | Declarative YAML config | Configuration drift, injection | LLM01 |
+| ⚙️ **Configuration** | SHA-pinned Actions | Supply chain compromise | LLM05 |
+| ⚙️ **Configuration** | Scoped token distribution | Over-privileged execution | LLM06 |
+| 📋 **Plan** | Workflow stage decomposition | Uncontrolled agent scope | LLM08 |
+| 📋 **Plan** | Read-only agent execution | Unauthorized data modification | LLM06 |
+| 📋 **Plan** | Tool allowlisting (MCP) | Unauthorized tool invocation | LLM09 |
+| 🛡️ **SafeOutputs** | Write buffer (artifacts) | Direct unauthorized writes | LLM06 |
+| 🛡️ **SafeOutputs** | Deterministic content filters | Malicious content injection | LLM02 |
+| 🛡️ **SafeOutputs** | Secret leak detection | Credential exfiltration | LLM06 |
+| 🛡️ **SafeOutputs** | Output sanitization | XSS/injection in generated content | LLM02 |
+| 🔥 **Firewall** | Docker + iptables isolation | Network-based exfiltration | LLM06 |
+| 🔥 **Firewall** | Domain allowlist (Squid proxy) | Data exfiltration to unauthorized endpoints | LLM06 |
+| 🔥 **Firewall** | Chroot mode | Host filesystem access | LLM09 |
+
+### **🔄 SafeOutputs Data Flow**
+
+```mermaid
+sequenceDiagram
+    participant Agent as 🤖 AI Agent<br/>(Read-Only)
+    participant Buffer as 📦 SafeOutputs<br/>Buffer
+    participant Filter as 🔍 Deterministic<br/>Filters
+    participant Secret as 🔐 Secret<br/>Scanner
+    participant Output as ✅ Controlled<br/>Actions
+
+    Agent->>Buffer: Write request (PR, Issue, Comment)
+    Note over Agent,Buffer: Agent CANNOT write directly<br/>All writes buffered as artifacts
+
+    Buffer->>Filter: Content validation
+    Filter->>Filter: Schema check ✓<br/>Size limits ✓<br/>Format validation ✓
+
+    Filter->>Secret: Pre-externalization scan
+    Secret->>Secret: Credential patterns ✓<br/>API key detection ✓<br/>Token scanning ✓
+
+    alt Content passes all checks
+        Secret->>Output: Approved for externalization
+        Output->>Output: create_issue ✅<br/>create_pull_request ✅<br/>add_comment ✅
+    else Content fails validation
+        Secret-->>Agent: ❌ Rejected with reason
+        Note over Agent: Must retry with<br/>sanitized content
+    end
+```
+
+### **🔥 Agent Workflow Firewall (AWF) Architecture**
+
+```mermaid
+graph LR
+    subgraph "Agent Runtime 🤖"
+        Agent[AI Agent Process]
+        MCP[MCP Servers<br/>🔧 Tool Providers]
+    end
+
+    subgraph "AWF Container 🐳"
+        IPTables[iptables Rules<br/>🚫 Default DENY]
+        Squid[Squid Proxy<br/>🌐 Domain Filter]
+        DNS[DNS Control<br/>🔍 Resolution Filter]
+    end
+
+    subgraph "Allowed Destinations ✅"
+        GitHub[github.com<br/>🐙 API + Pages]
+        Anthropic[api.anthropic.com<br/>🤖 Claude API]
+        Riksdag[data.riksdagen.se<br/>🏛️ Parliament Data]
+        Regering[regeringen.se<br/>🇸🇪 Government Data]
+    end
+
+    subgraph "Blocked ❌"
+        Malicious[*.evil.com<br/>🚫 Unknown Hosts]
+        Exfil[pastebin.com<br/>🚫 Data Exfiltration]
+    end
+
+    Agent --> IPTables
+    MCP --> IPTables
+    IPTables --> Squid
+    Squid --> GitHub
+    Squid --> Anthropic
+    Squid --> Riksdag
+    Squid --> Regering
+    Squid -.->|BLOCKED| Malicious
+    Squid -.->|BLOCKED| Exfil
+
+    style Malicious fill:#f44336,color:#fff,stroke-dasharray: 5 5
+    style Exfil fill:#f44336,color:#fff,stroke-dasharray: 5 5
+    style GitHub fill:#4caf50,color:#fff
+    style Anthropic fill:#4caf50,color:#fff
+    style Riksdag fill:#4caf50,color:#fff
+    style Regering fill:#4caf50,color:#fff
+```
+
+### **🔧 Compilation-Time Security Controls**
+
+The gh-aw compilation pipeline enforces security **before runtime**:
+
+| Control | Purpose | Tool/Scanner |
+|---|---|---|
+| 🔍 Schema Validation | Workflow YAML structure correctness | `gh aw compile` |
+| 🧮 Expression Safety | Prevent injection via `${{ }}` expressions | actionlint |
+| 📌 SHA Pinning | Immutable action references | zizmor |
+| 🔐 Secret Scanning | Pre-commit credential detection | GitHub Secret Scanning |
+| 🏗️ Supply Chain | Dependency integrity verification | poutine |
+| 📏 Size Limits | Prompt file ≤550 lines enforcement | Compilation pipeline |
+
+### **🎯 gh-aw Trust Boundaries**
+
+| Boundary | Description | Security Control |
+|---|---|---|
+| **TB-AW-1** | Agent ↔ Host OS | Container isolation + chroot |
+| **TB-AW-2** | Agent ↔ Network | AWF + iptables + domain allowlist |
+| **TB-AW-3** | Agent ↔ External APIs | API Proxy + token scoping |
+| **TB-AW-4** | Agent ↔ Repository | SafeOutputs buffer (no direct writes) |
+| **TB-AW-5** | MCP Server ↔ Agent | Tool allowlisting + container isolation |
+| **TB-AW-6** | Agent Output ↔ Production | Deterministic filters + secret scanning |
+
+### **⚠️ gh-aw Specific Threats (STRIDE)**
+
+| # | Threat | STRIDE | gh-aw Mitigation | Residual Risk |
+|---|---|---|---|---|
+| GH-AW-01 | 🎭 Agent prompt injection via crafted issue content | Spoofing | Plan-level input sanitization, tool allowlisting | Low |
+| GH-AW-02 | 🔓 Token theft from agent runtime | Tampering | Scoped tokens, short-lived credentials, secret redaction | Low |
+| GH-AW-03 | 📡 Data exfiltration via agent network access | Info Disclosure | AWF domain allowlist, iptables egress control | Very Low |
+| GH-AW-04 | 💀 Malicious code injection in generated PRs | Tampering | SafeOutputs filters, CodeQL scanning, human review | Low |
+| GH-AW-05 | 🚫 Agent service disruption (token exhaustion) | Denial of Service | 25M token budget, mandatory mid-run checkpoints | Low |
+| GH-AW-06 | 🔑 Privilege escalation via MCP tool abuse | Elevation | Tool allowlisting, MCP container sandbox | Very Low |
+| GH-AW-07 | 🎪 Sandbox escape via container vulnerability | Elevation | VM isolation (substrate layer), regular patching | Very Low |
+| GH-AW-08 | 📝 Supply chain attack via workflow dependencies | Tampering | SHA pinning, compilation-time scanning (zizmor, poutine) | Low |
+
+### **📊 Hack23 AI Policy Alignment**
+
+Per **Hack23 AI Policy** and **OWASP LLM Security Policy**, the following controls are enforced:
+
+```mermaid
+mindmap
+  root((🤖 Hack23<br/>AI Security))
+    🛡️ OWASP LLM Top 10
+      LLM01 Prompt Injection
+        Input sanitization
+        System prompt hardening
+      LLM02 Insecure Output
+        SafeOutputs filters
+        Content validation
+      LLM05 Supply Chain
+        SHA pinning
+        Vendor assessment
+      LLM06 Sensitive Info
+        Secret scanning
+        Token scoping
+      LLM09 Overreliance
+        Human review gates
+        Automated testing
+    🇪🇺 EU AI Act
+      Transparency
+        AI-generated labels
+        Model cards
+      Human Oversight
+        PR review requirement
+        Editorial approval
+      Risk Assessment
+        This threat model
+        Quarterly review
+    🔥 gh-aw Controls
+      5-Layer Defense
+        Substrate isolation
+        SafeOutputs
+      Network Security
+        AWF firewall
+        Domain allowlist
+      Output Security
+        Deterministic filters
+        Secret detection
+    📋 Governance
+      Quarterly Review
+      Incident Response
+      Model Migration Plan
+      Token Budget Monitoring
+```
 
 As a **static HTML/CSS/JavaScript website** with no backend services, Riksdagsmonitor has unique security characteristics distinct from traditional multi-tier web applications.
 
@@ -2198,77 +2433,213 @@ graph TB
 
 Following [Hack23 Threat Modeling Policy § 4.4](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Threat_Modeling.md#scenario-centric-analysis), we develop domain-specific threat scenarios for Swedish democratic transparency platforms.
 
-### **Democratic Transparency Threat Taxonomy**
+### **🏛️ Democratic Transparency Threat Taxonomy**
 
-| Threat Category | Description | Riksdagsmonitor Impact | Mitigation Strategy |
-|-----------------|-------------|----------------------|---------------------|
-| **🗳️ Electoral Integrity** | Manipulation of voting data, false election results | HIGH - Core mission threat | Document ID validation, cross-verification |
-| **📊 Legislative Misinformation** | Fabricated committee reports, fake parliamentary documents | HIGH - Undermines transparency | riksdag-regering-mcp verification, fact-checking |
-| **🏛️ Institutional Distrust** | Erosion of trust in Riksdag, government agencies | CRITICAL - Mission failure | Transparency commitment, public corrections |
-| **🗣️ Political Narrative Manipulation** | Biased AI-generated content favoring specific parties | MEDIUM - Reputational risk | Party mention tracking, bias metrics (planned Q2 2026) |
-| **🌐 Cross-Border Disinformation** | Foreign influence operations via AI content generation | HIGH - Nation-state APT threat | AI output validation, human oversight |
-| **📰 Media Manipulation** | False attribution to Riksdagsmonitor in media reports | MEDIUM - Brand impersonation | Clear branding, AI-generated disclosure |
-| **🔍 Transparency Undermining** | DDoS during critical political events (elections, votes) | MEDIUM - Availability threat | Multi-region CDN, DR failover |
-| **🤝 Civil Society Trust** | Loss of transparency advocate support | HIGH - Stakeholder alienation | Incident transparency, public accountability |
+```mermaid
+mindmap
+  root((🏛️ Democratic<br/>Threats))
+    🗳️ Electoral Integrity
+      Vote manipulation
+      Exit poll fabrication
+      Result timing attacks
+      Voter suppression info
+    📊 Legislative Misinfo
+      Fake committee reports
+      Fabricated decisions
+      Vote count errors
+      Motion misattribution
+    🌐 Foreign Interference
+      Nation-state APT
+      Influence operations
+      Coordinated inauthentic behavior
+      Election timing attacks
+    🤖 AI-Enabled Threats
+      Deepfake politicians
+      AI-generated disinformation
+      Hallucinated legislation
+      Bias amplification
+    🏛️ Institutional Trust
+      Transparency undermining
+      Source discrediting
+      Platform impersonation
+      Civil society alienation
+    📰 Information Warfare
+      Narrative manipulation
+      Media ecosystem poisoning
+      Cross-border campaigns
+      Platform weaponization
+```
 
-### **Swedish Political Context Threats**
+| Threat Category | Description | Riksdagsmonitor Impact | Mitigation Strategy | gh-aw Control |
+|---|---|---|---|---|
+| **🗳️ Electoral Integrity** | Manipulation of voting data, false election results | HIGH - Core mission threat | Document ID validation, cross-verification | SafeOutputs content filters |
+| **📊 Legislative Misinformation** | Fabricated committee reports, fake parliamentary documents | HIGH - Undermines transparency | riksdag-regering-mcp verification, fact-checking | MCP tool validation |
+| **🏛️ Institutional Distrust** | Erosion of trust in Riksdag, government agencies | CRITICAL - Mission failure | Transparency commitment, public corrections | Human review gates |
+| **🗣️ Political Narrative Manipulation** | Biased AI-generated content favoring specific parties | MEDIUM - Reputational risk | Party mention tracking, bias metrics (planned Q2 2026) | SafeOutputs bias detection |
+| **🌐 Cross-Border Disinformation** | Foreign influence operations via AI content generation | HIGH - Nation-state APT threat | AI output validation, human oversight | AWF network isolation |
+| **📰 Media Manipulation** | False attribution to Riksdagsmonitor in media reports | MEDIUM - Brand impersonation | Clear branding, AI-generated disclosure | Output watermarking |
+| **🔍 Transparency Undermining** | DDoS during critical political events (elections, votes) | MEDIUM - Availability threat | Multi-region CDN, DR failover | Infrastructure isolation |
+| **🤝 Civil Society Trust** | Loss of transparency advocate support | HIGH - Stakeholder alienation | Incident transparency, public accountability | Audit trail |
+| **🎭 Deepfake Exploitation** | AI-generated fake video/audio of politicians | HIGH - Credibility attack | Source verification, provenance tracking | Content provenance headers |
+| **🧠 Cognitive Manipulation** | Exploiting information overload to obscure real data | MEDIUM - Democratic fatigue | Content prioritization, editorial standards | Rate limiting |
+| **🔗 Supply Chain Poisoning** | Compromise of upstream political data sources | HIGH - Data integrity | Multi-source verification, anomaly detection | MCP container isolation |
+| **⚡ Timing Attacks** | Publishing misleading content during politically sensitive moments | HIGH - Maximum impact exploitation | Election-period content freezes, heightened review | Mandatory human gates |
 
-#### Riksdag-Specific Threats:
+### **🇸🇪 Swedish Political Context Threats**
+
+#### 🏛️ Riksdag-Specific Threats:
 
 | Threat | Swedish Political Context | Attack Scenario | Current Controls | Gap Analysis |
-|--------|---------------------------|----------------|------------------|--------------|
-| **Betänkande Manipulation** | "Betänkande" (committee report) mistranslation | AI translates "betänkande" as "consideration" instead of "committee report" across 14 languages | TRANSLATION_GUIDE.md terminology dictionary | ⚠️ GAP: No automated translation validation (planned Q2 2026) |
-| **Riksdagsbeslut Fabrication** | "Riksdagsbeslut" (parliamentary decision) fake records | AI hallucinates non-existent parliamentary decisions with plausible dok_id | Document ID validation (manual PR review) | ⚠️ GAP: No automated API verification (planned Q1 2026) |
-| **Utskott Misattribution** | Committee ("utskott") jurisdiction errors | AI attributes motion to wrong committee (e.g., Finance instead of Foreign Affairs) | riksdag-regering-mcp organ field validation | ✅ ADEQUATE: MCP returns correct organ code |
-| **Voteringsresultat Arithmetic** | Vote margin calculation errors | AI reports 175-174 vote when actual is 176-173 | Display full vote counts (not margins), PR review | ⚠️ GAP: No automated vote arithmetic validation |
-| **Partirepresentation Bias** | Unequal party coverage in AI news | AI-generated articles favor specific parties (e.g., more positive language for S vs. SD) | Editorial guidelines, human review | ⚠️ GAP: No party mention tracking dashboard (planned Q2 2026) |
+|---|---|---|---|---|
+| **🔤 Betänkande Manipulation** | "Betänkande" (committee report) mistranslation | AI translates "betänkande" as "consideration" instead of "committee report" across 14 languages | TRANSLATION_GUIDE.md terminology dictionary | ⚠️ GAP: No automated translation validation (planned Q2 2026) |
+| **📜 Riksdagsbeslut Fabrication** | "Riksdagsbeslut" (parliamentary decision) fake records | AI hallucinates non-existent parliamentary decisions with plausible dok_id | Document ID validation (manual PR review) | ⚠️ GAP: No automated API verification (planned Q1 2026) |
+| **🏢 Utskott Misattribution** | Committee ("utskott") jurisdiction errors | AI attributes motion to wrong committee (e.g., Finance instead of Foreign Affairs) | riksdag-regering-mcp organ field validation | ✅ ADEQUATE: MCP returns correct organ code |
+| **🔢 Voteringsresultat Arithmetic** | Vote margin calculation errors | AI reports 175-174 vote when actual is 176-173 | Display full vote counts (not margins), PR review | ⚠️ GAP: No automated vote arithmetic validation |
+| **⚖️ Partirepresentation Bias** | Unequal party coverage in AI news | AI-generated articles favor specific parties (e.g., more positive language for S vs. SD) | Editorial guidelines, human review | ⚠️ GAP: No party mention tracking dashboard (planned Q2 2026) |
+| **🕐 Motion Timing Deception** | Publishing motions before official availability | AI generates articles about motions still under embargo | MCP data freshness checks | ✅ ADEQUATE: Only published documents available |
+| **🤥 Interpellation Fabrication** | Fake interpellation debates | AI generates non-existent Q&A between minister and MP | Interpellation ID validation, source URLs | ⚠️ GAP: No automated debate transcript verification |
 
-#### Regeringen-Specific Threats:
+#### 🇸🇪 Regeringen-Specific Threats:
 
 | Threat | Swedish Government Context | Attack Scenario | Current Controls | Gap Analysis |
-|--------|----------------------------|----------------|------------------|--------------|
-| **Proposition Fabrication** | Fake government propositions (prop.) | AI invents non-existent proposition with fabricated prop number | regeringen.se URL validation via g0v.se | ✅ ADEQUATE: All propositions require valid URL |
-| **SOU/Ds Report Misattribution** | Government inquiry (SOU/Ds) incorrect department | AI attributes SOU report to wrong ministry | analyze_g0v_by_department validation | ✅ ADEQUATE: MCP returns correct department |
-| **Ministerial Quote Fabrication** | Fake statements from Swedish ministers | AI generates quotes attributed to ministers that were never said | Source citations (g0v.se URLs), PR review | ⚠️ GAP: No automated quote verification against speech transcripts |
-| **Government Document Metadata** | Incorrect document dates, departments | AI reports wrong publication date or departmental origin | get_g0v_document_content metadata validation | ✅ ADEQUATE: MCP returns structured metadata |
-| **Remiss Process Misrepresentation** | Incorrect remiss (public consultation) status | AI reports closed remiss as open or vice versa | g0v.se remiss status field | ✅ ADEQUATE: MCP returns current status |
+|---|---|---|---|---|
+| **📋 Proposition Fabrication** | Fake government propositions (prop.) | AI invents non-existent proposition with fabricated prop number | regeringen.se URL validation via g0v.se | ✅ ADEQUATE: All propositions require valid URL |
+| **🏢 SOU/Ds Report Misattribution** | Government inquiry (SOU/Ds) incorrect department | AI attributes SOU report to wrong ministry | analyze_g0v_by_department validation | ✅ ADEQUATE: MCP returns correct department |
+| **💬 Ministerial Quote Fabrication** | Fake statements from Swedish ministers | AI generates quotes attributed to ministers that were never said | Source citations (g0v.se URLs), PR review | ⚠️ GAP: No automated quote verification against speech transcripts |
+| **📅 Government Document Metadata** | Incorrect document dates, departments | AI reports wrong publication date or departmental origin | get_g0v_document_content metadata validation | ✅ ADEQUATE: MCP returns structured metadata |
+| **🔄 Remiss Process Misrepresentation** | Incorrect remiss (public consultation) status | AI reports closed remiss as open or vice versa | g0v.se remiss status field | ✅ ADEQUATE: MCP returns current status |
+| **🏛️ Budget Misrepresentation** | Incorrect budget figures or allocation claims | AI fabricates or miscalculates budget numbers | IMF/SCB cross-verification, source citation | ⚠️ GAP: No automated fiscal data validation |
+| **👤 Cabinet Reshuffle Confusion** | Incorrect minister assignments | AI reports wrong minister for a portfolio | g0v.se current government roster | ✅ ADEQUATE: MCP returns current ministers |
 
-### **Democratic Accountability Metrics**
+### **🌍 Advanced Democratic Threat Scenarios**
 
-| Metric | Target | Current Performance | Monitoring Method |
-|--------|--------|---------------------|------------------|
-| **Factual Accuracy (Post-Review)** | 98%+ | 98-99% (estimated) | PR rejection rate tracking |
-| **Hallucination Detection Rate** | 95%+ | 95% (human review) | Fact-checking protocol compliance |
-| **Cross-Language Consistency** | 90%+ | 80-85% (estimated) | Manual spot-checks (planned automation Q2 2026) |
-| **Party Representation Balance** | ±5% variance | Not measured | ⚠️ GAP: Planned Q2 2026 dashboard |
-| **Document ID Validation Coverage** | 100% | 100% (manual) | PR review checklist |
-| **Translation Quality (Human Review)** | 90%+ | 90-95% (estimated) | TRANSLATION_GUIDE.md compliance |
+#### 🎭 Scenario: AI-Enabled Foreign Influence Operation
 
-### **Civic Technology Threat Scenarios**
+```mermaid
+sequenceDiagram
+    participant APT as 🕵️ Foreign APT<br/>(Intelligence Service)
+    participant Supply as 📦 Supply Chain<br/>(Upstream Data)
+    participant Agent as 🤖 AI Agent<br/>(gh-aw Protected)
+    participant Safe as 🛡️ SafeOutputs<br/>(Filter Layer)
+    participant Human as 👁️ Human<br/>Reviewer
+    participant Public as 🌐 Published<br/>Content
 
-#### Scenario: Election Day Disinformation Campaign
+    Note over APT,Public: 🔴 ATTACK PHASE: Data Poisoning Attempt
+
+    APT->>Supply: Inject subtle bias in<br/>public data sources
+    Supply->>Agent: Poisoned data retrieved<br/>via MCP servers
+    Agent->>Safe: Generated article with<br/>embedded bias
+
+    Note over Safe: 🛡️ DEFENSE: gh-aw Multi-Layer Detection
+
+    Safe->>Safe: Content filter: ✓ Schema valid<br/>Bias detector: ⚠️ Sentiment anomaly<br/>Secret scan: ✓ No leaks
+
+    alt Bias Detected
+        Safe-->>Human: ⚠️ Flagged for enhanced review
+        Human->>Human: Cross-verify with<br/>official sources
+        Human-->>Safe: ❌ REJECTED: Bias confirmed
+    else Subtle Bias (Below Threshold)
+        Safe->>Human: Standard review queue
+        Human->>Public: ✅ Published after verification
+        Note over Public: Residual risk: LOW<br/>(human caught subtle bias)
+    end
+```
+
+**Threat Actor:** Nation-State APT (e.g., GRU/SVR-affiliated actors)  
+**Objective:** Undermine Swedish democratic institutions via subtle, AI-amplified disinformation  
+**Attack Phases:**
+1. **🔍 Reconnaissance:** Map Riksdagsmonitor's data sources, publication timing, and editorial patterns
+2. **💉 Data Poisoning:** Inject subtly biased content into upstream data sources (e.g., manipulated metadata in public APIs)
+3. **🤖 AI Amplification:** Exploit AI's pattern-matching to amplify injected biases across 14 languages
+4. **📡 Distribution:** Use legitimate-appearing content to undermine trust in Swedish institutions
+5. **🔄 Persistence:** Maintain long-term subtle influence below detection thresholds
+
+**gh-aw Defenses:**
+- ✅ AWF network isolation prevents agent from accessing non-allowlisted sources
+- ✅ MCP container sandboxing limits data source compromise blast radius
+- ✅ SafeOutputs content validation catches schema violations
+- ✅ Human review gate catches remaining semantic anomalies
+- ⚠️ GAP: Automated bias/sentiment analysis not yet deployed (planned Q2 2026)
+
+#### 🗳️ Scenario: Election Day Disinformation Campaign
 
 **Threat Actor:** Nation-State APT (Foreign Intelligence Service)  
 **Timing:** Swedish parliamentary election Sunday (September 2026)  
 **Attack Vector:**
-1. **Pre-positioning (Weeks Before):** Compromise MCP server, inject subtle bias in AI content generation
-2. **Activation (Election Day):** Publish false exit poll data, fabricate early vote counts
-3. **Amplification (Social Media):** Coordinate with bot networks to spread misinformation
-4. **Persistence (Post-Election):** Maintain doubt about election integrity
+1. **🕵️ Pre-positioning (Weeks Before):** Compromise MCP server, inject subtle bias in AI content generation
+2. **⚡ Activation (Election Day):** Publish false exit poll data, fabricate early vote counts
+3. **📢 Amplification (Social Media):** Coordinate with bot networks to spread misinformation
+4. **🔄 Persistence (Post-Election):** Maintain doubt about election integrity
 
 **Impact:**
-- Erosion of public trust in Swedish election results
-- International media attention questioning Swedish democracy
-- Long-term reputational damage to Riksdagsmonitor
-- Potential legal liability for spreading false information
+- 🏛️ Erosion of public trust in Swedish election results
+- 🌐 International media attention questioning Swedish democracy
+- 📉 Long-term reputational damage to Riksdagsmonitor
+- ⚖️ Potential legal liability for spreading false information
 
 **Mitigation:**
-- **Pre-Election:** Freeze AI content generation 48h before election (manual mode only)
-- **During Election:** Heightened human review, no automated political data publication
-- **Post-Election:** Cross-verify all results with official Riksdag sources before publication
-- **Incident Response:** Pre-drafted public statement, CEO accountability, transparent correction process
+- **🚨 Pre-Election:** Freeze AI content generation 48h before election (manual mode only)
+- **👁️ During Election:** Heightened human review, no automated political data publication
+- **✅ Post-Election:** Cross-verify all results with official Riksdag sources before publication
+- **📋 Incident Response:** Pre-drafted public statement, CEO accountability, transparent correction process
+
+**gh-aw Election Protection:**
+- SafeOutputs: Enhanced content validation rules active during election periods
+- AWF: Stricter domain allowlist (only riksdagen.se and val.se during election mode)
+- Token budget: Reduced to prevent burst generation attempts
+- Mandatory human gate: ALL content requires explicit human approval
 
 **Residual Risk:** **MEDIUM** (2.5/10) - Accept risk with enhanced monitoring during high-stakes events
+
+#### 🤖 Scenario: AI Model Compromise via Prompt Injection
+
+**Threat Actor:** Hacktivist / Politically Motivated Attacker  
+**Objective:** Inject political propaganda into AI-generated content  
+**Attack Vector:**
+1. **📝 Craft Injection:** Create GitHub issue or PR comment containing adversarial prompts
+2. **🔄 Agent Processing:** Hope AI agent processes crafted content as instructions
+3. **📊 Content Manipulation:** Generate biased or misleading political content
+4. **🌐 Publication:** Bypass review to publish manipulated content
+
+**gh-aw Defenses:**
+- ✅ **Plan-level trust:** Workflow decomposition prevents single-point injection
+- ✅ **Tool allowlisting:** Agent cannot execute arbitrary commands
+- ✅ **SafeOutputs:** All writes go through content validation
+- ✅ **Read-only execution:** Agent cannot modify source directly
+- ✅ **Human review:** PR approval required before any content merges
+
+**Residual Risk:** **LOW** (1.5/10) - gh-aw's multi-layer defense effectively neutralizes prompt injection attacks
+
+#### 🏛️ Scenario: Democratic Data Source Manipulation
+
+**Threat Actor:** Insider (Malicious Employee at Data Provider) or Supply Chain Attacker  
+**Objective:** Subtly alter parliamentary data to create false narratives  
+**Attack Vector:**
+1. **🎯 Target Selection:** Identify high-value data fields (vote counts, committee assignments)
+2. **🔧 Subtle Modification:** Change a single vote, alter committee membership dates
+3. **🤖 Amplification:** Rely on AI to propagate subtle errors across all language versions
+4. **📰 Narrative Building:** Use accumulated small errors to build false political narratives
+
+**gh-aw Defenses:**
+- ✅ **MCP verification:** Data retrieved through validated MCP server endpoints
+- ✅ **Cross-source validation:** Multiple data sources compared for consistency
+- ✅ **Anomaly detection:** Statistical outliers flagged for human review
+- ⚠️ **GAP:** No real-time data integrity monitoring across all sources
+
+**Residual Risk:** **LOW** (2.0/10) - Multiple verification layers, but subtle one-off errors may pass
+
+### **📈 Democratic Accountability Metrics**
+
+| Metric | Target | Current Performance | Monitoring Method | gh-aw Contribution |
+|---|---|---|---|---|
+| **✅ Factual Accuracy (Post-Review)** | 98%+ | 98-99% (estimated) | PR rejection rate tracking | SafeOutputs validation |
+| **🔍 Hallucination Detection Rate** | 95%+ | 95% (human review) | Fact-checking protocol compliance | Content filters |
+| **🌐 Cross-Language Consistency** | 90%+ | 80-85% (estimated) | Manual spot-checks (planned automation Q2 2026) | Multi-language SafeOutputs |
+| **⚖️ Party Representation Balance** | ±5% variance | Not measured | ⚠️ GAP: Planned Q2 2026 dashboard | Bias detection (planned) |
+| **📜 Document ID Validation Coverage** | 100% | 100% (manual) | PR review checklist | MCP validation |
+| **🔤 Translation Quality (Human Review)** | 90%+ | 90-95% (estimated) | TRANSLATION_GUIDE.md compliance | SafeOutputs schema check |
+| **⏱️ Time-to-Correction** | <2h (critical), <24h (standard) | ~1h critical, ~8h standard | Incident response log | Automated alert pipeline |
+| **🛡️ gh-aw Filter Effectiveness** | 99%+ pass rate | 99.5% | SafeOutputs metrics | Built-in monitoring |
 
 ---
 
@@ -2348,7 +2719,7 @@ Following [Hack23 AB Workshop Framework](https://github.com/Hack23/ISMS-PUBLIC/b
 | **CVE Database (NVD)** | Vulnerability disclosures | Daily | Dependabot + manual review | Free |
 | **Swedish CERT-SE** | National threat intelligence | Ad-hoc | Email alerts | Free |
 
-**Next Review:** 2026-08-30 (Quarterly schedule)
+**Next Review:** 2026-09-02 (Quarterly schedule)
 
 ---
 
@@ -2951,11 +3322,11 @@ Riksdagsmonitor-specific security practices for civic transparency platforms.
 ## 📋 Document Control
 
 **📋 Document Owner:** James Pether Sörling, CEO & CISO  
-**📄 Version:** 1.5
-**📅 Last Updated:** 2026-05-30 (UTC)
+**📄 Version:** 2.0
+**📅 Last Updated:** 2026-06-02 (UTC)
 **✅ Approved by:** James Pether Sörling, CEO  
 **🔄 Review Cycle:** Quarterly
-**⏰ Next Review:** 2026-08-30
+**⏰ Next Review:** 2026-09-02
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807)  
 **📤 Distribution:** Public  
 **🏷️ Classification:** [![Confidentiality: Public](https://img.shields.io/badge/C-Public-lightgrey?style=flat-square)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#confidentiality-levels) [![Integrity: High](https://img.shields.io/badge/I-High-orange?style=flat-square)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#integrity-levels) [![Availability: High](https://img.shields.io/badge/A-High-orange?style=flat-square)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#availability-levels)
@@ -2963,7 +3334,7 @@ Riksdagsmonitor-specific security practices for civic transparency platforms.
 ### **Framework Compliance**
 
 **🎯 Framework Alignment:**  
-[![ISO 27001](https://img.shields.io/badge/ISO_27001-2022_Compliant-blue?style=flat-square&logo=iso&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) [![NIST CSF 2.0](https://img.shields.io/badge/NIST_CSF-2.0_Aligned-green?style=flat-square&logo=nist&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) [![CIS Controls](https://img.shields.io/badge/CIS_Controls-v8.1_Aligned-orange?style=flat-square&logo=cisecurity&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) [![OWASP](https://img.shields.io/badge/OWASP-LLM_Top_10_Compliant-purple?style=flat-square&logo=owasp&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/OWASP_LLM_Security_Policy.md) [![EU AI Act](https://img.shields.io/badge/EU_AI_Act-Limited_Risk_Compliant-darkblue?style=flat-square)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/EU_AI_Act_Compliance.md)
+[![ISO 27001](https://img.shields.io/badge/ISO_27001-2022_Compliant-blue?style=flat-square&logo=iso&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) [![NIST CSF 2.0](https://img.shields.io/badge/NIST_CSF-2.0_Aligned-green?style=flat-square&logo=nist&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) [![CIS Controls](https://img.shields.io/badge/CIS_Controls-v8.1_Aligned-orange?style=flat-square&logo=cisecurity&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) [![OWASP](https://img.shields.io/badge/OWASP-LLM_Top_10_Compliant-purple?style=flat-square&logo=owasp&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/OWASP_LLM_Security_Policy.md) [![EU AI Act](https://img.shields.io/badge/EU_AI_Act-Limited_Risk_Compliant-darkblue?style=flat-square)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/EU_AI_Act_Compliance.md) [![gh-aw](https://img.shields.io/badge/gh--aw-5_Layer_Defense-green?style=flat-square&logo=github&logoColor=white)](https://github.github.com/gh-aw/introduction/architecture/)
 
 
 ---
