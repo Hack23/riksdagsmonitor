@@ -11,8 +11,52 @@ This skill is a dispatcher: identify the task type, load the matching `.github/a
 
 Read only the files you need:
 Load these files from `github/gh-aw` (they are not available locally).
-- `.github/aw/ECONOMIC_DATA_CONTRACT.md`
-- `.github/aw/SANDBOX_COMMIT_HANDOFF.md`
+- `.github/aw/agentic-chat.md`
+- `.github/aw/asciicharts.md`
+- `.github/aw/campaign.md`
+- `.github/aw/charts-trending.md`
+- `.github/aw/charts.md`
+- `.github/aw/cli-commands.md`
+- `.github/aw/context.md`
+- `.github/aw/create-agentic-workflow.md`
+- `.github/aw/create-shared-agentic-workflow.md`
+- `.github/aw/debug-agentic-workflow.md`
+- `.github/aw/dependabot.md`
+- `.github/aw/deployment-status.md`
+- `.github/aw/experiments.md`
+- `.github/aw/github-agentic-workflows.md`
+- `.github/aw/github-mcp-server.md`
+- `.github/aw/llms.md`
+- `.github/aw/memory.md`
+- `.github/aw/messages.md`
+- `.github/aw/network.md`
+- `.github/aw/patterns.md`
+- `.github/aw/pr-reviewer.md`
+- `.github/aw/report.md`
+- `.github/aw/reuse.md`
+- `.github/aw/safe-outputs-automation.md`
+- `.github/aw/safe-outputs-content.md`
+- `.github/aw/safe-outputs-management.md`
+- `.github/aw/safe-outputs-runtime.md`
+- `.github/aw/safe-outputs.md`
+- `.github/aw/serena-tool.md`
+- `.github/aw/shared-safe-jobs.md`
+- `.github/aw/skills.md`
+- `.github/aw/subagents.md`
+- `.github/aw/syntax-agentic.md`
+- `.github/aw/syntax-core.md`
+- `.github/aw/syntax-tools-imports.md`
+- `.github/aw/syntax.md`
+- `.github/aw/test-coverage.md`
+- `.github/aw/test-expression.md`
+- `.github/aw/token-optimization.md`
+- `.github/aw/triggers.md`
+- `.github/aw/update-agentic-workflow.md`
+- `.github/aw/upgrade-agentic-workflows.md`
+- `.github/aw/visual-regression.md`
+- `.github/aw/workflow-constraints.md`
+- `.github/aw/workflow-editing.md`
+- `.github/aw/workflow-patterns.md`
 
 After loading the matching workflow prompt, follow it directly:
 - Create new workflows: `.github/aw/create-agentic-workflow.md`
