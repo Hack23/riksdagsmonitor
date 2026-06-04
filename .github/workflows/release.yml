@@ -233,7 +233,7 @@ jobs:
 
           # Defense-in-depth: fail attribution stays on Unit Tests rather
           # than the downstream deploy-docs job ("Artifact not found").
-          if ! find builds -type f | grep -q .; then
+          if [ -z "$(find builds -type f -print -quit)" ]; then
             echo "::error::No unit-test or coverage files found under builds/ — check vitest/coverage configuration."
             exit 1
           fi
