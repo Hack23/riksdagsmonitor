@@ -1,4 +1,4 @@
-riksdagsmonitor@1.0.2 /home/runner/work/riksdagsmonitor/riksdagsmonitor
+riksdagsmonitor@1.0.4 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 ├─┬ @eslint/js@10.0.1
 │ └── eslint@10.4.1 deduped
 ├─┬ @types/d3@7.4.3
@@ -503,10 +503,12 @@ riksdagsmonitor@1.0.2 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ │ │ └── is-extendable@0.1.1
 │ │ └── kind-of@6.0.3 deduped
 │ └── strip-bom-string@1.0.0
-├─┬ happy-dom@20.9.0
+├─┬ happy-dom@20.10.1
 │ ├── @types/node@25.9.1 deduped
 │ ├── @types/whatwg-mimetype@3.0.2
 │ ├─┬ @types/ws@8.18.1
+│ │ └── @types/node@25.9.1 deduped
+│ ├─┬ buffer-image-size@0.6.4
 │ │ └── @types/node@25.9.1 deduped
 │ ├── entities@7.0.1
 │ ├── whatwg-mimetype@3.0.0
@@ -1346,7 +1348,7 @@ riksdagsmonitor@1.0.2 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ ├── @vitest/utils@4.1.8 deduped
 │ ├── es-module-lexer@2.0.0
 │ ├── expect-type@1.3.0
-│ ├── happy-dom@20.9.0 deduped
+│ ├── happy-dom@20.10.1 deduped
 │ ├── UNMET OPTIONAL DEPENDENCY jsdom@*
 │ ├─┬ magic-string@0.30.21
 │ │ └── @jridgewell/sourcemap-codec@1.5.5
