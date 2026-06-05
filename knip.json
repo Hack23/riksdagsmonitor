@@ -44,6 +44,9 @@
   ],
   "ignoreBinaries": [
     "cypress",
+    "pdftotext",
+    "shellcheck",
+    "which",
     "python3",
     "linkinator"
   ]
