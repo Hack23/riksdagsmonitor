@@ -1,5 +1,5 @@
 {
-  "version": "1.0.4",
+  "version": "1.0.5",
   "name": "riksdagsmonitor",
   "dependencies": {
     "@eslint/js": {
@@ -2863,8 +2863,8 @@
       }
     },
     "knip": {
-      "version": "6.15.0",
-      "resolved": "https://registry.npmjs.org/knip/-/knip-6.15.0.tgz",
+      "version": "6.16.0",
+      "resolved": "https://registry.npmjs.org/knip/-/knip-6.16.0.tgz",
       "overridden": false,
       "dependencies": {
         "fdir": {
@@ -2910,9 +2910,6 @@
         },
         "jiti": {
           "version": "2.7.0"
-        },
-        "minimist": {
-          "version": "1.2.8"
         },
         "oxc-parser": {
           "version": "0.133.0",
@@ -4989,8 +4986,8 @@
       }
     },
     "start-server-and-test": {
-      "version": "3.0.6",
-      "resolved": "https://registry.npmjs.org/start-server-and-test/-/start-server-and-test-3.0.6.tgz",
+      "version": "3.0.8",
+      "resolved": "https://registry.npmjs.org/start-server-and-test/-/start-server-and-test-3.0.8.tgz",
       "overridden": false,
       "dependencies": {
         "arg": {
@@ -5045,8 +5042,8 @@
           }
         },
         "lazy-ass": {
-          "version": "1.6.0",
-          "resolved": "https://registry.npmjs.org/lazy-ass/-/lazy-ass-1.6.0.tgz",
+          "version": "2.0.3",
+          "resolved": "https://registry.npmjs.org/lazy-ass/-/lazy-ass-2.0.3.tgz",
           "overridden": false
         },
         "tree-kill": {
@@ -5916,7 +5913,7 @@
               "overridden": false,
               "dependencies": {
                 "hono": {
-                  "version": "4.12.18"
+                  "version": "4.12.23"
                 }
               }
             },
@@ -6351,8 +6348,8 @@
               }
             },
             "hono": {
-              "version": "4.12.18",
-              "resolved": "https://registry.npmjs.org/hono/-/hono-4.12.18.tgz",
+              "version": "4.12.23",
+              "resolved": "https://registry.npmjs.org/hono/-/hono-4.12.23.tgz",
               "overridden": false
             },
             "jose": {

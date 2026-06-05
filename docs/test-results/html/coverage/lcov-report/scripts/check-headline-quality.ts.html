@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">51.18% </span>
+                <span class="strong">51.93% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>65/127</span>
+                <span class='fraction'>67/129</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">68.75% </span>
+                <span class="strong">72.22% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>11/16</span>
+                <span class='fraction'>13/18</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">51.75% </span>
+                <span class="strong">52.58% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>59/114</span>
+                <span class='fraction'>61/116</span>
             </div>
         
             
@@ -550,7 +550,23 @@
 <a name='L485'></a><a href='#L485'>485</a>
 <a name='L486'></a><a href='#L486'>486</a>
 <a name='L487'></a><a href='#L487'>487</a>
-<a name='L488'></a><a href='#L488'>488</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L488'></a><a href='#L488'>488</a>
+<a name='L489'></a><a href='#L489'>489</a>
+<a name='L490'></a><a href='#L490'>490</a>
+<a name='L491'></a><a href='#L491'>491</a>
+<a name='L492'></a><a href='#L492'>492</a>
+<a name='L493'></a><a href='#L493'>493</a>
+<a name='L494'></a><a href='#L494'>494</a>
+<a name='L495'></a><a href='#L495'>495</a>
+<a name='L496'></a><a href='#L496'>496</a>
+<a name='L497'></a><a href='#L497'>497</a>
+<a name='L498'></a><a href='#L498'>498</a>
+<a name='L499'></a><a href='#L499'>499</a>
+<a name='L500'></a><a href='#L500'>500</a>
+<a name='L501'></a><a href='#L501'>501</a>
+<a name='L502'></a><a href='#L502'>502</a>
+<a name='L503'></a><a href='#L503'>503</a>
+<a name='L504'></a><a href='#L504'>504</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -603,6 +619,22 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">21x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">28x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1091,7 +1123,23 @@
 import { readdirSync, readFileSync, statSync } from 'node:fs';
 import { join, relative } from 'node:path';
 &nbsp;
-import { prettifyFallbackTitle } from './render-lib/aggregator/order.js';
+/**
+ * Plain slug → Title-Case prettifier for a single path segment.
+ *
+ * Rule E detects H1s that merely echo the subfolder slug, so it must
+ * compare against the *bare* slug-to-title-case label (e.g.
+ * `propositions` → `Propositions`). It deliberately does NOT reuse the
+ * renderer's `prettifyFallbackTitle`, whose curated category map turns
+ * `propositions` into an engaging headline (`Government Bills — …`) and
+ * would stop Rule E from flagging the lazy bare-slug H1.
+ */
+function prettifySlugSegment(segment: string): string {
+  return segment
+    .split(/[-_]/)
+    .filter(Boolean)
+    .map((part) =&gt; part.charAt(0).toUpperCase() + part.slice(1))
+    .join(' ');
+}
 &nbsp;
 // ─────────────────────────────────────────────────────────────────────────
 // Rule A — Untranslated Swedish in EN H1
@@ -1280,14 +1328,14 @@ export function subfolderFromBriefPath(filepath: string): string | null {
 &nbsp;
 /**
  * Build the prettified label for a multi-segment subfolder path. Joins
- * each path segment via `prettifyFallbackTitle` so `election-cycle/current`
+ * each path segment via `prettifySlugSegment` so `election-cycle/current`
  * → `Election Cycle Current`.
  */
 export function prettifySubfolderPath(subfolder: string): string {
   return subfolder
     .split('/')
     .filter(Boolean)
-    .map((seg) =&gt; prettifyFallbackTitle(seg))
+    .map((seg) =&gt; prettifySlugSegment(seg))
     .join(' ');
 }
 &nbsp;
@@ -1308,7 +1356,7 @@ export function matchesPrettifiedSubfolder(h1: string, subfolder: string | null)
   const segments = subfolder.split('/').filter(Boolean);
   const leaf = segments[segments.length - 1];
   <span class="missing-if-branch" title="if path not taken" >I</span>if (!leaf) <span class="cstat-no" title="statement not covered" >return false;</span>
-  const leafLabel = normaliseHeadlineForCompare(prettifyFallbackTitle(leaf));
+  const leafLabel = normaliseHeadlineForCompare(prettifySlugSegment(leaf));
   return Boolean(leafLabel) &amp;&amp; headline === leafLabel;
 }
 &nbsp;
@@ -1531,7 +1579,7 @@ export async function <span class="fstat-no" title="function not covered" >main(
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-05-25T09:36:38.192Z
+                at 2026-06-05T18:40:25.505Z
             </div>
         <script src="../prettify.js"></script>
         <script>
