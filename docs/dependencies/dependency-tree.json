@@ -1,5 +1,5 @@
 {
-  "version": "1.0.5",
+  "version": "1.0.6",
   "name": "riksdagsmonitor",
   "dependencies": {
     "@eslint/js": {
@@ -245,8 +245,8 @@
       }
     },
     "@types/node": {
-      "version": "25.9.1",
-      "resolved": "https://registry.npmjs.org/@types/node/-/node-25.9.1.tgz",
+      "version": "25.9.2",
+      "resolved": "https://registry.npmjs.org/@types/node/-/node-25.9.2.tgz",
       "overridden": false,
       "dependencies": {
         "undici-types": {
@@ -262,7 +262,7 @@
       "overridden": false,
       "dependencies": {
         "@types/node": {
-          "version": "25.9.1"
+          "version": "25.9.2"
         }
       }
     },
@@ -2568,7 +2568,7 @@
       "overridden": false,
       "dependencies": {
         "@types/node": {
-          "version": "25.9.1"
+          "version": "25.9.2"
         },
         "@types/whatwg-mimetype": {
           "version": "3.0.2",
@@ -2581,7 +2581,7 @@
           "overridden": false,
           "dependencies": {
             "@types/node": {
-              "version": "25.9.1"
+              "version": "25.9.2"
             }
           }
         },
@@ -2591,7 +2591,7 @@
           "overridden": false,
           "dependencies": {
             "@types/node": {
-              "version": "25.9.1"
+              "version": "25.9.2"
             }
           }
         },
@@ -5594,7 +5594,7 @@
       "overridden": false,
       "dependencies": {
         "@types/node": {
-          "version": "25.9.1"
+          "version": "25.9.2"
         },
         "@vitejs/devtools": {},
         "esbuild": {
@@ -5695,7 +5695,7 @@
         "@edge-runtime/vm": {},
         "@opentelemetry/api": {},
         "@types/node": {
-          "version": "25.9.1"
+          "version": "25.9.2"
         },
         "@vitest/browser-playwright": {},
         "@vitest/browser-preview": {},
