@@ -3,6 +3,7 @@
 > **Generated**: 2026-06-06  
 > **Scope**: Riksdagsmonitor news articles (analysis/daily/)  
 > **Classification**: 🟢 PUBLIC
+> **Phase 2 Status**: ✅ COMPLETE — Renderer exclusion filter deployed
 
 ---
 
@@ -288,6 +289,39 @@ These are the first 32 article subdirectories confirmed to lack `executive-brief
 - [ ] **SEO Descriptions**: 100% of canonical articles have descriptions ≥140 chars (Latin) / ≥70 chars (CJK)
 - [ ] **CI Gates**: `test-article-headers --strict` passes on every commit
 - [ ] **No Regression**: Future article aggregations maintain contract compliance
+
+---
+
+## Phase 2 Implementation Complete (2026-06-06)
+
+**Renderer Exclusion Filter** deployed to prevent Tier A articles from rendering as production HTML.
+
+### Changes Made:
+1. **Modified**: `scripts/render-articles.ts`
+   - Added `isArticleEligibleForRendering()` function with clear JSDoc explaining Tier A/B/C classification
+   - Integrated filtering into `allCaseDates()` article discovery process
+   - Filter excludes: `documents/`, `full-text/`, `election-cycle/` subdirectories
+   
+2. **Added**: `tests/render-articles-eligibility.test.ts`
+   - Comprehensive test suite covering all exclusion patterns
+   - 13 passing tests validating filter behavior
+   - Edge case coverage: case sensitivity, prefix vs. full match, nested paths
+   
+### Validation Results:
+- ✅ 13/13 exclusion filter tests pass
+- ✅ article-head-metadata.test.ts: 29 passing tests (no regression)
+- ✅ article-pipeline.test.ts: 38 passing tests (no regression)
+- ✅ Manual validation: Tier A paths correctly excluded, Tier B/C paths included
+
+### Impact:
+- **Resolves**: 32 reported pages with missing descriptions (now excluded from rendering)
+- **Prevents**: 200+ intermediate analysis artifacts from shipping as public articles
+- **Enables**: Next phase (Phase 3 backfill) to focus only on real Tier B/C articles
+
+### Next Steps:
+- Phase 3: Backfill executive-brief.md for real articles lacking descriptions
+- Phase 4: Rewrite 3 articles with generic filler descriptions
+- Phase 5: Add CI validation gates
 
 ---
 

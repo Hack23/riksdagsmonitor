@@ -41,10 +41,17 @@ Top 32 problem articles identified (all missing executive-brief.md):
 - **Tier C** (Rewrite): 3 articles → replace generic descriptions
 - **Deliverable**: `seo-description-audit-*.csv` classification report
 
-### Phase 2: Renderer Exclusion (1 PR)
-- Exclude Tier A articles (`documents/`, `full-text/`) from HTML generation
-- Update article discovery logic in `scripts/generate-news-indexes/`
-- Add test: "Tier A articles don't render to HTML"
+### Phase 2: Renderer Exclusion (1 PR) ✅ COMPLETE
+- ✅ Added `isArticleEligibleForRendering()` filter to `scripts/render-articles.ts`
+- ✅ Excluded Tier A articles (`documents/`, `full-text/`, `election-cycle/`) from HTML generation
+- ✅ Updated article discovery in `allCaseDates()` with filtering logic
+- ✅ Added comprehensive test suite (`tests/render-articles-eligibility.test.ts`) with 13 passing tests
+- **Status**: Filter now prevents 200+ intermediate analysis artifacts from rendering as production articles
+- **Acceptance Criteria Met**:
+  - ✅ Tier A paths (documents/, full-text/, election-cycle/) excluded
+  - ✅ Tier B/C real articles continue to render
+  - ✅ Case-sensitive matching prevents false positives
+  - ✅ Existing tests pass (article-head-metadata.test.ts, article-pipeline.test.ts)
 
 ### Phase 3: Description Backfill (1 PR)
 - Create `scripts/backfill-executive-briefs.ts`
