@@ -1,17 +1,17 @@
 {
   "metadata": {
-    "source_url": "https://raw.githubusercontent.com/Hack23/cia/56866e41e178c31d1a017ce51a44c30fd51710a3/service.data.impl/sample-data/extraction_summary_report.csv",
-    "last_updated": "2026-05-10 17:10:32.838261",
-    "extraction_time": "2026-05-10 17:10:32.838261",
-    "generated_at": "2026-05-10T16:13:02.246Z",
+    "source_url": "https://raw.githubusercontent.com/Hack23/cia/b50dd2a00429527451fdc1eed26aeca1c75a6273/service.data.impl/sample-data/extraction_summary_report.csv",
+    "last_updated": "2026-06-06 20:48:04.446826",
+    "extraction_time": "2026-06-06 20:48:04.446826",
+    "generated_at": "2026-06-06T22:42:10.677Z",
     "version": "1.2.0"
   },
   "counts": {
-    "total_persons": 2495,
-    "total_votes": 3717898,
+    "total_persons": 2499,
+    "total_votes": 3724917,
     "total_documents": 109480,
     "total_committee_documents": 8840,
-    "total_rule_violations": 2309,
+    "total_rule_violations": 2322,
     "total_against_proposals": 56244,
     "total_committee_proposals": 59070,
     "total_document_activities": 393991,
@@ -20,20 +20,20 @@
     "total_document_attachments": 162525,
     "total_riksdag_parties": 12,
     "total_governments": 20,
-    "total_government_proposals": 5879,
+    "total_government_proposals": 5909,
     "total_government_roles": 77,
     "total_government_role_members": 502,
-    "total_member_proposals": 94879,
-    "total_committee_decisions": 59646,
-    "total_committee_member_proposals": 94253,
-    "total_committee_role_members": 19111,
+    "total_member_proposals": 94926,
+    "total_committee_decisions": 59950,
+    "total_committee_member_proposals": 94350,
+    "total_committee_role_members": 19163,
     "total_committee_roles": 153,
-    "total_party_members": 2434,
+    "total_party_members": 2438,
     "total_party_role_members": 301,
     "total_party_summary": 13,
-    "total_politician_documents": 280578,
-    "total_ballot_politician_summaries": 3745119,
-    "total_document_content": 301216
+    "total_politician_documents": 281187,
+    "total_ballot_politician_summaries": 3767804,
+    "total_document_content": 300919
   },
   "tables": {
     "success": [
@@ -115,7 +115,7 @@
       },
       {
         "name": "document_content_data",
-        "count": 301216
+        "count": 300919
       },
       {
         "name": "document_data",
@@ -131,7 +131,7 @@
       },
       {
         "name": "document_element",
-        "count": 316424
+        "count": 318730
       },
       {
         "name": "document_person_reference_co_0",
@@ -175,19 +175,19 @@
       },
       {
         "name": "jv_commit",
-        "count": 5382916
+        "count": 5428867
       },
       {
         "name": "jv_commit_property",
-        "count": 5373020
+        "count": 5401591
       },
       {
         "name": "jv_global_id",
-        "count": 12609875
+        "count": 12644831
       },
       {
         "name": "jv_snapshot",
-        "count": 12722492
+        "count": 12654477
       },
       {
         "name": "language_data",
@@ -199,7 +199,7 @@
       },
       {
         "name": "person_data",
-        "count": 2495
+        "count": 2499
       },
       {
         "name": "person_detail_data",
@@ -231,7 +231,7 @@
       },
       {
         "name": "rule_violation",
-        "count": 2309
+        "count": 2322
       },
       {
         "name": "sweden_political_party",
@@ -251,7 +251,7 @@
       },
       {
         "name": "vote_data",
-        "count": 3717898
+        "count": 3724917
       },
       {
         "name": "world_bank_data",
