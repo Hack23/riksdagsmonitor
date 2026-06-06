@@ -114,6 +114,31 @@ function canonicalPathFor(_date: string, subfolder: string, lang: Language, date
   return `news/${date}-${flatSubfolder}-${lang}.html`;
 }
 
+/**
+ * Check if an article subfolder is eligible for HTML rendering.
+ * 
+ * **Tier A (Excluded)**: Intermediate Pass-1 analysis artifacts that lack
+ * `executive-brief.md` files and should not render as production news:
+ *   - `documents/` subdirectories (intermediate analysis)
+ *   - `full-text/` subdirectories (raw document analysis)
+ *   - `election-cycle/` when no parent article exists (orphaned)
+ * 
+ * **Tier B/C (Included)**: Real articles that should be rendered, with or
+ * without executive briefs.
+ * 
+ * @param subfolder The article subfolder path (e.g. 'propositions', 'documents/prop-2026-123')
+ * @returns true if the article should be rendered to HTML, false if excluded
+ */
+function isArticleEligibleForRendering(subfolder: string): boolean {
+  // Exclude Tier A: documents/, full-text/, and orphaned election-cycle/
+  if (subfolder.startsWith('documents/') || subfolder === 'documents') return false;
+  if (subfolder.startsWith('full-text/') || subfolder === 'full-text') return false;
+  if (subfolder.startsWith('election-cycle/')) return false; // Orphaned election-cycle/ is excluded
+  if (subfolder === 'election-cycle') return false; // Top-level election-cycle is excluded
+  
+  return true;
+}
+
 function allCaseDates(): RenderCase[] {
   if (!fs.existsSync(DAILY_DIR)) return [];
   const out: RenderCase[] = [];
@@ -129,6 +154,14 @@ function allCaseDates(): RenderCase[] {
       for (const entry of entries) {
         const subfolder = prefix ? `${prefix}/${entry.name}` : entry.name;
         const subRepoRel = `analysis/daily/${date}/${subfolder}`;
+        
+        // Skip Tier A articles (intermediate analysis artifacts)
+        if (!isArticleEligibleForRendering(subfolder)) {
+          // Still recurse into subdirectories to find eligible articles nested deeper
+          discoverSubfolders(path.join(dir, entry.name), subfolder);
+          continue;
+        }
+        
         const md = locateArticleMd(date, subfolder);
         if (md) {
           out.push({ date, subfolder, articleMdPath: md, subfolderRepoRelPath: subRepoRel });
