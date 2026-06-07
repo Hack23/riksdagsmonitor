@@ -1,5 +1,5 @@
 {
-  "version": "1.0.6",
+  "version": "1.0.7",
   "name": "riksdagsmonitor",
   "dependencies": {
     "@eslint/js": {
@@ -2563,8 +2563,8 @@
       }
     },
     "happy-dom": {
-      "version": "20.10.1",
-      "resolved": "https://registry.npmjs.org/happy-dom/-/happy-dom-20.10.1.tgz",
+      "version": "20.10.2",
+      "resolved": "https://registry.npmjs.org/happy-dom/-/happy-dom-20.10.2.tgz",
       "overridden": false,
       "dependencies": {
         "@types/node": {
@@ -2606,8 +2606,8 @@
           "overridden": false
         },
         "ws": {
-          "version": "8.19.0",
-          "resolved": "https://registry.npmjs.org/ws/-/ws-8.19.0.tgz",
+          "version": "8.21.0",
+          "resolved": "https://registry.npmjs.org/ws/-/ws-8.21.0.tgz",
           "overridden": false,
           "dependencies": {
             "bufferutil": {},
@@ -2863,8 +2863,8 @@
       }
     },
     "knip": {
-      "version": "6.16.0",
-      "resolved": "https://registry.npmjs.org/knip/-/knip-6.16.0.tgz",
+      "version": "6.16.1",
+      "resolved": "https://registry.npmjs.org/knip/-/knip-6.16.1.tgz",
       "overridden": false,
       "dependencies": {
         "fdir": {
@@ -5831,7 +5831,7 @@
           "overridden": false
         },
         "happy-dom": {
-          "version": "20.10.1"
+          "version": "20.10.2"
         },
         "jsdom": {},
         "magic-string": {
