@@ -1,5 +1,5 @@
 {
-  "version": "1.0.8",
+  "version": "1.0.9",
   "name": "riksdagsmonitor",
   "dependencies": {
     "@eslint/js": {
@@ -567,8 +567,8 @@
       }
     },
     "cypress": {
-      "version": "15.16.0",
-      "resolved": "https://registry.npmjs.org/cypress/-/cypress-15.16.0.tgz",
+      "version": "15.17.0",
+      "resolved": "https://registry.npmjs.org/cypress/-/cypress-15.17.0.tgz",
       "overridden": false,
       "dependencies": {
         "@cypress/request": {
@@ -4986,8 +4986,8 @@
       }
     },
     "start-server-and-test": {
-      "version": "3.0.8",
-      "resolved": "https://registry.npmjs.org/start-server-and-test/-/start-server-and-test-3.0.8.tgz",
+      "version": "3.0.9",
+      "resolved": "https://registry.npmjs.org/start-server-and-test/-/start-server-and-test-3.0.9.tgz",
       "overridden": false,
       "dependencies": {
         "arg": {
