@@ -54,7 +54,7 @@
 #   - actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
 #   - actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
 #   - github/gh-aw-actions/setup@ff3d7ecc684ffaf8c99e9ac7e40536e955a9776b # v0.79.3
-#   - github/gh-aw/actions/setup-cli@c405b1fbb4326daa5a4204a2ffb3f9f91cab331d # v0.79.3
+#   - github/gh-aw/actions/setup-cli@3faf908f47a3822de6cc1a1c153d3eab00dfa00f # v0.79.4
 #
 # Container images used:
 #   - alpine:latest@sha256:5b10f432ef3da1b8d4c7eb6c487f2f5a8f096bc91145e68878dd4a5019afde11
@@ -575,7 +575,7 @@ jobs:
       - name: Download container images
         run: bash "${RUNNER_TEMP}/gh-aw/actions/download_docker_images.sh" alpine:latest@sha256:5b10f432ef3da1b8d4c7eb6c487f2f5a8f096bc91145e68878dd4a5019afde11 ghcr.io/github/gh-aw-firewall/agent:0.27.0@sha256:3816d1692e6d96887b27f1e4f1d64b8d7edb43ed9d7506b8f203913cbb81c248 ghcr.io/github/gh-aw-firewall/api-proxy:0.27.0@sha256:f28d2bd3197fb6ef9ec40ef345bbf2bb33e50151a8e72e89abb618fc3d0066eb ghcr.io/github/gh-aw-firewall/squid:0.27.0@sha256:d6a01d4cf3d928e6a7fc42e34afef228e753dce87646edc91d8a5cd0b612d9a6 ghcr.io/github/gh-aw-mcpg:v0.3.25@sha256:c10331ad17668ef89f38f5e356678788a40b0cd5fef96e8f92e1d9c1de47cbaa ghcr.io/github/github-mcp-server:v1.1.2@sha256:30197479d8036c7811892bc07e06f9a05c9ef3cdd79bc59f256d50647f95788c node:26-alpine@sha256:30f5a66e7265ef70aac56b4753ffa7905e54eca1084bc25503893ad8e9273f05 node:lts-alpine@sha256:2bdb65ed1dab192432bc31c95f94155ca5ad7fc1392fb7eb7526ab682fa5bf14
       - name: Install gh-aw extension
-        uses: github/gh-aw/actions/setup-cli@c405b1fbb4326daa5a4204a2ffb3f9f91cab331d # v0.79.3
+        uses: github/gh-aw/actions/setup-cli@3faf908f47a3822de6cc1a1c153d3eab00dfa00f # v0.79.4
         with:
           version: 'v0.79.3'
           github-token: ${{ secrets.GH_AW_GITHUB_MCP_SERVER_TOKEN || secrets.GH_AW_GITHUB_TOKEN || secrets.GITHUB_TOKEN }}
