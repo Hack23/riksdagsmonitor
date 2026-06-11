@@ -1,5 +1,5 @@
 {
-  "version": "1.0.9",
+  "version": "1.0.10",
   "name": "riksdagsmonitor",
   "dependencies": {
     "@eslint/js": {
@@ -4986,8 +4986,8 @@
       }
     },
     "start-server-and-test": {
-      "version": "3.0.9",
-      "resolved": "https://registry.npmjs.org/start-server-and-test/-/start-server-and-test-3.0.9.tgz",
+      "version": "3.0.10",
+      "resolved": "https://registry.npmjs.org/start-server-and-test/-/start-server-and-test-3.0.10.tgz",
       "overridden": false,
       "dependencies": {
         "arg": {
