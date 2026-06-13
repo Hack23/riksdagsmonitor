@@ -1,22 +1,30 @@
 # Forward Indicators — Realtime Monitor 2026-06-13
 
-1. 2026-06-17: JuU44 debate in plenary.
-2. 2026-06-17: JuU45 and JuU47 debate alongside JuU44.
-3. 2026-06-18: media framing of the police-training bill.
-4. 2026-06-18: opposition follow-up on welfare cuts.
-5. 2026-06-19: whether SkU30 becomes a privacy story.
-6. 2026-06-20: whether SfU32 becomes an asylum/return story.
-7. +1 week: any new police recruitment framing from the Government.
-8. +1 week: any prison-conditions follow-up from the opposition.
-9. +1 month: whether the capacity frame persists after recess.
-10. +1 month: whether defence climate adaptation gets linked to budget strain.
-11. +1 election cycle: whether this pulse becomes part of a broader "delivery vs strain" campaign.
+## Dated Watch Items & Verifiable Milestones
+
+To allow readers to verify or falsify our political-intelligence assessments over time, this matrix outlines specific, dated, and verifiable milestones for the implementation of the Saturday session's state capacity package.
+
+| Target Date | Milestone Event | Verifiable Action / Indicator | Analytical Relevance |
+|---|---|---|---|
+| **June 17, 2026** | Riksdag Plenary Votes | Division lists and votes on `JuU44`, `JuU42`, `SfU36`, and `SfU31`. | Verifies voting discipline and the L defection risk (`coalition-mathematics.md`). |
+| **July 13, 2026** | Entry into Force: `SfU36` | First "vandel" deportation orders issued by Migrationsverket. | Verifies the legal and administrative friction of conduct deportations (`risk-assessment.md`). |
+| **July 21, 2026** | Entry into Force: `SfU31` | First electronic tagging systems deployed on supervised migrants. | Verifies the technical and procurement feasibility of migrant tracking (`implementation-feasibility.md`). |
+| **August 1, 2026** | Entry into Force: `JuU42` | Removal of joint-sentencing cap; double network sentences applied in courts. | Marks the official start of the sentencing surge and its pressure on prisons (`HD10557`). |
+| **August 1, 2026** | Entry into Force: `JuU40` | First "abuse of public office" indictments filed against civil servants. | Measures the rise of "defensive bureaucracy" and administrative paralysis. |
+| **October 15, 2026** | Q3 Budget Review | Regional and municipal funding allocation adjustments. | Verifies the fiscal strain on local schools and healthcare (`HD10558`). |
+| **January 1, 2027** | Entry into Force: `JuU44` | Police academy tuition/CSN write-off programs fully operational. | Verifies the recruitment and pipeline scaling speed of the police force. |
+| **January 1, 2027** | Entry into Force: `SoU35` | "Farmaceutsortiment" OTC counseling program begins in pharmacies. | Measures the success of regulatory delegation in relieving primary care services. |
+
+---
+
+## Forecasting Verification Diagram
 
 ```mermaid
-flowchart LR
-  A["June 17"] --> B["Debate"]
-  B --> C["+1 week"]
-  C --> D["+1 month"]
-  D --> E["Election"]
+timeline
+  title 2026-2027 Implementation Forecast
+  June 17, 2026 : Plenary Votes (JuU44, JuU42, SfU36, SfU31)
+  July 13, 2026 : SfU36 Vandel Deportations Begin
+  July 21, 2026 : SfU31 Migrant Tagging Pilots Begin
+  August 1, 2026 : JuU42 Double Sentencing Begins; JuU40 Civil Service Liability Begins
+  January 1, 2027 : JuU44 Paid Police Tuition Begins; SoU35 OTC Pharmacy Assortment Begins
 ```
-
