@@ -3,7 +3,7 @@ date: 2026-06-13
 subfolder: realtime-monitor
 slug: 2026-06-13-realtime-monitor
 source_folder: analysis/daily/2026-06-13/realtime-monitor
-generated_at: 2026-06-13T12:14:40.291Z
+generated_at: 2026-06-13T12:46:22.450Z
 language: en
 layout: article
 ---
@@ -1463,6 +1463,1280 @@ No prior `analysis/daily/2026-06-13/realtime-monitor/` run exists.
 
 No same-day prior run exists for this subfolder.
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-06-13/realtime-monitor/executive-brief_ar.md -->
+
+<!-- dir: rtl -->
+# جلسة السبت الاستثنائية تعزز قدرة الدولة: الموافقة على مضاعفة عقوبات العصابات وعمليات الترحيل على أساس السلوك
+
+**Cykel**: realtime-monitor · **Riksmöte**: 2025/26  
+**الأولويات**: عالية
+
+---
+
+### 🎯 الخلاصة
+
+تمثل الجلسة العامة الاستثنائية يوم السبت ١٣ يونيو ٢٠٢٦ نقطة تحول في التاريخ الإداري والجنائي السويدي، وتوضح مركزية وتشديدًا غير مسبوقين لسلطة الدولة ("قدرة الدولة"). وبينما يظل إصلاح التوظيف المثير للاهتمام في **HD01JuU44 ("En betald polisutbildning")** (الذي يقدم شطبًا للديون وحماية معززة لرجال الشرطة) ركيزة أساسية، فإنه يُفهم الآن بوضوح على أنه مجرد جزء واحد من حملة متزامنة متعددة الجبهات لإعادة بناء سلطة الدولة.
+
+من خلال دمج التوسعات الجنائية الشاملة لـ **HD01JuU42 (مضاعفة عقوبات الجرائم المرتبطة بالعصابات)** والمسؤولية المدنية لـ **HD01JuU40 (Tjenestemannsansvar)** مع حزمة إنفاذ قوانين الهجرة العدوانية للغاية — التي تضم عمليات الترحيل على أساس السلوك (**HD01SfU36**)، والمراقبة الإلكترونية للأفراد الخاضعين للإشراف (**HD01SfU31**)، والتتبع البيومتري (**HD01SkU30**)، والوصول المقيد إلى مزايا الرعاية الاجتماعية (**HD01SfU29**) — انتقلت الحكومة من مجرد إطلاق إشارات خطابية حول "التشدد ضد الجريمة" إلى إعادة هيكلة شاملة لقدرة الدولة.
+
+---
+
+### قراءة في 60 ثانية
+
+- **جلسة السبت**: تمثل الجلسة العامة ٢٠٢٥/٢٦:١٣٩ تجمعًا نادرًا في عطلة نهاية الأسبوع دُعي إليه خصيصًا لتصفية متأخرات الإصلاحات الهيكلية البارزة بشأن القانون والنظام، والهجرة، والمركزية الإدارية.
+- **القانون والنظام الصارم**: تلغي `HD01JuU42` سقف الأحكام المشتركة البالغ ١٠ سنوات، وتضاعف العقوبات المرتبطة بالعصابات، وتدخل أحكام السجن مدى الحياة لجرائم العنف المتكررة. وفي الوقت نفسه، تقدم `HD01JuU40` جريمة جنائية جديدة للمسؤولين العموميين، "إساءة استخدام الوظيفة العامة"، مما يفرض مسؤولية قانونية صارمة داخليًا.
+- **الهجرة والحدود**: تخفض `HD01SfU36` حد الترحيل من خلال السماح بإلغاء تصاريح الإقامة بسبب "bristande vandel" (السلوك السيئ)، بينما تقنن `HD01SfU31` التتبع الإلكتروني لطالبي اللجوء الخاضعين للإشراف والمهاجرين غير الشرعيين.
+- **الرعاية الاجتماعية والقيود الإدارية**: تحرم `HD01SfU29` السجناء الخاضعين للمراقبة الإلكترونية أو الاحتجاز الوقائي من مزايا الضمان الاجتماعي وتجبرهم على دفع تكاليف إعالتهم. وتفوض `HD01SoU35` مبيعات الأدوية التي لا تستلزم وصفة طبية للصيدليات مع تقديم مشورة إلزامية من الصيادلة.
+- **المركزية الهيكلية**: تتجاوز `HD01MJU24` مجالس إدارة المقاطعات الإقليمية لإنشاء وكالة وطنية مركزية لترخيص البيئة (`Miljöprövningsmyndigheten`)، بهدف تسريع الانتقال الصناعي.
+- **موقف المعارضة**: يركز على الضغط النظامي، مشيرًا إلى السجون المكتظة والمسيئة (`HD10557`)، وشبكات الرعاية البلدية التي تعاني من نقص التمويل (`HD10558`)، وجيش يكافح من أجل التكيف مع المناخ (`HD10555`).
+
+**أهم مؤشر مستقبلي**: التصويت النهائي في ١٧ يونيو ٢٠٢٦ على JuU44 و JuU42 و SfU36 و SfU31.  
+**مستوى الثقة**: مرتفع في مسار التشريعات والوثائق؛ مرتفع في السرد الموحد لقدرة الدولة.
+
+---
+
+### القرارات
+
+1. **الريادة في قدرة الدولة**: رفض التحليل المجزأ. دمج جميع الوثائق الـ ١٣ في إطار موحد لـ "قدرة الدولة" و "أجهزة الإكراه".
+2. **التركيز على جلسة نهاية الأسبوع**: تركيز التحليل بأكمله على الجلسة الاستثنائية ليوم السبت ١٣ يونيو ٢٠٢٦، والتعامل معها كحملة تشريعية موحدة وليس كأحداث معزولة.
+3. **موازنة ضغوط المعارضة**: عدم معاملة الاستجوابات بشأن تخفيضات الرعاية الاجتماعية، وإساءة المعاملة في السجون، والتكيف مع المناخ العسكري كضوضاء، بل كعواقب مباشرة للتوسع العدواني للدولة.
+
+---
+
+### لقطة أدلة
+
+| doc | signal | key provisions |
+|---|---|---|
+| `HD01JuU44` | التعليم الشرطي المدفوع | شطب ديون CSN بمرور الوقت، ميزة معفاة من الضرائب، سرية أكثر صرامة حول الطلاب |
+| `HD01JuU42` | مضاعفة عقوبات العصابات | لا يوجد سقف للأحكام المشتركة البالغ ١٠ سنوات، مضاعفة الحد الأقصى المشترك، السجن مدى الحياة لجرائم العنف المتكررة، توسيع الاحتجاز السابق للمحاكمة |
+| `HD01JuU40` | Tjenestemannsansvar | جريمة جديدة لـ "إساءة استخدام الوظيفة العامة"، رفع الحد الأدنى للمخالفة الجسيمة إلى ١.٥ سنة |
+| `HD01SfU36` | عمليات الترحيل على أساس السلوك | رفض/إلغاء التصاريح بسبب "bristande vandel" (الديون، عدم الأمانة، عدم الامتثال) |
+| `HD01SfU31` | المراقبة الإلكترونية | التتبع الإلكتروني والحدود الجغرافية كبدائل للاحتجاز الفعلي |
+| `HD01SfU29` | حدود الرعاية الاجتماعية أثناء الاحتجاز | لا توجد ضمان اجتماعي للسجناء الخاضعين للمراقبة الإلكترونية، الدفع مقابل إعالتهم الخاصة |
+| `HD01SkU30` | البيومترية في التسجيل المدني | تجريم تزوير قيد النفوس، ومشاركة البيانات الحيوية بين مصلحة الضرائب والشرطة |
+| `HD01SfU32` | عمليات العودة | سلطات التفتيش القسرية، وتفتيش الهواتف، وتوسيع نطاق أخذ البصمات |
+| `HD01MJU24` | Miljöprövningsmyndigheten | وكالة مركزية وطنية لترخيص البيئة، تتجاوز المجالس الإقليمية |
+| `HD01SoU35` | التشكيلة الصيدلانية | تنشئ تشكيلة "farmaceutsortiment" للأدوية التي لا تستلزم وصفة طبية وتتطلب مشورة إلزامية من الصيدلي |
+| `HD10558` | الضغط الناجم عن تخفيضات الرعاية | استجواب S حول نقص تمويل البلديات والمناطق وحجم الفصول الدراسية |
+| `HD10557` | الاعتداء الجنسي في السجون | استجواب V حول الاكتظاظ ونقص الموظفين والانتهاكات في مصلحة السجون |
+| `HD10555` | التكيف العسكري مع المناخ | استجواب MP حول التكيف العسكري مع الإجهاد المناخي والمشهد الأوسع للتهديدات |
+
+```mermaid
+flowchart TD
+  subgraph Saturday Plenary Session 2025/26:139
+    A1["HD01SfU36<br/>Vandel Deportation"]
+    A2["HD01SfU31<br/>Migrant Tracking"]
+    A3["HD01SfU29<br/>Prisoner Welfare Limits"]
+    A4["HD01JuU42<br/>Double Gang Sentences"]
+    A5["HD01JuU40<br/>Civil Service Liability"]
+  end
+
+  subgraph Adjacent Hardening Package
+    B1["HD01JuU44<br/>Paid Police Training"]
+    B2["HD01SkU30<br/>Skatteverket Biometrics"]
+    B3["HD01SfU32<br/>Return Operations"]
+    B4["HD01MJU24<br/>Environmental Permitting"]
+    B5["HD01SoU35<br/>OTC Pharmacy Delegation"]
+  end
+
+  subgraph Systemic Strain / Opposition Backlash
+    C1["HD10558<br/>Welfare & Local Cuts"]
+    C2["HD10557<br/>Kriminalvården Overcrowding"]
+    C3["HD10555<br/>Defence Climate Adapt"]
+  end
+
+  A1 & A2 & A3 & A4 & A5 --> STATE["HARDENED STATE CAPACITY"]
+  B1 & B2 & B3 & B4 & B5 --> STATE
+  STATE --> STRAIN["Systemic Strain & Bottlenecks"]
+  C1 & C2 & C3 -.-> STRAIN
+
+  style STATE fill:#ff006e,stroke:#0a0e27,color:#ffffff,stroke-width:2px
+  style STRAIN fill:#ffbe0b,stroke:#0a0e27,color:#0a0e27
+  style A1 fill:#00d9ff,stroke:#0a0e27,color:#0a0e27
+  style A2 fill:#00d9ff,stroke:#0a0e27,color:#0a0e27
+  style A4 fill:#00d9ff,stroke:#0a0e27,color:#0a0e27
+  style B1 fill:#00d9ff,stroke:#0a0e27,color:#0a0e27
+  style C1 fill:#ffbe0b,stroke:#0a0e27,color:#0a0e27
+  style C2 fill:#ffbe0b,stroke:#0a0e27,color:#0a0e27
+```
+
+<!-- source-sha: 3cbc48e33ff1ee4ebcade24170fd1d1a9b887ae7 -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-06-13/realtime-monitor/executive-brief_da.md -->
+
+**Klassificering**: OFFENTLIG  
+**Cykel**: realtime-monitor · **Riksmöte**: 2025/26  
+**Prioritet**: HØJ
+
+---
+
+### 🎯 Resumé
+
+Den ekstraordinære plenarsession lørdag den 13. juni 2026 repræsenterer et vendepunkt i svensk administrativ og strafferetlig historie, hvilket demonstrerer en hidtil uset centralisering og styrkelse af statslig autoritet ("statskapacitet"). Selvom den iøjnefaldende rekrutteringsreform i **HD01JuU44 ("En betald polisutbildning")** (der tilbyder afskrivning av gæld og forbedret beskyttelse af betjente) fortsat er en afgørende søjle, forstås den nu tydeligt som blot én brik i en synkroniseret kampagne på flere fronter for at genopbygge statslig autoritet.
+
+Ved at integrera de omfattende strafferetlige udvidelser i **HD01JuU42 (Dobbeltstraf for bandekriminalitet)** og det skærpede tjenestemandsansvar i **HD01JuU40 (Tjenestemandsansvar)** med en yderst aggressiv migrationshåndhævelsespakke — bestående af udvisninger på grund af dårlig vandel (**HD01SfU36**), elektronisk overvågning af personer under opsyn (**HD01SfU31**), biometrisk sporing (**HD01SkU30**) og begrænset velfærdsadgang (**HD01SfU29**) — har regeringen bevæget sig fra retoriske signaler om at være "hård mod kriminalitet" til en gennemgribende omstrukturering af statskapaciteten.
+
+---
+
+### 60 sekunders læsning
+
+- **Lørdagssessionen**: Plenarsession 2025/26:139 markerer en sjælden weekendsamling indkaldt specifikt til at afvikle en række højtprofilerede, strukturelle reformer om lov og orden, migration og administrativ centralisering.
+- **Hård lov og orden**: `HD01JuU42` fjerner det 10-årige loft for fælles strafudmåling, fordobler banderelaterede straffe og indfører livstid for gentagen voldskriminalitet. Samtidig indfører `HD01JuU40` en ny straffelovsovertrædelse for offentligt ansatte, "misbrug af offentligt embede", hvilket pålægger et strengt juridisk ansvar internt.
+- **Migration og grænser**: `HD01SfU36` sænker udvisningstærsklen ved at tillade tilbagekaldelse af opholdstilladelser for "bristande vandel" (dårlig vandel), mens `HD01SfU31` legaliserer elektronisk sporing for asylansøgere under opsyn og udokumenterede migranter.
+- **Velfærd og administrative begrænsninger**: `HD01SfU29` fratager sociale ydelser fra fanger under elektronisk overvågning eller forebyggende varetægt og tvinger dem til at betale for deres eget underhold. `HD01SoU35` uddelegerer salg af håndkøbsmedicin til apoteker med krav om obligatorisk rådgivning fra en farmaceut.
+- **Strukturel centralisering**: `HD01MJU24` går uden om de regionale länsstyrelser for at etablere en centraliseret national miljøgodkendelsesmyndighed (`Miljöprövningsmyndigheten`) med det formål at fremskynde den industrielle omstilling.
+- **Oppositionens holdning**: Fokuserer på systemisk overbelastning og peger på overfyldte fængsler med misbrug (`HD10557`), underfinansierede kommunale velfærdsnetværk (`HD10558`) og et militær, der kæmper med klimatilpasning (`HD10555`).
+
+**Vigtigste fremadrettede signal**: Endelige afstemninger den 17. juni 2026 om JuU44, JuU42, SfU36 og SfU31 i salen.  
+**Konfidensgrad**: HØJ på lovgivnings- og dokumentstien; HØJ på den konsoliderede fortælling om statskapacitet.
+
+---
+
+### Beslutninger
+
+1. **Fokus på statskapacitet**: Afvis fragmenteret analyse. Saml alle 13 dokumenter under en fælles ramme for "statskapacitet" og "statens tvangsapparat".
+2. **Fokus på weekendsessionen**: Centrer hele overvågningen om den ekstraordinære session lørdag den 13. juni 2026, og behandl den som en samled lovgivningsmæssig offensiv snarere end isolerede begivenheder.
+3. **Afbalancering af systemisk pres**: Behandl interpellationerne om velfærdsbesparelser, misbrug i fængsler og militær klimatilpasning ikke som baggrundsstøj, men som de direkte eksternaliteter af denne aggressive statslige ekspansion.
+
+---
+
+### Evidensoversigt
+
+| doc | signal | key provisions |
+|---|---|---|
+| `HD01JuU44` | Betalt politiuddannelse | Afskrivning af CSN-gæld over tid, skattefri fordel, strengere fortrolighed omkring studerende |
+| `HD01JuU42` | Dobbeltstraf for bandekriminalitet | Intet 10-årigt loft for fælles strafudmåling, dobbelt fælles maksimum, livstid for gentagen voldskriminalitet, udvidet varetægtsfængsling |
+| `HD01JuU40` | Tjenestemandsansvar | Ny "misbrug af offentligt embede"-forseelse, groft tjenestefejl-minimum hævet til 1,5 år |
+| `HD01SfU36` | Udvisning på grund af dårlig vandel | Tilladelser nægtet/tilbagekaldt for "bristande vandel" (gæld, uærlighed, manglende overholdelse) |
+| `HD01SfU31` | Elektronisk fodlænke | Elektronisk sporing og geografiske begrænsninger som alternativer til fysisk tilbageholdelse |
+| `HD01SfU29` | Velfærdsbegrænsninger under varetægt | Ingen social sikring til fanger under elektronisk overvågning, betaling for eget underhold |
+| `HD01SkU30` | Biometri i folkeregistret | Folkebogføringssvindel kriminaliseret, biometri deles på tværs af skat og politi |
+| `HD01SfU32` | Udsendelsesoperationer | Tvangsindgreb ved ransagning, telefoninspektion, udvidet optagelse af fingeraftryk |
+| `HD01MJU24` | Miljöprövningsmyndigheten | Centraliseret national miljøgodkendelsesmyndighed, går uden om regionale råd |
+| `HD01SoU35` | Farmaceutsortiment | Skaber "farmaceutsortiment" for håndkøbsmedicin med krav om obligatorisk rådgivning |
+| `HD10558` | Pres fra velfærdsbesparelser | S-interpellation om underfinansiering af kommuner og regioner samt klassestørrelse |
+| `HD10557` | Sexuelt misbrug i fængsler | V-interpellation om overfyldning af Kriminalvården, personalemangel og misbrug |
+| `HD10555` | Militær klimatilpasning | MP-interpellation om militær tilpasning til klimastress og et bredere trusselsbillede |
+
+```mermaid
+flowchart TD
+  subgraph Saturday Plenary Session 2025/26:139
+    A1["HD01SfU36<br/>Vandel Deportation"]
+    A2["HD01SfU31<br/>Migrant Tracking"]
+    A3["HD01SfU29<br/>Prisoner Welfare Limits"]
+    A4["HD01JuU42<br/>Double Gang Sentences"]
+    A5["HD01JuU40<br/>Civil Service Liability"]
+  end
+
+  subgraph Adjacent Hardening Package
+    B1["HD01JuU44<br/>Paid Police Training"]
+    B2["HD01SkU30<br/>Skatteverket Biometrics"]
+    B3["HD01SfU32<br/>Return Operations"]
+    B4["HD01MJU24<br/>Environmental Permitting"]
+    B5["HD01SoU35<br/>OTC Pharmacy Delegation"]
+  end
+
+  subgraph Systemic Strain / Opposition Backlash
+    C1["HD10558<br/>Welfare & Local Cuts"]
+    C2["HD10557<br/>Kriminalvården Overcrowding"]
+    C3["HD10555<br/>Defence Climate Adapt"]
+  end
+
+  A1 & A2 & A3 & A4 & A5 --> STATE["HARDENED STATE CAPACITY"]
+  B1 & B2 & B3 & B4 & B5 --> STATE
+  STATE --> STRAIN["Systemic Strain & Bottlenecks"]
+  C1 & C2 & C3 -.-> STRAIN
+
+  style STATE fill:#ff006e,stroke:#0a0e27,color:#ffffff,stroke-width:2px
+  style STRAIN fill:#ffbe0b,stroke:#0a0e27,color:#0a0e27
+  style A1 fill:#00d9ff,stroke:#0a0e27,color:#0a0e27
+  style A2 fill:#00d9ff,stroke:#0a0e27,color:#0a0e27
+  style A4 fill:#00d9ff,stroke:#0a0e27,color:#0a0e27
+  style B1 fill:#00d9ff,stroke:#0a0e27,color:#0a0e27
+  style C1 fill:#ffbe0b,stroke:#0a0e27,color:#0a0e27
+  style C2 fill:#ffbe0b,stroke:#0a0e27,color:#0a0e27
+```
+
+<!-- source-sha: 3cbc48e33ff1ee4ebcade24170fd1d1a9b887ae7 -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-06-13/realtime-monitor/executive-brief_de.md -->
+
+**Einstufung**: ÖFFENTLICH  
+**Cykel**: realtime-monitor · **Riksmöte**: 2025/26  
+**Priorität**: HOCH
+
+---
+
+### 🎯 Zusammenfassung
+
+Die außerordentliche Plenarsitzung am Samstag, dem 13. Juni 2026, stellt einen Wendepunkt in der schwedischen Verwaltungs- und Strafrechtsgeschichte dar und zeigt eine beispiellose Zentralisierung und Stärkung der staatlichen Autorität („Staatskapazität“). Während die reißerische Rekrutierungsreform von **HD01JuU44 ("En betald polisutbildning")** (die den Erlass von Studienschulden und einen verbesserten Schutz für Beamte vorsieht) ein entscheidender Pfeiler bleibt, wird sie nun eindeutig als nur ein Teil einer synchronisierten Mehrfrontenkampagne zum Wiederaufbau staatlicher Autorität verstanden.
+
+Durch die Integration der weitreichenden strafrechtlichen Verschärfungen von **HD01JuU42 (Doppelte Strafen für Bandenkriminalität)** und des verschärften Dienstvergehens von **HD01JuU40 (Tjenestemannsansvar)** mit einem hocheffektiven Migrationsdurchsetzungspaket — bestehend aus Ausweisungen wegen mangelnden Wohlverhaltens (**HD01SfU36**), elektronischer Überwachung von Personen unter Aufsicht (**HD01SfU31**), biometrischer Erfassung (**HD01SkU30**) und eingeschränktem Zugang zu Sozialleistungen (**HD01SfU29**) — hat sich die Regierung von rhetorischen „Härte-gegen-Kriminalität“-Signalen zu einer umfassenden Umstrukturierung der Staatskapazität bewegt.
+
+---
+
+### 60-Sekunden-Schnellleser
+
+- **Die Samstags-Sitzung**: Die Plenarsitzung 2025/26:139 markiert eine seltene Wochenendversammlung, die speziell einberufen wurde, um einen Rückstand an hochrelevanten, strukturellen Reformen in den Bereichen Recht und Ordnung, Migration und administrative Zentralisierung abzuarbeiten.
+- **Hartes Recht & Ordnung**: `HD01JuU42` hebt die 10-jährige Höchstgrenze für Gesamtstrafen auf, verdoppelt bandenbezogene Strafen und führt lebenslange Haftstrafen für wiederholte Gewaltverbrechen ein. Gleichzeitig führt `HD01JuU40` einen neuen Straftatbestand für Beamte ein, „Dienstvergehen“, der intern eine strenge rechtliche Verantwortlichkeit auferlegt.
+- **Migration & Grenzen**: `HD01SfU36` senkt die Abschiebungsschwelle durch die Möglichkeit des Entzugs von Aufenthaltstiteln wegen „bristande vandel“ (mangelndes Wohlverhalten), während `HD01SfU31` die elektronische Überwachung von Personen unter Aufsicht und undokumentierten Migranten legalisiert.
+- **Sozialleistungen & administrative Einschränkungen**: `HD01SfU29` entzieht Gefangenen unter elektronischer Überwachung oder Sicherungsverwahrung die Sozialversicherungsleistungen und zwingt sie, für ihren Unterhalt selbst aufzukommen. `HD01SoU35` delegiert den Verkauf von rezeptfreien Medikamenten an Apotheken mit einer obligatorischen Beratung durch Apotheker.
+- **Strukturelle Zentralisierung**: `HD01MJU24` umgeht die regionalen Länsstyrelser (Bezirksregierungen), um eine zentralisierte nationale Umweltprüfungsbehörde (`Miljöprövningsmyndigheten`) einzurichten, mit dem Ziel, die industrielle Wende zu beschleunigen.
+- **Haltung der Opposition**: Konzentriert sich auf systemische Belastungen und verweist auf überfüllte Gefängnisse mit Missständen (`HD10557`), unterfinanzierte kommunale Sozialnetzwerke (`HD10558`) und ein Militär, das mit der Klimaanpassung kämpft (`HD10555`).
+
+**Wichtigstes Vorwärtssignal**: Endgültige Abstimmungen am 17. Juni 2026 über JuU44, JuU42, SfU36 und SfU31 in der Kammer.  
+**Vertrauensniveau**: HOCH auf der Gesetzgebungs- und Dokumentenspur; HOCH beim konsolidierten Narrativ zur Staatskapazität.
+
+---
+
+### Entscheidungen
+
+1. **Fokus auf Staatskapazität**: Isolierte Analysen ablehnen. Alle 13 Dokumente in einen einheitlichen Rahmen aus „Staatskapazität“ und „staatlichem Zwangsapparat“ einordnen.
+2. **Fokus auf Wochenendsitzung**: Den gesamten Fokus auf die außerordentliche Sitzung am Samstag, dem 13. Juni 2026, richten und diese als eine konsolidierte Gesetzgebungsoffensive und nicht als isolierte Ereignisse betrachten.
+3. **Ausgleich systemischer Belastung**: Die Interpellationen zu Kürzungen im Sozialbereich, Missbrauch im Gefängnis und militärischer Klimaanpassung nicht als bloßes Rauschen, sondern als direkte Auswirkungen dieser aggressiven staatlichen Expansion betrachten.
+
+---
+
+### Evidenz-Übersicht
+
+| doc | signal | key provisions |
+|---|---|---|
+| `HD01JuU44` | Bezahlte Polizeiausbildung | Erlass von CSN-Schulden über die Zeit, steuerfreier Vorteil, strengere Geheimhaltung für Studierende |
+| `HD01JuU42` | Doppelte Strafen für Bandenkriminalität | Keine 10-jährige Höchstgrenze für Gesamtstrafen, doppeltes gemeinsames Maximum, lebenslange Haft für wiederholte Gewaltdelikte, ausgeweitete Untersuchungshaft |
+| `HD01JuU40` | Tjenestemannsansvar | Neues Dienstvergehen, Mindeststrafe für schweres Dienstvergehen auf 1,5 Jahre angehoben |
+| `HD01SfU36` | Ausweisung wegen mangelnden Wohlverhaltens | Aufenthaltstitel verweigert/entzogen wegen „bristande vandel“ (Schulden, Unehrlichkeit, Nichteinhaltung) |
+| `HD01SfU31` | Elektronische Fußfessel | Elektronische Überwachung und geografische Einschränkungen als Alternative zu physischer Haft |
+| `HD01SfU29` | Einschränkung von Sozialleistungen bei Haft | Keine Sozialversicherung für elektronisch überwachte Gefangene, Zahlung für eigenen Unterhalt |
+| `HD01SkU30` | Biometrie im Melderegister | Betrug bei der Wohnsitzanmeldung kriminalisiert, Biometrie zwischen Steueramt und Polizei geteilt |
+| `HD01SfU32` | Rückführungsmaßnahmen | Zwangsbefugnisse bei Durchsuchungen, Telefoninspektion, erweiterte Fingerabdrucknahme |
+| `HD01MJU24` | Miljöprövningsmyndigheten | Zentralisierte nationale Umweltprüfungsbehörde, umgeht regionale Gremien |
+| `HD01SoU35` | Apothekersortiment | Schafft ein „Farmaceutsortiment“ für rezeptfreie Medikamente mit verpflichtender Apothekerberatung |
+| `HD10558` | Druck durch Sozialkürzungen | S-Interpellation zu Unterfinanzierung von Kommunen und Regionen sowie Klassengrößen |
+| `HD10557` | Sexueller Missbrauch im Gefängnis | V-Interpellation zur Überbelegung, Personalmangel und Missbrauch bei Kriminalvården |
+| `HD10555` | Militärische Klimaanpassung | MP-Interpellation zur militärischen Anpassung an Klimastress und ein breiteres Bedrohungsszenario |
+
+```mermaid
+flowchart TD
+  subgraph Saturday Plenary Session 2025/26:139
+    A1["HD01SfU36<br/>Vandel Deportation"]
+    A2["HD01SfU31<br/>Migrant Tracking"]
+    A3["HD01SfU29<br/>Prisoner Welfare Limits"]
+    A4["HD01JuU42<br/>Double Gang Sentences"]
+    A5["HD01JuU40<br/>Civil Service Liability"]
+  end
+
+  subgraph Adjacent Hardening Package
+    B1["HD01JuU44<br/>Paid Police Training"]
+    B2["HD01SkU30<br/>Skatteverket Biometrics"]
+    B3["HD01SfU32<br/>Return Operations"]
+    B4["HD01MJU24<br/>Environmental Permitting"]
+    B5["HD01SoU35<br/>OTC Pharmacy Delegation"]
+  end
+
+  subgraph Systemic Strain / Opposition Backlash
+    C1["HD10558<br/>Welfare & Local Cuts"]
+    C2["HD10557<br/>Kriminalvården Overcrowding"]
+    C3["HD10555<br/>Defence Climate Adapt"]
+  end
+
+  A1 & A2 & A3 & A4 & A5 --> STATE["HARDENED STATE CAPACITY"]
+  B1 & B2 & B3 & B4 & B5 --> STATE
+  STATE --> STRAIN["Systemic Strain & Bottlenecks"]
+  C1 & C2 & C3 -.-> STRAIN
+
+  style STATE fill:#ff006e,stroke:#0a0e27,color:#ffffff,stroke-width:2px
+  style STRAIN fill:#ffbe0b,stroke:#0a0e27,color:#0a0e27
+  style A1 fill:#00d9ff,stroke:#0a0e27,color:#0a0e27
+  style A2 fill:#00d9ff,stroke:#0a0e27,color:#0a0e27
+  style A4 fill:#00d9ff,stroke:#0a0e27,color:#0a0e27
+  style B1 fill:#00d9ff,stroke:#0a0e27,color:#0a0e27
+  style C1 fill:#ffbe0b,stroke:#0a0e27,color:#0a0e27
+  style C2 fill:#ffbe0b,stroke:#0a0e27,color:#0a0e27
+```
+
+<!-- source-sha: 3cbc48e33ff1ee4ebcade24170fd1d1a9b887ae7 -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-06-13/realtime-monitor/executive-brief_es.md -->
+
+**Clasificación**: PUBLIC  
+**Cykel**: realtime-monitor · **Riksmöte**: 2025/26  
+**Prioridad**: ALTA
+
+---
+
+### 🎯 Resumen
+
+La sesión plenaria extraordinaria del sábado 13 de junio de 2026 marca un hito en la historia administrativa y penal sueca, demostrando una centralización y endurecimiento sin precedentes de la autoridad estatal ("capacidad del Estado"). Aunque la reforma de contratación de **HD01JuU44 ("En betald polisutbildning")** (condonación de deudas y mayor protección a oficiales) sigue siendo un pilar, se entiende ahora como parte de una campaña sincronizada en múltiples frentes para reconstruir la autoridad del Estado.
+
+Al integrar las penas dobles para delitos de pandillas (**HD01JuU42**) y la responsabilidad pública de **HD01JuU40 (Tjenestemannsansvar)** con un paquete de aplicación migratoria agresivo —deportaciones por "mala conducta" (**HD01SfU36**), monitoreo electrónico (**HD01SfU31**), biometría (**HD01SkU30**) y acceso restringido a asistencia social (**HD01SfU29**)— el Gobierno ha pasado de señales retóricas de mano dura a una reestructuración integral de la capacidad del Estado.
+
+---
+
+### Lectura de 60 segundos
+
+- **La sesión del sábado**: La sesión 2025/26:139 es una inusual asamblea de fin de semana convocada para despejar un cúmulo de reformas estructurales de alta relevancia sobre ley y orden, migración y centralización.
+- **Ley y orden**: `HD01JuU42` elimina el límite de condenas conjuntas, duplica las penas de pandillas y crea cadena perpetua para reincidentes violentos. En paralelo, `HD01JuU40` crea el delito de "abuso de funciones públicas", reforzando la responsabilidad legal interna.
+- **Migración y fronteras**: `HD01SfU36` reduce el umbral de deportación para "mala conducta" (permisos denegados o revocados), mientras que `HD01SfU31` legaliza el monitoreo electrónico para solicitantes de asilo y sin papeles.
+- **Límites de bienestar y administración**: `HD01SfU29` retira beneficios sociales a presos bajo monitoreo o preventivos, cobrando su manutención. `HD01SoU35` delega la venta de medicamentos sin receta a farmacias con asesoramiento obligatorio.
+- **Centralización**: `HD01MJU24` elude las juntas provinciales para crear una agencia nacional de permisos ambientales (`Miljöprövningsmyndigheten`) a fin de acelerar transiciones industriales.
+- **Oposición**: Alerta de tensión sistémica, prisiones sobrepobladas (`HD10557`), subfinanciación de bienestar municipal (`HD10558`) y dificultades de adaptación climática militar (`HD10555`).
+
+**Principal signal prospectiva**: Votaciones finales el 17 de junio de 2026 sobre JuU44, JuU42, SfU36 y SfU31.  
+**Nivel de confianza**: ALTO en los textos legislativos; ALTO en la tesis de capacidad del Estado.
+
+---
+
+### Decisiones
+
+1. **Capacidad del Estado**: Integrar los 13 textos en un marco unificado de "capacidad del Estado" y aparato coercitivo.
+2. **Focus de sesión**: Centrar el análisis en la sesión extraordinaria del sábado 13 de junio de 2026, vista como una ofensiva legislativa unificada.
+3. **Contrapeso de tensión**: Tratar las interpelaciones (social, prisiones, militar) como consecuencias directas de esta expansión estatal.
+
+---
+
+### Resumen de evidencia
+
+| doc | signal | key provisions |
+|---|---|---|
+| `HD01JuU44` | Educación policial pagada | Condonación de deuda de CSN con el tiempo, beneficio libre de impuestos, mayor confidencialidad sobre los estudiantes |
+| `HD01JuU42` | Penas dobles para pandillas | Sin límite de 10 años para condenas conjuntas, doble máximo conjunto, cadena perpetua por delitos violentos reincidentes, prisión preventiva ampliada |
+| `HD01JuU40` | Tjenestemannsansvar | Nuevo delito de "abuso de funciones públicas", el mínimo para incumplimiento grave de deberes profesionales se eleva a 1,5 años |
+| `HD01SfU36` | Deportaciones basadas en conducta | Permisos denegados/revocados por "bristande vandel" (deudas, deshonestidad, incumplimiento) |
+| `HD01SfU31` | Monitoreo electrónico | Seguimiento electrónico y límites geográficos como alternativas a la detención física |
+| `HD01SfU29` | Límites de asistencia social en prisión | Sin seguridad social para presos bajo monitoreo electrónico, pago por su propio mantenimiento |
+| `HD01SkU30` | Biometría en registro civil | Fraude de empadronamiento criminalizado, biometría compartida entre Hacienda y Policía |
+| `HD01SfU32` | Operaciones de retorno | Facultades coercitivas de registro, inspección de teléfonos, toma de huellas dactilares ampliada |
+| `HD01MJU24` | Miljöprövningsmyndigheten | Agencia nacional centralizada de permisos ambientales, eludiendo juntas regionales |
+| `HD01SoU35` | Gama farmacéutica | Crea la "farmaceutsortiment" para medicamentos de venta libre con asesoramiento farmacéutico obligatorio |
+| `HD10558` | Presión por recortes de asistencia social | Interpelación S sobre subfinanciación municipal y regional y tamaño de clases |
+| `HD10557` | Abusos en prisiones | Interpelación V sobre sobrepoblación en Kriminalvården, escasez de personal y abusos |
+| `HD10555` | Adaptación climática militar | Interpelación MP sobre adaptación militar al estrés climático y un panorama de amenazas más amplio |
+
+```mermaid
+flowchart TD
+  subgraph Saturday Plenary Session 2025/26:139
+    A1["HD01SfU36<br/>Vandel Deportation"]
+    A2["HD01SfU31<br/>Migrant Tracking"]
+    A3["HD01SfU29<br/>Prisoner Welfare Limits"]
+    A4["HD01JuU42<br/>Double Gang Sentences"]
+    A5["HD01JuU40<br/>Civil Service Liability"]
+  end
+
+  subgraph Adjacent Hardening Package
+    B1["HD01JuU44<br/>Paid Police Training"]
+    B2["HD01SkU30<br/>Skatteverket Biometrics"]
+    B3["HD01SfU32<br/>Return Operations"]
+    B4["HD01MJU24<br/>Environmental Permitting"]
+    B5["HD01SoU35<br/>OTC Pharmacy Delegation"]
+  end
+
+  subgraph Systemic Strain / Opposition Backlash
+    C1["HD10558<br/>Welfare & Local Cuts"]
+    C2["HD10557<br/>Kriminalvården Overcrowding"]
+    C3["HD10555<br/>Defence Climate Adapt"]
+  end
+
+  A1 & A2 & A3 & A4 & A5 --> STATE["HARDENED STATE CAPACITY"]
+  B1 & B2 & B3 & B4 & B5 --> STATE
+  STATE --> STRAIN["Systemic Strain & Bottlenecks"]
+  C1 & C2 & C3 -.-> STRAIN
+
+  style STATE fill:#ff006e,stroke:#0a0e27,color:#ffffff,stroke-width:2px
+  style STRAIN fill:#ffbe0b,stroke:#0a0e27,color:#0a0e27
+  style A1 fill:#00d9ff,stroke:#0a0e27,color:#0a0e27
+  style A2 fill:#00d9ff,stroke:#0a0e27,color:#0a0e27
+  style A4 fill:#00d9ff,stroke:#0a0e27,color:#0a0e27
+  style B1 fill:#00d9ff,stroke:#0a0e27,color:#0a0e27
+  style C1 fill:#ffbe0b,stroke:#0a0e27,color:#0a0e27
+  style C2 fill:#ffbe0b,stroke:#0a0e27,color:#0a0e27
+```
+
+<!-- source-sha: 3cbc48e33ff1ee4ebcade24170fd1d1a9b887ae7 -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-06-13/realtime-monitor/executive-brief_fi.md -->
+
+**Klassifiointi**: JULKINEN  
+**Sykli**: realtime-monitor · **Riksmöte**: 2025/26  
+**Prioriteetti**: KORKEA
+
+---
+
+### 🎯 Tiivistelmä
+
+Ylimääräinen täysistunto lauantaina 13. kesäkuuta 2026 edustaa käännekohtaa Ruotsin hallinto- ja rangaistushistoriassa osoittaen ennennäkemätöntä valtion auktoriteetin keskittämistä ja tiukentamista ("valtion valmiudet"). Vaikka suurta huomiota herättänyt rekrytointiuudistus **HD01JuU44 ("En betald polisutbildning")** (joka tarjoaa opintolainojen anteeksiantamista ja parannettua poliisien suojelua) on edelleen kriittinen pilari, se ymmärretään nyt selvästi vain yhdeksi osaksi synkronoitua, monirintamaista kampanjaa valtion auktoriteetin palauttamiseksi.
+
+Integroimalla laajat rangaistusoikeudelliset laajennukset **HD01JuU42 (jengirikosten tuplarangaistukset)** ja virkamiesten vastuullisuuden **HD01JuU40 (Virkamiesten vastuullisuus)** erittäin aggressiiviseen maahanmuuton valvontapakettiin — joka koostuu vandel-perusteisista karkotuksista (**HD01SfU36**), valvottavien henkilöiden sähköisestä seurannasta (**HD01SfU31**), biometrisestä seurannasta (**HD01SkU30**) ja rajoitetusta pääsystä sosiaalitukiin (**HD01SfU29**) — hallitus on siirtynyt retorisen "kovat otteet rikollisuutta vastaan" -viestinnän sijaan valtion valmiuksien kokonaisvaltaiseen uudistamiseen.
+
+---
+
+### 60 sekunnin pikaluku
+
+- **Lauantai-istunto**: Täysistunto 2025/26:139 merkitsee harvinaista viikonloppukokousta, joka on kutsuttu koolle erityisesti purkamaan erittäin merkittävien rakenneuudistusten ruuhkaa koskien lakia ja järjestystä, maahanmuuttoa ja hallinnollista keskittämistä.
+- **Kova laki ja järjestys**: `HD01JuU42` poistaa 10 vuoden yhteisrangaistuksen ylärajan, tuplaa jengeihin liittyvät tuomiot ja ottaa käyttöön elinkautisen vankeusrangaistuksen toistuvista väkivaltarikoksista. Samaan aikaan `HD01JuU40` esittelee uuden rikosnimikkeen julkisille virkamiehille, "virka-aseman väärinkäyttö", asettaen tiukan oikeudellisen vastuun sisäisesti.
+- **Maahanmuutto ja rajat**: `HD01SfU36` alentaa karkotuskynnystä sallimalla oleskelulupien peruuttamisen "bristande vandel" (huono käytös) vuoksi, kun taas `HD01SfU31` laillistaa sähköisen seurannan valvotuille turvapaikanhakijoille ja paperittomille maahanmuuttajille.
+- **Sosiaalituki- ja hallinnolliset rajoitukset**: `HD01SfU29` poistaa sosiaaliturvaetuudet vangeilta, jotka ovat sähköisessä valvonnassa tai turvaosastolla, ja pakottaa heidät maksamaan omasta ylläpidostaan. `HD01SoU35` siirtää käsikauppalääkkeiden myynnin apteekkeihin pakollisella farmaseutin neuvonnalla.
+- **Rakenteellinen keskittäminen**: `HD01MJU24` ohittaa alueelliset lääninhallitukset perustaakseen keskitetyn kansallisen ympäristölupaviraston (`Miljöprövningsmyndigheten`), jonka tavoitteena on nopeuttaa teollisuuden siirtymiä.
+- **Opposition kanta**: Keskittyy järjestelmän ylikuormitukseen ja viittaa ylikansoitettuihin, väärinkäytöksiä sisältäviin vankiloihin (`HD10557`), alirahoitettuihin kunnallisiin hyvinvointiverkostoihin (`HD10558`) ja armeijaan, joka kamppailee ilmastonmuutokseen sopeutumisen kanssa (`HD10555`).
+
+**Tärkein tuleva signaali**: JuU44, JuU42, SfU36 ja SfU31 lopulliset äänestykset täysistuntosalissa 17. kesäkuuta 2026.  
+**Luottamustaso**: KORKEA lainsäädäntö- ja asiakirjahistoriassa; KORKEA yhtenäisessä kertomuksessa valtion valmiuksista.
+
+---
+
+### Päätökset
+
+1. **Keskity valtion valmiuksiin**: Hylkää pirstaloitunut analyysi. Yhdistä kaikki 13 asiakirjaa yhtenäiseen "valtion valmiudet" ja "valtion pakkokeinot" -kehykseen.
+2. **Lauantai-istunnon painotus**: Keskitä koko analyysi poikkeukselliseen lauantain 13. kesäkuuta 2026 istuntoon ja käsittele sitä yhtenäisenä lainsäädäntöoffensiivina erillisten tapahtumien sijaan.
+3. **Tasapainota järjestelmän kuormituksella**: Käsittele sosiaalitukien leikkauksia, vankiloiden väärinkäytöksiä ja armeijan ilmastosopeutumista koskevia välikysymyksiä suorina seurauksina tästä aggressiivisesta valtion laajentumisesta.
+
+---
+
+### Todisteiden yhteenveto
+
+| doc | signal | key provisions |
+|---|---|---|
+| `HD01JuU44` | Maksuton poliisikoulutus | CSN-opintolainojen anteeksiantaminen ajan myötä, verovapaa etuus, tiukempi salassapito opiskelijoiden ympärillä |
+| `HD01JuU42` | Jengirikosten tuplarangaistukset | Ei 10 vuoden yhteisrangaistuksen ylärajaa, tuplattu yhteinen maksimi, elinkautinen toistuvista väkivaltarikoksista, laajennettu esitutkintavankeus |
+| `HD01JuU40` | Virkamiesten vastuullisuus | Uusi "virka-aseman väärinkäyttö" -rikos, törkeän virkavirheen minimituomio nostettu 1,5 vuoteen |
+| `HD01SfU36` | Vandel-perusteiset karkotukset | Luvat evätään/peruutetaan "bristande vandel" (velat, epärehellisyys, noudattamatta jättäminen) vuoksi |
+| `HD01SfU31` | Sähköinen valvonta | Sähköinen seuranta ja maantieteelliset rajoitukset vaihtoehtona fyysiselle säilöönotolle |
+| `HD01SfU29` | Sosiaalituen rajoitukset vankeusaikana | Ei sosiaaliturvaa sähköisesti valvotuille vangeille, maksu omasta ylläpidosta |
+| `HD01SkU30` | Biometria väestökirjanpidossa | Väestökirjanpitorikos kriminalisoidaan, biometria jaetaan veroviraston ja poliisin välillä |
+| `HD01SfU32` | Palautusoperaatiot | Pakkokeinot kotietsinnässä, puhelimen tarkastus, laajennettu sormenjälkien ottaminen |
+| `HD01MJU24` | Miljöprövningsmyndigheten | Keskitetty kansallinen ympäristölupavirasto, ohittaa alueelliset lautakunnat |
+| `HD01SoU35` | Farmaseuttivalikoima | Luo "farmaseuttivalikoiman" käsikauppalääkkeille, jotka vaativat pakollisen farmaseutin neuvonnan |
+| `HD10558` | Sosiaalitukien leikkausten paine | S:n välikysymys kuntien ja alueiden alirahoituksesta sekä luokkakooista |
+| `HD10557` | Seksuaalinen väkivalta vankiloissa | V:n välikysymys Kriminalvårdenin ylikansoituksesta, henkilöstöpulasta ja väärinkäytöksistä |
+| `HD10555` | Armeijan ilmastosopeutuminen | MP:n välikysymys armeijan sopeutumisesta ilmastostressiin ja laajempaan uhkakuvaan |
+
+```mermaid
+flowchart TD
+  subgraph Saturday Plenary Session 2025/26:139
+    A1["HD01SfU36<br/>Vandel Deportation"]
+    A2["HD01SfU31<br/>Migrant Tracking"]
+    A3["HD01SfU29<br/>Prisoner Welfare Limits"]
+    A4["HD01JuU42<br/>Double Gang Sentences"]
+    A5["HD01JuU40<br/>Civil Service Liability"]
+  end
+
+  subgraph Adjacent Hardening Package
+    B1["HD01JuU44<br/>Paid Police Training"]
+    B2["HD01SkU30<br/>Skatteverket Biometrics"]
+    B3["HD01SfU32<br/>Return Operations"]
+    B4["HD01MJU24<br/>Environmental Permitting"]
+    B5["HD01SoU35<br/>OTC Pharmacy Delegation"]
+  end
+
+  subgraph Systemic Strain / Opposition Backlash
+    C1["HD10558<br/>Welfare & Local Cuts"]
+    C2["HD10557<br/>Kriminalvården Overcrowding"]
+    C3["HD10555<br/>Defence Climate Adapt"]
+  end
+
+  A1 & A2 & A3 & A4 & A5 --> STATE["HARDENED STATE CAPACITY"]
+  B1 & B2 & B3 & B4 & B5 --> STATE
+  STATE --> STRAIN["Systemic Strain & Bottlenecks"]
+  C1 & C2 & C3 -.-> STRAIN
+
+  style STATE fill:#ff006e,stroke:#0a0e27,color:#ffffff,stroke-width:2px
+  style STRAIN fill:#ffbe0b,stroke:#0a0e27,color:#0a0e27
+  style A1 fill:#00d9ff,stroke:#0a0e27,color:#0a0e27
+  style A2 fill:#00d9ff,stroke:#0a0e27,color:#0a0e27
+  style A4 fill:#00d9ff,stroke:#0a0e27,color:#0a0e27
+  style B1 fill:#00d9ff,stroke:#0a0e27,color:#0a0e27
+  style C1 fill:#ffbe0b,stroke:#0a0e27,color:#0a0e27
+  style C2 fill:#ffbe0b,stroke:#0a0e27,color:#0a0e27
+```
+
+<!-- source-sha: 3cbc48e33ff1ee4ebcade24170fd1d1a9b887ae7 -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-06-13/realtime-monitor/executive-brief_fr.md -->
+
+**Cykel**: realtime-monitor · **Riksmöte**: 2025/26  
+**Priorité**: ÉLEVÉE
+
+---
+
+### 🎯 Résumé
+
+La séance du samedi 13 juin 2026 marque un tournant administratif et pénal en Suède, illustrant un durcissement inédit de l'autorité étatique (« capacité de l'État »). Si la réforme du recrutement de **HD01JuU44 ("En betald polisutbildning")** (allègement de dette et protection accrue des policiers) reste un pilier, elle s'inscrit désormais dans une campagne synchronisée plus vaste pour restaurer l'autorité de l'État.
+
+En combinant les peines doublées contre les gangs (**HD01JuU42**), le durcissement de la responsabilité publique (**HD01JuU40**) et un volet migratoire agressif — expulsions pour « mauvaise conduite » (**HD01SfU36**), bracelet électronique (**HD01SfU31**), biométrie (**HD01SkU30**) et accès réduit aux aides sociales (**HD01SfU29**) — le gouvernement passe de la rhétorique sécuritaire à une restructuration de la capacité de l'État.
+
+---
+
+### Lecture en 60 secondes
+
+- **La session du samedi** : La séance 2025/26:139 est une rare assemblée de week-end convoquée pour résorber le retard de réformes structurelles clés (ordre public, immigration et centralisation).
+- **Ordre public et fermeté** : `HD01JuU42` supprime le plafond de cumul des peines, double celles liées aux gangs et crée la perpétuité pour récidive violente. En parallèle, `HD01JuU40` crée le délit d'« abus de pouvoir public », renforçant la responsabilité pénale interne.
+- **Immigration & frontières** : `HD01SfU36` facilite l'expulsion pour « mauvaise conduite » (révocation de séjour), tandis que `HD01SfU31` légalise le bracelet électronique pour les demandeurs d'asile sous surveillance et sans-papiers.
+- **Aides & limites administratives** : `HD01SfU29` prive d'aides sociales les détenus sous surveillance électronique ou préventive, facturant leur entretien. `HD01SoU35` encadre la vente libre de médicaments en pharmacie avec conseil obligatoire.
+- **Centralisation** : `HD01MJU24` contourne les préfectures régionales au profit d'une agence nationale centralisée des permis environnementaux (`Miljöprövningsmyndigheten`) afin d'accélérer la transition industrielle.
+- **Opposition** : Alerte sur le surpeuplement carcéral (`HD10557`), le sous-financement social municipal (`HD10558`) et les failles de l'adaptation climatique de l'armée (`HD10555`).
+
+**Principal signal prospectif** : Votes finaux le 17 juin 2026 sur JuU44, JuU42, SfU36 et SfU31.  
+**Niveau de confiance** : ÉLEVÉ sur les textes ; ÉLEVÉ sur la thèse de renforcement de la capacité de l'État.
+
+---
+
+### Décisions
+
+1. **Capacité de l'État** : Intégrer les 13 textes dans un cadre unifié de « capacité de l'État » et d'appareil coercitif.
+2. **Focus séance** : Centrer l'analyse sur la session extraordinaire du samedi 13 juin 2026, vue comme une offensive législative unifiée.
+3. **Pression systémique** : Analyser les interpellations (social, prisons, armée) comme des conséquences directes de cette expansion étatique.
+
+---
+
+### Aperçu des preuves
+
+| doc | signal | key provisions |
+|---|---|---|
+| `HD01JuU44` | Formation policière rémunérée | Annulation de la dette CSN au fil du temps, avantage exonéré d'impôt, secret plus srtict autour des étudiants |
+| `HD01JuU42` | Doublement des peines pour les gangs | Pas de plafond de 10 ans pour le cumul des peines, doublement du maximum cumulé, prison à perpétuité pour récidive de crime violent, détention provisoire élargie |
+| `HD01JuU40` | Tjenestemannsansvar | Nouvelle infraction pénale pour "abus de pouvoir public", le minimum pour manquement grave aux devoirs professionnels est porté à 1,5 ans |
+| `HD01SfU36` | Expulsions basées sur le comportement | Permis refusés/révoqués pour "bristande vandel" (dettes, malhonnêteté, non-conformité) |
+| `HD01SfU31` | Surveillance électronique | Suivi électronique et limites géographiques comme alternatives à la détention physique |
+| `HD01SfU29` | Restrictions sociales pour les détenus | Pas de sécurité sociale pour les prisonniers sous surveillance électronique, paiement pour leur propre entretien |
+| `HD01SkU30` | Biométrie à l'état civil | Fraude à l'état civil criminalisée, biométrie partagée entre le fisc et la police |
+| `HD01SfU32` | Opérations de retour | Pouvoirs de perquisition coercitifs, inspection de téléphones, prise d'empreintes digitales élargie |
+| `HD01MJU24` | Miljöprövningsmyndigheten | Agence nationale centralisée des permis environnementaux, contournant les conseils régionaux |
+| `HD01SoU35` | Gamme pharmaceutique | Crée un "farmaceutsortiment" pour les médicaments en vente libre nécessitant des conseils de pharmaciens obligatoires |
+| `HD10558` | Pression des coupes budgétaires sociales | Interpellation S sur le sous-financement municipal et régional et la taille des classes |
+| `HD10557` | Abus sexuels en prison | Interpellation V sur la surpopulation de Kriminalvården, les pénuries de personnel et les abus |
+| `HD10555` | Adaptation climatique militaire | Interpellation MP sur l'adaptation militaire au stress climatique et le paysage général des menaces |
+
+```mermaid
+flowchart TD
+  subgraph Saturday Plenary Session 2025/26:139
+    A1["HD01SfU36<br/>Vandel Deportation"]
+    A2["HD01SfU31<br/>Migrant Tracking"]
+    A3["HD01SfU29<br/>Prisoner Welfare Limits"]
+    A4["HD01JuU42<br/>Double Gang Sentences"]
+    A5["HD01JuU40<br/>Civil Service Liability"]
+  end
+
+  subgraph Adjacent Hardening Package
+    B1["HD01JuU44<br/>Paid Police Training"]
+    B2["HD01SkU30<br/>Skatteverket Biometrics"]
+    B3["HD01SfU32<br/>Return Operations"]
+    B4["HD01MJU24<br/>Environmental Permitting"]
+    B5["HD01SoU35<br/>OTC Pharmacy Delegation"]
+  end
+
+  subgraph Systemic Strain / Opposition Backlash
+    C1["HD10558<br/>Welfare & Local Cuts"]
+    C2["HD10557<br/>Kriminalvården Overcrowding"]
+    C3["HD10555<br/>Defence Climate Adapt"]
+  end
+
+  A1 & A2 & A3 & A4 & A5 --> STATE["HARDENED STATE CAPACITY"]
+  B1 & B2 & B3 & B4 & B5 --> STATE
+  STATE --> STRAIN["Systemic Strain & Bottlenecks"]
+  C1 & C2 & C3 -.-> STRAIN
+
+  style STATE fill:#ff006e,stroke:#0a0e27,color:#ffffff,stroke-width:2px
+  style STRAIN fill:#ffbe0b,stroke:#0a0e27,color:#0a0e27
+  style A1 fill:#00d9ff,stroke:#0a0e27,color:#0a0e27
+  style A2 fill:#00d9ff,stroke:#0a0e27,color:#0a0e27
+  style A4 fill:#00d9ff,stroke:#0a0e27,color:#0a0e27
+  style B1 fill:#00d9ff,stroke:#0a0e27,color:#0a0e27
+  style C1 fill:#ffbe0b,stroke:#0a0e27,color:#0a0e27
+  style C2 fill:#ffbe0b,stroke:#0a0e27,color:#0a0e27
+```
+
+<!-- source-sha: 3cbc48e33ff1ee4ebcade24170fd1d1a9b887ae7 -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-06-13/realtime-monitor/executive-brief_he.md -->
+
+<!-- dir: rtl -->
+# ישיבת שבת חריגה מחזקת את יכולת המדינה: אושרו הכפלת עונשים לכנופיות וגירוש על בסיס התנהגות
+
+**Cykel**: realtime-monitor · **Riksmöte**: 2025/26  
+**Prioritet**: HIGH
+
+---
+
+### 🎯 עיקרי הדברים
+
+ישיבת המליאה החריגה ביום שבת, 13 ביוני 2026, מהווה נקודת מפנה בהיסטוריה המנהלית והפלילית של שוודיה, ומציגה ריכוזיות והקשחה חסרות תקדים של הסמכות המדינתית ("יכולת המדינה"). בעוד שרפורמת הגיוס הבולטת של **HD01JuU44 ("En betald polisutbildning")** (המציעה מחיקת חובות והגנה מוגברת לשוטרים) נותרת נדבך קריטי, כעת ברור שהיא מהווה רק חלק אחד מקמפיין מסונכרן ורב-חזיתי לשיקום סמכות המדינה.
+
+על ידי שילוב ההרחבות הפליליות הנרחבות של **HD01JuU42 (הכפלת עונשים על פשיעה הקשורה לכנופיות)** והאחריות הציבורית של **HD01JuU40 (Tjenestemannsansvar)** עם חבילת אכיפת הגירה אגרסיבית במיוחד — הכוללת גירושים על בסיס התנהגות (**HD01SfU36**), מעקב אלקטרוני אחר אנשים תחת פיקוח (**HD01SfU31**), מעקב ביומטרי (**HD01SkU30**), וגישה מוגבלת להטבות רווחה (**HD01SfU29**) — הממשלה עברה מאמירות רטוריות של "יד קשה נגד הפשע" לארגון מחדש מקיף של יכולת המדינה.
+
+---
+
+### קריאה של 60 שניות
+
+- **ישיבת השבת**: ישיבת המליאה 2025/26:139 מציינת כינוס סוף שבוע נדיר שזומן במיוחד כדי לפנות פיגור ברפורמות מבניות בולטות בנושאי חוק וסדר, הגירה וריכוזיות מנהלית.
+- **חוק וסדר נוקשים**: `HD01JuU42` מבטל את תקרת הענישה המשותפת של 10 שנים, מכפיל עונשים הקשורים לכנופיות ומציג עונשי מאסר עולם על פשעי אלימות חוזרים. במקביל, `HD01JuU40` מציג עבירה פלילית חדשה לעובדי ציבור, "הפרת אמונים", המטילה אחריות משפטית קפדנית מבפנים.
+- **הגירה וגבולות**: `HD01SfU36` מוריד את סף הגירוש על ידי מתן אפשרות לביטול רישיונות שהייה בגלל "bristande vandel" (התנהגות לקויה), בעוד ש-`HD01SfU31` מכשיר מעקב אלקטרוני עבור מבקשי מקלט תחת פיקוח ומהגרים חסרי תיעוד.
+- **רווחה ומגבלות מנהליות**: `HD01SfU29` שולל הטבות ביטוח לאומי מאסירים תחת מעקב אלקטרוני או מעצר מניעתי ומאלץ אותם לשלם עבור אחזקתם. `HD01SoU35` מאציל מכירת תרופות ללא מרשם לבתי מרקחת באמצעות ייעוץ רוקח חובה.
+- **ריכוזיות מבנית**: `HD01MJU24` עוקf את המועצות המנהליות המחוזיות כדי להקים סוכנות ארצית מרכזית לאישורים סביבתיים (`Miljöprövningsmyndigheten`), במטרה להאיץ מעברים תעשייתיים.
+- **עמדת האופוזיציה**: מתמקדת בלחץ המערכתי, ומצביעה על בתי כלא צפופים ופוגעניים (`HD10557`), רשתות רווחה עירוניות בתת-תקצוב (`HD10558`) וצבא שנאבק בהסתגלות לאקלים (`HD10555`).
+
+**האות העתידי המרכزي**: הצבעות סופיות ב-17 ביוני 2026 על JuU44, JuU42, SfU36 ו-SfU31.  
+**רמת ביטחון**: גבוהה לגבי מסלול החקיקה והמסמכים; גבוהה לגבי הנרטיב המאוحد של יכולת המדינה.
+
+---
+
+### החלטות
+
+1. **להוביל עם יכולת המדינה**: לדחות ניתוח מבודד. לשלב את כל 13 המסמכים במסגרת מאוחדת של "יכולת המדינה" ו"מנגנון כפייה".
+2. **מיקוד בישיבה של סוף השבוע**: לרכז את כל הניתוח בישיבה החריגה ביום שבת, 13 ביוני 2026, ולהתייחס אליה כאל דחיפה חקיקתית מאוחדת ולא כאירועים מבודדים.
+3. **איזון לחץ האופוזיציה**: להתייחס לשאילתות בנושא קיצוצי רווחה, התעללות בבתי כלא והתאמת אקלים צבאית לא כרעש רקע, אלא כתוצאות הישירות של התרחבות מדינתית אגרסיבית זו.
+
+---
+
+### סקירת ראיות
+
+| doc | signal | key provisions |
+|---|---|---|
+| `HD01JuU44` | לימודי משטרה ממומנים | מחיקת חובות CSN לאורך זמן, הטבה פטורה ממס, סודיות מוגברת סביב סטודנטים |
+| `HD01JuU42` | עונשים כפולים לכנופיות | ללא תקרת ענישה משותפת של 10 שנים, כפל מקסימום משותף, מאסר עולם על פשעי אלימות חוזרים, הרחבת מעצר לפני משפט |
+| `HD01JuU40` | Tjenestemannsansvar | עבירה חדשה של "הפרת אמונים", מינימום להפרת חובה חמורה הועלה ל-1.5 שנים |
+| `HD01SfU36` | גירוש על בסיס התנהגות | אישורים נדחו/בוטלו בגלל "bristande vandel" (חובות, חוסר יושר, אי-ציות) |
+| `HD01SfU31` | פיקוח אלקטרוני | מעקב אלקטרוני ומגבלות גאוגרפיות כחלופות למעצר פיזי |
+| `HD01SfU29` | מגבלות רווחה במעצר | אין ביטוח לאומי לאסירים תחת מעקב אלקטרוני, תשלום עבור אחזקתם העצמית |
+| `HD01SkU30` | ביומטריה ברישום האوכלוסין | הונאה ברישום האوכלוסין הוגדרה כעבירה פלילית, ביומטריה משותפת בין רשות המיסים למשטרה |
+| `HD01SfU32` | מבצעי החזרה | סמכויות חיפוש כפויות, בדיקת טלפונים, לקיחת טביעות אצבע מורחבת |
+| `HD01MJU24` | Miljöprövningsmyndigheten | סוכנות ארצית מרכזית לאישורים סביבתיים, עוקפת ועדות מחוזיות |
+| `HD01SoU35` | מגוון תרופות רוקחי | מייצר "farmaceutsortiment" לתרופות ללא מרשם המחייבות ייעוץ רוקח חובה |
+| `HD10558` | לחץ מקיצוצי רווחה | שאילתת S על תת-תקצוב עירוני ומחוזי וגודל הכיתות |
+| `HD10557` | התעללות מינית בבתי כלא | שאילתת V על צפיפות, מחסور בכוח אדם והתעללות ב-Kriminalvården |
+| `HD10555` | התאמת אקלים צבאית | שאילתת MP על התאמה צבאית למאמצי אקלים ומרחב الأיומים הרחב יותר |
+
+```mermaid
+flowchart TD
+  subgraph Saturday Plenary Session 2025/26:139
+    A1["HD01SfU36<br/>Vandel Deportation"]
+    A2["HD01SfU31<br/>Migrant Tracking"]
+    A3["HD01SfU29<br/>Prisoner Welfare Limits"]
+    A4["HD01JuU42<br/>Double Gang Sentences"]
+    A5["HD01JuU40<br/>Civil Service Liability"]
+  end
+
+  subgraph Adjacent Hardening Package
+    B1["HD01JuU44<br/>Paid Police Training"]
+    B2["HD01SkU30<br/>Skatteverket Biometrics"]
+    B3["HD01SfU32<br/>Return Operations"]
+    B4["HD01MJU24<br/>Environmental Permitting"]
+    B5["HD01SoU35<br/>OTC Pharmacy Delegation"]
+  end
+
+  subgraph Systemic Strain / Opposition Backlash
+    C1["HD10558<br/>Welfare & Local Cuts"]
+    C2["HD10557<br/>Kriminalvården Overcrowding"]
+    C3["HD10555<br/>Defence Climate Adapt"]
+  end
+
+  A1 & A2 & A3 & A4 & A5 --> STATE["HARDENED STATE CAPACITY"]
+  B1 & B2 & B3 & B4 & B5 --> STATE
+  STATE --> STRAIN["Systemic Strain & Bottlenecks"]
+  C1 & C2 & C3 -.-> STRAIN
+
+  style STATE fill:#ff006e,stroke:#0a0e27,color:#ffffff,stroke-width:2px
+  style STRAIN fill:#ffbe0b,stroke:#0a0e27,color:#0a0e27
+  style A1 fill:#00d9ff,stroke:#0a0e27,color:#0a0e27
+  style A2 fill:#00d9ff,stroke:#0a0e27,color:#0a0e27
+  style A4 fill:#00d9ff,stroke:#0a0e27,color:#0a0e27
+  style B1 fill:#00d9ff,stroke:#0a0e27,color:#0a0e27
+  style C1 fill:#ffbe0b,stroke:#0a0e27,color:#0a0e27
+  style C2 fill:#ffbe0b,stroke:#0a0e27,color:#0a0e27
+```
+
+<!-- source-sha: 3cbc48e33ff1ee4ebcade24170fd1d1a9b887ae7 -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-06-13/realtime-monitor/executive-brief_ja.md -->
+
+**Cykel**: realtime-monitor · **Riksmöte**: 2025/26  
+**Prioritet**: HIGH
+
+---
+
+### 🎯 要約
+
+2026年6月13日土曜日の臨時本会議は、スウェーデンの行政および刑事の歴史における重大な転換点であり、国家権力（「国家能力」）の前例のない集中と強化を示しています。大きな注目を集めた**HD01JuU44（「En betald polisutbildning」）**の採用改革（奨学金の免除や警察官の保護強化を提示）は重要な柱であり続けていますが、今では国家権力を再構築するための同調した複数フロントに及ぶキャンペーンの単なる一過性にすぎないと明確に理解されています。
+
+**HD01JuU42（ギャング関連犯罪に対する刑期の倍増）**の抜本的な刑法拡張と、**HD01JuU40（Tjenestemannsansvar）**の公務員説明責任を、非常に積極的な移民法的強制執行スイート — 素行に基づく強制送還（**HD01SfU36**）、監視対象者の電子監視（**HD01SfU31**）、バイオメトリック追跡（**HD01SkU30**）、および制限された福祉アクセス（**HD01SfU29**） — と統合することにより、政府はレトリック的な「犯罪に対する強硬姿勢」シグナリングから、国家能力の包括的な再構築へと大きく舵を切りました。
+
+---
+
+### 60秒のクイックリード
+
+- **土曜会合**：2025/26:139本会議は、治安、移民、および行政集中に関する重要かつ構造的な改革の遅れを解消するために特別に招集された、稀な週末の集会です。
+- **厳格な法と秩序**：`HD01JuU42`は10年の合算刑期上限を撤廃し、ギャング関連の刑期を倍増させ、再犯の暴力的犯罪に無期懲役を導入します。同時に、`HD01JuU40`は公務員に対して「職権濫用」という新しい刑事犯罪を導入し、内部に厳格な法的説明責任を課します。
+- **移民と国境**：`HD01SfU36`は「bristande vandel（不適切な素行）」による居住許可の取り消しを可能にすることで強制送還の閾値を下げ、一方で`HD01SfU31`は監視対象の難民申請者や不法移民に対する電子タグ（GPS追跡）を合法化します。
+- **福祉と行政の制限**：`HD01SfU29`は、電子監視または予防拘禁下にある受刑者から社会保障給付を剥奪し、自身の維持費を支払わせます。`HD01SoU35`は、薬剤師による義務的なカウンセリングを通じて、一般用医薬品（OTC）の販売を薬局に委託します。
+- **構造的集中**：`HD01MJU24`は、地方の県行政委員会を迂回して中央集権的な国家環境認可機関（`Miljöprövningsmyndigheten`）を設立し、産業の移行を加速させることを目指しています。
+- **野党の立場**：システム上の緊張に焦点を当て、過密で虐待的な刑務所（`HD10557`）、資金不足の自治体福祉ネットワーク（`HD10558`）、および気候変動への適応に苦しむ軍（`HD10555`）を指摘しています。
+
+**主要な今後の予測トリガー**：6月17日の本会議におけるJuU44、JuU42、SfU36、SfU31の最終投票。  
+**確信度**：立法および文書の追跡に関して「高」、統合された国家能力のナラティブに関して「高」。
+
+---
+
+### 決定事項
+
+1. **国家能力を中心に据える**：サイロ化された分析を拒否します。13すべての文書を、統合された「国家能力」および「強制装置」の枠組みに強制的に位置づけます。
+2. **週末の会合への焦点化**：分析全体の焦点を2026年6月13日土曜日の例外的な会合に当て、これを個別の出来事ではなく、統合された立法的攻勢として扱います。
+3. **野党の反発の相殺**：福祉削減、刑務所内での虐待、および軍の気候変動適応に関する質問を、背景のノイズではなく、このアグレッシブな国家拡張の直接的な外部不経済として扱います。
+
+---
+
+### エビデンスのスナップショット
+
+| doc | signal | key provisions |
+|---|---|---|
+| `HD01JuU44` | 有給の警察教育 | 時間の経過に伴うCSN返済免除、非課税給付、学生周辺の秘密保持の強化 |
+| `HD01JuU42` | ギャングの刑期倍増 | 10年の合算刑期上限の撤廃、合算最大刑期の倍増、暴力的犯罪再犯への無期懲役、起訴前勾留の拡大 |
+| `HD01JuU40` | Tjenestemannsansvar | 新しい「職権濫用」犯罪、重大な職務怠慢の最低刑期を1.5年に引き上げ |
+| `HD01SfU36` | 素行に基づく強制送還 | 「bristande vandel（不適切な素行）」（債務、不誠実、不遵守）による許可の拒否/取り消し |
+| `HD01SfU31` | 監視対象へのタグ装着 | 物理的な拘禁の代替としての電子追跡と地理的制限 |
+| `HD01SfU29` | 拘禁時の福祉制限 | 電子監視下の囚人に対する社会保障の廃止、自己維持費の支払い |
+| `HD01SkU30` | 住民登録のバイオメトリクス | 住民登録詐欺の犯罪化、税務署と警察の間でのバイオメトリクスの共有 |
+| `HD01SfU32` | 送還作戦 | 強制的な捜索権限、電話検査、指紋採取の拡大 |
+| `HD01MJU24` | Miljöprövningsmyndigheten | 地方委員会を迂回する中央集権的な国家環境認可機関 |
+| `HD01SoU35` | 薬剤師専売品目 | 薬剤師による義務的なカウンセリングを必要とする一般用医薬品の「farmaceutsortiment」の創設 |
+| `HD10558` | 福祉削減の圧力 | 地方自治体および地域社会の資金不足とクラス規模に関するS（社会民主労働党）の質問 |
+| `HD10557` | 刑務所内での性的虐待 | Kriminalvården（刑務保護局）の過密、職員不足、および虐待に関するV（左翼党）の質問 |
+| `HD10555` | 軍の気候変動適応 | 気候ストレスへの軍の適応とより広範な脅威の状況に関するMP（緑の党）の質問 |
+
+```mermaid
+flowchart TD
+  subgraph Saturday Plenary Session 2025/26:139
+    A1["HD01SfU36<br/>Vandel Deportation"]
+    A2["HD01SfU31<br/>Migrant Tracking"]
+    A3["HD01SfU29<br/>Prisoner Welfare Limits"]
+    A4["HD01JuU42<br/>Double Gang Sentences"]
+    A5["HD01JuU40<br/>Civil Service Liability"]
+  end
+
+  subgraph Adjacent Hardening Package
+    B1["HD01JuU44<br/>Paid Police Training"]
+    B2["HD01SkU30<br/>Skatteverket Biometrics"]
+    B3["HD01SfU32<br/>Return Operations"]
+    B4["HD01MJU24<br/>Environmental Permitting"]
+    B5["HD01SoU35<br/>OTC Pharmacy Delegation"]
+  end
+
+  subgraph Systemic Strain / Opposition Backlash
+    C1["HD10558<br/>Welfare & Local Cuts"]
+    C2["HD10557<br/>Kriminalvården Overcrowding"]
+    C3["HD10555<br/>Defence Climate Adapt"]
+  end
+
+  A1 & A2 & A3 & A4 & A5 --> STATE["HARDENED STATE CAPACITY"]
+  B1 & B2 & B3 & B4 & B5 --> STATE
+  STATE --> STRAIN["Systemic Strain & Bottlenecks"]
+  C1 & C2 & C3 -.-> STRAIN
+
+  style STATE fill:#ff006e,stroke:#0a0e27,color:#ffffff,stroke-width:2px
+  style STRAIN fill:#ffbe0b,stroke:#0a0e27,color:#0a0e27
+  style A1 fill:#00d9ff,stroke:#0a0e27,color:#0a0e27
+  style A2 fill:#00d9ff,stroke:#0a0e27,color:#0a0e27
+  style A4 fill:#00d9ff,stroke:#0a0e27,color:#0a0e27
+  style B1 fill:#00d9ff,stroke:#0a0e27,color:#0a0e27
+  style C1 fill:#ffbe0b,stroke:#0a0e27,color:#0a0e27
+  style C2 fill:#ffbe0b,stroke:#0a0e27,color:#0a0e27
+```
+
+<!-- source-sha: 3cbc48e33ff1ee4ebcade24170fd1d1a9b887ae7 -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-06-13/realtime-monitor/executive-brief_ko.md -->
+
+**Cykel**: realtime-monitor · **Riksmöte**: 2025/26  
+**Prioritet**: HIGH
+
+---
+
+### 🎯 요약
+
+2026년 6월 13일 토요일에 소집된 임시 본회의는 스웨덴 행정 및 형사 역사상 중요한 전환점이며, 전례 없는 국가 권력("국가 역량")의 집중과 강화를 보여줍니다. 큰 화제를 모은 **HD01JuU44("En betald polisutbildning")** 경찰 채용 개혁(학자금 대출 탕감 및 경찰관 보호 강화 제공)은 핵심적 기둥으로 남아 있지만, 이는 국가 권력을 재건하기 위한 여러 전선에 걸친 동기화된 캠페인의 일환에 불과한 것으로 명확히 이해됩니다.
+
+**HD01JuU42(갱단 관련 범죄 형량 배가)**의 전면적인 형법 확장과 **HD01JuU40(Tjenestemannsansvar)**의 공직 책무성을 매우 공격적인 이민 법적 집행 세트 — 품행 기준 강제 출국 (**HD01SfU36**), 감시 대상자 전자 감시 (**HD01SfU31**), 바이오메트릭 추적 (**HD01SkU30**), 복지 혜택 제한 (**HD01SfU29**) — 와 통합함으로써, 정부는 수사적인 "범죄에 대한 강경 대응" 신호에서 국가 역량의 종합적인 재구조화로 크게 선회했습니다.
+
+---
+
+### 60초 요약
+
+- **토요일 회의**: 본회의 2025/26:139는 치안, 이민, 행정 집중화에 관한 세간의 이목을 끄는 구조적 개혁 과제들의 정체를 해소하기 위해 특별히 소집된 이례적인 주말 회의입니다.
+- **엄격한 법과 질서**: `HD01JuU42`는 10년의 누적 형량 한도를 폐지하고, 갱단 관련 형량을 배가하며, 강력 범죄 재범에 무기징역을 도입합니다. 이와 동시에, `HD01JuU40`은 공무원에게 "직권남용"이라는 새로운 형사 범죄를 도입하여 내부적으로 엄격한 법적 책무성을 부과합니다.
+- **이민과 국경**: `HD01SfU36`은 "bristande vandel(부적절한 품행)"에 따른 거주 허가 취소를 허용함으로써 강제 출국의 기준을 낮추는 한편, `HD01SfU31`은 감시 대상 난민 신청자 및 불법 이민자에 대한 전자식 추적을 합법화합니다.
+- **복지 및 행정적 제한**: `HD01SfU29`는 전자 감시 또는 예방적 구금 상태인 수감자에게서 사회 보장 혜택을 박탈하고 자체 유지비를 지불하도록 강제합니다. `HD01SoU35`는 약사의 의무 상담을 통해 일반 의약품(OTC) 판매를 약국에 위임합니다.
+- **구조적 집중화**: `HD01MJU24`는 지역 현 행정위원회를 우회하여 중앙집권적인 국립환경허가청(`Miljöprövningsmyndigheten`)을 설립함으로써 산업 전환을 가속화하고자 합니다.
+- **야당의 입장**: 시스템적 긴장에 초점을 맞추며, 과밀하고 가혹 행위가 발생하는 교도소(`HD10557`), 재원이 부족한 지방 자치단체 복지망(`HD10558`), 기후 변화 적응에 어려움을 겪는 군대(`HD10555`)를 지적하고 있습니다.
+
+**가장 중요한 미래 지향적 신호**: 6월 17일 본회의에서 예정된 JuU44, JuU42, SfU36 및 SfU31에 대한 최종 표결.  
+**신뢰도**: 입법 및 문서 추적의 확실성 "높음"; 통합된 국가 역량 나러티브의 확실성 "높음".
+
+---
+
+### 결정 사항
+
+1. **국가 역량 중심 분석**: 파편화된 개별 분석을 거부합니다. 13개 문서 모두를 하나의 통합된 "국가 역량" 및 "강제 기구" 체계 내에 강제로 매핑합니다.
+2. **주말 회의 초점화**: 분석 전체의 초점을 2026년 6월 13일 토요일의 임시 본회의에 맞추고, 이를 개별적 사건이 아닌 통합된 법적 공세로 다룹니다.
+3. **야당의 시스템적 우려 상쇄**: 복지 삭감, 교도소 내 가혹 행위, 군 기후 변화 적응 관련 질문을 소음이 아닌, 적극적인 국가 확장 정책에 따른 직접적인 외부적 결과물로 다룹니다.
+
+---
+
+### 증거 요약
+
+| doc | signal | key provisions |
+|---|---|---|
+| `HD01JuU44` | 유급 경찰 교육 | 시간 경과에 따른 CSN 채무 탕감, 비과세 혜택, 학생 주변의 보안 강화 |
+| `HD01JuU42` | 갱단 관련 형량 배가 | 10년의 누적 형량 한도 폐지, 공동 최대 형량의 배가, 폭력 범죄 재범에 무기징역, 기소 전 구금 확대 |
+| `HD01JuU40` | Tjenestemannsansvar | 새로운 "직권남용" 범죄, 중대한 직무유기의 최소 형량을 1.5년으로 인상 |
+| `HD01SfU36` | 품행 기준 강제 출국 | 「bristande vandel(부적절한 품행)」(채무, 부당 행위, 불이행)에 따른 허가 거부/취소 |
+| `HD01SfU31` | 감시 대상 위치 추적 | 전자식 추적 및 지리적 제한을 신체적 구금의 대안으로 활용 |
+| `HD01SfU29` | 수감 상태 시 복지 제한 | 전자 감시를 받는 수감자에 대한 사회 보장 폐지, 수감 비용 본인 부담 |
+| `HD01SkU30` | 주민등록상의 바이오메트릭스 | 주민등록 사기의 범죄화, 국세청과 경찰 간에 생체 정보 공유 |
+| `HD01SfU32` | 송환 작전 | 강제적 수색 권한, 전화기 검사, 지문 채취 확대 |
+| `HD01MJU24` | Miljöprövningsmyndigheten | 지역 행정위원회를 우회하는 국립 중앙 환경 허가 기관 |
+| `HD01SoU35` | 약사 전담 품목 | 약사의 의무적인 상담이 필요한 일반 의약품의 'farmaceutsortiment' 규정 신설 |
+| `HD10558` | 복지 삭감에 따른 압박 | 지방 정부 및 지역 자금 부족과 학급 규모에 관한 S(사회민주당)의 질문 |
+| `HD10557` | 교도소 내 성적 학대 | Kriminalvården(교도관리국)의 과밀, 직원 부족 및 가혹 행위에 대한 V(좌파당)의 질문 |
+| `HD10555` | 군대의 기후 변화 적응 | 기후 변화 스트레스 적응 및 더 광범위한 위협 국면에 직면한 군대에 대한 MP(녹색당)의 질문 |
+
+```mermaid
+flowchart TD
+  subgraph Saturday Plenary Session 2025/26:139
+    A1["HD01SfU36<br/>Vandel Deportation"]
+    A2["HD01SfU31<br/>Migrant Tracking"]
+    A3["HD01SfU29<br/>Prisoner Welfare Limits"]
+    A4["HD01JuU42<br/>Double Gang Sentences"]
+    A5["HD01JuU40<br/>Civil Service Liability"]
+  end
+
+  subgraph Adjacent Hardening Package
+    B1["HD01JuU44<br/>Paid Police Training"]
+    B2["HD01SkU30<br/>Skatteverket Biometrics"]
+    B3["HD01SfU32<br/>Return Operations"]
+    B4["HD01MJU24<br/>Environmental Permitting"]
+    B5["HD01SoU35<br/>OTC Pharmacy Delegation"]
+  end
+
+  subgraph Systemic Strain / Opposition Backlash
+    C1["HD10558<br/>Welfare & Local Cuts"]
+    C2["HD10557<br/>Kriminalvården Overcrowding"]
+    C3["HD10555<br/>Defence Climate Adapt"]
+  end
+
+  A1 & A2 & A3 & A4 & A5 --> STATE["HARDENED STATE CAPACITY"]
+  B1 & B2 & B3 & B4 & B5 --> STATE
+  STATE --> STRAIN["Systemic Strain & Bottlenecks"]
+  C1 & C2 & C3 -.-> STRAIN
+
+  style STATE fill:#ff006e,stroke:#0a0e27,color:#ffffff,stroke-width:2px
+  style STRAIN fill:#ffbe0b,stroke:#0a0e27,color:#0a0e27
+  style A1 fill:#00d9ff,stroke:#0a0e27,color:#0a0e27
+  style A2 fill:#00d9ff,stroke:#0a0e27,color:#0a0e27
+  style A4 fill:#00d9ff,stroke:#0a0e27,color:#0a0e27
+  style B1 fill:#00d9ff,stroke:#0a0e27,color:#0a0e27
+  style C1 fill:#ffbe0b,stroke:#0a0e27,color:#0a0e27
+  style C2 fill:#ffbe0b,stroke:#0a0e27,color:#0a0e27
+```
+
+<!-- source-sha: 3cbc48e33ff1ee4ebcade24170fd1d1a9b887ae7 -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-06-13/realtime-monitor/executive-brief_nl.md -->
+
+**Classificatie**: OPENBAAR  
+**Cykel**: realtime-monitor · **Riksmöte**: 2025/26  
+**Prioriteit**: HOOG
+
+---
+
+### 🎯 Samenvatting
+
+De buitengewone plenaire vergadering van zaterdag 13 juni 2026 vertegenwoordigt een keerpunt in de Zweedse administratieve en strafrechtelijke geschiedenis, wat getuigt van een ongekende centralisatie en verharding van het staatsgezag ("staatscapaciteit"). Hoewel de veelbesproken wervingshervorming van **HD01JuU44 ("En betald polisutbildning")** (die kwijtschelding van schulden en betere bescherming van agenten biedt) een cruciale pijler blijft, wordt deze nu duidelijk begrepen als slechts één onderdeel van een gesynchroniseerde campagne op meerdere fronten om het staatsgezag te herstellen.
+
+Door de ingrijpende strafrechtelijke uitbreidingen van **HD01JuU42 (dubbele straffen voor bendegerelateerde misdrijven)** en de verantwoording van ambtenaren van **HD01JuU40 (Tjenestemannsansvar)** te integreren met een zeer agressief migratiehandhavingspakket — bestaande uit deportaties op basis van gedrag (**HD01SfU36**), elektronisch toezicht voor personen onder toezicht (**HD01SfU31**), biometrische registratie (**HD01SkU30**) en beperkte toegang tot sociale voorzieningen (**HD01SfU29**) — is de regering overgestapt van retorische signalen van "hard tegen criminaliteit" naar een alomvattende herstructurering van de staatscapaciteit.
+
+---
+
+### 60-seconden-lezing
+
+- **De zaterdagsessie**: Plenaire vergadering 2025/26:139 markeert een zeldzame weekendbijeenkomst die specifiek is bijeengeroepen om een achterstand in te halen van zeer relevante, structurele hervormingen op het gebied van wet en orde, migratie en administratieve centralisatie.
+- **Harde wet en orde**: `HD01JuU42` schrapt het 10-jarige plafond voor gezamenlijke strafoplegging, verdubbelt bendegerelateerde straffen en introduceert levenslang voor herhaalde geweldsdelicten. Tegelijkertijd introduceert `HD01JuU40` een nieuw strafbaar feit voor ambtenaren, "ambtsmisdraging", wat intern een strikte wettelijke aansprakelijkheid oplegt.
+- **Migratie en grenzen**: `HD01SfU36` verlaagt de deportatiedrempel door intrekking van verblijfsvergunningen wegens "bristande vandel" (slecht gedrag) toe te staan, terwijl `HD01SfU31` elektronisch toezicht legaliseert voor asielzoekers onder toezicht en ongedocumenteerde migranten.
+- **Sociale zekerheid en administratieve beperkingen**: `HD01SfU29` ontneemt socialezekerheidsuitkeringen aan gevangenen onder elektronisch toezicht of preventieve detentie en verplicht hen te betalen voor hun onderhoud. `HD01SoU35` delegeert de verkoop van zelfzorgmedicijnen aan apotheken via verplichte voorlichting door apothekers.
+- **Structurele centralisatie**: `HD01MJU24` omzeilt de regionale provinciale besturen om een gecentraliseerd nationaal Milieuvergunningsagentschap (`Miljöprövningsmyndigheten`) op te richten, met als doel industriële transities te versnellen.
+- **Standpunt van de oppositie**: Richt zich op systemische druk, wijzend op overvolle f prisons met misstanden (`HD10557`), ondergefinancierde gemeentelijke welzijnsnetwerken (`HD10558`) en een krijgsmacht die worstelt met klimaatadaptatie (`HD10555`).
+
+**Belangrijkste vooruitblikkende signaal**: Eindstemmingen op 17 juni 2026 over JuU44, JuU42, SfU36 en SfU31 in de kamer.  
+**Betrouwbaarheid**: HOOG op de wetgevende en documentenlijn; HOOG op het geconsolideerde staatscapaciteitsnarratief.
+
+---
+
+### Besluiten
+
+1. **Focus op staatscapaciteit**: Wijs silo-analyse af. Plaats alle 13 documenten in een verenigd kader van "staatscapaciteit" en "dwangapparaat".
+2. **Focus op de weekendsessie**: Richt alle aandacht op de buitengewone sessie van zaterdag 13 juni 2026 en behandel deze als een geconsolideerd wetgevend offensief in plaats van geïsoleerde gebeurtenissen.
+3. **Compensatie voor oppositiedruk**: Behandel interpellaties over bezuinigingen op welzijn, misstanden in de gevangenis en militaire klimaatadaptatie niet als ruis, maar as de directe gevolgen van deze agressieve staatsexpansie.
+
+---
+
+### Overzicht van bewijsmateriaal
+
+| doc | signal | key provisions |
+|---|---|---|
+| `HD01JuU44` | Betaalde politieopleiding | Kwijtschelding van CSN-schuld in de loop van de tijd, belastingvrij voordeel, strengere geheimhouding rond studenten |
+| `HD01JuU42` | Dubbele straffen voor bendeleden | Geen 10-jarig plafond voor gezamenlijke strafoplegging, dubbel gezamenlijk maximum, levenslang voor herhaalde geweldsdelicten, uitgebreide voorlopige hechtenis |
+| `HD01JuU40` | Tjenestemannsansvar | Nieuw strafbaar feit voor "ambtsmisdraging", minimum voor ernstig plichtsverzuim verhoogd naar 1,5 jaar |
+| `HD01SfU36` | Gedragsgebaseerde deportaties | Vergunningen geweigerd/ingetrokken wegens "bristande vandel" (schulden, oneerlijkheid, niet-naleving) |
+| `HD01SfU31` | Elektronische voetketen | Elektronische tracking en geografische beperkingen als alternatieven voor fysieke detentie |
+| `HD01SfU29` | Beperking van welzijn tijdens hechtenis | Geen sociale zekerheid voor gevangenen onder elektronisch toezicht, betaling voor eigen onderhoud |
+| `HD01SkU30` | Biometrie in bevolkingsregister | Fraude met bevolkingsregistratie gecriminaliseerd, biometrie gedeeld tussen Belastingdienst en Politie |
+| `HD01SfU32` | Terugkeeroperaties | Dwingende bevoegdheden tot huiszoeking, telefooninspectie, uitgebreide vingerafdrukregistratie |
+| `HD01MJU24` | Miljöprövningsmyndigheten | Gecentraliseerd nationaal milieuvergunningsagentschap, omzeilt regionale besturen |
+| `HD01SoU35` | Apothekersassortiment | Creëert een "farmaceutsortiment" voor zelfzorgmedicijnen met verplichte voorlichting door apothekers |
+| `HD10558` | Druk van bezuinigingen op welzijn | S-interpellatie over gemeentelijke en regionale onderfinanciering en klasgrootte |
+| `HD10557` | Seksueel misbruik in gevangenissen | V-interpellatie over overbevolking, personeelstekorten en misbruik bij Kriminalvården |
+| `HD10555` | Militaire klimaatadaptatie | MP-interpellatie over militaire adaptatie aan klimaatstress en een breder dreigingslandschap |
+
+```mermaid
+flowchart TD
+  subgraph Saturday Plenary Session 2025/26:139
+    A1["HD01SfU36<br/>Vandel Deportation"]
+    A2["HD01SfU31<br/>Migrant Tracking"]
+    A3["HD01SfU29<br/>Prisoner Welfare Limits"]
+    A4["HD01JuU42<br/>Double Gang Sentences"]
+    A5["HD01JuU40<br/>Civil Service Liability"]
+  end
+
+  subgraph Adjacent Hardening Package
+    B1["HD01JuU44<br/>Paid Police Training"]
+    B2["HD01SkU30<br/>Skatteverket Biometrics"]
+    B3["HD01SfU32<br/>Return Operations"]
+    B4["HD01MJU24<br/>Environmental Permitting"]
+    B5["HD01SoU35<br/>OTC Pharmacy Delegation"]
+  end
+
+  subgraph Systemic Strain / Opposition Backlash
+    C1["HD10558<br/>Welfare & Local Cuts"]
+    C2["HD10557<br/>Kriminalvården Overcrowding"]
+    C3["HD10555<br/>Defence Climate Adapt"]
+  end
+
+  A1 & A2 & A3 & A4 & A5 --> STATE["HARDENED STATE CAPACITY"]
+  B1 & B2 & B3 & B4 & B5 --> STATE
+  STATE --> STRAIN["Systemic Strain & Bottlenecks"]
+  C1 & C2 & C3 -.-> STRAIN
+
+  style STATE fill:#ff006e,stroke:#0a0e27,color:#ffffff,stroke-width:2px
+  style STRAIN fill:#ffbe0b,stroke:#0a0e27,color:#0a0e27
+  style A1 fill:#00d9ff,stroke:#0a0e27,color:#0a0e27
+  style A2 fill:#00d9ff,stroke:#0a0e27,color:#0a0e27
+  style A4 fill:#00d9ff,stroke:#0a0e27,color:#0a0e27
+  style B1 fill:#00d9ff,stroke:#0a0e27,color:#0a0e27
+  style C1 fill:#ffbe0b,stroke:#0a0e27,color:#0a0e27
+  style C2 fill:#ffbe0b,stroke:#0a0e27,color:#0a0e27
+```
+
+<!-- source-sha: 3cbc48e33ff1ee4ebcade24170fd1d1a9b887ae7 -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-06-13/realtime-monitor/executive-brief_no.md -->
+
+**Klassificering**: OFFENTLIG  
+**Cykel**: realtime-monitor · **Riksmöte**: 2025/26  
+**Prioritet**: HÖG
+
+---
+
+### 🎯 Resymé
+
+Den ekstraordinære plenumssesjonen lørdag 13. juni 2026 representerer et vendepunkt i svensk administrativ og strafferettslig historie, noe som demonstrerer en uovertruffen sentralisering og skjerping av statlig autoritet ("statskapasitet"). Selv om den oppsiktsvekkende rekrutteringsreformen i **HD01JuU44 ("En betald polisutbildning")** (som tilbyr sletting av gjeld og forbedret beskyttelse av tjenestemenn) forblir en kritisk pilar, forstås den nå tydelig som bare én brikke i en synkronisert kampanje på flere fronter for å gjenreise statlig autoritet.
+
+Ved å integrere de omfattende strafferettslige utvidelsene i **HD01JuU42 (Dobbeltstraff for bandekriminalitet)** og det skjerpede tjenestemannsansvaret i **HD01JuU40 (Tjenestemannsansvar)** med en svært aggressiv pakke for migrasjonshåndhevelse — bestående av utvisninger på grunn av dårlig vandel (**HD01SfU36**), elektronisk overvåking av personer under tilsyn (**HD01SfU31**), biometrisk sporing (**HD01SkU30**) og begrenset velferdsadgang (**HD01SfU29**) — har regeringen beveget seg fra retoriske signaler om å være "tøff mot kriminalitet" till en omfattende omstrukturering av statskapasiteten.
+
+---
+
+### 60 sekunders lesing
+
+- **Lørdagssesjonen**: Plenumssession 2025/26:139 markerer en sjelden helgesamling innkalt spesifikt for å fjerne et etterslep av høyt profilerte, strukturelle reformer om lov og orden, migrasjon og administrativ sentralisering.
+- **Streng lov og orden**: `HD01JuU42` fjerner det 10-årige taket for felles straffutmåling, fordobler gjengrelaterte straffer og innfører livstid for gjentatt voldskriminalitet. Samtidig innfører `HD01JuU40` en ny straffbar handling for offentlig ansatte, "misbruk av offentlig embete", som pålegger strengt juridisk ansvar internt.
+- **Migrasjon og grenser**: `HD01SfU36` senker utvisningsterskelen ved å tillate tilbakekalling av oppholdstillatelse for "bristande vandel" (dårlig vandel), mens `HD01SfU31` legaliserer elektronisk sporing for asylsøkere under tilsyn og uidentifiserte migranter.
+- **Velferd og administrative begrensninger**: `HD01SfU29` fratar sosiale ytelser fra fanger under elektronisk overvåking eller forebyggende varetekt og tvinger dem til å betale for eget underhold. `HD01SoU35` utdelegerer salg av reseptfrie medisiner til apotek med krav om obligatorisk rådgivning fra farmasøyt.
+- **Strukturell sentralisering**: `HD01MJU24` går utenom de regionale fylkesadministrative styrene (länsstyrelserna) for å etablere en sentralisert nasjonal miljøgodkjenningsmyndighet (`Miljöprövningsmyndigheten`), med mål om å fremskynde den industrielle omstillingen.
+- **Opposisjonens holdning**: Fokuserer på systemisk overbelastning og peker på overfylte fængsler med misbruk (`HD10557`), underfinansierte kommunale velferdsnettverk (`HD10558`) og et militær som kjemper med klimatilpasning (`HD10555`).
+
+**Viktigste framoversignal**: Endelige avstemninger 17. juni 2026 om JuU44, JuU42, SfU36 og SfU31 i salen.  
+**Konfidensgrad**: HØY på lovgivnings- og dokumentstien; HØY på den konsoliderete fortellingen om statskapasitet.
+
+---
+
+### Beslutninger
+
+1. **Fokus på statskapasitet**: Avvis fragmentert analyse. Samle alle 13 dokumenter under en felles ramme for "statskapasitet" og "statens tvangsapparat".
+2. **Fokus på helgesesjonen**: Sentrer hele overvåkingen om den ekstraordinære lørdagssesjonen 13. juni 2026, og behandle den som en samlet lovgivningsmessig offensiv snarere enn isolerte hendelser.
+3. **Avbalansering av systemisk press**: Behandle interpellasjonene om velferdskutt, misbruk i fængsler og militær klimatilpasning ikke som bakgrunnsstøy, men som direkte eksternaliteter av denne aggressive statlige ekspansjonen.
+
+---
+
+### Evidensöversikt
+
+| doc | signal | key provisions |
+|---|---|---|
+| `HD01JuU44` | Betalt politiutdanning | Sletting av CSN-gjeld over tid, skattefri fordel, strengere konfidensialitet rundt studenter |
+| `HD01JuU42` | Dobbeltstraff for bandekriminalitet | Intet 10-årig tak for felles straffutmåling, dobbelt felles maksimum, livstid for gjentatt voldskriminalitet, utvidet varetægtsfængsling |
+| `HD01JuU40` | Tjenestemannsansvar | Nytt lovbrudd for tjenesteforhold, grovt tjenestefeil-minimum hevet til 1,5 år |
+| `HD01SfU36` | Utvisning på grunn av dårlig vandel | Tillatelser nektet/tilbakekalt for "bristande vandel" (gjeld, uærlighet, manglende overholdelse) |
+| `HD01SfU31` | Elektronisk fotlenke | Elektronisk sporing og geografiske begrensninger som alternativer til fysisk tilbakeholdelse |
+| `HD01SfU29` | Velferdsbegrensninger under varetekt | Ingen trygd for fanger under elektronisk overvåking, betaling for eget underhold |
+| `HD01SkU30` | Biometri i folkeregisteret | Folkeregistersvindel kriminalisert, biometri deles på tvers av skatt og politi |
+| `HD01SfU32` | Returoperasjoner | Tvangsmessige ransakingsbeføyelser, telefoninspeksjon, utvitet fingeravtrykkstaking |
+| `HD01MJU24` | Miljöprövningsmyndigheten | Sentralisert nasjonal miljøgodkjenningsmyndighet, går utenom regionale styrer |
+| `HD01SoU35` | Farmasøytutvalg | Oppretter "farmaceutsortiment" for reseptfrie medisiner med krav om obligatorisk rådgivning |
+| `HD10558` | Press fra velferdskutt | S-interpellasjon om underfinansiering av kommuner og regioner samt klassestørrelse |
+| `HD10557` | Sexuelt misbruk i fængsler | V-interpellasjon om overfylling av Kriminalvården, personalemangel og misbruk |
+| `HD10555` | Militær klimatilpasning | MP-interpellasjon om militær tilpasning til klimastress og et bredere trusselbilde |
+
+```mermaid
+flowchart TD
+  subgraph Saturday Plenary Session 2025/26:139
+    A1["HD01SfU36<br/>Vandel Deportation"]
+    A2["HD01SfU31<br/>Migrant Tracking"]
+    A3["HD01SfU29<br/>Prisoner Welfare Limits"]
+    A4["HD01JuU42<br/>Double Gang Sentences"]
+    A5["HD01JuU40<br/>Civil Service Liability"]
+  end
+
+  subgraph Adjacent Hardening Package
+    B1["HD01JuU44<br/>Paid Police Training"]
+    B2["HD01SkU30<br/>Skatteverket Biometrics"]
+    B3["HD01SfU32<br/>Return Operations"]
+    B4["HD01MJU24<br/>Environmental Permitting"]
+    B5["HD01SoU35<br/>OTC Pharmacy Delegation"]
+  end
+
+  subgraph Systemic Strain / Opposition Backlash
+    C1["HD10558<br/>Welfare & Local Cuts"]
+    C2["HD10557<br/>Kriminalvården Overcrowding"]
+    C3["HD10555<br/>Defence Climate Adapt"]
+  end
+
+  A1 & A2 & A3 & A4 & A5 --> STATE["HARDENED STATE CAPACITY"]
+  B1 & B2 & B3 & B4 & B5 --> STATE
+  STATE --> STRAIN["Systemic Strain & Bottlenecks"]
+  C1 & C2 & C3 -.-> STRAIN
+
+  style STATE fill:#ff006e,stroke:#0a0e27,color:#ffffff,stroke-width:2px
+  style STRAIN fill:#ffbe0b,stroke:#0a0e27,color:#0a0e27
+  style A1 fill:#00d9ff,stroke:#0a0e27,color:#0a0e27
+  style A2 fill:#00d9ff,stroke:#0a0e27,color:#0a0e27
+  style A4 fill:#00d9ff,stroke:#0a0e27,color:#0a0e27
+  style B1 fill:#00d9ff,stroke:#0a0e27,color:#0a0e27
+  style C1 fill:#ffbe0b,stroke:#0a0e27,color:#0a0e27
+  style C2 fill:#ffbe0b,stroke:#0a0e27,color:#0a0e27
+```
+
+<!-- source-sha: 3cbc48e33ff1ee4ebcade24170fd1d1a9b887ae7 -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-06-13/realtime-monitor/executive-brief_sv.md -->
+
+**Klassificering**: OFFENTLIG  
+**Cykel**: realtime-monitor · **Riksmöte**: 2025/26  
+**Prioritet**: HÖG
+
+---
+
+### 🎯 Sammanfattning
+
+Det extraordinära lördagssammanträdet den 13 juni 2026 utgör en vattendelare i svensk förvaltnings- och straffrättslig historia och visar på en oöverträffad centralisering och skärpning av statens auktoritet ("statsförmåga"). Även om den mycket uppmärksammade rekryteringsreformen i **HD01JuU44 ("En betald polisutbildning")** (som erbjuder avskrivning av studieskulder och stärkt skydd för polisaspiranter) förblir en viktig pelare, framstår den nu tydligt som en del av en samordnad kampanj på flera fronter för att återupprätta statens auktoritet.
+
+Genom att integrera de omfattande straffrättsliga skärpningarna i **HD01JuU42 (Dubbla straff för gängkriminella)** och det skärpta tjänstemannaansvaret i **HD01JuU40 (Straffansvar för tjänstefel)** med ett mycket offensivt migrationspaket — bestående av utvisningar på grund av bristande vandel (**HD01SfU36**), elektronisk övervakning av personer under uppsikt (**HD01SfU31**), biometrisk spårning (**HD01SkU30**) och begränsade välfärdsförmåner (**HD01SfU29**) — har regeringen gått från retoriska utspel om hårdare tag till en genomgripande omstrukturering av statsförmågan.
+
+---
+
+### 60 sekunders läsning
+
+- **Lördagssammanträdet**: Kammarens sammanträde 2025/26:139 markerar ett sällsynt helgmöte som sammankallats specifikt för att beta av en hög med högprioriterade, strukturella reformer rörande lag och ordning, migration samt administrativ centralisering.
+- **Hårdare tag och ordning**: `HD01JuU42` tar bort det 10-åriga taket för gemensam straffmätning, fördubblar gängkopplade straff och inför livstidsstraff för upprepad våldsbrottslighet. Samtidigt införs genom `HD01JuU40` ett nytt brott för offentliga tjänstemän, "tjänstefel", vilket innebär ett strikt rättsligt ansvar internt.
+- **Migration & gränser**: `HD01SfU36` sänker tröskeln för utvisning genom att tillåta återkallelse av uppehållstillstånd för "bristande vandel" (skulder, ohederlighet, bristande efterlevnad), medan `HD01SfU31` legaliserar elektronisk övervakning för asylsökande under uppsikt och papperslösa migranter.
+- **Välfärd och administrativa begränsningar**: `HD01SfU29` drar in socialförsäkringsförmåner för fångar under elektronisk övervakning eller förebyggande detention och tvingar dem att betala för sitt eget uppehälle. `HD01SoU35` delegerar försäljning av receptfria läkemedel till apotek med krav på obligatorisk rådgivning från farmaceut.
+- **Strukturell centralisering**: `HD01MJU24` rundar de regionala länsstyrelserna för att inrätta en centraliserad nationell Miljöprövningsmyndighet, med syftet att påskynda den industriella omställningen.
+- **Oppositionens ställningstagande**: Fokuserar på systembelastning och pekar på överfulla fängelser med missförhållanden (`HD10557`), underfinansierade kommunala välfärdsnätverk (`HD10558`) och ett försvar som kämpar med klimatanpassning (`HD10555`).
+
+**Viktigaste framåtblickande signal**: Slutomröstningar den 17 juni 2026 om JuU44, JuU42, SfU36 och SfU31 i kammaren.  
+**Konfidensgrad**: HÖG gällande lagstiftnings- och dokumentkedjan; HÖG gällande den samlade berättelsen om statsförmågan.
+
+---
+
+### Beslut
+
+1. **Fokusera på statsförmågan**: Avvisa fragmenterad analys. Samla alla 13 dokument under ett enhetligt ramverk för "statsförmåga" och "statligt tvångsmedel".
+2. **Fokus på helgsessionen**: Centrera hela bevakningen kring det extraordinära lördagssammanträdet den 13 juni 2026, och behandla det som en samlad lagstiftningsoffensiv snarare än isolerade händelser.
+3. **Balansera med systembelastningen**: Behandla interpellationerna om välfärdsnedskärningar, missförhållanden i fängelser och militär klimatanpassning inte som bakgrundsbrus, utan som direkta följder av denna aggressiva statliga expansion.
+
+---
+
+### Evidensöversikt
+
+| doc | signal | key provisions |
+|---|---|---|
+| `HD01JuU44` | Betald polisutbildning | Avskrivning av CSN-lån över tid, skattefri förmån, stärkt sekretess för studenter |
+| `HD01JuU42` | Fördubblade straff för gängkriminella | Inget 10-årigt tak för gemensam straffmätning, fördubblat gemensamt maxstraff, livstid för upprepad våldsbrottslighet, utökad häktning |
+| `HD01JuU40` | Tjänstemannaansvar | Nytt brott för tjänstefel, minimistraffet för grovt tjänstefel höjs till 1,5 år |
+| `HD01SfU36` | Utvisning på grund av bristande vandel | Tillstånd nekas/återkallas för "bristande vandel" (skulder, ohederlighet, bristande efterlevnad) |
+| `HD01SfU31` | Elektronisk fotboja | Elektronisk spårning och geografiska begränsningar som alternativ till fysiskt förvar |
+| `HD01SfU29` | Begränsad välfärd under häktning/straff | Ingen socialförsäkring för fångar under elektronisk övervakning, betala för eget uppehälle |
+| `HD01SkU30` | Biometri i folkbokföringen | Folkbokföringsbrott kriminaliseras, biometri delas mellan Skatteverket och Polisen |
+| `HD01SfU32` | Verkställighetsåtgärder | Tvångsbefogenheter för husrannsakan, mobilinspektion, utökad fingeravtryckstagning |
+| `HD01MJU24` | Miljöprövningsmyndigheten | Centraliserad nationell miljöprövningsmyndighet, rundar länsstyrelserna |
+| `HD01SoU35` | Farmaceutsortiment | Skapar "farmaceutsortiment" för receptfria läkemedel med krav på obligatorisk rådgivning |
+| `HD10558` | Tryck från välfärdsnedskärningar | S-interpellation om underfinansiering av kommuner och regioner samt klassstorlekar |
+| `HD10557` | Sexuella övergrepp i fängelser | V-interpellation om överbelastning, personalbrist och övergrepp inom Kriminalvården |
+| `HD10555` | Militär klimatanpassning | MP-interpellation om militär anpassning till klimatpåverkan och en bredare hotbild |
+
+```mermaid
+flowchart TD
+  subgraph Saturday Plenary Session 2025/26:139
+    A1["HD01SfU36<br/>Vandel Deportation"]
+    A2["HD01SfU31<br/>Migrant Tracking"]
+    A3["HD01SfU29<br/>Prisoner Welfare Limits"]
+    A4["HD01JuU42<br/>Double Gang Sentences"]
+    A5["HD01JuU40<br/>Civil Service Liability"]
+  end
+
+  subgraph Adjacent Hardening Package
+    B1["HD01JuU44<br/>Paid Police Training"]
+    B2["HD01SkU30<br/>Skatteverket Biometrics"]
+    B3["HD01SfU32<br/>Return Operations"]
+    B4["HD01MJU24<br/>Environmental Permitting"]
+    B5["HD01SoU35<br/>OTC Pharmacy Delegation"]
+  end
+
+  subgraph Systemic Strain / Opposition Backlash
+    C1["HD10558<br/>Welfare & Local Cuts"]
+    C2["HD10557<br/>Kriminalvården Overcrowding"]
+    C3["HD10555<br/>Defence Climate Adapt"]
+  end
+
+  A1 & A2 & A3 & A4 & A5 --> STATE["HARDENED STATE CAPACITY"]
+  B1 & B2 & B3 & B4 & B5 --> STATE
+  STATE --> STRAIN["Systemic Strain & Bottlenecks"]
+  C1 & C2 & C3 -.-> STRAIN
+
+  style STATE fill:#ff006e,stroke:#0a0e27,color:#ffffff,stroke-width:2px
+  style STRAIN fill:#ffbe0b,stroke:#0a0e27,color:#0a0e27
+  style A1 fill:#00d9ff,stroke:#0a0e27,color:#0a0e27
+  style A2 fill:#00d9ff,stroke:#0a0e27,color:#0a0e27
+  style A4 fill:#00d9ff,stroke:#0a0e27,color:#0a0e27
+  style B1 fill:#00d9ff,stroke:#0a0e27,color:#0a0e27
+  style C1 fill:#ffbe0b,stroke:#0a0e27,color:#0a0e27
+  style C2 fill:#ffbe0b,stroke:#0a0e27,color:#0a0e27
+```
+
+<!-- source-sha: 3cbc48e33ff1ee4ebcade24170fd1d1a9b887ae7 -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-06-13/realtime-monitor/executive-brief_zh.md -->
+
+**Cykel**: realtime-monitor · **Riksmöte**: 2025/26  
+**Prioritet**: HIGH
+
+---
+
+### 🎯 摘要
+
+2026年6月13日星期六召开的临时全体会议代表了瑞典行政和刑法历史上的分水岭，展示了国家权力（“国家能力”）前所未有的集中和强化。虽然备受瞩目的**HD01JuU44（“En betald polisutbildning”）**警察招募改革（提供学贷减免和加强对警员的保护）仍然是一个关键支柱，但现在人们清楚地认识到，这仅仅是重建国家权力、在多个战线同步展开的更大行动中的一环。
+
+通过将**HD01JuU42（帮派相关犯罪刑期翻倍）**的彻底刑法扩张以及**HD01JuU40（Tjenestemannsansvar）**的公职问责制，与极具攻击性的移民执法套件相融合 — 包括基于操守的驱逐出境（**HD01SfU36**）、针对受监视人员的电子监视（**HD01SfU31**）、生物识别跟踪（**HD01SkU30**）以及限制福利获取（**HD01SfU29**） — 政府已从口头上的“严厉打击犯罪”转向对国家能力的全面重构。
+
+---
+
+### 60秒速读
+
+- **周六会议**：全体会议2025/26:139标志着一次罕见的周末集会，专门为了解决在法律与秩序、移民以及行政集中化等备受关注的结构性改革方面的积压问题。
+- **严格的法律与秩序**：`HD01JuU42`取消了10年的合并刑期上限，将与帮派相关的刑期翻倍，并对重复暴力犯罪引入终身监禁。与此同时，`HD01JuU40`为公职人员引入了一项新的刑事罪名，即“滥用公职罪”，在内部施加了严格的法律问责制。
+- **移民与国境**：`HD01SfU36`降低了驱逐出境的门槛，允许以“bristande vandel（品行不端）”为由撤销居留许可，而`HD01SfU31`则使针对受监视的寻求庇护者和无证移民的电子追踪（GPS定位）合法化。
+- **福利与行政限制**：`HD01SfU29`剥夺了处于电子监视或预防性拘留下的囚犯的社会保障福利，并强迫他们自付生活费。`HD01SoU35`通过强制性的药剂师咨询，将非处方药（OTC）销售委托给药房。
+- **结构性集中化**：`HD01MJU24`绕过地方县行政委员会，建立了一个集中的国家环境许可局（`Miljöprövningsmyndigheten`），旨在加速工业转型。
+- **反对党立场**：聚焦于系统性压力，指出过度拥挤且存在虐待行为的监狱（`HD10557`）、资金不足的地方福利网络（`HD10558`）以及在气候适应方面挣扎的军队（`HD10555`）。
+
+**首要前瞻性触发信号**：6月17日议会中对JuU44、JuU42、SfU36和SfU31的最终表决。  
+**置信度**：立法和文件追踪“高”；对统一的国家能力叙事置信度“高”。
+
+---
+
+### 决策
+
+1. **国家能力为先**：拒绝孤立分析。将所有13份文件强制纳入一个统一的“国家能力”和“强制机器”框架。
+2. **聚焦周末会议**：将整个分析重点放在2026年6月13日星期六的特殊会议上，将其视为一次统一的立法攻势，而非孤立事件。
+3. **平衡反对党压力**：将有关福利削减、监狱虐待和军事气候适应的质询不视为背景杂音，而是视为这种积极的国家扩张的直接负外部效应。
+
+---
+
+### 证据速览
+
+| doc | signal | key provisions |
+|---|---|---|
+| `HD01JuU44` | 有薪警察教育 | 学贷（CSN）随时间免除、免税福利、对学生更严格的保密措施 |
+| `HD01JuU42` | 帮派刑期翻倍 | 取消10年的合并刑期上限、合并最大刑期翻倍、对重复暴力犯罪判处无期徒刑、扩大审前拘留 |
+| `HD01JuU40` | Tjenestemannsansvar | 新增“滥用公职”罪，重大渎职罪最低刑期提高至1.5年 |
+| `HD01SfU36` | 基于操守的驱逐出境 | 因“bristande vandel（品行不端）”（债务、不诚实、不遵守规定）而拒绝/撤销许可 |
+| `HD01SfU31` | 受监视人员佩戴电子标签 | 将电子追踪和地理限制作为人身拘留的替代方案 |
+| `HD01SfU29` | 拘留期间的福利限制 | 取消对电子监视下囚犯的社会保障福利，自付生活费用 |
+| `HD01SkU30` | 户籍登记中的生物识别 | 户籍登记欺诈定罪，税务局和警察局之间共享生物识别数据 |
+| `HD01SfU32` | 遣返行动 | 强制性搜查权、电话检查、扩大指纹采集 |
+| `HD01MJU24` | Miljöprövningsmyndigheten | 绕过地方县委员会建立中央集权的全国环境许可机构 |
+| `HD01SoU35` | 药剂师专售品类 | 为非处方药建立“farmaceutsortiment”类别，且必须有药剂师咨询 |
+| `HD10558` | 福利削减的压力 | 社会民主党（S）关于地方自治体及区域资金不足以及班级规模的质询 |
+| `HD10557` | 监狱中的性虐待 | 左翼党（V）关于监狱管理局（Kriminalvården）过度拥挤、人员短缺和虐待行为的质询 |
+| `HD10555` | 军事气候适应 | 绿党（MP）关于军事适应气候压力和更广泛威胁态势的质询 |
+
+```mermaid
+flowchart TD
+  subgraph Saturday Plenary Session 2025/26:139
+    A1["HD01SfU36<br/>Vandel Deportation"]
+    A2["HD01SfU31<br/>Migrant Tracking"]
+    A3["HD01SfU29<br/>Prisoner Welfare Limits"]
+    A4["HD01JuU42<br/>Double Gang Sentences"]
+    A5["HD01JuU40<br/>Civil Service Liability"]
+  end
+
+  subgraph Adjacent Hardening Package
+    B1["HD01JuU44<br/>Paid Police Training"]
+    B2["HD01SkU30<br/>Skatteverket Biometrics"]
+    B3["HD01SfU32<br/>Return Operations"]
+    B4["HD01MJU24<br/>Environmental Permitting"]
+    B5["HD01SoU35<br/>OTC Pharmacy Delegation"]
+  end
+
+  subgraph Systemic Strain / Opposition Backlash
+    C1["HD10558<br/>Welfare & Local Cuts"]
+    C2["HD10557<br/>Kriminalvården Overcrowding"]
+    C3["HD10555<br/>Defence Climate Adapt"]
+  end
+
+  A1 & A2 & A3 & A4 & A5 --> STATE["HARDENED STATE CAPACITY"]
+  B1 & B2 & B3 & B4 & B5 --> STATE
+  STATE --> STRAIN["Systemic Strain & Bottlenecks"]
+  C1 & C2 & C3 -.-> STRAIN
+
+  style STATE fill:#ff006e,stroke:#0a0e27,color:#ffffff,stroke-width:2px
+  style STRAIN fill:#ffbe0b,stroke:#0a0e27,color:#0a0e27
+  style A1 fill:#00d9ff,stroke:#0a0e27,color:#0a0e27
+  style A2 fill:#00d9ff,stroke:#0a0e27,color:#0a0e27
+  style A4 fill:#00d9ff,stroke:#0a0e27,color:#0a0e27
+  style B1 fill:#00d9ff,stroke:#0a0e27,color:#0a0e27
+  style C1 fill:#ffbe0b,stroke:#0a0e27,color:#0a0e27
+  style C2 fill:#ffbe0b,stroke:#0a0e27,color:#0a0e27
+```
+
+<!-- source-sha: 3cbc48e33ff1ee4ebcade24170fd1d1a9b887ae7 -->
+
 ## Mcp Reliability Audit
 <!-- source: mcp-reliability-audit.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-06-13/realtime-monitor/mcp-reliability-audit.md -->
 
@@ -1535,7 +2809,7 @@ This generated report reconciles the analysis folder with the article projection
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 29 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 42 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 13 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 1 | Linked in Article Sources, not expanded inline |
 
@@ -1587,6 +2861,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`analysis-index.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-06-13/realtime-monitor/analysis-index.md)
 - [`cross-run-diff.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-06-13/realtime-monitor/cross-run-diff.md)
 - [`cross-session-intelligence.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-06-13/realtime-monitor/cross-session-intelligence.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-06-13/realtime-monitor/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-06-13/realtime-monitor/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-06-13/realtime-monitor/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-06-13/realtime-monitor/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-06-13/realtime-monitor/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-06-13/realtime-monitor/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-06-13/realtime-monitor/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-06-13/realtime-monitor/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-06-13/realtime-monitor/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-06-13/realtime-monitor/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-06-13/realtime-monitor/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-06-13/realtime-monitor/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-06-13/realtime-monitor/executive-brief_zh.md)
 - [`mcp-reliability-audit.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-06-13/realtime-monitor/mcp-reliability-audit.md)
 - [`reference-analysis-quality.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-06-13/realtime-monitor/reference-analysis-quality.md)
 - [`session-baseline.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-06-13/realtime-monitor/session-baseline.md)
