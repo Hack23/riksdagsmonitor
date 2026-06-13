@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "cycle": "realtime-monitor",
+  "date": "2026-06-13",
+  "subfolder": "realtime-monitor",
+  "generated_at": "2026-06-13T11:41:00Z",
+  "pirs": [
+    {
+      "pir_id": "PIR-STATE-CAPACITY-01",
+      "statement": "Will the June 17 debate expand the paid police-training frame beyond recruitment into broader state-capacity messaging?",
+      "status": "open",
+      "confidence": "HIGH"
+    },
+    {
+      "pir_id": "PIR-REGISTER-01",
+      "statement": "Will SkU30 become a privacy debate or stay an administrative-control story?",
+      "status": "open",
+      "confidence": "MEDIUM"
+    }
+  ]
+}
