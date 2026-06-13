@@ -150,6 +150,7 @@ graph LR
 
 | Component | Version | Purpose |
 | --- | --- | --- |
+| GitHub Actions Runner | `ubuntu-26.04` | CI/CD execution environment |
 | Node.js | 26 | Runtime (native TypeScript strip-types) |
 | TypeScript | 6.0.3 | Type system |
 | Vite | 8.0.14 | Build toolchain (esbuild) |

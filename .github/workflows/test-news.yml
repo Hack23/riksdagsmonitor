@@ -30,7 +30,7 @@ permissions:
 jobs:
   build:
     name: Build for News Tests
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     # Bumped 10 → 15 → 25. `npm run build` renders ~5 400 news pages
     # (391 subfolders × 14 languages) and now takes ~14m42s on its own
     # (run #26603785540 "Build Test (Vite)" step), pushing the full job
@@ -78,7 +78,7 @@ jobs:
   
   test-news:
     name: News & Sitemap Tests
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     needs: build
     timeout-minutes: 5 # Max 5 minutes
     # Use the official Cypress browsers image so Chrome/Firefox/Edge are
@@ -147,7 +147,7 @@ jobs:
   
   summary:
     name: News Test Summary
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     needs: [build, test-news]
     if: always()
     

@@ -30,7 +30,7 @@ permissions:
 jobs:
   build:
     name: Build for Homepage Tests
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     # Bumped 10 → 15 → 20 → 25. Same `npm run build` as test-news.yml: it
     # renders ~5 400 pages (391 subfolders × 14 languages) in ~14m42s
     # (run #26603785540 "Build Test (Vite)" step), so the full job runs
@@ -76,7 +76,7 @@ jobs:
   
   test-homepage:
     name: Homepage & Accessibility Tests
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     needs: build
     timeout-minutes: 5 # Max 5 minutes
     # Use the official Cypress browsers image so Chrome/Firefox/Edge are
@@ -147,7 +147,7 @@ jobs:
   
   summary:
     name: Homepage Test Summary
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     needs: [build, test-homepage]
     if: always()
     

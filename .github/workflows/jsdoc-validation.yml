@@ -11,7 +11,7 @@ permissions:
 jobs:
   typedoc-generation:
     name: Generate & Validate TypeDoc
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     timeout-minutes: 10
     
     steps:
@@ -203,7 +203,7 @@ jobs:
   # deploy-docs:
   #   name: Deploy to GitHub Pages
   #   needs: jsdoc-generation
-  #   runs-on: ubuntu-latest
+  #   runs-on: ubuntu-26.04
   #   if: github.ref == 'refs/heads/main'
   #   steps:
   #     - uses: actions/download-artifact@v4

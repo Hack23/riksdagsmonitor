@@ -40,7 +40,7 @@ permissions:
 jobs:
   audit:
     name: Audit <head> metadata (English locale)
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     timeout-minutes: 30
 
     steps:

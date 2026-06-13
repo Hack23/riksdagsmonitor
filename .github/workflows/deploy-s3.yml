@@ -23,7 +23,7 @@ env:
 jobs:
   deploy:
     if: ${{ github.event.inputs.fix_mimetypes != 'true' }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     # Full prebuild + Vite + minify + S3 deploy routinely runs >15 minutes
     # as the article corpus grows, so keep explicit headroom.
     timeout-minutes: 45
@@ -470,7 +470,7 @@ jobs:
   # ── Fix MIME types on existing S3 objects (manual trigger only) ──
   fix-mimetypes:
     if: ${{ github.event.inputs.fix_mimetypes == 'true' }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     steps:
       - name: Harden Runner
         uses: step-security/harden-runner@9af89fc71515a100421586dfdb3dc9c984fbf411 # v2.19.4
