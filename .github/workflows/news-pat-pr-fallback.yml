@@ -56,7 +56,7 @@ concurrency:
 jobs:
   fallback:
     name: Host-side PAT PR fallback
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     permissions:
       contents: write
       pull-requests: write

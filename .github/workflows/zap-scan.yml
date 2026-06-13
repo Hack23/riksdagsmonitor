@@ -40,7 +40,7 @@ permissions:
 jobs:
   zap-scan:
     name: OWASP ZAP Full Scan
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     timeout-minutes: 60
 
     steps:

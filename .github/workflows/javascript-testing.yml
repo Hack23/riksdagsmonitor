@@ -43,7 +43,7 @@ jobs:
   # Vitest Unit Tests
   unit-tests:
     name: Unit Tests (Vitest)
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     
     steps:
       - name: Harden Runner
@@ -96,7 +96,7 @@ jobs:
   # Vite Build Test
   build-test:
     name: Build Test (Vite)
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     
     steps:
       - name: Harden Runner
@@ -159,7 +159,7 @@ jobs:
   # (Other E2E tests moved to separate workflows: test-homepage.yml, test-dashboard.yml, test-news.yml)
   multi-language-tests:
     name: Multi-Language Sanity Tests
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     needs: build-test
     # This job covers homepage + dashboard + news across all 14 languages
     # (~3× the work of the per-page Cypress jobs), so it needs a larger budget
@@ -242,7 +242,7 @@ jobs:
   # Never blocks the pipeline (continue-on-error: true).
   node-next-compat:
     name: Node.js Nightly Compat
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     continue-on-error: true
     # Bound the whole job so a hung checkout/fetch (transient GitHub-hosted
     # runner flake — see PR #2428 run 25737016620 where `git fetch` stalled
@@ -340,7 +340,7 @@ jobs:
   # Summary Report
   test-summary:
     name: Test Summary
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     needs: [unit-tests, build-test, multi-language-tests, node-next-compat]
     if: always()
     

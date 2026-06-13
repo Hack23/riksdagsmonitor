@@ -205,7 +205,7 @@ Node.js 26 is the **last release under the old two-per-year schedule**. It relea
 **Completed upgrade checklist (for Node.js 26):**
 - [x] Validate TypeScript native type-stripping (`process.features.typescript === "strip"`) still works
 - [x] Confirm all 43+ workflows pass on Node.js 26 (blocking CI jobs)
-- [x] Verify GitHub Actions `ubuntu-latest` runners include Node.js 26
+- [x] Verify GitHub Actions `ubuntu-26.04` runners include Node.js 26
 - [x] Update all `node-version: '25'` → `'26'` across all workflow YAML and markdown files
 - [x] Update `package.json` `engines.node` from `>=25` to `>=26`
 - [x] Update `.nvmrc` from `25` to `26`
@@ -308,7 +308,7 @@ Riksdagsmonitor outputs **static HTML5, CSS3, and ES2020+ JavaScript**. Browser 
 
 | Component | Current | Maintenance Strategy |
 |-----------|---------|---------------------|
-| GitHub Actions runners | `ubuntu-latest` | Auto-updated by GitHub |
+| GitHub Actions runners | `ubuntu-26.04` | Pinned; update when next LTS image releases |
 | Action versions | SHA-pinned | Update via Dependabot |
 | step-security/harden-runner | SHA-pinned | Update via Dependabot |
 | Node.js in CI | `node-version: '26'` | Update with each Node.js migration |

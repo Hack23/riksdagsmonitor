@@ -30,7 +30,7 @@ permissions:
 jobs:
   build:
     name: Build for Dashboard Tests
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     # Bumped from 10 → 15 after observing ~9m45s build times getting
     # cancelled at the 10-min cap on busier runners (see run #26052744369).
     timeout-minutes: 15
@@ -73,7 +73,7 @@ jobs:
   
   test-dashboard:
     name: Dashboard Tests
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     needs: build
     timeout-minutes: 5 # Max 5 minutes
     # Use the official Cypress browsers image so Chrome/Firefox/Edge are
@@ -147,7 +147,7 @@ jobs:
   
   summary:
     name: Dashboard Test Summary
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     needs: [build, test-dashboard]
     if: always()
     

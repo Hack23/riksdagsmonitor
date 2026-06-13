@@ -24,7 +24,7 @@ permissions:
 jobs:
   regenerate:
     name: Regenerate article.md + news HTML (all langs)
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     timeout-minutes: 60
 
     steps:
