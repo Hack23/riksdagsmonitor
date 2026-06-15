@@ -61,7 +61,7 @@
     "test": "NODE_OPTIONS='--max-old-space-size=2048' vitest run",
     "test:watch": "vitest",
     "test:ui": "vitest --ui",
-    "test:coverage": "vitest run --coverage",
+    "test:coverage": "NODE_OPTIONS='--max-old-space-size=4096' vitest run --coverage",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run --config video=false",
     "cypress:run:fast": "cypress run --config video=false --quiet --browser chrome",

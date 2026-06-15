@@ -454,13 +454,22 @@ export default defineConfig({
     
     // Watch mode settings
     watch: false,
-    
+
     // Pool options for parallel execution (Vitest 4+)
-    // Use VM threads for better memory control
-    pool: 'vmThreads',
-    // Single VM thread to reduce memory pressure
-    singleThread: true,
-    
+    // Use the default 'forks' pool (child processes) instead of the
+    // experimental 'vmThreads' pool (worker_threads + VM context).
+    // 'vmThreads' is marked @experimental in Vitest 4.x and triggers
+    // "Worker exited unexpectedly" crashes in CI when any worker thread
+    // terminates abnormally (SIGABRT/OOM). Child-process forks are fully
+    // isolated: a crash in one worker does not cascade to the parent or
+    // other workers, and the OS reclaims memory cleanly between files.
+    pool: 'forks',
+
+    // Limit to one concurrent fork so coverage instrumentation and the
+    // large import graph (scripts/**) do not compete for heap. This is the
+    // forks-pool equivalent of the previous singleThread: true setting.
+    maxWorkers: 1,
+
     // Mock configuration
     mockReset: true,
     restoreMocks: true,
