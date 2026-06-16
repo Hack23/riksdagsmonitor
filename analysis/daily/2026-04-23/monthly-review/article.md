@@ -3,7 +3,7 @@ date: 2026-04-23
 subfolder: monthly-review
 slug: 2026-04-23-monthly-review
 source_folder: analysis/daily/2026-04-23/monthly-review
-generated_at: 2026-06-13T12:46:20.489Z
+generated_at: 2026-06-16T12:10:23.170Z
 language: en
 layout: article
 ---
