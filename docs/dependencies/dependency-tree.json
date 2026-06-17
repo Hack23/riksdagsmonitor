@@ -1,5 +1,5 @@
 {
-  "version": "1.0.15",
+  "version": "1.0.17",
   "name": "riksdagsmonitor",
   "dependencies": {
     "@eslint/js": {
@@ -2563,8 +2563,8 @@
       }
     },
     "happy-dom": {
-      "version": "20.10.4",
-      "resolved": "https://registry.npmjs.org/happy-dom/-/happy-dom-20.10.4.tgz",
+      "version": "20.10.5",
+      "resolved": "https://registry.npmjs.org/happy-dom/-/happy-dom-20.10.5.tgz",
       "overridden": false,
       "dependencies": {
         "@types/node": {
@@ -5830,7 +5830,7 @@
           "overridden": false
         },
         "happy-dom": {
-          "version": "20.10.4"
+          "version": "20.10.5"
         },
         "jsdom": {},
         "magic-string": {
@@ -5912,7 +5912,7 @@
               "overridden": false,
               "dependencies": {
                 "hono": {
-                  "version": "4.12.23"
+                  "version": "4.12.25"
                 }
               }
             },
@@ -6347,8 +6347,8 @@
               }
             },
             "hono": {
-              "version": "4.12.23",
-              "resolved": "https://registry.npmjs.org/hono/-/hono-4.12.23.tgz",
+              "version": "4.12.25",
+              "resolved": "https://registry.npmjs.org/hono/-/hono-4.12.25.tgz",
               "overridden": false
             },
             "jose": {
