@@ -1,5 +1,5 @@
 {
-  "version": "1.0.17",
+  "version": "1.0.18",
   "name": "riksdagsmonitor",
   "dependencies": {
     "@eslint/js": {
@@ -245,13 +245,13 @@
       }
     },
     "@types/node": {
-      "version": "25.9.3",
-      "resolved": "https://registry.npmjs.org/@types/node/-/node-25.9.3.tgz",
+      "version": "26.0.0",
+      "resolved": "https://registry.npmjs.org/@types/node/-/node-26.0.0.tgz",
       "overridden": false,
       "dependencies": {
         "undici-types": {
-          "version": "7.24.6",
-          "resolved": "https://registry.npmjs.org/undici-types/-/undici-types-7.24.6.tgz",
+          "version": "8.3.0",
+          "resolved": "https://registry.npmjs.org/undici-types/-/undici-types-8.3.0.tgz",
           "overridden": false
         }
       }
@@ -262,7 +262,7 @@
       "overridden": false,
       "dependencies": {
         "@types/node": {
-          "version": "25.9.3"
+          "version": "26.0.0"
         }
       }
     },
@@ -2563,12 +2563,12 @@
       }
     },
     "happy-dom": {
-      "version": "20.10.5",
-      "resolved": "https://registry.npmjs.org/happy-dom/-/happy-dom-20.10.5.tgz",
+      "version": "20.10.6",
+      "resolved": "https://registry.npmjs.org/happy-dom/-/happy-dom-20.10.6.tgz",
       "overridden": false,
       "dependencies": {
         "@types/node": {
-          "version": "25.9.3"
+          "version": "26.0.0"
         },
         "@types/whatwg-mimetype": {
           "version": "3.0.2",
@@ -2581,7 +2581,7 @@
           "overridden": false,
           "dependencies": {
             "@types/node": {
-              "version": "25.9.3"
+              "version": "26.0.0"
             }
           }
         },
@@ -2591,7 +2591,7 @@
           "overridden": false,
           "dependencies": {
             "@types/node": {
-              "version": "25.9.3"
+              "version": "26.0.0"
             }
           }
         },
@@ -3219,8 +3219,8 @@
           "version": "1.11.19"
         },
         "dompurify": {
-          "version": "3.4.10",
-          "resolved": "https://registry.npmjs.org/dompurify/-/dompurify-3.4.10.tgz",
+          "version": "3.4.11",
+          "resolved": "https://registry.npmjs.org/dompurify/-/dompurify-3.4.11.tgz",
           "overridden": false,
           "dependencies": {
             "@types/trusted-types": {
@@ -5591,7 +5591,7 @@
       "overridden": false,
       "dependencies": {
         "@types/node": {
-          "version": "25.9.3"
+          "version": "26.0.0"
         },
         "@vitejs/devtools": {},
         "esbuild": {
@@ -5694,7 +5694,7 @@
         "@edge-runtime/vm": {},
         "@opentelemetry/api": {},
         "@types/node": {
-          "version": "25.9.3"
+          "version": "26.0.0"
         },
         "@vitest/browser-playwright": {},
         "@vitest/browser-preview": {},
@@ -5830,7 +5830,7 @@
           "overridden": false
         },
         "happy-dom": {
-          "version": "20.10.5"
+          "version": "20.10.6"
         },
         "jsdom": {},
         "magic-string": {
