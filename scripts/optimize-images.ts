@@ -2,7 +2,7 @@ import { mkdir } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 
-import sharp from 'sharp';
+import sharp, { type Color, type FitEnum, type Sharp } from 'sharp';
 
 const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const imageDir = path.join(repoRoot, 'public', 'images');
@@ -14,7 +14,7 @@ interface WidthVariantSet {
   readonly source: string;
   readonly widths: readonly number[];
   readonly formats: readonly VariantFormat[];
-  readonly fit?: keyof sharp.FitEnum;
+  readonly fit?: keyof FitEnum;
 }
 
 interface SquareVariantSet {
@@ -22,7 +22,7 @@ interface SquareVariantSet {
   readonly source: string;
   readonly sizes: readonly number[];
   readonly formats: readonly VariantFormat[];
-  readonly background?: sharp.Color;
+  readonly background?: Color;
 }
 
 type VariantSet = WidthVariantSet | SquareVariantSet;
@@ -77,7 +77,7 @@ export function variantName(source: string, size: number, format: VariantFormat)
   return `${name}-${size}w.${format}`;
 }
 
-async function encode(image: sharp.Sharp, format: VariantFormat): Promise<sharp.Sharp> {
+async function encode(image: Sharp, format: VariantFormat): Promise<Sharp> {
   switch (format) {
     case 'avif':
       return image.avif({ quality: 62, effort: 6 });
