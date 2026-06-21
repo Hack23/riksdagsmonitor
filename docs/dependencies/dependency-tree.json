@@ -1,5 +1,5 @@
 {
-  "version": "1.0.18",
+  "version": "1.0.19",
   "name": "riksdagsmonitor",
   "dependencies": {
     "@eslint/js": {
@@ -2718,8 +2718,8 @@
       }
     },
     "js-yaml": {
-      "version": "4.2.0",
-      "resolved": "https://registry.npmjs.org/js-yaml/-/js-yaml-4.2.0.tgz",
+      "version": "5.0.0",
+      "resolved": "https://registry.npmjs.org/js-yaml/-/js-yaml-5.0.0.tgz",
       "overridden": false,
       "dependencies": {
         "argparse": {
@@ -2748,7 +2748,14 @@
               "version": "7.0.15"
             },
             "js-yaml": {
-              "version": "4.2.0"
+              "version": "4.2.0",
+              "resolved": "https://registry.npmjs.org/js-yaml/-/js-yaml-4.2.0.tgz",
+              "overridden": false,
+              "dependencies": {
+                "argparse": {
+                  "version": "2.0.1"
+                }
+              }
             }
           }
         },
@@ -2766,7 +2773,14 @@
           "version": "4.0.3"
         },
         "js-yaml": {
-          "version": "4.2.0"
+          "version": "4.2.0",
+          "resolved": "https://registry.npmjs.org/js-yaml/-/js-yaml-4.2.0.tgz",
+          "overridden": false,
+          "dependencies": {
+            "argparse": {
+              "version": "2.0.1"
+            }
+          }
         },
         "lodash": {
           "version": "4.18.1"
