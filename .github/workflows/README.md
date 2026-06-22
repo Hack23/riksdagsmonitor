@@ -120,7 +120,25 @@ Every news workflow declares the **same** tool & runtime surface for parity, res
 | `safe-outputs.create-pull-request.fallback-as-issue` | `true` (explicit) | If org disables Actions PR creation, fall back to an issue + branch link instead of failing |
 | `safe-outputs.create-pull-request.if-no-changes` | `warn` | Empty patches emit a warning instead of failing the run (e.g. duplicate-date dispatches) |
 | `network.allowed` | `node`, `github`, `defaults` + explicit Docker Hub hosts (`docker.io`, `registry-1.docker.io`, `auth.docker.io`, `production.cloudflare.docker.com`) + IMF/SCB/Riksdag/Statskontoret/site domains | Ecosystem identifiers preferred per upstream `network.md`. The broad `containers` ecosystem (which would also permit `ghcr.io`, `quay.io`, `gcr.io`, `mcr.microsoft.com`, `pkgs.k8s.io`, …) is **deliberately omitted** to keep least-privilege egress; only the minimal Docker Hub hosts actually required to resolve `node:26-alpine` for the SCB and World Bank MCP servers are enumerated. Any future switch to `ghcr.io`, `quay.io`, or other registries must add the specific hosts and be reviewed against the egress allowlist policy before merge. |
-| `permissions` | `contents: read`, `issues: read`, `pull-requests: read`, `actions: read`, `discussions: read`, `security-events: read` | Least-privilege agent token; write capabilities live exclusively in the safe-outputs runner job |
+| `permissions` | `contents: read`, `issues: read`, `pull-requests: read`, `actions: read`, `discussions: read`, `security-events: read`, `copilot-requests: write` | Least-privilege agent token; write capabilities live exclusively in the safe-outputs runner job. `copilot-requests: write` enables **GitHub Actions token-based Copilot inference** (`COPILOT_GITHUB_TOKEN: ${{ github.token }}` in the compiled lock file) so the Copilot engine no longer needs a personal-access-token secret. Requires org-level centralized Copilot billing — see [gh-aw billing reference](https://github.github.com/gh-aw/reference/billing/). |
+
+### Accepted compile warnings
+
+`gh aw compile` reports **one expected, reviewed warning per `news-*.md` workflow** (14 total). Compilation is green — `0 error(s)` — and these warnings are an **accepted design decision**, not a defect:
+
+```
+⚠ Warning: secrets expressions detected in 'steps' section may be leaked to the agent job.
+  Found: ${{ secrets.IMF_SDMX_SUBSCRIPTION_KEY }}.
+  Consider moving operations requiring secrets to a separate job outside the agent job.
+```
+
+**Why it is expected.** Every news workflow forwards `secrets.IMF_SDMX_SUBSCRIPTION_KEY` to the [`news-prewarm`](../actions/news-prewarm/action.yml) composite action via a `with:` input in the `steps:` section. The key is **deliberately** propagated into the agent job (exported to `$GITHUB_ENV`, then inherited by the firewalled agent shell via `awf --env-all`) because the agent's `bash` tool makes **live authenticated IMF SDMX 3.0 calls** (`tsx scripts/imf-fetch.ts sdmx …` for IFS / BOP / DOTS / GFS_COFOG / MFS_IR / PCPS / ER). This is the documented economic-data architecture — see [`.github/aw/ECONOMIC_DATA_CONTRACT.md`](../aw/ECONOMIC_DATA_CONTRACT.md), [`.github/prompts/02-mcp-access.md`](../prompts/02-mcp-access.md), and [`analysis/imf/agentic-integration.md`](../../analysis/imf/agentic-integration.md).
+
+gh-aw emits this warning unconditionally for **any** `secrets.*` reference in an injected step section when `strict: false` (every news workflow sets `strict: false` to permit the trusted custom MCP egress domain `riksdag-regering-ai.onrender.com`). In strict mode a `with:` binding on a `uses:` step would instead be treated as a "safe binding" and clear the warning, but strict mode also forbids the custom network domain, job write permissions, and the `bash` wildcard tools these workflows require — so flipping strict is not viable.
+
+**Why it is safe.** The key is masked in logs (`::add-mask::` inside `news-prewarm`) and registered in gh-aw's `GH_AW_SECRET_NAMES` redaction list (the compiled `Redact secrets in logs` step), so it is scrubbed from artifacts and run logs. It is the **only** non-engine secret in the agent job and is required for the workflow's core function.
+
+**If you ever need a zero-secrets-in-agent posture** (gh-aw "Layer 2"), the warning can be removed legitimately only by moving all authenticated SDMX fetching into a separate pre-fetch job that uploads `data/imf-*.json` artifacts for the agent to consume — a re-architecture that retires agent-side live SDMX calls and requires coordinated updates to the IMF contract and prompts.
 
 ### v0.74.3 capabilities — adoption status
 
