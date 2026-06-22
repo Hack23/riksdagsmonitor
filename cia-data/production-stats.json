@@ -1,9 +1,9 @@
 {
   "metadata": {
-    "source_url": "https://raw.githubusercontent.com/Hack23/cia/b50dd2a00429527451fdc1eed26aeca1c75a6273/service.data.impl/sample-data/extraction_summary_report.csv",
+    "source_url": "https://raw.githubusercontent.com/Hack23/cia/4c846c78372f8d0bfcc43f2edd40c889e927e4a6/service.data.impl/sample-data/extraction_summary_report.csv",
     "last_updated": "2026-06-06 20:48:04.446826",
     "extraction_time": "2026-06-06 20:48:04.446826",
-    "generated_at": "2026-06-06T22:42:10.677Z",
+    "generated_at": "2026-06-22T05:14:20.554Z",
     "version": "1.2.0"
   },
   "counts": {
