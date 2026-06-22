@@ -41,6 +41,7 @@ permissions:
   actions: read
   discussions: read
   security-events: read
+  copilot-requests: write
 
 timeout-minutes: 60
 
