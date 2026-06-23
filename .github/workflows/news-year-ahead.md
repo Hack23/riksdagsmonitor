@@ -48,6 +48,12 @@ permissions:
 
 timeout-minutes: 60
 
+# Cost-focus guardrails. `max-turns` caps agent tool-calling turns (runaway-loop circuit
+# breaker) and is tunable repo-wide via the NEWS_MAX_TURNS variable. `max-ai-credits` is a
+# per-run AI Credits ceiling — expressions are unsupported here, so a literal is required.
+max-turns: ${{ vars.NEWS_MAX_TURNS || 300 }}
+max-ai-credits: 3000
+
 concurrency:
   group: gh-aw-news-year-ahead-${{ inputs.article_date || 'today' }}
   cancel-in-progress: false
