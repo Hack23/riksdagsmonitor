@@ -1,5 +1,5 @@
 {
-  "version": "1.0.19",
+  "version": "1.0.20",
   "name": "riksdagsmonitor",
   "dependencies": {
     "@eslint/js": {
@@ -2495,8 +2495,8 @@
       "overridden": false
     },
     "globals": {
-      "version": "17.6.0",
-      "resolved": "https://registry.npmjs.org/globals/-/globals-17.6.0.tgz",
+      "version": "17.7.0",
+      "resolved": "https://registry.npmjs.org/globals/-/globals-17.7.0.tgz",
       "overridden": false
     },
     "gray-matter": {
@@ -2718,8 +2718,8 @@
       }
     },
     "js-yaml": {
-      "version": "5.0.0",
-      "resolved": "https://registry.npmjs.org/js-yaml/-/js-yaml-5.0.0.tgz",
+      "version": "5.1.0",
+      "resolved": "https://registry.npmjs.org/js-yaml/-/js-yaml-5.1.0.tgz",
       "overridden": false,
       "dependencies": {
         "argparse": {
@@ -2877,8 +2877,8 @@
       }
     },
     "knip": {
-      "version": "6.17.1",
-      "resolved": "https://registry.npmjs.org/knip/-/knip-6.17.1.tgz",
+      "version": "6.18.0",
+      "resolved": "https://registry.npmjs.org/knip/-/knip-6.18.0.tgz",
       "overridden": false,
       "dependencies": {
         "fdir": {
@@ -2926,8 +2926,8 @@
           "version": "2.7.0"
         },
         "oxc-parser": {
-          "version": "0.135.0",
-          "resolved": "https://registry.npmjs.org/oxc-parser/-/oxc-parser-0.135.0.tgz",
+          "version": "0.137.0",
+          "resolved": "https://registry.npmjs.org/oxc-parser/-/oxc-parser-0.137.0.tgz",
           "overridden": false,
           "dependencies": {
             "@oxc-parser/binding-android-arm-eabi": {},
@@ -2944,8 +2944,8 @@
             "@oxc-parser/binding-linux-riscv64-musl": {},
             "@oxc-parser/binding-linux-s390x-gnu": {},
             "@oxc-parser/binding-linux-x64-gnu": {
-              "version": "0.135.0",
-              "resolved": "https://registry.npmjs.org/@oxc-parser/binding-linux-x64-gnu/-/binding-linux-x64-gnu-0.135.0.tgz",
+              "version": "0.137.0",
+              "resolved": "https://registry.npmjs.org/@oxc-parser/binding-linux-x64-gnu/-/binding-linux-x64-gnu-0.137.0.tgz",
               "overridden": false
             },
             "@oxc-parser/binding-linux-x64-musl": {},
@@ -2955,15 +2955,15 @@
             "@oxc-parser/binding-win32-ia32-msvc": {},
             "@oxc-parser/binding-win32-x64-msvc": {},
             "@oxc-project/types": {
-              "version": "0.135.0",
-              "resolved": "https://registry.npmjs.org/@oxc-project/types/-/types-0.135.0.tgz",
+              "version": "0.137.0",
+              "resolved": "https://registry.npmjs.org/@oxc-project/types/-/types-0.137.0.tgz",
               "overridden": false
             }
           }
         },
         "oxc-resolver": {
-          "version": "11.20.0",
-          "resolved": "https://registry.npmjs.org/oxc-resolver/-/oxc-resolver-11.20.0.tgz",
+          "version": "11.21.3",
+          "resolved": "https://registry.npmjs.org/oxc-resolver/-/oxc-resolver-11.21.3.tgz",
           "overridden": false,
           "dependencies": {
             "@oxc-resolver/binding-android-arm-eabi": {},
@@ -2980,15 +2980,11 @@
             "@oxc-resolver/binding-linux-riscv64-musl": {},
             "@oxc-resolver/binding-linux-s390x-gnu": {},
             "@oxc-resolver/binding-linux-x64-gnu": {
-              "version": "11.20.0",
-              "resolved": "https://registry.npmjs.org/@oxc-resolver/binding-linux-x64-gnu/-/binding-linux-x64-gnu-11.20.0.tgz",
+              "version": "11.21.3",
+              "resolved": "https://registry.npmjs.org/@oxc-resolver/binding-linux-x64-gnu/-/binding-linux-x64-gnu-11.21.3.tgz",
               "overridden": false
             },
-            "@oxc-resolver/binding-linux-x64-musl": {
-              "version": "11.20.0",
-              "resolved": "https://registry.npmjs.org/@oxc-resolver/binding-linux-x64-musl/-/binding-linux-x64-musl-11.20.0.tgz",
-              "overridden": false
-            },
+            "@oxc-resolver/binding-linux-x64-musl": {},
             "@oxc-resolver/binding-openharmony-arm64": {},
             "@oxc-resolver/binding-wasm32-wasi": {},
             "@oxc-resolver/binding-win32-arm64-msvc": {},
@@ -3784,8 +3780,8 @@
       }
     },
     "papaparse": {
-      "version": "5.5.3",
-      "resolved": "https://registry.npmjs.org/papaparse/-/papaparse-5.5.3.tgz",
+      "version": "5.5.4",
+      "resolved": "https://registry.npmjs.org/papaparse/-/papaparse-5.5.4.tgz",
       "overridden": false
     },
     "rehype-autolink-headings": {
@@ -4924,8 +4920,8 @@
       }
     },
     "sharp": {
-      "version": "0.35.1",
-      "resolved": "https://registry.npmjs.org/sharp/-/sharp-0.35.1.tgz",
+      "version": "0.35.2",
+      "resolved": "https://registry.npmjs.org/sharp/-/sharp-0.35.2.tgz",
       "overridden": false,
       "dependencies": {
         "@img/colour": {
@@ -4944,42 +4940,29 @@
         "@img/sharp-libvips-linux-riscv64": {},
         "@img/sharp-libvips-linux-s390x": {},
         "@img/sharp-libvips-linux-x64": {
-          "version": "1.3.0",
-          "resolved": "https://registry.npmjs.org/@img/sharp-libvips-linux-x64/-/sharp-libvips-linux-x64-1.3.0.tgz",
+          "version": "1.3.1",
+          "resolved": "https://registry.npmjs.org/@img/sharp-libvips-linux-x64/-/sharp-libvips-linux-x64-1.3.1.tgz",
           "overridden": false
         },
         "@img/sharp-libvips-linuxmusl-arm64": {},
-        "@img/sharp-libvips-linuxmusl-x64": {
-          "version": "1.3.0",
-          "resolved": "https://registry.npmjs.org/@img/sharp-libvips-linuxmusl-x64/-/sharp-libvips-linuxmusl-x64-1.3.0.tgz",
-          "overridden": false
-        },
+        "@img/sharp-libvips-linuxmusl-x64": {},
         "@img/sharp-linux-arm": {},
         "@img/sharp-linux-arm64": {},
         "@img/sharp-linux-ppc64": {},
         "@img/sharp-linux-riscv64": {},
         "@img/sharp-linux-s390x": {},
         "@img/sharp-linux-x64": {
-          "version": "0.35.1",
-          "resolved": "https://registry.npmjs.org/@img/sharp-linux-x64/-/sharp-linux-x64-0.35.1.tgz",
+          "version": "0.35.2",
+          "resolved": "https://registry.npmjs.org/@img/sharp-linux-x64/-/sharp-linux-x64-0.35.2.tgz",
           "overridden": false,
           "dependencies": {
             "@img/sharp-libvips-linux-x64": {
-              "version": "1.3.0"
+              "version": "1.3.1"
             }
           }
         },
         "@img/sharp-linuxmusl-arm64": {},
-        "@img/sharp-linuxmusl-x64": {
-          "version": "0.35.1",
-          "resolved": "https://registry.npmjs.org/@img/sharp-linuxmusl-x64/-/sharp-linuxmusl-x64-0.35.1.tgz",
-          "overridden": false,
-          "dependencies": {
-            "@img/sharp-libvips-linuxmusl-x64": {
-              "version": "1.3.0"
-            }
-          }
-        },
+        "@img/sharp-linuxmusl-x64": {},
         "@img/sharp-webcontainers-wasm32": {},
         "@img/sharp-win32-arm64": {},
         "@img/sharp-win32-ia32": {},
@@ -5295,47 +5278,47 @@
       }
     },
     "typescript-eslint": {
-      "version": "8.61.1",
-      "resolved": "https://registry.npmjs.org/typescript-eslint/-/typescript-eslint-8.61.1.tgz",
+      "version": "8.62.0",
+      "resolved": "https://registry.npmjs.org/typescript-eslint/-/typescript-eslint-8.62.0.tgz",
       "overridden": false,
       "dependencies": {
         "@typescript-eslint/eslint-plugin": {
-          "version": "8.61.1",
-          "resolved": "https://registry.npmjs.org/@typescript-eslint/eslint-plugin/-/eslint-plugin-8.61.1.tgz",
+          "version": "8.62.0",
+          "resolved": "https://registry.npmjs.org/@typescript-eslint/eslint-plugin/-/eslint-plugin-8.62.0.tgz",
           "overridden": false,
           "dependencies": {
             "@eslint-community/regexpp": {
               "version": "4.12.2"
             },
             "@typescript-eslint/parser": {
-              "version": "8.61.1"
+              "version": "8.62.0"
             },
             "@typescript-eslint/scope-manager": {
-              "version": "8.61.1",
-              "resolved": "https://registry.npmjs.org/@typescript-eslint/scope-manager/-/scope-manager-8.61.1.tgz",
+              "version": "8.62.0",
+              "resolved": "https://registry.npmjs.org/@typescript-eslint/scope-manager/-/scope-manager-8.62.0.tgz",
               "overridden": false,
               "dependencies": {
                 "@typescript-eslint/types": {
-                  "version": "8.61.1"
+                  "version": "8.62.0"
                 },
                 "@typescript-eslint/visitor-keys": {
-                  "version": "8.61.1"
+                  "version": "8.62.0"
                 }
               }
             },
             "@typescript-eslint/type-utils": {
-              "version": "8.61.1",
-              "resolved": "https://registry.npmjs.org/@typescript-eslint/type-utils/-/type-utils-8.61.1.tgz",
+              "version": "8.62.0",
+              "resolved": "https://registry.npmjs.org/@typescript-eslint/type-utils/-/type-utils-8.62.0.tgz",
               "overridden": false,
               "dependencies": {
                 "@typescript-eslint/types": {
-                  "version": "8.61.1"
+                  "version": "8.62.0"
                 },
                 "@typescript-eslint/typescript-estree": {
-                  "version": "8.61.1"
+                  "version": "8.62.0"
                 },
                 "@typescript-eslint/utils": {
-                  "version": "8.61.1"
+                  "version": "8.62.0"
                 },
                 "debug": {
                   "version": "4.4.3"
@@ -5352,15 +5335,15 @@
               }
             },
             "@typescript-eslint/utils": {
-              "version": "8.61.1"
+              "version": "8.62.0"
             },
             "@typescript-eslint/visitor-keys": {
-              "version": "8.61.1",
-              "resolved": "https://registry.npmjs.org/@typescript-eslint/visitor-keys/-/visitor-keys-8.61.1.tgz",
+              "version": "8.62.0",
+              "resolved": "https://registry.npmjs.org/@typescript-eslint/visitor-keys/-/visitor-keys-8.62.0.tgz",
               "overridden": false,
               "dependencies": {
                 "@typescript-eslint/types": {
-                  "version": "8.61.1"
+                  "version": "8.62.0"
                 },
                 "eslint-visitor-keys": {
                   "version": "5.0.1"
@@ -5394,23 +5377,23 @@
           }
         },
         "@typescript-eslint/parser": {
-          "version": "8.61.1",
-          "resolved": "https://registry.npmjs.org/@typescript-eslint/parser/-/parser-8.61.1.tgz",
+          "version": "8.62.0",
+          "resolved": "https://registry.npmjs.org/@typescript-eslint/parser/-/parser-8.62.0.tgz",
           "overridden": false,
           "dependencies": {
             "@typescript-eslint/scope-manager": {
-              "version": "8.61.1"
+              "version": "8.62.0"
             },
             "@typescript-eslint/types": {
-              "version": "8.61.1",
-              "resolved": "https://registry.npmjs.org/@typescript-eslint/types/-/types-8.61.1.tgz",
+              "version": "8.62.0",
+              "resolved": "https://registry.npmjs.org/@typescript-eslint/types/-/types-8.62.0.tgz",
               "overridden": false
             },
             "@typescript-eslint/typescript-estree": {
-              "version": "8.61.1"
+              "version": "8.62.0"
             },
             "@typescript-eslint/visitor-keys": {
-              "version": "8.61.1"
+              "version": "8.62.0"
             },
             "debug": {
               "version": "4.4.3"
@@ -5424,20 +5407,20 @@
           }
         },
         "@typescript-eslint/typescript-estree": {
-          "version": "8.61.1",
-          "resolved": "https://registry.npmjs.org/@typescript-eslint/typescript-estree/-/typescript-estree-8.61.1.tgz",
+          "version": "8.62.0",
+          "resolved": "https://registry.npmjs.org/@typescript-eslint/typescript-estree/-/typescript-estree-8.62.0.tgz",
           "overridden": false,
           "dependencies": {
             "@typescript-eslint/project-service": {
-              "version": "8.61.1",
-              "resolved": "https://registry.npmjs.org/@typescript-eslint/project-service/-/project-service-8.61.1.tgz",
+              "version": "8.62.0",
+              "resolved": "https://registry.npmjs.org/@typescript-eslint/project-service/-/project-service-8.62.0.tgz",
               "overridden": false,
               "dependencies": {
                 "@typescript-eslint/tsconfig-utils": {
-                  "version": "8.61.1"
+                  "version": "8.62.0"
                 },
                 "@typescript-eslint/types": {
-                  "version": "8.61.1"
+                  "version": "8.62.0"
                 },
                 "debug": {
                   "version": "4.4.3"
@@ -5448,8 +5431,8 @@
               }
             },
             "@typescript-eslint/tsconfig-utils": {
-              "version": "8.61.1",
-              "resolved": "https://registry.npmjs.org/@typescript-eslint/tsconfig-utils/-/tsconfig-utils-8.61.1.tgz",
+              "version": "8.62.0",
+              "resolved": "https://registry.npmjs.org/@typescript-eslint/tsconfig-utils/-/tsconfig-utils-8.62.0.tgz",
               "overridden": false,
               "dependencies": {
                 "typescript": {
@@ -5458,10 +5441,10 @@
               }
             },
             "@typescript-eslint/types": {
-              "version": "8.61.1"
+              "version": "8.62.0"
             },
             "@typescript-eslint/visitor-keys": {
-              "version": "8.61.1"
+              "version": "8.62.0"
             },
             "debug": {
               "version": "4.4.3"
@@ -5484,21 +5467,21 @@
           }
         },
         "@typescript-eslint/utils": {
-          "version": "8.61.1",
-          "resolved": "https://registry.npmjs.org/@typescript-eslint/utils/-/utils-8.61.1.tgz",
+          "version": "8.62.0",
+          "resolved": "https://registry.npmjs.org/@typescript-eslint/utils/-/utils-8.62.0.tgz",
           "overridden": false,
           "dependencies": {
             "@eslint-community/eslint-utils": {
               "version": "4.9.1"
             },
             "@typescript-eslint/scope-manager": {
-              "version": "8.61.1"
+              "version": "8.62.0"
             },
             "@typescript-eslint/types": {
-              "version": "8.61.1"
+              "version": "8.62.0"
             },
             "@typescript-eslint/typescript-estree": {
-              "version": "8.61.1"
+              "version": "8.62.0"
             },
             "eslint": {
               "version": "10.5.0"
