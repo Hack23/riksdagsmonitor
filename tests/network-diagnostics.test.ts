@@ -54,6 +54,12 @@ const NEWS_PREWARM_ACTION = path.join(
   'action.yml'
 );
 const NEWS_PREWARM_USES_REF = './.github/actions/news-prewarm';
+// A `uses:` reference to the shared news-prewarm composite action may appear as
+// the bare local form (`./.github/actions/news-prewarm`) or the SHA-pinned
+// remote form (`<owner>/<repo>/.github/actions/news-prewarm@<sha>`) that
+// `gh aw compile` emits under strict action pinning. Match either form.
+const NEWS_PREWARM_USES_RE =
+  /uses:\s*(?:\.\/|[A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+\/)\.github\/actions\/news-prewarm(?:@[0-9a-fA-F]+)?/;
 
 // ---------------------------------------------------------------------------
 // Constants
@@ -528,7 +534,7 @@ describe('Network Diagnostics Configuration', () => {
         expect(
           fm,
           `${workflow} does not reference shared composite action ${NEWS_PREWARM_USES_REF}`
-        ).toContain(`uses: ${NEWS_PREWARM_USES_REF}`);
+        ).toMatch(NEWS_PREWARM_USES_RE);
 
         // And it must NOT have re-introduced the misleading inline name.
         expect(
@@ -600,7 +606,7 @@ describe('Network Diagnostics Configuration', () => {
         expect(
           fm,
           `${workflow} missing reference to shared pre-flight action ${NEWS_PREWARM_USES_REF}`
-        ).toContain(`uses: ${NEWS_PREWARM_USES_REF}`);
+        ).toMatch(NEWS_PREWARM_USES_RE);
       });
     });
 
@@ -638,7 +644,7 @@ describe('Network Diagnostics Configuration', () => {
         const hasPreWarmReference =
           content.includes('Pre-warm') ||
           content.includes('pre-warm') ||
-          fm.includes(NEWS_PREWARM_USES_REF);
+          NEWS_PREWARM_USES_RE.test(fm);
         const hasHealthGate = content.includes('get_sync_status');
         const hasToolsList = content.includes('tools/list');
 
@@ -672,7 +678,7 @@ describe('Network Diagnostics Configuration', () => {
         expect(
           fm,
           `${workflow} missing shared pre-flight composite action ${NEWS_PREWARM_USES_REF}`
-        ).toContain(`uses: ${NEWS_PREWARM_USES_REF}`);
+        ).toMatch(NEWS_PREWARM_USES_RE);
 
         // Health gate should be reachable from the effective prompt surface
         // (workflow body + imported modules).

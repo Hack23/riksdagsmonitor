@@ -8,6 +8,17 @@ const WORKFLOWS_DIR = join(REPO_ROOT, '.github', 'workflows');
 
 const ACTION_CONTENT = readFileSync(ACTION_PATH, 'utf8');
 
+// A composite-action `uses:` reference may appear either as the bare local form
+// (`./.github/actions/<name>`) or as the SHA-pinned remote form
+// (`<owner>/<repo>/.github/actions/<name>@<sha>`) that `gh aw compile` emits
+// under strict action pinning. These helpers locate either form.
+const newsActionRef = (name: string): RegExp =>
+  new RegExp(
+    `uses:\\s*(?:\\./|[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+/)\\.github/actions/${name}(?:@[0-9a-fA-F]+)?`,
+  );
+const indexOfNewsAction = (content: string, name: string): number =>
+  content.search(newsActionRef(name));
+
 // Per-workflow expectations derived from `analysis/article-types.json`. The
 // subfolder MUST be the article-type id and the default depth MUST match the
 // per-tier policy (year-ahead/election-cycle = comprehensive, news-translate =
@@ -113,7 +124,7 @@ describe('news-*.md workflows wire news-resolve-inputs immediately after news-pr
     expect(newsWorkflows.length).toBe(14);
     for (const f of newsWorkflows) {
       const content = readFileSync(join(WORKFLOWS_DIR, f), 'utf8');
-      expect(content, `${f} missing news-prewarm`).toContain('./.github/actions/news-prewarm');
+      expect(content, `${f} missing news-prewarm`).toMatch(newsActionRef('news-prewarm'));
     }
   });
 
@@ -125,8 +136,8 @@ describe('news-*.md workflows wire news-resolve-inputs immediately after news-pr
       // Sequencing: news-resolve-inputs must appear AFTER news-prewarm in the
       // steps block (otherwise $GITHUB_ENV is set before any pre-warm has run,
       // which is harmless but breaks the documented contract).
-      const prewarmIdx   = content.indexOf('./.github/actions/news-prewarm');
-      const resolveIdx   = content.indexOf('./.github/actions/news-resolve-inputs');
+      const prewarmIdx   = indexOfNewsAction(content, 'news-prewarm');
+      const resolveIdx   = indexOfNewsAction(content, 'news-resolve-inputs');
       expect(prewarmIdx, `${filename} missing news-prewarm`).toBeGreaterThan(-1);
       expect(resolveIdx, `${filename} missing news-resolve-inputs`).toBeGreaterThan(-1);
       expect(resolveIdx).toBeGreaterThan(prewarmIdx);

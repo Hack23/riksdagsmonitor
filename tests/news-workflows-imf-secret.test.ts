@@ -47,7 +47,13 @@ describe('news-*.md IMF SDMX subscription key forwarding', () => {
       const content = readFileSync(path, 'utf8');
 
       // 1. The workflow must reference the news-prewarm composite action.
-      expect(content).toMatch(/uses:\s*\.\/\.github\/actions\/news-prewarm/);
+      //    The reference may be either the bare local form
+      //    (`./.github/actions/news-prewarm`) or the SHA-pinned remote form
+      //    (`Hack23/riksdagsmonitor/.github/actions/news-prewarm@<sha>`) that
+      //    `gh aw compile` emits under strict action pinning.
+      expect(content).toMatch(
+        /uses:\s*(?:\.\/|[A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+\/)\.github\/actions\/news-prewarm(?:@[0-9a-fA-F]+)?/,
+      );
 
       // 2. Immediately after that `uses:` line the workflow must declare a
       //    `with:` block forwarding the IMF SDMX subscription key from
@@ -55,7 +61,7 @@ describe('news-*.md IMF SDMX subscription key forwarding', () => {
       //    that the news-prewarm action's `imf-sdmx-subscription-key` input
       //    expects (see `.github/actions/news-prewarm/action.yml`).
       const pattern =
-        /uses:\s*\.\/\.github\/actions\/news-prewarm\s*\n\s*with:\s*\n\s*imf-sdmx-subscription-key:\s*\$\{\{\s*secrets\.IMF_SDMX_SUBSCRIPTION_KEY\s*\}\}/;
+        /uses:\s*(?:\.\/|[A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+\/)\.github\/actions\/news-prewarm(?:@[0-9a-fA-F]+)?\s*\n\s*with:\s*\n\s*imf-sdmx-subscription-key:\s*\$\{\{\s*secrets\.IMF_SDMX_SUBSCRIPTION_KEY\s*\}\}/;
       expect(content).toMatch(pattern);
     },
   );
