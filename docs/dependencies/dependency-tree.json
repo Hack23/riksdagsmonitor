@@ -1,5 +1,5 @@
 {
-  "version": "1.0.20",
+  "version": "1.0.21",
   "name": "riksdagsmonitor",
   "dependencies": {
     "@eslint/js": {
@@ -567,8 +567,8 @@
       }
     },
     "cypress": {
-      "version": "15.17.0",
-      "resolved": "https://registry.npmjs.org/cypress/-/cypress-15.17.0.tgz",
+      "version": "15.18.0",
+      "resolved": "https://registry.npmjs.org/cypress/-/cypress-15.18.0.tgz",
       "overridden": false,
       "dependencies": {
         "@cypress/request": {
@@ -5583,8 +5583,8 @@
       }
     },
     "vite": {
-      "version": "8.0.16",
-      "resolved": "https://registry.npmjs.org/vite/-/vite-8.0.16.tgz",
+      "version": "8.1.0",
+      "resolved": "https://registry.npmjs.org/vite/-/vite-8.1.0.tgz",
       "overridden": false,
       "dependencies": {
         "@types/node": {
@@ -5626,14 +5626,12 @@
           }
         },
         "rolldown": {
-          "version": "1.0.3",
-          "resolved": "https://registry.npmjs.org/rolldown/-/rolldown-1.0.3.tgz",
+          "version": "1.1.2",
+          "resolved": "https://registry.npmjs.org/rolldown/-/rolldown-1.1.2.tgz",
           "overridden": false,
           "dependencies": {
             "@oxc-project/types": {
-              "version": "0.133.0",
-              "resolved": "https://registry.npmjs.org/@oxc-project/types/-/types-0.133.0.tgz",
-              "overridden": false
+              "version": "0.137.0"
             },
             "@rolldown/binding-android-arm64": {},
             "@rolldown/binding-darwin-arm64": {},
@@ -5645,15 +5643,11 @@
             "@rolldown/binding-linux-ppc64-gnu": {},
             "@rolldown/binding-linux-s390x-gnu": {},
             "@rolldown/binding-linux-x64-gnu": {
-              "version": "1.0.3",
-              "resolved": "https://registry.npmjs.org/@rolldown/binding-linux-x64-gnu/-/binding-linux-x64-gnu-1.0.3.tgz",
+              "version": "1.1.2",
+              "resolved": "https://registry.npmjs.org/@rolldown/binding-linux-x64-gnu/-/binding-linux-x64-gnu-1.1.2.tgz",
               "overridden": false
             },
-            "@rolldown/binding-linux-x64-musl": {
-              "version": "1.0.3",
-              "resolved": "https://registry.npmjs.org/@rolldown/binding-linux-x64-musl/-/binding-linux-x64-musl-1.0.3.tgz",
-              "overridden": false
-            },
+            "@rolldown/binding-linux-x64-musl": {},
             "@rolldown/binding-openharmony-arm64": {},
             "@rolldown/binding-wasm32-wasi": {},
             "@rolldown/binding-win32-arm64-msvc": {},
@@ -5759,7 +5753,7 @@
             },
             "msw": {},
             "vite": {
-              "version": "8.0.16"
+              "version": "8.1.0"
             }
           }
         },
@@ -5871,7 +5865,7 @@
           "version": "3.1.0"
         },
         "vite": {
-          "version": "8.0.16"
+          "version": "8.1.0"
         },
         "why-is-node-running": {
           "version": "2.3.0",

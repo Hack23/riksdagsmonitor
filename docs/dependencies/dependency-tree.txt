@@ -1,4 +1,4 @@
-riksdagsmonitor@1.0.20 /home/runner/work/riksdagsmonitor/riksdagsmonitor
+riksdagsmonitor@1.0.21 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 ├─┬ @eslint/js@10.0.1
 │ └── eslint@10.5.0 deduped
 ├─┬ @types/d3@7.4.3
@@ -111,7 +111,7 @@ riksdagsmonitor@1.0.20 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ └── @kurkle/color@0.3.4
 ├─┬ chartjs-plugin-annotation@3.1.0
 │ └── chart.js@4.5.1 deduped
-├─┬ cypress@15.17.0
+├─┬ cypress@15.18.0
 │ ├─┬ @cypress/request@4.0.0
 │ │ ├── aws-sign2@0.7.0
 │ │ ├── aws4@1.13.2
@@ -1271,9 +1271,9 @@ riksdagsmonitor@1.0.20 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ └─┬ unist-util-visit-parents@6.0.2
 │   ├── @types/unist@3.0.3 deduped
 │   └── unist-util-is@6.0.1 deduped
-├─┬ vite@8.0.16
+├─┬ vite@8.1.0
 │ ├── @types/node@26.0.0 deduped
-│ ├── UNMET OPTIONAL DEPENDENCY @vitejs/devtools@^0.1.18
+│ ├── UNMET OPTIONAL DEPENDENCY @vitejs/devtools@^0.3.0
 │ ├── esbuild@0.28.1 deduped
 │ ├── UNMET OPTIONAL DEPENDENCY fsevents@~2.3.3
 │ ├── jiti@2.7.0 deduped
@@ -1284,23 +1284,23 @@ riksdagsmonitor@1.0.20 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ │ ├── nanoid@3.3.12
 │ │ ├── picocolors@1.1.1
 │ │ └── source-map-js@1.2.1 deduped
-│ ├─┬ rolldown@1.0.3
-│ │ ├── @oxc-project/types@0.133.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-android-arm64@1.0.3
-│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-darwin-arm64@1.0.3
-│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-darwin-x64@1.0.3
-│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-freebsd-x64@1.0.3
-│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-linux-arm-gnueabihf@1.0.3
-│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-linux-arm64-gnu@1.0.3
-│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-linux-arm64-musl@1.0.3
-│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-linux-ppc64-gnu@1.0.3
-│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-linux-s390x-gnu@1.0.3
-│ │ ├── @rolldown/binding-linux-x64-gnu@1.0.3
-│ │ ├── @rolldown/binding-linux-x64-musl@1.0.3
-│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-openharmony-arm64@1.0.3
-│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-wasm32-wasi@1.0.3
-│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-win32-arm64-msvc@1.0.3
-│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-win32-x64-msvc@1.0.3
+│ ├─┬ rolldown@1.1.2
+│ │ ├── @oxc-project/types@0.137.0 deduped
+│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-android-arm64@1.1.2
+│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-darwin-arm64@1.1.2
+│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-darwin-x64@1.1.2
+│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-freebsd-x64@1.1.2
+│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-linux-arm-gnueabihf@1.1.2
+│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-linux-arm64-gnu@1.1.2
+│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-linux-arm64-musl@1.1.2
+│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-linux-ppc64-gnu@1.1.2
+│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-linux-s390x-gnu@1.1.2
+│ │ ├── @rolldown/binding-linux-x64-gnu@1.1.2
+│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-linux-x64-musl@1.1.2
+│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-openharmony-arm64@1.1.2
+│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-wasm32-wasi@1.1.2
+│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-win32-arm64-msvc@1.1.2
+│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-win32-x64-msvc@1.1.2
 │ │ └── @rolldown/pluginutils@1.0.1
 │ ├── UNMET OPTIONAL DEPENDENCY sass-embedded@^1.70.0
 │ ├── UNMET OPTIONAL DEPENDENCY sass@^1.70.0
@@ -1333,7 +1333,7 @@ riksdagsmonitor@1.0.20 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ │ ├── estree-walker@3.0.3 deduped
 │ │ ├── magic-string@0.30.21 deduped
 │ │ ├── UNMET OPTIONAL DEPENDENCY msw@^2.4.9
-│ │ └── vite@8.0.16 deduped
+│ │ └── vite@8.1.0 deduped
 │ ├─┬ @vitest/pretty-format@4.1.9
 │ │ └── tinyrainbow@3.1.0 deduped
 │ ├─┬ @vitest/runner@4.1.9
@@ -1361,7 +1361,7 @@ riksdagsmonitor@1.0.20 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ ├── tinyexec@1.0.2
 │ ├── tinyglobby@0.2.17 deduped
 │ ├── tinyrainbow@3.1.0 deduped
-│ ├── vite@8.0.16 deduped
+│ ├── vite@8.1.0 deduped
 │ └─┬ why-is-node-running@2.3.0
 │   ├── siginfo@2.0.0
 │   └── stackback@0.0.2
