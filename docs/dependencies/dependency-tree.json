@@ -1,5 +1,5 @@
 {
-  "version": "1.0.21",
+  "version": "1.0.22",
   "name": "riksdagsmonitor",
   "dependencies": {
     "@eslint/js": {
@@ -245,8 +245,8 @@
       }
     },
     "@types/node": {
-      "version": "26.0.0",
-      "resolved": "https://registry.npmjs.org/@types/node/-/node-26.0.0.tgz",
+      "version": "26.0.1",
+      "resolved": "https://registry.npmjs.org/@types/node/-/node-26.0.1.tgz",
       "overridden": false,
       "dependencies": {
         "undici-types": {
@@ -262,7 +262,7 @@
       "overridden": false,
       "dependencies": {
         "@types/node": {
-          "version": "26.0.0"
+          "version": "26.0.1"
         }
       }
     },
@@ -1196,8 +1196,8 @@
           "overridden": false
         },
         "dayjs": {
-          "version": "1.11.19",
-          "resolved": "https://registry.npmjs.org/dayjs/-/dayjs-1.11.19.tgz",
+          "version": "1.11.21",
+          "resolved": "https://registry.npmjs.org/dayjs/-/dayjs-1.11.21.tgz",
           "overridden": false
         },
         "debug": {
@@ -2568,7 +2568,7 @@
       "overridden": false,
       "dependencies": {
         "@types/node": {
-          "version": "26.0.0"
+          "version": "26.0.1"
         },
         "@types/whatwg-mimetype": {
           "version": "3.0.2",
@@ -2581,7 +2581,7 @@
           "overridden": false,
           "dependencies": {
             "@types/node": {
-              "version": "26.0.0"
+              "version": "26.0.1"
             }
           }
         },
@@ -2591,7 +2591,7 @@
           "overridden": false,
           "dependencies": {
             "@types/node": {
-              "version": "26.0.0"
+              "version": "26.0.1"
             }
           }
         },
@@ -2877,8 +2877,8 @@
       }
     },
     "knip": {
-      "version": "6.18.0",
-      "resolved": "https://registry.npmjs.org/knip/-/knip-6.18.0.tgz",
+      "version": "6.20.0",
+      "resolved": "https://registry.npmjs.org/knip/-/knip-6.20.0.tgz",
       "overridden": false,
       "dependencies": {
         "fdir": {
@@ -3027,8 +3027,8 @@
       }
     },
     "mermaid": {
-      "version": "11.15.0",
-      "resolved": "https://registry.npmjs.org/mermaid/-/mermaid-11.15.0.tgz",
+      "version": "11.16.0",
+      "resolved": "https://registry.npmjs.org/mermaid/-/mermaid-11.16.0.tgz",
       "overridden": false,
       "dependencies": {
         "@braintree/sanitize-url": {
@@ -3100,8 +3100,8 @@
           }
         },
         "@mermaid-js/parser": {
-          "version": "1.1.1",
-          "resolved": "https://registry.npmjs.org/@mermaid-js/parser/-/parser-1.1.1.tgz",
+          "version": "1.2.0",
+          "resolved": "https://registry.npmjs.org/@mermaid-js/parser/-/parser-1.2.0.tgz",
           "overridden": false,
           "dependencies": {
             "@chevrotain/types": {
@@ -3145,7 +3145,7 @@
               }
             },
             "cytoscape": {
-              "version": "3.33.2"
+              "version": "3.34.0"
             }
           }
         },
@@ -3167,13 +3167,13 @@
               }
             },
             "cytoscape": {
-              "version": "3.33.2"
+              "version": "3.34.0"
             }
           }
         },
         "cytoscape": {
-          "version": "3.33.2",
-          "resolved": "https://registry.npmjs.org/cytoscape/-/cytoscape-3.33.2.tgz",
+          "version": "3.34.0",
+          "resolved": "https://registry.npmjs.org/cytoscape/-/cytoscape-3.34.0.tgz",
           "overridden": false
         },
         "d3-sankey": {
@@ -3226,7 +3226,7 @@
           }
         },
         "dayjs": {
-          "version": "1.11.19"
+          "version": "1.11.21"
         },
         "dompurify": {
           "version": "3.4.11",
@@ -5588,7 +5588,7 @@
       "overridden": false,
       "dependencies": {
         "@types/node": {
-          "version": "26.0.0"
+          "version": "26.0.1"
         },
         "@vitejs/devtools": {},
         "esbuild": {
@@ -5685,7 +5685,7 @@
         "@edge-runtime/vm": {},
         "@opentelemetry/api": {},
         "@types/node": {
-          "version": "26.0.0"
+          "version": "26.0.1"
         },
         "@vitest/browser-playwright": {},
         "@vitest/browser-preview": {},
