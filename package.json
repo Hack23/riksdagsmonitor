@@ -216,7 +216,7 @@
     "typescript-eslint": "8.62.1",
     "unified": "^11.0.5",
     "unist-util-visit": "5.1.0",
-    "vite": "8.1.0",
+    "vite": "8.1.1",
     "vitest": "4.1.9",
     "worldbank-mcp": "1.0.1"
   },
