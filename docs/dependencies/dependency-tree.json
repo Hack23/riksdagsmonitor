@@ -1,5 +1,5 @@
 {
-  "version": "1.0.25",
+  "version": "1.0.26",
   "name": "riksdagsmonitor",
   "dependencies": {
     "@eslint/js": {
@@ -572,8 +572,8 @@
       "overridden": false,
       "dependencies": {
         "@cypress/request": {
-          "version": "4.0.0",
-          "resolved": "https://registry.npmjs.org/@cypress/request/-/request-4.0.0.tgz",
+          "version": "4.0.1",
+          "resolved": "https://registry.npmjs.org/@cypress/request/-/request-4.0.1.tgz",
           "overridden": false,
           "dependencies": {
             "aws-sign2": {
@@ -653,9 +653,7 @@
                           }
                         },
                         "es-define-property": {
-                          "version": "1.0.1",
-                          "resolved": "https://registry.npmjs.org/es-define-property/-/es-define-property-1.0.1.tgz",
-                          "overridden": false
+                          "version": "1.0.1"
                         },
                         "es-errors": {
                           "version": "1.3.0"
@@ -908,13 +906,18 @@
               "overridden": false
             },
             "qs": {
-              "version": "6.14.2",
-              "resolved": "https://registry.npmjs.org/qs/-/qs-6.14.2.tgz",
+              "version": "6.15.3",
+              "resolved": "https://registry.npmjs.org/qs/-/qs-6.15.3.tgz",
               "overridden": false,
               "dependencies": {
+                "es-define-property": {
+                  "version": "1.0.1",
+                  "resolved": "https://registry.npmjs.org/es-define-property/-/es-define-property-1.0.1.tgz",
+                  "overridden": false
+                },
                 "side-channel": {
-                  "version": "1.1.0",
-                  "resolved": "https://registry.npmjs.org/side-channel/-/side-channel-1.1.0.tgz",
+                  "version": "1.1.1",
+                  "resolved": "https://registry.npmjs.org/side-channel/-/side-channel-1.1.1.tgz",
                   "overridden": false,
                   "dependencies": {
                     "es-errors": {
@@ -926,8 +929,8 @@
                       "overridden": false
                     },
                     "side-channel-list": {
-                      "version": "1.0.0",
-                      "resolved": "https://registry.npmjs.org/side-channel-list/-/side-channel-list-1.0.0.tgz",
+                      "version": "1.0.1",
+                      "resolved": "https://registry.npmjs.org/side-channel-list/-/side-channel-list-1.0.1.tgz",
                       "overridden": false,
                       "dependencies": {
                         "es-errors": {
@@ -2429,9 +2432,9 @@
           "overridden": false,
           "dependencies": {
             "brace-expansion": {
-              "version": "5.0.2",
-              "resolved": "https://registry.npmjs.org/brace-expansion/-/brace-expansion-5.0.2.tgz",
-              "overridden": false,
+              "version": "5.0.7",
+              "resolved": "https://registry.npmjs.org/brace-expansion/-/brace-expansion-5.0.7.tgz",
+              "overridden": true,
               "dependencies": {
                 "balanced-match": {
                   "version": "4.0.3",
@@ -2505,8 +2508,8 @@
       "overridden": false,
       "dependencies": {
         "js-yaml": {
-          "version": "3.14.2",
-          "resolved": "https://registry.npmjs.org/js-yaml/-/js-yaml-3.14.2.tgz",
+          "version": "3.15.0",
+          "resolved": "https://registry.npmjs.org/js-yaml/-/js-yaml-3.15.0.tgz",
           "overridden": false,
           "dependencies": {
             "argparse": {
@@ -5258,14 +5261,7 @@
           "overridden": false,
           "dependencies": {
             "brace-expansion": {
-              "version": "5.0.5",
-              "resolved": "https://registry.npmjs.org/brace-expansion/-/brace-expansion-5.0.5.tgz",
-              "overridden": false,
-              "dependencies": {
-                "balanced-match": {
-                  "version": "4.0.3"
-                }
-              }
+              "version": "5.0.7"
             }
           }
         },
@@ -5583,8 +5579,8 @@
       }
     },
     "vite": {
-      "version": "8.1.0",
-      "resolved": "https://registry.npmjs.org/vite/-/vite-8.1.0.tgz",
+      "version": "8.1.1",
+      "resolved": "https://registry.npmjs.org/vite/-/vite-8.1.1.tgz",
       "overridden": false,
       "dependencies": {
         "@types/node": {
@@ -5606,13 +5602,13 @@
           "version": "4.0.4"
         },
         "postcss": {
-          "version": "8.5.15",
-          "resolved": "https://registry.npmjs.org/postcss/-/postcss-8.5.15.tgz",
+          "version": "8.5.16",
+          "resolved": "https://registry.npmjs.org/postcss/-/postcss-8.5.16.tgz",
           "overridden": false,
           "dependencies": {
             "nanoid": {
-              "version": "3.3.12",
-              "resolved": "https://registry.npmjs.org/nanoid/-/nanoid-3.3.12.tgz",
+              "version": "3.3.15",
+              "resolved": "https://registry.npmjs.org/nanoid/-/nanoid-3.3.15.tgz",
               "overridden": false
             },
             "picocolors": {
@@ -5626,8 +5622,8 @@
           }
         },
         "rolldown": {
-          "version": "1.1.2",
-          "resolved": "https://registry.npmjs.org/rolldown/-/rolldown-1.1.2.tgz",
+          "version": "1.1.3",
+          "resolved": "https://registry.npmjs.org/rolldown/-/rolldown-1.1.3.tgz",
           "overridden": false,
           "dependencies": {
             "@oxc-project/types": {
@@ -5643,8 +5639,8 @@
             "@rolldown/binding-linux-ppc64-gnu": {},
             "@rolldown/binding-linux-s390x-gnu": {},
             "@rolldown/binding-linux-x64-gnu": {
-              "version": "1.1.2",
-              "resolved": "https://registry.npmjs.org/@rolldown/binding-linux-x64-gnu/-/binding-linux-x64-gnu-1.1.2.tgz",
+              "version": "1.1.3",
+              "resolved": "https://registry.npmjs.org/@rolldown/binding-linux-x64-gnu/-/binding-linux-x64-gnu-1.1.3.tgz",
               "overridden": false
             },
             "@rolldown/binding-linux-x64-musl": {},
@@ -5753,7 +5749,7 @@
             },
             "msw": {},
             "vite": {
-              "version": "8.1.0"
+              "version": "8.1.1"
             }
           }
         },
@@ -5865,7 +5861,7 @@
           "version": "3.1.0"
         },
         "vite": {
-          "version": "8.1.0"
+          "version": "8.1.1"
         },
         "why-is-node-running": {
           "version": "2.3.0",
@@ -5954,16 +5950,16 @@
               }
             },
             "express-rate-limit": {
-              "version": "8.2.1",
-              "resolved": "https://registry.npmjs.org/express-rate-limit/-/express-rate-limit-8.2.1.tgz",
+              "version": "8.5.2",
+              "resolved": "https://registry.npmjs.org/express-rate-limit/-/express-rate-limit-8.5.2.tgz",
               "overridden": false,
               "dependencies": {
                 "express": {
                   "version": "5.2.1"
                 },
                 "ip-address": {
-                  "version": "10.0.1",
-                  "resolved": "https://registry.npmjs.org/ip-address/-/ip-address-10.0.1.tgz",
+                  "version": "10.2.0",
+                  "resolved": "https://registry.npmjs.org/ip-address/-/ip-address-10.2.0.tgz",
                   "overridden": false
                 }
               }
@@ -6028,7 +6024,7 @@
                       "version": "2.4.1"
                     },
                     "qs": {
-                      "version": "6.14.2"
+                      "version": "6.15.3"
                     },
                     "raw-body": {
                       "version": "3.0.2"
@@ -6199,7 +6195,7 @@
                   }
                 },
                 "qs": {
-                  "version": "6.14.2"
+                  "version": "6.15.3"
                 },
                 "range-parser": {
                   "version": "1.2.1",
@@ -6226,8 +6222,8 @@
                       "version": "1.3.3"
                     },
                     "path-to-regexp": {
-                      "version": "8.3.0",
-                      "resolved": "https://registry.npmjs.org/path-to-regexp/-/path-to-regexp-8.3.0.tgz",
+                      "version": "8.4.2",
+                      "resolved": "https://registry.npmjs.org/path-to-regexp/-/path-to-regexp-8.4.2.tgz",
                       "overridden": false
                     }
                   }
