@@ -41,7 +41,7 @@
 #
 # Custom actions used:
 #   - Hack23/riksdagsmonitor/.github/actions/news-prewarm@a9014fb7edc152cbc6cad7b6cc6fc79f59dc80a4 # a9014fb7edc152cbc6cad7b6cc6fc79f59dc80a4
-#   - Hack23/riksdagsmonitor/.github/actions/news-resolve-inputs@a9014fb7edc152cbc6cad7b6cc6fc79f59dc80a4 # a9014fb7edc152cbc6cad7b6cc6fc79f59dc80a4
+#   - Hack23/riksdagsmonitor/.github/actions/news-resolve-inputs@0ca42d227d24b27369a35259e38325ab4a010af7 # a9014fb7edc152cbc6cad7b6cc6fc79f59dc80a4
 #   - actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
 #   - actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
 #   - actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
@@ -527,7 +527,7 @@ jobs:
         with:
           imf-sdmx-subscription-key: ${{ secrets.IMF_SDMX_SUBSCRIPTION_KEY }}
       - name: Resolve workflow inputs
-        uses: Hack23/riksdagsmonitor/.github/actions/news-resolve-inputs@a9014fb7edc152cbc6cad7b6cc6fc79f59dc80a4 # a9014fb7edc152cbc6cad7b6cc6fc79f59dc80a4
+        uses: Hack23/riksdagsmonitor/.github/actions/news-resolve-inputs@0ca42d227d24b27369a35259e38325ab4a010af7 # a9014fb7edc152cbc6cad7b6cc6fc79f59dc80a4
         with:
           analysis-depth: ${{ inputs.analysis_depth }}
           article-date: ${{ inputs.article_date }}
