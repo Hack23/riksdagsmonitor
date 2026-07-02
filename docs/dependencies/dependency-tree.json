@@ -1,5 +1,5 @@
 {
-  "version": "1.0.26",
+  "version": "1.0.27",
   "name": "riksdagsmonitor",
   "dependencies": {
     "@eslint/js": {
@@ -245,8 +245,8 @@
       }
     },
     "@types/node": {
-      "version": "26.0.1",
-      "resolved": "https://registry.npmjs.org/@types/node/-/node-26.0.1.tgz",
+      "version": "26.1.0",
+      "resolved": "https://registry.npmjs.org/@types/node/-/node-26.1.0.tgz",
       "overridden": false,
       "dependencies": {
         "undici-types": {
@@ -262,7 +262,7 @@
       "overridden": false,
       "dependencies": {
         "@types/node": {
-          "version": "26.0.1"
+          "version": "26.1.0"
         }
       }
     },
@@ -351,7 +351,7 @@
               "overridden": false,
               "dependencies": {
                 "semver": {
-                  "version": "7.8.4"
+                  "version": "7.8.5"
                 }
               }
             },
@@ -2571,7 +2571,7 @@
       "overridden": false,
       "dependencies": {
         "@types/node": {
-          "version": "26.0.1"
+          "version": "26.1.0"
         },
         "@types/whatwg-mimetype": {
           "version": "3.0.2",
@@ -2584,7 +2584,7 @@
           "overridden": false,
           "dependencies": {
             "@types/node": {
-              "version": "26.0.1"
+              "version": "26.1.0"
             }
           }
         },
@@ -2594,7 +2594,7 @@
           "overridden": false,
           "dependencies": {
             "@types/node": {
-              "version": "26.0.1"
+              "version": "26.1.0"
             }
           }
         },
@@ -2721,8 +2721,8 @@
       }
     },
     "js-yaml": {
-      "version": "5.2.0",
-      "resolved": "https://registry.npmjs.org/js-yaml/-/js-yaml-5.2.0.tgz",
+      "version": "5.2.1",
+      "resolved": "https://registry.npmjs.org/js-yaml/-/js-yaml-5.2.1.tgz",
       "overridden": false,
       "dependencies": {
         "argparse": {
@@ -2880,8 +2880,8 @@
       }
     },
     "knip": {
-      "version": "6.23.0",
-      "resolved": "https://registry.npmjs.org/knip/-/knip-6.23.0.tgz",
+      "version": "6.24.0",
+      "resolved": "https://registry.npmjs.org/knip/-/knip-6.24.0.tgz",
       "overridden": false,
       "dependencies": {
         "fdir": {
@@ -4923,8 +4923,8 @@
       }
     },
     "sharp": {
-      "version": "0.35.2",
-      "resolved": "https://registry.npmjs.org/sharp/-/sharp-0.35.2.tgz",
+      "version": "0.35.3",
+      "resolved": "https://registry.npmjs.org/sharp/-/sharp-0.35.3.tgz",
       "overridden": false,
       "dependencies": {
         "@img/colour": {
@@ -4943,8 +4943,8 @@
         "@img/sharp-libvips-linux-riscv64": {},
         "@img/sharp-libvips-linux-s390x": {},
         "@img/sharp-libvips-linux-x64": {
-          "version": "1.3.1",
-          "resolved": "https://registry.npmjs.org/@img/sharp-libvips-linux-x64/-/sharp-libvips-linux-x64-1.3.1.tgz",
+          "version": "1.3.2",
+          "resolved": "https://registry.npmjs.org/@img/sharp-libvips-linux-x64/-/sharp-libvips-linux-x64-1.3.2.tgz",
           "overridden": false
         },
         "@img/sharp-libvips-linuxmusl-arm64": {},
@@ -4955,12 +4955,12 @@
         "@img/sharp-linux-riscv64": {},
         "@img/sharp-linux-s390x": {},
         "@img/sharp-linux-x64": {
-          "version": "0.35.2",
-          "resolved": "https://registry.npmjs.org/@img/sharp-linux-x64/-/sharp-linux-x64-0.35.2.tgz",
+          "version": "0.35.3",
+          "resolved": "https://registry.npmjs.org/@img/sharp-linux-x64/-/sharp-linux-x64-0.35.3.tgz",
           "overridden": false,
           "dependencies": {
             "@img/sharp-libvips-linux-x64": {
-              "version": "1.3.1"
+              "version": "1.3.2"
             }
           }
         },
@@ -4976,8 +4976,8 @@
           "overridden": false
         },
         "semver": {
-          "version": "7.8.4",
-          "resolved": "https://registry.npmjs.org/semver/-/semver-7.8.4.tgz",
+          "version": "7.8.5",
+          "resolved": "https://registry.npmjs.org/semver/-/semver-7.8.5.tgz",
           "overridden": false
         }
       }
@@ -5449,7 +5449,7 @@
               "version": "10.2.4"
             },
             "semver": {
-              "version": "7.8.4"
+              "version": "7.8.5"
             },
             "tinyglobby": {
               "version": "0.2.17"
@@ -5579,12 +5579,12 @@
       }
     },
     "vite": {
-      "version": "8.1.1",
-      "resolved": "https://registry.npmjs.org/vite/-/vite-8.1.1.tgz",
+      "version": "8.1.3",
+      "resolved": "https://registry.npmjs.org/vite/-/vite-8.1.3.tgz",
       "overridden": false,
       "dependencies": {
         "@types/node": {
-          "version": "26.0.1"
+          "version": "26.1.0"
         },
         "@vitejs/devtools": {},
         "esbuild": {
@@ -5681,7 +5681,7 @@
         "@edge-runtime/vm": {},
         "@opentelemetry/api": {},
         "@types/node": {
-          "version": "26.0.1"
+          "version": "26.1.0"
         },
         "@vitest/browser-playwright": {},
         "@vitest/browser-preview": {},
@@ -5749,7 +5749,7 @@
             },
             "msw": {},
             "vite": {
-              "version": "8.1.1"
+              "version": "8.1.3"
             }
           }
         },
@@ -5861,7 +5861,7 @@
           "version": "3.1.0"
         },
         "vite": {
-          "version": "8.1.1"
+          "version": "8.1.3"
         },
         "why-is-node-running": {
           "version": "2.3.0",
