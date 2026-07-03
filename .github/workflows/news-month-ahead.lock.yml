@@ -46,7 +46,7 @@
 #   - IMF_SDMX_SUBSCRIPTION_KEY
 #
 # Custom actions used:
-#   - Hack23/riksdagsmonitor/.github/actions/news-prewarm@a9014fb7edc152cbc6cad7b6cc6fc79f59dc80a4 # a9014fb7edc152cbc6cad7b6cc6fc79f59dc80a4
+#   - Hack23/riksdagsmonitor/.github/actions/news-prewarm@4f3528be3f84b1acfc3e2ea2838ea0eb681cc138 # a9014fb7edc152cbc6cad7b6cc6fc79f59dc80a4
 #   - Hack23/riksdagsmonitor/.github/actions/news-resolve-inputs@a9014fb7edc152cbc6cad7b6cc6fc79f59dc80a4 # a9014fb7edc152cbc6cad7b6cc6fc79f59dc80a4
 #   - actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
 #   - actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
@@ -517,7 +517,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
       - name: News pre-warm & pre-flight (composite)
-        uses: Hack23/riksdagsmonitor/.github/actions/news-prewarm@a9014fb7edc152cbc6cad7b6cc6fc79f59dc80a4 # a9014fb7edc152cbc6cad7b6cc6fc79f59dc80a4
+        uses: Hack23/riksdagsmonitor/.github/actions/news-prewarm@4f3528be3f84b1acfc3e2ea2838ea0eb681cc138 # a9014fb7edc152cbc6cad7b6cc6fc79f59dc80a4
         with:
           imf-sdmx-subscription-key: ${{ secrets.IMF_SDMX_SUBSCRIPTION_KEY }}
       - name: Resolve workflow inputs
