@@ -75,7 +75,7 @@ scripts/__pycache__/
 /rss.xml
 /sitemap*
 dashboard-initial.png
-api/
+/api/
 current-*.png
 
 # Workflow lock files (runtime artifacts, not committed)
