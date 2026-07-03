@@ -1,0 +1,885 @@
+<!DOCTYPE html><html class="default" lang="en" data-base="../"><head><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>AGENTS | Riksdagsmonitor Intelligence Platform — API Documentation - v1.0.28</title><meta name="description" content="Documentation for Riksdagsmonitor Intelligence Platform — API Documentation"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="../assets/style.css"/><link rel="stylesheet" href="../assets/highlight.css"/><script defer src="../assets/main.js"></script><script async src="../assets/icons.js" id="tsd-icons-script"></script><script async src="../assets/search.js" id="tsd-search-script"></script><script async src="../assets/navigation.js" id="tsd-nav-script"></script><script async src="../assets/hierarchy.js" id="tsd-hierarchy-script"></script></head><body><script>document.documentElement.dataset.theme = localStorage.getItem("tsd-theme") || "os";document.body.style.display="none";setTimeout(() => window.app?app.showPage():document.body.style.removeProperty("display"),500)</script><header class="tsd-page-toolbar"><div class="tsd-toolbar-contents container"><a href="../index.html" class="title">Riksdagsmonitor Intelligence Platform — API Documentation - v1.0.28</a><div id="tsd-toolbar-links"><a href="https://riksdagsmonitor.com">🏠 Home</a><a href="https://riksdagsmonitor.com/political-intelligence.html">🕵️ Political Intelligence</a><a href="https://riksdagsmonitor.com/sitemap.html">🗺️ Sitemap</a><a href="https://www.npmjs.com/package/riksdagsmonitor">📦 npm Package</a><a href="https://github.com/Hack23/riksdagsmonitor">📦 GitHub</a><a href="https://github.com/Hack23/ISMS-PUBLIC">🛡️ ISMS</a><a href="https://github.com/Hack23/cia">🏛️ CIA Platform</a></div><button id="tsd-search-trigger" class="tsd-widget" aria-label="Search"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-search"></use></svg></button><dialog id="tsd-search" aria-label="Search"><input role="combobox" id="tsd-search-input" aria-controls="tsd-search-results" aria-autocomplete="list" aria-expanded="true" autocapitalize="off" autocomplete="off" placeholder="Search the docs" maxLength="100"/><ul role="listbox" id="tsd-search-results"></ul><div id="tsd-search-status" aria-live="polite" aria-atomic="true"><div>Preparing search index...</div></div></dialog><a href="#" class="tsd-widget menu" id="tsd-toolbar-menu-trigger" data-toggle="menu" aria-label="Menu"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-menu"></use></svg></a></div></header><div class="container container-main"><div class="col-content"><div class="tsd-page-title"><ul class="tsd-breadcrumb" aria-label="Breadcrumb"><li><a href="" aria-current="page">AGENTS</a></li></ul></div><div class="tsd-panel tsd-typography"><p align="center">
+  <img src="https://hack23.com/icon-192.png" alt="Hack23 Logo" width="192" height="192">
+</p>
+<h1 align="center">🤖 Riksdagsmonitor — Custom Agents Guide</h1>
+<p align="center">
+  <strong>🎯 24 Specialised GitHub Copilot Agents Powering Democratic Transparency</strong><br>
+  <em>🕵️ 14 Persona Agents · ⚙️ 9 Workflow-Specialist Agents · 📚 1 Shared Developer Instructions</em>
+</p>
+<p align="center">
+  <img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/>
+  <img src="https://img.shields.io/badge/Agents-24-success?style=for-the-badge" alt="24 Agents"/>
+  <img src="https://img.shields.io/badge/Skills-91-purple?style=for-the-badge" alt="91 Skills"/>
+  <img src="https://img.shields.io/badge/MCP_Servers-8-orange?style=for-the-badge" alt="8 MCP Servers"/>
+</p>
+<p><strong>📋 Document Owner:</strong> CEO | <strong>🏢 Owner:</strong> Hack23 AB (<a href="http://Org.nr">Org.nr</a> 559534-7807) | <strong>🏷️ Classification:</strong> 🟢 Public</p>
+<hr>
+<h2 id="overview" class="tsd-anchor-link">Overview<a href="#overview" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<p>This repository includes custom GitHub Copilot agents specialized for different aspects of the riksdagsmonitor project. Each agent has deep expertise in its domain and can be invoked to assist with specific tasks.</p>
+<blockquote>
+<p><strong>Directory-level catalog:</strong> <a href="../media/README.md"><code>.github/agents/README.md</code></a> — summarises all <strong>24 agent files</strong> (14 persona agents + 9 workflow-specialist <code>.agent.md</code> + shared <code>developer.instructions.md</code>). This document is the long-form reference with invocation examples and per-agent skill mappings.
+<strong>Companion docs:</strong> <a href="SKILLS.html"><code>SKILLS.md</code></a> · <a href="../media/README-1.md"><code>.github/skills/README.md</code></a> · <a href="../media/README-2.md"><code>.github/prompts/README.md</code></a> · <a href="../media/README-3.md"><code>.github/workflows/README.md</code></a></p>
+</blockquote>
+<h2 id="available-agents-14-personas" class="tsd-anchor-link">Available Agents (14 Personas)<a href="#available-agents-14-personas" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<h3 id="1-security-architect-" class="tsd-anchor-link">1. Security Architect (<code>security-architect</code>)<a href="#1-security-architect-" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Expertise</strong>: Security architecture, ISMS compliance, threat modeling, ISO 27001/NIST CSF/CIS Controls</p>
+<p><strong>Use for</strong>:</p>
+<ul>
+<li>Security architecture design and review</li>
+<li>STRIDE threat modeling</li>
+<li>Compliance framework mapping</li>
+<li>Security control implementation</li>
+<li>Incident response planning</li>
+<li>Security documentation (SECURITY_ARCHITECTURE.md, THREAT_MODEL.md)</li>
+</ul>
+<p><strong>Example invocation</strong>:</p>
+<pre><code class="javascript"><span class="hl-0">assign_copilot_to_issue</span><span class="hl-1">({</span><br/><span class="hl-1">  </span><span class="hl-5">owner:</span><span class="hl-1"> </span><span class="hl-2">&quot;Hack23&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-5">repo:</span><span class="hl-1"> </span><span class="hl-2">&quot;riksdagsmonitor&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-5">issue_number:</span><span class="hl-1"> </span><span class="hl-6">123</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-5">custom_agent:</span><span class="hl-1"> </span><span class="hl-2">&quot;security-architect&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-5">custom_instructions:</span><span class="hl-1"> </span><span class="hl-2">&quot;Review and update SECURITY_ARCHITECTURE.md with new controls&quot;</span><br/><span class="hl-1">})</span>
+</code><button type="button">Copy</button></pre>
+
+<h3 id="2-documentation-architect-" class="tsd-anchor-link">2. Documentation Architect (<code>documentation-architect</code>)<a href="#2-documentation-architect-" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Expertise</strong>: C4 architecture models, Mermaid diagrams, technical documentation, knowledge management</p>
+<p><strong>Use for</strong>:</p>
+<ul>
+<li>Creating C4 architecture diagrams (Context, Container, Component)</li>
+<li>Designing Mermaid flowcharts, sequence diagrams, state diagrams</li>
+<li>Writing comprehensive technical documentation</li>
+<li>Maintaining documentation portfolio (<a href="http://ARCHITECTURE.md">ARCHITECTURE.md</a>, DATA_MODEL.md, etc.)</li>
+<li>Documentation standards enforcement</li>
+</ul>
+<p><strong>Example invocation</strong>:</p>
+<pre><code class="javascript"><span class="hl-0">assign_copilot_to_issue</span><span class="hl-1">({</span><br/><span class="hl-1">  </span><span class="hl-5">owner:</span><span class="hl-1"> </span><span class="hl-2">&quot;Hack23&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-5">repo:</span><span class="hl-1"> </span><span class="hl-2">&quot;riksdagsmonitor&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-5">issue_number:</span><span class="hl-1"> </span><span class="hl-6">124</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-5">custom_agent:</span><span class="hl-1"> </span><span class="hl-2">&quot;documentation-architect&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-5">custom_instructions:</span><span class="hl-1"> </span><span class="hl-2">&quot;Create comprehensive ARCHITECTURE.md with C4 models&quot;</span><br/><span class="hl-1">})</span>
+</code><button type="button">Copy</button></pre>
+
+<h3 id="3-quality-engineer-" class="tsd-anchor-link">3. Quality Engineer (<code>quality-engineer</code>)<a href="#3-quality-engineer-" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Expertise</strong>: HTML/CSS validation, accessibility testing, link checking, CI/CD quality gates</p>
+<p><strong>Use for</strong>:</p>
+<ul>
+<li>HTML5 validation with HTMLHint</li>
+<li>CSS3 validation and optimization</li>
+<li>Link integrity checking with linkinator</li>
+<li>WCAG 2.1 AA accessibility compliance</li>
+<li>Quality workflow configuration</li>
+<li>Performance optimization</li>
+</ul>
+<p><strong>Example invocation</strong>:</p>
+<pre><code class="javascript"><span class="hl-0">assign_copilot_to_issue</span><span class="hl-1">({</span><br/><span class="hl-1">  </span><span class="hl-5">owner:</span><span class="hl-1"> </span><span class="hl-2">&quot;Hack23&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-5">repo:</span><span class="hl-1"> </span><span class="hl-2">&quot;riksdagsmonitor&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-5">issue_number:</span><span class="hl-1"> </span><span class="hl-6">125</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-5">custom_agent:</span><span class="hl-1"> </span><span class="hl-2">&quot;quality-engineer&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-5">custom_instructions:</span><span class="hl-1"> </span><span class="hl-2">&quot;Fix all HTML validation errors and ensure WCAG 2.1 AA compliance&quot;</span><br/><span class="hl-1">})</span>
+</code><button type="button">Copy</button></pre>
+
+<h3 id="4-frontend-specialist-" class="tsd-anchor-link">4. Frontend Specialist (<code>frontend-specialist</code>)<a href="#4-frontend-specialist-" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Expertise</strong>: Static HTML/CSS, responsive design, multi-language localization, modern frontend</p>
+<p><strong>Use for</strong>:</p>
+<ul>
+<li>Semantic HTML5 development</li>
+<li>Responsive CSS (Grid, Flexbox)</li>
+<li>Multi-language website implementation (14 languages)</li>
+<li>Cyberpunk theme design system</li>
+<li>Cross-browser compatibility</li>
+<li>Progressive enhancement</li>
+</ul>
+<p><strong>Example invocation</strong>:</p>
+<pre><code class="javascript"><span class="hl-0">assign_copilot_to_issue</span><span class="hl-1">({</span><br/><span class="hl-1">  </span><span class="hl-5">owner:</span><span class="hl-1"> </span><span class="hl-2">&quot;Hack23&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-5">repo:</span><span class="hl-1"> </span><span class="hl-2">&quot;riksdagsmonitor&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-5">issue_number:</span><span class="hl-1"> </span><span class="hl-6">126</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-5">custom_agent:</span><span class="hl-1"> </span><span class="hl-2">&quot;frontend-specialist&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-5">custom_instructions:</span><span class="hl-1"> </span><span class="hl-2">&quot;Implement responsive navigation with support for all 14 languages&quot;</span><br/><span class="hl-1">})</span>
+</code><button type="button">Copy</button></pre>
+
+<h3 id="5-isms-compliance-manager-" class="tsd-anchor-link">5. ISMS Compliance Manager (<code>isms-compliance-manager</code>)<a href="#5-isms-compliance-manager-" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Expertise</strong>: ISMS policy enforcement, ISO 27001, NIST CSF 2.0, CIS Controls, audit preparation</p>
+<p><strong>Use for</strong>:</p>
+<ul>
+<li>Compliance verification</li>
+<li>Gap analysis</li>
+<li>Documentation completeness checking</li>
+<li>Audit evidence collection</li>
+<li>Control effectiveness assessment</li>
+<li>Compliance reporting</li>
+</ul>
+<p><strong>Example invocation</strong>:</p>
+<pre><code class="javascript"><span class="hl-0">assign_copilot_to_issue</span><span class="hl-1">({</span><br/><span class="hl-1">  </span><span class="hl-5">owner:</span><span class="hl-1"> </span><span class="hl-2">&quot;Hack23&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-5">repo:</span><span class="hl-1"> </span><span class="hl-2">&quot;riksdagsmonitor&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-5">issue_number:</span><span class="hl-1"> </span><span class="hl-6">127</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-5">custom_agent:</span><span class="hl-1"> </span><span class="hl-2">&quot;isms-compliance-manager&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-5">custom_instructions:</span><span class="hl-1"> </span><span class="hl-2">&quot;Perform compliance gap analysis and verify all required documentation exists&quot;</span><br/><span class="hl-1">})</span>
+</code><button type="button">Copy</button></pre>
+
+<h3 id="6-deployment-specialist-" class="tsd-anchor-link">6. Deployment Specialist (<code>deployment-specialist</code>)<a href="#6-deployment-specialist-" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Expertise</strong>: GitHub Pages deployment, GitHub Actions, CI/CD security, workflow optimization</p>
+<p><strong>Use for</strong>:</p>
+<ul>
+<li>GitHub Actions workflow design</li>
+<li>Workflow security hardening</li>
+<li>GitHub Pages configuration</li>
+<li>Deployment automation</li>
+<li>Performance optimization</li>
+<li>Monitoring and alerting</li>
+</ul>
+<p><strong>Example invocation</strong>:</p>
+<pre><code class="javascript"><span class="hl-0">assign_copilot_to_issue</span><span class="hl-1">({</span><br/><span class="hl-1">  </span><span class="hl-5">owner:</span><span class="hl-1"> </span><span class="hl-2">&quot;Hack23&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-5">repo:</span><span class="hl-1"> </span><span class="hl-2">&quot;riksdagsmonitor&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-5">issue_number:</span><span class="hl-1"> </span><span class="hl-6">128</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-5">custom_agent:</span><span class="hl-1"> </span><span class="hl-2">&quot;deployment-specialist&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-5">custom_instructions:</span><span class="hl-1"> </span><span class="hl-2">&quot;Optimize CI/CD pipeline and add security hardening&quot;</span><br/><span class="hl-1">})</span>
+</code><button type="button">Copy</button></pre>
+
+<h3 id="7-intelligence-operative-" class="tsd-anchor-link">7. Intelligence Operative (<code>intelligence-operative</code>)<a href="#7-intelligence-operative-" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Expertise</strong>: Political intelligence analysis, OSINT methodologies, Swedish politics, behavioral analysis</p>
+<p><strong>Use for</strong>:</p>
+<ul>
+<li>Political data analysis and visualization dashboards</li>
+<li>OSINT collection from Swedish government sources</li>
+<li>Swedish political system analysis (Riksdag, 8 parties, electoral system)</li>
+<li>Voting pattern analysis and legislative monitoring</li>
+<li>Coalition behavior and stability assessment</li>
+<li>Policy impact assessment</li>
+<li>Risk assessment frameworks for democratic accountability</li>
+<li>GDPR-compliant political data processing</li>
+<li>Multi-language political content (14 languages)</li>
+</ul>
+<p><strong>Long-horizon expertise</strong>:</p>
+<ul>
+<li>Horizon stratification (T+72h / T+7d / T+30d / T+90d / T+365d / T+1460d / election) with per-band WEP language ladder</li>
+<li>Scenario-tree depth scaling (quarter = 4 scenarios, year = 4+5 wildcards, election-cycle = 4 scenarios × 3 coalition branches + 5 wildcards = 12 leaves)</li>
+<li>PIR roll-forward rules for long-horizon Priority Intelligence Requirements</li>
+<li>Cycle-rollover playbook (±30 days of election anchor) — see <a href="../media/cycle-rollover.md"><code>.github/prompts/ext/cycle-rollover.md</code></a></li>
+<li>Runtime context via <a href="../modules/scripts_horizon-context.html"><code>scripts/horizon-context.ts</code></a> and <a href="../media/article-types.json"><code>analysis/article-types.json</code></a></li>
+</ul>
+<p><strong>Data Sources via riksdag-regering-mcp</strong>:</p>
+<ul>
+<li><strong>32 specialized tools</strong> for accessing Swedish political data</li>
+<li><strong>Ledamöter (MPs)</strong>: Information, activities, assignments</li>
+<li><strong>Riksdagsdokument (Documents)</strong>: Motions, questions, bills</li>
+<li><strong>Anföranden (Speeches)</strong>: Chamber debates, statements</li>
+<li><strong>Voteringar (Votes)</strong>: Voting records, patterns</li>
+<li><strong>Regeringsdokument (Government)</strong>: SOU reports, propositions</li>
+</ul>
+<p><strong>Example invocation</strong>:</p>
+<pre><code class="javascript"><span class="hl-0">assign_copilot_to_issue</span><span class="hl-1">({</span><br/><span class="hl-1">  </span><span class="hl-5">owner:</span><span class="hl-1"> </span><span class="hl-2">&quot;Hack23&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-5">repo:</span><span class="hl-1"> </span><span class="hl-2">&quot;riksdagsmonitor&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-5">issue_number:</span><span class="hl-1"> </span><span class="hl-6">129</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-5">custom_agent:</span><span class="hl-1"> </span><span class="hl-2">&quot;intelligence-operative&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-5">custom_instructions:</span><span class="hl-1"> </span><span class="hl-2">&quot;Create voting discipline dashboard showing party cohesion metrics for 2024&quot;</span><br/><span class="hl-1">})</span>
+</code><button type="button">Copy</button></pre>
+
+<h3 id="8-task-agent-✨-new" class="tsd-anchor-link">8. Task Agent (<code>task-agent</code>) ✨ NEW<a href="#8-task-agent-✨-new" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Expertise</strong>: Product excellence, quality assurance, ISMS compliance, Playwright testing, issue management</p>
+<p><strong>Use for</strong>:</p>
+<ul>
+<li>Continuous product analysis (quality, UI/UX, security)</li>
+<li>GitHub issue creation for bugs, features, improvements</li>
+<li>HTML/CSS validation and link checking</li>
+<li>Accessibility compliance auditing (WCAG 2.1 AA)</li>
+<li>Security header verification</li>
+<li>ISMS compliance tracking (ISO/NIST/CIS)</li>
+<li>Playwright browser testing and visual regression</li>
+<li>Agent coordination and task delegation</li>
+</ul>
+<p><strong>Key Capabilities</strong>:</p>
+<ul>
+<li><strong>Quality Assessment</strong>: HTML/CSS validation, link integrity, build health</li>
+<li><strong>UI/UX Evaluation</strong>: WCAG 2.1 AA audits, responsive design testing, 14-language support</li>
+<li><strong>Security &amp; ISMS</strong>: ISO 27001 control verification, NIST CSF mapping, CIS Controls</li>
+<li><strong>Browser Testing</strong>: Playwright automation, screenshot capture, cross-browser testing</li>
+<li><strong>Issue Management</strong>: Well-structured GitHub issues with labels, priorities, agent assignments</li>
+</ul>
+<p><strong>Example invocation</strong>:</p>
+<pre><code class="javascript"><span class="hl-0">assign_copilot_to_issue</span><span class="hl-1">({</span><br/><span class="hl-1">  </span><span class="hl-5">owner:</span><span class="hl-1"> </span><span class="hl-2">&quot;Hack23&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-5">repo:</span><span class="hl-1"> </span><span class="hl-2">&quot;riksdagsmonitor&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-5">issue_number:</span><span class="hl-1"> </span><span class="hl-6">130</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-5">custom_agent:</span><span class="hl-1"> </span><span class="hl-2">&quot;task-agent&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-5">custom_instructions:</span><span class="hl-1"> </span><span class="hl-2">`</span><br/><span class="hl-2">    Audit accessibility compliance for all 14 language versions.</span><br/><span class="hl-2">    Create issues for any WCAG 2.1 AA violations found.</span><br/><span class="hl-2">    Include Playwright screenshots as evidence.</span><br/><span class="hl-2">  `</span><br/><span class="hl-1">})</span>
+</code><button type="button">Copy</button></pre>
+
+<h3 id="9-ui-enhancement-specialist-✨" class="tsd-anchor-link">9. UI Enhancement Specialist (<code>ui-enhancement-specialist</code>) ✨<a href="#9-ui-enhancement-specialist-✨" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Expertise</strong>: Static HTML5/CSS3, responsive design, multi-language localization, WCAG 2.1 AA accessibility</p>
+<p><strong>Use for</strong>:</p>
+<ul>
+<li>Static HTML5/CSS3 development and optimization</li>
+<li>Cyberpunk theme design system implementation</li>
+<li>CSS-only data visualizations (charts, heat maps, progress bars)</li>
+<li>14-language support with RTL layouts (Arabic, Hebrew)</li>
+<li>WCAG 2.1 AA accessibility compliance</li>
+<li>Core Web Vitals optimization (LCP, FID, CLS)</li>
+<li>XSS prevention and CSP enforcement</li>
+<li>Mobile-first responsive design (320px-1440px+)</li>
+</ul>
+<p><strong>Key Capabilities</strong>:</p>
+<ul>
+<li><strong>Design System</strong>: Cyberpunk color palette, fluid typography with clamp(), CSS custom properties</li>
+<li><strong>Data Visualization</strong>: CSS-only progress bars, heat maps, bar charts for political metrics</li>
+<li><strong>Accessibility</strong>: Keyboard navigation, screen reader support, ARIA labels, color contrast 4.5:1</li>
+<li><strong>Multi-Language</strong>: Separate HTML files for 14 languages, hreflang SEO, RTL support</li>
+<li><strong>Performance</strong>: Lazy loading, CSS optimization, image optimization, Core Web Vitals</li>
+<li><strong>Security</strong>: No inline scripts, CSP headers, safe external links</li>
+</ul>
+<p><strong>Example invocation</strong>:</p>
+<pre><code class="javascript"><span class="hl-0">assign_copilot_to_issue</span><span class="hl-1">({</span><br/><span class="hl-1">  </span><span class="hl-5">owner:</span><span class="hl-1"> </span><span class="hl-2">&quot;Hack23&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-5">repo:</span><span class="hl-1"> </span><span class="hl-2">&quot;riksdagsmonitor&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-5">issue_number:</span><span class="hl-1"> </span><span class="hl-6">131</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-5">custom_agent:</span><span class="hl-1"> </span><span class="hl-2">&quot;ui-enhancement-specialist&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-5">custom_instructions:</span><span class="hl-1"> </span><span class="hl-2">`</span><br/><span class="hl-2">    Implement voting discipline dashboard using CSS-only visualizations.</span><br/><span class="hl-2">    Ensure WCAG 2.1 AA compliance and responsive design.</span><br/><span class="hl-2">    Support all 14 languages including RTL for Arabic and Hebrew.</span><br/><span class="hl-2">  `</span><br/><span class="hl-1">})</span>
+</code><button type="button">Copy</button></pre>
+
+<h3 id="10-data-pipeline-specialist-✨" class="tsd-anchor-link">10. Data Pipeline Specialist (<code>data-pipeline-specialist</code>) ✨<a href="#10-data-pipeline-specialist-✨" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Expertise</strong>: CIA data consumption, ETL workflows, data validation, caching strategies, pipeline automation</p>
+<p><strong>Use for</strong>:</p>
+<ul>
+<li>CIA export client design (19 visualization products)</li>
+<li>JSON Schema validation against CIA schemas</li>
+<li>Versioned caching with archival</li>
+<li>Automated nightly data fetch workflows (02:00 CET)</li>
+<li>Data freshness monitoring and alerting</li>
+<li>Graceful fallback to cached data</li>
+<li>Pipeline orchestration with GitHub Actions</li>
+</ul>
+<p><strong>Key Capabilities</strong>:</p>
+<ul>
+<li><strong>CIA Integration</strong>: Consume 19 CIA visualization product exports (election forecasts, risk assessments, OSINT)</li>
+<li><strong>Validation</strong>: JSON Schema validation, data quality checks, freshness monitoring</li>
+<li><strong>Caching</strong>: Versioned cache (current + archive), fallback strategies, data integrity</li>
+<li><strong>Automation</strong>: Scheduled GitHub Actions workflows, error recovery, monitoring</li>
+</ul>
+<p><strong>Addresses</strong>: Issues #18 (foundation), #19, #20 (CIA data pipeline)</p>
+<p><strong>Example invocation</strong>:</p>
+<pre><code class="javascript"><span class="hl-0">assign_copilot_to_issue</span><span class="hl-1">({</span><br/><span class="hl-1">  </span><span class="hl-5">owner:</span><span class="hl-1"> </span><span class="hl-2">&quot;Hack23&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-5">repo:</span><span class="hl-1"> </span><span class="hl-2">&quot;riksdagsmonitor&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-5">issue_number:</span><span class="hl-1"> </span><span class="hl-6">18</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-5">custom_agent:</span><span class="hl-1"> </span><span class="hl-2">&quot;data-pipeline-specialist&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-5">custom_instructions:</span><span class="hl-1"> </span><span class="hl-2">`</span><br/><span class="hl-2">    Implement automated CIA data consumption pipeline:</span><br/><span class="hl-2">    - Fetch 19 CIA visualization products nightly at 02:00 CET</span><br/><span class="hl-2">    - Validate against CIA JSON schemas</span><br/><span class="hl-2">    - Cache with version tracking and archival</span><br/><span class="hl-2">    - Monitor data freshness (&lt; 24 hours)</span><br/><span class="hl-2">    - Implement graceful fallback to cached data</span><br/><span class="hl-2">  `</span><br/><span class="hl-1">})</span>
+</code><button type="button">Copy</button></pre>
+
+<h3 id="11-data-visualization-specialist-✨" class="tsd-anchor-link">11. Data Visualization Specialist (<code>data-visualization-specialist</code>) ✨<a href="#11-data-visualization-specialist-✨" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Expertise</strong>: Chart.js/D3.js, interactive dashboards, political data visualization, CIA intelligence displays</p>
+<p><strong>Use for</strong>:</p>
+<ul>
+<li>Chart.js patterns (bar, line, scatter charts with error bars)</li>
+<li>D3.js network diagrams (influence mapping, coalition networks)</li>
+<li>Interactive election forecasting dashboards</li>
+<li>Risk heat maps (45 rules × 349 MPs)</li>
+<li>Time series visualization (50+ years historical data)</li>
+<li>Performance optimization for large datasets</li>
+<li>Responsive, accessible chart design</li>
+</ul>
+<p><strong>Key Capabilities</strong>:</p>
+<ul>
+<li><strong>Chart.js</strong>: Bar, line, scatter, radar charts with confidence intervals</li>
+<li><strong>D3.js</strong>: Force-directed graphs, network diagrams, geographic maps</li>
+<li><strong>Dashboards</strong>: Multi-panel CIA intelligence visualization (19 products)</li>
+<li><strong>Interactivity</strong>: Tooltips, zoom, pan, drill-down, real-time updates</li>
+<li><strong>Accessibility</strong>: WCAG 2.1 AA, keyboard navigation, screen reader support</li>
+</ul>
+<p><strong>Addresses</strong>: Issues #15, #16, #19, #20 (CIA visualization)</p>
+<p><strong>Example invocation</strong>:</p>
+<pre><code class="javascript"><span class="hl-0">assign_copilot_to_issue</span><span class="hl-1">({</span><br/><span class="hl-1">  </span><span class="hl-5">owner:</span><span class="hl-1"> </span><span class="hl-2">&quot;Hack23&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-5">repo:</span><span class="hl-1"> </span><span class="hl-2">&quot;riksdagsmonitor&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-5">issue_number:</span><span class="hl-1"> </span><span class="hl-6">20</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-5">custom_agent:</span><span class="hl-1"> </span><span class="hl-2">&quot;data-visualization-specialist&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-5">custom_instructions:</span><span class="hl-1"> </span><span class="hl-2">`</span><br/><span class="hl-2">    Visualize CIA Election 2026 Forecasting Model:</span><br/><span class="hl-2">    - Seat prediction bar charts with confidence intervals (±5 seats)</span><br/><span class="hl-2">    - Coalition scenario probability charts (stacked bar)</span><br/><span class="hl-2">    - Historical trend lines (50 years)</span><br/><span class="hl-2">    - Interactive tooltips with methodology</span><br/><span class="hl-2">    - Responsive design (320px-1440px+)</span><br/><span class="hl-2">    - WCAG 2.1 AA accessibility</span><br/><span class="hl-2">  `</span><br/><span class="hl-1">})</span>
+</code><button type="button">Copy</button></pre>
+
+<h3 id="12-content-generator-✨-new" class="tsd-anchor-link">12. Content Generator (<code>content-generator</code>) ✨ <strong>NEW</strong><a href="#12-content-generator-✨-new" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Expertise</strong>: Automated news generation, intelligence reports, multi-language content, template-based rendering</p>
+<p><strong>Use for</strong>:</p>
+<ul>
+<li>Automated daily news articles from CIA exports</li>
+<li>Weekly intelligence summaries</li>
+<li>Monthly risk assessment reports</li>
+<li>Multi-language content generation (14 languages)</li>
+<li>Template-based markdown/HTML rendering</li>
+<li>Scheduled content workflows</li>
+<li>SEO optimization and front matter generation</li>
+</ul>
+<p><strong>Key Capabilities</strong>:</p>
+<ul>
+<li><strong>News Generation</strong>: Data-to-narrative transformation, inverted pyramid structure</li>
+<li><strong>Intelligence Reports</strong>: Executive summaries, risk assessments, coalition analyses</li>
+<li><strong>Multi-Language</strong>: 14-language support with RTL layouts (Arabic, Hebrew)</li>
+<li><strong>Automation</strong>: GitHub Actions scheduled workflows (daily 02:00 CET)</li>
+<li><strong>Quality</strong>: Content validation, tone consistency, factual accuracy checks</li>
+</ul>
+<p><strong>Long-horizon expertise</strong>:</p>
+<ul>
+<li>Horizon stratification (T+72h → T+1460d) with per-band WEP confidence language</li>
+<li>Registry-driven article types via <a href="../modules/scripts_horizon-context.html"><code>scripts/horizon-context.ts</code></a> and <a href="../media/article-types.json"><code>analysis/article-types.json</code></a></li>
+<li>Cycle-rollover–aware content generation — see <a href="../media/cycle-rollover.md"><code>.github/prompts/ext/cycle-rollover.md</code></a></li>
+</ul>
+<p><strong>Addresses</strong>: Issue #17 (nightly news generation)</p>
+<p><strong>Example invocation</strong>:</p>
+<pre><code class="javascript"><span class="hl-0">assign_copilot_to_issue</span><span class="hl-1">({</span><br/><span class="hl-1">  </span><span class="hl-5">owner:</span><span class="hl-1"> </span><span class="hl-2">&quot;Hack23&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-5">repo:</span><span class="hl-1"> </span><span class="hl-2">&quot;riksdagsmonitor&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-5">issue_number:</span><span class="hl-1"> </span><span class="hl-6">17</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-5">custom_agent:</span><span class="hl-1"> </span><span class="hl-2">&quot;content-generator&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-5">custom_instructions:</span><span class="hl-1"> </span><span class="hl-2">`</span><br/><span class="hl-2">    Implement nightly news generation from CIA intelligence exports:</span><br/><span class="hl-2">    - Generate daily articles from 19 CIA products</span><br/><span class="hl-2">    - Create election forecast updates with seat predictions</span><br/><span class="hl-2">    - Generate risk assessment summaries</span><br/><span class="hl-2">    - Support all 14 languages</span><br/><span class="hl-2">    - Include proper YAML front matter</span><br/><span class="hl-2">    - Validate content quality and factual accuracy</span><br/><span class="hl-2">    - Commit to content/ directory via automated PR</span><br/><span class="hl-2">  `</span><br/><span class="hl-1">})</span>
+</code><button type="button">Copy</button></pre>
+
+<h3 id="13-devops-engineer-✨-new" class="tsd-anchor-link">13. DevOps Engineer (<code>devops-engineer</code>) ✨ <strong>NEW</strong><a href="#13-devops-engineer-✨-new" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Expertise</strong>: CI/CD pipelines, GitHub Actions security, infrastructure automation, monitoring, performance optimization</p>
+<p><strong>Use for</strong>:</p>
+<ul>
+<li>GitHub Actions workflow design and optimization</li>
+<li>Workflow security hardening (step-security/harden-runner, SHA pinning)</li>
+<li>GitHub Pages configuration and optimization</li>
+<li>Automated data pipeline workflows</li>
+<li>Performance monitoring (Core Web Vitals, Lighthouse CI)</li>
+<li>Uptime monitoring and alerting</li>
+<li>Build optimization (&lt; 2 min target)</li>
+<li>Secret management and environment configuration</li>
+</ul>
+<p><strong>Key Capabilities</strong>:</p>
+<ul>
+<li><strong>CI/CD</strong>: Multi-stage pipelines, parallel jobs, caching, artifact management</li>
+<li><strong>Security</strong>: Action SHA pinning, least privilege, egress auditing, secret scanning</li>
+<li><strong>Automation</strong>: Scheduled workflows (cron), event-driven triggers, cross-repo coordination</li>
+<li><strong>Monitoring</strong>: Uptime checks, build success rates, performance tracking, alerting</li>
+<li><strong>Optimization</strong>: Build time reduction, asset optimization, CDN configuration</li>
+</ul>
+<p><strong>Addresses</strong>: Infrastructure automation for all agents</p>
+<p><strong>Example invocation</strong>:</p>
+<pre><code class="javascript"><span class="hl-0">assign_copilot_to_issue</span><span class="hl-1">({</span><br/><span class="hl-1">  </span><span class="hl-5">owner:</span><span class="hl-1"> </span><span class="hl-2">&quot;Hack23&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-5">repo:</span><span class="hl-1"> </span><span class="hl-2">&quot;riksdagsmonitor&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-5">issue_number:</span><span class="hl-1"> </span><span class="hl-6">200</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-5">custom_agent:</span><span class="hl-1"> </span><span class="hl-2">&quot;devops-engineer&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-5">custom_instructions:</span><span class="hl-1"> </span><span class="hl-2">`</span><br/><span class="hl-2">    Optimize CI/CD pipeline for riksdagsmonitor:</span><br/><span class="hl-2">    - Reduce build time from 5 min to &lt; 2 min</span><br/><span class="hl-2">    - Implement GitHub Actions caching (dependencies, build)</span><br/><span class="hl-2">    - Add Lighthouse CI for performance monitoring</span><br/><span class="hl-2">    - Harden all workflows (SHA pinning, step-security/harden-runner)</span><br/><span class="hl-2">    - Add uptime monitoring for all 14 language versions</span><br/><span class="hl-2">    - Implement automated data pipeline (nightly 02:00 CET)</span><br/><span class="hl-2">  `</span><br/><span class="hl-1">})</span>
+</code><button type="button">Copy</button></pre>
+
+<h3 id="14-news-journalist-✨-new" class="tsd-anchor-link">14. News Journalist (<code>news-journalist</code>) ✨ <strong>NEW</strong><a href="#14-news-journalist-✨-new" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Expertise</strong>: Political journalism, editorial standards, OSINT/INTOP data-driven AI-generated political intelligence, Swedish and global politics</p>
+<p><strong>Use for</strong>:</p>
+<ul>
+<li>Political news article generation (Riksdagen, Regeringen, Myndigheter)</li>
+<li>Editorial quality control (OSINT/INTOP-driven editorial standards)</li>
+<li>Multi-language news coverage (14 languages)</li>
+<li>Fact-checking and source verification</li>
+<li>Intelligence-driven narrative reporting</li>
+<li>SEO-optimized <a href="http://Schema.org">Schema.org</a> structured articles</li>
+</ul>
+<p><strong>Key Capabilities</strong>:</p>
+<ul>
+<li><strong>News Generation</strong>: Data-driven articles from Riksdag/Regering MCP data</li>
+<li><strong>Editorial Standards</strong>: Inverted pyramid structure, balanced reporting, attribution</li>
+<li><strong>Multi-Language</strong>: Full translation workflow for 14 languages with RTL support</li>
+<li><strong>Quality</strong>: <a href="http://Schema.org">Schema.org</a> NewsArticle, FAQPage, speakable structured data</li>
+<li><strong>SEO</strong>: Meta tags, Open Graph, Twitter Cards, hreflang tags</li>
+</ul>
+<p><strong>Long-horizon expertise</strong>:</p>
+<ul>
+<li>Horizon stratification (T+72h → T+1460d) with per-band WEP confidence ladder</li>
+<li>Scenario-tree branching for quarter / year / election-cycle articles</li>
+<li>PIR roll-forward integration for forward-look coverage</li>
+<li>Runtime context via <a href="../modules/scripts_horizon-context.html"><code>scripts/horizon-context.ts</code></a> and <a href="../media/article-types.json"><code>analysis/article-types.json</code></a></li>
+</ul>
+<p><strong>Example invocation</strong>:</p>
+<pre><code class="javascript"><span class="hl-0">assign_copilot_to_issue</span><span class="hl-1">({</span><br/><span class="hl-1">  </span><span class="hl-5">owner:</span><span class="hl-1"> </span><span class="hl-2">&quot;Hack23&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-5">repo:</span><span class="hl-1"> </span><span class="hl-2">&quot;riksdagsmonitor&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-5">issue_number:</span><span class="hl-1"> </span><span class="hl-6">201</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-5">custom_agent:</span><span class="hl-1"> </span><span class="hl-2">&quot;news-journalist&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-5">custom_instructions:</span><span class="hl-1"> </span><span class="hl-2">`</span><br/><span class="hl-2">    Generate daily political news article covering:</span><br/><span class="hl-2">    - Latest government propositions</span><br/><span class="hl-2">    - Opposition motions</span><br/><span class="hl-2">    - Committee reports</span><br/><span class="hl-2">    - Support all 14 languages</span><br/><span class="hl-2">    - Include Schema.org structured data</span><br/><span class="hl-2">  `</span><br/><span class="hl-1">})</span>
+</code><button type="button">Copy</button></pre>
+
+<h2 id="github-copilot-coding-agent-features" class="tsd-anchor-link">GitHub Copilot Coding Agent Features<a href="#github-copilot-coding-agent-features" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<p>All agents support modern GitHub Copilot coding agent features:</p>
+<h3 id="basic-assignment-legacy" class="tsd-anchor-link">Basic Assignment (Legacy)<a href="#basic-assignment-legacy" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<pre><code class="javascript"><span class="hl-5">github</span><span class="hl-1">-</span><span class="hl-0">update_issue</span><span class="hl-1">({</span><br/><span class="hl-1">  </span><span class="hl-5">owner:</span><span class="hl-1"> </span><span class="hl-2">&quot;Hack23&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-5">repo:</span><span class="hl-1"> </span><span class="hl-2">&quot;riksdagsmonitor&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-5">issue_number:</span><span class="hl-1"> </span><span class="hl-6">123</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-5">assignees:</span><span class="hl-1"> [</span><span class="hl-2">&quot;copilot-swe-agent[bot]&quot;</span><span class="hl-1">]</span><br/><span class="hl-1">})</span>
+</code><button type="button">Copy</button></pre>
+
+<h3 id="advanced-assignment-with-custom-instructions" class="tsd-anchor-link">Advanced Assignment with Custom Instructions<a href="#advanced-assignment-with-custom-instructions" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<pre><code class="javascript"><span class="hl-0">assign_copilot_to_issue</span><span class="hl-1">({</span><br/><span class="hl-1">  </span><span class="hl-5">owner:</span><span class="hl-1"> </span><span class="hl-2">&quot;Hack23&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-5">repo:</span><span class="hl-1"> </span><span class="hl-2">&quot;riksdagsmonitor&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-5">issue_number:</span><span class="hl-1"> </span><span class="hl-6">123</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-5">base_ref:</span><span class="hl-1"> </span><span class="hl-2">&quot;main&quot;</span><span class="hl-1">,  </span><span class="hl-4">// Optional: specify base branch</span><br/><span class="hl-1">  </span><span class="hl-5">custom_instructions:</span><span class="hl-1"> </span><span class="hl-2">`</span><br/><span class="hl-2">    - Follow Hack23 ISMS policies</span><br/><span class="hl-2">    - Use security-by-design principles</span><br/><span class="hl-2">    - Update all relevant documentation</span><br/><span class="hl-2">    - Ensure WCAG 2.1 AA compliance</span><br/><span class="hl-2">  `</span><br/><span class="hl-1">})</span>
+</code><button type="button">Copy</button></pre>
+
+<h3 id="direct-pr-creation" class="tsd-anchor-link">Direct PR Creation<a href="#direct-pr-creation" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<pre><code class="javascript"><span class="hl-0">create_pull_request_with_copilot</span><span class="hl-1">({</span><br/><span class="hl-1">  </span><span class="hl-5">owner:</span><span class="hl-1"> </span><span class="hl-2">&quot;Hack23&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-5">repo:</span><span class="hl-1"> </span><span class="hl-2">&quot;riksdagsmonitor&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-5">title:</span><span class="hl-1"> </span><span class="hl-2">&quot;Security Enhancement&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-5">body:</span><span class="hl-1"> </span><span class="hl-2">&quot;Implement additional security controls&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-5">base_ref:</span><span class="hl-1"> </span><span class="hl-2">&quot;main&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-5">custom_agent:</span><span class="hl-1"> </span><span class="hl-2">&quot;security-architect&quot;</span><br/><span class="hl-1">})</span>
+</code><button type="button">Copy</button></pre>
+
+<h3 id="job-status-tracking" class="tsd-anchor-link">Job Status Tracking<a href="#job-status-tracking" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<pre><code class="javascript"><span class="hl-9">const</span><span class="hl-1"> </span><span class="hl-8">status</span><span class="hl-1"> = </span><span class="hl-0">get_copilot_job_status</span><span class="hl-1">({</span><br/><span class="hl-1">  </span><span class="hl-5">owner:</span><span class="hl-1"> </span><span class="hl-2">&quot;Hack23&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-5">repo:</span><span class="hl-1"> </span><span class="hl-2">&quot;riksdagsmonitor&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-5">job_id:</span><span class="hl-1"> </span><span class="hl-2">&quot;abc123-def456&quot;</span><br/><span class="hl-1">});</span>
+</code><button type="button">Copy</button></pre>
+
+<h3 id="stacked-prs-workflow" class="tsd-anchor-link">Stacked PRs Workflow<a href="#stacked-prs-workflow" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<pre><code class="javascript"><span class="hl-4">// PR 1: Foundation</span><br/><span class="hl-9">const</span><span class="hl-1"> </span><span class="hl-8">pr1</span><span class="hl-1"> = </span><span class="hl-0">create_pull_request_with_copilot</span><span class="hl-1">({</span><br/><span class="hl-1">  </span><span class="hl-5">owner:</span><span class="hl-1"> </span><span class="hl-2">&quot;Hack23&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-5">repo:</span><span class="hl-1"> </span><span class="hl-2">&quot;riksdagsmonitor&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-5">title:</span><span class="hl-1"> </span><span class="hl-2">&quot;Foundation: Security documentation&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-5">body:</span><span class="hl-1"> </span><span class="hl-2">&quot;Create security architecture docs&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-5">base_ref:</span><span class="hl-1"> </span><span class="hl-2">&quot;main&quot;</span><br/><span class="hl-1">});</span><br/><br/><span class="hl-4">// PR 2: Build on PR 1</span><br/><span class="hl-9">const</span><span class="hl-1"> </span><span class="hl-8">pr2</span><span class="hl-1"> = </span><span class="hl-0">create_pull_request_with_copilot</span><span class="hl-1">({</span><br/><span class="hl-1">  </span><span class="hl-5">owner:</span><span class="hl-1"> </span><span class="hl-2">&quot;Hack23&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-5">repo:</span><span class="hl-1"> </span><span class="hl-2">&quot;riksdagsmonitor&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-5">title:</span><span class="hl-1"> </span><span class="hl-2">&quot;Enhancement: Security controls&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-5">body:</span><span class="hl-1"> </span><span class="hl-2">&quot;Implement security controls from documentation&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-5">base_ref:</span><span class="hl-1"> </span><span class="hl-5">pr1</span><span class="hl-1">.</span><span class="hl-5">branch</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-5">custom_agent:</span><span class="hl-1"> </span><span class="hl-2">&quot;security-architect&quot;</span><br/><span class="hl-1">});</span>
+</code><button type="button">Copy</button></pre>
+
+<h2 id="agent-configuration" class="tsd-anchor-link">Agent Configuration<a href="#agent-configuration" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<h3 id="repository-level-mcp-configuration" class="tsd-anchor-link">Repository-Level MCP Configuration<a href="#repository-level-mcp-configuration" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Important</strong>: Repository-level agents in <code>.github/agents/</code> cannot have MCP servers configured in their YAML frontmatter. MCP servers are configured at the repository level in <code>.github/copilot-mcp.json</code> and are automatically available to all agents.</p>
+<p>Each agent file's <strong>YAML frontmatter</strong> contains only:</p>
+<pre><code class="yaml"><span class="hl-1">---</span><br/><span class="hl-11">name</span><span class="hl-1">: </span><span class="hl-12">agent-name</span><br/><span class="hl-11">description</span><span class="hl-1">: </span><span class="hl-12">Brief description of agent&#39;s expertise</span><br/><span class="hl-11">tools</span><span class="hl-1">: [</span><span class="hl-2">&quot;*&quot;</span><span class="hl-1">]</span><br/><span class="hl-1">---</span>
+</code><button type="button">Copy</button></pre>
+
+<p>All 14 primary Copilot agents in this repo use <code>tools: [&quot;*&quot;]</code> and omit <code>mcp-servers:</code> entirely. The agent body after the frontmatter contains detailed instructions, capabilities, examples, <strong>a standardised &quot;Available MCP Servers&quot; reference</strong>, <strong>standardised Copilot coding-agent tool snippets</strong> (<code>assign_copilot_to_issue</code>, <code>create_pull_request_with_copilot</code>, <code>get_copilot_job_status</code>, including <code>base_ref</code> and <code>custom_agent</code>), and <strong>a standardised &quot;Related Hack23 ISMS Policies&quot; block</strong> pointing at the governance chain rooted in <code>Information_Security_Policy.md</code>. Each agent file MUST remain below the 16 KB GitHub Copilot agent size limit.</p>
+<h3 id="mcp-server-configuration-repository-level-only" class="tsd-anchor-link">MCP Server Configuration (Repository-Level Only)<a href="#mcp-server-configuration-repository-level-only" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p>MCP servers are configured in <code>.github/copilot-mcp.json</code>:</p>
+<pre><code class="json"><span class="hl-1">{</span><br/><span class="hl-1">  </span><span class="hl-13">&quot;mcpServers&quot;</span><span class="hl-1">: {</span><br/><span class="hl-1">    </span><span class="hl-13">&quot;github&quot;</span><span class="hl-1">: {</span><br/><span class="hl-1">      </span><span class="hl-13">&quot;type&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;local&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-13">&quot;command&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;npx&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-13">&quot;args&quot;</span><span class="hl-1">: [</span><span class="hl-2">&quot;-y&quot;</span><span class="hl-1">, </span><span class="hl-2">&quot;@modelcontextprotocol/server-github&quot;</span><span class="hl-1">, </span><span class="hl-2">&quot;--toolsets&quot;</span><span class="hl-1">, </span><span class="hl-2">&quot;all&quot;</span><span class="hl-1">, </span><span class="hl-2">&quot;--tools&quot;</span><span class="hl-1">, </span><span class="hl-2">&quot;*&quot;</span><span class="hl-1">],</span><br/><span class="hl-1">      </span><span class="hl-13">&quot;env&quot;</span><span class="hl-1">: {</span><br/><span class="hl-1">        </span><span class="hl-13">&quot;GITHUB_TOKEN&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;${{ secrets.COPILOT_MCP_GITHUB_PERSONAL_ACCESS_TOKEN }}&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">        </span><span class="hl-13">&quot;GITHUB_PERSONAL_ACCESS_TOKEN&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;${{ secrets.COPILOT_MCP_GITHUB_PERSONAL_ACCESS_TOKEN }}&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">        </span><span class="hl-13">&quot;GITHUB_OWNER&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;Hack23&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">        </span><span class="hl-13">&quot;GITHUB_API_URL&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;https://api.githubcopilot.com/mcp/insiders&quot;</span><br/><span class="hl-1">      },</span><br/><span class="hl-1">      </span><span class="hl-13">&quot;tools&quot;</span><span class="hl-1">: [</span><span class="hl-2">&quot;*&quot;</span><span class="hl-1">]</span><br/><span class="hl-1">    },</span><br/><span class="hl-1">    </span><span class="hl-13">&quot;filesystem&quot;</span><span class="hl-1">: {</span><br/><span class="hl-1">      </span><span class="hl-13">&quot;type&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;local&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-13">&quot;command&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;npx&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-13">&quot;args&quot;</span><span class="hl-1">: [</span><span class="hl-2">&quot;-y&quot;</span><span class="hl-1">, </span><span class="hl-2">&quot;@modelcontextprotocol/server-filesystem&quot;</span><span class="hl-1">, </span><span class="hl-2">&quot;/home/runner/work/riksdagsmonitor/riksdagsmonitor&quot;</span><span class="hl-1">],</span><br/><span class="hl-1">      </span><span class="hl-13">&quot;tools&quot;</span><span class="hl-1">: [</span><span class="hl-2">&quot;*&quot;</span><span class="hl-1">]</span><br/><span class="hl-1">    },</span><br/><span class="hl-1">    </span><span class="hl-13">&quot;git&quot;</span><span class="hl-1">: {</span><br/><span class="hl-1">      </span><span class="hl-13">&quot;type&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;local&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-13">&quot;command&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;npx&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-13">&quot;args&quot;</span><span class="hl-1">: [</span><span class="hl-2">&quot;-y&quot;</span><span class="hl-1">, </span><span class="hl-2">&quot;@modelcontextprotocol/server-git&quot;</span><span class="hl-1">, </span><span class="hl-2">&quot;--repository&quot;</span><span class="hl-1">, </span><span class="hl-2">&quot;/home/runner/work/riksdagsmonitor/riksdagsmonitor&quot;</span><span class="hl-1">],</span><br/><span class="hl-1">      </span><span class="hl-13">&quot;tools&quot;</span><span class="hl-1">: [</span><span class="hl-2">&quot;*&quot;</span><span class="hl-1">]</span><br/><span class="hl-1">    }</span><br/><span class="hl-1">  }</span><br/><span class="hl-1">}</span>
+</code><button type="button">Copy</button></pre>
+
+<p><strong>Notes</strong>:</p>
+<ul>
+<li>This configuration provides all agents with access to MCP servers</li>
+<li>Filesystem and git paths are environment-specific (GitHub Actions runner layout)</li>
+<li>⚠️ <strong>Security</strong>: MCP packages are not version-pinned. Consider pinning to specific versions for supply chain security</li>
+</ul>
+<h2 id="skills-mapping-by-agent" class="tsd-anchor-link">Skills Mapping by Agent<a href="#skills-mapping-by-agent" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<p>All agents automatically load relevant skills from <code>.github/skills/</code> based on their expertise. Here's the recommended skill mapping for each agent:</p>
+<h3 id="security-architect" class="tsd-anchor-link">Security Architect<a href="#security-architect" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Primary Skills</strong> (Core expertise):</p>
+<ul>
+<li><code>hack23-isms-compliance</code> - ISMS framework enforcement</li>
+<li><code>security-by-design</code> - Security architecture principles</li>
+<li><code>static-site-security</code> - Static website security</li>
+<li><code>threat-modeling</code> - STRIDE threat analysis</li>
+<li><code>iso-27001-controls</code> - ISO 27001:2022 controls</li>
+<li><code>nist-csf-mapping</code> - NIST CSF 2.0 functions</li>
+<li><code>cis-controls</code> - CIS Controls v8.1</li>
+<li><code>secure-code-review</code> - Security code review</li>
+<li><code>security-documentation</code> - ISMS documentation</li>
+</ul>
+<p><strong>Supporting Skills</strong>:</p>
+<ul>
+<li><code>ci-cd-security</code> - GitHub Actions security</li>
+<li><code>secrets-management</code> - Secrets and PAT management</li>
+</ul>
+<h3 id="documentation-architect" class="tsd-anchor-link">Documentation Architect<a href="#documentation-architect" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Primary Skills</strong>:</p>
+<ul>
+<li><code>documentation-standards</code> - Documentation guidelines</li>
+<li><code>c4-architecture-documentation</code> - C4 model and Mermaid diagrams</li>
+<li><code>security-documentation</code> - ISMS documentation standards</li>
+</ul>
+<p><strong>Supporting Skills</strong>:</p>
+<ul>
+<li><code>hack23-isms-compliance</code> - Compliance requirements</li>
+<li><code>threat-modeling</code> - Threat model documentation</li>
+</ul>
+<h3 id="quality-engineer" class="tsd-anchor-link">Quality Engineer<a href="#quality-engineer" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Primary Skills</strong>:</p>
+<ul>
+<li><code>code-quality-checks</code> - HTML/CSS validation, link checking</li>
+<li><code>html-accessibility</code> - WCAG 2.1 AA compliance</li>
+<li><code>playwright-testing</code> - Browser automation and testing</li>
+<li><code>multi-language-localization</code> - i18n/l10n testing</li>
+</ul>
+<p><strong>Supporting Skills</strong>:</p>
+<ul>
+<li><code>responsive-design</code> - Cross-device testing</li>
+<li><code>static-site-security</code> - Security validation</li>
+<li><code>issue-management</code> - Bug reporting and tracking</li>
+</ul>
+<h3 id="frontend-specialist" class="tsd-anchor-link">Frontend Specialist<a href="#frontend-specialist" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Primary Skills</strong>:</p>
+<ul>
+<li><code>responsive-design</code> - Mobile-first responsive design</li>
+<li><code>html-accessibility</code> - WCAG 2.1 AA accessibility</li>
+<li><code>multi-language-localization</code> - 14-language support</li>
+<li><code>design-system-management</code> - Cyberpunk theme design system</li>
+</ul>
+<p><strong>Supporting Skills</strong>:</p>
+<ul>
+<li><code>static-site-security</code> - XSS prevention, CSP</li>
+<li><code>code-quality-checks</code> - HTML/CSS validation</li>
+<li><code>political-data-visualization</code> - CSS-only visualizations</li>
+</ul>
+<h3 id="isms-compliance-manager" class="tsd-anchor-link">ISMS Compliance Manager<a href="#isms-compliance-manager" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Primary Skills</strong>:</p>
+<ul>
+<li><code>hack23-isms-compliance</code> - ISMS framework</li>
+<li><code>iso-27001-controls</code> - ISO 27001:2022 Annex A</li>
+<li><code>nist-csf-mapping</code> - NIST CSF 2.0</li>
+<li><code>cis-controls</code> - CIS Controls v8.1</li>
+<li><code>security-documentation</code> - Documentation standards</li>
+</ul>
+<p><strong>Supporting Skills</strong>:</p>
+<ul>
+<li><code>security-by-design</code> - Security principles</li>
+<li><code>threat-modeling</code> - Risk assessment</li>
+<li><code>gdpr-compliance</code> - Data protection</li>
+</ul>
+<h3 id="deployment-specialist" class="tsd-anchor-link">Deployment Specialist<a href="#deployment-specialist" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Primary Skills</strong>:</p>
+<ul>
+<li><code>github-actions-workflows</code> - CI/CD workflow patterns</li>
+<li><code>ci-cd-security</code> - Workflow security hardening</li>
+<li><code>secrets-management</code> - GitHub secrets management</li>
+</ul>
+<p><strong>Supporting Skills</strong>:</p>
+<ul>
+<li><code>static-site-security</code> - Deployment security</li>
+<li><code>code-quality-checks</code> - Quality gates</li>
+<li><code>hack23-isms-compliance</code> - Compliance requirements</li>
+</ul>
+<h3 id="intelligence-operative" class="tsd-anchor-link">Intelligence Operative<a href="#intelligence-operative" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Primary Skills</strong>:</p>
+<ul>
+<li><code>riksdag-regering-mcp</code> - 32 political data tools</li>
+<li><code>political-science-analysis</code> - Political frameworks</li>
+<li><code>osint-methodologies</code> - OSINT collection</li>
+<li><code>intelligence-analysis-techniques</code> - ACH, SWOT, Red Team</li>
+<li><code>swedish-political-system</code> - Riksdag structure</li>
+<li><code>electoral-analysis</code> - Election forecasting</li>
+<li><code>behavioral-analysis</code> - Political psychology</li>
+<li><code>legislative-monitoring</code> - Voting patterns</li>
+<li><code>strategic-communication-analysis</code> - Narrative analysis</li>
+<li><code>risk-assessment-frameworks</code> - Risk indicators</li>
+<li><code>data-science-for-intelligence</code> - Statistical analysis</li>
+</ul>
+<p><strong>Supporting Skills</strong>:</p>
+<ul>
+<li><code>gdpr-compliance</code> - Political data GDPR</li>
+<li><code>political-data-visualization</code> - CSS-only dashboards</li>
+<li><code>multi-language-localization</code> - 14-language content</li>
+</ul>
+<h3 id="task-agent" class="tsd-anchor-link">Task Agent<a href="#task-agent" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Primary Skills</strong>:</p>
+<ul>
+<li><code>issue-management</code> - GitHub issue creation</li>
+<li><code>playwright-testing</code> - Browser automation and testing</li>
+<li><code>code-quality-checks</code> - HTML/CSS/link validation</li>
+<li><code>html-accessibility</code> - WCAG 2.1 AA audits</li>
+<li><code>hack23-isms-compliance</code> - ISMS verification</li>
+</ul>
+<p><strong>Supporting Skills</strong>:</p>
+<ul>
+<li>All skills (task agent coordinates across domains)</li>
+</ul>
+<h3 id="ui-enhancement-specialist" class="tsd-anchor-link">UI Enhancement Specialist<a href="#ui-enhancement-specialist" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Primary Skills</strong>:</p>
+<ul>
+<li><code>responsive-design</code> - Mobile-first design</li>
+<li><code>design-system-management</code> - Cyberpunk theme</li>
+<li><code>political-data-visualization</code> - CSS-only charts</li>
+<li><code>html-accessibility</code> - WCAG 2.1 AA</li>
+<li><code>multi-language-localization</code> - 14-language support</li>
+</ul>
+<p><strong>Supporting Skills</strong>:</p>
+<ul>
+<li><code>static-site-security</code> - XSS, CSP enforcement</li>
+<li><code>code-quality-checks</code> - Validation and testing</li>
+<li><code>playwright-testing</code> - Visual regression</li>
+</ul>
+<h3 id="data-pipeline-specialist-✨-new" class="tsd-anchor-link">Data Pipeline Specialist ✨ <strong>NEW</strong><a href="#data-pipeline-specialist-✨-new" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Primary Skills</strong>:</p>
+<ul>
+<li><code>cia-data-integration</code> - CIA export consumption, JSON Schema validation</li>
+<li><code>data-pipeline-engineering</code> - ETL workflows, automated scheduling</li>
+<li><code>api-integration</code> - REST/GraphQL clients, rate limiting</li>
+<li><code>github-actions-workflows</code> - Automated pipeline workflows</li>
+</ul>
+<p><strong>Supporting Skills</strong>:</p>
+<ul>
+<li><code>performance-optimization</code> - Data processing optimization</li>
+<li><code>code-quality-checks</code> - Data validation checks</li>
+<li><code>secrets-management</code> - API keys and credentials</li>
+</ul>
+<h3 id="data-visualization-specialist-✨-new" class="tsd-anchor-link">Data Visualization Specialist ✨ <strong>NEW</strong><a href="#data-visualization-specialist-✨-new" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Primary Skills</strong>:</p>
+<ul>
+<li><code>advanced-data-visualization</code> - Chart.js/D3.js, interactive dashboards</li>
+<li><code>political-data-visualization</code> - Political metrics visualization</li>
+<li><code>responsive-design</code> - Responsive chart layouts</li>
+<li><code>html-accessibility</code> - WCAG 2.1 AA chart accessibility</li>
+<li><code>performance-optimization</code> - Large dataset optimization</li>
+</ul>
+<p><strong>Supporting Skills</strong>:</p>
+<ul>
+<li><code>cia-data-integration</code> - CIA data consumption</li>
+<li><code>multi-language-localization</code> - 14-language chart labels</li>
+<li><code>code-quality-checks</code> - Chart validation</li>
+</ul>
+<h3 id="content-generator-✨-new" class="tsd-anchor-link">Content Generator ✨ <strong>NEW</strong><a href="#content-generator-✨-new" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Primary Skills</strong>:</p>
+<ul>
+<li><code>automated-content-generation</code> - Template-based content generation</li>
+<li><code>multi-language-localization</code> - 14-language content</li>
+<li><code>html-accessibility</code> - Accessible article structure</li>
+<li><code>github-actions-workflows</code> - Scheduled content generation</li>
+</ul>
+<p><strong>Supporting Skills</strong>:</p>
+<ul>
+<li><code>cia-data-integration</code> - CIA data consumption for articles</li>
+<li><code>political-science-analysis</code> - Content validation</li>
+<li><code>responsive-design</code> - Article layout</li>
+<li><code>static-site-security</code> - Content security</li>
+</ul>
+<h3 id="devops-engineer-✨-new" class="tsd-anchor-link">DevOps Engineer ✨ <strong>NEW</strong><a href="#devops-engineer-✨-new" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Primary Skills</strong>:</p>
+<ul>
+<li><code>github-actions-workflows</code> - CI/CD pipeline design</li>
+<li><code>ci-cd-security</code> - Workflow security hardening</li>
+<li><code>secrets-management</code> - GitHub secrets, PATs</li>
+<li><code>performance-optimization</code> - Build and runtime optimization</li>
+</ul>
+<p><strong>Supporting Skills</strong>:</p>
+<ul>
+<li><code>static-site-security</code> - Infrastructure security</li>
+<li><code>code-quality-checks</code> - Automated quality gates</li>
+<li><code>hack23-isms-compliance</code> - Compliance requirements</li>
+<li><code>threat-modeling</code> - Security architecture</li>
+</ul>
+<h3 id="news-journalist-✨-new" class="tsd-anchor-link">News Journalist ✨ <strong>NEW</strong><a href="#news-journalist-✨-new" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Primary Skills</strong>:</p>
+<ul>
+<li><code>editorial-standards</code> - Journalism quality standards</li>
+<li><code>automated-content-generation</code> - Template-based article generation</li>
+<li><code>multi-language-localization</code> - 14-language content</li>
+<li><code>seo-optimization</code> - <a href="http://Schema.org">Schema.org</a>, meta tags, structured data</li>
+<li><code>riksdag-regering-mcp</code> - Swedish political data tools</li>
+</ul>
+<p><strong>Supporting Skills</strong>:</p>
+<ul>
+<li><code>political-science-analysis</code> - Political context</li>
+<li><code>html-accessibility</code> - Accessible article structure</li>
+<li><code>responsive-design</code> - Article layout</li>
+<li><code>language-expertise</code> - Translation quality</li>
+</ul>
+<hr>
+<h2 id="best-practices" class="tsd-anchor-link">Best Practices<a href="#best-practices" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<h3 id="1-choose-the-right-agent" class="tsd-anchor-link">1. Choose the Right Agent<a href="#1-choose-the-right-agent" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p>Select the agent that best matches your task:</p>
+<ul>
+<li><strong>Security tasks</strong> → Security Architect</li>
+<li><strong>Documentation</strong> → Documentation Architect</li>
+<li><strong>Quality/Testing</strong> → Quality Engineer</li>
+<li><strong>UI/Frontend</strong> → Frontend Specialist</li>
+<li><strong>Compliance</strong> → ISMS Compliance Manager</li>
+<li><strong>CI/CD</strong> → Deployment Specialist</li>
+<li><strong>Political news</strong> → News Journalist</li>
+</ul>
+<h3 id="2-provide-clear-instructions" class="tsd-anchor-link">2. Provide Clear Instructions<a href="#2-provide-clear-instructions" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p>Use <code>custom_instructions</code> to give specific guidance:</p>
+<pre><code class="javascript"><span class="hl-7">custom_instructions</span><span class="hl-1">: </span><span class="hl-2">`</span><br/><span class="hl-2">  - Follow existing patterns in src/</span><br/><span class="hl-2">  - Include unit tests with 80%+ coverage</span><br/><span class="hl-2">  - Update relevant documentation</span><br/><span class="hl-2">  - Ensure security best practices</span><br/><span class="hl-2">`</span>
+</code><button type="button">Copy</button></pre>
+
+<h3 id="3-leverage-skills" class="tsd-anchor-link">3. Leverage Skills<a href="#3-leverage-skills" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p>Agents automatically load relevant skills from <code>.github/skills/</code> (91 total skills across 12 categories):</p>
+<p><strong>Core Infrastructure (9)</strong>:</p>
+<ul>
+<li><code>hack23-isms-compliance</code>, <code>security-by-design</code>, <code>static-site-security</code></li>
+<li><code>ci-cd-security</code>, <code>documentation-standards</code>, <code>html-accessibility</code></li>
+<li><code>multi-language-localization</code>, <code>hack23-future-architecture-standards</code>, <code>documentation-portfolio</code></li>
+</ul>
+<p><strong>Political Intelligence (11)</strong>:</p>
+<ul>
+<li><code>political-science-analysis</code>, <code>osint-methodologies</code>, <code>intelligence-analysis-techniques</code></li>
+<li><code>swedish-political-system</code>, <code>electoral-analysis</code>, <code>behavioral-analysis</code></li>
+<li><code>strategic-communication-analysis</code>, <code>legislative-monitoring</code></li>
+<li><code>risk-assessment-frameworks</code>, <code>data-science-for-intelligence</code>, <code>gdpr-compliance</code></li>
+</ul>
+<p><strong>ISMS &amp; Security (12)</strong>:</p>
+<ul>
+<li><code>cis-controls</code>, <code>iso-27001-controls</code>, <code>nist-csf-mapping</code></li>
+<li><code>threat-modeling</code>, <code>secure-code-review</code>, <code>security-documentation</code></li>
+<li><code>incident-response</code>, <code>input-validation</code>, <code>vulnerability-management</code></li>
+<li><code>data-protection</code>, <code>ai-governance</code>, <code>information-security-strategy</code></li>
+</ul>
+<p><strong>Development &amp; Operations (16)</strong>:</p>
+<ul>
+<li><code>c4-architecture-documentation</code>, <code>github-actions-workflows</code>, <code>code-quality-checks</code>, <code>secrets-management</code></li>
+<li><code>data-pipeline-engineering</code>, <code>automated-content-generation</code>, <code>performance-optimization</code>, <code>api-integration</code></li>
+<li><code>github-agentic-workflows</code>, <code>code-review-practices</code>, <code>testing-strategy</code>, <code>contribution-guidelines</code></li>
+<li><code>change-management</code>, <code>open-source-governance</code>, <code>copilot-agent-patterns</code>, <code>product-management-patterns</code></li>
+</ul>
+<p><strong>UI/UX &amp; Design (7)</strong>:</p>
+<ul>
+<li><code>responsive-design</code>, <code>design-system-management</code>, <code>political-data-visualization</code></li>
+<li><code>advanced-data-visualization</code>, <code>ui-ux-design</code>, <code>seo-optimization</code>, <code>data-visualization-principles</code></li>
+</ul>
+<p><strong>Testing &amp; Quality Assurance (2)</strong>:</p>
+<ul>
+<li><code>playwright-testing</code>, <code>issue-management</code></li>
+</ul>
+<p><strong>Data Integration (4)</strong>:</p>
+<ul>
+<li><code>riksdag-regering-mcp</code>, <code>cia-data-integration</code>, <code>mcp-server-development</code>, <code>european-parliament-api</code></li>
+</ul>
+<p><strong>Business &amp; Marketing (2)</strong>:</p>
+<ul>
+<li><code>marketing</code>, <code>business-development</code></li>
+</ul>
+<p><strong>Language &amp; Localization (1)</strong>:</p>
+<ul>
+<li><code>language-expertise</code></li>
+</ul>
+<p><strong>GitHub Agentic Workflows (12)</strong>:</p>
+<ul>
+<li><code>gh-aw-authentication-credentials</code>, <code>gh-aw-containerization</code>, <code>gh-aw-continuous-ai-patterns</code></li>
+<li><code>gh-aw-firewall</code>, <code>gh-aw-github-actions-integration</code>, <code>gh-aw-logging-monitoring</code></li>
+<li><code>gh-aw-mcp-configuration</code>, <code>gh-aw-mcp-gateway</code>, <code>gh-aw-safe-outputs</code></li>
+<li><code>gh-aw-security-architecture</code>, <code>gh-aw-tools-ecosystem</code>, <code>gh-aw-workflow-authoring</code></li>
+</ul>
+<p><strong>Journalism &amp; Media (4)</strong>:</p>
+<ul>
+<li><code>editorial-standards</code>, <code>investigative-journalism</code>, <code>prospective-news-coverage</code>, <code>comparative-politics-reporting</code></li>
+</ul>
+<p><strong>Government &amp; Regulatory (7)</strong>:</p>
+<ul>
+<li><code>global-government-analysis</code>, <code>myndigheter-monitoring</code>, <code>regulatory-affairs</code></li>
+<li><code>economic-policy-analysis</code>, <code>secure-development-lifecycle</code>, <code>secure-development-policy</code>, <code>compliance-checklist</code></li>
+</ul>
+<p>See <a href="SKILLS.html">SKILLS.md</a> for comprehensive skill documentation and <a href="#skills-mapping-by-agent">Skills Mapping</a> above for agent-specific recommendations.</p>
+<h3 id="4-use-feature-branches" class="tsd-anchor-link">4. Use Feature Branches<a href="#4-use-feature-branches" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p>Specify <code>base_ref</code> for feature branch workflows:</p>
+<pre><code class="javascript"><span class="hl-7">base_ref</span><span class="hl-1">: </span><span class="hl-2">&quot;feature/security-enhancements&quot;</span>
+</code><button type="button">Copy</button></pre>
+
+<h3 id="5-monitor-progress" class="tsd-anchor-link">5. Monitor Progress<a href="#5-monitor-progress" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p>Track job status for long-running tasks:</p>
+<pre><code class="javascript"><span class="hl-0">get_copilot_job_status</span><span class="hl-1">({</span><br/><span class="hl-1">  </span><span class="hl-5">owner:</span><span class="hl-1"> </span><span class="hl-2">&quot;Hack23&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-5">repo:</span><span class="hl-1"> </span><span class="hl-2">&quot;riksdagsmonitor&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-5">job_id:</span><span class="hl-1"> </span><span class="hl-2">&quot;job-id-from-assignment&quot;</span><br/><span class="hl-1">})</span>
+</code><button type="button">Copy</button></pre>
+
+<h2 id="agent-standards" class="tsd-anchor-link">Agent Standards<a href="#agent-standards" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<p>All agents follow these standards:</p>
+<h3 id="security" class="tsd-anchor-link">Security<a href="#security" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul>
+<li>✅ Follow Hack23 Secure Development Policy</li>
+<li>✅ Implement security-by-design principles</li>
+<li>✅ Update security documentation when making changes</li>
+<li>✅ Never introduce security vulnerabilities</li>
+<li>✅ Use least privilege access controls</li>
+</ul>
+<h3 id="documentation" class="tsd-anchor-link">Documentation<a href="#documentation" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul>
+<li>✅ Update relevant documentation</li>
+<li>✅ Use C4 model for architecture diagrams</li>
+<li>✅ Create Mermaid diagrams for complex concepts</li>
+<li>✅ Follow Hack23 documentation standards</li>
+<li>✅ Include document control metadata</li>
+</ul>
+<h3 id="quality" class="tsd-anchor-link">Quality<a href="#quality" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul>
+<li>✅ Validate HTML with HTMLHint</li>
+<li>✅ Check links with linkinator</li>
+<li>✅ Ensure WCAG 2.1 AA accessibility</li>
+<li>✅ Test responsive design</li>
+<li>✅ Verify cross-browser compatibility</li>
+</ul>
+<h3 id="compliance" class="tsd-anchor-link">Compliance<a href="#compliance" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul>
+<li>✅ Map to ISO 27001/NIST CSF/CIS Controls</li>
+<li>✅ Ensure all required docs exist</li>
+<li>✅ Follow ISMS policies</li>
+<li>✅ Maintain audit evidence</li>
+<li>✅ Document compliance gaps</li>
+</ul>
+<h2 id="troubleshooting" class="tsd-anchor-link">Troubleshooting<a href="#troubleshooting" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<h3 id="agent-not-available" class="tsd-anchor-link">Agent Not Available<a href="#agent-not-available" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul>
+<li>Verify agent file exists in <code>.github/agents/</code></li>
+<li>Check YAML frontmatter is valid</li>
+<li>Ensure agent name matches file name</li>
+</ul>
+<h3 id="task-not-completing" class="tsd-anchor-link">Task Not Completing<a href="#task-not-completing" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul>
+<li>Check job status with <code>get_copilot_job_status</code></li>
+<li>Review workflow logs</li>
+<li>Verify custom instructions are clear</li>
+<li>Check if blocked by required reviews</li>
+</ul>
+<h3 id="unexpected-results" class="tsd-anchor-link">Unexpected Results<a href="#unexpected-results" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul>
+<li>Refine <code>custom_instructions</code></li>
+<li>Specify <code>base_ref</code> if working on feature branch</li>
+<li>Try different agent if task doesn't match expertise</li>
+<li>Provide more context in issue description</li>
+</ul>
+<h2 id="related-documentation" class="tsd-anchor-link">Related Documentation<a href="#related-documentation" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<ul>
+<li><a href="SKILLS.html">SKILLS.md</a> - Agent skills reference</li>
+<li><a href="../media/README-4.md">README.md</a> - Project overview</li>
+<li><a href="https://github.com/Hack23/ISMS-PUBLIC">Hack23 ISMS-PUBLIC</a> - ISMS policies</li>
+<li><a href="https://docs.github.com/en/copilot/concepts/agents">GitHub Copilot Agents</a> - Official docs</li>
+</ul>
+<hr>
+<p><strong>Last Updated</strong>: 2026-02-20<br>
+<strong>Maintained by</strong>: Hack23 AB</p>
+<hr>
+<h2 id="🌐-imf-as-primary-economic-data-canon-cross-agent-rule" class="tsd-anchor-link">🌐 IMF as Primary Economic-Data Canon (Cross-Agent Rule)<a href="#🌐-imf-as-primary-economic-data-canon-cross-agent-rule" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<blockquote>
+<p><strong>Effective:</strong> 2026-04-24 · <strong>Owner:</strong> CEO · <strong>Authority:</strong> <a href="../media/ECONOMIC_DATA_CONTRACT.md"><code>.github/aw/ECONOMIC_DATA_CONTRACT.md</code></a> v2.1</p>
+</blockquote>
+<p><strong>Every persona agent that produces, validates, or visualises economic data MUST default to IMF as the primary economic-data source.</strong> This rule supersedes any earlier WB-centric guidance in individual agent files.</p>
+<h3 id="authoritative-imf-hub-for-agents" class="tsd-anchor-link">Authoritative IMF hub for agents<a href="#authoritative-imf-hub-for-agents" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><a href="../media/README-5.md"><code>analysis/imf/README.md</code></a> · <a href="../media/agentic-integration.md"><code>analysis/imf/agentic-integration.md</code></a> · <a href="../media/indicators-inventory.json"><code>analysis/imf/indicators-inventory.json</code></a> · <a href="../media/data-dictionary.md"><code>analysis/imf/data-dictionary.md</code></a> · <a href="../media/ECONOMIC_DATA_CONTRACT.md"><code>.github/aw/ECONOMIC_DATA_CONTRACT.md</code></a></p>
+<h3 id="agent-by-agent-imf-responsibility" class="tsd-anchor-link">Agent-by-agent IMF responsibility<a href="#agent-by-agent-imf-responsibility" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>Agent</th>
+<th>IMF responsibility</th>
+<th>Primary IMF dataflow</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>intelligence-operative</code></td>
+<td>Cite IMF projections in scenario analysis (T+5); cross-validate IMF SWE vs SCB</td>
+<td>WEO + FM + GFS_COFOG</td>
+</tr>
+<tr>
+<td><code>news-journalist</code></td>
+<td>Lead every economic claim with IMF citation; emit <code>economicProvenance.provider: imf</code></td>
+<td>WEO + FM + IFS + DOTS</td>
+</tr>
+<tr>
+<td><code>content-generator</code></td>
+<td>Render IMF dashboards in automated daily articles; vintage-aware</td>
+<td>WEO + FM + IFS</td>
+</tr>
+<tr>
+<td><code>data-pipeline-specialist</code></td>
+<td>Own <code>scripts/imf-context.ts</code>, <code>imf-fetch.ts</code>, <code>imf-client.ts</code>, <code>imf-codes.ts</code>; vintage cache</td>
+<td>All IMF dataflows</td>
+</tr>
+<tr>
+<td><code>data-visualization-specialist</code></td>
+<td>IMF dataflow registry as single source of truth for chart axes; vintage badge (yellow &gt;3mo, red &gt;6mo)</td>
+<td>WEO + FM + ER + PCPS</td>
+</tr>
+<tr>
+<td><code>security-architect</code></td>
+<td>IMF egress allow-list (<code>www.imf.org</code>, <code>api.imf.org</code>); SHA-256 payload pin; vintage discipline</td>
+<td>(security control surface)</td>
+</tr>
+<tr>
+<td><code>isms-compliance-manager</code></td>
+<td>IMF data classification: PUBLIC / no PII / GDPR DPIA short-circuit</td>
+<td>(compliance evidence)</td>
+</tr>
+<tr>
+<td><code>documentation-architect</code></td>
+<td>IMF as first-class C4 container in <a href="http://ARCHITECTURE.md">ARCHITECTURE.md</a>; mirror IMF sequence diagram from <code>agentic-integration.md</code></td>
+<td>(architectural surface)</td>
+</tr>
+<tr>
+<td><code>quality-engineer</code></td>
+<td><code>tests/imf-context.test.ts</code>, <code>tests/imf-inventory.test.ts</code>, <code>tests/imf-precedence-contract.test.ts</code></td>
+<td>(test surface)</td>
+</tr>
+<tr>
+<td><code>devops-engineer</code></td>
+<td>IMF CLI smoke check in <code>mcp-setup.sh</code>; IMF host in <code>copilot-setup-steps.yml</code> allow-list</td>
+<td>(operational surface)</td>
+</tr>
+<tr>
+<td><code>deployment-specialist</code></td>
+<td>IMF egress allow-list in CDN / WAF config</td>
+<td>(deployment surface)</td>
+</tr>
+<tr>
+<td><code>frontend-specialist</code></td>
+<td>IMF data renders in dashboard HTML/CSS with vintage badge</td>
+<td>(UI surface)</td>
+</tr>
+<tr>
+<td><code>ui-enhancement-specialist</code></td>
+<td>CSS-only IMF data visualisations (forecast cones for WEO projections)</td>
+<td>(UI surface)</td>
+</tr>
+<tr>
+<td><code>task-agent</code></td>
+<td>IMF coverage in product analysis matrix; create issues for IMF gaps</td>
+<td>(PM surface)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Canonical rule.</strong> Every economic claim in a Riksdagsmonitor article cites an IMF dataflow first; World Bank citations are reserved for governance, environment and social residue (the classes IMF does not publish). SCB is the Swedish-specific ground truth layer. See <code>ECONOMIC_DATA_CONTRACT.md</code> v2.1 for the banned-phrase list and vintage discipline (&gt;6 mo → annotation).</p>
+<hr>
+<h2 id="🔗-hack23-ecosystem" class="tsd-anchor-link">🔗 Hack23 Ecosystem<a href="#🔗-hack23-ecosystem" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<table>
+<tr>
+  <th width="33%">🌐 Platforms</th>
+  <th width="33%">📦 Open-Source Projects</th>
+  <th width="33%">🛡️ Governance &amp; Standards</th>
+</tr>
+<tr>
+<td valign="top">
+🗳️ <a href="https://riksdagsmonitor.com">Riksdagsmonitor</a> — Swedish Parliament intelligence<br>
+🇪🇺 <a href="https://www.euparliamentmonitor.com">EU Parliament Monitor</a> — European coverage<br>
+🕵️ <a href="https://www.hack23.com/cia">Citizen Intelligence Agency</a> — political-data engine<br>
+🌐 <a href="https://www.hack23.com">Hack23 AB</a> — corporate site<br>
+📰 <a href="https://hack23.com/blog.html">Hack23 Blog</a> — engineering &amp; policy<br>
+💼 <a href="https://www.linkedin.com/company/hack23/">Hack23 on LinkedIn</a>
+</td>
+<td valign="top">
+🗳️ <a href="https://github.com/Hack23/riksdagsmonitor">Hack23/riksdagsmonitor</a><br>
+🕵️ <a href="https://github.com/Hack23/cia">Hack23/cia</a><br>
+🇪🇺 <a href="https://github.com/Hack23/euparliamentmonitor">Hack23/euparliamentmonitor</a><br>
+🔌 <a href="https://github.com/Hack23/european-parliament-mcp">Hack23/european-parliament-mcp</a><br>
+✅ <a href="https://github.com/Hack23/cia-compliance-manager">Hack23/cia-compliance-manager</a><br>
+🥋 <a href="https://github.com/Hack23/black-trigram">Hack23/black-trigram</a><br>
+🏠 <a href="https://github.com/Hack23/homepage">Hack23/homepage</a>
+</td>
+<td valign="top">
+🛡️ <a href="https://github.com/Hack23/ISMS-PUBLIC">Hack23 ISMS-PUBLIC</a> — public ISMS<br>
+🔒 <a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Information_Security_Policy.md">Information Security Policy</a><br>
+🤖 <a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/AI_Policy.md">AI Policy</a><br>
+🧪 <a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md">Secure Development Policy</a><br>
+🎯 <a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Threat_Modeling.md">Threat Modeling Policy</a><br>
+⚠️ <a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Vulnerability_Management.md">Vulnerability Management</a><br>
+🏷️ <a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md">Classification Framework</a>
+</td>
+</tr>
+</table>
+<p align="center">
+<a href="https://www.bestpractices.dev/projects/12069"><img src="https://www.bestpractices.dev/projects/12069/badge" alt="OpenSSF Best Practices"/></a>
+<a href="https://scorecard.dev/viewer/?uri=github.com/Hack23/riksdagsmonitor"><img src="https://api.securityscorecards.dev/projects/github.com/Hack23/riksdagsmonitor/badge" alt="OpenSSF Scorecard"/></a>
+<a href="https://github.com/Hack23/ISMS-PUBLIC"><img src="https://img.shields.io/badge/ISO_27001-2022-blue?style=flat-square&logo=iso&logoColor=white" alt="ISO 27001:2022"/></a>
+<a href="https://github.com/Hack23/ISMS-PUBLIC"><img src="https://img.shields.io/badge/NIST_CSF-2.0-green?style=flat-square&logo=nist&logoColor=white" alt="NIST CSF 2.0"/></a>
+<a href="https://github.com/Hack23/ISMS-PUBLIC"><img src="https://img.shields.io/badge/CIS_Controls-v8.1-orange?style=flat-square&logo=cisecurity&logoColor=white" alt="CIS Controls v8.1"/></a>
+<a href="https://www.apache.org/licenses/LICENSE-2.0"><img src="https://img.shields.io/badge/License-Apache_2.0-blue?style=flat-square" alt="Apache 2.0"/></a>
+</p>
+<p align="center"><em>🗳️ Empower citizens · 🔍 Strengthen democratic accountability · 🕵️ Illuminate the political process</em></p>
+<p align="center"><sub>© 2008–2026 <a href="https://www.hack23.com">Hack23 AB</a> (Org.nr 559534-7807) · Maintainer: <a href="https://www.linkedin.com/in/jamessorling/">James Pether Sörling, CISSP CISM</a></sub></p></div></div><div class="col-sidebar"><div class="page-menu"><div class="tsd-navigation settings"><details class="tsd-accordion"><summary class="tsd-accordion-summary"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg><h3>Settings</h3></summary><div class="tsd-accordion-details"><div class="tsd-filter-visibility"><span class="settings-label">Member Visibility</span><ul id="tsd-filter-options"><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-protected" name="protected" checked/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Protected</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-private" name="private" checked/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Private</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-inherited" name="inherited" checked/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Inherited</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-alpha" name="alpha"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Alpha</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-beta" name="beta"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Beta</span></label></li></ul></div><div class="tsd-theme-toggle"><label class="settings-label" for="tsd-theme">Theme</label><select id="tsd-theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></div></div></details></div><details open class="tsd-accordion tsd-page-navigation"><summary class="tsd-accordion-summary"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg><h3>On This Page</h3></summary><div class="tsd-accordion-details"><a href="#overview"><span>Overview</span></a><a href="#available-agents-14-personas"><span>Available <wbr/>Agents (14 <wbr/>Personas)</span></a><ul><li><a href="#1-security-architect-"><span>1. <wbr/>Security <wbr/>Architect ()</span></a></li><li><a href="#2-documentation-architect-"><span>2. <wbr/>Documentation <wbr/>Architect ()</span></a></li><li><a href="#3-quality-engineer-"><span>3. <wbr/>Quality <wbr/>Engineer ()</span></a></li><li><a href="#4-frontend-specialist-"><span>4. <wbr/>Frontend <wbr/>Specialist ()</span></a></li><li><a href="#5-isms-compliance-manager-"><span>5. <wbr/>ISMS <wbr/>Compliance <wbr/>Manager ()</span></a></li><li><a href="#6-deployment-specialist-"><span>6. <wbr/>Deployment <wbr/>Specialist ()</span></a></li><li><a href="#7-intelligence-operative-"><span>7. <wbr/>Intelligence <wbr/>Operative ()</span></a></li><li><a href="#8-task-agent-✨-new"><span>8. <wbr/>Task <wbr/>Agent () ✨ <wbr/>NEW</span></a></li><li><a href="#9-ui-enhancement-specialist-✨"><span>9. <wbr/>UI <wbr/>Enhancement <wbr/>Specialist () ✨</span></a></li><li><a href="#10-data-pipeline-specialist-✨"><span>10. <wbr/>Data <wbr/>Pipeline <wbr/>Specialist () ✨</span></a></li><li><a href="#11-data-visualization-specialist-✨"><span>11. <wbr/>Data <wbr/>Visualization <wbr/>Specialist () ✨</span></a></li><li><a href="#12-content-generator-✨-new"><span>12. <wbr/>Content <wbr/>Generator () ✨ <wbr/>NEW</span></a></li><li><a href="#13-devops-engineer-✨-new"><span>13. <wbr/>Dev<wbr/>Ops <wbr/>Engineer () ✨ <wbr/>NEW</span></a></li><li><a href="#14-news-journalist-✨-new"><span>14. <wbr/>News <wbr/>Journalist () ✨ <wbr/>NEW</span></a></li></ul><a href="#github-copilot-coding-agent-features"><span>Git<wbr/>Hub <wbr/>Copilot <wbr/>Coding <wbr/>Agent <wbr/>Features</span></a><ul><li><a href="#basic-assignment-legacy"><span>Basic <wbr/>Assignment (<wbr/>Legacy)</span></a></li><li><a href="#advanced-assignment-with-custom-instructions"><span>Advanced <wbr/>Assignment with <wbr/>Custom <wbr/>Instructions</span></a></li><li><a href="#direct-pr-creation"><span>Direct <wbr/>PR <wbr/>Creation</span></a></li><li><a href="#job-status-tracking"><span>Job <wbr/>Status <wbr/>Tracking</span></a></li><li><a href="#stacked-prs-workflow"><span>Stacked <wbr/>P<wbr/>Rs <wbr/>Workflow</span></a></li></ul><a href="#agent-configuration"><span>Agent <wbr/>Configuration</span></a><ul><li><a href="#repository-level-mcp-configuration"><span>Repository-<wbr/>Level <wbr/>MCP <wbr/>Configuration</span></a></li><li><a href="#mcp-server-configuration-repository-level-only"><span>MCP <wbr/>Server <wbr/>Configuration (<wbr/>Repository-<wbr/>Level <wbr/>Only)</span></a></li></ul><a href="#skills-mapping-by-agent"><span>Skills <wbr/>Mapping by <wbr/>Agent</span></a><ul><li><a href="#security-architect"><span>Security <wbr/>Architect</span></a></li><li><a href="#documentation-architect"><span>Documentation <wbr/>Architect</span></a></li><li><a href="#quality-engineer"><span>Quality <wbr/>Engineer</span></a></li><li><a href="#frontend-specialist"><span>Frontend <wbr/>Specialist</span></a></li><li><a href="#isms-compliance-manager"><span>ISMS <wbr/>Compliance <wbr/>Manager</span></a></li><li><a href="#deployment-specialist"><span>Deployment <wbr/>Specialist</span></a></li><li><a href="#intelligence-operative"><span>Intelligence <wbr/>Operative</span></a></li><li><a href="#task-agent"><span>Task <wbr/>Agent</span></a></li><li><a href="#ui-enhancement-specialist"><span>UI <wbr/>Enhancement <wbr/>Specialist</span></a></li><li><a href="#data-pipeline-specialist-✨-new"><span>Data <wbr/>Pipeline <wbr/>Specialist ✨ <wbr/>NEW</span></a></li><li><a href="#data-visualization-specialist-✨-new"><span>Data <wbr/>Visualization <wbr/>Specialist ✨ <wbr/>NEW</span></a></li><li><a href="#content-generator-✨-new"><span>Content <wbr/>Generator ✨ <wbr/>NEW</span></a></li><li><a href="#devops-engineer-✨-new"><span>Dev<wbr/>Ops <wbr/>Engineer ✨ <wbr/>NEW</span></a></li><li><a href="#news-journalist-✨-new"><span>News <wbr/>Journalist ✨ <wbr/>NEW</span></a></li></ul><a href="#best-practices"><span>Best <wbr/>Practices</span></a><ul><li><a href="#1-choose-the-right-agent"><span>1. <wbr/>Choose the <wbr/>Right <wbr/>Agent</span></a></li><li><a href="#2-provide-clear-instructions"><span>2. <wbr/>Provide <wbr/>Clear <wbr/>Instructions</span></a></li><li><a href="#3-leverage-skills"><span>3. <wbr/>Leverage <wbr/>Skills</span></a></li><li><a href="#4-use-feature-branches"><span>4. <wbr/>Use <wbr/>Feature <wbr/>Branches</span></a></li><li><a href="#5-monitor-progress"><span>5. <wbr/>Monitor <wbr/>Progress</span></a></li></ul><a href="#agent-standards"><span>Agent <wbr/>Standards</span></a><ul><li><a href="#security"><span>Security</span></a></li><li><a href="#documentation"><span>Documentation</span></a></li><li><a href="#quality"><span>Quality</span></a></li><li><a href="#compliance"><span>Compliance</span></a></li></ul><a href="#troubleshooting"><span>Troubleshooting</span></a><ul><li><a href="#agent-not-available"><span>Agent <wbr/>Not <wbr/>Available</span></a></li><li><a href="#task-not-completing"><span>Task <wbr/>Not <wbr/>Completing</span></a></li><li><a href="#unexpected-results"><span>Unexpected <wbr/>Results</span></a></li></ul><a href="#related-documentation"><span>Related <wbr/>Documentation</span></a><a href="#🌐-imf-as-primary-economic-data-canon-cross-agent-rule"><span>🌐 <wbr/>IMF as <wbr/>Primary <wbr/>Economic-<wbr/>Data <wbr/>Canon (<wbr/>Cross-<wbr/>Agent <wbr/>Rule)</span></a><ul><li><a href="#authoritative-imf-hub-for-agents"><span>Authoritative <wbr/>IMF hub for agents</span></a></li><li><a href="#agent-by-agent-imf-responsibility"><span>Agent-<wbr/>by-<wbr/>agent <wbr/>IMF responsibility</span></a></li></ul><a href="#🔗-hack23-ecosystem"><span>🔗 <wbr/>Hack23 <wbr/>Ecosystem</span></a></div></details></div><div class="site-menu"><nav id="tsd-sidebar-links" class="tsd-navigation"><a href="https://riksdagsmonitor.com">── Live Platform ──</a><a href="https://riksdagsmonitor.com">🌐 Riksdagsmonitor.com</a><a href="https://riksdagsmonitor.com/political-intelligence.html">🕵️ Political Intelligence Index</a><a href="https://riksdagsmonitor.com/sitemap.html">🗺️ Sitemap (Human + XML)</a><a href="https://riksdagsmonitor.com/news/">📰 News &amp; Articles</a><a href="https://www.npmjs.com/package/riksdagsmonitor">📦 npm Package</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/ARCHITECTURE.md">── Current Architecture ──</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/ARCHITECTURE.md">🏛️ Architecture</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/SECURITY_ARCHITECTURE.md">🔒 Security Architecture</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/THREAT_MODEL.md">🛡️ Threat Model</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/DATA_MODEL.md">📊 Data Model</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FLOWCHART.md">🔄 Flowchart</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/STATEDIAGRAM.md">📈 State Diagram</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/MINDMAP.md">🧠 Mindmap</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/SWOT.md">💼 SWOT Analysis</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_ARCHITECTURE.md">── Future Architecture ──</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_ARCHITECTURE.md">🚀 Future Architecture</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_SECURITY_ARCHITECTURE.md">🔮 Future Security</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_THREAT_MODEL.md">🎯 Future Threat Model</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_DATA_MODEL.md">📊 Future Data Model</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_FLOWCHART.md">🔄 Future Flowchart</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_STATEDIAGRAM.md">📈 Future State Diagram</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_MINDMAP.md">🧠 Future Mindmap</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_SWOT.md">💼 Future SWOT</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_WORKFLOWS.md">🔄 Future Workflows</a><a href="#">── Security &amp; Compliance ──</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/SECURITY.md">🔐 Security Policy</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/CRA-ASSESSMENT.md">📋 CRA Assessment</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/BCPPlan.md">🏢 BCP Plan</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FinancialSecurityPlan.md">💰 Financial Security</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/End-of-Life-Strategy.md">📅 End-of-Life Strategy</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/README.md">── Project Docs ──</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/TESTING.md">🧪 Testing</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/WORKFLOWS.md">🔄 Workflows</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/RELEASE_PROCESS.md">📦 Release Process</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/CONTRIBUTING.md">🤝 Contributing</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/CODE_OF_CONDUCT.md">📜 Code of Conduct</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/AGENTS.md">🤖 Copilot Agents</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/SKILLS.md">🛠 Copilot Skills</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/LABELS.md">🏷 Labels</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/TRANSLATION_GUIDE.md">🌐 Translation Guide</a><a href="https://github.com/Hack23/ISMS-PUBLIC">── Hack23 ISMS Policies ──</a><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md">📋 Secure Dev Policy</a><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Information_Security_Policy.md">🔐 Information Security</a><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Threat_Modeling.md">🎯 Threat Modeling</a><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Open_Source_Policy.md">🌐 Open Source Policy</a><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Risk_Assessment_Methodology.md">📊 Risk Assessment</a><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/AI_Policy.md">🤖 AI Policy</a><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Change_Management_Policy.md">🔧 Change Management</a><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Incident_Response_Plan.md">🛡️ Incident Response</a><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Asset_Management_Policy.md">📦 Asset Management</a><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Access_Control_Policy.md">🔑 Access Control</a><a href="https://riksdagsmonitor.com/docs/api/">── Hack23 API Docs ──</a><a href="https://riksdagsmonitor.com/docs/api/">📚 Riksdagsmonitor API</a><a href="https://euparliamentmonitor.com/docs/api/">🇪🇺 EU Parliament MCP API</a><a href="https://ciacompliancemanager.com/api/">🔍 CIA Compliance Mgr API</a><a href="https://blacktrigram.com/api/">⚔️ Black Trigram API</a><a href="https://riksdagsmonitor.com" class="tsd-nav-link">🏠 Home</a><a href="https://riksdagsmonitor.com/political-intelligence.html" class="tsd-nav-link">🕵️ Political Intelligence</a><a href="https://riksdagsmonitor.com/sitemap.html" class="tsd-nav-link">🗺️ Sitemap</a><a href="https://www.npmjs.com/package/riksdagsmonitor" class="tsd-nav-link">📦 npm Package</a><a href="https://github.com/Hack23/riksdagsmonitor" class="tsd-nav-link">📦 GitHub</a><a href="https://github.com/Hack23/ISMS-PUBLIC" class="tsd-nav-link">🛡️ ISMS</a><a href="https://github.com/Hack23/cia" class="tsd-nav-link">🏛️ CIA Platform</a></nav><nav class="tsd-navigation"><a href="../modules.html">Riksdagsmonitor Intelligence Platform — API Documentation - v1.0.28</a><ul class="tsd-small-nested-navigation" id="tsd-nav-container"><li>Loading...</li></ul></nav></div></div></div><footer><p class="tsd-generator">Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></footer><div class="overlay"></div></body></html>

@@ -1,0 +1,450 @@
+# Automatic Pull Request Labeling Configuration for Riksdagsmonitor
+# Based on file changes, PR title, and PR body content
+# Aligned with static HTML/CSS political transparency platform architecture
+
+# ============================================================================
+# 🗳️ CONTENT & FEATURES
+# ============================================================================
+
+news:
+  - any:
+      - changed-files:
+          - any-glob-to-any-file:
+              - "news/**/*.html"
+              - "news/**/*.md"
+              - "scripts/article-template.js"
+              - "scripts/generate-*.js"
+              - ".github/workflows/news-*.yml"
+              - ".github/workflows/news-*.md"
+      - title: "news:*"
+      - title: "content:*"
+      - body: "- [x] 📰 News Content"
+
+dashboard:
+  - any:
+      - changed-files:
+          - any-glob-to-any-file:
+              - "dashboard/**"
+              - "js/*-dashboard.js"
+              - "*-dashboard.html"
+              - "politician-dashboard.html"
+      - title: "dashboard:*"
+      - body: "- [x] 📊 Dashboard"
+
+visualization:
+  - any:
+      - changed-files:
+          - any-glob-to-any-file:
+              - "js/*-dashboard.js"
+              - "js/lib/chart*.js"
+              - "js/lib/d3*.js"
+              - "cia-data/**/*.csv"
+      - title: "viz:*"
+      - title: "chart:*"
+      - title: "visualization:*"
+      - body: "- [x] 📈 Data Visualization"
+
+intelligence:
+  - any:
+      - changed-files:
+          - any-glob-to-any-file:
+              - "cia-data/**"
+              - "data/cia/**"
+              - "schemas/cia/**"
+              - "scripts/load-cia-*.js"
+      - title: "intelligence:*"
+      - title: "cia:*"
+      - body: "- [x] 🔍 Political Intelligence"
+
+# ============================================================================
+# 💻 TECHNOLOGY
+# ============================================================================
+
+html-css:
+  - any:
+      - changed-files:
+          - any-glob-to-any-file:
+              - "**/*.html"
+              - "**/*.css"
+              - "styles.css"
+      - title: "html:*"
+      - title: "css:*"
+      - title: "style:*"
+      - body: "- [x] 🎨 HTML/CSS"
+
+javascript:
+  - any:
+      - changed-files:
+          - any-glob-to-any-file:
+              - "**/*.js"
+              - "**/*.mjs"
+              - "js/**"
+              - "scripts/**/*.js"
+      - title: "js:*"
+      - title: "javascript:*"
+      - body: "- [x] 💻 JavaScript"
+
+workflow:
+  - any:
+      - changed-files:
+          - any-glob-to-any-file:
+              - ".github/workflows/**/*.yml"
+              - ".github/workflows/**/*.md"
+              - ".github/copilot-*.yml"
+              - ".github/copilot-*.json"
+      - title: "workflow:*"
+      - title: "github-actions:*"
+      - body: "- [x] ⚙️ GitHub Actions"
+
+security:
+  - any:
+      - changed-files:
+          - any-glob-to-any-file:
+              - "SECURITY_ARCHITECTURE.md"
+              - "THREAT_MODEL.md"
+              - "FUTURE_SECURITY_ARCHITECTURE.md"
+              - ".github/workflows/codeql.yml"
+              - ".github/workflows/scorecards.yml"
+      - title: "security:*"
+      - title: "sec:*"
+      - body: "- [x] 🔒 Security"
+
+# ============================================================================
+# 📊 DATA INTEGRATION
+# ============================================================================
+
+cia-data:
+  - any:
+      - changed-files:
+          - any-glob-to-any-file:
+              - "cia-data/**"
+              - "data/cia/**"
+              - "data/cia-exports/**"
+              - "schemas/cia/**"
+              - "scripts/load-cia-*.js"
+              - "scripts/update-stats-from-cia.js"
+              - ".github/workflows/update-cia-stats.yml"
+              - ".github/workflows/validate-cia-data.yml"
+      - title: "cia:*"
+      - title: "cia-data:*"
+      - body: "- [x] 🗂️ CIA Data"
+
+riksdag-data:
+  - any:
+      - changed-files:
+          - any-glob-to-any-file:
+              - "scripts/mcp-client.js"
+              - "scripts/fetch-riksdag-*.js"
+              - ".github/copilot-mcp.json"
+      - title: "riksdag:*"
+      - title: "mcp:*"
+      - body: "- [x] 🏛️ Riksdag Data"
+
+data-pipeline:
+  - any:
+      - changed-files:
+          - any-glob-to-any-file:
+              - ".github/workflows/data-pipeline.yml"
+              - "scripts/fetch-*.js"
+              - "scripts/validate-*.js"
+      - title: "pipeline:*"
+      - title: "etl:*"
+      - body: "- [x] 🔄 Data Pipeline"
+
+schema:
+  - any:
+      - changed-files:
+          - any-glob-to-any-file:
+              - "schemas/**"
+              - "**/*.schema.json"
+              - ".github/workflows/check-cia-schema-updates.yml"
+              - ".github/workflows/sync-cia-schemas.yml"
+      - title: "schema:*"
+      - body: "- [x] 📋 Schema"
+
+# ============================================================================
+# 🌍 INTERNATIONALIZATION
+# ============================================================================
+
+i18n:
+  - any:
+      - changed-files:
+          - any-glob-to-any-file:
+              - "index_*.html"
+              - "sitemap_*.html"
+              - "sitemap_*.xml"
+              - "news/**/*_*.html"
+              - "TRANSLATION_GUIDE.md"
+      - title: "i18n:*"
+      - title: "localization:*"
+      - title: "l10n:*"
+      - body: "- [x] 🌍 Internationalization"
+
+translation:
+  - any:
+      - changed-files:
+          - any-glob-to-any-file:
+              - "index_sv.html"
+              - "index_da.html"
+              - "index_no.html"
+              - "index_fi.html"
+              - "index_de.html"
+              - "index_fr.html"
+              - "index_es.html"
+              - "index_nl.html"
+              - "index_ar.html"
+              - "index_he.html"
+              - "index_ja.html"
+              - "index_ko.html"
+              - "index_zh.html"
+              - "news/**/*-sv.html"
+              - "news/**/*-da.html"
+              - "news/**/*-no.html"
+              - "news/**/*-fi.html"
+              - "news/**/*-de.html"
+              - "news/**/*-fr.html"
+              - "news/**/*-es.html"
+              - "news/**/*-nl.html"
+              - "news/**/*-ar.html"
+              - "news/**/*-he.html"
+              - "news/**/*-ja.html"
+              - "news/**/*-ko.html"
+              - "news/**/*-zh.html"
+              - "TRANSLATION_GUIDE.md"
+              - ".github/workflows/translation-validation.yml"
+      - title: "translation:*"
+      - title: "translate:*"
+      - body: "- [x] 🗣️ Translation"
+
+rtl:
+  - any:
+      - changed-files:
+          - any-glob-to-any-file:
+              - "index_ar.html"
+              - "index_he.html"
+              - "news/**/*-ar.html"
+              - "news/**/*-he.html"
+              - "scripts/article-template.js"
+      - title: "rtl:*"
+      - title: "arabic:*"
+      - title: "hebrew:*"
+      - body: "- [x] ↔️ RTL Support"
+
+# ============================================================================
+# 🔒 ISMS & COMPLIANCE
+# ============================================================================
+
+isms:
+  - any:
+      - changed-files:
+          - any-glob-to-any-file:
+              - "SECURITY_ARCHITECTURE.md"
+              - "THREAT_MODEL.md"
+              - "FUTURE_SECURITY_ARCHITECTURE.md"
+              - "CRA-ASSESSMENT.md"
+              - "BCPPlan.md"
+              - ".github/skills/hack23-isms-compliance/**"
+      - title: "isms:*"
+      - body: "- [x] 📋 ISMS"
+
+iso-27001:
+  - any:
+      - changed-files:
+          - any-glob-to-any-file:
+              - ".github/skills/iso-27001-controls/**"
+              - "SECURITY_ARCHITECTURE.md"
+      - title: "iso-27001:*"
+      - title: "iso27001:*"
+      - body: "- [x] 🔐 ISO 27001"
+
+nist-csf:
+  - any:
+      - changed-files:
+          - any-glob-to-any-file:
+              - ".github/skills/nist-csf-mapping/**"
+              - "SECURITY_ARCHITECTURE.md"
+      - title: "nist:*"
+      - title: "nist-csf:*"
+      - body: "- [x] 🛡️ NIST CSF"
+
+cis-controls:
+  - any:
+      - changed-files:
+          - any-glob-to-any-file:
+              - ".github/skills/cis-controls/**"
+              - "SECURITY_ARCHITECTURE.md"
+      - title: "cis:*"
+      - title: "cis-controls:*"
+      - body: "- [x] 🎯 CIS Controls"
+
+# ============================================================================
+# 🏗️ INFRASTRUCTURE & OPERATIONS
+# ============================================================================
+
+ci-cd:
+  - any:
+      - changed-files:
+          - any-glob-to-any-file:
+              - ".github/workflows/**"
+              - ".github/copilot-setup-steps.yml"
+      - title: "ci:*"
+      - title: "cd:*"
+      - title: "ci-cd:*"
+      - body: "- [x] 🔄 CI/CD"
+
+deployment:
+  - any:
+      - changed-files:
+          - any-glob-to-any-file:
+              - ".github/workflows/deploy-*.yml"
+              - "CNAME"
+              - "robots.txt"
+              - "sitemap.xml"
+      - title: "deploy:*"
+      - title: "deployment:*"
+      - body: "- [x] 🚀 Deployment"
+
+performance:
+  - any:
+      - changed-files:
+          - any-glob-to-any-file:
+              - ".github/workflows/lighthouse-ci.yml"
+              - "vite.config.js"
+              - "js/lib/**"
+      - title: "perf:*"
+      - title: "performance:*"
+      - body: "- [x] ⚡ Performance"
+
+monitoring:
+  - any:
+      - changed-files:
+          - any-glob-to-any-file:
+              - ".github/workflows/uptime-monitor.yml"
+              - ".github/workflows/scorecards.yml"
+      - title: "monitoring:*"
+      - title: "uptime:*"
+      - body: "- [x] 📊 Monitoring"
+
+# ============================================================================
+# 🔄 QUALITY & TESTING
+# ============================================================================
+
+testing:
+  - any:
+      - changed-files:
+          - any-glob-to-any-file:
+              - "tests/**"
+              - "cypress/**"
+              - "**/*.test.js"
+              - "**/*.spec.js"
+              - "vitest.config.js"
+              - "cypress.config.js"
+              - ".github/workflows/javascript-testing.yml"
+      - title: "test:*"
+      - title: "testing:*"
+      - body: "- [x] 🧪 Testing"
+
+accessibility:
+  - any:
+      - changed-files:
+          - any-glob-to-any-file:
+              - ".github/skills/html-accessibility/**"
+              - ".github/workflows/quality-checks.yml"
+      - title: "a11y:*"
+      - title: "accessibility:*"
+      - title: "wcag:*"
+      - body: "- [x] ♿ Accessibility"
+
+documentation:
+  - any:
+      - changed-files:
+          - any-glob-to-any-file:
+              - "**/*.md"
+              - "docs/**"
+              - "README.md"
+              - "AGENTS.md"
+              - "SKILLS.md"
+              - "WORKFLOWS.md"
+      - title: "docs:*"
+      - title: "documentation:*"
+      - body: "- [x] 📚 Documentation"
+
+refactor:
+  - any:
+      - changed-files:
+          - any-glob-to-any-file:
+              - "scripts/**"
+              - "js/**"
+      - title: "refactor:*"
+      - title: "cleanup:*"
+      - body: "- [x] ♻️ Refactor"
+
+# ============================================================================
+# 🏷️ STANDARD LABELS
+# ============================================================================
+
+bug:
+  - any:
+      - title: "fix:*"
+      - title: "bug:*"
+      - title: "bugfix:*"
+      - body: "- [x] 🐛 Bug Fix"
+
+enhancement:
+  - any:
+      - title: "feat:*"
+      - title: "feature:*"
+      - title: "enhance:*"
+      - title: "enhancement:*"
+      - body: "- [x] ✨ Enhancement"
+
+dependencies:
+  - any:
+      - changed-files:
+          - any-glob-to-any-file:
+              - "package.json"
+              - "package-lock.json"
+              - ".github/dependabot.yml"
+      - title: "deps:*"
+      - title: "build(deps):*"
+      - title: "chore(deps):*"
+      - body: "- [x] 📦 Dependencies"
+
+# ============================================================================
+# 🤖 AGENT & SKILLS
+# ============================================================================
+
+agent:
+  - any:
+      - changed-files:
+          - any-glob-to-any-file:
+              - ".github/agents/**"
+              - ".github/copilot-instructions.md"
+              - "AGENTS.md"
+      - title: "agent:*"
+      - body: "- [x] 🤖 Agent Configuration"
+
+skill:
+  - any:
+      - changed-files:
+          - any-glob-to-any-file:
+              - ".github/skills/**"
+              - "SKILLS.md"
+      - title: "skill:*"
+      - body: "- [x] 🎯 Skill Configuration"
+
+# ============================================================================
+# 🎯 AGENTIC WORKFLOWS
+# ============================================================================
+
+agentic-workflow:
+  - any:
+      - changed-files:
+          - any-glob-to-any-file:
+              - ".github/workflows/*.md"
+              - ".github/workflows/*.lock.yml"
+              - ".github/workflows/compile-agentic-workflows.yml"
+              - ".github/aw/**"
+      - title: "aw:*"
+      - title: "agentic:*"
+      - body: "- [x] 🤖 Agentic Workflow"

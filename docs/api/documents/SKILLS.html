@@ -1,0 +1,1806 @@
+<!DOCTYPE html><html class="default" lang="en" data-base="../"><head><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>SKILLS | Riksdagsmonitor Intelligence Platform — API Documentation - v1.0.28</title><meta name="description" content="Documentation for Riksdagsmonitor Intelligence Platform — API Documentation"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="../assets/style.css"/><link rel="stylesheet" href="../assets/highlight.css"/><script defer src="../assets/main.js"></script><script async src="../assets/icons.js" id="tsd-icons-script"></script><script async src="../assets/search.js" id="tsd-search-script"></script><script async src="../assets/navigation.js" id="tsd-nav-script"></script><script async src="../assets/hierarchy.js" id="tsd-hierarchy-script"></script></head><body><script>document.documentElement.dataset.theme = localStorage.getItem("tsd-theme") || "os";document.body.style.display="none";setTimeout(() => window.app?app.showPage():document.body.style.removeProperty("display"),500)</script><header class="tsd-page-toolbar"><div class="tsd-toolbar-contents container"><a href="../index.html" class="title">Riksdagsmonitor Intelligence Platform — API Documentation - v1.0.28</a><div id="tsd-toolbar-links"><a href="https://riksdagsmonitor.com">🏠 Home</a><a href="https://riksdagsmonitor.com/political-intelligence.html">🕵️ Political Intelligence</a><a href="https://riksdagsmonitor.com/sitemap.html">🗺️ Sitemap</a><a href="https://www.npmjs.com/package/riksdagsmonitor">📦 npm Package</a><a href="https://github.com/Hack23/riksdagsmonitor">📦 GitHub</a><a href="https://github.com/Hack23/ISMS-PUBLIC">🛡️ ISMS</a><a href="https://github.com/Hack23/cia">🏛️ CIA Platform</a></div><button id="tsd-search-trigger" class="tsd-widget" aria-label="Search"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-search"></use></svg></button><dialog id="tsd-search" aria-label="Search"><input role="combobox" id="tsd-search-input" aria-controls="tsd-search-results" aria-autocomplete="list" aria-expanded="true" autocapitalize="off" autocomplete="off" placeholder="Search the docs" maxLength="100"/><ul role="listbox" id="tsd-search-results"></ul><div id="tsd-search-status" aria-live="polite" aria-atomic="true"><div>Preparing search index...</div></div></dialog><a href="#" class="tsd-widget menu" id="tsd-toolbar-menu-trigger" data-toggle="menu" aria-label="Menu"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-menu"></use></svg></a></div></header><div class="container container-main"><div class="col-content"><div class="tsd-page-title"><ul class="tsd-breadcrumb" aria-label="Breadcrumb"><li><a href="" aria-current="page">SKILLS</a></li></ul></div><div class="tsd-panel tsd-typography"><p align="center">
+  <img src="https://hack23.com/icon-192.png" alt="Hack23 Logo" width="192" height="192">
+</p>
+<h1 align="center">🎯 Riksdagsmonitor — Agent Skills Guide</h1>
+<p align="center">
+  <strong>🧠 91 Specialised Skills Powering Autonomous Political Intelligence</strong><br>
+  <em>🛡️ 14 ISMS &amp; Security · 🕵️ 11 Political Intelligence · 🤖 13 GitHub Agentic Workflows · …</em>
+</p>
+<p align="center">
+  <img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/>
+  <img src="https://img.shields.io/badge/Skills-91-success?style=for-the-badge" alt="91 Skills"/>
+  <img src="https://img.shields.io/badge/Categories-12-purple?style=for-the-badge" alt="12 Categories"/>
+  <img src="https://img.shields.io/badge/Updated-2026--04--22-orange?style=for-the-badge" alt="Updated"/>
+</p>
+<p><strong>📋 Document Owner:</strong> CEO | <strong>🏢 Owner:</strong> Hack23 AB (<a href="http://Org.nr">Org.nr</a> 559534-7807) | <strong>🏷️ Classification:</strong> 🟢 Public</p>
+<hr>
+<h2 id="overview" class="tsd-anchor-link">Overview<a href="#overview" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<p>Agent skills are strategic, high-level principles and best practices that guide Copilot agents in performing their tasks. Skills are automatically loaded when relevant to the current context, providing agents with specialized knowledge without cluttering the main prompt.</p>
+<blockquote>
+<p><strong>Directory-level catalog:</strong> <a href="../media/README-1.md"><code>.github/skills/README.md</code></a> — compact 91-skill catalog grouped by 12 functional categories.
+<strong>Companion docs:</strong> <a href="AGENTS.html"><code>AGENTS.md</code></a> · <a href="../media/README.md"><code>.github/agents/README.md</code></a> · <a href="../media/README-2.md"><code>.github/prompts/README.md</code></a> · <a href="../media/README-3.md"><code>.github/workflows/README.md</code></a></p>
+</blockquote>
+<h2 id="what-are-skills" class="tsd-anchor-link">What Are Skills?<a href="#what-are-skills" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<p>Skills are structured instruction sets stored in <code>.github/skills/</code> that teach agents:</p>
+<ul>
+<li><strong>How</strong> to approach specific types of tasks</li>
+<li><strong>What</strong> principles and standards to follow</li>
+<li><strong>Why</strong> certain practices are important</li>
+<li><strong>When</strong> to apply specific patterns</li>
+</ul>
+<p>Skills are:</p>
+<ul>
+<li>✅ <strong>Strategic</strong>: High-level principles, not step-by-step instructions</li>
+<li>✅ <strong>Rule-Based</strong>: Clear rules and standards</li>
+<li>✅ <strong>Reusable</strong>: Apply across multiple tasks</li>
+<li>✅ <strong>Context-Aware</strong>: Load only when relevant</li>
+</ul>
+<h2 id="available-skills-91-total-✨-updated-2026-04-22" class="tsd-anchor-link">Available Skills (91 Total) ✨ <strong>UPDATED 2026-04-22</strong><a href="#available-skills-91-total-✨-updated-2026-04-22" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<h3 id="core-infrastructure-9-skills-⬆️-expanded" class="tsd-anchor-link">Core Infrastructure (9 skills) ⬆️ <strong>EXPANDED</strong><a href="#core-infrastructure-9-skills-⬆️-expanded" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ol>
+<li>hack23-isms-compliance</li>
+<li>security-by-design</li>
+<li>static-site-security</li>
+<li>ci-cd-security</li>
+<li>documentation-standards</li>
+<li>html-accessibility</li>
+<li>multi-language-localization</li>
+<li><strong>hack23-future-architecture-standards</strong> ✨ (2026-02-11)</li>
+<li><strong>documentation-portfolio</strong> ✨ <strong>NEW</strong> (2026-02-20) - Required architecture docs (current/future state)</li>
+</ol>
+<h3 id="political-intelligence-11-skills" class="tsd-anchor-link">Political Intelligence (11 skills)<a href="#political-intelligence-11-skills" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<blockquote>
+<p><strong>Cross-cutting — Horizon stratification:</strong> Skills 12, 14, 17, 18 and 82 (<code>intelligence-analysis-techniques</code>, <code>electoral-analysis</code>, <code>legislative-monitoring</code>, <code>risk-assessment-frameworks</code>, <code>prospective-news-coverage</code>) each include a &quot;Horizon stratification&quot; subsection mapping the canonical bands (72h / week / month / quarter / year / cycle / election) to per-band WEP language. The <code>election</code> band is scenario-driven (coalition outcomes never above &quot;likely&quot;). Authoritative source: <a href="../media/long-horizon-forecasting.md"><code>.github/prompts/ext/long-horizon-forecasting.md</code></a>. Runtime helper: <a href="../modules/scripts_horizon-context.html"><code>scripts/horizon-context.ts</code></a>.</p>
+</blockquote>
+<ol start="10">
+<li>political-science-analysis</li>
+<li>osint-methodologies</li>
+<li>intelligence-analysis-techniques</li>
+<li>swedish-political-system</li>
+<li>electoral-analysis</li>
+<li>behavioral-analysis</li>
+<li>strategic-communication-analysis</li>
+<li>legislative-monitoring</li>
+<li>risk-assessment-frameworks</li>
+<li>data-science-for-intelligence</li>
+<li>gdpr-compliance</li>
+</ol>
+<h3 id="isms-security-12-skills-⬆️-expanded" class="tsd-anchor-link">ISMS &amp; Security (12 skills) ⬆️ <strong>EXPANDED</strong><a href="#isms-security-12-skills-⬆️-expanded" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ol start="21">
+<li>cis-controls</li>
+<li>iso-27001-controls</li>
+<li>nist-csf-mapping</li>
+<li>threat-modeling</li>
+<li>secure-code-review</li>
+<li>security-documentation</li>
+<li><strong>incident-response</strong> ✨ <strong>NEW</strong> (2026-02-20) - Security incident procedures (NIST/ISO 27001)</li>
+<li><strong>input-validation</strong> ✨ <strong>NEW</strong> (2026-02-20) - XSS/injection prevention patterns</li>
+<li><strong>vulnerability-management</strong> ✨ <strong>NEW</strong> (2026-02-20) - Vulnerability scanning and remediation</li>
+<li><strong>data-protection</strong> ✨ <strong>NEW</strong> (2026-02-20) - Privacy-by-design, GDPR compliance</li>
+<li><strong>ai-governance</strong> ✨ <strong>NEW</strong> (2026-02-20) - AI/LLM governance and responsible AI</li>
+<li><strong>information-security-strategy</strong> ✨ <strong>NEW</strong> (2026-02-20) - Security program governance</li>
+</ol>
+<h3 id="development-operations-16-skills-⬆️-expanded" class="tsd-anchor-link">Development &amp; Operations (16 skills) ⬆️ <strong>EXPANDED</strong><a href="#development-operations-16-skills-⬆️-expanded" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ol start="33">
+<li>c4-architecture-documentation</li>
+<li>github-actions-workflows</li>
+<li>code-quality-checks</li>
+<li>secrets-management</li>
+<li>data-pipeline-engineering</li>
+<li>automated-content-generation</li>
+<li>performance-optimization</li>
+<li>api-integration</li>
+<li>github-agentic-workflows</li>
+<li><strong>code-review-practices</strong> ✨ <strong>NEW</strong> (2026-02-20) - Code review standards and feedback</li>
+<li><strong>testing-strategy</strong> ✨ <strong>NEW</strong> (2026-02-20) - Unit/integration/E2E/security testing</li>
+<li><strong>contribution-guidelines</strong> ✨ <strong>NEW</strong> (2026-02-20) - Open source contribution standards</li>
+<li><strong>change-management</strong> ✨ <strong>NEW</strong> (2026-02-20) - Change control processes (ITIL/ISO 27001)</li>
+<li><strong>open-source-governance</strong> ✨ <strong>NEW</strong> (2026-02-20) - License compliance and supply chain security</li>
+<li><strong>copilot-agent-patterns</strong> ✨ <strong>NEW</strong> (2026-02-20) - Agent design patterns and orchestration</li>
+<li><strong>product-management-patterns</strong> ✨ <strong>NEW</strong> (2026-02-20) - Feature prioritization and roadmaps</li>
+</ol>
+<h3 id="uiux-design-7-skills-⬆️-expanded" class="tsd-anchor-link">UI/UX &amp; Design (7 skills) ⬆️ <strong>EXPANDED</strong><a href="#uiux-design-7-skills-⬆️-expanded" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ol start="49">
+<li>responsive-design</li>
+<li>design-system-management</li>
+<li>political-data-visualization</li>
+<li>advanced-data-visualization</li>
+<li>ui-ux-design</li>
+<li><strong>seo-optimization</strong> ✨ <strong>NEW</strong> (2026-02-20) - <a href="http://Schema.org">Schema.org</a>, meta tags, multilingual SEO</li>
+<li><strong>data-visualization-principles</strong> ✨ <strong>NEW</strong> (2026-02-20) - Chart selection, color theory, accessibility</li>
+</ol>
+<h3 id="testing-quality-assurance-2-skills" class="tsd-anchor-link">Testing &amp; Quality Assurance (2 skills)<a href="#testing-quality-assurance-2-skills" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ol start="56">
+<li>playwright-testing</li>
+<li>issue-management</li>
+</ol>
+<h3 id="data-integration-6-skills-⬆️-expanded" class="tsd-anchor-link">Data Integration (6 skills) ⬆️ <strong>EXPANDED</strong><a href="#data-integration-6-skills-⬆️-expanded" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ol start="58">
+<li>riksdag-regering-mcp</li>
+<li>cia-data-integration</li>
+<li><strong>mcp-server-development</strong> ✨ <strong>NEW</strong> (2026-02-20) - MCP server patterns and transport protocols</li>
+<li><strong>european-parliament-api</strong> ✨ <strong>NEW</strong> (2026-02-20) - EU Parliament Open Data integration</li>
+<li><strong>mcp-gateway-configuration</strong> ✨ <strong>NEW</strong> (2026-04-22) - MCP gateway setup, routing, access control</li>
+<li><strong>mcp-gateway-security</strong> ✨ <strong>NEW</strong> (2026-04-22) - Token management, request validation, audit logging</li>
+</ol>
+<h3 id="business-marketing-3-skills" class="tsd-anchor-link">Business &amp; Marketing (3 skills)<a href="#business-marketing-3-skills" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ol start="64">
+<li>marketing</li>
+<li>business-development</li>
+<li><strong>business-model-canvas</strong> ✨ <strong>NEW</strong> (2026-04-22) - Business Model Canvas for open-source sustainability</li>
+</ol>
+<h3 id="language-localization-1-skill" class="tsd-anchor-link">Language &amp; Localization (1 skill)<a href="#language-localization-1-skill" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ol start="67">
+<li>language-expertise</li>
+</ol>
+<h3 id="github-agentic-workflows-12-skills" class="tsd-anchor-link">GitHub Agentic Workflows (12 skills)<a href="#github-agentic-workflows-12-skills" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ol start="68">
+<li>gh-aw-authentication-credentials</li>
+<li>gh-aw-containerization</li>
+<li>gh-aw-continuous-ai-patterns</li>
+<li>gh-aw-firewall</li>
+<li>gh-aw-github-actions-integration</li>
+<li>gh-aw-logging-monitoring</li>
+<li>gh-aw-mcp-configuration</li>
+<li>gh-aw-mcp-gateway</li>
+<li>gh-aw-safe-outputs</li>
+<li>gh-aw-security-architecture</li>
+<li>gh-aw-tools-ecosystem</li>
+<li>gh-aw-workflow-authoring</li>
+</ol>
+<h3 id="journalism-media-4-skills" class="tsd-anchor-link">Journalism &amp; Media (4 skills)<a href="#journalism-media-4-skills" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ol start="80">
+<li>editorial-standards</li>
+<li>investigative-journalism</li>
+<li>prospective-news-coverage</li>
+<li>comparative-politics-reporting</li>
+</ol>
+<h3 id="secure-development-3-skills" class="tsd-anchor-link">Secure Development (3 skills)<a href="#secure-development-3-skills" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ol start="84">
+<li>secure-development-lifecycle</li>
+<li>secure-development-policy</li>
+<li>compliance-checklist</li>
+</ol>
+<h3 id="government-regulatory-5-skills-⬆️-expanded" class="tsd-anchor-link">Government &amp; Regulatory (5 skills) ⬆️ <strong>EXPANDED</strong><a href="#government-regulatory-5-skills-⬆️-expanded" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ol start="87">
+<li>global-government-analysis</li>
+<li>myndigheter-monitoring</li>
+<li>regulatory-affairs</li>
+<li>economic-policy-analysis</li>
+<li><strong>seo-best-practices</strong> ✨ <strong>NEW</strong> (2026-04-22) - Canonical URLs, sitemap, robots.txt, technical SEO</li>
+</ol>
+<hr>
+<h2 id="detailed-skill-descriptions" class="tsd-anchor-link">Detailed Skill Descriptions<a href="#detailed-skill-descriptions" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<h2 id="available-skills" class="tsd-anchor-link">Available Skills<a href="#available-skills" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<h3 id="1-hack23-isms-compliance" class="tsd-anchor-link">1. hack23-isms-compliance<a href="#1-hack23-isms-compliance" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Purpose</strong>: Ensure all work complies with Hack23's ISMS requirements (ISO 27001:2022, NIST CSF 2.0, CIS Controls v8.1)</p>
+<p><strong>Key Principles</strong>:</p>
+<ul>
+<li>Security by Design</li>
+<li>Compliance as Code</li>
+<li>Transparency First</li>
+<li>Risk-Based Approach</li>
+</ul>
+<p><strong>Enforces</strong>:</p>
+<ul>
+<li>Required documentation portfolio (SECURITY_ARCHITECTURE.md, THREAT_MODEL.md, etc.)</li>
+<li>Compliance framework mapping (ISO 27001 Annex A, NIST CSF functions, CIS Controls)</li>
+<li>DevSecOps requirements (CI/CD security, scanning, access control)</li>
+<li>STRIDE threat modeling</li>
+<li>Audit evidence collection</li>
+</ul>
+<p><strong>When to Use</strong>:</p>
+<ul>
+<li>Any security-related task</li>
+<li>Documentation updates</li>
+<li>Architecture changes</li>
+<li>Compliance reviews</li>
+<li>Audit preparation</li>
+</ul>
+<h3 id="2-security-by-design" class="tsd-anchor-link">2. security-by-design<a href="#2-security-by-design" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Purpose</strong>: Apply security-by-design principles from project inception</p>
+<p><strong>Key Principles</strong>:</p>
+<ul>
+<li>Secure by Default</li>
+<li>Defense in Depth</li>
+<li>Least Privilege</li>
+<li>Fail Securely</li>
+<li>Don't Trust User Input</li>
+<li>Keep Security Simple</li>
+<li>Separation of Duties</li>
+<li>Economy of Mechanism</li>
+</ul>
+<p><strong>Enforces</strong>:</p>
+<ul>
+<li>Security considered in all design decisions</li>
+<li>Multiple layers of security controls</li>
+<li>Minimal necessary permissions</li>
+<li>Secure failure modes</li>
+<li>Input validation everywhere</li>
+<li>Simple, auditable security mechanisms</li>
+</ul>
+<p><strong>When to Use</strong>:</p>
+<ul>
+<li>Designing new features</li>
+<li>Architecture reviews</li>
+<li>Security enhancements</li>
+<li>Code reviews</li>
+<li>Threat modeling</li>
+</ul>
+<h3 id="3-static-site-security" class="tsd-anchor-link">3. static-site-security<a href="#3-static-site-security" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Purpose</strong>: Security best practices specific to static HTML/CSS websites on GitHub Pages</p>
+<p><strong>Key Principles</strong>:</p>
+<ul>
+<li>Leverage eliminated server-side attack vectors (no server-side SQL injection/CSRF and greatly reduced XSS surface)</li>
+<li>Minimize attack surface</li>
+<li>Secure transport layer (TLS 1.3, HTTPS-only)</li>
+<li>Implement security headers</li>
+<li>Content security and integrity</li>
+</ul>
+<p><strong>Enforces</strong>:</p>
+<ul>
+<li>HTTPS-only with TLS 1.3</li>
+<li>Comprehensive security headers (CSP, HSTS, X-Frame-Options, etc.)</li>
+<li>Subresource Integrity (SRI) for CDN resources</li>
+<li>Minimal dependencies</li>
+<li>Access control for repository</li>
+<li>Security monitoring and alerting</li>
+</ul>
+<p><strong>When to Use</strong>:</p>
+<ul>
+<li>Static site development</li>
+<li>Security configuration</li>
+<li>Deployment setup</li>
+<li>Security reviews</li>
+<li>Incident response</li>
+</ul>
+<h3 id="4-ci-cd-security" class="tsd-anchor-link">4. ci-cd-security<a href="#4-ci-cd-security" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Purpose</strong>: Security-hardened CI/CD pipelines using GitHub Actions</p>
+<p><strong>Key Principles</strong>:</p>
+<ul>
+<li>Least Privilege Permissions</li>
+<li>Pin Actions to SHA</li>
+<li>Harden Runner (egress auditing)</li>
+<li>Secrets Management</li>
+<li>Supply Chain Security</li>
+</ul>
+<p><strong>Enforces</strong>:</p>
+<ul>
+<li>Minimal workflow permissions</li>
+<li>SHA-pinned action versions (never tags)</li>
+<li>step-security/harden-runner on all jobs</li>
+<li>Proper secrets handling (never echo)</li>
+<li>Dependency scanning (Dependabot, CodeQL)</li>
+<li>Quality gates that fail on security issues</li>
+</ul>
+<p><strong>When to Use</strong>:</p>
+<ul>
+<li>Creating workflows</li>
+<li>Workflow security reviews</li>
+<li>CI/CD optimization</li>
+<li>Supply chain hardening</li>
+<li>Security scanning setup</li>
+</ul>
+<h3 id="5-documentation-standards" class="tsd-anchor-link">5. documentation-standards<a href="#5-documentation-standards" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Purpose</strong>: Consistent, high-quality technical documentation following C4 model and Hack23 standards</p>
+<p><strong>Key Principles</strong>:</p>
+<ul>
+<li>Clarity First</li>
+<li>Consistency</li>
+<li>Visual Communication</li>
+<li>Completeness</li>
+<li>Maintenance</li>
+</ul>
+<p><strong>Enforces</strong>:</p>
+<ul>
+<li>Standard document structure (version, classification, owner, review date)</li>
+<li>C4 architecture model (Context, Container, Component levels)</li>
+<li>Professional Mermaid diagrams</li>
+<li>Document control metadata</li>
+<li>Cross-references to related docs</li>
+</ul>
+<p><strong>When to Use</strong>:</p>
+<ul>
+<li>Creating documentation</li>
+<li>Architecture diagrams</li>
+<li>Documentation reviews</li>
+<li>Knowledge transfer</li>
+<li>Onboarding materials</li>
+</ul>
+<h3 id="6-html-accessibility" class="tsd-anchor-link">6. html-accessibility<a href="#6-html-accessibility" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Purpose</strong>: Ensure websites meet WCAG 2.1 Level AA accessibility standards</p>
+<p><strong>Key Principles (POUR)</strong>:</p>
+<ul>
+<li><strong>Perceivable</strong>: Content must be presentable to all users</li>
+<li><strong>Operable</strong>: Interface must be operable by all</li>
+<li><strong>Understandable</strong>: Information must be understandable</li>
+<li><strong>Robust</strong>: Content must work with assistive technologies</li>
+</ul>
+<p><strong>Enforces</strong>:</p>
+<ul>
+<li>Semantic HTML5 markup</li>
+<li>Alt text for all images</li>
+<li>Sufficient color contrast (4.5:1 for normal text, 3:1 for large)</li>
+<li>Keyboard navigation support</li>
+<li>ARIA attributes where appropriate</li>
+<li>Visible focus indicators</li>
+</ul>
+<p><strong>When to Use</strong>:</p>
+<ul>
+<li>HTML development</li>
+<li>UI/UX design</li>
+<li>Accessibility audits</li>
+<li>Quality reviews</li>
+<li>User testing</li>
+</ul>
+<h3 id="7-multi-language-localization" class="tsd-anchor-link">7. multi-language-localization<a href="#7-multi-language-localization" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Purpose</strong>: Proper internationalization (i18n) and localization (l10n) for multi-language sites</p>
+<p><strong>Key Principles</strong>:</p>
+<ul>
+<li>Language Declaration</li>
+<li>Proper File Structure</li>
+<li>Language Switcher</li>
+<li>RTL Support</li>
+<li>Cultural Considerations</li>
+</ul>
+<p><strong>Enforces</strong>:</p>
+<ul>
+<li>Correct <code>lang</code> attribute on all pages</li>
+<li>Separate HTML files per language (index_sv.html, etc.)</li>
+<li>Proper hreflang tags for SEO</li>
+<li>RTL layout support (Arabic, Hebrew)</li>
+<li>Cultural formatting (dates, numbers, currency)</li>
+</ul>
+<p><strong>When to Use</strong>:</p>
+<ul>
+<li>Multi-language implementation</li>
+<li>Translation management</li>
+<li>RTL language support</li>
+<li>SEO optimization</li>
+<li>Cultural adaptation</li>
+</ul>
+<h3 id="8-hack23-future-architecture-standards-✨-new-2026-02-11" class="tsd-anchor-link">8. hack23-future-architecture-standards ✨ <strong>NEW</strong> (2026-02-11)<a href="#8-hack23-future-architecture-standards-✨-new-2026-02-11" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Purpose</strong>: Complete standards for creating FUTURE_ARCHITECTURE.md documents following CIA Compliance Manager gold standard</p>
+<p><strong>Key Principles</strong>:</p>
+<ul>
+<li>Comprehensive Future State Planning</li>
+<li>C4 Model Architecture (Context + Container diagrams)</li>
+<li>AWS Well-Architected Framework Alignment (5 pillars)</li>
+<li>Multi-Region Strategy Documentation</li>
+<li>Pure Technical Architecture (no business/monetary content)</li>
+</ul>
+<p><strong>Enforces</strong>:</p>
+<ul>
+<li>Document structure: minimum 800 lines (target 1,000-1,300)</li>
+<li>Related documentation table: 16 documents (8 current + 8 future)</li>
+<li>C4 diagrams: Context + Container with focus statements</li>
+<li>AWS Well-Architected: All 5 pillars (Security, Reliability, Performance, Cost Optimization, Operational Excellence)</li>
+<li>AWS Security Services: 7 core services (IAM, Cognito, GuardDuty, Security Hub, WAF, KMS, CloudTrail)</li>
+<li>Multi-region architecture: Active-Active or Active-Passive with DynamoDB Global Tables</li>
+<li>Mermaid diagrams: Minimum 8 diagrams with consistent color scheme</li>
+<li>Migration roadmap: 4-phase plan with timeline and technical milestones</li>
+<li>Comprehensive conclusion: 400-600 words summarizing technical vision</li>
+</ul>
+<p><strong>Standards Include</strong>:</p>
+<ul>
+<li>Header format with version, date, status (X.X-DRAFT)</li>
+<li>Executive summary (100-200 words)</li>
+<li>Current vs Future comparison (v1.0 → v2.0)</li>
+<li>Architectural vision with core principles (8-12 principles)</li>
+<li>Security services integration diagrams</li>
+<li>Multi-region deployment topology</li>
+<li>DynamoDB Global Tables configuration</li>
+<li>Route 53 health checks and failover</li>
+<li>Risk mitigation strategies</li>
+</ul>
+<p><strong>Reference Implementation</strong>:</p>
+<ul>
+<li>CIA Compliance Manager: 1,326 lines, 65 KB, 15+ diagrams</li>
+<li>URL: <a href="https://github.com/Hack23/cia-compliance-manager/blob/main/docs/architecture/FUTURE_ARCHITECTURE.md">https://github.com/Hack23/cia-compliance-manager/blob/main/docs/architecture/FUTURE_ARCHITECTURE.md</a></li>
+</ul>
+<p><strong>When to Use</strong>:</p>
+<ul>
+<li>Creating new FUTURE_ARCHITECTURE.md documents</li>
+<li>Updating existing future architecture documentation</li>
+<li>Planning AWS serverless migrations</li>
+<li>Documenting multi-region strategies</li>
+<li>Compliance with Hack23 documentation standards</li>
+</ul>
+<h3 id="9-political-science-analysis" class="tsd-anchor-link">9. political-science-analysis<a href="#9-political-science-analysis" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Purpose</strong>: Apply comparative politics, political behavior, public policy analysis frameworks to Swedish political data</p>
+<p><strong>Key Principles</strong>:</p>
+<ul>
+<li>Objectivity and Non-Partisanship</li>
+<li>Evidence-Based Analysis</li>
+<li>Multi-Source Verification</li>
+<li>Democratic Theory Application</li>
+<li>Swedish Political System Context</li>
+</ul>
+<p><strong>Enforces</strong>:</p>
+<ul>
+<li>Balanced coverage of all parties</li>
+<li>Comparative political frameworks</li>
+<li>Democratic quality indicators</li>
+<li>Policy cycle analysis</li>
+<li>Voting behavior analysis</li>
+</ul>
+<p><strong>When to Use</strong>:</p>
+<ul>
+<li>Political dashboard design</li>
+<li>Voting pattern analysis</li>
+<li>Coalition stability assessment</li>
+<li>Policy impact evaluation</li>
+<li>Democratic accountability metrics</li>
+</ul>
+<h3 id="10-osint-methodologies" class="tsd-anchor-link">10. osint-methodologies<a href="#10-osint-methodologies" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Purpose</strong>: OSINT collection, source evaluation, data integration for Swedish political intelligence</p>
+<p><strong>Key Principles</strong>:</p>
+<ul>
+<li>Public Sources Only</li>
+<li>Source Reliability Assessment (NATO Admiralty Code)</li>
+<li>Data Quality Metrics</li>
+<li>Source Triangulation</li>
+<li>GDPR Compliance</li>
+</ul>
+<p><strong>Enforces</strong>:</p>
+<ul>
+<li>riksdag-regering-mcp as primary data source</li>
+<li>Multi-source verification</li>
+<li>Completeness/accuracy/timeliness tracking</li>
+<li>Ethical OSINT collection</li>
+<li>Privacy-by-design</li>
+</ul>
+<p><strong>When to Use</strong>:</p>
+<ul>
+<li>Data source integration</li>
+<li>Data quality validation</li>
+<li>Source credibility assessment</li>
+<li>OSINT collection strategies</li>
+</ul>
+<h3 id="11-intelligence-analysis-techniques" class="tsd-anchor-link">11. intelligence-analysis-techniques<a href="#11-intelligence-analysis-techniques" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Purpose</strong>: Structured analytic techniques (ACH, SWOT, Devil's Advocacy) for political intelligence</p>
+<p><strong>Key Principles</strong>:</p>
+<ul>
+<li>Analysis of Competing Hypotheses</li>
+<li>SWOT Analysis</li>
+<li>Red Team Thinking</li>
+<li>Key Assumptions Check</li>
+<li>Confidence Level Assessment</li>
+</ul>
+<p><strong>Enforces</strong>:</p>
+<ul>
+<li>Multiple hypothesis consideration</li>
+<li>Structured reasoning</li>
+<li>Bias mitigation</li>
+<li>Diagnostic evidence focus</li>
+<li>Uncertainty communication</li>
+</ul>
+<p><strong>When to Use</strong>:</p>
+<ul>
+<li>Election forecasting</li>
+<li>Coalition prediction</li>
+<li>Policy outcome assessment</li>
+<li>Crisis analysis</li>
+</ul>
+<h3 id="12-swedish-political-system" class="tsd-anchor-link">12. swedish-political-system<a href="#12-swedish-political-system" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Purpose</strong>: Swedish Riksdag structure, 8 parties, electoral system, government formation</p>
+<p><strong>Key Principles</strong>:</p>
+<ul>
+<li>Parliamentary Democracy</li>
+<li>Negative Parliamentarism</li>
+<li>Proportional Representation</li>
+<li>Consensus-Seeking Culture</li>
+<li>Public Access Principle (Offentlighetsprincipen)</li>
+</ul>
+<p><strong>Enforces</strong>:</p>
+<ul>
+<li>349 MPs, 15 committees</li>
+<li>8 parliamentary parties</li>
+<li>4% electoral threshold</li>
+<li>Coalition formation patterns</li>
+<li>Parliamentary procedures</li>
+</ul>
+<p><strong>When to Use</strong>:</p>
+<ul>
+<li>Political data interpretation</li>
+<li>Coalition analysis</li>
+<li>Electoral analysis</li>
+<li>Government formation</li>
+</ul>
+<h3 id="13-electoral-analysis" class="tsd-anchor-link">13. electoral-analysis<a href="#13-electoral-analysis" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Purpose</strong>: Election forecasting, campaign analysis, coalition prediction</p>
+<p><strong>Key Principles</strong>:</p>
+<ul>
+<li>Historical Trend Analysis</li>
+<li>Polling Aggregation</li>
+<li>Seat Projection Modeling</li>
+<li>Coalition Viability Assessment</li>
+<li>Confidence Intervals</li>
+</ul>
+<p><strong>Enforces</strong>:</p>
+<ul>
+<li>Historical data (1970-present)</li>
+<li>Uncertainty quantification</li>
+<li>Methodology transparency</li>
+<li>Scenario modeling</li>
+</ul>
+<p><strong>When to Use</strong>:</p>
+<ul>
+<li>Election forecasts</li>
+<li>Campaign tracking</li>
+<li>Coalition predictions</li>
+<li>Voter behavior modeling</li>
+</ul>
+<h3 id="14-behavioral-analysis" class="tsd-anchor-link">14. behavioral-analysis<a href="#14-behavioral-analysis" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Purpose</strong>: Political psychology, cognitive biases, leadership analysis</p>
+<p><strong>Key Principles</strong>:</p>
+<ul>
+<li>Cognitive Bias Recognition</li>
+<li>Leadership Styles</li>
+<li>Group Dynamics</li>
+<li>Political Psychology</li>
+<li>Behavioral Profiling</li>
+</ul>
+<p><strong>Enforces</strong>:</p>
+<ul>
+<li>Evidence-based psychological analysis</li>
+<li>MP behavioral profiles</li>
+<li>Influence network analysis</li>
+<li>Coalition psychology</li>
+</ul>
+<p><strong>When to Use</strong>:</p>
+<ul>
+<li>MP profiling</li>
+<li>Leadership assessment</li>
+<li>Coalition dynamics</li>
+<li>Decision-making analysis</li>
+</ul>
+<h3 id="15-strategic-communication-analysis" class="tsd-anchor-link">15. strategic-communication-analysis<a href="#15-strategic-communication-analysis" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Purpose</strong>: Narrative analysis, media bias detection, information operations</p>
+<p><strong>Key Principles</strong>:</p>
+<ul>
+<li>Narrative Identification</li>
+<li>Media Analysis</li>
+<li>Discourse Analysis</li>
+<li>Counter-Disinformation</li>
+<li>Fact-Checking</li>
+</ul>
+<p><strong>Enforces</strong>:</p>
+<ul>
+<li>Objective communication analysis</li>
+<li>Source credibility assessment</li>
+<li>Disinformation detection</li>
+<li>Transparent methodologies</li>
+</ul>
+<p><strong>When to Use</strong>:</p>
+<ul>
+<li>Media monitoring</li>
+<li>Narrative tracking</li>
+<li>Disinformation detection</li>
+<li>Communication strategy assessment</li>
+</ul>
+<h3 id="16-legislative-monitoring" class="tsd-anchor-link">16. legislative-monitoring<a href="#16-legislative-monitoring" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Purpose</strong>: Voting patterns, bill tracking, committee effectiveness, parliamentary oversight</p>
+<p><strong>Key Principles</strong>:</p>
+<ul>
+<li>Voting Record Analysis</li>
+<li>Legislative Pipeline Tracking</li>
+<li>Committee Productivity</li>
+<li>Parliamentary Oversight</li>
+<li>Accountability Mechanisms</li>
+</ul>
+<p><strong>Enforces</strong>:</p>
+<ul>
+<li>Comprehensive vote tracking</li>
+<li>Bill lifecycle monitoring</li>
+<li>Committee effectiveness metrics</li>
+<li>Government oversight assessment</li>
+</ul>
+<p><strong>When to Use</strong>:</p>
+<ul>
+<li>Voting pattern analysis</li>
+<li>Bill tracking</li>
+<li>Committee analysis</li>
+<li>Oversight effectiveness</li>
+</ul>
+<h3 id="17-risk-assessment-frameworks" class="tsd-anchor-link">17. risk-assessment-frameworks<a href="#17-risk-assessment-frameworks" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Purpose</strong>: Political risk indicators, corruption detection, early warning systems</p>
+<p><strong>Key Principles</strong>:</p>
+<ul>
+<li>Electoral Risk</li>
+<li>Policy Risk</li>
+<li>Institutional Risk</li>
+<li>Corruption Risk</li>
+<li>External Risk</li>
+</ul>
+<p><strong>Enforces</strong>:</p>
+<ul>
+<li>45 risk rules framework</li>
+<li>Severity classification</li>
+<li>Risk scoring methodology</li>
+<li>Early warning indicators</li>
+</ul>
+<p><strong>When to Use</strong>:</p>
+<ul>
+<li>Risk assessment</li>
+<li>Corruption indicators</li>
+<li>Democratic stability</li>
+<li>Accountability gaps</li>
+</ul>
+<h3 id="18-data-science-for-intelligence" class="tsd-anchor-link">18. data-science-for-intelligence<a href="#18-data-science-for-intelligence" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Purpose</strong>: Statistical analysis, data visualization, pattern recognition for political intelligence</p>
+<p><strong>Key Principles</strong>:</p>
+<ul>
+<li>Statistical Rigor</li>
+<li>CSS-Only Visualization</li>
+<li>Pattern Recognition</li>
+<li>Network Analysis</li>
+<li>WCAG 2.1 AA Accessibility</li>
+</ul>
+<p><strong>Enforces</strong>:</p>
+<ul>
+<li>Responsive HTML/CSS dashboards</li>
+<li>No JavaScript frameworks</li>
+<li>Accessible visualizations</li>
+<li>Data quality validation</li>
+</ul>
+<p><strong>When to Use</strong>:</p>
+<ul>
+<li>Dashboard design</li>
+<li>Data visualization</li>
+<li>Pattern analysis</li>
+<li>Statistical modeling</li>
+</ul>
+<h3 id="19-gdpr-compliance" class="tsd-anchor-link">19. gdpr-compliance<a href="#19-gdpr-compliance" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Purpose</strong>: GDPR compliance for political data processing, privacy-by-design</p>
+<p><strong>Key Principles</strong>:</p>
+<ul>
+<li>Public Interest Basis (Article 6(1)(e))</li>
+<li>Special Category Data (Article 9)</li>
+<li>Data Subject Rights</li>
+<li>Privacy-by-Design</li>
+<li>Data Minimization</li>
+</ul>
+<p><strong>Enforces</strong>:</p>
+<ul>
+<li>GDPR Article 6(1)(e) compliance</li>
+<li>No personal data beyond official capacity</li>
+<li>No tracking/cookies</li>
+<li>HTTPS-only</li>
+<li>Transparent data usage</li>
+</ul>
+<p><strong>When to Use</strong>:</p>
+<ul>
+<li>Political data processing</li>
+<li>Privacy assessments</li>
+<li>Data collection strategies</li>
+<li>Compliance verification</li>
+</ul>
+<h3 id="20-cis-controls-✨-new" class="tsd-anchor-link">20. cis-controls ✨ NEW<a href="#20-cis-controls-✨-new" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Purpose</strong>: CIS Controls v8.1 critical security controls for static HTML/CSS websites on GitHub Pages</p>
+<p><strong>Key Principles</strong>:</p>
+<ul>
+<li>Asset Inventory (repositories, domains, CDN)</li>
+<li>Secure Configuration (GitHub Pages, security headers)</li>
+<li>Access Control (branch protection, MFA)</li>
+<li>Audit Logging (GitHub audit logs)</li>
+<li>Application Security (HTML/CSS validation, dependency scanning)</li>
+</ul>
+<p><strong>Enforces</strong>:</p>
+<ul>
+<li>Control 1: Asset management (GitHub repo, domain, DNS)</li>
+<li>Control 4: Secure configuration (CSP, HSTS, X-Frame-Options)</li>
+<li>Control 6: Access control management (GitHub permissions)</li>
+<li>Control 8: Audit log management</li>
+<li>Control 16: Application software security (validation, scanning)</li>
+</ul>
+<p><strong>When to Use</strong>:</p>
+<ul>
+<li>Security hardening</li>
+<li>Compliance assessments</li>
+<li>GitHub Pages configuration</li>
+<li>Security baseline establishment</li>
+</ul>
+<h3 id="21-iso-27001-controls-✨-new" class="tsd-anchor-link">21. iso-27001-controls ✨ NEW<a href="#21-iso-27001-controls-✨-new" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Purpose</strong>: ISO 27001:2022 Annex A controls for static HTML/CSS websites</p>
+<p><strong>Key Principles</strong>:</p>
+<ul>
+<li>Organizational Controls (A.5)</li>
+<li>Technical Controls (A.8)</li>
+<li>Development Controls (A.14)</li>
+<li>Incident Management (A.16)</li>
+</ul>
+<p><strong>Enforces</strong>:</p>
+<ul>
+<li>A.8.3: Access restrictions via GitHub permissions</li>
+<li>A.8.23: Web filtering (CSP, security headers)</li>
+<li>A.8.24: Cryptography (TLS 1.3, HTTPS-only)</li>
+<li>A.8.28: Secure coding (HTML5/CSS3 validation)</li>
+<li>A.14.2.8: Security testing (validation, scanning)</li>
+</ul>
+<p><strong>When to Use</strong>:</p>
+<ul>
+<li>ISMS audits</li>
+<li>Security architecture changes</li>
+<li>ISO 27001 certification prep</li>
+<li>Control implementation verification</li>
+</ul>
+<h3 id="22-nist-csf-mapping-✨-new" class="tsd-anchor-link">22. nist-csf-mapping ✨ NEW<a href="#22-nist-csf-mapping-✨-new" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Purpose</strong>: NIST Cybersecurity Framework 2.0 mapping for static sites</p>
+<p><strong>Key Principles</strong>:</p>
+<ul>
+<li>IDENTIFY: Asset management, risk assessment</li>
+<li>PROTECT: Access control, data security</li>
+<li>DETECT: Continuous monitoring, adverse events</li>
+<li>RESPOND: Incident analysis, mitigation</li>
+<li>RECOVER: Recovery planning, communications</li>
+</ul>
+<p><strong>Enforces</strong>:</p>
+<ul>
+<li><a href="http://ID.AM">ID.AM</a>: Repository and domain inventory</li>
+<li><a href="http://PR.AC">PR.AC</a>: GitHub MFA, branch protection</li>
+<li>PR.DS: HTTPS-only, no cookies</li>
+<li><a href="http://DE.CM">DE.CM</a>: GitHub audit logs, Dependabot</li>
+<li>RC.RP: Git history backups, rollback procedures</li>
+</ul>
+<p><strong>When to Use</strong>:</p>
+<ul>
+<li>Security architecture reviews</li>
+<li>Compliance assessments</li>
+<li>Risk management</li>
+<li>Control mapping</li>
+</ul>
+<h3 id="23-threat-modeling-✨-new" class="tsd-anchor-link">23. threat-modeling ✨ NEW<a href="#23-threat-modeling-✨-new" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Purpose</strong>: STRIDE threat modeling for static HTML/CSS websites on GitHub Pages</p>
+<p><strong>Key Principles</strong>:</p>
+<ul>
+<li>Spoofing (domain hijacking, DNS attacks)</li>
+<li>Tampering (repository compromise)</li>
+<li>Repudiation (audit trail integrity)</li>
+<li>Information Disclosure (secret leaks)</li>
+<li>Denial of Service (DDoS protection)</li>
+<li>Elevation of Privilege (access control)</li>
+</ul>
+<p><strong>Enforces</strong>:</p>
+<ul>
+<li>HTTPS and DNSSEC</li>
+<li>Branch protection and GPG signing</li>
+<li>GitHub audit logs</li>
+<li>Secret scanning</li>
+<li>GitHub Pages CDN protection</li>
+<li>Minimal workflow permissions</li>
+</ul>
+<p><strong>When to Use</strong>:</p>
+<ul>
+<li>Security design</li>
+<li>Threat analysis</li>
+<li>Risk assessments</li>
+<li>ISMS compliance (ISO A.12.6)</li>
+</ul>
+<h3 id="24-secure-code-review-✨-new" class="tsd-anchor-link">24. secure-code-review ✨ NEW<a href="#24-secure-code-review-✨-new" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Purpose</strong>: Security code review for HTML/CSS/JavaScript in static websites</p>
+<p><strong>Key Principles</strong>:</p>
+<ul>
+<li>HTML Security (no inline scripts, CSP compliance)</li>
+<li>CSS Security (no external imports, no user-controlled CSS)</li>
+<li>Link Security (HTTPS-only, link integrity)</li>
+<li>Configuration Security (no secrets, minimal permissions)</li>
+</ul>
+<p><strong>Enforces</strong>:</p>
+<ul>
+<li>No inline JavaScript (CSP compliance)</li>
+<li>External links use rel=&quot;noopener noreferrer&quot;</li>
+<li>All links HTTPS</li>
+<li>Secret scanning</li>
+<li>Workflow permissions minimal</li>
+</ul>
+<p><strong>When to Use</strong>:</p>
+<ul>
+<li>PR reviews</li>
+<li>Security audits</li>
+<li>Code contributions</li>
+<li>XSS prevention</li>
+</ul>
+<h3 id="25-security-documentation-✨-new" class="tsd-anchor-link">25. security-documentation ✨ NEW<a href="#25-security-documentation-✨-new" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Purpose</strong>: ISMS security documentation standards for Hack23 projects</p>
+<p><strong>Key Principles</strong>:</p>
+<ul>
+<li>Current State (SECURITY_ARCHITECTURE.md)</li>
+<li>Future State (FUTURE_SECURITY_ARCHITECTURE.md)</li>
+<li>Threat Analysis (THREAT_MODEL.md)</li>
+<li>System Design (<a href="http://ARCHITECTURE.md">ARCHITECTURE.md</a>)</li>
+<li>Security Policy (<a href="http://SECURITY.md">SECURITY.md</a>)</li>
+</ul>
+<p><strong>Enforces</strong>:</p>
+<ul>
+<li>C4 diagrams (Context, Container, Component)</li>
+<li>Mermaid workflows</li>
+<li>Compliance mapping (ISO/NIST/CIS)</li>
+<li>Document control metadata</li>
+<li>Classification marking</li>
+</ul>
+<p><strong>When to Use</strong>:</p>
+<ul>
+<li>Architecture changes</li>
+<li>Security control updates</li>
+<li>ISMS audits</li>
+<li>Compliance documentation</li>
+</ul>
+<h3 id="26-c4-architecture-documentation-✨-new" class="tsd-anchor-link">26. c4-architecture-documentation ✨ NEW<a href="#26-c4-architecture-documentation-✨-new" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Purpose</strong>: C4 architecture model for documenting static sites with MCP integrations</p>
+<p><strong>Key Principles</strong>:</p>
+<ul>
+<li>Context Diagram (system and users)</li>
+<li>Container Diagram (technology choices)</li>
+<li>Component Diagram (internal structure)</li>
+<li>Code Diagram (class/interface level)</li>
+</ul>
+<p><strong>Enforces</strong>:</p>
+<ul>
+<li>Mermaid C4 diagrams</li>
+<li>Technology stack documentation</li>
+<li>MCP server integration diagrams</li>
+<li>Deployment pipeline documentation</li>
+</ul>
+<p><strong>When to Use</strong>:</p>
+<ul>
+<li><a href="http://ARCHITECTURE.md">ARCHITECTURE.md</a> updates</li>
+<li>System design documentation</li>
+<li>MCP server integration</li>
+<li>Technology decisions</li>
+</ul>
+<h3 id="27-github-actions-workflows-✨-new" class="tsd-anchor-link">27. github-actions-workflows ✨ NEW<a href="#27-github-actions-workflows-✨-new" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Purpose</strong>: GitHub Actions workflow patterns for static site CI/CD</p>
+<p><strong>Key Principles</strong>:</p>
+<ul>
+<li>Quality Checks (HTML/CSS validation, link checking)</li>
+<li>Security Scanning (CodeQL, Dependabot, secret scanning)</li>
+<li>Deployment (GitHub Pages publishing)</li>
+<li>Minimal Permissions (least privilege)</li>
+</ul>
+<p><strong>Enforces</strong>:</p>
+<ul>
+<li>HTMLHint validation</li>
+<li>linkinator link checking</li>
+<li>CodeQL security analysis</li>
+<li>Dependency scanning</li>
+<li>Least privilege permissions</li>
+<li>SHA-pinned actions</li>
+</ul>
+<p><strong>When to Use</strong>:</p>
+<ul>
+<li>CI/CD pipeline design</li>
+<li>Workflow optimization</li>
+<li>Security hardening</li>
+<li>Quality gate implementation</li>
+</ul>
+<h3 id="28-code-quality-checks-✨-new" class="tsd-anchor-link">28. code-quality-checks ✨ NEW<a href="#28-code-quality-checks-✨-new" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Purpose</strong>: Quality gates for static HTML/CSS websites</p>
+<p><strong>Key Principles</strong>:</p>
+<ul>
+<li>HTML Validation (HTMLHint, 0 errors)</li>
+<li>CSS Validation (CSSLint, warnings only)</li>
+<li>Link Integrity (linkinator, 0 broken links)</li>
+<li>Accessibility (axe-core, WCAG 2.1 AA)</li>
+<li>Performance (Core Web Vitals, PageSpeed Insights)</li>
+</ul>
+<p><strong>Enforces</strong>:</p>
+<ul>
+<li>0 HTML validation errors</li>
+<li>0 broken links</li>
+<li>0 WCAG 2.1 AA violations</li>
+<li>4.5:1 color contrast minimum</li>
+<li>90+ PageSpeed score</li>
+</ul>
+<p><strong>When to Use</strong>:</p>
+<ul>
+<li>PR reviews</li>
+<li>Quality assurance</li>
+<li>Pre-deployment checks</li>
+<li>Continuous monitoring</li>
+</ul>
+<h3 id="29-secrets-management-✨-new" class="tsd-anchor-link">29. secrets-management ✨ NEW<a href="#29-secrets-management-✨-new" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Purpose</strong>: GitHub secrets and environment variables for MCP servers and CI/CD</p>
+<p><strong>Key Principles</strong>:</p>
+<ul>
+<li>GitHub Secrets (Actions, Environment)</li>
+<li>Secret Scanning (automatic detection)</li>
+<li>Secret Rotation (90-day cycle)</li>
+<li>Least Privilege (minimal scopes)</li>
+<li>Audit Logging (secret access tracking)</li>
+</ul>
+<p><strong>Enforces</strong>:</p>
+<ul>
+<li>COPILOT_MCP_GITHUB_PERSONAL_ACCESS_TOKEN configuration</li>
+<li>Environment-specific secrets (copilot environment)</li>
+<li>.gitignore for sensitive files</li>
+<li>Secret scanning enabled</li>
+<li>90-day rotation policy</li>
+</ul>
+<p><strong>When to Use</strong>:</p>
+<ul>
+<li>MCP server configuration</li>
+<li>CI/CD workflow setup</li>
+<li>Secret rotation</li>
+<li>Security audits</li>
+</ul>
+<h3 id="29-responsive-design-✨-new" class="tsd-anchor-link">29. responsive-design ✨ NEW<a href="#29-responsive-design-✨-new" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Purpose</strong>: Mobile-first responsive web design with CSS Grid/Flexbox, breakpoints (320px-1440px+)</p>
+<p><strong>Key Principles</strong>:</p>
+<ul>
+<li>Mobile-First Design</li>
+<li>Fluid Typography (clamp())</li>
+<li>Flexible Layouts (Grid/Flexbox)</li>
+<li>Touch-Friendly (44x44px targets)</li>
+<li>Performance Optimized</li>
+<li>Content Priority</li>
+</ul>
+<p><strong>Enforces</strong>:</p>
+<ul>
+<li>Standard breakpoints (320px, 768px, 1024px, 1440px+)</li>
+<li>Fluid typography with clamp()</li>
+<li>CSS Grid for layouts</li>
+<li>44x44px minimum touch targets</li>
+<li>Viewport meta tag required</li>
+<li>Max-width constraint for ultra-wide</li>
+</ul>
+<p><strong>When to Use</strong>:</p>
+<ul>
+<li>All HTML/CSS development</li>
+<li>New feature implementation</li>
+<li>Dashboard design</li>
+<li>Navigation redesign</li>
+<li>Mobile optimization</li>
+<li>Cross-device testing</li>
+</ul>
+<h3 id="30-design-system-management-✨-new" class="tsd-anchor-link">30. design-system-management ✨ NEW<a href="#30-design-system-management-✨-new" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Purpose</strong>: Cyberpunk theme design system with CSS custom properties and component library</p>
+<p><strong>Key Principles</strong>:</p>
+<ul>
+<li>Single Source of Truth (CSS variables)</li>
+<li>Component-Based Architecture</li>
+<li>Theme Consistency</li>
+<li>Accessibility Built-In</li>
+<li>Responsive Scaling</li>
+<li>Performance Focused</li>
+</ul>
+<p><strong>Enforces</strong>:</p>
+<ul>
+<li>CSS custom properties for all design tokens</li>
+<li>Cyberpunk color palette (cyan, magenta, yellow on dark)</li>
+<li>Fluid typography and spacing scales</li>
+<li>Reusable component patterns</li>
+<li>4.5:1 color contrast minimum</li>
+<li>Neon glow effects</li>
+</ul>
+<p><strong>When to Use</strong>:</p>
+<ul>
+<li>New page creation</li>
+<li>Component development</li>
+<li>UI refactoring</li>
+<li>Theme updates</li>
+<li>Accessibility enhancements</li>
+<li>Style standardization</li>
+</ul>
+<h3 id="31-political-data-visualization-✨-new" class="tsd-anchor-link">31. political-data-visualization ✨ NEW<a href="#31-political-data-visualization-✨-new" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Purpose</strong>: CSS-only data visualization (charts, heat maps, progress bars) for political metrics</p>
+<p><strong>Key Principles</strong>:</p>
+<ul>
+<li>CSS-Only (no JavaScript)</li>
+<li>Accessibility First (WCAG 2.1 AA)</li>
+<li>Semantic Markup</li>
+<li>Progressive Disclosure</li>
+<li>Color-Blind Safe</li>
+<li>Responsive Design</li>
+</ul>
+<p><strong>Enforces</strong>:</p>
+<ul>
+<li>Progress bars for voting discipline</li>
+<li>Bar charts for MP/party distribution</li>
+<li>Heat maps for voting patterns</li>
+<li>Donut charts for coalitions</li>
+<li>Timeline visualizations</li>
+<li>Swedish party color palette</li>
+<li>Screen reader support</li>
+</ul>
+<p><strong>When to Use</strong>:</p>
+<ul>
+<li>Dashboard design</li>
+<li>Party analysis visualizations</li>
+<li>Voting record displays</li>
+<li>Committee activity metrics</li>
+<li>MP profile timelines</li>
+<li>Risk assessment indicators</li>
+</ul>
+<h3 id="32-playwright-testing-✨-new" class="tsd-anchor-link">32. playwright-testing ✨ NEW<a href="#32-playwright-testing-✨-new" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Purpose</strong>: Browser automation, visual regression testing, screenshot capture for static websites</p>
+<p><strong>Key Principles</strong>:</p>
+<ul>
+<li>Headless First</li>
+<li>Visual Evidence</li>
+<li>Accessibility Integration (axe-core)</li>
+<li>Cross-Browser Coverage</li>
+<li>Responsive Testing</li>
+<li>Performance Monitoring</li>
+</ul>
+<p><strong>Enforces</strong>:</p>
+<ul>
+<li>Xvfb display for headless rendering</li>
+<li>Screenshot capture on all tests</li>
+<li>WCAG 2.1 AA audits with axe-playwright</li>
+<li>Multi-language testing (14 languages)</li>
+<li>Responsive viewport testing</li>
+<li>Core Web Vitals measurement</li>
+</ul>
+<p><strong>When to Use</strong>:</p>
+<ul>
+<li>Quality assurance automation</li>
+<li>Visual regression detection</li>
+<li>Accessibility audits</li>
+<li>Cross-browser testing</li>
+<li>Issue validation with evidence</li>
+<li>Performance monitoring</li>
+</ul>
+<h3 id="33-issue-management-✨-new" class="tsd-anchor-link">33. issue-management ✨ NEW<a href="#33-issue-management-✨-new" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Purpose</strong>: GitHub issue creation, labeling, milestones, agent assignment for product management</p>
+<p><strong>Key Principles</strong>:</p>
+<ul>
+<li>Clarity First</li>
+<li>Actionable Items</li>
+<li>Properly Labeled</li>
+<li>Traceable</li>
+<li>Evidence-Based</li>
+<li>Agent-Optimized</li>
+</ul>
+<p><strong>Enforces</strong>:</p>
+<ul>
+<li>Structured issue templates</li>
+<li>Clear acceptance criteria</li>
+<li>Type/priority/area/agent labels</li>
+<li>Screenshot/log evidence</li>
+<li>Related issue linking</li>
+<li>Copilot agent assignment format</li>
+</ul>
+<p><strong>When to Use</strong>:</p>
+<ul>
+<li>Bug reports</li>
+<li>Feature requests</li>
+<li>Security issues</li>
+<li>Accessibility issues</li>
+<li>Technical debt tracking</li>
+<li>Agent task delegation</li>
+</ul>
+<h3 id="34-riksdag-regering-mcp-✨-new" class="tsd-anchor-link">34. riksdag-regering-mcp ✨ NEW<a href="#34-riksdag-regering-mcp-✨-new" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Purpose</strong>: 32 specialized tools for Swedish political data via riksdag-regering-mcp MCP server</p>
+<p><strong>Key Principles</strong>:</p>
+<ul>
+<li>Authoritative Data Source</li>
+<li>Comprehensive Coverage (50+ years)</li>
+<li>Structured API</li>
+<li>Real-Time Access</li>
+<li>GDPR Compliance</li>
+<li>Multi-Source Integration</li>
+</ul>
+<p><strong>Available Tools</strong>:</p>
+<ul>
+<li>Search &amp; Discovery (6 tools): MPs, documents, speeches, votes</li>
+<li>Detailed Information (6 tools): Document content, MP profiles</li>
+<li>Parliamentary Documents (6 tools): Motions, propositions, reports</li>
+<li>Government Documents (4 tools): SOU, Dir, propositions</li>
+<li>Analytics &amp; Aggregation (5 tools): Voting groups, reports</li>
+<li>Advanced Queries (5 tools): Pagination, batch fetching</li>
+</ul>
+<p><strong>When to Use</strong>:</p>
+<ul>
+<li>Political intelligence analysis</li>
+<li>Legislative monitoring</li>
+<li>MP profiling and analysis</li>
+<li>Coalition behavior assessment</li>
+<li>Policy research and tracking</li>
+<li>Voting pattern analysis</li>
+<li>Government oversight</li>
+<li>Electoral research</li>
+</ul>
+<h2 id="how-skills-feed-the-news-aggregator" class="tsd-anchor-link">How Skills Feed the News Aggregator<a href="#how-skills-feed-the-news-aggregator" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<p>The news-generation pipeline (<code>scripts/aggregate-analysis.ts</code> → <code>scripts/render-articles.ts</code> → <code>scripts/render-lib/</code>) derives every published article from three static inputs — <code>analysis/methodologies/</code>, <code>analysis/templates/</code>, and the per-day <code>analysis/daily/$DATE/$SUB/*.md</code> artifacts — and skills shape all three. During the analysis phase of every per-type news workflow, the agent loads the relevant skills and uses them to author artifacts that the aggregator can consume without modification: <strong><code>automated-content-generation</code></strong> dictates the section schema each artifact must hit (executive-brief, synthesis, significance, stakeholders, SWOT, scenarios, comparative, intel-assessment, classification); <strong><code>editorial-standards</code></strong> governs tone, inverted-pyramid structure, attribution, and the rule that every factual claim must cite a specific Riksdag/Regering source; and <strong><code>data-pipeline-engineering</code></strong> provides the contract for how MCP query results are cached, deduplicated, and inlined into artifacts so the aggregator's SHA-256 manifest remains reproducible. These three skills are therefore <strong>primary</strong> for the aggregator flow — an artifact authored with them drops into <code>analysis/daily/$DATE/$SUB/</code> and is published as <code>news/$DATE-$SUB-{en,sv}.html</code> on the next CI run with zero manual intervention, no template fill-in, and no post-hoc HTML editing.</p>
+<h2 id="how-skills-work" class="tsd-anchor-link">How Skills Work<a href="#how-skills-work" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<h3 id="automatic-loading" class="tsd-anchor-link">Automatic Loading<a href="#automatic-loading" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p>Skills are automatically loaded by Copilot when relevant to the task. You don't need to explicitly reference them.</p>
+<h3 id="skill-discovery" class="tsd-anchor-link">Skill Discovery<a href="#skill-discovery" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p>Copilot determines skill relevance based on:</p>
+<ul>
+<li>Task description</li>
+<li>File paths being modified</li>
+<li>Agent being used</li>
+<li>Keywords in instructions</li>
+</ul>
+<h3 id="skill-structure" class="tsd-anchor-link">Skill Structure<a href="#skill-structure" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p>Each skill follows this structure:</p>
+<pre><code class="markdown"><span class="hl-1">---</span><br/><span class="hl-11">name</span><span class="hl-21">: </span><span class="hl-12">skill-name</span><br/><span class="hl-11">description</span><span class="hl-21">: </span><span class="hl-12">Brief description of skill purpose</span><br/><span class="hl-11">license</span><span class="hl-21">: </span><span class="hl-12">Apache-2.0</span><br/><span class="hl-1">---</span><br/><br/><span class="hl-11"># Skill Title</span><br/><br/><span class="hl-11">## Purpose</span><br/><span class="hl-1">[Why this skill exists]</span><br/><br/><span class="hl-11">## Core Principles</span><br/><span class="hl-1">[High-level guiding principles]</span><br/><br/><span class="hl-11">## Enforces</span><br/><span class="hl-1">[Specific rules and standards]</span><br/><br/><span class="hl-11">## When to Use</span><br/><span class="hl-1">[Scenarios where skill applies]</span><br/><br/><span class="hl-11">## Examples</span><br/><span class="hl-1">[Concrete examples]</span><br/><br/><span class="hl-11">## Remember</span><br/><span class="hl-1">[Key takeaways]</span><br/><br/><span class="hl-11">## References</span><br/><span class="hl-1">[External resources]</span>
+</code><button type="button">Copy</button></pre>
+
+<h2 id="skill-hierarchy" class="tsd-anchor-link">Skill Hierarchy<a href="#skill-hierarchy" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<p>Skills follow a hierarchy from strategic to tactical:</p>
+<pre><code><span class="hl-5">Level</span><span class="hl-1"> </span><span class="hl-6">1</span><span class="hl-1"> (</span><span class="hl-5">Strategic</span><span class="hl-1">): </span><span class="hl-5">hack23</span><span class="hl-1">-</span><span class="hl-5">isms</span><span class="hl-1">-</span><span class="hl-5">compliance</span><br/><span class="hl-1">  ├─ </span><span class="hl-5">Level</span><span class="hl-1"> </span><span class="hl-6">2</span><span class="hl-1"> (</span><span class="hl-5">Architectural</span><span class="hl-1">): </span><span class="hl-5">security</span><span class="hl-1">-</span><span class="hl-5">by</span><span class="hl-1">-</span><span class="hl-5">design</span><br/><span class="hl-1">  │   ├─ </span><span class="hl-5">Level</span><span class="hl-1"> </span><span class="hl-6">3</span><span class="hl-1"> (</span><span class="hl-5">Technical</span><span class="hl-1">): </span><span class="hl-5">static</span><span class="hl-1">-</span><span class="hl-5">site</span><span class="hl-1">-</span><span class="hl-5">security</span><br/><span class="hl-1">  │   └─ </span><span class="hl-5">Level</span><span class="hl-1"> </span><span class="hl-6">3</span><span class="hl-1"> (</span><span class="hl-5">Technical</span><span class="hl-1">): </span><span class="hl-5">ci</span><span class="hl-1">-</span><span class="hl-5">cd</span><span class="hl-1">-</span><span class="hl-5">security</span><br/><span class="hl-1">  │</span><br/><span class="hl-1">  └─ </span><span class="hl-5">Level</span><span class="hl-1"> </span><span class="hl-6">2</span><span class="hl-1"> (</span><span class="hl-5">Standards</span><span class="hl-1">): </span><span class="hl-5">documentation</span><span class="hl-1">-</span><span class="hl-5">standards</span><br/><span class="hl-1">      ├─ </span><span class="hl-5">Level</span><span class="hl-1"> </span><span class="hl-6">3</span><span class="hl-1"> (</span><span class="hl-5">Technical</span><span class="hl-1">): </span><span class="hl-5">html</span><span class="hl-1">-</span><span class="hl-5">accessibility</span><br/><span class="hl-1">      └─ </span><span class="hl-5">Level</span><span class="hl-1"> </span><span class="hl-6">3</span><span class="hl-1"> (</span><span class="hl-5">Technical</span><span class="hl-1">): </span><span class="hl-5">multi</span><span class="hl-1">-</span><span class="hl-5">language</span><span class="hl-1">-</span><span class="hl-5">localization</span>
+</code><button>Copy</button></pre>
+
+<h2 id="best-practices" class="tsd-anchor-link">Best Practices<a href="#best-practices" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<h3 id="for-users" class="tsd-anchor-link">For Users<a href="#for-users" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ol>
+<li><strong>Trust the Skills</strong>: Agents automatically apply skills - you don't need to reference them</li>
+<li><strong>Be Specific</strong>: Provide clear task descriptions to help skill discovery</li>
+<li><strong>Review Results</strong>: Verify agents followed skill guidelines</li>
+<li><strong>Provide Feedback</strong>: Improve skills based on agent outcomes</li>
+</ol>
+<h3 id="for-skill-authors" class="tsd-anchor-link">For Skill Authors<a href="#for-skill-authors" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ol>
+<li><strong>Strategic, Not Tactical</strong>: Focus on principles, not step-by-step instructions</li>
+<li><strong>Rule-Based</strong>: Clear, enforceable rules</li>
+<li><strong>Examples Matter</strong>: Show good and bad patterns</li>
+<li><strong>Keep Updated</strong>: Evolve skills as standards change</li>
+<li><strong>Cross-Reference</strong>: Link to relevant ISMS policies and standards</li>
+</ol>
+<h2 id="skill-development" class="tsd-anchor-link">Skill Development<a href="#skill-development" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<h3 id="creating-a-new-skill" class="tsd-anchor-link">Creating a New Skill<a href="#creating-a-new-skill" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ol>
+<li><strong>Identify Need</strong>: What knowledge gap exists?</li>
+<li><strong>Define Scope</strong>: What should this skill cover?</li>
+<li><strong>Write Principles</strong>: What are the high-level rules?</li>
+<li><strong>Add Examples</strong>: Show concrete applications</li>
+<li><strong>Document Use Cases</strong>: When should this apply?</li>
+<li><strong>Test</strong>: Verify agents use the skill correctly</li>
+</ol>
+<h3 id="skill-template" class="tsd-anchor-link">Skill Template<a href="#skill-template" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<pre><code class="markdown"><span class="hl-1">---</span><br/><span class="hl-11">name</span><span class="hl-21">: </span><span class="hl-12">your-skill-name</span><br/><span class="hl-11">description</span><span class="hl-21">: </span><span class="hl-12">Brief description (max 200 chars)</span><br/><span class="hl-11">license</span><span class="hl-21">: </span><span class="hl-12">Apache-2.0</span><br/><span class="hl-1">---</span><br/><br/><span class="hl-11"># Skill Title</span><br/><br/><span class="hl-11">## Purpose</span><br/><span class="hl-1">Why this skill exists and what problem it solves.</span><br/><br/><span class="hl-11">## Core Principles</span><br/><span class="hl-1">1-5 high-level guiding principles</span><br/><br/><span class="hl-11">## Enforces</span><br/><span class="hl-1">Specific rules, standards, and requirements</span><br/><br/><span class="hl-11">## When to Use</span><br/><span class="hl-1">Scenarios and contexts where skill applies</span><br/><br/><span class="hl-11">## Examples</span><br/><span class="hl-11">### Good Pattern</span><br/><span class="hl-1">[</span><span class="hl-2">Example</span><span class="hl-1">]</span><br/><br/><span class="hl-11">### Anti-Pattern</span><br/><span class="hl-1">[</span><span class="hl-2">Counter-example</span><span class="hl-1">]</span><br/><br/><span class="hl-11">## Remember</span><br/><span class="hl-1">Key takeaways (3-5 bullet points)</span><br/><br/><span class="hl-11">## References</span><br/><span class="hl-1">External resources and standards</span>
+</code><button type="button">Copy</button></pre>
+
+<h2 id="quality-standards-for-skills" class="tsd-anchor-link">Quality Standards for Skills<a href="#quality-standards-for-skills" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<p>All skills must:</p>
+<ul>
+<li>✅ Have valid YAML frontmatter</li>
+<li>✅ Include clear purpose statement</li>
+<li>✅ Define strategic principles (not step-by-step instructions)</li>
+<li>✅ Provide concrete examples</li>
+<li>✅ Specify when to apply</li>
+<li>✅ Reference authoritative sources</li>
+<li>✅ Follow Hack23 ISMS requirements</li>
+<li>✅ Use inclusive, accessible language</li>
+</ul>
+<h2 id="integration-with-agents" class="tsd-anchor-link">Integration with Agents<a href="#integration-with-agents" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<p>Agents are configured to automatically discover and use skills:</p>
+<pre><code class="yaml"><span class="hl-4"># Agent configuration includes skill discovery</span><br/><span class="hl-11">tools</span><span class="hl-1">: [</span><span class="hl-2">&quot;view&quot;</span><span class="hl-1">, </span><span class="hl-2">&quot;edit&quot;</span><span class="hl-1">, </span><span class="hl-2">&quot;create&quot;</span><span class="hl-1">, </span><span class="hl-2">&quot;search&quot;</span><span class="hl-1">, </span><span class="hl-2">&quot;bash&quot;</span><span class="hl-1">, </span><span class="hl-2">&quot;grep&quot;</span><span class="hl-1">, </span><span class="hl-2">&quot;glob&quot;</span><span class="hl-1">]</span><br/><br/><span class="hl-4"># Agents have access to .github/skills/ directory</span><br/><span class="hl-4"># Skills load automatically based on context</span>
+</code><button type="button">Copy</button></pre>
+
+<h2 id="relationship-to-hack23-isms" class="tsd-anchor-link">Relationship to Hack23 ISMS<a href="#relationship-to-hack23-isms" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<p>All skills align with Hack23's public ISMS:</p>
+<ul>
+<li><a href="https://github.com/Hack23/ISMS-PUBLIC">Information Security Management System (ISMS)</a></li>
+<li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md">Secure Development Policy</a></li>
+</ul>
+<p>Skills operationalize ISMS policies into practical, actionable guidance for agents.</p>
+<h2 id="compliance-framework-mapping" class="tsd-anchor-link">Compliance Framework Mapping<a href="#compliance-framework-mapping" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<p>Skills enforce compliance with:</p>
+<ul>
+<li><strong>ISO 27001:2022</strong>: Annex A controls</li>
+<li><strong>NIST CSF 2.0</strong>: Six functions (GOVERN, IDENTIFY, PROTECT, DETECT, RESPOND, RECOVER)</li>
+<li><strong>CIS Controls v8.1</strong>: Implementation Groups 1-3</li>
+<li><strong>WCAG 2.1</strong>: Level AA accessibility</li>
+<li><strong>W3C Standards</strong>: HTML5, CSS3, i18n/l10n</li>
+</ul>
+<h2 id="troubleshooting" class="tsd-anchor-link">Troubleshooting<a href="#troubleshooting" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<h3 id="skill-not-being-applied" class="tsd-anchor-link">Skill Not Being Applied<a href="#skill-not-being-applied" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul>
+<li>Verify skill file exists in <code>.github/skills/</code></li>
+<li>Check YAML frontmatter is valid</li>
+<li>Ensure <code>SKILL.md</code> filename is correct</li>
+<li>Review skill description for keyword matching</li>
+</ul>
+<h3 id="conflicting-skills" class="tsd-anchor-link">Conflicting Skills<a href="#conflicting-skills" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul>
+<li>Skills are applied in hierarchy order (strategic → tactical)</li>
+<li>More specific skills override general ones</li>
+<li>Document exceptions in custom instructions</li>
+</ul>
+<h3 id="updating-skills" class="tsd-anchor-link">Updating Skills<a href="#updating-skills" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul>
+<li>Update skill file in <code>.github/skills/</code></li>
+<li>Changes take effect on next agent invocation</li>
+<li>Test with sample task to verify changes</li>
+<li>Document changes in commit message</li>
+</ul>
+<h2 id="related-documentation" class="tsd-anchor-link">Related Documentation<a href="#related-documentation" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<ul>
+<li><a href="AGENTS.html">AGENTS.md</a> - Custom agents reference</li>
+<li><a href="../media/README-4.md">README.md</a> - Project overview</li>
+<li><a href="https://github.com/Hack23/ISMS-PUBLIC">Hack23 ISMS-PUBLIC</a> - ISMS policies</li>
+<li><a href="https://docs.github.com/en/copilot/concepts/agents/about-agent-skills">GitHub Copilot Skills</a> - Official docs</li>
+<li><a href="https://github.com/anthropics/skills">Anthropic Skills</a> - Community skills</li>
+<li><a href="https://github.com/github/awesome-copilot">Awesome Copilot</a> - Best practices</li>
+</ul>
+<hr>
+<p><strong>Last Updated</strong>: 2026-02-06<br>
+<strong>Maintained by</strong>: Hack23 AB</p>
+<h3 id="35-data-pipeline-engineering-✨-new-2026-02-06" class="tsd-anchor-link">35. data-pipeline-engineering ✨ NEW - 2026-02-06<a href="#35-data-pipeline-engineering-✨-new-2026-02-06" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Purpose</strong>: Expert knowledge in designing robust ETL (Extract, Transform, Load) pipelines for automated data processing</p>
+<p><strong>Key Principles</strong>:</p>
+<ul>
+<li>Idempotency (pipeline runs produce same results)</li>
+<li>Observability (full visibility into pipeline health)</li>
+<li>Error Recovery (graceful handling of failures)</li>
+<li>Version Tracking (track all data changes)</li>
+<li>Monitoring (real-time pipeline health checks)</li>
+</ul>
+<p><strong>Enforces</strong>:</p>
+<ul>
+<li>ETL workflow patterns (Extract → Transform → Load)</li>
+<li>Automated scheduling (cron, GitHub Actions)</li>
+<li>Data versioning and archival</li>
+<li>Pipeline health monitoring</li>
+<li>Error recovery strategies</li>
+<li>Audit logging</li>
+</ul>
+<p><strong>When to Use</strong>:</p>
+<ul>
+<li>Building automated data pipelines</li>
+<li>Scheduling data fetching workflows</li>
+<li>Implementing data versioning</li>
+<li>Monitoring pipeline health</li>
+<li>Designing error recovery</li>
+</ul>
+<h3 id="36-automated-content-generation-✨-new-2026-02-06" class="tsd-anchor-link">36. automated-content-generation ✨ NEW - 2026-02-06<a href="#36-automated-content-generation-✨-new-2026-02-06" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Purpose</strong>: Template-based content generation, intelligence reports, and multi-language automated content</p>
+<p><strong>Key Principles</strong>:</p>
+<ul>
+<li>Template-Based (reusable content templates)</li>
+<li>Multi-Language (14 languages support)</li>
+<li>Data-Driven (content from structured data)</li>
+<li>Quality Assured (validation before publication)</li>
+<li>SEO Optimized (search engine friendly)</li>
+</ul>
+<p><strong>Enforces</strong>:</p>
+<ul>
+<li>Markdown/HTML template engines</li>
+<li>Multi-language content generation</li>
+<li>Scheduled content generation (daily/weekly)</li>
+<li>Content validation and quality checks</li>
+<li>SEO meta tags and structured data</li>
+<li>RSS feed generation</li>
+</ul>
+<p><strong>When to Use</strong>:</p>
+<ul>
+<li>Automated news generation</li>
+<li>Intelligence report creation</li>
+<li>Multi-language content</li>
+<li>Scheduled content updates</li>
+<li>RSS feed generation</li>
+</ul>
+<h3 id="37-performance-optimization-✨-new-2026-02-06" class="tsd-anchor-link">37. performance-optimization ✨ NEW - 2026-02-06<a href="#37-performance-optimization-✨-new-2026-02-06" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Purpose</strong>: Core Web Vitals optimization, bundle size reduction, caching strategies, and performance tuning</p>
+<p><strong>Key Principles</strong>:</p>
+<ul>
+<li>Measure First (Lighthouse/PageSpeed Insights)</li>
+<li>Core Web Vitals (LCP &lt; 2.5s, FID &lt; 100ms, CLS &lt; 0.1)</li>
+<li>Progressive Enhancement</li>
+<li>Lazy Loading</li>
+<li>Caching Strategy</li>
+</ul>
+<p><strong>Enforces</strong>:</p>
+<ul>
+<li>Core Web Vitals targets</li>
+<li>Bundle size optimization (&lt; 100KB initial)</li>
+<li>Image optimization (WebP, lazy loading)</li>
+<li>HTTP caching headers</li>
+<li>CDN optimization</li>
+<li>Code splitting and tree shaking</li>
+</ul>
+<p><strong>When to Use</strong>:</p>
+<ul>
+<li>Performance tuning</li>
+<li>Bundle size reduction</li>
+<li>Load time optimization</li>
+<li>Core Web Vitals improvement</li>
+<li>Caching strategy design</li>
+</ul>
+<h3 id="38-api-integration-✨-new-2026-02-06" class="tsd-anchor-link">38. api-integration ✨ NEW - 2026-02-06<a href="#38-api-integration-✨-new-2026-02-06" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Purpose</strong>: REST/GraphQL API client design, rate limiting, error handling, and authentication best practices</p>
+<p><strong>Key Principles</strong>:</p>
+<ul>
+<li>Resilience (handle failures gracefully)</li>
+<li>Rate Limiting (respect API limits)</li>
+<li>Retry Logic (exponential backoff)</li>
+<li>Circuit Breaker (fail fast when needed)</li>
+<li>Security (secure credential storage)</li>
+</ul>
+<p><strong>Enforces</strong>:</p>
+<ul>
+<li>REST/GraphQL client patterns</li>
+<li>Rate limiting and throttling</li>
+<li>Retry logic with exponential backoff</li>
+<li>Circuit breaker pattern</li>
+<li>Error handling and recovery</li>
+<li>Authentication (OAuth, API keys, JWT)</li>
+<li>Request/response logging</li>
+<li>Timeout configuration</li>
+</ul>
+<p><strong>When to Use</strong>:</p>
+<ul>
+<li>Building API clients</li>
+<li>Integrating external services</li>
+<li>Handling API failures</li>
+<li>Rate limit management</li>
+<li>Authentication implementation</li>
+</ul>
+<h3 id="39-advanced-data-visualization-✨-new-2026-02-06" class="tsd-anchor-link">39. advanced-data-visualization ✨ NEW - 2026-02-06<a href="#39-advanced-data-visualization-✨-new-2026-02-06" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Purpose</strong>: Chart.js/D3.js expertise for interactive dashboards, complex charts, and political data visualization</p>
+<p><strong>Key Principles</strong>:</p>
+<ul>
+<li>Accessibility First (WCAG 2.1 AA compliant)</li>
+<li>Responsive Always (mobile-first design)</li>
+<li>Performance Critical (optimize for large datasets)</li>
+<li>Clarity Over Complexity (clear data storytelling)</li>
+<li>Interactive Insight (enable user exploration)</li>
+</ul>
+<p><strong>Enforces</strong>:</p>
+<ul>
+<li>Chart.js bar/line/scatter/pie charts</li>
+<li>D3.js network/force/geo diagrams</li>
+<li>Interactive tooltips and legends</li>
+<li>Responsive chart design</li>
+<li>Screen reader compatibility</li>
+<li>Performance optimization (lazy loading, canvas vs SVG)</li>
+</ul>
+<p><strong>Chart Types</strong>:</p>
+<ul>
+<li>Election Forecasting (confidence intervals, seat predictions)</li>
+<li>Risk Heat Maps (multi-dimensional risk scoring)</li>
+<li>Network Diagrams (influence and power structures)</li>
+<li>Time Series (historical trends, 50+ years)</li>
+<li>Scatter Plots (correlation and clustering)</li>
+<li>Sankey Diagrams (coalition flows)</li>
+</ul>
+<p><strong>When to Use</strong>:</p>
+<ul>
+<li>Creating interactive dashboards</li>
+<li>Visualizing complex datasets</li>
+<li>Building political intelligence displays</li>
+<li>Network/influence mapping</li>
+<li>Time series analysis</li>
+</ul>
+<h3 id="40-cia-data-integration-✨-new-2026-02-06" class="tsd-anchor-link">40. cia-data-integration ✨ NEW - 2026-02-06<a href="#40-cia-data-integration-✨-new-2026-02-06" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Purpose</strong>: Expert knowledge in consuming CIA platform JSON exports, validation, caching strategies, and data pipeline integration</p>
+<p><strong>Key Principles</strong>:</p>
+<ul>
+<li>CIA is Source of Truth (never modify CIA's pre-computed data)</li>
+<li>Validate Before Cache (always validate against CIA-provided JSON schemas)</li>
+<li>Version Tracking (track all CIA data updates with timestamps)</li>
+<li>Graceful Degradation (fall back to cached data if CIA unavailable)</li>
+<li>Data Freshness (monitor and alert on stale data &gt; 24 hours)</li>
+<li>Audit Logging (log all data operations for traceability)</li>
+</ul>
+<p><strong>Enforces</strong>:</p>
+<ul>
+<li>Fetch 19 visualization products from CIA platform</li>
+<li>Handle rate limiting and connection failures</li>
+<li>Implement retry logic with exponential backoff</li>
+<li>Circuit breaker pattern for API failures</li>
+<li>JSON Schema validation using Ajv</li>
+<li>Versioned caching structure (current + archive)</li>
+<li>Data freshness monitoring</li>
+<li>Automatic fallback to cached data</li>
+</ul>
+<p><strong>Data Products (19 Total)</strong>:</p>
+<ul>
+<li>Overview Dashboard</li>
+<li>Party Performance</li>
+<li>Government Cabinet Scorecard</li>
+<li>Election Cycle Analysis</li>
+<li>Top 10 Rankings (10 products)</li>
+<li>Committee Network Analysis</li>
+<li>Politician Career Analysis</li>
+<li>Party Longitudinal Analysis</li>
+</ul>
+<p><strong>When to Use</strong>:</p>
+<ul>
+<li>Implementing CIA export fetch workflows</li>
+<li>Validating CIA JSON data</li>
+<li>Designing caching strategies</li>
+<li>Building data consumption pipelines</li>
+<li>Monitoring data freshness</li>
+<li>Handling API failures gracefully</li>
+</ul>
+<hr>
+<p><strong>Skills Total</strong>: 40 (34 original + 6 new)<br>
+<strong>Last Major Update</strong>: 2026-02-06<br>
+<strong>New Skills Added</strong>: data-pipeline-engineering, automated-content-generation, performance-optimization, api-integration, advanced-data-visualization, cia-data-integration</p>
+<h3 id="34-github-agentic-workflows-✨-new-2026-02-11" class="tsd-anchor-link">34. github-agentic-workflows ✨ <strong>NEW</strong> (2026-02-11)<a href="#34-github-agentic-workflows-✨-new-2026-02-11" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Purpose</strong>: Master GitHub Agentic Workflows - AI-powered repository automation hosted in GitHub Actions</p>
+<p><strong>Key Capabilities</strong>:</p>
+<ul>
+<li><strong>Agentic Automation</strong>: Create workflows that reason, decide, and adapt using natural language</li>
+<li><strong>Model Context Protocol (MCP)</strong>: Integrate tools via standardized protocol</li>
+<li><strong>Security Architecture</strong>: Defense-in-depth with safe outputs, threat detection, permission separation</li>
+<li><strong>Operational Patterns</strong>: ChatOps, DailyOps, DataOps, IssueOps, MemoryOps, MultiRepoOps, ProjectOps, and more</li>
+<li><strong>Orchestration</strong>: Coordinate multiple workflows with orchestrator/worker patterns</li>
+<li><strong>Memory Systems</strong>: Persistent state with cache-memory (7-day) and repo-memory (unlimited)</li>
+<li><strong>Safe Inputs/Outputs</strong>: Custom tools and pre-approved actions without write permissions</li>
+<li><strong>Cost Management</strong>: Monitor and optimize AI engine and GitHub Actions costs</li>
+</ul>
+<p><strong>Core Components</strong>:</p>
+<ul>
+<li>Workflow structure (frontmatter + markdown instructions)</li>
+<li>Triggers (issues, PRs, schedules, slash commands, labels)</li>
+<li>Tools (github, edit, view, bash, playwright, web, custom MCP)</li>
+<li>Safe outputs (create-issue, create-comment, create-pr, update-project, upload-asset)</li>
+<li>Security layers (prompt injection protection, threat detection, SARIF reporting)</li>
+</ul>
+<p><strong>Operational Patterns</strong> (13 types):</p>
+<ol>
+<li><strong>ChatOps</strong>: Slash command-based interactive automation (<code>/review</code>, <code>/deploy</code>)</li>
+<li><strong>DailyOps</strong>: Scheduled incremental improvements (technical debt reduction)</li>
+<li><strong>DataOps</strong>: Deterministic extraction + agentic analysis (reports, audits)</li>
+<li><strong>DispatchOps</strong>: Manual workflow execution with inputs</li>
+<li><strong>IssueOps</strong>: Automated issue triage and management</li>
+<li><strong>LabelOps</strong>: Label-based workflow triggers and routing</li>
+<li><strong>MemoryOps</strong>: Stateful workflows with persistent data between runs</li>
+<li><strong>MultiRepoOps</strong>: Cross-repository coordination and synchronization</li>
+<li><strong>ProjectOps</strong>: GitHub Projects v2 board automation</li>
+<li><strong>SideRepoOps</strong>: Separate automation repository pattern</li>
+<li><strong>SpecOps</strong>: W3C-style specification maintenance</li>
+<li><strong>TaskOps</strong>: Scaffolded improvement strategy (research → plan → implement)</li>
+<li><strong>TrialOps</strong>: Testing workflows in isolated trial repositories</li>
+</ol>
+<p><strong>Advanced Features</strong>:</p>
+<ul>
+<li>Memory persistence (cache-memory, repo-memory)</li>
+<li>Concurrency control and timeout settings</li>
+<li>Environment variables and imports</li>
+<li>GitHub Projects v2 integration</li>
+<li>Asset uploads to orphaned git branches</li>
+<li>Comment minimization (SPAM classification)</li>
+<li>SARIF code scanning alerts</li>
+<li>Tracker IDs for orchestration monitoring</li>
+</ul>
+<p><strong>CLI Commands</strong>:</p>
+<pre><code class="bash"><span class="hl-0">gh</span><span class="hl-1"> </span><span class="hl-2">extension</span><span class="hl-1"> </span><span class="hl-2">install</span><span class="hl-1"> </span><span class="hl-2">github/gh-aw</span><span class="hl-1">  </span><span class="hl-4"># Install extension</span><br/><span class="hl-0">gh</span><span class="hl-1"> </span><span class="hl-2">aw</span><span class="hl-1"> </span><span class="hl-2">compile</span><span class="hl-1">                      </span><span class="hl-4"># Compile .md to .lock.yml</span><br/><span class="hl-0">gh</span><span class="hl-1"> </span><span class="hl-2">aw</span><span class="hl-1"> </span><span class="hl-2">run</span><span class="hl-1"> </span><span class="hl-2">workflow-name</span><span class="hl-1">            </span><span class="hl-4"># Trigger run</span><br/><span class="hl-0">gh</span><span class="hl-1"> </span><span class="hl-2">aw</span><span class="hl-1"> </span><span class="hl-2">status</span><span class="hl-1">                       </span><span class="hl-4"># Check status</span><br/><span class="hl-0">gh</span><span class="hl-1"> </span><span class="hl-2">aw</span><span class="hl-1"> </span><span class="hl-2">logs</span><span class="hl-1"> </span><span class="hl-9">--costs</span><span class="hl-1">                 </span><span class="hl-4"># Monitor costs</span><br/><span class="hl-0">gh</span><span class="hl-1"> </span><span class="hl-2">aw</span><span class="hl-1"> </span><span class="hl-2">add-wizard</span><span class="hl-1"> </span><span class="hl-2">org/repo/workflow</span><span class="hl-1"> </span><span class="hl-4"># Add external workflow</span><br/><span class="hl-0">gh</span><span class="hl-1"> </span><span class="hl-2">aw</span><span class="hl-1"> </span><span class="hl-2">init</span><span class="hl-1">                         </span><span class="hl-4"># Initialize repository</span>
+</code><button type="button">Copy</button></pre>
+
+<p><strong>AI Engines</strong>:</p>
+<ul>
+<li>GitHub Copilot (default, requires PAT with copilot access)</li>
+<li>Claude by Anthropic (requires ANTHROPIC_API_KEY)</li>
+<li>Codex (requires OPENAI_API_KEY)</li>
+</ul>
+<p><strong>Security Best Practices</strong>:</p>
+<ul>
+<li>✅ Minimal permissions (read-only for AI job)</li>
+<li>✅ Safe outputs for write operations</li>
+<li>✅ Threat detection enabled</li>
+<li>✅ Network restrictions applied</li>
+<li>✅ Tool allowlists (explicit tool access)</li>
+<li>✅ Human approval for critical actions</li>
+<li>✅ Dry run testing before production</li>
+<li>✅ Regular cost and log monitoring</li>
+</ul>
+<p><strong>When to Use</strong>:</p>
+<ul>
+<li>Creating AI-powered repository automation</li>
+<li>Implementing Continuous AI patterns</li>
+<li>Building issue/PR triage bots</li>
+<li>Automating code quality improvements</li>
+<li>Setting up slash command workflows</li>
+<li>Cross-repository coordination</li>
+<li>Project board automation</li>
+<li>Security scanning workflows</li>
+<li>Documentation maintenance</li>
+<li>Daily incremental improvements</li>
+</ul>
+<p><strong>References</strong>:</p>
+<ul>
+<li>Official Docs: <a href="https://github.github.com/gh-aw/">https://github.github.com/gh-aw/</a></li>
+<li>Security Architecture: <a href="https://github.github.com/gh-aw/introduction/architecture/">https://github.github.com/gh-aw/introduction/architecture/</a></li>
+<li>Operational Patterns: <a href="https://github.github.com/gh-aw/patterns/">https://github.github.com/gh-aw/patterns/</a></li>
+<li>Reference Glossary: <a href="https://github.github.com/gh-aw/reference/glossary/">https://github.github.com/gh-aw/reference/glossary/</a></li>
+<li>Model Context Protocol: <a href="https://modelcontextprotocol.io/">https://modelcontextprotocol.io/</a></li>
+</ul>
+<p><strong>Version</strong>: 1.0.0<br>
+<strong>Last Updated</strong>: 2026-02-11<br>
+<strong>Coverage</strong>: 1670 lines, 34KB comprehensive documentation</p>
+<hr>
+<h2 id="new-skills-details-2026-02-11" class="tsd-anchor-link">New Skills Details (2026-02-11)<a href="#new-skills-details-2026-02-11" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<h3 id="38-ui-ux-design-✨-new" class="tsd-anchor-link">38. ui-ux-design ✨ NEW<a href="#38-ui-ux-design-✨-new" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Purpose</strong>: Comprehensive user experience and interface design for political transparency platforms</p>
+<p><strong>Key Capabilities</strong>:</p>
+<ul>
+<li>User research and persona development (journalists, researchers, citizens, policymakers)</li>
+<li>Information architecture and site structure optimization</li>
+<li>WCAG 2.1 AA accessibility compliance (mandatory)</li>
+<li>Mobile-first responsive design (320px-1920px+)</li>
+<li>Cyberpunk theme design system implementation</li>
+<li>Usability testing and A/B testing strategies</li>
+<li>Core Web Vitals optimization (LCP, FID, CLS)</li>
+<li>Multi-language UI considerations (14 languages, RTL support)</li>
+</ul>
+<p><strong>When to Use</strong>:</p>
+<ul>
+<li>Designing new features or pages</li>
+<li>UI/UX improvements and optimization</li>
+<li>Accessibility audits and remediation</li>
+<li>Usability testing and user research</li>
+<li>Design system updates</li>
+<li>Performance optimization</li>
+<li>Multi-language UI enhancements</li>
+</ul>
+<p><strong>Related Skills</strong>: responsive-design, design-system-management, html-accessibility, multi-language-localization</p>
+<h3 id="44-marketing-✨-new" class="tsd-anchor-link">44. marketing ✨ NEW<a href="#44-marketing-✨-new" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Purpose</strong>: Strategic marketing for promoting political transparency platforms and driving adoption</p>
+<p><strong>Key Capabilities</strong>:</p>
+<ul>
+<li>SEO optimization (technical, content, link building)</li>
+<li>Content marketing strategy and calendar</li>
+<li>Social media engagement (Twitter/X, LinkedIn, Mastodon)</li>
+<li>Analytics and measurement (Google Analytics, KPIs)</li>
+<li>Media relations and press kit development</li>
+<li>Growth strategies (short, medium, long-term)</li>
+<li>Brand guidelines and messaging framework</li>
+<li>Compliance and ethical marketing (GDPR, neutrality)</li>
+</ul>
+<p><strong>When to Use</strong>:</p>
+<ul>
+<li>SEO optimization across all language versions</li>
+<li>Content strategy and planning</li>
+<li>Social media campaigns</li>
+<li>Media outreach and partnerships</li>
+<li>Growth initiatives and user acquisition</li>
+<li>Brand development and positioning</li>
+<li>Analytics review and optimization</li>
+</ul>
+<p><strong>Target Audiences</strong>: Citizens, journalists, researchers, policymakers, international users</p>
+<h3 id="45-business-development-✨-new" class="tsd-anchor-link">45. business-development ✨ NEW<a href="#45-business-development-✨-new" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Purpose</strong>: Strategic growth, partnerships, and sustainable revenue models for open-source platforms</p>
+<p><strong>Key Capabilities</strong>:</p>
+<ul>
+<li>Stakeholder engagement and partnership strategies</li>
+<li>Revenue models (freemium, enterprise SaaS, grants, consulting)</li>
+<li>Community building (open-source and user communities)</li>
+<li>Target stakeholder analysis (journalists, academics, NGOs, corporate, citizens)</li>
+<li>Sales funnel and outreach strategies</li>
+<li>Business risk management</li>
+<li>Ethical boundaries and transparency commitments</li>
+</ul>
+<p><strong>When to Use</strong>:</p>
+<ul>
+<li>Partnership development and evaluation</li>
+<li>Revenue strategy and business model design</li>
+<li>Community engagement and growth</li>
+<li>Enterprise sales and consulting services</li>
+<li>Grant applications and funding strategies</li>
+<li>Stakeholder communication</li>
+<li>Business planning and sustainability</li>
+</ul>
+<p><strong>Revenue Streams</strong>: Enterprise licenses, research grants, consulting, partnerships, ethical sponsorships</p>
+<h3 id="46-language-expertise-✨-new" class="tsd-anchor-link">46. language-expertise ✨ NEW<a href="#46-language-expertise-✨-new" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Purpose</strong>: Comprehensive linguistic and cultural expertise for all 14 supported languages</p>
+<p><strong>Supported Languages</strong>:</p>
+<ul>
+<li><strong>Latin Script (LTR)</strong>: English (en), Swedish (sv), Danish (da), Norwegian (no), Finnish (fi), German (de), French (fr), Spanish (es), Dutch (nl)</li>
+<li><strong>RTL Languages</strong>: Arabic (ar), Hebrew (he)</li>
+<li><strong>Asian Scripts</strong>: Japanese (ja), Korean (ko), Chinese (zh)</li>
+</ul>
+<p><strong>Key Capabilities</strong>:</p>
+<ul>
+<li>Native-level translation quality and domain expertise</li>
+<li>Cultural appropriateness and political sensitivities</li>
+<li>Technical correctness (UTF-8, RTL, fonts, formatting)</li>
+<li>Language-specific style guidelines and terminology</li>
+<li>Translation workflow and quality assurance</li>
+<li>Accessibility (screen readers, font selection)</li>
+<li>SEO (hreflang tags, multilingual sitemaps)</li>
+<li>Cultural considerations (colors, symbols, formats)</li>
+</ul>
+<p><strong>When to Use</strong>:</p>
+<ul>
+<li>Creating or updating content in any of 14 languages</li>
+<li>Translation and localization tasks</li>
+<li>Cultural adaptation and sensitivity reviews</li>
+<li>RTL layout implementation (Arabic, Hebrew)</li>
+<li>Multi-language SEO optimization</li>
+<li>Font and typography selection</li>
+<li>Date/number/currency formatting</li>
+<li>Political terminology translation</li>
+</ul>
+<p><strong>Critical Features</strong>: RTL support for Arabic/Hebrew, CJK font support, cultural color symbolism, political neutrality across all languages</p>
+<hr>
+<h2 id="skill-usage-guidelines" class="tsd-anchor-link">Skill Usage Guidelines<a href="#skill-usage-guidelines" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<h3 id="when-to-apply-multiple-skills" class="tsd-anchor-link">When to Apply Multiple Skills<a href="#when-to-apply-multiple-skills" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p>Many tasks benefit from combining multiple skills:</p>
+<p><strong>Example 1: New Dashboard Feature</strong></p>
+<ul>
+<li><code>ui-ux-design</code> - User research, wireframes, usability testing</li>
+<li><code>responsive-design</code> - Mobile-first layout implementation</li>
+<li><code>html-accessibility</code> - WCAG 2.1 AA compliance</li>
+<li><code>advanced-data-visualization</code> - Chart.js/D3.js implementation</li>
+<li><code>language-expertise</code> - Multi-language labels, RTL support</li>
+<li><code>marketing</code> - SEO optimization, social sharing</li>
+</ul>
+<p><strong>Example 2: Content Creation</strong></p>
+<ul>
+<li><code>automated-content-generation</code> - Template-based article generation</li>
+<li><code>language-expertise</code> - Translation to all 14 languages</li>
+<li><code>editorial-standards</code> - Fact-checking, AP style compliance</li>
+<li><code>marketing</code> - SEO optimization, social media promotion</li>
+<li><code>html-accessibility</code> - Accessible article structure</li>
+</ul>
+<p><strong>Example 3: Business Growth Initiative</strong></p>
+<ul>
+<li><code>business-development</code> - Partnership strategy, revenue models</li>
+<li><code>marketing</code> - SEO, content marketing, social media</li>
+<li><code>ui-ux-design</code> - User research, conversion optimization</li>
+<li><code>data-science-for-intelligence</code> - Analytics and insights</li>
+<li><code>language-expertise</code> - International market expansion</li>
+</ul>
+<hr>
+<h2 id="skill-maintenance" class="tsd-anchor-link">Skill Maintenance<a href="#skill-maintenance" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<h3 id="adding-new-skills" class="tsd-anchor-link">Adding New Skills<a href="#adding-new-skills" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ol>
+<li>Create directory in <code>.github/skills/SKILL-NAME/</code></li>
+<li>Create <code>SKILL.md</code> with YAML frontmatter</li>
+<li>Include comprehensive guidance and examples</li>
+<li>Update this <code>SKILLS.md</code> catalog</li>
+<li>Update <code>README.md</code> if adding new category</li>
+</ol>
+<h3 id="updating-existing-skills" class="tsd-anchor-link">Updating Existing Skills<a href="#updating-existing-skills" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ol>
+<li>Maintain version history in skill file</li>
+<li>Update last modified date</li>
+<li>Cross-reference related skills</li>
+<li>Keep examples current with repository state</li>
+</ol>
+<h3 id="quality-standards" class="tsd-anchor-link">Quality Standards<a href="#quality-standards" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul>
+<li>✅ Clear purpose statement</li>
+<li>✅ Comprehensive capabilities list</li>
+<li>✅ Concrete examples and code snippets</li>
+<li>✅ &quot;When to Use&quot; guidance</li>
+<li>✅ Related skills cross-references</li>
+<li>✅ Compliance with Hack23 standards</li>
+</ul>
+<hr>
+<p><strong>Last Updated</strong>: 2026-04-22<br>
+<strong>Total Skills</strong>: 91<br>
+<strong>New Skills (2026-02-20 → 2026-04-22)</strong>: 18 skills added from Hack23 repos (security, development, governance, platform, design); +4 since 2026-02-20 (<code>business-model-canvas</code>, <code>mcp-gateway-configuration</code>, <code>mcp-gateway-security</code>, <code>seo-best-practices</code> per catalog reconciliation)<br>
+<strong>Maintained by</strong>: Hack23 AB</p>
+<hr>
+<h2 id="🌐-imf-as-primary-economic-data-canon-cross-skill-rule" class="tsd-anchor-link">🌐 IMF as Primary Economic-Data Canon (Cross-Skill Rule)<a href="#🌐-imf-as-primary-economic-data-canon-cross-skill-rule" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<blockquote>
+<p><strong>Effective:</strong> 2026-04-24 · <strong>Owner:</strong> CEO · <strong>Authority:</strong> <a href="../media/ECONOMIC_DATA_CONTRACT.md"><code>.github/aw/ECONOMIC_DATA_CONTRACT.md</code></a> v2.1</p>
+</blockquote>
+<p><strong>Every skill that touches economic-data analysis (electoral, risk, comparative-politics, OSINT, data-science, economic-policy, intelligence-analysis-techniques) MUST default to IMF as the primary economic-data source.</strong> World Bank citations are reserved for governance, environment and social residue. SCB is the Swedish-specific ground truth layer.</p>
+<h3 id="authoritative-imf-references-for-skills" class="tsd-anchor-link">Authoritative IMF references for skills<a href="#authoritative-imf-references-for-skills" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><a href="../media/README-5.md"><code>analysis/imf/README.md</code></a> · <a href="../media/agentic-integration.md"><code>analysis/imf/agentic-integration.md</code></a> · <a href="../media/indicators-inventory.json"><code>analysis/imf/indicators-inventory.json</code></a> · <a href="../media/data-dictionary.md"><code>analysis/imf/data-dictionary.md</code></a> · <a href="../media/ECONOMIC_DATA_CONTRACT.md"><code>.github/aw/ECONOMIC_DATA_CONTRACT.md</code></a></p>
+<h3 id="skills-affected-by-economic-data-dependency" class="tsd-anchor-link">Skills affected (by economic-data dependency)<a href="#skills-affected-by-economic-data-dependency" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>Skill</th>
+<th>IMF dataflows used</th>
+<th>WB residue used</th>
+<th>SCB use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>economic-policy-analysis</code></td>
+<td>WEO · FM · IFS · BOP · DOTS · GFS_COFOG</td>
+<td>None — full IMF</td>
+<td>SCB monthly KPI/AKU</td>
+</tr>
+<tr>
+<td><code>electoral-analysis</code></td>
+<td>WEO (growth, unemployment, inflation as electoral conditions)</td>
+<td>None</td>
+<td>SCB regional</td>
+</tr>
+<tr>
+<td><code>risk-assessment-frameworks</code></td>
+<td>WEO + FM (debt, deficit, projections)</td>
+<td>WGI governance</td>
+<td>SCB budget execution</td>
+</tr>
+<tr>
+<td><code>comparative-politics-reporting</code></td>
+<td>WEO + FM (cross-country Nordic peers)</td>
+<td>WGI for governance benchmarks</td>
+<td>—</td>
+</tr>
+<tr>
+<td><code>osint-methodologies</code></td>
+<td>IMF graded <strong>A1/A2</strong> (Admiralty); cite WEO/FM as primary economic sources</td>
+<td>WB graded A1 for governance</td>
+<td>SCB graded A1 for SE-specific</td>
+</tr>
+<tr>
+<td><code>data-science-for-intelligence</code></td>
+<td>IMF for cross-country panels; vintage-discipline as data-quality control</td>
+<td>WB for non-economic panels</td>
+<td>SCB for SE-specific</td>
+</tr>
+<tr>
+<td><code>intelligence-analysis-techniques</code></td>
+<td>IMF projections feed scenario analysis (T+5)</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td><code>legislative-monitoring</code></td>
+<td>IMF GFS_COFOG for committee-aligned spending (FöU/SoU/UbU/SfU)</td>
+<td>—</td>
+<td>SCB budget execution</td>
+</tr>
+<tr>
+<td><code>behavioral-analysis</code></td>
+<td>IMF macro context as backdrop for political behaviour</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td><code>business-model-canvas</code></td>
+<td>IMF for market/macro context</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td><code>gh-aw-mcp-configuration</code></td>
+<td>IMF is <strong>CLI-not-MCP</strong> (intentional) — <code>tsx scripts/imf-fetch.ts</code></td>
+<td><code>worldbank-mcp</code> for residue</td>
+<td><code>scb-mcp</code> for SE</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Canonical rule.</strong> Every economic claim in a Riksdagsmonitor article cites an IMF dataflow first; World Bank citations are reserved for governance, environment and social residue (the classes IMF does not publish). SCB is the Swedish-specific ground truth layer. See <code>ECONOMIC_DATA_CONTRACT.md</code> v2.1 for the banned-phrase list and vintage discipline (&gt;6 mo → annotation).</p>
+<hr>
+<h2 id="🔗-hack23-ecosystem" class="tsd-anchor-link">🔗 Hack23 Ecosystem<a href="#🔗-hack23-ecosystem" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<table>
+<tr>
+  <th width="33%">🌐 Platforms</th>
+  <th width="33%">📦 Open-Source Projects</th>
+  <th width="33%">🛡️ Governance &amp; Standards</th>
+</tr>
+<tr>
+<td valign="top">
+🗳️ <a href="https://riksdagsmonitor.com">Riksdagsmonitor</a> — Swedish Parliament intelligence<br>
+🇪🇺 <a href="https://www.euparliamentmonitor.com">EU Parliament Monitor</a> — European coverage<br>
+🕵️ <a href="https://www.hack23.com/cia">Citizen Intelligence Agency</a> — political-data engine<br>
+🌐 <a href="https://www.hack23.com">Hack23 AB</a> — corporate site<br>
+📰 <a href="https://hack23.com/blog.html">Hack23 Blog</a> — engineering &amp; policy<br>
+💼 <a href="https://www.linkedin.com/company/hack23/">Hack23 on LinkedIn</a>
+</td>
+<td valign="top">
+🗳️ <a href="https://github.com/Hack23/riksdagsmonitor">Hack23/riksdagsmonitor</a><br>
+🕵️ <a href="https://github.com/Hack23/cia">Hack23/cia</a><br>
+🇪🇺 <a href="https://github.com/Hack23/euparliamentmonitor">Hack23/euparliamentmonitor</a><br>
+🔌 <a href="https://github.com/Hack23/european-parliament-mcp">Hack23/european-parliament-mcp</a><br>
+✅ <a href="https://github.com/Hack23/cia-compliance-manager">Hack23/cia-compliance-manager</a><br>
+🥋 <a href="https://github.com/Hack23/black-trigram">Hack23/black-trigram</a><br>
+🏠 <a href="https://github.com/Hack23/homepage">Hack23/homepage</a>
+</td>
+<td valign="top">
+🛡️ <a href="https://github.com/Hack23/ISMS-PUBLIC">Hack23 ISMS-PUBLIC</a> — public ISMS<br>
+🔒 <a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Information_Security_Policy.md">Information Security Policy</a><br>
+🤖 <a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/AI_Policy.md">AI Policy</a><br>
+🧪 <a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md">Secure Development Policy</a><br>
+🎯 <a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Threat_Modeling.md">Threat Modeling Policy</a><br>
+⚠️ <a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Vulnerability_Management.md">Vulnerability Management</a><br>
+🏷️ <a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md">Classification Framework</a>
+</td>
+</tr>
+</table>
+<p align="center">
+<a href="https://www.bestpractices.dev/projects/12069"><img src="https://www.bestpractices.dev/projects/12069/badge" alt="OpenSSF Best Practices"/></a>
+<a href="https://scorecard.dev/viewer/?uri=github.com/Hack23/riksdagsmonitor"><img src="https://api.securityscorecards.dev/projects/github.com/Hack23/riksdagsmonitor/badge" alt="OpenSSF Scorecard"/></a>
+<a href="https://github.com/Hack23/ISMS-PUBLIC"><img src="https://img.shields.io/badge/ISO_27001-2022-blue?style=flat-square&logo=iso&logoColor=white" alt="ISO 27001:2022"/></a>
+<a href="https://github.com/Hack23/ISMS-PUBLIC"><img src="https://img.shields.io/badge/NIST_CSF-2.0-green?style=flat-square&logo=nist&logoColor=white" alt="NIST CSF 2.0"/></a>
+<a href="https://github.com/Hack23/ISMS-PUBLIC"><img src="https://img.shields.io/badge/CIS_Controls-v8.1-orange?style=flat-square&logo=cisecurity&logoColor=white" alt="CIS Controls v8.1"/></a>
+<a href="https://www.apache.org/licenses/LICENSE-2.0"><img src="https://img.shields.io/badge/License-Apache_2.0-blue?style=flat-square" alt="Apache 2.0"/></a>
+</p>
+<p align="center"><em>🗳️ Empower citizens · 🔍 Strengthen democratic accountability · 🕵️ Illuminate the political process</em></p>
+<p align="center"><sub>© 2008–2026 <a href="https://www.hack23.com">Hack23 AB</a> (Org.nr 559534-7807) · Maintainer: <a href="https://www.linkedin.com/in/jamessorling/">James Pether Sörling, CISSP CISM</a></sub></p></div></div><div class="col-sidebar"><div class="page-menu"><div class="tsd-navigation settings"><details class="tsd-accordion"><summary class="tsd-accordion-summary"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg><h3>Settings</h3></summary><div class="tsd-accordion-details"><div class="tsd-filter-visibility"><span class="settings-label">Member Visibility</span><ul id="tsd-filter-options"><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-protected" name="protected" checked/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Protected</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-private" name="private" checked/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Private</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-inherited" name="inherited" checked/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Inherited</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-alpha" name="alpha"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Alpha</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-beta" name="beta"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Beta</span></label></li></ul></div><div class="tsd-theme-toggle"><label class="settings-label" for="tsd-theme">Theme</label><select id="tsd-theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></div></div></details></div><details open class="tsd-accordion tsd-page-navigation"><summary class="tsd-accordion-summary"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg><h3>On This Page</h3></summary><div class="tsd-accordion-details"><a href="#overview"><span>Overview</span></a><a href="#what-are-skills"><span>What <wbr/>Are <wbr/>Skills?</span></a><a href="#available-skills-91-total-✨-updated-2026-04-22"><span>Available <wbr/>Skills (91 <wbr/>Total) ✨ <wbr/>UPDATED 2026-<wbr/>04-<wbr/>22</span></a><ul><li><a href="#core-infrastructure-9-skills-⬆️-expanded"><span>Core <wbr/>Infrastructure (9 skills) ⬆️ <wbr/>EXPANDED</span></a></li><li><a href="#political-intelligence-11-skills"><span>Political <wbr/>Intelligence (11 skills)</span></a></li><li><a href="#isms-security-12-skills-⬆️-expanded"><span>ISMS &amp; <wbr/>Security (12 skills) ⬆️ <wbr/>EXPANDED</span></a></li><li><a href="#development-operations-16-skills-⬆️-expanded"><span>Development &amp; <wbr/>Operations (16 skills) ⬆️ <wbr/>EXPANDED</span></a></li><li><a href="#uiux-design-7-skills-⬆️-expanded"><span>UI/<wbr/>UX &amp; <wbr/>Design (7 skills) ⬆️ <wbr/>EXPANDED</span></a></li><li><a href="#testing-quality-assurance-2-skills"><span>Testing &amp; <wbr/>Quality <wbr/>Assurance (2 skills)</span></a></li><li><a href="#data-integration-6-skills-⬆️-expanded"><span>Data <wbr/>Integration (6 skills) ⬆️ <wbr/>EXPANDED</span></a></li><li><a href="#business-marketing-3-skills"><span>Business &amp; <wbr/>Marketing (3 skills)</span></a></li><li><a href="#language-localization-1-skill"><span>Language &amp; <wbr/>Localization (1 skill)</span></a></li><li><a href="#github-agentic-workflows-12-skills"><span>Git<wbr/>Hub <wbr/>Agentic <wbr/>Workflows (12 skills)</span></a></li><li><a href="#journalism-media-4-skills"><span>Journalism &amp; <wbr/>Media (4 skills)</span></a></li><li><a href="#secure-development-3-skills"><span>Secure <wbr/>Development (3 skills)</span></a></li><li><a href="#government-regulatory-5-skills-⬆️-expanded"><span>Government &amp; <wbr/>Regulatory (5 skills) ⬆️ <wbr/>EXPANDED</span></a></li></ul><a href="#detailed-skill-descriptions"><span>Detailed <wbr/>Skill <wbr/>Descriptions</span></a><a href="#available-skills"><span>Available <wbr/>Skills</span></a><ul><li><a href="#1-hack23-isms-compliance"><span>1. hack23-<wbr/>isms-<wbr/>compliance</span></a></li><li><a href="#2-security-by-design"><span>2. security-<wbr/>by-<wbr/>design</span></a></li><li><a href="#3-static-site-security"><span>3. static-<wbr/>site-<wbr/>security</span></a></li><li><a href="#4-ci-cd-security"><span>4. ci-<wbr/>cd-<wbr/>security</span></a></li><li><a href="#5-documentation-standards"><span>5. documentation-<wbr/>standards</span></a></li><li><a href="#6-html-accessibility"><span>6. html-<wbr/>accessibility</span></a></li><li><a href="#7-multi-language-localization"><span>7. multi-<wbr/>language-<wbr/>localization</span></a></li><li><a href="#8-hack23-future-architecture-standards-✨-new-2026-02-11"><span>8. hack23-<wbr/>future-<wbr/>architecture-<wbr/>standards ✨ <wbr/>NEW (2026-<wbr/>02-<wbr/>11)</span></a></li><li><a href="#9-political-science-analysis"><span>9. political-<wbr/>science-<wbr/>analysis</span></a></li><li><a href="#10-osint-methodologies"><span>10. osint-<wbr/>methodologies</span></a></li><li><a href="#11-intelligence-analysis-techniques"><span>11. intelligence-<wbr/>analysis-<wbr/>techniques</span></a></li><li><a href="#12-swedish-political-system"><span>12. swedish-<wbr/>political-<wbr/>system</span></a></li><li><a href="#13-electoral-analysis"><span>13. electoral-<wbr/>analysis</span></a></li><li><a href="#14-behavioral-analysis"><span>14. behavioral-<wbr/>analysis</span></a></li><li><a href="#15-strategic-communication-analysis"><span>15. strategic-<wbr/>communication-<wbr/>analysis</span></a></li><li><a href="#16-legislative-monitoring"><span>16. legislative-<wbr/>monitoring</span></a></li><li><a href="#17-risk-assessment-frameworks"><span>17. risk-<wbr/>assessment-<wbr/>frameworks</span></a></li><li><a href="#18-data-science-for-intelligence"><span>18. data-<wbr/>science-<wbr/>for-<wbr/>intelligence</span></a></li><li><a href="#19-gdpr-compliance"><span>19. gdpr-<wbr/>compliance</span></a></li><li><a href="#20-cis-controls-✨-new"><span>20. cis-<wbr/>controls ✨ <wbr/>NEW</span></a></li><li><a href="#21-iso-27001-controls-✨-new"><span>21. iso-<wbr/>27001-<wbr/>controls ✨ <wbr/>NEW</span></a></li><li><a href="#22-nist-csf-mapping-✨-new"><span>22. nist-<wbr/>csf-<wbr/>mapping ✨ <wbr/>NEW</span></a></li><li><a href="#23-threat-modeling-✨-new"><span>23. threat-<wbr/>modeling ✨ <wbr/>NEW</span></a></li><li><a href="#24-secure-code-review-✨-new"><span>24. secure-<wbr/>code-<wbr/>review ✨ <wbr/>NEW</span></a></li><li><a href="#25-security-documentation-✨-new"><span>25. security-<wbr/>documentation ✨ <wbr/>NEW</span></a></li><li><a href="#26-c4-architecture-documentation-✨-new"><span>26. c4-<wbr/>architecture-<wbr/>documentation ✨ <wbr/>NEW</span></a></li><li><a href="#27-github-actions-workflows-✨-new"><span>27. github-<wbr/>actions-<wbr/>workflows ✨ <wbr/>NEW</span></a></li><li><a href="#28-code-quality-checks-✨-new"><span>28. code-<wbr/>quality-<wbr/>checks ✨ <wbr/>NEW</span></a></li><li><a href="#29-secrets-management-✨-new"><span>29. secrets-<wbr/>management ✨ <wbr/>NEW</span></a></li><li><a href="#29-responsive-design-✨-new"><span>29. responsive-<wbr/>design ✨ <wbr/>NEW</span></a></li><li><a href="#30-design-system-management-✨-new"><span>30. design-<wbr/>system-<wbr/>management ✨ <wbr/>NEW</span></a></li><li><a href="#31-political-data-visualization-✨-new"><span>31. political-<wbr/>data-<wbr/>visualization ✨ <wbr/>NEW</span></a></li><li><a href="#32-playwright-testing-✨-new"><span>32. playwright-<wbr/>testing ✨ <wbr/>NEW</span></a></li><li><a href="#33-issue-management-✨-new"><span>33. issue-<wbr/>management ✨ <wbr/>NEW</span></a></li><li><a href="#34-riksdag-regering-mcp-✨-new"><span>34. riksdag-<wbr/>regering-<wbr/>mcp ✨ <wbr/>NEW</span></a></li></ul><a href="#how-skills-feed-the-news-aggregator"><span>How <wbr/>Skills <wbr/>Feed the <wbr/>News <wbr/>Aggregator</span></a><a href="#how-skills-work"><span>How <wbr/>Skills <wbr/>Work</span></a><ul><li><a href="#automatic-loading"><span>Automatic <wbr/>Loading</span></a></li><li><a href="#skill-discovery"><span>Skill <wbr/>Discovery</span></a></li><li><a href="#skill-structure"><span>Skill <wbr/>Structure</span></a></li></ul><a href="#skill-hierarchy"><span>Skill <wbr/>Hierarchy</span></a><a href="#best-practices"><span>Best <wbr/>Practices</span></a><ul><li><a href="#for-users"><span>For <wbr/>Users</span></a></li><li><a href="#for-skill-authors"><span>For <wbr/>Skill <wbr/>Authors</span></a></li></ul><a href="#skill-development"><span>Skill <wbr/>Development</span></a><ul><li><a href="#creating-a-new-skill"><span>Creating a <wbr/>New <wbr/>Skill</span></a></li><li><a href="#skill-template"><span>Skill <wbr/>Template</span></a></li></ul><a href="#quality-standards-for-skills"><span>Quality <wbr/>Standards for <wbr/>Skills</span></a><a href="#integration-with-agents"><span>Integration with <wbr/>Agents</span></a><a href="#relationship-to-hack23-isms"><span>Relationship to <wbr/>Hack23 <wbr/>ISMS</span></a><a href="#compliance-framework-mapping"><span>Compliance <wbr/>Framework <wbr/>Mapping</span></a><a href="#troubleshooting"><span>Troubleshooting</span></a><ul><li><a href="#skill-not-being-applied"><span>Skill <wbr/>Not <wbr/>Being <wbr/>Applied</span></a></li><li><a href="#conflicting-skills"><span>Conflicting <wbr/>Skills</span></a></li><li><a href="#updating-skills"><span>Updating <wbr/>Skills</span></a></li></ul><a href="#related-documentation"><span>Related <wbr/>Documentation</span></a><ul><li><a href="#35-data-pipeline-engineering-✨-new-2026-02-06"><span>35. data-<wbr/>pipeline-<wbr/>engineering ✨ <wbr/>NEW -<wbr/> 2026-<wbr/>02-<wbr/>06</span></a></li><li><a href="#36-automated-content-generation-✨-new-2026-02-06"><span>36. automated-<wbr/>content-<wbr/>generation ✨ <wbr/>NEW -<wbr/> 2026-<wbr/>02-<wbr/>06</span></a></li><li><a href="#37-performance-optimization-✨-new-2026-02-06"><span>37. performance-<wbr/>optimization ✨ <wbr/>NEW -<wbr/> 2026-<wbr/>02-<wbr/>06</span></a></li><li><a href="#38-api-integration-✨-new-2026-02-06"><span>38. api-<wbr/>integration ✨ <wbr/>NEW -<wbr/> 2026-<wbr/>02-<wbr/>06</span></a></li><li><a href="#39-advanced-data-visualization-✨-new-2026-02-06"><span>39. advanced-<wbr/>data-<wbr/>visualization ✨ <wbr/>NEW -<wbr/> 2026-<wbr/>02-<wbr/>06</span></a></li><li><a href="#40-cia-data-integration-✨-new-2026-02-06"><span>40. cia-<wbr/>data-<wbr/>integration ✨ <wbr/>NEW -<wbr/> 2026-<wbr/>02-<wbr/>06</span></a></li><li><a href="#34-github-agentic-workflows-✨-new-2026-02-11"><span>34. github-<wbr/>agentic-<wbr/>workflows ✨ <wbr/>NEW (2026-<wbr/>02-<wbr/>11)</span></a></li></ul><a href="#new-skills-details-2026-02-11"><span>New <wbr/>Skills <wbr/>Details (2026-<wbr/>02-<wbr/>11)</span></a><ul><li><a href="#38-ui-ux-design-✨-new"><span>38. ui-<wbr/>ux-<wbr/>design ✨ <wbr/>NEW</span></a></li><li><a href="#44-marketing-✨-new"><span>44. marketing ✨ <wbr/>NEW</span></a></li><li><a href="#45-business-development-✨-new"><span>45. business-<wbr/>development ✨ <wbr/>NEW</span></a></li><li><a href="#46-language-expertise-✨-new"><span>46. language-<wbr/>expertise ✨ <wbr/>NEW</span></a></li></ul><a href="#skill-usage-guidelines"><span>Skill <wbr/>Usage <wbr/>Guidelines</span></a><ul><li><a href="#when-to-apply-multiple-skills"><span>When to <wbr/>Apply <wbr/>Multiple <wbr/>Skills</span></a></li></ul><a href="#skill-maintenance"><span>Skill <wbr/>Maintenance</span></a><ul><li><a href="#adding-new-skills"><span>Adding <wbr/>New <wbr/>Skills</span></a></li><li><a href="#updating-existing-skills"><span>Updating <wbr/>Existing <wbr/>Skills</span></a></li><li><a href="#quality-standards"><span>Quality <wbr/>Standards</span></a></li></ul><a href="#🌐-imf-as-primary-economic-data-canon-cross-skill-rule"><span>🌐 <wbr/>IMF as <wbr/>Primary <wbr/>Economic-<wbr/>Data <wbr/>Canon (<wbr/>Cross-<wbr/>Skill <wbr/>Rule)</span></a><ul><li><a href="#authoritative-imf-references-for-skills"><span>Authoritative <wbr/>IMF references for skills</span></a></li><li><a href="#skills-affected-by-economic-data-dependency"><span>Skills affected (by economic-<wbr/>data dependency)</span></a></li></ul><a href="#🔗-hack23-ecosystem"><span>🔗 <wbr/>Hack23 <wbr/>Ecosystem</span></a></div></details></div><div class="site-menu"><nav id="tsd-sidebar-links" class="tsd-navigation"><a href="https://riksdagsmonitor.com">── Live Platform ──</a><a href="https://riksdagsmonitor.com">🌐 Riksdagsmonitor.com</a><a href="https://riksdagsmonitor.com/political-intelligence.html">🕵️ Political Intelligence Index</a><a href="https://riksdagsmonitor.com/sitemap.html">🗺️ Sitemap (Human + XML)</a><a href="https://riksdagsmonitor.com/news/">📰 News &amp; Articles</a><a href="https://www.npmjs.com/package/riksdagsmonitor">📦 npm Package</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/ARCHITECTURE.md">── Current Architecture ──</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/ARCHITECTURE.md">🏛️ Architecture</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/SECURITY_ARCHITECTURE.md">🔒 Security Architecture</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/THREAT_MODEL.md">🛡️ Threat Model</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/DATA_MODEL.md">📊 Data Model</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FLOWCHART.md">🔄 Flowchart</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/STATEDIAGRAM.md">📈 State Diagram</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/MINDMAP.md">🧠 Mindmap</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/SWOT.md">💼 SWOT Analysis</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_ARCHITECTURE.md">── Future Architecture ──</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_ARCHITECTURE.md">🚀 Future Architecture</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_SECURITY_ARCHITECTURE.md">🔮 Future Security</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_THREAT_MODEL.md">🎯 Future Threat Model</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_DATA_MODEL.md">📊 Future Data Model</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_FLOWCHART.md">🔄 Future Flowchart</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_STATEDIAGRAM.md">📈 Future State Diagram</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_MINDMAP.md">🧠 Future Mindmap</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_SWOT.md">💼 Future SWOT</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_WORKFLOWS.md">🔄 Future Workflows</a><a href="#">── Security &amp; Compliance ──</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/SECURITY.md">🔐 Security Policy</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/CRA-ASSESSMENT.md">📋 CRA Assessment</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/BCPPlan.md">🏢 BCP Plan</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FinancialSecurityPlan.md">💰 Financial Security</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/End-of-Life-Strategy.md">📅 End-of-Life Strategy</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/README.md">── Project Docs ──</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/TESTING.md">🧪 Testing</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/WORKFLOWS.md">🔄 Workflows</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/RELEASE_PROCESS.md">📦 Release Process</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/CONTRIBUTING.md">🤝 Contributing</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/CODE_OF_CONDUCT.md">📜 Code of Conduct</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/AGENTS.md">🤖 Copilot Agents</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/SKILLS.md">🛠 Copilot Skills</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/LABELS.md">🏷 Labels</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/TRANSLATION_GUIDE.md">🌐 Translation Guide</a><a href="https://github.com/Hack23/ISMS-PUBLIC">── Hack23 ISMS Policies ──</a><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md">📋 Secure Dev Policy</a><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Information_Security_Policy.md">🔐 Information Security</a><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Threat_Modeling.md">🎯 Threat Modeling</a><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Open_Source_Policy.md">🌐 Open Source Policy</a><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Risk_Assessment_Methodology.md">📊 Risk Assessment</a><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/AI_Policy.md">🤖 AI Policy</a><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Change_Management_Policy.md">🔧 Change Management</a><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Incident_Response_Plan.md">🛡️ Incident Response</a><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Asset_Management_Policy.md">📦 Asset Management</a><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Access_Control_Policy.md">🔑 Access Control</a><a href="https://riksdagsmonitor.com/docs/api/">── Hack23 API Docs ──</a><a href="https://riksdagsmonitor.com/docs/api/">📚 Riksdagsmonitor API</a><a href="https://euparliamentmonitor.com/docs/api/">🇪🇺 EU Parliament MCP API</a><a href="https://ciacompliancemanager.com/api/">🔍 CIA Compliance Mgr API</a><a href="https://blacktrigram.com/api/">⚔️ Black Trigram API</a><a href="https://riksdagsmonitor.com" class="tsd-nav-link">🏠 Home</a><a href="https://riksdagsmonitor.com/political-intelligence.html" class="tsd-nav-link">🕵️ Political Intelligence</a><a href="https://riksdagsmonitor.com/sitemap.html" class="tsd-nav-link">🗺️ Sitemap</a><a href="https://www.npmjs.com/package/riksdagsmonitor" class="tsd-nav-link">📦 npm Package</a><a href="https://github.com/Hack23/riksdagsmonitor" class="tsd-nav-link">📦 GitHub</a><a href="https://github.com/Hack23/ISMS-PUBLIC" class="tsd-nav-link">🛡️ ISMS</a><a href="https://github.com/Hack23/cia" class="tsd-nav-link">🏛️ CIA Platform</a></nav><nav class="tsd-navigation"><a href="../modules.html">Riksdagsmonitor Intelligence Platform — API Documentation - v1.0.28</a><ul class="tsd-small-nested-navigation" id="tsd-nav-container"><li>Loading...</li></ul></nav></div></div></div><footer><p class="tsd-generator">Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></footer><div class="overlay"></div></body></html>

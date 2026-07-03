@@ -1,0 +1,1331 @@
+<!DOCTYPE html><html class="default" lang="en" data-base="../"><head><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>FUTURE_DATA_MODEL | Riksdagsmonitor Intelligence Platform — API Documentation - v1.0.28</title><meta name="description" content="Documentation for Riksdagsmonitor Intelligence Platform — API Documentation"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="../assets/style.css"/><link rel="stylesheet" href="../assets/highlight.css"/><script defer src="../assets/main.js"></script><script async src="../assets/icons.js" id="tsd-icons-script"></script><script async src="../assets/search.js" id="tsd-search-script"></script><script async src="../assets/navigation.js" id="tsd-nav-script"></script><script async src="../assets/hierarchy.js" id="tsd-hierarchy-script"></script></head><body><script>document.documentElement.dataset.theme = localStorage.getItem("tsd-theme") || "os";document.body.style.display="none";setTimeout(() => window.app?app.showPage():document.body.style.removeProperty("display"),500)</script><header class="tsd-page-toolbar"><div class="tsd-toolbar-contents container"><a href="../index.html" class="title">Riksdagsmonitor Intelligence Platform — API Documentation - v1.0.28</a><div id="tsd-toolbar-links"><a href="https://riksdagsmonitor.com">🏠 Home</a><a href="https://riksdagsmonitor.com/political-intelligence.html">🕵️ Political Intelligence</a><a href="https://riksdagsmonitor.com/sitemap.html">🗺️ Sitemap</a><a href="https://www.npmjs.com/package/riksdagsmonitor">📦 npm Package</a><a href="https://github.com/Hack23/riksdagsmonitor">📦 GitHub</a><a href="https://github.com/Hack23/ISMS-PUBLIC">🛡️ ISMS</a><a href="https://github.com/Hack23/cia">🏛️ CIA Platform</a></div><button id="tsd-search-trigger" class="tsd-widget" aria-label="Search"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-search"></use></svg></button><dialog id="tsd-search" aria-label="Search"><input role="combobox" id="tsd-search-input" aria-controls="tsd-search-results" aria-autocomplete="list" aria-expanded="true" autocapitalize="off" autocomplete="off" placeholder="Search the docs" maxLength="100"/><ul role="listbox" id="tsd-search-results"></ul><div id="tsd-search-status" aria-live="polite" aria-atomic="true"><div>Preparing search index...</div></div></dialog><a href="#" class="tsd-widget menu" id="tsd-toolbar-menu-trigger" data-toggle="menu" aria-label="Menu"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-menu"></use></svg></a></div></header><div class="container container-main"><div class="col-content"><div class="tsd-page-title"><ul class="tsd-breadcrumb" aria-label="Breadcrumb"><li><a href="" aria-current="page">FUTURE_DATA_MODEL</a></li></ul></div><div class="tsd-panel tsd-typography"><p align="center">
+  <img src="https://hack23.com/icon-192.png" alt="Hack23 Logo" width="192" height="192">
+</p>
+<h1 align="center">📊 Riksdagsmonitor — Future Data Architecture Model</h1>
+<p align="center">
+  <strong>🔮 Three-Horizon Evolution: Static JSON/CSV → Richer Static Pre-Compute → AWS Serverless Intelligence</strong><br>
+  <em>🎯 Neptune Graph · Aurora Serverless v2 · OpenSearch Vector · Bedrock Knowledge Bases · API Gateway · Cognito</em>
+</p>
+<p align="center">
+  <img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/>
+  <img src="https://img.shields.io/badge/Version-3.0-555?style=for-the-badge" alt="Version"/>
+  <img src="https://img.shields.io/badge/Effective-2026--05--31-success?style=for-the-badge" alt="Effective Date"/>
+  <img src="https://img.shields.io/badge/Review-Annual-orange?style=for-the-badge" alt="Review Cycle"/>
+</p>
+<p align="center">
+  <img src="https://img.shields.io/badge/Horizon-2026--2037-blueviolet?style=flat-square" alt="Horizon"/>
+  <img src="https://img.shields.io/badge/GDPR_Art._9-9(2)(e)_·_9(2)(g)-darkblue?style=flat-square" alt="GDPR Article 9"/>
+  <img src="https://img.shields.io/badge/Public_Data_Only-Neutral-success?style=flat-square" alt="Public Data Only"/>
+</p>
+<h3 align="center">🏆 Evidence & Compliance Badges</h3>
+<p align="center">
+  <a href="https://api.securityscorecards.dev/projects/github.com/Hack23/riksdagsmonitor"><img src="https://api.securityscorecards.dev/projects/github.com/Hack23/riksdagsmonitor/badge" alt="OpenSSF Scorecard"/></a>
+  <a href="https://slsa.dev"><img src="https://slsa.dev/images/gh-badge-level3.svg" alt="SLSA 3"/></a>
+  <a href="https://sonarcloud.io/dashboard?id=Hack23_riksdagsmonitor"><img src="https://sonarcloud.io/api/project_badges/measure?project=Hack23_riksdagsmonitor&metric=alert_status" alt="Quality Gate"/></a>
+  <a href="https://app.fossa.com/projects/git%2Bgithub.com%2FHack23%2Friksdagsmonitor"><img src="https://app.fossa.com/api/projects/git%2Bgithub.com%2FHack23%2Friksdagsmonitor.svg?type=shield" alt="FOSSA"/></a>
+</p>
+<p><strong>📋 Document Owner:</strong> CEO | <strong>📄 Version:</strong> 3.0 | <strong>📅 Last Updated:</strong> 2026-05-31 (UTC)<br>
+<strong>🔄 Review Cycle:</strong> Annual | <strong>⏰ Next Review:</strong> 2027-05-31<br>
+<strong>🏢 Owner:</strong> Hack23 AB (<a href="http://Org.nr">Org.nr</a> 5595347807) | <strong>🏷️ Classification:</strong> Public</p>
+<hr>
+<h2 id="📚-architecture-documentation-map" class="tsd-anchor-link">📚 Architecture Documentation Map<a href="#📚-architecture-documentation-map" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<table>
+<thead>
+<tr>
+<th>Document</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="ARCHITECTURE.html">Architecture</a></td>
+<td>🏛️ Current</td>
+<td>C4 model showing system structure</td>
+</tr>
+<tr>
+<td><a href="DATA_MODEL.html">Data Model</a></td>
+<td>📊 Current</td>
+<td>Data entities and relationships</td>
+</tr>
+<tr>
+<td><a href="FLOWCHART.html">Flowcharts</a></td>
+<td>🔄 Current</td>
+<td>Process flows and pipelines</td>
+</tr>
+<tr>
+<td><a href="STATEDIAGRAM.html">State Diagrams</a></td>
+<td>🔄 Current</td>
+<td>System state transitions</td>
+</tr>
+<tr>
+<td><a href="MINDMAP.html">Mindmap</a></td>
+<td>🗺️ Current</td>
+<td>System conceptual map</td>
+</tr>
+<tr>
+<td><a href="SWOT.html">SWOT</a></td>
+<td>💼 Current</td>
+<td>Strategic analysis</td>
+</tr>
+<tr>
+<td><a href="FUTURE_ARCHITECTURE.html">Future Architecture</a></td>
+<td>🏗️ Future</td>
+<td>System evolution roadmap</td>
+</tr>
+<tr>
+<td><strong><a href="">Future Data Model</a></strong></td>
+<td>📊 <strong>Future</strong></td>
+<td><strong>Enhanced data architecture (this doc)</strong></td>
+</tr>
+<tr>
+<td><a href="FUTURE_FLOWCHART.html">Future Flowcharts</a></td>
+<td>🔄 Future</td>
+<td>Advanced process flows</td>
+</tr>
+<tr>
+<td><a href="FUTURE_STATEDIAGRAM.html">Future State Diagrams</a></td>
+<td>🔄 Future</td>
+<td>Advanced state management</td>
+</tr>
+<tr>
+<td><a href="FUTURE_MINDMAP.html">Future Mindmap</a></td>
+<td>🗺️ Future</td>
+<td>Future capability map</td>
+</tr>
+<tr>
+<td><a href="FUTURE_SWOT.html">Future SWOT</a></td>
+<td>💼 Future</td>
+<td>Strategic outlook</td>
+</tr>
+<tr>
+<td><a href="SECURITY_ARCHITECTURE.html">Security Architecture</a></td>
+<td>🛡️ Security</td>
+<td>Defense-in-depth controls</td>
+</tr>
+<tr>
+<td><a href="FUTURE_SECURITY_ARCHITECTURE.html">Future Security Architecture</a></td>
+<td>🛡️ Future</td>
+<td>Security roadmap</td>
+</tr>
+<tr>
+<td><a href="THREAT_MODEL.html">Threat Model</a></td>
+<td>🎯 Security</td>
+<td>STRIDE analysis</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="🎯-executive-summary" class="tsd-anchor-link">🎯 Executive Summary<a href="#🎯-executive-summary" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<p>Riksdagsmonitor today is a <strong>static, evidence-first political intelligence platform</strong>: pre-computed JSON/CSV products derived from Swedish parliamentary open data, served as static HTML/CSS in <strong>14 languages</strong> with no client-side framework. The current data model (<a href="DATA_MODEL.html">DATA_MODEL.md</a> v1.3) already encodes <strong>2,494 politicians</strong> (349 active MPs), <strong>3,529,786 voting records</strong>, <strong>109,259 documents</strong>, <strong>8 active parties</strong> (+ 32 historical = 40 total), <strong>15 committees</strong>, <strong>20 governments</strong>, and <strong>15 CIA analytical subsystems</strong> that compile into <strong>19 user-facing intelligence products</strong>.</p>
+<p>This Future Data Model defines <strong>three explicit horizons</strong> that preserve the platform's static-first, public-data-only, neutral mission while progressively deepening analytical richness:</p>
+<table>
+<thead>
+<tr>
+<th>Horizon</th>
+<th>Window</th>
+<th>Data Architecture</th>
+<th>Mission Continuity</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Horizon 1 — Baseline</strong></td>
+<td>v1.x (now)</td>
+<td>Static pre-computed JSON/CSV; CIA subsystems; npm typed surface; IMF/SCB/World Bank caches</td>
+<td>Evidence-first, neutral, public-source-only</td>
+</tr>
+<tr>
+<td><strong>Horizon 2 — Richer Static</strong></td>
+<td>v2.0 (2026–2027)</td>
+<td><strong>Still 100% static</strong>: build-time party-cohesion matrices, coalition/bloc graphs, party-vs-party datasets, OSINT structures (network edges, temporal series, anomaly scores, source-graded INTOP metadata)</td>
+<td>Same hosting, deeper pre-computation</td>
+</tr>
+<tr>
+<td><strong>Horizon 3 — Serverless</strong></td>
+<td>v3.0+ (2028–2037)</td>
+<td>AWS serverless data tier (Neptune Serverless, Aurora Serverless v2, DynamoDB, OpenSearch Serverless, Timestream, Bedrock Knowledge Bases) exposed via <strong>API Gateway (GraphQL/REST) + Amazon Cognito</strong></td>
+<td>Interactive queries layered atop the same primary-source ground truth</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>All future metrics in this document are TARGETS, not achieved measurements.</strong> Horizons 2 and 3 are forward-looking design intent. The platform processes <strong>only public data</strong>, treats political opinions as <strong>GDPR Article 9 special-category data</strong> (lawful bases 9(2)(e) manifestly made public; 9(2)(g) substantial public interest), maintains <strong>strict party neutrality</strong>, and contains <strong>no surveillance capability</strong> of private individuals.</p>
+</blockquote>
+<pre><code class="mermaid"><span class="hl-1">graph LR</span><br/><span class="hl-1">    subgraph H1[&quot;Horizon 1 — v1.x Baseline (now)&quot;]</span><br/><span class="hl-1">        A1[&quot;Static JSON/CSV&lt;br/&gt;CIA subsystems&quot;]</span><br/><span class="hl-1">        A2[&quot;npm typed surface&lt;br/&gt;riksdagsmonitor&quot;]</span><br/><span class="hl-1">        A3[&quot;IMF / SCB / World Bank caches&quot;]</span><br/><span class="hl-1">    end</span><br/><span class="hl-1">    subgraph H2[&quot;Horizon 2 — v2.0 Richer Static (2026-2027)&quot;]</span><br/><span class="hl-1">        B1[&quot;Party cohesion matrices&lt;br/&gt;Coalition / bloc graphs&quot;]</span><br/><span class="hl-1">        B2[&quot;OSINT structures&lt;br/&gt;edges · series · anomaly · INTOP&quot;]</span><br/><span class="hl-1">    end</span><br/><span class="hl-1">    subgraph H3[&quot;Horizon 3 — v3.0+ Serverless (2028-2037)&quot;]</span><br/><span class="hl-1">        C1[&quot;Neptune · Aurora v2 · DynamoDB&quot;]</span><br/><span class="hl-1">        C2[&quot;OpenSearch · Timestream · Bedrock KB&quot;]</span><br/><span class="hl-1">        C3[&quot;API Gateway + Cognito&quot;]</span><br/><span class="hl-1">    end</span><br/><span class="hl-1">    H1 --&gt; H2 --&gt; H3</span><br/><span class="hl-1">    style A1 fill:#bbdefb,stroke:#1565c0,color:#000000</span><br/><span class="hl-1">    style A2 fill:#bbdefb,stroke:#1565c0,color:#000000</span><br/><span class="hl-1">    style A3 fill:#bbdefb,stroke:#1565c0,color:#000000</span><br/><span class="hl-1">    style B1 fill:#c8e6c9,stroke:#2e7d32,color:#000000</span><br/><span class="hl-1">    style B2 fill:#c8e6c9,stroke:#2e7d32,color:#000000</span><br/><span class="hl-1">    style C1 fill:#e1bee7,stroke:#6a1b9a,color:#000000</span><br/><span class="hl-1">    style C2 fill:#e1bee7,stroke:#6a1b9a,color:#000000</span><br/><span class="hl-1">    style C3 fill:#e1bee7,stroke:#6a1b9a,color:#000000</span>
+</code><button type="button">Copy</button></pre>
+
+<hr>
+<h2 id="📋-table-of-contents" class="tsd-anchor-link">📋 Table of Contents<a href="#📋-table-of-contents" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<ol>
+<li><a href="#1-three-horizon-data-evolution-overview">Three-Horizon Data Evolution Overview</a></li>
+<li><a href="#2-horizon-1--v1x-baseline-data-model">Horizon 1 — v1.x Baseline Data Model</a></li>
+<li><a href="#3-horizon-2--v20-static-intelligence-data-models-20262027">Horizon 2 — v2.0 Static Intelligence Data Models (2026–2027)</a></li>
+<li><a href="#4-horizon-3--v30-aws-serverless-data-tier-20282037">Horizon 3 — v3.0+ AWS Serverless Data Tier (2028–2037)</a></li>
+<li><a href="#5-source-ingestion--integration">Source Ingestion &amp; Integration</a></li>
+<li><a href="#6-graphql-api-schema">GraphQL API Schema</a></li>
+<li><a href="#7-data-model-diagrams">Data Model Diagrams</a></li>
+<li><a href="#8-implementation-roadmap">Implementation Roadmap</a></li>
+<li><a href="#9-technology-stack-evolution--cost-projections">Technology Stack Evolution &amp; Cost Projections</a></li>
+<li><a href="#10-isms-compliance--data-governance">ISMS Compliance &amp; Data Governance</a></li>
+<li><a href="#11-imf-data-domain--filesystem-cache--aurora-schema">IMF Data Domain — Filesystem Cache → Aurora Schema</a></li>
+<li><a href="#12-aillm-data-architecture-evolution-20262037">AI/LLM Data Architecture Evolution (2026–2037)</a></li>
+<li><a href="#13-related-documentation">Related Documentation</a></li>
+</ol>
+<hr>
+<h2 id="1-three-horizon-data-evolution-overview" class="tsd-anchor-link">1. Three-Horizon Data Evolution Overview<a href="#1-three-horizon-data-evolution-overview" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<p>The platform evolves along <strong>three horizons</strong> without ever abandoning its static-first, evidence-first foundation. Each horizon is additive: the serverless tier (Horizon 3) is layered <em>on top of</em> — never <em>instead of</em> — the static pre-computed ground truth that Horizons 1 and 2 establish.</p>
+<h3 id="11-horizon-comparison" class="tsd-anchor-link">1.1 Horizon Comparison<a href="#11-horizon-comparison" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>H1 — Baseline (v1.x)</th>
+<th>H2 — Richer Static (v2.0, 2026–2027)</th>
+<th>H3 — Serverless (v3.0+, 2028–2037)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Data form</strong></td>
+<td>Pre-computed JSON/CSV</td>
+<td>Pre-computed JSON (party matrices, graphs, OSINT)</td>
+<td>Live queryable stores + static fallback</td>
+</tr>
+<tr>
+<td><strong>Compute</strong></td>
+<td>GitHub Actions build-time</td>
+<td>GitHub Actions build-time (heavier)</td>
+<td>AWS Lambda + Step Functions on demand</td>
+</tr>
+<tr>
+<td><strong>Storage</strong></td>
+<td>S3 + CloudFront, GitHub Pages DR</td>
+<td>Same</td>
+<td>Neptune, Aurora v2, DynamoDB, OpenSearch, Timestream</td>
+</tr>
+<tr>
+<td><strong>Access</strong></td>
+<td>Static HTTP fetch</td>
+<td>Static HTTP fetch</td>
+<td><strong>API Gateway (GraphQL/REST) + Cognito</strong></td>
+</tr>
+<tr>
+<td><strong>Query model</strong></td>
+<td>File-addressed</td>
+<td>File-addressed</td>
+<td>Graph traversal, SQL, vector, time-series</td>
+</tr>
+<tr>
+<td><strong>AI</strong></td>
+<td>Newsroom (Opus 4.x) authoring</td>
+<td>+ RAG-ready embeddings (build-time)</td>
+<td>Bedrock Knowledge Bases RAG</td>
+</tr>
+<tr>
+<td><strong>Cost</strong></td>
+<td>~CDN + Actions minutes</td>
+<td>Marginally higher build cost</td>
+<td>Pay-per-use serverless (target $X/mo)</td>
+</tr>
+<tr>
+<td><strong>Neutrality / GDPR</strong></td>
+<td>Art. 9 public-data only</td>
+<td>Same</td>
+<td>Same, with Cognito audit trail</td>
+</tr>
+</tbody>
+</table>
+<h3 id="12-data-volume-projections-targets" class="tsd-anchor-link">1.2 Data Volume Projections (Targets)<a href="#12-data-volume-projections-targets" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>H1 (now)</th>
+<th>H2 target (2027)</th>
+<th>H3 target (2030)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Politicians (all-time)</td>
+<td>2,494</td>
+<td>2,494+</td>
+<td>3,000+</td>
+</tr>
+<tr>
+<td>Active MPs tracked</td>
+<td>349</td>
+<td>349</td>
+<td>349</td>
+</tr>
+<tr>
+<td>Voting records</td>
+<td>3,529,786</td>
+<td>~3.7M</td>
+<td>~4.5M</td>
+</tr>
+<tr>
+<td>Documents indexed</td>
+<td>109,259</td>
+<td>~130,000</td>
+<td>~200,000</td>
+</tr>
+<tr>
+<td>Chamber speeches (anföranden)</td>
+<td>indexed</td>
+<td>+ entity-linked</td>
+<td>+ vector-embedded</td>
+</tr>
+<tr>
+<td>Pre-computed party datasets</td>
+<td>CIA subsystems</td>
+<td>+ cohesion/coalition/bloc</td>
+<td>served via API</td>
+</tr>
+<tr>
+<td>News corpus (HTML)</td>
+<td>~3,953</td>
+<td>~6,000</td>
+<td>~10,000</td>
+</tr>
+<tr>
+<td>Languages</td>
+<td>14</td>
+<td>14</td>
+<td>14</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Projections are planning targets to size infrastructure, <strong>not commitments or forecasts of political outcomes</strong>.</p>
+</blockquote>
+<hr>
+<h2 id="2-horizon-1-v1x-baseline-data-model" class="tsd-anchor-link">2. Horizon 1 — v1.x Baseline Data Model<a href="#2-horizon-1-v1x-baseline-data-model" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<p>Horizon 1 is the <strong>live, shipping</strong> data model defined authoritatively in <a href="DATA_MODEL.html">DATA_MODEL.md</a> v1.3 (2026-05-06). This section summarizes it as the anchor that Horizons 2 and 3 extend.</p>
+<h3 id="21-core-entities" class="tsd-anchor-link">2.1 Core Entities<a href="#21-core-entities" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<pre><code class="mermaid"><span class="hl-1">erDiagram</span><br/><span class="hl-1">    POLITICIAN ||--o{ ASSIGNMENT : holds</span><br/><span class="hl-1">    POLITICIAN ||--o{ VOTE : casts</span><br/><span class="hl-1">    POLITICIAN ||--o{ SPEECH : delivers</span><br/><span class="hl-1">    PARTY ||--o{ POLITICIAN : includes</span><br/><span class="hl-1">    PARTY ||--o{ VOTE : aggregates</span><br/><span class="hl-1">    COMMITTEE ||--o{ ASSIGNMENT : staffs</span><br/><span class="hl-1">    COMMITTEE ||--o{ DOCUMENT : produces</span><br/><span class="hl-1">    DOCUMENT ||--o{ VOTE : triggers</span><br/><span class="hl-1">    MINISTRY ||--o{ ROLE : defines</span><br/><span class="hl-1">    GOVERNMENT ||--o{ MINISTRY : organizes</span><br/><span class="hl-1">    GOVERNMENT ||--o{ ROLE : appoints</span><br/><br/><span class="hl-1">    POLITICIAN {</span><br/><span class="hl-1">        string intressent_id PK</span><br/><span class="hl-1">        string namn</span><br/><span class="hl-1">        string parti FK</span><br/><span class="hl-1">        string valkrets</span><br/><span class="hl-1">        string status</span><br/><span class="hl-1">        date fodd</span><br/><span class="hl-1">    }</span><br/><span class="hl-1">    PARTY {</span><br/><span class="hl-1">        string kod PK</span><br/><span class="hl-1">        string namn</span><br/><span class="hl-1">        boolean active</span><br/><span class="hl-1">        int seats</span><br/><span class="hl-1">    }</span><br/><span class="hl-1">    COMMITTEE {</span><br/><span class="hl-1">        string kod PK</span><br/><span class="hl-1">        string namn</span><br/><span class="hl-1">        string organ</span><br/><span class="hl-1">    }</span><br/><span class="hl-1">    DOCUMENT {</span><br/><span class="hl-1">        string dok_id PK</span><br/><span class="hl-1">        string doktyp</span><br/><span class="hl-1">        string titel</span><br/><span class="hl-1">        string rm</span><br/><span class="hl-1">        date publicerad</span><br/><span class="hl-1">    }</span><br/><span class="hl-1">    VOTE {</span><br/><span class="hl-1">        string votering_id PK</span><br/><span class="hl-1">        string dok_id FK</span><br/><span class="hl-1">        string intressent_id FK</span><br/><span class="hl-1">        string rost</span><br/><span class="hl-1">        string punkt</span><br/><span class="hl-1">    }</span><br/><span class="hl-1">    MINISTRY {</span><br/><span class="hl-1">        string kod PK</span><br/><span class="hl-1">        string namn</span><br/><span class="hl-1">        string government FK</span><br/><span class="hl-1">    }</span><br/><span class="hl-1">    GOVERNMENT {</span><br/><span class="hl-1">        string id PK</span><br/><span class="hl-1">        string namn</span><br/><span class="hl-1">        date from</span><br/><span class="hl-1">        date tom</span><br/><span class="hl-1">    }</span><br/><span class="hl-1">    ROLE {</span><br/><span class="hl-1">        string id PK</span><br/><span class="hl-1">        string ministry FK</span><br/><span class="hl-1">        string intressent_id FK</span><br/><span class="hl-1">        string titel</span><br/><span class="hl-1">    }</span><br/><span class="hl-1">    SPEECH {</span><br/><span class="hl-1">        string anforande_id PK</span><br/><span class="hl-1">        string intressent_id FK</span><br/><span class="hl-1">        string dok_id FK</span><br/><span class="hl-1">        string rm</span><br/><span class="hl-1">    }</span>
+</code><button type="button">Copy</button></pre>
+
+<p><strong>Baseline counts</strong> (from DATA_MODEL.md): 2,494 politicians; 349 active MPs; 8 active parties (S, M, SD, C, V, MP, KD, L) + 32 historical = 40 total; 15 committees; 109,259 documents; 3,529,786 voting records; 20 governments (76 roles, 500 role members); chamber speeches (anföranden) indexed at <code>/anforande/</code>. Historical coverage: 1971–2026.</p>
+<h3 id="22-cia-subsystems-→-user-facing-products" class="tsd-anchor-link">2.2 CIA Subsystems → User-Facing Products<a href="#22-cia-subsystems-→-user-facing-products" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p>The <strong>15 CIA data subsystems</strong> (anomaly, coalition, committee, distribution, election, election-cycle, ministry, parties, party, percentile, politician, pre-election, risk, seasonal, voting) compile into <strong>19 user-facing intelligence products</strong>: 4 dashboards + 10 Top-10 rankings + 5 advanced analytics.</p>
+<pre><code class="mermaid"><span class="hl-1">graph TD</span><br/><span class="hl-1">    subgraph SUB[&quot;15 CIA Subsystems (build-time)&quot;]</span><br/><span class="hl-1">        S1[&quot;anomaly · coalition · committee&quot;]</span><br/><span class="hl-1">        S2[&quot;distribution · election · election-cycle&quot;]</span><br/><span class="hl-1">        S3[&quot;ministry · parties · party · percentile&quot;]</span><br/><span class="hl-1">        S4[&quot;politician · pre-election · risk&quot;]</span><br/><span class="hl-1">        S5[&quot;seasonal · voting&quot;]</span><br/><span class="hl-1">    end</span><br/><span class="hl-1">    subgraph PROD[&quot;19 User-Facing Products&quot;]</span><br/><span class="hl-1">        P1[&quot;4 Dashboards&quot;]</span><br/><span class="hl-1">        P2[&quot;10 Top-10 Rankings&quot;]</span><br/><span class="hl-1">        P3[&quot;5 Advanced Analytics&quot;]</span><br/><span class="hl-1">    end</span><br/><span class="hl-1">    SUB --&gt; PROD</span><br/><span class="hl-1">    style S1 fill:#bbdefb,stroke:#1565c0,color:#000000</span><br/><span class="hl-1">    style S2 fill:#bbdefb,stroke:#1565c0,color:#000000</span><br/><span class="hl-1">    style S3 fill:#bbdefb,stroke:#1565c0,color:#000000</span><br/><span class="hl-1">    style S4 fill:#bbdefb,stroke:#1565c0,color:#000000</span><br/><span class="hl-1">    style S5 fill:#bbdefb,stroke:#1565c0,color:#000000</span><br/><span class="hl-1">    style P1 fill:#c8e6c9,stroke:#2e7d32,color:#000000</span><br/><span class="hl-1">    style P2 fill:#c8e6c9,stroke:#2e7d32,color:#000000</span><br/><span class="hl-1">    style P3 fill:#c8e6c9,stroke:#2e7d32,color:#000000</span>
+</code><button type="button">Copy</button></pre>
+
+<h3 id="23-npm-typed-surface" class="tsd-anchor-link">2.3 npm Typed Surface<a href="#23-npm-typed-surface" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p>Package <code>riksdagsmonitor</code> v0.9.40 (<code>&quot;type&quot;:&quot;module&quot;</code>, SLSA provenance attested) exposes typed subpaths generated by <code>scripts/generate-types-from-cia-schemas.ts</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Subpath</th>
+<th>Contents</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>./</code></td>
+<td>Root types</td>
+</tr>
+<tr>
+<td><code>./shared</code>, <code>./shared/*</code></td>
+<td>Shared domain types</td>
+</tr>
+<tr>
+<td><code>./cia/*</code></td>
+<td>CIA subsystem types</td>
+</tr>
+<tr>
+<td><code>./dashboards/*</code></td>
+<td>Dashboard data shapes</td>
+</tr>
+<tr>
+<td><code>./ui/*</code></td>
+<td>UI component data contracts</td>
+</tr>
+</tbody>
+</table>
+<h3 id="24-economic-statistical-caches" class="tsd-anchor-link">2.4 Economic &amp; Statistical Caches<a href="#24-economic-statistical-caches" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>Source</th>
+<th>Role</th>
+<th>Cache location</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>IMF</strong> (primary economic)</td>
+<td>WEO/FM/IFS/BOP/DOTS/GFS_COFOG/PCPS/ER/MFS_IR/MFS_PR; T+5 projections</td>
+<td><code>analysis/data/imf/{indicator}/{country}.json</code> + <code>.meta.json</code></td>
+</tr>
+<tr>
+<td><strong>SCB</strong> (Swedish ground truth)</td>
+<td>PxWeb v2 national statistics</td>
+<td>build-time fetch</td>
+</tr>
+<tr>
+<td><strong>World Bank</strong> (non-economic only)</td>
+<td>Governance (WGI), environment, social residue</td>
+<td>build-time fetch</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Per ADR 0001, the IMF client is a <strong>pure-TypeScript client</strong> (<code>scripts/imf-client.ts</code>), <strong>not</strong> an MCP server. Economic World Bank codes are deprecated in favour of IMF.</p>
+</blockquote>
+<h3 id="25-analysis-artifacts-news-corpus" class="tsd-anchor-link">2.5 Analysis Artifacts &amp; News Corpus<a href="#25-analysis-artifacts-news-corpus" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul>
+<li><strong>Analysis artifact families</strong>: Family A core synthesis = 9 artifacts; Family B (2), Family C (5), Family D (7), Family E (per-document). Gate: <code>scripts/agentic/analysis-gate.ts</code>.</li>
+<li><strong>Newsroom</strong>: 14 gh-aw agentic workflows, Claude Opus 4.8 (Sonnet 4.6 for translation), 14 languages, zero human editors. News corpus ~3,953 HTML files under <code>news/</code>.</li>
+<li><strong>Political-intelligence catalog</strong>: pre-computed cross-entity intelligence products surfaced in <code>political-intelligence.html</code> (+ 13 localized variants).</li>
+</ul>
+<hr>
+<h2 id="3-horizon-2-v20-static-intelligence-data-models-20262027" class="tsd-anchor-link">3. Horizon 2 — v2.0 Static Intelligence Data Models (2026–2027)<a href="#3-horizon-2-v20-static-intelligence-data-models-20262027" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<p><strong>Horizon 2 remains 100% static.</strong> No servers, no databases, no auth tier. It deepens <em>pre-computation</em>: the GitHub Actions build emits richer party-focused and OSINT-structured JSON datasets that static HTML pages consume directly. This horizon proves analytical value <strong>before</strong> any serverless investment.</p>
+<h3 id="31-design-principles" class="tsd-anchor-link">3.1 Design Principles<a href="#31-design-principles" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ol>
+<li><strong>Static-first invariant</strong> — every H2 dataset is a build-time artifact addressable by URL; no runtime compute.</li>
+<li><strong>Party-centric depth</strong> — cohesion, coalition, and bloc analytics become first-class pre-computed products.</li>
+<li><strong>OSINT rigor</strong> — network/temporal/anomaly structures carry <strong>source-grading and INTOP metadata</strong> so every edge and score is traceable to a primary source.</li>
+<li><strong>Forward-compatible shapes</strong> — H2 JSON schemas are designed to map cleanly onto H3 graph/SQL/vector stores.</li>
+</ol>
+<h3 id="32-party-cohesion-matrices" class="tsd-anchor-link">3.2 Party Cohesion Matrices<a href="#32-party-cohesion-matrices" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p>A pre-computed matrix scoring intra-party voting discipline per voting period, per committee, and per policy domain.</p>
+<pre><code class="json"><span class="hl-1">{</span><br/><span class="hl-1">  </span><span class="hl-13">&quot;schema&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;party-cohesion-matrix@2.0&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-13">&quot;generated_at&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;2027-01-15T00:00:00Z&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-13">&quot;rm&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;2026/27&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-13">&quot;source_grading&quot;</span><span class="hl-1">: { </span><span class="hl-13">&quot;system&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;Admiralty&quot;</span><span class="hl-1">, </span><span class="hl-13">&quot;reliability&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;A&quot;</span><span class="hl-1">, </span><span class="hl-13">&quot;credibility&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;1&quot;</span><span class="hl-1"> },</span><br/><span class="hl-1">  </span><span class="hl-13">&quot;parties&quot;</span><span class="hl-1">: [</span><span class="hl-2">&quot;S&quot;</span><span class="hl-1">, </span><span class="hl-2">&quot;M&quot;</span><span class="hl-1">, </span><span class="hl-2">&quot;SD&quot;</span><span class="hl-1">, </span><span class="hl-2">&quot;C&quot;</span><span class="hl-1">, </span><span class="hl-2">&quot;V&quot;</span><span class="hl-1">, </span><span class="hl-2">&quot;MP&quot;</span><span class="hl-1">, </span><span class="hl-2">&quot;KD&quot;</span><span class="hl-1">, </span><span class="hl-2">&quot;L&quot;</span><span class="hl-1">],</span><br/><span class="hl-1">  </span><span class="hl-13">&quot;matrix&quot;</span><span class="hl-1">: [</span><br/><span class="hl-1">    {</span><br/><span class="hl-1">      </span><span class="hl-13">&quot;party&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;S&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-13">&quot;cohesion_index&quot;</span><span class="hl-1">: </span><span class="hl-6">0.97</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-13">&quot;rebel_votes&quot;</span><span class="hl-1">: </span><span class="hl-6">14</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-13">&quot;total_votes&quot;</span><span class="hl-1">: </span><span class="hl-6">5120</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-13">&quot;by_committee&quot;</span><span class="hl-1">: { </span><span class="hl-13">&quot;FiU&quot;</span><span class="hl-1">: </span><span class="hl-6">0.99</span><span class="hl-1">, </span><span class="hl-13">&quot;SoU&quot;</span><span class="hl-1">: </span><span class="hl-6">0.95</span><span class="hl-1">, </span><span class="hl-13">&quot;UU&quot;</span><span class="hl-1">: </span><span class="hl-6">0.98</span><span class="hl-1"> },</span><br/><span class="hl-1">      </span><span class="hl-13">&quot;evidence_dok_ids&quot;</span><span class="hl-1">: [</span><span class="hl-2">&quot;H801FiU1&quot;</span><span class="hl-1">, </span><span class="hl-2">&quot;H801SoU12&quot;</span><span class="hl-1">]</span><br/><span class="hl-1">    }</span><br/><span class="hl-1">  ]</span><br/><span class="hl-1">}</span>
+</code><button type="button">Copy</button></pre>
+
+<ul>
+<li><code>cohesion_index</code> ∈ [0,1] = share of party MPs voting with the party majority.</li>
+<li>Every party row carries <code>evidence_dok_ids</code> so the static page can deep-link to primary documents.</li>
+<li><code>source_grading</code> applies the Admiralty/NATO reliability–credibility scale at dataset level.</li>
+</ul>
+<h3 id="33-coalition-bloc-graphs" class="tsd-anchor-link">3.3 Coalition &amp; Bloc Graphs<a href="#33-coalition-bloc-graphs" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p>A pre-computed graph of inter-party alignment derived from co-voting frequency, expressed as nodes (parties) and weighted edges (alignment strength).</p>
+<pre><code class="json"><span class="hl-1">{</span><br/><span class="hl-1">  </span><span class="hl-13">&quot;schema&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;coalition-bloc-graph@2.0&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-13">&quot;rm&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;2026/27&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-13">&quot;nodes&quot;</span><span class="hl-1">: [</span><br/><span class="hl-1">    { </span><span class="hl-13">&quot;id&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;S&quot;</span><span class="hl-1">, </span><span class="hl-13">&quot;bloc&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;left&quot;</span><span class="hl-1">, </span><span class="hl-13">&quot;seats&quot;</span><span class="hl-1">: </span><span class="hl-6">107</span><span class="hl-1"> },</span><br/><span class="hl-1">    { </span><span class="hl-13">&quot;id&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;M&quot;</span><span class="hl-1">, </span><span class="hl-13">&quot;bloc&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;right&quot;</span><span class="hl-1">, </span><span class="hl-13">&quot;seats&quot;</span><span class="hl-1">: </span><span class="hl-6">68</span><span class="hl-1"> }</span><br/><span class="hl-1">  ],</span><br/><span class="hl-1">  </span><span class="hl-13">&quot;edges&quot;</span><span class="hl-1">: [</span><br/><span class="hl-1">    {</span><br/><span class="hl-1">      </span><span class="hl-13">&quot;source&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;S&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-13">&quot;target&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;V&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-13">&quot;alignment&quot;</span><span class="hl-1">: </span><span class="hl-6">0.88</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-13">&quot;shared_yes_votes&quot;</span><span class="hl-1">: </span><span class="hl-6">4210</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-13">&quot;divergent_votes&quot;</span><span class="hl-1">: </span><span class="hl-6">560</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-13">&quot;intop_class&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;OPEN-SOURCE&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-13">&quot;evidence_dok_ids&quot;</span><span class="hl-1">: [</span><span class="hl-2">&quot;H801AU3&quot;</span><span class="hl-1">]</span><br/><span class="hl-1">    }</span><br/><span class="hl-1">  ]</span><br/><span class="hl-1">}</span>
+</code><button type="button">Copy</button></pre>
+
+<pre><code class="mermaid"><span class="hl-1">graph LR</span><br/><span class="hl-1">    S((S)) ---|0.88| V((V))</span><br/><span class="hl-1">    S ---|0.79| MP((MP))</span><br/><span class="hl-1">    M((M)) ---|0.91| KD((KD))</span><br/><span class="hl-1">    M ---|0.84| L((L))</span><br/><span class="hl-1">    M ---|0.62| SD((SD))</span><br/><span class="hl-1">    C((C)) ---|0.55| M</span><br/><span class="hl-1">    style S fill:#ef9a9a,stroke:#b71c1c,color:#000000</span><br/><span class="hl-1">    style V fill:#ef9a9a,stroke:#b71c1c,color:#000000</span><br/><span class="hl-1">    style MP fill:#a5d6a7,stroke:#1b5e20,color:#000000</span><br/><span class="hl-1">    style M fill:#90caf9,stroke:#0d47a1,color:#000000</span><br/><span class="hl-1">    style KD fill:#90caf9,stroke:#0d47a1,color:#000000</span><br/><span class="hl-1">    style L fill:#90caf9,stroke:#0d47a1,color:#000000</span><br/><span class="hl-1">    style SD fill:#fff59d,stroke:#f57f17,color:#000000</span><br/><span class="hl-1">    style C fill:#c8e6c9,stroke:#2e7d32,color:#000000</span>
+</code><button type="button">Copy</button></pre>
+
+<blockquote>
+<p>Bloc labels reflect <strong>published, self-declared</strong> parliamentary alignments and co-voting evidence — never editorial judgement. Edge weights are reproducible from the public voting record.</p>
+</blockquote>
+<h3 id="34-party-vs-party-comparison-datasets" class="tsd-anchor-link">3.4 Party-vs-Party Comparison Datasets<a href="#34-party-vs-party-comparison-datasets" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p>Symmetric pairwise comparison datasets enabling static comparison pages (e.g., &quot;S vs M on welfare&quot;).</p>
+<pre><code class="json"><span class="hl-1">{</span><br/><span class="hl-1">  </span><span class="hl-13">&quot;schema&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;party-vs-party@2.0&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-13">&quot;pair&quot;</span><span class="hl-1">: [</span><span class="hl-2">&quot;S&quot;</span><span class="hl-1">, </span><span class="hl-2">&quot;M&quot;</span><span class="hl-1">],</span><br/><span class="hl-1">  </span><span class="hl-13">&quot;domains&quot;</span><span class="hl-1">: {</span><br/><span class="hl-1">    </span><span class="hl-13">&quot;welfare&quot;</span><span class="hl-1">: { </span><span class="hl-13">&quot;agreement&quot;</span><span class="hl-1">: </span><span class="hl-6">0.41</span><span class="hl-1">, </span><span class="hl-13">&quot;votes&quot;</span><span class="hl-1">: </span><span class="hl-6">612</span><span class="hl-1">, </span><span class="hl-13">&quot;evidence_dok_ids&quot;</span><span class="hl-1">: [</span><span class="hl-2">&quot;H801SoU5&quot;</span><span class="hl-1">] },</span><br/><span class="hl-1">    </span><span class="hl-13">&quot;defence&quot;</span><span class="hl-1">: { </span><span class="hl-13">&quot;agreement&quot;</span><span class="hl-1">: </span><span class="hl-6">0.83</span><span class="hl-1">, </span><span class="hl-13">&quot;votes&quot;</span><span class="hl-1">: </span><span class="hl-6">188</span><span class="hl-1">, </span><span class="hl-13">&quot;evidence_dok_ids&quot;</span><span class="hl-1">: [</span><span class="hl-2">&quot;H801FoU2&quot;</span><span class="hl-1">] },</span><br/><span class="hl-1">    </span><span class="hl-13">&quot;economy&quot;</span><span class="hl-1">: { </span><span class="hl-13">&quot;agreement&quot;</span><span class="hl-1">: </span><span class="hl-6">0.37</span><span class="hl-1">, </span><span class="hl-13">&quot;votes&quot;</span><span class="hl-1">: </span><span class="hl-6">540</span><span class="hl-1">, </span><span class="hl-13">&quot;evidence_dok_ids&quot;</span><span class="hl-1">: [</span><span class="hl-2">&quot;H801FiU1&quot;</span><span class="hl-1">] }</span><br/><span class="hl-1">  }</span><br/><span class="hl-1">}</span>
+</code><button type="button">Copy</button></pre>
+
+<h3 id="35-osint-data-structures" class="tsd-anchor-link">3.5 OSINT Data Structures<a href="#35-osint-data-structures" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p>Horizon 2 formalizes four OSINT structure families as build-time JSON, each carrying provenance metadata so the static UI can show <em>how we know</em>.</p>
+<h4 id="351-network-edges" class="tsd-anchor-link">3.5.1 Network Edges<a href="#351-network-edges" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4>
+<pre><code class="json"><span class="hl-1">{</span><br/><span class="hl-1">  </span><span class="hl-13">&quot;schema&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;osint-network-edges@2.0&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-13">&quot;edge_type&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;co-sponsorship&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-13">&quot;edges&quot;</span><span class="hl-1">: [</span><br/><span class="hl-1">    {</span><br/><span class="hl-1">      </span><span class="hl-13">&quot;from&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;intressent_0123&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-13">&quot;to&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;intressent_0456&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-13">&quot;weight&quot;</span><span class="hl-1">: </span><span class="hl-6">23</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-13">&quot;rm&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;2026/27&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-13">&quot;evidence_dok_ids&quot;</span><span class="hl-1">: [</span><span class="hl-2">&quot;H802Mot123&quot;</span><span class="hl-1">],</span><br/><span class="hl-1">      </span><span class="hl-13">&quot;source_grading&quot;</span><span class="hl-1">: { </span><span class="hl-13">&quot;reliability&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;A&quot;</span><span class="hl-1">, </span><span class="hl-13">&quot;credibility&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;1&quot;</span><span class="hl-1"> }</span><br/><span class="hl-1">    }</span><br/><span class="hl-1">  ]</span><br/><span class="hl-1">}</span>
+</code><button type="button">Copy</button></pre>
+
+<h4 id="352-temporal-series" class="tsd-anchor-link">3.5.2 Temporal Series<a href="#352-temporal-series" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4>
+<pre><code class="json"><span class="hl-1">{</span><br/><span class="hl-1">  </span><span class="hl-13">&quot;schema&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;osint-temporal-series@2.0&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-13">&quot;metric&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;speech_activity&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-13">&quot;entity&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;intressent_0123&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-13">&quot;interval&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;monthly&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-13">&quot;points&quot;</span><span class="hl-1">: [</span><br/><span class="hl-1">    { </span><span class="hl-13">&quot;t&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;2026-09&quot;</span><span class="hl-1">, </span><span class="hl-13">&quot;v&quot;</span><span class="hl-1">: </span><span class="hl-6">12</span><span class="hl-1"> },</span><br/><span class="hl-1">    { </span><span class="hl-13">&quot;t&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;2026-10&quot;</span><span class="hl-1">, </span><span class="hl-13">&quot;v&quot;</span><span class="hl-1">: </span><span class="hl-6">19</span><span class="hl-1"> }</span><br/><span class="hl-1">  ]</span><br/><span class="hl-1">}</span>
+</code><button type="button">Copy</button></pre>
+
+<h4 id="353-anomaly-scores" class="tsd-anchor-link">3.5.3 Anomaly Scores<a href="#353-anomaly-scores" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4>
+<pre><code class="json"><span class="hl-1">{</span><br/><span class="hl-1">  </span><span class="hl-13">&quot;schema&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;osint-anomaly-scores@2.0&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-13">&quot;method&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;seasonal-decomposition + z-score&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-13">&quot;scores&quot;</span><span class="hl-1">: [</span><br/><span class="hl-1">    {</span><br/><span class="hl-1">      </span><span class="hl-13">&quot;entity&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;intressent_0123&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-13">&quot;metric&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;vote_attendance&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-13">&quot;z&quot;</span><span class="hl-1">: </span><span class="hl-6">-3.1</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-13">&quot;flag&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;low-attendance-outlier&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-13">&quot;evidence_dok_ids&quot;</span><span class="hl-1">: [</span><span class="hl-2">&quot;H802Vot44&quot;</span><span class="hl-1">],</span><br/><span class="hl-1">      </span><span class="hl-13">&quot;explanation&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;Attendance 3.1σ below seasonal baseline; documented leave of absence.&quot;</span><br/><span class="hl-1">    }</span><br/><span class="hl-1">  ]</span><br/><span class="hl-1">}</span>
+</code><button type="button">Copy</button></pre>
+
+<blockquote>
+<p>Anomaly flags are <strong>descriptive statistical signals on public records</strong>, always paired with a neutral, evidence-linked explanation. They are never accusatory and never applied to private individuals.</p>
+</blockquote>
+<h4 id="354-source-grading-intop-metadata" class="tsd-anchor-link">3.5.4 Source-Grading &amp; INTOP Metadata<a href="#354-source-grading-intop-metadata" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4>
+<p>Every H2 dataset embeds a <code>source_grading</code> block (Admiralty reliability A–F × credibility 1–6) and an <code>intop_class</code> field (e.g., <code>OPEN-SOURCE</code>, <code>OFFICIAL-PUBLIC</code>) so downstream consumers — and H3's RAG pipeline — inherit provenance.</p>
+<h3 id="355-evidence-provenance-invariant" class="tsd-anchor-link">3.5.5 Evidence &amp; Provenance Invariant<a href="#355-evidence-provenance-invariant" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p>Every Horizon 2 dataset is rejected by <code>scripts/agentic/analysis-gate.ts</code> unless it satisfies the <strong>evidence-first invariant</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Requirement</th>
+<th>Enforcement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>evidence_dok_ids</code> non-empty on every scored row/edge</td>
+<td>Gate hard-fail</td>
+</tr>
+<tr>
+<td><code>source_grading</code> (Admiralty A–F × 1–6) present at dataset level</td>
+<td>Gate hard-fail</td>
+</tr>
+<tr>
+<td><code>intop_class</code> present on every relational edge</td>
+<td>Gate hard-fail</td>
+</tr>
+<tr>
+<td>Reproducible from public voting/document record</td>
+<td>CI re-computation diff</td>
+</tr>
+<tr>
+<td>Neutral, non-accusatory language on anomaly explanations</td>
+<td>Editorial lint</td>
+</tr>
+</tbody>
+</table>
+<p>This guarantees that the H3 RAG pipeline (§4.7) <em>inherits</em> provenance: an embedding can always be traced back to a <code>dok_id</code>.</p>
+<h3 id="36-government-minister-scorecard-datasets" class="tsd-anchor-link">3.6 Government &amp; Minister Scorecard Datasets<a href="#36-government-minister-scorecard-datasets" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p>Horizon 2 adds pre-computed accountability datasets covering the executive branch — the 20 governments (76 roles, 500 role members) in the baseline — without any editorial scoring of &quot;good&quot; or &quot;bad&quot;. Metrics are purely descriptive counts on the public record.</p>
+<pre><code class="json"><span class="hl-1">{</span><br/><span class="hl-1">  </span><span class="hl-13">&quot;schema&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;minister-scorecard@2.0&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-13">&quot;rm&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;2026/27&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-13">&quot;ministry&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;Finansdepartementet&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-13">&quot;role_holder&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;intressent_0789&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-13">&quot;interpellations_received&quot;</span><span class="hl-1">: </span><span class="hl-6">41</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-13">&quot;written_questions_answered&quot;</span><span class="hl-1">: </span><span class="hl-6">118</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-13">&quot;propositions_introduced&quot;</span><span class="hl-1">: </span><span class="hl-6">9</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-13">&quot;evidence_dok_ids&quot;</span><span class="hl-1">: [</span><span class="hl-2">&quot;H801FiU1&quot;</span><span class="hl-1">, </span><span class="hl-2">&quot;H801Prop44&quot;</span><span class="hl-1">],</span><br/><span class="hl-1">  </span><span class="hl-13">&quot;source_grading&quot;</span><span class="hl-1">: { </span><span class="hl-13">&quot;reliability&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;A&quot;</span><span class="hl-1">, </span><span class="hl-13">&quot;credibility&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;1&quot;</span><span class="hl-1"> }</span><br/><span class="hl-1">}</span>
+</code><button type="button">Copy</button></pre>
+
+<h3 id="37-rebellion-defection-timelines" class="tsd-anchor-link">3.7 Rebellion &amp; Defection Timelines<a href="#37-rebellion-defection-timelines" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p>A temporal OSINT dataset tracking individual MPs who voted against their party majority, with neutral context and primary-source links.</p>
+<pre><code class="json"><span class="hl-1">{</span><br/><span class="hl-1">  </span><span class="hl-13">&quot;schema&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;rebellion-timeline@2.0&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-13">&quot;entity&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;intressent_0123&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-13">&quot;party&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;S&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-13">&quot;events&quot;</span><span class="hl-1">: [</span><br/><span class="hl-1">    {</span><br/><span class="hl-1">      </span><span class="hl-13">&quot;t&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;2026-11-18&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-13">&quot;votering_id&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;H801Vot88&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-13">&quot;party_majority&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;Ja&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-13">&quot;individual_vote&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;Nej&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-13">&quot;dok_id&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;H801SoU12&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-13">&quot;context&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;Voted against party line on welfare amendment; public record only.&quot;</span><br/><span class="hl-1">    }</span><br/><span class="hl-1">  ]</span><br/><span class="hl-1">}</span>
+</code><button type="button">Copy</button></pre>
+
+<h3 id="38-build-time-generation-pipeline" class="tsd-anchor-link">3.8 Build-Time Generation Pipeline<a href="#38-build-time-generation-pipeline" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<pre><code class="mermaid"><span class="hl-1">sequenceDiagram</span><br/><span class="hl-1">    participant API as Riksdag/Regering APIs</span><br/><span class="hl-1">    participant GH as GitHub Actions</span><br/><span class="hl-1">    participant GEN as Dataset Generators</span><br/><span class="hl-1">    participant GATE as analysis-gate.ts</span><br/><span class="hl-1">    participant S3 as S3 + CloudFront</span><br/><span class="hl-1">    API-&gt;&gt;GH: Fetch voteringar / dokument / anföranden</span><br/><span class="hl-1">    GH-&gt;&gt;GEN: Compute cohesion / coalition / OSINT</span><br/><span class="hl-1">    GEN-&gt;&gt;GEN: Attach source_grading + INTOP + dok_ids</span><br/><span class="hl-1">    GEN-&gt;&gt;GATE: Submit artifacts</span><br/><span class="hl-1">    GATE--&gt;&gt;GEN: Pass (provenance complete) / Reject</span><br/><span class="hl-1">    GEN-&gt;&gt;S3: Publish static JSON datasets</span><br/><span class="hl-1">    S3-&gt;&gt;S3: GitHub Pages DR mirror</span>
+</code><button type="button">Copy</button></pre>
+
+<h3 id="39-horizon-2-erd" class="tsd-anchor-link">3.9 Horizon 2 ERD<a href="#39-horizon-2-erd" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<pre><code class="mermaid"><span class="hl-1">erDiagram</span><br/><span class="hl-1">    PARTY ||--o{ COHESION_ROW : scored_in</span><br/><span class="hl-1">    PARTY ||--o{ BLOC_EDGE : participates</span><br/><span class="hl-1">    PARTY ||--o{ PAIR_COMPARE : compared</span><br/><span class="hl-1">    POLITICIAN ||--o{ NETWORK_EDGE : connects</span><br/><span class="hl-1">    POLITICIAN ||--o{ TEMPORAL_POINT : measured</span><br/><span class="hl-1">    POLITICIAN ||--o{ ANOMALY_SCORE : flagged</span><br/><span class="hl-1">    SOURCE_GRADING ||--o{ COHESION_ROW : grades</span><br/><span class="hl-1">    SOURCE_GRADING ||--o{ BLOC_EDGE : grades</span><br/><span class="hl-1">    SOURCE_GRADING ||--o{ NETWORK_EDGE : grades</span><br/><br/><span class="hl-1">    COHESION_ROW {</span><br/><span class="hl-1">        string party FK</span><br/><span class="hl-1">        float cohesion_index</span><br/><span class="hl-1">        int rebel_votes</span><br/><span class="hl-1">        json evidence_dok_ids</span><br/><span class="hl-1">    }</span><br/><span class="hl-1">    BLOC_EDGE {</span><br/><span class="hl-1">        string source FK</span><br/><span class="hl-1">        string target FK</span><br/><span class="hl-1">        float alignment</span><br/><span class="hl-1">        string intop_class</span><br/><span class="hl-1">    }</span><br/><span class="hl-1">    PAIR_COMPARE {</span><br/><span class="hl-1">        string party_a FK</span><br/><span class="hl-1">        string party_b FK</span><br/><span class="hl-1">        json domains</span><br/><span class="hl-1">    }</span><br/><span class="hl-1">    NETWORK_EDGE {</span><br/><span class="hl-1">        string from FK</span><br/><span class="hl-1">        string to FK</span><br/><span class="hl-1">        int weight</span><br/><span class="hl-1">        string edge_type</span><br/><span class="hl-1">    }</span><br/><span class="hl-1">    TEMPORAL_POINT {</span><br/><span class="hl-1">        string entity FK</span><br/><span class="hl-1">        string t</span><br/><span class="hl-1">        float v</span><br/><span class="hl-1">    }</span><br/><span class="hl-1">    ANOMALY_SCORE {</span><br/><span class="hl-1">        string entity FK</span><br/><span class="hl-1">        float z</span><br/><span class="hl-1">        string flag</span><br/><span class="hl-1">    }</span><br/><span class="hl-1">    SOURCE_GRADING {</span><br/><span class="hl-1">        string reliability</span><br/><span class="hl-1">        string credibility</span><br/><span class="hl-1">        string intop_class</span><br/><span class="hl-1">    }</span>
+</code><button type="button">Copy</button></pre>
+
+<hr>
+<h2 id="4-horizon-3-v30-aws-serverless-data-tier-20282037" class="tsd-anchor-link">4. Horizon 3 — v3.0+ AWS Serverless Data Tier (2028–2037)<a href="#4-horizon-3-v30-aws-serverless-data-tier-20282037" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<p>Horizon 3 layers an <strong>interactive, queryable serverless tier</strong> atop the static ground truth. The static H1/H2 artifacts remain the <strong>system of record and disaster-recovery fallback</strong>; the serverless stores are <em>derived, query-optimized projections</em> hydrated from those artifacts. Access is mediated by <strong>Amazon API Gateway (GraphQL &amp; REST) with Amazon Cognito</strong> for authentication and rate-limiting.</p>
+<h3 id="41-serverless-store-selection" class="tsd-anchor-link">4.1 Serverless Store Selection<a href="#41-serverless-store-selection" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>Store</th>
+<th>Purpose</th>
+<th>Data shape</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Amazon Neptune Serverless</strong></td>
+<td>Political relationship graph (co-voting, co-sponsorship, coalition)</td>
+<td>Property graph (Gremlin)</td>
+</tr>
+<tr>
+<td><strong>Amazon Aurora Serverless v2 (PostgreSQL)</strong></td>
+<td>Relational facts (politicians, parties, documents, votes, committees, IMF cache)</td>
+<td>SQL tables</td>
+</tr>
+<tr>
+<td><strong>Amazon DynamoDB</strong></td>
+<td>High-velocity key lookups (dashboard state, rankings, session)</td>
+<td>Key-value / document</td>
+</tr>
+<tr>
+<td><strong>Amazon OpenSearch Serverless</strong></td>
+<td>Full-text + <strong>vector</strong> search over documents &amp; speeches</td>
+<td>Inverted index + k-NN vectors</td>
+</tr>
+<tr>
+<td><strong>Amazon Timestream</strong></td>
+<td>Time-series metrics (attendance, activity, anomaly z-scores)</td>
+<td>Time-series</td>
+</tr>
+<tr>
+<td><strong>Amazon Bedrock Knowledge Bases</strong></td>
+<td>RAG over corpus for the newsroom &amp; citizen Q&amp;A</td>
+<td>Managed vector KB</td>
+</tr>
+</tbody>
+</table>
+<h3 id="42-neptune-graph-gremlin" class="tsd-anchor-link">4.2 Neptune Graph (Gremlin)<a href="#42-neptune-graph-gremlin" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<pre><code class="groovy">// Vertices
+g.addV('politician').property('intressent_id','intressent_0123')
+                    .property('namn','Example MP')
+                    .property('parti','S')
+                    .property('valkrets','Stockholm')
+
+g.addV('party').property('kod','S').property('namn','Socialdemokraterna')
+
+// Edges (derived from public voting record)
+g.V().has('politician','intressent_id','intressent_0123').as('a')
+ .V().has('politician','intressent_id','intressent_0456').as('b')
+ .addE('co_voted').from('a').to('b')
+   .property('weight',4210)
+   .property('rm','2026/27')
+   .property('evidence_dok_id','H801AU3')
+</code><button type="button">Copy</button></pre>
+
+<h3 id="43-aurora-serverless-v2-postgresql-schema" class="tsd-anchor-link">4.3 Aurora Serverless v2 (PostgreSQL) Schema<a href="#43-aurora-serverless-v2-postgresql-schema" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<pre><code class="sql"><span class="hl-9">CREATE</span><span class="hl-1"> </span><span class="hl-9">TABLE</span><span class="hl-1"> </span><span class="hl-0">politicians</span><span class="hl-1"> (</span><br/><span class="hl-1">    intressent_id   </span><span class="hl-9">TEXT</span><span class="hl-1"> </span><span class="hl-9">PRIMARY KEY</span><span class="hl-1">,</span><br/><span class="hl-1">    namn            </span><span class="hl-9">TEXT</span><span class="hl-1"> </span><span class="hl-9">NOT NULL</span><span class="hl-1">,</span><br/><span class="hl-1">    parti           </span><span class="hl-9">TEXT</span><span class="hl-1"> </span><span class="hl-9">REFERENCES</span><span class="hl-1"> parties(kod),</span><br/><span class="hl-1">    valkrets        </span><span class="hl-9">TEXT</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-9">status</span><span class="hl-1">          </span><span class="hl-9">TEXT</span><span class="hl-1">,</span><br/><span class="hl-1">    fodd            </span><span class="hl-9">DATE</span><br/><span class="hl-1">);</span><br/><br/><span class="hl-9">CREATE</span><span class="hl-1"> </span><span class="hl-9">TABLE</span><span class="hl-1"> </span><span class="hl-0">parties</span><span class="hl-1"> (</span><br/><span class="hl-1">    kod     </span><span class="hl-9">TEXT</span><span class="hl-1"> </span><span class="hl-9">PRIMARY KEY</span><span class="hl-1">,</span><br/><span class="hl-1">    namn    </span><span class="hl-9">TEXT</span><span class="hl-1"> </span><span class="hl-9">NOT NULL</span><span class="hl-1">,</span><br/><span class="hl-1">    active  </span><span class="hl-9">BOOLEAN</span><span class="hl-1"> </span><span class="hl-9">NOT NULL</span><span class="hl-1"> </span><span class="hl-9">DEFAULT</span><span class="hl-1"> TRUE,</span><br/><span class="hl-1">    seats   </span><span class="hl-9">INTEGER</span><br/><span class="hl-1">);</span><br/><br/><span class="hl-9">CREATE</span><span class="hl-1"> </span><span class="hl-9">TABLE</span><span class="hl-1"> </span><span class="hl-0">documents</span><span class="hl-1"> (</span><br/><span class="hl-1">    dok_id      </span><span class="hl-9">TEXT</span><span class="hl-1"> </span><span class="hl-9">PRIMARY KEY</span><span class="hl-1">,</span><br/><span class="hl-1">    doktyp      </span><span class="hl-9">TEXT</span><span class="hl-1">,</span><br/><span class="hl-1">    titel       </span><span class="hl-9">TEXT</span><span class="hl-1">,</span><br/><span class="hl-1">    rm          </span><span class="hl-9">TEXT</span><span class="hl-1">,</span><br/><span class="hl-1">    publicerad  </span><span class="hl-9">DATE</span><br/><span class="hl-1">);</span><br/><br/><span class="hl-9">CREATE</span><span class="hl-1"> </span><span class="hl-9">TABLE</span><span class="hl-1"> </span><span class="hl-0">votes</span><span class="hl-1"> (</span><br/><span class="hl-1">    votering_id     </span><span class="hl-9">TEXT</span><span class="hl-1"> </span><span class="hl-9">PRIMARY KEY</span><span class="hl-1">,</span><br/><span class="hl-1">    dok_id          </span><span class="hl-9">TEXT</span><span class="hl-1"> </span><span class="hl-9">REFERENCES</span><span class="hl-1"> documents(dok_id),</span><br/><span class="hl-1">    intressent_id   </span><span class="hl-9">TEXT</span><span class="hl-1"> </span><span class="hl-9">REFERENCES</span><span class="hl-1"> politicians(intressent_id),</span><br/><span class="hl-1">    rost            </span><span class="hl-9">TEXT</span><span class="hl-1"> </span><span class="hl-9">CHECK</span><span class="hl-1"> (rost </span><span class="hl-9">IN</span><span class="hl-1"> (</span><span class="hl-2">&#39;Ja&#39;</span><span class="hl-1">,</span><span class="hl-2">&#39;Nej&#39;</span><span class="hl-1">,</span><span class="hl-2">&#39;Avstår&#39;</span><span class="hl-1">,</span><span class="hl-2">&#39;Frånvarande&#39;</span><span class="hl-1">)),</span><br/><span class="hl-1">    punkt           </span><span class="hl-9">TEXT</span><br/><span class="hl-1">);</span><br/><br/><span class="hl-9">CREATE</span><span class="hl-1"> </span><span class="hl-9">TABLE</span><span class="hl-1"> </span><span class="hl-0">committees</span><span class="hl-1"> (</span><br/><span class="hl-1">    kod     </span><span class="hl-9">TEXT</span><span class="hl-1"> </span><span class="hl-9">PRIMARY KEY</span><span class="hl-1">,</span><br/><span class="hl-1">    namn    </span><span class="hl-9">TEXT</span><span class="hl-1"> </span><span class="hl-9">NOT NULL</span><span class="hl-1">,</span><br/><span class="hl-1">    organ   </span><span class="hl-9">TEXT</span><br/><span class="hl-1">);</span><br/><br/><span class="hl-9">CREATE</span><span class="hl-1"> </span><span class="hl-9">INDEX</span><span class="hl-1"> </span><span class="hl-0">idx_votes_intressent</span><span class="hl-1"> </span><span class="hl-9">ON</span><span class="hl-1"> votes(intressent_id);</span><br/><span class="hl-9">CREATE</span><span class="hl-1"> </span><span class="hl-9">INDEX</span><span class="hl-1"> </span><span class="hl-0">idx_votes_dok</span><span class="hl-1"> </span><span class="hl-9">ON</span><span class="hl-1"> votes(dok_id);</span><br/><span class="hl-9">CREATE</span><span class="hl-1"> </span><span class="hl-9">INDEX</span><span class="hl-1"> </span><span class="hl-0">idx_docs_rm</span><span class="hl-1"> </span><span class="hl-9">ON</span><span class="hl-1"> documents(rm);</span>
+</code><button type="button">Copy</button></pre>
+
+<h3 id="44-dynamodb-tables" class="tsd-anchor-link">4.4 DynamoDB Tables<a href="#44-dynamodb-tables" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<pre><code class="json"><span class="hl-1">{</span><br/><span class="hl-1">  </span><span class="hl-13">&quot;TableName&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;rm_dashboard_state&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-13">&quot;KeySchema&quot;</span><span class="hl-1">: [</span><br/><span class="hl-1">    { </span><span class="hl-13">&quot;AttributeName&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;pk&quot;</span><span class="hl-1">, </span><span class="hl-13">&quot;KeyType&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;HASH&quot;</span><span class="hl-1"> },</span><br/><span class="hl-1">    { </span><span class="hl-13">&quot;AttributeName&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;sk&quot;</span><span class="hl-1">, </span><span class="hl-13">&quot;KeyType&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;RANGE&quot;</span><span class="hl-1"> }</span><br/><span class="hl-1">  ],</span><br/><span class="hl-1">  </span><span class="hl-13">&quot;AttributeDefinitions&quot;</span><span class="hl-1">: [</span><br/><span class="hl-1">    { </span><span class="hl-13">&quot;AttributeName&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;pk&quot;</span><span class="hl-1">, </span><span class="hl-13">&quot;AttributeType&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;S&quot;</span><span class="hl-1"> },</span><br/><span class="hl-1">    { </span><span class="hl-13">&quot;AttributeName&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;sk&quot;</span><span class="hl-1">, </span><span class="hl-13">&quot;AttributeType&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;S&quot;</span><span class="hl-1"> }</span><br/><span class="hl-1">  ],</span><br/><span class="hl-1">  </span><span class="hl-13">&quot;BillingMode&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;PAY_PER_REQUEST&quot;</span><br/><span class="hl-1">}</span>
+</code><button type="button">Copy</button></pre>
+
+<p>Access patterns: <code>pk=RANKING#top10-attendance</code>, <code>sk=RM#2026/27</code>; <code>pk=PARTY#S</code>, <code>sk=COHESION#2026/27</code>.</p>
+<h3 id="45-opensearch-serverless-index" class="tsd-anchor-link">4.5 OpenSearch Serverless Index<a href="#45-opensearch-serverless-index" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<pre><code class="json"><span class="hl-1">{</span><br/><span class="hl-1">  </span><span class="hl-13">&quot;mappings&quot;</span><span class="hl-1">: {</span><br/><span class="hl-1">    </span><span class="hl-13">&quot;properties&quot;</span><span class="hl-1">: {</span><br/><span class="hl-1">      </span><span class="hl-13">&quot;dok_id&quot;</span><span class="hl-1">: { </span><span class="hl-13">&quot;type&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;keyword&quot;</span><span class="hl-1"> },</span><br/><span class="hl-1">      </span><span class="hl-13">&quot;titel&quot;</span><span class="hl-1">: { </span><span class="hl-13">&quot;type&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;text&quot;</span><span class="hl-1"> },</span><br/><span class="hl-1">      </span><span class="hl-13">&quot;body&quot;</span><span class="hl-1">: { </span><span class="hl-13">&quot;type&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;text&quot;</span><span class="hl-1"> },</span><br/><span class="hl-1">      </span><span class="hl-13">&quot;rm&quot;</span><span class="hl-1">: { </span><span class="hl-13">&quot;type&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;keyword&quot;</span><span class="hl-1"> },</span><br/><span class="hl-1">      </span><span class="hl-13">&quot;doktyp&quot;</span><span class="hl-1">: { </span><span class="hl-13">&quot;type&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;keyword&quot;</span><span class="hl-1"> },</span><br/><span class="hl-1">      </span><span class="hl-13">&quot;embedding&quot;</span><span class="hl-1">: { </span><span class="hl-13">&quot;type&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;knn_vector&quot;</span><span class="hl-1">, </span><span class="hl-13">&quot;dimension&quot;</span><span class="hl-1">: </span><span class="hl-6">1024</span><span class="hl-1"> },</span><br/><span class="hl-1">      </span><span class="hl-13">&quot;source_grading&quot;</span><span class="hl-1">: { </span><span class="hl-13">&quot;type&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;object&quot;</span><span class="hl-1"> }</span><br/><span class="hl-1">    }</span><br/><span class="hl-1">  }</span><br/><span class="hl-1">}</span>
+</code><button type="button">Copy</button></pre>
+
+<h3 id="46-timestream-schema" class="tsd-anchor-link">4.6 Timestream Schema<a href="#46-timestream-schema" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>Measure</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>intressent_id</code>, <code>metric</code></td>
+<td><code>value</code> (double)</td>
+<td>attendance per session</td>
+</tr>
+<tr>
+<td><code>party</code>, <code>metric</code></td>
+<td><code>value</code> (double)</td>
+<td>cohesion index over time</td>
+</tr>
+<tr>
+<td><code>entity</code>, <code>metric</code></td>
+<td><code>z_score</code> (double)</td>
+<td>anomaly signal over time</td>
+</tr>
+</tbody>
+</table>
+<h3 id="47-bedrock-knowledge-bases-rag" class="tsd-anchor-link">4.7 Bedrock Knowledge Bases RAG<a href="#47-bedrock-knowledge-bases-rag" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<pre><code class="javascript"><span class="hl-4">// Build-time: embed corpus → Bedrock KB; runtime: retrieve + ground</span><br/><span class="hl-3">import</span><span class="hl-1"> { </span><span class="hl-5">BedrockAgentRuntimeClient</span><span class="hl-1">, </span><span class="hl-5">RetrieveAndGenerateCommand</span><span class="hl-1"> }</span><br/><span class="hl-1">  </span><span class="hl-3">from</span><span class="hl-1"> </span><span class="hl-2">&quot;@aws-sdk/client-bedrock-agent-runtime&quot;</span><span class="hl-1">;</span><br/><br/><span class="hl-9">const</span><span class="hl-1"> </span><span class="hl-8">client</span><span class="hl-1"> = </span><span class="hl-9">new</span><span class="hl-1"> </span><span class="hl-0">BedrockAgentRuntimeClient</span><span class="hl-1">({ </span><span class="hl-5">region:</span><span class="hl-1"> </span><span class="hl-2">&quot;eu-west-1&quot;</span><span class="hl-1"> });</span><br/><br/><span class="hl-9">const</span><span class="hl-1"> </span><span class="hl-8">response</span><span class="hl-1"> = </span><span class="hl-3">await</span><span class="hl-1"> </span><span class="hl-5">client</span><span class="hl-1">.</span><span class="hl-0">send</span><span class="hl-1">(</span><span class="hl-9">new</span><span class="hl-1"> </span><span class="hl-0">RetrieveAndGenerateCommand</span><span class="hl-1">({</span><br/><span class="hl-1">  </span><span class="hl-5">input:</span><span class="hl-1"> { </span><span class="hl-5">text:</span><span class="hl-1"> </span><span class="hl-2">&quot;How did party S vote on the 2027 defence bill?&quot;</span><span class="hl-1"> },</span><br/><span class="hl-1">  </span><span class="hl-5">retrieveAndGenerateConfiguration:</span><span class="hl-1"> {</span><br/><span class="hl-1">    </span><span class="hl-5">type:</span><span class="hl-1"> </span><span class="hl-2">&quot;KNOWLEDGE_BASE&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-5">knowledgeBaseConfiguration:</span><span class="hl-1"> {</span><br/><span class="hl-1">      </span><span class="hl-5">knowledgeBaseId:</span><span class="hl-1"> </span><span class="hl-2">&quot;rm-corpus-kb&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-5">modelArn:</span><span class="hl-1"> </span><span class="hl-2">&quot;arn:aws:bedrock:eu-west-1::foundation-model/anthropic.claude-opus&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-5">retrievalConfiguration:</span><span class="hl-1"> {</span><br/><span class="hl-1">        </span><span class="hl-5">vectorSearchConfiguration:</span><span class="hl-1"> { </span><span class="hl-5">numberOfResults:</span><span class="hl-1"> </span><span class="hl-6">8</span><span class="hl-1"> }</span><br/><span class="hl-1">      }</span><br/><span class="hl-1">    }</span><br/><span class="hl-1">  }</span><br/><span class="hl-1">}));</span><br/><span class="hl-4">// Every generated answer MUST cite retrieved dok_ids — no ungrounded claims.</span>
+</code><button type="button">Copy</button></pre>
+
+<blockquote>
+<p>The RAG pipeline is <strong>retrieval-grounded only</strong>: generated answers must cite retrieved <code>dok_id</code> evidence. This enforces the evidence-first invariant at the AI layer and prevents hallucinated political claims.</p>
+</blockquote>
+<h3 id="48-access-tier-api-gateway--cognito" class="tsd-anchor-link">4.8 Access Tier — API Gateway + Cognito<a href="#48-access-tier-api-gateway--cognito" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<pre><code class="mermaid"><span class="hl-1">graph TD</span><br/><span class="hl-1">    U[&quot;Citizen / Journalist / Researcher&quot;] --&gt; CF[&quot;CloudFront&quot;]</span><br/><span class="hl-1">    CF --&gt; APIGW[&quot;API Gateway (GraphQL + REST)&quot;]</span><br/><span class="hl-1">    APIGW --&gt; COG[&quot;Amazon Cognito&lt;br/&gt;auth · rate-limit · audit&quot;]</span><br/><span class="hl-1">    COG --&gt; L[&quot;AWS Lambda Resolvers&quot;]</span><br/><span class="hl-1">    L --&gt; NEP[&quot;Neptune Serverless&quot;]</span><br/><span class="hl-1">    L --&gt; AUR[&quot;Aurora Serverless v2&quot;]</span><br/><span class="hl-1">    L --&gt; DDB[&quot;DynamoDB&quot;]</span><br/><span class="hl-1">    L --&gt; OS[&quot;OpenSearch Serverless&quot;]</span><br/><span class="hl-1">    L --&gt; TS[&quot;Timestream&quot;]</span><br/><span class="hl-1">    L --&gt; KB[&quot;Bedrock Knowledge Bases&quot;]</span><br/><span class="hl-1">    L -. fallback .-&gt; S3[&quot;Static H1/H2 JSON (system of record)&quot;]</span><br/><span class="hl-1">    style APIGW fill:#ffe0b2,stroke:#e65100,color:#000000</span><br/><span class="hl-1">    style COG fill:#ffcc80,stroke:#e65100,color:#000000</span><br/><span class="hl-1">    style L fill:#fff9c4,stroke:#f9a825,color:#000000</span><br/><span class="hl-1">    style NEP fill:#e1bee7,stroke:#6a1b9a,color:#000000</span><br/><span class="hl-1">    style AUR fill:#e1bee7,stroke:#6a1b9a,color:#000000</span><br/><span class="hl-1">    style DDB fill:#e1bee7,stroke:#6a1b9a,color:#000000</span><br/><span class="hl-1">    style OS fill:#e1bee7,stroke:#6a1b9a,color:#000000</span><br/><span class="hl-1">    style TS fill:#e1bee7,stroke:#6a1b9a,color:#000000</span><br/><span class="hl-1">    style KB fill:#e1bee7,stroke:#6a1b9a,color:#000000</span><br/><span class="hl-1">    style S3 fill:#bbdefb,stroke:#1565c0,color:#000000</span>
+</code><button type="button">Copy</button></pre>
+
+<blockquote>
+<p>API Gateway + Cognito provide <strong>authentication, throttling, and an audit trail</strong> — supporting GDPR accountability — while the public read corpus stays open. AppSync may serve as a managed-GraphQL resolver option behind API Gateway, but API Gateway + Lambda is the headline contract.</p>
+</blockquote>
+<h3 id="49-store-sizing-access-patterns-targets" class="tsd-anchor-link">4.9 Store Sizing &amp; Access Patterns (Targets)<a href="#49-store-sizing-access-patterns-targets" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>Store</th>
+<th>Target volume (2030)</th>
+<th>Primary access pattern</th>
+<th>Why this store</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Neptune Serverless</td>
+<td>~2.5M edges (co-voting, co-sponsorship)</td>
+<td>Multi-hop traversal (&quot;who co-votes with whom&quot;)</td>
+<td>Graph queries are O(edges) not O(joins)</td>
+</tr>
+<tr>
+<td>Aurora Serverless v2</td>
+<td>~200K docs, ~4.5M votes</td>
+<td>Relational filters, aggregates</td>
+<td>ACID facts, SQL analysts</td>
+</tr>
+<tr>
+<td>DynamoDB</td>
+<td>~19 product partitions × RM</td>
+<td>Single-digit-ms key lookup</td>
+<td>Dashboard/ranking hot path</td>
+</tr>
+<tr>
+<td>OpenSearch Serverless</td>
+<td>~200K docs + speeches</td>
+<td>Text + k-NN vector</td>
+<td>Semantic + keyword search</td>
+</tr>
+<tr>
+<td>Timestream</td>
+<td>~10M points</td>
+<td>Range scans, anomaly windows</td>
+<td>Native time-series rollups</td>
+</tr>
+<tr>
+<td>Bedrock KB</td>
+<td>corpus embeddings</td>
+<td>RAG retrieve-and-generate</td>
+<td>Managed grounding</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Each store is <strong>derived</strong> from the static system-of-record; loss of any serverless store degrades gracefully to static H1/H2 JSON, never to data loss.</p>
+</blockquote>
+<h3 id="410-multi-source-consistency-model" class="tsd-anchor-link">4.10 Multi-Source Consistency Model<a href="#410-multi-source-consistency-model" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p>The serverless tier is <strong>eventually consistent</strong> with the static SoR. The hydration contract (§5) guarantees: (a) the static artifact version is stamped on every hydrated record; (b) API responses expose <code>as_of</code> vintage; (c) parity diffs run continuously in CI. No write path exists that bypasses the static SoR — the database cannot drift from the public record.</p>
+<h3 id="411-political-intelligence-capability-data-structures-osintintop-to-2037" class="tsd-anchor-link">4.11 Political-Intelligence Capability Data Structures (OSINT/INTOP, to 2037)<a href="#411-political-intelligence-capability-data-structures-osintintop-to-2037" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<blockquote>
+<p><strong>Master catalog:</strong> these schemas back the capabilities in <a href="FUTURE_MINDMAP.html#-theme--political-intelligence-capability-catalog-to-2037--the-master-osintintop-map"><code>FUTURE_MINDMAP.md</code> §Political-Intelligence Capability Catalog</a> and the architecture in <a href="FUTURE_ARCHITECTURE.html#4a-%EF%B8%8F-political-intelligence-capability-architecture-osintintop-to-2037"><code>FUTURE_ARCHITECTURE.md</code> §4A</a>. They extend the H2 OSINT structures (§3.5) with the <strong>fusion, warning, forecasting and provenance</strong> entities the current model does not yet carry. Every record is provenance-stamped and reproducible from public sources; every analytic record carries Admiralty grading and documented uncertainty.</p>
+</blockquote>
+<h4 id="4111-resolved-entity-cross-source-entity-resolution-c1" class="tsd-anchor-link">4.11.1 Resolved-entity (cross-source entity resolution — C1)<a href="#4111-resolved-entity-cross-source-entity-resolution-c1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4>
+<pre><code class="json"><span class="hl-1">{</span><br/><span class="hl-1">  </span><span class="hl-13">&quot;schema&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;intel-resolved-entity@3.0&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-13">&quot;canonical_id&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;person:0123&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-13">&quot;labels&quot;</span><span class="hl-1">: [</span><span class="hl-2">&quot;Förnamn Efternamn&quot;</span><span class="hl-1">],</span><br/><span class="hl-1">  </span><span class="hl-13">&quot;links&quot;</span><span class="hl-1">: [</span><br/><span class="hl-1">    { </span><span class="hl-13">&quot;source&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;riksdag&quot;</span><span class="hl-1">, </span><span class="hl-13">&quot;ref&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;intressent_0123&quot;</span><span class="hl-1">, </span><span class="hl-13">&quot;confidence&quot;</span><span class="hl-1">: </span><span class="hl-6">0.99</span><span class="hl-1"> },</span><br/><span class="hl-1">    { </span><span class="hl-13">&quot;source&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;lobby-register&quot;</span><span class="hl-1">, </span><span class="hl-13">&quot;ref&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;org-2231&quot;</span><span class="hl-1">, </span><span class="hl-13">&quot;confidence&quot;</span><span class="hl-1">: </span><span class="hl-6">0.82</span><span class="hl-1">, </span><span class="hl-13">&quot;relation&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;former-employee&quot;</span><span class="hl-1"> },</span><br/><span class="hl-1">    { </span><span class="hl-13">&quot;source&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;company-register&quot;</span><span class="hl-1">, </span><span class="hl-13">&quot;ref&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;orgnr-556xxx&quot;</span><span class="hl-1">, </span><span class="hl-13">&quot;confidence&quot;</span><span class="hl-1">: </span><span class="hl-6">0.71</span><span class="hl-1">, </span><span class="hl-13">&quot;relation&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;board-member&quot;</span><span class="hl-1"> }</span><br/><span class="hl-1">  ],</span><br/><span class="hl-1">  </span><span class="hl-13">&quot;resolution_method&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;embedding-match + deterministic-keys&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-13">&quot;source_grading&quot;</span><span class="hl-1">: { </span><span class="hl-13">&quot;reliability&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;B&quot;</span><span class="hl-1">, </span><span class="hl-13">&quot;credibility&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;2&quot;</span><span class="hl-1"> },</span><br/><span class="hl-1">  </span><span class="hl-13">&quot;as_of&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;2028-09-01&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-13">&quot;ethics&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;public-records-only; no private-life data&quot;</span><br/><span class="hl-1">}</span>
+</code><button type="button">Copy</button></pre>
+
+<h4 id="4112-multi-int-fusion-edge-c6" class="tsd-anchor-link">4.11.2 Multi-INT fusion edge (C6)<a href="#4112-multi-int-fusion-edge-c6" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4>
+<pre><code class="json"><span class="hl-1">{</span><br/><span class="hl-1">  </span><span class="hl-13">&quot;schema&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;intel-fusion-edge@3.0&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-13">&quot;from&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;person:0123&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-13">&quot;to&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;org:2231&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-13">&quot;int_families&quot;</span><span class="hl-1">: [</span><span class="hl-2">&quot;OSINT&quot;</span><span class="hl-1">, </span><span class="hl-2">&quot;FININT&quot;</span><span class="hl-1">],</span><br/><span class="hl-1">  </span><span class="hl-13">&quot;relation&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;received-funding-while-voting-on-related-bill&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-13">&quot;evidence&quot;</span><span class="hl-1">: [</span><br/><span class="hl-1">    { </span><span class="hl-13">&quot;type&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;vote&quot;</span><span class="hl-1">, </span><span class="hl-13">&quot;dok_id&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;H802Vot44&quot;</span><span class="hl-1">, </span><span class="hl-13">&quot;grade&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;A1&quot;</span><span class="hl-1"> },</span><br/><span class="hl-1">    { </span><span class="hl-13">&quot;type&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;funding-disclosure&quot;</span><span class="hl-1">, </span><span class="hl-13">&quot;ref&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;party-fin-2027&quot;</span><span class="hl-1">, </span><span class="hl-13">&quot;grade&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;B2&quot;</span><span class="hl-1"> }</span><br/><span class="hl-1">  ],</span><br/><span class="hl-1">  </span><span class="hl-13">&quot;salience&quot;</span><span class="hl-1">: </span><span class="hl-6">0.74</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-13">&quot;neutrality_note&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;Descriptive correlation on public records; not an allegation of wrongdoing.&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-13">&quot;as_of&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;2028-10-01&quot;</span><br/><span class="hl-1">}</span>
+</code><button type="button">Copy</button></pre>
+
+<h4 id="4113-indications-warning-indicator-c14" class="tsd-anchor-link">4.11.3 Indications &amp; Warning indicator (C14)<a href="#4113-indications-warning-indicator-c14" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4>
+<pre><code class="json"><span class="hl-1">{</span><br/><span class="hl-1">  </span><span class="hl-13">&quot;schema&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;intel-iw-indicator@3.0&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-13">&quot;tripwire&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;coalition-rupture&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-13">&quot;indicators&quot;</span><span class="hl-1">: [</span><br/><span class="hl-1">    { </span><span class="hl-13">&quot;name&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;govt-bloc-cohesion-delta&quot;</span><span class="hl-1">, </span><span class="hl-13">&quot;value&quot;</span><span class="hl-1">: </span><span class="hl-6">-0.18</span><span class="hl-1">, </span><span class="hl-13">&quot;threshold&quot;</span><span class="hl-1">: </span><span class="hl-6">-0.15</span><span class="hl-1">, </span><span class="hl-13">&quot;breached&quot;</span><span class="hl-1">: </span><span class="hl-9">true</span><span class="hl-1"> },</span><br/><span class="hl-1">    { </span><span class="hl-13">&quot;name&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;confidence-motion-filed&quot;</span><span class="hl-1">, </span><span class="hl-13">&quot;value&quot;</span><span class="hl-1">: </span><span class="hl-6">1</span><span class="hl-1">, </span><span class="hl-13">&quot;threshold&quot;</span><span class="hl-1">: </span><span class="hl-6">1</span><span class="hl-1">, </span><span class="hl-13">&quot;breached&quot;</span><span class="hl-1">: </span><span class="hl-9">true</span><span class="hl-1"> }</span><br/><span class="hl-1">  ],</span><br/><span class="hl-1">  </span><span class="hl-13">&quot;warning_level&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;elevated&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-13">&quot;probability&quot;</span><span class="hl-1">: { </span><span class="hl-13">&quot;point&quot;</span><span class="hl-1">: </span><span class="hl-6">0.42</span><span class="hl-1">, </span><span class="hl-13">&quot;band&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;roughly even&quot;</span><span class="hl-1">, </span><span class="hl-13">&quot;wep_lexicon&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;ICD-203&quot;</span><span class="hl-1"> },</span><br/><span class="hl-1">  </span><span class="hl-13">&quot;evidence_dok_ids&quot;</span><span class="hl-1">: [</span><span class="hl-2">&quot;H802Vot44&quot;</span><span class="hl-1">, </span><span class="hl-2">&quot;H802Mot201&quot;</span><span class="hl-1">],</span><br/><span class="hl-1">  </span><span class="hl-13">&quot;recommended_retasking&quot;</span><span class="hl-1">: [</span><span class="hl-2">&quot;intel-multi-int-fusion&quot;</span><span class="hl-1">, </span><span class="hl-2">&quot;intel-forecast-calibrate&quot;</span><span class="hl-1">],</span><br/><span class="hl-1">  </span><span class="hl-13">&quot;human_review&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;required&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-13">&quot;as_of&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;2029-02-14T09:00:00Z&quot;</span><br/><span class="hl-1">}</span>
+</code><button type="button">Copy</button></pre>
+
+<h4 id="4114-forecast-calibration-record-c13--c29" class="tsd-anchor-link">4.11.4 Forecast + calibration record (C13 / C29)<a href="#4114-forecast-calibration-record-c13--c29" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4>
+<pre><code class="json"><span class="hl-1">{</span><br/><span class="hl-1">  </span><span class="hl-13">&quot;schema&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;intel-forecast@3.0&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-13">&quot;question_id&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;PIR-2029-coalition-after-budget&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-13">&quot;forecast&quot;</span><span class="hl-1">: { </span><span class="hl-13">&quot;p&quot;</span><span class="hl-1">: </span><span class="hl-6">0.38</span><span class="hl-1">, </span><span class="hl-13">&quot;band&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;unlikely&quot;</span><span class="hl-1">, </span><span class="hl-13">&quot;horizon_days&quot;</span><span class="hl-1">: </span><span class="hl-6">90</span><span class="hl-1"> },</span><br/><span class="hl-1">  </span><span class="hl-13">&quot;method&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;ensemble (gradient-boost + LLM-scenario)&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-13">&quot;assumptions_checked&quot;</span><span class="hl-1">: [</span><span class="hl-2">&quot;KAC-passed&quot;</span><span class="hl-1">],</span><br/><span class="hl-1">  </span><span class="hl-13">&quot;calibration&quot;</span><span class="hl-1">: { </span><span class="hl-13">&quot;rolling_brier&quot;</span><span class="hl-1">: </span><span class="hl-6">0.14</span><span class="hl-1">, </span><span class="hl-13">&quot;n_resolved&quot;</span><span class="hl-1">: </span><span class="hl-6">47</span><span class="hl-1">, </span><span class="hl-13">&quot;trend&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;improving&quot;</span><span class="hl-1"> },</span><br/><span class="hl-1">  </span><span class="hl-13">&quot;resolved&quot;</span><span class="hl-1">: </span><span class="hl-9">null</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-13">&quot;as_of&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;2029-03-01&quot;</span><br/><span class="hl-1">}</span>
+</code><button type="button">Copy</button></pre>
+
+<h4 id="4115-fimi-coordinated-inauthentic-behaviour-signal-c20" class="tsd-anchor-link">4.11.5 FIMI / coordinated-inauthentic-behaviour signal (C20)<a href="#4115-fimi-coordinated-inauthentic-behaviour-signal-c20" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4>
+<pre><code class="json"><span class="hl-1">{</span><br/><span class="hl-1">  </span><span class="hl-13">&quot;schema&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;intel-fimi-signal@3.0&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-13">&quot;narrative_id&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;frame:2029-energy-cost&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-13">&quot;disarm_ttps&quot;</span><span class="hl-1">: [</span><span class="hl-2">&quot;T0049.003&quot;</span><span class="hl-1">, </span><span class="hl-2">&quot;T0017&quot;</span><span class="hl-1">],</span><br/><span class="hl-1">  </span><span class="hl-13">&quot;amplification&quot;</span><span class="hl-1">: { </span><span class="hl-13">&quot;coordinated_accounts_est&quot;</span><span class="hl-1">: </span><span class="hl-6">0</span><span class="hl-1">, </span><span class="hl-13">&quot;method&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;aggregate-network-only&quot;</span><span class="hl-1">, </span><span class="hl-13">&quot;individual_profiling&quot;</span><span class="hl-1">: </span><span class="hl-9">false</span><span class="hl-1"> },</span><br/><span class="hl-1">  </span><span class="hl-13">&quot;attribution_confidence&quot;</span><span class="hl-1">: { </span><span class="hl-13">&quot;band&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;low&quot;</span><span class="hl-1">, </span><span class="hl-13">&quot;wep_lexicon&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;ICD-203&quot;</span><span class="hl-1"> },</span><br/><span class="hl-1">  </span><span class="hl-13">&quot;evidence&quot;</span><span class="hl-1">: [{ </span><span class="hl-13">&quot;type&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;public-discourse-aggregate&quot;</span><span class="hl-1">, </span><span class="hl-13">&quot;grade&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;C3&quot;</span><span class="hl-1"> }],</span><br/><span class="hl-1">  </span><span class="hl-13">&quot;ethics&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;aggregate public discourse only; no citizen profiling; advisory, not accusatory&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-13">&quot;as_of&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;2029-04-10&quot;</span><br/><span class="hl-1">}</span>
+</code><button type="button">Copy</button></pre>
+
+<h4 id="4116-estimative-product-nie-style-key-judgment-c22" class="tsd-anchor-link">4.11.6 Estimative product (NIE-style key judgment — C22)<a href="#4116-estimative-product-nie-style-key-judgment-c22" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4>
+<pre><code class="json"><span class="hl-1">{</span><br/><span class="hl-1">  </span><span class="hl-13">&quot;schema&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;intel-estimative@3.0&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-13">&quot;title&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;Government durability through 2026 budget cycle&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-13">&quot;key_judgments&quot;</span><span class="hl-1">: [</span><br/><span class="hl-1">    { </span><span class="hl-13">&quot;kj&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;Government likely survives the budget vote.&quot;</span><span class="hl-1">, </span><span class="hl-13">&quot;confidence&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;moderate&quot;</span><span class="hl-1">, </span><span class="hl-13">&quot;p&quot;</span><span class="hl-1">: </span><span class="hl-6">0.66</span><span class="hl-1">, </span><span class="hl-13">&quot;dissent&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;minority view: snap election if SD defects&quot;</span><span class="hl-1"> }</span><br/><span class="hl-1">  ],</span><br/><span class="hl-1">  </span><span class="hl-13">&quot;icd203_compliance&quot;</span><span class="hl-1">: { </span><span class="hl-13">&quot;sources_characterized&quot;</span><span class="hl-1">: </span><span class="hl-9">true</span><span class="hl-1">, </span><span class="hl-13">&quot;uncertainty_expressed&quot;</span><span class="hl-1">: </span><span class="hl-9">true</span><span class="hl-1">, </span><span class="hl-13">&quot;assumptions_distinguished&quot;</span><span class="hl-1">: </span><span class="hl-9">true</span><span class="hl-1"> },</span><br/><span class="hl-1">  </span><span class="hl-13">&quot;neutrality_audit&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;party-symmetry-passed&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-13">&quot;evidence_dok_ids&quot;</span><span class="hl-1">: [</span><span class="hl-2">&quot;H802Vot44&quot;</span><span class="hl-1">, </span><span class="hl-2">&quot;H802Bet12&quot;</span><span class="hl-1">],</span><br/><span class="hl-1">  </span><span class="hl-13">&quot;human_signoff&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;analyst-id&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-13">&quot;as_of&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;2029-05-01&quot;</span><br/><span class="hl-1">}</span>
+</code><button type="button">Copy</button></pre>
+
+<h4 id="4117-provenance-content-credential-record-c8--c9" class="tsd-anchor-link">4.11.7 Provenance / content-credential record (C8 / C9)<a href="#4117-provenance-content-credential-record-c8--c9" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4>
+<pre><code class="json"><span class="hl-1">{</span><br/><span class="hl-1">  </span><span class="hl-13">&quot;schema&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;intel-provenance@3.0&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-13">&quot;asset_id&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;evidence-9f2a&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-13">&quot;origin&quot;</span><span class="hl-1">: { </span><span class="hl-13">&quot;source&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;riksdag&quot;</span><span class="hl-1">, </span><span class="hl-13">&quot;url&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;https://data.riksdagen.se/...&quot;</span><span class="hl-1">, </span><span class="hl-13">&quot;fetched_at&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;2029-01-02T08:00:00Z&quot;</span><span class="hl-1"> },</span><br/><span class="hl-1">  </span><span class="hl-13">&quot;c2pa&quot;</span><span class="hl-1">: { </span><span class="hl-13">&quot;signed&quot;</span><span class="hl-1">: </span><span class="hl-9">true</span><span class="hl-1">, </span><span class="hl-13">&quot;kms_key&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;alias/intel-provenance&quot;</span><span class="hl-1">, </span><span class="hl-13">&quot;manifest_hash&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;sha256:...&quot;</span><span class="hl-1"> },</span><br/><span class="hl-1">  </span><span class="hl-13">&quot;synthetic_media_check&quot;</span><span class="hl-1">: { </span><span class="hl-13">&quot;ran&quot;</span><span class="hl-1">: </span><span class="hl-9">true</span><span class="hl-1">, </span><span class="hl-13">&quot;verdict&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;authentic&quot;</span><span class="hl-1">, </span><span class="hl-13">&quot;model&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;df-detector-v3&quot;</span><span class="hl-1"> },</span><br/><span class="hl-1">  </span><span class="hl-13">&quot;chain_of_custody&quot;</span><span class="hl-1">: [</span><span class="hl-2">&quot;fetch&quot;</span><span class="hl-1">, </span><span class="hl-2">&quot;extract&quot;</span><span class="hl-1">, </span><span class="hl-2">&quot;grade&quot;</span><span class="hl-1">, </span><span class="hl-2">&quot;embed&quot;</span><span class="hl-1">],</span><br/><span class="hl-1">  </span><span class="hl-13">&quot;refuse_to_cite&quot;</span><span class="hl-1">: </span><span class="hl-9">false</span><br/><span class="hl-1">}</span>
+</code><button type="button">Copy</button></pre>
+
+<h4 id="4118-capability-entity-erd-horizon-3" class="tsd-anchor-link">4.11.8 Capability-entity ERD (Horizon 3)<a href="#4118-capability-entity-erd-horizon-3" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4>
+<pre><code class="mermaid"><span class="hl-1">erDiagram</span><br/><span class="hl-1">    RESOLVED_ENTITY ||--o{ FUSION_EDGE : participates</span><br/><span class="hl-1">    FUSION_EDGE }o--|| PROVENANCE : &quot;anchored by&quot;</span><br/><span class="hl-1">    IW_INDICATOR ||--o{ FORECAST : &quot;re-tasks&quot;</span><br/><span class="hl-1">    FORECAST ||--o{ ESTIMATIVE : &quot;feeds&quot;</span><br/><span class="hl-1">    ESTIMATIVE }o--|| PROVENANCE : &quot;cites&quot;</span><br/><span class="hl-1">    FIMI_SIGNAL }o--|| PROVENANCE : &quot;evidenced by&quot;</span><br/><span class="hl-1">    RESOLVED_ENTITY {</span><br/><span class="hl-1">        string canonical_id PK</span><br/><span class="hl-1">        string source_grading</span><br/><span class="hl-1">        date as_of</span><br/><span class="hl-1">    }</span><br/><span class="hl-1">    FUSION_EDGE {</span><br/><span class="hl-1">        string from FK</span><br/><span class="hl-1">        string to FK</span><br/><span class="hl-1">        float salience</span><br/><span class="hl-1">    }</span><br/><span class="hl-1">    IW_INDICATOR {</span><br/><span class="hl-1">        string tripwire</span><br/><span class="hl-1">        string warning_level</span><br/><span class="hl-1">        float probability</span><br/><span class="hl-1">    }</span><br/><span class="hl-1">    FORECAST {</span><br/><span class="hl-1">        string question_id PK</span><br/><span class="hl-1">        float p</span><br/><span class="hl-1">        float rolling_brier</span><br/><span class="hl-1">    }</span><br/><span class="hl-1">    ESTIMATIVE {</span><br/><span class="hl-1">        string title</span><br/><span class="hl-1">        string neutrality_audit</span><br/><span class="hl-1">        string human_signoff</span><br/><span class="hl-1">    }</span><br/><span class="hl-1">    FIMI_SIGNAL {</span><br/><span class="hl-1">        string narrative_id PK</span><br/><span class="hl-1">        string attribution_confidence</span><br/><span class="hl-1">    }</span><br/><span class="hl-1">    PROVENANCE {</span><br/><span class="hl-1">        string asset_id PK</span><br/><span class="hl-1">        bool refuse_to_cite</span><br/><span class="hl-1">    }</span>
+</code><button type="button">Copy</button></pre>
+
+<p><strong>Data-governance rails.</strong> All capability entities inherit the §10 GDPR Article 9 posture (lawful bases 9(2)(e)/9(2)(g)), the §3.5.5 evidence-and-provenance invariant (no analytic record without a <code>dok_id</code>/primary-source anchor + Admiralty grade), and the §4.10 consistency contract (serverless stores never drift from the public static SoR). FININT/SOCMINT entities carry an explicit <code>ethics</code> field asserting <strong>public-records-only, aggregate, non-accusatory</strong> processing with <strong>no citizen profiling</strong>.</p>
+<hr>
+<h2 id="5-source-ingestion-integration" class="tsd-anchor-link">5. Source Ingestion &amp; Integration<a href="#5-source-ingestion-integration" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<pre><code class="mermaid"><span class="hl-1">sequenceDiagram</span><br/><span class="hl-1">    participant SRC as Riksdag / Regering / IMF / SCB / WB</span><br/><span class="hl-1">    participant EB as EventBridge (scheduled)</span><br/><span class="hl-1">    participant ING as Lambda Ingestors</span><br/><span class="hl-1">    participant SF as Step Functions</span><br/><span class="hl-1">    participant ART as Static Artifacts (S3)</span><br/><span class="hl-1">    participant HYD as Hydrators</span><br/><span class="hl-1">    participant STORE as Serverless Stores</span><br/><span class="hl-1">    EB-&gt;&gt;ING: Trigger scheduled fetch</span><br/><span class="hl-1">    ING-&gt;&gt;SRC: Pull public data</span><br/><span class="hl-1">    ING-&gt;&gt;ART: Write versioned JSON (system of record)</span><br/><span class="hl-1">    ART-&gt;&gt;SF: Emit &quot;artifact updated&quot;</span><br/><span class="hl-1">    SF-&gt;&gt;HYD: Orchestrate hydration</span><br/><span class="hl-1">    HYD-&gt;&gt;STORE: Upsert Neptune / Aurora / DynamoDB / OpenSearch / Timestream</span><br/><span class="hl-1">    HYD-&gt;&gt;STORE: Embed corpus → Bedrock KB</span>
+</code><button type="button">Copy</button></pre>
+
+<h3 id="51-migration-strategy" class="tsd-anchor-link">5.1 Migration Strategy<a href="#51-migration-strategy" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ol>
+<li><strong>Dual-write era</strong> — static artifacts remain canonical; serverless stores are hydrated copies. UI can fall back to static at any time.</li>
+<li><strong>Read-shadow</strong> — API Gateway serves reads from serverless while continuously diffed against static for parity.</li>
+<li><strong>Promote</strong> — once parity is proven, interactive features (graph traversal, vector search) are exposed; static remains DR.</li>
+</ol>
+<h3 id="52-integration-components" class="tsd-anchor-link">5.2 Integration Components<a href="#52-integration-components" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>EventBridge</strong></td>
+<td>Scheduled ingestion triggers (replaces some cron in GitHub Actions)</td>
+</tr>
+<tr>
+<td><strong>Step Functions</strong></td>
+<td>Orchestrates multi-store hydration with retries</td>
+</tr>
+<tr>
+<td><strong>Kinesis</strong> (optional)</td>
+<td>Streaming ingestion for high-frequency updates</td>
+</tr>
+<tr>
+<td><strong>Lambda</strong></td>
+<td>Stateless ingestors, hydrators, GraphQL resolvers</td>
+</tr>
+</tbody>
+</table>
+<h3 id="53-data-quality-cross-source-reconciliation" class="tsd-anchor-link">5.3 Data Quality &amp; Cross-Source Reconciliation<a href="#53-data-quality-cross-source-reconciliation" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p>Economic context blends three providers with a strict precedence rule (IMF primary, SCB ground truth, World Bank non-economic residue). Reconciliation guards against silent divergence:</p>
+<pre><code class="mermaid"><span class="hl-1">graph TD</span><br/><span class="hl-1">    IMF[&quot;IMF SWE (WEO/FM)&quot;] --&gt; CMP{&quot;&gt;0.3pp delta?&quot;}</span><br/><span class="hl-1">    SCB[&quot;SCB national accounts&quot;] --&gt; CMP</span><br/><span class="hl-1">    CMP --&gt;|No| OK[&quot;Accept; tag dual-source provenance&quot;]</span><br/><span class="hl-1">    CMP --&gt;|Yes| REV[&quot;Editorial review flag&quot;]</span><br/><span class="hl-1">    REV --&gt; NOTE[&quot;Footnote both values + vintages&quot;]</span><br/><span class="hl-1">    WB[&quot;World Bank (non-economic only)&quot;] --&gt; GOV[&quot;Governance / environment&quot;]</span><br/><span class="hl-1">    style IMF fill:#bbdefb,stroke:#1565c0,color:#000000</span><br/><span class="hl-1">    style SCB fill:#c8e6c9,stroke:#2e7d32,color:#000000</span><br/><span class="hl-1">    style WB fill:#fff9c4,stroke:#f9a825,color:#000000</span><br/><span class="hl-1">    style CMP fill:#ffcc80,stroke:#e65100,color:#000000</span><br/><span class="hl-1">    style REV fill:#ef9a9a,stroke:#b71c1c,color:#000000</span><br/><span class="hl-1">    style OK fill:#a5d6a7,stroke:#1b5e20,color:#000000</span><br/><span class="hl-1">    style NOTE fill:#e1bee7,stroke:#6a1b9a,color:#000000</span><br/><span class="hl-1">    style GOV fill:#bbdefb,stroke:#1565c0,color:#000000</span>
+</code><button type="button">Copy</button></pre>
+
+<table>
+<thead>
+<tr>
+<th>Check</th>
+<th>Rule</th>
+<th>Action on failure</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IMF ↔ SCB GDP/inflation delta</td>
+<td>&gt; 0.3pp triggers review</td>
+<td>Footnote both values + vintages</td>
+</tr>
+<tr>
+<td>Voting record completeness</td>
+<td>every <code>votering_id</code> resolves to a <code>dok_id</code></td>
+<td>Reject artifact</td>
+</tr>
+<tr>
+<td>Party roster integrity</td>
+<td>active parties ∈ {S,M,SD,C,V,MP,KD,L}</td>
+<td>Flag schema drift</td>
+</tr>
+<tr>
+<td>Vintage freshness</td>
+<td>IMF <code>vintage</code> within one WEO cycle</td>
+<td>Re-fetch</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="6-graphql-api-schema" class="tsd-anchor-link">6. GraphQL API Schema<a href="#6-graphql-api-schema" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<pre><code class="graphql"><span class="hl-9">type</span><span class="hl-1"> </span><span class="hl-10">Politician</span><span class="hl-1"> {</span><br/><span class="hl-1">  </span><span class="hl-5">intressentId</span><span class="hl-1">: </span><span class="hl-10">ID</span><span class="hl-1">!</span><br/><span class="hl-1">  </span><span class="hl-5">namn</span><span class="hl-1">: </span><span class="hl-10">String</span><span class="hl-1">!</span><br/><span class="hl-1">  </span><span class="hl-5">parti</span><span class="hl-1">: </span><span class="hl-10">Party</span><span class="hl-1">!</span><br/><span class="hl-1">  </span><span class="hl-5">valkrets</span><span class="hl-1">: </span><span class="hl-10">String</span><br/><span class="hl-1">  </span><span class="hl-5">status</span><span class="hl-1">: </span><span class="hl-10">String</span><br/><span class="hl-1">  </span><span class="hl-5">votes</span><span class="hl-1">(</span><span class="hl-5">rm</span><span class="hl-1">: </span><span class="hl-10">String</span><span class="hl-1">): [</span><span class="hl-10">Vote</span><span class="hl-1">!]!</span><br/><span class="hl-1">  </span><span class="hl-5">speeches</span><span class="hl-1">(</span><span class="hl-5">rm</span><span class="hl-1">: </span><span class="hl-10">String</span><span class="hl-1">): [</span><span class="hl-10">Speech</span><span class="hl-1">!]!</span><br/><span class="hl-1">  </span><span class="hl-5">anomalyScores</span><span class="hl-1">: [</span><span class="hl-10">AnomalyScore</span><span class="hl-1">!]!</span><br/><span class="hl-1">}</span><br/><br/><span class="hl-9">type</span><span class="hl-1"> </span><span class="hl-10">Party</span><span class="hl-1"> {</span><br/><span class="hl-1">  </span><span class="hl-5">kod</span><span class="hl-1">: </span><span class="hl-10">ID</span><span class="hl-1">!</span><br/><span class="hl-1">  </span><span class="hl-5">namn</span><span class="hl-1">: </span><span class="hl-10">String</span><span class="hl-1">!</span><br/><span class="hl-1">  </span><span class="hl-5">active</span><span class="hl-1">: </span><span class="hl-10">Boolean</span><span class="hl-1">!</span><br/><span class="hl-1">  </span><span class="hl-5">seats</span><span class="hl-1">: </span><span class="hl-10">Int</span><br/><span class="hl-1">  </span><span class="hl-5">cohesion</span><span class="hl-1">(</span><span class="hl-5">rm</span><span class="hl-1">: </span><span class="hl-10">String</span><span class="hl-1">!): </span><span class="hl-10">CohesionRow</span><span class="hl-1">!</span><br/><span class="hl-1">  </span><span class="hl-5">alignments</span><span class="hl-1">(</span><span class="hl-5">rm</span><span class="hl-1">: </span><span class="hl-10">String</span><span class="hl-1">!): [</span><span class="hl-10">BlocEdge</span><span class="hl-1">!]!</span><br/><span class="hl-1">}</span><br/><br/><span class="hl-9">type</span><span class="hl-1"> </span><span class="hl-10">Vote</span><span class="hl-1"> {</span><br/><span class="hl-1">  </span><span class="hl-5">voteringId</span><span class="hl-1">: </span><span class="hl-10">ID</span><span class="hl-1">!</span><br/><span class="hl-1">  </span><span class="hl-5">document</span><span class="hl-1">: </span><span class="hl-10">Document</span><span class="hl-1">!</span><br/><span class="hl-1">  </span><span class="hl-5">politician</span><span class="hl-1">: </span><span class="hl-10">Politician</span><span class="hl-1">!</span><br/><span class="hl-1">  </span><span class="hl-5">rost</span><span class="hl-1">: </span><span class="hl-10">String</span><span class="hl-1">!</span><br/><span class="hl-1">  </span><span class="hl-5">punkt</span><span class="hl-1">: </span><span class="hl-10">String</span><br/><span class="hl-1">}</span><br/><br/><span class="hl-9">type</span><span class="hl-1"> </span><span class="hl-10">Document</span><span class="hl-1"> {</span><br/><span class="hl-1">  </span><span class="hl-5">dokId</span><span class="hl-1">: </span><span class="hl-10">ID</span><span class="hl-1">!</span><br/><span class="hl-1">  </span><span class="hl-5">doktyp</span><span class="hl-1">: </span><span class="hl-10">String</span><br/><span class="hl-1">  </span><span class="hl-5">titel</span><span class="hl-1">: </span><span class="hl-10">String</span><br/><span class="hl-1">  </span><span class="hl-5">rm</span><span class="hl-1">: </span><span class="hl-10">String</span><br/><span class="hl-1">  </span><span class="hl-5">publicerad</span><span class="hl-1">: </span><span class="hl-10">String</span><br/><span class="hl-1">}</span><br/><br/><span class="hl-9">type</span><span class="hl-1"> </span><span class="hl-10">Speech</span><span class="hl-1"> {</span><br/><span class="hl-1">  </span><span class="hl-5">anforandeId</span><span class="hl-1">: </span><span class="hl-10">ID</span><span class="hl-1">!</span><br/><span class="hl-1">  </span><span class="hl-5">politician</span><span class="hl-1">: </span><span class="hl-10">Politician</span><span class="hl-1">!</span><br/><span class="hl-1">  </span><span class="hl-5">document</span><span class="hl-1">: </span><span class="hl-10">Document</span><br/><span class="hl-1">  </span><span class="hl-5">rm</span><span class="hl-1">: </span><span class="hl-10">String</span><br/><span class="hl-1">}</span><br/><br/><span class="hl-9">type</span><span class="hl-1"> </span><span class="hl-10">CohesionRow</span><span class="hl-1"> {</span><br/><span class="hl-1">  </span><span class="hl-5">party</span><span class="hl-1">: </span><span class="hl-10">String</span><span class="hl-1">!</span><br/><span class="hl-1">  </span><span class="hl-5">cohesionIndex</span><span class="hl-1">: </span><span class="hl-10">Float</span><span class="hl-1">!</span><br/><span class="hl-1">  </span><span class="hl-5">rebelVotes</span><span class="hl-1">: </span><span class="hl-10">Int</span><span class="hl-1">!</span><br/><span class="hl-1">  </span><span class="hl-5">evidenceDokIds</span><span class="hl-1">: [</span><span class="hl-10">String</span><span class="hl-1">!]!</span><br/><span class="hl-1">}</span><br/><br/><span class="hl-9">type</span><span class="hl-1"> </span><span class="hl-10">BlocEdge</span><span class="hl-1"> {</span><br/><span class="hl-1">  </span><span class="hl-5">source</span><span class="hl-1">: </span><span class="hl-10">String</span><span class="hl-1">!</span><br/><span class="hl-1">  </span><span class="hl-5">target</span><span class="hl-1">: </span><span class="hl-10">String</span><span class="hl-1">!</span><br/><span class="hl-1">  </span><span class="hl-5">alignment</span><span class="hl-1">: </span><span class="hl-10">Float</span><span class="hl-1">!</span><br/><span class="hl-1">  </span><span class="hl-5">intopClass</span><span class="hl-1">: </span><span class="hl-10">String</span><span class="hl-1">!</span><br/><span class="hl-1">  </span><span class="hl-5">evidenceDokIds</span><span class="hl-1">: [</span><span class="hl-10">String</span><span class="hl-1">!]!</span><br/><span class="hl-1">}</span><br/><br/><span class="hl-9">type</span><span class="hl-1"> </span><span class="hl-10">AnomalyScore</span><span class="hl-1"> {</span><br/><span class="hl-1">  </span><span class="hl-5">entity</span><span class="hl-1">: </span><span class="hl-10">String</span><span class="hl-1">!</span><br/><span class="hl-1">  </span><span class="hl-5">metric</span><span class="hl-1">: </span><span class="hl-10">String</span><span class="hl-1">!</span><br/><span class="hl-1">  </span><span class="hl-5">z</span><span class="hl-1">: </span><span class="hl-10">Float</span><span class="hl-1">!</span><br/><span class="hl-1">  </span><span class="hl-5">flag</span><span class="hl-1">: </span><span class="hl-10">String</span><span class="hl-1">!</span><br/><span class="hl-1">  </span><span class="hl-5">explanation</span><span class="hl-1">: </span><span class="hl-10">String</span><span class="hl-1">!</span><br/><span class="hl-1">}</span><br/><br/><span class="hl-9">type</span><span class="hl-1"> </span><span class="hl-10">Query</span><span class="hl-1"> {</span><br/><span class="hl-1">  </span><span class="hl-5">politician</span><span class="hl-1">(</span><span class="hl-5">intressentId</span><span class="hl-1">: </span><span class="hl-10">ID</span><span class="hl-1">!): </span><span class="hl-10">Politician</span><br/><span class="hl-1">  </span><span class="hl-5">party</span><span class="hl-1">(</span><span class="hl-5">kod</span><span class="hl-1">: </span><span class="hl-10">ID</span><span class="hl-1">!): </span><span class="hl-10">Party</span><br/><span class="hl-1">  </span><span class="hl-5">searchDocuments</span><span class="hl-1">(</span><span class="hl-5">query</span><span class="hl-1">: </span><span class="hl-10">String</span><span class="hl-1">!, </span><span class="hl-5">rm</span><span class="hl-1">: </span><span class="hl-10">String</span><span class="hl-1">): [</span><span class="hl-10">Document</span><span class="hl-1">!]!</span><br/><span class="hl-1">  </span><span class="hl-5">ragAnswer</span><span class="hl-1">(</span><span class="hl-5">question</span><span class="hl-1">: </span><span class="hl-10">String</span><span class="hl-1">!): </span><span class="hl-10">GroundedAnswer</span><span class="hl-1">!</span><br/><span class="hl-1">}</span><br/><br/><span class="hl-9">type</span><span class="hl-1"> </span><span class="hl-10">GroundedAnswer</span><span class="hl-1"> {</span><br/><span class="hl-1">  </span><span class="hl-5">answer</span><span class="hl-1">: </span><span class="hl-10">String</span><span class="hl-1">!</span><br/><span class="hl-1">  </span><span class="hl-5">citations</span><span class="hl-1">: [</span><span class="hl-10">String</span><span class="hl-1">!]!</span><span class="hl-4">   # dok_ids — never empty</span><br/><span class="hl-1">}</span><br/><br/><span class="hl-9">type</span><span class="hl-1"> </span><span class="hl-10">Mutation</span><span class="hl-1"> {</span><br/><span class="hl-1">  </span><span class="hl-5">refreshHydration</span><span class="hl-1">(</span><span class="hl-5">source</span><span class="hl-1">: </span><span class="hl-10">String</span><span class="hl-1">!): </span><span class="hl-10">HydrationResult</span><span class="hl-1">!</span><br/><span class="hl-1">}</span><br/><br/><span class="hl-9">type</span><span class="hl-1"> </span><span class="hl-10">HydrationResult</span><span class="hl-1"> {</span><br/><span class="hl-1">  </span><span class="hl-5">source</span><span class="hl-1">: </span><span class="hl-10">String</span><span class="hl-1">!</span><br/><span class="hl-1">  </span><span class="hl-5">updatedAt</span><span class="hl-1">: </span><span class="hl-10">String</span><span class="hl-1">!</span><br/><span class="hl-1">  </span><span class="hl-5">recordsUpserted</span><span class="hl-1">: </span><span class="hl-10">Int</span><span class="hl-1">!</span><br/><span class="hl-1">}</span><br/><br/><span class="hl-9">type</span><span class="hl-1"> </span><span class="hl-10">Subscription</span><span class="hl-1"> {</span><br/><span class="hl-1">  </span><span class="hl-5">newAnomaly</span><span class="hl-1">(</span><span class="hl-5">party</span><span class="hl-1">: </span><span class="hl-10">String</span><span class="hl-1">): </span><span class="hl-10">AnomalyScore</span><span class="hl-1">!</span><br/><span class="hl-1">  </span><span class="hl-5">voteAdded</span><span class="hl-1">(</span><span class="hl-5">rm</span><span class="hl-1">: </span><span class="hl-10">String</span><span class="hl-1">!): </span><span class="hl-10">Vote</span><span class="hl-1">!</span><br/><span class="hl-1">}</span>
+</code><button type="button">Copy</button></pre>
+
+<blockquote>
+<p><code>GroundedAnswer.citations</code> is non-nullable and must be non-empty — the schema <em>itself</em> enforces evidence-first AI output.</p>
+</blockquote>
+<hr>
+<h2 id="7-data-model-diagrams" class="tsd-anchor-link">7. Data Model Diagrams<a href="#7-data-model-diagrams" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<h3 id="71-cross-horizon-erd" class="tsd-anchor-link">7.1 Cross-Horizon ERD<a href="#71-cross-horizon-erd" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<pre><code class="mermaid"><span class="hl-1">erDiagram</span><br/><span class="hl-1">    POLITICIAN ||--o{ VOTE : casts</span><br/><span class="hl-1">    POLITICIAN ||--o{ SPEECH : delivers</span><br/><span class="hl-1">    POLITICIAN ||--o{ NETWORK_EDGE : connects</span><br/><span class="hl-1">    POLITICIAN ||--o{ ANOMALY_SCORE : flagged</span><br/><span class="hl-1">    PARTY ||--o{ POLITICIAN : includes</span><br/><span class="hl-1">    PARTY ||--o{ COHESION_ROW : scored</span><br/><span class="hl-1">    PARTY ||--o{ BLOC_EDGE : aligns</span><br/><span class="hl-1">    DOCUMENT ||--o{ VOTE : triggers</span><br/><span class="hl-1">    DOCUMENT ||--o{ EMBEDDING : indexed</span><br/><span class="hl-1">    COMMITTEE ||--o{ DOCUMENT : produces</span><br/><span class="hl-1">    POLITICIAN {</span><br/><span class="hl-1">        string intressent_id PK</span><br/><span class="hl-1">        string parti FK</span><br/><span class="hl-1">    }</span><br/><span class="hl-1">    PARTY {</span><br/><span class="hl-1">        string kod PK</span><br/><span class="hl-1">        boolean active</span><br/><span class="hl-1">    }</span><br/><span class="hl-1">    DOCUMENT {</span><br/><span class="hl-1">        string dok_id PK</span><br/><span class="hl-1">        string rm</span><br/><span class="hl-1">    }</span><br/><span class="hl-1">    VOTE {</span><br/><span class="hl-1">        string votering_id PK</span><br/><span class="hl-1">        string rost</span><br/><span class="hl-1">    }</span><br/><span class="hl-1">    SPEECH {</span><br/><span class="hl-1">        string anforande_id PK</span><br/><span class="hl-1">    }</span><br/><span class="hl-1">    COHESION_ROW {</span><br/><span class="hl-1">        string party FK</span><br/><span class="hl-1">        float cohesion_index</span><br/><span class="hl-1">    }</span><br/><span class="hl-1">    BLOC_EDGE {</span><br/><span class="hl-1">        string source FK</span><br/><span class="hl-1">        string target FK</span><br/><span class="hl-1">        float alignment</span><br/><span class="hl-1">    }</span><br/><span class="hl-1">    NETWORK_EDGE {</span><br/><span class="hl-1">        string from FK</span><br/><span class="hl-1">        string to FK</span><br/><span class="hl-1">        int weight</span><br/><span class="hl-1">    }</span><br/><span class="hl-1">    ANOMALY_SCORE {</span><br/><span class="hl-1">        string entity FK</span><br/><span class="hl-1">        float z</span><br/><span class="hl-1">    }</span><br/><span class="hl-1">    EMBEDDING {</span><br/><span class="hl-1">        string dok_id FK</span><br/><span class="hl-1">        int dimension</span><br/><span class="hl-1">    }</span><br/><span class="hl-1">    COMMITTEE {</span><br/><span class="hl-1">        string kod PK</span><br/><span class="hl-1">    }</span>
+</code><button type="button">Copy</button></pre>
+
+<h3 id="72-aws-service-integration" class="tsd-anchor-link">7.2 AWS Service Integration<a href="#72-aws-service-integration" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<pre><code class="mermaid"><span class="hl-1">graph TB</span><br/><span class="hl-1">    subgraph EDGE[&quot;Edge&quot;]</span><br/><span class="hl-1">        CF[&quot;CloudFront&quot;]</span><br/><span class="hl-1">        WAF[&quot;AWS WAF&quot;]</span><br/><span class="hl-1">    end</span><br/><span class="hl-1">    subgraph ACCESS[&quot;Access Tier&quot;]</span><br/><span class="hl-1">        APIGW[&quot;API Gateway&quot;]</span><br/><span class="hl-1">        COG[&quot;Cognito&quot;]</span><br/><span class="hl-1">    end</span><br/><span class="hl-1">    subgraph COMPUTE[&quot;Compute&quot;]</span><br/><span class="hl-1">        L[&quot;Lambda&quot;]</span><br/><span class="hl-1">        SF[&quot;Step Functions&quot;]</span><br/><span class="hl-1">        EB[&quot;EventBridge&quot;]</span><br/><span class="hl-1">    end</span><br/><span class="hl-1">    subgraph DATA[&quot;Data Tier&quot;]</span><br/><span class="hl-1">        NEP[&quot;Neptune&quot;]</span><br/><span class="hl-1">        AUR[&quot;Aurora v2&quot;]</span><br/><span class="hl-1">        DDB[&quot;DynamoDB&quot;]</span><br/><span class="hl-1">        OS[&quot;OpenSearch&quot;]</span><br/><span class="hl-1">        TS[&quot;Timestream&quot;]</span><br/><span class="hl-1">        KB[&quot;Bedrock KB&quot;]</span><br/><span class="hl-1">        S3[&quot;S3 (static SoR)&quot;]</span><br/><span class="hl-1">    end</span><br/><span class="hl-1">    CF --&gt; WAF --&gt; APIGW --&gt; COG --&gt; L</span><br/><span class="hl-1">    EB --&gt; SF --&gt; L</span><br/><span class="hl-1">    L --&gt; NEP &amp; AUR &amp; DDB &amp; OS &amp; TS &amp; KB</span><br/><span class="hl-1">    L -. fallback .-&gt; S3</span><br/><span class="hl-1">    style CF fill:#ffe0b2,stroke:#e65100,color:#000000</span><br/><span class="hl-1">    style WAF fill:#ffe0b2,stroke:#e65100,color:#000000</span><br/><span class="hl-1">    style APIGW fill:#ffcc80,stroke:#e65100,color:#000000</span><br/><span class="hl-1">    style COG fill:#ffcc80,stroke:#e65100,color:#000000</span><br/><span class="hl-1">    style L fill:#fff9c4,stroke:#f9a825,color:#000000</span><br/><span class="hl-1">    style SF fill:#fff9c4,stroke:#f9a825,color:#000000</span><br/><span class="hl-1">    style EB fill:#fff9c4,stroke:#f9a825,color:#000000</span><br/><span class="hl-1">    style NEP fill:#e1bee7,stroke:#6a1b9a,color:#000000</span><br/><span class="hl-1">    style AUR fill:#e1bee7,stroke:#6a1b9a,color:#000000</span><br/><span class="hl-1">    style DDB fill:#e1bee7,stroke:#6a1b9a,color:#000000</span><br/><span class="hl-1">    style OS fill:#e1bee7,stroke:#6a1b9a,color:#000000</span><br/><span class="hl-1">    style TS fill:#e1bee7,stroke:#6a1b9a,color:#000000</span><br/><span class="hl-1">    style KB fill:#e1bee7,stroke:#6a1b9a,color:#000000</span><br/><span class="hl-1">    style S3 fill:#bbdefb,stroke:#1565c0,color:#000000</span>
+</code><button type="button">Copy</button></pre>
+
+<h3 id="73-query-data-flow-sequence" class="tsd-anchor-link">7.3 Query Data-Flow Sequence<a href="#73-query-data-flow-sequence" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<pre><code class="mermaid"><span class="hl-1">sequenceDiagram</span><br/><span class="hl-1">    participant U as User</span><br/><span class="hl-1">    participant CF as CloudFront</span><br/><span class="hl-1">    participant GW as API Gateway</span><br/><span class="hl-1">    participant C as Cognito</span><br/><span class="hl-1">    participant L as Lambda</span><br/><span class="hl-1">    participant N as Neptune</span><br/><span class="hl-1">    participant O as OpenSearch</span><br/><span class="hl-1">    participant K as Bedrock KB</span><br/><span class="hl-1">    U-&gt;&gt;CF: GraphQL query</span><br/><span class="hl-1">    CF-&gt;&gt;GW: Forward</span><br/><span class="hl-1">    GW-&gt;&gt;C: Authorize + throttle</span><br/><span class="hl-1">    C--&gt;&gt;GW: Token OK</span><br/><span class="hl-1">    GW-&gt;&gt;L: Resolve</span><br/><span class="hl-1">    L-&gt;&gt;N: Graph traversal (co-voting)</span><br/><span class="hl-1">    L-&gt;&gt;O: Vector + text search</span><br/><span class="hl-1">    L-&gt;&gt;K: RAG retrieve (grounded)</span><br/><span class="hl-1">    K--&gt;&gt;L: Answer + dok_id citations</span><br/><span class="hl-1">    L--&gt;&gt;U: Response (evidence-linked)</span>
+</code><button type="button">Copy</button></pre>
+
+<h3 id="74-neptune-graph-visualization" class="tsd-anchor-link">7.4 Neptune Graph Visualization<a href="#74-neptune-graph-visualization" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<pre><code class="mermaid"><span class="hl-1">graph LR</span><br/><span class="hl-1">    P1((MP A · S)) ---|co_voted 4210| P2((MP B · V))</span><br/><span class="hl-1">    P1 ---|co_sponsored 23| P3((MP C · S))</span><br/><span class="hl-1">    P2 ---|committee FiU| P4((MP D · MP))</span><br/><span class="hl-1">    P3 ---|co_voted 1880| P4</span><br/><span class="hl-1">    style P1 fill:#ef9a9a,stroke:#b71c1c,color:#000000</span><br/><span class="hl-1">    style P3 fill:#ef9a9a,stroke:#b71c1c,color:#000000</span><br/><span class="hl-1">    style P2 fill:#ef9a9a,stroke:#b71c1c,color:#000000</span><br/><span class="hl-1">    style P4 fill:#a5d6a7,stroke:#1b5e20,color:#000000</span>
+</code><button type="button">Copy</button></pre>
+
+<h3 id="75-time-series-flow" class="tsd-anchor-link">7.5 Time-Series Flow<a href="#75-time-series-flow" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<pre><code class="mermaid"><span class="hl-1">graph LR</span><br/><span class="hl-1">    SRC[&quot;Vote / speech events&quot;] --&gt; ING[&quot;Lambda ingestor&quot;]</span><br/><span class="hl-1">    ING --&gt; TS[&quot;Timestream&quot;]</span><br/><span class="hl-1">    TS --&gt; AGG[&quot;Scheduled aggregation&quot;]</span><br/><span class="hl-1">    AGG --&gt; ANOM[&quot;Anomaly z-scores&quot;]</span><br/><span class="hl-1">    ANOM --&gt; API[&quot;API Gateway&quot;]</span><br/><span class="hl-1">    style SRC fill:#bbdefb,stroke:#1565c0,color:#000000</span><br/><span class="hl-1">    style ING fill:#fff9c4,stroke:#f9a825,color:#000000</span><br/><span class="hl-1">    style TS fill:#e1bee7,stroke:#6a1b9a,color:#000000</span><br/><span class="hl-1">    style AGG fill:#fff9c4,stroke:#f9a825,color:#000000</span><br/><span class="hl-1">    style ANOM fill:#c8e6c9,stroke:#2e7d32,color:#000000</span><br/><span class="hl-1">    style API fill:#ffcc80,stroke:#e65100,color:#000000</span>
+</code><button type="button">Copy</button></pre>
+
+<h3 id="76-bedrock-kb-rag-pipeline" class="tsd-anchor-link">7.6 Bedrock KB RAG Pipeline<a href="#76-bedrock-kb-rag-pipeline" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<pre><code class="mermaid"><span class="hl-1">graph TD</span><br/><span class="hl-1">    DOCS[&quot;Documents + speeches (public)&quot;] --&gt; CHUNK[&quot;Chunk + grade source&quot;]</span><br/><span class="hl-1">    CHUNK --&gt; EMB[&quot;Embed (Titan / Bedrock)&quot;]</span><br/><span class="hl-1">    EMB --&gt; KB[&quot;Knowledge Base vector store&quot;]</span><br/><span class="hl-1">    Q[&quot;Citizen question&quot;] --&gt; RET[&quot;Retrieve top-k&quot;]</span><br/><span class="hl-1">    KB --&gt; RET</span><br/><span class="hl-1">    RET --&gt; GEN[&quot;Generate grounded answer&quot;]</span><br/><span class="hl-1">    GEN --&gt; CITE[&quot;Attach dok_id citations&quot;]</span><br/><span class="hl-1">    CITE --&gt; OUT[&quot;Answer (never ungrounded)&quot;]</span><br/><span class="hl-1">    style DOCS fill:#bbdefb,stroke:#1565c0,color:#000000</span><br/><span class="hl-1">    style CHUNK fill:#fff9c4,stroke:#f9a825,color:#000000</span><br/><span class="hl-1">    style EMB fill:#fff9c4,stroke:#f9a825,color:#000000</span><br/><span class="hl-1">    style KB fill:#e1bee7,stroke:#6a1b9a,color:#000000</span><br/><span class="hl-1">    style RET fill:#fff9c4,stroke:#f9a825,color:#000000</span><br/><span class="hl-1">    style GEN fill:#c8e6c9,stroke:#2e7d32,color:#000000</span><br/><span class="hl-1">    style CITE fill:#c8e6c9,stroke:#2e7d32,color:#000000</span><br/><span class="hl-1">    style OUT fill:#a5d6a7,stroke:#1b5e20,color:#000000</span>
+</code><button type="button">Copy</button></pre>
+
+<hr>
+<h2 id="8-implementation-roadmap" class="tsd-anchor-link">8. Implementation Roadmap<a href="#8-implementation-roadmap" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<pre><code class="mermaid"><span class="hl-1">gantt</span><br/><span class="hl-1">    title Riksdagsmonitor Data Architecture Roadmap (2026-2037)</span><br/><span class="hl-1">    dateFormat YYYY-MM-DD</span><br/><span class="hl-1">    section Horizon 2 (Static)</span><br/><span class="hl-1">    Party cohesion matrices        :h2a, 2026-06-01, 180d</span><br/><span class="hl-1">    Coalition / bloc graphs         :h2b, after h2a, 150d</span><br/><span class="hl-1">    OSINT structures + INTOP        :h2c, 2026-09-01, 240d</span><br/><span class="hl-1">    Build pipeline hardening        :h2d, after h2c, 120d</span><br/><span class="hl-1">    section Horizon 3 Phase 1 (Foundation)</span><br/><span class="hl-1">    Aurora v2 + DynamoDB            :h3a, 2028-01-01, 200d</span><br/><span class="hl-1">    Ingestion (EventBridge/Step)    :h3b, after h3a, 150d</span><br/><span class="hl-1">    section Horizon 3 Phase 2 (Graph + Search)</span><br/><span class="hl-1">    Neptune Serverless              :h3c, 2029-01-01, 220d</span><br/><span class="hl-1">    OpenSearch + vectors            :h3d, after h3c, 180d</span><br/><span class="hl-1">    section Horizon 3 Phase 3 (AI)</span><br/><span class="hl-1">    Bedrock Knowledge Bases RAG     :h3e, 2030-01-01, 240d</span><br/><span class="hl-1">    Timestream anomaly pipeline     :h3f, after h3e, 180d</span><br/><span class="hl-1">    section Horizon 3 Phase 4 (Access)</span><br/><span class="hl-1">    API Gateway + Cognito GA        :h3g, 2031-01-01, 200d</span><br/><span class="hl-1">    Interactive features GA         :h3h, after h3g, 365d</span><br/><span class="hl-1">    section Long Horizon</span><br/><span class="hl-1">    Pre-AGI scaling                 :lh1, 2032-01-01, 730d</span><br/><span class="hl-1">    AGI/Post-AGI data ops           :lh2, 2034-01-01, 1095d</span>
+</code><button type="button">Copy</button></pre>
+
+<table>
+<thead>
+<tr>
+<th>Phase</th>
+<th>Window</th>
+<th>Outcome</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>H2 Static</strong></td>
+<td>2026–2027</td>
+<td>Richer pre-computed party + OSINT datasets, no servers</td>
+</tr>
+<tr>
+<td><strong>H3 Phase 1</strong></td>
+<td>2028</td>
+<td>Relational + KV foundation, hydration from static SoR</td>
+</tr>
+<tr>
+<td><strong>H3 Phase 2</strong></td>
+<td>2029</td>
+<td>Graph traversal + vector search</td>
+</tr>
+<tr>
+<td><strong>H3 Phase 3</strong></td>
+<td>2030</td>
+<td>RAG + anomaly time-series</td>
+</tr>
+<tr>
+<td><strong>H3 Phase 4</strong></td>
+<td>2031+</td>
+<td>API Gateway + Cognito GA, interactive UX</td>
+</tr>
+<tr>
+<td><strong>Long Horizon</strong></td>
+<td>2032–2037</td>
+<td>Pre-AGI → AGI data operations</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="9-technology-stack-evolution-cost-projections" class="tsd-anchor-link">9. Technology Stack Evolution &amp; Cost Projections<a href="#9-technology-stack-evolution-cost-projections" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<h3 id="91-stack-by-horizon" class="tsd-anchor-link">9.1 Stack by Horizon<a href="#91-stack-by-horizon" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>H1</th>
+<th>H2</th>
+<th>H3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hosting</td>
+<td>S3 + CloudFront, GH Pages DR</td>
+<td>Same</td>
+<td>+ serverless tier</td>
+</tr>
+<tr>
+<td>Compute</td>
+<td>GitHub Actions</td>
+<td>GitHub Actions (heavier)</td>
+<td>Lambda + Step Functions</td>
+</tr>
+<tr>
+<td>Storage</td>
+<td>JSON/CSV files</td>
+<td>+ party/OSINT JSON</td>
+<td>Neptune/Aurora/DynamoDB/OpenSearch/Timestream</td>
+</tr>
+<tr>
+<td>AI</td>
+<td>Newsroom Opus 4.x</td>
+<td>+ build-time embeddings</td>
+<td>Bedrock KB RAG</td>
+</tr>
+<tr>
+<td>Access</td>
+<td>Static fetch</td>
+<td>Static fetch</td>
+<td>API Gateway + Cognito</td>
+</tr>
+</tbody>
+</table>
+<h3 id="92-cost-posture-targets" class="tsd-anchor-link">9.2 Cost Posture (Targets)<a href="#92-cost-posture-targets" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>Horizon</th>
+<th>Cost model</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>H1</td>
+<td>Near-zero marginal (CDN + Actions)</td>
+<td>Static economics</td>
+</tr>
+<tr>
+<td>H2</td>
+<td>Slightly higher Actions minutes</td>
+<td>No new runtime cost</td>
+</tr>
+<tr>
+<td>H3</td>
+<td>Pay-per-use serverless</td>
+<td>Scales to zero; static fallback caps risk</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>All serverless stores chosen for <strong>scale-to-zero / on-demand billing</strong> to preserve the platform's low-cost, sustainable, open-source posture.</p>
+</blockquote>
+<hr>
+<h2 id="10-isms-compliance-data-governance" class="tsd-anchor-link">10. ISMS Compliance &amp; Data Governance<a href="#10-isms-compliance-data-governance" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<h3 id="101-framework-mapping" class="tsd-anchor-link">10.1 Framework Mapping<a href="#101-framework-mapping" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>Control area</th>
+<th>ISO 27001:2022</th>
+<th>NIST CSF 2.0</th>
+<th>CIS Controls v8.1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Access control (Cognito)</td>
+<td>A.5.15, A.5.18</td>
+<td>PR.AA</td>
+<td>CIS 6</td>
+</tr>
+<tr>
+<td>Data classification</td>
+<td>A.5.12</td>
+<td><a href="http://ID.AM">ID.AM</a></td>
+<td>CIS 3</td>
+</tr>
+<tr>
+<td>Logging &amp; audit (API GW)</td>
+<td>A.8.15</td>
+<td><a href="http://DE.CM">DE.CM</a></td>
+<td>CIS 8</td>
+</tr>
+<tr>
+<td>Cryptography (in transit/at rest)</td>
+<td>A.8.24</td>
+<td>PR.DS</td>
+<td>CIS 3</td>
+</tr>
+<tr>
+<td>Supply chain (SLSA, npm)</td>
+<td>A.5.19–A.5.21</td>
+<td><a href="http://ID.SC">ID.SC</a></td>
+<td>CIS 16</td>
+</tr>
+<tr>
+<td>Secure development</td>
+<td>A.8.25–A.8.28</td>
+<td><a href="http://PR.PS">PR.PS</a></td>
+<td>CIS 16</td>
+</tr>
+</tbody>
+</table>
+<h3 id="102-gdpr-article-9-posture" class="tsd-anchor-link">10.2 GDPR Article 9 Posture<a href="#102-gdpr-article-9-posture" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul>
+<li>Political opinions = <strong>special-category data</strong>; lawful bases <strong>9(2)(e)</strong> (manifestly made public) and <strong>9(2)(g)</strong> (substantial public interest).</li>
+<li><strong>Public data only</strong> — exclusively official primary sources; no private individuals, no leaked/hacked data.</li>
+<li>Data minimisation, purpose limitation, storage limitation, integrity &amp; confidentiality applied across all horizons.</li>
+<li><strong>DPIA</strong> required before activating any H3 interactive feature processing personal data at new scale.</li>
+</ul>
+<h3 id="103-data-classification" class="tsd-anchor-link">10.3 Data Classification<a href="#103-data-classification" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>Class</th>
+<th>Examples</th>
+<th>Handling</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Public</strong></td>
+<td>Votes, documents, speeches, party metadata</td>
+<td>Open read; integrity-protected</td>
+</tr>
+<tr>
+<td><strong>Derived-Public</strong></td>
+<td>Cohesion/coalition/OSINT datasets</td>
+<td>Provenance-tagged; reproducible</td>
+</tr>
+<tr>
+<td><strong>Operational</strong></td>
+<td>Hydration state, audit logs</td>
+<td>Cognito-gated; retention-limited</td>
+</tr>
+</tbody>
+</table>
+<h3 id="104-data-lifecycle" class="tsd-anchor-link">10.4 Data Lifecycle<a href="#104-data-lifecycle" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<pre><code class="mermaid"><span class="hl-1">stateDiagram-v2</span><br/><span class="hl-1">    [*] --&gt; Ingested: Fetch public source</span><br/><span class="hl-1">    Ingested --&gt; Validated: analysis-gate.ts</span><br/><span class="hl-1">    Validated --&gt; Published: Static artifact (SoR)</span><br/><span class="hl-1">    Published --&gt; Hydrated: Serverless projection</span><br/><span class="hl-1">    Hydrated --&gt; Served: API Gateway + Cognito</span><br/><span class="hl-1">    Served --&gt; Archived: Retention policy</span><br/><span class="hl-1">    Archived --&gt; [*]</span><br/><span class="hl-1">    Validated --&gt; Rejected: Provenance incomplete</span><br/><span class="hl-1">    Rejected --&gt; [*]</span>
+</code><button type="button">Copy</button></pre>
+
+<h3 id="105-stakeholder-risk-analysis" class="tsd-anchor-link">10.5 Stakeholder &amp; Risk Analysis<a href="#105-stakeholder-risk-analysis" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Stakeholders</strong> (power × interest, neutral framing):</p>
+<table>
+<thead>
+<tr>
+<th>Stakeholder</th>
+<th>Interest</th>
+<th>Data-tier implication</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Citizens</td>
+<td>Accessible, neutral accountability</td>
+<td>Static-first, 14 languages, WCAG 2.1 AA</td>
+</tr>
+<tr>
+<td>Journalists / researchers</td>
+<td>Queryable evidence with citations</td>
+<td>H3 GraphQL + grounded RAG</td>
+</tr>
+<tr>
+<td>Parliamentary parties (all 8)</td>
+<td>Fair, equal, reproducible treatment</td>
+<td>Symmetric datasets; no editorial scoring</td>
+</tr>
+<tr>
+<td>Hack23 maintainers</td>
+<td>Sustainable, low-cost ops</td>
+<td>Scale-to-zero serverless; static DR</td>
+</tr>
+<tr>
+<td>Regulators (GDPR/NIS2)</td>
+<td>Lawful, auditable processing</td>
+<td>Cognito audit trail; DPIA gate</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Top data-architecture risks</strong> (target mitigations):</p>
+<table>
+<thead>
+<tr>
+<th>Risk</th>
+<th>Likelihood</th>
+<th>Impact</th>
+<th>Mitigation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Serverless drift from public record</td>
+<td>Low</td>
+<td>High</td>
+<td>Static SoR canonical; continuous parity diff</td>
+</tr>
+<tr>
+<td>Source API change (Riksdag/IMF/SCB)</td>
+<td>Medium</td>
+<td>Medium</td>
+<td>Versioned ingestors; vintage stamping; allowlisted hosts</td>
+</tr>
+<tr>
+<td>AI ungrounded/biased output</td>
+<td>Medium</td>
+<td>High</td>
+<td>Non-empty <code>dok_id</code> citations enforced by schema; neutrality lint; human-in-loop</td>
+</tr>
+<tr>
+<td>Cost overrun (H3)</td>
+<td>Low</td>
+<td>Medium</td>
+<td>Pay-per-use; static fallback caps blast radius</td>
+</tr>
+<tr>
+<td>Provenance loss</td>
+<td>Low</td>
+<td>High</td>
+<td><code>source_grading</code> + INTOP mandatory at gate</td>
+</tr>
+<tr>
+<td>Perceived partisanship</td>
+<td>Low</td>
+<td>High</td>
+<td>Symmetric party datasets; published methodology; reproducibility</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>The single most important control is the <strong>static system-of-record</strong>: because every serverless and AI output is derived from immutable, citation-tagged public artifacts, the platform cannot silently fabricate or skew the political record.</p>
+</blockquote>
+<hr>
+<h2 id="11-imf-data-domain-filesystem-cache-→-aurora-schema" class="tsd-anchor-link">11. IMF Data Domain — Filesystem Cache → Aurora Schema<a href="#11-imf-data-domain-filesystem-cache-→-aurora-schema" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<p>IMF is the <strong>primary economic data domain</strong> (ADR 0001). Today it is a filesystem cache; in Horizon 3 it is projected into Aurora while the cache remains the system of record.</p>
+<h3 id="111-current-cache-h1h2" class="tsd-anchor-link">11.1 Current Cache (H1/H2)<a href="#111-current-cache-h1h2" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul>
+<li>Client: <code>scripts/imf-client.ts</code> (pure TypeScript, <strong>not</strong> an MCP server).</li>
+<li>Cache: <code>analysis/data/imf/{indicator}/{country}.json</code> + <code>.meta.json</code> sidecar.</li>
+<li>Vintage labels: e.g. <code>WEO-2026-04</code>.</li>
+<li>Dataflows: WEO, FM, IFS, BOP, DOTS, GFS_COFOG, PCPS, ER, MFS_IR, MFS_PR; T+5 projections.</li>
+<li>Allowlisted hosts: <code>data.imf.org</code>, <code>api.imf.org</code>, <code>www.imf.org</code>.</li>
+</ul>
+<h3 id="112-aurora-projection-h3" class="tsd-anchor-link">11.2 Aurora Projection (H3)<a href="#112-aurora-projection-h3" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<pre><code class="sql"><span class="hl-9">CREATE</span><span class="hl-1"> </span><span class="hl-9">TABLE</span><span class="hl-1"> </span><span class="hl-0">imf_cache</span><span class="hl-1"> (</span><br/><span class="hl-1">    indicator      </span><span class="hl-9">TEXT</span><span class="hl-1"> </span><span class="hl-9">NOT NULL</span><span class="hl-1">,</span><br/><span class="hl-1">    country        </span><span class="hl-9">TEXT</span><span class="hl-1"> </span><span class="hl-9">NOT NULL</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-9">period</span><span class="hl-1">         </span><span class="hl-9">TEXT</span><span class="hl-1"> </span><span class="hl-9">NOT NULL</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-9">value</span><span class="hl-1">          </span><span class="hl-9">DOUBLE PRECISION</span><span class="hl-1">,</span><br/><span class="hl-1">    is_projection  </span><span class="hl-9">BOOLEAN</span><span class="hl-1"> </span><span class="hl-9">NOT NULL</span><span class="hl-1"> </span><span class="hl-9">DEFAULT</span><span class="hl-1"> FALSE,</span><br/><span class="hl-1">    vintage        </span><span class="hl-9">TEXT</span><span class="hl-1"> </span><span class="hl-9">NOT NULL</span><span class="hl-1">,         </span><span class="hl-4">-- e.g. &#39;WEO-2026-04&#39;</span><br/><span class="hl-1">    dataflow       </span><span class="hl-9">TEXT</span><span class="hl-1"> </span><span class="hl-9">NOT NULL</span><span class="hl-1">,         </span><span class="hl-4">-- WEO/FM/IFS/...</span><br/><span class="hl-1">    fetched_at     </span><span class="hl-9">TIMESTAMPTZ</span><span class="hl-1"> </span><span class="hl-9">NOT NULL</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-9">PRIMARY KEY</span><span class="hl-1"> (indicator, country, </span><span class="hl-9">period</span><span class="hl-1">, vintage)</span><br/><span class="hl-1">);</span><br/><br/><span class="hl-9">CREATE</span><span class="hl-1"> </span><span class="hl-9">TABLE</span><span class="hl-1"> </span><span class="hl-0">article_economic_provenance</span><span class="hl-1"> (</span><br/><span class="hl-1">    article_id     </span><span class="hl-9">TEXT</span><span class="hl-1"> </span><span class="hl-9">NOT NULL</span><span class="hl-1">,</span><br/><span class="hl-1">    indicator      </span><span class="hl-9">TEXT</span><span class="hl-1"> </span><span class="hl-9">NOT NULL</span><span class="hl-1">,</span><br/><span class="hl-1">    country        </span><span class="hl-9">TEXT</span><span class="hl-1"> </span><span class="hl-9">NOT NULL</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-9">period</span><span class="hl-1">         </span><span class="hl-9">TEXT</span><span class="hl-1"> </span><span class="hl-9">NOT NULL</span><span class="hl-1">,</span><br/><span class="hl-1">    vintage        </span><span class="hl-9">TEXT</span><span class="hl-1"> </span><span class="hl-9">NOT NULL</span><span class="hl-1">,</span><br/><span class="hl-1">    used_at        </span><span class="hl-9">TIMESTAMPTZ</span><span class="hl-1"> </span><span class="hl-9">NOT NULL</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-9">PRIMARY KEY</span><span class="hl-1"> (article_id, indicator, country, </span><span class="hl-9">period</span><span class="hl-1">, vintage)</span><br/><span class="hl-1">);</span><br/><br/><span class="hl-9">CREATE</span><span class="hl-1"> </span><span class="hl-9">INDEX</span><span class="hl-1"> </span><span class="hl-0">idx_imf_dataflow</span><span class="hl-1"> </span><span class="hl-9">ON</span><span class="hl-1"> imf_cache(dataflow);</span><br/><span class="hl-9">CREATE</span><span class="hl-1"> </span><span class="hl-9">INDEX</span><span class="hl-1"> </span><span class="hl-0">idx_imf_country</span><span class="hl-1"> </span><span class="hl-9">ON</span><span class="hl-1"> imf_cache(country);</span>
+</code><button type="button">Copy</button></pre>
+
+<h3 id="113-economicdatasource-discriminated-union" class="tsd-anchor-link">11.3 EconomicDataSource Discriminated Union<a href="#113-economicdatasource-discriminated-union" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<pre><code class="typescript"><span class="hl-9">type</span><span class="hl-1"> </span><span class="hl-10">EconomicDataSource</span><span class="hl-1"> =</span><br/><span class="hl-1">  | { </span><span class="hl-5">provider</span><span class="hl-1">: </span><span class="hl-2">&quot;IMF&quot;</span><span class="hl-1">; </span><span class="hl-5">dataflow</span><span class="hl-1">: </span><span class="hl-2">&quot;WEO&quot;</span><span class="hl-1"> | </span><span class="hl-2">&quot;FM&quot;</span><span class="hl-1"> | </span><span class="hl-2">&quot;IFS&quot;</span><span class="hl-1"> | </span><span class="hl-2">&quot;BOP&quot;</span><span class="hl-1"> | </span><span class="hl-2">&quot;DOTS&quot;</span><br/><span class="hl-1">      | </span><span class="hl-2">&quot;GFS_COFOG&quot;</span><span class="hl-1"> | </span><span class="hl-2">&quot;PCPS&quot;</span><span class="hl-1"> | </span><span class="hl-2">&quot;ER&quot;</span><span class="hl-1"> | </span><span class="hl-2">&quot;MFS_IR&quot;</span><span class="hl-1"> | </span><span class="hl-2">&quot;MFS_PR&quot;</span><span class="hl-1">; </span><span class="hl-5">vintage</span><span class="hl-1">: </span><span class="hl-10">string</span><span class="hl-1"> }</span><br/><span class="hl-1">  | { </span><span class="hl-5">provider</span><span class="hl-1">: </span><span class="hl-2">&quot;SCB&quot;</span><span class="hl-1">; </span><span class="hl-5">table</span><span class="hl-1">: </span><span class="hl-10">string</span><span class="hl-1"> }                 </span><span class="hl-4">// Swedish ground truth</span><br/><span class="hl-1">  | { </span><span class="hl-5">provider</span><span class="hl-1">: </span><span class="hl-2">&quot;WorldBank&quot;</span><span class="hl-1">; </span><span class="hl-5">series</span><span class="hl-1">: </span><span class="hl-10">string</span><span class="hl-1">; </span><span class="hl-5">economic</span><span class="hl-1">: </span><span class="hl-10">false</span><span class="hl-1"> }; </span><span class="hl-4">// non-economic only</span>
+</code><button type="button">Copy</button></pre>
+
+<h3 id="114-provider-decision-matrix" class="tsd-anchor-link">11.4 Provider Decision Matrix<a href="#114-provider-decision-matrix" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>Need</th>
+<th>Provider</th>
+<th>Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GDP, inflation, fiscal, BoP</td>
+<td><strong>IMF</strong></td>
+<td>Primary economic; T+5 projections</td>
+</tr>
+<tr>
+<td>Swedish national statistics</td>
+<td><strong>SCB</strong></td>
+<td>Authoritative ground truth</td>
+</tr>
+<tr>
+<td>Governance / environment / social</td>
+<td><strong>World Bank</strong></td>
+<td>Non-economic residue only</td>
+</tr>
+<tr>
+<td>Economic series</td>
+<td>❌ World Bank</td>
+<td><strong>Deprecated</strong> — use IMF</td>
+</tr>
+</tbody>
+</table>
+<h3 id="115-imf-data-classification" class="tsd-anchor-link">11.5 IMF Data Classification<a href="#115-imf-data-classification" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p>IMF cache entries are <strong>Derived-Public</strong>: openly published source values, provenance-tagged with <code>vintage</code> + <code>dataflow</code>, fully reproducible, and linked to articles via <code>article_economic_provenance</code> for editorial accountability.</p>
+<hr>
+<h2 id="12-aillm-data-architecture-evolution-20262037" class="tsd-anchor-link">12. AI/LLM Data Architecture Evolution (2026–2037)<a href="#12-aillm-data-architecture-evolution-20262037" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<p>The newsroom and analytical layer evolve with frontier-model capability. The table below translates the AI model roadmap into <strong>data-architecture implications</strong> — what each capability tier demands from the data tier.</p>
+<table>
+<thead>
+<tr>
+<th>Year</th>
+<th>Model Tier</th>
+<th>Status</th>
+<th>Data-Architecture Implication</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2026</td>
+<td>Opus 4.6–4.9</td>
+<td>🟢 Current</td>
+<td>Static build-time authoring; corpus as files; RAG-ready embeddings begin</td>
+</tr>
+<tr>
+<td>2027</td>
+<td>Opus 5.x</td>
+<td>🔵 Near</td>
+<td>Richer H2 OSINT datasets feed model context; embeddings standardized</td>
+</tr>
+<tr>
+<td>2028</td>
+<td>Opus 6.x</td>
+<td>🟣 Planned</td>
+<td>H3 Phase 1: relational + KV stores hydrate model retrieval</td>
+</tr>
+<tr>
+<td>2029</td>
+<td>Opus 7.x</td>
+<td>🟠 Projected</td>
+<td>Graph + vector retrieval (Neptune + OpenSearch) for grounded synthesis</td>
+</tr>
+<tr>
+<td>2030</td>
+<td>Opus 8.x</td>
+<td>🔴 Horizon</td>
+<td>Bedrock KB RAG GA; anomaly time-series inform model prompts</td>
+</tr>
+<tr>
+<td>2031–2033</td>
+<td>Opus 9–10.x / Pre-AGI</td>
+<td>⚪ Speculative</td>
+<td>Real-time grounded Q&amp;A via API Gateway; strict citation enforcement</td>
+</tr>
+<tr>
+<td>2034–2037</td>
+<td>AGI / Post-AGI</td>
+<td>⭐ Visionary</td>
+<td>Autonomous evidence-bound analysis; human-in-the-loop governance retained</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="mermaid"><span class="hl-1">timeline</span><br/><span class="hl-1">    title AI ↔ Data Tier Co-Evolution</span><br/><span class="hl-1">    2026 : Opus 4.x : Static authoring + embeddings</span><br/><span class="hl-1">    2027 : Opus 5.x : H2 OSINT context</span><br/><span class="hl-1">    2028 : Opus 6.x : Aurora + DynamoDB retrieval</span><br/><span class="hl-1">    2029 : Opus 7.x : Neptune + OpenSearch grounding</span><br/><span class="hl-1">    2030 : Opus 8.x : Bedrock KB RAG GA</span><br/><span class="hl-1">    2031 : Pre-AGI : Real-time grounded Q&amp;A</span><br/><span class="hl-1">    2034 : AGI/Post-AGI : Autonomous evidence-bound analysis</span>
+</code><button type="button">Copy</button></pre>
+
+<blockquote>
+<p><strong>Governance invariant across all tiers:</strong> every AI-generated claim is <strong>retrieval-grounded and dok_id-cited</strong>, neutrality is enforced, and a <strong>human-in-the-loop</strong> governance gate is retained even at AGI tiers. Capability never overrides the evidence-first and neutrality principles.</p>
+</blockquote>
+<h3 id="121-rag-data-contract" class="tsd-anchor-link">12.1 RAG Data Contract<a href="#121-rag-data-contract" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Requirement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>answer</code></td>
+<td>Generated text</td>
+</tr>
+<tr>
+<td><code>citations</code></td>
+<td><strong>Non-empty</strong> array of <code>dok_id</code></td>
+</tr>
+<tr>
+<td><code>source_grading</code></td>
+<td>Admiralty reliability/credibility per retrieved chunk</td>
+</tr>
+<tr>
+<td><code>neutrality_check</code></td>
+<td>Passed before publication</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="13-related-documentation" class="tsd-anchor-link">13. Related Documentation<a href="#13-related-documentation" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<table>
+<thead>
+<tr>
+<th>Document</th>
+<th>Relationship</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="DATA_MODEL.html">DATA_MODEL.md</a></td>
+<td>Current-state baseline (Horizon 1) this doc extends</td>
+</tr>
+<tr>
+<td><a href="FUTURE_ARCHITECTURE.html">FUTURE_ARCHITECTURE.md</a></td>
+<td>Target system architecture</td>
+</tr>
+<tr>
+<td><a href="FUTURE_SECURITY_ARCHITECTURE.html">FUTURE_SECURITY_ARCHITECTURE.md</a></td>
+<td>Target security controls</td>
+</tr>
+<tr>
+<td><a href="FUTURE_THREAT_MODEL.html">FUTURE_THREAT_MODEL.md</a></td>
+<td>Target threat model</td>
+</tr>
+<tr>
+<td><a href="ARCHITECTURE.html">ARCHITECTURE.md</a></td>
+<td>Current architecture</td>
+</tr>
+<tr>
+<td><a href="../media/README-5.md">analysis/imf/README.md</a></td>
+<td>IMF data domain reference</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="📄-document-control" class="tsd-anchor-link">📄 Document Control<a href="#📄-document-control" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Document Owner</strong></td>
+<td>CEO</td>
+</tr>
+<tr>
+<td><strong>Version</strong></td>
+<td>3.0</td>
+</tr>
+<tr>
+<td><strong>Last Updated</strong></td>
+<td>2026-05-31 (UTC)</td>
+</tr>
+<tr>
+<td><strong>Review Cycle</strong></td>
+<td>Annual</td>
+</tr>
+<tr>
+<td><strong>Next Review</strong></td>
+<td>2027-05-31</td>
+</tr>
+<tr>
+<td><strong>Classification</strong></td>
+<td>Public</td>
+</tr>
+<tr>
+<td><strong>Data Posture</strong></td>
+<td>Public sources only; GDPR Art. 9 (9(2)(e), 9(2)(g)); strict neutrality</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="🔗-hack23-ecosystem" class="tsd-anchor-link">🔗 Hack23 Ecosystem<a href="#🔗-hack23-ecosystem" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<p>Riksdagsmonitor is part of the <strong>Hack23</strong> open-source transparency ecosystem, operated under the <a href="https://github.com/Hack23/ISMS-PUBLIC">Hack23 ISMS-PUBLIC</a> governance framework (ISO 27001:2022, NIST CSF 2.0, CIS Controls v8.1, GDPR, NIS2).</p>
+<blockquote>
+<p><strong>Mission:</strong> empower citizens, strengthen democratic accountability, and illuminate the political process with rigorous, neutral, evidence-based intelligence drawn exclusively from public sources.</p>
+</blockquote>
+<p align="center"><em>© Hack23 · Public · Evidence-first · Neutral · Privacy-respecting</em></p></div></div><div class="col-sidebar"><div class="page-menu"><div class="tsd-navigation settings"><details class="tsd-accordion"><summary class="tsd-accordion-summary"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg><h3>Settings</h3></summary><div class="tsd-accordion-details"><div class="tsd-filter-visibility"><span class="settings-label">Member Visibility</span><ul id="tsd-filter-options"><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-protected" name="protected" checked/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Protected</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-private" name="private" checked/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Private</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-inherited" name="inherited" checked/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Inherited</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-alpha" name="alpha"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Alpha</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-beta" name="beta"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Beta</span></label></li></ul></div><div class="tsd-theme-toggle"><label class="settings-label" for="tsd-theme">Theme</label><select id="tsd-theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></div></div></details></div><details open class="tsd-accordion tsd-page-navigation"><summary class="tsd-accordion-summary"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg><h3>On This Page</h3></summary><div class="tsd-accordion-details"><a href="#📚-architecture-documentation-map"><span>📚 <wbr/>Architecture <wbr/>Documentation <wbr/>Map</span></a><a href="#🎯-executive-summary"><span>🎯 <wbr/>Executive <wbr/>Summary</span></a><a href="#📋-table-of-contents"><span>📋 <wbr/>Table of <wbr/>Contents</span></a><a href="#1-three-horizon-data-evolution-overview"><span>1. <wbr/>Three-<wbr/>Horizon <wbr/>Data <wbr/>Evolution <wbr/>Overview</span></a><ul><li><a href="#11-horizon-comparison"><span>1.1 <wbr/>Horizon <wbr/>Comparison</span></a></li><li><a href="#12-data-volume-projections-targets"><span>1.2 <wbr/>Data <wbr/>Volume <wbr/>Projections (<wbr/>Targets)</span></a></li></ul><a href="#2-horizon-1-v1x-baseline-data-model"><span>2. <wbr/>Horizon 1 — v1.x <wbr/>Baseline <wbr/>Data <wbr/>Model</span></a><ul><li><a href="#21-core-entities"><span>2.1 <wbr/>Core <wbr/>Entities</span></a></li><li><a href="#22-cia-subsystems-→-user-facing-products"><span>2.2 <wbr/>CIA <wbr/>Subsystems → <wbr/>User-<wbr/>Facing <wbr/>Products</span></a></li><li><a href="#23-npm-typed-surface"><span>2.3 npm <wbr/>Typed <wbr/>Surface</span></a></li><li><a href="#24-economic-statistical-caches"><span>2.4 <wbr/>Economic &amp; <wbr/>Statistical <wbr/>Caches</span></a></li><li><a href="#25-analysis-artifacts-news-corpus"><span>2.5 <wbr/>Analysis <wbr/>Artifacts &amp; <wbr/>News <wbr/>Corpus</span></a></li></ul><a href="#3-horizon-2-v20-static-intelligence-data-models-20262027"><span>3. <wbr/>Horizon 2 — v2.0 <wbr/>Static <wbr/>Intelligence <wbr/>Data <wbr/>Models (2026–2027)</span></a><ul><li><a href="#31-design-principles"><span>3.1 <wbr/>Design <wbr/>Principles</span></a></li><li><a href="#32-party-cohesion-matrices"><span>3.2 <wbr/>Party <wbr/>Cohesion <wbr/>Matrices</span></a></li><li><a href="#33-coalition-bloc-graphs"><span>3.3 <wbr/>Coalition &amp; <wbr/>Bloc <wbr/>Graphs</span></a></li><li><a href="#34-party-vs-party-comparison-datasets"><span>3.4 <wbr/>Party-<wbr/>vs-<wbr/>Party <wbr/>Comparison <wbr/>Datasets</span></a></li><li><a href="#35-osint-data-structures"><span>3.5 <wbr/>OSINT <wbr/>Data <wbr/>Structures</span></a></li><li><ul><li><a href="#351-network-edges"><span>3.5.1 <wbr/>Network <wbr/>Edges</span></a></li><li><a href="#352-temporal-series"><span>3.5.2 <wbr/>Temporal <wbr/>Series</span></a></li><li><a href="#353-anomaly-scores"><span>3.5.3 <wbr/>Anomaly <wbr/>Scores</span></a></li><li><a href="#354-source-grading-intop-metadata"><span>3.5.4 <wbr/>Source-<wbr/>Grading &amp; <wbr/>INTOP <wbr/>Metadata</span></a></li></ul></li><li><a href="#355-evidence-provenance-invariant"><span>3.5.5 <wbr/>Evidence &amp; <wbr/>Provenance <wbr/>Invariant</span></a></li><li><a href="#36-government-minister-scorecard-datasets"><span>3.6 <wbr/>Government &amp; <wbr/>Minister <wbr/>Scorecard <wbr/>Datasets</span></a></li><li><a href="#37-rebellion-defection-timelines"><span>3.7 <wbr/>Rebellion &amp; <wbr/>Defection <wbr/>Timelines</span></a></li><li><a href="#38-build-time-generation-pipeline"><span>3.8 <wbr/>Build-<wbr/>Time <wbr/>Generation <wbr/>Pipeline</span></a></li><li><a href="#39-horizon-2-erd"><span>3.9 <wbr/>Horizon 2 <wbr/>ERD</span></a></li></ul><a href="#4-horizon-3-v30-aws-serverless-data-tier-20282037"><span>4. <wbr/>Horizon 3 — v3.0+ <wbr/>AWS <wbr/>Serverless <wbr/>Data <wbr/>Tier (2028–2037)</span></a><ul><li><a href="#41-serverless-store-selection"><span>4.1 <wbr/>Serverless <wbr/>Store <wbr/>Selection</span></a></li><li><a href="#42-neptune-graph-gremlin"><span>4.2 <wbr/>Neptune <wbr/>Graph (<wbr/>Gremlin)</span></a></li><li><a href="#43-aurora-serverless-v2-postgresql-schema"><span>4.3 <wbr/>Aurora <wbr/>Serverless v2 (<wbr/>Postgre<wbr/>SQL) <wbr/>Schema</span></a></li><li><a href="#44-dynamodb-tables"><span>4.4 <wbr/>Dynamo<wbr/>DB <wbr/>Tables</span></a></li><li><a href="#45-opensearch-serverless-index"><span>4.5 <wbr/>Open<wbr/>Search <wbr/>Serverless <wbr/>Index</span></a></li><li><a href="#46-timestream-schema"><span>4.6 <wbr/>Timestream <wbr/>Schema</span></a></li><li><a href="#47-bedrock-knowledge-bases-rag"><span>4.7 <wbr/>Bedrock <wbr/>Knowledge <wbr/>Bases <wbr/>RAG</span></a></li><li><a href="#48-access-tier-api-gateway--cognito"><span>4.8 <wbr/>Access <wbr/>Tier — <wbr/>API <wbr/>Gateway + <wbr/>Cognito</span></a></li><li><a href="#49-store-sizing-access-patterns-targets"><span>4.9 <wbr/>Store <wbr/>Sizing &amp; <wbr/>Access <wbr/>Patterns (<wbr/>Targets)</span></a></li><li><a href="#410-multi-source-consistency-model"><span>4.10 <wbr/>Multi-<wbr/>Source <wbr/>Consistency <wbr/>Model</span></a></li><li><a href="#411-political-intelligence-capability-data-structures-osintintop-to-2037"><span>4.11 <wbr/>Political-<wbr/>Intelligence <wbr/>Capability <wbr/>Data <wbr/>Structures (<wbr/>OSINT/<wbr/>INTOP, to 2037)</span></a></li><li><ul><li><a href="#4111-resolved-entity-cross-source-entity-resolution-c1"><span>4.11.1 <wbr/>Resolved-<wbr/>entity (cross-<wbr/>source entity resolution — <wbr/>C1)</span></a></li><li><a href="#4112-multi-int-fusion-edge-c6"><span>4.11.2 <wbr/>Multi-<wbr/>INT fusion edge (<wbr/>C6)</span></a></li><li><a href="#4113-indications-warning-indicator-c14"><span>4.11.3 <wbr/>Indications &amp; <wbr/>Warning indicator (<wbr/>C14)</span></a></li><li><a href="#4114-forecast-calibration-record-c13--c29"><span>4.11.4 <wbr/>Forecast + calibration record (<wbr/>C13 / <wbr/>C29)</span></a></li><li><a href="#4115-fimi-coordinated-inauthentic-behaviour-signal-c20"><span>4.11.5 <wbr/>FIMI / coordinated-<wbr/>inauthentic-<wbr/>behaviour signal (<wbr/>C20)</span></a></li><li><a href="#4116-estimative-product-nie-style-key-judgment-c22"><span>4.11.6 <wbr/>Estimative product (<wbr/>NIE-<wbr/>style key judgment — <wbr/>C22)</span></a></li><li><a href="#4117-provenance-content-credential-record-c8--c9"><span>4.11.7 <wbr/>Provenance / content-<wbr/>credential record (<wbr/>C8 / <wbr/>C9)</span></a></li><li><a href="#4118-capability-entity-erd-horizon-3"><span>4.11.8 <wbr/>Capability-<wbr/>entity <wbr/>ERD (<wbr/>Horizon 3)</span></a></li></ul></li></ul><a href="#5-source-ingestion-integration"><span>5. <wbr/>Source <wbr/>Ingestion &amp; <wbr/>Integration</span></a><ul><li><a href="#51-migration-strategy"><span>5.1 <wbr/>Migration <wbr/>Strategy</span></a></li><li><a href="#52-integration-components"><span>5.2 <wbr/>Integration <wbr/>Components</span></a></li><li><a href="#53-data-quality-cross-source-reconciliation"><span>5.3 <wbr/>Data <wbr/>Quality &amp; <wbr/>Cross-<wbr/>Source <wbr/>Reconciliation</span></a></li></ul><a href="#6-graphql-api-schema"><span>6. <wbr/>Graph<wbr/>QL <wbr/>API <wbr/>Schema</span></a><a href="#7-data-model-diagrams"><span>7. <wbr/>Data <wbr/>Model <wbr/>Diagrams</span></a><ul><li><a href="#71-cross-horizon-erd"><span>7.1 <wbr/>Cross-<wbr/>Horizon <wbr/>ERD</span></a></li><li><a href="#72-aws-service-integration"><span>7.2 <wbr/>AWS <wbr/>Service <wbr/>Integration</span></a></li><li><a href="#73-query-data-flow-sequence"><span>7.3 <wbr/>Query <wbr/>Data-<wbr/>Flow <wbr/>Sequence</span></a></li><li><a href="#74-neptune-graph-visualization"><span>7.4 <wbr/>Neptune <wbr/>Graph <wbr/>Visualization</span></a></li><li><a href="#75-time-series-flow"><span>7.5 <wbr/>Time-<wbr/>Series <wbr/>Flow</span></a></li><li><a href="#76-bedrock-kb-rag-pipeline"><span>7.6 <wbr/>Bedrock <wbr/>KB <wbr/>RAG <wbr/>Pipeline</span></a></li></ul><a href="#8-implementation-roadmap"><span>8. <wbr/>Implementation <wbr/>Roadmap</span></a><a href="#9-technology-stack-evolution-cost-projections"><span>9. <wbr/>Technology <wbr/>Stack <wbr/>Evolution &amp; <wbr/>Cost <wbr/>Projections</span></a><ul><li><a href="#91-stack-by-horizon"><span>9.1 <wbr/>Stack by <wbr/>Horizon</span></a></li><li><a href="#92-cost-posture-targets"><span>9.2 <wbr/>Cost <wbr/>Posture (<wbr/>Targets)</span></a></li></ul><a href="#10-isms-compliance-data-governance"><span>10. <wbr/>ISMS <wbr/>Compliance &amp; <wbr/>Data <wbr/>Governance</span></a><ul><li><a href="#101-framework-mapping"><span>10.1 <wbr/>Framework <wbr/>Mapping</span></a></li><li><a href="#102-gdpr-article-9-posture"><span>10.2 <wbr/>GDPR <wbr/>Article 9 <wbr/>Posture</span></a></li><li><a href="#103-data-classification"><span>10.3 <wbr/>Data <wbr/>Classification</span></a></li><li><a href="#104-data-lifecycle"><span>10.4 <wbr/>Data <wbr/>Lifecycle</span></a></li><li><a href="#105-stakeholder-risk-analysis"><span>10.5 <wbr/>Stakeholder &amp; <wbr/>Risk <wbr/>Analysis</span></a></li></ul><a href="#11-imf-data-domain-filesystem-cache-→-aurora-schema"><span>11. <wbr/>IMF <wbr/>Data <wbr/>Domain — <wbr/>Filesystem <wbr/>Cache → <wbr/>Aurora <wbr/>Schema</span></a><ul><li><a href="#111-current-cache-h1h2"><span>11.1 <wbr/>Current <wbr/>Cache (<wbr/>H1/<wbr/>H2)</span></a></li><li><a href="#112-aurora-projection-h3"><span>11.2 <wbr/>Aurora <wbr/>Projection (<wbr/>H3)</span></a></li><li><a href="#113-economicdatasource-discriminated-union"><span>11.3 <wbr/>Economic<wbr/>Data<wbr/>Source <wbr/>Discriminated <wbr/>Union</span></a></li><li><a href="#114-provider-decision-matrix"><span>11.4 <wbr/>Provider <wbr/>Decision <wbr/>Matrix</span></a></li><li><a href="#115-imf-data-classification"><span>11.5 <wbr/>IMF <wbr/>Data <wbr/>Classification</span></a></li></ul><a href="#12-aillm-data-architecture-evolution-20262037"><span>12. <wbr/>AI/<wbr/>LLM <wbr/>Data <wbr/>Architecture <wbr/>Evolution (2026–2037)</span></a><ul><li><a href="#121-rag-data-contract"><span>12.1 <wbr/>RAG <wbr/>Data <wbr/>Contract</span></a></li></ul><a href="#13-related-documentation"><span>13. <wbr/>Related <wbr/>Documentation</span></a><a href="#📄-document-control"><span>📄 <wbr/>Document <wbr/>Control</span></a><a href="#🔗-hack23-ecosystem"><span>🔗 <wbr/>Hack23 <wbr/>Ecosystem</span></a></div></details></div><div class="site-menu"><nav id="tsd-sidebar-links" class="tsd-navigation"><a href="https://riksdagsmonitor.com">── Live Platform ──</a><a href="https://riksdagsmonitor.com">🌐 Riksdagsmonitor.com</a><a href="https://riksdagsmonitor.com/political-intelligence.html">🕵️ Political Intelligence Index</a><a href="https://riksdagsmonitor.com/sitemap.html">🗺️ Sitemap (Human + XML)</a><a href="https://riksdagsmonitor.com/news/">📰 News &amp; Articles</a><a href="https://www.npmjs.com/package/riksdagsmonitor">📦 npm Package</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/ARCHITECTURE.md">── Current Architecture ──</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/ARCHITECTURE.md">🏛️ Architecture</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/SECURITY_ARCHITECTURE.md">🔒 Security Architecture</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/THREAT_MODEL.md">🛡️ Threat Model</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/DATA_MODEL.md">📊 Data Model</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FLOWCHART.md">🔄 Flowchart</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/STATEDIAGRAM.md">📈 State Diagram</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/MINDMAP.md">🧠 Mindmap</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/SWOT.md">💼 SWOT Analysis</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_ARCHITECTURE.md">── Future Architecture ──</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_ARCHITECTURE.md">🚀 Future Architecture</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_SECURITY_ARCHITECTURE.md">🔮 Future Security</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_THREAT_MODEL.md">🎯 Future Threat Model</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_DATA_MODEL.md">📊 Future Data Model</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_FLOWCHART.md">🔄 Future Flowchart</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_STATEDIAGRAM.md">📈 Future State Diagram</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_MINDMAP.md">🧠 Future Mindmap</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_SWOT.md">💼 Future SWOT</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_WORKFLOWS.md">🔄 Future Workflows</a><a href="#">── Security &amp; Compliance ──</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/SECURITY.md">🔐 Security Policy</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/CRA-ASSESSMENT.md">📋 CRA Assessment</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/BCPPlan.md">🏢 BCP Plan</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FinancialSecurityPlan.md">💰 Financial Security</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/End-of-Life-Strategy.md">📅 End-of-Life Strategy</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/README.md">── Project Docs ──</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/TESTING.md">🧪 Testing</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/WORKFLOWS.md">🔄 Workflows</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/RELEASE_PROCESS.md">📦 Release Process</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/CONTRIBUTING.md">🤝 Contributing</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/CODE_OF_CONDUCT.md">📜 Code of Conduct</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/AGENTS.md">🤖 Copilot Agents</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/SKILLS.md">🛠 Copilot Skills</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/LABELS.md">🏷 Labels</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/TRANSLATION_GUIDE.md">🌐 Translation Guide</a><a href="https://github.com/Hack23/ISMS-PUBLIC">── Hack23 ISMS Policies ──</a><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md">📋 Secure Dev Policy</a><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Information_Security_Policy.md">🔐 Information Security</a><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Threat_Modeling.md">🎯 Threat Modeling</a><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Open_Source_Policy.md">🌐 Open Source Policy</a><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Risk_Assessment_Methodology.md">📊 Risk Assessment</a><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/AI_Policy.md">🤖 AI Policy</a><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Change_Management_Policy.md">🔧 Change Management</a><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Incident_Response_Plan.md">🛡️ Incident Response</a><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Asset_Management_Policy.md">📦 Asset Management</a><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Access_Control_Policy.md">🔑 Access Control</a><a href="https://riksdagsmonitor.com/docs/api/">── Hack23 API Docs ──</a><a href="https://riksdagsmonitor.com/docs/api/">📚 Riksdagsmonitor API</a><a href="https://euparliamentmonitor.com/docs/api/">🇪🇺 EU Parliament MCP API</a><a href="https://ciacompliancemanager.com/api/">🔍 CIA Compliance Mgr API</a><a href="https://blacktrigram.com/api/">⚔️ Black Trigram API</a><a href="https://riksdagsmonitor.com" class="tsd-nav-link">🏠 Home</a><a href="https://riksdagsmonitor.com/political-intelligence.html" class="tsd-nav-link">🕵️ Political Intelligence</a><a href="https://riksdagsmonitor.com/sitemap.html" class="tsd-nav-link">🗺️ Sitemap</a><a href="https://www.npmjs.com/package/riksdagsmonitor" class="tsd-nav-link">📦 npm Package</a><a href="https://github.com/Hack23/riksdagsmonitor" class="tsd-nav-link">📦 GitHub</a><a href="https://github.com/Hack23/ISMS-PUBLIC" class="tsd-nav-link">🛡️ ISMS</a><a href="https://github.com/Hack23/cia" class="tsd-nav-link">🏛️ CIA Platform</a></nav><nav class="tsd-navigation"><a href="../modules.html">Riksdagsmonitor Intelligence Platform — API Documentation - v1.0.28</a><ul class="tsd-small-nested-navigation" id="tsd-nav-container"><li>Loading...</li></ul></nav></div></div></div><footer><p class="tsd-generator">Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></footer><div class="overlay"></div></body></html>

@@ -1,0 +1,734 @@
+<!DOCTYPE html><html class="default" lang="en" data-base="../"><head><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>LABELS | Riksdagsmonitor Intelligence Platform — API Documentation - v1.0.28</title><meta name="description" content="Documentation for Riksdagsmonitor Intelligence Platform — API Documentation"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="../assets/style.css"/><link rel="stylesheet" href="../assets/highlight.css"/><script defer src="../assets/main.js"></script><script async src="../assets/icons.js" id="tsd-icons-script"></script><script async src="../assets/search.js" id="tsd-search-script"></script><script async src="../assets/navigation.js" id="tsd-nav-script"></script><script async src="../assets/hierarchy.js" id="tsd-hierarchy-script"></script></head><body><script>document.documentElement.dataset.theme = localStorage.getItem("tsd-theme") || "os";document.body.style.display="none";setTimeout(() => window.app?app.showPage():document.body.style.removeProperty("display"),500)</script><header class="tsd-page-toolbar"><div class="tsd-toolbar-contents container"><a href="../index.html" class="title">Riksdagsmonitor Intelligence Platform — API Documentation - v1.0.28</a><div id="tsd-toolbar-links"><a href="https://riksdagsmonitor.com">🏠 Home</a><a href="https://riksdagsmonitor.com/political-intelligence.html">🕵️ Political Intelligence</a><a href="https://riksdagsmonitor.com/sitemap.html">🗺️ Sitemap</a><a href="https://www.npmjs.com/package/riksdagsmonitor">📦 npm Package</a><a href="https://github.com/Hack23/riksdagsmonitor">📦 GitHub</a><a href="https://github.com/Hack23/ISMS-PUBLIC">🛡️ ISMS</a><a href="https://github.com/Hack23/cia">🏛️ CIA Platform</a></div><button id="tsd-search-trigger" class="tsd-widget" aria-label="Search"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-search"></use></svg></button><dialog id="tsd-search" aria-label="Search"><input role="combobox" id="tsd-search-input" aria-controls="tsd-search-results" aria-autocomplete="list" aria-expanded="true" autocapitalize="off" autocomplete="off" placeholder="Search the docs" maxLength="100"/><ul role="listbox" id="tsd-search-results"></ul><div id="tsd-search-status" aria-live="polite" aria-atomic="true"><div>Preparing search index...</div></div></dialog><a href="#" class="tsd-widget menu" id="tsd-toolbar-menu-trigger" data-toggle="menu" aria-label="Menu"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-menu"></use></svg></a></div></header><div class="container container-main"><div class="col-content"><div class="tsd-page-title"><ul class="tsd-breadcrumb" aria-label="Breadcrumb"><li><a href="" aria-current="page">LABELS</a></li></ul></div><div class="tsd-panel tsd-typography"><p align="center">
+  <img src="https://hack23.com/icon-192.png" alt="Hack23 Logo" width="192" height="192">
+</p>
+<h1 align="center">🏷️ Riksdagsmonitor — Label System</h1>
+<p align="center">
+  <strong>🤖 Automated Pull-Request &amp; Issue Categorisation</strong><br>
+  <em>🎯 File-Path Routing · Title Detection · Body Heuristics · GitHub Actions Driven</em>
+</p>
+<p align="center">
+  <img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/>
+  <img src="https://img.shields.io/badge/Version-1.1-555?style=for-the-badge" alt="Version"/>
+  <img src="https://img.shields.io/badge/Effective-2026--05--03-success?style=for-the-badge" alt="Effective Date"/>
+  <img src="https://img.shields.io/badge/Review-Annual-orange?style=for-the-badge" alt="Review Cycle"/>
+</p>
+<p><strong>📋 Document Owner:</strong> CEO | <strong>📅 Last Updated:</strong> 2026-05-03 (UTC) | <strong>🏢 Owner:</strong> Hack23 AB (<a href="http://Org.nr">Org.nr</a> 559534-7807) | <strong>🏷️ Classification:</strong> 🟢 Public</p>
+<blockquote>
+<p><strong>🆕 What changed since last review (v1.0 → v1.1, 2026-05-03):</strong></p>
+<ul>
+<li>🔄 <strong>Drift reconciliation</strong> with the live label set (<code>gh label list --repo Hack23/riksdagsmonitor --limit 300</code>): the repository now carries <strong>159 labels</strong> (was 46 in v1.0). The categories below cover the original 46 plus 113 agentic-newsroom additions, grouped as:
+<ul>
+<li><strong>Agent ownership:</strong> <code>agent:news-journalist</code>, <code>agent:security-architect</code>, <code>agent:documentation-architect</code>, <code>agent:data-pipeline-specialist</code>, <code>agent:intelligence-operative</code></li>
+<li><strong>Component routing:</strong> <code>component:content</code>, <code>component:visualization</code>, <code>component:i18n</code>, <code>component:navigation</code>, <code>component:news</code>, <code>component:ai-workflows</code>, <code>component:security</code>, <code>component:architecture</code>, <code>component:cia-data</code>, <code>component:data-integration</code>, <code>component:data-pipeline</code>, <code>component:workflow</code>, <code>component:strategy</code>, <code>component:future</code>, <code>component:performance</code>, <code>component:dashboard</code>, <code>component:documentation</code></li>
+<li><strong>Priority (canonical &amp; legacy):</strong> <code>priority:critical</code>, <code>priority:high</code>, <code>priority:medium</code>, <code>priority:low</code> (legacy <code>priority-critical</code>, <code>priority-high</code>, <code>priority-medium</code>, <code>priority-low</code> still active)</li>
+<li><strong>Type:</strong> <code>type:feature</code>, <code>type:documentation</code>, <code>type:security</code>, <code>type:accessibility</code>, <code>type:monitoring</code></li>
+<li><strong>Agentic newsroom:</strong> <code>agentic-workflows</code>, <code>agentic-workflow</code>, <code>agentic-news</code>, <code>automated-news</code>, <code>news-generation</code>, <code>news-content</code>, <code>news-article</code>, <code>auto-generated</code>, <code>ai-generated</code>, <code>needs-editorial-review</code>, <code>analysis-data</code>, <code>analysis-only</code></li>
+<li><strong>Article horizons &amp; types:</strong> <code>realtime-monitor</code>, <code>realtime-pulse</code>, <code>evening-analysis</code>, <code>week-ahead</code>, <code>month-ahead</code>, <code>year-ahead</code>, <code>long-horizon</code>, <code>forward-look</code>, <code>weekly-review</code>, <code>monthly-review</code>, <code>committee-reports</code>, <code>propositions</code>, <code>motions</code>, <code>interpellations</code>, <code>interpellation-debates</code>, <code>opposition-motions</code>, <code>article:motions</code></li>
+<li><strong>Language tracks:</strong> <code>lang:en</code>, <code>lang:sv</code>, <code>multi-language</code>, <code>translations</code></li>
+<li><strong>Pipeline:</strong> <code>automated-pipeline</code>, <code>economic-context</code>, <code>cia-intelligence</code>, <code>data-update</code>, <code>heartbeat</code>, <code>news/content</code>, <code>content</code></li>
+<li><strong>Tooling:</strong> <code>npm</code>, <code>github-actions</code>, <code>code-quality</code>, <code>frontend</code>, <code>refactoring</code>, <code>typescript</code>, <code>validation</code>, <code>maintenance</code></li>
+</ul>
+</li>
+<li>📋 The taxonomy is documented categorically below; for the canonical machine-readable taxonomy see <a href="../media/labeler.yml"><code>.github/labeler.yml</code></a> and the setup workflow <a href="../media/setup-labels.yml"><code>.github/workflows/setup-labels.yml</code></a>.</li>
+</ul>
+</blockquote>
+<p>This document describes the automatic labeling system for the riksdagsmonitor repository. Labels are automatically applied to pull requests based on file changes, PR titles, and PR body content.</p>
+<hr>
+<h2 id="📋-overview" class="tsd-anchor-link">📋 Overview<a href="#📋-overview" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<p>The riksdagsmonitor repository uses an automated labeling system powered by GitHub Actions to categorize pull requests and issues. This helps maintain organization, improves searchability, and provides quick visual context about changes.</p>
+<h3 id="key-features" class="tsd-anchor-link">Key Features<a href="#key-features" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul>
+<li>✅ <strong>Automatic labeling</strong> based on file paths, PR titles, and descriptions</li>
+<li>✅ <strong>159 labels total</strong> — 46 base labels managed by <a href="../media/setup-labels.yml"><code>setup-labels.yml</code></a> + 113 labels created dynamically by agentic workflows, GitHub Actions labeler, and manual additions</li>
+<li>✅ <strong>Size labels</strong> automatically calculated from PR diff</li>
+<li>✅ <strong>Security hardened</strong> workflows with SHA pinning</li>
+<li>✅ <strong>Status tracking</strong> with priority and progress labels</li>
+<li>✅ <strong>Agentic-newsroom taxonomy</strong>: <code>agent:*</code> (per-Copilot-agent owner), <code>component:*</code> (subsystem), <code>priority:*</code> / <code>priority-*</code>, <code>agentic-workflows</code>, <code>news-generation</code>, <code>needs-editorial-review</code>, <code>auto-generated</code>, <code>ai-generated</code>, horizon tags (<code>week-ahead</code>, <code>month-ahead</code>, <code>quarter-ahead</code>, <code>year-ahead</code>, <code>long-horizon</code>, <code>forward-look</code>, <code>realtime-monitor</code>, <code>realtime-pulse</code>)</li>
+</ul>
+<blockquote>
+<p><strong>Note:</strong> The <code>setup-labels.yml</code> workflow verifies exactly <strong>46</strong> base labels (the core taxonomy defined in the workflow itself). The remaining 113 labels are created on-the-fly by the agentic news workflows, the GitHub Actions labeler (<code>.github/labeler.yml</code>), and manual issue triage. The full live label set can be queried with <code>gh label list --repo Hack23/riksdagsmonitor --limit 300</code>.</p>
+</blockquote>
+<hr>
+<h2 id="🚀-setup" class="tsd-anchor-link">🚀 Setup<a href="#🚀-setup" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<h3 id="initial-setup" class="tsd-anchor-link">Initial Setup<a href="#initial-setup" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p>Run the label setup workflow to create all required labels:</p>
+<ol>
+<li>Go to <strong>Actions</strong> → <strong>Setup Repository Labels</strong></li>
+<li>Click <strong>Run workflow</strong></li>
+<li>(Optional) Check &quot;Recreate all labels&quot; to delete existing labels first</li>
+<li>Wait for completion (usually &lt; 1 minute)</li>
+</ol>
+<p><strong>Direct link:</strong> <a href="../../actions/workflows/setup-labels.yml">Setup Repository Labels Workflow</a></p>
+<h3 id="automatic-labeling" class="tsd-anchor-link">Automatic Labeling<a href="#automatic-labeling" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p>Once labels are created, the automatic labeler runs on every PR:</p>
+<ul>
+<li>Triggers on PR <strong>opened</strong>, <strong>synchronize</strong>, <strong>reopened</strong>, <strong>edited</strong></li>
+<li>Applies labels based on <code>.github/labeler.yml</code> configuration</li>
+<li>Adds size labels based on diff statistics</li>
+<li>Posts a summary comment on new PRs</li>
+</ul>
+<hr>
+<h2 id="🏷️-label-categories" class="tsd-anchor-link">🏷️ Label Categories<a href="#🏷️-label-categories" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<h3 id="🗳️-content-features" class="tsd-anchor-link">🗳️ Content &amp; Features<a href="#🗳️-content-features" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p>Labels for content generation and feature development:</p>
+<table>
+<thead>
+<tr>
+<th>Label</th>
+<th>Color</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>news</code></td>
+<td><img src="https://via.placeholder.com/15/ff6b9d/000000?text=+" alt="#ff6b9d"></td>
+<td>News articles and content generation</td>
+</tr>
+<tr>
+<td><code>dashboard</code></td>
+<td><img src="https://via.placeholder.com/15/1e88e5/000000?text=+" alt="#1e88e5"></td>
+<td>Interactive dashboards (Chart.js/D3.js)</td>
+</tr>
+<tr>
+<td><code>visualization</code></td>
+<td><img src="https://via.placeholder.com/15/9c27b0/000000?text=+" alt="#9c27b0"></td>
+<td>Data visualization features</td>
+</tr>
+<tr>
+<td><code>intelligence</code></td>
+<td><img src="https://via.placeholder.com/15/6a1b9a/000000?text=+" alt="#6a1b9a"></td>
+<td>Political intelligence analysis</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Auto-applies when:</strong></p>
+<ul>
+<li>Changing files in <code>news/</code>, <code>dashboard/</code>, <code>js/*-dashboard.js</code></li>
+<li>PR title starts with <code>news:</code>, <code>dashboard:</code>, <code>viz:</code></li>
+<li>PR body contains <code>- [x] 📰 News Content</code>, <code>- [x] 📊 Dashboard</code></li>
+</ul>
+<hr>
+<h3 id="💻-technology" class="tsd-anchor-link">💻 Technology<a href="#💻-technology" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p>Labels for technical implementation:</p>
+<table>
+<thead>
+<tr>
+<th>Label</th>
+<th>Color</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>html-css</code></td>
+<td><img src="https://via.placeholder.com/15/e1bee7/000000?text=+" alt="#e1bee7"></td>
+<td>HTML/CSS changes</td>
+</tr>
+<tr>
+<td><code>javascript</code></td>
+<td><img src="https://via.placeholder.com/15/f9a825/000000?text=+" alt="#f9a825"></td>
+<td>JavaScript code changes</td>
+</tr>
+<tr>
+<td><code>workflow</code></td>
+<td><img src="https://via.placeholder.com/15/1976d2/000000?text=+" alt="#1976d2"></td>
+<td>GitHub Actions workflows</td>
+</tr>
+<tr>
+<td><code>security</code></td>
+<td><img src="https://via.placeholder.com/15/d32f2f/000000?text=+" alt="#d32f2f"></td>
+<td>Security improvements</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Auto-applies when:</strong></p>
+<ul>
+<li>Changing <code>.html</code>, <code>.css</code>, <code>.js</code> files</li>
+<li>Modifying <code>.github/workflows/</code> files</li>
+<li>Updating security documentation</li>
+<li>PR title starts with <code>html:</code>, <code>js:</code>, <code>workflow:</code>, <code>security:</code></li>
+</ul>
+<hr>
+<h3 id="📊-data-integration" class="tsd-anchor-link">📊 Data Integration<a href="#📊-data-integration" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p>Labels for data pipeline and integration:</p>
+<table>
+<thead>
+<tr>
+<th>Label</th>
+<th>Color</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>cia-data</code></td>
+<td><img src="https://via.placeholder.com/15/00897b/000000?text=+" alt="#00897b"></td>
+<td>CIA platform data integration</td>
+</tr>
+<tr>
+<td><code>riksdag-data</code></td>
+<td><img src="https://via.placeholder.com/15/0277bd/000000?text=+" alt="#0277bd"></td>
+<td>Riksdag-Regering MCP data</td>
+</tr>
+<tr>
+<td><code>data-pipeline</code></td>
+<td><img src="https://via.placeholder.com/15/00695c/000000?text=+" alt="#00695c"></td>
+<td>ETL and data processing</td>
+</tr>
+<tr>
+<td><code>schema</code></td>
+<td><img src="https://via.placeholder.com/15/546e7a/000000?text=+" alt="#546e7a"></td>
+<td>Data schema changes</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Auto-applies when:</strong></p>
+<ul>
+<li>Changing files in <code>cia-data/</code>, <code>data/cia/</code>, <code>schemas/</code></li>
+<li>Modifying <code>scripts/load-cia-*.js</code>, <code>scripts/mcp-client.js</code></li>
+<li>PR title starts with <code>cia:</code>, <code>riksdag:</code>, <code>pipeline:</code>, <code>schema:</code></li>
+</ul>
+<hr>
+<h3 id="🌍-internationalization" class="tsd-anchor-link">🌍 Internationalization<a href="#🌍-internationalization" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p>Labels for multi-language support (14 languages):</p>
+<table>
+<thead>
+<tr>
+<th>Label</th>
+<th>Color</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>i18n</code></td>
+<td><img src="https://via.placeholder.com/15/4caf50/000000?text=+" alt="#4caf50"></td>
+<td>Internationalization/localization</td>
+</tr>
+<tr>
+<td><code>translation</code></td>
+<td><img src="https://via.placeholder.com/15/66bb6a/000000?text=+" alt="#66bb6a"></td>
+<td>Translation updates</td>
+</tr>
+<tr>
+<td><code>rtl</code></td>
+<td><img src="https://via.placeholder.com/15/8bc34a/000000?text=+" alt="#8bc34a"></td>
+<td>RTL language support (Arabic, Hebrew)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Auto-applies when:</strong></p>
+<ul>
+<li>Changing <code>index_*.html</code>, <code>sitemap_*.html</code>, <code>news/**/*-*.html</code></li>
+<li>Modifying <code>TRANSLATION_GUIDE.md</code></li>
+<li>PR title starts with <code>i18n:</code>, <code>translation:</code>, <code>rtl:</code></li>
+</ul>
+<p><strong>Supported Languages:</strong></p>
+<ul>
+<li>English (EN), Swedish (SV), Danish (DA), Norwegian (NO), Finnish (FI)</li>
+<li>German (DE), French (FR), Spanish (ES), Dutch (NL)</li>
+<li>Arabic (AR), Hebrew (HE), Japanese (JA), Korean (KO), Chinese (ZH)</li>
+</ul>
+<hr>
+<h3 id="🔒-isms-compliance" class="tsd-anchor-link">🔒 ISMS &amp; Compliance<a href="#🔒-isms-compliance" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p>Labels for security and compliance frameworks:</p>
+<table>
+<thead>
+<tr>
+<th>Label</th>
+<th>Color</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>isms</code></td>
+<td><img src="https://via.placeholder.com/15/b71c1c/000000?text=+" alt="#b71c1c"></td>
+<td>ISMS compliance changes</td>
+</tr>
+<tr>
+<td><code>iso-27001</code></td>
+<td><img src="https://via.placeholder.com/15/c62828/000000?text=+" alt="#c62828"></td>
+<td>ISO 27001 controls</td>
+</tr>
+<tr>
+<td><code>nist-csf</code></td>
+<td><img src="https://via.placeholder.com/15/d32f2f/000000?text=+" alt="#d32f2f"></td>
+<td>NIST CSF compliance</td>
+</tr>
+<tr>
+<td><code>cis-controls</code></td>
+<td><img src="https://via.placeholder.com/15/e53935/000000?text=+" alt="#e53935"></td>
+<td>CIS Controls</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Auto-applies when:</strong></p>
+<ul>
+<li>Changing <code>SECURITY_ARCHITECTURE.md</code>, <code>THREAT_MODEL.md</code>, <code>CRA-ASSESSMENT.md</code></li>
+<li>Modifying <code>.github/skills/iso-27001-controls/</code>, <code>.github/skills/nist-csf-mapping/</code></li>
+<li>PR title starts with <code>isms:</code>, <code>iso-27001:</code>, <code>nist:</code>, <code>cis:</code></li>
+</ul>
+<p><strong>Frameworks:</strong></p>
+<ul>
+<li><strong>ISO 27001:2022</strong> - Information security management</li>
+<li><strong>NIST CSF 2.0</strong> - Cybersecurity framework</li>
+<li><strong>CIS Controls v8.1</strong> - Security best practices</li>
+</ul>
+<hr>
+<h3 id="🏗️-infrastructure-operations" class="tsd-anchor-link">🏗️ Infrastructure &amp; Operations<a href="#🏗️-infrastructure-operations" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p>Labels for CI/CD and infrastructure:</p>
+<table>
+<thead>
+<tr>
+<th>Label</th>
+<th>Color</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ci-cd</code></td>
+<td><img src="https://via.placeholder.com/15/1565c0/000000?text=+" alt="#1565c0"></td>
+<td>CI/CD pipeline changes</td>
+</tr>
+<tr>
+<td><code>deployment</code></td>
+<td><img src="https://via.placeholder.com/15/0d47a1/000000?text=+" alt="#0d47a1"></td>
+<td>Deployment configuration</td>
+</tr>
+<tr>
+<td><code>performance</code></td>
+<td><img src="https://via.placeholder.com/15/ff6f00/000000?text=+" alt="#ff6f00"></td>
+<td>Performance optimization</td>
+</tr>
+<tr>
+<td><code>monitoring</code></td>
+<td><img src="https://via.placeholder.com/15/558b2f/000000?text=+" alt="#558b2f"></td>
+<td>Monitoring and alerting</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Auto-applies when:</strong></p>
+<ul>
+<li>Changing <code>.github/workflows/</code> files</li>
+<li>Modifying <code>CNAME</code>, <code>robots.txt</code>, <code>vite.config.js</code></li>
+<li>PR title starts with <code>ci:</code>, <code>deploy:</code>, <code>perf:</code>, <code>monitoring:</code></li>
+</ul>
+<hr>
+<h3 id="🔄-quality-testing" class="tsd-anchor-link">🔄 Quality &amp; Testing<a href="#🔄-quality-testing" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p>Labels for code quality and testing:</p>
+<table>
+<thead>
+<tr>
+<th>Label</th>
+<th>Color</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>testing</code></td>
+<td><img src="https://via.placeholder.com/15/26c6da/000000?text=+" alt="#26c6da"></td>
+<td>Test coverage</td>
+</tr>
+<tr>
+<td><code>accessibility</code></td>
+<td><img src="https://via.placeholder.com/15/7e57c2/000000?text=+" alt="#7e57c2"></td>
+<td>WCAG 2.1 AA compliance</td>
+</tr>
+<tr>
+<td><code>documentation</code></td>
+<td><img src="https://via.placeholder.com/15/0075ca/000000?text=+" alt="#0075ca"></td>
+<td>Documentation updates</td>
+</tr>
+<tr>
+<td><code>refactor</code></td>
+<td><img src="https://via.placeholder.com/15/ffb74d/000000?text=+" alt="#ffb74d"></td>
+<td>Code refactoring</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Auto-applies when:</strong></p>
+<ul>
+<li>Changing files in <code>tests/</code>, <code>cypress/</code>, <code>*.test.js</code></li>
+<li>Modifying <code>**/*.md</code> files</li>
+<li>PR title starts with <code>test:</code>, <code>a11y:</code>, <code>docs:</code>, <code>refactor:</code></li>
+</ul>
+<hr>
+<h3 id="🏷️-standard-labels" class="tsd-anchor-link">🏷️ Standard Labels<a href="#🏷️-standard-labels" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p>Essential workflow labels:</p>
+<table>
+<thead>
+<tr>
+<th>Label</th>
+<th>Color</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bug</code></td>
+<td><img src="https://via.placeholder.com/15/d73a4a/000000?text=+" alt="#d73a4a"></td>
+<td>Bug fixes</td>
+</tr>
+<tr>
+<td><code>enhancement</code></td>
+<td><img src="https://via.placeholder.com/15/a2eeef/000000?text=+" alt="#a2eeef"></td>
+<td>Enhancements</td>
+</tr>
+<tr>
+<td><code>dependencies</code></td>
+<td><img src="https://via.placeholder.com/15/0366d6/000000?text=+" alt="#0366d6"></td>
+<td>Dependency updates</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Auto-applies when:</strong></p>
+<ul>
+<li>PR title starts with <code>fix:</code>, <code>bug:</code>, <code>feat:</code>, <code>deps:</code></li>
+<li>Changing <code>package.json</code>, <code>package-lock.json</code></li>
+<li>PR body contains <code>- [x] 🐛 Bug Fix</code>, <code>- [x] ✨ Enhancement</code></li>
+</ul>
+<hr>
+<h3 id="🤖-ai-automation" class="tsd-anchor-link">🤖 AI &amp; Automation<a href="#🤖-ai-automation" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p>Labels for GitHub Copilot agents and agentic workflows:</p>
+<table>
+<thead>
+<tr>
+<th>Label</th>
+<th>Color</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>agent</code></td>
+<td><img src="https://via.placeholder.com/15/5319e7/000000?text=+" alt="#5319e7"></td>
+<td>Agent configuration</td>
+</tr>
+<tr>
+<td><code>skill</code></td>
+<td><img src="https://via.placeholder.com/15/bfd4f2/000000?text=+" alt="#bfd4f2"></td>
+<td>Skill configuration</td>
+</tr>
+<tr>
+<td><code>agentic-workflow</code></td>
+<td><img src="https://via.placeholder.com/15/6e40aa/000000?text=+" alt="#6e40aa"></td>
+<td>Agentic workflow changes</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Auto-applies when:</strong></p>
+<ul>
+<li>Changing <code>.github/agents/</code>, <code>.github/skills/</code>, <code>AGENTS.md</code>, <code>SKILLS.md</code></li>
+<li>Modifying <code>.github/workflows/*.md</code>, <code>.github/workflows/*.lock.yml</code></li>
+<li>PR title starts with <code>agent:</code>, <code>skill:</code>, <code>aw:</code></li>
+</ul>
+<hr>
+<h3 id="🚦-priority-labels" class="tsd-anchor-link">🚦 Priority Labels<a href="#🚦-priority-labels" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p>Manual labels for prioritization:</p>
+<table>
+<thead>
+<tr>
+<th>Label</th>
+<th>Color</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>priority-critical</code></td>
+<td><img src="https://via.placeholder.com/15/b60205/000000?text=+" alt="#b60205"></td>
+<td>Critical priority (security, outages)</td>
+</tr>
+<tr>
+<td><code>priority-high</code></td>
+<td><img src="https://via.placeholder.com/15/d93f0b/000000?text=+" alt="#d93f0b"></td>
+<td>High priority (important features)</td>
+</tr>
+<tr>
+<td><code>priority-medium</code></td>
+<td><img src="https://via.placeholder.com/15/fbca04/000000?text=+" alt="#fbca04"></td>
+<td>Medium priority (standard work)</td>
+</tr>
+<tr>
+<td><code>priority-low</code></td>
+<td><img src="https://via.placeholder.com/15/0e8a16/000000?text=+" alt="#0e8a16"></td>
+<td>Low priority (nice-to-have)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Usage:</strong> Manually add to PRs/issues to indicate urgency.</p>
+<hr>
+<h3 id="📏-size-labels" class="tsd-anchor-link">📏 Size Labels<a href="#📏-size-labels" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p>Automatically calculated from PR diff:</p>
+<table>
+<thead>
+<tr>
+<th>Label</th>
+<th>Color</th>
+<th>Lines Changed</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>size-xs</code></td>
+<td><img src="https://via.placeholder.com/15/3cbf00/000000?text=+" alt="#3cbf00"></td>
+<td>&lt; 10</td>
+<td>Extra small change</td>
+</tr>
+<tr>
+<td><code>size-s</code></td>
+<td><img src="https://via.placeholder.com/15/5d9801/000000?text=+" alt="#5d9801"></td>
+<td>10-50</td>
+<td>Small change</td>
+</tr>
+<tr>
+<td><code>size-m</code></td>
+<td><img src="https://via.placeholder.com/15/7f7f00/000000?text=+" alt="#7f7f00"></td>
+<td>50-250</td>
+<td>Medium change</td>
+</tr>
+<tr>
+<td><code>size-l</code></td>
+<td><img src="https://via.placeholder.com/15/bf7e00/000000?text=+" alt="#bf7e00"></td>
+<td>250-1000</td>
+<td>Large change</td>
+</tr>
+<tr>
+<td><code>size-xl</code></td>
+<td><img src="https://via.placeholder.com/15/d93f0b/000000?text=+" alt="#d93f0b"></td>
+<td>&gt; 1000</td>
+<td>Extra large change</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Auto-applies:</strong> Calculated from <code>additions + deletions</code> in PR diff.</p>
+<hr>
+<h3 id="🎭-status-labels" class="tsd-anchor-link">🎭 Status Labels<a href="#🎭-status-labels" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p>Manual labels for workflow tracking:</p>
+<table>
+<thead>
+<tr>
+<th>Label</th>
+<th>Color</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>status-needs-review</code></td>
+<td><img src="https://via.placeholder.com/15/fbca04/000000?text=+" alt="#fbca04"></td>
+<td>Needs code review</td>
+</tr>
+<tr>
+<td><code>status-in-progress</code></td>
+<td><img src="https://via.placeholder.com/15/1d76db/000000?text=+" alt="#1d76db"></td>
+<td>Work in progress</td>
+</tr>
+<tr>
+<td><code>status-blocked</code></td>
+<td><img src="https://via.placeholder.com/15/d93f0b/000000?text=+" alt="#d93f0b"></td>
+<td>Blocked by dependencies</td>
+</tr>
+<tr>
+<td><code>status-ready</code></td>
+<td><img src="https://via.placeholder.com/15/0e8a16/000000?text=+" alt="#0e8a16"></td>
+<td>Ready to merge</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Usage:</strong> Manually add/update as PR progresses through workflow.</p>
+<hr>
+<h2 id="🔧-configuration" class="tsd-anchor-link">🔧 Configuration<a href="#🔧-configuration" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<h3 id="labeler-configuration" class="tsd-anchor-link">Labeler Configuration<a href="#labeler-configuration" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p>The automatic labeler is configured in <code>.github/labeler.yml</code>. Labels are applied based on:</p>
+<ol>
+<li><strong>File path patterns</strong> - Uses glob patterns to match changed files</li>
+<li><strong>PR title</strong> - Matches title prefixes (e.g., <code>fix:</code>, <code>feat:</code>)</li>
+<li><strong>PR body</strong> - Matches checkbox patterns (e.g., <code>- [x] 🐛 Bug Fix</code>)</li>
+</ol>
+<p><strong>Example:</strong></p>
+<pre><code class="yaml"><span class="hl-11">news</span><span class="hl-1">:</span><br/><span class="hl-1">  - </span><span class="hl-11">any</span><span class="hl-1">:</span><br/><span class="hl-1">      - </span><span class="hl-11">changed-files</span><span class="hl-1">:</span><br/><span class="hl-1">          - </span><span class="hl-11">any-glob-to-any-file</span><span class="hl-1">:</span><br/><span class="hl-1">              - </span><span class="hl-2">&quot;news/**/*.html&quot;</span><br/><span class="hl-1">              - </span><span class="hl-2">&quot;scripts/article-template.js&quot;</span><br/><span class="hl-1">      - </span><span class="hl-11">title</span><span class="hl-1">: </span><span class="hl-2">&quot;news:*&quot;</span><br/><span class="hl-1">      - </span><span class="hl-11">body</span><span class="hl-1">: </span><span class="hl-2">&quot;- [x] 📰 News Content&quot;</span>
+</code><button type="button">Copy</button></pre>
+
+<h3 id="modifying-labels" class="tsd-anchor-link">Modifying Labels<a href="#modifying-labels" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p>To modify the labeling system:</p>
+<ol>
+<li><strong>Edit label definitions:</strong> Modify <code>.github/workflows/setup-labels.yml</code></li>
+<li><strong>Edit auto-labeling rules:</strong> Modify <code>.github/labeler.yml</code></li>
+<li><strong>Run setup workflow:</strong> Actions → Setup Repository Labels</li>
+<li><strong>Test on new PR:</strong> Create a test PR to verify labels</li>
+</ol>
+<hr>
+<h2 id="📊-usage-examples" class="tsd-anchor-link">📊 Usage Examples<a href="#📊-usage-examples" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<h3 id="example-1-news-article-pr" class="tsd-anchor-link">Example 1: News Article PR<a href="#example-1-news-article-pr" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Files changed:</strong></p>
+<ul>
+<li><code>news/2026-02-15-riksdag-budget-vote-en.html</code></li>
+<li><code>news/2026-02-15-riksdag-budget-vote-sv.html</code></li>
+</ul>
+<p><strong>Labels applied:</strong></p>
+<ul>
+<li>✅ <code>news</code> (news article)</li>
+<li>✅ <code>html-css</code> (HTML files)</li>
+<li>✅ <code>i18n</code> (multi-language)</li>
+<li>✅ <code>translation</code> (Swedish translation)</li>
+<li>✅ <code>size-s</code> (&lt; 50 lines)</li>
+</ul>
+<hr>
+<h3 id="example-2-dashboard-enhancement" class="tsd-anchor-link">Example 2: Dashboard Enhancement<a href="#example-2-dashboard-enhancement" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Files changed:</strong></p>
+<ul>
+<li><code>js/politician-dashboard.js</code></li>
+<li><code>politician-dashboard.html</code></li>
+<li><code>cia-data/politician/view_riksdagen_politician_ranking_sample.csv</code></li>
+</ul>
+<p><strong>PR Title:</strong> <code>feat: Add politician influence network visualization</code></p>
+<p><strong>Labels applied:</strong></p>
+<ul>
+<li>✅ <code>dashboard</code> (dashboard changes)</li>
+<li>✅ <code>visualization</code> (data visualization)</li>
+<li>✅ <code>javascript</code> (JS code)</li>
+<li>✅ <code>html-css</code> (HTML file)</li>
+<li>✅ <code>cia-data</code> (CIA data)</li>
+<li>✅ <code>enhancement</code> (feature)</li>
+<li>✅ <code>size-m</code> (50-250 lines)</li>
+</ul>
+<hr>
+<h3 id="example-3-security-architecture-update" class="tsd-anchor-link">Example 3: Security Architecture Update<a href="#example-3-security-architecture-update" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Files changed:</strong></p>
+<ul>
+<li><code>SECURITY_ARCHITECTURE.md</code></li>
+<li><code>THREAT_MODEL.md</code></li>
+<li><code>.github/skills/iso-27001-controls/SKILL.md</code></li>
+</ul>
+<p><strong>PR Title:</strong> <code>security: Update ISO 27001 control mapping</code></p>
+<p><strong>Labels applied:</strong></p>
+<ul>
+<li>✅ <code>security</code> (security changes)</li>
+<li>✅ <code>isms</code> (ISMS compliance)</li>
+<li>✅ <code>iso-27001</code> (ISO 27001)</li>
+<li>✅ <code>documentation</code> (markdown files)</li>
+<li>✅ <code>skill</code> (skill changes)</li>
+<li>✅ <code>size-m</code> (50-250 lines)</li>
+</ul>
+<hr>
+<h3 id="example-4-cicd-workflow" class="tsd-anchor-link">Example 4: CI/CD Workflow<a href="#example-4-cicd-workflow" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Files changed:</strong></p>
+<ul>
+<li><code>.github/workflows/data-pipeline.yml</code></li>
+<li><code>.github/workflows/quality-checks.yml</code></li>
+</ul>
+<p><strong>PR Title:</strong> <code>ci: Optimize data pipeline workflow</code></p>
+<p><strong>Labels applied:</strong></p>
+<ul>
+<li>✅ <code>workflow</code> (GitHub Actions)</li>
+<li>✅ <code>ci-cd</code> (CI/CD changes)</li>
+<li>✅ <code>data-pipeline</code> (data pipeline)</li>
+<li>✅ <code>performance</code> (optimization)</li>
+<li>✅ <code>size-s</code> (&lt; 50 lines)</li>
+</ul>
+<hr>
+<h2 id="🛠️-troubleshooting" class="tsd-anchor-link">🛠️ Troubleshooting<a href="#🛠️-troubleshooting" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<h3 id="labels-not-applied" class="tsd-anchor-link">Labels Not Applied<a href="#labels-not-applied" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Problem:</strong> Labels are not being applied to PRs.</p>
+<p><strong>Solutions:</strong></p>
+<ol>
+<li>Check if labels exist: Actions → Setup Repository Labels → Run workflow</li>
+<li>Verify labeler workflow ran: Actions → Pull Request Automatic Labeler</li>
+<li>Check workflow logs for errors</li>
+<li>Ensure <code>.github/labeler.yml</code> is valid YAML</li>
+</ol>
+<hr>
+<h3 id="missing-labels" class="tsd-anchor-link">Missing Labels<a href="#missing-labels" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Problem:</strong> Some labels don't exist in the repository.</p>
+<p><strong>Solution:</strong></p>
+<ol>
+<li>Go to Actions → Setup Repository Labels</li>
+<li>Click &quot;Run workflow&quot;</li>
+<li>(Optional) Check &quot;Recreate all labels&quot; to rebuild from scratch</li>
+<li>Wait for completion</li>
+<li>Re-trigger labeler on existing PRs</li>
+</ol>
+<hr>
+<h3 id="size-label-incorrect" class="tsd-anchor-link">Size Label Incorrect<a href="#size-label-incorrect" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Problem:</strong> Size label doesn't match PR diff.</p>
+<p><strong>Explanation:</strong> Size is calculated from total changes (additions + deletions), not just additions.</p>
+<p><strong>Formula:</strong></p>
+<pre><code class="bash"><span class="hl-0">TOTAL_CHANGES</span><span class="hl-1"> </span><span class="hl-2">=</span><span class="hl-1"> </span><span class="hl-2">ADDITIONS</span><span class="hl-1"> </span><span class="hl-2">+</span><span class="hl-1"> </span><span class="hl-2">DELETIONS</span><br/><span class="hl-3">if</span><span class="hl-1"> </span><span class="hl-0">TOTAL_CHANGES</span><span class="hl-1"> &lt; </span><span class="hl-2">10:</span><span class="hl-1"> </span><span class="hl-2">size-xs</span><br/><span class="hl-3">elif</span><span class="hl-1"> </span><span class="hl-0">TOTAL_CHANGES</span><span class="hl-1"> &lt; </span><span class="hl-2">50:</span><span class="hl-1"> </span><span class="hl-2">size-s</span><br/><span class="hl-3">elif</span><span class="hl-1"> </span><span class="hl-0">TOTAL_CHANGES</span><span class="hl-1"> &lt; </span><span class="hl-2">250:</span><span class="hl-1"> </span><span class="hl-2">size-m</span><br/><span class="hl-3">elif</span><span class="hl-1"> </span><span class="hl-0">TOTAL_CHANGES</span><span class="hl-1"> &lt; </span><span class="hl-2">1000:</span><span class="hl-1"> </span><span class="hl-2">size-l</span><br/><span class="hl-1">else: size-xl</span>
+</code><button type="button">Copy</button></pre>
+
+<hr>
+<h2 id="📚-references" class="tsd-anchor-link">📚 References<a href="#📚-references" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<ul>
+<li><strong>Labeler Configuration:</strong> <a href="../.github/labeler.yml"><code>.github/labeler.yml</code></a></li>
+<li><strong>Setup Workflow:</strong> <a href="../.github/workflows/setup-labels.yml"><code>.github/workflows/setup-labels.yml</code></a></li>
+<li><strong>Labeler Workflow:</strong> <a href="../.github/workflows/labeler.yml"><code>.github/workflows/labeler.yml</code></a></li>
+<li><strong>GitHub Labeler Action:</strong> <a href="https://github.com/actions/labeler">actions/labeler</a></li>
+<li><strong>ISMS Documentation:</strong> <a href="https://github.com/Hack23/ISMS-PUBLIC">Hack23 ISMS-PUBLIC</a></li>
+</ul>
+<hr>
+<h2 id="🤝-contributing" class="tsd-anchor-link">🤝 Contributing<a href="#🤝-contributing" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<p>When contributing to the labeling system:</p>
+<ol>
+<li>✅ Test label changes on a test PR first</li>
+<li>✅ Document new labels in this file</li>
+<li>✅ Follow existing color scheme patterns</li>
+<li>✅ Ensure labels align with repository structure</li>
+<li>✅ Update <a href="http://WORKFLOWS.md">WORKFLOWS.md</a> if adding new workflows</li>
+</ol>
+<hr>
+<p><strong>Last Updated:</strong> 2026-02-15<br>
+<strong>Version:</strong> 1.0<br>
+<strong>Maintained by:</strong> Hack23 AB (<a href="http://Org.nr">Org.nr</a> 5595347807)</p>
+<hr>
+<h2 id="🔗-hack23-ecosystem" class="tsd-anchor-link">🔗 Hack23 Ecosystem<a href="#🔗-hack23-ecosystem" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<table>
+<tr>
+  <th width="33%">🌐 Platforms</th>
+  <th width="33%">📦 Open-Source Projects</th>
+  <th width="33%">🛡️ Governance &amp; Standards</th>
+</tr>
+<tr>
+<td valign="top">
+🗳️ <a href="https://riksdagsmonitor.com">Riksdagsmonitor</a> — Swedish Parliament intelligence<br>
+🇪🇺 <a href="https://www.euparliamentmonitor.com">EU Parliament Monitor</a> — European coverage<br>
+🕵️ <a href="https://www.hack23.com/cia">Citizen Intelligence Agency</a> — political-data engine<br>
+🌐 <a href="https://www.hack23.com">Hack23 AB</a> — corporate site<br>
+📰 <a href="https://hack23.com/blog.html">Hack23 Blog</a> — engineering &amp; policy<br>
+💼 <a href="https://www.linkedin.com/company/hack23/">Hack23 on LinkedIn</a>
+</td>
+<td valign="top">
+🗳️ <a href="https://github.com/Hack23/riksdagsmonitor">Hack23/riksdagsmonitor</a><br>
+🕵️ <a href="https://github.com/Hack23/cia">Hack23/cia</a><br>
+🇪🇺 <a href="https://github.com/Hack23/euparliamentmonitor">Hack23/euparliamentmonitor</a><br>
+🔌 <a href="https://github.com/Hack23/european-parliament-mcp">Hack23/european-parliament-mcp</a><br>
+✅ <a href="https://github.com/Hack23/cia-compliance-manager">Hack23/cia-compliance-manager</a><br>
+🥋 <a href="https://github.com/Hack23/black-trigram">Hack23/black-trigram</a><br>
+🏠 <a href="https://github.com/Hack23/homepage">Hack23/homepage</a>
+</td>
+<td valign="top">
+🛡️ <a href="https://github.com/Hack23/ISMS-PUBLIC">Hack23 ISMS-PUBLIC</a> — public ISMS<br>
+🔒 <a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Information_Security_Policy.md">Information Security Policy</a><br>
+🤖 <a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/AI_Policy.md">AI Policy</a><br>
+🧪 <a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md">Secure Development Policy</a><br>
+🎯 <a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Threat_Modeling.md">Threat Modeling Policy</a><br>
+⚠️ <a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Vulnerability_Management.md">Vulnerability Management</a><br>
+🏷️ <a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md">Classification Framework</a>
+</td>
+</tr>
+</table>
+<p align="center">
+<a href="https://www.bestpractices.dev/projects/12069"><img src="https://www.bestpractices.dev/projects/12069/badge" alt="OpenSSF Best Practices"/></a>
+<a href="https://scorecard.dev/viewer/?uri=github.com/Hack23/riksdagsmonitor"><img src="https://api.securityscorecards.dev/projects/github.com/Hack23/riksdagsmonitor/badge" alt="OpenSSF Scorecard"/></a>
+<a href="https://github.com/Hack23/ISMS-PUBLIC"><img src="https://img.shields.io/badge/ISO_27001-2022-blue?style=flat-square&logo=iso&logoColor=white" alt="ISO 27001:2022"/></a>
+<a href="https://github.com/Hack23/ISMS-PUBLIC"><img src="https://img.shields.io/badge/NIST_CSF-2.0-green?style=flat-square&logo=nist&logoColor=white" alt="NIST CSF 2.0"/></a>
+<a href="https://github.com/Hack23/ISMS-PUBLIC"><img src="https://img.shields.io/badge/CIS_Controls-v8.1-orange?style=flat-square&logo=cisecurity&logoColor=white" alt="CIS Controls v8.1"/></a>
+<a href="https://www.apache.org/licenses/LICENSE-2.0"><img src="https://img.shields.io/badge/License-Apache_2.0-blue?style=flat-square" alt="Apache 2.0"/></a>
+</p>
+<p align="center"><em>🗳️ Empower citizens · 🔍 Strengthen democratic accountability · 🕵️ Illuminate the political process</em></p>
+<p align="center"><sub>© 2008–2026 <a href="https://www.hack23.com">Hack23 AB</a> (Org.nr 559534-7807) · Maintainer: <a href="https://www.linkedin.com/in/jamessorling/">James Pether Sörling, CISSP CISM</a></sub></p></div></div><div class="col-sidebar"><div class="page-menu"><div class="tsd-navigation settings"><details class="tsd-accordion"><summary class="tsd-accordion-summary"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg><h3>Settings</h3></summary><div class="tsd-accordion-details"><div class="tsd-filter-visibility"><span class="settings-label">Member Visibility</span><ul id="tsd-filter-options"><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-protected" name="protected" checked/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Protected</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-private" name="private" checked/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Private</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-inherited" name="inherited" checked/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Inherited</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-alpha" name="alpha"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Alpha</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-beta" name="beta"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Beta</span></label></li></ul></div><div class="tsd-theme-toggle"><label class="settings-label" for="tsd-theme">Theme</label><select id="tsd-theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></div></div></details></div><details open class="tsd-accordion tsd-page-navigation"><summary class="tsd-accordion-summary"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg><h3>On This Page</h3></summary><div class="tsd-accordion-details"><a href="#📋-overview"><span>📋 <wbr/>Overview</span></a><ul><li><a href="#key-features"><span>Key <wbr/>Features</span></a></li></ul><a href="#🚀-setup"><span>🚀 <wbr/>Setup</span></a><ul><li><a href="#initial-setup"><span>Initial <wbr/>Setup</span></a></li><li><a href="#automatic-labeling"><span>Automatic <wbr/>Labeling</span></a></li></ul><a href="#🏷️-label-categories"><span>🏷️ <wbr/>Label <wbr/>Categories</span></a><ul><li><a href="#🗳️-content-features"><span>🗳️ <wbr/>Content &amp; <wbr/>Features</span></a></li><li><a href="#💻-technology"><span>💻 <wbr/>Technology</span></a></li><li><a href="#📊-data-integration"><span>📊 <wbr/>Data <wbr/>Integration</span></a></li><li><a href="#🌍-internationalization"><span>🌍 <wbr/>Internationalization</span></a></li><li><a href="#🔒-isms-compliance"><span>🔒 <wbr/>ISMS &amp; <wbr/>Compliance</span></a></li><li><a href="#🏗️-infrastructure-operations"><span>🏗️ <wbr/>Infrastructure &amp; <wbr/>Operations</span></a></li><li><a href="#🔄-quality-testing"><span>🔄 <wbr/>Quality &amp; <wbr/>Testing</span></a></li><li><a href="#🏷️-standard-labels"><span>🏷️ <wbr/>Standard <wbr/>Labels</span></a></li><li><a href="#🤖-ai-automation"><span>🤖 <wbr/>AI &amp; <wbr/>Automation</span></a></li><li><a href="#🚦-priority-labels"><span>🚦 <wbr/>Priority <wbr/>Labels</span></a></li><li><a href="#📏-size-labels"><span>📏 <wbr/>Size <wbr/>Labels</span></a></li><li><a href="#🎭-status-labels"><span>🎭 <wbr/>Status <wbr/>Labels</span></a></li></ul><a href="#🔧-configuration"><span>🔧 <wbr/>Configuration</span></a><ul><li><a href="#labeler-configuration"><span>Labeler <wbr/>Configuration</span></a></li><li><a href="#modifying-labels"><span>Modifying <wbr/>Labels</span></a></li></ul><a href="#📊-usage-examples"><span>📊 <wbr/>Usage <wbr/>Examples</span></a><ul><li><a href="#example-1-news-article-pr"><span>Example 1: <wbr/>News <wbr/>Article <wbr/>PR</span></a></li><li><a href="#example-2-dashboard-enhancement"><span>Example 2: <wbr/>Dashboard <wbr/>Enhancement</span></a></li><li><a href="#example-3-security-architecture-update"><span>Example 3: <wbr/>Security <wbr/>Architecture <wbr/>Update</span></a></li><li><a href="#example-4-cicd-workflow"><span>Example 4: <wbr/>CI/<wbr/>CD <wbr/>Workflow</span></a></li></ul><a href="#🛠️-troubleshooting"><span>🛠️ <wbr/>Troubleshooting</span></a><ul><li><a href="#labels-not-applied"><span>Labels <wbr/>Not <wbr/>Applied</span></a></li><li><a href="#missing-labels"><span>Missing <wbr/>Labels</span></a></li><li><a href="#size-label-incorrect"><span>Size <wbr/>Label <wbr/>Incorrect</span></a></li></ul><a href="#📚-references"><span>📚 <wbr/>References</span></a><a href="#🤝-contributing"><span>🤝 <wbr/>Contributing</span></a><a href="#🔗-hack23-ecosystem"><span>🔗 <wbr/>Hack23 <wbr/>Ecosystem</span></a></div></details></div><div class="site-menu"><nav id="tsd-sidebar-links" class="tsd-navigation"><a href="https://riksdagsmonitor.com">── Live Platform ──</a><a href="https://riksdagsmonitor.com">🌐 Riksdagsmonitor.com</a><a href="https://riksdagsmonitor.com/political-intelligence.html">🕵️ Political Intelligence Index</a><a href="https://riksdagsmonitor.com/sitemap.html">🗺️ Sitemap (Human + XML)</a><a href="https://riksdagsmonitor.com/news/">📰 News &amp; Articles</a><a href="https://www.npmjs.com/package/riksdagsmonitor">📦 npm Package</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/ARCHITECTURE.md">── Current Architecture ──</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/ARCHITECTURE.md">🏛️ Architecture</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/SECURITY_ARCHITECTURE.md">🔒 Security Architecture</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/THREAT_MODEL.md">🛡️ Threat Model</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/DATA_MODEL.md">📊 Data Model</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FLOWCHART.md">🔄 Flowchart</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/STATEDIAGRAM.md">📈 State Diagram</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/MINDMAP.md">🧠 Mindmap</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/SWOT.md">💼 SWOT Analysis</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_ARCHITECTURE.md">── Future Architecture ──</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_ARCHITECTURE.md">🚀 Future Architecture</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_SECURITY_ARCHITECTURE.md">🔮 Future Security</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_THREAT_MODEL.md">🎯 Future Threat Model</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_DATA_MODEL.md">📊 Future Data Model</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_FLOWCHART.md">🔄 Future Flowchart</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_STATEDIAGRAM.md">📈 Future State Diagram</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_MINDMAP.md">🧠 Future Mindmap</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_SWOT.md">💼 Future SWOT</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_WORKFLOWS.md">🔄 Future Workflows</a><a href="#">── Security &amp; Compliance ──</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/SECURITY.md">🔐 Security Policy</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/CRA-ASSESSMENT.md">📋 CRA Assessment</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/BCPPlan.md">🏢 BCP Plan</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FinancialSecurityPlan.md">💰 Financial Security</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/End-of-Life-Strategy.md">📅 End-of-Life Strategy</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/README.md">── Project Docs ──</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/TESTING.md">🧪 Testing</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/WORKFLOWS.md">🔄 Workflows</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/RELEASE_PROCESS.md">📦 Release Process</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/CONTRIBUTING.md">🤝 Contributing</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/CODE_OF_CONDUCT.md">📜 Code of Conduct</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/AGENTS.md">🤖 Copilot Agents</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/SKILLS.md">🛠 Copilot Skills</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/LABELS.md">🏷 Labels</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/TRANSLATION_GUIDE.md">🌐 Translation Guide</a><a href="https://github.com/Hack23/ISMS-PUBLIC">── Hack23 ISMS Policies ──</a><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md">📋 Secure Dev Policy</a><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Information_Security_Policy.md">🔐 Information Security</a><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Threat_Modeling.md">🎯 Threat Modeling</a><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Open_Source_Policy.md">🌐 Open Source Policy</a><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Risk_Assessment_Methodology.md">📊 Risk Assessment</a><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/AI_Policy.md">🤖 AI Policy</a><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Change_Management_Policy.md">🔧 Change Management</a><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Incident_Response_Plan.md">🛡️ Incident Response</a><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Asset_Management_Policy.md">📦 Asset Management</a><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Access_Control_Policy.md">🔑 Access Control</a><a href="https://riksdagsmonitor.com/docs/api/">── Hack23 API Docs ──</a><a href="https://riksdagsmonitor.com/docs/api/">📚 Riksdagsmonitor API</a><a href="https://euparliamentmonitor.com/docs/api/">🇪🇺 EU Parliament MCP API</a><a href="https://ciacompliancemanager.com/api/">🔍 CIA Compliance Mgr API</a><a href="https://blacktrigram.com/api/">⚔️ Black Trigram API</a><a href="https://riksdagsmonitor.com" class="tsd-nav-link">🏠 Home</a><a href="https://riksdagsmonitor.com/political-intelligence.html" class="tsd-nav-link">🕵️ Political Intelligence</a><a href="https://riksdagsmonitor.com/sitemap.html" class="tsd-nav-link">🗺️ Sitemap</a><a href="https://www.npmjs.com/package/riksdagsmonitor" class="tsd-nav-link">📦 npm Package</a><a href="https://github.com/Hack23/riksdagsmonitor" class="tsd-nav-link">📦 GitHub</a><a href="https://github.com/Hack23/ISMS-PUBLIC" class="tsd-nav-link">🛡️ ISMS</a><a href="https://github.com/Hack23/cia" class="tsd-nav-link">🏛️ CIA Platform</a></nav><nav class="tsd-navigation"><a href="../modules.html">Riksdagsmonitor Intelligence Platform — API Documentation - v1.0.28</a><ul class="tsd-small-nested-navigation" id="tsd-nav-container"><li>Loading...</li></ul></nav></div></div></div><footer><p class="tsd-generator">Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></footer><div class="overlay"></div></body></html>

@@ -1,0 +1,2877 @@
+<!DOCTYPE html><html class="default" lang="en" data-base="../"><head><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>STATEDIAGRAM | Riksdagsmonitor Intelligence Platform — API Documentation - v1.0.28</title><meta name="description" content="Documentation for Riksdagsmonitor Intelligence Platform — API Documentation"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="../assets/style.css"/><link rel="stylesheet" href="../assets/highlight.css"/><script defer src="../assets/main.js"></script><script async src="../assets/icons.js" id="tsd-icons-script"></script><script async src="../assets/search.js" id="tsd-search-script"></script><script async src="../assets/navigation.js" id="tsd-nav-script"></script><script async src="../assets/hierarchy.js" id="tsd-hierarchy-script"></script></head><body><script>document.documentElement.dataset.theme = localStorage.getItem("tsd-theme") || "os";document.body.style.display="none";setTimeout(() => window.app?app.showPage():document.body.style.removeProperty("display"),500)</script><header class="tsd-page-toolbar"><div class="tsd-toolbar-contents container"><a href="../index.html" class="title">Riksdagsmonitor Intelligence Platform — API Documentation - v1.0.28</a><div id="tsd-toolbar-links"><a href="https://riksdagsmonitor.com">🏠 Home</a><a href="https://riksdagsmonitor.com/political-intelligence.html">🕵️ Political Intelligence</a><a href="https://riksdagsmonitor.com/sitemap.html">🗺️ Sitemap</a><a href="https://www.npmjs.com/package/riksdagsmonitor">📦 npm Package</a><a href="https://github.com/Hack23/riksdagsmonitor">📦 GitHub</a><a href="https://github.com/Hack23/ISMS-PUBLIC">🛡️ ISMS</a><a href="https://github.com/Hack23/cia">🏛️ CIA Platform</a></div><button id="tsd-search-trigger" class="tsd-widget" aria-label="Search"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-search"></use></svg></button><dialog id="tsd-search" aria-label="Search"><input role="combobox" id="tsd-search-input" aria-controls="tsd-search-results" aria-autocomplete="list" aria-expanded="true" autocapitalize="off" autocomplete="off" placeholder="Search the docs" maxLength="100"/><ul role="listbox" id="tsd-search-results"></ul><div id="tsd-search-status" aria-live="polite" aria-atomic="true"><div>Preparing search index...</div></div></dialog><a href="#" class="tsd-widget menu" id="tsd-toolbar-menu-trigger" data-toggle="menu" aria-label="Menu"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-menu"></use></svg></a></div></header><div class="container container-main"><div class="col-content"><div class="tsd-page-title"><ul class="tsd-breadcrumb" aria-label="Breadcrumb"><li><a href="" aria-current="page">STATEDIAGRAM</a></li></ul></div><div class="tsd-panel tsd-typography"><p align="center">
+  <img src="https://hack23.com/icon-192.png" alt="Hack23 Logo" width="192" height="192">
+</p>
+<h1 align="center">🔄 Riksdagsmonitor — State Diagrams</h1>
+<p align="center">
+  <strong>🎭 System Behavior and State Transitions for Democratic Transparency</strong><br>
+  <em>📊 Lifecycle Management · Workflow States · AI-Driven Processes</em>
+</p>
+<p align="center">
+  <img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/>
+  <img src="https://img.shields.io/badge/Version-1.2-555?style=for-the-badge" alt="Version"/>
+  <img src="https://img.shields.io/badge/Effective-2026--05--06-success?style=for-the-badge" alt="Effective Date"/>
+  <img src="https://img.shields.io/badge/Review-Quarterly-orange?style=for-the-badge" alt="Review Cycle"/>
+</p>
+<p><strong>📋 Document Owner:</strong> CEO | <strong>📄 Version:</strong> 1.2 | <strong>📅 Last Updated:</strong> 2026-05-06 (UTC)<br>
+<strong>🔄 Review Cycle:</strong> Quarterly | <strong>⏰ Next Review:</strong> 2026-08-06<br>
+<strong>🏢 Owner:</strong> Hack23 AB (<a href="http://Org.nr">Org.nr</a> 5595347807) | <strong>🏷️ Classification:</strong> Public</p>
+<hr>
+<h2 id="executive-summary" class="tsd-anchor-link">Executive Summary<a href="#executive-summary" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<p>This document illustrates the key state transitions and behavioral models within the Riksdagsmonitor platform. These diagrams provide a comprehensive view of how system components change states in response to user interactions, data updates, workflow executions, and automated processes. All state models align with Hack23 AB's <a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/AI_Policy.md">AI Policy</a> and <a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md">Secure Development Policy</a>.</p>
+<h2 id="📚-architecture-documentation-map" class="tsd-anchor-link">📚 Architecture Documentation Map<a href="#📚-architecture-documentation-map" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<table>
+<thead>
+<tr>
+<th>Document</th>
+<th>Focus</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="ARCHITECTURE.html">🏛️ Architecture</a></td>
+<td>🏗️ C4 Models</td>
+<td>System context, containers, components</td>
+</tr>
+<tr>
+<td><a href="DATA_MODEL.html">📊 Data Model</a></td>
+<td>📊 Data</td>
+<td>Entity relationships and data dictionary</td>
+</tr>
+<tr>
+<td><a href="FLOWCHART.html">🔄 Flowchart</a></td>
+<td>🔄 Processes</td>
+<td>Business and data flow diagrams</td>
+</tr>
+<tr>
+<td><strong><a href="">📈 State Diagram</a></strong></td>
+<td><strong>📈 States</strong></td>
+<td><strong>System state transitions and lifecycles</strong></td>
+</tr>
+<tr>
+<td><a href="MINDMAP.html">🧠 Mindmap</a></td>
+<td>🧠 Concepts</td>
+<td>System conceptual relationships</td>
+</tr>
+<tr>
+<td><a href="SWOT.html">💼 SWOT</a></td>
+<td>💼 Strategy</td>
+<td>Strategic analysis and positioning</td>
+</tr>
+<tr>
+<td><a href="SECURITY_ARCHITECTURE.html">🛡️ Security Architecture</a></td>
+<td>🔒 Security</td>
+<td>Current security controls and design</td>
+</tr>
+<tr>
+<td><a href="FUTURE_SECURITY_ARCHITECTURE.html">🚀 Future Security</a></td>
+<td>🔮 Security</td>
+<td>Planned security improvements</td>
+</tr>
+<tr>
+<td><a href="THREAT_MODEL.html">🎯 Threat Model</a></td>
+<td>🎯 Threats</td>
+<td>STRIDE/MITRE ATT&amp;CK analysis</td>
+</tr>
+<tr>
+<td><a href="WORKFLOWS.html">🔧 Workflows</a></td>
+<td>🔧 DevOps</td>
+<td>CI/CD automation and pipelines</td>
+</tr>
+<tr>
+<td><a href="CRA-ASSESSMENT.html">🛡️ CRA Assessment</a></td>
+<td>⚖️ Compliance</td>
+<td>EU Cyber Resilience Act conformity</td>
+</tr>
+<tr>
+<td><a href="FUTURE_ARCHITECTURE.html">🚀 Future Architecture</a></td>
+<td>🔮 Evolution</td>
+<td>Architectural evolution roadmap</td>
+</tr>
+<tr>
+<td><a href="FUTURE_DATA_MODEL.html">📊 Future Data Model</a></td>
+<td>🔮 Data</td>
+<td>Enhanced data architecture plans</td>
+</tr>
+<tr>
+<td><a href="FUTURE_FLOWCHART.html">🔄 Future Flowchart</a></td>
+<td>🔮 Processes</td>
+<td>Improved process workflows</td>
+</tr>
+<tr>
+<td><a href="FUTURE_STATEDIAGRAM.html">📈 Future State Diagram</a></td>
+<td>🔮 States</td>
+<td>Advanced state management</td>
+</tr>
+<tr>
+<td><a href="FUTURE_MINDMAP.html">🧠 Future Mindmap</a></td>
+<td>🔮 Concepts</td>
+<td>Capability expansion plans</td>
+</tr>
+<tr>
+<td><a href="FUTURE_SWOT.html">💼 Future SWOT</a></td>
+<td>🔮 Strategy</td>
+<td>Future strategic opportunities</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="1-📰-news-article-lifecycle-states" class="tsd-anchor-link">1. 📰 News Article Lifecycle States<a href="#1-📰-news-article-lifecycle-states" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<p><strong>📊 Data Focus:</strong> Illustrates how news articles flow from generation to publication across 14 languages.</p>
+<p><strong>🔄 Process Focus:</strong> Shows state transitions as articles are generated, translated, validated, reviewed, and published.</p>
+<p><strong>🤖 AI Integration:</strong> Agentic workflows (Copilot + riksdag-regering-mcp) generate and translate content with human oversight.</p>
+<pre><code class="mermaid"><span class="hl-1">stateDiagram-v2</span><br/><span class="hl-1">    [*] --&gt; Draft</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    Draft --&gt; Translation: Content Generated</span><br/><span class="hl-1">    Draft --&gt; Error: Generation Failed</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    Translation --&gt; Validation: All Languages Complete</span><br/><span class="hl-1">    Translation --&gt; TranslationFailed: AI Hallucination/Context Loss</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    Validation --&gt; Review: All Checks Passed</span><br/><span class="hl-1">    Validation --&gt; ValidationFailed: data-translate Markers Remain</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    Review --&gt; Approved: Human Approval</span><br/><span class="hl-1">    Review --&gt; Rejected: Changes Requested</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    Approved --&gt; Published: PR Merged</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    Published --&gt; Rollback: Production Issue</span><br/><span class="hl-1">    Published --&gt; [*]</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    TranslationFailed --&gt; Draft: Retry Translation</span><br/><span class="hl-1">    ValidationFailed --&gt; Translation: Fix Translations</span><br/><span class="hl-1">    Rejected --&gt; Draft: Revise Content</span><br/><span class="hl-1">    Error --&gt; Draft: Fix and Retry</span><br/><span class="hl-1">    Rollback --&gt; Draft: Recreate Article</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    note right of Draft</span><br/><span class="hl-1">        Article generated by Copilot agent</span><br/><span class="hl-1">        Swedish content from riksdag-regering-mcp</span><br/><span class="hl-1">        data-translate markers added</span><br/><span class="hl-1">    end note</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    note right of Translation</span><br/><span class="hl-1">        Multi-language translation (14 languages)</span><br/><span class="hl-1">        EN, SV, DA, NO, FI, DE, FR, ES</span><br/><span class="hl-1">        NL, AR, HE, JA, KO, ZH</span><br/><span class="hl-1">    end note</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    note right of Validation</span><br/><span class="hl-1">        scripts/validate-news-translations.js</span><br/><span class="hl-1">        Exit 0: All translations complete</span><br/><span class="hl-1">        Exit 1: Markers detected</span><br/><span class="hl-1">    end note</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    note right of Published</span><br/><span class="hl-1">        Deployed to production</span><br/><span class="hl-1">        Immutable state</span><br/><span class="hl-1">        Cannot transition back to DRAFT</span><br/><span class="hl-1">    end note</span>
+</code><button type="button">Copy</button></pre>
+
+<h3 id="11-state-definitions" class="tsd-anchor-link">1.1 State Definitions<a href="#11-state-definitions" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>State</th>
+<th>Description</th>
+<th>Entry Conditions</th>
+<th>Exit Conditions</th>
+<th>Typical Duration</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>DRAFT</strong></td>
+<td>Article generated by Copilot agent with Swedish content only</td>
+<td>Workflow triggered</td>
+<td>Translation starts</td>
+<td>2-5 minutes</td>
+</tr>
+<tr>
+<td><strong>TRANSLATION</strong></td>
+<td>Multi-language translation in progress (14 languages)</td>
+<td>Draft complete, data-translate markers present</td>
+<td>All languages translated</td>
+<td>3-8 minutes</td>
+</tr>
+<tr>
+<td><strong>VALIDATION</strong></td>
+<td>Automated validation checking for remaining markers</td>
+<td>Translation complete</td>
+<td>Validation script exit 0 or 1</td>
+<td>30-60 seconds</td>
+</tr>
+<tr>
+<td><strong>REVIEW</strong></td>
+<td>Human review in pull request</td>
+<td>Validation passed, PR created</td>
+<td>Approved or rejected</td>
+<td>1-24 hours</td>
+</tr>
+<tr>
+<td><strong>APPROVED</strong></td>
+<td>PR approved, awaiting merge</td>
+<td>Reviewer approval</td>
+<td>PR merged</td>
+<td>1-60 minutes</td>
+</tr>
+<tr>
+<td><strong>PUBLISHED</strong></td>
+<td>Merged to main, deployed to production</td>
+<td>PR merged, deployment complete</td>
+<td>Rollback (rare)</td>
+<td>Permanent</td>
+</tr>
+<tr>
+<td><strong>ERROR</strong></td>
+<td>Generation failure requiring intervention</td>
+<td>AI error, API failure</td>
+<td>Manual fix, retry</td>
+<td>Variable</td>
+</tr>
+<tr>
+<td><strong>TRANSLATION_FAILED</strong></td>
+<td>Translation error (hallucination, context loss)</td>
+<td>AI translation error</td>
+<td>Retry translation</td>
+<td>5-15 minutes</td>
+</tr>
+<tr>
+<td><strong>VALIDATION_FAILED</strong></td>
+<td>Validation script detected remaining markers</td>
+<td>scripts/validate-news-translations.js exit 1</td>
+<td>Fix translations</td>
+<td>5-10 minutes</td>
+</tr>
+<tr>
+<td><strong>REJECTED</strong></td>
+<td>Human reviewer requested changes</td>
+<td>Changes requested</td>
+<td>Revise content</td>
+<td>Variable</td>
+</tr>
+<tr>
+<td><strong>ROLLBACK</strong></td>
+<td>Production issue, reverting changes</td>
+<td>Critical production bug</td>
+<td>Recreate article</td>
+<td>10-30 minutes</td>
+</tr>
+</tbody>
+</table>
+<h3 id="12-state-transition-matrix" class="tsd-anchor-link">1.2 State Transition Matrix<a href="#12-state-transition-matrix" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>From State</th>
+<th>Event</th>
+<th>To State</th>
+<th>Conditions</th>
+<th>Actions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DRAFT</td>
+<td>translate_complete</td>
+<td>TRANSLATION</td>
+<td>All languages done</td>
+<td>Trigger validation</td>
+</tr>
+<tr>
+<td>DRAFT</td>
+<td>generation_failed</td>
+<td>ERROR</td>
+<td>AI error, API timeout</td>
+<td>Log error, alert team</td>
+</tr>
+<tr>
+<td>TRANSLATION</td>
+<td>validation_start</td>
+<td>VALIDATION</td>
+<td>Translation complete</td>
+<td>Run validate-news-translations.js</td>
+</tr>
+<tr>
+<td>TRANSLATION</td>
+<td>translation_error</td>
+<td>TRANSLATION_FAILED</td>
+<td>Hallucination detected</td>
+<td>Log error, retry</td>
+</tr>
+<tr>
+<td>VALIDATION</td>
+<td>validation_passed</td>
+<td>REVIEW</td>
+<td>Exit code 0</td>
+<td>Create PR</td>
+</tr>
+<tr>
+<td>VALIDATION</td>
+<td>validation_failed</td>
+<td>VALIDATION_FAILED</td>
+<td>Exit code 1, markers found</td>
+<td>Return to translation</td>
+</tr>
+<tr>
+<td>REVIEW</td>
+<td>approve</td>
+<td>APPROVED</td>
+<td>Reviewer approval</td>
+<td>Prepare merge</td>
+</tr>
+<tr>
+<td>REVIEW</td>
+<td>request_changes</td>
+<td>REJECTED</td>
+<td>Feedback provided</td>
+<td>Notify author</td>
+</tr>
+<tr>
+<td>APPROVED</td>
+<td>merge</td>
+<td>PUBLISHED</td>
+<td>All checks passed</td>
+<td>Deploy to production</td>
+</tr>
+<tr>
+<td>PUBLISHED</td>
+<td>production_issue</td>
+<td>ROLLBACK</td>
+<td>Critical bug detected</td>
+<td>Revert commit</td>
+</tr>
+</tbody>
+</table>
+<h3 id="13-state-invariants" class="tsd-anchor-link">1.3 State Invariants<a href="#13-state-invariants" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul>
+<li><strong>PUBLISHED → DRAFT</strong>: ❌ <strong>BLOCKED</strong> - Published articles are immutable (cannot revert to draft)</li>
+<li><strong>VALIDATION_FAILED → PUBLISHED</strong>: ❌ <strong>BLOCKED</strong> - Cannot publish with untranslated markers</li>
+<li><strong>ERROR → PUBLISHED</strong>: ❌ <strong>BLOCKED</strong> - Must resolve errors before publishing</li>
+<li><strong>DRAFT → PUBLISHED</strong>: ❌ <strong>BLOCKED</strong> - Must pass through TRANSLATION → VALIDATION → REVIEW → APPROVED</li>
+<li><strong>TRANSLATION → REVIEW</strong>: ❌ <strong>BLOCKED</strong> - Must validate first</li>
+</ul>
+<h3 id="14-error-state-handling" class="tsd-anchor-link">1.4 Error State Handling<a href="#14-error-state-handling" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>Error State</th>
+<th>Detection</th>
+<th>Recovery</th>
+<th>Retry Logic</th>
+<th>Notification</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ERROR</strong></td>
+<td>AI generation fails, API timeout</td>
+<td>Manual fix, retry workflow</td>
+<td>Max 3 attempts, exponential backoff (1m, 2m, 4m)</td>
+<td>GitHub issue auto-created</td>
+</tr>
+<tr>
+<td><strong>TRANSLATION_FAILED</strong></td>
+<td>AI hallucination, context loss</td>
+<td>Automatic retry with refined prompt</td>
+<td>Max 2 attempts, 5-minute delay</td>
+<td>Workflow annotation</td>
+</tr>
+<tr>
+<td><strong>VALIDATION_FAILED</strong></td>
+<td>data-translate markers remain</td>
+<td>Return to translation step</td>
+<td>Automatic retry</td>
+<td>Workflow log</td>
+</tr>
+<tr>
+<td><strong>REJECTED</strong></td>
+<td>Human reviewer feedback</td>
+<td>Manual content revision</td>
+<td>N/A (human-driven)</td>
+<td>PR comment</td>
+</tr>
+<tr>
+<td><strong>ROLLBACK</strong></td>
+<td>Production bug detected</td>
+<td>Manual revert + recreate</td>
+<td>N/A (manual)</td>
+<td>GitHub issue, Slack alert</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="2-🤖-agentic-workflow-states" class="tsd-anchor-link">2. 🤖 Agentic Workflow States<a href="#2-🤖-agentic-workflow-states" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<p><strong>📊 Data Focus:</strong> GitHub Actions workflows executing Copilot agents with MCP server integration.</p>
+<p><strong>🔄 Process Focus:</strong> Shows workflow lifecycle from scheduling through deployment.</p>
+<p><strong>🤖 AI Integration:</strong> Limited Risk AI system per Hack23 AI Policy requiring human oversight.</p>
+<pre><code class="mermaid"><span class="hl-1">stateDiagram-v2</span><br/><span class="hl-1">    [*] --&gt; Queued</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    Queued --&gt; Running: Workflow Starts</span><br/><span class="hl-1">    Queued --&gt; Cancelled: Manual Cancellation</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    Running --&gt; Generating: Copilot Agent Active</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    Generating --&gt; Translating: Content Generated</span><br/><span class="hl-1">    Generating --&gt; HallucinationDetected: AI Error Detected</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    Translating --&gt; Validating: Translation Complete</span><br/><span class="hl-1">    Translating --&gt; TranslationError: Translation Failed</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    Validating --&gt; Success: All Checks Passed</span><br/><span class="hl-1">    Validating --&gt; Failure: Validation Failed</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    Success --&gt; PRCreated: Pull Request Opened</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    PRCreated --&gt; PRReview: Awaiting Review</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    PRReview --&gt; Merged: PR Approved &amp; Merged</span><br/><span class="hl-1">    PRReview --&gt; Closed: PR Rejected/Cancelled</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    Merged --&gt; Deployed: Deployment Complete</span><br/><span class="hl-1">    Deployed --&gt; [*]</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    HallucinationDetected --&gt; Failure</span><br/><span class="hl-1">    TranslationError --&gt; Failure</span><br/><span class="hl-1">    Failure --&gt; Logged: Error Logged</span><br/><span class="hl-1">    Logged --&gt; [*]</span><br/><span class="hl-1">    Closed --&gt; [*]</span><br/><span class="hl-1">    Cancelled --&gt; [*]</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    note right of Queued</span><br/><span class="hl-1">        Scheduled or manual trigger</span><br/><span class="hl-1">        Awaiting GitHub Actions runner</span><br/><span class="hl-1">    end note</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    note right of Generating</span><br/><span class="hl-1">        Copilot agent queries riksdag-regering-mcp</span><br/><span class="hl-1">        Generates Swedish content</span><br/><span class="hl-1">        Real-time monitoring active</span><br/><span class="hl-1">    end note</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    note right of HallucinationDetected</span><br/><span class="hl-1">        AI-specific error state</span><br/><span class="hl-1">        Prompt injection detection</span><br/><span class="hl-1">        Context drift monitoring</span><br/><span class="hl-1">    end note</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    note right of PRReview</span><br/><span class="hl-1">        Human oversight required</span><br/><span class="hl-1">        Limited Risk AI system</span><br/><span class="hl-1">        MUST review before merge</span><br/><span class="hl-1">    end note</span>
+</code><button type="button">Copy</button></pre>
+
+<h3 id="21-state-definitions" class="tsd-anchor-link">2.1 State Definitions<a href="#21-state-definitions" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>State</th>
+<th>Description</th>
+<th>Entry Conditions</th>
+<th>Exit Conditions</th>
+<th>Typical Duration</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>QUEUED</strong></td>
+<td>Workflow scheduled, awaiting runner</td>
+<td>Cron trigger or manual dispatch</td>
+<td>Runner available</td>
+<td>10-60 seconds</td>
+</tr>
+<tr>
+<td><strong>RUNNING</strong></td>
+<td>Workflow executing, runner assigned</td>
+<td>Runner allocated</td>
+<td>Copilot agent starts</td>
+<td>10-30 seconds</td>
+</tr>
+<tr>
+<td><strong>GENERATING</strong></td>
+<td>Copilot agent generating content</td>
+<td>Agent initialized, MCP connected</td>
+<td>Content complete</td>
+<td>2-5 minutes</td>
+</tr>
+<tr>
+<td><strong>TRANSLATING</strong></td>
+<td>Multi-language translation</td>
+<td>Content generated</td>
+<td>All languages done</td>
+<td>3-8 minutes</td>
+</tr>
+<tr>
+<td><strong>VALIDATING</strong></td>
+<td>Playwright + translation validation</td>
+<td>Translation complete</td>
+<td>Validation exit 0 or 1</td>
+<td>1-2 minutes</td>
+</tr>
+<tr>
+<td><strong>SUCCESS</strong></td>
+<td>All checks passed</td>
+<td>Validation successful</td>
+<td>PR created</td>
+<td>10-30 seconds</td>
+</tr>
+<tr>
+<td><strong>FAILURE</strong></td>
+<td>Workflow failed</td>
+<td>Error detected</td>
+<td>Logged</td>
+<td>Immediate</td>
+</tr>
+<tr>
+<td><strong>HALLUCINATION_DETECTED</strong></td>
+<td>AI error (hallucination, prompt injection)</td>
+<td>AI monitoring alert</td>
+<td>Error logged</td>
+<td>Immediate</td>
+</tr>
+<tr>
+<td><strong>TRANSLATION_ERROR</strong></td>
+<td>Translation failure</td>
+<td>Translation step failed</td>
+<td>Error logged</td>
+<td>Immediate</td>
+</tr>
+<tr>
+<td><strong>PR_CREATED</strong></td>
+<td>Pull request opened</td>
+<td>Success state, PR API call</td>
+<td>Review requested</td>
+<td>Immediate</td>
+</tr>
+<tr>
+<td><strong>PR_REVIEW</strong></td>
+<td>Human review in progress</td>
+<td>PR created</td>
+<td>Approved or closed</td>
+<td>1-24 hours</td>
+</tr>
+<tr>
+<td><strong>MERGED</strong></td>
+<td>Changes merged to main</td>
+<td>PR approved, merge button clicked</td>
+<td>Deployment starts</td>
+<td>Immediate</td>
+</tr>
+<tr>
+<td><strong>DEPLOYED</strong></td>
+<td>Changes live in production</td>
+<td>GitHub Pages deployment complete</td>
+<td>Monitoring active</td>
+<td>2-5 minutes</td>
+</tr>
+<tr>
+<td><strong>CLOSED</strong></td>
+<td>PR rejected or cancelled</td>
+<td>Review rejected, manual close</td>
+<td>Workflow terminated</td>
+<td>Immediate</td>
+</tr>
+<tr>
+<td><strong>CANCELLED</strong></td>
+<td>Workflow manually cancelled</td>
+<td>User cancellation</td>
+<td>Workflow terminated</td>
+<td>Immediate</td>
+</tr>
+<tr>
+<td><strong>LOGGED</strong></td>
+<td>Error logged for audit</td>
+<td>Any failure state</td>
+<td>Workflow terminated</td>
+<td>Immediate</td>
+</tr>
+</tbody>
+</table>
+<h3 id="22-state-transition-matrix" class="tsd-anchor-link">2.2 State Transition Matrix<a href="#22-state-transition-matrix" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>From State</th>
+<th>Event</th>
+<th>To State</th>
+<th>Conditions</th>
+<th>Actions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>QUEUED</td>
+<td>runner_allocated</td>
+<td>RUNNING</td>
+<td>Runner available</td>
+<td>Initialize environment</td>
+</tr>
+<tr>
+<td>RUNNING</td>
+<td>agent_start</td>
+<td>GENERATING</td>
+<td>Copilot agent ready</td>
+<td>Connect MCP server</td>
+</tr>
+<tr>
+<td>GENERATING</td>
+<td>content_complete</td>
+<td>TRANSLATING</td>
+<td>Swedish content done</td>
+<td>Start translation</td>
+</tr>
+<tr>
+<td>GENERATING</td>
+<td>ai_error</td>
+<td>HALLUCINATION_DETECTED</td>
+<td>Hallucination/injection</td>
+<td>Log error, alert</td>
+</tr>
+<tr>
+<td>TRANSLATING</td>
+<td>translation_complete</td>
+<td>VALIDATING</td>
+<td>All languages done</td>
+<td>Run validation</td>
+</tr>
+<tr>
+<td>TRANSLATING</td>
+<td>translation_failed</td>
+<td>TRANSLATION_ERROR</td>
+<td>AI error</td>
+<td>Log error</td>
+</tr>
+<tr>
+<td>VALIDATING</td>
+<td>validation_success</td>
+<td>SUCCESS</td>
+<td>Exit code 0</td>
+<td>Prepare PR</td>
+</tr>
+<tr>
+<td>VALIDATING</td>
+<td>validation_failed</td>
+<td>FAILURE</td>
+<td>Exit code 1</td>
+<td>Log failure</td>
+</tr>
+<tr>
+<td>SUCCESS</td>
+<td>pr_created</td>
+<td>PR_CREATED</td>
+<td>PR API success</td>
+<td>Notify team</td>
+</tr>
+<tr>
+<td>PR_CREATED</td>
+<td>review_requested</td>
+<td>PR_REVIEW</td>
+<td>Reviewer assigned</td>
+<td>Await review</td>
+</tr>
+<tr>
+<td>PR_REVIEW</td>
+<td>approve_and_merge</td>
+<td>MERGED</td>
+<td>Human approval</td>
+<td>Merge PR</td>
+</tr>
+<tr>
+<td>PR_REVIEW</td>
+<td>reject_or_close</td>
+<td>CLOSED</td>
+<td>Human rejection</td>
+<td>Close PR</td>
+</tr>
+<tr>
+<td>MERGED</td>
+<td>deployment_complete</td>
+<td>DEPLOYED</td>
+<td>GitHub Pages updated</td>
+<td>Monitor production</td>
+</tr>
+</tbody>
+</table>
+<h3 id="23-ai-specific-states-hack23-ai-policy-compliance" class="tsd-anchor-link">2.3 AI-Specific States (Hack23 AI Policy Compliance)<a href="#23-ai-specific-states-hack23-ai-policy-compliance" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>AI State</th>
+<th>Purpose</th>
+<th>Detection Method</th>
+<th>Mitigation</th>
+<th>Audit Log</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>HALLUCINATION_DETECTED</strong></td>
+<td>Detect AI-generated false information</td>
+<td>Content validation, fact-checking</td>
+<td>Retry with refined prompt, human review</td>
+<td>✅ Yes - workflow logs</td>
+</tr>
+<tr>
+<td><strong>TRANSLATION_ERROR</strong></td>
+<td>Detect translation quality issues</td>
+<td>Validation script, marker detection</td>
+<td>Automatic retry, context preservation</td>
+<td>✅ Yes - workflow logs</td>
+</tr>
+<tr>
+<td><strong>GENERATING</strong></td>
+<td>AI content creation active</td>
+<td>Workflow state tracking</td>
+<td>Real-time monitoring, timeout (30 min)</td>
+<td>✅ Yes - workflow logs</td>
+</tr>
+<tr>
+<td><strong>PR_REVIEW</strong></td>
+<td>Human oversight required</td>
+<td>Limited Risk AI system</td>
+<td>MUST review before production</td>
+<td>✅ Yes - PR history</td>
+</tr>
+<tr>
+<td><strong>LOGGED</strong></td>
+<td>Audit trail for AI operations</td>
+<td>All failure states</td>
+<td>Compliance reporting</td>
+<td>✅ Yes - permanent logs</td>
+</tr>
+</tbody>
+</table>
+<h3 id="24-workflow-coordination" class="tsd-anchor-link">2.4 Workflow Coordination<a href="#24-workflow-coordination" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Shared State File:</strong> <code>workflow-state.json</code></p>
+<pre><code class="javascript"><span class="hl-1">{</span><br/><span class="hl-1">  </span><span class="hl-2">&quot;lastUpdate&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;2026-02-15T15:30:00Z&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-2">&quot;recentArticles&quot;</span><span class="hl-1">: [</span><br/><span class="hl-1">    {</span><br/><span class="hl-1">      </span><span class="hl-2">&quot;slug&quot;</span><span class="hl-5">:</span><span class="hl-1"> </span><span class="hl-2">&quot;2026-02-15-week-ahead-en.html&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-2">&quot;timestamp&quot;</span><span class="hl-5">:</span><span class="hl-1"> </span><span class="hl-2">&quot;2026-02-15T15:25:00Z&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-2">&quot;workflow&quot;</span><span class="hl-5">:</span><span class="hl-1"> </span><span class="hl-2">&quot;news-week-ahead&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-2">&quot;title&quot;</span><span class="hl-5">:</span><span class="hl-1"> </span><span class="hl-2">&quot;Week Ahead in Swedish Parliament&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-2">&quot;topics&quot;</span><span class="hl-5">:</span><span class="hl-1"> [</span><span class="hl-2">&quot;parliament&quot;</span><span class="hl-1">, </span><span class="hl-2">&quot;schedule&quot;</span><span class="hl-1">, </span><span class="hl-2">&quot;committees&quot;</span><span class="hl-1">]</span><br/><span class="hl-1">    }</span><br/><span class="hl-1">  ],</span><br/><span class="hl-1">  </span><span class="hl-2">&quot;mcpQueryCache&quot;</span><span class="hl-1">: {</span><br/><span class="hl-1">    </span><span class="hl-2">&quot;hash123&quot;</span><span class="hl-5">:</span><span class="hl-1"> {</span><br/><span class="hl-1">      </span><span class="hl-2">&quot;query&quot;</span><span class="hl-5">:</span><span class="hl-1"> </span><span class="hl-2">&quot;recent motions&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-2">&quot;result&quot;</span><span class="hl-5">:</span><span class="hl-1"> {...},</span><br/><span class="hl-1">      </span><span class="hl-2">&quot;timestamp&quot;</span><span class="hl-5">:</span><span class="hl-1"> </span><span class="hl-2">&quot;2026-02-15T14:00:00Z&quot;</span><br/><span class="hl-1">    }</span><br/><span class="hl-1">  },</span><br/><span class="hl-1">  </span><span class="hl-2">&quot;workflows&quot;</span><span class="hl-1">: {</span><br/><span class="hl-1">    </span><span class="hl-2">&quot;news-week-ahead&quot;</span><span class="hl-5">:</span><span class="hl-1"> {</span><br/><span class="hl-1">      </span><span class="hl-2">&quot;lastRun&quot;</span><span class="hl-5">:</span><span class="hl-1"> </span><span class="hl-2">&quot;2026-02-15T05:51:00Z&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-2">&quot;status&quot;</span><span class="hl-5">:</span><span class="hl-1"> </span><span class="hl-2">&quot;success&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-2">&quot;articles&quot;</span><span class="hl-5">:</span><span class="hl-1"> </span><span class="hl-6">1</span><br/><span class="hl-1">    },</span><br/><span class="hl-1">    </span><span class="hl-2">&quot;news-evening-analysis&quot;</span><span class="hl-5">:</span><span class="hl-1"> {</span><br/><span class="hl-1">      </span><span class="hl-2">&quot;lastRun&quot;</span><span class="hl-5">:</span><span class="hl-1"> </span><span class="hl-2">&quot;2026-02-14T18:00:00Z&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-2">&quot;status&quot;</span><span class="hl-5">:</span><span class="hl-1"> </span><span class="hl-2">&quot;success&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-2">&quot;articles&quot;</span><span class="hl-5">:</span><span class="hl-1"> </span><span class="hl-6">1</span><br/><span class="hl-1">    },</span><br/><span class="hl-1">    </span><span class="hl-2">&quot;news-realtime-monitor&quot;</span><span class="hl-5">:</span><span class="hl-1"> {</span><br/><span class="hl-1">      </span><span class="hl-2">&quot;lastRun&quot;</span><span class="hl-5">:</span><span class="hl-1"> </span><span class="hl-2">&quot;2026-02-15T14:00:00Z&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-2">&quot;status&quot;</span><span class="hl-5">:</span><span class="hl-1"> </span><span class="hl-2">&quot;success&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-2">&quot;articles&quot;</span><span class="hl-5">:</span><span class="hl-1"> </span><span class="hl-6">2</span><br/><span class="hl-1">    }</span><br/><span class="hl-1">  }</span><br/><span class="hl-1">}</span>
+</code><button type="button">Copy</button></pre>
+
+<hr>
+<h2 id="3-📊-dashboard-data-states" class="tsd-anchor-link">3. 📊 Dashboard Data States<a href="#3-📊-dashboard-data-states" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<p><strong>📊 Data Focus:</strong> LocalStorage-based caching for CIA dashboard exports and Riksdag data.</p>
+<p><strong>🔄 Process Focus:</strong> Shows data lifecycle from initial fetch through refresh cycles.</p>
+<p><strong>⚡ Performance Focus:</strong> Minimizes API calls while maintaining data freshness.</p>
+<pre><code class="mermaid"><span class="hl-1">stateDiagram-v2</span><br/><span class="hl-1">    [*] --&gt; Empty</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    Empty --&gt; Fetching: Initial Load</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    Fetching --&gt; Cached: Fetch Success</span><br/><span class="hl-1">    Fetching --&gt; Error: Fetch Failed</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    Cached --&gt; Stale: Freshness Threshold Exceeded</span><br/><span class="hl-1">    Cached --&gt; [*]: User Exits</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    Stale --&gt; Refreshing: Background Refresh</span><br/><span class="hl-1">    Stale --&gt; Cached: Use Stale Data</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    Refreshing --&gt; Cached: Refresh Success</span><br/><span class="hl-1">    Refreshing --&gt; Error: Refresh Failed</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    Error --&gt; Fetching: Retry</span><br/><span class="hl-1">    Error --&gt; Cached: Fallback to Stale Cache</span><br/><span class="hl-1">    Error --&gt; [*]: Max Retries Exceeded</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    note right of Empty</span><br/><span class="hl-1">        No cached data</span><br/><span class="hl-1">        First visit or cache cleared</span><br/><span class="hl-1">    end note</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    note right of Cached</span><br/><span class="hl-1">        Valid cached data</span><br/><span class="hl-1">        Within freshness threshold</span><br/><span class="hl-1">        Served instantly from LocalStorage</span><br/><span class="hl-1">    end note</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    note right of Stale</span><br/><span class="hl-1">        Cached data expired</span><br/><span class="hl-1">        Still usable as fallback</span><br/><span class="hl-1">        Background refresh triggered</span><br/><span class="hl-1">    end note</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    note right of Error</span><br/><span class="hl-1">        Network failure</span><br/><span class="hl-1">        API unavailable</span><br/><span class="hl-1">        Fallback to stale cache if available</span><br/><span class="hl-1">    end note</span>
+</code><button type="button">Copy</button></pre>
+
+<h3 id="31-state-definitions" class="tsd-anchor-link">3.1 State Definitions<a href="#31-state-definitions" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>State</th>
+<th>Description</th>
+<th>Entry Conditions</th>
+<th>Exit Conditions</th>
+<th>Typical Duration</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>EMPTY</strong></td>
+<td>No cached data, initial load</td>
+<td>First visit, cache cleared</td>
+<td>Fetch starts</td>
+<td>Instant</td>
+</tr>
+<tr>
+<td><strong>FETCHING</strong></td>
+<td>Requesting data from GitHub CDN</td>
+<td>Empty state, refresh needed</td>
+<td>Data received or error</td>
+<td>200-1000ms</td>
+</tr>
+<tr>
+<td><strong>CACHED</strong></td>
+<td>Valid cached data within freshness threshold</td>
+<td>Fetch success, refresh success</td>
+<td>Threshold exceeded</td>
+<td>Hours to days</td>
+</tr>
+<tr>
+<td><strong>STALE</strong></td>
+<td>Cached data expired beyond threshold</td>
+<td>Freshness check failed</td>
+<td>Refresh initiated</td>
+<td>Seconds to minutes</td>
+</tr>
+<tr>
+<td><strong>REFRESHING</strong></td>
+<td>Background refresh in progress</td>
+<td>Stale state detected</td>
+<td>Data updated or error</td>
+<td>200-1000ms</td>
+</tr>
+<tr>
+<td><strong>ERROR</strong></td>
+<td>Fetch/refresh failed</td>
+<td>Network error, API timeout</td>
+<td>Retry or fallback</td>
+<td>Seconds</td>
+</tr>
+</tbody>
+</table>
+<h3 id="32-freshness-thresholds" class="tsd-anchor-link">3.2 Freshness Thresholds<a href="#32-freshness-thresholds" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>Data Type</th>
+<th>Freshness Threshold</th>
+<th>Rationale</th>
+<th>Fallback Behavior</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Production Stats</strong></td>
+<td>24 hours</td>
+<td>Updated monthly, low volatility</td>
+<td>Use stale cache indefinitely</td>
+</tr>
+<tr>
+<td><strong>Seasonal Patterns</strong></td>
+<td>7 days</td>
+<td>Updated quarterly, stable data</td>
+<td>Use stale cache indefinitely</td>
+</tr>
+<tr>
+<td><strong>Politician Data</strong></td>
+<td>24 hours</td>
+<td>Updated weekly, moderate volatility</td>
+<td>Use stale cache up to 7 days</td>
+</tr>
+<tr>
+<td><strong>Party Performance</strong></td>
+<td>7 days</td>
+<td>Updated monthly, low volatility</td>
+<td>Use stale cache indefinitely</td>
+</tr>
+<tr>
+<td><strong>Election Forecasts</strong></td>
+<td>24 hours</td>
+<td>Updated daily, high volatility</td>
+<td>Require fresh data, retry</td>
+</tr>
+<tr>
+<td><strong>Risk Assessments</strong></td>
+<td>24 hours</td>
+<td>Updated daily, high volatility</td>
+<td>Require fresh data, retry</td>
+</tr>
+</tbody>
+</table>
+<h3 id="33-state-transition-matrix" class="tsd-anchor-link">3.3 State Transition Matrix<a href="#33-state-transition-matrix" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>From State</th>
+<th>Event</th>
+<th>To State</th>
+<th>Conditions</th>
+<th>Actions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>EMPTY</td>
+<td>page_load</td>
+<td>FETCHING</td>
+<td>No cache exists</td>
+<td>Fetch from CDN</td>
+</tr>
+<tr>
+<td>FETCHING</td>
+<td>fetch_success</td>
+<td>CACHED</td>
+<td>HTTP 200, valid JSON</td>
+<td>Store in LocalStorage</td>
+</tr>
+<tr>
+<td>FETCHING</td>
+<td>fetch_failed</td>
+<td>ERROR</td>
+<td>Network error, timeout</td>
+<td>Log error, retry</td>
+</tr>
+<tr>
+<td>CACHED</td>
+<td>freshness_check</td>
+<td>STALE</td>
+<td>Age &gt; threshold</td>
+<td>Serve stale, trigger refresh</td>
+</tr>
+<tr>
+<td>CACHED</td>
+<td>user_exit</td>
+<td>[END]</td>
+<td>Page unload</td>
+<td>Persist cache</td>
+</tr>
+<tr>
+<td>STALE</td>
+<td>background_refresh</td>
+<td>REFRESHING</td>
+<td>Auto-triggered</td>
+<td>Fetch updated data</td>
+</tr>
+<tr>
+<td>STALE</td>
+<td>immediate_serve</td>
+<td>CACHED</td>
+<td>User needs data now</td>
+<td>Serve stale data</td>
+</tr>
+<tr>
+<td>REFRESHING</td>
+<td>refresh_success</td>
+<td>CACHED</td>
+<td>HTTP 200, valid JSON</td>
+<td>Update LocalStorage</td>
+</tr>
+<tr>
+<td>REFRESHING</td>
+<td>refresh_failed</td>
+<td>ERROR</td>
+<td>Network error</td>
+<td>Log error, use stale</td>
+</tr>
+<tr>
+<td>ERROR</td>
+<td>retry</td>
+<td>FETCHING</td>
+<td>Retry count &lt; max</td>
+<td>Exponential backoff</td>
+</tr>
+<tr>
+<td>ERROR</td>
+<td>fallback</td>
+<td>CACHED</td>
+<td>Stale cache available</td>
+<td>Use stale data</td>
+</tr>
+<tr>
+<td>ERROR</td>
+<td>max_retries</td>
+<td>[END]</td>
+<td>3 retries exceeded</td>
+<td>Show error message</td>
+</tr>
+</tbody>
+</table>
+<h3 id="34-cache-strategy" class="tsd-anchor-link">3.4 Cache Strategy<a href="#34-cache-strategy" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>LocalStorage Schema:</strong></p>
+<pre><code class="javascript"><span class="hl-1">{</span><br/><span class="hl-1">  </span><span class="hl-2">&quot;riksdagsmonitor_cache&quot;</span><span class="hl-1">: {</span><br/><span class="hl-1">    </span><span class="hl-2">&quot;production_stats&quot;</span><span class="hl-5">:</span><span class="hl-1"> {</span><br/><span class="hl-1">      </span><span class="hl-2">&quot;data&quot;</span><span class="hl-5">:</span><span class="hl-1"> {...},</span><br/><span class="hl-1">      </span><span class="hl-2">&quot;timestamp&quot;</span><span class="hl-5">:</span><span class="hl-1"> </span><span class="hl-2">&quot;2026-02-15T15:30:00Z&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-2">&quot;version&quot;</span><span class="hl-5">:</span><span class="hl-1"> </span><span class="hl-2">&quot;1.0&quot;</span><br/><span class="hl-1">    },</span><br/><span class="hl-1">    </span><span class="hl-2">&quot;seasonal_patterns&quot;</span><span class="hl-5">:</span><span class="hl-1"> {</span><br/><span class="hl-1">      </span><span class="hl-2">&quot;data&quot;</span><span class="hl-5">:</span><span class="hl-1"> {...},</span><br/><span class="hl-1">      </span><span class="hl-2">&quot;timestamp&quot;</span><span class="hl-5">:</span><span class="hl-1"> </span><span class="hl-2">&quot;2026-02-10T10:00:00Z&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-2">&quot;version&quot;</span><span class="hl-5">:</span><span class="hl-1"> </span><span class="hl-2">&quot;1.0&quot;</span><br/><span class="hl-1">    },</span><br/><span class="hl-1">    </span><span class="hl-2">&quot;politician_data&quot;</span><span class="hl-5">:</span><span class="hl-1"> {</span><br/><span class="hl-1">      </span><span class="hl-2">&quot;data&quot;</span><span class="hl-5">:</span><span class="hl-1"> {...},</span><br/><span class="hl-1">      </span><span class="hl-2">&quot;timestamp&quot;</span><span class="hl-5">:</span><span class="hl-1"> </span><span class="hl-2">&quot;2026-02-15T14:00:00Z&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-2">&quot;version&quot;</span><span class="hl-5">:</span><span class="hl-1"> </span><span class="hl-2">&quot;1.0&quot;</span><br/><span class="hl-1">    }</span><br/><span class="hl-1">  }</span><br/><span class="hl-1">}</span>
+</code><button type="button">Copy</button></pre>
+
+<p><strong>Freshness Check Algorithm:</strong></p>
+<pre><code class="javascript"><span class="hl-9">function</span><span class="hl-1"> </span><span class="hl-0">isFresh</span><span class="hl-1">(</span><span class="hl-5">cachedItem</span><span class="hl-1">, </span><span class="hl-5">thresholdHours</span><span class="hl-1">) {</span><br/><span class="hl-1">  </span><span class="hl-9">const</span><span class="hl-1"> </span><span class="hl-8">now</span><span class="hl-1"> = </span><span class="hl-9">new</span><span class="hl-1"> </span><span class="hl-0">Date</span><span class="hl-1">();</span><br/><span class="hl-1">  </span><span class="hl-9">const</span><span class="hl-1"> </span><span class="hl-8">cached</span><span class="hl-1"> = </span><span class="hl-9">new</span><span class="hl-1"> </span><span class="hl-0">Date</span><span class="hl-1">(</span><span class="hl-5">cachedItem</span><span class="hl-1">.</span><span class="hl-5">timestamp</span><span class="hl-1">);</span><br/><span class="hl-1">  </span><span class="hl-9">const</span><span class="hl-1"> </span><span class="hl-8">ageHours</span><span class="hl-1"> = (</span><span class="hl-5">now</span><span class="hl-1"> - </span><span class="hl-5">cached</span><span class="hl-1">) / (</span><span class="hl-6">1000</span><span class="hl-1"> * </span><span class="hl-6">60</span><span class="hl-1"> * </span><span class="hl-6">60</span><span class="hl-1">);</span><br/><span class="hl-1">  </span><span class="hl-3">return</span><span class="hl-1"> </span><span class="hl-5">ageHours</span><span class="hl-1"> &lt; </span><span class="hl-5">thresholdHours</span><span class="hl-1">;</span><br/><span class="hl-1">}</span>
+</code><button type="button">Copy</button></pre>
+
+<hr>
+<h2 id="4-🔀-pull-request-review-states" class="tsd-anchor-link">4. 🔀 Pull Request Review States<a href="#4-🔀-pull-request-review-states" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<p><strong>📊 Data Focus:</strong> PR lifecycle from creation through deployment.</p>
+<p><strong>🔄 Process Focus:</strong> Shows review workflow with quality gates and human approval.</p>
+<p><strong>🔒 Security Focus:</strong> All checks must pass before merge.</p>
+<pre><code class="mermaid"><span class="hl-1">stateDiagram-v2</span><br/><span class="hl-1">    [*] --&gt; Open</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    Open --&gt; Draft: Mark as Draft</span><br/><span class="hl-1">    Open --&gt; CIRunning: CI Triggered</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    Draft --&gt; Open: Ready for Review</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    CIRunning --&gt; CIPassed: All Checks Pass</span><br/><span class="hl-1">    CIRunning --&gt; CIFailed: Quality Gate Failed</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    CIPassed --&gt; ReviewRequested: Assign Reviewer</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    CIFailed --&gt; Open: Fix Issues</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    ReviewRequested --&gt; ChangesRequested: Feedback Provided</span><br/><span class="hl-1">    ReviewRequested --&gt; Approved: Review Approved</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    ChangesRequested --&gt; Open: Push Updates</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    Approved --&gt; ReviewDismissed: New Commits Pushed</span><br/><span class="hl-1">    Approved --&gt; MergeReady: All Requirements Met</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    ReviewDismissed --&gt; ReviewRequested: Re-request Review</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    MergeReady --&gt; Merged: Merge Button Clicked</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    Merged --&gt; Deployed: GitHub Pages Deployment</span><br/><span class="hl-1">    Deployed --&gt; [*]</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    Open --&gt; Closed: Close without Merge</span><br/><span class="hl-1">    Draft --&gt; Closed: Abandon Draft</span><br/><span class="hl-1">    Closed --&gt; [*]</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    note right of CIRunning</span><br/><span class="hl-1">        HTMLHint validation</span><br/><span class="hl-1">        Link checking (linkinator)</span><br/><span class="hl-1">        JavaScript linting (ESLint)</span><br/><span class="hl-1">        Dependency scanning</span><br/><span class="hl-1">        Secret scanning</span><br/><span class="hl-1">    end note</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    note right of MergeReady</span><br/><span class="hl-1">        All checks passed</span><br/><span class="hl-1">        Approved by reviewer</span><br/><span class="hl-1">        No merge conflicts</span><br/><span class="hl-1">        Branch up to date</span><br/><span class="hl-1">    end note</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    note right of Deployed</span><br/><span class="hl-1">        GitHub Pages updated</span><br/><span class="hl-1">        CDN cache invalidated</span><br/><span class="hl-1">        Production monitoring active</span><br/><span class="hl-1">    end note</span>
+</code><button type="button">Copy</button></pre>
+
+<h3 id="41-state-definitions" class="tsd-anchor-link">4.1 State Definitions<a href="#41-state-definitions" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>State</th>
+<th>Description</th>
+<th>Entry Conditions</th>
+<th>Exit Conditions</th>
+<th>Typical Duration</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>OPEN</strong></td>
+<td>PR created, awaiting CI</td>
+<td>PR opened</td>
+<td>CI starts</td>
+<td>Seconds</td>
+</tr>
+<tr>
+<td><strong>DRAFT</strong></td>
+<td>Work-in-progress, not ready for review</td>
+<td>Marked as draft</td>
+<td>Ready for review</td>
+<td>Hours to days</td>
+</tr>
+<tr>
+<td><strong>CI_RUNNING</strong></td>
+<td>Quality checks executing</td>
+<td>PR opened, new commits</td>
+<td>Checks complete</td>
+<td>2-5 minutes</td>
+</tr>
+<tr>
+<td><strong>CI_PASSED</strong></td>
+<td>All checks passed</td>
+<td>All workflows green</td>
+<td>Review requested</td>
+<td>Seconds</td>
+</tr>
+<tr>
+<td><strong>CI_FAILED</strong></td>
+<td>Quality gate failed</td>
+<td>HTMLHint error, broken links</td>
+<td>Fix pushed</td>
+<td>Variable</td>
+</tr>
+<tr>
+<td><strong>REVIEW_REQUESTED</strong></td>
+<td>Assigned to reviewer</td>
+<td>Checks passed</td>
+<td>Review submitted</td>
+<td>1-24 hours</td>
+</tr>
+<tr>
+<td><strong>CHANGES_REQUESTED</strong></td>
+<td>Feedback provided, changes needed</td>
+<td>Reviewer requests changes</td>
+<td>Updates pushed</td>
+<td>Variable</td>
+</tr>
+<tr>
+<td><strong>APPROVED</strong></td>
+<td>Approved by reviewer</td>
+<td>Reviewer approval</td>
+<td>Merge or new commits</td>
+<td>Minutes to hours</td>
+</tr>
+<tr>
+<td><strong>REVIEW_DISMISSED</strong></td>
+<td>Previous approval dismissed</td>
+<td>New commits after approval</td>
+<td>Re-review requested</td>
+<td>Seconds</td>
+</tr>
+<tr>
+<td><strong>MERGE_READY</strong></td>
+<td>All requirements met</td>
+<td>Approved + checks passed + no conflicts</td>
+<td>Merge initiated</td>
+<td>Minutes</td>
+</tr>
+<tr>
+<td><strong>MERGED</strong></td>
+<td>Changes merged to main</td>
+<td>Merge button clicked</td>
+<td>Deployment starts</td>
+<td>Seconds</td>
+</tr>
+<tr>
+<td><strong>CLOSED</strong></td>
+<td>PR closed without merge</td>
+<td>Manual close, abandonment</td>
+<td>Workflow terminated</td>
+<td>Immediate</td>
+</tr>
+<tr>
+<td><strong>DEPLOYED</strong></td>
+<td>Changes live in production</td>
+<td>GitHub Pages deployment complete</td>
+<td>Monitoring active</td>
+<td>2-5 minutes</td>
+</tr>
+</tbody>
+</table>
+<h3 id="42-quality-gates-ci-checks" class="tsd-anchor-link">4.2 Quality Gates (CI Checks)<a href="#42-quality-gates-ci-checks" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>Check</th>
+<th>Tool</th>
+<th>Purpose</th>
+<th>Failure Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>HTML Validation</strong></td>
+<td>HTMLHint</td>
+<td>Standards compliance</td>
+<td>❌ Block merge, show errors</td>
+</tr>
+<tr>
+<td><strong>Link Checking</strong></td>
+<td>Linkinator v6</td>
+<td>Verify internal/external links</td>
+<td>❌ Block merge, list broken links</td>
+</tr>
+<tr>
+<td><strong>JavaScript Linting</strong></td>
+<td>ESLint 10</td>
+<td>Code quality</td>
+<td>⚠️ Warn (clean: 0 errors, 1 warning)</td>
+</tr>
+<tr>
+<td><strong>Dependency Scanning</strong></td>
+<td>Dependabot</td>
+<td>Vulnerability detection</td>
+<td>❌ Block merge if critical</td>
+</tr>
+<tr>
+<td><strong>Secret Scanning</strong></td>
+<td>GitHub</td>
+<td>Credential leak detection</td>
+<td>❌ Block merge, remove secrets</td>
+</tr>
+<tr>
+<td><strong>CodeQL</strong></td>
+<td>GitHub</td>
+<td>Security vulnerability scan</td>
+<td>⚠️ Review required if alerts</td>
+</tr>
+</tbody>
+</table>
+<h3 id="43-state-transition-matrix" class="tsd-anchor-link">4.3 State Transition Matrix<a href="#43-state-transition-matrix" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>From State</th>
+<th>Event</th>
+<th>To State</th>
+<th>Conditions</th>
+<th>Actions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OPEN</td>
+<td>mark_draft</td>
+<td>DRAFT</td>
+<td>User action</td>
+<td>Prevent reviews</td>
+</tr>
+<tr>
+<td>OPEN</td>
+<td>ci_trigger</td>
+<td>CI_RUNNING</td>
+<td>Commit detected</td>
+<td>Run workflows</td>
+</tr>
+<tr>
+<td>DRAFT</td>
+<td>ready_for_review</td>
+<td>OPEN</td>
+<td>User marks ready</td>
+<td>Allow reviews</td>
+</tr>
+<tr>
+<td>CI_RUNNING</td>
+<td>checks_passed</td>
+<td>CI_PASSED</td>
+<td>All workflows green</td>
+<td>Enable merge</td>
+</tr>
+<tr>
+<td>CI_RUNNING</td>
+<td>checks_failed</td>
+<td>CI_FAILED</td>
+<td>Any workflow red</td>
+<td>Block merge</td>
+</tr>
+<tr>
+<td>CI_FAILED</td>
+<td>push_fix</td>
+<td>OPEN</td>
+<td>New commits</td>
+<td>Re-run CI</td>
+</tr>
+<tr>
+<td>CI_PASSED</td>
+<td>request_review</td>
+<td>REVIEW_REQUESTED</td>
+<td>Reviewer assigned</td>
+<td>Notify reviewer</td>
+</tr>
+<tr>
+<td>REVIEW_REQUESTED</td>
+<td>approve</td>
+<td>APPROVED</td>
+<td>Reviewer approval</td>
+<td>Enable merge</td>
+</tr>
+<tr>
+<td>REVIEW_REQUESTED</td>
+<td>request_changes</td>
+<td>CHANGES_REQUESTED</td>
+<td>Feedback provided</td>
+<td>Block merge</td>
+</tr>
+<tr>
+<td>CHANGES_REQUESTED</td>
+<td>push_updates</td>
+<td>OPEN</td>
+<td>New commits</td>
+<td>Re-run CI</td>
+</tr>
+<tr>
+<td>APPROVED</td>
+<td>new_commits</td>
+<td>REVIEW_DISMISSED</td>
+<td>Commits after approval</td>
+<td>Re-request review</td>
+</tr>
+<tr>
+<td>APPROVED</td>
+<td>all_requirements</td>
+<td>MERGE_READY</td>
+<td>Checks + approval + no conflicts</td>
+<td>Show merge button</td>
+</tr>
+<tr>
+<td>MERGE_READY</td>
+<td>merge</td>
+<td>MERGED</td>
+<td>Merge button clicked</td>
+<td>Start deployment</td>
+</tr>
+<tr>
+<td>MERGED</td>
+<td>deployment_complete</td>
+<td>DEPLOYED</td>
+<td>GitHub Pages updated</td>
+<td>Monitor production</td>
+</tr>
+<tr>
+<td>OPEN</td>
+<td>close</td>
+<td>CLOSED</td>
+<td>Manual close</td>
+<td>End workflow</td>
+</tr>
+</tbody>
+</table>
+<h3 id="44-merge-requirements-checklist" class="tsd-anchor-link">4.4 Merge Requirements Checklist<a href="#44-merge-requirements-checklist" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p>Before transition to MERGE_READY state, ALL must be true:</p>
+<ul>
+<li>✅ All CI checks passed (HTML, links, security)</li>
+<li>✅ At least 1 approval from reviewer</li>
+<li>✅ No merge conflicts with base branch</li>
+<li>✅ Branch is up to date with base</li>
+<li>✅ No requested changes pending</li>
+<li>✅ No critical security vulnerabilities detected</li>
+<li>✅ All required status checks passed</li>
+</ul>
+<hr>
+<h2 id="5-🚀-cicd-pipeline-states" class="tsd-anchor-link">5. 🚀 CI/CD Pipeline States<a href="#5-🚀-cicd-pipeline-states" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<p><strong>📊 Data Focus:</strong> Deployment pipeline from commit to production monitoring.</p>
+<p><strong>🔄 Process Focus:</strong> Shows build, test, security scan, and deployment workflow.</p>
+<p><strong>🔒 Security Focus:</strong> Multiple security gates (CodeQL, Dependabot, secret scanning).</p>
+<pre><code class="mermaid"><span class="hl-1">stateDiagram-v2</span><br/><span class="hl-1">    [*] --&gt; Commit</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    Commit --&gt; Build: Trigger CI/CD</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    Build --&gt; Test: Build Success</span><br/><span class="hl-1">    Build --&gt; Failed: Build Error</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    Test --&gt; Scan: Tests Passed</span><br/><span class="hl-1">    Test --&gt; Failed: Test Failures</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    Scan --&gt; DeployStaging: Security Checks Passed</span><br/><span class="hl-1">    Scan --&gt; Vulnerable: Critical Vulnerability Detected</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    Vulnerable --&gt; Failed: Block Deployment</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    DeployStaging --&gt; HealthCheck: Staging Deployed</span><br/><span class="hl-1">    DeployStaging --&gt; Failed: Deployment Error</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    HealthCheck --&gt; DeployProduction: Health Check Passed</span><br/><span class="hl-1">    HealthCheck --&gt; Unhealthy: Health Check Failed</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    Unhealthy --&gt; Rollback: Critical Issue</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    DeployProduction --&gt; Monitor: Production Deployed</span><br/><span class="hl-1">    DeployProduction --&gt; Failed: Deployment Error</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    Monitor --&gt; ErrorsDetected: Production Errors</span><br/><span class="hl-1">    Monitor --&gt; [*]: Stable</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    ErrorsDetected --&gt; Rollback: Critical Errors</span><br/><span class="hl-1">    ErrorsDetected --&gt; Monitor: Minor Errors (Log &amp; Monitor)</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    Rollback --&gt; Commit: Revert &amp; Fix</span><br/><span class="hl-1">    Failed --&gt; Commit: Fix &amp; Retry</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    note right of Build</span><br/><span class="hl-1">        Vite build executing</span><br/><span class="hl-1">        Asset optimization</span><br/><span class="hl-1">        HTML/CSS/JS bundling</span><br/><span class="hl-1">    end note</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    note right of Scan</span><br/><span class="hl-1">        CodeQL security scan</span><br/><span class="hl-1">        Dependabot vulnerability check</span><br/><span class="hl-1">        Secret scanning</span><br/><span class="hl-1">        License compliance</span><br/><span class="hl-1">    end note</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    note right of DeployProduction</span><br/><span class="hl-1">        GitHub Pages deployment</span><br/><span class="hl-1">        AWS CloudFront cache invalidation</span><br/><span class="hl-1">        Multi-region S3 sync</span><br/><span class="hl-1">    end note</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    note right of Monitor</span><br/><span class="hl-1">        Uptime monitoring</span><br/><span class="hl-1">        Performance metrics (Core Web Vitals)</span><br/><span class="hl-1">        Error tracking</span><br/><span class="hl-1">        User analytics</span><br/><span class="hl-1">    end note</span>
+</code><button type="button">Copy</button></pre>
+
+<h3 id="51-state-definitions" class="tsd-anchor-link">5.1 State Definitions<a href="#51-state-definitions" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>State</th>
+<th>Description</th>
+<th>Entry Conditions</th>
+<th>Exit Conditions</th>
+<th>Typical Duration</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>COMMIT</strong></td>
+<td>Code pushed to repository</td>
+<td>Git push, PR merge</td>
+<td>CI/CD triggered</td>
+<td>Seconds</td>
+</tr>
+<tr>
+<td><strong>BUILD</strong></td>
+<td>Vite build executing</td>
+<td>Commit detected</td>
+<td>Build success/failure</td>
+<td>1-2 minutes</td>
+</tr>
+<tr>
+<td><strong>TEST</strong></td>
+<td>Unit tests (Vitest) and E2E tests (Cypress)</td>
+<td>Build success</td>
+<td>Tests pass/fail</td>
+<td>2-3 minutes</td>
+</tr>
+<tr>
+<td><strong>SCAN</strong></td>
+<td>Security scanning</td>
+<td>Tests passed</td>
+<td>Scans complete</td>
+<td>3-5 minutes</td>
+</tr>
+<tr>
+<td><strong>FAILED</strong></td>
+<td>Build/test/scan failure</td>
+<td>Any step failed</td>
+<td>Fix committed</td>
+<td>Variable</td>
+</tr>
+<tr>
+<td><strong>VULNERABLE</strong></td>
+<td>Security vulnerability detected</td>
+<td>Critical CVE found</td>
+<td>Fix applied</td>
+<td>Variable</td>
+</tr>
+<tr>
+<td><strong>DEPLOY_STAGING</strong></td>
+<td>Deploying to preview environment</td>
+<td>Scans passed</td>
+<td>Deployment complete</td>
+<td>2-3 minutes</td>
+</tr>
+<tr>
+<td><strong>HEALTH_CHECK</strong></td>
+<td>Smoke tests on staging</td>
+<td>Staging deployed</td>
+<td>Checks pass/fail</td>
+<td>1-2 minutes</td>
+</tr>
+<tr>
+<td><strong>UNHEALTHY</strong></td>
+<td>Health check failed</td>
+<td>Staging broken</td>
+<td>Rollback initiated</td>
+<td>Seconds</td>
+</tr>
+<tr>
+<td><strong>DEPLOY_PRODUCTION</strong></td>
+<td>Deploying to GitHub Pages + CloudFront</td>
+<td>Health checks passed</td>
+<td>Deployment complete</td>
+<td>3-5 minutes</td>
+</tr>
+<tr>
+<td><strong>MONITOR</strong></td>
+<td>Production monitoring active</td>
+<td>Production deployed</td>
+<td>Errors detected or stable</td>
+<td>Continuous</td>
+</tr>
+<tr>
+<td><strong>ERRORS_DETECTED</strong></td>
+<td>Production errors detected</td>
+<td>Monitoring alerts</td>
+<td>Rollback or mitigate</td>
+<td>Variable</td>
+</tr>
+<tr>
+<td><strong>ROLLBACK</strong></td>
+<td>Reverting to previous version</td>
+<td>Critical errors</td>
+<td>Revert complete</td>
+<td>5-10 minutes</td>
+</tr>
+</tbody>
+</table>
+<h3 id="52-security-scanning-gates" class="tsd-anchor-link">5.2 Security Scanning Gates<a href="#52-security-scanning-gates" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>Scanner</th>
+<th>Technology</th>
+<th>Purpose</th>
+<th>Blocking</th>
+<th>Typical Duration</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>CodeQL</strong></td>
+<td>GitHub Advanced Security</td>
+<td>JavaScript/Python vulnerability detection</td>
+<td>⚠️ Review required</td>
+<td>3-4 minutes</td>
+</tr>
+<tr>
+<td><strong>Dependabot</strong></td>
+<td>GitHub Dependabot</td>
+<td>Dependency vulnerability scanning</td>
+<td>❌ Critical only</td>
+<td>1-2 minutes</td>
+</tr>
+<tr>
+<td><strong>Secret Scanning</strong></td>
+<td>GitHub</td>
+<td>Credential leak detection</td>
+<td>❌ Yes - block immediately</td>
+<td>30 seconds</td>
+</tr>
+<tr>
+<td><strong>License Check</strong></td>
+<td>Custom script</td>
+<td>OSS license compliance</td>
+<td>⚠️ Review required</td>
+<td>10 seconds</td>
+</tr>
+</tbody>
+</table>
+<h3 id="53-state-transition-matrix" class="tsd-anchor-link">5.3 State Transition Matrix<a href="#53-state-transition-matrix" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>From State</th>
+<th>Event</th>
+<th>To State</th>
+<th>Conditions</th>
+<th>Actions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>COMMIT</td>
+<td>ci_trigger</td>
+<td>BUILD</td>
+<td>New commit pushed</td>
+<td>Clone repo, install deps</td>
+</tr>
+<tr>
+<td>BUILD</td>
+<td>build_success</td>
+<td>TEST</td>
+<td>Vite build complete</td>
+<td>Run test suite</td>
+</tr>
+<tr>
+<td>BUILD</td>
+<td>build_error</td>
+<td>FAILED</td>
+<td>Compilation error</td>
+<td>Log error, notify</td>
+</tr>
+<tr>
+<td>TEST</td>
+<td>tests_passed</td>
+<td>SCAN</td>
+<td>All tests green</td>
+<td>Run security scans</td>
+</tr>
+<tr>
+<td>TEST</td>
+<td>tests_failed</td>
+<td>FAILED</td>
+<td>Any test red</td>
+<td>Log failures, notify</td>
+</tr>
+<tr>
+<td>SCAN</td>
+<td>scans_passed</td>
+<td>DEPLOY_STAGING</td>
+<td>No critical vulnerabilities</td>
+<td>Deploy to staging</td>
+</tr>
+<tr>
+<td>SCAN</td>
+<td>vulnerability_found</td>
+<td>VULNERABLE</td>
+<td>Critical CVE detected</td>
+<td>Block deployment, alert</td>
+</tr>
+<tr>
+<td>VULNERABLE</td>
+<td>fix_applied</td>
+<td>FAILED</td>
+<td>Vulnerability mitigated</td>
+<td>Restart pipeline</td>
+</tr>
+<tr>
+<td>DEPLOY_STAGING</td>
+<td>staging_deployed</td>
+<td>HEALTH_CHECK</td>
+<td>Deployment success</td>
+<td>Run smoke tests</td>
+</tr>
+<tr>
+<td>DEPLOY_STAGING</td>
+<td>staging_failed</td>
+<td>FAILED</td>
+<td>Deployment error</td>
+<td>Log error, notify</td>
+</tr>
+<tr>
+<td>HEALTH_CHECK</td>
+<td>checks_passed</td>
+<td>DEPLOY_PRODUCTION</td>
+<td>Staging healthy</td>
+<td>Deploy to production</td>
+</tr>
+<tr>
+<td>HEALTH_CHECK</td>
+<td>checks_failed</td>
+<td>UNHEALTHY</td>
+<td>Staging broken</td>
+<td>Rollback staging</td>
+</tr>
+<tr>
+<td>UNHEALTHY</td>
+<td>rollback_initiated</td>
+<td>ROLLBACK</td>
+<td>Critical issue</td>
+<td>Revert deployment</td>
+</tr>
+<tr>
+<td>DEPLOY_PRODUCTION</td>
+<td>prod_deployed</td>
+<td>MONITOR</td>
+<td>Deployment success</td>
+<td>Activate monitoring</td>
+</tr>
+<tr>
+<td>DEPLOY_PRODUCTION</td>
+<td>prod_failed</td>
+<td>FAILED</td>
+<td>Deployment error</td>
+<td>Log error, notify</td>
+</tr>
+<tr>
+<td>MONITOR</td>
+<td>errors_detected</td>
+<td>ERRORS_DETECTED</td>
+<td>Error threshold exceeded</td>
+<td>Evaluate severity</td>
+</tr>
+<tr>
+<td>MONITOR</td>
+<td>stable</td>
+<td>[END]</td>
+<td>No errors 24h</td>
+<td>Continue monitoring</td>
+</tr>
+<tr>
+<td>ERRORS_DETECTED</td>
+<td>critical_errors</td>
+<td>ROLLBACK</td>
+<td>High severity</td>
+<td>Revert immediately</td>
+</tr>
+<tr>
+<td>ERRORS_DETECTED</td>
+<td>minor_errors</td>
+<td>MONITOR</td>
+<td>Low severity</td>
+<td>Log and monitor</td>
+</tr>
+<tr>
+<td>ROLLBACK</td>
+<td>revert_complete</td>
+<td>COMMIT</td>
+<td>Previous version restored</td>
+<td>Fix and redeploy</td>
+</tr>
+<tr>
+<td>FAILED</td>
+<td>fix_committed</td>
+<td>COMMIT</td>
+<td>Issue resolved</td>
+<td>Restart pipeline</td>
+</tr>
+</tbody>
+</table>
+<h3 id="54-deployment-targets" class="tsd-anchor-link">5.4 Deployment Targets<a href="#54-deployment-targets" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>Target</th>
+<th>Technology</th>
+<th>Purpose</th>
+<th>Deployment Time</th>
+<th>Availability</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>GitHub Pages</strong></td>
+<td>GitHub CDN</td>
+<td>Primary hosting</td>
+<td>2-3 minutes</td>
+<td>99.9% SLA</td>
+</tr>
+<tr>
+<td><strong>AWS CloudFront</strong></td>
+<td>600+ PoPs</td>
+<td>Global CDN</td>
+<td>3-5 minutes</td>
+<td>99.99% SLA</td>
+</tr>
+<tr>
+<td><strong>S3 us-east-1</strong></td>
+<td>Amazon S3</td>
+<td>Primary storage</td>
+<td>1-2 minutes</td>
+<td>99.99% SLA</td>
+</tr>
+<tr>
+<td><strong>S3 eu-west-1</strong></td>
+<td>Amazon S3</td>
+<td>Replica storage</td>
+<td>Async (&lt;15 min)</td>
+<td>99.99% SLA</td>
+</tr>
+</tbody>
+</table>
+<h3 id="55-health-check-criteria" class="tsd-anchor-link">5.5 Health Check Criteria<a href="#55-health-check-criteria" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Staging Health Checks:</strong></p>
+<ul>
+<li>✅ HTTP 200 response for index.html</li>
+<li>✅ All 14 language versions accessible</li>
+<li>✅ CSS/JS assets loading</li>
+<li>✅ No console errors</li>
+<li>✅ Links resolve correctly</li>
+</ul>
+<p><strong>Production Health Checks:</strong></p>
+<ul>
+<li>✅ All staging checks</li>
+<li>✅ CloudFront cache serving correctly</li>
+<li>✅ S3 replication complete</li>
+<li>✅ Core Web Vitals within targets (LCP &lt; 2.5s, FID &lt; 100ms, CLS &lt; 0.1)</li>
+<li>✅ Uptime monitoring active</li>
+</ul>
+<hr>
+<h2 id="6-🌐-translation-validation-states" class="tsd-anchor-link">6. 🌐 Translation Validation States<a href="#6-🌐-translation-validation-states" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<p><strong>📊 Data Focus:</strong> Multi-language content validation lifecycle.</p>
+<p><strong>🔄 Process Focus:</strong> Shows translation workflow from marking through publishing.</p>
+<p><strong>🤖 AI Integration:</strong> Agentic translation with automated validation.</p>
+<pre><code class="mermaid"><span class="hl-1">stateDiagram-v2</span><br/><span class="hl-1">    [*] --&gt; Untranslated</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    Untranslated --&gt; Skip: Content Exempt</span><br/><span class="hl-1">    Untranslated --&gt; Marked: data-translate Markers Added</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    Marked --&gt; Translating: Agentic Translation Started</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    Translating --&gt; Translated: All Languages Complete</span><br/><span class="hl-1">    Translating --&gt; Failed: Translation Error</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    Translated --&gt; Validated: Validation Script Passed</span><br/><span class="hl-1">    Translated --&gt; Invalid: Markers Remain</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    Failed --&gt; Retrying: Retry Translation</span><br/><span class="hl-1">    Retrying --&gt; Translating: Retry Attempt</span><br/><span class="hl-1">    Retrying --&gt; Failed: Max Retries Exceeded</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    Invalid --&gt; Translating: Fix Translations</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    Validated --&gt; Published: Clean Content Deployed</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    Published --&gt; Rollback: Production Issue</span><br/><span class="hl-1">    Published --&gt; [*]</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    Rollback --&gt; Untranslated: Recreate Content</span><br/><span class="hl-1">    Skip --&gt; Published: Exempt Content</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    note right of Marked</span><br/><span class="hl-1">        Swedish API content wrapped</span><br/><span class="hl-1">        &lt;span data-translate=&quot;true&quot; lang=&quot;sv&quot;&gt;</span><br/><span class="hl-1">        14 language versions needed</span><br/><span class="hl-1">    end note</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    note right of Translating</span><br/><span class="hl-1">        Copilot agent translating</span><br/><span class="hl-1">        EN, SV, DA, NO, FI, DE, FR, ES</span><br/><span class="hl-1">        NL, AR, HE, JA, KO, ZH</span><br/><span class="hl-1">    end note</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    note right of Validated</span><br/><span class="hl-1">        scripts/validate-news-translations.js</span><br/><span class="hl-1">        Exit code 0 (success)</span><br/><span class="hl-1">        No markers remaining</span><br/><span class="hl-1">    end note</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    note right of Published</span><br/><span class="hl-1">        Clean translated content live</span><br/><span class="hl-1">        No data-translate markers</span><br/><span class="hl-1">        All languages accessible</span><br/><span class="hl-1">    end note</span>
+</code><button type="button">Copy</button></pre>
+
+<h3 id="61-state-definitions" class="tsd-anchor-link">6.1 State Definitions<a href="#61-state-definitions" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>State</th>
+<th>Description</th>
+<th>Entry Conditions</th>
+<th>Exit Conditions</th>
+<th>Typical Duration</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>UNTRANSLATED</strong></td>
+<td>Swedish API content not yet translated</td>
+<td>Content generated</td>
+<td>Markers added</td>
+<td>Seconds</td>
+</tr>
+<tr>
+<td><strong>SKIP</strong></td>
+<td>Content exempt from translation</td>
+<td>Static content, images</td>
+<td>Direct publish</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>MARKED</strong></td>
+<td>data-translate=&quot;true&quot; lang=&quot;sv&quot; markers added</td>
+<td>Swedish content identified</td>
+<td>Translation starts</td>
+<td>Seconds</td>
+</tr>
+<tr>
+<td><strong>TRANSLATING</strong></td>
+<td>Agentic translation in progress</td>
+<td>Markers present</td>
+<td>All languages done</td>
+<td>3-8 minutes</td>
+</tr>
+<tr>
+<td><strong>TRANSLATED</strong></td>
+<td>All languages completed</td>
+<td>Translation done</td>
+<td>Validation runs</td>
+<td>Seconds</td>
+</tr>
+<tr>
+<td><strong>VALIDATED</strong></td>
+<td>Validation script passed (exit 0)</td>
+<td>No markers remain</td>
+<td>Ready to publish</td>
+<td>Seconds</td>
+</tr>
+<tr>
+<td><strong>INVALID</strong></td>
+<td>Markers remain (validation exit 1)</td>
+<td>Validation detected markers</td>
+<td>Fix translations</td>
+<td>Variable</td>
+</tr>
+<tr>
+<td><strong>FAILED</strong></td>
+<td>Translation error</td>
+<td>AI error, context loss</td>
+<td>Retry or manual fix</td>
+<td>Variable</td>
+</tr>
+<tr>
+<td><strong>RETRYING</strong></td>
+<td>Retry translation attempt</td>
+<td>First attempt failed</td>
+<td>Retry completes</td>
+<td>3-8 minutes</td>
+</tr>
+<tr>
+<td><strong>PUBLISHED</strong></td>
+<td>Clean content deployed</td>
+<td>Validation passed</td>
+<td>Monitoring active</td>
+<td>Permanent</td>
+</tr>
+<tr>
+<td><strong>ROLLBACK</strong></td>
+<td>Revert to previous version</td>
+<td>Production issue</td>
+<td>Content recreated</td>
+<td>5-10 minutes</td>
+</tr>
+</tbody>
+</table>
+<h3 id="62-translation-validation-script" class="tsd-anchor-link">6.2 Translation Validation Script<a href="#62-translation-validation-script" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Tool:</strong> <code>scripts/validate-news-translations.js</code></p>
+<p><strong>Purpose:</strong> Detects remaining <code>data-translate=&quot;true&quot;</code> markers in non-Swedish articles</p>
+<p><strong>Exit Codes:</strong></p>
+<ul>
+<li><code>0</code> - Success: All articles fully translated</li>
+<li><code>1</code> - Failure: Untranslated markers found</li>
+</ul>
+<p><strong>Usage:</strong></p>
+<pre><code class="bash"><span class="hl-4"># Validate all news articles</span><br/><span class="hl-0">npm</span><span class="hl-1"> </span><span class="hl-2">run</span><span class="hl-1"> </span><span class="hl-2">validate-news</span><br/><br/><span class="hl-4"># Check specific directory</span><br/><span class="hl-0">node</span><span class="hl-1"> </span><span class="hl-2">scripts/validate-news-translations.js</span><span class="hl-1"> </span><span class="hl-2">news/</span>
+</code><button type="button">Copy</button></pre>
+
+<p><strong>Sample Output (Failure):</strong></p>
+<pre><code><span class="hl-1">📋 </span><span class="hl-8">NEWS</span><span class="hl-1"> </span><span class="hl-8">TRANSLATION</span><span class="hl-1"> </span><span class="hl-8">VALIDATION</span><br/><br/><span class="hl-1">✓ </span><span class="hl-5">Fully</span><span class="hl-1"> </span><span class="hl-7">translated</span><span class="hl-1">: </span><span class="hl-6">142</span><br/><span class="hl-1">✗ </span><span class="hl-5">Needs</span><span class="hl-1"> </span><span class="hl-7">translation</span><span class="hl-1">: </span><span class="hl-6">3</span><br/><br/><span class="hl-5">Untranslated</span><span class="hl-1"> </span><span class="hl-7">Articles</span><span class="hl-1">:</span><br/><span class="hl-1">  ✗ </span><span class="hl-6">2026</span><span class="hl-1">-</span><span class="hl-6">02</span><span class="hl-1">-</span><span class="hl-6">15</span><span class="hl-1">-</span><span class="hl-5">committee</span><span class="hl-1">-</span><span class="hl-5">reports</span><span class="hl-1">-</span><span class="hl-5">de</span><span class="hl-1">.</span><span class="hl-5">html</span><span class="hl-1"> - </span><span class="hl-6">10</span><span class="hl-1"> </span><span class="hl-5">markers</span><br/><span class="hl-1">    </span><span class="hl-7">Samples</span><span class="hl-1">:</span><br/><span class="hl-1">      </span><span class="hl-6">1.</span><span class="hl-1"> </span><span class="hl-2">&quot;Bättre förutsättningar att sända ut statlig personal&quot;</span><br/><span class="hl-1">      </span><span class="hl-6">2.</span><span class="hl-1"> </span><span class="hl-2">&quot;Ett register för alla bostadsrätter&quot;</span><br/><span class="hl-1">  </span><br/><span class="hl-5">Action</span><span class="hl-1"> </span><span class="hl-7">Required</span><span class="hl-1">:</span><br/><span class="hl-6">1.</span><span class="hl-1"> </span><span class="hl-5">Open</span><span class="hl-1"> </span><span class="hl-5">each</span><span class="hl-1"> </span><span class="hl-5">file</span><span class="hl-1"> </span><span class="hl-5">listed</span><span class="hl-1"> </span><span class="hl-5">above</span><br/><span class="hl-6">2.</span><span class="hl-1"> </span><span class="hl-5">Find</span><span class="hl-1"> </span><span class="hl-5">all</span><span class="hl-1"> &lt;</span><span class="hl-5">span</span><span class="hl-1"> </span><span class="hl-5">data</span><span class="hl-1">-</span><span class="hl-5">translate</span><span class="hl-1">=</span><span class="hl-2">&quot;true&quot;</span><span class="hl-1"> </span><span class="hl-5">lang</span><span class="hl-1">=</span><span class="hl-2">&quot;sv&quot;</span><span class="hl-1">&gt;</span><span class="hl-5">Swedish</span><span class="hl-1"> </span><span class="hl-5">text</span><span class="hl-1">&lt;/</span><span class="hl-5">span</span><span class="hl-1">&gt; </span><span class="hl-5">elements</span><br/><span class="hl-6">3.</span><span class="hl-1"> </span><span class="hl-5">Translate</span><span class="hl-1"> </span><span class="hl-5">the</span><span class="hl-1"> </span><span class="hl-5">Swedish</span><span class="hl-1"> </span><span class="hl-5">text</span><span class="hl-1"> </span><span class="hl-5">to</span><span class="hl-1"> </span><span class="hl-5">the</span><span class="hl-1"> </span><span class="hl-5">article</span><span class="hl-2">&#39;s target languag</span><span class="hl-20">e</span><br/><span class="hl-6">4.</span><span class="hl-1"> </span><span class="hl-5">Replace</span><span class="hl-1"> </span><span class="hl-5">the</span><span class="hl-1"> </span><span class="hl-5">span</span><span class="hl-1"> </span><span class="hl-3">with</span><span class="hl-1"> </span><span class="hl-5">plain</span><span class="hl-1"> </span><span class="hl-5">translated</span><span class="hl-1"> </span><span class="hl-5">text</span><br/><span class="hl-6">5.</span><span class="hl-1"> </span><span class="hl-5">Consult</span><span class="hl-1"> </span><span class="hl-8">TRANSLATION_GUIDE</span><span class="hl-1">.</span><span class="hl-5">md</span><span class="hl-1"> </span><span class="hl-5">for</span><span class="hl-1"> </span><span class="hl-5">terminology</span>
+</code><button>Copy</button></pre>
+
+<h3 id="63-state-transition-matrix" class="tsd-anchor-link">6.3 State Transition Matrix<a href="#63-state-transition-matrix" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>From State</th>
+<th>Event</th>
+<th>To State</th>
+<th>Conditions</th>
+<th>Actions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>UNTRANSLATED</td>
+<td>exempt_content</td>
+<td>SKIP</td>
+<td>Static/image content</td>
+<td>Publish directly</td>
+</tr>
+<tr>
+<td>UNTRANSLATED</td>
+<td>add_markers</td>
+<td>MARKED</td>
+<td>Swedish API content</td>
+<td>Wrap in data-translate spans</td>
+</tr>
+<tr>
+<td>MARKED</td>
+<td>start_translation</td>
+<td>TRANSLATING</td>
+<td>Markers present</td>
+<td>Trigger Copilot agent</td>
+</tr>
+<tr>
+<td>TRANSLATING</td>
+<td>translation_complete</td>
+<td>TRANSLATED</td>
+<td>All 14 languages done</td>
+<td>Run validation</td>
+</tr>
+<tr>
+<td>TRANSLATING</td>
+<td>translation_error</td>
+<td>FAILED</td>
+<td>AI error, hallucination</td>
+<td>Log error</td>
+</tr>
+<tr>
+<td>TRANSLATED</td>
+<td>validation_success</td>
+<td>VALIDATED</td>
+<td>Exit code 0</td>
+<td>Prepare publish</td>
+</tr>
+<tr>
+<td>TRANSLATED</td>
+<td>validation_failed</td>
+<td>INVALID</td>
+<td>Exit code 1, markers found</td>
+<td>Return to translation</td>
+</tr>
+<tr>
+<td>INVALID</td>
+<td>fix_translations</td>
+<td>TRANSLATING</td>
+<td>Manual fix or retry</td>
+<td>Re-translate</td>
+</tr>
+<tr>
+<td>FAILED</td>
+<td>retry</td>
+<td>RETRYING</td>
+<td>Retry count &lt; max</td>
+<td>Retry attempt</td>
+</tr>
+<tr>
+<td>RETRYING</td>
+<td>retry_attempt</td>
+<td>TRANSLATING</td>
+<td>New translation job</td>
+<td>Attempt translation</td>
+</tr>
+<tr>
+<td>RETRYING</td>
+<td>max_retries</td>
+<td>FAILED</td>
+<td>3 retries exceeded</td>
+<td>Manual intervention</td>
+</tr>
+<tr>
+<td>VALIDATED</td>
+<td>publish</td>
+<td>PUBLISHED</td>
+<td>All checks passed</td>
+<td>Deploy to production</td>
+</tr>
+<tr>
+<td>PUBLISHED</td>
+<td>production_issue</td>
+<td>ROLLBACK</td>
+<td>Critical bug</td>
+<td>Revert changes</td>
+</tr>
+<tr>
+<td>ROLLBACK</td>
+<td>recreate</td>
+<td>UNTRANSLATED</td>
+<td>Content needs fix</td>
+<td>Restart workflow</td>
+</tr>
+<tr>
+<td>SKIP</td>
+<td>publish</td>
+<td>PUBLISHED</td>
+<td>Exempt content</td>
+<td>Deploy directly</td>
+</tr>
+</tbody>
+</table>
+<h3 id="64-translation-marker-format" class="tsd-anchor-link">6.4 Translation Marker Format<a href="#64-translation-marker-format" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Swedish Content (Needs Translation):</strong></p>
+<pre><code class="html"><span class="hl-16">&lt;</span><span class="hl-11">p</span><span class="hl-16">&gt;</span><br/><span class="hl-1">  The committee proposes </span><br/><span class="hl-1">  </span><span class="hl-16">&lt;</span><span class="hl-11">span</span><span class="hl-1"> </span><span class="hl-17">data-translate</span><span class="hl-1">=</span><span class="hl-12">&quot;true&quot;</span><span class="hl-1"> </span><span class="hl-17">lang</span><span class="hl-1">=</span><span class="hl-12">&quot;sv&quot;</span><span class="hl-16">&gt;</span><span class="hl-1">bättre förutsättningar för statlig personal</span><span class="hl-16">&lt;/</span><span class="hl-11">span</span><span class="hl-16">&gt;</span><span class="hl-1"> </span><br/><span class="hl-1">  in the budget.</span><br/><span class="hl-16">&lt;/</span><span class="hl-11">p</span><span class="hl-16">&gt;</span>
+</code><button type="button">Copy</button></pre>
+
+<p><strong>Translated Content (Clean):</strong></p>
+<pre><code class="html"><span class="hl-16">&lt;</span><span class="hl-11">p</span><span class="hl-16">&gt;</span><br/><span class="hl-1">  The committee proposes better conditions for government personnel in the budget.</span><br/><span class="hl-16">&lt;/</span><span class="hl-11">p</span><span class="hl-16">&gt;</span>
+</code><button type="button">Copy</button></pre>
+
+<h3 id="65-language-support-matrix" class="tsd-anchor-link">6.5 Language Support Matrix<a href="#65-language-support-matrix" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>Language Code</th>
+<th>Language Name</th>
+<th>Script</th>
+<th>Direction</th>
+<th>Translation Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>en</strong></td>
+<td>English</td>
+<td>Latin</td>
+<td>LTR</td>
+<td>✅ Yes</td>
+</tr>
+<tr>
+<td><strong>sv</strong></td>
+<td>Swedish</td>
+<td>Latin</td>
+<td>LTR</td>
+<td>❌ No (source)</td>
+</tr>
+<tr>
+<td><strong>da</strong></td>
+<td>Danish</td>
+<td>Latin</td>
+<td>LTR</td>
+<td>✅ Yes</td>
+</tr>
+<tr>
+<td><strong>no</strong></td>
+<td>Norwegian</td>
+<td>Latin</td>
+<td>LTR</td>
+<td>✅ Yes</td>
+</tr>
+<tr>
+<td><strong>fi</strong></td>
+<td>Finnish</td>
+<td>Latin</td>
+<td>LTR</td>
+<td>✅ Yes</td>
+</tr>
+<tr>
+<td><strong>de</strong></td>
+<td>German</td>
+<td>Latin</td>
+<td>LTR</td>
+<td>✅ Yes</td>
+</tr>
+<tr>
+<td><strong>fr</strong></td>
+<td>French</td>
+<td>Latin</td>
+<td>LTR</td>
+<td>✅ Yes</td>
+</tr>
+<tr>
+<td><strong>es</strong></td>
+<td>Spanish</td>
+<td>Latin</td>
+<td>LTR</td>
+<td>✅ Yes</td>
+</tr>
+<tr>
+<td><strong>nl</strong></td>
+<td>Dutch</td>
+<td>Latin</td>
+<td>LTR</td>
+<td>✅ Yes</td>
+</tr>
+<tr>
+<td><strong>ar</strong></td>
+<td>Arabic</td>
+<td>Arabic</td>
+<td><strong>RTL</strong></td>
+<td>✅ Yes</td>
+</tr>
+<tr>
+<td><strong>he</strong></td>
+<td>Hebrew</td>
+<td>Hebrew</td>
+<td><strong>RTL</strong></td>
+<td>✅ Yes</td>
+</tr>
+<tr>
+<td><strong>ja</strong></td>
+<td>Japanese</td>
+<td>Kanji/Hiragana/Katakana</td>
+<td>LTR</td>
+<td>✅ Yes</td>
+</tr>
+<tr>
+<td><strong>ko</strong></td>
+<td>Korean</td>
+<td>Hangul</td>
+<td>LTR</td>
+<td>✅ Yes</td>
+</tr>
+<tr>
+<td><strong>zh</strong></td>
+<td>Chinese</td>
+<td>Simplified Chinese</td>
+<td>LTR</td>
+<td>✅ Yes</td>
+</tr>
+</tbody>
+</table>
+<h3 id="66-retry-logic" class="tsd-anchor-link">6.6 Retry Logic<a href="#66-retry-logic" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Translation Retry Policy:</strong></p>
+<ul>
+<li><strong>Max Attempts:</strong> 3</li>
+<li><strong>Backoff Strategy:</strong> Exponential (5 min, 10 min, 20 min)</li>
+<li><strong>Retry Triggers:</strong> AI hallucination, context loss, network error</li>
+<li><strong>Manual Intervention:</strong> After 3 failed attempts</li>
+</ul>
+<p><strong>Validation Retry Policy:</strong></p>
+<ul>
+<li><strong>Max Attempts:</strong> Unlimited (automatic retry after fixes)</li>
+<li><strong>Backoff Strategy:</strong> None (immediate re-validation)</li>
+<li><strong>Retry Triggers:</strong> Markers detected, validation script exit 1</li>
+<li><strong>Manual Intervention:</strong> If markers persist after 3 translation attempts</li>
+</ul>
+<hr>
+<h2 id="6a-📦-analysis-artifact-lifecycle-states" class="tsd-anchor-link">6A. 📦 Analysis Artifact Lifecycle States<a href="#6a-📦-analysis-artifact-lifecycle-states" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<p><strong>📊 Data Focus:</strong> 23 analysis artifacts (Families A-D) produced by every agentic news workflow.</p>
+<p><strong>🔄 Process Focus:</strong> Shows artifact folder lifecycle from creation through consumption by article rendering.</p>
+<p><strong>🤖 AI Integration:</strong> Artifacts are produced by Copilot agents and validated by <code>scripts/agentic/analysis-gate.ts</code>.</p>
+<pre><code class="mermaid"><span class="hl-1">stateDiagram-v2</span><br/><span class="hl-1">    [*] --&gt; Empty</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    Empty --&gt; Populating: Agentic workflow starts writing artifacts</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    Populating --&gt; Populated: All 23 artifacts written</span><br/><span class="hl-1">    Populating --&gt; Incomplete: Timeout or agent error</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    Populated --&gt; GateChecking: analysis-gate.ts invoked</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    GateChecking --&gt; GatePassed: All checks 1-9b pass</span><br/><span class="hl-1">    GateChecking --&gt; GateFailed: One or more checks fail</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    GateFailed --&gt; Populating: Agent retries failed artifacts</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    GatePassed --&gt; Consumed: render-articles.ts reads artifacts</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    Consumed --&gt; Archived: Article published, artifacts retained</span><br/><span class="hl-1">    Archived --&gt; [*]</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    Incomplete --&gt; [*]: Workflow terminates with error</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    note right of Empty</span><br/><span class="hl-1">        analysis/daily/YYYY-MM-DD/type/ folder</span><br/><span class="hl-1">        23 expected files (Families A-D)</span><br/><span class="hl-1">    end note</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    note right of GateChecking</span><br/><span class="hl-1">        Check 1: Artifact existence (23 files)</span><br/><span class="hl-1">        Check 2: No stub placeholders</span><br/><span class="hl-1">        Check 3: Minimum word count</span><br/><span class="hl-1">        Check 4: Evidence citations</span><br/><span class="hl-1">        Check 5: Mermaid diagrams with colour</span><br/><span class="hl-1">        Check 6: Pass-2 evidence (revision proof)</span><br/><span class="hl-1">        Check 7: Cross-references</span><br/><span class="hl-1">        Check 8: Data-source connectivity audit</span><br/><span class="hl-1">        Check 9a: Political classification</span><br/><span class="hl-1">        Check 9b: Agency evidence (Statskontoret)</span><br/><span class="hl-1">    end note</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    note right of Consumed</span><br/><span class="hl-1">        aggregate-analysis.ts aggregates</span><br/><span class="hl-1">        render-articles.ts renders HTML</span><br/><span class="hl-1">        Artifacts become read-only</span><br/><span class="hl-1">    end note</span>
+</code><button type="button">Copy</button></pre>
+
+<h3 id="6a1-state-definitions" class="tsd-anchor-link">6A.1 State Definitions<a href="#6a1-state-definitions" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>State</th>
+<th>Description</th>
+<th>Entry Conditions</th>
+<th>Exit Conditions</th>
+<th>Typical Duration</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>EMPTY</strong></td>
+<td>Analysis folder created but no artifacts written</td>
+<td>Workflow triggered</td>
+<td>First artifact written</td>
+<td>Seconds</td>
+</tr>
+<tr>
+<td><strong>POPULATING</strong></td>
+<td>Agent writing artifacts to folder</td>
+<td>First artifact write</td>
+<td>All 23 present or timeout</td>
+<td>5-15 minutes</td>
+</tr>
+<tr>
+<td><strong>INCOMPLETE</strong></td>
+<td>Timeout or error, fewer than 23 artifacts</td>
+<td>Agent timeout/error</td>
+<td>Workflow terminates</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>POPULATED</strong></td>
+<td>All 23 artifacts present in folder</td>
+<td>23 files written</td>
+<td>Gate check invoked</td>
+<td>Seconds</td>
+</tr>
+<tr>
+<td><strong>GATE_CHECKING</strong></td>
+<td>analysis-gate.ts running checks 1-9b</td>
+<td>Populated state</td>
+<td>Pass or fail</td>
+<td>5-30 seconds</td>
+</tr>
+<tr>
+<td><strong>GATE_PASSED</strong></td>
+<td>All gate checks passed</td>
+<td>All checks pass</td>
+<td>Render starts</td>
+<td>Seconds</td>
+</tr>
+<tr>
+<td><strong>GATE_FAILED</strong></td>
+<td>One or more checks failed</td>
+<td>Any check fails</td>
+<td>Retry or terminate</td>
+<td>Variable</td>
+</tr>
+<tr>
+<td><strong>CONSUMED</strong></td>
+<td>Artifacts read by render pipeline</td>
+<td>render-articles.ts invoked</td>
+<td>Article published</td>
+<td>1-5 minutes</td>
+</tr>
+<tr>
+<td><strong>ARCHIVED</strong></td>
+<td>Artifacts retained for audit trail</td>
+<td>Article published</td>
+<td>Permanent</td>
+<td>Permanent</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="6b-🕵️-political-intelligence-assessment-states" class="tsd-anchor-link">6B. 🕵️ Political Intelligence Assessment States<a href="#6b-🕵️-political-intelligence-assessment-states" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<p><strong>📊 Data Focus:</strong> Intelligence assessment lifecycle for political analysis products.</p>
+<p><strong>🔄 Process Focus:</strong> Shows the intelligence cycle from collection through dissemination and feedback.</p>
+<p><strong>🤖 AI Integration:</strong> Horizon stratification (T+72h → T+1460d) drives assessment scope and confidence levels.</p>
+<pre><code class="mermaid"><span class="hl-1">stateDiagram-v2</span><br/><span class="hl-1">    [*] --&gt; Collection</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    Collection --&gt; Processing: Raw data gathered</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    Processing --&gt; Analysis: Data cleaned and structured</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    Analysis --&gt; Assessment: Analytical products created</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    Assessment --&gt; Dissemination: Confidence labels assigned</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    Dissemination --&gt; Feedback: Published to audience</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    Feedback --&gt; Collection: New requirements identified</span><br/><span class="hl-1">    Feedback --&gt; [*]: Cycle complete</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    Collection --&gt; Collection: Continuous monitoring</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    note right of Collection</span><br/><span class="hl-1">        Sources: Riksdag MCP (32 tools)</span><br/><span class="hl-1">        SCB statistics, IMF economic data</span><br/><span class="hl-1">        Government documents, voting records</span><br/><span class="hl-1">    end note</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    note right of Analysis</span><br/><span class="hl-1">        20 methodologies applied</span><br/><span class="hl-1">        39 analysis templates used</span><br/><span class="hl-1">        Horizon-specific framing:</span><br/><span class="hl-1">        T+72h, T+7d, T+30d, T+90d, T+365d, T+1460d</span><br/><span class="hl-1">    end note</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    note right of Assessment</span><br/><span class="hl-1">        Confidence levels: High/Medium/Low</span><br/><span class="hl-1">        WEP language ladder per horizon band</span><br/><span class="hl-1">        Scenario analysis (≥3 scenarios)</span><br/><span class="hl-1">    end note</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    note right of Dissemination</span><br/><span class="hl-1">        14 languages, RTL support</span><br/><span class="hl-1">        Article rendering pipeline</span><br/><span class="hl-1">        RSS, sitemap, indexes generated</span><br/><span class="hl-1">    end note</span>
+</code><button type="button">Copy</button></pre>
+
+<h3 id="6b1-state-definitions" class="tsd-anchor-link">6B.1 State Definitions<a href="#6b1-state-definitions" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>State</th>
+<th>Description</th>
+<th>Entry Conditions</th>
+<th>Exit Conditions</th>
+<th>Typical Duration</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>COLLECTION</strong></td>
+<td>Gathering raw political data from sources</td>
+<td>Workflow trigger or schedule</td>
+<td>Sufficient data gathered</td>
+<td>2-5 minutes</td>
+</tr>
+<tr>
+<td><strong>PROCESSING</strong></td>
+<td>Cleaning, structuring, deduplication</td>
+<td>Raw data available</td>
+<td>Structured data ready</td>
+<td>1-3 minutes</td>
+</tr>
+<tr>
+<td><strong>ANALYSIS</strong></td>
+<td>Applying methodologies and templates</td>
+<td>Structured data ready</td>
+<td>Analysis artifacts produced</td>
+<td>5-15 minutes</td>
+</tr>
+<tr>
+<td><strong>ASSESSMENT</strong></td>
+<td>Assigning confidence, creating judgments</td>
+<td>Analysis complete</td>
+<td>Assessment products ready</td>
+<td>2-5 minutes</td>
+</tr>
+<tr>
+<td><strong>DISSEMINATION</strong></td>
+<td>Publishing to audience in multiple languages</td>
+<td>Assessment approved</td>
+<td>Content published</td>
+<td>3-10 minutes</td>
+</tr>
+<tr>
+<td><strong>FEEDBACK</strong></td>
+<td>Receiving feedback, identifying new requirements</td>
+<td>Content published</td>
+<td>New PIRs identified</td>
+<td>Continuous</td>
+</tr>
+</tbody>
+</table>
+<h3 id="6b2-horizon-stratification" class="tsd-anchor-link">6B.2 Horizon Stratification<a href="#6b2-horizon-stratification" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>Horizon</th>
+<th>Timeframe</th>
+<th>Scope</th>
+<th>Confidence Band</th>
+<th>Scenario Depth</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>T+72h</strong></td>
+<td>3 days</td>
+<td>Tactical</td>
+<td>High</td>
+<td>2-3 scenarios</td>
+</tr>
+<tr>
+<td><strong>T+7d</strong></td>
+<td>1 week</td>
+<td>Tactical/Operational</td>
+<td>High-Medium</td>
+<td>3 scenarios</td>
+</tr>
+<tr>
+<td><strong>T+30d</strong></td>
+<td>1 month</td>
+<td>Operational</td>
+<td>Medium</td>
+<td>3-4 scenarios</td>
+</tr>
+<tr>
+<td><strong>T+90d</strong></td>
+<td>Quarter</td>
+<td>Strategic</td>
+<td>Medium-Low</td>
+<td>4 scenarios</td>
+</tr>
+<tr>
+<td><strong>T+365d</strong></td>
+<td>1 year</td>
+<td>Strategic</td>
+<td>Low-Medium</td>
+<td>4+ scenarios + wildcards</td>
+</tr>
+<tr>
+<td><strong>T+1460d</strong></td>
+<td>Election cycle</td>
+<td>Grand strategic</td>
+<td>Low</td>
+<td>4×3 coalition branches + wildcards</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="7-📊-state-metrics-and-monitoring" class="tsd-anchor-link">7. 📊 State Metrics and Monitoring<a href="#7-📊-state-metrics-and-monitoring" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<h3 id="71-time-in-state-average-duration" class="tsd-anchor-link">7.1 Time in State (Average Duration)<a href="#71-time-in-state-average-duration" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>State Category</th>
+<th>State</th>
+<th>Mean Duration</th>
+<th>P50</th>
+<th>P95</th>
+<th>P99</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Article Lifecycle</strong></td>
+<td>DRAFT</td>
+<td>2-5 min</td>
+<td>3 min</td>
+<td>7 min</td>
+<td>10 min</td>
+</tr>
+<tr>
+<td><strong>Article Lifecycle</strong></td>
+<td>TRANSLATION</td>
+<td>3-8 min</td>
+<td>5 min</td>
+<td>12 min</td>
+<td>20 min</td>
+</tr>
+<tr>
+<td><strong>Article Lifecycle</strong></td>
+<td>VALIDATION</td>
+<td>30-60 sec</td>
+<td>45 sec</td>
+<td>90 sec</td>
+<td>2 min</td>
+</tr>
+<tr>
+<td><strong>Article Lifecycle</strong></td>
+<td>REVIEW</td>
+<td>1-24 hours</td>
+<td>6 hours</td>
+<td>24 hours</td>
+<td>48 hours</td>
+</tr>
+<tr>
+<td><strong>Workflow</strong></td>
+<td>QUEUED</td>
+<td>10-60 sec</td>
+<td>30 sec</td>
+<td>90 sec</td>
+<td>2 min</td>
+</tr>
+<tr>
+<td><strong>Workflow</strong></td>
+<td>GENERATING</td>
+<td>2-5 min</td>
+<td>3 min</td>
+<td>7 min</td>
+<td>10 min</td>
+</tr>
+<tr>
+<td><strong>Workflow</strong></td>
+<td>VALIDATING</td>
+<td>1-2 min</td>
+<td>90 sec</td>
+<td>3 min</td>
+<td>5 min</td>
+</tr>
+<tr>
+<td><strong>Dashboard</strong></td>
+<td>FETCHING</td>
+<td>200-1000ms</td>
+<td>500ms</td>
+<td>1.5 sec</td>
+<td>3 sec</td>
+</tr>
+<tr>
+<td><strong>Dashboard</strong></td>
+<td>CACHED</td>
+<td>Hours to days</td>
+<td>12 hours</td>
+<td>48 hours</td>
+<td>7 days</td>
+</tr>
+<tr>
+<td><strong>PR Review</strong></td>
+<td>CI_RUNNING</td>
+<td>2-5 min</td>
+<td>3 min</td>
+<td>7 min</td>
+<td>10 min</td>
+</tr>
+<tr>
+<td><strong>PR Review</strong></td>
+<td>REVIEW_REQUESTED</td>
+<td>1-24 hours</td>
+<td>4 hours</td>
+<td>24 hours</td>
+<td>48 hours</td>
+</tr>
+<tr>
+<td><strong>CI/CD</strong></td>
+<td>BUILD</td>
+<td>1-2 min</td>
+<td>90 sec</td>
+<td>3 min</td>
+<td>5 min</td>
+</tr>
+<tr>
+<td><strong>CI/CD</strong></td>
+<td>TEST</td>
+<td>2-3 min</td>
+<td>150 sec</td>
+<td>4 min</td>
+<td>6 min</td>
+</tr>
+<tr>
+<td><strong>CI/CD</strong></td>
+<td>SCAN</td>
+<td>3-5 min</td>
+<td>4 min</td>
+<td>7 min</td>
+<td>10 min</td>
+</tr>
+<tr>
+<td><strong>Translation</strong></td>
+<td>TRANSLATING</td>
+<td>3-8 min</td>
+<td>5 min</td>
+<td>12 min</td>
+<td>20 min</td>
+</tr>
+</tbody>
+</table>
+<h3 id="72-state-transition-frequency-matrix" class="tsd-anchor-link">7.2 State Transition Frequency Matrix<a href="#72-state-transition-frequency-matrix" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Top 10 Most Frequent Transitions (Weekly):</strong></p>
+<table>
+<thead>
+<tr>
+<th>From State</th>
+<th>To State</th>
+<th>Frequency</th>
+<th>Success Rate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DRAFT</td>
+<td>TRANSLATION</td>
+<td>~50</td>
+<td>98%</td>
+</tr>
+<tr>
+<td>TRANSLATION</td>
+<td>VALIDATION</td>
+<td>~50</td>
+<td>95%</td>
+</tr>
+<tr>
+<td>VALIDATION</td>
+<td>REVIEW</td>
+<td>~48</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>REVIEW</td>
+<td>APPROVED</td>
+<td>~45</td>
+<td>94%</td>
+</tr>
+<tr>
+<td>APPROVED</td>
+<td>PUBLISHED</td>
+<td>~45</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>QUEUED</td>
+<td>RUNNING</td>
+<td>~50</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>RUNNING</td>
+<td>GENERATING</td>
+<td>~50</td>
+<td>98%</td>
+</tr>
+<tr>
+<td>FETCHING</td>
+<td>CACHED</td>
+<td>~1000</td>
+<td>95%</td>
+</tr>
+<tr>
+<td>CACHED</td>
+<td>STALE</td>
+<td>~200</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>OPEN</td>
+<td>CI_RUNNING</td>
+<td>~50</td>
+<td>100%</td>
+</tr>
+</tbody>
+</table>
+<h3 id="73-error-rates-failed-transitions" class="tsd-anchor-link">7.3 Error Rates (Failed Transitions)<a href="#73-error-rates-failed-transitions" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>Transition</th>
+<th>Error Rate</th>
+<th>Primary Cause</th>
+<th>Mitigation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GENERATING → HALLUCINATION_DETECTED</td>
+<td>2%</td>
+<td>AI hallucination</td>
+<td>Refined prompts, fact-checking</td>
+</tr>
+<tr>
+<td>TRANSLATION → TRANSLATION_FAILED</td>
+<td>5%</td>
+<td>Context loss</td>
+<td>Retry with context preservation</td>
+</tr>
+<tr>
+<td>VALIDATION → VALIDATION_FAILED</td>
+<td>5%</td>
+<td>Incomplete translation</td>
+<td>Automatic retry</td>
+</tr>
+<tr>
+<td>FETCHING → ERROR</td>
+<td>5%</td>
+<td>Network timeout</td>
+<td>Fallback to stale cache</td>
+</tr>
+<tr>
+<td>BUILD → FAILED</td>
+<td>2%</td>
+<td>Dependency issues</td>
+<td>Lock file management</td>
+</tr>
+<tr>
+<td>TEST → FAILED</td>
+<td>1%</td>
+<td>Regression</td>
+<td>Pre-commit testing</td>
+</tr>
+<tr>
+<td>SCAN → VULNERABLE</td>
+<td>&lt;1%</td>
+<td>New CVE</td>
+<td>Automatic Dependabot PRs</td>
+</tr>
+</tbody>
+</table>
+<h3 id="74-bottleneck-analysis" class="tsd-anchor-link">7.4 Bottleneck Analysis<a href="#74-bottleneck-analysis" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>States with Long P95 Durations:</strong></p>
+<table>
+<thead>
+<tr>
+<th>State</th>
+<th>P95 Duration</th>
+<th>Bottleneck Cause</th>
+<th>Optimization</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>REVIEW</strong> (Article)</td>
+<td>24 hours</td>
+<td>Human availability</td>
+<td>Automate more checks, expand reviewer pool</td>
+</tr>
+<tr>
+<td><strong>TRANSLATION</strong></td>
+<td>12 min</td>
+<td>AI processing time</td>
+<td>Parallel translation, caching</td>
+</tr>
+<tr>
+<td><strong>SCAN</strong> (Security)</td>
+<td>7 min</td>
+<td>CodeQL analysis</td>
+<td>Incremental analysis</td>
+</tr>
+<tr>
+<td><strong>REVIEW_REQUESTED</strong> (PR)</td>
+<td>24 hours</td>
+<td>Human availability</td>
+<td>Expand reviewer pool, SLA enforcement</td>
+</tr>
+</tbody>
+</table>
+<h3 id="75-monitoring-dashboards" class="tsd-anchor-link">7.5 Monitoring Dashboards<a href="#75-monitoring-dashboards" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Key Metrics to Track:</strong></p>
+<ol>
+<li><strong>Article Generation Success Rate:</strong> % of workflows reaching PUBLISHED state</li>
+<li><strong>Translation Quality:</strong> % of articles passing validation on first attempt</li>
+<li><strong>Review Turnaround Time:</strong> Time from REVIEW → APPROVED</li>
+<li><strong>Cache Hit Rate:</strong> % of dashboard requests served from CACHED state</li>
+<li><strong>CI/CD Success Rate:</strong> % of commits reaching DEPLOYED state</li>
+<li><strong>Production Uptime:</strong> Time in MONITOR state without errors</li>
+<li><strong>Rollback Frequency:</strong> Number of ROLLBACK events per week</li>
+</ol>
+<h3 id="76-alerting-thresholds" class="tsd-anchor-link">7.6 Alerting Thresholds<a href="#76-alerting-thresholds" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Warning Threshold</th>
+<th>Critical Threshold</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Article Generation Failures</strong></td>
+<td>&gt; 5%</td>
+<td>&gt; 10%</td>
+<td>Investigate AI/MCP server</td>
+</tr>
+<tr>
+<td><strong>Translation Failures</strong></td>
+<td>&gt; 10%</td>
+<td>&gt; 20%</td>
+<td>Review translation prompts</td>
+</tr>
+<tr>
+<td><strong>CI/CD Failures</strong></td>
+<td>&gt; 5%</td>
+<td>&gt; 15%</td>
+<td>Check infrastructure</td>
+</tr>
+<tr>
+<td><strong>Cache Errors</strong></td>
+<td>&gt; 10%</td>
+<td>&gt; 25%</td>
+<td>Verify CDN availability</td>
+</tr>
+<tr>
+<td><strong>Production Errors</strong></td>
+<td>&gt; 0.1%</td>
+<td>&gt; 1%</td>
+<td>Immediate rollback</td>
+</tr>
+<tr>
+<td><strong>Review Backlog</strong></td>
+<td>&gt; 10 PRs</td>
+<td>&gt; 20 PRs</td>
+<td>Expand reviewer pool</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="8-🔒-security-and-compliance" class="tsd-anchor-link">8. 🔒 Security and Compliance<a href="#8-🔒-security-and-compliance" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<h3 id="81-ai-policy-compliance-hack23-ai-policy" class="tsd-anchor-link">8.1 AI Policy Compliance (Hack23 AI Policy)<a href="#81-ai-policy-compliance-hack23-ai-policy" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Limited Risk AI System Classification:</strong></p>
+<ul>
+<li>✅ Human oversight required (PR_REVIEW state)</li>
+<li>✅ AI-specific states documented (HALLUCINATION_DETECTED, TRANSLATION_ERROR)</li>
+<li>✅ Audit logs maintained (LOGGED state, workflow history)</li>
+<li>✅ Error detection and recovery (automatic retries, rollback procedures)</li>
+<li>✅ Transparency (state transitions visible in PRs and logs)</li>
+</ul>
+<p><strong>AI Risk Controls:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Risk</th>
+<th>State Where Risk Occurs</th>
+<th>Mitigation</th>
+<th>Monitoring</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Hallucination</strong></td>
+<td>GENERATING</td>
+<td>Fact-checking, human review</td>
+<td>HALLUCINATION_DETECTED state</td>
+</tr>
+<tr>
+<td><strong>Prompt Injection</strong></td>
+<td>GENERATING</td>
+<td>Input validation, sandboxing</td>
+<td>Real-time detection</td>
+</tr>
+<tr>
+<td><strong>Context Loss</strong></td>
+<td>TRANSLATION</td>
+<td>Context preservation, retry</td>
+<td>TRANSLATION_FAILED state</td>
+</tr>
+<tr>
+<td><strong>Bias Amplification</strong></td>
+<td>GENERATING, TRANSLATING</td>
+<td>Diverse training data, review</td>
+<td>Manual review in PR_REVIEW</td>
+</tr>
+<tr>
+<td><strong>Data Poisoning</strong></td>
+<td>GENERATING</td>
+<td>Trusted data sources only</td>
+<td>Source validation</td>
+</tr>
+</tbody>
+</table>
+<h3 id="82-state-invariants-for-security" class="tsd-anchor-link">8.2 State Invariants for Security<a href="#82-state-invariants-for-security" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Security-Critical Invariants:</strong></p>
+<ol>
+<li><strong>VULNERABLE → DEPLOY_PRODUCTION</strong>: ❌ <strong>BLOCKED</strong> - Cannot deploy with critical vulnerabilities</li>
+<li><strong>VALIDATION_FAILED → PUBLISHED</strong>: ❌ <strong>BLOCKED</strong> - Cannot publish untranslated content</li>
+<li><strong>CI_FAILED → MERGED</strong>: ❌ <strong>BLOCKED</strong> - Cannot merge with failing checks</li>
+<li><strong>HALLUCINATION_DETECTED → PUBLISHED</strong>: ❌ <strong>BLOCKED</strong> - Cannot publish AI errors without review</li>
+<li><strong>ERROR → DEPLOYED</strong>: ❌ <strong>BLOCKED</strong> - Cannot deploy failed builds</li>
+</ol>
+<h3 id="83-audit-trail-requirements" class="tsd-anchor-link">8.3 Audit Trail Requirements<a href="#83-audit-trail-requirements" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p>All state transitions MUST be logged with:</p>
+<ul>
+<li>✅ Timestamp (ISO 8601 format)</li>
+<li>✅ From State</li>
+<li>✅ To State</li>
+<li>✅ Triggering Event</li>
+<li>✅ Actor (user, system, AI agent)</li>
+<li>✅ Conditions Met (or failed)</li>
+<li>✅ Actions Taken</li>
+<li>✅ Outcome (success/failure)</li>
+</ul>
+<p><strong>Retention Policy:</strong> 90 days for operational logs, 7 years for compliance logs</p>
+<hr>
+<h2 id="9-🔄-integration-with-other-documentation" class="tsd-anchor-link">9. 🔄 Integration with Other Documentation<a href="#9-🔄-integration-with-other-documentation" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<h3 id="91-cross-references" class="tsd-anchor-link">9.1 Cross-References<a href="#91-cross-references" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>Document</th>
+<th>Relevant State Diagrams</th>
+<th>Integration Point</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong><a href="http://ARCHITECTURE.md">ARCHITECTURE.md</a></strong></td>
+<td>Dashboard Data States, CI/CD Pipeline</td>
+<td>C4 Container diagram component states</td>
+</tr>
+<tr>
+<td><strong><a href="http://WORKFLOWS.md">WORKFLOWS.md</a></strong></td>
+<td>Agentic Workflow States, CI/CD Pipeline</td>
+<td>GitHub Actions workflow execution</td>
+</tr>
+<tr>
+<td><strong>THREAT_MODEL.md</strong></td>
+<td>All state diagrams</td>
+<td>State transition security risks</td>
+</tr>
+<tr>
+<td><strong>TRANSLATION_GUIDE.md</strong></td>
+<td>Translation Validation States</td>
+<td>Multi-language content workflow</td>
+</tr>
+<tr>
+<td><strong><a href="http://FLOWCHART.md">FLOWCHART.md</a></strong></td>
+<td>Article Lifecycle States</td>
+<td>Process and data flow diagrams</td>
+</tr>
+</tbody>
+</table>
+<h3 id="92-architecture-component-state-mapping" class="tsd-anchor-link">9.2 Architecture Component State Mapping<a href="#92-architecture-component-state-mapping" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>Architecture Component</th>
+<th>State Diagram</th>
+<th>Key States</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Interactive Dashboards</strong></td>
+<td>Dashboard Data States</td>
+<td>EMPTY, FETCHING, CACHED, STALE</td>
+</tr>
+<tr>
+<td><strong>Static Website</strong></td>
+<td>CI/CD Pipeline</td>
+<td>BUILD, TEST, DEPLOY_PRODUCTION</td>
+</tr>
+<tr>
+<td><strong>News Generation</strong></td>
+<td>Article Lifecycle, Agentic Workflow</td>
+<td>DRAFT, GENERATING, TRANSLATION, PUBLISHED</td>
+</tr>
+<tr>
+<td><strong>GitHub Actions</strong></td>
+<td>Agentic Workflow, CI/CD Pipeline</td>
+<td>QUEUED, RUNNING, DEPLOYED</td>
+</tr>
+<tr>
+<td><strong>Quality Gates</strong></td>
+<td>PR Review States, CI/CD Pipeline</td>
+<td>CI_RUNNING, CI_PASSED, CI_FAILED</td>
+</tr>
+</tbody>
+</table>
+<h3 id="93-workflow-execution-state-mapping" class="tsd-anchor-link">9.3 Workflow Execution State Mapping<a href="#93-workflow-execution-state-mapping" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>Workflow</th>
+<th>State Diagram</th>
+<th>Execution Path</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong><a href="http://news-evening-analysis.md">news-evening-analysis.md</a></strong> + 9 other per-type news workflows</td>
+<td>Article Lifecycle, Agentic Workflow</td>
+<td>QUEUED → ANALYSING → AGGREGATING → RENDERING → VALIDATING → PR_CREATED</td>
+</tr>
+<tr>
+<td><strong><a href="http://news-translate.md">news-translate.md</a></strong></td>
+<td>Article Lifecycle, Agentic Workflow</td>
+<td>QUEUED → READING_RENDERED_HTML → TRANSLATING → VALIDATING → PR_CREATED</td>
+</tr>
+<tr>
+<td><strong><a href="http://news-realtime-monitor.md">news-realtime-monitor.md</a></strong></td>
+<td>Article Lifecycle, Agentic Workflow</td>
+<td>QUEUED → ANALYSING → AGGREGATING → RENDERING → VALIDATING → PR_CREATED</td>
+</tr>
+<tr>
+<td><strong>quality-checks.yml</strong></td>
+<td>PR Review States, CI/CD Pipeline</td>
+<td>CI_RUNNING → CI_PASSED/CI_FAILED</td>
+</tr>
+<tr>
+<td><strong>dependency-review.yml</strong></td>
+<td>CI/CD Pipeline</td>
+<td>SCAN → VULNERABLE/PASSED</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="10-📈-future-enhancements" class="tsd-anchor-link">10. 📈 Future Enhancements<a href="#10-📈-future-enhancements" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<h3 id="101-planned-state-additions" class="tsd-anchor-link">10.1 Planned State Additions<a href="#101-planned-state-additions" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Enhanced AI Monitoring:</strong></p>
+<ul>
+<li><strong>CONFIDENCE_SCORE_LOW</strong> - AI-generated content below confidence threshold</li>
+<li><strong>HUMAN_OVERRIDE_REQUIRED</strong> - Manual intervention needed</li>
+<li><strong>AI_EXPLANATION_GENERATED</strong> - AI provides reasoning for decisions</li>
+</ul>
+<p><strong>Advanced Caching:</strong></p>
+<ul>
+<li><strong>PREFETCHING</strong> - Proactive cache warming</li>
+<li><strong>CACHE_INVALIDATION</strong> - Explicit cache clearing</li>
+<li><strong>MULTI_REGION_SYNC</strong> - Cross-region cache synchronization</li>
+</ul>
+<p><strong>Deployment Optimization:</strong></p>
+<ul>
+<li><strong>CANARY_DEPLOYMENT</strong> - Gradual rollout to subset of users</li>
+<li><strong>BLUE_GREEN_DEPLOYMENT</strong> - Zero-downtime deployments</li>
+<li><strong>FEATURE_FLAG_EVALUATION</strong> - Dynamic feature enablement</li>
+</ul>
+<h3 id="102-monitoring-improvements" class="tsd-anchor-link">10.2 Monitoring Improvements<a href="#102-monitoring-improvements" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul>
+<li>Real-time state transition dashboard (Grafana)</li>
+<li>Machine learning-based anomaly detection for state durations</li>
+<li>Predictive analytics for workflow success rates</li>
+<li>Automated bottleneck identification and alerts</li>
+</ul>
+<h3 id="103-automation-opportunities" class="tsd-anchor-link">10.3 Automation Opportunities<a href="#103-automation-opportunities" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul>
+<li>Auto-retry for transient failures (network, API timeouts)</li>
+<li>Smart cache preloading based on user behavior patterns</li>
+<li>Automated rollback on production error thresholds</li>
+<li>Self-healing workflows for common failure scenarios</li>
+</ul>
+<h2 id="📚-architecture-documentation-map-1" class="tsd-anchor-link">📚 Architecture Documentation Map<a href="#📚-architecture-documentation-map-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<table>
+<thead>
+<tr>
+<th>Document</th>
+<th>Focus</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="ARCHITECTURE.html">🏛️ Architecture</a></td>
+<td>🏗️ C4 Models</td>
+<td>System context, containers, components</td>
+</tr>
+<tr>
+<td><a href="DATA_MODEL.html">📊 Data Model</a></td>
+<td>📊 Data</td>
+<td>Entity relationships and data dictionary</td>
+</tr>
+<tr>
+<td><a href="FLOWCHART.html">🔄 Flowchart</a></td>
+<td>🔄 Processes</td>
+<td>Business and data flow diagrams</td>
+</tr>
+<tr>
+<td><strong><a href="">📈 State Diagram</a></strong></td>
+<td><strong>📈 States</strong></td>
+<td><strong>System state transitions and lifecycles</strong></td>
+</tr>
+<tr>
+<td><a href="MINDMAP.html">🧠 Mindmap</a></td>
+<td>🧠 Concepts</td>
+<td>System conceptual relationships</td>
+</tr>
+<tr>
+<td><a href="SWOT.html">💼 SWOT</a></td>
+<td>💼 Strategy</td>
+<td>Strategic analysis and positioning</td>
+</tr>
+<tr>
+<td><a href="SECURITY_ARCHITECTURE.html">🛡️ Security Architecture</a></td>
+<td>🔒 Security</td>
+<td>Current security controls and design</td>
+</tr>
+<tr>
+<td><a href="FUTURE_SECURITY_ARCHITECTURE.html">🚀 Future Security</a></td>
+<td>🔮 Security</td>
+<td>Planned security improvements</td>
+</tr>
+<tr>
+<td><a href="THREAT_MODEL.html">🎯 Threat Model</a></td>
+<td>🎯 Threats</td>
+<td>STRIDE/MITRE ATT&amp;CK analysis</td>
+</tr>
+<tr>
+<td><a href="WORKFLOWS.html">🔧 Workflows</a></td>
+<td>🔧 DevOps</td>
+<td>CI/CD automation and pipelines</td>
+</tr>
+<tr>
+<td><a href="CRA-ASSESSMENT.html">🛡️ CRA Assessment</a></td>
+<td>⚖️ Compliance</td>
+<td>EU Cyber Resilience Act conformity</td>
+</tr>
+<tr>
+<td><a href="FUTURE_ARCHITECTURE.html">🚀 Future Architecture</a></td>
+<td>🔮 Evolution</td>
+<td>Architectural evolution roadmap</td>
+</tr>
+<tr>
+<td><a href="FUTURE_DATA_MODEL.html">📊 Future Data Model</a></td>
+<td>🔮 Data</td>
+<td>Enhanced data architecture plans</td>
+</tr>
+<tr>
+<td><a href="FUTURE_FLOWCHART.html">🔄 Future Flowchart</a></td>
+<td>🔮 Processes</td>
+<td>Improved process workflows</td>
+</tr>
+<tr>
+<td><a href="FUTURE_STATEDIAGRAM.html">📈 Future State Diagram</a></td>
+<td>🔮 States</td>
+<td>Advanced state management</td>
+</tr>
+<tr>
+<td><a href="FUTURE_MINDMAP.html">🧠 Future Mindmap</a></td>
+<td>🔮 Concepts</td>
+<td>Capability expansion plans</td>
+</tr>
+<tr>
+<td><a href="FUTURE_SWOT.html">💼 Future SWOT</a></td>
+<td>🔮 Strategy</td>
+<td>Future strategic opportunities</td>
+</tr>
+</tbody>
+</table>
+<h3 id="hack23-isms-policies" class="tsd-anchor-link">Hack23 ISMS Policies<a href="#hack23-isms-policies" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul>
+<li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md">🛡️ Secure Development Policy</a> — Architecture documentation requirements</li>
+<li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md">🏷️ Classification Framework</a> — CIA triad classification</li>
+</ul>
+<hr>
+<p><strong>📋 Document Control:</strong><br>
+<strong>✅ Approved by:</strong> James Pether Sörling, CEO<br>
+<strong>📤 Distribution:</strong> Public<br>
+<strong>🏷️ Classification:</strong> <a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#confidentiality-levels"><img src="https://img.shields.io/badge/C-Public-lightgrey?style=flat-square&amp;logo=unlock&amp;logoColor=black" alt="Confidentiality: Public"></a><br>
+<strong>📅 Effective Date:</strong> 2026-02-15<br>
+<strong>⏰ Next Review:</strong> 2026-05-15<br>
+<strong>🎯 Framework Compliance:</strong> <a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md"><img src="https://img.shields.io/badge/ISO_27001-2022_Aligned-blue?style=flat-square&amp;logo=iso&amp;logoColor=white" alt="ISO 27001"></a> <a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md"><img src="https://img.shields.io/badge/NIST_CSF-2.0_Aligned-green?style=flat-square&amp;logo=nist&amp;logoColor=white" alt="NIST CSF 2.0"></a> <a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md"><img src="https://img.shields.io/badge/CIS_Controls-v8.1_Aligned-orange?style=flat-square&amp;logo=cisecurity&amp;logoColor=white" alt="CIS Controls"></a></p>
+<hr>
+<h2 id="🌐-imf-cache-vintage-state-machine-current-state" class="tsd-anchor-link">🌐 IMF Cache &amp; Vintage State Machine (Current State)<a href="#🌐-imf-cache-vintage-state-machine-current-state" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<blockquote>
+<p><strong>Status:</strong> ✅ Implemented and in production. The IMF cache lives in <code>analysis/imf/</code> (canonical hub) and <code>analysis/daily/*/economic-data.json</code> (per-article vintage cache). Every cache row is vintage-tagged and SHA-256 pinned. Authority: <a href="../media/ECONOMIC_DATA_CONTRACT.md"><code>.github/aw/ECONOMIC_DATA_CONTRACT.md</code></a> v2.1.</p>
+</blockquote>
+<h3 id="imf-cache-row-lifecycle" class="tsd-anchor-link">IMF cache row lifecycle<a href="#imf-cache-row-lifecycle" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<pre><code class="mermaid"><span class="hl-1">stateDiagram-v2</span><br/><span class="hl-1">    [*] --&gt; Empty: cache key absent</span><br/><span class="hl-1">    Empty --&gt; Fetching: news-* worker requests dataflow/indicator/country</span><br/><span class="hl-1">    Fetching --&gt; Fresh: payload &lt;=6 months old · SHA-256 pinned</span><br/><span class="hl-1">    Fetching --&gt; Stale: payload &gt;6 months old</span><br/><span class="hl-1">    Fetching --&gt; RateLimited: HTTP 429</span><br/><span class="hl-1">    Fetching --&gt; Failed: HTTP 5xx / timeout</span><br/><span class="hl-1">    Fresh --&gt; Used: article cites with full confidence</span><br/><span class="hl-1">    Stale --&gt; Annotated: staleness_annotated=true required</span><br/><span class="hl-1">    Annotated --&gt; Used: article cites with downgraded confidence</span><br/><span class="hl-1">    RateLimited --&gt; Backoff: exponential 2^n seconds</span><br/><span class="hl-1">    Backoff --&gt; Fetching: retry</span><br/><span class="hl-1">    Failed --&gt; CacheFallback: serve last cached vintage</span><br/><span class="hl-1">    CacheFallback --&gt; Used: article cites with cache-fallback annotation</span><br/><span class="hl-1">    Used --&gt; [*]</span>
+</code><button type="button">Copy</button></pre>
+
+<h3 id="weo-vintage-transition-april-→-october-cycle-current-behaviour" class="tsd-anchor-link">WEO vintage transition (April → October cycle, current behaviour)<a href="#weo-vintage-transition-april-→-october-cycle-current-behaviour" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<pre><code class="mermaid"><span class="hl-1">stateDiagram-v2</span><br/><span class="hl-1">    [*] --&gt; WEO_2026_04: April WEO published; cached</span><br/><span class="hl-1">    WEO_2026_04 --&gt; WEO_2026_10: October WEO published (supersedes pointer set)</span><br/><span class="hl-1">    WEO_2026_04 --&gt; Archived: superseded; preserved for audit-trail</span><br/><span class="hl-1">    WEO_2026_10 --&gt; WEO_2027_04: April 2027 WEO publishes</span><br/><span class="hl-1">    WEO_2026_10 --&gt; Archived</span><br/><span class="hl-1">    Archived --&gt; [*]: never deleted (provenance integrity)</span>
+</code><button type="button">Copy</button></pre>
+
+<p><strong>Current production guarantees:</strong></p>
+<ul>
+<li>Vintage label format <code>YYYY-MM</code> enforced by <code>tests/imf-inventory.test.ts</code></li>
+<li><code>supersedes</code> pointer never overwrites prior vintage row (immutable supersedes-chain)</li>
+<li>Stale vintages (&gt;6 months) trigger automatic article-level annotation per <code>scripts/article-quality-enhancer.ts</code></li>
+<li>Cache-fallback path tested by <code>tests/economic-context-multi-provider.test.ts</code></li>
+</ul>
+<hr>
+<h2 id="🔗-hack23-ecosystem" class="tsd-anchor-link">🔗 Hack23 Ecosystem<a href="#🔗-hack23-ecosystem" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<table>
+<tr>
+  <th width="33%">🌐 Platforms</th>
+  <th width="33%">📦 Open-Source Projects</th>
+  <th width="33%">🛡️ Governance &amp; Standards</th>
+</tr>
+<tr>
+<td valign="top">
+🗳️ <a href="https://riksdagsmonitor.com">Riksdagsmonitor</a> — Swedish Parliament intelligence<br>
+🇪🇺 <a href="https://www.euparliamentmonitor.com">EU Parliament Monitor</a> — European coverage<br>
+🕵️ <a href="https://www.hack23.com/cia">Citizen Intelligence Agency</a> — political-data engine<br>
+🌐 <a href="https://www.hack23.com">Hack23 AB</a> — corporate site<br>
+📰 <a href="https://hack23.com/blog.html">Hack23 Blog</a> — engineering &amp; policy<br>
+💼 <a href="https://www.linkedin.com/company/hack23/">Hack23 on LinkedIn</a>
+</td>
+<td valign="top">
+🗳️ <a href="https://github.com/Hack23/riksdagsmonitor">Hack23/riksdagsmonitor</a><br>
+🕵️ <a href="https://github.com/Hack23/cia">Hack23/cia</a><br>
+🇪🇺 <a href="https://github.com/Hack23/euparliamentmonitor">Hack23/euparliamentmonitor</a><br>
+🔌 <a href="https://github.com/Hack23/european-parliament-mcp">Hack23/european-parliament-mcp</a><br>
+✅ <a href="https://github.com/Hack23/cia-compliance-manager">Hack23/cia-compliance-manager</a><br>
+🥋 <a href="https://github.com/Hack23/black-trigram">Hack23/black-trigram</a><br>
+🏠 <a href="https://github.com/Hack23/homepage">Hack23/homepage</a>
+</td>
+<td valign="top">
+🛡️ <a href="https://github.com/Hack23/ISMS-PUBLIC">Hack23 ISMS-PUBLIC</a> — public ISMS<br>
+🔒 <a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Information_Security_Policy.md">Information Security Policy</a><br>
+🤖 <a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/AI_Policy.md">AI Policy</a><br>
+🧪 <a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md">Secure Development Policy</a><br>
+🎯 <a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Threat_Modeling.md">Threat Modeling Policy</a><br>
+⚠️ <a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Vulnerability_Management.md">Vulnerability Management</a><br>
+🏷️ <a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md">Classification Framework</a>
+</td>
+</tr>
+</table>
+<p align="center">
+<a href="https://www.bestpractices.dev/projects/12069"><img src="https://www.bestpractices.dev/projects/12069/badge" alt="OpenSSF Best Practices"/></a>
+<a href="https://scorecard.dev/viewer/?uri=github.com/Hack23/riksdagsmonitor"><img src="https://api.securityscorecards.dev/projects/github.com/Hack23/riksdagsmonitor/badge" alt="OpenSSF Scorecard"/></a>
+<a href="https://github.com/Hack23/ISMS-PUBLIC"><img src="https://img.shields.io/badge/ISO_27001-2022-blue?style=flat-square&logo=iso&logoColor=white" alt="ISO 27001:2022"/></a>
+<a href="https://github.com/Hack23/ISMS-PUBLIC"><img src="https://img.shields.io/badge/NIST_CSF-2.0-green?style=flat-square&logo=nist&logoColor=white" alt="NIST CSF 2.0"/></a>
+<a href="https://github.com/Hack23/ISMS-PUBLIC"><img src="https://img.shields.io/badge/CIS_Controls-v8.1-orange?style=flat-square&logo=cisecurity&logoColor=white" alt="CIS Controls v8.1"/></a>
+<a href="https://www.apache.org/licenses/LICENSE-2.0"><img src="https://img.shields.io/badge/License-Apache_2.0-blue?style=flat-square" alt="Apache 2.0"/></a>
+</p>
+<p align="center"><em>🗳️ Empower citizens · 🔍 Strengthen democratic accountability · 🕵️ Illuminate the political process</em></p>
+<p align="center"><sub>© 2008–2026 <a href="https://www.hack23.com">Hack23 AB</a> (Org.nr 559534-7807) · Maintainer: <a href="https://www.linkedin.com/in/jamessorling/">James Pether Sörling, CISSP CISM</a></sub></p></div></div><div class="col-sidebar"><div class="page-menu"><div class="tsd-navigation settings"><details class="tsd-accordion"><summary class="tsd-accordion-summary"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg><h3>Settings</h3></summary><div class="tsd-accordion-details"><div class="tsd-filter-visibility"><span class="settings-label">Member Visibility</span><ul id="tsd-filter-options"><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-protected" name="protected" checked/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Protected</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-private" name="private" checked/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Private</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-inherited" name="inherited" checked/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Inherited</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-alpha" name="alpha"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Alpha</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-beta" name="beta"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Beta</span></label></li></ul></div><div class="tsd-theme-toggle"><label class="settings-label" for="tsd-theme">Theme</label><select id="tsd-theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></div></div></details></div><details open class="tsd-accordion tsd-page-navigation"><summary class="tsd-accordion-summary"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg><h3>On This Page</h3></summary><div class="tsd-accordion-details"><a href="#executive-summary"><span>Executive <wbr/>Summary</span></a><a href="#📚-architecture-documentation-map"><span>📚 <wbr/>Architecture <wbr/>Documentation <wbr/>Map</span></a><a href="#1-📰-news-article-lifecycle-states"><span>1. 📰 <wbr/>News <wbr/>Article <wbr/>Lifecycle <wbr/>States</span></a><ul><li><a href="#11-state-definitions"><span>1.1 <wbr/>State <wbr/>Definitions</span></a></li><li><a href="#12-state-transition-matrix"><span>1.2 <wbr/>State <wbr/>Transition <wbr/>Matrix</span></a></li><li><a href="#13-state-invariants"><span>1.3 <wbr/>State <wbr/>Invariants</span></a></li><li><a href="#14-error-state-handling"><span>1.4 <wbr/>Error <wbr/>State <wbr/>Handling</span></a></li></ul><a href="#2-🤖-agentic-workflow-states"><span>2. 🤖 <wbr/>Agentic <wbr/>Workflow <wbr/>States</span></a><ul><li><a href="#21-state-definitions"><span>2.1 <wbr/>State <wbr/>Definitions</span></a></li><li><a href="#22-state-transition-matrix"><span>2.2 <wbr/>State <wbr/>Transition <wbr/>Matrix</span></a></li><li><a href="#23-ai-specific-states-hack23-ai-policy-compliance"><span>2.3 <wbr/>AI-<wbr/>Specific <wbr/>States (<wbr/>Hack23 <wbr/>AI <wbr/>Policy <wbr/>Compliance)</span></a></li><li><a href="#24-workflow-coordination"><span>2.4 <wbr/>Workflow <wbr/>Coordination</span></a></li></ul><a href="#3-📊-dashboard-data-states"><span>3. 📊 <wbr/>Dashboard <wbr/>Data <wbr/>States</span></a><ul><li><a href="#31-state-definitions"><span>3.1 <wbr/>State <wbr/>Definitions</span></a></li><li><a href="#32-freshness-thresholds"><span>3.2 <wbr/>Freshness <wbr/>Thresholds</span></a></li><li><a href="#33-state-transition-matrix"><span>3.3 <wbr/>State <wbr/>Transition <wbr/>Matrix</span></a></li><li><a href="#34-cache-strategy"><span>3.4 <wbr/>Cache <wbr/>Strategy</span></a></li></ul><a href="#4-🔀-pull-request-review-states"><span>4. 🔀 <wbr/>Pull <wbr/>Request <wbr/>Review <wbr/>States</span></a><ul><li><a href="#41-state-definitions"><span>4.1 <wbr/>State <wbr/>Definitions</span></a></li><li><a href="#42-quality-gates-ci-checks"><span>4.2 <wbr/>Quality <wbr/>Gates (<wbr/>CI <wbr/>Checks)</span></a></li><li><a href="#43-state-transition-matrix"><span>4.3 <wbr/>State <wbr/>Transition <wbr/>Matrix</span></a></li><li><a href="#44-merge-requirements-checklist"><span>4.4 <wbr/>Merge <wbr/>Requirements <wbr/>Checklist</span></a></li></ul><a href="#5-🚀-cicd-pipeline-states"><span>5. 🚀 <wbr/>CI/<wbr/>CD <wbr/>Pipeline <wbr/>States</span></a><ul><li><a href="#51-state-definitions"><span>5.1 <wbr/>State <wbr/>Definitions</span></a></li><li><a href="#52-security-scanning-gates"><span>5.2 <wbr/>Security <wbr/>Scanning <wbr/>Gates</span></a></li><li><a href="#53-state-transition-matrix"><span>5.3 <wbr/>State <wbr/>Transition <wbr/>Matrix</span></a></li><li><a href="#54-deployment-targets"><span>5.4 <wbr/>Deployment <wbr/>Targets</span></a></li><li><a href="#55-health-check-criteria"><span>5.5 <wbr/>Health <wbr/>Check <wbr/>Criteria</span></a></li></ul><a href="#6-🌐-translation-validation-states"><span>6. 🌐 <wbr/>Translation <wbr/>Validation <wbr/>States</span></a><ul><li><a href="#61-state-definitions"><span>6.1 <wbr/>State <wbr/>Definitions</span></a></li><li><a href="#62-translation-validation-script"><span>6.2 <wbr/>Translation <wbr/>Validation <wbr/>Script</span></a></li><li><a href="#63-state-transition-matrix"><span>6.3 <wbr/>State <wbr/>Transition <wbr/>Matrix</span></a></li><li><a href="#64-translation-marker-format"><span>6.4 <wbr/>Translation <wbr/>Marker <wbr/>Format</span></a></li><li><a href="#65-language-support-matrix"><span>6.5 <wbr/>Language <wbr/>Support <wbr/>Matrix</span></a></li><li><a href="#66-retry-logic"><span>6.6 <wbr/>Retry <wbr/>Logic</span></a></li></ul><a href="#6a-📦-analysis-artifact-lifecycle-states"><span>6<wbr/>A. 📦 <wbr/>Analysis <wbr/>Artifact <wbr/>Lifecycle <wbr/>States</span></a><ul><li><a href="#6a1-state-definitions"><span>6<wbr/>A.1 <wbr/>State <wbr/>Definitions</span></a></li></ul><a href="#6b-🕵️-political-intelligence-assessment-states"><span>6<wbr/>B. 🕵️ <wbr/>Political <wbr/>Intelligence <wbr/>Assessment <wbr/>States</span></a><ul><li><a href="#6b1-state-definitions"><span>6<wbr/>B.1 <wbr/>State <wbr/>Definitions</span></a></li><li><a href="#6b2-horizon-stratification"><span>6<wbr/>B.2 <wbr/>Horizon <wbr/>Stratification</span></a></li></ul><a href="#7-📊-state-metrics-and-monitoring"><span>7. 📊 <wbr/>State <wbr/>Metrics and <wbr/>Monitoring</span></a><ul><li><a href="#71-time-in-state-average-duration"><span>7.1 <wbr/>Time in <wbr/>State (<wbr/>Average <wbr/>Duration)</span></a></li><li><a href="#72-state-transition-frequency-matrix"><span>7.2 <wbr/>State <wbr/>Transition <wbr/>Frequency <wbr/>Matrix</span></a></li><li><a href="#73-error-rates-failed-transitions"><span>7.3 <wbr/>Error <wbr/>Rates (<wbr/>Failed <wbr/>Transitions)</span></a></li><li><a href="#74-bottleneck-analysis"><span>7.4 <wbr/>Bottleneck <wbr/>Analysis</span></a></li><li><a href="#75-monitoring-dashboards"><span>7.5 <wbr/>Monitoring <wbr/>Dashboards</span></a></li><li><a href="#76-alerting-thresholds"><span>7.6 <wbr/>Alerting <wbr/>Thresholds</span></a></li></ul><a href="#8-🔒-security-and-compliance"><span>8. 🔒 <wbr/>Security and <wbr/>Compliance</span></a><ul><li><a href="#81-ai-policy-compliance-hack23-ai-policy"><span>8.1 <wbr/>AI <wbr/>Policy <wbr/>Compliance (<wbr/>Hack23 <wbr/>AI <wbr/>Policy)</span></a></li><li><a href="#82-state-invariants-for-security"><span>8.2 <wbr/>State <wbr/>Invariants for <wbr/>Security</span></a></li><li><a href="#83-audit-trail-requirements"><span>8.3 <wbr/>Audit <wbr/>Trail <wbr/>Requirements</span></a></li></ul><a href="#9-🔄-integration-with-other-documentation"><span>9. 🔄 <wbr/>Integration with <wbr/>Other <wbr/>Documentation</span></a><ul><li><a href="#91-cross-references"><span>9.1 <wbr/>Cross-<wbr/>References</span></a></li><li><a href="#92-architecture-component-state-mapping"><span>9.2 <wbr/>Architecture <wbr/>Component <wbr/>State <wbr/>Mapping</span></a></li><li><a href="#93-workflow-execution-state-mapping"><span>9.3 <wbr/>Workflow <wbr/>Execution <wbr/>State <wbr/>Mapping</span></a></li></ul><a href="#10-📈-future-enhancements"><span>10. 📈 <wbr/>Future <wbr/>Enhancements</span></a><ul><li><a href="#101-planned-state-additions"><span>10.1 <wbr/>Planned <wbr/>State <wbr/>Additions</span></a></li><li><a href="#102-monitoring-improvements"><span>10.2 <wbr/>Monitoring <wbr/>Improvements</span></a></li><li><a href="#103-automation-opportunities"><span>10.3 <wbr/>Automation <wbr/>Opportunities</span></a></li></ul><a href="#📚-architecture-documentation-map-1"><span>📚 <wbr/>Architecture <wbr/>Documentation <wbr/>Map</span></a><ul><li><a href="#hack23-isms-policies"><span>Hack23 <wbr/>ISMS <wbr/>Policies</span></a></li></ul><a href="#🌐-imf-cache-vintage-state-machine-current-state"><span>🌐 <wbr/>IMF <wbr/>Cache &amp; <wbr/>Vintage <wbr/>State <wbr/>Machine (<wbr/>Current <wbr/>State)</span></a><ul><li><a href="#imf-cache-row-lifecycle"><span>IMF cache row lifecycle</span></a></li><li><a href="#weo-vintage-transition-april-→-october-cycle-current-behaviour"><span>WEO vintage transition (<wbr/>April → <wbr/>October cycle, current behaviour)</span></a></li></ul><a href="#🔗-hack23-ecosystem"><span>🔗 <wbr/>Hack23 <wbr/>Ecosystem</span></a></div></details></div><div class="site-menu"><nav id="tsd-sidebar-links" class="tsd-navigation"><a href="https://riksdagsmonitor.com">── Live Platform ──</a><a href="https://riksdagsmonitor.com">🌐 Riksdagsmonitor.com</a><a href="https://riksdagsmonitor.com/political-intelligence.html">🕵️ Political Intelligence Index</a><a href="https://riksdagsmonitor.com/sitemap.html">🗺️ Sitemap (Human + XML)</a><a href="https://riksdagsmonitor.com/news/">📰 News &amp; Articles</a><a href="https://www.npmjs.com/package/riksdagsmonitor">📦 npm Package</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/ARCHITECTURE.md">── Current Architecture ──</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/ARCHITECTURE.md">🏛️ Architecture</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/SECURITY_ARCHITECTURE.md">🔒 Security Architecture</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/THREAT_MODEL.md">🛡️ Threat Model</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/DATA_MODEL.md">📊 Data Model</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FLOWCHART.md">🔄 Flowchart</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/STATEDIAGRAM.md">📈 State Diagram</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/MINDMAP.md">🧠 Mindmap</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/SWOT.md">💼 SWOT Analysis</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_ARCHITECTURE.md">── Future Architecture ──</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_ARCHITECTURE.md">🚀 Future Architecture</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_SECURITY_ARCHITECTURE.md">🔮 Future Security</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_THREAT_MODEL.md">🎯 Future Threat Model</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_DATA_MODEL.md">📊 Future Data Model</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_FLOWCHART.md">🔄 Future Flowchart</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_STATEDIAGRAM.md">📈 Future State Diagram</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_MINDMAP.md">🧠 Future Mindmap</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_SWOT.md">💼 Future SWOT</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_WORKFLOWS.md">🔄 Future Workflows</a><a href="#">── Security &amp; Compliance ──</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/SECURITY.md">🔐 Security Policy</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/CRA-ASSESSMENT.md">📋 CRA Assessment</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/BCPPlan.md">🏢 BCP Plan</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FinancialSecurityPlan.md">💰 Financial Security</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/End-of-Life-Strategy.md">📅 End-of-Life Strategy</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/README.md">── Project Docs ──</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/TESTING.md">🧪 Testing</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/WORKFLOWS.md">🔄 Workflows</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/RELEASE_PROCESS.md">📦 Release Process</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/CONTRIBUTING.md">🤝 Contributing</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/CODE_OF_CONDUCT.md">📜 Code of Conduct</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/AGENTS.md">🤖 Copilot Agents</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/SKILLS.md">🛠 Copilot Skills</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/LABELS.md">🏷 Labels</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/TRANSLATION_GUIDE.md">🌐 Translation Guide</a><a href="https://github.com/Hack23/ISMS-PUBLIC">── Hack23 ISMS Policies ──</a><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md">📋 Secure Dev Policy</a><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Information_Security_Policy.md">🔐 Information Security</a><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Threat_Modeling.md">🎯 Threat Modeling</a><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Open_Source_Policy.md">🌐 Open Source Policy</a><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Risk_Assessment_Methodology.md">📊 Risk Assessment</a><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/AI_Policy.md">🤖 AI Policy</a><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Change_Management_Policy.md">🔧 Change Management</a><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Incident_Response_Plan.md">🛡️ Incident Response</a><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Asset_Management_Policy.md">📦 Asset Management</a><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Access_Control_Policy.md">🔑 Access Control</a><a href="https://riksdagsmonitor.com/docs/api/">── Hack23 API Docs ──</a><a href="https://riksdagsmonitor.com/docs/api/">📚 Riksdagsmonitor API</a><a href="https://euparliamentmonitor.com/docs/api/">🇪🇺 EU Parliament MCP API</a><a href="https://ciacompliancemanager.com/api/">🔍 CIA Compliance Mgr API</a><a href="https://blacktrigram.com/api/">⚔️ Black Trigram API</a><a href="https://riksdagsmonitor.com" class="tsd-nav-link">🏠 Home</a><a href="https://riksdagsmonitor.com/political-intelligence.html" class="tsd-nav-link">🕵️ Political Intelligence</a><a href="https://riksdagsmonitor.com/sitemap.html" class="tsd-nav-link">🗺️ Sitemap</a><a href="https://www.npmjs.com/package/riksdagsmonitor" class="tsd-nav-link">📦 npm Package</a><a href="https://github.com/Hack23/riksdagsmonitor" class="tsd-nav-link">📦 GitHub</a><a href="https://github.com/Hack23/ISMS-PUBLIC" class="tsd-nav-link">🛡️ ISMS</a><a href="https://github.com/Hack23/cia" class="tsd-nav-link">🏛️ CIA Platform</a></nav><nav class="tsd-navigation"><a href="../modules.html">Riksdagsmonitor Intelligence Platform — API Documentation - v1.0.28</a><ul class="tsd-small-nested-navigation" id="tsd-nav-container"><li>Loading...</li></ul></nav></div></div></div><footer><p class="tsd-generator">Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></footer><div class="overlay"></div></body></html>

@@ -1,0 +1,758 @@
+<!DOCTYPE html><html class="default" lang="en" data-base="../"><head><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>FUTURE_FLOWCHART | Riksdagsmonitor Intelligence Platform — API Documentation - v1.0.28</title><meta name="description" content="Documentation for Riksdagsmonitor Intelligence Platform — API Documentation"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="../assets/style.css"/><link rel="stylesheet" href="../assets/highlight.css"/><script defer src="../assets/main.js"></script><script async src="../assets/icons.js" id="tsd-icons-script"></script><script async src="../assets/search.js" id="tsd-search-script"></script><script async src="../assets/navigation.js" id="tsd-nav-script"></script><script async src="../assets/hierarchy.js" id="tsd-hierarchy-script"></script></head><body><script>document.documentElement.dataset.theme = localStorage.getItem("tsd-theme") || "os";document.body.style.display="none";setTimeout(() => window.app?app.showPage():document.body.style.removeProperty("display"),500)</script><header class="tsd-page-toolbar"><div class="tsd-toolbar-contents container"><a href="../index.html" class="title">Riksdagsmonitor Intelligence Platform — API Documentation - v1.0.28</a><div id="tsd-toolbar-links"><a href="https://riksdagsmonitor.com">🏠 Home</a><a href="https://riksdagsmonitor.com/political-intelligence.html">🕵️ Political Intelligence</a><a href="https://riksdagsmonitor.com/sitemap.html">🗺️ Sitemap</a><a href="https://www.npmjs.com/package/riksdagsmonitor">📦 npm Package</a><a href="https://github.com/Hack23/riksdagsmonitor">📦 GitHub</a><a href="https://github.com/Hack23/ISMS-PUBLIC">🛡️ ISMS</a><a href="https://github.com/Hack23/cia">🏛️ CIA Platform</a></div><button id="tsd-search-trigger" class="tsd-widget" aria-label="Search"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-search"></use></svg></button><dialog id="tsd-search" aria-label="Search"><input role="combobox" id="tsd-search-input" aria-controls="tsd-search-results" aria-autocomplete="list" aria-expanded="true" autocapitalize="off" autocomplete="off" placeholder="Search the docs" maxLength="100"/><ul role="listbox" id="tsd-search-results"></ul><div id="tsd-search-status" aria-live="polite" aria-atomic="true"><div>Preparing search index...</div></div></dialog><a href="#" class="tsd-widget menu" id="tsd-toolbar-menu-trigger" data-toggle="menu" aria-label="Menu"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-menu"></use></svg></a></div></header><div class="container container-main"><div class="col-content"><div class="tsd-page-title"><ul class="tsd-breadcrumb" aria-label="Breadcrumb"><li><a href="" aria-current="page">FUTURE_FLOWCHART</a></li></ul></div><div class="tsd-panel tsd-typography"><p align="center">
+  <img src="https://hack23.com/icon-192.png" alt="Hack23 Logo" width="192" height="192">
+</p>
+<h1 align="center">🚀 Riksdagsmonitor — Future Flowchart Architecture</h1>
+<p align="center">
+  <strong>🔄 Process & Data-Flow Evolution: From Agentic Static Newsroom to AWS-Serverless Intelligence Platform</strong><br>
+  <em>🎯 Build-Time OSINT · Party Landscape Analytics · Bedrock RAG · Predictive Democracy · Real-Time Fusion</em>
+</p>
+<p align="center">
+  <img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/>
+  <img src="https://img.shields.io/badge/Version-3.0-555?style=for-the-badge" alt="Version"/>
+  <img src="https://img.shields.io/badge/Effective-2026--05--31-success?style=for-the-badge" alt="Effective Date"/>
+  <img src="https://img.shields.io/badge/Review-Quarterly-orange?style=for-the-badge" alt="Review Cycle"/>
+</p>
+<p align="center">
+  <img src="https://img.shields.io/badge/Horizon-2026→2037-blueviolet?style=flat-square" alt="Horizon"/>
+  <img src="https://img.shields.io/badge/v1.x-Static_Agentic_Newsroom-4caf50?style=flat-square" alt="v1"/>
+  <img src="https://img.shields.io/badge/v2.0-Static_Deepening-2196f3?style=flat-square" alt="v2"/>
+  <img src="https://img.shields.io/badge/v3.0+-AWS_Serverless-ff9800?style=flat-square" alt="v3"/>
+  <img src="https://img.shields.io/badge/Data-Public_Only-success?style=flat-square" alt="Public Data"/>
+  <img src="https://img.shields.io/badge/GDPR-Art._9(2)(e)%2F(g)-blue?style=flat-square" alt="GDPR"/>
+</p>
+<p><strong>📋 Document Owner:</strong> CEO | <strong>📄 Version:</strong> 3.0 | <strong>📅 Last Updated:</strong> 2026-05-31 (UTC)<br>
+<strong>🔄 Review Cycle:</strong> Quarterly | <strong>⏰ Next Review:</strong> 2026-08-31<br>
+<strong>🏢 Owner:</strong> Hack23 AB (<a href="http://Org.nr">Org.nr</a> 559534-7807) | <strong>🏷️ Classification:</strong> Public</p>
+<hr>
+<h2 id="📚-architecture-documentation-map" class="tsd-anchor-link">📚 Architecture Documentation Map<a href="#📚-architecture-documentation-map" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<table>
+<thead>
+<tr>
+<th>Document</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="ARCHITECTURE.html">Architecture</a></td>
+<td>🏛️ Current</td>
+<td>C4 model showing system structure</td>
+</tr>
+<tr>
+<td><a href="DATA_MODEL.html">Data Model</a></td>
+<td>📊 Current</td>
+<td>Data entities and relationships</td>
+</tr>
+<tr>
+<td><a href="FLOWCHART.html">Flowcharts</a></td>
+<td>🔄 Current</td>
+<td>Process flows and pipelines (this doc's baseline)</td>
+</tr>
+<tr>
+<td><a href="STATEDIAGRAM.html">State Diagrams</a></td>
+<td>🔄 Current</td>
+<td>System state transitions</td>
+</tr>
+<tr>
+<td><a href="MINDMAP.html">Mindmap</a></td>
+<td>🗺️ Current</td>
+<td>System conceptual map</td>
+</tr>
+<tr>
+<td><a href="SWOT.html">SWOT</a></td>
+<td>💼 Current</td>
+<td>Strategic analysis</td>
+</tr>
+<tr>
+<td><a href="WORKFLOWS.html">Workflows</a></td>
+<td>🔧 Current</td>
+<td>CI/CD automation and pipelines</td>
+</tr>
+<tr>
+<td><a href="FUTURE_ARCHITECTURE.html">Future Architecture</a></td>
+<td>🏗️ Future</td>
+<td>System evolution roadmap</td>
+</tr>
+<tr>
+<td><a href="FUTURE_DATA_MODEL.html">Future Data Model</a></td>
+<td>📊 Future</td>
+<td>Enhanced data architecture</td>
+</tr>
+<tr>
+<td><strong><a href="">Future Flowcharts</a></strong></td>
+<td>🔄 <strong>Future</strong></td>
+<td><strong>Advanced process &amp; data flows (this doc)</strong></td>
+</tr>
+<tr>
+<td><a href="FUTURE_STATEDIAGRAM.html">Future State Diagrams</a></td>
+<td>🔄 Future</td>
+<td>Advanced state management</td>
+</tr>
+<tr>
+<td><a href="FUTURE_MINDMAP.html">Future Mindmap</a></td>
+<td>🗺️ Future</td>
+<td>Future capability map</td>
+</tr>
+<tr>
+<td><a href="FUTURE_SWOT.html">Future SWOT</a></td>
+<td>💼 Future</td>
+<td>Strategic outlook</td>
+</tr>
+<tr>
+<td><a href="SECURITY_ARCHITECTURE.html">Security Architecture</a></td>
+<td>🛡️ Security</td>
+<td>Defense-in-depth controls</td>
+</tr>
+<tr>
+<td><a href="FUTURE_SECURITY_ARCHITECTURE.html">Future Security Architecture</a></td>
+<td>🛡️ Future</td>
+<td>Security roadmap</td>
+</tr>
+<tr>
+<td><a href="THREAT_MODEL.html">Threat Model</a></td>
+<td>🎯 Security</td>
+<td>STRIDE analysis</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="🎯-executive-summary" class="tsd-anchor-link">🎯 Executive Summary<a href="#🎯-executive-summary" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<p>This document maps the <strong>process and data-flow evolution</strong> of Riksdagsmonitor across three horizons (2026–2037). It is the forward-looking sibling of <a href="FLOWCHART.html"><code>FLOWCHART.md</code></a>: every future flow is built <strong>on top of the production v1.x baseline</strong> documented there — the autonomous agentic newsroom, the multi-provider data fetch/persist layer, the analysis-gate quality wall, and the multi-region static deploy.</p>
+<p>The roadmap deliberately <strong>separates the static-deepening near term from the serverless long term</strong>, so investment stays grounded:</p>
+<table>
+<thead>
+<tr>
+<th>Horizon</th>
+<th>Window</th>
+<th>Architecture</th>
+<th>Process centre of gravity</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🟢 <strong>v1.x baseline</strong></td>
+<td>shipped (2026)</td>
+<td>Static HTML/CSS · 14 agentic workflows · CloudFront + multi-region S3 + GitHub Pages DR</td>
+<td>Build-time: gh-aw → analysis artifacts → gate → render → translate → deploy</td>
+</tr>
+<tr>
+<td>🔵 <strong>v2.0</strong></td>
+<td>2026–2027</td>
+<td><strong>Still static</strong> — deeper precompute</td>
+<td>Build-time <strong>party-landscape dashboards</strong> + <strong>OSINT products</strong> (network / temporal / anomaly / source-grading / INTOP) baked into static HTML</td>
+</tr>
+<tr>
+<td>🟠 <strong>v3.0+</strong></td>
+<td>2028–2037</td>
+<td><strong>AWS serverless</strong> (Lambda · Step Functions · EventBridge · Kinesis · Bedrock · API Gateway · Cognito)</td>
+<td>Runtime: conversational intelligence, RAG semantic search, predictive forecasting, real-time fusion, personalization, public API</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Strategic process vision:</strong></p>
+<ul>
+<li>🟢 <strong>Agentic newsroom hardening</strong> — keep zero-human-editor pipeline; tighten the analysis gate and provenance (2026)</li>
+<li>🔵 <strong>Static OSINT precompute</strong> — move network/temporal/anomaly analytics to <em>build time</em>; render party-focused landscape dashboards &amp; INTOP scorecards as static artifacts (2026–2027)</li>
+<li>🟠 <strong>Bedrock runtime flows</strong> — multi-modal generation, real-time fact-checking and Knowledge-Bases RAG over the 109K+ document corpus (2028+)</li>
+<li>🟠 <strong>Predictive pipelines</strong> — Step-Functions election &amp; vote forecasting with calibrated uncertainty (2028+)</li>
+<li>🟠 <strong>Streaming fusion</strong> — Kinesis + EventBridge real-time parliamentary monitoring and multi-source data fusion (2029+)</li>
+<li>🟠 <strong>API economy &amp; personalization</strong> — API Gateway public political-intelligence API + Cognito personalized feeds (2029+)</li>
+<li>🛡️ <strong>Guardrails throughout</strong> — public data only, GDPR Art. 9(2)(e)/(g), party neutrality, no surveillance/psyops, human-on-the-loop governance per <a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/AI_Policy.md">AI Policy</a></li>
+</ul>
+<blockquote>
+<p>⚠️ <strong>Targets, not achievements.</strong> All metrics below the v1.x baseline are <strong>roadmap targets</strong>, explicitly labelled, never presented as already delivered.</p>
+</blockquote>
+<hr>
+<h2 id="📋-table-of-contents" class="tsd-anchor-link">📋 Table of Contents<a href="#📋-table-of-contents" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<ol>
+<li><a href="#1--three-horizon-process-evolution">Three-Horizon Process Evolution</a></li>
+<li><a href="#2--v1x-baseline-flows-build-the-future-on-this">v1.x Baseline Flows (Build the Future On This)</a></li>
+<li><a href="#3--v20-static-deepening-flows-20262027">v2.0 Static-Deepening Flows (2026–2027)</a></li>
+<li><a href="#4--v30-aws-serverless-runtime-flows-20282037">v3.0+ AWS-Serverless Runtime Flows (2028–2037)</a></li>
+<li><a href="#5-%EF%B8%8F-isms--ai-policy-compliance-flows">ISMS &amp; AI-Policy Compliance Flows</a></li>
+<li><a href="#6--ai-model-lifecycle--evolution-flows">AI Model Lifecycle &amp; Evolution Flows</a></li>
+<li><a href="#7--performance--cost-optimization-flows">Performance &amp; Cost-Optimization Flows</a></li>
+<li><a href="#8--imf-economic-dataflow-evolution">IMF Economic-Dataflow Evolution</a></li>
+<li><a href="#-document-control">Document Control</a></li>
+<li><a href="#-related-documentation">Related Documentation</a></li>
+</ol>
+<hr>
+<h2 id="1-🧭-three-horizon-process-evolution" class="tsd-anchor-link">1. 🧭 Three-Horizon Process Evolution<a href="#1-🧭-three-horizon-process-evolution" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<p>The platform's process architecture migrates along one axis — <strong>where computation happens</strong> — while the democratic-ethics guardrails stay constant. v1.x and v2.0 compute everything at <strong>build time</strong> and ship immutable static artifacts; v3.0+ moves compute to <strong>managed serverless runtime</strong> without ever introducing a server to patch.</p>
+<pre><code class="mermaid"><span class="hl-1">flowchart LR</span><br/><span class="hl-1">    subgraph H1[&quot;🟢 v1.x Baseline — Static Agentic Newsroom (2026)&quot;]</span><br/><span class="hl-1">        direction TB</span><br/><span class="hl-1">        B1[gh-aw agentic workflows] --&gt; B2[Analysis artifacts + gate]</span><br/><span class="hl-1">        B2 --&gt; B3[Article render + 14-lang translate]</span><br/><span class="hl-1">        B3 --&gt; B4[Multi-region static deploy]</span><br/><span class="hl-1">    end</span><br/><br/><span class="hl-1">    subgraph H2[&quot;🔵 v2.0 — Static Deepening (2026–2027)&quot;]</span><br/><span class="hl-1">        direction TB</span><br/><span class="hl-1">        V1[Build-time OSINT precompute&lt;br/&gt;network · temporal · anomaly] --&gt; V2[Party-landscape dashboards]</span><br/><span class="hl-1">        V2 --&gt; V3[Source-grading + INTOP scorecards]</span><br/><span class="hl-1">        V3 --&gt; V4[Static HTML artifacts&lt;br/&gt;no runtime backend]</span><br/><span class="hl-1">    end</span><br/><br/><span class="hl-1">    subgraph H3[&quot;🟠 v3.0+ — AWS Serverless (2028–2037)&quot;]</span><br/><span class="hl-1">        direction TB</span><br/><span class="hl-1">        S1[API Gateway + Cognito] --&gt; S2[Lambda + Step Functions]</span><br/><span class="hl-1">        S2 --&gt; S3[Bedrock + Knowledge Bases RAG]</span><br/><span class="hl-1">        S3 --&gt; S4[Kinesis streaming + EventBridge fusion]</span><br/><span class="hl-1">    end</span><br/><br/><span class="hl-1">    H1 --&gt; H2 --&gt; H3</span><br/><br/><span class="hl-1">    style B1 fill:#4caf50,color:#000000</span><br/><span class="hl-1">    style B4 fill:#4caf50,color:#000000</span><br/><span class="hl-1">    style V1 fill:#2196f3,color:#ffffff</span><br/><span class="hl-1">    style V4 fill:#2196f3,color:#ffffff</span><br/><span class="hl-1">    style S1 fill:#ff9800,color:#000000</span><br/><span class="hl-1">    style S4 fill:#ff9800,color:#000000</span>
+</code><button type="button">Copy</button></pre>
+
+<p><strong>Horizon decision gates</strong> — promotion to the next horizon is conditional, not calendar-driven:</p>
+<pre><code class="mermaid"><span class="hl-1">flowchart TD</span><br/><span class="hl-1">    G0[v1.x in production] --&gt; G1{Static precompute&lt;br/&gt;covers party + OSINT needs&lt;br/&gt;at acceptable build time?}</span><br/><span class="hl-1">    G1 --&gt;|Yes — stay static| G2[v2.0: deepen static OSINT]</span><br/><span class="hl-1">    G1 --&gt;|Build time &gt; budget OR&lt;br/&gt;real-time demand proven| G3{Serverless ROI &amp;&lt;br/&gt;governance ready?}</span><br/><span class="hl-1">    G2 --&gt; G3</span><br/><span class="hl-1">    G3 --&gt;|No| G2</span><br/><span class="hl-1">    G3 --&gt;|Yes — DPIA + cost model approved| G4[v3.0+: AWS serverless runtime]</span><br/><br/><span class="hl-1">    style G0 fill:#4caf50,color:#000000</span><br/><span class="hl-1">    style G2 fill:#2196f3,color:#ffffff</span><br/><span class="hl-1">    style G4 fill:#ff9800,color:#000000</span><br/><span class="hl-1">    style G3 fill:#9c27b0,color:#ffffff</span>
+</code><button type="button">Copy</button></pre>
+
+<hr>
+<h2 id="2-🟢-v1x-baseline-flows-build-the-future-on-this" class="tsd-anchor-link">2. 🟢 v1.x Baseline Flows (Build the Future On This)<a href="#2-🟢-v1x-baseline-flows-build-the-future-on-this" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<p>These flows are <strong>in production today</strong> and refreshed to match <a href="FLOWCHART.html"><code>FLOWCHART.md</code></a>. Every later horizon extends — never replaces — them.</p>
+<h3 id="21-agentic-newsroom-pipeline-gh-aw-→-artifacts-→-article-→-deploy" class="tsd-anchor-link">2.1 Agentic Newsroom Pipeline (gh-aw → artifacts → article → deploy)<a href="#21-agentic-newsroom-pipeline-gh-aw-→-artifacts-→-article-→-deploy" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Objective:</strong> zero-human-editor publication of intelligence articles in 14 languages, gated by the <a href="FLOWCHART.html#17--analysis-gate-validation-flow"><code>analysis gate</code></a>.</p>
+<pre><code class="mermaid"><span class="hl-1">flowchart TD</span><br/><span class="hl-1">    CRON[⏰ Scheduled gh-aw workflow&lt;br/&gt;14 agentic workflows] --&gt; MCPI[Initialize MCP clients]</span><br/><span class="hl-1">    MCPI --&gt; FETCH[Multi-provider data fetch]</span><br/><br/><span class="hl-1">    FETCH --&gt; RR[riksdag-regering MCP&lt;br/&gt;32+ tools]</span><br/><span class="hl-1">    FETCH --&gt; SCB[scb MCP — PxWeb v2]</span><br/><span class="hl-1">    FETCH --&gt; WB[world-bank MCP — WGI / non-econ]</span><br/><span class="hl-1">    FETCH --&gt; IMF[imf TS client via bash&lt;br/&gt;WEO / FM / IFS — primary economic]</span><br/><span class="hl-1">    FETCH --&gt; CIA[CIA platform JSON/CSV export]</span><br/><br/><span class="hl-1">    RR --&gt; AGG[Context aggregation + dedup + relevance]</span><br/><span class="hl-1">    SCB --&gt; AGG</span><br/><span class="hl-1">    WB --&gt; AGG</span><br/><span class="hl-1">    IMF --&gt; AGG</span><br/><span class="hl-1">    CIA --&gt; AGG</span><br/><br/><span class="hl-1">    AGG --&gt; ARTI[Produce analysis artifacts&lt;br/&gt;9 core / 14 Tier-C in analysis/daily/DATE/]</span><br/><span class="hl-1">    ARTI --&gt; GATE{Analysis Gate&lt;br/&gt;single blocking wall}</span><br/><span class="hl-1">    GATE --&gt;|Fail| BLOCK[Block + open issue&lt;br/&gt;no publication]</span><br/><span class="hl-1">    GATE --&gt;|Pass| GEN[Claude Opus 4.8&lt;br/&gt;article composition]</span><br/><span class="hl-1">    GEN --&gt; QC{Quality + evidence&lt;br/&gt;citations valid?}</span><br/><span class="hl-1">    QC --&gt;|No| RETRY[Refine prompt] --&gt; GEN</span><br/><span class="hl-1">    QC --&gt;|Yes| RENDER[Template HTML render]</span><br/><span class="hl-1">    RENDER --&gt; TRANS[14-language translation&lt;br/&gt;Sonnet 4.6]</span><br/><span class="hl-1">    TRANS --&gt; SEO[Schema.org + hreflang + OG tags]</span><br/><span class="hl-1">    SEO --&gt; COMMIT[Git commit + signed provenance]</span><br/><span class="hl-1">    COMMIT --&gt; CI[CI/CD: HTMLHint · ESLint · Vitest · Cypress]</span><br/><span class="hl-1">    CI --&gt; DEPLOY[Multi-region static deploy]</span><br/><span class="hl-1">    DEPLOY --&gt; LIVE[📰 Live in 14 languages]</span><br/><br/><span class="hl-1">    style CRON fill:#2196f3,color:#ffffff</span><br/><span class="hl-1">    style GATE fill:#ff006e,color:#ffffff</span><br/><span class="hl-1">    style BLOCK fill:#f44336,color:#ffffff</span><br/><span class="hl-1">    style GEN fill:#9c27b0,color:#ffffff</span><br/><span class="hl-1">    style LIVE fill:#4caf50,color:#000000</span>
+</code><button type="button">Copy</button></pre>
+
+<h3 id="22-build-time-political-intelligence-analysis-gate-flow" class="tsd-anchor-link">2.2 Build-Time Political-Intelligence &amp; Analysis-Gate Flow<a href="#22-build-time-political-intelligence-analysis-gate-flow" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Objective:</strong> horizon-stratified intelligence products precompiled before each static build.</p>
+<pre><code class="mermaid"><span class="hl-1">flowchart TD</span><br/><span class="hl-1">    T[generate-political-intelligence.ts] --&gt; CAT[catalog.ts&lt;br/&gt;article-types.json registry]</span><br/><span class="hl-1">    CAT --&gt; STR[daily-streams.ts&lt;br/&gt;active streams per horizon]</span><br/><span class="hl-1">    STR --&gt; HZ{Horizon stratification}</span><br/><span class="hl-1">    HZ --&gt; H72[T+72h]</span><br/><span class="hl-1">    HZ --&gt; H7[T+7d]</span><br/><span class="hl-1">    HZ --&gt; H30[T+30d]</span><br/><span class="hl-1">    HZ --&gt; H90[T+90d]</span><br/><span class="hl-1">    HZ --&gt; H365[T+365d]</span><br/><span class="hl-1">    HZ --&gt; H1460[T+1460d election cycle]</span><br/><br/><span class="hl-1">    H72 --&gt; GATE{Analysis Gate&lt;br/&gt;9 checks · artifact existence,&lt;br/&gt;evidence, Pass-2, cross-refs}</span><br/><span class="hl-1">    H7 --&gt; GATE</span><br/><span class="hl-1">    H30 --&gt; GATE</span><br/><span class="hl-1">    H90 --&gt; GATE</span><br/><span class="hl-1">    H365 --&gt; GATE</span><br/><span class="hl-1">    H1460 --&gt; GATE</span><br/><br/><span class="hl-1">    GATE --&gt;|Fail| STOP[❌ Block pipeline]</span><br/><span class="hl-1">    GATE --&gt;|Pass| I18N[i18n/ — 14-language translation]</span><br/><span class="hl-1">    I18N --&gt; RND[render/ — template HTML]</span><br/><span class="hl-1">    RND --&gt; OUT[political-intelligence*.html&lt;br/&gt;14 variants]</span><br/><br/><span class="hl-1">    style T fill:#2196f3,color:#ffffff</span><br/><span class="hl-1">    style GATE fill:#ff006e,color:#ffffff</span><br/><span class="hl-1">    style STOP fill:#f44336,color:#ffffff</span><br/><span class="hl-1">    style OUT fill:#4caf50,color:#000000</span>
+</code><button type="button">Copy</button></pre>
+
+<h3 id="23-data-fetch-persist-flow-multi-provider-provenance-tagged" class="tsd-anchor-link">2.3 Data Fetch &amp; Persist Flow (multi-provider, provenance-tagged)<a href="#23-data-fetch-persist-flow-multi-provider-provenance-tagged" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<pre><code class="mermaid"><span class="hl-1">flowchart LR</span><br/><span class="hl-1">    TRIG[download-parliamentary-data.ts&lt;br/&gt;+ fetch-voting-records.ts&lt;br/&gt;+ fetch-calendar.ts] --&gt; SRC{Source}</span><br/><span class="hl-1">    SRC --&gt;|Propositions / motions / betänkanden| RIKS[(data.riksdagen.se)]</span><br/><span class="hl-1">    SRC --&gt;|Government docs| G0V[(Regeringen via g0v.se)]</span><br/><span class="hl-1">    SRC --&gt;|Statistics| SCB[(SCB PxWeb v2)]</span><br/><span class="hl-1">    SRC --&gt;|Economic primary| IMF[(IMF SDMX 3.0 + Datamapper)]</span><br/><span class="hl-1">    SRC --&gt;|Governance / environment| WB[(World Bank)]</span><br/><span class="hl-1">    SRC --&gt;|Aggregated political engine| CIA[(CIA platform export)]</span><br/><br/><span class="hl-1">    RIKS --&gt; VAL[Validate + transform]</span><br/><span class="hl-1">    G0V --&gt; VAL</span><br/><span class="hl-1">    SCB --&gt; VAL</span><br/><span class="hl-1">    IMF --&gt; VAL</span><br/><span class="hl-1">    WB --&gt; VAL</span><br/><span class="hl-1">    CIA --&gt; VAL</span><br/><span class="hl-1">    VAL --&gt; PROV[Attach provenance + freshness + SHA-256]</span><br/><span class="hl-1">    PROV --&gt; PERSIST[(data/ + analysis/data/ JSON + meta)]</span><br/><span class="hl-1">    PERSIST --&gt; READY[Ready for analysis + dashboard build]</span><br/><br/><span class="hl-1">    style TRIG fill:#2196f3,color:#ffffff</span><br/><span class="hl-1">    style IMF fill:#0a4f8f,color:#ffffff</span><br/><span class="hl-1">    style PERSIST fill:#ff9800,color:#000000</span><br/><span class="hl-1">    style READY fill:#4caf50,color:#000000</span>
+</code><button type="button">Copy</button></pre>
+
+<h3 id="24-dashboard-build-flow-lazy-loaded-typescript-modules" class="tsd-anchor-link">2.4 Dashboard Build Flow (lazy-loaded TypeScript modules)<a href="#24-dashboard-build-flow-lazy-loaded-typescript-modules" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<pre><code class="mermaid"><span class="hl-1">flowchart TD</span><br/><span class="hl-1">    DATA[(Persisted JSON: 349 MPs · 2,494 historical ·&lt;br/&gt;3.5M+ votes · 109K+ docs)] --&gt; TS[TypeScript dashboard modules&lt;br/&gt;Chart.js / D3.js]</span><br/><span class="hl-1">    TS --&gt; BUILD[Vite build — code-split per dashboard]</span><br/><span class="hl-1">    BUILD --&gt; LAZY[Lazy-loaded bundles&lt;br/&gt;~11 functional dashboards]</span><br/><span class="hl-1">    LAZY --&gt; A11Y[WCAG 2.1 AA pass + cyberpunk theme]</span><br/><span class="hl-1">    A11Y --&gt; STATIC[Static HTML + hashed assets]</span><br/><span class="hl-1">    STATIC --&gt; DEPLOY[Deploy step]</span><br/><br/><span class="hl-1">    style DATA fill:#ff9800,color:#000000</span><br/><span class="hl-1">    style STATIC fill:#4caf50,color:#000000</span><br/><span class="hl-1">    style A11Y fill:#9c27b0,color:#ffffff</span>
+</code><button type="button">Copy</button></pre>
+
+<h3 id="25-multi-region-static-deploy-disaster-recovery-flow" class="tsd-anchor-link">2.5 Multi-Region Static Deploy &amp; Disaster-Recovery Flow<a href="#25-multi-region-static-deploy-disaster-recovery-flow" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<pre><code class="mermaid"><span class="hl-1">flowchart TD</span><br/><span class="hl-1">    MERGE[Merge to main] --&gt; CIGATE[CI security gate&lt;br/&gt;CodeQL · Dependabot · SLSA · Sigstore]</span><br/><span class="hl-1">    CIGATE --&gt; OK{All gates green?}</span><br/><span class="hl-1">    OK --&gt;|No| HALT[Halt + alert]</span><br/><span class="hl-1">    OK --&gt;|Yes| S3P[(S3 primary — us-east-1)]</span><br/><span class="hl-1">    S3P --&gt; REPL[(S3 replica — eu-west-1)]</span><br/><span class="hl-1">    S3P --&gt; CF[CloudFront invalidation]</span><br/><span class="hl-1">    REPL --&gt; CF</span><br/><span class="hl-1">    CF --&gt; PROD[🌐 riksdagsmonitor.com live]</span><br/><span class="hl-1">    PROD --&gt; HEALTH{Origin healthy?}</span><br/><span class="hl-1">    HEALTH --&gt;|Degraded| DR[Fail over to GitHub Pages DR]</span><br/><span class="hl-1">    HEALTH --&gt;|Healthy| DONE[Serving from edge]</span><br/><span class="hl-1">    DR --&gt; DONE</span><br/><br/><span class="hl-1">    style MERGE fill:#2196f3,color:#ffffff</span><br/><span class="hl-1">    style HALT fill:#f44336,color:#ffffff</span><br/><span class="hl-1">    style PROD fill:#4caf50,color:#000000</span><br/><span class="hl-1">    style DR fill:#ff9800,color:#000000</span>
+</code><button type="button">Copy</button></pre>
+
+<hr>
+<h2 id="3-🔵-v20-static-deepening-flows-20262027" class="tsd-anchor-link">3. 🔵 v2.0 Static-Deepening Flows (2026–2027)<a href="#3-🔵-v20-static-deepening-flows-20262027" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<blockquote>
+<p><strong>Strategic choice: stay static.</strong> v2.0 introduces <strong>no runtime backend</strong>. Every new capability is <strong>precomputed at build time</strong> and rendered into immutable HTML/CSS. The wins are deeper party analytics and higher-grade OSINT, not new infrastructure. AI generations of this window (Opus 4.6–4.9 → 5.x) primarily sharpen the <em>agentic build pipeline</em>.</p>
+</blockquote>
+<h3 id="31-party-focused-political-landscape-dashboard-build" class="tsd-anchor-link">3.1 Party-Focused Political-Landscape Dashboard Build<a href="#31-party-focused-political-landscape-dashboard-build" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Objective:</strong> turn the persisted corpus into party-centric landscape dashboards — cohesion, coalition dynamics, bloc alignment, party-vs-party comparison, agenda tracking — all computed offline.</p>
+<pre><code class="mermaid"><span class="hl-1">flowchart TD</span><br/><span class="hl-1">    CORPUS[(Persisted corpus: votes · speeches · motions · members)] --&gt; COH[Compute party-cohesion index&lt;br/&gt;Rice index per voting block]</span><br/><span class="hl-1">    CORPUS --&gt; BLOC[Compute bloc alignment&lt;br/&gt;government vs opposition matrices]</span><br/><span class="hl-1">    CORPUS --&gt; COAL[Coalition-dynamics model&lt;br/&gt;agreement / defection rates]</span><br/><span class="hl-1">    CORPUS --&gt; AGENDA[Agenda tracking&lt;br/&gt;topic share per party over time]</span><br/><br/><span class="hl-1">    COH --&gt; AGG[Aggregate party-landscape dataset]</span><br/><span class="hl-1">    BLOC --&gt; AGG</span><br/><span class="hl-1">    COAL --&gt; AGG</span><br/><span class="hl-1">    AGENDA --&gt; AGG</span><br/><span class="hl-1">    AGG --&gt; NEU{Neutrality lint&lt;br/&gt;equal coverage per party?}</span><br/><span class="hl-1">    NEU --&gt;|Imbalanced| FIXN[Rebalance + flag] --&gt; AGG</span><br/><span class="hl-1">    NEU --&gt;|Balanced| RENDER[Render party-landscape dashboards&lt;br/&gt;Chart.js / D3.js static]</span><br/><span class="hl-1">    RENDER --&gt; I18N[14-language labels]</span><br/><span class="hl-1">    I18N --&gt; OUT[Static party-landscape HTML]</span><br/><br/><span class="hl-1">    style CORPUS fill:#ff9800,color:#000000</span><br/><span class="hl-1">    style NEU fill:#ff006e,color:#ffffff</span><br/><span class="hl-1">    style OUT fill:#4caf50,color:#000000</span><br/><span class="hl-1">    style AGG fill:#9c27b0,color:#ffffff</span>
+</code><button type="button">Copy</button></pre>
+
+<h3 id="32-build-time-osint-computation-pipeline-network-·-temporal-·-anomaly" class="tsd-anchor-link">3.2 Build-Time OSINT Computation Pipeline (network · temporal · anomaly)<a href="#32-build-time-osint-computation-pipeline-network-·-temporal-·-anomaly" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Objective:</strong> move structured tradecraft (network analysis, temporal/seasonal patterns, anomaly detection) from ad-hoc analysis into a <strong>repeatable build-time pipeline</strong> whose outputs are graded and rendered statically.</p>
+<pre><code class="mermaid"><span class="hl-1">flowchart TD</span><br/><span class="hl-1">    IN[(Corpus + provenance)] --&gt; NET[Network analysis&lt;br/&gt;co-sponsorship + co-voting graph&lt;br/&gt;centrality · clustering · bridging]</span><br/><span class="hl-1">    IN --&gt; TEMP[Temporal analysis&lt;br/&gt;seasonal cadence · trend breaks]</span><br/><span class="hl-1">    IN --&gt; ANOM[Anomaly detection&lt;br/&gt;voting defection · attendance outliers]</span><br/><br/><span class="hl-1">    NET --&gt; SCORE[Apply OSINT source-grading&lt;br/&gt;A–F reliability × 1–6 credibility]</span><br/><span class="hl-1">    TEMP --&gt; SCORE</span><br/><span class="hl-1">    ANOM --&gt; SCORE</span><br/><span class="hl-1">    SCORE --&gt; ACH{ACH check&lt;br/&gt;≥3 competing hypotheses&lt;br/&gt;per anomaly}</span><br/><span class="hl-1">    ACH --&gt;|Unsupported| DROP[Drop / downgrade claim]</span><br/><span class="hl-1">    ACH --&gt;|Supported with dok_id evidence| PROD[OSINT product dataset]</span><br/><span class="hl-1">    PROD --&gt; VIZ[Render network/temporal/anomaly dashboards]</span><br/><span class="hl-1">    VIZ --&gt; OUTO[Static OSINT HTML artifacts]</span><br/><br/><span class="hl-1">    style IN fill:#ff9800,color:#000000</span><br/><span class="hl-1">    style SCORE fill:#9c27b0,color:#ffffff</span><br/><span class="hl-1">    style ACH fill:#ff006e,color:#ffffff</span><br/><span class="hl-1">    style DROP fill:#f44336,color:#ffffff</span><br/><span class="hl-1">    style OUTO fill:#4caf50,color:#000000</span>
+</code><button type="button">Copy</button></pre>
+
+<h3 id="33-source-grading-intop-scorecard-flow" class="tsd-anchor-link">3.3 Source-Grading &amp; INTOP Scorecard Flow<a href="#33-source-grading-intop-scorecard-flow" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Objective:</strong> produce evidence-graded INTOP (intelligence-operations) scorecards where every metric ties to a <code>dok_id</code>, vote count, or named actor.</p>
+<pre><code class="mermaid"><span class="hl-1">flowchart LR</span><br/><span class="hl-1">    CLAIM[Candidate claim / metric] --&gt; EV{Evidence present?&lt;br/&gt;dok_id · vote count · named actor · primary URL}</span><br/><span class="hl-1">    EV --&gt;|No| REJ[Reject — generic statement]</span><br/><span class="hl-1">    EV --&gt;|Yes| GRADE[Assign source grade&lt;br/&gt;reliability + credibility]</span><br/><span class="hl-1">    GRADE --&gt; UNC[Attach uncertainty band]</span><br/><span class="hl-1">    UNC --&gt; CARD[Compose INTOP scorecard cell]</span><br/><span class="hl-1">    CARD --&gt; AUDIT[Append to data-source audit trail]</span><br/><span class="hl-1">    AUDIT --&gt; STATIC[Render static scorecard]</span><br/><br/><span class="hl-1">    style CLAIM fill:#2196f3,color:#ffffff</span><br/><span class="hl-1">    style REJ fill:#f44336,color:#ffffff</span><br/><span class="hl-1">    style GRADE fill:#9c27b0,color:#ffffff</span><br/><span class="hl-1">    style STATIC fill:#4caf50,color:#000000</span>
+</code><button type="button">Copy</button></pre>
+
+<h3 id="34-v20-build-sequence-end-to-end-still-no-runtime-backend" class="tsd-anchor-link">3.4 v2.0 Build Sequence (end-to-end, still no runtime backend)<a href="#34-v20-build-sequence-end-to-end-still-no-runtime-backend" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<pre><code class="mermaid"><span class="hl-1">sequenceDiagram</span><br/><span class="hl-1">    participant W as gh-aw workflow</span><br/><span class="hl-1">    participant D as Data fetch layer</span><br/><span class="hl-1">    participant O as OSINT precompute</span><br/><span class="hl-1">    participant P as Party-landscape compute</span><br/><span class="hl-1">    participant G as Analysis gate</span><br/><span class="hl-1">    participant R as Renderer (14 lang)</span><br/><span class="hl-1">    participant S as Static deploy</span><br/><br/><span class="hl-1">    W-&gt;&gt;D: Fetch + persist (provenance-tagged)</span><br/><span class="hl-1">    D--&gt;&gt;W: Versioned JSON corpus</span><br/><span class="hl-1">    W-&gt;&gt;O: Run network/temporal/anomaly + source-grading</span><br/><span class="hl-1">    W-&gt;&gt;P: Compute cohesion/coalition/bloc/agenda</span><br/><span class="hl-1">    O--&gt;&gt;G: OSINT products (graded)</span><br/><span class="hl-1">    P--&gt;&gt;G: Party-landscape datasets (neutrality-checked)</span><br/><span class="hl-1">    G-&gt;&gt;G: 9-check validation + Pass-2 evidence</span><br/><span class="hl-1">    alt Gate fails</span><br/><span class="hl-1">        G--&gt;&gt;W: Block + open issue</span><br/><span class="hl-1">    else Gate passes</span><br/><span class="hl-1">        G-&gt;&gt;R: Approved datasets</span><br/><span class="hl-1">        R-&gt;&gt;S: Static HTML/CSS artifacts</span><br/><span class="hl-1">        S--&gt;&gt;W: Deployed to CloudFront + S3 (+ GH Pages DR)</span><br/><span class="hl-1">    end</span>
+</code><button type="button">Copy</button></pre>
+
+<p><strong>v2.0 outcome:</strong> richer intelligence, <strong>identical hosting model</strong>. Build time grows; attack surface does not. When build time exceeds budget <em>or</em> real-time demand is proven, the horizon-gate (§1) authorizes the v3.0 serverless move.</p>
+<hr>
+<h2 id="4-🟠-v30-aws-serverless-runtime-flows-20282037" class="tsd-anchor-link">4. 🟠 v3.0+ AWS-Serverless Runtime Flows (2028–2037)<a href="#4-🟠-v30-aws-serverless-runtime-flows-20282037" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<blockquote>
+<p><strong>Strategic choice: all-in managed serverless.</strong> No Kubernetes, no containers, no servers to patch — only Lambda, Step Functions, EventBridge, Kinesis, Bedrock, API Gateway, Cognito, DynamoDB, Aurora Serverless v2, Neptune Serverless, OpenSearch Serverless, and Timestream. AWS Well-Architected aligned, multi-region resilient. AI generations Opus 6.x→AGI unlock conversational, predictive, and self-improving runtime flows.</p>
+</blockquote>
+<h3 id="41-public-political-intelligence-api-request-flow-api-gateway-·-lambda-·-cognito" class="tsd-anchor-link">4.1 Public Political-Intelligence API Request Flow (API Gateway · Lambda · Cognito)<a href="#41-public-political-intelligence-api-request-flow-api-gateway-·-lambda-·-cognito" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<pre><code class="mermaid"><span class="hl-1">flowchart TD</span><br/><span class="hl-1">    USER[API consumer / citizen app] --&gt; APIGW[Amazon API Gateway]</span><br/><span class="hl-1">    APIGW --&gt; AUTH{Cognito authorizer}</span><br/><span class="hl-1">    AUTH --&gt;|Anonymous public tier| RL1[Rate-limit: public quota]</span><br/><span class="hl-1">    AUTH --&gt;|Authenticated| RL2[Rate-limit: tiered quota]</span><br/><span class="hl-1">    RL1 --&gt; LMB[Lambda resolver]</span><br/><span class="hl-1">    RL2 --&gt; LMB</span><br/><span class="hl-1">    LMB --&gt; CACHE{Edge / DynamoDB cache hit?}</span><br/><span class="hl-1">    CACHE --&gt;|Yes| RESP[Return cached response]</span><br/><span class="hl-1">    CACHE --&gt;|No| DATA[Query Aurora SLv2 / Neptune / OpenSearch]</span><br/><span class="hl-1">    DATA --&gt; SHAPE[Shape + redact to public-data policy]</span><br/><span class="hl-1">    SHAPE --&gt; AUDIT[Emit access log → audit trail]</span><br/><span class="hl-1">    AUDIT --&gt; RESP</span><br/><span class="hl-1">    RESP --&gt; USER</span><br/><br/><span class="hl-1">    style USER fill:#2196f3,color:#ffffff</span><br/><span class="hl-1">    style AUTH fill:#9c27b0,color:#ffffff</span><br/><span class="hl-1">    style SHAPE fill:#ff006e,color:#ffffff</span><br/><span class="hl-1">    style RESP fill:#4caf50,color:#000000</span>
+</code><button type="button">Copy</button></pre>
+
+<h3 id="42-bedrock-multi-modal-generation-real-time-fact-checking" class="tsd-anchor-link">4.2 Bedrock Multi-Modal Generation + Real-Time Fact-Checking<a href="#42-bedrock-multi-modal-generation-real-time-fact-checking" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<pre><code class="mermaid"><span class="hl-1">flowchart TD</span><br/><span class="hl-1">    EVT[EventBridge: parliamentary event] --&gt; SF[Step Functions orchestration]</span><br/><span class="hl-1">    SF --&gt; EXTRACT[Lambda: extract structured data]</span><br/><span class="hl-1">    EXTRACT --&gt; BR[Amazon Bedrock&lt;br/&gt;multi-modal content generation]</span><br/><span class="hl-1">    BR --&gt; DRAFT[Draft article + media]</span><br/><span class="hl-1">    DRAFT --&gt; FC[Real-time fact-check Lambda]</span><br/><span class="hl-1">    FC --&gt; KB[(Bedrock Knowledge Bases&lt;br/&gt;RAG over corpus)]</span><br/><span class="hl-1">    KB --&gt; VERDICT{Claims grounded in&lt;br/&gt;primary sources?}</span><br/><span class="hl-1">    VERDICT --&gt;|Unsupported| CORRECT[Bedrock self-correction loop] --&gt; FC</span><br/><span class="hl-1">    VERDICT --&gt;|Grounded| GUARD{Bedrock Guardrails&lt;br/&gt;neutrality + GDPR Art.9}</span><br/><span class="hl-1">    GUARD --&gt;|Violation| HOLD[Hold for human-on-the-loop review]</span><br/><span class="hl-1">    GUARD --&gt;|Pass| PUB[Publish + translate 14+ langs]</span><br/><span class="hl-1">    PUB --&gt; APIDX[Index into OpenSearch + Knowledge Base]</span><br/><br/><span class="hl-1">    style EVT fill:#2196f3,color:#ffffff</span><br/><span class="hl-1">    style BR fill:#9c27b0,color:#ffffff</span><br/><span class="hl-1">    style VERDICT fill:#ff006e,color:#ffffff</span><br/><span class="hl-1">    style HOLD fill:#ff9800,color:#000000</span><br/><span class="hl-1">    style PUB fill:#4caf50,color:#000000</span>
+</code><button type="button">Copy</button></pre>
+
+<h3 id="43-bedrock-knowledge-bases-rag-semantic-search-flow" class="tsd-anchor-link">4.3 Bedrock Knowledge-Bases RAG Semantic-Search Flow<a href="#43-bedrock-knowledge-bases-rag-semantic-search-flow" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<pre><code class="mermaid"><span class="hl-1">sequenceDiagram</span><br/><span class="hl-1">    participant U as User / agent</span><br/><span class="hl-1">    participant GW as API Gateway</span><br/><span class="hl-1">    participant L as Lambda (query)</span><br/><span class="hl-1">    participant EMB as Bedrock embeddings</span><br/><span class="hl-1">    participant OS as OpenSearch Serverless (vector)</span><br/><span class="hl-1">    participant KB as Bedrock Knowledge Base</span><br/><span class="hl-1">    participant FM as Bedrock foundation model</span><br/><br/><span class="hl-1">    U-&gt;&gt;GW: Natural-language political query</span><br/><span class="hl-1">    GW-&gt;&gt;L: Authorized request (Cognito)</span><br/><span class="hl-1">    L-&gt;&gt;EMB: Embed query</span><br/><span class="hl-1">    EMB--&gt;&gt;L: Query vector</span><br/><span class="hl-1">    L-&gt;&gt;OS: k-NN retrieve top passages (109K+ docs)</span><br/><span class="hl-1">    OS--&gt;&gt;L: Ranked passages + dok_id citations</span><br/><span class="hl-1">    L-&gt;&gt;KB: Assemble grounded context</span><br/><span class="hl-1">    KB-&gt;&gt;FM: Generate answer with citations</span><br/><span class="hl-1">    FM--&gt;&gt;L: Answer + source spans + uncertainty</span><br/><span class="hl-1">    L--&gt;&gt;GW: Cited, neutral response</span><br/><span class="hl-1">    GW--&gt;&gt;U: Answer (every claim → primary source)</span>
+</code><button type="button">Copy</button></pre>
+
+<h3 id="44-predictive-election-vote-forecasting-pipeline-step-functions" class="tsd-anchor-link">4.4 Predictive Election &amp; Vote-Forecasting Pipeline (Step Functions)<a href="#44-predictive-election-vote-forecasting-pipeline-step-functions" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<pre><code class="mermaid"><span class="hl-1">flowchart TD</span><br/><span class="hl-1">    TRIG[Scheduled / event trigger] --&gt; ING[Ingest features&lt;br/&gt;votes · polls · IMF macro · agenda]</span><br/><span class="hl-1">    ING --&gt; FE[Feature engineering Lambda]</span><br/><span class="hl-1">    FE --&gt; MODEL[Bedrock + custom models&lt;br/&gt;election &amp; vote forecasting]</span><br/><span class="hl-1">    MODEL --&gt; CAL[Calibrate uncertainty&lt;br/&gt;scenario tree per horizon]</span><br/><span class="hl-1">    CAL --&gt; WEP{Word-of-estimative-probability&lt;br/&gt;ceiling per horizon band}</span><br/><span class="hl-1">    WEP --&gt;|Exceeds ceiling for horizon| DOWN[Downgrade confidence]</span><br/><span class="hl-1">    WEP --&gt;|Within band| SCEN[Emit 4-scenario + wildcard set]</span><br/><span class="hl-1">    DOWN --&gt; SCEN</span><br/><span class="hl-1">    SCEN --&gt; PIR[Roll forward PIRs to longer horizons]</span><br/><span class="hl-1">    PIR --&gt; STORE[(Timestream + DynamoDB)]</span><br/><span class="hl-1">    STORE --&gt; PUBF[Publish forecast products + API]</span><br/><br/><span class="hl-1">    style TRIG fill:#2196f3,color:#ffffff</span><br/><span class="hl-1">    style MODEL fill:#9c27b0,color:#ffffff</span><br/><span class="hl-1">    style WEP fill:#ff006e,color:#ffffff</span><br/><span class="hl-1">    style PUBF fill:#4caf50,color:#000000</span>
+</code><button type="button">Copy</button></pre>
+
+<h3 id="45-real-time-streaming-multi-source-data-fusion" class="tsd-anchor-link">4.5 Real-Time Streaming &amp; Multi-Source Data Fusion<a href="#45-real-time-streaming-multi-source-data-fusion" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<pre><code class="mermaid"><span class="hl-1">flowchart LR</span><br/><span class="hl-1">    SRC1[Riksdagen live feed] --&gt; KIN[Amazon Kinesis streams]</span><br/><span class="hl-1">    SRC2[Regeringen updates] --&gt; KIN</span><br/><span class="hl-1">    SRC3[SCB / IMF releases] --&gt; KIN</span><br/><span class="hl-1">    SRC4[CIA platform deltas] --&gt; KIN</span><br/><span class="hl-1">    KIN --&gt; KDA[Kinesis Data Analytics&lt;br/&gt;windowed enrichment]</span><br/><span class="hl-1">    KDA --&gt; FUSE[Fusion Lambda&lt;br/&gt;entity resolution + dedup]</span><br/><span class="hl-1">    FUSE --&gt; EB[EventBridge bus]</span><br/><span class="hl-1">    EB --&gt; R1[Trigger fact-check]</span><br/><span class="hl-1">    EB --&gt; R2[Update forecasts]</span><br/><span class="hl-1">    EB --&gt; R3[Refresh dashboards / API cache]</span><br/><span class="hl-1">    R1 --&gt; STORE[(Aurora SLv2 · Neptune · OpenSearch · Timestream)]</span><br/><span class="hl-1">    R2 --&gt; STORE</span><br/><span class="hl-1">    R3 --&gt; STORE</span><br/><br/><span class="hl-1">    style KIN fill:#ff9800,color:#000000</span><br/><span class="hl-1">    style FUSE fill:#9c27b0,color:#ffffff</span><br/><span class="hl-1">    style EB fill:#2196f3,color:#ffffff</span><br/><span class="hl-1">    style STORE fill:#4caf50,color:#000000</span>
+</code><button type="button">Copy</button></pre>
+
+<h3 id="46-personalized-feed-flow-cognito-identity-privacy-preserving" class="tsd-anchor-link">4.6 Personalized Feed Flow (Cognito identity, privacy-preserving)<a href="#46-personalized-feed-flow-cognito-identity-privacy-preserving" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<pre><code class="mermaid"><span class="hl-1">flowchart TD</span><br/><span class="hl-1">    LOGIN[User sign-in via Cognito] --&gt; CONSENT{Explicit consent&lt;br/&gt;GDPR Art. 9}</span><br/><span class="hl-1">    CONSENT --&gt;|Declined| ANON[Serve neutral default feed]</span><br/><span class="hl-1">    CONSENT --&gt;|Granted| PREF[Store minimal preferences&lt;br/&gt;data minimisation]</span><br/><span class="hl-1">    PREF --&gt; RECO[Bedrock recommendation&lt;br/&gt;topic / committee / region]</span><br/><span class="hl-1">    RECO --&gt; NEU{Neutrality filter&lt;br/&gt;no partisan amplification}</span><br/><span class="hl-1">    NEU --&gt;|Skew detected| REBAL[Rebalance feed] --&gt; RECO</span><br/><span class="hl-1">    NEU --&gt;|Balanced| FEED[Personalized intelligence feed]</span><br/><span class="hl-1">    ANON --&gt; FEED</span><br/><span class="hl-1">    FEED --&gt; RIGHTS[Honour access / erasure rights]</span><br/><br/><span class="hl-1">    style LOGIN fill:#2196f3,color:#ffffff</span><br/><span class="hl-1">    style CONSENT fill:#ff006e,color:#ffffff</span><br/><span class="hl-1">    style NEU fill:#ff006e,color:#ffffff</span><br/><span class="hl-1">    style FEED fill:#4caf50,color:#000000</span>
+</code><button type="button">Copy</button></pre>
+
+<h3 id="47-continuous-model-improvement-federated-learning" class="tsd-anchor-link">4.7 Continuous Model Improvement + Federated Learning<a href="#47-continuous-model-improvement-federated-learning" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<pre><code class="mermaid"><span class="hl-1">flowchart TD</span><br/><span class="hl-1">    SIG[Signals: corrections · gate fails · user feedback] --&gt; EVAL[Bedrock model evaluation harness]</span><br/><span class="hl-1">    EVAL --&gt; FED{Federated / privacy-preserving&lt;br/&gt;training applicable?}</span><br/><span class="hl-1">    FED --&gt;|Yes| LOCAL[Local gradient aggregation&lt;br/&gt;differential privacy noise]</span><br/><span class="hl-1">    FED --&gt;|No| CENTRAL[Centralised eval set&lt;br/&gt;public data only]</span><br/><span class="hl-1">    LOCAL --&gt; CAND[Candidate model]</span><br/><span class="hl-1">    CENTRAL --&gt; CAND</span><br/><span class="hl-1">    CAND --&gt; SHADOW[Shadow run 7 days&lt;br/&gt;parallel to production]</span><br/><span class="hl-1">    SHADOW --&gt; QG{Quality gate pass?}</span><br/><span class="hl-1">    QG --&gt;|No| ROLLBACK[Retain current model]</span><br/><span class="hl-1">    QG --&gt;|Yes| ROLLOUT[Gradual rollout 5%→25%→100%]</span><br/><span class="hl-1">    ROLLOUT --&gt; DOC[Update model-card + docs]</span><br/><br/><span class="hl-1">    style SIG fill:#2196f3,color:#ffffff</span><br/><span class="hl-1">    style FED fill:#ff006e,color:#ffffff</span><br/><span class="hl-1">    style SHADOW fill:#9c27b0,color:#ffffff</span><br/><span class="hl-1">    style ROLLOUT fill:#4caf50,color:#000000</span><br/><span class="hl-1">    style ROLLBACK fill:#ff9800,color:#000000</span>
+</code><button type="button">Copy</button></pre>
+
+<h3 id="48-crowdsourced-fact-checking-flow-human-in-the-loop" class="tsd-anchor-link">4.8 Crowdsourced Fact-Checking Flow (human-in-the-loop)<a href="#48-crowdsourced-fact-checking-flow-human-in-the-loop" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<pre><code class="mermaid"><span class="hl-1">flowchart TD</span><br/><span class="hl-1">    PUBL[Published claim] --&gt; SUBMIT[Contributor submits challenge&lt;br/&gt;via Cognito-auth portal]</span><br/><span class="hl-1">    SUBMIT --&gt; SPAM{Anti-abuse + reputation check}</span><br/><span class="hl-1">    SPAM --&gt;|Reject| DENY[Discard]</span><br/><span class="hl-1">    SPAM --&gt;|Accept| TRIAGE[Bedrock triage&lt;br/&gt;cluster + evidence-match]</span><br/><span class="hl-1">    TRIAGE --&gt; EVID{Primary-source evidence?}</span><br/><span class="hl-1">    EVID --&gt;|No| CLOSE[Close — insufficient evidence]</span><br/><span class="hl-1">    EVID --&gt;|Yes| REVIEW[Human-on-the-loop adjudication]</span><br/><span class="hl-1">    REVIEW --&gt; DECIDE{Upheld?}</span><br/><span class="hl-1">    DECIDE --&gt;|Yes| CORRECT[Issue correction + audit entry]</span><br/><span class="hl-1">    DECIDE --&gt;|No| EXPLAIN[Document rationale]</span><br/><span class="hl-1">    CORRECT --&gt; KBUPD[Update Knowledge Base + reputation]</span><br/><br/><span class="hl-1">    style PUBL fill:#2196f3,color:#ffffff</span><br/><span class="hl-1">    style EVID fill:#ff006e,color:#ffffff</span><br/><span class="hl-1">    style REVIEW fill:#9c27b0,color:#ffffff</span><br/><span class="hl-1">    style CORRECT fill:#4caf50,color:#000000</span><br/><span class="hl-1">    style DENY fill:#f44336,color:#ffffff</span>
+</code><button type="button">Copy</button></pre>
+
+<hr>
+<h2 id="4a-🛰️-political-intelligence-cycle-process-flows-osintintop-to-2037" class="tsd-anchor-link">4A. 🛰️ Political-Intelligence Cycle Process Flows (OSINT/INTOP, to 2037)<a href="#4a-🛰️-political-intelligence-cycle-process-flows-osintintop-to-2037" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<blockquote>
+<p>These flows realize the <a href="FUTURE_MINDMAP.html#-theme--political-intelligence-capability-catalog-to-2037--the-master-osintintop-map">Political-Intelligence Capability Catalog</a> (C1–C32) as the <strong>intelligence cycle</strong> — Direction → Collection → Processing → Analysis → Production → Dissemination → Feedback. The current platform runs a strong <strong>single-source, build-time, document-centric</strong> version of this cycle; the flows below add the <strong>fusion, warning, continuous-calibration and counter-AI</strong> loops that are missing today. Every loop keeps a <strong>human-on-the-loop checkpoint</strong>, an <strong>evidence/provenance anchor</strong>, and a <strong>party-symmetry/neutrality gate</strong> before anything is published.</p>
+</blockquote>
+<h3 id="4a1-master-intelligence-cycle-loop" class="tsd-anchor-link">4A.1 Master intelligence-cycle loop<a href="#4a1-master-intelligence-cycle-loop" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<pre><code class="mermaid"><span class="hl-1">flowchart LR</span><br/><span class="hl-1">    DIR[🎯 Direction&lt;br/&gt;PIRs and tripwires] --&gt; COL[📡 Collection&lt;br/&gt;multi-source OSINT]</span><br/><span class="hl-1">    COL --&gt; PROC[⚙️ Processing&lt;br/&gt;entity-resolve plus provenance]</span><br/><span class="hl-1">    PROC --&gt; FUSE[🔗 Fusion&lt;br/&gt;multi-INT graph]</span><br/><span class="hl-1">    FUSE --&gt; ANAL[🧠 Analysis&lt;br/&gt;SAT plus forecasting]</span><br/><span class="hl-1">    ANAL --&gt; PROD[📝 Production&lt;br/&gt;estimative products]</span><br/><span class="hl-1">    PROD --&gt; NEUT{Neutrality plus&lt;br/&gt;evidence gate}</span><br/><span class="hl-1">    NEUT --&gt;|Fail| ANAL</span><br/><span class="hl-1">    NEUT --&gt;|Pass| DISS[📤 Dissemination&lt;br/&gt;COP plus briefings]</span><br/><span class="hl-1">    DISS --&gt; FB[🔄 Feedback&lt;br/&gt;calibration plus retasking]</span><br/><span class="hl-1">    FB --&gt; DIR</span><br/><br/><span class="hl-1">    style DIR fill:#9c27b0,color:#ffffff</span><br/><span class="hl-1">    style FUSE fill:#2196f3,color:#ffffff</span><br/><span class="hl-1">    style NEUT fill:#ff006e,color:#ffffff</span><br/><span class="hl-1">    style DISS fill:#4caf50,color:#000000</span><br/><span class="hl-1">    style FB fill:#ff9800,color:#000000</span>
+</code><button type="button">Copy</button></pre>
+
+<h3 id="4a2-multi-int-fusion-entity-resolution-flow-c1--c6" class="tsd-anchor-link">4A.2 Multi-INT fusion &amp; entity-resolution flow (C1 / C6)<a href="#4a2-multi-int-fusion-entity-resolution-flow-c1--c6" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<pre><code class="mermaid"><span class="hl-1">flowchart TD</span><br/><span class="hl-1">    SRC[Public sources&lt;br/&gt;riksdag plus registers plus discourse] --&gt; NORM[Normalize plus stamp provenance]</span><br/><span class="hl-1">    NORM --&gt; ER{Entity match?&lt;br/&gt;deterministic plus embedding}</span><br/><span class="hl-1">    ER --&gt;|Ambiguous| HOLD[Hold for human review]</span><br/><span class="hl-1">    ER --&gt;|Resolved| CANON[Canonical entity ID]</span><br/><span class="hl-1">    CANON --&gt; EDGE[Build fusion edge&lt;br/&gt;plus Admiralty grade]</span><br/><span class="hl-1">    EDGE --&gt; GRADE{Evidence-anchored?&lt;br/&gt;dok_id present}</span><br/><span class="hl-1">    GRADE --&gt;|No| DROP[Reject — no analytic record]</span><br/><span class="hl-1">    GRADE --&gt;|Yes| GRAPH[Multi-INT fusion graph]</span><br/><span class="hl-1">    GRAPH --&gt; SAL[Salience plus neutrality note]</span><br/><span class="hl-1">    SAL --&gt; COP[Common Operating Picture]</span><br/><br/><span class="hl-1">    style SRC fill:#2196f3,color:#ffffff</span><br/><span class="hl-1">    style ER fill:#ff006e,color:#ffffff</span><br/><span class="hl-1">    style GRADE fill:#ff006e,color:#ffffff</span><br/><span class="hl-1">    style DROP fill:#f44336,color:#ffffff</span><br/><span class="hl-1">    style COP fill:#4caf50,color:#000000</span>
+</code><button type="button">Copy</button></pre>
+
+<h3 id="4a3-indications-warning-tripwire-flow-c14" class="tsd-anchor-link">4A.3 Indications &amp; Warning tripwire flow (C14)<a href="#4a3-indications-warning-tripwire-flow-c14" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<pre><code class="mermaid"><span class="hl-1">flowchart TD</span><br/><span class="hl-1">    STREAM[Continuous public-data stream] --&gt; IND[Compute indicators&lt;br/&gt;cohesion, motions, calendar]</span><br/><span class="hl-1">    IND --&gt; TW{Threshold breached?}</span><br/><span class="hl-1">    TW --&gt;|No| STREAM</span><br/><span class="hl-1">    TW --&gt;|Yes| LEVEL[Set warning level&lt;br/&gt;watch / elevated / high]</span><br/><span class="hl-1">    LEVEL --&gt; WEP[Attach calibrated probability&lt;br/&gt;ICD-203 lexicon]</span><br/><span class="hl-1">    WEP --&gt; HUM{Human triage}</span><br/><span class="hl-1">    HUM --&gt;|False alarm| TUNE[Tune threshold plus log]</span><br/><span class="hl-1">    HUM --&gt;|Confirm| RETASK[Re-task fusion plus forecasting]</span><br/><span class="hl-1">    RETASK --&gt; BRIEF[Warning note to watchers]</span><br/><span class="hl-1">    TUNE --&gt; STREAM</span><br/><br/><span class="hl-1">    style STREAM fill:#2196f3,color:#ffffff</span><br/><span class="hl-1">    style TW fill:#ff006e,color:#ffffff</span><br/><span class="hl-1">    style HUM fill:#9c27b0,color:#ffffff</span><br/><span class="hl-1">    style BRIEF fill:#4caf50,color:#000000</span>
+</code><button type="button">Copy</button></pre>
+
+<h3 id="4a4-forecasting-continuous-calibration-loop-c13--c29" class="tsd-anchor-link">4A.4 Forecasting &amp; continuous-calibration loop (C13 / C29)<a href="#4a4-forecasting-continuous-calibration-loop-c13--c29" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<pre><code class="mermaid"><span class="hl-1">flowchart TD</span><br/><span class="hl-1">    PIR[Forecasting question / PIR] --&gt; ASSUME[Key-assumptions check]</span><br/><span class="hl-1">    ASSUME --&gt; MODEL[Ensemble forecast&lt;br/&gt;stats plus LLM scenarios]</span><br/><span class="hl-1">    MODEL --&gt; WEPF[Express as WEP plus point p]</span><br/><span class="hl-1">    WEPF --&gt; PUBF[Publish forecast plus assumptions]</span><br/><span class="hl-1">    PUBF --&gt; WAIT[Await resolution]</span><br/><span class="hl-1">    WAIT --&gt; RES{Event resolved?}</span><br/><span class="hl-1">    RES --&gt;|No| WAIT</span><br/><span class="hl-1">    RES --&gt;|Yes| SCORE[Brier-score plus update ledger]</span><br/><span class="hl-1">    SCORE --&gt; CAL{Calibration drifting?}</span><br/><span class="hl-1">    CAL --&gt;|Yes| RETRAIN[Retrain plus re-weight ensemble]</span><br/><span class="hl-1">    CAL --&gt;|No| PIR</span><br/><span class="hl-1">    RETRAIN --&gt; PIR</span><br/><br/><span class="hl-1">    style PIR fill:#9c27b0,color:#ffffff</span><br/><span class="hl-1">    style RES fill:#ff006e,color:#ffffff</span><br/><span class="hl-1">    style SCORE fill:#2196f3,color:#ffffff</span><br/><span class="hl-1">    style CAL fill:#ff006e,color:#ffffff</span><br/><span class="hl-1">    style RETRAIN fill:#ff9800,color:#000000</span>
+</code><button type="button">Copy</button></pre>
+
+<h3 id="4a5-fimi-influence-early-warning-flow-c20--aggregate-non-accusatory" class="tsd-anchor-link">4A.5 FIMI / influence early-warning flow (C20) — aggregate, non-accusatory<a href="#4a5-fimi-influence-early-warning-flow-c20--aggregate-non-accusatory" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<pre><code class="mermaid"><span class="hl-1">flowchart TD</span><br/><span class="hl-1">    DISC[Aggregate public discourse] --&gt; FRAME[Detect narrative frames&lt;br/&gt;DISARM TTPs]</span><br/><span class="hl-1">    FRAME --&gt; COORD{Coordination signal?&lt;br/&gt;network-level only}</span><br/><span class="hl-1">    COORD --&gt;|No| LOG[Log frame, no alert]</span><br/><span class="hl-1">    COORD --&gt;|Yes| ATTR[Attribution confidence&lt;br/&gt;low/med, WEP-qualified]</span><br/><span class="hl-1">    ATTR --&gt; ETH{Ethics gate&lt;br/&gt;no citizen profiling}</span><br/><span class="hl-1">    ETH --&gt;|Fail| HALT[Halt — privacy breach risk]</span><br/><span class="hl-1">    ETH --&gt;|Pass| ADV[Advisory signal to analysts]</span><br/><span class="hl-1">    ADV --&gt; HUM[Human-on-the-loop framing]</span><br/><span class="hl-1">    HUM --&gt; BRIEFF[Contextual briefing, not accusation]</span><br/><br/><span class="hl-1">    style DISC fill:#2196f3,color:#ffffff</span><br/><span class="hl-1">    style COORD fill:#ff006e,color:#ffffff</span><br/><span class="hl-1">    style ETH fill:#ff006e,color:#ffffff</span><br/><span class="hl-1">    style HALT fill:#f44336,color:#ffffff</span><br/><span class="hl-1">    style BRIEFF fill:#4caf50,color:#000000</span>
+</code><button type="button">Copy</button></pre>
+
+<h3 id="4a6-counter-ai-analytic-integrity-gate-c26c32" class="tsd-anchor-link">4A.6 Counter-AI &amp; analytic-integrity gate (C26–C32)<a href="#4a6-counter-ai-analytic-integrity-gate-c26c32" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<pre><code class="mermaid"><span class="hl-1">flowchart TD</span><br/><span class="hl-1">    IN[AI-assisted analytic step] --&gt; INJ{Prompt-injection /&lt;br/&gt;poisoning screen}</span><br/><span class="hl-1">    INJ --&gt;|Detected| QUAR[Quarantine input plus alert]</span><br/><span class="hl-1">    INJ --&gt;|Clean| PROV{Provenance plus C2PA valid?}</span><br/><span class="hl-1">    PROV --&gt;|No| REFUSE[Refuse to cite]</span><br/><span class="hl-1">    PROV --&gt;|Yes| SAT[SAT-assisted reasoning&lt;br/&gt;ACH plus devil&#39;s advocate]</span><br/><span class="hl-1">    SAT --&gt; SYM{Party-symmetry audit}</span><br/><span class="hl-1">    SYM --&gt;|Asymmetric| REWORK[Rebalance plus re-review]</span><br/><span class="hl-1">    SYM --&gt;|Symmetric| ICD{ICD-203 compliance?}</span><br/><span class="hl-1">    ICD --&gt;|No| REWORK</span><br/><span class="hl-1">    ICD --&gt;|Yes| SIGN[Human sign-off plus publish]</span><br/><br/><span class="hl-1">    style IN fill:#2196f3,color:#ffffff</span><br/><span class="hl-1">    style INJ fill:#ff006e,color:#ffffff</span><br/><span class="hl-1">    style PROV fill:#ff006e,color:#ffffff</span><br/><span class="hl-1">    style SYM fill:#ff006e,color:#ffffff</span><br/><span class="hl-1">    style REFUSE fill:#f44336,color:#ffffff</span><br/><span class="hl-1">    style SIGN fill:#4caf50,color:#000000</span>
+</code><button type="button">Copy</button></pre>
+
+<hr>
+<h2 id="5-🛡️-isms-ai-policy-compliance-flows" class="tsd-anchor-link">5. 🛡️ ISMS &amp; AI-Policy Compliance Flows<a href="#5-🛡️-isms-ai-policy-compliance-flows" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<p>Compliance is a <strong>gate in every horizon</strong>, mapped to ISO 27001:2022, NIST CSF 2.0 and CIS Controls v8.1, under <a href="https://github.com/Hack23/ISMS-PUBLIC">Hack23 ISMS-PUBLIC</a>.</p>
+<h3 id="51-ai-policy-compliance-workflow-all-horizons" class="tsd-anchor-link">5.1 AI-Policy Compliance Workflow (all horizons)<a href="#51-ai-policy-compliance-workflow-all-horizons" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<pre><code class="mermaid"><span class="hl-1">flowchart TD</span><br/><span class="hl-1">    START[AI-assisted process invoked] --&gt; PUB{Public data only?}</span><br/><span class="hl-1">    PUB --&gt;|No| REJECT[Reject — policy violation]</span><br/><span class="hl-1">    PUB --&gt;|Yes| LAWFUL{&quot;GDPR Art. 9 lawful basis&lt;br/&gt;9(2)(e) public / 9(2)(g) public interest&quot;}</span><br/><span class="hl-1">    LAWFUL --&gt;|None| REJECT</span><br/><span class="hl-1">    LAWFUL --&gt;|Established| NEUTRAL{Party neutrality maintained?}</span><br/><span class="hl-1">    NEUTRAL --&gt;|Skewed| REBAL[Rebalance + document] --&gt; NEUTRAL</span><br/><span class="hl-1">    NEUTRAL --&gt;|Balanced| EVID{Evidence standard met?&lt;br/&gt;dok_id / vote / named actor}</span><br/><span class="hl-1">    EVID --&gt;|No| BLOCKE[Block — generic claim]</span><br/><span class="hl-1">    EVID --&gt;|Yes| HITL{High-risk processing?}</span><br/><span class="hl-1">    HITL --&gt;|Yes| DPIA[Run DPIA + human-on-the-loop]</span><br/><span class="hl-1">    HITL --&gt;|No| LOG[Log decision + provenance]</span><br/><span class="hl-1">    DPIA --&gt; LOG</span><br/><span class="hl-1">    LOG --&gt; APPROVE[✅ Proceed]</span><br/><br/><span class="hl-1">    style START fill:#2196f3,color:#ffffff</span><br/><span class="hl-1">    style REJECT fill:#f44336,color:#ffffff</span><br/><span class="hl-1">    style BLOCKE fill:#f44336,color:#ffffff</span><br/><span class="hl-1">    style DPIA fill:#9c27b0,color:#ffffff</span><br/><span class="hl-1">    style APPROVE fill:#4caf50,color:#000000</span>
+</code><button type="button">Copy</button></pre>
+
+<h3 id="52-control-mapping-process-→-framework" class="tsd-anchor-link">5.2 Control Mapping (process → framework)<a href="#52-control-mapping-process-→-framework" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>Future process flow</th>
+<th>ISO 27001:2022</th>
+<th>NIST CSF 2.0</th>
+<th>CIS v8.1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Agentic newsroom + analysis gate</td>
+<td>A.8.25 secure SDLC, A.8.28 secure coding</td>
+<td><a href="http://PR.PS">PR.PS</a>, <a href="http://DE.CM">DE.CM</a></td>
+<td>16 App Security</td>
+</tr>
+<tr>
+<td>Multi-provider data fetch + provenance</td>
+<td>A.5.34 privacy, A.8.12 data leakage</td>
+<td><a href="http://ID.AM">ID.AM</a>, PR.DS</td>
+<td>3 Data Protection</td>
+</tr>
+<tr>
+<td>Bedrock generation + Guardrails</td>
+<td>A.5.23 cloud services</td>
+<td><a href="http://GV.SC">GV.SC</a>, PR.AA</td>
+<td>4 Secure Config</td>
+</tr>
+<tr>
+<td>API Gateway + Cognito</td>
+<td>A.8.3 access, A.8.5 auth</td>
+<td>PR.AA, <a href="http://PR.AC">PR.AC</a></td>
+<td>6 Access Control</td>
+</tr>
+<tr>
+<td>Streaming fusion + audit trail</td>
+<td>A.8.15 logging, A.8.16 monitoring</td>
+<td><a href="http://DE.CM">DE.CM</a>, <a href="http://RS.AN">RS.AN</a></td>
+<td>8 Audit Log Mgmt</td>
+</tr>
+<tr>
+<td>Federated learning + DP</td>
+<td>A.5.34 privacy, A.8.11 data masking</td>
+<td>PR.DS, GV.RM</td>
+<td>3 Data Protection</td>
+</tr>
+<tr>
+<td>Model lifecycle + rollback</td>
+<td>A.8.32 change mgmt</td>
+<td><a href="http://ID.IM">ID.IM</a>, <a href="http://PR.PS">PR.PS</a></td>
+<td>4 Secure Config</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="6-🤖-ai-model-lifecycle-evolution-flows" class="tsd-anchor-link">6. 🤖 AI Model Lifecycle &amp; Evolution Flows<a href="#6-🤖-ai-model-lifecycle-evolution-flows" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<h3 id="61-ai-model-lifecycle-management-continuous-evaluation-→-rollout" class="tsd-anchor-link">6.1 AI Model Lifecycle Management (continuous evaluation → rollout)<a href="#61-ai-model-lifecycle-management-continuous-evaluation-→-rollout" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<pre><code class="mermaid"><span class="hl-1">graph TD</span><br/><span class="hl-1">    subgraph EVAL[&quot;Continuous Model Evaluation (~quarterly cadence)&quot;]</span><br/><span class="hl-1">        A[New model release&lt;br/&gt;Opus 4.8 → 5.x → 6.x …] --&gt; B{Benchmark vs current}</span><br/><span class="hl-1">        B --&gt;|Superior| C[Shadow test — 7-day parallel run]</span><br/><span class="hl-1">        B --&gt;|Equal/Inferior| D[Document + keep current]</span><br/><span class="hl-1">        C --&gt; E{Quality gate pass?}</span><br/><span class="hl-1">        E --&gt;|Yes| F[Gradual rollout 5%→25%→100%]</span><br/><span class="hl-1">        E --&gt;|No| G[Rollback + retain current]</span><br/><span class="hl-1">        F --&gt; H[Full deploy + update model-card]</span><br/><span class="hl-1">    end</span><br/><br/><span class="hl-1">    subgraph MAJOR[&quot;Annual Major Upgrade&quot;]</span><br/><span class="hl-1">        I[Major version&lt;br/&gt;Opus 5.0 / 6.0 / 7.0 …] --&gt; J{Architecture compatible?}</span><br/><span class="hl-1">        J --&gt;|Yes| K[Enable new capabilities]</span><br/><span class="hl-1">        J --&gt;|No| L[Adapt platform + re-test]</span><br/><span class="hl-1">        K --&gt; M[Integration test — 14+ languages]</span><br/><span class="hl-1">        L --&gt; M</span><br/><span class="hl-1">        M --&gt; N[Deploy behind feature flags]</span><br/><span class="hl-1">    end</span><br/><br/><span class="hl-1">    subgraph COMP[&quot;Competitor Evaluation (quarterly)&quot;]</span><br/><span class="hl-1">        O[Review OpenAI · Google · Meta · EU sovereign AI] --&gt; P{Better per-task model?}</span><br/><span class="hl-1">        P --&gt;|Yes| Q[Multi-model via Amazon Bedrock]</span><br/><span class="hl-1">        P --&gt;|No| R[Keep provider strategy]</span><br/><span class="hl-1">        Q --&gt; S[A/B test per task type]</span><br/><span class="hl-1">    end</span><br/><br/><span class="hl-1">    subgraph PARA[&quot;Paradigm-Shift Watch (2031–2037)&quot;]</span><br/><span class="hl-1">        U[Quantum / neuromorphic / AGI signal] --&gt; V{Paradigm shift viable?}</span><br/><span class="hl-1">        V --&gt;|Yes| W[Autonomous mode + human oversight]</span><br/><span class="hl-1">        V --&gt;|Partial| X[Enhanced mode]</span><br/><span class="hl-1">        V --&gt;|No| Y[Continue annual upgrades]</span><br/><span class="hl-1">    end</span><br/><br/><span class="hl-1">    H --&gt; I</span><br/><span class="hl-1">    N --&gt; O</span><br/><span class="hl-1">    S --&gt; U</span><br/><br/><span class="hl-1">    style A fill:#00d9ff,color:#000000</span><br/><span class="hl-1">    style I fill:#ff006e,color:#ffffff</span><br/><span class="hl-1">    style O fill:#ffbe0b,color:#000000</span><br/><span class="hl-1">    style U fill:#9c27b0,color:#ffffff</span>
+</code><button type="button">Copy</button></pre>
+
+<h3 id="62-ai-model-evolution-timeline-devsecops-capability-verbatim" class="tsd-anchor-link">6.2 AI Model Evolution Timeline — DevSecOps Capability (verbatim)<a href="#62-ai-model-evolution-timeline-devsecops-capability-verbatim" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<blockquote>
+<p><strong>Assumptions:</strong> major AI-model upgrades land roughly annually; competitors (OpenAI, Google, Meta, EU sovereign AI) are re-evaluated at each release; the architecture is built to absorb paradigm shifts (quantum AI, neuromorphic computing); all transitions are governed by the <a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/AI_Policy.md">Hack23 AI Policy</a>.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Year</th>
+<th>AI Model</th>
+<th>DevSecOps Capability Evolution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2026</td>
+<td>Opus 4.6–4.9</td>
+<td>🟢 AI-assisted code review, automated test generation, agentic CI/CD workflows</td>
+</tr>
+<tr>
+<td>2027</td>
+<td>Opus 5.x</td>
+<td>🔵 Predictive vulnerability detection, intelligent dependency management</td>
+</tr>
+<tr>
+<td>2028</td>
+<td>Opus 6.x</td>
+<td>🟣 Multi-modal security analysis (code + architecture + runtime), automated threat modeling</td>
+</tr>
+<tr>
+<td>2029</td>
+<td>Opus 7.x</td>
+<td>🟠 Autonomous security pipeline orchestration, self-healing build systems</td>
+</tr>
+<tr>
+<td>2030</td>
+<td>Opus 8.x</td>
+<td>🔴 Near-expert automated security review, AI-driven architecture validation</td>
+</tr>
+<tr>
+<td>2031–2033</td>
+<td>Opus 9–10.x / Pre-AGI</td>
+<td>⚪ Autonomous secure development lifecycle management</td>
+</tr>
+<tr>
+<td>2034–2037</td>
+<td>AGI / Post-AGI</td>
+<td>⭐ Transformative software engineering with built-in security assurance</td>
+</tr>
+</tbody>
+</table>
+<h3 id="63-the-same-ai-curve-translated-into-process-terms" class="tsd-anchor-link">6.3 The Same AI Curve, Translated into Process Terms<a href="#63-the-same-ai-curve-translated-into-process-terms" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p>Each model generation unlocks a concrete change in <strong>where and how the platform processes political intelligence</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Year</th>
+<th>AI Model</th>
+<th>Process / Data-Flow Unlock (OSINT · party analytics · forecasting)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2026</td>
+<td>Opus 4.6–4.9</td>
+<td>🟢 v1.x agentic newsroom hardened; analysis-gate Pass-2 automation; 14-language translation throughput</td>
+</tr>
+<tr>
+<td>2027</td>
+<td>Opus 5.x</td>
+<td>🔵 v2.0 build-time OSINT precompute (network/temporal/anomaly) becomes reliable; party-landscape datasets auto-graded</td>
+</tr>
+<tr>
+<td>2028</td>
+<td>Opus 6.x</td>
+<td>🟣 v3.0 Bedrock multi-modal generation + real-time fact-check loop; RAG over 109K+ docs goes live</td>
+</tr>
+<tr>
+<td>2029</td>
+<td>Opus 7.x</td>
+<td>🟠 Autonomous streaming-fusion orchestration; self-correcting forecast pipelines; personalized feeds</td>
+</tr>
+<tr>
+<td>2030</td>
+<td>Opus 8.x</td>
+<td>🔴 Near-expert election/vote forecasting with calibrated uncertainty; conversational intelligence assistant</td>
+</tr>
+<tr>
+<td>2031–2033</td>
+<td>Opus 9–10.x / Pre-AGI</td>
+<td>⚪ Federated/Nordic &amp; EU-parliament expansion; cross-jurisdiction data fusion at scale</td>
+</tr>
+<tr>
+<td>2034–2037</td>
+<td>AGI / Post-AGI</td>
+<td>⭐ Transformative democratic-intelligence flows with built-in neutrality &amp; privacy assurance</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="mermaid"><span class="hl-1">flowchart LR</span><br/><span class="hl-1">    Y26[2026 Opus 4.x&lt;br/&gt;🟢 Static agentic newsroom] --&gt; Y27[2027 Opus 5.x&lt;br/&gt;🔵 Static OSINT precompute]</span><br/><span class="hl-1">    Y27 --&gt; Y28[2028 Opus 6.x&lt;br/&gt;🟣 Bedrock RAG + fact-check]</span><br/><span class="hl-1">    Y28 --&gt; Y29[2029 Opus 7.x&lt;br/&gt;🟠 Streaming fusion]</span><br/><span class="hl-1">    Y29 --&gt; Y30[2030 Opus 8.x&lt;br/&gt;🔴 Calibrated forecasting]</span><br/><span class="hl-1">    Y30 --&gt; Y33[2031–33 Pre-AGI&lt;br/&gt;⚪ Nordic/EU federation]</span><br/><span class="hl-1">    Y33 --&gt; Y37[2034–37 AGI&lt;br/&gt;⭐ Transformative flows]</span><br/><br/><span class="hl-1">    style Y26 fill:#4caf50,color:#000000</span><br/><span class="hl-1">    style Y27 fill:#2196f3,color:#ffffff</span><br/><span class="hl-1">    style Y28 fill:#9c27b0,color:#ffffff</span><br/><span class="hl-1">    style Y29 fill:#ff9800,color:#000000</span><br/><span class="hl-1">    style Y30 fill:#f44336,color:#ffffff</span><br/><span class="hl-1">    style Y33 fill:#eceff1,color:#000000</span><br/><span class="hl-1">    style Y37 fill:#ffd700,color:#000000</span>
+</code><button type="button">Copy</button></pre>
+
+<hr>
+<h2 id="7-⚡-performance-cost-optimization-flows" class="tsd-anchor-link">7. ⚡ Performance &amp; Cost-Optimization Flows<a href="#7-⚡-performance-cost-optimization-flows" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<blockquote>
+<p>All numbers are <strong>roadmap targets</strong>, not achieved metrics.</p>
+</blockquote>
+<h3 id="71-performance-targets-by-horizon" class="tsd-anchor-link">7.1 Performance Targets by Horizon<a href="#71-performance-targets-by-horizon" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>v1.x (today)</th>
+<th>v2.0 target</th>
+<th>v3.0+ target</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LCP (p95)</td>
+<td>&lt; 2.5 s</td>
+<td>&lt; 2.0 s</td>
+<td>&lt; 1.8 s (edge)</td>
+</tr>
+<tr>
+<td>Build time (full)</td>
+<td>minutes</td>
+<td>minutes (heavier precompute)</td>
+<td>n/a (runtime)</td>
+</tr>
+<tr>
+<td>API response (p95)</td>
+<td>n/a (static)</td>
+<td>n/a (static)</td>
+<td>&lt; 200 ms</td>
+</tr>
+<tr>
+<td>RAG semantic query (p95)</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>&lt; 800 ms</td>
+</tr>
+<tr>
+<td>Streaming fusion latency</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>&lt; 2 s end-to-end</td>
+</tr>
+<tr>
+<td>Forecast refresh</td>
+<td>daily build</td>
+<td>daily build</td>
+<td>event-driven (minutes)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="72-cost-optimization-decision-flow" class="tsd-anchor-link">7.2 Cost-Optimization Decision Flow<a href="#72-cost-optimization-decision-flow" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<pre><code class="mermaid"><span class="hl-1">flowchart TD</span><br/><span class="hl-1">    REQ[New capability requested] --&gt; STATIC{Can it be precomputed&lt;br/&gt;at build time?}</span><br/><span class="hl-1">    STATIC --&gt;|Yes| BUILD[Render static — near-zero runtime cost]</span><br/><span class="hl-1">    STATIC --&gt;|No| RUNTIME{Real-time demand proven?}</span><br/><span class="hl-1">    RUNTIME --&gt;|No| DEFER[Defer — keep static]</span><br/><span class="hl-1">    RUNTIME --&gt;|Yes| SERVERLESS[Serverless — pay-per-use Lambda]</span><br/><span class="hl-1">    SERVERLESS --&gt; CACHE[Cache aggressively&lt;br/&gt;edge + DynamoDB TTL]</span><br/><span class="hl-1">    CACHE --&gt; BATCH[Batch Bedrock calls off-peak]</span><br/><span class="hl-1">    BATCH --&gt; BUDGET{Within cost budget?}</span><br/><span class="hl-1">    BUDGET --&gt;|No| TUNE[Tune model tier / quotas] --&gt; BUDGET</span><br/><span class="hl-1">    BUDGET --&gt;|Yes| SHIP[Ship + monitor cost telemetry]</span><br/><br/><span class="hl-1">    style REQ fill:#2196f3,color:#ffffff</span><br/><span class="hl-1">    style BUILD fill:#4caf50,color:#000000</span><br/><span class="hl-1">    style DEFER fill:#ff9800,color:#000000</span><br/><span class="hl-1">    style SHIP fill:#4caf50,color:#000000</span>
+</code><button type="button">Copy</button></pre>
+
+<p><strong>Optimization levers:</strong> static-first default · CloudFront cache (99% hit-rate target) · Bedrock model-tier selection per task · off-peak batch generation · Brotli/gzip compression · serverless scale-to-zero · vintage-aware data caching (avoid redundant IMF/SCB fetches).</p>
+<hr>
+<h2 id="8-🌐-imf-economic-dataflow-evolution" class="tsd-anchor-link">8. 🌐 IMF Economic-Dataflow Evolution<a href="#8-🌐-imf-economic-dataflow-evolution" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<p><em>Baseline: the <strong>already-implemented</strong> IMF pipeline is documented in <a href="FLOWCHART.html#-imf-economic-data-pipeline-current-state"><code>FLOWCHART.md</code></a>. The diagram below layers future gates (vintage-age UI badge, provider-mix telemetry, RAG-indexed economic provenance) onto today's pure-TypeScript client without changing the canonical IMF-first rule.</em></p>
+<blockquote>
+<p><strong>Authoritative hub:</strong> <a href="../media/README-5.md"><code>analysis/imf/README.md</code></a> · <a href="../media/agentic-integration.md"><code>analysis/imf/agentic-integration.md</code></a> · <a href="../media/indicators-inventory.json"><code>analysis/imf/indicators-inventory.json</code></a> · <a href="../media/data-dictionary.md"><code>analysis/imf/data-dictionary.md</code></a> · <a href="../media/ECONOMIC_DATA_CONTRACT.md"><code>.github/aw/ECONOMIC_DATA_CONTRACT.md</code></a> v2.1</p>
+</blockquote>
+<pre><code class="mermaid"><span class="hl-1">flowchart LR</span><br/><span class="hl-1">    classDef primary fill:#0a4f8f,color:#fff,stroke:#00d9ff,stroke-width:2px</span><br/><span class="hl-1">    classDef secondary fill:#3a3a3a,color:#ddd,stroke:#888</span><br/><span class="hl-1">    classDef gate fill:#ff006e,color:#fff,stroke:#fff</span><br/><span class="hl-1">    classDef future fill:#9c27b0,color:#fff,stroke:#fff</span><br/><br/><span class="hl-1">    Start([news-* / forecast workflow]) --&gt; Domain{Identify economic class}</span><br/><span class="hl-1">    Domain --&gt;|Macro · Fiscal · Monetary · External · Trade| IMF[(IMF SDMX 3.0 + Datamapper&lt;br/&gt;scripts/imf-client.ts)]:::primary</span><br/><span class="hl-1">    Domain --&gt;|Governance / Environment / Social residue| WB[(World Bank)]:::secondary</span><br/><span class="hl-1">    Domain --&gt;|Swedish monthly / regional| SCB[(SCB PxWeb v2)]:::secondary</span><br/><br/><span class="hl-1">    IMF --&gt; Vintage{Vintage &gt; 6 months?}:::gate</span><br/><span class="hl-1">    Vintage --&gt;|Yes| Annotate[Annotate stale + downgrade confidence]</span><br/><span class="hl-1">    Vintage --&gt;|No| Cache[Cache: vintage-tagged · SHA-256 pinned]</span><br/><span class="hl-1">    Annotate --&gt; Cache</span><br/><span class="hl-1">    Cache --&gt; Provenance[Emit economicProvenance&lt;br/&gt;provider · dataflow · indicator · vintage]</span><br/><span class="hl-1">    WB --&gt; Cache</span><br/><span class="hl-1">    SCB --&gt; Cache</span><br/><br/><span class="hl-1">    Provenance --&gt; Compose[Article / forecast composition]</span><br/><span class="hl-1">    Compose --&gt; Lint{IMF-first lint}:::gate</span><br/><span class="hl-1">    Lint --&gt;|WB economic citation w/o IMF cross-ref| Reject([Block — open issue])</span><br/><span class="hl-1">    Lint --&gt;|Pass| Publish([Publish])</span><br/><br/><span class="hl-1">    Publish --&gt; FutBadge[v2.0: vintage-age UI badge&lt;br/&gt;+ provider-mix telemetry]:::future</span><br/><span class="hl-1">    Publish --&gt; FutRAG[v3.0+: index economicProvenance&lt;br/&gt;into Bedrock Knowledge Base]:::future</span><br/><br/><span class="hl-1">    style Start fill:#2196f3,color:#ffffff</span><br/><span class="hl-1">    style Publish fill:#4caf50,color:#000000</span>
+</code><button type="button">Copy</button></pre>
+
+<h3 id="provider-decision-matrix" class="tsd-anchor-link">Provider decision matrix<a href="#provider-decision-matrix" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>Indicator class</th>
+<th>Primary</th>
+<th>Secondary</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Macro (GDP, growth, unemployment, inflation, fiscal balance, debt, current account)</td>
+<td><strong>IMF WEO + Fiscal Monitor</strong></td>
+<td>SCB (Sweden monthly)</td>
+<td>Freshness + T+5 projections; SNA 2008 / GFSM 2014 / BPM6 comparability</td>
+</tr>
+<tr>
+<td>Bilateral trade flows</td>
+<td><strong>IMF DOTS</strong></td>
+<td>—</td>
+<td>Partner-country dimension, monthly cadence</td>
+</tr>
+<tr>
+<td>Monthly inflation, policy rates</td>
+<td><strong>IMF IFS / MFS_IR</strong></td>
+<td>SCB / Riksbank</td>
+<td>Standardised cross-country</td>
+</tr>
+<tr>
+<td>Government spending by function (defence/health/education/social protection)</td>
+<td><strong>IMF GFS_COFOG</strong></td>
+<td>—</td>
+<td>Committee-aligned (FöU/SoU/UbU/SfU)</td>
+</tr>
+<tr>
+<td>Commodity prices, exchange rates</td>
+<td><strong>IMF PCPS / ER</strong></td>
+<td>—</td>
+<td>Canonical benchmarks</td>
+</tr>
+<tr>
+<td>Governance (CC.EST, RL.EST, VA.EST, GE.EST, RQ.EST, PV.EST)</td>
+<td><strong>World Bank WGI</strong></td>
+<td>—</td>
+<td>IMF has no equivalent</td>
+</tr>
+<tr>
+<td>Environment (CO2, renewables, forest, water)</td>
+<td><strong>World Bank</strong></td>
+<td>—</td>
+<td>IMF has no equivalent</td>
+</tr>
+<tr>
+<td>Social/education residue (literacy, school participation, gender ratios)</td>
+<td><strong>World Bank</strong></td>
+<td>GFS_COFOG 09</td>
+<td>IMF has no equivalent</td>
+</tr>
+<tr>
+<td>Defence spending depth (long historicals)</td>
+<td><strong>World Bank MS.MIL.</strong>*</td>
+<td>GFS_COFOG 02</td>
+<td>WB deeper history</td>
+</tr>
+<tr>
+<td>Swedish ground truth (monthly labour, regional, budget execution)</td>
+<td><strong>SCB</strong></td>
+<td>—</td>
+<td>National statistics authority</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Canonical rule (unchanged across horizons).</strong> Every economic claim cites an IMF dataflow first; World Bank citations are reserved for governance, environment and social residue; SCB is the Swedish-specific ground-truth layer. In v3.0+, this same provenance is <strong>indexed into the Bedrock Knowledge Base</strong> so RAG answers inherit the IMF-first discipline. See <code>ECONOMIC_DATA_CONTRACT.md</code> v2.1 for the banned-phrase list and vintage discipline (&gt;6 mo → annotation).</p>
+<hr>
+<h2 id="📝-document-control" class="tsd-anchor-link">📝 Document Control<a href="#📝-document-control" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<p><strong>Version History:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Version</th>
+<th>Date</th>
+<th>Changes</th>
+<th>Author</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.0</td>
+<td>2026-02-15</td>
+<td>Initial creation with 10+ comprehensive future flowcharts</td>
+<td>Hack23 Documentation Team</td>
+</tr>
+<tr>
+<td>2.0</td>
+<td>2026-02-24</td>
+<td>Extended to 2037 vision, AI/LLM evolution flow, AGI planning</td>
+<td>Hack23 Documentation Team</td>
+</tr>
+<tr>
+<td>3.0</td>
+<td>2026-05-31</td>
+<td>Full refresh &amp; re-alignment to v1.0.x baseline (<a href="FLOWCHART.html">FLOWCHART.md</a>); restructured into three explicit horizons (v1.x static agentic newsroom → v2.0 static deepening → v3.0+ AWS serverless); added build-time OSINT/party-landscape &amp; INTOP flows; AWS-serverless runtime flows (API Gateway, Lambda, Step Functions, EventBridge, Kinesis, <strong>Bedrock</strong>, <strong>Knowledge Bases RAG</strong>, <strong>Cognito</strong>); AI Model Evolution table verbatim + process translation; refreshed IMF dataflow evolution</td>
+<td>Hack23 Intelligence-Operative Agent</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Review Schedule:</strong></p>
+<ul>
+<li>Quarterly review aligned with FUTURE_ARCHITECTURE.md and FUTURE_SECURITY_ARCHITECTURE.md</li>
+<li>Updated as capabilities reach implementation milestones and horizon-gates are crossed</li>
+</ul>
+<p><strong>Classification:</strong> Public<br>
+<strong>Distribution:</strong> Unrestricted<br>
+<strong>Repository:</strong> <a href="https://github.com/Hack23/riksdagsmonitor">https://github.com/Hack23/riksdagsmonitor</a><br>
+<strong>Path:</strong> /FUTURE_FLOWCHART.md<br>
+<strong>Format:</strong> Markdown with Mermaid diagrams<br>
+<strong>Next Review:</strong> 2026-08-31</p>
+<hr>
+<h2 id="📚-related-documentation" class="tsd-anchor-link">📚 Related Documentation<a href="#📚-related-documentation" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<h3 id="current-state-baseline-this-doc-builds-on" class="tsd-anchor-link">Current State (baseline this doc builds on)<a href="#current-state-baseline-this-doc-builds-on" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul>
+<li><strong><a href="FLOWCHART.html">FLOWCHART.md</a></strong> — current process flows &amp; pipelines (direct baseline)</li>
+<li><strong><a href="ARCHITECTURE.html">ARCHITECTURE.md</a></strong> — current system architecture (C4 model)</li>
+<li><strong><a href="DATA_MODEL.html">DATA_MODEL.md</a></strong> — current data structures</li>
+<li><strong><a href="STATEDIAGRAM.html">STATEDIAGRAM.md</a></strong> — current state transitions</li>
+<li><strong><a href="WORKFLOWS.html">WORKFLOWS.md</a></strong> — CI/CD automation</li>
+<li><strong><a href="SECURITY_ARCHITECTURE.html">SECURITY_ARCHITECTURE.md</a></strong> — current security controls</li>
+</ul>
+<h3 id="future-vision-sibling-future_-docs" class="tsd-anchor-link">Future Vision (sibling FUTURE_* docs)<a href="#future-vision-sibling-future_-docs" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul>
+<li><strong><a href="FUTURE_ARCHITECTURE.html">FUTURE_ARCHITECTURE.md</a></strong> — architectural evolution roadmap</li>
+<li><strong><a href="FUTURE_DATA_MODEL.html">FUTURE_DATA_MODEL.md</a></strong> — enhanced data architecture</li>
+<li><strong><a href="FUTURE_STATEDIAGRAM.html">FUTURE_STATEDIAGRAM.md</a></strong> — advanced state management</li>
+<li><strong><a href="FUTURE_MINDMAP.html">FUTURE_MINDMAP.md</a></strong> — future capability map</li>
+<li><strong><a href="FUTURE_SWOT.html">FUTURE_SWOT.md</a></strong> — strategic outlook</li>
+<li><strong><a href="FUTURE_SECURITY_ARCHITECTURE.html">FUTURE_SECURITY_ARCHITECTURE.md</a></strong> — security evolution roadmap</li>
+</ul>
+<h3 id="isms-compliance" class="tsd-anchor-link">ISMS &amp; Compliance<a href="#isms-compliance" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul>
+<li><strong><a href="https://github.com/Hack23/ISMS-PUBLIC/">Hack23 ISMS-PUBLIC</a></strong> — Information Security Management System</li>
+<li><strong><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/AI_Policy.md">AI Policy</a></strong> — AI governance and ethics</li>
+<li><strong><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md">Secure Development Policy</a></strong> — SDLC security</li>
+<li><strong><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md">Classification Framework</a></strong> — data and system classification</li>
+</ul>
+<h3 id="cia-platform-standards" class="tsd-anchor-link">CIA Platform &amp; Standards<a href="#cia-platform-standards" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul>
+<li><strong><a href="https://www.hack23.com/cia">CIA Platform</a></strong> — Citizen Intelligence Agency (data source)</li>
+<li><strong><a href="https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai">EU AI Act</a></strong> · <strong><a href="https://gdpr.eu/">GDPR</a></strong> · <strong><a href="https://www.iso.org/isoiec-27001-information-security.html">ISO 27001</a></strong> · <strong><a href="https://www.nist.gov/itl/ai-risk-management-framework">NIST AI RMF</a></strong></li>
+</ul>
+<hr>
+<p align="center">
+  <strong>🌐 Riksdagsmonitor — Building the Future of Democratic Transparency</strong><br>
+  <em>Powered by AI, Grounded in Privacy, Committed to Democracy</em>
+</p>
+<p align="center">
+  <a href="https://www.riksdagsmonitor.se">Website</a> ·
+  <a href="https://github.com/Hack23/riksdagsmonitor">GitHub</a> ·
+  <a href="https://www.hack23.com/cia">CIA Platform</a> ·
+  <a href="https://github.com/Hack23/ISMS-PUBLIC">ISMS</a>
+</p>
+<hr>
+<p><strong>📋 Document Control:</strong><br>
+<strong>✅ Approved by:</strong> James Pether Sörling, CEO<br>
+<strong>📤 Distribution:</strong> Public<br>
+<strong>🏷️ Classification:</strong> <a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#confidentiality-levels"><img src="https://img.shields.io/badge/C-Public-lightgrey?style=flat-square" alt="Confidentiality: Public"></a><br>
+<strong>📅 Effective Date:</strong> 2026-05-31<br>
+<strong>⏰ Next Review:</strong> 2026-08-31<br>
+<strong>🎯 Framework Compliance:</strong> <a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md"><img src="https://img.shields.io/badge/ISO_27001-2022_Aligned-blue?style=flat-square&amp;logo=iso&amp;logoColor=white" alt="ISO 27001"></a> <a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md"><img src="https://img.shields.io/badge/NIST_CSF-2.0_Aligned-green?style=flat-square&amp;logo=nist&amp;logoColor=white" alt="NIST CSF 2.0"></a> <a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md"><img src="https://img.shields.io/badge/CIS_Controls-v8.1_Aligned-orange?style=flat-square&amp;logo=cisecurity&amp;logoColor=white" alt="CIS Controls"></a></p>
+<hr>
+<h2 id="🔗-hack23-ecosystem" class="tsd-anchor-link">🔗 Hack23 Ecosystem<a href="#🔗-hack23-ecosystem" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<table>
+<tr>
+  <th width="33%">🌐 Platforms</th>
+  <th width="33%">📦 Open-Source Projects</th>
+  <th width="33%">🛡️ Governance &amp; Standards</th>
+</tr>
+<tr>
+<td valign="top">
+🗳️ <a href="https://riksdagsmonitor.com">Riksdagsmonitor</a> — Swedish Parliament intelligence<br>
+🇪🇺 <a href="https://www.euparliamentmonitor.com">EU Parliament Monitor</a> — European coverage<br>
+🕵️ <a href="https://www.hack23.com/cia">Citizen Intelligence Agency</a> — political-data engine<br>
+🌐 <a href="https://www.hack23.com">Hack23 AB</a> — corporate site<br>
+📰 <a href="https://hack23.com/blog.html">Hack23 Blog</a> — engineering &amp; policy<br>
+💼 <a href="https://www.linkedin.com/company/hack23/">Hack23 on LinkedIn</a>
+</td>
+<td valign="top">
+🗳️ <a href="https://github.com/Hack23/riksdagsmonitor">Hack23/riksdagsmonitor</a><br>
+🕵️ <a href="https://github.com/Hack23/cia">Hack23/cia</a><br>
+🇪🇺 <a href="https://github.com/Hack23/euparliamentmonitor">Hack23/euparliamentmonitor</a><br>
+🔌 <a href="https://github.com/Hack23/european-parliament-mcp">Hack23/european-parliament-mcp</a><br>
+✅ <a href="https://github.com/Hack23/cia-compliance-manager">Hack23/cia-compliance-manager</a><br>
+🥋 <a href="https://github.com/Hack23/black-trigram">Hack23/black-trigram</a><br>
+🏠 <a href="https://github.com/Hack23/homepage">Hack23/homepage</a>
+</td>
+<td valign="top">
+🛡️ <a href="https://github.com/Hack23/ISMS-PUBLIC">Hack23 ISMS-PUBLIC</a> — public ISMS<br>
+🔒 <a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Information_Security_Policy.md">Information Security Policy</a><br>
+🤖 <a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/AI_Policy.md">AI Policy</a><br>
+🧪 <a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md">Secure Development Policy</a><br>
+🎯 <a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Threat_Modeling.md">Threat Modeling Policy</a><br>
+⚠️ <a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Vulnerability_Management.md">Vulnerability Management</a><br>
+🏷️ <a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md">Classification Framework</a>
+</td>
+</tr>
+</table>
+<p align="center">
+<a href="https://www.bestpractices.dev/projects/12069"><img src="https://www.bestpractices.dev/projects/12069/badge" alt="OpenSSF Best Practices"/></a>
+<a href="https://scorecard.dev/viewer/?uri=github.com/Hack23/riksdagsmonitor"><img src="https://api.securityscorecards.dev/projects/github.com/Hack23/riksdagsmonitor/badge" alt="OpenSSF Scorecard"/></a>
+<a href="https://github.com/Hack23/ISMS-PUBLIC"><img src="https://img.shields.io/badge/ISO_27001-2022-blue?style=flat-square&logo=iso&logoColor=white" alt="ISO 27001:2022"/></a>
+<a href="https://github.com/Hack23/ISMS-PUBLIC"><img src="https://img.shields.io/badge/NIST_CSF-2.0-green?style=flat-square&logo=nist&logoColor=white" alt="NIST CSF 2.0"/></a>
+<a href="https://github.com/Hack23/ISMS-PUBLIC"><img src="https://img.shields.io/badge/CIS_Controls-v8.1-orange?style=flat-square&logo=cisecurity&logoColor=white" alt="CIS Controls v8.1"/></a>
+<a href="https://www.apache.org/licenses/LICENSE-2.0"><img src="https://img.shields.io/badge/License-Apache_2.0-blue?style=flat-square" alt="Apache 2.0"/></a>
+</p>
+<p align="center"><em>🗳️ Empower citizens · 🔍 Strengthen democratic accountability · 🕵️ Illuminate the political process</em></p>
+<p align="center"><sub>© 2008–2026 <a href="https://www.hack23.com">Hack23 AB</a> (Org.nr 559534-7807) · Maintainer: <a href="https://www.linkedin.com/in/jamessorling/">James Pether Sörling, CISSP CISM</a></sub></p></div></div><div class="col-sidebar"><div class="page-menu"><div class="tsd-navigation settings"><details class="tsd-accordion"><summary class="tsd-accordion-summary"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg><h3>Settings</h3></summary><div class="tsd-accordion-details"><div class="tsd-filter-visibility"><span class="settings-label">Member Visibility</span><ul id="tsd-filter-options"><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-protected" name="protected" checked/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Protected</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-private" name="private" checked/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Private</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-inherited" name="inherited" checked/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Inherited</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-alpha" name="alpha"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Alpha</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-beta" name="beta"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Beta</span></label></li></ul></div><div class="tsd-theme-toggle"><label class="settings-label" for="tsd-theme">Theme</label><select id="tsd-theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></div></div></details></div><details open class="tsd-accordion tsd-page-navigation"><summary class="tsd-accordion-summary"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg><h3>On This Page</h3></summary><div class="tsd-accordion-details"><a href="#📚-architecture-documentation-map"><span>📚 <wbr/>Architecture <wbr/>Documentation <wbr/>Map</span></a><a href="#🎯-executive-summary"><span>🎯 <wbr/>Executive <wbr/>Summary</span></a><a href="#📋-table-of-contents"><span>📋 <wbr/>Table of <wbr/>Contents</span></a><a href="#1-🧭-three-horizon-process-evolution"><span>1. 🧭 <wbr/>Three-<wbr/>Horizon <wbr/>Process <wbr/>Evolution</span></a><a href="#2-🟢-v1x-baseline-flows-build-the-future-on-this"><span>2. 🟢 v1.x <wbr/>Baseline <wbr/>Flows (<wbr/>Build the <wbr/>Future <wbr/>On <wbr/>This)</span></a><ul><li><a href="#21-agentic-newsroom-pipeline-gh-aw-→-artifacts-→-article-→-deploy"><span>2.1 <wbr/>Agentic <wbr/>Newsroom <wbr/>Pipeline (gh-<wbr/>aw → artifacts → article → deploy)</span></a></li><li><a href="#22-build-time-political-intelligence-analysis-gate-flow"><span>2.2 <wbr/>Build-<wbr/>Time <wbr/>Political-<wbr/>Intelligence &amp; <wbr/>Analysis-<wbr/>Gate <wbr/>Flow</span></a></li><li><a href="#23-data-fetch-persist-flow-multi-provider-provenance-tagged"><span>2.3 <wbr/>Data <wbr/>Fetch &amp; <wbr/>Persist <wbr/>Flow (multi-<wbr/>provider, provenance-<wbr/>tagged)</span></a></li><li><a href="#24-dashboard-build-flow-lazy-loaded-typescript-modules"><span>2.4 <wbr/>Dashboard <wbr/>Build <wbr/>Flow (lazy-<wbr/>loaded <wbr/>Type<wbr/>Script modules)</span></a></li><li><a href="#25-multi-region-static-deploy-disaster-recovery-flow"><span>2.5 <wbr/>Multi-<wbr/>Region <wbr/>Static <wbr/>Deploy &amp; <wbr/>Disaster-<wbr/>Recovery <wbr/>Flow</span></a></li></ul><a href="#3-🔵-v20-static-deepening-flows-20262027"><span>3. 🔵 v2.0 <wbr/>Static-<wbr/>Deepening <wbr/>Flows (2026–2027)</span></a><ul><li><a href="#31-party-focused-political-landscape-dashboard-build"><span>3.1 <wbr/>Party-<wbr/>Focused <wbr/>Political-<wbr/>Landscape <wbr/>Dashboard <wbr/>Build</span></a></li><li><a href="#32-build-time-osint-computation-pipeline-network-·-temporal-·-anomaly"><span>3.2 <wbr/>Build-<wbr/>Time <wbr/>OSINT <wbr/>Computation <wbr/>Pipeline (network · temporal · anomaly)</span></a></li><li><a href="#33-source-grading-intop-scorecard-flow"><span>3.3 <wbr/>Source-<wbr/>Grading &amp; <wbr/>INTOP <wbr/>Scorecard <wbr/>Flow</span></a></li><li><a href="#34-v20-build-sequence-end-to-end-still-no-runtime-backend"><span>3.4 v2.0 <wbr/>Build <wbr/>Sequence (end-<wbr/>to-<wbr/>end, still no runtime backend)</span></a></li></ul><a href="#4-🟠-v30-aws-serverless-runtime-flows-20282037"><span>4. 🟠 v3.0+ <wbr/>AWS-<wbr/>Serverless <wbr/>Runtime <wbr/>Flows (2028–2037)</span></a><ul><li><a href="#41-public-political-intelligence-api-request-flow-api-gateway-·-lambda-·-cognito"><span>4.1 <wbr/>Public <wbr/>Political-<wbr/>Intelligence <wbr/>API <wbr/>Request <wbr/>Flow (<wbr/>API <wbr/>Gateway · <wbr/>Lambda · <wbr/>Cognito)</span></a></li><li><a href="#42-bedrock-multi-modal-generation-real-time-fact-checking"><span>4.2 <wbr/>Bedrock <wbr/>Multi-<wbr/>Modal <wbr/>Generation + <wbr/>Real-<wbr/>Time <wbr/>Fact-<wbr/>Checking</span></a></li><li><a href="#43-bedrock-knowledge-bases-rag-semantic-search-flow"><span>4.3 <wbr/>Bedrock <wbr/>Knowledge-<wbr/>Bases <wbr/>RAG <wbr/>Semantic-<wbr/>Search <wbr/>Flow</span></a></li><li><a href="#44-predictive-election-vote-forecasting-pipeline-step-functions"><span>4.4 <wbr/>Predictive <wbr/>Election &amp; <wbr/>Vote-<wbr/>Forecasting <wbr/>Pipeline (<wbr/>Step <wbr/>Functions)</span></a></li><li><a href="#45-real-time-streaming-multi-source-data-fusion"><span>4.5 <wbr/>Real-<wbr/>Time <wbr/>Streaming &amp; <wbr/>Multi-<wbr/>Source <wbr/>Data <wbr/>Fusion</span></a></li><li><a href="#46-personalized-feed-flow-cognito-identity-privacy-preserving"><span>4.6 <wbr/>Personalized <wbr/>Feed <wbr/>Flow (<wbr/>Cognito identity, privacy-<wbr/>preserving)</span></a></li><li><a href="#47-continuous-model-improvement-federated-learning"><span>4.7 <wbr/>Continuous <wbr/>Model <wbr/>Improvement + <wbr/>Federated <wbr/>Learning</span></a></li><li><a href="#48-crowdsourced-fact-checking-flow-human-in-the-loop"><span>4.8 <wbr/>Crowdsourced <wbr/>Fact-<wbr/>Checking <wbr/>Flow (human-<wbr/>in-<wbr/>the-<wbr/>loop)</span></a></li></ul><a href="#4a-🛰️-political-intelligence-cycle-process-flows-osintintop-to-2037"><span>4<wbr/>A. 🛰️ <wbr/>Political-<wbr/>Intelligence <wbr/>Cycle <wbr/>Process <wbr/>Flows (<wbr/>OSINT/<wbr/>INTOP, to 2037)</span></a><ul><li><a href="#4a1-master-intelligence-cycle-loop"><span>4<wbr/>A.1 <wbr/>Master intelligence-<wbr/>cycle loop</span></a></li><li><a href="#4a2-multi-int-fusion-entity-resolution-flow-c1--c6"><span>4<wbr/>A.2 <wbr/>Multi-<wbr/>INT fusion &amp; entity-<wbr/>resolution flow (<wbr/>C1 / <wbr/>C6)</span></a></li><li><a href="#4a3-indications-warning-tripwire-flow-c14"><span>4<wbr/>A.3 <wbr/>Indications &amp; <wbr/>Warning tripwire flow (<wbr/>C14)</span></a></li><li><a href="#4a4-forecasting-continuous-calibration-loop-c13--c29"><span>4<wbr/>A.4 <wbr/>Forecasting &amp; continuous-<wbr/>calibration loop (<wbr/>C13 / <wbr/>C29)</span></a></li><li><a href="#4a5-fimi-influence-early-warning-flow-c20--aggregate-non-accusatory"><span>4<wbr/>A.5 <wbr/>FIMI / influence early-<wbr/>warning flow (<wbr/>C20) — aggregate, non-<wbr/>accusatory</span></a></li><li><a href="#4a6-counter-ai-analytic-integrity-gate-c26c32"><span>4<wbr/>A.6 <wbr/>Counter-<wbr/>AI &amp; analytic-<wbr/>integrity gate (<wbr/>C26–<wbr/>C32)</span></a></li></ul><a href="#5-🛡️-isms-ai-policy-compliance-flows"><span>5. 🛡️ <wbr/>ISMS &amp; <wbr/>AI-<wbr/>Policy <wbr/>Compliance <wbr/>Flows</span></a><ul><li><a href="#51-ai-policy-compliance-workflow-all-horizons"><span>5.1 <wbr/>AI-<wbr/>Policy <wbr/>Compliance <wbr/>Workflow (all horizons)</span></a></li><li><a href="#52-control-mapping-process-→-framework"><span>5.2 <wbr/>Control <wbr/>Mapping (process → framework)</span></a></li></ul><a href="#6-🤖-ai-model-lifecycle-evolution-flows"><span>6. 🤖 <wbr/>AI <wbr/>Model <wbr/>Lifecycle &amp; <wbr/>Evolution <wbr/>Flows</span></a><ul><li><a href="#61-ai-model-lifecycle-management-continuous-evaluation-→-rollout"><span>6.1 <wbr/>AI <wbr/>Model <wbr/>Lifecycle <wbr/>Management (continuous evaluation → rollout)</span></a></li><li><a href="#62-ai-model-evolution-timeline-devsecops-capability-verbatim"><span>6.2 <wbr/>AI <wbr/>Model <wbr/>Evolution <wbr/>Timeline — <wbr/>Dev<wbr/>Sec<wbr/>Ops <wbr/>Capability (verbatim)</span></a></li><li><a href="#63-the-same-ai-curve-translated-into-process-terms"><span>6.3 <wbr/>The <wbr/>Same <wbr/>AI <wbr/>Curve, <wbr/>Translated into <wbr/>Process <wbr/>Terms</span></a></li></ul><a href="#7-⚡-performance-cost-optimization-flows"><span>7. ⚡ <wbr/>Performance &amp; <wbr/>Cost-<wbr/>Optimization <wbr/>Flows</span></a><ul><li><a href="#71-performance-targets-by-horizon"><span>7.1 <wbr/>Performance <wbr/>Targets by <wbr/>Horizon</span></a></li><li><a href="#72-cost-optimization-decision-flow"><span>7.2 <wbr/>Cost-<wbr/>Optimization <wbr/>Decision <wbr/>Flow</span></a></li></ul><a href="#8-🌐-imf-economic-dataflow-evolution"><span>8. 🌐 <wbr/>IMF <wbr/>Economic-<wbr/>Dataflow <wbr/>Evolution</span></a><ul><li><a href="#provider-decision-matrix"><span>Provider decision matrix</span></a></li></ul><a href="#📝-document-control"><span>📝 <wbr/>Document <wbr/>Control</span></a><a href="#📚-related-documentation"><span>📚 <wbr/>Related <wbr/>Documentation</span></a><ul><li><a href="#current-state-baseline-this-doc-builds-on"><span>Current <wbr/>State (baseline this doc builds on)</span></a></li><li><a href="#future-vision-sibling-future_-docs"><span>Future <wbr/>Vision (sibling <wbr/>FUTURE_<wbr/>* docs)</span></a></li><li><a href="#isms-compliance"><span>ISMS &amp; <wbr/>Compliance</span></a></li><li><a href="#cia-platform-standards"><span>CIA <wbr/>Platform &amp; <wbr/>Standards</span></a></li></ul><a href="#🔗-hack23-ecosystem"><span>🔗 <wbr/>Hack23 <wbr/>Ecosystem</span></a></div></details></div><div class="site-menu"><nav id="tsd-sidebar-links" class="tsd-navigation"><a href="https://riksdagsmonitor.com">── Live Platform ──</a><a href="https://riksdagsmonitor.com">🌐 Riksdagsmonitor.com</a><a href="https://riksdagsmonitor.com/political-intelligence.html">🕵️ Political Intelligence Index</a><a href="https://riksdagsmonitor.com/sitemap.html">🗺️ Sitemap (Human + XML)</a><a href="https://riksdagsmonitor.com/news/">📰 News &amp; Articles</a><a href="https://www.npmjs.com/package/riksdagsmonitor">📦 npm Package</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/ARCHITECTURE.md">── Current Architecture ──</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/ARCHITECTURE.md">🏛️ Architecture</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/SECURITY_ARCHITECTURE.md">🔒 Security Architecture</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/THREAT_MODEL.md">🛡️ Threat Model</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/DATA_MODEL.md">📊 Data Model</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FLOWCHART.md">🔄 Flowchart</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/STATEDIAGRAM.md">📈 State Diagram</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/MINDMAP.md">🧠 Mindmap</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/SWOT.md">💼 SWOT Analysis</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_ARCHITECTURE.md">── Future Architecture ──</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_ARCHITECTURE.md">🚀 Future Architecture</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_SECURITY_ARCHITECTURE.md">🔮 Future Security</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_THREAT_MODEL.md">🎯 Future Threat Model</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_DATA_MODEL.md">📊 Future Data Model</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_FLOWCHART.md">🔄 Future Flowchart</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_STATEDIAGRAM.md">📈 Future State Diagram</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_MINDMAP.md">🧠 Future Mindmap</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_SWOT.md">💼 Future SWOT</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_WORKFLOWS.md">🔄 Future Workflows</a><a href="#">── Security &amp; Compliance ──</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/SECURITY.md">🔐 Security Policy</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/CRA-ASSESSMENT.md">📋 CRA Assessment</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/BCPPlan.md">🏢 BCP Plan</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FinancialSecurityPlan.md">💰 Financial Security</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/End-of-Life-Strategy.md">📅 End-of-Life Strategy</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/README.md">── Project Docs ──</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/TESTING.md">🧪 Testing</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/WORKFLOWS.md">🔄 Workflows</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/RELEASE_PROCESS.md">📦 Release Process</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/CONTRIBUTING.md">🤝 Contributing</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/CODE_OF_CONDUCT.md">📜 Code of Conduct</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/AGENTS.md">🤖 Copilot Agents</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/SKILLS.md">🛠 Copilot Skills</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/LABELS.md">🏷 Labels</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/TRANSLATION_GUIDE.md">🌐 Translation Guide</a><a href="https://github.com/Hack23/ISMS-PUBLIC">── Hack23 ISMS Policies ──</a><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md">📋 Secure Dev Policy</a><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Information_Security_Policy.md">🔐 Information Security</a><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Threat_Modeling.md">🎯 Threat Modeling</a><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Open_Source_Policy.md">🌐 Open Source Policy</a><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Risk_Assessment_Methodology.md">📊 Risk Assessment</a><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/AI_Policy.md">🤖 AI Policy</a><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Change_Management_Policy.md">🔧 Change Management</a><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Incident_Response_Plan.md">🛡️ Incident Response</a><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Asset_Management_Policy.md">📦 Asset Management</a><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Access_Control_Policy.md">🔑 Access Control</a><a href="https://riksdagsmonitor.com/docs/api/">── Hack23 API Docs ──</a><a href="https://riksdagsmonitor.com/docs/api/">📚 Riksdagsmonitor API</a><a href="https://euparliamentmonitor.com/docs/api/">🇪🇺 EU Parliament MCP API</a><a href="https://ciacompliancemanager.com/api/">🔍 CIA Compliance Mgr API</a><a href="https://blacktrigram.com/api/">⚔️ Black Trigram API</a><a href="https://riksdagsmonitor.com" class="tsd-nav-link">🏠 Home</a><a href="https://riksdagsmonitor.com/political-intelligence.html" class="tsd-nav-link">🕵️ Political Intelligence</a><a href="https://riksdagsmonitor.com/sitemap.html" class="tsd-nav-link">🗺️ Sitemap</a><a href="https://www.npmjs.com/package/riksdagsmonitor" class="tsd-nav-link">📦 npm Package</a><a href="https://github.com/Hack23/riksdagsmonitor" class="tsd-nav-link">📦 GitHub</a><a href="https://github.com/Hack23/ISMS-PUBLIC" class="tsd-nav-link">🛡️ ISMS</a><a href="https://github.com/Hack23/cia" class="tsd-nav-link">🏛️ CIA Platform</a></nav><nav class="tsd-navigation"><a href="../modules.html">Riksdagsmonitor Intelligence Platform — API Documentation - v1.0.28</a><ul class="tsd-small-nested-navigation" id="tsd-nav-container"><li>Loading...</li></ul></nav></div></div></div><footer><p class="tsd-generator">Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></footer><div class="overlay"></div></body></html>

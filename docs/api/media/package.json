@@ -1,0 +1,236 @@
+{
+  "name": "riksdagsmonitor",
+  "version": "1.0.28",
+  "type": "module",
+  "description": "Swedish Parliament (Riksdag) intelligence platform — TypeScript utilities for political data visualization, dashboards, and open data analysis with Chart.js and D3.js",
+  "main": "dist/lib/shared/index.js",
+  "module": "dist/lib/shared/index.js",
+  "types": "dist/lib/shared/index.d.ts",
+  "sideEffects": [
+    "./dist/lib/shared/register-globals.js",
+    "./src/browser/cia-entry.ts",
+    "./src/browser/shared/register-globals-bootstrap.ts"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/lib/shared/index.js",
+      "types": "./dist/lib/shared/index.d.ts"
+    },
+    "./shared": {
+      "import": "./dist/lib/shared/index.js",
+      "types": "./dist/lib/shared/index.d.ts"
+    },
+    "./shared/*": {
+      "import": "./dist/lib/shared/*.js",
+      "types": "./dist/lib/shared/*.d.ts"
+    },
+    "./cia/*": {
+      "import": "./dist/lib/cia/*.js",
+      "types": "./dist/lib/cia/*.d.ts"
+    },
+    "./dashboards/*": {
+      "import": "./dist/lib/dashboards/*.js",
+      "types": "./dist/lib/dashboards/*.d.ts"
+    },
+    "./ui/*": {
+      "import": "./dist/lib/ui/*.js",
+      "types": "./dist/lib/ui/*.d.ts"
+    }
+  },
+  "files": [
+    "dist/lib",
+    "README.md",
+    "LICENSE",
+    "SECURITY.md"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "provenance": true,
+    "registry": "https://registry.npmjs.org/"
+  },
+  "scripts": {
+    "dev": "vite",
+    "predev": "npx tsx scripts/copy-vendor-mermaid.ts --quiet",
+    "copy-vendor": "npx tsx scripts/copy-vendor-mermaid.ts",
+    "build:csv-contracts-fixture": "npx tsx scripts/build-csv-contracts-fixture.ts",
+    "prebuild": "npx tsx scripts/optimize-images.ts && npx tsx scripts/generate-article-types-doc.ts && npx tsx scripts/copy-vendor-mermaid.ts --quiet && npx tsx scripts/build-csv-contracts-fixture.ts && npx tsx scripts/aggregate-analysis.ts --all --quiet && npx tsx scripts/render-articles.ts --all --lang all --quiet && npx tsx scripts/generate-news-indexes/index.ts && npx tsx scripts/extract-news-metadata.ts && npx tsx scripts/generate-sitemap-html.ts && npx tsx scripts/generate-political-intelligence.ts && npx tsx scripts/generate-rss.ts && npx tsx scripts/generate-sitemap.ts && npx tsx scripts/normalize-static-html-chrome.ts && npx tsx scripts/backfill-translated-chrome.ts && npx tsx scripts/strip-legacy-chrome-script-tags.ts && npx tsx scripts/fix-hreflang.ts --write",
+    "build": "vite build",
+    "build:lib": "tsc -p tsconfig.lib.json && tsc -p tsconfig.npm-scripts.json",
+    "postbuild": "cp rss.xml dist/rss.xml && (cp rss_*.xml dist/ 2>/dev/null; exit 0) && cp sitemap.xml dist/sitemap.xml && cp -r cia-data dist/cia-data && cp manifest.json dist/manifest.json",
+    "preview": "vite preview",
+    "test": "NODE_OPTIONS='--max-old-space-size=2048' vitest run",
+    "test:watch": "vitest",
+    "test:ui": "vitest --ui",
+    "test:coverage": "NODE_OPTIONS='--max-old-space-size=4096' vitest run --coverage",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run --config video=false",
+    "cypress:run:fast": "cypress run --config video=false --quiet --browser chrome",
+    "cypress:run:critical": "cypress run --spec 'cypress/e2e/homepage.cy.js,cypress/e2e/accessibility.cy.js' --config video=false",
+    "e2e": "npm run build && start-server-and-test preview http://localhost:4173 cypress:run",
+    "e2e:fast": "npm run build && start-server-and-test preview http://localhost:4173 cypress:run:fast",
+    "sync-schemas": "npx tsx scripts/sync-cia-schemas.ts",
+    "validate-data": "npx tsx scripts/validate-against-cia-schemas.ts",
+    "check-updates": "npx tsx scripts/check-cia-schema-updates.ts",
+    "check:analysis-language": "tsx scripts/check-analysis-language.ts",
+    "check:headline-quality": "tsx scripts/check-headline-quality.ts",
+    "check:brief-language": "tsx scripts/check-brief-language.ts",
+    "generate-types": "npx tsx scripts/generate-types-from-cia-schemas.ts",
+    "validate-translations": "npx tsx scripts/validate-translations.ts",
+    "validate-news": "npx tsx scripts/validate-news-translations.ts",
+    "validate-exec-brief-translations": "npx tsx scripts/validate-executive-brief-translations.ts",
+    "validate-article": "npx tsx scripts/validate-article.ts",
+    "validate:mermaid": "npx tsx scripts/validate-mermaid-diagrams.ts",
+    "fix:mermaid": "npx tsx scripts/fix-mermaid-diagrams.ts",
+    "validate-all": "npm run htmlhint && npm run validate-translations && npm run validate-news && npm run validate-article",
+    "generate-news": "npx tsx scripts/render-articles.ts --all --lang all",
+    "aggregate-analysis": "npx tsx scripts/aggregate-analysis.ts --all",
+    "render-articles": "npx tsx scripts/render-articles.ts --all --lang all",
+    "generate-news-indexes": "node scripts/generate-news-indexes.ts",
+    "generate-sitemap": "tsx scripts/generate-sitemap.ts",
+    "generate-sitemap-html": "npx tsx scripts/generate-sitemap-html.ts",
+    "generate-political-intelligence": "npx tsx scripts/generate-political-intelligence.ts",
+    "optimize-images": "npx tsx scripts/optimize-images.ts",
+    "generate-rss": "npx tsx scripts/generate-rss.ts",
+    "htmlhint": "sh -c 'htmlhint *.html; set -- news/*.html; if [ -e \"$1\" ]; then htmlhint \"$@\"; else echo \"No news/*.html files to lint\"; fi'",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "check:docs": "npx tsx scripts/generate-article-types-doc.ts && git diff --exit-code Article-Generation.md",
+    "typedoc": "typedoc",
+    "typedoc:validate": "npm run typedoc && vitest run tests/jsdoc-validation.test.js",
+    "coverage": "vitest run --coverage",
+    "docs:dependencies": "mkdir -p docs/dependencies && (npm list --all --json > docs/dependencies/dependency-tree.json 2> docs/dependencies/dependency-tree.log || true) && (npm list --all > docs/dependencies/dependency-tree.txt 2>> docs/dependencies/dependency-tree.log || true)",
+    "docs:diagrams": "echo 'Architecture diagrams generation placeholder - implement with graphviz if needed'",
+    "test:e2ereportmerge": "echo 'Cypress report merge placeholder - mochawesome-merge if multi-spec reports exist'",
+    "test:e2ereporthtmlall": "echo 'Cypress HTML report generation placeholder - mochawesome-report-generator'",
+    "build:test-reports": "mkdir -p docs/test-results docs/cypress docs/coverage && ([ -d builds/coverage ] && [ -n \"$(ls -A builds/coverage 2>/dev/null)\" ] && cp -r builds/coverage/* docs/coverage/ || echo 'No coverage directory to copy') && ([ -d builds/test-results ] && [ -n \"$(ls -A builds/test-results 2>/dev/null)\" ] && cp -r builds/test-results/* docs/test-results/ || echo 'No test-results directory to copy') && ([ -d builds/cypress ] && [ -n \"$(ls -A builds/cypress 2>/dev/null)\" ] && cp -r builds/cypress/* docs/cypress/ || echo 'No cypress directory to copy') && echo 'Test reports copied to docs/'",
+    "docs:sitemap": "tsx scripts/generate-sitemap.ts",
+    "serve": "python3 -m http.server 8080",
+    "linkcheck": "linkinator http://localhost:8080/ --recurse",
+    "prepublishOnly": "npm run lint && npm run build:lib && npm test",
+    "prepack": "echo 'Prepack: build artifacts should already be generated (see prepublishOnly/CI)'",
+    "download-data": "npx tsx scripts/download-parliamentary-data.ts",
+    "download-data:today": "npx tsx scripts/download-parliamentary-data.ts --date today",
+    "download-data:weekly": "npx tsx scripts/download-parliamentary-data.ts --aggregate weekly",
+    "backfill-metadata": "tsx scripts/backfill-article-metadata.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hack23/riksdagsmonitor.git"
+  },
+  "keywords": [
+    "riksdag",
+    "riksdagen",
+    "swedish-parliament",
+    "parliament",
+    "sweden",
+    "politics",
+    "political-data",
+    "political-intelligence",
+    "political-analysis",
+    "democracy",
+    "civic-tech",
+    "open-data",
+    "osint",
+    "transparency",
+    "government",
+    "data-visualization",
+    "dashboard",
+    "chart.js",
+    "d3",
+    "typescript",
+    "monitoring",
+    "voting-records",
+    "parliamentary",
+    "intelligence"
+  ],
+  "author": "Hack23 AB",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/Hack23/riksdagsmonitor/issues"
+  },
+  "homepage": "https://riksdagsmonitor.com",
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/Hack23"
+  },
+  "peerDependencies": {
+    "chart.js": "^4.0.0",
+    "chartjs-plugin-annotation": "^3.0.0",
+    "d3": "^7.0.0",
+    "papaparse": "^5.0.0"
+  },
+  "peerDependenciesMeta": {
+    "chart.js": {
+      "optional": true
+    },
+    "chartjs-plugin-annotation": {
+      "optional": true
+    },
+    "d3": {
+      "optional": true
+    },
+    "papaparse": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@eslint/js": "10.0.1",
+    "@types/d3": "7.4.3",
+    "@types/hast": "3.0.4",
+    "@types/node": "26.1.0",
+    "@types/papaparse": "5.5.2",
+    "@vitest/coverage-v8": "4.1.9",
+    "@vitest/ui": "4.1.9",
+    "ajv": "8.20.0",
+    "ajv-formats": "3.0.1",
+    "chart.js": "4.5.1",
+    "chartjs-plugin-annotation": "3.1.0",
+    "d3": "7.9.0",
+    "eslint": "10.6.0",
+    "github-slugger": "^2.0.0",
+    "globals": "17.7.0",
+    "gray-matter": "^4.0.3",
+    "happy-dom": "20.10.6",
+    "hast-util-to-string": "3.0.1",
+    "htmlhint": "1.9.2",
+    "js-yaml": "5.2.1",
+    "json-schema-to-typescript": "15.0.4",
+    "jszip": "3.10.1",
+    "knip": "6.24.0",
+    "mermaid": "11.16.0",
+    "minify": "15.3.1",
+    "papaparse": "5.5.4",
+    "rehype-autolink-headings": "^7.1.0",
+    "rehype-raw": "^7.0.0",
+    "rehype-sanitize": "^6.0.0",
+    "rehype-stringify": "^10.0.1",
+    "remark-gfm": "^4.0.1",
+    "remark-parse": "^11.0.0",
+    "remark-rehype": "^11.1.2",
+    "sharp": "^0.35.3",
+    "start-server-and-test": "3.0.11",
+    "tsx": "4.23.0",
+    "typedoc": "0.28.19",
+    "typedoc-plugin-mdn-links": "5.1.1",
+    "typescript": "6.0.3",
+    "typescript-eslint": "8.62.1",
+    "unified": "^11.0.5",
+    "unist-util-visit": "5.1.0",
+    "vite": "8.1.3",
+    "vitest": "4.1.9",
+    "worldbank-mcp": "1.0.1"
+  },
+  "optionalDependencies": {
+    "cypress": "15.18.0"
+  },
+  "overrides": {
+    "glob": "13.0.6",
+    "brace-expansion": "5.0.7"
+  },
+  "engines": {
+    "node": ">=26"
+  },
+  "x-external-mcp": {
+    "_comment": "SBOM-style manifest for MCP servers managed outside of npm dependencies (Python, Docker, HTTP). Tracked here so supply-chain reviews, Open_Source_Policy.md audits, and Change_Management.md tickets have a single source of truth. Currently EMPTY: IMF access was migrated from c-cf/imf-data-mcp (Python/uvx) to the repository's pure-TypeScript client scripts/imf-client.ts (invoked via scripts/imf-fetch.ts from the bash tool in agentic workflows) — it is now fully covered by the npm SBOM."
+  }
+}

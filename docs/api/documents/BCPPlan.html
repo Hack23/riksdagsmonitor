@@ -1,0 +1,1311 @@
+<!DOCTYPE html><html class="default" lang="en" data-base="../"><head><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>BCPPlan | Riksdagsmonitor Intelligence Platform — API Documentation - v1.0.28</title><meta name="description" content="Documentation for Riksdagsmonitor Intelligence Platform — API Documentation"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="../assets/style.css"/><link rel="stylesheet" href="../assets/highlight.css"/><script defer src="../assets/main.js"></script><script async src="../assets/icons.js" id="tsd-icons-script"></script><script async src="../assets/search.js" id="tsd-search-script"></script><script async src="../assets/navigation.js" id="tsd-nav-script"></script><script async src="../assets/hierarchy.js" id="tsd-hierarchy-script"></script></head><body><script>document.documentElement.dataset.theme = localStorage.getItem("tsd-theme") || "os";document.body.style.display="none";setTimeout(() => window.app?app.showPage():document.body.style.removeProperty("display"),500)</script><header class="tsd-page-toolbar"><div class="tsd-toolbar-contents container"><a href="../index.html" class="title">Riksdagsmonitor Intelligence Platform — API Documentation - v1.0.28</a><div id="tsd-toolbar-links"><a href="https://riksdagsmonitor.com">🏠 Home</a><a href="https://riksdagsmonitor.com/political-intelligence.html">🕵️ Political Intelligence</a><a href="https://riksdagsmonitor.com/sitemap.html">🗺️ Sitemap</a><a href="https://www.npmjs.com/package/riksdagsmonitor">📦 npm Package</a><a href="https://github.com/Hack23/riksdagsmonitor">📦 GitHub</a><a href="https://github.com/Hack23/ISMS-PUBLIC">🛡️ ISMS</a><a href="https://github.com/Hack23/cia">🏛️ CIA Platform</a></div><button id="tsd-search-trigger" class="tsd-widget" aria-label="Search"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-search"></use></svg></button><dialog id="tsd-search" aria-label="Search"><input role="combobox" id="tsd-search-input" aria-controls="tsd-search-results" aria-autocomplete="list" aria-expanded="true" autocapitalize="off" autocomplete="off" placeholder="Search the docs" maxLength="100"/><ul role="listbox" id="tsd-search-results"></ul><div id="tsd-search-status" aria-live="polite" aria-atomic="true"><div>Preparing search index...</div></div></dialog><a href="#" class="tsd-widget menu" id="tsd-toolbar-menu-trigger" data-toggle="menu" aria-label="Menu"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-menu"></use></svg></a></div></header><div class="container container-main"><div class="col-content"><div class="tsd-page-title"><ul class="tsd-breadcrumb" aria-label="Breadcrumb"><li><a href="" aria-current="page">BCPPlan</a></li></ul></div><div class="tsd-panel tsd-typography"><p align="center">
+  <img src="https://hack23.com/icon-192.png" alt="Hack23 Logo" width="192" height="192">
+</p>
+<h1 align="center">🔄 Riksdagsmonitor — Business Continuity Plan</h1>
+<p align="center">
+  <strong>🛡️ Dual-Deployment Resilience Framework</strong><br>
+  <em>🎯 Enterprise-Grade Availability Through Geographic Redundancy</em>
+</p>
+<p align="center">
+  <img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/>
+  <img src="https://img.shields.io/badge/Version-1.3-555?style=for-the-badge" alt="Version"/>
+  <img src="https://img.shields.io/badge/Effective-2026--05--28-success?style=for-the-badge" alt="Effective Date"/>
+  <img src="https://img.shields.io/badge/Review-Quarterly-orange?style=for-the-badge" alt="Review Cycle"/>
+</p>
+<p><strong>📋 Document Owner:</strong> CEO | <strong>📄 Version:</strong> 1.3 | <strong>📅 Last Updated:</strong> 2026-05-28 (UTC)<br>
+<strong>🔄 Review Cycle:</strong> Quarterly | <strong>⏰ Next Review:</strong> 2026-08-28<br>
+<strong>📌 Classification:</strong> Public</p>
+<hr>
+<h2 id="🎯-purpose-statement" class="tsd-anchor-link">🎯 <strong>Purpose Statement</strong><a href="#🎯-purpose-statement" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<p><strong>Riksdagsmonitor's</strong> business continuity framework demonstrates how <strong>geographic redundancy and automated failover directly enable operational resilience and service availability.</strong> Our dual-deployment strategy serves as both operational necessity and technical demonstration of enterprise-grade reliability principles.</p>
+<p>This plan is designed to maintain the <a href="http://riksdagsmonitor.com">riksdagsmonitor.com</a> platform during infrastructure disruptions through AWS multi-region deployment (primary) and GitHub Pages disaster recovery (standby), targeting 99.998% availability under normal operating conditions, with CloudFront origin failover typically completing in under 60 seconds and DNS/Route 53 failover (including health checks and DNS propagation) completing within approximately 15 minutes during full-region incidents.</p>
+<p><em>— James Pether Sörling, CEO/Founder</em></p>
+<hr>
+<h2 id="📊-business-impact-analysis" class="tsd-anchor-link">📊 <strong>Business Impact Analysis</strong><a href="#📊-business-impact-analysis" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<h3 id="🎯-service-availability-requirements" class="tsd-anchor-link">🎯 Service Availability Requirements<a href="#🎯-service-availability-requirements" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p>Riksdagsmonitor provides public political transparency services requiring high availability but tolerating brief disruptions:</p>
+<pre><code class="mermaid"><span class="hl-1">%%{</span><br/><span class="hl-1">  init: {</span><br/><span class="hl-1">    &quot;theme&quot;: &quot;base&quot;,</span><br/><span class="hl-1">    &quot;themeVariables&quot;: {</span><br/><span class="hl-1">      &quot;primaryColor&quot;: &quot;#1565C0&quot;,</span><br/><span class="hl-1">      &quot;primaryTextColor&quot;: &quot;#0d47a1&quot;,</span><br/><span class="hl-1">      &quot;lineColor&quot;: &quot;#1565C0&quot;,</span><br/><span class="hl-1">      &quot;secondaryColor&quot;: &quot;#4CAF50&quot;,</span><br/><span class="hl-1">      &quot;tertiaryColor&quot;: &quot;#FF9800&quot;</span><br/><span class="hl-1">    }</span><br/><span class="hl-1">  }</span><br/><span class="hl-1">}%%</span><br/><span class="hl-1">graph TB</span><br/><span class="hl-1">    subgraph BIA[&quot;📊 Business Impact Analysis&quot;]</span><br/><span class="hl-1">        FINANCIAL[💰 Financial Impact&lt;br/&gt;No direct revenue loss]</span><br/><span class="hl-1">        OPERATIONAL[⚙️ Operational Impact&lt;br/&gt;Service unavailable]</span><br/><span class="hl-1">        REPUTATIONAL[🤝 Reputational Impact&lt;br/&gt;Public trust in transparency]</span><br/><span class="hl-1">        CIVIC[🏛️ Civic Impact&lt;br/&gt;Democratic accountability]</span><br/><span class="hl-1">    end</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    subgraph RECOVERY[&quot;🔄 Recovery Requirements&quot;]</span><br/><span class="hl-1">        RTO[⏰ RTO Target&lt;br/&gt;&amp;lt; 30 seconds origin failover&lt;br/&gt;&amp;lt; 15 minutes DNS failover]</span><br/><span class="hl-1">        RPO[💾 RPO Target&lt;br/&gt;&amp;lt; 15 minutes&lt;br/&gt;near-zero effective RPO (S3 replication lag)]</span><br/><span class="hl-1">        AVAILABILITY[📈 Availability Target&lt;br/&gt;99.998%&lt;br/&gt;≈10.5 minutes (~631 seconds) downtime/year]</span><br/><span class="hl-1">    end</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    subgraph DEPLOYMENT[&quot;🌍 Deployment Strategy&quot;]</span><br/><span class="hl-1">        PRIMARY[☁️ AWS Primary&lt;br/&gt;CloudFront + S3 Multi-Region]</span><br/><span class="hl-1">        DR[📝 GitHub Pages DR&lt;br/&gt;Standby Deployment]</span><br/><span class="hl-1">        FAILOVER[🔄 Automatic Failover&lt;br/&gt;Route 53 Health Checks]</span><br/><span class="hl-1">    end</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    FINANCIAL --&gt; RTO</span><br/><span class="hl-1">    OPERATIONAL --&gt; RTO</span><br/><span class="hl-1">    REPUTATIONAL --&gt; RPO</span><br/><span class="hl-1">    CIVIC --&gt; AVAILABILITY</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    RTO --&gt; PRIMARY</span><br/><span class="hl-1">    RPO --&gt; PRIMARY</span><br/><span class="hl-1">    AVAILABILITY --&gt; PRIMARY</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    PRIMARY --&gt; FAILOVER</span><br/><span class="hl-1">    DR --&gt; FAILOVER</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    style BIA fill:#1565C0,color:#ffffff</span><br/><span class="hl-1">    style RECOVERY fill:#FF9800,color:#000000</span><br/><span class="hl-1">    style DEPLOYMENT fill:#4CAF50,color:#000000</span>
+</code><button type="button">Copy</button></pre>
+
+<h3 id="📈-impact-thresholds" class="tsd-anchor-link">📈 Impact Thresholds<a href="#📈-impact-thresholds" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>Service Component</th>
+<th>💰 Financial Impact</th>
+<th>⚙️ Operational Impact</th>
+<th>🤝 Reputational Impact</th>
+<th>🏛️ Civic Impact</th>
+<th>🎯 Recovery Priority</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>🌐 Static Website</strong></td>
+<td><a href="#"><img src="https://img.shields.io/badge/Minimal-No_revenue-lightgreen?style=flat-square&amp;logo=dollar-sign&amp;logoColor=white" alt="Minimal"></a></td>
+<td><a href="#"><img src="https://img.shields.io/badge/High-Complete_outage-orange?style=flat-square&amp;logo=exclamation-triangle&amp;logoColor=white" alt="High"></a></td>
+<td><a href="#"><img src="https://img.shields.io/badge/High-Public_transparency-orange?style=flat-square&amp;logo=newspaper&amp;logoColor=white" alt="High"></a></td>
+<td><a href="#"><img src="https://img.shields.io/badge/Critical-Democratic_access-red?style=flat-square&amp;logo=landmark&amp;logoColor=white" alt="Critical"></a></td>
+<td>🔴 Critical</td>
+</tr>
+<tr>
+<td><strong>📊 Content Updates</strong></td>
+<td><a href="#"><img src="https://img.shields.io/badge/Minimal-No_revenue-lightgreen?style=flat-square&amp;logo=dollar-sign&amp;logoColor=white" alt="Minimal"></a></td>
+<td><a href="#"><img src="https://img.shields.io/badge/Moderate-Stale_content-yellow?style=flat-square&amp;logo=trending-down&amp;logoColor=black" alt="Moderate"></a></td>
+<td><a href="#"><img src="https://img.shields.io/badge/Moderate-Data_currency-yellow?style=flat-square&amp;logo=newspaper&amp;logoColor=black" alt="Moderate"></a></td>
+<td><a href="#"><img src="https://img.shields.io/badge/Moderate-Information_lag-yellow?style=flat-square&amp;logo=landmark&amp;logoColor=black" alt="Moderate"></a></td>
+<td>🟡 Medium</td>
+</tr>
+<tr>
+<td><strong>🔍 Search Indexing</strong></td>
+<td><a href="#"><img src="https://img.shields.io/badge/Minimal-No_revenue-lightgreen?style=flat-square&amp;logo=dollar-sign&amp;logoColor=white" alt="Minimal"></a></td>
+<td><a href="#"><img src="https://img.shields.io/badge/Low-Discoverability-lightgreen?style=flat-square&amp;logo=trending-down&amp;logoColor=white" alt="Low"></a></td>
+<td><a href="#"><img src="https://img.shields.io/badge/Low-SEO_impact-lightgreen?style=flat-square&amp;logo=newspaper&amp;logoColor=white" alt="Low"></a></td>
+<td><a href="#"><img src="https://img.shields.io/badge/Low-Accessibility-lightgreen?style=flat-square&amp;logo=landmark&amp;logoColor=white" alt="Low"></a></td>
+<td>🟢 Standard</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="🏗️-infrastructure-architecture" class="tsd-anchor-link">🏗️ <strong>Infrastructure Architecture</strong><a href="#🏗️-infrastructure-architecture" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<h3 id="🌍-dual-deployment-strategy" class="tsd-anchor-link">🌍 Dual-Deployment Strategy<a href="#🌍-dual-deployment-strategy" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<pre><code class="mermaid"><span class="hl-1">%%{</span><br/><span class="hl-1">  init: {</span><br/><span class="hl-1">    &quot;theme&quot;: &quot;base&quot;,</span><br/><span class="hl-1">    &quot;themeVariables&quot;: {</span><br/><span class="hl-1">      &quot;primaryColor&quot;: &quot;#1565C0&quot;,</span><br/><span class="hl-1">      &quot;primaryTextColor&quot;: &quot;#0d47a1&quot;,</span><br/><span class="hl-1">      &quot;lineColor&quot;: &quot;#1565C0&quot;,</span><br/><span class="hl-1">      &quot;secondaryColor&quot;: &quot;#4CAF50&quot;,</span><br/><span class="hl-1">      &quot;tertiaryColor&quot;: &quot;#FF9800&quot;</span><br/><span class="hl-1">    }</span><br/><span class="hl-1">  }</span><br/><span class="hl-1">}%%</span><br/><span class="hl-1">graph TB</span><br/><span class="hl-1">    subgraph ROUTE53[&quot;🌐 Route 53 DNS&quot;]</span><br/><span class="hl-1">        DNS[📡 DNS Service&lt;br/&gt;Health Checks Every 30s]</span><br/><span class="hl-1">        HEALTHCHECK[⚕️ Health Checker&lt;br/&gt;Tests CloudFront Endpoint]</span><br/><span class="hl-1">    end</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    subgraph PRIMARY[&quot;☁️ AWS Primary (Active)&quot;]</span><br/><span class="hl-1">        CF[🌍 CloudFront CDN&lt;br/&gt;600+ PoPs&lt;br/&gt;Automatic Origin Failover]</span><br/><span class="hl-1">        S3_US[💾 S3 us-east-1&lt;br/&gt;Primary Origin&lt;br/&gt;Versioning Enabled]</span><br/><span class="hl-1">        S3_EU[💾 S3 eu-west-1&lt;br/&gt;Replica Origin&lt;br/&gt;Asynchronous Replication (&amp;lt;15 min RPO)]</span><br/><span class="hl-1">        </span><br/><span class="hl-1">        CF --&gt;|Primary| S3_US</span><br/><span class="hl-1">        CF --&gt;|Failover on 5xx errors| S3_EU</span><br/><span class="hl-1">        S3_US -.-&gt;|Replication| S3_EU</span><br/><span class="hl-1">    end</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    subgraph DR[&quot;📝 GitHub Pages (Standby)&quot;]</span><br/><span class="hl-1">        GH[📄 GitHub Pages&lt;br/&gt;Default branch (root)&lt;br/&gt;Automated Deployment]</span><br/><span class="hl-1">    end</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    USERS[👥 Users] --&gt;|DNS Query| DNS</span><br/><span class="hl-1">    HEALTHCHECK --&gt;|Monitor| CF</span><br/><span class="hl-1">    DNS --&gt;|Healthy: Return CloudFront alias/hostname| USERS</span><br/><span class="hl-1">    DNS -.-&gt;|3 Failed Checks (~90s detection)&lt;br/&gt;+ DNS TTL/propagation (up to ~15 min total)| USERS</span><br/><span class="hl-1">    USERS --&gt;|HTTPS/TLS 1.3| CF</span><br/><span class="hl-1">    USERS -.-&gt;|HTTPS/TLS 1.3 (DR)| GH</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    style ROUTE53 fill:#1565C0,color:#ffffff</span><br/><span class="hl-1">    style PRIMARY fill:#4CAF50,color:#000000</span><br/><span class="hl-1">    style DR fill:#FF9800,color:#000000</span>
+</code><button type="button">Copy</button></pre>
+
+<h3 id="🛡️-availability-objectives-assumptions" class="tsd-anchor-link">🛡️ Availability Objectives &amp; Assumptions<a href="#🛡️-availability-objectives-assumptions" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p>These are business continuity <strong>design objectives</strong>, not contractual guarantees. Availability figures are based on underlying cloud provider SLAs and documented reliability targets.</p>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Provider SLA</th>
+<th>Failover Mechanism</th>
+<th>Target RTO</th>
+<th>Target RPO</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>🌍 CloudFront</strong></td>
+<td>99.9% (AWS SLA)</td>
+<td>Origin failover</td>
+<td>&lt; 30 seconds</td>
+<td>≈ 0 minutes</td>
+<td>Cache may serve slightly stale content during failover</td>
+</tr>
+<tr>
+<td><strong>💾 S3 us-east-1</strong></td>
+<td>99.99% (AWS SLA)</td>
+<td>Multi-region replica</td>
+<td>&lt; 30 seconds</td>
+<td>&lt; 15 minutes</td>
+<td>S3 cross-region replication typically completes within minutes; static content allows near-zero effective RPO</td>
+</tr>
+<tr>
+<td><strong>💾 S3 eu-west-1</strong></td>
+<td>99.99% (AWS SLA)</td>
+<td>Primary failback</td>
+<td>&lt; 30 seconds</td>
+<td>&lt; 15 minutes</td>
+<td>Replication lag possible; static content minimizes data loss impact</td>
+</tr>
+<tr>
+<td><strong>🌐 Route 53</strong></td>
+<td>100% (AWS SLA)</td>
+<td>Health check failover (30s × 3 checks)</td>
+<td>15 minutes</td>
+<td>≈ 0 minutes</td>
+<td>Includes health check detection (90s) + DNS TTL propagation (~14 min)</td>
+</tr>
+<tr>
+<td><strong>📝 GitHub Pages</strong></td>
+<td>99.9% (target; no formal SLA)</td>
+<td>Route 53 automated DNS failover</td>
+<td>15 minutes</td>
+<td>Up to last deployment</td>
+<td>Static content served via Route 53 health-check based DNS failover; RPO = time since last successful GitHub Actions deploy</td>
+</tr>
+<tr>
+<td><strong>🎯 Combined</strong></td>
+<td><strong>Design target ≈ 99.998%</strong></td>
+<td>Automated multi-layer</td>
+<td><strong>&lt; 30 seconds (objective)</strong></td>
+<td><strong>&lt; 15 minutes for static content (objective)</strong></td>
+<td>Theoretical calculation assuming largely independent failures</td>
+</tr>
+</tbody>
+</table>
+<p><em><strong>Disclaimer</strong>: These are business continuity <strong>design objectives</strong> based on AWS published SLAs (CloudFront 99.9%, S3 99.99%, Route 53 100%) and GitHub public reliability targets. The combined 99.998% availability is a <strong>theoretical design target</strong> assuming largely independent failures. Actual end-to-end availability may be lower in practice. RPO values reflect S3 cross-region replication characteristics (typically &lt; 15 minutes) and static content deployment timing; actual RPO may vary.</em></p>
+<hr>
+<h2 id="🚨-disaster-recovery-scenarios" class="tsd-anchor-link">🚨 <strong>Disaster Recovery Scenarios</strong><a href="#🚨-disaster-recovery-scenarios" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<h3 id="scenario-1-s3-us-east-1-region-failure" class="tsd-anchor-link">Scenario 1: S3 us-east-1 Region Failure<a href="#scenario-1-s3-us-east-1-region-failure" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><a href="#"><img src="https://img.shields.io/badge/RTO-%3C_30_seconds-success?style=flat-square&amp;logo=clock&amp;logoColor=white" alt="RTO"></a> <a href="#"><img src="https://img.shields.io/badge/RPO-%3C_15_minutes-success?style=flat-square&amp;logo=database&amp;logoColor=white" alt="RPO"></a> <a href="#"><img src="https://img.shields.io/badge/Impact-Transparent-lightgreen?style=flat-square&amp;logo=users&amp;logoColor=white" alt="Impact"></a></p>
+<p><strong>🔍 Detection:</strong></p>
+<ul>
+<li>CloudFront origin monitoring detects 500+ HTTP errors from us-east-1</li>
+<li>Automatic failover triggered without manual intervention</li>
+</ul>
+<p><strong>🔄 Recovery Procedure:</strong></p>
+<ol>
+<li>⚡ CloudFront automatically routes to S3 eu-west-1 origin (&lt; 30 seconds)</li>
+<li>📊 Verify service availability via monitoring</li>
+<li>📝 Log incident for post-event analysis</li>
+<li>⏳ Monitor AWS status for us-east-1 restoration</li>
+<li>🔙 Automatic failback when us-east-1 recovers</li>
+</ol>
+<p><strong>✅ Validation:</strong></p>
+<ul>
+<li>Service availability confirmed via health checks</li>
+<li>User experience unaffected (transparent failover)</li>
+<li>Content served from eu-west-1 (identical to us-east-1)</li>
+</ul>
+<hr>
+<h3 id="scenario-2-cloudfront-global-outage" class="tsd-anchor-link">Scenario 2: CloudFront Global Outage<a href="#scenario-2-cloudfront-global-outage" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><a href="#"><img src="https://img.shields.io/badge/RTO-15_minutes-yellow?style=flat-square&amp;logo=clock&amp;logoColor=white" alt="RTO"></a> <a href="#"><img src="https://img.shields.io/badge/RPO-%3C_15_minutes-success?style=flat-square&amp;logo=database&amp;logoColor=white" alt="RPO"></a> <a href="#"><img src="https://img.shields.io/badge/Impact-Brief_disruption-yellow?style=flat-square&amp;logo=users&amp;logoColor=black" alt="Impact"></a></p>
+<p><strong>🔍 Detection:</strong></p>
+<ul>
+<li>Route 53 health checks fail for CloudFront endpoint</li>
+<li>Automated DNS failover to GitHub Pages after health check detection + DNS propagation (≈ 15 minutes total)</li>
+</ul>
+<p><strong>🔄 Recovery Procedure:</strong></p>
+<ol>
+<li>⚕️ Route 53 detects CloudFront health check failures (30s intervals × 3 failures = 90 seconds detection time)</li>
+<li>🌐 DNS automatically updates <a href="http://riksdagsmonitor.com">riksdagsmonitor.com</a> → GitHub Pages</li>
+<li>📊 Verify GitHub Pages serving traffic</li>
+<li>📧 Notify CEO of failover event</li>
+<li>⏳ Monitor CloudFront status for restoration</li>
+<li>🔙 Intentionally manual DNS failback after CloudFront recovery and stability confirmation
+<ul>
+<li><strong>Rationale:</strong> Failback is manual by design to avoid DNS flapping and ensure human verification before restoring CloudFront as primary</li>
+</ul>
+</li>
+</ol>
+<p><strong>✅ Validation:</strong></p>
+<ul>
+<li>GitHub Pages availability confirmed</li>
+<li>Users redirected via DNS (up to 15-minute TTL)</li>
+<li>Content identical (synchronized deployment)</li>
+</ul>
+<hr>
+<h3 id="scenario-3-both-aws-s3-regions-unavailable" class="tsd-anchor-link">Scenario 3: Both AWS S3 Regions Unavailable<a href="#scenario-3-both-aws-s3-regions-unavailable" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><a href="#"><img src="https://img.shields.io/badge/RTO-15_minutes-yellow?style=flat-square&amp;logo=clock&amp;logoColor=white" alt="RTO"></a> <a href="#"><img src="https://img.shields.io/badge/RPO-%3C_15_minutes-success?style=flat-square&amp;logo=database&amp;logoColor=white" alt="RPO"></a> <a href="#"><img src="https://img.shields.io/badge/Impact-Brief_disruption-yellow?style=flat-square&amp;logo=users&amp;logoColor=black" alt="Impact"></a></p>
+<p><strong>🔍 Detection:</strong></p>
+<ul>
+<li>CloudFront cannot reach either S3 origin</li>
+<li>Route 53 health checks fail</li>
+</ul>
+<p><strong>🔄 Recovery Procedure:</strong></p>
+<ol>
+<li>⚡ CloudFront attempts origin failover (&lt; 30 seconds)</li>
+<li>🌐 Route 53 DNS failover to GitHub Pages (15 minutes)</li>
+<li>📊 Verify GitHub Pages serving traffic</li>
+<li>📧 CEO notification of major AWS outage</li>
+<li>⏳ Monitor AWS status dashboard</li>
+<li>🔙 DNS failback after AWS recovery</li>
+</ol>
+<p><strong>✅ Validation:</strong></p>
+<ul>
+<li>Service restored via GitHub Pages</li>
+<li>Incident documented with AWS service disruption details</li>
+</ul>
+<hr>
+<h3 id="scenario-4-aws-account-compromise" class="tsd-anchor-link">Scenario 4: AWS Account Compromise<a href="#scenario-4-aws-account-compromise" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><a href="#"><img src="https://img.shields.io/badge/RTO-15_minutes-yellow?style=flat-square&amp;logo=clock&amp;logoColor=white" alt="RTO"></a> <a href="#"><img src="https://img.shields.io/badge/RPO-Up_to_last_deployment-success?style=flat-square&amp;logo=database&amp;logoColor=white" alt="RPO"></a> <a href="#"><img src="https://img.shields.io/badge/Impact-Security_incident-red?style=flat-square&amp;logo=shield-halved&amp;logoColor=white" alt="Impact"></a></p>
+<p><strong>🔍 Detection:</strong></p>
+<ul>
+<li>CloudTrail alerts for unauthorized API calls</li>
+<li>GuardDuty security findings</li>
+<li>Unexpected configuration changes</li>
+</ul>
+<p><strong>🔄 Recovery Procedure:</strong></p>
+<ol>
+<li>🔒 Immediate DNS failover to GitHub Pages (operator action: 2 minutes; client-visible cutover: up to DNS TTL propagation ~15 minutes)</li>
+<li>🔐 Revoke all AWS IAM credentials and access keys</li>
+<li>🔄 Update AWS IAM role trust policy for GitHub Actions OIDC provider to revoke compromised trust</li>
+<li>📊 CloudTrail audit of unauthorized actions</li>
+<li>🛡️ AWS Support engagement for forensics</li>
+<li>🔧 Restore infrastructure from documented configuration and backups (future-state: Infrastructure-as-Code)</li>
+<li>✅ Security validation before DNS failback</li>
+</ol>
+<p><strong>✅ Validation:</strong></p>
+<ul>
+<li>Service operational on GitHub Pages</li>
+<li>All compromised credentials revoked</li>
+<li>Forensic analysis completed</li>
+<li>Infrastructure hardened before restoration</li>
+</ul>
+<hr>
+<h3 id="scenario-5-github-pages-unavailable-during-dr" class="tsd-anchor-link">Scenario 5: GitHub Pages Unavailable (During DR)<a href="#scenario-5-github-pages-unavailable-during-dr" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><a href="#"><img src="https://img.shields.io/badge/RTO-Manual_restore-orange?style=flat-square&amp;logo=clock&amp;logoColor=white" alt="RTO"></a> <a href="#"><img src="https://img.shields.io/badge/RPO-Up_to_last_successful_deploy-success?style=flat-square&amp;logo=database&amp;logoColor=white" alt="RPO"></a> <a href="#"><img src="https://img.shields.io/badge/Impact-Extended_downtime-red?style=flat-square&amp;logo=users&amp;logoColor=white" alt="Impact"></a></p>
+<p><strong>🔍 Detection:</strong></p>
+<ul>
+<li>GitHub Pages deployment failure</li>
+<li>Health checks fail for GitHub Pages endpoint</li>
+</ul>
+<p><strong>🔄 Recovery Procedure:</strong></p>
+<ol>
+<li>📊 Verify GitHub status dashboard</li>
+<li>🌐 If AWS available, revert DNS to CloudFront immediately</li>
+<li>📄 If both unavailable, deploy to alternative CDN (Cloudflare Pages, Netlify)</li>
+<li>📦 Build static site from Git main branch</li>
+<li>🌐 Update DNS to alternative CDN</li>
+<li>🔙 Restore to primary after AWS/GitHub recovery</li>
+</ol>
+<p><strong>✅ Validation:</strong></p>
+<ul>
+<li>Alternative deployment confirmed operational</li>
+<li>DNS propagation verified</li>
+<li>Incident escalated to GitHub Support</li>
+</ul>
+<hr>
+<h2 id="📋-recovery-team-structure" class="tsd-anchor-link">📋 <strong>Recovery Team Structure</strong><a href="#📋-recovery-team-structure" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<h3 id="🎯-business-continuity-team" class="tsd-anchor-link">🎯 Business Continuity Team<a href="#🎯-business-continuity-team" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>👨‍💼 CEO (James Pether Sörling) - Business Continuity Coordinator</strong></p>
+<ul>
+<li><strong>🔑 Authority</strong>: Full decision-making power for continuity actions</li>
+<li><strong>🎯 Responsibilities</strong>: Strategic decisions, stakeholder communication, recovery coordination</li>
+<li><strong>📞 Contact</strong>: Primary mobile, backup email, monitoring alerts</li>
+<li><strong>🛠️ Tools</strong>: AWS Console, GitHub CLI, Route 53 DNS management, CloudWatch</li>
+</ul>
+<p><strong>🔧 Technical Recovery (CEO as Technical Lead)</strong></p>
+<ul>
+<li><strong>🎯 Responsibilities</strong>: AWS infrastructure, GitHub Pages, DNS failover, health check monitoring</li>
+<li><strong>🛠️ Tools</strong>: AWS Console, AWS CLI, GitHub Actions, Route 53, CloudWatch</li>
+<li><strong>📞 Escalation Paths</strong>: AWS Enterprise Support, GitHub Enterprise Support</li>
+</ul>
+<h3 id="📞-emergency-contact-matrix" class="tsd-anchor-link">📞 Emergency Contact Matrix<a href="#📞-emergency-contact-matrix" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>👤 Role</th>
+<th>📞 Primary Contact</th>
+<th>🔄 Backup Method</th>
+<th>⏰ Response Time</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>👨‍💼 CEO/Coordinator</strong></td>
+<td>📱 Mobile phone</td>
+<td>📧 Email + SMS</td>
+<td>&lt; 15 minutes</td>
+</tr>
+<tr>
+<td><strong>☁️ AWS Support</strong></td>
+<td>🌐 Enterprise Portal</td>
+<td>📞 Phone support</td>
+<td>&lt; 15 minutes</td>
+</tr>
+<tr>
+<td><strong>📝 GitHub Support</strong></td>
+<td>🌐 Enterprise Portal</td>
+<td>📧 Email</td>
+<td>&lt; 1 hour</td>
+</tr>
+<tr>
+<td><strong>🌐 Route 53 Operations</strong></td>
+<td>☁️ AWS Console</td>
+<td>📱 Mobile app</td>
+<td>&lt; 5 minutes</td>
+</tr>
+<tr>
+<td><strong>📊 Monitoring Alerts</strong></td>
+<td>📧 Email + 📱 SMS</td>
+<td>💬 Chat/IM</td>
+<td>Real-time</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="🚨-emergency-activation" class="tsd-anchor-link">🚨 <strong>Emergency Activation</strong><a href="#🚨-emergency-activation" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<h3 id="📞-immediate-actions-first-15-minutes" class="tsd-anchor-link">📞 Immediate Actions (First 15 Minutes)<a href="#📞-immediate-actions-first-15-minutes" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ol>
+<li><strong>📊 Assess Situation</strong>: Determine scope via CloudWatch, Route 53 health checks</li>
+<li><strong>🔍 Identify Failure Point</strong>: AWS infrastructure, DNS, GitHub Pages</li>
+<li><strong>🚀 Activate Recovery</strong>: Automatic (CloudFront failover) or manual (DNS update)</li>
+<li><strong>📢 Log Incident</strong>: Document detection time, symptoms, actions taken</li>
+<li><strong>📧 Stakeholder Notification</strong>: CEO notification via monitoring alerts</li>
+</ol>
+<h3 id="🔄-recovery-activation-decision-tree" class="tsd-anchor-link">🔄 Recovery Activation Decision Tree<a href="#🔄-recovery-activation-decision-tree" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<pre><code class="mermaid"><span class="hl-1">%%{</span><br/><span class="hl-1">  init: {</span><br/><span class="hl-1">    &quot;theme&quot;: &quot;base&quot;,</span><br/><span class="hl-1">    &quot;themeVariables&quot;: {</span><br/><span class="hl-1">      &quot;primaryColor&quot;: &quot;#1565C0&quot;,</span><br/><span class="hl-1">      &quot;primaryTextColor&quot;: &quot;#0d47a1&quot;,</span><br/><span class="hl-1">      &quot;lineColor&quot;: &quot;#1565C0&quot;,</span><br/><span class="hl-1">      &quot;secondaryColor&quot;: &quot;#4CAF50&quot;,</span><br/><span class="hl-1">      &quot;tertiaryColor&quot;: &quot;#FF9800&quot;</span><br/><span class="hl-1">    }</span><br/><span class="hl-1">  }</span><br/><span class="hl-1">}%%</span><br/><span class="hl-1">graph TD</span><br/><span class="hl-1">    INCIDENT[🚨 Service Disruption Detected] --&gt; CHECK_CF{CloudFront&lt;br/&gt;Accessible?}</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    CHECK_CF --&gt;|No| MANUAL_DNS[🌐 Manual DNS Failover&lt;br/&gt;to GitHub Pages&lt;br/&gt;RTO: 2 minutes]</span><br/><span class="hl-1">    CHECK_CF --&gt;|Yes| CHECK_S3{S3 Origins&lt;br/&gt;Accessible?}</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    CHECK_S3 --&gt;|us-east-1 No| AUTO_FAILOVER[⚡ Automatic Origin Failover&lt;br/&gt;to eu-west-1&lt;br/&gt;RTO: &amp;lt; 30 seconds]</span><br/><span class="hl-1">    CHECK_S3 --&gt;|Both No| ROUTE53_FAILOVER[⚕️ Route 53 Health Check&lt;br/&gt;DNS Failover&lt;br/&gt;RTO: 15 minutes]</span><br/><span class="hl-1">    CHECK_S3 --&gt;|Yes| CHECK_HEALTH{Health Check&lt;br/&gt;Passing?}</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    CHECK_HEALTH --&gt;|No| INVESTIGATE[🔍 Investigate Root Cause&lt;br/&gt;Application Error?&lt;br/&gt;Configuration Issue?]</span><br/><span class="hl-1">    CHECK_HEALTH --&gt;|Yes| FALSE_ALARM[✅ False Alarm&lt;br/&gt;Monitor and Document]</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    MANUAL_DNS --&gt; VERIFY[✅ Verify Service Restored]</span><br/><span class="hl-1">    AUTO_FAILOVER --&gt; VERIFY</span><br/><span class="hl-1">    ROUTE53_FAILOVER --&gt; VERIFY</span><br/><span class="hl-1">    INVESTIGATE --&gt; VERIFY</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    VERIFY --&gt; DOCUMENT[📝 Incident Documentation&lt;br/&gt;Post-Event Analysis]</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    style INCIDENT fill:#FF9800,color:#000000</span><br/><span class="hl-1">    style MANUAL_DNS fill:#1565C0,color:#ffffff</span><br/><span class="hl-1">    style AUTO_FAILOVER fill:#4CAF50,color:#000000</span><br/><span class="hl-1">    style ROUTE53_FAILOVER fill:#1565C0,color:#ffffff</span><br/><span class="hl-1">    style VERIFY fill:#4CAF50,color:#000000</span>
+</code><button type="button">Copy</button></pre>
+
+<hr>
+<h2 id="🧪-testing-validation" class="tsd-anchor-link">🧪 <strong>Testing &amp; Validation</strong><a href="#🧪-testing-validation" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<h3 id="📅-bcp-testing-schedule" class="tsd-anchor-link">📅 BCP Testing Schedule<a href="#📅-bcp-testing-schedule" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>Test Type</th>
+<th>Frequency</th>
+<th>Scope</th>
+<th>Success Criteria</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>⚡ Origin Failover Test</strong></td>
+<td>Quarterly</td>
+<td>CloudFront → S3 eu-west-1</td>
+<td>Failover &lt; 30 seconds, no data loss</td>
+</tr>
+<tr>
+<td><strong>🌐 DNS Failover Test</strong></td>
+<td>Semi-Annual</td>
+<td>Route 53 → GitHub Pages</td>
+<td>Failover within 15 minutes, content identical</td>
+</tr>
+<tr>
+<td><strong>🔙 Failback Test</strong></td>
+<td>Quarterly</td>
+<td>Return to primary infrastructure</td>
+<td>Clean restoration, no errors</td>
+</tr>
+<tr>
+<td><strong>📊 Monitoring Alert Test</strong></td>
+<td>Monthly</td>
+<td>CloudWatch, Route 53 health checks</td>
+<td>Alerts delivered within 5 minutes</td>
+</tr>
+<tr>
+<td><strong>📋 Recovery Runbook Test</strong></td>
+<td>Quarterly</td>
+<td>Execute documented procedures</td>
+<td>All steps executable, documentation accurate</td>
+</tr>
+<tr>
+<td><strong>🔐 Security Incident Drill</strong></td>
+<td>Annual</td>
+<td>AWS account compromise scenario</td>
+<td>Credentials revoked, service restored on DR</td>
+</tr>
+</tbody>
+</table>
+<h3 id="🎯-testing-methodology" class="tsd-anchor-link">🎯 Testing Methodology<a href="#🎯-testing-methodology" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Quarterly Origin Failover Test:</strong></p>
+<ol>
+<li>🔧 Temporarily deny CloudFront access to S3 us-east-1 via bucket policy (add temporary Deny statement for CloudFront Origin Access Identity)</li>
+<li>⏱️ Measure CloudFront automatic failover time to eu-west-1</li>
+<li>✅ Verify content served from eu-west-1 origin</li>
+<li>🔙 Remove the temporary Deny from us-east-1 bucket policy and confirm failback to primary origin</li>
+<li>📝 Document results and improvements</li>
+</ol>
+<p><strong>Semi-Annual DNS Failover Test:</strong></p>
+<ol>
+<li>🔧 Update Route 53 health check to force failure</li>
+<li>⏱️ Measure DNS propagation time</li>
+<li>✅ Verify GitHub Pages serving traffic</li>
+<li>🔙 Restore Route 53 health check</li>
+<li>📝 Document results and TTL impact</li>
+</ol>
+<hr>
+<h2 id="📊-business-continuity-metrics" class="tsd-anchor-link">📊 <strong>Business Continuity Metrics</strong><a href="#📊-business-continuity-metrics" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<h3 id="🎯-performance-tracking" class="tsd-anchor-link">🎯 Performance Tracking<a href="#🎯-performance-tracking" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Target</th>
+<th>Current Status</th>
+<th>Trend</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>🎯 Availability</strong></td>
+<td>99.998%</td>
+<td>99.999% (YTD)</td>
+<td>✅ Exceeding</td>
+</tr>
+<tr>
+<td><strong>⚡ Origin Failover RTO</strong></td>
+<td>&lt; 30 seconds</td>
+<td>18 seconds (last test)</td>
+<td>✅ On track</td>
+</tr>
+<tr>
+<td><strong>🌐 DNS Failover RTO</strong></td>
+<td>15 minutes</td>
+<td>14 minutes (last test)</td>
+<td>✅ On track</td>
+</tr>
+<tr>
+<td><strong>💾 Data Synchronization</strong></td>
+<td>0 RPO</td>
+<td>0 seconds (real-time)</td>
+<td>✅ On track</td>
+</tr>
+<tr>
+<td><strong>🧪 BCP Testing</strong></td>
+<td>Quarterly</td>
+<td>Last tested 2026-02</td>
+<td>✅ Current</td>
+</tr>
+<tr>
+<td><strong>📊 Monitoring Coverage</strong></td>
+<td>100%</td>
+<td>100% (all endpoints)</td>
+<td>✅ Complete</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Note:</strong> The &quot;Current Status&quot; values in this table are illustrative planning examples. Actual operational metrics are monitored via AWS CloudWatch, Route 53 health check logs, and GitHub Pages status, and documented in operational runbooks.</p>
+</blockquote>
+<hr>
+<h2 id="🏢-single-person-company-adaptation" class="tsd-anchor-link">🏢 <strong>Single-Person Company Adaptation</strong><a href="#🏢-single-person-company-adaptation" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<h3 id="hack23-ab-single-person-bcp-model" class="tsd-anchor-link"><strong>Hack23 AB Single-Person BCP Model</strong><a href="#hack23-ab-single-person-bcp-model" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p>As CEO/Founder is the sole employee, traditional business continuity teams are not possible. <strong>Riksdagsmonitor implements automated infrastructure resilience + comprehensive documentation:</strong></p>
+<h4 id="🎯-ceo-as-business-continuity-coordinator" class="tsd-anchor-link"><strong>🎯 CEO As Business Continuity Coordinator</strong><a href="#🎯-ceo-as-business-continuity-coordinator" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4>
+<p><strong>Capabilities</strong>:</p>
+<ul>
+<li><strong>Cloud Infrastructure Expertise</strong>: AWS Solutions Architect, 15+ years experience</li>
+<li><strong>Automated Failover</strong>: CloudFront origin failover, Route 53 health checks (no manual intervention)</li>
+<li><strong>Documentation</strong>: All procedures documented in ISMS for continuity</li>
+<li><strong>Monitoring</strong>: CloudWatch alarms, Route 53 health checks, automated notifications</li>
+<li><strong>Supplier Relationships</strong>: AWS Enterprise Support, GitHub Enterprise Support</li>
+</ul>
+<h4 id="🎯-compensating-controls" class="tsd-anchor-link"><strong>🎯 Compensating Controls</strong><a href="#🎯-compensating-controls" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4>
+<table>
+<thead>
+<tr>
+<th>Control Type</th>
+<th>Implementation</th>
+<th>Effectiveness</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>🤖 Automated Failover</strong></td>
+<td>CloudFront origin failover (&lt; 30s), Route 53 DNS failover (15 min)</td>
+<td>Eliminates manual recovery for primary scenarios</td>
+</tr>
+<tr>
+<td><strong>📚 Documentation</strong></td>
+<td>Complete runbooks in <a href="http://BCPPlan.md">BCPPlan.md</a>, <a href="http://ARCHITECTURE.md">ARCHITECTURE.md</a>, SECURITY_ARCHITECTURE.md</td>
+<td>Enables recovery by any technical professional</td>
+</tr>
+<tr>
+<td><strong>🔄 Infrastructure-as-Code (Planned)</strong></td>
+<td>AWS static site and DNS infrastructure to be codified in Terraform/CloudFormation (see FUTURE_SECURITY_ARCHITECTURE.md)</td>
+<td>Future-state: fully reproducible infrastructure from version-controlled IaC</td>
+</tr>
+<tr>
+<td><strong>📊 Comprehensive Monitoring</strong></td>
+<td>CloudWatch, Route 53 health checks, automated alerts</td>
+<td>Real-time detection and notification</td>
+</tr>
+<tr>
+<td><strong>💾 Geographic Redundancy</strong></td>
+<td>Multi-region S3 (us-east-1 + eu-west-1), GitHub Pages standby</td>
+<td>No single point of failure</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="📚-related-documents" class="tsd-anchor-link">📚 <strong>Related Documents</strong><a href="#📚-related-documents" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<h3 id="🏗️-architecture-security" class="tsd-anchor-link">🏗️ Architecture &amp; Security<a href="#🏗️-architecture-security" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul>
+<li><a href="ARCHITECTURE.html">🏗️ ARCHITECTURE.md</a> - System architecture and AWS infrastructure design</li>
+<li><a href="SECURITY_ARCHITECTURE.html">🔐 SECURITY_ARCHITECTURE.md</a> - Security controls and AWS security architecture</li>
+<li><a href="FUTURE_SECURITY_ARCHITECTURE.html">🚀 FUTURE_SECURITY_ARCHITECTURE.md</a> - Security roadmap and planned enhancements</li>
+<li><a href="THREAT_MODEL.html">🎯 THREAT_MODEL.md</a> - STRIDE threat analysis and risk assessment</li>
+</ul>
+<h3 id="🔧-operations" class="tsd-anchor-link">🔧 Operations<a href="#🔧-operations" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul>
+<li><a href="WORKFLOWS.html">⚙️ WORKFLOWS.md</a> - CI/CD workflows and deployment automation</li>
+<li><a href="../media/README-4.md">📖 README.md</a> - Project overview and quick start guide</li>
+</ul>
+<blockquote>
+<p>ℹ️ <strong>Alignment notice:</strong> <a href="http://WORKFLOWS.md">WORKFLOWS.md</a>, FUTURE_SECURITY_ARCHITECTURE.md and THREAT_MODEL.md are pending update to fully align with the dual-deployment continuity model and current primary hosting described in this BCPPlan. If there is any conflict regarding the current hosting/deployment architecture, this BCPPlan is the authoritative source.</p>
+</blockquote>
+<hr>
+<hr>
+<h2 id="📖-incident-response-playbooks" class="tsd-anchor-link">📖 Incident Response Playbooks<a href="#📖-incident-response-playbooks" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<p>This section provides detailed, step-by-step incident response playbooks for the three highest-probability incident scenarios for Riksdagsmonitor. All playbooks follow the PICERL framework: <strong>P</strong>reparation, <strong>I</strong>dentification, <strong>C</strong>ontainment, <strong>E</strong>radication, <strong>R</strong>ecovery, <strong>L</strong>essons Learned.</p>
+<hr>
+<h3 id="playbook-1-content-tampering-incident" class="tsd-anchor-link">Playbook 1: Content Tampering Incident<a href="#playbook-1-content-tampering-incident" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Playbook ID:</strong> IR-PB-001<br>
+<strong>Version:</strong> 1.0<br>
+<strong>Owner:</strong> James Pether Sörling, CEO<br>
+<strong>Last Reviewed:</strong> 2026-02-25</p>
+<h4 id="trigger-conditions-and-detection-signals" class="tsd-anchor-link">Trigger Conditions and Detection Signals<a href="#trigger-conditions-and-detection-signals" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4>
+<p>This playbook activates when any of the following are detected:</p>
+<table>
+<thead>
+<tr>
+<th>Signal</th>
+<th>Detection Method</th>
+<th>Severity Indicator</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Unexpected content changes in production</td>
+<td>GitHub Actions diff in deploy log</td>
+<td>HIGH if unauthorized</td>
+</tr>
+<tr>
+<td>Unauthorized Git commits to main branch</td>
+<td>GitHub audit log alert</td>
+<td>CRITICAL</td>
+</tr>
+<tr>
+<td>Branch protection bypass detected</td>
+<td>GitHub security event</td>
+<td>CRITICAL</td>
+</tr>
+<tr>
+<td>Anomalous content detected by user report</td>
+<td>User email to <a href="mailto:security@hack23.com">security@hack23.com</a></td>
+<td>HIGH</td>
+</tr>
+<tr>
+<td>SLSA attestation failure</td>
+<td>GitHub Actions security job</td>
+<td>HIGH</td>
+</tr>
+<tr>
+<td>Unexpected language content injection</td>
+<td>HTMLHint content validation</td>
+<td>MEDIUM</td>
+</tr>
+</tbody>
+</table>
+<h4 id="severity-classification" class="tsd-anchor-link">Severity Classification<a href="#severity-classification" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4>
+<table>
+<thead>
+<tr>
+<th>Severity</th>
+<th>Criteria</th>
+<th>Response Time</th>
+<th>Escalation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>P1 - Critical</strong></td>
+<td>Unauthorized content in production, branch protection bypass, SLSA attestation failure</td>
+<td>15 minutes to containment</td>
+<td>Immediate personal notification to CEO</td>
+</tr>
+<tr>
+<td><strong>P2 - High</strong></td>
+<td>Suspected tampering unconfirmed, anomalous content flagged</td>
+<td>1 hour to investigation</td>
+<td>Alert within 30 minutes</td>
+</tr>
+<tr>
+<td><strong>P3 - Medium</strong></td>
+<td>Minor unexpected changes, validation warnings</td>
+<td>4 hours to resolution</td>
+<td>Standard ISMS notification</td>
+</tr>
+</tbody>
+</table>
+<h4 id="step-by-step-response-procedure" class="tsd-anchor-link">Step-by-Step Response Procedure<a href="#step-by-step-response-procedure" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4>
+<p><strong>PHASE 1: DETECT (0-15 minutes for P1)</strong></p>
+<ol>
+<li><strong>Receive Alert</strong> — GitHub Actions notification, user report, or automated monitoring</li>
+<li><strong>Verify Authenticity</strong> — Confirm alert is genuine (not false positive)
+<ul>
+<li>Check GitHub Actions run logs for the deploy job</li>
+<li>Verify SHA-256 hashes in build metadata</li>
+<li>Review Git commit history on main branch</li>
+</ul>
+</li>
+<li><strong>Classify Severity</strong> — Apply classification matrix above</li>
+<li><strong>Document Start Time</strong> — Record incident start timestamp in UTC</li>
+<li><strong>Open Incident Record</strong> — Create GitHub Issue with label <code>security-incident</code></li>
+</ol>
+<p><strong>PHASE 2: TRIAGE (15-30 minutes for P1)</strong></p>
+<ol>
+<li><strong>Scope Assessment</strong> — Which files are affected? (index.html, all 14 language variants, news articles?)</li>
+<li><strong>Impact Assessment</strong> — Is tampered content currently visible to users?</li>
+<li><strong>Source Identification</strong> — Review GitHub audit log for:<pre><code><span class="hl-5">Settings</span><span class="hl-1"> &gt; </span><span class="hl-5">Security</span><span class="hl-1"> &gt; </span><span class="hl-5">Audit</span><span class="hl-1"> </span><span class="hl-5">log</span><br/><span class="hl-7">Filter</span><span class="hl-1">: </span><span class="hl-5">Action</span><span class="hl-1"> = </span><span class="hl-2">&quot;repo.create_actions_secret&quot;</span><span class="hl-1"> </span><span class="hl-5">or</span><span class="hl-1"> </span><span class="hl-2">&quot;git.push&quot;</span><span class="hl-1"> </span><span class="hl-5">or</span><span class="hl-1"> </span><span class="hl-2">&quot;protected_branch&quot;</span>
+</code><button>Copy</button></pre>
+
+</li>
+<li><strong>Blast Radius</strong> — Determine if compromise is isolated or widespread</li>
+</ol>
+<p><strong>PHASE 3: CONTAIN (30-60 minutes for P1)</strong></p>
+<ol>
+<li><strong>Immediate Rollback</strong> — Revert to last known good commit:<pre><code class="bash"><span class="hl-0">git</span><span class="hl-1"> </span><span class="hl-2">log</span><span class="hl-1"> </span><span class="hl-9">--oneline</span><span class="hl-1"> </span><span class="hl-9">-20</span><span class="hl-1">  </span><span class="hl-4"># Identify last known good commit</span><br/><span class="hl-0">git</span><span class="hl-1"> </span><span class="hl-2">revert</span><span class="hl-1"> </span><span class="hl-2">HEAD...</span><span class="hl-1">&lt;</span><span class="hl-2">last-good-sh</span><span class="hl-1">a&gt;  </span><span class="hl-4"># Revert to good state</span><br/><span class="hl-0">git</span><span class="hl-1"> </span><span class="hl-2">push</span><span class="hl-1"> </span><span class="hl-2">origin</span><span class="hl-1"> </span><span class="hl-2">main</span><span class="hl-1">  </span><span class="hl-4"># Trigger redeploy</span>
+</code><button type="button">Copy</button></pre>
+
+</li>
+<li><strong>Block Malicious User</strong> (if external) — Via GitHub repository settings</li>
+<li><strong>Revoke Compromised Credentials</strong> — If credentials were used:
+<ul>
+<li>Rotate all GitHub Secrets immediately</li>
+<li>Revoke compromised PATs</li>
+<li>Regenerate Amazon Bedrock API keys</li>
+</ul>
+</li>
+<li><strong>Enable Temporary Maintenance Mode</strong> — If content integrity cannot be confirmed:
+<ul>
+<li>Temporarily set CloudFront to return 503 for affected paths</li>
+<li>Display maintenance page with explanation</li>
+</ul>
+</li>
+</ol>
+<p><strong>PHASE 4: ERADICATE (1-4 hours)</strong></p>
+<ol>
+<li><strong>Root Cause Analysis</strong> — Determine exact attack vector:
+<ul>
+<li>Social engineering?</li>
+<li>Compromised credentials?</li>
+<li>Supply chain attack via dependency?</li>
+<li>GitHub Actions workflow injection?</li>
+</ul>
+</li>
+<li><strong>Remove Malicious Content</strong> — Clean all affected files</li>
+<li><strong>Verify Clean State</strong> — SHA-256 comparison against last known good</li>
+<li><strong>Patch Vulnerability</strong> — Fix the root cause (update dependency, revoke credential, harden workflow)</li>
+</ol>
+<p><strong>PHASE 5: RECOVER (4-24 hours)</strong></p>
+<ol>
+<li><strong>Restore Service</strong> — Deploy verified clean content</li>
+<li><strong>Verify Integrity</strong> — Automated integrity checks pass</li>
+<li><strong>Monitor Closely</strong> — Increased monitoring for 72 hours post-incident</li>
+<li><strong>Stakeholder Communication</strong> — Post transparent incident report (see template below)</li>
+</ol>
+<p><strong>PHASE 6: POST-INCIDENT (Within 72 hours)</strong></p>
+<ol>
+<li><strong>Lessons Learned Meeting</strong> — Document findings</li>
+<li><strong>Update Controls</strong> — Implement additional preventive measures</li>
+<li><strong>Update Threat Model</strong> — If new attack vector discovered</li>
+<li><strong>NIS2 Assessment</strong> — Determine if ENISA notification required</li>
+</ol>
+<h4 id="communication-template" class="tsd-anchor-link">Communication Template<a href="#communication-template" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4>
+<pre><code><span class="hl-7">Subject</span><span class="hl-1">: [</span><span class="hl-5">Riksdagsmonitor</span><span class="hl-1">] </span><span class="hl-5">Security</span><span class="hl-1"> </span><span class="hl-5">Incident</span><span class="hl-1"> </span><span class="hl-5">Report</span><span class="hl-1"> - </span><span class="hl-5">Content</span><span class="hl-1"> </span><span class="hl-5">Integrity</span><br/><br/><span class="hl-7">Incident</span><span class="hl-1">: </span><span class="hl-5">Potential</span><span class="hl-1"> </span><span class="hl-5">content</span><span class="hl-1"> </span><span class="hl-5">tampering</span><span class="hl-1"> </span><span class="hl-5">detected</span><br/><span class="hl-5">Date</span><span class="hl-1">/</span><span class="hl-7">Time</span><span class="hl-1">: [</span><span class="hl-8">UTC</span><span class="hl-1"> </span><span class="hl-5">timestamp</span><span class="hl-1">]</span><br/><span class="hl-7">Severity</span><span class="hl-1">: [</span><span class="hl-8">P1</span><span class="hl-1">/</span><span class="hl-8">P2</span><span class="hl-1">/</span><span class="hl-8">P3</span><span class="hl-1">]</span><br/><span class="hl-7">Status</span><span class="hl-1">: [</span><span class="hl-5">Investigating</span><span class="hl-1"> / </span><span class="hl-5">Contained</span><span class="hl-1"> / </span><span class="hl-5">Resolved</span><span class="hl-1">]</span><br/><br/><span class="hl-7">Summary</span><span class="hl-1">:</span><br/><span class="hl-5">We</span><span class="hl-1"> </span><span class="hl-5">detected</span><span class="hl-1"> [</span><span class="hl-5">brief</span><span class="hl-1"> </span><span class="hl-5">description</span><span class="hl-1">]. </span><span class="hl-5">Our</span><span class="hl-1"> </span><span class="hl-5">investigation</span><span class="hl-1"> </span><span class="hl-5">found</span><span class="hl-1"> [</span><span class="hl-5">findings</span><span class="hl-1">].</span><br/><br/><span class="hl-5">Actions</span><span class="hl-1"> </span><span class="hl-7">Taken</span><span class="hl-1">:</span><br/><span class="hl-6">1.</span><span class="hl-1"> [</span><span class="hl-5">Action</span><span class="hl-1"> </span><span class="hl-5">taken</span><span class="hl-1">]</span><br/><span class="hl-6">2.</span><span class="hl-1"> [</span><span class="hl-5">Action</span><span class="hl-1"> </span><span class="hl-5">taken</span><span class="hl-1">]</span><br/><br/><span class="hl-7">Impact</span><span class="hl-1">:</span><br/><span class="hl-5">Content</span><span class="hl-1"> </span><span class="hl-5">was</span><span class="hl-1"> [</span><span class="hl-5">not</span><span class="hl-1"> </span><span class="hl-5">affected</span><span class="hl-1"> / </span><span class="hl-5">affected</span><span class="hl-1"> </span><span class="hl-5">for</span><span class="hl-1"> </span><span class="hl-8">X</span><span class="hl-1"> </span><span class="hl-5">minutes</span><span class="hl-1">] </span><span class="hl-5">between</span><span class="hl-1"> [</span><span class="hl-5">time</span><span class="hl-1">] </span><span class="hl-5">and</span><span class="hl-1"> [</span><span class="hl-5">time</span><span class="hl-1">].</span><br/><br/><span class="hl-5">Preventive</span><span class="hl-1"> </span><span class="hl-7">Measures</span><span class="hl-1">:</span><br/><span class="hl-1">[</span><span class="hl-5">Measures</span><span class="hl-1"> </span><span class="hl-5">implemented</span><span class="hl-1"> </span><span class="hl-5">to</span><span class="hl-1"> </span><span class="hl-5">prevent</span><span class="hl-1"> </span><span class="hl-5">recurrence</span><span class="hl-1">]</span><br/><br/><span class="hl-7">Contact</span><span class="hl-1">: </span><span class="hl-5">security</span><span class="hl-1">@</span><span class="hl-5">hack23</span><span class="hl-1">.</span><span class="hl-5">com</span>
+</code><button>Copy</button></pre>
+
+<h4 id="rollback-procedure-using-git-history" class="tsd-anchor-link">Rollback Procedure Using Git History<a href="#rollback-procedure-using-git-history" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4>
+<pre><code class="bash"><span class="hl-4"># Step 1: Identify good commit</span><br/><span class="hl-0">git</span><span class="hl-1"> </span><span class="hl-2">log</span><span class="hl-1"> </span><span class="hl-9">--oneline</span><span class="hl-1"> </span><span class="hl-9">--graph</span><span class="hl-1"> </span><span class="hl-9">--all</span><span class="hl-1"> | </span><span class="hl-0">head</span><span class="hl-1"> </span><span class="hl-9">-30</span><br/><br/><span class="hl-4"># Step 2: Verify content of last known good commit</span><br/><span class="hl-0">git</span><span class="hl-1"> </span><span class="hl-2">show</span><span class="hl-1"> &lt;</span><span class="hl-2">good-sh</span><span class="hl-1">a&gt;</span><span class="hl-2">:index.html</span><span class="hl-1"> | </span><span class="hl-0">sha256sum</span><br/><br/><span class="hl-4"># Step 3: Create revert commit (preserves history)</span><br/><span class="hl-0">git</span><span class="hl-1"> </span><span class="hl-2">revert</span><span class="hl-1"> </span><span class="hl-9">--no-commit</span><span class="hl-1"> &lt;</span><span class="hl-2">bad-sh</span><span class="hl-1">a&gt;</span><span class="hl-2">..</span><span class="hl-1">&lt;</span><span class="hl-2">HEA</span><span class="hl-1">D&gt;</span><br/><span class="hl-0">git</span><span class="hl-1"> </span><span class="hl-2">commit</span><span class="hl-1"> </span><span class="hl-9">-m</span><span class="hl-1"> </span><span class="hl-2">&quot;security: revert content tampering incident [IR-PB-001]&quot;</span><br/><br/><span class="hl-4"># Step 4: Push and trigger redeploy</span><br/><span class="hl-0">git</span><span class="hl-1"> </span><span class="hl-2">push</span><span class="hl-1"> </span><span class="hl-2">origin</span><span class="hl-1"> </span><span class="hl-2">main</span><br/><br/><span class="hl-4"># Step 5: Verify production content</span><br/><span class="hl-0">curl</span><span class="hl-1"> </span><span class="hl-9">-s</span><span class="hl-1"> </span><span class="hl-2">https://riksdagsmonitor.com/</span><span class="hl-1"> | </span><span class="hl-0">sha256sum</span>
+</code><button type="button">Copy</button></pre>
+
+<h4 id="evidence-collection-checklist" class="tsd-anchor-link">Evidence Collection Checklist<a href="#evidence-collection-checklist" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4>
+<ul>
+<li>[ ] GitHub Actions run logs (download and archive)</li>
+<li>[ ] GitHub Audit Log export for incident timeframe</li>
+<li>[ ] Git commit history with diff</li>
+<li>[ ] SHA-256 hashes of affected and clean files</li>
+<li>[ ] CloudFront access logs for incident timeframe</li>
+<li>[ ] SLSA attestation records</li>
+<li>[ ] Sigstore transparency log entries</li>
+<li>[ ] Browser screenshots of tampered content (if visible)</li>
+<li>[ ] User reports with timestamps</li>
+<li>[ ] Credential access logs from GitHub</li>
+</ul>
+<hr>
+<h3 id="playbook-2-mcp-service-outage-incident" class="tsd-anchor-link">Playbook 2: MCP Service Outage Incident<a href="#playbook-2-mcp-service-outage-incident" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Playbook ID:</strong> IR-PB-002<br>
+<strong>Version:</strong> 1.0<br>
+<strong>Owner:</strong> James Pether Sörling, CEO<br>
+<strong>Last Reviewed:</strong> 2026-02-25</p>
+<h4 id="trigger-conditions" class="tsd-anchor-link">Trigger Conditions<a href="#trigger-conditions" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4>
+<table>
+<thead>
+<tr>
+<th>Signal</th>
+<th>Detection Method</th>
+<th>Severity</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GitHub Actions MCP job failure</td>
+<td>Workflow notification email</td>
+<td>HIGH</td>
+</tr>
+<tr>
+<td><a href="http://riksdag.se">riksdag.se</a> API returning 5xx errors</td>
+<td>Pipeline error log</td>
+<td>HIGH</td>
+</tr>
+<tr>
+<td>IMF upstream unavailable (<a href="http://data.imf.org">data.imf.org</a> / <a href="http://api.imf.org">api.imf.org</a> 5xx, DNS, or TLS error)</td>
+<td><code>scripts/imf-client.ts</code> retry-exhausted log</td>
+<td>LOW (optional enrichment — graceful fallback to cached <code>analysis/data/imf/</code> snapshots)</td>
+</tr>
+<tr>
+<td>API timeout after 30s</td>
+<td>MCP client timeout log</td>
+<td>MEDIUM</td>
+</tr>
+<tr>
+<td>Data staleness alert (&gt;48h)</td>
+<td>Automated staleness checker</td>
+<td>MEDIUM</td>
+</tr>
+<tr>
+<td>Amazon Bedrock API unavailable</td>
+<td>GitHub Actions job failure</td>
+<td>HIGH</td>
+</tr>
+<tr>
+<td>Zero articles generated for 3+ days</td>
+<td>Manual monitoring check</td>
+<td>HIGH</td>
+</tr>
+<tr>
+<td>CIA platform export unavailable</td>
+<td>Dashboard shows stale data</td>
+<td>MEDIUM</td>
+</tr>
+</tbody>
+</table>
+<h4 id="severity-classification-1" class="tsd-anchor-link">Severity Classification<a href="#severity-classification-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4>
+<table>
+<thead>
+<tr>
+<th>Severity</th>
+<th>Criteria</th>
+<th>Response Time</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>P1 - Critical</strong></td>
+<td>Complete MCP pipeline down, 0 data updates for 24+ hours</td>
+<td>1 hour</td>
+</tr>
+<tr>
+<td><strong>P2 - High</strong></td>
+<td>Partial data failure, degraded content generation, 12-24 hour gap</td>
+<td>4 hours</td>
+</tr>
+<tr>
+<td><strong>P3 - Medium</strong></td>
+<td>Single source unavailable, minor staleness, pipeline flaky</td>
+<td>24 hours</td>
+</tr>
+</tbody>
+</table>
+<h4 id="step-by-step-response-procedure-1" class="tsd-anchor-link">Step-by-Step Response Procedure<a href="#step-by-step-response-procedure-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4>
+<p><strong>PHASE 1: DETECT AND VERIFY</strong></p>
+<ol>
+<li><strong>Confirm Outage</strong> — Check GitHub Actions run history:
+<ul>
+<li>Navigate to Actions tab</li>
+<li>Filter by workflow: <code>news-generation.yml</code></li>
+<li>Check last 5 runs for failure pattern</li>
+</ul>
+</li>
+<li><strong>Identify Scope</strong> — Determine which component is failing:
+<ul>
+<li>Riksdag API unavailable?</li>
+<li>Amazon Bedrock rate limited or unavailable?</li>
+<li>riksdag-regering-mcp server issue?</li>
+<li>Network egress blocked by harden-runner?</li>
+</ul>
+</li>
+<li><strong>Check External Status Pages:</strong>
+<ul>
+<li><a href="https://www.riksdagen.se/sv/kontakt/">https://www.riksdagen.se/sv/kontakt/</a> (Riksdag IT contact)</li>
+<li><a href="https://status.aws.amazon.com/">https://status.aws.amazon.com/</a> (Amazon Bedrock status)</li>
+<li><a href="https://www.githubstatus.com/">https://www.githubstatus.com/</a> (GitHub Actions status)</li>
+</ul>
+</li>
+<li><strong>Classify Severity</strong> and start incident timer</li>
+</ol>
+<p><strong>PHASE 2: TRIAGE</strong></p>
+<ol>
+<li><strong>Check Cached Data Availability</strong> — Verify <code>cia-data/</code> directory has recent data</li>
+<li><strong>Determine User Impact</strong> — Are dashboards showing stale data? How stale?</li>
+<li><strong>Estimate Recovery Time</strong> — Is this an external outage (wait) or internal issue (fix)?</li>
+</ol>
+<p><strong>PHASE 3: CONTAIN / GRACEFUL DEGRADATION</strong></p>
+<ol>
+<li><strong>Activate Stale Data Banner</strong> — If data is more than 48 hours old:
+<ul>
+<li>Edit <code>index.html</code> to show data freshness warning</li>
+<li>Deploy immediately</li>
+</ul>
+</li>
+<li><strong>Use Cached Data</strong> — Pipeline automatically falls back to <code>cia-data/</code> cache</li>
+<li><strong>Disable Failed Pipeline</strong> — If pipeline is producing errors, temporarily disable cron:<pre><code class="yaml"><span class="hl-4"># Temporarily comment out schedule trigger in workflow YAML</span><br/><span class="hl-4"># on:</span><br/><span class="hl-4">#   schedule:</span><br/><span class="hl-4">#     - cron: &#39;0 1 * * *&#39;</span>
+</code><button type="button">Copy</button></pre>
+
+</li>
+<li><strong>Document Outage Start</strong> — Record in incident log</li>
+</ol>
+<p><strong>PHASE 4: INVESTIGATE AND RESTORE</strong></p>
+<ol>
+<li><strong>External Outage:</strong> Wait for provider recovery, monitor status pages</li>
+<li><strong>Internal Issue - API Change:</strong>
+<ul>
+<li>Review Riksdag API changelog</li>
+<li>Update MCP server configuration</li>
+<li>Test with <code>npm run test:mcp</code></li>
+</ul>
+</li>
+<li><strong>Internal Issue - Credential:</strong>
+<ul>
+<li>Verify Amazon Bedrock API key in GitHub Secrets</li>
+<li>Rotate key if expired or compromised</li>
+</ul>
+</li>
+<li><strong>Internal Issue - Rate Limiting:</strong>
+<ul>
+<li>Implement exponential backoff</li>
+<li>Reduce fetch frequency temporarily</li>
+<li>Check Riksdag API terms of service</li>
+</ul>
+</li>
+</ol>
+<p><strong>PHASE 5: RESTORE SERVICE</strong></p>
+<ol>
+<li><strong>Re-enable Pipeline</strong> — Restore cron schedule in workflow</li>
+<li><strong>Run Manual Trigger</strong> — <code>workflow_dispatch</code> to verify pipeline works</li>
+<li><strong>Verify Output</strong> — Confirm articles generate successfully in all 14 languages</li>
+<li><strong>Remove Stale Banner</strong> — Update HTML once fresh data available</li>
+<li><strong>Verify Dashboards</strong> — Confirm CIA data dashboards show current data</li>
+</ol>
+<p><strong>PHASE 6: POST-INCIDENT</strong></p>
+<ol>
+<li><strong>Document Root Cause</strong> — In incident GitHub Issue</li>
+<li><strong>Add Monitoring</strong> — Alert if no successful pipeline run in 36 hours</li>
+<li><strong>Update Runbooks</strong> — If new failure mode discovered</li>
+<li><strong>Resilience Improvement</strong> — Implement recommendation from this incident</li>
+</ol>
+<h4 id="service-restoration-checklist" class="tsd-anchor-link">Service Restoration Checklist<a href="#service-restoration-checklist" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4>
+<ul>
+<li>[ ] MCP server responding to tool discovery</li>
+<li>[ ] Riksdag API returning valid JSON</li>
+<li>[ ] Amazon Bedrock API responding within 30s</li>
+<li>[ ] News generation pipeline completes without error</li>
+<li>[ ] 14 language articles successfully generated</li>
+<li>[ ] SHA-256 integrity check passes</li>
+<li>[ ] Git commit and PR created successfully</li>
+<li>[ ] CIA data dashboards showing fresh data</li>
+<li>[ ] Stale data banners removed from all 14 language pages</li>
+<li>[ ] GitHub Actions workflow next scheduled run confirmed</li>
+</ul>
+<h4 id="communication-template-1" class="tsd-anchor-link">Communication Template<a href="#communication-template-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4>
+<pre><code><span class="hl-7">Subject</span><span class="hl-1">: [</span><span class="hl-5">Riksdagsmonitor</span><span class="hl-1">] </span><span class="hl-5">Service</span><span class="hl-1"> </span><span class="hl-5">Notification</span><span class="hl-1"> - </span><span class="hl-5">Data</span><span class="hl-1"> </span><span class="hl-5">Pipeline</span><span class="hl-1"> </span><span class="hl-5">Status</span><br/><br/><span class="hl-7">Status</span><span class="hl-1">: [</span><span class="hl-5">Investigating</span><span class="hl-1"> / </span><span class="hl-5">Degraded</span><span class="hl-1"> / </span><span class="hl-5">Restored</span><span class="hl-1">]</span><br/><span class="hl-7">Affected</span><span class="hl-1">: </span><span class="hl-5">Automated</span><span class="hl-1"> </span><span class="hl-5">news</span><span class="hl-1"> </span><span class="hl-5">generation</span><span class="hl-1"> </span><span class="hl-5">and</span><span class="hl-1">/</span><span class="hl-5">or</span><span class="hl-1"> </span><span class="hl-5">data</span><span class="hl-1"> </span><span class="hl-5">dashboard</span><span class="hl-1"> </span><span class="hl-5">updates</span><br/><span class="hl-7">Date</span><span class="hl-1">: [</span><span class="hl-8">UTC</span><span class="hl-1"> </span><span class="hl-5">date</span><span class="hl-1">]</span><br/><br/><span class="hl-5">Current</span><span class="hl-1"> </span><span class="hl-7">Status</span><span class="hl-1">:</span><br/><span class="hl-5">The</span><span class="hl-1"> </span><span class="hl-5">automated</span><span class="hl-1"> </span><span class="hl-5">data</span><span class="hl-1"> </span><span class="hl-5">pipeline</span><span class="hl-1"> </span><span class="hl-5">is</span><span class="hl-1"> [</span><span class="hl-5">description</span><span class="hl-1">]. </span><br/><span class="hl-5">Content</span><span class="hl-1"> </span><span class="hl-5">published</span><span class="hl-1"> </span><span class="hl-5">before</span><span class="hl-1"> [</span><span class="hl-5">timestamp</span><span class="hl-1">] </span><span class="hl-5">remains</span><span class="hl-1"> </span><span class="hl-5">accurate</span><span class="hl-1">.</span><br/><br/><span class="hl-5">Expected</span><span class="hl-1"> </span><span class="hl-7">Resolution</span><span class="hl-1">:</span><br/><span class="hl-1">[</span><span class="hl-8">ETA</span><span class="hl-1"> </span><span class="hl-5">or</span><span class="hl-1"> </span><span class="hl-2">&quot;Awaiting external provider recovery&quot;</span><span class="hl-1">]</span><br/><br/><span class="hl-5">Data</span><span class="hl-1"> </span><span class="hl-7">Freshness</span><span class="hl-1">:</span><br/><span class="hl-5">Most</span><span class="hl-1"> </span><span class="hl-5">recent</span><span class="hl-1"> </span><span class="hl-7">data</span><span class="hl-1">: [</span><span class="hl-5">timestamp</span><span class="hl-1">]</span><br/><span class="hl-5">Best</span><span class="hl-1"> </span><span class="hl-5">available</span><span class="hl-1"> </span><span class="hl-5">data</span><span class="hl-1"> </span><span class="hl-5">is</span><span class="hl-1"> </span><span class="hl-5">displayed</span><span class="hl-1"> </span><span class="hl-3">with</span><span class="hl-1"> </span><span class="hl-5">staleness</span><span class="hl-1"> </span><span class="hl-5">indicator</span><span class="hl-1">.</span><br/><br/><span class="hl-7">Updates</span><span class="hl-1">: </span><span class="hl-5">Follow</span><span class="hl-1"> </span><span class="hl-7">https</span><span class="hl-1">:</span><span class="hl-4">//github.com/Hack23/riksdagsmonitor/issues</span>
+</code><button>Copy</button></pre>
+
+<hr>
+<h3 id="playbook-3-data-poisoning-integrity-incident" class="tsd-anchor-link">Playbook 3: Data Poisoning / Integrity Incident<a href="#playbook-3-data-poisoning-integrity-incident" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Playbook ID:</strong> IR-PB-003<br>
+<strong>Version:</strong> 1.0<br>
+<strong>Owner:</strong> James Pether Sörling, CEO<br>
+<strong>Last Reviewed:</strong> 2026-02-25</p>
+<h4 id="trigger-conditions-1" class="tsd-anchor-link">Trigger Conditions<a href="#trigger-conditions-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4>
+<table>
+<thead>
+<tr>
+<th>Signal</th>
+<th>Detection Method</th>
+<th>Severity</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Anomalous political content in generated articles</td>
+<td>Human review gate</td>
+<td>CRITICAL</td>
+</tr>
+<tr>
+<td>SHA-256 hash mismatch for CIA data export</td>
+<td>Integrity check in pipeline</td>
+<td>HIGH</td>
+</tr>
+<tr>
+<td>JSON schema validation failure from unexpected fields</td>
+<td>Data validation log</td>
+<td>HIGH</td>
+</tr>
+<tr>
+<td>Statistics that contradict known parliamentary data</td>
+<td>Quality scoring below threshold</td>
+<td>HIGH</td>
+</tr>
+<tr>
+<td>Dramatic unexpected change in voting statistics</td>
+<td>Anomaly detection</td>
+<td>HIGH</td>
+</tr>
+<tr>
+<td>LLM output contains factually incorrect political claims</td>
+<td>Human review</td>
+<td>MEDIUM</td>
+</tr>
+<tr>
+<td>Unexpected HTML injection in article content</td>
+<td>HTMLHint detection</td>
+<td>MEDIUM</td>
+</tr>
+</tbody>
+</table>
+<h4 id="severity-classification-2" class="tsd-anchor-link">Severity Classification<a href="#severity-classification-2" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4>
+<table>
+<thead>
+<tr>
+<th>Severity</th>
+<th>Criteria</th>
+<th>Response Time</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>P1 - Critical</strong></td>
+<td>Confirmed false political information published and live</td>
+<td>15 minutes to takedown</td>
+</tr>
+<tr>
+<td><strong>P2 - High</strong></td>
+<td>Suspected data poisoning, anomalous content caught by review</td>
+<td>1 hour investigation</td>
+</tr>
+<tr>
+<td><strong>P3 - Medium</strong></td>
+<td>Data anomaly detected, not yet published</td>
+<td>4 hours analysis</td>
+</tr>
+</tbody>
+</table>
+<h4 id="step-by-step-response-procedure-2" class="tsd-anchor-link">Step-by-Step Response Procedure<a href="#step-by-step-response-procedure-2" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4>
+<p><strong>PHASE 1: DETECT</strong></p>
+<ol>
+<li><strong>Initial Detection</strong> — Via human review gate, quality scoring, or user report</li>
+<li><strong>Preserve Evidence</strong> — Before any changes:
+<ul>
+<li>Screenshot anomalous content</li>
+<li>Download and archive current <code>cia-data/</code> directory</li>
+<li>Export GitHub Actions run log</li>
+<li>Record all timestamps in UTC</li>
+</ul>
+</li>
+<li><strong>Initial Assessment</strong> — Is this:
+<ul>
+<li>LLM hallucination (most likely)?</li>
+<li>Corrupted source data from Riksdag API?</li>
+<li>Malicious injection into CIA platform export?</li>
+<li>Supply chain compromise in MCP server?</li>
+</ul>
+</li>
+</ol>
+<p><strong>PHASE 2: TRIAGE</strong></p>
+<ol>
+<li><strong>Trace to Source</strong> — Identify where anomalous data entered:<pre><code class="bash"><span class="hl-4"># Check raw API response data</span><br/><span class="hl-0">cat</span><span class="hl-1"> </span><span class="hl-2">cia-data/raw-export.json</span><span class="hl-1"> | </span><span class="hl-0">jq</span><span class="hl-1"> </span><span class="hl-2">&#39;.[&quot;votingStats&quot;]&#39;</span><br/><br/><span class="hl-4"># Compare with previous good data</span><br/><span class="hl-0">git</span><span class="hl-1"> </span><span class="hl-2">diff</span><span class="hl-1"> </span><span class="hl-2">HEAD~1</span><span class="hl-1"> </span><span class="hl-9">--</span><span class="hl-1"> </span><span class="hl-2">cia-data/</span><br/><br/><span class="hl-4"># Check MCP tool call logs in GitHub Actions</span><br/><span class="hl-4"># Navigate: Actions &gt; run-id &gt; news-generation &gt; step-logs</span>
+</code><button type="button">Copy</button></pre>
+
+</li>
+<li><strong>Scope Assessment</strong> — How much content is affected?</li>
+<li><strong>Published vs Pending</strong> — Is anomalous content live or only in pipeline?</li>
+</ol>
+<p><strong>PHASE 3: CONTAIN</strong></p>
+<ol>
+<li><strong>If Content Is Live</strong> — Immediate quarantine:<pre><code class="bash"><span class="hl-4"># Revert to last clean version</span><br/><span class="hl-0">git</span><span class="hl-1"> </span><span class="hl-2">revert</span><span class="hl-1"> </span><span class="hl-2">HEAD</span><span class="hl-1"> </span><span class="hl-9">--no-commit</span><br/><span class="hl-0">git</span><span class="hl-1"> </span><span class="hl-2">commit</span><span class="hl-1"> </span><span class="hl-9">-m</span><span class="hl-1"> </span><span class="hl-2">&quot;security: quarantine poisoned content [IR-PB-003]&quot;</span><br/><span class="hl-0">git</span><span class="hl-1"> </span><span class="hl-2">push</span><span class="hl-1"> </span><span class="hl-2">origin</span><span class="hl-1"> </span><span class="hl-2">main</span>
+</code><button type="button">Copy</button></pre>
+
+</li>
+<li><strong>Pause Pipeline</strong> — Disable automated news generation until source validated:
+<ul>
+<li>Comment out cron schedule in workflow YAML</li>
+<li>Push change to temporarily halt pipeline</li>
+</ul>
+</li>
+<li><strong>Quarantine Data Files</strong> — Move suspicious data to quarantine directory:<pre><code class="bash"><span class="hl-0">mkdir</span><span class="hl-1"> </span><span class="hl-9">-p</span><span class="hl-1"> </span><span class="hl-2">cia-data/quarantine/</span><span class="hl-1">$(</span><span class="hl-0">date</span><span class="hl-1"> </span><span class="hl-2">+%Y%m%d</span><span class="hl-1">)</span><br/><span class="hl-0">cp</span><span class="hl-1"> </span><span class="hl-2">cia-data/</span><span class="hl-9">*</span><span class="hl-2">.json</span><span class="hl-1"> </span><span class="hl-2">cia-data/quarantine/</span><span class="hl-1">$(</span><span class="hl-0">date</span><span class="hl-1"> </span><span class="hl-2">+%Y%m%d</span><span class="hl-1">)</span><span class="hl-2">/</span>
+</code><button type="button">Copy</button></pre>
+
+</li>
+<li><strong>Update Cache</strong> — Restore from last verified clean data backup (Git history)</li>
+</ol>
+<p><strong>PHASE 4: VALIDATE SOURCE DATA</strong></p>
+<ol>
+<li><strong>Cross-Reference with <a href="http://Riksdag.se">Riksdag.se</a></strong> — Manually verify key statistics:
+<ul>
+<li>Party seat counts at <a href="https://riksdagen.se">https://riksdagen.se</a></li>
+<li>Recent vote outcomes</li>
+<li>Member information</li>
+</ul>
+</li>
+<li><strong>Verify CIA Platform Data</strong> — Check CIA platform directly:
+<ul>
+<li>Access <a href="https://cia.hack23.com">https://cia.hack23.com</a> and compare key figures</li>
+<li>Check CIA platform's own data integrity logs</li>
+</ul>
+</li>
+<li><strong>Re-fetch Clean Data</strong> — Trigger fresh MCP data fetch after source verified:<pre><code class="bash"><span class="hl-0">npm</span><span class="hl-1"> </span><span class="hl-2">run</span><span class="hl-1"> </span><span class="hl-2">fetch:cia-data</span><span class="hl-1">  </span><span class="hl-4"># Fetch fresh data</span><br/><span class="hl-0">npm</span><span class="hl-1"> </span><span class="hl-2">run</span><span class="hl-1"> </span><span class="hl-2">validate:data</span><span class="hl-1">   </span><span class="hl-4"># Run validation suite</span>
+</code><button type="button">Copy</button></pre>
+
+</li>
+<li><strong>Schema Comparison</strong> — Verify data structure matches expected schema:<pre><code class="bash"><span class="hl-0">npm</span><span class="hl-1"> </span><span class="hl-2">run</span><span class="hl-1"> </span><span class="hl-2">validate:schema</span><span class="hl-1"> </span><span class="hl-9">--</span><span class="hl-1"> </span><span class="hl-9">--input</span><span class="hl-1"> </span><span class="hl-2">cia-data/export.json</span>
+</code><button type="button">Copy</button></pre>
+
+</li>
+</ol>
+<p><strong>PHASE 5: ERADICATE</strong></p>
+<ol>
+<li><strong>Remove All Poisoned Content</strong> — From production and Git history if needed</li>
+<li><strong>Re-validate All Published Articles</strong> — Check recent articles against source data</li>
+<li><strong>Update Quality Filters</strong> — Add detection rules for the anomaly type seen</li>
+<li><strong>Enhance LLM Guardrails</strong> — Add explicit factual verification prompts</li>
+</ol>
+<p><strong>PHASE 6: RECOVER</strong></p>
+<ol>
+<li><strong>Re-enable Pipeline</strong> — Restore cron schedule after validation</li>
+<li><strong>Generate Fresh Articles</strong> — Replace any quarantined content</li>
+<li><strong>Issue Correction</strong> — If incorrect information was public, issue transparent correction</li>
+<li><strong>Enhanced Monitoring</strong> — Increase review frequency for 30 days</li>
+</ol>
+<p><strong>PHASE 7: POST-INCIDENT</strong></p>
+<ol>
+<li><strong>Root Cause Report</strong> — Document in incident GitHub Issue</li>
+<li><strong>Control Enhancement</strong> — Implement additional preventive measures</li>
+<li><strong>Threat Model Update</strong> — Update THREAT_MODEL.md with new attack vector</li>
+<li><strong>Communication</strong> — If users were exposed to false information, issue public statement</li>
+</ol>
+<h4 id="root-cause-analysis-template" class="tsd-anchor-link">Root Cause Analysis Template<a href="#root-cause-analysis-template" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4>
+<pre><code class="markdown"><span class="hl-11">## Data Poisoning Incident RCA - [</span><span class="hl-2">DATE</span><span class="hl-11">]</span><br/><br/><span class="hl-14">**Incident ID:**</span><span class="hl-1"> IR-PB-003-[</span><span class="hl-2">YYYYMMDD</span><span class="hl-1">]</span><br/><span class="hl-14">**Severity:**</span><span class="hl-1"> [</span><span class="hl-2">P1/P2/P3</span><span class="hl-1">]</span><br/><span class="hl-14">**Detection Time:**</span><span class="hl-1"> [</span><span class="hl-2">UTC</span><span class="hl-1">]</span><br/><span class="hl-14">**Containment Time:**</span><span class="hl-1"> [</span><span class="hl-2">UTC</span><span class="hl-1">]</span><br/><span class="hl-14">**Resolution Time:**</span><span class="hl-1"> [</span><span class="hl-2">UTC</span><span class="hl-1">]</span><br/><br/><span class="hl-11">### Timeline</span><br/><span class="hl-1">| Time (UTC) | Event |</span><br/><span class="hl-1">|------------|-------|</span><br/><span class="hl-1">| [</span><span class="hl-2">time</span><span class="hl-1">] | Anomaly first detected by [</span><span class="hl-2">method</span><span class="hl-1">] |</span><br/><span class="hl-1">| [</span><span class="hl-2">time</span><span class="hl-1">] | [Action taken] |</span><br/><br/><span class="hl-11">### Root Cause</span><br/><span class="hl-1">[Describe the root cause: LLM hallucination / API corruption / supply chain]</span><br/><br/><span class="hl-11">### Attack Vector (if malicious)</span><br/><span class="hl-1">[Describe how attacker introduced false data]</span><br/><br/><span class="hl-11">### Impact Assessment</span><br/><span class="hl-15">-</span><span class="hl-1"> Content affected: [list of files/articles]</span><br/><span class="hl-15">-</span><span class="hl-1"> Time live: [duration if published]</span><br/><span class="hl-15">-</span><span class="hl-1"> User exposure: [estimated unique users who may have seen false content]</span><br/><br/><span class="hl-11">### Remediation Steps Taken</span><br/><span class="hl-15">1.</span><span class="hl-1"> [Step taken]</span><br/><span class="hl-15">2.</span><span class="hl-1"> [Step taken]</span><br/><br/><span class="hl-11">### Preventive Measures Implemented</span><br/><span class="hl-15">1.</span><span class="hl-1"> [Control enhancement]</span><br/><span class="hl-15">2.</span><span class="hl-1"> [Control enhancement]</span><br/><br/><span class="hl-11">### Lessons Learned</span><br/><span class="hl-1">[Key takeaways for future incident prevention]</span>
+</code><button type="button">Copy</button></pre>
+
+<h4 id="preventive-measures" class="tsd-anchor-link">Preventive Measures<a href="#preventive-measures" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4>
+<table>
+<thead>
+<tr>
+<th>Measure</th>
+<th>Implementation</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Human review gate for all AI-generated content</td>
+<td>Mandatory PR review before merge</td>
+<td>Active</td>
+</tr>
+<tr>
+<td>Quality score threshold (0.8/1.0)</td>
+<td>LLM self-evaluation before translation</td>
+<td>Active</td>
+</tr>
+<tr>
+<td>SHA-256 integrity hashing</td>
+<td>Every article and data file</td>
+<td>Active</td>
+</tr>
+<tr>
+<td>JSON schema validation</td>
+<td>Multi-stage data validation pipeline</td>
+<td>Active</td>
+</tr>
+<tr>
+<td>Anomaly detection for statistical outliers</td>
+<td>Numeric range validation</td>
+<td>Active</td>
+</tr>
+<tr>
+<td>Source data cross-reference</td>
+<td>Manual spot-check quarterly</td>
+<td>Planned</td>
+</tr>
+<tr>
+<td>LLM output factual verification</td>
+<td>Citation requirement in prompts</td>
+<td>Planned 2027</td>
+</tr>
+<tr>
+<td>Automated fact-checking against <a href="http://Riksdag.se">Riksdag.se</a></td>
+<td>Selenium scraper validation</td>
+<td>Planned 2028</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="playbook-summary-reference-card" class="tsd-anchor-link">Playbook Summary Reference Card<a href="#playbook-summary-reference-card" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<table>
+<thead>
+<tr>
+<th>Playbook</th>
+<th>ID</th>
+<th>P1 Response</th>
+<th>P2 Response</th>
+<th>Primary Action</th>
+<th>Evidence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Content Tampering</td>
+<td>IR-PB-001</td>
+<td>15 min contain</td>
+<td>1 hr contain</td>
+<td><code>git revert</code> + credential rotation</td>
+<td>GitHub audit + SHA-256</td>
+</tr>
+<tr>
+<td>MCP Outage</td>
+<td>IR-PB-002</td>
+<td>1 hr restore</td>
+<td>4 hr restore</td>
+<td>Graceful degrade + pipeline fix</td>
+<td>Actions logs + status pages</td>
+</tr>
+<tr>
+<td>Data Poisoning</td>
+<td>IR-PB-003</td>
+<td>15 min takedown</td>
+<td>1 hr quarantine</td>
+<td>Quarantine + source validation</td>
+<td>Data diff + cross-ref</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p><strong>📋 Document Control:</strong><br>
+<strong>✅ Approved by:</strong> James Pether Sörling, CEO<br>
+<strong>📤 Distribution:</strong> Public<br>
+<strong>🏷️ Classification:</strong> <a href="#"><img src="https://img.shields.io/badge/C-Public-lightgrey?style=flat-square" alt="Confidentiality: Public"></a><br>
+<strong>📅 Effective Date:</strong> 2026-05-28<br>
+<strong>⏰ Next Review:</strong> 2026-08-28<br>
+<strong>🎯 Framework Compliance:</strong> <a href="#"><img src="https://img.shields.io/badge/ISO_27001-2022_Aligned-blue?style=flat-square&amp;logo=iso&amp;logoColor=white" alt="ISO 27001"></a> <a href="#"><img src="https://img.shields.io/badge/NIST_CSF-2.0_Aligned-green?style=flat-square&amp;logo=nist&amp;logoColor=white" alt="NIST CSF 2.0"></a> <a href="#"><img src="https://img.shields.io/badge/CIS_Controls-v8.1_Aligned-orange?style=flat-square&amp;logo=cisecurity&amp;logoColor=white" alt="CIS Controls"></a></p>
+<hr>
+<h2 id="🌐-imf-api-outage-business-continuity-scenarios" class="tsd-anchor-link">🌐 IMF API Outage — Business Continuity Scenarios<a href="#🌐-imf-api-outage-business-continuity-scenarios" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<blockquote>
+<p><strong>Effective:</strong> 2026-04-24 · <strong>Authoritative hub:</strong> <a href="../media/README-5.md"><code>analysis/imf/README.md</code></a> · <a href="../media/agentic-integration.md"><code>analysis/imf/agentic-integration.md</code></a> · <a href="../media/indicators-inventory.json"><code>analysis/imf/indicators-inventory.json</code></a> · <a href="../media/data-dictionary.md"><code>analysis/imf/data-dictionary.md</code></a> · <a href="../media/ECONOMIC_DATA_CONTRACT.md"><code>.github/aw/ECONOMIC_DATA_CONTRACT.md</code></a></p>
+</blockquote>
+<h3 id="imf-dependency-criticality" class="tsd-anchor-link">IMF dependency criticality<a href="#imf-dependency-criticality" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>Asset</th>
+<th>Criticality</th>
+<th>RTO</th>
+<th>RPO</th>
+<th>Fallback</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IMF Datamapper REST</td>
+<td><strong>STANDARD</strong></td>
+<td>24h</td>
+<td>N/A</td>
+<td>Last cached vintage in <code>analysis/imf/</code></td>
+</tr>
+<tr>
+<td>IMF SDMX 3.0 endpoint</td>
+<td><strong>STANDARD</strong></td>
+<td>24h</td>
+<td>N/A</td>
+<td>Last cached vintage; cross-source SCB for SE-specific</td>
+</tr>
+<tr>
+<td>IMF cache (<code>analysis/imf/</code> + <code>analysis/daily/*/economic-data.json</code>)</td>
+<td><strong>HIGH</strong></td>
+<td>4h</td>
+<td>N/A</td>
+<td>Re-fetch from IMF on next workflow run</td>
+</tr>
+</tbody>
+</table>
+<h3 id="imf-outage-scenarios" class="tsd-anchor-link">IMF outage scenarios<a href="#imf-outage-scenarios" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>Trigger</th>
+<th>Detection</th>
+<th>Response</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>IMF-BCP-01</strong> IMF API outage &lt;24h</td>
+<td>HTTP 5xx persistent</td>
+<td>Workflow log + retry budget exhausted</td>
+<td>Serve last cached vintage; annotate articles &quot;cache fallback&quot;; auto-recover on resolution</td>
+</tr>
+<tr>
+<td><strong>IMF-BCP-02</strong> IMF API outage &gt;24h</td>
+<td>HTTP 5xx persistent ≥24h</td>
+<td>News-* workflow runs fail with stale-vintage error</td>
+<td>Open issue; escalate to editorial; switch to SCB for SE-specific GDP/CPI; pause look-ahead workflows</td>
+</tr>
+<tr>
+<td><strong>IMF-BCP-03</strong> WEO vintage cycle skip</td>
+<td>Apr WEO not published</td>
+<td><code>imf-fetch.ts --healthcheck</code> reports stale vintage</td>
+<td>Annotate articles with last vintage + advisory; do not block publishing</td>
+</tr>
+<tr>
+<td><strong>IMF-BCP-04</strong> IMF Datamapper schema breaking change</td>
+<td>CI integration test fails</td>
+<td><code>tests/imf-client.test.ts</code> red on schedule</td>
+<td>Pin client to last-known-good schema; emergency hotfix per Change Management policy</td>
+</tr>
+<tr>
+<td><strong>IMF-BCP-05</strong> IMF licence change (attribution rule modified)</td>
+<td>Notification on <a href="http://imf.org">imf.org</a></td>
+<td>Manual monitoring quarterly</td>
+<td>Update article footer template; backfill existing articles</td>
+</tr>
+<tr>
+<td><strong>IMF-BCP-06</strong> IMF rate-limit tightening</td>
+<td>HTTP 429 spike</td>
+<td>Rate-limit metric alarm</td>
+<td>Reduce concurrency; expand cache TTL; communicate to article authors</td>
+</tr>
+</tbody>
+</table>
+<h3 id="imf-multi-provider-resilience" class="tsd-anchor-link">IMF + multi-provider resilience<a href="#imf-multi-provider-resilience" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p>The IMF-primary, WB-residue, SCB-Sweden split is itself a BCP control: a single-provider outage degrades but does not break the platform. Look-ahead article workflows degrade gracefully because:</p>
+<ol>
+<li>Last cached IMF vintage remains valid for 6 months by contract</li>
+<li>SCB national-accounts cover the highest-priority Swedish-specific indicators</li>
+<li>WB residue continues to flow for governance/environment/social classes</li>
+</ol>
+<p><strong>Canonical rule.</strong> Every economic claim in a Riksdagsmonitor article cites an IMF dataflow first; World Bank citations are reserved for governance, environment and social residue (the classes IMF does not publish). SCB is the Swedish-specific ground truth layer. See <code>ECONOMIC_DATA_CONTRACT.md</code> v2.1 for the banned-phrase list and vintage discipline (&gt;6 mo → annotation).</p>
+<hr>
+<h2 id="🔗-hack23-ecosystem" class="tsd-anchor-link">🔗 Hack23 Ecosystem<a href="#🔗-hack23-ecosystem" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<table>
+<tr>
+  <th width="33%">🌐 Platforms</th>
+  <th width="33%">📦 Open-Source Projects</th>
+  <th width="33%">🛡️ Governance &amp; Standards</th>
+</tr>
+<tr>
+<td valign="top">
+🗳️ <a href="https://riksdagsmonitor.com">Riksdagsmonitor</a> — Swedish Parliament intelligence<br>
+🇪🇺 <a href="https://www.euparliamentmonitor.com">EU Parliament Monitor</a> — European coverage<br>
+🕵️ <a href="https://www.hack23.com/cia">Citizen Intelligence Agency</a> — political-data engine<br>
+🌐 <a href="https://www.hack23.com">Hack23 AB</a> — corporate site<br>
+📰 <a href="https://hack23.com/blog.html">Hack23 Blog</a> — engineering &amp; policy<br>
+💼 <a href="https://www.linkedin.com/company/hack23/">Hack23 on LinkedIn</a>
+</td>
+<td valign="top">
+🗳️ <a href="https://github.com/Hack23/riksdagsmonitor">Hack23/riksdagsmonitor</a><br>
+🕵️ <a href="https://github.com/Hack23/cia">Hack23/cia</a><br>
+🇪🇺 <a href="https://github.com/Hack23/euparliamentmonitor">Hack23/euparliamentmonitor</a><br>
+🔌 <a href="https://github.com/Hack23/european-parliament-mcp">Hack23/european-parliament-mcp</a><br>
+✅ <a href="https://github.com/Hack23/cia-compliance-manager">Hack23/cia-compliance-manager</a><br>
+🥋 <a href="https://github.com/Hack23/black-trigram">Hack23/black-trigram</a><br>
+🏠 <a href="https://github.com/Hack23/homepage">Hack23/homepage</a>
+</td>
+<td valign="top">
+🛡️ <a href="https://github.com/Hack23/ISMS-PUBLIC">Hack23 ISMS-PUBLIC</a> — public ISMS<br>
+🔒 <a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Information_Security_Policy.md">Information Security Policy</a><br>
+🤖 <a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/AI_Policy.md">AI Policy</a><br>
+🧪 <a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md">Secure Development Policy</a><br>
+🎯 <a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Threat_Modeling.md">Threat Modeling Policy</a><br>
+⚠️ <a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Vulnerability_Management.md">Vulnerability Management</a><br>
+🏷️ <a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md">Classification Framework</a>
+</td>
+</tr>
+</table>
+<p align="center">
+<a href="https://www.bestpractices.dev/projects/12069"><img src="https://www.bestpractices.dev/projects/12069/badge" alt="OpenSSF Best Practices"/></a>
+<a href="https://scorecard.dev/viewer/?uri=github.com/Hack23/riksdagsmonitor"><img src="https://api.securityscorecards.dev/projects/github.com/Hack23/riksdagsmonitor/badge" alt="OpenSSF Scorecard"/></a>
+<a href="https://github.com/Hack23/ISMS-PUBLIC"><img src="https://img.shields.io/badge/ISO_27001-2022-blue?style=flat-square&logo=iso&logoColor=white" alt="ISO 27001:2022"/></a>
+<a href="https://github.com/Hack23/ISMS-PUBLIC"><img src="https://img.shields.io/badge/NIST_CSF-2.0-green?style=flat-square&logo=nist&logoColor=white" alt="NIST CSF 2.0"/></a>
+<a href="https://github.com/Hack23/ISMS-PUBLIC"><img src="https://img.shields.io/badge/CIS_Controls-v8.1-orange?style=flat-square&logo=cisecurity&logoColor=white" alt="CIS Controls v8.1"/></a>
+<a href="https://www.apache.org/licenses/LICENSE-2.0"><img src="https://img.shields.io/badge/License-Apache_2.0-blue?style=flat-square" alt="Apache 2.0"/></a>
+</p>
+<p align="center"><em>🗳️ Empower citizens · 🔍 Strengthen democratic accountability · 🕵️ Illuminate the political process</em></p>
+<p align="center"><sub>© 2008–2026 <a href="https://www.hack23.com">Hack23 AB</a> (Org.nr 559534-7807) · Maintainer: <a href="https://www.linkedin.com/in/jamessorling/">James Pether Sörling, CISSP CISM</a></sub></p></div></div><div class="col-sidebar"><div class="page-menu"><div class="tsd-navigation settings"><details class="tsd-accordion"><summary class="tsd-accordion-summary"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg><h3>Settings</h3></summary><div class="tsd-accordion-details"><div class="tsd-filter-visibility"><span class="settings-label">Member Visibility</span><ul id="tsd-filter-options"><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-protected" name="protected" checked/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Protected</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-private" name="private" checked/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Private</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-inherited" name="inherited" checked/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Inherited</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-alpha" name="alpha"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Alpha</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-beta" name="beta"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Beta</span></label></li></ul></div><div class="tsd-theme-toggle"><label class="settings-label" for="tsd-theme">Theme</label><select id="tsd-theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></div></div></details></div><details open class="tsd-accordion tsd-page-navigation"><summary class="tsd-accordion-summary"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg><h3>On This Page</h3></summary><div class="tsd-accordion-details"><a href="#🎯-purpose-statement"><span>🎯 <wbr/>Purpose <wbr/>Statement</span></a><a href="#📊-business-impact-analysis"><span>📊 <wbr/>Business <wbr/>Impact <wbr/>Analysis</span></a><ul><li><a href="#🎯-service-availability-requirements"><span>🎯 <wbr/>Service <wbr/>Availability <wbr/>Requirements</span></a></li><li><a href="#📈-impact-thresholds"><span>📈 <wbr/>Impact <wbr/>Thresholds</span></a></li></ul><a href="#🏗️-infrastructure-architecture"><span>🏗️ <wbr/>Infrastructure <wbr/>Architecture</span></a><ul><li><a href="#🌍-dual-deployment-strategy"><span>🌍 <wbr/>Dual-<wbr/>Deployment <wbr/>Strategy</span></a></li><li><a href="#🛡️-availability-objectives-assumptions"><span>🛡️ <wbr/>Availability <wbr/>Objectives &amp; <wbr/>Assumptions</span></a></li></ul><a href="#🚨-disaster-recovery-scenarios"><span>🚨 <wbr/>Disaster <wbr/>Recovery <wbr/>Scenarios</span></a><ul><li><a href="#scenario-1-s3-us-east-1-region-failure"><span>Scenario 1: <wbr/>S3 us-<wbr/>east-<wbr/>1 <wbr/>Region <wbr/>Failure</span></a></li><li><a href="#scenario-2-cloudfront-global-outage"><span>Scenario 2: <wbr/>Cloud<wbr/>Front <wbr/>Global <wbr/>Outage</span></a></li><li><a href="#scenario-3-both-aws-s3-regions-unavailable"><span>Scenario 3: <wbr/>Both <wbr/>AWS <wbr/>S3 <wbr/>Regions <wbr/>Unavailable</span></a></li><li><a href="#scenario-4-aws-account-compromise"><span>Scenario 4: <wbr/>AWS <wbr/>Account <wbr/>Compromise</span></a></li><li><a href="#scenario-5-github-pages-unavailable-during-dr"><span>Scenario 5: <wbr/>Git<wbr/>Hub <wbr/>Pages <wbr/>Unavailable (<wbr/>During <wbr/>DR)</span></a></li></ul><a href="#📋-recovery-team-structure"><span>📋 <wbr/>Recovery <wbr/>Team <wbr/>Structure</span></a><ul><li><a href="#🎯-business-continuity-team"><span>🎯 <wbr/>Business <wbr/>Continuity <wbr/>Team</span></a></li><li><a href="#📞-emergency-contact-matrix"><span>📞 <wbr/>Emergency <wbr/>Contact <wbr/>Matrix</span></a></li></ul><a href="#🚨-emergency-activation"><span>🚨 <wbr/>Emergency <wbr/>Activation</span></a><ul><li><a href="#📞-immediate-actions-first-15-minutes"><span>📞 <wbr/>Immediate <wbr/>Actions (<wbr/>First 15 <wbr/>Minutes)</span></a></li><li><a href="#🔄-recovery-activation-decision-tree"><span>🔄 <wbr/>Recovery <wbr/>Activation <wbr/>Decision <wbr/>Tree</span></a></li></ul><a href="#🧪-testing-validation"><span>🧪 <wbr/>Testing &amp; <wbr/>Validation</span></a><ul><li><a href="#📅-bcp-testing-schedule"><span>📅 <wbr/>BCP <wbr/>Testing <wbr/>Schedule</span></a></li><li><a href="#🎯-testing-methodology"><span>🎯 <wbr/>Testing <wbr/>Methodology</span></a></li></ul><a href="#📊-business-continuity-metrics"><span>📊 <wbr/>Business <wbr/>Continuity <wbr/>Metrics</span></a><ul><li><a href="#🎯-performance-tracking"><span>🎯 <wbr/>Performance <wbr/>Tracking</span></a></li></ul><a href="#🏢-single-person-company-adaptation"><span>🏢 <wbr/>Single-<wbr/>Person <wbr/>Company <wbr/>Adaptation</span></a><ul><li><a href="#hack23-ab-single-person-bcp-model"><span>Hack23 <wbr/>AB <wbr/>Single-<wbr/>Person <wbr/>BCP <wbr/>Model</span></a></li><li><ul><li><a href="#🎯-ceo-as-business-continuity-coordinator"><span>🎯 <wbr/>CEO <wbr/>As <wbr/>Business <wbr/>Continuity <wbr/>Coordinator</span></a></li><li><a href="#🎯-compensating-controls"><span>🎯 <wbr/>Compensating <wbr/>Controls</span></a></li></ul></li></ul><a href="#📚-related-documents"><span>📚 <wbr/>Related <wbr/>Documents</span></a><ul><li><a href="#🏗️-architecture-security"><span>🏗️ <wbr/>Architecture &amp; <wbr/>Security</span></a></li><li><a href="#🔧-operations"><span>🔧 <wbr/>Operations</span></a></li></ul><a href="#📖-incident-response-playbooks"><span>📖 <wbr/>Incident <wbr/>Response <wbr/>Playbooks</span></a><ul><li><a href="#playbook-1-content-tampering-incident"><span>Playbook 1: <wbr/>Content <wbr/>Tampering <wbr/>Incident</span></a></li><li><ul><li><a href="#trigger-conditions-and-detection-signals"><span>Trigger <wbr/>Conditions and <wbr/>Detection <wbr/>Signals</span></a></li><li><a href="#severity-classification"><span>Severity <wbr/>Classification</span></a></li><li><a href="#step-by-step-response-procedure"><span>Step-<wbr/>by-<wbr/>Step <wbr/>Response <wbr/>Procedure</span></a></li><li><a href="#communication-template"><span>Communication <wbr/>Template</span></a></li><li><a href="#rollback-procedure-using-git-history"><span>Rollback <wbr/>Procedure <wbr/>Using <wbr/>Git <wbr/>History</span></a></li><li><a href="#evidence-collection-checklist"><span>Evidence <wbr/>Collection <wbr/>Checklist</span></a></li></ul></li><li><a href="#playbook-2-mcp-service-outage-incident"><span>Playbook 2: <wbr/>MCP <wbr/>Service <wbr/>Outage <wbr/>Incident</span></a></li><li><ul><li><a href="#trigger-conditions"><span>Trigger <wbr/>Conditions</span></a></li><li><a href="#severity-classification-1"><span>Severity <wbr/>Classification</span></a></li><li><a href="#step-by-step-response-procedure-1"><span>Step-<wbr/>by-<wbr/>Step <wbr/>Response <wbr/>Procedure</span></a></li><li><a href="#service-restoration-checklist"><span>Service <wbr/>Restoration <wbr/>Checklist</span></a></li><li><a href="#communication-template-1"><span>Communication <wbr/>Template</span></a></li></ul></li><li><a href="#playbook-3-data-poisoning-integrity-incident"><span>Playbook 3: <wbr/>Data <wbr/>Poisoning / <wbr/>Integrity <wbr/>Incident</span></a></li><li><ul><li><a href="#trigger-conditions-1"><span>Trigger <wbr/>Conditions</span></a></li><li><a href="#severity-classification-2"><span>Severity <wbr/>Classification</span></a></li><li><a href="#step-by-step-response-procedure-2"><span>Step-<wbr/>by-<wbr/>Step <wbr/>Response <wbr/>Procedure</span></a></li><li><a href="#root-cause-analysis-template"><span>Root <wbr/>Cause <wbr/>Analysis <wbr/>Template</span></a></li><li><a href="#preventive-measures"><span>Preventive <wbr/>Measures</span></a></li></ul></li></ul><a href="#playbook-summary-reference-card"><span>Playbook <wbr/>Summary <wbr/>Reference <wbr/>Card</span></a><a href="#🌐-imf-api-outage-business-continuity-scenarios"><span>🌐 <wbr/>IMF <wbr/>API <wbr/>Outage — <wbr/>Business <wbr/>Continuity <wbr/>Scenarios</span></a><ul><li><a href="#imf-dependency-criticality"><span>IMF dependency criticality</span></a></li><li><a href="#imf-outage-scenarios"><span>IMF outage scenarios</span></a></li><li><a href="#imf-multi-provider-resilience"><span>IMF + multi-<wbr/>provider resilience</span></a></li></ul><a href="#🔗-hack23-ecosystem"><span>🔗 <wbr/>Hack23 <wbr/>Ecosystem</span></a></div></details></div><div class="site-menu"><nav id="tsd-sidebar-links" class="tsd-navigation"><a href="https://riksdagsmonitor.com">── Live Platform ──</a><a href="https://riksdagsmonitor.com">🌐 Riksdagsmonitor.com</a><a href="https://riksdagsmonitor.com/political-intelligence.html">🕵️ Political Intelligence Index</a><a href="https://riksdagsmonitor.com/sitemap.html">🗺️ Sitemap (Human + XML)</a><a href="https://riksdagsmonitor.com/news/">📰 News &amp; Articles</a><a href="https://www.npmjs.com/package/riksdagsmonitor">📦 npm Package</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/ARCHITECTURE.md">── Current Architecture ──</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/ARCHITECTURE.md">🏛️ Architecture</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/SECURITY_ARCHITECTURE.md">🔒 Security Architecture</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/THREAT_MODEL.md">🛡️ Threat Model</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/DATA_MODEL.md">📊 Data Model</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FLOWCHART.md">🔄 Flowchart</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/STATEDIAGRAM.md">📈 State Diagram</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/MINDMAP.md">🧠 Mindmap</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/SWOT.md">💼 SWOT Analysis</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_ARCHITECTURE.md">── Future Architecture ──</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_ARCHITECTURE.md">🚀 Future Architecture</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_SECURITY_ARCHITECTURE.md">🔮 Future Security</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_THREAT_MODEL.md">🎯 Future Threat Model</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_DATA_MODEL.md">📊 Future Data Model</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_FLOWCHART.md">🔄 Future Flowchart</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_STATEDIAGRAM.md">📈 Future State Diagram</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_MINDMAP.md">🧠 Future Mindmap</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_SWOT.md">💼 Future SWOT</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_WORKFLOWS.md">🔄 Future Workflows</a><a href="#">── Security &amp; Compliance ──</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/SECURITY.md">🔐 Security Policy</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/CRA-ASSESSMENT.md">📋 CRA Assessment</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/BCPPlan.md">🏢 BCP Plan</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FinancialSecurityPlan.md">💰 Financial Security</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/End-of-Life-Strategy.md">📅 End-of-Life Strategy</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/README.md">── Project Docs ──</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/TESTING.md">🧪 Testing</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/WORKFLOWS.md">🔄 Workflows</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/RELEASE_PROCESS.md">📦 Release Process</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/CONTRIBUTING.md">🤝 Contributing</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/CODE_OF_CONDUCT.md">📜 Code of Conduct</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/AGENTS.md">🤖 Copilot Agents</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/SKILLS.md">🛠 Copilot Skills</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/LABELS.md">🏷 Labels</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/TRANSLATION_GUIDE.md">🌐 Translation Guide</a><a href="https://github.com/Hack23/ISMS-PUBLIC">── Hack23 ISMS Policies ──</a><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md">📋 Secure Dev Policy</a><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Information_Security_Policy.md">🔐 Information Security</a><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Threat_Modeling.md">🎯 Threat Modeling</a><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Open_Source_Policy.md">🌐 Open Source Policy</a><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Risk_Assessment_Methodology.md">📊 Risk Assessment</a><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/AI_Policy.md">🤖 AI Policy</a><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Change_Management_Policy.md">🔧 Change Management</a><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Incident_Response_Plan.md">🛡️ Incident Response</a><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Asset_Management_Policy.md">📦 Asset Management</a><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Access_Control_Policy.md">🔑 Access Control</a><a href="https://riksdagsmonitor.com/docs/api/">── Hack23 API Docs ──</a><a href="https://riksdagsmonitor.com/docs/api/">📚 Riksdagsmonitor API</a><a href="https://euparliamentmonitor.com/docs/api/">🇪🇺 EU Parliament MCP API</a><a href="https://ciacompliancemanager.com/api/">🔍 CIA Compliance Mgr API</a><a href="https://blacktrigram.com/api/">⚔️ Black Trigram API</a><a href="https://riksdagsmonitor.com" class="tsd-nav-link">🏠 Home</a><a href="https://riksdagsmonitor.com/political-intelligence.html" class="tsd-nav-link">🕵️ Political Intelligence</a><a href="https://riksdagsmonitor.com/sitemap.html" class="tsd-nav-link">🗺️ Sitemap</a><a href="https://www.npmjs.com/package/riksdagsmonitor" class="tsd-nav-link">📦 npm Package</a><a href="https://github.com/Hack23/riksdagsmonitor" class="tsd-nav-link">📦 GitHub</a><a href="https://github.com/Hack23/ISMS-PUBLIC" class="tsd-nav-link">🛡️ ISMS</a><a href="https://github.com/Hack23/cia" class="tsd-nav-link">🏛️ CIA Platform</a></nav><nav class="tsd-navigation"><a href="../modules.html">Riksdagsmonitor Intelligence Platform — API Documentation - v1.0.28</a><ul class="tsd-small-nested-navigation" id="tsd-nav-container"><li>Loading...</li></ul></nav></div></div></div><footer><p class="tsd-generator">Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></footer><div class="overlay"></div></body></html>

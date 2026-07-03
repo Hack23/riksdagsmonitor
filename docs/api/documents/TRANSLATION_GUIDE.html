@@ -1,0 +1,2253 @@
+<!DOCTYPE html><html class="default" lang="en" data-base="../"><head><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>TRANSLATION_GUIDE | Riksdagsmonitor Intelligence Platform — API Documentation - v1.0.28</title><meta name="description" content="Documentation for Riksdagsmonitor Intelligence Platform — API Documentation"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="../assets/style.css"/><link rel="stylesheet" href="../assets/highlight.css"/><script defer src="../assets/main.js"></script><script async src="../assets/icons.js" id="tsd-icons-script"></script><script async src="../assets/search.js" id="tsd-search-script"></script><script async src="../assets/navigation.js" id="tsd-nav-script"></script><script async src="../assets/hierarchy.js" id="tsd-hierarchy-script"></script></head><body><script>document.documentElement.dataset.theme = localStorage.getItem("tsd-theme") || "os";document.body.style.display="none";setTimeout(() => window.app?app.showPage():document.body.style.removeProperty("display"),500)</script><header class="tsd-page-toolbar"><div class="tsd-toolbar-contents container"><a href="../index.html" class="title">Riksdagsmonitor Intelligence Platform — API Documentation - v1.0.28</a><div id="tsd-toolbar-links"><a href="https://riksdagsmonitor.com">🏠 Home</a><a href="https://riksdagsmonitor.com/political-intelligence.html">🕵️ Political Intelligence</a><a href="https://riksdagsmonitor.com/sitemap.html">🗺️ Sitemap</a><a href="https://www.npmjs.com/package/riksdagsmonitor">📦 npm Package</a><a href="https://github.com/Hack23/riksdagsmonitor">📦 GitHub</a><a href="https://github.com/Hack23/ISMS-PUBLIC">🛡️ ISMS</a><a href="https://github.com/Hack23/cia">🏛️ CIA Platform</a></div><button id="tsd-search-trigger" class="tsd-widget" aria-label="Search"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-search"></use></svg></button><dialog id="tsd-search" aria-label="Search"><input role="combobox" id="tsd-search-input" aria-controls="tsd-search-results" aria-autocomplete="list" aria-expanded="true" autocapitalize="off" autocomplete="off" placeholder="Search the docs" maxLength="100"/><ul role="listbox" id="tsd-search-results"></ul><div id="tsd-search-status" aria-live="polite" aria-atomic="true"><div>Preparing search index...</div></div></dialog><a href="#" class="tsd-widget menu" id="tsd-toolbar-menu-trigger" data-toggle="menu" aria-label="Menu"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-menu"></use></svg></a></div></header><div class="container container-main"><div class="col-content"><div class="tsd-page-title"><ul class="tsd-breadcrumb" aria-label="Breadcrumb"><li><a href="" aria-current="page">TRANSLATION_GUIDE</a></li></ul></div><div class="tsd-panel tsd-typography"><p align="center">
+  <img src="https://hack23.com/icon-192.png" alt="Hack23 Logo" width="192" height="192">
+</p>
+<h1 align="center">🌐 Riksdagsmonitor — Translation Guide</h1>
+<p align="center">
+  <strong>🗣️ Consistent Multilingual Political Intelligence Across 14 Languages</strong><br>
+  <em>🇸🇪🇬🇧🇩🇰🇳🇴🇫🇮🇩🇪🇫🇷🇪🇸🇳🇱🇸🇦🇮🇱🇯🇵🇰🇷🇨🇳 · RTL Support · BCP-47 Compliance</em>
+</p>
+<p align="center">
+  <img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/>
+  <img src="https://img.shields.io/badge/Version-1.0-555?style=for-the-badge" alt="Version"/>
+  <img src="https://img.shields.io/badge/Languages-14-success?style=for-the-badge" alt="14 Languages"/>
+  <img src="https://img.shields.io/badge/Effective-2026--02--10-orange?style=for-the-badge" alt="Effective Date"/>
+</p>
+<p><strong>📋 Document Owner:</strong> CEO | <strong>📄 Version:</strong> 1.0 | <strong>📅 Last Updated:</strong> 2026-02-10 (UTC)<br>
+<strong>🏢 Owner:</strong> Hack23 AB (<a href="http://Org.nr">Org.nr</a> 559534-7807) | <strong>🏷️ Classification:</strong> 🟢 Public<br>
+<strong>📂 Repository:</strong> <a href="https://github.com/Hack23/riksdagsmonitor">Hack23/riksdagsmonitor</a></p>
+<hr>
+<h2 id="📋-overview" class="tsd-anchor-link">📋 Overview<a href="#📋-overview" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<p>This guide provides comprehensive translation standards and terminology for the Riksdagsmonitor platform across all 14 supported languages. It ensures consistency, accuracy, and cultural appropriateness in all language variants.</p>
+<h3 id="📰-news-articles-are-translated-out-of-band" class="tsd-anchor-link">📰 News articles are translated out-of-band<a href="#📰-news-articles-are-translated-out-of-band" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p>News articles are <strong>not</strong> localised by the workflow that generates them. The per-type news workflows (<code>news-propositions</code>, <code>news-motions</code>, <code>news-committee-reports</code>, <code>news-interpellations</code>, <code>news-evening-analysis</code>, <code>news-realtime-monitor</code>, <code>news-week-ahead</code>, <code>news-month-ahead</code>, <code>news-weekly-review</code>, <code>news-monthly-review</code>) each run the two-step <strong>aggregate-then-render</strong> pipeline (<a href="../modules/scripts_aggregate-analysis.html"><code>scripts/aggregate-analysis.ts</code></a> → <code>analysis/daily/$DATE/$SUB/article.md</code> → <a href="../modules/scripts_render-articles.html"><code>scripts/render-articles.ts</code></a> + <a href="../media/render-lib"><code>scripts/render-lib/</code></a>) to emit rendered HTML files for <strong>all 14 languages</strong> per article:</p>
+<ul>
+<li><code>news/$DATE-$SUB-en.html</code> (English master)</li>
+<li><code>news/$DATE-$SUB-sv.html</code> (Swedish)</li>
+<li><code>news/$DATE-$SUB-da.html</code>, <code>news/$DATE-$SUB-no.html</code>, …, <code>news/$DATE-$SUB-zh.html</code> (remaining 12 languages)</li>
+</ul>
+<p><strong>All 14 language renderings are produced by the per-type workflows themselves</strong> via the <strong>localized executive-brief cascade</strong> inside the renderer. Per-type workflows write <strong>only</strong> the canonical English <code>article.md</code> (aggregated from all 23 analysis artifacts). The renderer then composes the English <code>article.md</code> body with <code>executive-brief_&lt;lang&gt;.md</code> (when present) via the cascade chain in <code>scripts/render-lib/article-merge.ts</code> (<code>mergeLocalizedWithEnglish</code>) + <code>scripts/render-lib/aggregator/seo/localized-brief.ts</code> to produce each non-English HTML file. The English body remains in English prose — <strong>only the executive-brief hero section + SEO metadata is localized</strong>.</p>
+<p><strong>Per-type workflows do NOT write <code>article.&lt;lang&gt;.md</code></strong> — these files are now <strong>forbidden</strong> by <code>scripts/validate-file-ownership.ts</code> (category-independent reject). The ownership validator is invoked with <code>--files-from</code> and inspects only the paths it receives; an untouched historical <code>article.&lt;lang&gt;.md</code> already on disk is <strong>not</strong> flagged simply because a PR modifies another file in the same folder. The validator rejects an <code>article.&lt;lang&gt;.md</code> path only when that specific file is part of the changed-file input (i.e. a PR creates, modifies, deletes, or otherwise lists it).</p>
+<p>The standalone <a href="../media/news-translate.md"><code>news-translate</code></a> workflow <strong>does not touch</strong> <code>news/*.html</code> at all; its sole mission is <strong>executive-brief Markdown translation</strong> — see §&quot;Executive Brief Markdown Translations&quot; below.</p>
+<p>In parallel with the rendered HTML, each per-type workflow also writes a Markdown <strong>executive brief</strong> (the 60-second BLUF artifact, ≈ 400–600 words) at <code>analysis/daily/$DATE/$SUB/executive-brief.md</code> (English only). Localised siblings <code>executive-brief_&lt;lang&gt;.md</code> for all 13 non-English target languages are produced <strong>exclusively</strong> by <a href="../media/news-translate.md"><code>news-translate</code></a>, which runs three times daily (09:00 / 14:00 / 19:00 UTC) and:</p>
+<ol>
+<li>Scans <code>analysis/daily/**/executive-brief.md</code> for sources that are missing translations or whose <code>&lt;!-- source-sha: ... --&gt;</code> trailer no longer matches the current <code>git log -1 --format=%H</code> of the source.</li>
+<li>Picks up at most <code>max_briefs</code> source files per run (default 3, range 1–7), prioritising the oldest article date first.</li>
+<li>Translates each source into every requested target language using the terminology tables in this guide.</li>
+<li>Validates every translation with <code>scripts/validate-executive-brief-translations.ts</code> (structural parity, dok_id preservation, RTL markers, no English BLUF leakage, source-SHA trailer).</li>
+<li>Commits the batch and opens one PR per run.</li>
+</ol>
+<p>No other workflow — and no other contributor process — writes localised executive briefs or localised article HTML. This decoupling means:</p>
+<ul>
+<li>Editorial changes to a source executive brief ripple through all 14 languages in the next <code>news-translate</code> run.</li>
+<li>Terminology drift is detectable: a single <code>news-translate</code> regression only affects non-EN files.</li>
+<li>The 14 top-level <code>index_*.html</code> pages and <code>political-intelligence_*.html</code> pages remain hand-translated (that workflow is not in scope here).</li>
+</ul>
+<p>When translating HTML that has already been rendered, <strong>do not modify</strong> <code>&lt;pre class=&quot;mermaid&quot;&gt;</code> blocks — the Mermaid diagram source is a syntactic DSL that must survive untouched. Translate the adjacent <code>&lt;figcaption&gt;</code> and <code>&lt;details&gt;</code> fallback blocks instead. The same rule applies to fenced <code>```mermaid</code> blocks in executive-brief Markdown.</p>
+<h3 id="supported-languages-14" class="tsd-anchor-link">Supported Languages (14)<a href="#supported-languages-14" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>Language</th>
+<th>Code</th>
+<th>File</th>
+<th>Direction</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🇬🇧 English</td>
+<td>en</td>
+<td>index.html</td>
+<td>LTR</td>
+<td>✅ Master</td>
+</tr>
+<tr>
+<td>🇸🇪 Swedish</td>
+<td>sv</td>
+<td>index_sv.html</td>
+<td>LTR</td>
+<td>✅ Complete</td>
+</tr>
+<tr>
+<td>🇩🇰 Danish</td>
+<td>da</td>
+<td>index_da.html</td>
+<td>LTR</td>
+<td>✅ Complete</td>
+</tr>
+<tr>
+<td>🇳🇴 Norwegian</td>
+<td>no</td>
+<td>index_no.html</td>
+<td>LTR</td>
+<td>✅ Complete</td>
+</tr>
+<tr>
+<td>🇫🇮 Finnish</td>
+<td>fi</td>
+<td>index_fi.html</td>
+<td>LTR</td>
+<td>✅ Complete</td>
+</tr>
+<tr>
+<td>🇩🇪 German</td>
+<td>de</td>
+<td>index_de.html</td>
+<td>LTR</td>
+<td>✅ Complete</td>
+</tr>
+<tr>
+<td>🇫🇷 French</td>
+<td>fr</td>
+<td>index_fr.html</td>
+<td>LTR</td>
+<td>✅ Complete</td>
+</tr>
+<tr>
+<td>🇪🇸 Spanish</td>
+<td>es</td>
+<td>index_es.html</td>
+<td>LTR</td>
+<td>✅ Complete</td>
+</tr>
+<tr>
+<td>🇳🇱 Dutch</td>
+<td>nl</td>
+<td>index_nl.html</td>
+<td>LTR</td>
+<td>✅ Complete</td>
+</tr>
+<tr>
+<td>🇸🇦 Arabic</td>
+<td>ar</td>
+<td>index_ar.html</td>
+<td><strong>RTL</strong></td>
+<td>✅ Complete</td>
+</tr>
+<tr>
+<td>🇮🇱 Hebrew</td>
+<td>he</td>
+<td>index_he.html</td>
+<td><strong>RTL</strong></td>
+<td>✅ Complete</td>
+</tr>
+<tr>
+<td>🇯🇵 Japanese</td>
+<td>ja</td>
+<td>index_ja.html</td>
+<td>LTR</td>
+<td>✅ Complete</td>
+</tr>
+<tr>
+<td>🇰🇷 Korean</td>
+<td>ko</td>
+<td>index_ko.html</td>
+<td>LTR</td>
+<td>✅ Complete</td>
+</tr>
+<tr>
+<td>🇨🇳 Chinese</td>
+<td>zh</td>
+<td>index_zh.html</td>
+<td>LTR</td>
+<td>✅ Complete</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="📝-executive-brief-markdown-translations" class="tsd-anchor-link">📝 Executive Brief Markdown Translations<a href="#📝-executive-brief-markdown-translations" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<blockquote>
+<p><strong>Scope.</strong> Authoritative rules for translating <code>analysis/daily/$ARTICLE_DATE/$SUBFOLDER/executive-brief.md</code> (the 60-second BLUF artifact produced by every per-type news workflow) into the 13 non-English target languages. The <code>news-translate</code> workflow is the sole writer of these translations; no other workflow or contributor process may emit <code>executive-brief_&lt;lang&gt;.md</code>.</p>
+</blockquote>
+<h3 id="file-naming-contract" class="tsd-anchor-link">File naming contract<a href="#file-naming-contract" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Path</th>
+<th>Owner</th>
+<th>Language</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Canonical source</td>
+<td><code>analysis/daily/$DATE/$SUB/executive-brief.md</code></td>
+<td>Per-type news workflow (<code>news-propositions</code>, <code>news-motions</code>, …)</td>
+<td>English (<code>en</code>) — no suffix</td>
+</tr>
+<tr>
+<td>Translation sibling</td>
+<td><code>analysis/daily/$DATE/$SUB/executive-brief_sv.md</code></td>
+<td><code>news-translate</code></td>
+<td>Swedish</td>
+</tr>
+<tr>
+<td>Translation sibling</td>
+<td><code>analysis/daily/$DATE/$SUB/executive-brief_&lt;lang&gt;.md</code></td>
+<td><code>news-translate</code></td>
+<td>One per language in <code>{sv, da, no, fi, de, fr, es, nl, ar, he, ja, ko, zh}</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Together with the English source these 14 files cover the full 14-language set.</strong> No <code>executive-brief_en.md</code> file is ever created — <code>executive-brief.md</code> IS the English version. This is the only deviation from the <code>index_&lt;lang&gt;.html</code> naming pattern in the rest of the platform.</p>
+<h3 id="source-revision-signal-drift-detection" class="tsd-anchor-link">Source-revision signal (drift detection)<a href="#source-revision-signal-drift-detection" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p>Every translation MUST end with a single-line HTML comment that records the source commit at translation time:</p>
+<pre><code><span class="hl-1">&lt;!-- </span><span class="hl-5">source</span><span class="hl-1">-</span><span class="hl-7">sha</span><span class="hl-1">: &lt;</span><span class="hl-6">40</span><span class="hl-1">-</span><span class="hl-10">hex</span><span class="hl-1">-</span><span class="hl-10">sha</span><span class="hl-1">&gt; --&gt;</span>
+</code><button>Copy</button></pre>
+
+<p>The trailer is computed at translation time via <code>git log -1 --format=%H -- analysis/daily/$DATE/$SUB/executive-brief.md</code>. The <code>news-translate</code> workflow compares this trailer against the current source SHA on every run: matching ⇒ skip that language; mismatching ⇒ re-translate. Filesystem mtimes are <strong>never</strong> used as a freshness signal — <code>actions/checkout</code> resets them on every CI runner.</p>
+<h3 id="verbatim-preservation-never-translate-never-reword" class="tsd-anchor-link">Verbatim preservation (NEVER translate, NEVER reword)<a href="#verbatim-preservation-never-translate-never-reword" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>Block</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>YAML / HTML front-matter blocks</td>
+<td>Renderer reads them as structured data — translation breaks parsing.</td>
+</tr>
+<tr>
+<td><code>dok_id</code> codes (e.g. <code>H901FiU1</code>, <code>HA02UU3</code>, <code>H8011AU10</code>)</td>
+<td>Identifiers in the Riksdag API; translating breaks evidence links.</td>
+</tr>
+<tr>
+<td>MP <code>intressent_id</code> numeric codes</td>
+<td>Stable Riksdag identifiers.</td>
+</tr>
+<tr>
+<td>Vote IDs and <a href="http://Schema.org">Schema.org</a> JSON-LD <code>@id</code> URIs</td>
+<td>Machine-readable references.</td>
+</tr>
+<tr>
+<td>Image / badge / icon URLs (<code>https://img.shields.io/...</code>, <code>https://hack23.com/icon-192.png</code>)</td>
+<td>Asset references.</td>
+</tr>
+<tr>
+<td>Mermaid diagram <strong>DSL bodies</strong> (everything between <code>```mermaid</code> and <code>```</code>)</td>
+<td>Domain-specific syntax — translation will break rendering. Including <code>%%{init: ...}%%</code> prologues and <code>style …</code> / <code>classDef …</code> directives.</td>
+</tr>
+<tr>
+<td>Code-fence content for any language (<code>```ts</code>, <code>```bash</code>, <code>```json</code>, …)</td>
+<td>Code is not prose.</td>
+</tr>
+<tr>
+<td>Inline <code>`code`</code> spans</td>
+<td>Identifiers / commands.</td>
+</tr>
+<tr>
+<td>Markdown link targets (<code>](url)</code> and <code>[ref]: url</code>)</td>
+<td>URLs only — link text IS translated.</td>
+</tr>
+<tr>
+<td>File paths (<code>analysis/daily/...</code>, <code>scripts/...</code>, <code>.github/workflows/...</code>)</td>
+<td>Repository structure.</td>
+</tr>
+<tr>
+<td>Citation column values in evidence-anchor tables: <code>dok_id</code>, <code>retrieved_at</code> timestamps, <code>confidence</code> levels (<code>HIGH</code> / <code>MEDIUM</code> / <code>LOW</code>)</td>
+<td>Tradecraft canonical labels — these stay English even in non-English files.</td>
+</tr>
+<tr>
+<td>Numeric values, percentages, dates in ISO 8601 (<code>2026-05-16</code>), commit SHAs</td>
+<td>Data, not prose.</td>
+</tr>
+<tr>
+<td>HTML comments starting <code>&lt;!-- source-sha:</code>, <code>&lt;!-- TEMPLATE_CONTRACT_</code>, <code>&lt;!-- dir: rtl --&gt;</code></td>
+<td>Tooling markers.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="always-translate" class="tsd-anchor-link">Always translate<a href="#always-translate" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>Block</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>All running prose paragraphs</td>
+<td>Editor-grade tone, see §&quot;Tone register&quot; below.</td>
+</tr>
+<tr>
+<td>Headings (<code>#</code>, <code>##</code>, <code>###</code>, …)</td>
+<td>Including the BLUF heading and section headings.</td>
+</tr>
+<tr>
+<td>Markdown list items (bulleted and numbered)</td>
+<td>The 8-bullet 60-second read MUST stay as 8 bullets.</td>
+</tr>
+<tr>
+<td>Table cell <strong>text</strong> (not codes, IDs, URLs, or canonical confidence labels)</td>
+<td>Column headers ARE translated.</td>
+</tr>
+<tr>
+<td>Markdown link text (the <code>[text]</code> half)</td>
+<td>Target URL stays.</td>
+</tr>
+<tr>
+<td>Image <code>alt</code> attributes</td>
+<td>Accessibility-critical.</td>
+</tr>
+<tr>
+<td>Badge <strong>label</strong> segments where they encode text — e.g. <code>Owner-CEO</code> → translate &quot;Owner&quot; only if the badge URL is regenerated; otherwise leave the whole badge intact (cosmetic).</td>
+<td>Default: leave badges intact.</td>
+</tr>
+<tr>
+<td>Mermaid <strong><code>figcaption</code> and <code>&lt;details&gt;</code> fallback prose</strong> outside the fenced block</td>
+<td>Translate; the DSL inside the fence stays English.</td>
+</tr>
+<tr>
+<td><code>&lt;!-- Template instructions --&gt;</code> / <code>&lt;!-- AI-FIRST --&gt;</code> HTML comment prose <strong>only if</strong> the comment is content-bearing rather than a tooling marker. Default: keep tooling comments verbatim.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="structural-parity-validator-enforced" class="tsd-anchor-link">Structural parity (validator-enforced)<a href="#structural-parity-validator-enforced" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p>The validator (<code>scripts/validate-executive-brief-translations.ts</code>) requires translated files to match the source on:</p>
+<table>
+<thead>
+<tr>
+<th>Check</th>
+<th>Tolerance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Total heading count</td>
+<td>exact (±0)</td>
+</tr>
+<tr>
+<td>Mermaid fence count</td>
+<td>exact (±0)</td>
+</tr>
+<tr>
+<td>Code-fence count (all languages)</td>
+<td>exact (±0)</td>
+</tr>
+<tr>
+<td>Table count and row counts</td>
+<td>exact (±0)</td>
+</tr>
+<tr>
+<td>Evidence-anchor table column headers present in expected order</td>
+<td>exact</td>
+</tr>
+<tr>
+<td><code>dok_id</code> references preserved (set equality)</td>
+<td>exact</td>
+</tr>
+<tr>
+<td>Image / external-URL set preserved</td>
+<td>exact</td>
+</tr>
+<tr>
+<td>Top-level word count</td>
+<td>source ±25 % (translations expand or contract by language; outside ±25 % flags drift)</td>
+</tr>
+<tr>
+<td>Trailing <code>&lt;!-- source-sha: ... --&gt;</code> marker present and well-formed</td>
+<td>required</td>
+</tr>
+</tbody>
+</table>
+<h3 id="tone-register-per-language" class="tsd-anchor-link">Tone register per language<a href="#tone-register-per-language" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p>The executive brief is <strong>decision-grade BLUF for editors and duty officers</strong> — confident, factual, no hedging beyond the explicit confidence labels. Apply the dictionary translations from §&quot;Political &amp; Parliamentary Terms&quot;, §&quot;OSINT &amp; Intelligence Terms&quot;, §&quot;Swedish Parliamentary Document Types&quot; and §&quot;Riksdag Committee Abbreviations&quot; verbatim. Where a Swedish parliamentary term has no single-word target-language equivalent, prefer the dictionary entry over a literal translation.</p>
+<table>
+<thead>
+<tr>
+<th>Language</th>
+<th>Register</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>sv</code></td>
+<td>Editorial Swedish (Standard <code>Standardsvenska</code>)</td>
+<td>Match Riksdag press-release voice. Always render party abbreviations in Swedish (S, M, SD, V, MP, C, L, KD).</td>
+</tr>
+<tr>
+<td><code>da</code></td>
+<td>Editorial Danish (<code>Rigsmål</code>)</td>
+<td>Translate Swedish-specific institutions; keep <code>Riksdagen</code> capitalised.</td>
+</tr>
+<tr>
+<td><code>no</code></td>
+<td>Editorial <code>bokmål</code></td>
+<td>Use existing <code>no</code> code (legacy convention — see <code>scripts/validate-file-ownership.ts</code>).</td>
+</tr>
+<tr>
+<td><code>fi</code></td>
+<td>Standard Finnish (<code>yleiskieli</code>)</td>
+<td>Compound nouns favoured; Swedish loanwords for political institutions are acceptable when no Finnish equivalent exists.</td>
+</tr>
+<tr>
+<td><code>de</code></td>
+<td>Editorial German (<code>Standarddeutsch</code>)</td>
+<td>Use <code>der Riksdag</code>, not &quot;schwedisches Parlament&quot;.</td>
+</tr>
+<tr>
+<td><code>fr</code></td>
+<td>Editorial French (<code>français standard</code>)</td>
+<td>&quot;Le Riksdag&quot; with definite article.</td>
+</tr>
+<tr>
+<td><code>es</code></td>
+<td>Editorial Spanish (Castilian register)</td>
+<td>&quot;El Riksdag&quot;, masculine.</td>
+</tr>
+<tr>
+<td><code>nl</code></td>
+<td>Editorial Dutch (<code>Standaardnederlands</code>)</td>
+<td>&quot;De Riksdag&quot;, common gender.</td>
+</tr>
+<tr>
+<td><code>ar</code></td>
+<td>Modern Standard Arabic (MSA, <code>الفصحى</code>)</td>
+<td><strong>RTL</strong> — see §&quot;RTL Languages&quot;. Numbers stay Western Arabic numerals to match the source.</td>
+</tr>
+<tr>
+<td><code>he</code></td>
+<td>Modern Hebrew (<code>עברית תקנית</code>)</td>
+<td><strong>RTL</strong> — see §&quot;RTL Languages&quot;. Use definite article <code>ה</code> consistently.</td>
+</tr>
+<tr>
+<td><code>ja</code></td>
+<td>Editorial Japanese (常体 / です・ます choice: prefer <code>です・ます</code> for editor copy)</td>
+<td>Foreign names in katakana on first use, then English in parentheses where helpful.</td>
+</tr>
+<tr>
+<td><code>ko</code></td>
+<td>Editorial Korean (<code>표준어</code>, formal <code>합니다체</code>)</td>
+<td>Hangul; transliterate Swedish names on first use.</td>
+</tr>
+<tr>
+<td><code>zh</code></td>
+<td>Simplified Chinese (<code>简体中文</code>)</td>
+<td>Mainland editorial register; foreign names in Chinese transliteration on first use.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="rtl-specific-rules-arabic-hebrew" class="tsd-anchor-link">RTL-specific rules (Arabic &amp; Hebrew)<a href="#rtl-specific-rules-arabic-hebrew" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul>
+<li>Insert <code>&lt;!-- dir: rtl --&gt;</code> as the first non-frontmatter line of every <code>executive-brief_ar.md</code> and <code>executive-brief_he.md</code> so downstream renderers and aggregators can detect direction without parsing the language code.</li>
+<li>Punctuation marks must use RTL Unicode forms where appropriate (<code>،</code> ARABIC COMMA U+060C, <code>؟</code> ARABIC QUESTION MARK U+061F, Hebrew <code>׃</code> SOF PASUQ U+05C3 sparingly).</li>
+<li>Mermaid diagrams stay LTR — wrap the rendered figure in an <code>&lt;div dir=&quot;ltr&quot;&gt;</code> block in the surrounding HTML; the Markdown source itself does not need a wrapper.</li>
+</ul>
+<h3 id="workflow-integration" class="tsd-anchor-link">Workflow integration<a href="#workflow-integration" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>Workflow</th>
+<th>Reads</th>
+<th>Writes</th>
+<th>Frequency</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Per-type news (<code>news-propositions</code>, <code>news-motions</code>, …)</td>
+<td>—</td>
+<td><code>executive-brief.md</code> (EN) only</td>
+<td>Per type, daily</td>
+</tr>
+<tr>
+<td><code>news-translate</code></td>
+<td><code>executive-brief.md</code></td>
+<td><code>executive-brief_&lt;lang&gt;.md</code> for the 13 target languages</td>
+<td><strong>3× daily</strong> (09:00, 14:00, 19:00 UTC, 7 days/week)</td>
+</tr>
+</tbody>
+</table>
+<p>The translation workflow picks up at most <code>max_briefs</code> (default <code>3</code>, range <code>1–7</code>) untranslated or drifted source files per run, translates them into every requested target language (default = all 13 non-EN languages), and validates each translation with <code>scripts/validate-executive-brief-translations.ts</code> before committing. See <code>.github/workflows/news-translate.md</code> for the operational contract and time budget.</p>
+<h3 id="acceptance-checklist-per-translated-file" class="tsd-anchor-link">Acceptance checklist (per translated file)<a href="#acceptance-checklist-per-translated-file" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul>
+<li>[ ] Filename matches <code>analysis/daily/$DATE/$SUB/executive-brief_&lt;lang&gt;.md</code>.</li>
+<li>[ ] Heading, fence, table, and Mermaid counts match the source exactly.</li>
+<li>[ ] Every <code>dok_id</code>, intressent ID, vote ID, and external URL from the source appears in the translation.</li>
+<li>[ ] No verbatim English BLUF / section labels (&quot;Executive Brief&quot;, &quot;BLUF&quot;, &quot;Decisions&quot;, &quot;Confidence&quot;, &quot;Key Takeaways&quot;, &quot;What Happened&quot;, &quot;What It Means&quot;) remain in non-English files (validator scans a banned-phrase list).</li>
+<li>[ ] <code>ar</code> / <code>he</code> files start with <code>&lt;!-- dir: rtl --&gt;</code>.</li>
+<li>[ ] File ends with <code>&lt;!-- source-sha: &lt;40-hex&gt; --&gt;</code> matching the source's <code>git log -1 --format=%H</code>.</li>
+<li>[ ] <code>scripts/validate-executive-brief-translations.ts</code> exits 0 for this file.</li>
+</ul>
+<hr>
+<h2 id="🎯-translation-principles" class="tsd-anchor-link">🎯 Translation Principles<a href="#🎯-translation-principles" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<h3 id="1-never-translate-brand-names-proper-nouns" class="tsd-anchor-link">1. Never Translate (Brand Names &amp; Proper Nouns)<a href="#1-never-translate-brand-names-proper-nouns" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Reason</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Hack23</strong></td>
+<td>Company name</td>
+</tr>
+<tr>
+<td><strong>Hack23 AB</strong></td>
+<td>Swedish legal entity (<a href="http://Org.nr">Org.nr</a> 5595347807)</td>
+</tr>
+<tr>
+<td><strong>Citizen Intelligence Agency (CIA)</strong></td>
+<td>Platform/project name</td>
+</tr>
+<tr>
+<td><strong>Riksdag</strong></td>
+<td>Swedish Parliament (proper noun)</td>
+</tr>
+<tr>
+<td><strong>Riksdagsmonitor</strong></td>
+<td>Product name</td>
+</tr>
+<tr>
+<td><strong>James Pether Sörling</strong></td>
+<td>Founder name</td>
+</tr>
+<tr>
+<td><strong>CISSP, CISM</strong></td>
+<td>Professional certifications</td>
+</tr>
+<tr>
+<td><strong>GitHub, LinkedIn</strong></td>
+<td>Platform names</td>
+</tr>
+<tr>
+<td><strong>OpenSSF</strong></td>
+<td>Open Source Security Foundation</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2-terminology-categories" class="tsd-anchor-link">2. Terminology Categories<a href="#2-terminology-categories" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<h4 id="a-cia-triad-core-security-concepts" class="tsd-anchor-link">A. CIA Triad (Core Security Concepts)<a href="#a-cia-triad-core-security-concepts" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4>
+<p>The CIA Triad is fundamental to information security. Use consistent translations:</p>
+<table>
+<thead>
+<tr>
+<th>English</th>
+<th>Swedish</th>
+<th>Arabic</th>
+<th>Hebrew</th>
+<th>German</th>
+<th>French</th>
+<th>Spanish</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>CIA Triad</strong></td>
+<td>CIA-triaden</td>
+<td>ثلاثية CIA</td>
+<td>שלישיית CIA</td>
+<td>CIA-Triade</td>
+<td>Triade CIA</td>
+<td>Tríada CIA</td>
+</tr>
+<tr>
+<td><strong>Confidentiality</strong></td>
+<td>Konfidentialitet</td>
+<td>السرية</td>
+<td>סודיות</td>
+<td>Vertraulichkeit</td>
+<td>Confidentialité</td>
+<td>Confidencialidad</td>
+</tr>
+<tr>
+<td><strong>Integrity</strong></td>
+<td>Integritet</td>
+<td>السلامة</td>
+<td>שלמות</td>
+<td>Integrität</td>
+<td>Intégrité</td>
+<td>Integridad</td>
+</tr>
+<tr>
+<td><strong>Availability</strong></td>
+<td>Tillgänglighet</td>
+<td>التوافر</td>
+<td>זמינות</td>
+<td>Verfügbarkeit</td>
+<td>Disponibilité</td>
+<td>Disponibilidad</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>English</th>
+<th>Danish</th>
+<th>Norwegian</th>
+<th>Finnish</th>
+<th>Dutch</th>
+<th>Japanese</th>
+<th>Korean</th>
+<th>Chinese</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>CIA Triad</strong></td>
+<td>CIA-triaden</td>
+<td>CIA-triaden</td>
+<td>CIA-triadi</td>
+<td>CIA-triade</td>
+<td>CIA トライアド</td>
+<td>CIA 3요소</td>
+<td>CIA 三要素</td>
+</tr>
+<tr>
+<td><strong>Confidentiality</strong></td>
+<td>Fortrolighed</td>
+<td>Konfidensialitet</td>
+<td>Luottamuksellisuus</td>
+<td>Vertrouwelijkheid</td>
+<td>機密性</td>
+<td>기밀성</td>
+<td>机密性</td>
+</tr>
+<tr>
+<td><strong>Integrity</strong></td>
+<td>Integritet</td>
+<td>Integritet</td>
+<td>Eheys</td>
+<td>Integriteit</td>
+<td>完全性</td>
+<td>무결성</td>
+<td>完整性</td>
+</tr>
+<tr>
+<td><strong>Availability</strong></td>
+<td>Tilgængelighed</td>
+<td>Tilgjengelighet</td>
+<td>Saatavuus</td>
+<td>Beschikbaarheid</td>
+<td>可用性</td>
+<td>가용성</td>
+<td>可用性</td>
+</tr>
+</tbody>
+</table>
+<h4 id="b-political-parliamentary-terms" class="tsd-anchor-link">B. Political &amp; Parliamentary Terms<a href="#b-political-parliamentary-terms" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4>
+<table>
+<thead>
+<tr>
+<th>English</th>
+<th>Swedish</th>
+<th>Danish</th>
+<th>Norwegian</th>
+<th>Finnish</th>
+<th>German</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Parliament</strong></td>
+<td>Riksdag</td>
+<td>Folketing</td>
+<td>Storting</td>
+<td>Eduskunta</td>
+<td>Parlament</td>
+</tr>
+<tr>
+<td><strong>Member of Parliament (MP)</strong></td>
+<td>Riksdagsledamot</td>
+<td>Folketingsmedlem</td>
+<td>Stortingsrepresentant</td>
+<td>Kansanedustaja</td>
+<td>Parlamentsmitglied</td>
+</tr>
+<tr>
+<td><strong>Committee</strong></td>
+<td>Utskott</td>
+<td>Udvalg</td>
+<td>Komité</td>
+<td>Valiokunta</td>
+<td>Ausschuss</td>
+</tr>
+<tr>
+<td><strong>Coalition</strong></td>
+<td>Koalition</td>
+<td>Koalition</td>
+<td>Koalisjon</td>
+<td>Koalitio</td>
+<td>Koalition</td>
+</tr>
+<tr>
+<td><strong>Opposition</strong></td>
+<td>Opposition</td>
+<td>Opposition</td>
+<td>Opposisjon</td>
+<td>Oppositio</td>
+<td>Opposition</td>
+</tr>
+<tr>
+<td><strong>Election</strong></td>
+<td>Val</td>
+<td>Valg</td>
+<td>Valg</td>
+<td>Vaalit</td>
+<td>Wahl</td>
+</tr>
+<tr>
+<td><strong>Voting</strong></td>
+<td>Röstning</td>
+<td>Afstemning</td>
+<td>Avstemning</td>
+<td>Äänestys</td>
+<td>Abstimmung</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>English</th>
+<th>French</th>
+<th>Spanish</th>
+<th>Dutch</th>
+<th>Arabic</th>
+<th>Hebrew</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Parliament</strong></td>
+<td>Parlement</td>
+<td>Parlamento</td>
+<td>Parlement</td>
+<td>البرلمان</td>
+<td>פרלמנט</td>
+</tr>
+<tr>
+<td><strong>Member of Parliament (MP)</strong></td>
+<td>Député</td>
+<td>Diputado</td>
+<td>Parlementslid</td>
+<td>عضو البرلمان</td>
+<td>חבר פרלמנט</td>
+</tr>
+<tr>
+<td><strong>Committee</strong></td>
+<td>Commission</td>
+<td>Comité</td>
+<td>Commissie</td>
+<td>لجنة</td>
+<td>ועדה</td>
+</tr>
+<tr>
+<td><strong>Coalition</strong></td>
+<td>Coalition</td>
+<td>Coalición</td>
+<td>Coalitie</td>
+<td>تحالف</td>
+<td>קואליציה</td>
+</tr>
+<tr>
+<td><strong>Opposition</strong></td>
+<td>Opposition</td>
+<td>Oposición</td>
+<td>Oppositie</td>
+<td>المعارضة</td>
+<td>אופוזיציה</td>
+</tr>
+<tr>
+<td><strong>Election</strong></td>
+<td>Élection</td>
+<td>Elección</td>
+<td>Verkiezing</td>
+<td>انتخابات</td>
+<td>בחירות</td>
+</tr>
+<tr>
+<td><strong>Voting</strong></td>
+<td>Vote</td>
+<td>Votación</td>
+<td>Stemming</td>
+<td>تصويت</td>
+<td>הצבעה</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>English</th>
+<th>Japanese</th>
+<th>Korean</th>
+<th>Chinese</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Parliament</strong></td>
+<td>議会</td>
+<td>의회</td>
+<td>议会</td>
+</tr>
+<tr>
+<td><strong>Member of Parliament (MP)</strong></td>
+<td>国会議員</td>
+<td>국회의원</td>
+<td>议员</td>
+</tr>
+<tr>
+<td><strong>Committee</strong></td>
+<td>委員会</td>
+<td>위원회</td>
+<td>委员会</td>
+</tr>
+<tr>
+<td><strong>Coalition</strong></td>
+<td>連立</td>
+<td>연립</td>
+<td>联盟</td>
+</tr>
+<tr>
+<td><strong>Opposition</strong></td>
+<td>野党</td>
+<td>야당</td>
+<td>反对党</td>
+</tr>
+<tr>
+<td><strong>Election</strong></td>
+<td>選挙</td>
+<td>선거</td>
+<td>选举</td>
+</tr>
+<tr>
+<td><strong>Voting</strong></td>
+<td>投票</td>
+<td>투표</td>
+<td>投票</td>
+</tr>
+</tbody>
+</table>
+<h4 id="c-osint-intelligence-terms" class="tsd-anchor-link">C. OSINT &amp; Intelligence Terms<a href="#c-osint-intelligence-terms" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4>
+<table>
+<thead>
+<tr>
+<th>English</th>
+<th>Swedish</th>
+<th>German</th>
+<th>French</th>
+<th>Spanish</th>
+<th>Arabic</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>OSINT</strong></td>
+<td>OSINT</td>
+<td>OSINT</td>
+<td>OSINT</td>
+<td>OSINT</td>
+<td>استخبارات مفتوحة المصدر</td>
+</tr>
+<tr>
+<td><strong>Intelligence</strong></td>
+<td>Underrättelser</td>
+<td>Intelligenz</td>
+<td>Renseignement</td>
+<td>Inteligencia</td>
+<td>استخبارات</td>
+</tr>
+<tr>
+<td><strong>Monitoring</strong></td>
+<td>Övervakning</td>
+<td>Überwachung</td>
+<td>Surveillance</td>
+<td>Monitoreo</td>
+<td>مراقبة</td>
+</tr>
+<tr>
+<td><strong>Analysis</strong></td>
+<td>Analys</td>
+<td>Analyse</td>
+<td>Analyse</td>
+<td>Análisis</td>
+<td>تحليل</td>
+</tr>
+<tr>
+<td><strong>Risk Assessment</strong></td>
+<td>Riskbedömning</td>
+<td>Risikobewertung</td>
+<td>Évaluation des risques</td>
+<td>Evaluación de riesgos</td>
+<td>تقييم المخاطر</td>
+</tr>
+<tr>
+<td><strong>Transparency</strong></td>
+<td>Transparens</td>
+<td>Transparenz</td>
+<td>Transparence</td>
+<td>Transparencia</td>
+<td>شفافية</td>
+</tr>
+</tbody>
+</table>
+<h4 id="d-technical-security-terms" class="tsd-anchor-link">D. Technical &amp; Security Terms<a href="#d-technical-security-terms" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4>
+<table>
+<thead>
+<tr>
+<th>English</th>
+<th>Swedish</th>
+<th>German</th>
+<th>French</th>
+<th>Spanish</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Security</strong></td>
+<td>Säkerhet</td>
+<td>Sicherheit</td>
+<td>Sécurité</td>
+<td>Seguridad</td>
+</tr>
+<tr>
+<td><strong>Compliance</strong></td>
+<td>Efterlevnad</td>
+<td>Compliance</td>
+<td>Conformité</td>
+<td>Cumplimiento</td>
+</tr>
+<tr>
+<td><strong>ISO 27001</strong></td>
+<td>ISO 27001</td>
+<td>ISO 27001</td>
+<td>ISO 27001</td>
+<td>ISO 27001</td>
+</tr>
+<tr>
+<td><strong>NIST CSF</strong></td>
+<td>NIST CSF</td>
+<td>NIST CSF</td>
+<td>NIST CSF</td>
+<td>NIST CSF</td>
+</tr>
+<tr>
+<td><strong>CIS Controls</strong></td>
+<td>CIS Controls</td>
+<td>CIS Controls</td>
+<td>CIS Controls</td>
+<td>CIS Controls</td>
+</tr>
+<tr>
+<td><strong>DevSecOps</strong></td>
+<td>DevSecOps</td>
+<td>DevSecOps</td>
+<td>DevSecOps</td>
+<td>DevSecOps</td>
+</tr>
+<tr>
+<td><strong>ISMS</strong></td>
+<td>ISMS</td>
+<td>ISMS</td>
+<td>SMSI</td>
+<td>SGSI</td>
+</tr>
+</tbody>
+</table>
+<h4 id="e-swedish-parliamentary-document-types-riksdag-api" class="tsd-anchor-link">E. Swedish Parliamentary Document Types (Riksdag API)<a href="#e-swedish-parliamentary-document-types-riksdag-api" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4>
+<p>These terms appear in Riksdag API responses and MUST be translated accurately in news articles. The Swedish term is the <code>doktyp</code> field value. <strong>Never leave these untranslated.</strong></p>
+<table>
+<thead>
+<tr>
+<th>Swedish</th>
+<th>English</th>
+<th>German</th>
+<th>French</th>
+<th>Spanish</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Betänkande</strong> (bet)</td>
+<td>Committee report</td>
+<td>Ausschussbericht</td>
+<td>Rapport de commission</td>
+<td>Informe de comité</td>
+</tr>
+<tr>
+<td><strong>Proposition</strong> (prop)</td>
+<td>Government bill</td>
+<td>Regierungsvorlage</td>
+<td>Projet de loi du gouvernement</td>
+<td>Proyecto de ley gubernamental</td>
+</tr>
+<tr>
+<td><strong>Motion</strong> (mot)</td>
+<td>Parliamentary motion</td>
+<td>Parlamentarischer Antrag</td>
+<td>Motion parlementaire</td>
+<td>Moción parlamentaria</td>
+</tr>
+<tr>
+<td><strong>Interpellation</strong> (ip)</td>
+<td>Interpellation</td>
+<td>Interpellation</td>
+<td>Interpellation</td>
+<td>Interpelación</td>
+</tr>
+<tr>
+<td><strong>Skriftlig fråga</strong> (fr)</td>
+<td>Written question</td>
+<td>Schriftliche Anfrage</td>
+<td>Question écrite</td>
+<td>Pregunta escrita</td>
+</tr>
+<tr>
+<td><strong>Votering</strong></td>
+<td>Division/Vote</td>
+<td>Abstimmung</td>
+<td>Vote/Scrutin</td>
+<td>Votación</td>
+</tr>
+<tr>
+<td><strong>Anförande</strong></td>
+<td>Parliamentary speech</td>
+<td>Parlamentsrede</td>
+<td>Discours parlementaire</td>
+<td>Discurso parlamentario</td>
+</tr>
+<tr>
+<td><strong>Riksdagsskrivelse</strong> (rskr)</td>
+<td>Parliamentary communication</td>
+<td>Reichstagsschreiben</td>
+<td>Communication parlementaire</td>
+<td>Comunicación parlamentaria</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Swedish</th>
+<th>Danish</th>
+<th>Norwegian</th>
+<th>Finnish</th>
+<th>Dutch</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Betänkande</strong></td>
+<td>Udvalgsbetænkning</td>
+<td>Komitéinnstilling</td>
+<td>Valiokunnan mietintö</td>
+<td>Commissieverslag</td>
+</tr>
+<tr>
+<td><strong>Proposition</strong></td>
+<td>Regeringsforslag</td>
+<td>Regjeringsforslag</td>
+<td>Hallituksen esitys</td>
+<td>Wetsvoorstel</td>
+</tr>
+<tr>
+<td><strong>Motion</strong></td>
+<td>Beslutningsforslag</td>
+<td>Representantforslag</td>
+<td>Lakialoite</td>
+<td>Parlementaire motie</td>
+</tr>
+<tr>
+<td><strong>Interpellation</strong></td>
+<td>Forespørgsel</td>
+<td>Interpellasjon</td>
+<td>Välikysymys</td>
+<td>Interpellatie</td>
+</tr>
+<tr>
+<td><strong>Skriftlig fråga</strong></td>
+<td>Skriftligt spørgsmål</td>
+<td>Skriftlig spørsmål</td>
+<td>Kirjallinen kysymys</td>
+<td>Schriftelijke vraag</td>
+</tr>
+<tr>
+<td><strong>Votering</strong></td>
+<td>Afstemning</td>
+<td>Votering</td>
+<td>Äänestys</td>
+<td>Stemming</td>
+</tr>
+<tr>
+<td><strong>Anförande</strong></td>
+<td>Tale</td>
+<td>Innlegg</td>
+<td>Puheenvuoro</td>
+<td>Toespraak</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Swedish</th>
+<th>Arabic</th>
+<th>Hebrew</th>
+<th>Japanese</th>
+<th>Korean</th>
+<th>Chinese</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Betänkande</strong></td>
+<td>تقرير اللجنة</td>
+<td>דוח ועדה</td>
+<td>委員会報告</td>
+<td>위원회 보고서</td>
+<td>委员会报告</td>
+</tr>
+<tr>
+<td><strong>Proposition</strong></td>
+<td>مشروع قانون حكومي</td>
+<td>הצעת חוק ממשלתית</td>
+<td>政府法案</td>
+<td>정부 법안</td>
+<td>政府法案</td>
+</tr>
+<tr>
+<td><strong>Motion</strong></td>
+<td>اقتراح برلماني</td>
+<td>הצעה פרלמנטרית</td>
+<td>議会動議</td>
+<td>의회 동의</td>
+<td>议会动议</td>
+</tr>
+<tr>
+<td><strong>Interpellation</strong></td>
+<td>استجواب</td>
+<td>אינטרפלציה</td>
+<td>質問主意書</td>
+<td>대정부질문</td>
+<td>质询</td>
+</tr>
+<tr>
+<td><strong>Skriftlig fråga</strong></td>
+<td>سؤال مكتوب</td>
+<td>שאילתה</td>
+<td>書面質問</td>
+<td>서면질의</td>
+<td>书面质询</td>
+</tr>
+<tr>
+<td><strong>Votering</strong></td>
+<td>تصويت</td>
+<td>הצבעה</td>
+<td>採決</td>
+<td>표결</td>
+<td>表决</td>
+</tr>
+<tr>
+<td><strong>Anförande</strong></td>
+<td>خطاب برلماني</td>
+<td>נאום פרלמנטרי</td>
+<td>国会演説</td>
+<td>의회 연설</td>
+<td>议会发言</td>
+</tr>
+</tbody>
+</table>
+<h4 id="f-riksdag-committee-abbreviations" class="tsd-anchor-link">F. Riksdag Committee Abbreviations<a href="#f-riksdag-committee-abbreviations" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4>
+<p>Committee abbreviations (e.g., FiU, SoU) appear in document references like &quot;Bet. 2025/26:FiU10&quot;. Keep abbreviations as-is in document references, but translate committee names in running text.</p>
+<table>
+<thead>
+<tr>
+<th>Abbreviation</th>
+<th>Swedish Name</th>
+<th>English</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>FiU</strong></td>
+<td>Finansutskottet</td>
+<td>Finance Committee</td>
+</tr>
+<tr>
+<td><strong>SoU</strong></td>
+<td>Socialutskottet</td>
+<td>Social Affairs Committee</td>
+</tr>
+<tr>
+<td><strong>JuU</strong></td>
+<td>Justitieutskottet</td>
+<td>Justice Committee</td>
+</tr>
+<tr>
+<td><strong>CU</strong></td>
+<td>Civilutskottet</td>
+<td>Civil Affairs Committee</td>
+</tr>
+<tr>
+<td><strong>UU</strong></td>
+<td>Utrikesutskottet</td>
+<td>Foreign Affairs Committee</td>
+</tr>
+<tr>
+<td><strong>FöU</strong></td>
+<td>Försvarsutskottet</td>
+<td>Defence Committee</td>
+</tr>
+<tr>
+<td><strong>KU</strong></td>
+<td>Konstitutionsutskottet</td>
+<td>Constitutional Committee</td>
+</tr>
+<tr>
+<td><strong>KrU</strong></td>
+<td>Kulturutskottet</td>
+<td>Cultural Affairs Committee</td>
+</tr>
+<tr>
+<td><strong>MJU</strong></td>
+<td>Miljö- och jordbruksutskottet</td>
+<td>Environment and Agriculture Committee</td>
+</tr>
+<tr>
+<td><strong>NU</strong></td>
+<td>Näringsutskottet</td>
+<td>Industry Committee</td>
+</tr>
+<tr>
+<td><strong>SkU</strong></td>
+<td>Skatteutskottet</td>
+<td>Tax Committee</td>
+</tr>
+<tr>
+<td><strong>SfU</strong></td>
+<td>Socialförsäkringsutskottet</td>
+<td>Social Insurance Committee</td>
+</tr>
+<tr>
+<td><strong>TU</strong></td>
+<td>Trafikutskottet</td>
+<td>Transport Committee</td>
+</tr>
+<tr>
+<td><strong>UbU</strong></td>
+<td>Utbildningsutskottet</td>
+<td>Education Committee</td>
+</tr>
+<tr>
+<td><strong>AU</strong></td>
+<td>Arbetsmarknadsutskottet</td>
+<td>Labour Market Committee</td>
+</tr>
+</tbody>
+</table>
+<h4 id="g-common-policy-terms-from-riksdag-api" class="tsd-anchor-link">G. Common Policy Terms from Riksdag API<a href="#g-common-policy-terms-from-riksdag-api" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4>
+<table>
+<thead>
+<tr>
+<th>Swedish</th>
+<th>English</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Statlig personal</strong></td>
+<td>Government personnel</td>
+<td>Civil servants</td>
+</tr>
+<tr>
+<td><strong>Bostadsrätt</strong></td>
+<td>Tenant-ownership / Housing cooperative</td>
+<td>Swedish housing form</td>
+</tr>
+<tr>
+<td><strong>Föräldrapenning</strong></td>
+<td>Parental allowance</td>
+<td>Social insurance benefit</td>
+</tr>
+<tr>
+<td><strong>Djurskydd</strong></td>
+<td>Animal welfare/protection</td>
+<td>Regulatory area</td>
+</tr>
+<tr>
+<td><strong>Fribeloppet</strong></td>
+<td>Earning threshold</td>
+<td>Tax-free amount for students/pensioners</td>
+</tr>
+<tr>
+<td><strong>Tidöavtalet</strong></td>
+<td>The Tidö Agreement</td>
+<td>2022 governing agreement (M, KD, L, SD)</td>
+</tr>
+<tr>
+<td><strong>Riksrevisionen</strong></td>
+<td>Swedish National Audit Office</td>
+<td>Keep &quot;Riksrevisionen&quot; in parentheses</td>
+</tr>
+<tr>
+<td><strong>Riksbanken</strong></td>
+<td>Sveriges Riksbank</td>
+<td>Sweden's central bank</td>
+</tr>
+<tr>
+<td><strong>Statsråd</strong></td>
+<td>Cabinet minister</td>
+<td>Member of the government</td>
+</tr>
+<tr>
+<td><strong>Regeringskansliet</strong></td>
+<td>Government Offices of Sweden</td>
+<td>Administrative apparatus</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="🔄-cultural-adaptations" class="tsd-anchor-link">🔄 Cultural Adaptations<a href="#🔄-cultural-adaptations" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<h3 id="date-formats" class="tsd-anchor-link">Date Formats<a href="#date-formats" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>Region</th>
+<th>Format</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>US (English)</strong></td>
+<td>MM/DD/YYYY</td>
+<td>02/05/2026</td>
+</tr>
+<tr>
+<td><strong>EU (Most)</strong></td>
+<td>DD/MM/YYYY</td>
+<td>05/02/2026</td>
+</tr>
+<tr>
+<td><strong>Sweden</strong></td>
+<td>YYYY-MM-DD</td>
+<td>2026-02-05</td>
+</tr>
+<tr>
+<td><strong>ISO 8601</strong></td>
+<td>YYYY-MM-DD</td>
+<td>2026-02-05 (preferred)</td>
+</tr>
+<tr>
+<td><strong>Arabic</strong></td>
+<td>DD/MM/YYYY or ٥ فبراير ٢٠٢٦</td>
+<td>Both Western &amp; Arabic-Indic</td>
+</tr>
+<tr>
+<td><strong>Japanese</strong></td>
+<td>YYYY年MM月DD日</td>
+<td>2026年2月5日</td>
+</tr>
+<tr>
+<td><strong>Chinese</strong></td>
+<td>YYYY年MM月DD日</td>
+<td>2026年2月5日</td>
+</tr>
+<tr>
+<td><strong>Korean</strong></td>
+<td>YYYY년 MM월 DD일</td>
+<td>2026년 2월 5일</td>
+</tr>
+</tbody>
+</table>
+<h3 id="number-formats" class="tsd-anchor-link">Number Formats<a href="#number-formats" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>Region</th>
+<th>Thousands</th>
+<th>Decimal</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>US/UK</strong></td>
+<td>, (comma)</td>
+<td>. (period)</td>
+<td>1,000.50</td>
+</tr>
+<tr>
+<td><strong>EU (Most)</strong></td>
+<td>. (period) or space</td>
+<td>, (comma)</td>
+<td>1.000,50 or 1 000,50</td>
+</tr>
+<tr>
+<td><strong>Sweden</strong></td>
+<td>(space)</td>
+<td>, (comma)</td>
+<td>1 000,50</td>
+</tr>
+<tr>
+<td><strong>Arabic</strong></td>
+<td>Western or ١٬٠٠٠٫٥٠</td>
+<td>Both formats</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="currency" class="tsd-anchor-link">Currency<a href="#currency" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>Language</th>
+<th>Currency Symbol</th>
+<th>Position</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Swedish</strong></td>
+<td>kr (SEK)</td>
+<td>After amount</td>
+<td>5 000 kr</td>
+</tr>
+<tr>
+<td><strong>European</strong></td>
+<td>€ (EUR)</td>
+<td>After amount</td>
+<td>5 000 €</td>
+</tr>
+<tr>
+<td><strong>US</strong></td>
+<td>$ (USD)</td>
+<td>Before amount</td>
+<td>$5,000</td>
+</tr>
+<tr>
+<td><strong>Arabic</strong></td>
+<td>ر.س (SAR)</td>
+<td>After amount</td>
+<td>٥٬٠٠٠ ر.س</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="🎨-rtl-right-to-left-languages" class="tsd-anchor-link">🎨 RTL (Right-to-Left) Languages<a href="#🎨-rtl-right-to-left-languages" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<h3 id="arabic-ar-hebrew-he" class="tsd-anchor-link">Arabic (ar) &amp; Hebrew (he)<a href="#arabic-ar-hebrew-he" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>HTML Declaration:</strong></p>
+<pre><code class="html"><span class="hl-16">&lt;</span><span class="hl-11">html</span><span class="hl-1"> </span><span class="hl-17">lang</span><span class="hl-1">=</span><span class="hl-12">&quot;ar&quot;</span><span class="hl-1"> </span><span class="hl-17">dir</span><span class="hl-1">=</span><span class="hl-12">&quot;rtl&quot;</span><span class="hl-16">&gt;</span><br/><span class="hl-4">&lt;!-- or --&gt;</span><br/><span class="hl-16">&lt;</span><span class="hl-11">html</span><span class="hl-1"> </span><span class="hl-17">lang</span><span class="hl-1">=</span><span class="hl-12">&quot;he&quot;</span><span class="hl-1"> </span><span class="hl-17">dir</span><span class="hl-1">=</span><span class="hl-12">&quot;rtl&quot;</span><span class="hl-16">&gt;</span>
+</code><button type="button">Copy</button></pre>
+
+<p><strong>CSS Handling:</strong>
+The <code>styles.css</code> file includes comprehensive RTL support:</p>
+<ul>
+<li>Text alignment: right</li>
+<li>Flex direction: row-reverse for navigation</li>
+<li>List padding: right instead of left</li>
+<li>Form field alignment: right</li>
+<li>Breadcrumb arrows: reversed (←)</li>
+</ul>
+<p><strong>Font Families:</strong></p>
+<ul>
+<li><strong>Arabic:</strong> Noto Sans Arabic, Tahoma, Arial</li>
+<li><strong>Hebrew:</strong> Noto Sans Hebrew, Arial Hebrew, David</li>
+</ul>
+<p><strong>Special Considerations:</strong></p>
+<ul>
+<li>URLs remain LTR (left-to-right)</li>
+<li>Code blocks remain LTR</li>
+<li>Email addresses remain LTR</li>
+<li>Technical terms (e.g., &quot;CIA&quot;, &quot;OSINT&quot;) remain in Latin script</li>
+</ul>
+<hr>
+<h2 id="📏-quality-standards" class="tsd-anchor-link">📏 Quality Standards<a href="#📏-quality-standards" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<h3 id="translation-completeness-checklist" class="tsd-anchor-link">Translation Completeness Checklist<a href="#translation-completeness-checklist" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul>
+<li>[ ] All HTML meta tags translated (title, description, keywords)</li>
+<li>[ ] All Open Graph tags translated</li>
+<li>[ ] All Twitter Card metadata translated</li>
+<li>[ ] All <a href="http://Schema.org">Schema.org</a> structured data translated</li>
+<li>[ ] All visible page content translated</li>
+<li>[ ] All button/CTA text translated</li>
+<li>[ ] All navigation links translated</li>
+<li>[ ] All footer text translated</li>
+<li>[ ] All breadcrumb labels translated</li>
+</ul>
+<h3 id="technical-requirements" class="tsd-anchor-link">Technical Requirements<a href="#technical-requirements" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul>
+<li>[ ] <code>lang</code> attribute correct on <code>&lt;html&gt;</code> tag</li>
+<li>[ ] <code>dir=&quot;rtl&quot;</code> present for Arabic/Hebrew</li>
+<li>[ ] Proper font families loaded (Google Fonts)</li>
+<li>[ ] Hreflang tags present for all languages</li>
+<li>[ ] Canonical URL correct</li>
+<li>[ ] <a href="http://Schema.org">Schema.org</a> <code>inLanguage</code> property set</li>
+</ul>
+<h3 id="accessibility-wcag-21-aa" class="tsd-anchor-link">Accessibility (WCAG 2.1 AA)<a href="#accessibility-wcag-21-aa" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul>
+<li>[ ] Proper heading hierarchy (h1 → h2 → h3)</li>
+<li>[ ] Alt text translated for images</li>
+<li>[ ] ARIA labels translated</li>
+<li>[ ] Form labels translated</li>
+<li>[ ] Keyboard navigation working</li>
+<li>[ ] Screen reader compatible</li>
+</ul>
+<hr>
+<h2 id="🔗-seo-hreflang-tags" class="tsd-anchor-link">🔗 SEO &amp; Hreflang Tags<a href="#🔗-seo-hreflang-tags" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<h3 id="standard-hreflang-implementation" class="tsd-anchor-link">Standard Hreflang Implementation<a href="#standard-hreflang-implementation" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p>Each language file must include hreflang tags for all 14 languages plus x-default:</p>
+<pre><code class="html"><span class="hl-16">&lt;</span><span class="hl-11">link</span><span class="hl-1"> </span><span class="hl-17">rel</span><span class="hl-1">=</span><span class="hl-12">&quot;alternate&quot;</span><span class="hl-1"> </span><span class="hl-17">hreflang</span><span class="hl-1">=</span><span class="hl-12">&quot;en&quot;</span><span class="hl-1"> </span><span class="hl-17">href</span><span class="hl-1">=</span><span class="hl-12">&quot;https://riksdagsmonitor.com/index.html&quot;</span><span class="hl-16">&gt;</span><br/><span class="hl-16">&lt;</span><span class="hl-11">link</span><span class="hl-1"> </span><span class="hl-17">rel</span><span class="hl-1">=</span><span class="hl-12">&quot;alternate&quot;</span><span class="hl-1"> </span><span class="hl-17">hreflang</span><span class="hl-1">=</span><span class="hl-12">&quot;sv&quot;</span><span class="hl-1"> </span><span class="hl-17">href</span><span class="hl-1">=</span><span class="hl-12">&quot;https://riksdagsmonitor.com/index_sv.html&quot;</span><span class="hl-16">&gt;</span><br/><span class="hl-16">&lt;</span><span class="hl-11">link</span><span class="hl-1"> </span><span class="hl-17">rel</span><span class="hl-1">=</span><span class="hl-12">&quot;alternate&quot;</span><span class="hl-1"> </span><span class="hl-17">hreflang</span><span class="hl-1">=</span><span class="hl-12">&quot;da&quot;</span><span class="hl-1"> </span><span class="hl-17">href</span><span class="hl-1">=</span><span class="hl-12">&quot;https://riksdagsmonitor.com/index_da.html&quot;</span><span class="hl-16">&gt;</span><br/><span class="hl-16">&lt;</span><span class="hl-11">link</span><span class="hl-1"> </span><span class="hl-17">rel</span><span class="hl-1">=</span><span class="hl-12">&quot;alternate&quot;</span><span class="hl-1"> </span><span class="hl-17">hreflang</span><span class="hl-1">=</span><span class="hl-12">&quot;no&quot;</span><span class="hl-1"> </span><span class="hl-17">href</span><span class="hl-1">=</span><span class="hl-12">&quot;https://riksdagsmonitor.com/index_no.html&quot;</span><span class="hl-16">&gt;</span><br/><span class="hl-16">&lt;</span><span class="hl-11">link</span><span class="hl-1"> </span><span class="hl-17">rel</span><span class="hl-1">=</span><span class="hl-12">&quot;alternate&quot;</span><span class="hl-1"> </span><span class="hl-17">hreflang</span><span class="hl-1">=</span><span class="hl-12">&quot;fi&quot;</span><span class="hl-1"> </span><span class="hl-17">href</span><span class="hl-1">=</span><span class="hl-12">&quot;https://riksdagsmonitor.com/index_fi.html&quot;</span><span class="hl-16">&gt;</span><br/><span class="hl-16">&lt;</span><span class="hl-11">link</span><span class="hl-1"> </span><span class="hl-17">rel</span><span class="hl-1">=</span><span class="hl-12">&quot;alternate&quot;</span><span class="hl-1"> </span><span class="hl-17">hreflang</span><span class="hl-1">=</span><span class="hl-12">&quot;de&quot;</span><span class="hl-1"> </span><span class="hl-17">href</span><span class="hl-1">=</span><span class="hl-12">&quot;https://riksdagsmonitor.com/index_de.html&quot;</span><span class="hl-16">&gt;</span><br/><span class="hl-16">&lt;</span><span class="hl-11">link</span><span class="hl-1"> </span><span class="hl-17">rel</span><span class="hl-1">=</span><span class="hl-12">&quot;alternate&quot;</span><span class="hl-1"> </span><span class="hl-17">hreflang</span><span class="hl-1">=</span><span class="hl-12">&quot;fr&quot;</span><span class="hl-1"> </span><span class="hl-17">href</span><span class="hl-1">=</span><span class="hl-12">&quot;https://riksdagsmonitor.com/index_fr.html&quot;</span><span class="hl-16">&gt;</span><br/><span class="hl-16">&lt;</span><span class="hl-11">link</span><span class="hl-1"> </span><span class="hl-17">rel</span><span class="hl-1">=</span><span class="hl-12">&quot;alternate&quot;</span><span class="hl-1"> </span><span class="hl-17">hreflang</span><span class="hl-1">=</span><span class="hl-12">&quot;es&quot;</span><span class="hl-1"> </span><span class="hl-17">href</span><span class="hl-1">=</span><span class="hl-12">&quot;https://riksdagsmonitor.com/index_es.html&quot;</span><span class="hl-16">&gt;</span><br/><span class="hl-16">&lt;</span><span class="hl-11">link</span><span class="hl-1"> </span><span class="hl-17">rel</span><span class="hl-1">=</span><span class="hl-12">&quot;alternate&quot;</span><span class="hl-1"> </span><span class="hl-17">hreflang</span><span class="hl-1">=</span><span class="hl-12">&quot;nl&quot;</span><span class="hl-1"> </span><span class="hl-17">href</span><span class="hl-1">=</span><span class="hl-12">&quot;https://riksdagsmonitor.com/index_nl.html&quot;</span><span class="hl-16">&gt;</span><br/><span class="hl-16">&lt;</span><span class="hl-11">link</span><span class="hl-1"> </span><span class="hl-17">rel</span><span class="hl-1">=</span><span class="hl-12">&quot;alternate&quot;</span><span class="hl-1"> </span><span class="hl-17">hreflang</span><span class="hl-1">=</span><span class="hl-12">&quot;ar&quot;</span><span class="hl-1"> </span><span class="hl-17">href</span><span class="hl-1">=</span><span class="hl-12">&quot;https://riksdagsmonitor.com/index_ar.html&quot;</span><span class="hl-16">&gt;</span><br/><span class="hl-16">&lt;</span><span class="hl-11">link</span><span class="hl-1"> </span><span class="hl-17">rel</span><span class="hl-1">=</span><span class="hl-12">&quot;alternate&quot;</span><span class="hl-1"> </span><span class="hl-17">hreflang</span><span class="hl-1">=</span><span class="hl-12">&quot;he&quot;</span><span class="hl-1"> </span><span class="hl-17">href</span><span class="hl-1">=</span><span class="hl-12">&quot;https://riksdagsmonitor.com/index_he.html&quot;</span><span class="hl-16">&gt;</span><br/><span class="hl-16">&lt;</span><span class="hl-11">link</span><span class="hl-1"> </span><span class="hl-17">rel</span><span class="hl-1">=</span><span class="hl-12">&quot;alternate&quot;</span><span class="hl-1"> </span><span class="hl-17">hreflang</span><span class="hl-1">=</span><span class="hl-12">&quot;ja&quot;</span><span class="hl-1"> </span><span class="hl-17">href</span><span class="hl-1">=</span><span class="hl-12">&quot;https://riksdagsmonitor.com/index_ja.html&quot;</span><span class="hl-16">&gt;</span><br/><span class="hl-16">&lt;</span><span class="hl-11">link</span><span class="hl-1"> </span><span class="hl-17">rel</span><span class="hl-1">=</span><span class="hl-12">&quot;alternate&quot;</span><span class="hl-1"> </span><span class="hl-17">hreflang</span><span class="hl-1">=</span><span class="hl-12">&quot;ko&quot;</span><span class="hl-1"> </span><span class="hl-17">href</span><span class="hl-1">=</span><span class="hl-12">&quot;https://riksdagsmonitor.com/index_ko.html&quot;</span><span class="hl-16">&gt;</span><br/><span class="hl-16">&lt;</span><span class="hl-11">link</span><span class="hl-1"> </span><span class="hl-17">rel</span><span class="hl-1">=</span><span class="hl-12">&quot;alternate&quot;</span><span class="hl-1"> </span><span class="hl-17">hreflang</span><span class="hl-1">=</span><span class="hl-12">&quot;zh&quot;</span><span class="hl-1"> </span><span class="hl-17">href</span><span class="hl-1">=</span><span class="hl-12">&quot;https://riksdagsmonitor.com/index_zh.html&quot;</span><span class="hl-16">&gt;</span><br/><span class="hl-16">&lt;</span><span class="hl-11">link</span><span class="hl-1"> </span><span class="hl-17">rel</span><span class="hl-1">=</span><span class="hl-12">&quot;alternate&quot;</span><span class="hl-1"> </span><span class="hl-17">hreflang</span><span class="hl-1">=</span><span class="hl-12">&quot;x-default&quot;</span><span class="hl-1"> </span><span class="hl-17">href</span><span class="hl-1">=</span><span class="hl-12">&quot;https://riksdagsmonitor.com/index.html&quot;</span><span class="hl-16">&gt;</span>
+</code><button type="button">Copy</button></pre>
+
+<hr>
+<h2 id="🔍-translation-validation" class="tsd-anchor-link">🔍 Translation Validation<a href="#🔍-translation-validation" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<h3 id="automated-checks" class="tsd-anchor-link">Automated Checks<a href="#automated-checks" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p>Run these commands before committing translations:</p>
+<pre><code class="bash"><span class="hl-4"># HTML validation</span><br/><span class="hl-0">htmlhint</span><span class="hl-1"> </span><span class="hl-9">*</span><span class="hl-2">.html</span><br/><br/><span class="hl-4"># Main site translations (index files)</span><br/><span class="hl-0">npm</span><span class="hl-1"> </span><span class="hl-2">run</span><span class="hl-1"> </span><span class="hl-2">validate-translations</span><br/><br/><span class="hl-4"># News article translations</span><br/><span class="hl-0">npm</span><span class="hl-1"> </span><span class="hl-2">run</span><span class="hl-1"> </span><span class="hl-2">validate-news</span><br/><br/><span class="hl-4"># Run all validation checks together</span><br/><span class="hl-0">npm</span><span class="hl-1"> </span><span class="hl-2">run</span><span class="hl-1"> </span><span class="hl-2">validate-all</span><br/><br/><span class="hl-4"># Check language attributes</span><br/><span class="hl-3">for</span><span class="hl-1"> </span><span class="hl-5">file</span><span class="hl-1"> </span><span class="hl-3">in</span><span class="hl-1"> </span><span class="hl-2">index*.html</span><span class="hl-1">; </span><span class="hl-3">do</span><span class="hl-1"> </span><br/><span class="hl-1">  </span><span class="hl-0">echo</span><span class="hl-1"> </span><span class="hl-2">&quot;=== </span><span class="hl-5">$file</span><span class="hl-2"> ===&quot;</span><br/><span class="hl-1">  </span><span class="hl-0">grep</span><span class="hl-1"> </span><span class="hl-2">&#39;lang=&#39;</span><span class="hl-1"> </span><span class="hl-2">&quot;</span><span class="hl-5">$file</span><span class="hl-2">&quot;</span><span class="hl-1"> | </span><span class="hl-0">head</span><span class="hl-1"> </span><span class="hl-9">-1</span><br/><span class="hl-3">done</span><br/><br/><span class="hl-4"># Check RTL attributes</span><br/><span class="hl-0">grep</span><span class="hl-1"> </span><span class="hl-2">&#39;dir=&quot;rtl&quot;&#39;</span><span class="hl-1"> </span><span class="hl-2">index_ar.html</span><span class="hl-1"> </span><span class="hl-2">index_he.html</span><br/><br/><span class="hl-4"># Link checking</span><br/><span class="hl-0">python3</span><span class="hl-1"> </span><span class="hl-9">-m</span><span class="hl-1"> </span><span class="hl-2">http.server</span><span class="hl-1"> </span><span class="hl-6">8080</span><span class="hl-1"> &amp;</span><br/><span class="hl-0">linkinator</span><span class="hl-1"> </span><span class="hl-2">http://localhost:8080/</span><span class="hl-1"> </span><span class="hl-9">--recurse</span>
+</code><button type="button">Copy</button></pre>
+
+<h3 id="translation-validation-for-news-articles" class="tsd-anchor-link">Translation Validation for News Articles<a href="#translation-validation-for-news-articles" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p>News articles are generated by agentic workflows with Swedish content from the Riksdag API. These workflows must translate all Swedish content to the target language.</p>
+<p><strong>Check for untranslated markers</strong>:</p>
+<pre><code class="bash"><span class="hl-4"># Validate all news articles</span><br/><span class="hl-0">npm</span><span class="hl-1"> </span><span class="hl-2">run</span><span class="hl-1"> </span><span class="hl-2">validate-news</span><br/><br/><span class="hl-4"># Check specific articles</span><br/><span class="hl-0">node</span><span class="hl-1"> </span><span class="hl-2">scripts/validate-news-translations.js</span><span class="hl-1"> </span><span class="hl-2">news/</span><br/><br/><span class="hl-4"># Look for untranslated markers manually</span><br/><span class="hl-0">grep</span><span class="hl-1"> </span><span class="hl-9">-r</span><span class="hl-1"> </span><span class="hl-2">&#39;data-translate=&quot;true&quot;&#39;</span><span class="hl-1"> </span><span class="hl-2">news/</span><span class="hl-9">*</span><span class="hl-2">.html</span>
+</code><button type="button">Copy</button></pre>
+
+<p><strong>Expected output if validation passes</strong>:</p>
+<pre><code><span class="hl-1">✓ </span><span class="hl-5">Fully</span><span class="hl-1"> </span><span class="hl-7">translated</span><span class="hl-1">: </span><span class="hl-0">N</span><span class="hl-1"> (</span><span class="hl-5">number</span><span class="hl-1"> </span><span class="hl-9">of</span><span class="hl-1"> </span><span class="hl-5">articles</span><span class="hl-1">)</span><br/><span class="hl-1">✅ </span><span class="hl-8">ALL</span><span class="hl-1"> </span><span class="hl-8">ARTICLES</span><span class="hl-1"> </span><span class="hl-8">FULLY</span><span class="hl-1"> </span><span class="hl-8">TRANSLATED</span>
+</code><button>Copy</button></pre>
+
+<p><strong>If validation fails</strong>, you'll see:</p>
+<pre><code><span class="hl-1">✗ </span><span class="hl-6">2026</span><span class="hl-1">-</span><span class="hl-6">02</span><span class="hl-1">-</span><span class="hl-6">15</span><span class="hl-1">-</span><span class="hl-5">committee</span><span class="hl-1">-</span><span class="hl-5">reports</span><span class="hl-1">-</span><span class="hl-5">de</span><span class="hl-1">.</span><span class="hl-0">html</span><span class="hl-1"> (</span><span class="hl-8">DE</span><span class="hl-1">)</span><br/><span class="hl-1">  </span><span class="hl-5">Found</span><span class="hl-1"> </span><span class="hl-6">10</span><span class="hl-1"> </span><span class="hl-5">untranslated</span><span class="hl-1"> </span><span class="hl-0">marker</span><span class="hl-1">(</span><span class="hl-5">s</span><span class="hl-1">)</span><br/><span class="hl-1">  </span><span class="hl-7">Samples</span><span class="hl-1">:</span><br/><span class="hl-1">    </span><span class="hl-6">1.</span><span class="hl-1"> </span><span class="hl-2">&quot;Bättre förutsättningar att sända ut statlig personal&quot;</span><br/><span class="hl-1">    </span><span class="hl-6">2.</span><span class="hl-1"> </span><span class="hl-2">&quot;Ett register för alla bostadsrätter&quot;</span>
+</code><button>Copy</button></pre>
+
+<p><strong>To fix untranslated markers</strong>:</p>
+<ol>
+<li>Open the file listed</li>
+<li>Find <code>&lt;span data-translate=&quot;true&quot; lang=&quot;sv&quot;&gt;Swedish text&lt;/span&gt;</code></li>
+<li>Translate the Swedish text to the article's language</li>
+<li>Replace: <code>&lt;span data-translate=&quot;true&quot; lang=&quot;sv&quot;&gt;Swedish text&lt;/span&gt;</code> → <code>Translated text</code></li>
+<li>Consult Section E below for document type translations</li>
+<li>Run <code>npm run validate-news</code> again to verify</li>
+</ol>
+<h3 id="manual-review" class="tsd-anchor-link">Manual Review<a href="#manual-review" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul>
+<li>[ ] Native speaker review (preferred)</li>
+<li>[ ] Cultural appropriateness check</li>
+<li>[ ] Technical term consistency</li>
+<li>[ ] Political term accuracy</li>
+<li>[ ] Security terminology correctness</li>
+</ul>
+<hr>
+<h2 id="📰-political-intelligence-vocabulary-from-news-articles" class="tsd-anchor-link">📰 Political Intelligence Vocabulary (From News Articles)<a href="#📰-political-intelligence-vocabulary-from-news-articles" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<p>This section contains real-world political terminology extracted from translated news articles, providing proven translations for political intelligence and parliamentary reporting.</p>
+<h3 id="f-news-article-ui-labels" class="tsd-anchor-link">F. News Article UI Labels<a href="#f-news-article-ui-labels" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p>Standard labels used across all news article types:</p>
+<table>
+<thead>
+<tr>
+<th>English</th>
+<th>Swedish</th>
+<th>German</th>
+<th>French</th>
+<th>Spanish</th>
+<th>Dutch</th>
+<th>Danish</th>
+<th>Norwegian</th>
+<th>Finnish</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Committee</td>
+<td>Kommitté</td>
+<td>Ausschuss</td>
+<td>Commission</td>
+<td>Comisión</td>
+<td>Commissie</td>
+<td>Udvalg</td>
+<td>Komité</td>
+<td>Valiokunta</td>
+</tr>
+<tr>
+<td>Document</td>
+<td>Dokument</td>
+<td>Dokument</td>
+<td>Document</td>
+<td>Documento</td>
+<td>Document</td>
+<td>Dokument</td>
+<td>Dokument</td>
+<td>Asiakirja</td>
+</tr>
+<tr>
+<td>What to Watch</td>
+<td>Vad man ska följa</td>
+<td>Was zu beobachten</td>
+<td>À surveiller</td>
+<td>Qué observar</td>
+<td>Te volgen</td>
+<td>Hvad man skal følge</td>
+<td>Hva man skal følge</td>
+<td>Mitä seurata</td>
+</tr>
+<tr>
+<td>This Week</td>
+<td>Denna vecka</td>
+<td>Diese Woche</td>
+<td>Cette semaine</td>
+<td>Esta semana</td>
+<td>Deze week</td>
+<td>Denne uge</td>
+<td>Denne uken</td>
+<td>Tällä viikolla</td>
+</tr>
+<tr>
+<td>Next Week</td>
+<td>Nästa vecka</td>
+<td>Nächste Woche</td>
+<td>La semaine prochaine</td>
+<td>La próxima semana</td>
+<td>Volgende week</td>
+<td>Næste uge</td>
+<td>Neste uke</td>
+<td>Ensi viikolla</td>
+</tr>
+<tr>
+<td>Analysis</td>
+<td>Analys</td>
+<td>Analyse</td>
+<td>Analyse</td>
+<td>Análisis</td>
+<td>Analyse</td>
+<td>Analyse</td>
+<td>Analyse</td>
+<td>Analyysi</td>
+</tr>
+<tr>
+<td>Evening Analysis</td>
+<td>Kvällsanalys</td>
+<td>Abendanalyse</td>
+<td>Analyse du soir</td>
+<td>Análisis vespertino</td>
+<td>Avondanalyse</td>
+<td>Aftenanalyse</td>
+<td>Kveldsanalyse</td>
+<td>Ilta-analyysi</td>
+</tr>
+</tbody>
+</table>
+<h3 id="g-committee-report-terminology" class="tsd-anchor-link">G. Committee Report Terminology<a href="#g-committee-report-terminology" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p>Common phrases from committee reports:</p>
+<table>
+<thead>
+<tr>
+<th>English</th>
+<th>Swedish</th>
+<th>German</th>
+<th>French</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Better conditions for deploying government personnel</td>
+<td>Bättre förutsättningar att sända ut statlig personal</td>
+<td>Bessere Voraussetzungen für die Entsendung staatlichen Personals</td>
+<td>Meilleures conditions pour le déploiement du personnel gouvernemental</td>
+</tr>
+<tr>
+<td>A register for all condominiums</td>
+<td>Ett register för alla bostadsrätter</td>
+<td>Ein Register für alle Eigentumswohnungen</td>
+<td>Un registre pour toutes les copropriétés</td>
+</tr>
+<tr>
+<td>Animal welfare</td>
+<td>Djurskydd</td>
+<td>Tierschutz</td>
+<td>Protection des animaux</td>
+</tr>
+<tr>
+<td>Trade policy</td>
+<td>Handelspolitik</td>
+<td>Handelspolitik</td>
+<td>Politique commerciale</td>
+</tr>
+<tr>
+<td>Planning and construction</td>
+<td>Planering och byggande</td>
+<td>Planung und Bauwesen</td>
+<td>Planification et construction</td>
+</tr>
+</tbody>
+</table>
+<h3 id="h-political-process-terms" class="tsd-anchor-link">H. Political Process Terms<a href="#h-political-process-terms" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p>Key political process vocabulary from analysis articles:</p>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>English</th>
+<th>Swedish</th>
+<th>German</th>
+<th>French</th>
+<th>Spanish</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Coalition</td>
+<td>Coalition</td>
+<td>Koalition</td>
+<td>Koalition</td>
+<td>Coalition</td>
+<td>Coalición</td>
+</tr>
+<tr>
+<td>Legislative analysis</td>
+<td>Legislative analysis</td>
+<td>Lagstiftningsanalys</td>
+<td>Gesetzgebungsanalyse</td>
+<td>Analyse législative</td>
+<td>Análisis legislativo</td>
+</tr>
+<tr>
+<td>Political risk</td>
+<td>Political risk</td>
+<td>Politisk risk</td>
+<td>Politisches Risiko</td>
+<td>Risque politique</td>
+<td>Riesgo político</td>
+</tr>
+<tr>
+<td>Government record</td>
+<td>Government record</td>
+<td>Regeringsprotokoll</td>
+<td>Regierungsbilanz</td>
+<td>Bilan gouvernemental</td>
+<td>Registro del gobierno</td>
+</tr>
+<tr>
+<td>Parliamentary priorities</td>
+<td>Parliamentary priorities</td>
+<td>Parlamentariska prioriteringar</td>
+<td>Parlamentarische Prioritäten</td>
+<td>Priorités parlementaires</td>
+<td>Prioridades parlamentarias</td>
+</tr>
+<tr>
+<td>Mid-session assessment</td>
+<td>Mid-session assessment</td>
+<td>Halvtidsbedömning</td>
+<td>Halbzeitbewertung</td>
+<td>Évaluation à mi-session</td>
+<td>Evaluación a mitad de período</td>
+</tr>
+</tbody>
+</table>
+<h3 id="i-cjk-and-rtl-language-vocabulary" class="tsd-anchor-link">I. CJK and RTL Language Vocabulary<a href="#i-cjk-and-rtl-language-vocabulary" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p>For Chinese, Japanese, Korean, Arabic, and Hebrew:</p>
+<h4 id="chinese-简体中文" class="tsd-anchor-link">Chinese (简体中文)<a href="#chinese-简体中文" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4>
+<ul>
+<li><strong>委员会</strong> (Committee)</li>
+<li><strong>文件</strong> (Document)</li>
+<li><strong>本周关注</strong> (What to Watch This Week)</li>
+<li><strong>改善国家工作人员外派条件</strong> (Better conditions for deploying government personnel)</li>
+<li><strong>所有产权公寓登记制度</strong> (A register for all condominiums)</li>
+<li><strong>动物保护</strong> (Animal welfare)</li>
+</ul>
+<h4 id="japanese-日本語" class="tsd-anchor-link">Japanese (日本語)<a href="#japanese-日本語" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4>
+<ul>
+<li><strong>委員会</strong> (Committee)</li>
+<li><strong>文書</strong> (Document)</li>
+<li><strong>今週の注目</strong> (What to Watch This Week)</li>
+<li><strong>国家公務員の海外派遣条件の改善</strong> (Better conditions for deploying government personnel)</li>
+<li><strong>全分譲住宅の登録制度</strong> (A registry for all condominiums)</li>
+<li><strong>動物福祉</strong> (Animal welfare)</li>
+</ul>
+<h4 id="korean-한국어" class="tsd-anchor-link">Korean (한국어)<a href="#korean-한국어" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4>
+<ul>
+<li><strong>위원회</strong> (Committee)</li>
+<li><strong>문서</strong> (Document)</li>
+<li><strong>이번 주 주목사항</strong> (What to Watch This Week)</li>
+<li><strong>국가 공무원 파견 조건 개선</strong> (Better conditions for deploying government personnel)</li>
+<li><strong>모든 분양주택 등록 제도</strong> (A registry for all condominiums)</li>
+<li><strong>동물 복지</strong> (Animal welfare)</li>
+</ul>
+<h4 id="arabic-العربية" class="tsd-anchor-link">Arabic (العربية)<a href="#arabic-العربية" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4>
+<ul>
+<li><strong>لجنة</strong> (Committee)</li>
+<li><strong>وثيقة</strong> (Document)</li>
+<li><strong>ما يجب متابعته هذا الأسبوع</strong> (What to Watch This Week)</li>
+<li><strong>ظروف أفضل لإرسال الموظفين الحكوميين</strong> (Better conditions for deploying government personnel)</li>
+<li><strong>سجل لجميع حقوق الملكية السكنية</strong> (A registry for all condominiums)</li>
+<li><strong>رعاية الحيوان</strong> (Animal welfare)</li>
+</ul>
+<h4 id="hebrew-עברית" class="tsd-anchor-link">Hebrew (עברית)<a href="#hebrew-עברית" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4>
+<ul>
+<li><strong>ועדה</strong> (Committee)</li>
+<li><strong>מסמך</strong> (Document)</li>
+<li><strong>על מה לעקוב השבוע</strong> (What to Watch This Week)</li>
+<li><strong>תנאים טובים יותר לשליחת עובדי מדינה</strong> (Better conditions for deploying government personnel)</li>
+<li><strong>מרשם לכל דירות הבעלות</strong> (A registry for all condominiums)</li>
+<li><strong>רווחת בעלי חיים</strong> (Animal welfare)</li>
+</ul>
+<h3 id="j-article-type-classifications" class="tsd-anchor-link">J. Article Type Classifications<a href="#j-article-type-classifications" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p>Standard article type names across languages:</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>English</th>
+<th>Swedish</th>
+<th>German</th>
+<th>French</th>
+<th>Spanish</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Committee Reports</td>
+<td>Committee Reports</td>
+<td>Utskottsbetänkanden</td>
+<td>Ausschussberichte</td>
+<td>Rapports de commission</td>
+<td>Informes de comisión</td>
+</tr>
+<tr>
+<td>Propositions</td>
+<td>Government Propositions</td>
+<td>Propositioner</td>
+<td>Regierungsvorlagen</td>
+<td>Propositions gouvernementales</td>
+<td>Proposiciones gubernamentales</td>
+</tr>
+<tr>
+<td>Motions</td>
+<td>Opposition Motions</td>
+<td>Motioner</td>
+<td>Anträge</td>
+<td>Motions</td>
+<td>Mociones</td>
+</tr>
+<tr>
+<td>Evening Analysis</td>
+<td>Evening Analysis</td>
+<td>Kvällsanalys</td>
+<td>Abendanalyse</td>
+<td>Analyse du soir</td>
+<td>Análisis vespertino</td>
+</tr>
+<tr>
+<td>Week Ahead</td>
+<td>Week Ahead</td>
+<td>Veckan som kommer</td>
+<td>Kommende Woche</td>
+<td>La semaine à venir</td>
+<td>La semana próxima</td>
+</tr>
+</tbody>
+</table>
+<h3 id="k-temporal-expressions" class="tsd-anchor-link">K. Temporal Expressions<a href="#k-temporal-expressions" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p>Time-related vocabulary from news articles:</p>
+<table>
+<thead>
+<tr>
+<th>English</th>
+<th>Swedish</th>
+<th>German</th>
+<th>French</th>
+<th>Spanish</th>
+<th>Dutch</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Today</td>
+<td>Idag</td>
+<td>Heute</td>
+<td>Aujourd'hui</td>
+<td>Hoy</td>
+<td>Vandaag</td>
+</tr>
+<tr>
+<td>Tomorrow</td>
+<td>Imorgon</td>
+<td>Morgen</td>
+<td>Demain</td>
+<td>Mañana</td>
+<td>Morgen</td>
+</tr>
+<tr>
+<td>This week</td>
+<td>Denna vecka</td>
+<td>Diese Woche</td>
+<td>Cette semaine</td>
+<td>Esta semana</td>
+<td>Deze week</td>
+</tr>
+<tr>
+<td>Next week</td>
+<td>Nästa vecka</td>
+<td>Nächste Woche</td>
+<td>La semaine prochaine</td>
+<td>La próxima semana</td>
+<td>Volgende week</td>
+</tr>
+<tr>
+<td>Last week</td>
+<td>Förra veckan</td>
+<td>Letzte Woche</td>
+<td>La semaine dernière</td>
+<td>La semana pasada</td>
+<td>Vorige week</td>
+</tr>
+<tr>
+<td>Spring recess</td>
+<td>Våruppehåll</td>
+<td>Frühjahrspause</td>
+<td>Pause de printemps</td>
+<td>Receso de primavera</td>
+<td>Voorjaarsreces</td>
+</tr>
+<tr>
+<td>Mid-session</td>
+<td>Halvtid</td>
+<td>Halbzeit</td>
+<td>Mi-session</td>
+<td>Mitad de período</td>
+<td>Halverweg</td>
+</tr>
+<tr>
+<td>Parliamentary week</td>
+<td>Parlamentsvecka</td>
+<td>Parlamentswoche</td>
+<td>Semaine parlementaire</td>
+<td>Semana parlamentaria</td>
+<td>Parlementaire week</td>
+</tr>
+</tbody>
+</table>
+<h3 id="l-context-specific-translation-notes" class="tsd-anchor-link">L. Context-Specific Translation Notes<a href="#l-context-specific-translation-notes" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>Formal vs. Informal Register:</strong></p>
+<ul>
+<li>All political news uses <strong>formal register</strong> across all languages</li>
+<li>&quot;You&quot; → Swedish &quot;ni&quot; (not &quot;du&quot;), German &quot;Sie&quot; (not &quot;du&quot;), French &quot;vous&quot; (not &quot;tu&quot;)</li>
+<li>Journalistic third-person perspective maintained</li>
+</ul>
+<p><strong>Cultural Sensitivities:</strong></p>
+<ul>
+<li><strong>Political party names</strong>: Always use Swedish abbreviations (S, M, SD, V, MP, C, L, KD)</li>
+<li><strong>Riksdag</strong>: Keep in Swedish (don't translate to &quot;Parliament&quot; in running text)</li>
+<li><strong>Tidö Agreement</strong>: Proper noun, always &quot;Tidö-avtalet&quot; or &quot;Tidö Agreement&quot;</li>
+<li><strong>Committee codes</strong>: Keep Swedish (SoU, FiU, CU, etc.) in document references</li>
+</ul>
+<p><strong>Number Formatting:</strong></p>
+<ul>
+<li><strong>English</strong>: 1,000.50 (comma thousands, period decimal)</li>
+<li><strong>Swedish/German/Nordic</strong>: 1 000,50 (space thousands, comma decimal)</li>
+<li><strong>French</strong>: 1 000,50 (space thousands, comma decimal)</li>
+<li><strong>Arabic</strong>: ١٬٠٠٠٫٥٠ (Arabic-Indic numerals optional, comma thousands, period decimal)</li>
+</ul>
+<p><strong>Date Formatting:</strong></p>
+<ul>
+<li><strong>English</strong>: February 15, 2026</li>
+<li><strong>Swedish</strong>: 15 februari 2026</li>
+<li><strong>German</strong>: 15. Februar 2026</li>
+<li><strong>French</strong>: 15 février 2026</li>
+<li><strong>Spanish</strong>: 15 de febrero de 2026</li>
+<li><strong>Japanese</strong>: 2026年2月15日</li>
+<li><strong>Chinese</strong>: 2026年2月15日</li>
+<li><strong>Korean</strong>: 2026년 2월 15일</li>
+<li><strong>Arabic</strong>: ١٥ فبراير ٢٠٢٦</li>
+<li><strong>Hebrew</strong>: 15 בפברואר 2026</li>
+</ul>
+<hr>
+<h2 id="📚-reference-documents" class="tsd-anchor-link">📚 Reference Documents<a href="#📚-reference-documents" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<h3 id="external-translation-guides" class="tsd-anchor-link">External Translation Guides<a href="#external-translation-guides" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p>Riksdagsmonitor follows Hack23's comprehensive translation standards:</p>
+<ul>
+<li><strong>Homepage Repository:</strong> <a href="https://github.com/Hack23/homepage">Hack23/homepage</a></li>
+<li><strong>Arabic Translation Guide:</strong> <a href="https://github.com/Hack23/homepage/blob/master/Arabic-Translation-Guide.md">Arabic-Translation-Guide.md</a></li>
+<li><strong>Chinese Translation Guide:</strong> <a href="https://github.com/Hack23/homepage/blob/master/Chinese-Translation-Guide.md">Chinese-Translation-Guide.md</a></li>
+<li><strong>Korean Translation Guide:</strong> <a href="https://github.com/Hack23/homepage/blob/master/Korean-Translation-Guide.md">Korean-Translation-Guide.md</a></li>
+<li><strong>Spanish Translation Guide:</strong> <a href="https://github.com/Hack23/homepage/blob/master/Spanish-Translation-Guide.md">Spanish-Translation-Guide.md</a></li>
+<li><strong>Swedish Translation Guide:</strong> Swedish terminology embedded in this guide</li>
+</ul>
+<h3 id="w3c-standards" class="tsd-anchor-link">W3C Standards<a href="#w3c-standards" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul>
+<li><a href="https://www.w3.org/International/">W3C Internationalization</a></li>
+<li><a href="https://www.w3.org/International/articles/language-tags/">Language Tags (BCP 47)</a></li>
+<li><a href="https://www.w3.org/International/questions/qa-html-dir">Text Direction and Styling</a></li>
+</ul>
+<h3 id="related-documentation" class="tsd-anchor-link">Related Documentation<a href="#related-documentation" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul>
+<li><a href="ARCHITECTURE.html">ARCHITECTURE.md</a> - System architecture</li>
+<li><a href="SECURITY_ARCHITECTURE.html">SECURITY_ARCHITECTURE.md</a> - Security controls</li>
+<li><a href="../media/README-4.md">README.md</a> - Project overview</li>
+<li><a href="SKILLS.html">SKILLS.md</a> - Multi-language localization skill</li>
+</ul>
+<hr>
+<h2 id="🤝-contributing-translations" class="tsd-anchor-link">🤝 Contributing Translations<a href="#🤝-contributing-translations" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<h3 id="translation-workflow" class="tsd-anchor-link">Translation Workflow<a href="#translation-workflow" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ol>
+<li>
+<p><strong>Setup</strong></p>
+<pre><code class="bash"><span class="hl-0">git</span><span class="hl-1"> </span><span class="hl-2">clone</span><span class="hl-1"> </span><span class="hl-2">git@github.com:Hack23/riksdagsmonitor.git</span><br/><span class="hl-0">cd</span><span class="hl-1"> </span><span class="hl-2">riksdagsmonitor</span><br/><span class="hl-0">git</span><span class="hl-1"> </span><span class="hl-2">checkout</span><span class="hl-1"> </span><span class="hl-9">-b</span><span class="hl-1"> </span><span class="hl-2">translation/[language-code]</span>
+</code><button type="button">Copy</button></pre>
+
+</li>
+<li>
+<p><strong>Edit Language File</strong></p>
+<ul>
+<li>Copy structure from <code>index.html</code> (English master)</li>
+<li>Update <code>&lt;html lang=&quot;xx&quot;&gt;</code> attribute</li>
+<li>Add <code>dir=&quot;rtl&quot;</code> for Arabic/Hebrew</li>
+<li>Translate all content using glossary</li>
+<li>Maintain HTML structure and classes</li>
+</ul>
+</li>
+<li>
+<p><strong>Validate</strong></p>
+<pre><code class="bash"><span class="hl-0">htmlhint</span><span class="hl-1"> </span><span class="hl-2">index_[language-code].html</span>
+</code><button type="button">Copy</button></pre>
+
+</li>
+<li>
+<p><strong>Test Locally</strong></p>
+<pre><code class="bash"><span class="hl-0">python3</span><span class="hl-1"> </span><span class="hl-9">-m</span><span class="hl-1"> </span><span class="hl-2">http.server</span><span class="hl-1"> </span><span class="hl-6">8080</span><br/><span class="hl-4"># Open http://localhost:8080/index_[language-code].html</span>
+</code><button type="button">Copy</button></pre>
+
+</li>
+<li>
+<p><strong>Submit Pull Request</strong></p>
+<ul>
+<li>Descriptive commit message</li>
+<li>Reference translation guide</li>
+<li>Include native speaker review (if possible)</li>
+</ul>
+</li>
+</ol>
+<h3 id="translation-maintenance" class="tsd-anchor-link">Translation Maintenance<a href="#translation-maintenance" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul>
+<li>Review translations quarterly</li>
+<li>Update when source content changes</li>
+<li>Monitor user feedback</li>
+<li>Track translation quality metrics</li>
+</ul>
+<hr>
+<h2 id="📊-translation-status-dashboard" class="tsd-anchor-link">📊 Translation Status Dashboard<a href="#📊-translation-status-dashboard" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<h3 id="completeness-metrics" class="tsd-anchor-link">Completeness Metrics<a href="#completeness-metrics" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>Language</th>
+<th>Translation</th>
+<th>Hreflang</th>
+<th>RTL Support</th>
+<th>Font Loading</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>English (en)</td>
+<td>100%</td>
+<td>✅</td>
+<td>N/A</td>
+<td>✅</td>
+<td>✅ Complete</td>
+</tr>
+<tr>
+<td>Swedish (sv)</td>
+<td>100%</td>
+<td>✅</td>
+<td>N/A</td>
+<td>✅</td>
+<td>✅ Complete</td>
+</tr>
+<tr>
+<td>Danish (da)</td>
+<td>100%</td>
+<td>✅</td>
+<td>N/A</td>
+<td>✅</td>
+<td>✅ Complete</td>
+</tr>
+<tr>
+<td>Norwegian (no)</td>
+<td>100%</td>
+<td>✅</td>
+<td>N/A</td>
+<td>✅</td>
+<td>✅ Complete</td>
+</tr>
+<tr>
+<td>Finnish (fi)</td>
+<td>100%</td>
+<td>✅</td>
+<td>N/A</td>
+<td>✅</td>
+<td>✅ Complete</td>
+</tr>
+<tr>
+<td>German (de)</td>
+<td>100%</td>
+<td>✅</td>
+<td>N/A</td>
+<td>✅</td>
+<td>✅ Complete</td>
+</tr>
+<tr>
+<td>French (fr)</td>
+<td>100%</td>
+<td>✅</td>
+<td>N/A</td>
+<td>✅</td>
+<td>✅ Complete</td>
+</tr>
+<tr>
+<td>Spanish (es)</td>
+<td>100%</td>
+<td>✅</td>
+<td>N/A</td>
+<td>✅</td>
+<td>✅ Complete</td>
+</tr>
+<tr>
+<td>Dutch (nl)</td>
+<td>100%</td>
+<td>✅</td>
+<td>N/A</td>
+<td>✅</td>
+<td>✅ Complete</td>
+</tr>
+<tr>
+<td>Arabic (ar)</td>
+<td>100%</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅ Complete</td>
+</tr>
+<tr>
+<td>Hebrew (he)</td>
+<td>100%</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅ Complete</td>
+</tr>
+<tr>
+<td>Japanese (ja)</td>
+<td>100%</td>
+<td>✅</td>
+<td>N/A</td>
+<td>✅</td>
+<td>✅ Complete</td>
+</tr>
+<tr>
+<td>Korean (ko)</td>
+<td>100%</td>
+<td>✅</td>
+<td>N/A</td>
+<td>✅</td>
+<td>✅ Complete</td>
+</tr>
+<tr>
+<td>Chinese (zh)</td>
+<td>100%</td>
+<td>✅</td>
+<td>N/A</td>
+<td>✅</td>
+<td>✅ Complete</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Overall Status:</strong> ✅ <strong>100% Complete</strong> (14/14 languages)</p>
+<hr>
+<h2 id="🔐-security-compliance" class="tsd-anchor-link">🔐 Security &amp; Compliance<a href="#🔐-security-compliance" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<h3 id="isms-alignment" class="tsd-anchor-link">ISMS Alignment<a href="#isms-alignment" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p>This translation guide aligns with Hack23's Information Security Management System:</p>
+<ul>
+<li><strong>ISO 27001:2022</strong> - Asset management (language files)</li>
+<li><strong>NIST CSF 2.0</strong> - Governance (translation standards)</li>
+<li><strong>CIS Controls v8.1</strong> - Data protection (multi-language support)</li>
+</ul>
+<h3 id="content-security" class="tsd-anchor-link">Content Security<a href="#content-security" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul>
+<li>No secrets in translation files</li>
+<li>Sanitized user input (if forms added)</li>
+<li>XSS protection in all languages</li>
+<li>CSP headers consistent across languages</li>
+</ul>
+<hr>
+<h2 id="📞-support" class="tsd-anchor-link">📞 Support<a href="#📞-support" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<p><strong>Questions about translations?</strong></p>
+<ul>
+<li><strong>GitHub Issues:</strong> <a href="https://github.com/Hack23/riksdagsmonitor/issues">Hack23/riksdagsmonitor/issues</a></li>
+<li><strong>Email:</strong> <a href="mailto:pether@hack23.com">pether@hack23.com</a></li>
+<li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/jamessorling/">James Pether Sörling</a></li>
+</ul>
+<hr>
+<p><strong>Document Control</strong><br>
+<strong>Version:</strong> 1.0<br>
+<strong>Last Updated:</strong> 2026-02-05<br>
+<strong>Next Review:</strong> 2026-05-05 (Quarterly)<br>
+<strong>Owner:</strong> Hack23 AB<br>
+<strong>Classification:</strong> Public</p>
+<hr>
+<p><em>Riksdagsmonitor - Swedish Parliament Intelligence Platform</em><br>
+<em>Copyright © 2008-2026 Hack23 AB (<a href="http://Org.nr">Org.nr</a> 5595347807)</em><br>
+<em>Licensed under Apache License 2.0</em></p>
+<hr>
+<h2 id="🔗-hack23-ecosystem" class="tsd-anchor-link">🔗 Hack23 Ecosystem<a href="#🔗-hack23-ecosystem" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<table>
+<tr>
+  <th width="33%">🌐 Platforms</th>
+  <th width="33%">📦 Open-Source Projects</th>
+  <th width="33%">🛡️ Governance &amp; Standards</th>
+</tr>
+<tr>
+<td valign="top">
+🗳️ <a href="https://riksdagsmonitor.com">Riksdagsmonitor</a> — Swedish Parliament intelligence<br>
+🇪🇺 <a href="https://www.euparliamentmonitor.com">EU Parliament Monitor</a> — European coverage<br>
+🕵️ <a href="https://www.hack23.com/cia">Citizen Intelligence Agency</a> — political-data engine<br>
+🌐 <a href="https://www.hack23.com">Hack23 AB</a> — corporate site<br>
+📰 <a href="https://hack23.com/blog.html">Hack23 Blog</a> — engineering &amp; policy<br>
+💼 <a href="https://www.linkedin.com/company/hack23/">Hack23 on LinkedIn</a>
+</td>
+<td valign="top">
+🗳️ <a href="https://github.com/Hack23/riksdagsmonitor">Hack23/riksdagsmonitor</a><br>
+🕵️ <a href="https://github.com/Hack23/cia">Hack23/cia</a><br>
+🇪🇺 <a href="https://github.com/Hack23/euparliamentmonitor">Hack23/euparliamentmonitor</a><br>
+🔌 <a href="https://github.com/Hack23/european-parliament-mcp">Hack23/european-parliament-mcp</a><br>
+✅ <a href="https://github.com/Hack23/cia-compliance-manager">Hack23/cia-compliance-manager</a><br>
+🥋 <a href="https://github.com/Hack23/black-trigram">Hack23/black-trigram</a><br>
+🏠 <a href="https://github.com/Hack23/homepage">Hack23/homepage</a>
+</td>
+<td valign="top">
+🛡️ <a href="https://github.com/Hack23/ISMS-PUBLIC">Hack23 ISMS-PUBLIC</a> — public ISMS<br>
+🔒 <a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Information_Security_Policy.md">Information Security Policy</a><br>
+🤖 <a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/AI_Policy.md">AI Policy</a><br>
+🧪 <a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md">Secure Development Policy</a><br>
+🎯 <a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Threat_Modeling.md">Threat Modeling Policy</a><br>
+⚠️ <a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Vulnerability_Management.md">Vulnerability Management</a><br>
+🏷️ <a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md">Classification Framework</a>
+</td>
+</tr>
+</table>
+<p align="center">
+<a href="https://www.bestpractices.dev/projects/12069"><img src="https://www.bestpractices.dev/projects/12069/badge" alt="OpenSSF Best Practices"/></a>
+<a href="https://scorecard.dev/viewer/?uri=github.com/Hack23/riksdagsmonitor"><img src="https://api.securityscorecards.dev/projects/github.com/Hack23/riksdagsmonitor/badge" alt="OpenSSF Scorecard"/></a>
+<a href="https://github.com/Hack23/ISMS-PUBLIC"><img src="https://img.shields.io/badge/ISO_27001-2022-blue?style=flat-square&logo=iso&logoColor=white" alt="ISO 27001:2022"/></a>
+<a href="https://github.com/Hack23/ISMS-PUBLIC"><img src="https://img.shields.io/badge/NIST_CSF-2.0-green?style=flat-square&logo=nist&logoColor=white" alt="NIST CSF 2.0"/></a>
+<a href="https://github.com/Hack23/ISMS-PUBLIC"><img src="https://img.shields.io/badge/CIS_Controls-v8.1-orange?style=flat-square&logo=cisecurity&logoColor=white" alt="CIS Controls v8.1"/></a>
+<a href="https://www.apache.org/licenses/LICENSE-2.0"><img src="https://img.shields.io/badge/License-Apache_2.0-blue?style=flat-square" alt="Apache 2.0"/></a>
+</p>
+<p align="center"><em>🗳️ Empower citizens · 🔍 Strengthen democratic accountability · 🕵️ Illuminate the political process</em></p>
+<p align="center"><sub>© 2008–2026 <a href="https://www.hack23.com">Hack23 AB</a> (Org.nr 559534-7807) · Maintainer: <a href="https://www.linkedin.com/in/jamessorling/">James Pether Sörling, CISSP CISM</a></sub></p></div></div><div class="col-sidebar"><div class="page-menu"><div class="tsd-navigation settings"><details class="tsd-accordion"><summary class="tsd-accordion-summary"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg><h3>Settings</h3></summary><div class="tsd-accordion-details"><div class="tsd-filter-visibility"><span class="settings-label">Member Visibility</span><ul id="tsd-filter-options"><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-protected" name="protected" checked/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Protected</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-private" name="private" checked/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Private</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-inherited" name="inherited" checked/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Inherited</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-alpha" name="alpha"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Alpha</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-beta" name="beta"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Beta</span></label></li></ul></div><div class="tsd-theme-toggle"><label class="settings-label" for="tsd-theme">Theme</label><select id="tsd-theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></div></div></details></div><details open class="tsd-accordion tsd-page-navigation"><summary class="tsd-accordion-summary"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg><h3>On This Page</h3></summary><div class="tsd-accordion-details"><a href="#📋-overview"><span>📋 <wbr/>Overview</span></a><ul><li><a href="#📰-news-articles-are-translated-out-of-band"><span>📰 <wbr/>News articles are translated out-<wbr/>of-<wbr/>band</span></a></li><li><a href="#supported-languages-14"><span>Supported <wbr/>Languages (14)</span></a></li></ul><a href="#📝-executive-brief-markdown-translations"><span>📝 <wbr/>Executive <wbr/>Brief <wbr/>Markdown <wbr/>Translations</span></a><ul><li><a href="#file-naming-contract"><span>File naming contract</span></a></li><li><a href="#source-revision-signal-drift-detection"><span>Source-<wbr/>revision signal (drift detection)</span></a></li><li><a href="#verbatim-preservation-never-translate-never-reword"><span>Verbatim preservation (<wbr/>NEVER translate, <wbr/>NEVER reword)</span></a></li><li><a href="#always-translate"><span>Always translate</span></a></li><li><a href="#structural-parity-validator-enforced"><span>Structural parity (validator-<wbr/>enforced)</span></a></li><li><a href="#tone-register-per-language"><span>Tone register per language</span></a></li><li><a href="#rtl-specific-rules-arabic-hebrew"><span>RTL-<wbr/>specific rules (<wbr/>Arabic &amp; <wbr/>Hebrew)</span></a></li><li><a href="#workflow-integration"><span>Workflow integration</span></a></li><li><a href="#acceptance-checklist-per-translated-file"><span>Acceptance checklist (per translated file)</span></a></li></ul><a href="#🎯-translation-principles"><span>🎯 <wbr/>Translation <wbr/>Principles</span></a><ul><li><a href="#1-never-translate-brand-names-proper-nouns"><span>1. <wbr/>Never <wbr/>Translate (<wbr/>Brand <wbr/>Names &amp; <wbr/>Proper <wbr/>Nouns)</span></a></li><li><a href="#2-terminology-categories"><span>2. <wbr/>Terminology <wbr/>Categories</span></a></li><li><ul><li><a href="#a-cia-triad-core-security-concepts"><span>A. <wbr/>CIA <wbr/>Triad (<wbr/>Core <wbr/>Security <wbr/>Concepts)</span></a></li><li><a href="#b-political-parliamentary-terms"><span>B. <wbr/>Political &amp; <wbr/>Parliamentary <wbr/>Terms</span></a></li><li><a href="#c-osint-intelligence-terms"><span>C. <wbr/>OSINT &amp; <wbr/>Intelligence <wbr/>Terms</span></a></li><li><a href="#d-technical-security-terms"><span>D. <wbr/>Technical &amp; <wbr/>Security <wbr/>Terms</span></a></li><li><a href="#e-swedish-parliamentary-document-types-riksdag-api"><span>E. <wbr/>Swedish <wbr/>Parliamentary <wbr/>Document <wbr/>Types (<wbr/>Riksdag <wbr/>API)</span></a></li><li><a href="#f-riksdag-committee-abbreviations"><span>F. <wbr/>Riksdag <wbr/>Committee <wbr/>Abbreviations</span></a></li><li><a href="#g-common-policy-terms-from-riksdag-api"><span>G. <wbr/>Common <wbr/>Policy <wbr/>Terms from <wbr/>Riksdag <wbr/>API</span></a></li></ul></li></ul><a href="#🔄-cultural-adaptations"><span>🔄 <wbr/>Cultural <wbr/>Adaptations</span></a><ul><li><a href="#date-formats"><span>Date <wbr/>Formats</span></a></li><li><a href="#number-formats"><span>Number <wbr/>Formats</span></a></li><li><a href="#currency"><span>Currency</span></a></li></ul><a href="#🎨-rtl-right-to-left-languages"><span>🎨 <wbr/>RTL (<wbr/>Right-<wbr/>to-<wbr/>Left) <wbr/>Languages</span></a><ul><li><a href="#arabic-ar-hebrew-he"><span>Arabic (ar) &amp; <wbr/>Hebrew (he)</span></a></li></ul><a href="#📏-quality-standards"><span>📏 <wbr/>Quality <wbr/>Standards</span></a><ul><li><a href="#translation-completeness-checklist"><span>Translation <wbr/>Completeness <wbr/>Checklist</span></a></li><li><a href="#technical-requirements"><span>Technical <wbr/>Requirements</span></a></li><li><a href="#accessibility-wcag-21-aa"><span>Accessibility (<wbr/>WCAG 2.1 <wbr/>AA)</span></a></li></ul><a href="#🔗-seo-hreflang-tags"><span>🔗 <wbr/>SEO &amp; <wbr/>Hreflang <wbr/>Tags</span></a><ul><li><a href="#standard-hreflang-implementation"><span>Standard <wbr/>Hreflang <wbr/>Implementation</span></a></li></ul><a href="#🔍-translation-validation"><span>🔍 <wbr/>Translation <wbr/>Validation</span></a><ul><li><a href="#automated-checks"><span>Automated <wbr/>Checks</span></a></li><li><a href="#translation-validation-for-news-articles"><span>Translation <wbr/>Validation for <wbr/>News <wbr/>Articles</span></a></li><li><a href="#manual-review"><span>Manual <wbr/>Review</span></a></li></ul><a href="#📰-political-intelligence-vocabulary-from-news-articles"><span>📰 <wbr/>Political <wbr/>Intelligence <wbr/>Vocabulary (<wbr/>From <wbr/>News <wbr/>Articles)</span></a><ul><li><a href="#f-news-article-ui-labels"><span>F. <wbr/>News <wbr/>Article <wbr/>UI <wbr/>Labels</span></a></li><li><a href="#g-committee-report-terminology"><span>G. <wbr/>Committee <wbr/>Report <wbr/>Terminology</span></a></li><li><a href="#h-political-process-terms"><span>H. <wbr/>Political <wbr/>Process <wbr/>Terms</span></a></li><li><a href="#i-cjk-and-rtl-language-vocabulary"><span>I. <wbr/>CJK and <wbr/>RTL <wbr/>Language <wbr/>Vocabulary</span></a></li><li><ul><li><a href="#chinese-简体中文"><span>Chinese (简体中文)</span></a></li><li><a href="#japanese-日本語"><span>Japanese (日本語)</span></a></li><li><a href="#korean-한국어"><span>Korean (한국어)</span></a></li><li><a href="#arabic-العربية"><span>Arabic (العربية)</span></a></li><li><a href="#hebrew-עברית"><span>Hebrew (עברית)</span></a></li></ul></li><li><a href="#j-article-type-classifications"><span>J. <wbr/>Article <wbr/>Type <wbr/>Classifications</span></a></li><li><a href="#k-temporal-expressions"><span>K. <wbr/>Temporal <wbr/>Expressions</span></a></li><li><a href="#l-context-specific-translation-notes"><span>L. <wbr/>Context-<wbr/>Specific <wbr/>Translation <wbr/>Notes</span></a></li></ul><a href="#📚-reference-documents"><span>📚 <wbr/>Reference <wbr/>Documents</span></a><ul><li><a href="#external-translation-guides"><span>External <wbr/>Translation <wbr/>Guides</span></a></li><li><a href="#w3c-standards"><span>W3<wbr/>C <wbr/>Standards</span></a></li><li><a href="#related-documentation"><span>Related <wbr/>Documentation</span></a></li></ul><a href="#🤝-contributing-translations"><span>🤝 <wbr/>Contributing <wbr/>Translations</span></a><ul><li><a href="#translation-workflow"><span>Translation <wbr/>Workflow</span></a></li><li><a href="#translation-maintenance"><span>Translation <wbr/>Maintenance</span></a></li></ul><a href="#📊-translation-status-dashboard"><span>📊 <wbr/>Translation <wbr/>Status <wbr/>Dashboard</span></a><ul><li><a href="#completeness-metrics"><span>Completeness <wbr/>Metrics</span></a></li></ul><a href="#🔐-security-compliance"><span>🔐 <wbr/>Security &amp; <wbr/>Compliance</span></a><ul><li><a href="#isms-alignment"><span>ISMS <wbr/>Alignment</span></a></li><li><a href="#content-security"><span>Content <wbr/>Security</span></a></li></ul><a href="#📞-support"><span>📞 <wbr/>Support</span></a><a href="#🔗-hack23-ecosystem"><span>🔗 <wbr/>Hack23 <wbr/>Ecosystem</span></a></div></details></div><div class="site-menu"><nav id="tsd-sidebar-links" class="tsd-navigation"><a href="https://riksdagsmonitor.com">── Live Platform ──</a><a href="https://riksdagsmonitor.com">🌐 Riksdagsmonitor.com</a><a href="https://riksdagsmonitor.com/political-intelligence.html">🕵️ Political Intelligence Index</a><a href="https://riksdagsmonitor.com/sitemap.html">🗺️ Sitemap (Human + XML)</a><a href="https://riksdagsmonitor.com/news/">📰 News &amp; Articles</a><a href="https://www.npmjs.com/package/riksdagsmonitor">📦 npm Package</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/ARCHITECTURE.md">── Current Architecture ──</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/ARCHITECTURE.md">🏛️ Architecture</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/SECURITY_ARCHITECTURE.md">🔒 Security Architecture</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/THREAT_MODEL.md">🛡️ Threat Model</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/DATA_MODEL.md">📊 Data Model</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FLOWCHART.md">🔄 Flowchart</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/STATEDIAGRAM.md">📈 State Diagram</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/MINDMAP.md">🧠 Mindmap</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/SWOT.md">💼 SWOT Analysis</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_ARCHITECTURE.md">── Future Architecture ──</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_ARCHITECTURE.md">🚀 Future Architecture</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_SECURITY_ARCHITECTURE.md">🔮 Future Security</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_THREAT_MODEL.md">🎯 Future Threat Model</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_DATA_MODEL.md">📊 Future Data Model</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_FLOWCHART.md">🔄 Future Flowchart</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_STATEDIAGRAM.md">📈 Future State Diagram</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_MINDMAP.md">🧠 Future Mindmap</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_SWOT.md">💼 Future SWOT</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_WORKFLOWS.md">🔄 Future Workflows</a><a href="#">── Security &amp; Compliance ──</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/SECURITY.md">🔐 Security Policy</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/CRA-ASSESSMENT.md">📋 CRA Assessment</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/BCPPlan.md">🏢 BCP Plan</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FinancialSecurityPlan.md">💰 Financial Security</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/End-of-Life-Strategy.md">📅 End-of-Life Strategy</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/README.md">── Project Docs ──</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/TESTING.md">🧪 Testing</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/WORKFLOWS.md">🔄 Workflows</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/RELEASE_PROCESS.md">📦 Release Process</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/CONTRIBUTING.md">🤝 Contributing</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/CODE_OF_CONDUCT.md">📜 Code of Conduct</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/AGENTS.md">🤖 Copilot Agents</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/SKILLS.md">🛠 Copilot Skills</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/LABELS.md">🏷 Labels</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/TRANSLATION_GUIDE.md">🌐 Translation Guide</a><a href="https://github.com/Hack23/ISMS-PUBLIC">── Hack23 ISMS Policies ──</a><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md">📋 Secure Dev Policy</a><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Information_Security_Policy.md">🔐 Information Security</a><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Threat_Modeling.md">🎯 Threat Modeling</a><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Open_Source_Policy.md">🌐 Open Source Policy</a><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Risk_Assessment_Methodology.md">📊 Risk Assessment</a><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/AI_Policy.md">🤖 AI Policy</a><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Change_Management_Policy.md">🔧 Change Management</a><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Incident_Response_Plan.md">🛡️ Incident Response</a><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Asset_Management_Policy.md">📦 Asset Management</a><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Access_Control_Policy.md">🔑 Access Control</a><a href="https://riksdagsmonitor.com/docs/api/">── Hack23 API Docs ──</a><a href="https://riksdagsmonitor.com/docs/api/">📚 Riksdagsmonitor API</a><a href="https://euparliamentmonitor.com/docs/api/">🇪🇺 EU Parliament MCP API</a><a href="https://ciacompliancemanager.com/api/">🔍 CIA Compliance Mgr API</a><a href="https://blacktrigram.com/api/">⚔️ Black Trigram API</a><a href="https://riksdagsmonitor.com" class="tsd-nav-link">🏠 Home</a><a href="https://riksdagsmonitor.com/political-intelligence.html" class="tsd-nav-link">🕵️ Political Intelligence</a><a href="https://riksdagsmonitor.com/sitemap.html" class="tsd-nav-link">🗺️ Sitemap</a><a href="https://www.npmjs.com/package/riksdagsmonitor" class="tsd-nav-link">📦 npm Package</a><a href="https://github.com/Hack23/riksdagsmonitor" class="tsd-nav-link">📦 GitHub</a><a href="https://github.com/Hack23/ISMS-PUBLIC" class="tsd-nav-link">🛡️ ISMS</a><a href="https://github.com/Hack23/cia" class="tsd-nav-link">🏛️ CIA Platform</a></nav><nav class="tsd-navigation"><a href="../modules.html">Riksdagsmonitor Intelligence Platform — API Documentation - v1.0.28</a><ul class="tsd-small-nested-navigation" id="tsd-nav-container"><li>Loading...</li></ul></nav></div></div></div><footer><p class="tsd-generator">Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></footer><div class="overlay"></div></body></html>

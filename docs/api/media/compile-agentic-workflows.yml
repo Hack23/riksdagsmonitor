@@ -1,0 +1,179 @@
+name: Compile Agentic Workflows
+
+# Compile .md workflow files to .lock.yml and commit all generated artifacts.
+# News workflows import modules from .github/prompts/ (see that dir's README).
+
+on:
+  workflow_dispatch:
+
+# Only one compile run at a time. Cancelling in-flight runs is unsafe because
+# they may have already pushed to main, so wait instead.
+concurrency:
+  group: compile-agentic-workflows
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  compile:
+    name: Compile Agentic Workflows
+    runs-on: ubuntu-26.04
+
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@9af89fc71515a100421586dfdb3dc9c984fbf411 # v2.19.4
+        with:
+          egress-policy: audit
+
+      - name: Checkout
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          token: ${{ secrets.COPILOT_MCP_GITHUB_PERSONAL_ACCESS_TOKEN || secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+        with:
+          node-version: '26'
+          cache: 'npm'
+          cache-dependency-path: |
+            package-lock.json
+            .github/workflows/compile-agentic-workflows.yml
+
+      - name: Install gh-aw CLI
+        run: |
+          GH_AW_VERSION="v0.82.0"
+          gh extension install github/gh-aw --pin "$GH_AW_VERSION"
+        env:
+          GH_TOKEN: ${{ secrets.COPILOT_MCP_GITHUB_PERSONAL_ACCESS_TOKEN || secrets.GITHUB_TOKEN }}
+
+      - name: Apply gh-aw auto-fix codemods
+        # Runs deprecation codemods before compile so workflows always converge
+        # on the latest gh-aw schema without manual intervention. No-op when
+        # nothing needs fixing (exits 0 with "✓ No fixes needed").
+        run: gh aw fix --write
+        env:
+          GH_TOKEN: ${{ secrets.COPILOT_MCP_GITHUB_PERSONAL_ACCESS_TOKEN || secrets.GITHUB_TOKEN }}
+
+      - name: Compile all workflows (with --purge of stale lock files)
+        # --purge deletes any .lock.yml whose source .md no longer exists,
+        # replacing the previous separate `find ... -delete` step.
+        run: gh aw compile --purge
+        env:
+          GH_TOKEN: ${{ secrets.COPILOT_MCP_GITHUB_PERSONAL_ACCESS_TOKEN || secrets.GITHUB_TOKEN }}
+
+      - name: Enforce PAT fallback coverage (workflow_run triggers ↮ news-*.md)
+        # Drift detector: every news-*.md `name:` must appear in the
+        # `workflow_run.workflows:` list AND in the slug_for_name() case map
+        # of .github/workflows/news-pat-pr-fallback.yml. Without this check,
+        # a typo (e.g. "News: Translate Articles" vs the actual "News:
+        # Translate Executive Briefs") silently disables the host-side PAT
+        # recovery path for that workflow.
+        run: node scripts/check-pat-fallback-coverage.mjs
+
+      - name: Enforce prompt-module architecture
+        run: |
+          set -e
+          echo "🔍 Checking .github/prompts/ module line caps (≤ 550)…"
+          FAIL=0
+          for f in .github/prompts/*.md .github/prompts/ext/*.md; do
+            [ -f "$f" ] || continue
+            LINES=$(wc -l < "$f")
+            if [ "$LINES" -gt 550 ]; then
+              echo "  ❌ $f has $LINES lines (> 450)"
+              FAIL=1
+            else
+              echo "  ✅ $f ($LINES lines)"
+            fi
+          done
+          echo ""
+          echo "🔍 Checking .github/workflows/news-*.md body line caps (≤ 200 excluding frontmatter)…"
+          for f in .github/workflows/news-*.md; do
+            [ -f "$f" ] || continue
+            # Body = content after the second "^---$" line
+            BODY_LINES=$(awk 'BEGIN{c=0;out=0} /^---$/{c++;if(c==2){out=1;next}} out==1{print}' "$f" | wc -l)
+            if [ "$BODY_LINES" -gt 200 ]; then
+              echo "  ❌ $f has body of $BODY_LINES lines (> 200)"
+              FAIL=1
+            else
+              echo "  ✅ $f (body $BODY_LINES lines)"
+            fi
+          done
+          echo ""
+          echo "🔍 Enforcing safe-outputs.create-pull-request.max: 1 on all news workflows (source .md)…"
+          for f in .github/workflows/news-*.md; do
+            [ -f "$f" ] || continue
+            # Extract max value directly under create-pull-request block
+            MAX=$(awk '
+              /^  create-pull-request:/ {in_block=1; next}
+              in_block && /^  [a-zA-Z]/ {in_block=0}
+              in_block && /^    max:/ {print $2; exit}
+            ' "$f")
+            if [ -z "$MAX" ]; then
+              echo "  ❌ $f has no explicit create-pull-request.max (must be 1; default may change upstream)"
+              FAIL=1
+            elif [ "$MAX" != "1" ]; then
+              echo "  ❌ $f has create-pull-request.max: $MAX (must be 1)"
+              FAIL=1
+            else
+              echo "  ✅ $f (max: 1)"
+            fi
+          done
+          echo ""
+          echo "🔍 Enforcing create_pull_request.max: 1 on compiled .lock.yml (safe-outputs config)…"
+          for lf in .github/workflows/news-*.lock.yml; do
+            [ -f "$lf" ] || continue
+            # safe-outputs config appears in two forms in the compiled file:
+            #   (a) a plain-JSON block (e.g. in prompt heredocs): "create_pull_request":{...,"max":N,...}
+            #   (b) the runtime env var GH_AW_SAFE_OUTPUTS_HANDLER_CONFIG, a YAML-quoted string
+            #       that encodes JSON with backslash-escaped quotes: \"create_pull_request\":{...,\"max\":N,...}
+            # Normalise by stripping backslashes so a single grep pattern matches both forms.
+            BAD=0
+            NORM=$(tr -d '\\' < "$lf")
+            OCCURS=$(printf '%s' "$NORM" | grep -oE '"create_pull_request"[[:space:]]*:[[:space:]]*\{[^}]*"max"[[:space:]]*:[[:space:]]*[0-9]+' | grep -oE '"max"[[:space:]]*:[[:space:]]*[0-9]+' | grep -oE '[0-9]+$' || true)
+            COUNT_ANY=$(printf '%s' "$NORM" | grep -cE '"create_pull_request"[[:space:]]*:[[:space:]]*\{' || true)
+            if [ -z "$OCCURS" ] || [ "$COUNT_ANY" -eq 0 ]; then
+              echo "  ❌ $lf has no create_pull_request config with max (checked both plain and backslash-escaped JSON)"
+              FAIL=1
+              continue
+            fi
+            while IFS= read -r v; do
+              [ "$v" = "1" ] || BAD=1
+            done <<< "$OCCURS"
+            if [ "$BAD" -eq 1 ]; then
+              echo "  ❌ $lf has create_pull_request.max != 1 (found: $(echo "$OCCURS" | tr '\n' ' '))"
+              FAIL=1
+            else
+              echo "  ✅ $lf (create_pull_request.max: 1, $COUNT_ANY occurrence(s))"
+            fi
+          done
+          echo ""
+          echo "🔍 Scanning for banned multi-PR / heartbeat / keep-alive strings…"
+          BANNED='Heartbeat|keep-alive pinger|post-heartbeat rebase|🫀'
+          if grep -rInE "$BANNED" .github/workflows/news-*.md .github/prompts/ 2>/dev/null; then
+            echo "  ❌ banned strings present"
+            FAIL=1
+          else
+            echo "  ✅ no banned strings"
+          fi
+          echo ""
+          if [ "$FAIL" -ne 0 ]; then
+            echo "❌ Prompt-module architecture check failed."
+            exit 1
+          fi
+          echo "✅ Prompt-module architecture checks passed."
+
+      - name: Commit all generated files
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add .github/workflows/*.lock.yml \
+                  .github/workflows/agentics-maintenance.yml \
+                  .github/aw/actions-lock.json
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git diff --cached --stat
+            git commit -m "chore: recompile agentic workflow lock files"
+            git push
+          fi

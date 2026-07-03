@@ -1,0 +1,179 @@
+name: Setup Repository Labels
+
+on:
+  workflow_dispatch:
+    inputs:
+      recreate_all:
+        description: "Recreate all labels (deletes existing)"
+        type: boolean
+        default: false
+
+# Least privilege permissions for label management
+permissions:
+  contents: read
+  issues: write
+  pull-requests: write
+
+jobs:
+  setup-labels:
+    name: Create Repository Labels
+    runs-on: ubuntu-26.04
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@9af89fc71515a100421586dfdb3dc9c984fbf411 # v2.19.4
+        with:
+          egress-policy: audit
+
+      - name: Checkout repository
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+
+      - name: Remove existing labels (if requested)
+        if: github.event.inputs.recreate_all == 'true'
+        run: |
+          echo "🗑️ Removing existing labels..."
+          gh label list --json name --jq '.[].name' | while read label; do
+            echo "Deleting: $label"
+            gh label delete "$label" --confirm || echo "Failed to delete: $label"
+          done
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Create Labels
+        run: |
+          # Function to create or update label
+          create_or_update_label() {
+            local name="$1"
+            local color="$2"
+            local description="$3"
+            
+            if gh label list --search "$name" --limit 1 | grep -q "^$name"; then
+              echo "📝 Updating label: $name"
+              gh label edit "$name" --color "$color" --description "$description" || echo "❌ Failed to update: $name"
+            else
+              echo "✨ Creating label: $name"
+              gh label create "$name" --color "$color" --description "$description" || echo "❌ Failed to create: $name"
+            fi
+          }
+
+          echo "🚀 Setting up riksdagsmonitor repository labels..."
+
+          # ===================================================================
+          # 🗳️ CONTENT & FEATURES
+          # ===================================================================
+          create_or_update_label "news" "ff6b9d" "News articles and content generation"
+          create_or_update_label "dashboard" "1e88e5" "Interactive dashboards (Chart.js/D3.js)"
+          create_or_update_label "visualization" "9c27b0" "Data visualization features"
+          create_or_update_label "intelligence" "6a1b9a" "Political intelligence analysis"
+
+          # ===================================================================
+          # 💻 TECHNOLOGY
+          # ===================================================================
+          create_or_update_label "html-css" "e1bee7" "HTML/CSS changes"
+          create_or_update_label "javascript" "f9a825" "JavaScript code changes"
+          create_or_update_label "workflow" "1976d2" "GitHub Actions workflows"
+          create_or_update_label "security" "d32f2f" "Security improvements"
+
+          # ===================================================================
+          # 📊 DATA INTEGRATION
+          # ===================================================================
+          create_or_update_label "cia-data" "00897b" "CIA platform data integration"
+          create_or_update_label "riksdag-data" "0277bd" "Riksdag-Regering MCP data"
+          create_or_update_label "data-pipeline" "00695c" "ETL and data processing"
+          create_or_update_label "schema" "546e7a" "Data schema changes"
+
+          # ===================================================================
+          # 🌍 INTERNATIONALIZATION
+          # ===================================================================
+          create_or_update_label "i18n" "4caf50" "Internationalization/localization"
+          create_or_update_label "translation" "66bb6a" "Translation updates"
+          create_or_update_label "rtl" "8bc34a" "RTL language support (Arabic, Hebrew)"
+
+          # ===================================================================
+          # 🔒 ISMS & COMPLIANCE
+          # ===================================================================
+          create_or_update_label "isms" "b71c1c" "ISMS compliance changes"
+          create_or_update_label "iso-27001" "c62828" "ISO 27001 controls"
+          create_or_update_label "nist-csf" "d32f2f" "NIST CSF compliance"
+          create_or_update_label "cis-controls" "e53935" "CIS Controls"
+
+          # ===================================================================
+          # 🏗️ INFRASTRUCTURE & OPERATIONS
+          # ===================================================================
+          create_or_update_label "ci-cd" "1565c0" "CI/CD pipeline changes"
+          create_or_update_label "deployment" "0d47a1" "Deployment configuration"
+          create_or_update_label "performance" "ff6f00" "Performance optimization"
+          create_or_update_label "monitoring" "558b2f" "Monitoring and alerting"
+
+          # ===================================================================
+          # 🔄 QUALITY & TESTING
+          # ===================================================================
+          create_or_update_label "testing" "26c6da" "Test coverage"
+          create_or_update_label "accessibility" "7e57c2" "WCAG 2.1 AA compliance"
+          create_or_update_label "documentation" "0075ca" "Documentation updates"
+          create_or_update_label "refactor" "ffb74d" "Code refactoring"
+
+          # ===================================================================
+          # 🏷️ STANDARD LABELS
+          # ===================================================================
+          create_or_update_label "bug" "d73a4a" "Bug fixes"
+          create_or_update_label "enhancement" "a2eeef" "Enhancements"
+          create_or_update_label "dependencies" "0366d6" "Dependency updates"
+
+          # ===================================================================
+          # 🤖 AGENT & SKILLS
+          # ===================================================================
+          create_or_update_label "agent" "5319e7" "Agent configuration"
+          create_or_update_label "skill" "bfd4f2" "Skill configuration"
+
+          # ===================================================================
+          # 🎯 AGENTIC WORKFLOWS
+          # ===================================================================
+          create_or_update_label "agentic-workflow" "6e40aa" "Agentic workflow changes"
+
+          # ===================================================================
+          # 🚦 PRIORITY LABELS
+          # ===================================================================
+          create_or_update_label "priority-critical" "b60205" "Critical priority"
+          create_or_update_label "priority-high" "d93f0b" "High priority"
+          create_or_update_label "priority-medium" "fbca04" "Medium priority"
+          create_or_update_label "priority-low" "0e8a16" "Low priority"
+
+          # ===================================================================
+          # 📏 SIZE LABELS
+          # ===================================================================
+          create_or_update_label "size-xs" "3cbf00" "Extra small change (< 10 lines)"
+          create_or_update_label "size-s" "5d9801" "Small change (10-50 lines)"
+          create_or_update_label "size-m" "7f7f00" "Medium change (50-250 lines)"
+          create_or_update_label "size-l" "bf7e00" "Large change (250-1000 lines)"
+          create_or_update_label "size-xl" "d93f0b" "Extra large change (> 1000 lines)"
+
+          # ===================================================================
+          # 🎭 STATUS LABELS
+          # ===================================================================
+          create_or_update_label "status-needs-review" "fbca04" "Needs code review"
+          create_or_update_label "status-in-progress" "1d76db" "Work in progress"
+          create_or_update_label "status-blocked" "d93f0b" "Blocked by dependencies"
+          create_or_update_label "status-ready" "0e8a16" "Ready to merge"
+
+          echo ""
+          echo "✅ Label setup complete!"
+          echo ""
+          echo "📋 Label Summary:"
+          gh label list --limit 100
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Verify label creation
+        run: |
+          echo "🔍 Verifying label creation..."
+          label_count=$(gh label list --json name --jq '. | length')
+          echo "📊 Total labels created: $label_count"
+          
+          if [ "$label_count" -ne 46 ]; then
+            echo "⚠️ Error: Expected 46 labels, but found $label_count"
+            exit 1
+          else
+            echo "✅ Label verification passed"
+          fi
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

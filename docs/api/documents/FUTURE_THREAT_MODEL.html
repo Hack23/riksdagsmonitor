@@ -1,0 +1,3074 @@
+<!DOCTYPE html><html class="default" lang="en" data-base="../"><head><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>FUTURE_THREAT_MODEL | Riksdagsmonitor Intelligence Platform — API Documentation - v1.0.28</title><meta name="description" content="Documentation for Riksdagsmonitor Intelligence Platform — API Documentation"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="../assets/style.css"/><link rel="stylesheet" href="../assets/highlight.css"/><script defer src="../assets/main.js"></script><script async src="../assets/icons.js" id="tsd-icons-script"></script><script async src="../assets/search.js" id="tsd-search-script"></script><script async src="../assets/navigation.js" id="tsd-nav-script"></script><script async src="../assets/hierarchy.js" id="tsd-hierarchy-script"></script></head><body><script>document.documentElement.dataset.theme = localStorage.getItem("tsd-theme") || "os";document.body.style.display="none";setTimeout(() => window.app?app.showPage():document.body.style.removeProperty("display"),500)</script><header class="tsd-page-toolbar"><div class="tsd-toolbar-contents container"><a href="../index.html" class="title">Riksdagsmonitor Intelligence Platform — API Documentation - v1.0.28</a><div id="tsd-toolbar-links"><a href="https://riksdagsmonitor.com">🏠 Home</a><a href="https://riksdagsmonitor.com/political-intelligence.html">🕵️ Political Intelligence</a><a href="https://riksdagsmonitor.com/sitemap.html">🗺️ Sitemap</a><a href="https://www.npmjs.com/package/riksdagsmonitor">📦 npm Package</a><a href="https://github.com/Hack23/riksdagsmonitor">📦 GitHub</a><a href="https://github.com/Hack23/ISMS-PUBLIC">🛡️ ISMS</a><a href="https://github.com/Hack23/cia">🏛️ CIA Platform</a></div><button id="tsd-search-trigger" class="tsd-widget" aria-label="Search"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-search"></use></svg></button><dialog id="tsd-search" aria-label="Search"><input role="combobox" id="tsd-search-input" aria-controls="tsd-search-results" aria-autocomplete="list" aria-expanded="true" autocapitalize="off" autocomplete="off" placeholder="Search the docs" maxLength="100"/><ul role="listbox" id="tsd-search-results"></ul><div id="tsd-search-status" aria-live="polite" aria-atomic="true"><div>Preparing search index...</div></div></dialog><a href="#" class="tsd-widget menu" id="tsd-toolbar-menu-trigger" data-toggle="menu" aria-label="Menu"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-menu"></use></svg></a></div></header><div class="container container-main"><div class="col-content"><div class="tsd-page-title"><ul class="tsd-breadcrumb" aria-label="Breadcrumb"><li><a href="" aria-current="page">FUTURE_THREAT_MODEL</a></li></ul></div><div class="tsd-panel tsd-typography"><p align="center">
+  <img src="https://hack23.com/icon-192.png" alt="Hack23 Logo" width="192" height="192">
+</p>
+<h1 align="center">🔮 Hack23 AB — Riksdagsmonitor Future Threat Model</h1>
+<p align="center">
+  <strong>🛡️ Proactive Security for the Three-Horizon Architecture Evolution (2026–2037)</strong><br>
+  <em>🔍 STRIDE • MITRE ATT&CK • AI Workflow Expansion • Advanced Dashboards • Real-Time Data • AWS Serverless • Bedrock • Neptune • Aurora • Cognito</em>
+</p>
+<p align="center">
+  <img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/>
+  <img src="https://img.shields.io/badge/Version-2.1-555?style=for-the-badge" alt="Version"/>
+  <img src="https://img.shields.io/badge/Effective-2026--06--02-success?style=for-the-badge" alt="Effective Date"/>
+  <img src="https://img.shields.io/badge/Review-Quarterly-orange?style=for-the-badge" alt="Review Cycle"/>
+  <img src="https://img.shields.io/badge/Threats-F1--F21-critical?style=for-the-badge" alt="Threat Scenarios"/>
+  <img src="https://img.shields.io/badge/Controls-FUT--001_to_FUT--032-brightgreen?style=for-the-badge" alt="Security Controls"/>
+</p>
+<p align="center">
+  <img src="https://img.shields.io/badge/Horizon-2026--2037-blueviolet?style=flat-square" alt="Horizon"/>
+  <img src="https://img.shields.io/badge/H1-Static_Baseline-4caf50?style=flat-square" alt="Horizon 1"/>
+  <img src="https://img.shields.io/badge/H2-Static_Deepening-2196f3?style=flat-square" alt="Horizon 2"/>
+  <img src="https://img.shields.io/badge/H3-AWS_Serverless_AI-ff9800?style=flat-square" alt="Horizon 3"/>
+  <img src="https://img.shields.io/badge/Data-Public_Only-success?style=flat-square" alt="Public Data Only"/>
+  <img src="https://img.shields.io/badge/🗳️_Democratic-Integrity_Protected-blueviolet?style=flat-square" alt="Democratic Integrity"/>
+  <img src="https://img.shields.io/badge/🔒_GDPR-Art_9_Compliant-blue?style=flat-square" alt="GDPR Art. 9"/>
+</p>
+<p><strong>📋 Document Owner:</strong> CEO | <strong>📄 Version:</strong> 2.1 | <strong>📅 Last Updated:</strong> 2026-06-02 (UTC)<br>
+<strong>🔄 Review Cycle:</strong> Quarterly | <strong>⏰ Next Review:</strong> 2026-09-02<br>
+<strong>🏢 Owner:</strong> Hack23 AB (<a href="http://Org.nr">Org.nr</a> 5595347807) | <strong>🏷️ Classification:</strong> Public</p>
+<hr>
+<h2 id="🎯-purpose-scope" class="tsd-anchor-link">🎯 Purpose &amp; Scope<a href="#🎯-purpose-scope" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<p>Establish a forward-looking threat model for <strong>Riksdagsmonitor's three-horizon architecture evolution (2026–2037)</strong>, covering new capabilities and expanded attack surfaces across the planned roadmap. This document complements the current <a href="THREAT_MODEL.html">THREAT_MODEL.md</a> by analyzing threats specific to planned features that do not yet exist in production, and is the security counterpart to the strategy expressed in <a href="FUTURE_ARCHITECTURE.html">FUTURE_ARCHITECTURE.md</a>, <a href="FUTURE_DATA_MODEL.html">FUTURE_DATA_MODEL.md</a>, <a href="FUTURE_FLOWCHART.html">FUTURE_FLOWCHART.md</a>, <a href="FUTURE_STATEDIAGRAM.html">FUTURE_STATEDIAGRAM.md</a>, <a href="FUTURE_SWOT.html">FUTURE_SWOT.md</a>, <a href="FUTURE_MINDMAP.html">FUTURE_MINDMAP.md</a>, <a href="FUTURE_SECURITY_ARCHITECTURE.html">FUTURE_SECURITY_ARCHITECTURE.md</a> and <a href="FUTURE_WORKFLOWS.html">FUTURE_WORKFLOWS.md</a>.</p>
+<p><strong>📐 Coverage dimensions (v2.1):</strong></p>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th style="text-align:center">Scenarios</th>
+<th style="text-align:center">Controls</th>
+<th style="text-align:center">Diagrams</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🔧 <strong>Technical Security</strong> (STRIDE, ATT&amp;CK)</td>
+<td style="text-align:center">F1–F12</td>
+<td style="text-align:center">FUT-001–FUT-022</td>
+<td style="text-align:center">4 mermaid diagrams</td>
+</tr>
+<tr>
+<td>🗳️ <strong>Democratic Integrity &amp; Accountability</strong></td>
+<td style="text-align:center">F13–F16</td>
+<td style="text-align:center">FUT-023–FUT-027</td>
+<td style="text-align:center">2 mermaid diagrams</td>
+</tr>
+<tr>
+<td>🔒 <strong>Privacy &amp; GDPR (H3)</strong></td>
+<td style="text-align:center">F17–F18</td>
+<td style="text-align:center">FUT-028–FUT-029</td>
+<td style="text-align:center">1 mermaid diagram</td>
+</tr>
+<tr>
+<td>🔗 <strong>Supply Chain &amp; AI Governance</strong></td>
+<td style="text-align:center">F19–F21</td>
+<td style="text-align:center">FUT-030–FUT-032</td>
+<td style="text-align:center">1 mermaid diagram</td>
+</tr>
+<tr>
+<td>🌍 <strong>Geopolitical &amp; FIMI</strong></td>
+<td style="text-align:center">Cross-cutting</td>
+<td style="text-align:center">Source-grading, FIMI detection</td>
+<td style="text-align:center">1 mermaid diagram</td>
+</tr>
+<tr>
+<td>🤖 <strong>AI/LLM (OWASP Top 10)</strong></td>
+<td style="text-align:center">Cross-cutting</td>
+<td style="text-align:center">Model-level controls</td>
+<td style="text-align:center">—</td>
+</tr>
+<tr>
+<td>🕵️ <strong>Political-Intelligence Capabilities</strong></td>
+<td style="text-align:center">PI-T1–PI-T7</td>
+<td style="text-align:center">Integrity-by-construction</td>
+<td style="text-align:center">—</td>
+</tr>
+</tbody>
+</table>
+<h3 id="🧭-the-three-horizons-threat-model-framing" class="tsd-anchor-link"><strong>🧭 The Three Horizons (threat-model framing)</strong><a href="#🧭-the-three-horizons-threat-model-framing" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>Horizon</th>
+<th>Versions</th>
+<th>Window</th>
+<th>Architecture Posture</th>
+<th>Dominant Threat Themes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>🟢 H1 — Static Baseline</strong></td>
+<td>v1.x</td>
+<td>Today</td>
+<td>Static HTML/CSS on GitHub Pages, build-time agentic newsroom</td>
+<td>Supply-chain &amp; CI/CD compromise, prompt injection, content integrity (covered by <a href="THREAT_MODEL.html">THREAT_MODEL.md</a>)</td>
+</tr>
+<tr>
+<td><strong>🔵 H2 — Static, Go Deeper</strong></td>
+<td>v2.0</td>
+<td>2026–2027</td>
+<td>Still static, richer pre-compute, CIA pipeline, party/OSINT analytics, real-time read-only feeds, 14-language translation</td>
+<td>Pipeline cache poisoning, multi-workflow AI orchestration, real-time data manipulation, translation integrity</td>
+</tr>
+<tr>
+<td><strong>🟠 H3 — AWS Serverless AI</strong></td>
+<td>v3.0+</td>
+<td>2027–2037</td>
+<td>Amazon Bedrock, Neptune Serverless, Aurora Serverless v2, OpenSearch/Timestream/DynamoDB, AppSync/API Gateway, Cognito, Lambda, Step Functions, SageMaker, multi-region</td>
+<td>Cloud IAM &amp; identity attacks, RAG/Knowledge-Base poisoning, graph/relational data exfiltration, agentic excessive agency, model manipulation, multi-region failover abuse</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Horizon boundaries are <strong>roadmap intent, not commitments</strong> — the platform deliberately stays static through 2027 (<a href="FUTURE_ARCHITECTURE.html">FUTURE_ARCHITECTURE.md §2.6</a>). H3 threats are pre-modeled so that controls are designed <em>before</em> the first managed service is provisioned.</p>
+</blockquote>
+<h3 id="🔗-policy-alignment" class="tsd-anchor-link"><strong>🔗 Policy Alignment</strong><a href="#🔗-policy-alignment" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p>Aligned with <a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Threat_Modeling.md">Hack23 AB Threat Modeling Policy</a> and <a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md">Secure Development Policy</a>.</p>
+<h3 id="🔍-scope-planned-architecture-changes" class="tsd-anchor-link"><strong>🔍 Scope — Planned Architecture Changes</strong><a href="#🔍-scope-planned-architecture-changes" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>Planned Feature</th>
+<th>Horizon</th>
+<th>Target Date</th>
+<th>Architecture Impact</th>
+<th>New Attack Surface</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>CIA Data Pipeline Integration</strong></td>
+<td>H2</td>
+<td>Q2 2026</td>
+<td>Automated nightly fetch of 19 CIA visualization products</td>
+<td>External API dependency, data validation, cache poisoning</td>
+</tr>
+<tr>
+<td><strong>Advanced AI Content Pipelines</strong></td>
+<td>H2</td>
+<td>Q2-Q3 2026</td>
+<td>Additional agentic workflows (committee reports, motion analysis, week-ahead)</td>
+<td>Expanded prompt injection surface, multi-workflow orchestration risks</td>
+</tr>
+<tr>
+<td><strong>Real-Time Voting Dashboard</strong></td>
+<td>H3</td>
+<td>2028+</td>
+<td>WebSocket/SSE for live parliamentary voting data (requires Kinesis streaming backend)</td>
+<td>Real-time data manipulation, WebSocket security, connection state attacks</td>
+</tr>
+<tr>
+<td><strong>Politician Profile Pages</strong></td>
+<td>H2</td>
+<td>Q3 2026</td>
+<td>Per-politician detail pages with historical data</td>
+<td>Data accuracy attacks, profile defacement, SEO poisoning</td>
+</tr>
+<tr>
+<td><strong>Enhanced Chart.js/D3.js Dashboards</strong></td>
+<td>H2</td>
+<td>Q2-Q3 2026</td>
+<td>5 placeholder dashboards activated (Budget, Voting Patterns, Committee, Regional, Historical)</td>
+<td>Dashboard data injection, chart rendering exploits, large dataset DoS</td>
+</tr>
+<tr>
+<td><strong>Automated Content Translation</strong></td>
+<td>H2</td>
+<td>Q3 2026</td>
+<td>Machine translation pipeline for 14 languages</td>
+<td>Translation manipulation, cultural sensitivity attacks, LLM hallucination in non-English</td>
+</tr>
+<tr>
+<td><strong>EU Parliament Cross-Reference</strong></td>
+<td>H2</td>
+<td>Q4 2026</td>
+<td>Integration with European Parliament MCP Server</td>
+<td>Cross-platform data integrity, new external API dependency</td>
+</tr>
+<tr>
+<td><strong>Bedrock AI Content Engine</strong></td>
+<td>H3</td>
+<td>2028–2029</td>
+<td>Step-Functions-orchestrated Lambda + Bedrock (Claude Opus, Nova Premier, Polly) article/image/audio generation</td>
+<td>Managed-LLM prompt injection, insecure output handling, excessive agency, model supply chain</td>
+</tr>
+<tr>
+<td><strong>SageMaker Predictive Analytics</strong></td>
+<td>H3</td>
+<td>2028 Q4–2029 Q1</td>
+<td>Election forecasting, coalition &amp; MP-vote models (SageMaker Serverless Inference + Feature Store)</td>
+<td>Training-data/feature-store poisoning, forecast manipulation, inference DoS</td>
+</tr>
+<tr>
+<td><strong>Neptune Knowledge Graph + Bedrock Knowledge Bases</strong></td>
+<td>H3</td>
+<td>2029 Q2–Q4</td>
+<td>Semantic intelligence: graph (openCypher/Gremlin) + RAG vector search over 109K+ documents</td>
+<td>Graph-query injection, RAG/Knowledge-Base poisoning, embedding inversion, natural-language-query abuse</td>
+</tr>
+<tr>
+<td><strong>Aurora Serverless v2 / OpenSearch / Timestream / DynamoDB</strong></td>
+<td>H3</td>
+<td>2027–2028</td>
+<td>Managed relational, full-text, time-series and NoSQL stores behind Lambda resolvers</td>
+<td>SQL/NoSQL injection, broken object-level authorization, data exfiltration, encryption-key misuse</td>
+</tr>
+<tr>
+<td><strong>AppSync GraphQL + API Gateway Public API</strong></td>
+<td>H3</td>
+<td>2027–2028</td>
+<td>Managed GraphQL (real-time subscriptions) + REST usage plans</td>
+<td>GraphQL abuse (depth/complexity), broken authZ, subscription hijacking, API-key/usage-plan abuse</td>
+</tr>
+<tr>
+<td><strong>Amazon Cognito Identity</strong></td>
+<td>H3</td>
+<td>2027–2028</td>
+<td>Authenticated user accounts (saved searches, alerts, personalization) — first non-anonymous tier</td>
+<td>Account takeover, token theft/replay, IDOR, MFA bypass, GDPR scope creep</td>
+</tr>
+<tr>
+<td><strong>AWS Amplify Web PWA + Native Mobile Apps</strong></td>
+<td>H3</td>
+<td>2028+</td>
+<td>iOS/Android apps + PWA via Amplify, CloudFront + WAF + Shield edge</td>
+<td>Mobile API-key abuse, insecure local storage, certificate-pinning bypass, push-notification spoofing</td>
+</tr>
+<tr>
+<td><strong>Conversational AI (Bedrock Agents, Lex, Transcribe/Polly)</strong></td>
+<td>H3</td>
+<td>2028+</td>
+<td>Chatbot, voice interface, personal briefings, multi-agent autonomous tasks</td>
+<td>Agentic excessive agency, indirect prompt injection via voice, tool-chaining abuse, hallucinated political guidance</td>
+</tr>
+<tr>
+<td><strong>Multi-Region Resilience (Aurora Global, DynamoDB Global, S3 CRR, Route 53)</strong></td>
+<td>H3</td>
+<td>2028+</td>
+<td>Active-passive multi-region failover, global tables, cross-region replication</td>
+<td>Failover/route hijack, replication tampering, split-brain integrity, regional IAM drift</td>
+</tr>
+<tr>
+<td><strong>Nordic &amp; EU Federation (DK/NO/FI + EU Parliament)</strong></td>
+<td>H3</td>
+<td>2027–2030</td>
+<td>Shared data-mesh comparative analysis across parliaments</td>
+<td>Cross-jurisdiction data-integrity, source-spoofing, federation trust-boundary attacks</td>
+</tr>
+</tbody>
+</table>
+<h3 id="📅-threat-landscape-evolution-timeline" class="tsd-anchor-link"><strong>📅 Threat Landscape Evolution Timeline</strong><a href="#📅-threat-landscape-evolution-timeline" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<pre><code class="mermaid"><span class="hl-1">timeline</span><br/><span class="hl-1">    title Riksdagsmonitor Threat Landscape Evolution (2026–2037)</span><br/><span class="hl-1">    section 🟢 H1 — Static Baseline (Today)</span><br/><span class="hl-1">        2024-2026 : Supply-chain &amp; CI/CD compromise</span><br/><span class="hl-1">                  : Prompt injection in agentic workflows</span><br/><span class="hl-1">                  : Content integrity attacks</span><br/><span class="hl-1">                  : GitHub Actions credential theft</span><br/><span class="hl-1">    section 🔵 H2 — Static Deepening (2026–2027)</span><br/><span class="hl-1">        2026 Q2 : Pipeline cache poisoning</span><br/><span class="hl-1">               : Multi-workflow AI orchestration abuse</span><br/><span class="hl-1">               : 🗳️ Neutrality erosion via AI drift (F13)</span><br/><span class="hl-1">               : 🔗 MCP ecosystem compromise (F21)</span><br/><span class="hl-1">        2026 Q3 : Translation manipulation (14 languages)</span><br/><span class="hl-1">               : 📊 Election forecast weaponization (F14)</span><br/><span class="hl-1">               : Real-time data manipulation</span><br/><span class="hl-1">        2026 Q4 : Nordic federation trust attacks</span><br/><span class="hl-1">               : Cross-platform data integrity</span><br/><span class="hl-1">               : 🌍 FIMI information laundering (F16)</span><br/><span class="hl-1">    section 🟠 H3 — AWS Serverless AI (2027–2037)</span><br/><span class="hl-1">        2027 : 🔒 GDPR Art. 9 scope expansion (F17)</span><br/><span class="hl-1">             : Cloud IAM &amp; identity attacks</span><br/><span class="hl-1">             : SQL/NoSQL injection</span><br/><span class="hl-1">        2028 : RAG/Knowledge-Base poisoning</span><br/><span class="hl-1">             : 🧠 Foundation model regression (F19)</span><br/><span class="hl-1">             : Agentic excessive agency</span><br/><span class="hl-1">             : 📱 Mobile API abuse</span><br/><span class="hl-1">        2029-2037 : ⚖️ EU AI Act compliance (F20)</span><br/><span class="hl-1">                  : Multi-region failover hijack</span><br/><span class="hl-1">                  : Post-quantum cryptographic transition</span><br/><span class="hl-1">                  : AGI-era governance challenges</span>
+</code><button type="button">Copy</button></pre>
+
+<hr>
+<h2 id="📊-future-system-classification" class="tsd-anchor-link">📊 Future System Classification<a href="#📊-future-system-classification" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<h3 id="🏷️-evolved-security-classification" class="tsd-anchor-link"><strong>🏷️ Evolved Security Classification</strong><a href="#🏷️-evolved-security-classification" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>Current</th>
+<th>Future</th>
+<th>Rationale for Change</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>🔐 Confidentiality</strong></td>
+<td>Public</td>
+<td><strong>Public + limited Internal (H3)</strong></td>
+<td>Platform content stays public; H3 Cognito introduces authenticated user accounts whose saved searches/alerts reveal political interest (GDPR Art. 9) and must be protected</td>
+</tr>
+<tr>
+<td><strong>🔒 Integrity</strong></td>
+<td>High</td>
+<td><strong>Critical</strong></td>
+<td>Real-time voting data, expanded AI content, and H3 authoritative managed stores (Aurora/Neptune/forecasts) increase integrity requirements</td>
+</tr>
+<tr>
+<td><strong>⚡ Availability</strong></td>
+<td>High</td>
+<td><strong>Critical</strong></td>
+<td>Real-time dashboards and H3 public API / multi-region services require higher availability during parliamentary sessions and election windows</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Note:</strong> This table describes the <strong>future Riksdagsmonitor system security classification</strong>. The CIA classification badges in the Document Control section represent the <strong>classification of this document itself</strong>, not the future system, and may therefore differ from the future system's target classification. The H3 authenticated tier is the first time the platform processes per-user personal data — a <strong>DPIA is mandatory before Cognito launch</strong> (see F6 and FUT-013/FUT-014).</p>
+</blockquote>
+<hr>
+<h2 id="🏗️-future-architecture-threat-analysis" class="tsd-anchor-link">🏗️ Future Architecture Threat Analysis<a href="#🏗️-future-architecture-threat-analysis" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<h3 id="🎭-stride-per-future-component" class="tsd-anchor-link"><strong>🎭 STRIDE per Future Component</strong><a href="#🎭-stride-per-future-component" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>Future Component</th>
+<th>S (Spoofing)</th>
+<th>T (Tampering)</th>
+<th>R (Repudiation)</th>
+<th>I (Info Disclosure)</th>
+<th>D (DoS)</th>
+<th>E (Elevation)</th>
+<th style="text-align:right">Risk Level</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>CIA Data Pipeline</strong></td>
+<td>Source API spoofing</td>
+<td>Cached data poisoning</td>
+<td>Pipeline execution denial</td>
+<td>Data leakage via cache</td>
+<td>Pipeline backlog/timeout</td>
+<td>Pipeline credential escalation</td>
+<td style="text-align:right"><strong>HIGH</strong></td>
+</tr>
+<tr>
+<td><strong>Real-Time Voting Dashboard</strong></td>
+<td>WebSocket connection spoofing</td>
+<td>Vote data manipulation in transit</td>
+<td>Connection state denial</td>
+<td>Vote counting information leak</td>
+<td>WebSocket flood/connection exhaustion</td>
+<td>Client-side privilege via WebSocket</td>
+<td style="text-align:right"><strong>CRITICAL</strong></td>
+</tr>
+<tr>
+<td><strong>Politician Profile Pages</strong></td>
+<td>Profile data source spoofing</td>
+<td>Historical record tampering</td>
+<td>Profile edit denial</td>
+<td>Biographical data exposure</td>
+<td>Profile page DoS via complex queries</td>
+<td>SEO manipulation for profile ranking</td>
+<td style="text-align:right"><strong>MEDIUM</strong></td>
+</tr>
+<tr>
+<td><strong>Automated Translation Pipeline</strong></td>
+<td>Source language spoofing</td>
+<td>Translation output manipulation</td>
+<td>Translation attribution denial</td>
+<td>Source text leakage</td>
+<td>Translation queue exhaustion</td>
+<td>LLM model access escalation</td>
+<td style="text-align:right"><strong>HIGH</strong></td>
+</tr>
+<tr>
+<td><strong>Enhanced Dashboards (5 new)</strong></td>
+<td>Data source spoofing for charts</td>
+<td>Chart data injection/manipulation</td>
+<td>Dashboard interaction denial</td>
+<td>Data aggregation leakage</td>
+<td>Large dataset rendering DoS</td>
+<td>Dashboard admin escalation</td>
+<td style="text-align:right"><strong>MEDIUM</strong></td>
+</tr>
+<tr>
+<td><strong>EU Parliament Cross-Reference</strong></td>
+<td>EP MCP Server spoofing</td>
+<td>Cross-reference data tampering</td>
+<td>Data linkage denial</td>
+<td>EU political data leakage</td>
+<td>API rate limiting/timeout</td>
+<td>Cross-system privilege escalation</td>
+<td style="text-align:right"><strong>MEDIUM</strong></td>
+</tr>
+<tr>
+<td><strong>IMF Data Integration (TypeScript client — <code>scripts/imf-client.ts</code>)</strong></td>
+<td>IMF origin DNS hijack / TLS MITM</td>
+<td>IMF JSON response tampering in transit or at rest</td>
+<td>Stale / mis-vintaged WEO projections cited as current</td>
+<td>Aggregate public-only; negligible</td>
+<td>IMF rate-limit (10 req / 5 s) trips workflow</td>
+<td>Pure-TS client inside the npm SBOM; no new runtime</td>
+<td style="text-align:right"><strong>LOW</strong></td>
+</tr>
+<tr>
+<td><strong>🟠 H3 — Bedrock AI Content Engine</strong> (Lambda + Step Functions)</td>
+<td>IAM role assumption / model-endpoint spoofing</td>
+<td>Indirect prompt injection corrupts generated articles</td>
+<td>Generation lineage not attributable to a model/vintage</td>
+<td>Prompt/context leakage via model logs</td>
+<td>Bedrock throttling / runaway Step-Functions loops</td>
+<td>Over-scoped Lambda execution role escalates in account</td>
+<td style="text-align:right"><strong>HIGH</strong></td>
+</tr>
+<tr>
+<td><strong>🟠 H3 — SageMaker Predictive Models</strong></td>
+<td>Forged feature inputs / endpoint spoofing</td>
+<td>Training-data &amp; Feature-Store poisoning skews forecasts</td>
+<td>Forecast provenance &amp; training-set hash unrecorded</td>
+<td>Model/feature exposure via misconfigured endpoint</td>
+<td>Inference-endpoint flooding (pay-per-invoke abuse)</td>
+<td>Notebook/training-job role escalation</td>
+<td style="text-align:right"><strong>HIGH</strong></td>
+</tr>
+<tr>
+<td><strong>🟠 H3 — Neptune Knowledge Graph + Bedrock Knowledge Base</strong></td>
+<td>Source-document spoofing into the graph/KB</td>
+<td>Graph-edge tampering; RAG vector poisoning</td>
+<td>Ingestion source not traceable</td>
+<td>Embedding inversion / sensitive linkage inference</td>
+<td>Expensive openCypher/Gremlin or RAG query DoS</td>
+<td>Cross-tenant graph/KB access via broken IAM</td>
+<td style="text-align:right"><strong>HIGH</strong></td>
+</tr>
+<tr>
+<td><strong>🟠 H3 — Aurora Serverless v2 / OpenSearch / Timestream / DynamoDB</strong></td>
+<td>Lambda resolver spoofs DB identity</td>
+<td>SQL/NoSQL injection, stored-data tampering</td>
+<td>DB audit trail gap (no CloudTrail data events)</td>
+<td>Bulk data exfiltration via broken object-level authZ</td>
+<td>Query-of-death / connection exhaustion</td>
+<td>KMS key misuse decrypts at-rest data</td>
+<td style="text-align:right"><strong>CRITICAL</strong></td>
+</tr>
+<tr>
+<td><strong>🟠 H3 — AppSync GraphQL + API Gateway Public API</strong></td>
+<td>Resolver/identity spoofing</td>
+<td>Mutation tampering, response rewriting</td>
+<td>Request attribution gap across resolvers</td>
+<td>Over-fetch / introspection data leakage</td>
+<td>Deep/complex query &amp; subscription-flood DoS</td>
+<td>Authorizer bypass elevates to privileged scope</td>
+<td style="text-align:right"><strong>HIGH</strong></td>
+</tr>
+<tr>
+<td><strong>🟠 H3 — Amazon Cognito Identity</strong></td>
+<td>Credential stuffing / token replay</td>
+<td>Profile &amp; saved-search tampering</td>
+<td>Disputed account actions (weak audit)</td>
+<td>IDOR exposes another user's saved data</td>
+<td>Auth-endpoint flood / token-mint abuse</td>
+<td>MFA bypass / privilege escalation to admin pool</td>
+<td style="text-align:right"><strong>HIGH</strong></td>
+</tr>
+<tr>
+<td><strong>🟠 H3 — Amplify Web PWA + Native Mobile Apps</strong></td>
+<td>Push-notification / deep-link spoofing</td>
+<td>Client-side data &amp; cache tampering</td>
+<td>Device-side action repudiation</td>
+<td>Insecure local storage / key leakage</td>
+<td>App-store-targeted client DoS</td>
+<td>Cert-pinning bypass → API abuse</td>
+<td style="text-align:right"><strong>MEDIUM</strong></td>
+</tr>
+<tr>
+<td><strong>🟠 H3 — Conversational AI (Bedrock Agents, Lex, Transcribe/Polly)</strong></td>
+<td>Voice/session spoofing</td>
+<td>Indirect prompt injection via voice/KB context</td>
+<td>Agent action chain not auditable</td>
+<td>Briefing leakage across user sessions</td>
+<td>Agent loop / tool-chain resource exhaustion</td>
+<td>Excessive agency — agent invokes unintended tools/writes</td>
+<td style="text-align:right"><strong>CRITICAL</strong></td>
+</tr>
+<tr>
+<td><strong>🟠 H3 — Multi-Region Resilience (Aurora/DynamoDB Global, S3 CRR, Route 53)</strong></td>
+<td>Route 53 / health-check spoofing</td>
+<td>Replication-stream tampering, split-brain writes</td>
+<td>Cross-region action attribution gap</td>
+<td>Replica in weaker-controlled region leaks data</td>
+<td>Failover-triggering DoS, replication lag</td>
+<td>Regional IAM drift grants stale privileges</td>
+<td style="text-align:right"><strong>HIGH</strong></td>
+</tr>
+<tr>
+<td><strong>🟠 H3 — Nordic &amp; EU Federation Data Mesh</strong></td>
+<td>Foreign-parliament API spoofing</td>
+<td>Cross-jurisdiction record tampering</td>
+<td>Federated provenance ambiguity</td>
+<td>Comparative-dataset linkage disclosure</td>
+<td>Multi-source fetch amplification DoS</td>
+<td>Federation trust-boundary privilege crossing</td>
+<td style="text-align:right"><strong>MEDIUM</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="🔐-future-crown-jewel-analysis" class="tsd-anchor-link"><strong>🔐 Future Crown Jewel Analysis</strong><a href="#🔐-future-crown-jewel-analysis" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<pre><code class="mermaid"><span class="hl-1">flowchart TB</span><br/><span class="hl-1">    subgraph H2_JEWELS[&quot;🔵 H2 Crown Jewels (Static-Deep)&quot;]</span><br/><span class="hl-1">        REALTIME[&quot;📊 Real-Time Voting Data&lt;br/&gt;Live parliamentary decisions&quot;]</span><br/><span class="hl-1">        POLITICIAN[&quot;👤 Politician Profiles&lt;br/&gt;Historical performance records&quot;]</span><br/><span class="hl-1">        TRANSLATION[&quot;🌐 Translation Pipeline&lt;br/&gt;14-language content integrity&quot;]</span><br/><span class="hl-1">        CIA_DATA[&quot;🏛️ CIA Intelligence Data&lt;br/&gt;19 visualization products&quot;]</span><br/><span class="hl-1">    end</span><br/><br/><span class="hl-1">    subgraph H3_JEWELS[&quot;🟠 H3 Crown Jewels (AWS Serverless)&quot;]</span><br/><span class="hl-1">        GRAPH[&quot;🕸️ Neptune Knowledge Graph&lt;br/&gt;+ Bedrock KB vectors&quot;]</span><br/><span class="hl-1">        FORECAST[&quot;🔮 SageMaker Forecast Models&lt;br/&gt;Election &amp; coalition predictions&quot;]</span><br/><span class="hl-1">        AURORA[&quot;🗄️ Aurora/OpenSearch Stores&lt;br/&gt;Authoritative managed data&quot;]</span><br/><span class="hl-1">        IDENTITY[&quot;🔑 Cognito Identities&lt;br/&gt;First authenticated user tier&quot;]</span><br/><span class="hl-1">        AGENTS_AI[&quot;💬 Bedrock Agents&lt;br/&gt;Autonomous conversational AI&quot;]</span><br/><span class="hl-1">    end</span><br/><br/><span class="hl-1">    subgraph FUTURE_VECTORS[&quot;⚔️ Future Attack Vectors&quot;]</span><br/><span class="hl-1">        WEBSOCKET[&quot;🔌 WebSocket Exploitation&quot;]</span><br/><span class="hl-1">        CACHE_POISON[&quot;💉 Cache Poisoning&quot;]</span><br/><span class="hl-1">        LLM_MULTI[&quot;🤖 Multi-LLM Orchestration Attack&quot;]</span><br/><span class="hl-1">        API_CHAIN[&quot;🔗 API Chain Compromise&quot;]</span><br/><span class="hl-1">        RAG_POISON[&quot;📚 RAG / KB Poisoning&quot;]</span><br/><span class="hl-1">        IAM_ABUSE[&quot;🪪 Cloud IAM &amp; Token Abuse&quot;]</span><br/><span class="hl-1">        EXCESS_AGENCY[&quot;🧠 Agentic Excessive Agency&quot;]</span><br/><span class="hl-1">    end</span><br/><br/><span class="hl-1">    subgraph FUTURE_AGENTS[&quot;👥 Elevated Threat Agents&quot;]</span><br/><span class="hl-1">        ELECTION_ACTOR[&quot;🗳️ Election Interference Actor&quot;]</span><br/><span class="hl-1">        AI_ADVERSARY[&quot;🤖 AI-Enabled Adversary&quot;]</span><br/><span class="hl-1">        STATE_ACTOR[&quot;🏛️ Nation-State APT&quot;]</span><br/><span class="hl-1">        CLOUD_ATTACKER[&quot;☁️ Cloud-Native Attacker&quot;]</span><br/><span class="hl-1">    end</span><br/><br/><span class="hl-1">    WEBSOCKET --&gt; REALTIME</span><br/><span class="hl-1">    CACHE_POISON --&gt; CIA_DATA</span><br/><span class="hl-1">    LLM_MULTI --&gt; TRANSLATION</span><br/><span class="hl-1">    API_CHAIN --&gt; POLITICIAN</span><br/><span class="hl-1">    RAG_POISON --&gt; GRAPH</span><br/><span class="hl-1">    RAG_POISON --&gt; FORECAST</span><br/><span class="hl-1">    IAM_ABUSE --&gt; AURORA</span><br/><span class="hl-1">    IAM_ABUSE --&gt; IDENTITY</span><br/><span class="hl-1">    EXCESS_AGENCY --&gt; AGENTS_AI</span><br/><br/><span class="hl-1">    ELECTION_ACTOR --&gt; WEBSOCKET</span><br/><span class="hl-1">    AI_ADVERSARY --&gt; LLM_MULTI</span><br/><span class="hl-1">    AI_ADVERSARY --&gt; EXCESS_AGENCY</span><br/><span class="hl-1">    STATE_ACTOR --&gt; CACHE_POISON</span><br/><span class="hl-1">    CLOUD_ATTACKER --&gt; IAM_ABUSE</span><br/><span class="hl-1">    CLOUD_ATTACKER --&gt; RAG_POISON</span><br/><br/><span class="hl-1">    style REALTIME fill:#ffcdd2,stroke:#d32f2f,color:#000</span><br/><span class="hl-1">    style POLITICIAN fill:#fff3e0,stroke:#ff9800,color:#000</span><br/><span class="hl-1">    style TRANSLATION fill:#e3f2fd,stroke:#2196f3,color:#000</span><br/><span class="hl-1">    style CIA_DATA fill:#ffcdd2,stroke:#d32f2f,color:#000</span><br/><span class="hl-1">    style GRAPH fill:#ffcdd2,stroke:#d32f2f,color:#000</span><br/><span class="hl-1">    style FORECAST fill:#fff3e0,stroke:#ff9800,color:#000</span><br/><span class="hl-1">    style AURORA fill:#ffcdd2,stroke:#d32f2f,color:#000</span><br/><span class="hl-1">    style IDENTITY fill:#fff3e0,stroke:#ff9800,color:#000</span><br/><span class="hl-1">    style AGENTS_AI fill:#ffcdd2,stroke:#d32f2f,color:#000</span>
+</code><button type="button">Copy</button></pre>
+
+<hr>
+<h2 id="🎯-future-priority-threat-scenarios" class="tsd-anchor-link">🎯 Future Priority Threat Scenarios<a href="#🎯-future-priority-threat-scenarios" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<h3 id="scenario-f1-real-time-vote-manipulation-during-parliamentary-session" class="tsd-anchor-link"><strong>Scenario F1: Real-Time Vote Manipulation During Parliamentary Session</strong><a href="#scenario-f1-real-time-vote-manipulation-during-parliamentary-session" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Threat Agent</strong></td>
+<td>Nation-state actor, hacktivist</td>
+</tr>
+<tr>
+<td><strong>Attack Vector</strong></td>
+<td>WebSocket data injection, man-in-the-middle on data feed</td>
+</tr>
+<tr>
+<td><strong>Target</strong></td>
+<td>Real-time voting dashboard during live parliamentary vote</td>
+</tr>
+<tr>
+<td><strong>Impact</strong></td>
+<td>Display incorrect vote counts, undermine democratic trust</td>
+</tr>
+<tr>
+<td><strong>Likelihood</strong></td>
+<td>Medium (requires intercepting data stream)</td>
+</tr>
+<tr>
+<td><strong>Risk Score</strong></td>
+<td><strong>8.5/10 CRITICAL</strong></td>
+</tr>
+<tr>
+<td><strong>MITRE ATT&amp;CK</strong></td>
+<td><a href="https://attack.mitre.org/techniques/T1565/">T1565 Data Manipulation</a>, <a href="https://attack.mitre.org/techniques/T1557/">T1557 MITM</a></td>
+</tr>
+<tr>
+<td><strong>Planned Controls</strong></td>
+<td>TLS 1.3 for WebSocket, server-side data signing, client-side signature verification, comparison with official <a href="http://riksdagen.se">riksdagen.se</a> data</td>
+</tr>
+</tbody>
+</table>
+<h3 id="scenario-f2-cia-data-pipeline-cache-poisoning" class="tsd-anchor-link"><strong>Scenario F2: CIA Data Pipeline Cache Poisoning</strong><a href="#scenario-f2-cia-data-pipeline-cache-poisoning" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Threat Agent</strong></td>
+<td>Sophisticated attacker with CIA platform access knowledge</td>
+</tr>
+<tr>
+<td><strong>Attack Vector</strong></td>
+<td>Compromise cached CIA export data between fetch and display</td>
+</tr>
+<tr>
+<td><strong>Target</strong></td>
+<td>19 CIA visualization products cached locally</td>
+</tr>
+<tr>
+<td><strong>Impact</strong></td>
+<td>Display manipulated political intelligence data across all dashboards</td>
+</tr>
+<tr>
+<td><strong>Likelihood</strong></td>
+<td>Low (requires pipeline or storage compromise)</td>
+</tr>
+<tr>
+<td><strong>Risk Score</strong></td>
+<td><strong>7.2/10 HIGH</strong></td>
+</tr>
+<tr>
+<td><strong>MITRE ATT&amp;CK</strong></td>
+<td><a href="https://attack.mitre.org/techniques/T1195/">T1195 Supply Chain Compromise</a>, <a href="https://attack.mitre.org/techniques/T1565/001/">T1565.001 Stored Data Manipulation</a></td>
+</tr>
+<tr>
+<td><strong>Planned Controls</strong></td>
+<td>JSON Schema validation, cryptographic integrity hashing, freshness monitoring (&lt;24h), comparison with source checksums</td>
+</tr>
+</tbody>
+</table>
+<h3 id="scenario-f3-multi-workflow-ai-orchestration-attack" class="tsd-anchor-link"><strong>Scenario F3: Multi-Workflow AI Orchestration Attack</strong><a href="#scenario-f3-multi-workflow-ai-orchestration-attack" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Threat Agent</strong></td>
+<td>AI-enabled adversary, insider threat</td>
+</tr>
+<tr>
+<td><strong>Attack Vector</strong></td>
+<td>Coordinate prompt injection across multiple AI workflows to create consistent disinformation</td>
+</tr>
+<tr>
+<td><strong>Target</strong></td>
+<td>News pipeline aggregate+render scripts + multiple per-type workflows (news-evening-analysis, news-realtime-monitor, news-propositions, news-motions, news-committee-reports, news-interpellations, news-week-ahead, news-month-ahead, news-weekly-review, news-monthly-review) consuming the same <code>analysis/daily/$DATE/$SUB/</code> artifacts</td>
+</tr>
+<tr>
+<td><strong>Impact</strong></td>
+<td>Consistent AI-generated disinformation across all news outputs, bypassing single-workflow detection</td>
+</tr>
+<tr>
+<td><strong>Likelihood</strong></td>
+<td>Low (requires deep understanding of multiple workflow prompts)</td>
+</tr>
+<tr>
+<td><strong>Risk Score</strong></td>
+<td><strong>7.8/10 HIGH</strong></td>
+</tr>
+<tr>
+<td><strong>MITRE ATT&amp;CK</strong></td>
+<td><a href="https://attack.mitre.org/techniques/T1659/">T1659 Content Injection</a></td>
+</tr>
+<tr>
+<td><strong>Planned Controls</strong></td>
+<td>Cross-workflow consistency validation, independent fact-checking per workflow, rate limiting on AI content volume, mandatory human review for correlated outputs</td>
+</tr>
+</tbody>
+</table>
+<h3 id="scenario-f4-translation-pipeline-integrity-attack" class="tsd-anchor-link"><strong>Scenario F4: Translation Pipeline Integrity Attack</strong><a href="#scenario-f4-translation-pipeline-integrity-attack" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Threat Agent</strong></td>
+<td>Nation-state actor targeting specific language communities</td>
+</tr>
+<tr>
+<td><strong>Attack Vector</strong></td>
+<td>Manipulate automated translation to inject politically biased content in specific languages</td>
+</tr>
+<tr>
+<td><strong>Target</strong></td>
+<td>Arabic, Chinese, or Korean translations (harder for Swedish team to verify)</td>
+</tr>
+<tr>
+<td><strong>Impact</strong></td>
+<td>Language-specific disinformation targeting diaspora communities</td>
+</tr>
+<tr>
+<td><strong>Likelihood</strong></td>
+<td>Medium (translation verification is resource-intensive)</td>
+</tr>
+<tr>
+<td><strong>Risk Score</strong></td>
+<td><strong>6.8/10 HIGH</strong></td>
+</tr>
+<tr>
+<td><strong>MITRE ATT&amp;CK</strong></td>
+<td><a href="https://attack.mitre.org/techniques/T1659/">T1659 Content Injection</a></td>
+</tr>
+<tr>
+<td><strong>Planned Controls</strong></td>
+<td>Back-translation verification, native speaker review network, translation consistency scoring, <code>data-translate</code> attribute validation</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>The scenarios above (<strong>F1–F4</strong>) are <strong>Horizon 2</strong> threats — they materialise while the platform is still static. The scenarios below (<strong>F5–F12</strong>) are <strong>Horizon 3</strong> threats that only become live once managed AWS services are provisioned; they are pre-modeled so controls ship <em>with</em> each service (<a href="FUTURE_ARCHITECTURE.html">FUTURE_ARCHITECTURE.md §3</a>, <a href="FUTURE_ARCHITECTURE.html">§11.4 AWS Security Services</a>).</p>
+</blockquote>
+<h3 id="scenario-f5-bedrock-knowledge-base-rag-poisoning-h3" class="tsd-anchor-link"><strong>Scenario F5: Bedrock Knowledge-Base / RAG Poisoning (H3)</strong><a href="#scenario-f5-bedrock-knowledge-base-rag-poisoning-h3" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Threat Agent</strong></td>
+<td>Cloud-native attacker, AI-enabled adversary</td>
+</tr>
+<tr>
+<td><strong>Attack Vector</strong></td>
+<td>Inject crafted documents into the Bedrock Knowledge Base ingestion path so RAG retrieval surfaces poisoned context to Claude during answer generation</td>
+</tr>
+<tr>
+<td><strong>Target</strong></td>
+<td>Bedrock Knowledge Bases (109K+ document vectors) feeding natural-language queries and conversational AI</td>
+</tr>
+<tr>
+<td><strong>Impact</strong></td>
+<td>Authoritative-looking but fabricated citations and political analysis served to citizens and journalists</td>
+</tr>
+<tr>
+<td><strong>Likelihood</strong></td>
+<td>Medium (ingestion pipeline is the soft target, not the model)</td>
+</tr>
+<tr>
+<td><strong>Risk Score</strong></td>
+<td><strong>8.0/10 HIGH</strong></td>
+</tr>
+<tr>
+<td><strong>MITRE ATT&amp;CK</strong></td>
+<td><a href="https://attack.mitre.org/techniques/T1565/001/">T1565.001 Stored Data Manipulation</a>, <a href="https://attack.mitre.org/techniques/T1195/">T1195 Supply Chain Compromise</a></td>
+</tr>
+<tr>
+<td><strong>Planned Controls</strong></td>
+<td>Signed/whitelisted ingestion sources only (Riksdag/Regeringen/SCB/IMF), embedding-time provenance tags, citation-back-to-<code>dok_id</code> verification, RAG answer grounding score threshold, human review gate for conversational outputs</td>
+</tr>
+</tbody>
+</table>
+<h3 id="scenario-f6-cognito-account-takeover-idor-h3" class="tsd-anchor-link"><strong>Scenario F6: Cognito Account Takeover &amp; IDOR (H3)</strong><a href="#scenario-f6-cognito-account-takeover-idor-h3" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Threat Agent</strong></td>
+<td>Cybercriminal, hacktivist</td>
+</tr>
+<tr>
+<td><strong>Attack Vector</strong></td>
+<td>Credential stuffing, OAuth token theft/replay, or broken object-level authorization on saved-search/alert resources</td>
+</tr>
+<tr>
+<td><strong>Target</strong></td>
+<td>Amazon Cognito user pool — the platform's first authenticated tier (saved searches, alerts, personalization)</td>
+</tr>
+<tr>
+<td><strong>Impact</strong></td>
+<td>Account takeover, exposure of a citizen's political-interest profile (GDPR Art. 9 special category), defacement of personalized content</td>
+</tr>
+<tr>
+<td><strong>Likelihood</strong></td>
+<td>Medium (authenticated tier is a brand-new attack surface for the platform)</td>
+</tr>
+<tr>
+<td><strong>Risk Score</strong></td>
+<td><strong>7.5/10 HIGH</strong></td>
+</tr>
+<tr>
+<td><strong>MITRE ATT&amp;CK</strong></td>
+<td><a href="https://attack.mitre.org/techniques/T1110/">T1110 Brute Force</a>, <a href="https://attack.mitre.org/techniques/T1539/">T1539 Steal Web Session Cookie</a></td>
+</tr>
+<tr>
+<td><strong>Planned Controls</strong></td>
+<td>Mandatory MFA, Cognito advanced security (adaptive auth + compromised-credential detection), per-user resource-scoped IAM, short-lived tokens + rotation, DPIA before launch, data minimization (no political opinions persisted server-side beyond saved queries)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="scenario-f7-lambdaiam-privilege-escalation-data-exfiltration-h3" class="tsd-anchor-link"><strong>Scenario F7: Lambda/IAM Privilege Escalation &amp; Data Exfiltration (H3)</strong><a href="#scenario-f7-lambdaiam-privilege-escalation-data-exfiltration-h3" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Threat Agent</strong></td>
+<td>Nation-state APT, insider threat</td>
+</tr>
+<tr>
+<td><strong>Attack Vector</strong></td>
+<td>Over-scoped Lambda execution role or AppSync resolver chained to read Aurora/OpenSearch/DynamoDB beyond its purpose; KMS key misuse to decrypt at rest</td>
+</tr>
+<tr>
+<td><strong>Target</strong></td>
+<td>Aurora Serverless v2 <code>political_data</code> DB, OpenSearch indices, DynamoDB global tables</td>
+</tr>
+<tr>
+<td><strong>Impact</strong></td>
+<td>Bulk exfiltration or silent tampering of authoritative political datasets across regions</td>
+</tr>
+<tr>
+<td><strong>Likelihood</strong></td>
+<td>Low (requires account-level foothold)</td>
+</tr>
+<tr>
+<td><strong>Risk Score</strong></td>
+<td><strong>8.5/10 CRITICAL</strong></td>
+</tr>
+<tr>
+<td><strong>MITRE ATT&amp;CK</strong></td>
+<td><a href="https://attack.mitre.org/techniques/T1078/004/">T1078.004 Cloud Accounts</a>, <a href="https://attack.mitre.org/techniques/T1530/">T1530 Data from Cloud Storage</a>, <a href="https://attack.mitre.org/techniques/T1213/">T1213 Data from Information Repositories</a></td>
+</tr>
+<tr>
+<td><strong>Planned Controls</strong></td>
+<td>Least-privilege IAM per function (one role per Lambda), VPC isolation + private endpoints, KMS key policies with grant constraints, CloudTrail <strong>data events</strong> on all stores, GuardDuty + Security Hub correlation, IAM Access Analyzer in CI</td>
+</tr>
+</tbody>
+</table>
+<h3 id="scenario-f8-bedrock-agent-excessive-agency-h3" class="tsd-anchor-link"><strong>Scenario F8: Bedrock Agent Excessive Agency (H3)</strong><a href="#scenario-f8-bedrock-agent-excessive-agency-h3" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Threat Agent</strong></td>
+<td>AI-enabled adversary</td>
+</tr>
+<tr>
+<td><strong>Attack Vector</strong></td>
+<td>Indirect prompt injection (via voice, KB context, or user query) steers a Bedrock Agent to chain tools beyond intent — triggering writes, external calls, or content publication</td>
+</tr>
+<tr>
+<td><strong>Target</strong></td>
+<td>Conversational AI multi-agent system (Bedrock Agents, Lex, AppSync subscriptions)</td>
+</tr>
+<tr>
+<td><strong>Impact</strong></td>
+<td>Autonomous publication of manipulated content or unauthorized state changes without human review</td>
+</tr>
+<tr>
+<td><strong>Likelihood</strong></td>
+<td>Low-Medium (depends on agent tool scope)</td>
+</tr>
+<tr>
+<td><strong>Risk Score</strong></td>
+<td><strong>8.2/10 CRITICAL</strong></td>
+</tr>
+<tr>
+<td><strong>MITRE ATT&amp;CK</strong></td>
+<td><a href="https://attack.mitre.org/techniques/T1659/">T1659 Content Injection</a>, <a href="https://attack.mitre.org/techniques/T1648/">T1648 Serverless Execution</a></td>
+</tr>
+<tr>
+<td><strong>Planned Controls</strong></td>
+<td>Read-only default agent tool scope, write-action approval gates (human-in-the-loop per AI_Policy), tool allowlisting, per-session sandboxing, output-volume limits, full agent-action audit trail</td>
+</tr>
+</tbody>
+</table>
+<h3 id="scenario-f9-sagemaker-election-forecast-manipulation-h3" class="tsd-anchor-link"><strong>Scenario F9: SageMaker Election-Forecast Manipulation (H3)</strong><a href="#scenario-f9-sagemaker-election-forecast-manipulation-h3" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Threat Agent</strong></td>
+<td>Election interference actor, nation-state APT</td>
+</tr>
+<tr>
+<td><strong>Attack Vector</strong></td>
+<td>Poison SageMaker Feature Store / training data or forge inference inputs to skew published seat or coalition forecasts ahead of the 2026 (and later) elections</td>
+</tr>
+<tr>
+<td><strong>Target</strong></td>
+<td>SageMaker Serverless Inference election/coalition/MP-vote models</td>
+</tr>
+<tr>
+<td><strong>Impact</strong></td>
+<td>Biased forecasts erode democratic trust and could nudge voter behaviour — a direct attack on neutrality</td>
+</tr>
+<tr>
+<td><strong>Likelihood</strong></td>
+<td>Medium (high-value target during election windows)</td>
+</tr>
+<tr>
+<td><strong>Risk Score</strong></td>
+<td><strong>8.0/10 HIGH</strong></td>
+</tr>
+<tr>
+<td><strong>MITRE ATT&amp;CK</strong></td>
+<td><a href="https://attack.mitre.org/techniques/T1565/">T1565 Data Manipulation</a>, <a href="https://attack.mitre.org/techniques/T1195/003/">T1195.003 Compromise Hardware/Model Supply Chain</a></td>
+</tr>
+<tr>
+<td><strong>Planned Controls</strong></td>
+<td>Versioned + hashed training datasets, Feature Store access controls, model-card provenance, published confidence intervals + methodology transparency, cross-validation against SCB/poll aggregates, expert political-scientist review before publication</td>
+</tr>
+</tbody>
+</table>
+<h3 id="scenario-f10-appsyncapi-gateway-public-api-abuse-h3" class="tsd-anchor-link"><strong>Scenario F10: AppSync/API Gateway Public-API Abuse (H3)</strong><a href="#scenario-f10-appsyncapi-gateway-public-api-abuse-h3" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Threat Agent</strong></td>
+<td>Competitor, cybercriminal, hacktivist</td>
+</tr>
+<tr>
+<td><strong>Attack Vector</strong></td>
+<td>Deeply nested/complex GraphQL queries, schema introspection over-fetch, subscription floods, or API-key/usage-plan abuse on the public REST API</td>
+</tr>
+<tr>
+<td><strong>Target</strong></td>
+<td>AWS AppSync GraphQL API + Amazon API Gateway public REST endpoints</td>
+</tr>
+<tr>
+<td><strong>Impact</strong></td>
+<td>Cost-amplification DoS, data scraping at scale, real-time subscription hijacking</td>
+</tr>
+<tr>
+<td><strong>Likelihood</strong></td>
+<td>Medium (public API is internet-reachable by design)</td>
+</tr>
+<tr>
+<td><strong>Risk Score</strong></td>
+<td><strong>6.5/10 MEDIUM</strong></td>
+</tr>
+<tr>
+<td><strong>MITRE ATT&amp;CK</strong></td>
+<td><a href="https://attack.mitre.org/techniques/T1499/">T1499 Endpoint DoS</a>, <a href="https://attack.mitre.org/techniques/T1190/">T1190 Exploit Public-Facing Application</a></td>
+</tr>
+<tr>
+<td><strong>Planned Controls</strong></td>
+<td>Query depth/complexity limits, disabled production introspection, AWS WAF rate-based + bot-control rules, API Gateway usage plans + key rotation, per-identity throttling, Shield Standard DDoS</td>
+</tr>
+</tbody>
+</table>
+<h3 id="scenario-f11-multi-region-failover-replication-tampering-h3" class="tsd-anchor-link"><strong>Scenario F11: Multi-Region Failover &amp; Replication Tampering (H3)</strong><a href="#scenario-f11-multi-region-failover-replication-tampering-h3" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Threat Agent</strong></td>
+<td>Nation-state APT</td>
+</tr>
+<tr>
+<td><strong>Attack Vector</strong></td>
+<td>Route 53 / health-check spoofing forces failover to a weaker-controlled region; replication-stream tampering or split-brain writes corrupt Aurora Global / DynamoDB Global tables</td>
+</tr>
+<tr>
+<td><strong>Target</strong></td>
+<td>Active-passive multi-region deployment (Aurora Global DB, DynamoDB Global Tables, S3 CRR, Route 53)</td>
+</tr>
+<tr>
+<td><strong>Impact</strong></td>
+<td>Integrity divergence between regions, stale or tampered data served during failover</td>
+</tr>
+<tr>
+<td><strong>Likelihood</strong></td>
+<td>Low (requires DNS/control-plane compromise)</td>
+</tr>
+<tr>
+<td><strong>Risk Score</strong></td>
+<td><strong>6.0/10 MEDIUM</strong></td>
+</tr>
+<tr>
+<td><strong>MITRE ATT&amp;CK</strong></td>
+<td><a href="https://attack.mitre.org/techniques/T1565/002/">T1565.002 Transmitted Data Manipulation</a>, <a href="https://attack.mitre.org/techniques/T1583/002/">T1583.002 DNS Server</a></td>
+</tr>
+<tr>
+<td><strong>Planned Controls</strong></td>
+<td>DNSSEC + Route 53 health-check authentication, consistent cross-region IAM via SCPs, replication integrity checksums, conflict-resolution policy, automated AWS Resilience Hub failover drills, regional config-drift detection (AWS Config)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="scenario-f12-nordiceu-federation-cross-jurisdiction-integrity-h3" class="tsd-anchor-link"><strong>Scenario F12: Nordic/EU Federation Cross-Jurisdiction Integrity (H3)</strong><a href="#scenario-f12-nordiceu-federation-cross-jurisdiction-integrity-h3" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Threat Agent</strong></td>
+<td>Nation-state actor, competitor</td>
+</tr>
+<tr>
+<td><strong>Attack Vector</strong></td>
+<td>Spoof or tamper a foreign-parliament feed (DK/NO/FI or EU Parliament) so comparative cross-country analysis carries manipulated data through a trusted federation boundary</td>
+</tr>
+<tr>
+<td><strong>Target</strong></td>
+<td>Shared data-mesh comparative analytics across Nordic &amp; EU parliaments</td>
+</tr>
+<tr>
+<td><strong>Impact</strong></td>
+<td>Cross-border disinformation laundered through Riksdagsmonitor's neutrality reputation</td>
+</tr>
+<tr>
+<td><strong>Likelihood</strong></td>
+<td>Low-Medium (each new source widens the trust boundary)</td>
+</tr>
+<tr>
+<td><strong>Risk Score</strong></td>
+<td><strong>6.2/10 MEDIUM</strong></td>
+</tr>
+<tr>
+<td><strong>MITRE ATT&amp;CK</strong></td>
+<td><a href="https://attack.mitre.org/techniques/T1199/">T1199 Trusted Relationship</a>, <a href="https://attack.mitre.org/techniques/T1565/001/">T1565.001 Stored Data Manipulation</a></td>
+</tr>
+<tr>
+<td><strong>Planned Controls</strong></td>
+<td>Per-source TLS pinning + provenance tagging, source-of-truth precedence rules, cross-source consistency scoring, per-jurisdiction freshness SLAs, explicit federation trust-boundary documentation in <a href="FUTURE_DATA_MODEL.html">FUTURE_DATA_MODEL.md</a></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="🛡️-future-security-control-requirements" class="tsd-anchor-link">🛡️ Future Security Control Requirements<a href="#🛡️-future-security-control-requirements" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<h3 id="planned-controls-for-future-architecture" class="tsd-anchor-link"><strong>Planned Controls for Future Architecture</strong><a href="#planned-controls-for-future-architecture" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>Control ID</th>
+<th>Control Name</th>
+<th>Future Component</th>
+<th>STRIDE Coverage</th>
+<th>Implementation Target</th>
+<th>Priority</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>FUT-001</strong></td>
+<td>WebSocket TLS + Data Signing</td>
+<td>Real-Time Voting Dashboard</td>
+<td>T, S</td>
+<td>Q3 2026</td>
+<td>🔴 Critical</td>
+</tr>
+<tr>
+<td><strong>FUT-002</strong></td>
+<td>CIA Pipeline JSON Schema Validation</td>
+<td>CIA Data Pipeline</td>
+<td>T, I</td>
+<td>Q2 2026</td>
+<td>🔴 Critical</td>
+</tr>
+<tr>
+<td><strong>FUT-003</strong></td>
+<td>Pipeline Cryptographic Integrity</td>
+<td>CIA Data Pipeline</td>
+<td>T, R</td>
+<td>Q2 2026</td>
+<td>🔴 Critical</td>
+</tr>
+<tr>
+<td><strong>FUT-004</strong></td>
+<td>Cross-Workflow Consistency Checks</td>
+<td>AI Content Pipelines</td>
+<td>T, I</td>
+<td>Q2 2026</td>
+<td>🔴 Critical</td>
+</tr>
+<tr>
+<td><strong>FUT-005</strong></td>
+<td>Back-Translation Verification</td>
+<td>Translation Pipeline</td>
+<td>T</td>
+<td>Q3 2026</td>
+<td>🟡 High</td>
+</tr>
+<tr>
+<td><strong>FUT-006</strong></td>
+<td>Profile Data Source Verification</td>
+<td>Politician Profiles</td>
+<td>S, T</td>
+<td>Q3 2026</td>
+<td>🟡 High</td>
+</tr>
+<tr>
+<td><strong>FUT-007</strong></td>
+<td>Dashboard Data Rate Limiting</td>
+<td>Enhanced Dashboards</td>
+<td>D</td>
+<td>Q2 2026</td>
+<td>🟡 High</td>
+</tr>
+<tr>
+<td><strong>FUT-008</strong></td>
+<td>EU Parliament API Authentication</td>
+<td>EU Cross-Reference</td>
+<td>S, E</td>
+<td>Q4 2026</td>
+<td>🟡 High</td>
+</tr>
+<tr>
+<td><strong>FUT-009</strong></td>
+<td>Real-Time Anomaly Detection</td>
+<td>Real-Time Dashboard</td>
+<td>T, I</td>
+<td>Q3 2026</td>
+<td>🔴 Critical</td>
+</tr>
+<tr>
+<td><strong>FUT-010</strong></td>
+<td>Automated Content Volume Limiting</td>
+<td>AI Workflows</td>
+<td>D, T</td>
+<td>Q2 2026</td>
+<td>🟡 High</td>
+</tr>
+<tr>
+<td><strong>FUT-011</strong></td>
+<td>RAG Source Allowlist + Provenance Tagging</td>
+<td>Bedrock Knowledge Base</td>
+<td>T, I</td>
+<td>2027 Q2</td>
+<td>🔴 Critical</td>
+</tr>
+<tr>
+<td><strong>FUT-012</strong></td>
+<td>RAG Grounding-Score Threshold + Citation Verification</td>
+<td>Bedrock KB / Conversational AI</td>
+<td>T</td>
+<td>2027 Q2</td>
+<td>🔴 Critical</td>
+</tr>
+<tr>
+<td><strong>FUT-013</strong></td>
+<td>Cognito MFA + Advanced Security (adaptive auth)</td>
+<td>Cognito Identity</td>
+<td>S, E</td>
+<td>2027 Q4</td>
+<td>🔴 Critical</td>
+</tr>
+<tr>
+<td><strong>FUT-014</strong></td>
+<td>Per-User Resource-Scoped Authorization (anti-IDOR)</td>
+<td>Cognito / AppSync / Aurora</td>
+<td>I, E</td>
+<td>2027 Q4</td>
+<td>🔴 Critical</td>
+</tr>
+<tr>
+<td><strong>FUT-015</strong></td>
+<td>Least-Privilege IAM per Lambda + Access Analyzer in CI</td>
+<td>Lambda / IAM</td>
+<td>E</td>
+<td>2027</td>
+<td>🔴 Critical</td>
+</tr>
+<tr>
+<td><strong>FUT-016</strong></td>
+<td>CloudTrail Data Events + GuardDuty/Security Hub Correlation</td>
+<td>All managed stores</td>
+<td>R, I</td>
+<td>2027</td>
+<td>🟡 High</td>
+</tr>
+<tr>
+<td><strong>FUT-017</strong></td>
+<td>Agent Tool Allowlist + Write-Action Approval Gate</td>
+<td>Bedrock Agents</td>
+<td>E, T</td>
+<td>2028</td>
+<td>🔴 Critical</td>
+</tr>
+<tr>
+<td><strong>FUT-018</strong></td>
+<td>Versioned/Hashed Training Data + Feature-Store Access Control</td>
+<td>SageMaker</td>
+<td>T</td>
+<td>2026 Q4</td>
+<td>🟡 High</td>
+</tr>
+<tr>
+<td><strong>FUT-019</strong></td>
+<td>GraphQL Depth/Complexity Limits + WAF Rate Rules</td>
+<td>AppSync / API Gateway</td>
+<td>D</td>
+<td>2027</td>
+<td>🟡 High</td>
+</tr>
+<tr>
+<td><strong>FUT-020</strong></td>
+<td>KMS Key Policies + Envelope Encryption (at rest)</td>
+<td>Aurora / DynamoDB / S3</td>
+<td>I</td>
+<td>2027</td>
+<td>🔴 Critical</td>
+</tr>
+<tr>
+<td><strong>FUT-021</strong></td>
+<td>DNSSEC + Cross-Region SCP/Config-Drift Detection</td>
+<td>Multi-Region Resilience</td>
+<td>T, E</td>
+<td>2028</td>
+<td>🟡 High</td>
+</tr>
+<tr>
+<td><strong>FUT-022</strong></td>
+<td>Federation Trust-Boundary Provenance + Consistency Scoring</td>
+<td>Nordic/EU Data Mesh</td>
+<td>S, T</td>
+<td>2027–2030</td>
+<td>🟡 High</td>
+</tr>
+</tbody>
+</table>
+<h3 id="future-stride-→-control-mapping" class="tsd-anchor-link"><strong>Future STRIDE → Control Mapping</strong><a href="#future-stride-→-control-mapping" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>STRIDE Category</th>
+<th>Future Primary Control</th>
+<th>Future Secondary Control</th>
+<th>Future Monitoring</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Spoofing</strong></td>
+<td>WebSocket TLS (FUT-001), API auth (FUT-008), Cognito MFA (FUT-013)</td>
+<td>Data source verification (FUT-006), federation provenance (FUT-022)</td>
+<td>Connection/auth logs, GuardDuty (FUT-016)</td>
+</tr>
+<tr>
+<td><strong>Tampering</strong></td>
+<td>JSON Schema validation (FUT-002), data signing (FUT-003), RAG allowlist (FUT-011)</td>
+<td>Cross-workflow checks (FUT-004), training-data hashing (FUT-018)</td>
+<td>Data integrity monitoring, CloudTrail data events (FUT-016)</td>
+</tr>
+<tr>
+<td><strong>Repudiation</strong></td>
+<td>Cryptographic integrity (FUT-003), CloudTrail data events (FUT-016)</td>
+<td>Git-based change tracking, agent-action audit (FUT-017)</td>
+<td>Audit trail analysis, Security Hub</td>
+</tr>
+<tr>
+<td><strong>Info Disclosure</strong></td>
+<td>Resource-scoped authZ (FUT-014), KMS at rest (FUT-020)</td>
+<td>Rate limiting (FUT-007), RAG grounding (FUT-012)</td>
+<td>Data access monitoring, Access Analyzer (FUT-015)</td>
+</tr>
+<tr>
+<td><strong>DoS</strong></td>
+<td>Rate limiting (FUT-007), GraphQL complexity limits (FUT-019)</td>
+<td>WebSocket/connection limits, WAF + Shield</td>
+<td>Performance monitoring, anomaly detection (FUT-009)</td>
+</tr>
+<tr>
+<td><strong>Elevation</strong></td>
+<td>Least-privilege IAM per Lambda (FUT-015), Cognito MFA (FUT-013)</td>
+<td>Agent write-approval gate (FUT-017), cross-region SCP (FUT-021)</td>
+<td>Privilege usage monitoring, IAM Access Analyzer</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="🎖️-attacker-centric-threat-modeling-future-attack-vectors" class="tsd-anchor-link">🎖️ Attacker-Centric Threat Modeling — Future Attack Vectors<a href="#🎖️-attacker-centric-threat-modeling-future-attack-vectors" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<h3 id="👥-future-threat-agent-classification" class="tsd-anchor-link"><strong>👥 Future Threat Agent Classification</strong><a href="#👥-future-threat-agent-classification" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>Threat Agent</th>
+<th>Motivation</th>
+<th>Capability</th>
+<th>Future Target</th>
+<th>Risk Trend</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Nation-State APT</strong></td>
+<td>Political influence, intelligence gathering</td>
+<td>Very High (zero-day, AI-enhanced)</td>
+<td>Real-time voting data, politician profiles</td>
+<td>⬆️ Increasing</td>
+</tr>
+<tr>
+<td><strong>AI-Enabled Adversary</strong></td>
+<td>Automated exploitation, disinformation</td>
+<td>High (LLM-driven attacks)</td>
+<td>Translation pipeline, multi-workflow orchestration</td>
+<td>⬆️ Rapidly increasing</td>
+</tr>
+<tr>
+<td><strong>Hacktivist</strong></td>
+<td>Political disruption, ideology</td>
+<td>Medium (commodity tools + AI)</td>
+<td>Public dashboards, election forecasts</td>
+<td>➡️ Stable</td>
+</tr>
+<tr>
+<td><strong>Insider Threat</strong></td>
+<td>Data manipulation, sabotage</td>
+<td>High (pipeline access)</td>
+<td>CIA data pipeline, content generation</td>
+<td>⬆️ Increasing with more contributors</td>
+</tr>
+<tr>
+<td><strong>Competitor</strong></td>
+<td>Market intelligence, replication</td>
+<td>Medium (OSINT, scraping)</td>
+<td>Dashboard algorithms, analysis methodology</td>
+<td>➡️ Stable</td>
+</tr>
+<tr>
+<td><strong>Cybercriminal</strong></td>
+<td>Ransomware, cryptomining</td>
+<td>Medium (supply chain focus)</td>
+<td>CI/CD pipeline, dependency chain</td>
+<td>⬆️ Increasing</td>
+</tr>
+<tr>
+<td><strong>Cloud-Native Attacker</strong> (H3)</td>
+<td>Account compromise, data theft, cost-amplification</td>
+<td>High (IAM abuse, serverless/RAG exploitation)</td>
+<td>Aurora/OpenSearch stores, Cognito identities, Bedrock KB, public AppSync/API Gateway</td>
+<td>⬆️ Emerging with AWS migration</td>
+</tr>
+</tbody>
+</table>
+<h3 id="🌳-future-attack-tree-real-time-vote-manipulation" class="tsd-anchor-link"><strong>🌳 Future Attack Tree — Real-Time Vote Manipulation</strong><a href="#🌳-future-attack-tree-real-time-vote-manipulation" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<pre><code class="mermaid"><span class="hl-1">flowchart TD</span><br/><span class="hl-1">    ROOT[&quot;🎯 Manipulate Real-Time Vote Display&quot;]</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    A1[&quot;⚔️ A1: Compromise Data Feed&lt;br/&gt;Probability: 15%&quot;]</span><br/><span class="hl-1">    A2[&quot;⚔️ A2: Man-in-the-Middle&lt;br/&gt;Probability: 10%&quot;]</span><br/><span class="hl-1">    A3[&quot;⚔️ A3: Client-Side Injection&lt;br/&gt;Probability: 20%&quot;]</span><br/><span class="hl-1">    A4[&quot;⚔️ A4: Cache Poisoning&lt;br/&gt;Probability: 12%&quot;]</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    A1_1[&quot;🔧 A1.1: Compromise Riksdag API proxy&quot;]</span><br/><span class="hl-1">    A1_2[&quot;🔧 A1.2: DNS hijacking of data source&quot;]</span><br/><span class="hl-1">    A2_1[&quot;🔧 A2.1: TLS downgrade attack&quot;]</span><br/><span class="hl-1">    A2_2[&quot;🔧 A2.2: WebSocket hijacking&quot;]</span><br/><span class="hl-1">    A3_1[&quot;🔧 A3.1: XSS via dashboard parameter&quot;]</span><br/><span class="hl-1">    A3_2[&quot;🔧 A3.2: Browser extension manipulation&quot;]</span><br/><span class="hl-1">    A4_1[&quot;🔧 A4.1: CDN cache poisoning&quot;]</span><br/><span class="hl-1">    A4_2[&quot;🔧 A4.2: LocalStorage corruption&quot;]</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    ROOT --&gt; A1</span><br/><span class="hl-1">    ROOT --&gt; A2</span><br/><span class="hl-1">    ROOT --&gt; A3</span><br/><span class="hl-1">    ROOT --&gt; A4</span><br/><span class="hl-1">    A1 --&gt; A1_1</span><br/><span class="hl-1">    A1 --&gt; A1_2</span><br/><span class="hl-1">    A2 --&gt; A2_1</span><br/><span class="hl-1">    A2 --&gt; A2_2</span><br/><span class="hl-1">    A3 --&gt; A3_1</span><br/><span class="hl-1">    A3 --&gt; A3_2</span><br/><span class="hl-1">    A4 --&gt; A4_1</span><br/><span class="hl-1">    A4 --&gt; A4_2</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    style ROOT fill:#ffcdd2,stroke:#d32f2f,color:#000</span><br/><span class="hl-1">    style A1 fill:#fff3e0,stroke:#ff9800,color:#000</span><br/><span class="hl-1">    style A2 fill:#fff3e0,stroke:#ff9800,color:#000</span><br/><span class="hl-1">    style A3 fill:#e3f2fd,stroke:#2196f3,color:#000</span><br/><span class="hl-1">    style A4 fill:#fff3e0,stroke:#ff9800,color:#000</span>
+</code><button type="button">Copy</button></pre>
+
+<h3 id="🌳-future-attack-tree-cia-pipeline-compromise" class="tsd-anchor-link"><strong>🌳 Future Attack Tree — CIA Pipeline Compromise</strong><a href="#🌳-future-attack-tree-cia-pipeline-compromise" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<pre><code class="mermaid"><span class="hl-1">flowchart TD</span><br/><span class="hl-1">    ROOT2[&quot;🎯 Compromise CIA Intelligence Data&quot;]</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    B1[&quot;⚔️ B1: Pipeline Source Compromise&lt;br/&gt;Probability: 8%&quot;]</span><br/><span class="hl-1">    B2[&quot;⚔️ B2: Cache/Storage Manipulation&lt;br/&gt;Probability: 12%&quot;]</span><br/><span class="hl-1">    B3[&quot;⚔️ B3: Schema Bypass&lt;br/&gt;Probability: 5%&quot;]</span><br/><span class="hl-1">    B4[&quot;⚔️ B4: AI Content Poisoning&lt;br/&gt;Probability: 15%&quot;]</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    B1_1[&quot;🔧 B1.1: CIA platform API manipulation&quot;]</span><br/><span class="hl-1">    B1_2[&quot;🔧 B1.2: Nightly fetch interception&quot;]</span><br/><span class="hl-1">    B2_1[&quot;🔧 B2.1: GitHub CDN cache poisoning&quot;]</span><br/><span class="hl-1">    B2_2[&quot;🔧 B2.2: S3 bucket manipulation&quot;]</span><br/><span class="hl-1">    B3_1[&quot;🔧 B3.1: Schema version mismatch exploit&quot;]</span><br/><span class="hl-1">    B3_2[&quot;🔧 B3.2: JSON Schema validation bypass&quot;]</span><br/><span class="hl-1">    B4_1[&quot;🔧 B4.1: Prompt injection via CIA data fields&quot;]</span><br/><span class="hl-1">    B4_2[&quot;🔧 B4.2: Cross-workflow data flow contamination&quot;]</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    ROOT2 --&gt; B1</span><br/><span class="hl-1">    ROOT2 --&gt; B2</span><br/><span class="hl-1">    ROOT2 --&gt; B3</span><br/><span class="hl-1">    ROOT2 --&gt; B4</span><br/><span class="hl-1">    B1 --&gt; B1_1</span><br/><span class="hl-1">    B1 --&gt; B1_2</span><br/><span class="hl-1">    B2 --&gt; B2_1</span><br/><span class="hl-1">    B2 --&gt; B2_2</span><br/><span class="hl-1">    B3 --&gt; B3_1</span><br/><span class="hl-1">    B3 --&gt; B3_2</span><br/><span class="hl-1">    B4 --&gt; B4_1</span><br/><span class="hl-1">    B4 --&gt; B4_2</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    style ROOT2 fill:#ffcdd2,stroke:#d32f2f,color:#000</span><br/><span class="hl-1">    style B1 fill:#fff3e0,stroke:#ff9800,color:#000</span><br/><span class="hl-1">    style B2 fill:#fff3e0,stroke:#ff9800,color:#000</span><br/><span class="hl-1">    style B3 fill:#e8f5e9,stroke:#4caf50,color:#000</span><br/><span class="hl-1">    style B4 fill:#fff3e0,stroke:#ff9800,color:#000</span>
+</code><button type="button">Copy</button></pre>
+
+<h3 id="🌳-future-attack-tree-h3-cloud-iam-compromise--data-exfiltration" class="tsd-anchor-link"><strong>🌳 Future Attack Tree — H3 Cloud IAM Compromise &amp; Data Exfiltration</strong><a href="#🌳-future-attack-tree-h3-cloud-iam-compromise--data-exfiltration" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<pre><code class="mermaid"><span class="hl-1">flowchart TD</span><br/><span class="hl-1">    ROOT3[&quot;🎯 Exfiltrate / Tamper Authoritative AWS Data Stores&quot;]</span><br/><br/><span class="hl-1">    C1[&quot;⚔️ C1: Identity Compromise&lt;br/&gt;Probability: 10%&quot;]</span><br/><span class="hl-1">    C2[&quot;⚔️ C2: Over-Scoped Role Abuse&lt;br/&gt;Probability: 9%&quot;]</span><br/><span class="hl-1">    C3[&quot;⚔️ C3: RAG / KB Poisoning&lt;br/&gt;Probability: 14%&quot;]</span><br/><span class="hl-1">    C4[&quot;⚔️ C4: Public API Abuse&lt;br/&gt;Probability: 18%&quot;]</span><br/><br/><span class="hl-1">    C1_1[&quot;🔧 C1.1: Cognito credential stuffing / token replay&quot;]</span><br/><span class="hl-1">    C1_2[&quot;🔧 C1.2: CI/CD OIDC role assumption&quot;]</span><br/><span class="hl-1">    C2_1[&quot;🔧 C2.1: Lambda execution-role privilege escalation&quot;]</span><br/><span class="hl-1">    C2_2[&quot;🔧 C2.2: KMS key-policy misuse to decrypt at rest&quot;]</span><br/><span class="hl-1">    C3_1[&quot;🔧 C3.1: Poison Bedrock KB ingestion source&quot;]</span><br/><span class="hl-1">    C3_2[&quot;🔧 C3.2: SageMaker feature-store / training poisoning&quot;]</span><br/><span class="hl-1">    C4_1[&quot;🔧 C4.1: GraphQL depth/complexity cost-DoS&quot;]</span><br/><span class="hl-1">    C4_2[&quot;🔧 C4.2: IDOR on AppSync resolver / saved data&quot;]</span><br/><br/><span class="hl-1">    ROOT3 --&gt; C1</span><br/><span class="hl-1">    ROOT3 --&gt; C2</span><br/><span class="hl-1">    ROOT3 --&gt; C3</span><br/><span class="hl-1">    ROOT3 --&gt; C4</span><br/><span class="hl-1">    C1 --&gt; C1_1</span><br/><span class="hl-1">    C1 --&gt; C1_2</span><br/><span class="hl-1">    C2 --&gt; C2_1</span><br/><span class="hl-1">    C2 --&gt; C2_2</span><br/><span class="hl-1">    C3 --&gt; C3_1</span><br/><span class="hl-1">    C3 --&gt; C3_2</span><br/><span class="hl-1">    C4 --&gt; C4_1</span><br/><span class="hl-1">    C4 --&gt; C4_2</span><br/><br/><span class="hl-1">    style ROOT3 fill:#ffcdd2,stroke:#d32f2f,color:#000</span><br/><span class="hl-1">    style C1 fill:#fff3e0,stroke:#ff9800,color:#000</span><br/><span class="hl-1">    style C2 fill:#ffcdd2,stroke:#d32f2f,color:#000</span><br/><span class="hl-1">    style C3 fill:#fff3e0,stroke:#ff9800,color:#000</span><br/><span class="hl-1">    style C4 fill:#e3f2fd,stroke:#2196f3,color:#000</span>
+</code><button type="button">Copy</button></pre>
+
+<table>
+<thead>
+<tr>
+<th>Kill Chain Phase</th>
+<th>Future Attack Capability</th>
+<th>Disruption Control</th>
+<th>Detection Mechanism</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Reconnaissance</strong></td>
+<td>AI-powered API enumeration of new endpoints</td>
+<td>Rate limiting, API key rotation (FUT-008)</td>
+<td>API access pattern monitoring</td>
+</tr>
+<tr>
+<td><strong>Weaponization</strong></td>
+<td>LLM-crafted prompt injection payloads</td>
+<td>Input validation, prompt sanitization (FUT-004)</td>
+<td>Prompt content analysis logs</td>
+</tr>
+<tr>
+<td><strong>Delivery</strong></td>
+<td>Compromised data in CIA pipeline/WebSocket feeds</td>
+<td>TLS 1.3 pinning, source verification (FUT-001, FUT-002)</td>
+<td>Network traffic anomaly detection</td>
+</tr>
+<tr>
+<td><strong>Exploitation</strong></td>
+<td>Schema bypass, translation model manipulation</td>
+<td>JSON Schema strict validation (FUT-002), model input filtering</td>
+<td>Validation failure alerts, output consistency checking</td>
+</tr>
+<tr>
+<td><strong>Installation</strong></td>
+<td>Persistent cache poisoning, LocalStorage manipulation</td>
+<td>Cache TTL enforcement, integrity hashing (FUT-003)</td>
+<td>Cache integrity monitoring</td>
+</tr>
+<tr>
+<td><strong>C2</strong></td>
+<td>AI-orchestrated multi-workflow coordination</td>
+<td>Cross-workflow consistency checks (FUT-004), volume limiting (FUT-010)</td>
+<td>Workflow correlation analysis</td>
+</tr>
+<tr>
+<td><strong>Actions on Objectives</strong></td>
+<td>Public disinformation via manipulated dashboards/news</td>
+<td>Human review gate, source cross-validation, fact-checking</td>
+<td>Content integrity alerts, user reporting</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="🏗️-future-asset-attack-surface-analysis" class="tsd-anchor-link">🏗️ Future Asset Attack Surface Analysis<a href="#🏗️-future-asset-attack-surface-analysis" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<h3 id="🗺️-new-attack-surface-inventory" class="tsd-anchor-link"><strong>🗺️ New Attack Surface Inventory</strong><a href="#🗺️-new-attack-surface-inventory" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>Future Feature</th>
+<th>New Endpoints</th>
+<th>Data Sensitivity</th>
+<th>External Dependencies</th>
+<th>Attack Surface Rating</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Real-Time Voting Dashboard</strong></td>
+<td>WebSocket endpoint, SSE stream</td>
+<td>Critical (live democratic data)</td>
+<td>Riksdag API, CDN</td>
+<td>🔴 High</td>
+</tr>
+<tr>
+<td><strong>CIA Data Pipeline</strong></td>
+<td>Nightly fetch endpoint, cache API</td>
+<td>High (19 intelligence products)</td>
+<td>CIA Platform API, S3</td>
+<td>🔴 High</td>
+</tr>
+<tr>
+<td><strong>Politician Profile Pages</strong></td>
+<td>Per-MP URL routes (349+ pages)</td>
+<td>High (career/voting history)</td>
+<td>CIA data, Riksdag API</td>
+<td>🟡 Medium</td>
+</tr>
+<tr>
+<td><strong>Automated Translation</strong></td>
+<td>LLM API calls (14 languages)</td>
+<td>Medium (content integrity)</td>
+<td>LLM Provider API</td>
+<td>🟡 Medium</td>
+</tr>
+<tr>
+<td><strong>EU Parliament Cross-Ref</strong></td>
+<td>EP MCP Server API, GraphQL</td>
+<td>Medium (EU political data)</td>
+<td>EP Open Data API</td>
+<td>🟢 Low</td>
+</tr>
+<tr>
+<td><strong>5 New Dashboards</strong></td>
+<td>Chart data endpoints, D3 renders</td>
+<td>Medium (aggregated analytics)</td>
+<td>CIA data, Chart.js CDN</td>
+<td>🟡 Medium</td>
+</tr>
+<tr>
+<td><strong>🟠 H3 — Bedrock AI Content Engine</strong></td>
+<td>Lambda invoke, Bedrock/Polly model endpoints, Step Functions</td>
+<td>High (generated public content integrity)</td>
+<td>Amazon Bedrock, Polly</td>
+<td>🔴 High</td>
+</tr>
+<tr>
+<td><strong>🟠 H3 — Neptune + Bedrock Knowledge Base</strong></td>
+<td>openCypher/Gremlin, RAG retrieve/query</td>
+<td>High (semantic intelligence)</td>
+<td>Neptune Serverless, Bedrock KB</td>
+<td>🔴 High</td>
+</tr>
+<tr>
+<td><strong>🟠 H3 — Aurora/OpenSearch/Timestream/DynamoDB</strong></td>
+<td>Lambda DB resolvers (private)</td>
+<td>Critical (authoritative data)</td>
+<td>AWS managed data services, KMS</td>
+<td>🔴 High</td>
+</tr>
+<tr>
+<td><strong>🟠 H3 — AppSync GraphQL + API Gateway</strong></td>
+<td>Public GraphQL + REST endpoints, subscriptions</td>
+<td>High (public API, scraping/DoS target)</td>
+<td>AppSync, API Gateway, WAF</td>
+<td>🔴 High</td>
+</tr>
+<tr>
+<td><strong>🟠 H3 — Cognito Identity</strong></td>
+<td>Auth/token endpoints, user-pool APIs</td>
+<td>High (Art. 9 user profiles)</td>
+<td>Amazon Cognito</td>
+<td>🔴 High</td>
+</tr>
+<tr>
+<td><strong>🟠 H3 — SageMaker Predictive Models</strong></td>
+<td>Serverless inference endpoints</td>
+<td>High (forecast integrity)</td>
+<td>SageMaker, Feature Store</td>
+<td>🟡 Medium</td>
+</tr>
+<tr>
+<td><strong>🟠 H3 — Amplify Web PWA + Mobile Apps</strong></td>
+<td>App API calls, push, deep links</td>
+<td>Medium (client integrity)</td>
+<td>Amplify, CloudFront, Shield</td>
+<td>🟡 Medium</td>
+</tr>
+<tr>
+<td><strong>🟠 H3 — Conversational AI (Agents/Lex)</strong></td>
+<td>Chat/voice sessions, agent tool calls</td>
+<td>Critical (autonomous actions)</td>
+<td>Bedrock Agents, Lex, Transcribe</td>
+<td>🔴 High</td>
+</tr>
+<tr>
+<td><strong>🟠 H3 — Multi-Region Resilience</strong></td>
+<td>Route 53 failover, cross-region replication</td>
+<td>High (integrity across regions)</td>
+<td>Aurora/DynamoDB Global, S3 CRR</td>
+<td>🟡 Medium</td>
+</tr>
+<tr>
+<td><strong>🟠 H3 — Nordic/EU Federation</strong></td>
+<td>Foreign-parliament + EP API ingestion</td>
+<td>Medium (cross-jurisdiction integrity)</td>
+<td>DK/NO/FI + EU Parliament APIs</td>
+<td>🟡 Medium</td>
+</tr>
+</tbody>
+</table>
+<h3 id="📊-future-data-flow-threat-analysis" class="tsd-anchor-link"><strong>📊 Future Data Flow Threat Analysis</strong><a href="#📊-future-data-flow-threat-analysis" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<pre><code class="mermaid"><span class="hl-1">flowchart LR</span><br/><span class="hl-1">    subgraph EXTERNAL[&quot;🌐 External Sources&quot;]</span><br/><span class="hl-1">        RIKSDAG_API[&quot;Riksdag API&quot;]</span><br/><span class="hl-1">        CIA_API[&quot;CIA Platform&quot;]</span><br/><span class="hl-1">        EP_API[&quot;EU Parliament API&quot;]</span><br/><span class="hl-1">        LLM_API[&quot;LLM Provider&quot;]</span><br/><span class="hl-1">    end</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    subgraph PIPELINE[&quot;⚙️ Data Pipeline&quot;]</span><br/><span class="hl-1">        FETCH[&quot;Nightly Fetch&quot;]</span><br/><span class="hl-1">        VALIDATE[&quot;Schema Validation&quot;]</span><br/><span class="hl-1">        TRANSFORM[&quot;Data Transform&quot;]</span><br/><span class="hl-1">        CACHE[&quot;Cache Layer&quot;]</span><br/><span class="hl-1">    end</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    subgraph DELIVERY[&quot;📦 Content Delivery&quot;]</span><br/><span class="hl-1">        CDN[&quot;CloudFront CDN&quot;]</span><br/><span class="hl-1">        S3[&quot;S3 Static Assets&quot;]</span><br/><span class="hl-1">        PAGES[&quot;GitHub Pages&quot;]</span><br/><span class="hl-1">    end</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    subgraph CLIENT[&quot;🖥️ Browser Client&quot;]</span><br/><span class="hl-1">        DASHBOARD[&quot;Interactive Dashboards&quot;]</span><br/><span class="hl-1">        REALTIME[&quot;Real-Time Feeds&quot;]</span><br/><span class="hl-1">        PROFILES[&quot;Politician Profiles&quot;]</span><br/><span class="hl-1">    end</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    RIKSDAG_API --&gt;|&quot;🔴 T: Data interception&quot;| FETCH</span><br/><span class="hl-1">    CIA_API --&gt;|&quot;🔴 T: Source compromise&quot;| FETCH</span><br/><span class="hl-1">    EP_API --&gt;|&quot;🟡 S: API spoofing&quot;| FETCH</span><br/><span class="hl-1">    LLM_API --&gt;|&quot;🔴 T: Response manipulation&quot;| TRANSFORM</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    FETCH --&gt;|&quot;🟡 T: Pipeline tampering&quot;| VALIDATE</span><br/><span class="hl-1">    VALIDATE --&gt;|&quot;🟡 I: Validation bypass&quot;| TRANSFORM</span><br/><span class="hl-1">    TRANSFORM --&gt;|&quot;🟡 T: Cache poisoning&quot;| CACHE</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    CACHE --&gt;|&quot;🟡 T: CDN poisoning&quot;| CDN</span><br/><span class="hl-1">    CACHE --&gt; S3</span><br/><span class="hl-1">    CACHE --&gt; PAGES</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    CDN --&gt; DASHBOARD</span><br/><span class="hl-1">    CDN --&gt; REALTIME</span><br/><span class="hl-1">    CDN --&gt; PROFILES</span><br/><span class="hl-1">    </span><br/><span class="hl-1">    style EXTERNAL fill:#e3f2fd,stroke:#2196f3,color:#000</span><br/><span class="hl-1">    style PIPELINE fill:#fff3e0,stroke:#ff9800,color:#000</span><br/><span class="hl-1">    style DELIVERY fill:#e8f5e9,stroke:#4caf50,color:#000</span><br/><span class="hl-1">    style CLIENT fill:#f3e5f5,stroke:#9c27b0,color:#000</span>
+</code><button type="button">Copy</button></pre>
+
+<hr>
+<h2 id="🤖-aillm-future-threat-analysis-owasp-llm-top-10" class="tsd-anchor-link">🤖 AI/LLM Future Threat Analysis (OWASP LLM Top 10)<a href="#🤖-aillm-future-threat-analysis-owasp-llm-top-10" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<h3 id="future-ai-workflow-expansion-threats" class="tsd-anchor-link"><strong>Future AI Workflow Expansion Threats</strong><a href="#future-ai-workflow-expansion-threats" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>OWASP LLM ID</th>
+<th>Threat</th>
+<th>Future Relevance</th>
+<th>Planned Mitigation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>LLM01</strong></td>
+<td>Prompt Injection</td>
+<td>🔴 Critical — More workflows = larger injection surface</td>
+<td>Per-workflow input sanitization, prompt boundary enforcement</td>
+</tr>
+<tr>
+<td><strong>LLM02</strong></td>
+<td>Insecure Output Handling</td>
+<td>🔴 Critical — Auto-generated content directly published</td>
+<td>HTML sanitization, output schema validation, human review gate</td>
+</tr>
+<tr>
+<td><strong>LLM03</strong></td>
+<td>Training Data Poisoning</td>
+<td>🟡 Medium — Indirect via MCP data sources</td>
+<td>Source integrity verification, data provenance tracking</td>
+</tr>
+<tr>
+<td><strong>LLM04</strong></td>
+<td>Model Denial of Service</td>
+<td>🟡 Medium — Multiple concurrent workflow runs</td>
+<td>Workflow concurrency limits, timeout enforcement, rate limiting</td>
+</tr>
+<tr>
+<td><strong>LLM05</strong></td>
+<td>Supply Chain Vulnerabilities</td>
+<td>🟡 Medium — LLM model updates may introduce regressions</td>
+<td>Model version pinning, output regression testing</td>
+</tr>
+<tr>
+<td><strong>LLM06</strong></td>
+<td>Sensitive Information Disclosure</td>
+<td>🟢 Low — Public data only, no PII</td>
+<td>Data classification enforcement, output filtering</td>
+</tr>
+<tr>
+<td><strong>LLM07</strong></td>
+<td>Insecure Plugin Design</td>
+<td>🔴 Critical — MCP server tools are &quot;plugins&quot;</td>
+<td>MCP tool allowlisting, capability-based access control</td>
+</tr>
+<tr>
+<td><strong>LLM08</strong></td>
+<td>Excessive Agency</td>
+<td>🔴 Critical — Agents can create/edit content + trigger workflows</td>
+<td>Write operation approval gates, output volume limits</td>
+</tr>
+<tr>
+<td><strong>LLM09</strong></td>
+<td>Overreliance</td>
+<td>🟡 Medium — Over-trusting AI-generated political analysis</td>
+<td>Mandatory human editorial review, confidence scoring</td>
+</tr>
+<tr>
+<td><strong>LLM10</strong></td>
+<td>Model Theft</td>
+<td>🟢 Low — Using commercial API, not custom model</td>
+<td>API key rotation, access logging</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Mapping note:</strong> the table above uses the OWASP LLM Top-10 (2023/2024) IDs already established in this document. For <strong>Horizon 3</strong> the same risks intensify as the platform moves from build-time MCP agents to <strong>managed Bedrock Agents, Knowledge Bases (RAG) and SageMaker models</strong>. The H3-specific intensification is summarised below.</p>
+</blockquote>
+<h3 id="🟠-h3-bedrock-agentic-ai-threat-intensification" class="tsd-anchor-link"><strong>🟠 H3 Bedrock / Agentic AI Threat Intensification</strong><a href="#🟠-h3-bedrock-agentic-ai-threat-intensification" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>OWASP LLM Risk</th>
+<th>H3 Driver</th>
+<th>H3-Specific Mitigation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>LLM01 Prompt Injection</strong></td>
+<td>Indirect injection via RAG KB context, voice (Transcribe), and user queries to Bedrock Agents</td>
+<td>Source allowlist (FUT-011), grounding-score threshold (FUT-012), per-session sandboxing</td>
+</tr>
+<tr>
+<td><strong>LLM02 Insecure Output Handling</strong></td>
+<td>Agents can publish content autonomously to S3/CloudFront</td>
+<td>Write-action approval gate (FUT-017), output schema validation, human review gate</td>
+</tr>
+<tr>
+<td><strong>LLM03/04 Data Poisoning &amp; RAG Manipulation</strong></td>
+<td>Bedrock KB ingestion + SageMaker Feature Store are poisonable</td>
+<td>RAG provenance tagging (FUT-011), versioned/hashed training data (FUT-018)</td>
+</tr>
+<tr>
+<td><strong>LLM06 Sensitive Information Disclosure</strong></td>
+<td>Cognito introduces real user profiles (Art. 9) into prompts/briefings</td>
+<td>Per-user scoping (FUT-014), data minimization, briefing isolation per session</td>
+</tr>
+<tr>
+<td><strong>LLM07 Insecure Plugin Design</strong></td>
+<td>Bedrock Agent &quot;tools&quot; replace MCP tools as the plugin surface</td>
+<td>Tool allowlist (FUT-017), capability-scoped IAM (FUT-015)</td>
+</tr>
+<tr>
+<td><strong>LLM08 Excessive Agency</strong></td>
+<td>Multi-agent autonomous task execution (Phase 4)</td>
+<td>Read-only default scope, write approval gates (FUT-017), agent-action audit (FUT-016)</td>
+</tr>
+<tr>
+<td><strong>LLM10 Model Theft</strong></td>
+<td>Custom SageMaker forecasting models now exist</td>
+<td>Endpoint authZ, model-artifact encryption (FUT-020), access logging</td>
+</tr>
+</tbody>
+</table>
+<h3 id="future-multi-workflow-orchestration-threat-matrix" class="tsd-anchor-link"><strong>Future Multi-Workflow Orchestration Threat Matrix</strong><a href="#future-multi-workflow-orchestration-threat-matrix" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>Workflow Combination</th>
+<th>Attack Scenario</th>
+<th>Impact</th>
+<th>Detection Difficulty</th>
+<th>Planned Control</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>article-generator + evening-analysis</td>
+<td>Coordinated disinformation: article + supporting analysis</td>
+<td>Critical</td>
+<td>Hard — requires cross-workflow correlation</td>
+<td>FUT-004: Cross-workflow consistency</td>
+</tr>
+<tr>
+<td>translate + article-generator</td>
+<td>Inject bias in translation of generated content</td>
+<td>High</td>
+<td>Hard — translation errors look like hallucinations</td>
+<td>FUT-005: Back-translation verification</td>
+</tr>
+<tr>
+<td>realtime-monitor + committee-reports</td>
+<td>Time-sensitive misinformation during live events</td>
+<td>Critical</td>
+<td>Medium — timing anomalies detectable</td>
+<td>FUT-009: Real-time anomaly detection</td>
+</tr>
+<tr>
+<td>propositions + motions + weekly-review</td>
+<td>Long-running narrative manipulation across weekly content</td>
+<td>High</td>
+<td>Very Hard — gradual drift is subtle</td>
+<td>Longitudinal content consistency analysis</td>
+</tr>
+<tr>
+<td><strong>(H3)</strong> Bedrock Agent + Knowledge Base + Step Functions</td>
+<td>Poisoned KB context drives an agent to autonomously publish manipulated briefings</td>
+<td>Critical</td>
+<td>Very Hard — looks like a grounded answer</td>
+<td>FUT-011, FUT-012, FUT-017</td>
+</tr>
+<tr>
+<td><strong>(H3)</strong> SageMaker forecast + news-pre-election workflow</td>
+<td>Skewed forecast amplified into election-window articles</td>
+<td>Critical</td>
+<td>Hard — forecast looks statistically plausible</td>
+<td>FUT-018 + SCB/poll cross-validation + expert review</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="🛰️-political-intelligence-capability-threat-analysis-counter-ai-·-fimi-·-analytic-integrity" class="tsd-anchor-link">🛰️ Political-Intelligence Capability Threat Analysis (Counter-AI · FIMI · Analytic Integrity)<a href="#🛰️-political-intelligence-capability-threat-analysis-counter-ai-·-fimi-·-analytic-integrity" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<p>Fielding the <a href="FUTURE_MINDMAP.html#-theme--political-intelligence-capability-catalog-to-2037--the-master-osintintop-map">Political-Intelligence Capability Catalog</a> (C1–C32) creates a <strong>new, high-value attack surface</strong>: an adversary who can corrupt the intelligence pipeline can launder a manipulated judgment through the platform's own credibility. These threats are distinct from generic web threats — they target <strong>analytic integrity</strong>, <strong>calibration</strong>, <strong>neutrality</strong> and <strong>provenance</strong>. The catalog's assurance pillar (C26–C32) exists specifically to counter them.</p>
+<h3 id="stride-per-intelligence-capability-component" class="tsd-anchor-link"><strong>STRIDE per intelligence-capability component</strong><a href="#stride-per-intelligence-capability-component" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Threat (STRIDE)</th>
+<th>Scenario</th>
+<th>Counter-capability</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Multi-INT fusion graph (C6)</td>
+<td><strong>T</strong>ampering</td>
+<td>Poisoned edge fabricates a person↔funding link</td>
+<td>C8 evidence anchor (no edge without graded <code>dok_id</code>); human-review hold</td>
+</tr>
+<tr>
+<td>Entity resolution (C1)</td>
+<td><strong>S</strong>poofing</td>
+<td>Adversary games identifiers to merge/split entities</td>
+<td>Deterministic-key + embedding agreement; confidence floor; audit log</td>
+</tr>
+<tr>
+<td>I&amp;W tripwires (C14)</td>
+<td><strong>D</strong>enial of warning</td>
+<td>Flood of decoy signals desensitizes thresholds / hides real event</td>
+<td>Adaptive thresholds, anomaly-on-anomaly, human triage gate</td>
+</tr>
+<tr>
+<td>Forecasting + calibration (C13/C29)</td>
+<td><strong>T</strong>ampering / <strong>R</strong>epudiation</td>
+<td>Skewed training data degrades Brier; later denial of bias</td>
+<td>Immutable calibration ledger; rolling Brier as release gate; assumption logs</td>
+</tr>
+<tr>
+<td>FIMI early-warning (C20)</td>
+<td><strong>I</strong>nformation disclosure / abuse</td>
+<td>Mission-creep toward citizen profiling; false attribution</td>
+<td>Hard ethics gate, aggregate-only, advisory-not-accusatory, no profiling</td>
+</tr>
+<tr>
+<td>SAT / estimative engine (C11/C22)</td>
+<td><strong>T</strong>ampering</td>
+<td>Prompt-injection steers ACH toward a predetermined conclusion</td>
+<td>C26 injection screening; devil's-advocate pass; ICD-203 + human sign-off</td>
+</tr>
+<tr>
+<td>Provenance / C2PA (C8/C9)</td>
+<td><strong>S</strong>poofing</td>
+<td>Forged content credential passes synthetic evidence as authentic</td>
+<td>KMS-signed manifests; deepfake detector; refuse-to-cite on failure</td>
+</tr>
+<tr>
+<td>Neutrality gate (C31)</td>
+<td><strong>E</strong>levation / bias injection</td>
+<td>Asymmetric output ships, eroding party-neutrality</td>
+<td>CI party-symmetry audit; block-on-asymmetry; dual-control override</td>
+</tr>
+</tbody>
+</table>
+<h3 id="priority-intelligence-integrity-scenarios" class="tsd-anchor-link"><strong>Priority intelligence-integrity scenarios</strong><a href="#priority-intelligence-integrity-scenarios" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Scenario</th>
+<th>Impact</th>
+<th>Detection</th>
+<th>Planned control</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>PI-T1</strong></td>
+<td><strong>Analytic-pipeline data poisoning</strong> — adversary seeds public-looking sources to bias fusion/forecasting</td>
+<td>Critical — manipulated judgments gain platform credibility</td>
+<td>Hard — inputs look legitimate</td>
+<td>Source-grading floor, provenance, outlier detection on ingest, calibration drift alarms</td>
+</tr>
+<tr>
+<td><strong>PI-T2</strong></td>
+<td><strong>Prompt-injection of the SAT/estimative agent</strong> via crafted document text</td>
+<td>Critical — steered &quot;reasoned&quot; conclusion</td>
+<td>Hard — looks like grounded analysis</td>
+<td>C26 injection screening, Bedrock Guardrails, tool-permission minimization, human sign-off</td>
+</tr>
+<tr>
+<td><strong>PI-T3</strong></td>
+<td><strong>Provenance forgery / deepfake evidence</strong> cited in a briefing</td>
+<td>High — false evidence in the record</td>
+<td>Medium — manifest + detector checks</td>
+<td>C2PA verification, KMS signing, synthetic-media detector, refuse-to-cite</td>
+</tr>
+<tr>
+<td><strong>PI-T4</strong></td>
+<td><strong>Neutrality subversion</strong> — gradual asymmetric framing across products</td>
+<td>Critical — destroys institutional trust</td>
+<td>Very Hard — gradual drift</td>
+<td>C31 party-symmetry CI gate, longitudinal symmetry monitoring, dual review</td>
+</tr>
+<tr>
+<td><strong>PI-T5</strong></td>
+<td><strong>Warning suppression / decoy flooding</strong> of I&amp;W tripwires</td>
+<td>High — real coalition/vote event missed</td>
+<td>Medium — signal-rate anomalies</td>
+<td>Adaptive thresholds, redundancy across indicators, human-on-the-loop</td>
+</tr>
+<tr>
+<td><strong>PI-T6</strong></td>
+<td><strong>Calibration gaming</strong> — manipulate which questions resolve to inflate apparent accuracy</td>
+<td>High — misleading trust signal</td>
+<td>Hard — statistically subtle</td>
+<td>Pre-registered questions, immutable ledger, independent resolution criteria</td>
+</tr>
+<tr>
+<td><strong>PI-T7</strong></td>
+<td><strong>FIMI targeting the platform itself</strong> — adversary narratives crafted to trigger false advisories</td>
+<td>High — platform amplifies adversary frame</td>
+<td>Hard — designed to look organic</td>
+<td>Attribution-confidence floors, ethics gate, human framing, advisory-only output</td>
+</tr>
+</tbody>
+</table>
+<h3 id="mapping-to-standards" class="tsd-anchor-link"><strong>Mapping to standards</strong><a href="#mapping-to-standards" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>STRIDE</th>
+<th>MITRE ATT&amp;CK / ATLAS</th>
+<th>OWASP LLM Top 10</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PI-T1 poisoning</td>
+<td>Tampering</td>
+<td>ATLAS: ML Supply-Chain / Data Poisoning</td>
+<td>LLM03 Training-Data Poisoning</td>
+</tr>
+<tr>
+<td>PI-T2 injection</td>
+<td>Tampering / EoP</td>
+<td>ATLAS: LLM Prompt Injection</td>
+<td>LLM01 Prompt Injection</td>
+</tr>
+<tr>
+<td>PI-T3 provenance forgery</td>
+<td>Spoofing</td>
+<td>T1565 Data Manipulation</td>
+<td>LLM08 Excessive Agency (citation)</td>
+</tr>
+<tr>
+<td>PI-T4 neutrality</td>
+<td>Repudiation / bias</td>
+<td>— (governance)</td>
+<td>LLM09 Overreliance</td>
+</tr>
+<tr>
+<td>PI-T5 warning suppression</td>
+<td>DoS</td>
+<td>T1499 Endpoint DoS (signal)</td>
+<td>LLM04 Model DoS</td>
+</tr>
+<tr>
+<td>PI-T6 calibration gaming</td>
+<td>Repudiation</td>
+<td>— (integrity)</td>
+<td>LLM09 Overreliance</td>
+</tr>
+<tr>
+<td>PI-T7 FIMI targeting</td>
+<td>Information abuse</td>
+<td>DISARM TTPs</td>
+<td>LLM09 Overreliance</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Governing principle.</strong> Every intelligence-capability threat is met by an <strong>integrity-by-construction</strong> control, not by trust in the model: evidence anchoring, immutable calibration, provenance signing, neutrality-as-a-CI-gate, and a mandatory human-on-the-loop before any estimative product is published. See <a href="FUTURE_SECURITY_ARCHITECTURE.html"><code>FUTURE_SECURITY_ARCHITECTURE.md</code></a> for the corresponding controls.</p>
+<hr>
+<h2 id="🗳️-democratic-integrity-accountability-threats" class="tsd-anchor-link">🗳️ Democratic Integrity &amp; Accountability Threats<a href="#🗳️-democratic-integrity-accountability-threats" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<blockquote>
+<p><em>The platform's mission is democratic transparency — any threat that subverts, distorts, or undermines public accountability is existential regardless of technical sophistication.</em></p>
+</blockquote>
+<p>Riksdagsmonitor occupies a unique position: a <strong>neutral, AI-powered democratic-intelligence platform</strong> whose outputs influence citizen understanding of parliamentary proceedings. This creates a category of threats distinct from generic cybersecurity — threats to <strong>democratic processes, institutional trust, and political neutrality</strong> that no standard web-security framework adequately covers.</p>
+<h3 id="🏛️-democratic-threat-landscape" class="tsd-anchor-link"><strong>🏛️ Democratic Threat Landscape</strong><a href="#🏛️-democratic-threat-landscape" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<pre><code class="mermaid"><span class="hl-1">flowchart TB</span><br/><span class="hl-1">    subgraph DEMOCRATIC_THREATS[&quot;🗳️ Democratic Integrity Threats&quot;]</span><br/><span class="hl-1">        direction TB</span><br/><span class="hl-1">        DT1[&quot;🎭 Neutrality Subversion&lt;br/&gt;Asymmetric framing across parties&quot;]</span><br/><span class="hl-1">        DT2[&quot;📊 Forecast Weaponization&lt;br/&gt;Biased predictions influence voters&quot;]</span><br/><span class="hl-1">        DT3[&quot;🗞️ Information Laundering&lt;br/&gt;Adversary narratives gain platform credibility&quot;]</span><br/><span class="hl-1">        DT4[&quot;🔇 Accountability Suppression&lt;br/&gt;Hide/downplay political misconduct&quot;]</span><br/><span class="hl-1">        DT5[&quot;⚡ Election-Window Exploitation&lt;br/&gt;Time-critical attacks during campaigns&quot;]</span><br/><span class="hl-1">        DT6[&quot;🌐 Cross-Border Influence&lt;br/&gt;Foreign interference via federation&quot;]</span><br/><span class="hl-1">    end</span><br/><br/><span class="hl-1">    subgraph DEMOCRATIC_CONTROLS[&quot;🛡️ Democratic Safeguards&quot;]</span><br/><span class="hl-1">        direction TB</span><br/><span class="hl-1">        DC1[&quot;⚖️ Party-Symmetry CI Gate&lt;br/&gt;Automated neutrality enforcement&quot;]</span><br/><span class="hl-1">        DC2[&quot;📏 Calibration Ledger&lt;br/&gt;Immutable forecast accuracy tracking&quot;]</span><br/><span class="hl-1">        DC3[&quot;🔍 Source-Grade Floor&lt;br/&gt;Minimum evidence threshold&quot;]</span><br/><span class="hl-1">        DC4[&quot;👁️ Human-on-the-Loop&lt;br/&gt;Mandatory editorial oversight&quot;]</span><br/><span class="hl-1">        DC5[&quot;🚫 Election Cooling Period&lt;br/&gt;Restricted AI during election silence&quot;]</span><br/><span class="hl-1">        DC6[&quot;🤝 Federation Trust Boundaries&lt;br/&gt;Per-source integrity verification&quot;]</span><br/><span class="hl-1">    end</span><br/><br/><span class="hl-1">    subgraph DEMOCRATIC_ACTORS[&quot;👥 Democratic Threat Actors&quot;]</span><br/><span class="hl-1">        direction TB</span><br/><span class="hl-1">        DA1[&quot;🏛️ State-Sponsored IO&lt;br/&gt;Foreign influence operations&quot;]</span><br/><span class="hl-1">        DA2[&quot;🎪 Domestic Political Operatives&lt;br/&gt;Partisan manipulation attempts&quot;]</span><br/><span class="hl-1">        DA3[&quot;🤖 Autonomous AI Agents&lt;br/&gt;Unintended bias amplification&quot;]</span><br/><span class="hl-1">        DA4[&quot;📰 Disinformation Networks&lt;br/&gt;Coordinated inauthentic behavior&quot;]</span><br/><span class="hl-1">    end</span><br/><br/><span class="hl-1">    DA1 --&gt; DT3</span><br/><span class="hl-1">    DA1 --&gt; DT6</span><br/><span class="hl-1">    DA2 --&gt; DT1</span><br/><span class="hl-1">    DA2 --&gt; DT4</span><br/><span class="hl-1">    DA3 --&gt; DT1</span><br/><span class="hl-1">    DA3 --&gt; DT2</span><br/><span class="hl-1">    DA4 --&gt; DT3</span><br/><span class="hl-1">    DA4 --&gt; DT5</span><br/><br/><span class="hl-1">    DT1 -.-&gt;|mitigated by| DC1</span><br/><span class="hl-1">    DT2 -.-&gt;|mitigated by| DC2</span><br/><span class="hl-1">    DT3 -.-&gt;|mitigated by| DC3</span><br/><span class="hl-1">    DT4 -.-&gt;|mitigated by| DC4</span><br/><span class="hl-1">    DT5 -.-&gt;|mitigated by| DC5</span><br/><span class="hl-1">    DT6 -.-&gt;|mitigated by| DC6</span><br/><br/><span class="hl-1">    style DEMOCRATIC_THREATS fill:#fff3e0,stroke:#e65100,color:#000</span><br/><span class="hl-1">    style DEMOCRATIC_CONTROLS fill:#e8f5e9,stroke:#2e7d32,color:#000</span><br/><span class="hl-1">    style DEMOCRATIC_ACTORS fill:#fce4ec,stroke:#c62828,color:#000</span>
+</code><button type="button">Copy</button></pre>
+
+<h3 id="scenario-f13-gradual-neutrality-erosion-via-ai-drift" class="tsd-anchor-link"><strong>Scenario F13: Gradual Neutrality Erosion via AI Drift</strong><a href="#scenario-f13-gradual-neutrality-erosion-via-ai-drift" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>🎭 Threat Agent</strong></td>
+<td>Autonomous AI drift (unintentional), sophisticated insider, domestic political operative</td>
+</tr>
+<tr>
+<td><strong>⚔️ Attack Vector</strong></td>
+<td>Subtle, consistent asymmetry in AI-generated content: tone, coverage depth, or framing favors one bloc over another across hundreds of articles over weeks/months</td>
+</tr>
+<tr>
+<td><strong>🎯 Target</strong></td>
+<td>The platform's core neutrality invariant — equal treatment of all 8 Riksdag parties</td>
+</tr>
+<tr>
+<td><strong>💥 Impact</strong></td>
+<td>Institutional credibility destroyed; platform becomes a perceived partisan tool; cited in political campaigns as evidence of bias</td>
+</tr>
+<tr>
+<td><strong>📊 Likelihood</strong></td>
+<td>Medium-High (LLM training biases are well-documented; drift is natural without active correction)</td>
+</tr>
+<tr>
+<td><strong>⚠️ Risk Score</strong></td>
+<td><strong>9.0/10 CRITICAL</strong></td>
+</tr>
+<tr>
+<td><strong>🗂️ MITRE ATT&amp;CK</strong></td>
+<td><a href="https://attack.mitre.org/techniques/T1659/">T1659 Content Injection</a> (adapted: content bias injection)</td>
+</tr>
+<tr>
+<td><strong>🛡️ Planned Controls</strong></td>
+<td>FUT-023: Party-symmetry CI gate (automated), FUT-024: longitudinal sentiment-balance monitoring, dual-review for cross-party articles, mandatory bloc-parity metrics in every weekly review</td>
+</tr>
+</tbody>
+</table>
+<h3 id="scenario-f14-election-period-forecast-manipulation" class="tsd-anchor-link"><strong>Scenario F14: Election-Period Forecast Manipulation</strong><a href="#scenario-f14-election-period-forecast-manipulation" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>🎭 Threat Agent</strong></td>
+<td>Election interference actor, nation-state information operation</td>
+</tr>
+<tr>
+<td><strong>⚔️ Attack Vector</strong></td>
+<td>Timing-aware attack: manipulate SageMaker forecast inputs or translation pipeline during the 30-day pre-election window when media amplification is maximal</td>
+</tr>
+<tr>
+<td><strong>🎯 Target</strong></td>
+<td>Published seat/coalition predictions, pre-election news coverage, voter information pages</td>
+</tr>
+<tr>
+<td><strong>💥 Impact</strong></td>
+<td>Biased forecasts amplified by media; potential violation of Swedish election silence conventions; voter behavior influence; legal/regulatory consequences</td>
+</tr>
+<tr>
+<td><strong>📊 Likelihood</strong></td>
+<td>Medium (high-value target with clear temporal window)</td>
+</tr>
+<tr>
+<td><strong>⚠️ Risk Score</strong></td>
+<td><strong>8.8/10 CRITICAL</strong></td>
+</tr>
+<tr>
+<td><strong>🗂️ MITRE ATT&amp;CK</strong></td>
+<td><a href="https://attack.mitre.org/techniques/T1565/">T1565 Data Manipulation</a>, <a href="https://attack.mitre.org/techniques/T1583/006/">T1583.006 Web Services</a></td>
+</tr>
+<tr>
+<td><strong>🛡️ Planned Controls</strong></td>
+<td>FUT-025: Election cooling-period protocol (restricted AI autonomy, mandatory human approval for all election-relevant content), elevated monitoring, cross-validation with SCB/Valmyndigheten, explicit uncertainty disclosure</td>
+</tr>
+</tbody>
+</table>
+<h3 id="scenario-f15-democratic-accountability-suppression" class="tsd-anchor-link"><strong>Scenario F15: Democratic Accountability Suppression</strong><a href="#scenario-f15-democratic-accountability-suppression" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>🎭 Threat Agent</strong></td>
+<td>Domestic political operative, insider threat, sophisticated lobbyist</td>
+</tr>
+<tr>
+<td><strong>⚔️ Attack Vector</strong></td>
+<td>Manipulate content pipeline to suppress, delay, or downplay politically inconvenient information (votes, motions, committee decisions) while amplifying favorable narratives</td>
+</tr>
+<tr>
+<td><strong>🎯 Target</strong></td>
+<td>News article generation, politician profile pages, voting record displays</td>
+</tr>
+<tr>
+<td><strong>💥 Impact</strong></td>
+<td>Platform becomes complicit in accountability evasion; undermines democratic oversight function; erosion of public trust</td>
+</tr>
+<tr>
+<td><strong>📊 Likelihood</strong></td>
+<td>Low-Medium (requires insider access or pipeline compromise)</td>
+</tr>
+<tr>
+<td><strong>⚠️ Risk Score</strong></td>
+<td><strong>7.5/10 HIGH</strong></td>
+</tr>
+<tr>
+<td><strong>🗂️ MITRE ATT&amp;CK</strong></td>
+<td><a href="https://attack.mitre.org/techniques/T1565/001/">T1565.001 Stored Data Manipulation</a>, <a href="https://attack.mitre.org/techniques/T1070/">T1070 Indicator Removal</a></td>
+</tr>
+<tr>
+<td><strong>🛡️ Planned Controls</strong></td>
+<td>FUT-026: Completeness audit (automated check that all Riksdag decisions/votes are covered), source-of-record reconciliation with <a href="http://riksdagen.se">riksdagen.se</a>, time-to-publish SLA monitoring, dual-control on content deletion</td>
+</tr>
+</tbody>
+</table>
+<h3 id="scenario-f16-information-laundering-via-platform-credibility" class="tsd-anchor-link"><strong>Scenario F16: Information Laundering via Platform Credibility</strong><a href="#scenario-f16-information-laundering-via-platform-credibility" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>🎭 Threat Agent</strong></td>
+<td>Foreign information operation (FIMI), coordinated inauthentic network</td>
+</tr>
+<tr>
+<td><strong>⚔️ Attack Vector</strong></td>
+<td>Seed manipulated data into upstream sources (Riksdag API responses, government press releases via <a href="http://g0v.se">g0v.se</a>, foreign parliament feeds) knowing Riksdagsmonitor will automatically ingest, validate, and republish — laundering disinformation through the platform's trusted reputation</td>
+</tr>
+<tr>
+<td><strong>🎯 Target</strong></td>
+<td>External data ingestion paths: Riksdag API, Regeringen/g0v.se, SCB, IMF, Nordic/EU parliament feeds</td>
+</tr>
+<tr>
+<td><strong>💥 Impact</strong></td>
+<td>Platform amplifies state-sponsored disinformation with the credibility of &quot;independently verified&quot; parliamentary analysis</td>
+</tr>
+<tr>
+<td><strong>📊 Likelihood</strong></td>
+<td>Low-Medium (requires compromising or spoofing upstream government sources)</td>
+</tr>
+<tr>
+<td><strong>⚠️ Risk Score</strong></td>
+<td><strong>8.0/10 HIGH</strong></td>
+</tr>
+<tr>
+<td><strong>🗂️ MITRE ATT&amp;CK</strong></td>
+<td><a href="https://attack.mitre.org/techniques/T1199/">T1199 Trusted Relationship</a>, <a href="https://attack.mitre.org/techniques/T1659/">T1659 Content Injection</a></td>
+</tr>
+<tr>
+<td><strong>🛡️ Planned Controls</strong></td>
+<td>FUT-027: Multi-source cross-validation (never rely on single source), anomaly detection on ingest deltas, provenance chain verification, source-grading with confidence floors, human escalation for statistically improbable data changes</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="🔒-privacy-gdpr-data-protection-threats" class="tsd-anchor-link">🔒 Privacy, GDPR &amp; Data Protection Threats<a href="#🔒-privacy-gdpr-data-protection-threats" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<blockquote>
+<p><em>Horizon 3 introduces the platform's first authenticated user tier — transforming privacy from a non-concern to a critical obligation.</em></p>
+</blockquote>
+<h3 id="🔐-privacy-threat-landscape-h3" class="tsd-anchor-link"><strong>🔐 Privacy Threat Landscape (H3)</strong><a href="#🔐-privacy-threat-landscape-h3" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<pre><code class="mermaid"><span class="hl-1">flowchart LR</span><br/><span class="hl-1">    subgraph USER_DATA[&quot;👤 H3 User Data at Risk&quot;]</span><br/><span class="hl-1">        UD1[&quot;🔍 Saved Searches&lt;br/&gt;Reveal political interests&quot;]</span><br/><span class="hl-1">        UD2[&quot;🔔 Alert Subscriptions&lt;br/&gt;Track political monitoring&quot;]</span><br/><span class="hl-1">        UD3[&quot;📊 Personalization&lt;br/&gt;Behavioral profile&quot;]</span><br/><span class="hl-1">        UD4[&quot;💬 Chat History&lt;br/&gt;Political questions asked&quot;]</span><br/><span class="hl-1">    end</span><br/><br/><span class="hl-1">    subgraph GDPR_THREATS[&quot;⚠️ Privacy Threats&quot;]</span><br/><span class="hl-1">        GT1[&quot;📋 Art. 9 Violation&lt;br/&gt;Special-category data exposure&quot;]</span><br/><span class="hl-1">        GT2[&quot;🕵️ Profiling Risk&lt;br/&gt;Political opinion inference&quot;]</span><br/><span class="hl-1">        GT3[&quot;🌍 Cross-Border Transfer&lt;br/&gt;Multi-region data residency&quot;]</span><br/><span class="hl-1">        GT4[&quot;🗑️ Erasure Complexity&lt;br/&gt;Right-to-be-forgotten across replicas&quot;]</span><br/><span class="hl-1">        GT5[&quot;🔗 Linkage Attack&lt;br/&gt;De-anonymization via query patterns&quot;]</span><br/><span class="hl-1">    end</span><br/><br/><span class="hl-1">    subgraph PRIVACY_CONTROLS[&quot;🛡️ Privacy Controls&quot;]</span><br/><span class="hl-1">        PC1[&quot;📝 DPIA Mandatory&lt;br/&gt;Before Cognito launch&quot;]</span><br/><span class="hl-1">        PC2[&quot;🔒 Data Minimization&lt;br/&gt;No opinions stored server-side&quot;]</span><br/><span class="hl-1">        PC3[&quot;🏠 EU Data Residency&lt;br/&gt;eu-west-1 primary&quot;]</span><br/><span class="hl-1">        PC4[&quot;⏱️ Auto-Purge&lt;br/&gt;Configurable retention&quot;]</span><br/><span class="hl-1">        PC5[&quot;🎭 Pseudonymization&lt;br/&gt;Query-level privacy&quot;]</span><br/><span class="hl-1">    end</span><br/><br/><span class="hl-1">    UD1 --&gt; GT1</span><br/><span class="hl-1">    UD2 --&gt; GT2</span><br/><span class="hl-1">    UD3 --&gt; GT5</span><br/><span class="hl-1">    UD4 --&gt; GT1</span><br/><br/><span class="hl-1">    GT1 -.-&gt;|mitigated by| PC1</span><br/><span class="hl-1">    GT2 -.-&gt;|mitigated by| PC2</span><br/><span class="hl-1">    GT3 -.-&gt;|mitigated by| PC3</span><br/><span class="hl-1">    GT4 -.-&gt;|mitigated by| PC4</span><br/><span class="hl-1">    GT5 -.-&gt;|mitigated by| PC5</span><br/><br/><span class="hl-1">    style USER_DATA fill:#e3f2fd,stroke:#1565c0,color:#000</span><br/><span class="hl-1">    style GDPR_THREATS fill:#ffebee,stroke:#c62828,color:#000</span><br/><span class="hl-1">    style PRIVACY_CONTROLS fill:#e8f5e9,stroke:#2e7d32,color:#000</span>
+</code><button type="button">Copy</button></pre>
+
+<h3 id="scenario-f17-political-opinion-inference-from-usage-patterns-h3" class="tsd-anchor-link"><strong>Scenario F17: Political-Opinion Inference from Usage Patterns (H3)</strong><a href="#scenario-f17-political-opinion-inference-from-usage-patterns-h3" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>🎭 Threat Agent</strong></td>
+<td>Data breach attacker, insider, law enforcement overreach</td>
+</tr>
+<tr>
+<td><strong>⚔️ Attack Vector</strong></td>
+<td>Aggregate saved searches, alert patterns, and chatbot questions to infer a user's political opinions — GDPR Article 9 special-category data — without explicit consent for that processing purpose</td>
+</tr>
+<tr>
+<td><strong>🎯 Target</strong></td>
+<td>Cognito user profiles + associated DynamoDB/Aurora query history</td>
+</tr>
+<tr>
+<td><strong>💥 Impact</strong></td>
+<td>Violation of GDPR Art. 9 (processing special-category data without lawful basis); regulatory fines up to 4% annual turnover; chilling effect on civic engagement</td>
+</tr>
+<tr>
+<td><strong>📊 Likelihood</strong></td>
+<td>Medium (inference is technically straightforward once data is collected)</td>
+</tr>
+<tr>
+<td><strong>⚠️ Risk Score</strong></td>
+<td><strong>8.5/10 CRITICAL</strong></td>
+</tr>
+<tr>
+<td><strong>🗂️ MITRE ATT&amp;CK</strong></td>
+<td><a href="https://attack.mitre.org/techniques/T1530/">T1530 Data from Cloud Storage</a>, <a href="https://attack.mitre.org/techniques/T1213/">T1213 Data from Information Repositories</a></td>
+</tr>
+<tr>
+<td><strong>🛡️ Planned Controls</strong></td>
+<td>FUT-028: Privacy-by-design architecture (no server-side political-opinion storage), client-side encryption for saved queries, aggregate-only analytics, automated data minimization, DPIA gate before any new data collection, privacy-preserving personalization (on-device ML)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="scenario-f18-cross-region-data-residency-violation-h3" class="tsd-anchor-link"><strong>Scenario F18: Cross-Region Data Residency Violation (H3)</strong><a href="#scenario-f18-cross-region-data-residency-violation-h3" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>🎭 Threat Agent</strong></td>
+<td>Configuration error, multi-region replication misconfiguration</td>
+</tr>
+<tr>
+<td><strong>⚔️ Attack Vector</strong></td>
+<td>DynamoDB Global Tables or Aurora Global replication copies EU citizen data to non-adequate jurisdictions (e.g., us-east-1) without proper safeguards</td>
+</tr>
+<tr>
+<td><strong>🎯 Target</strong></td>
+<td>User personal data in DynamoDB/Aurora replicas</td>
+</tr>
+<tr>
+<td><strong>💥 Impact</strong></td>
+<td>GDPR Chapter V violation (international transfer without adequacy/safeguards); Schrems II implications</td>
+</tr>
+<tr>
+<td><strong>📊 Likelihood</strong></td>
+<td>Low (requires misconfiguration, but multi-region is complex)</td>
+</tr>
+<tr>
+<td><strong>⚠️ Risk Score</strong></td>
+<td><strong>6.5/10 MEDIUM</strong></td>
+</tr>
+<tr>
+<td><strong>🗂️ MITRE ATT&amp;CK</strong></td>
+<td><a href="https://attack.mitre.org/techniques/T1537/">T1537 Transfer Data to Cloud Account</a></td>
+</tr>
+<tr>
+<td><strong>🛡️ Planned Controls</strong></td>
+<td>FUT-029: Geo-fenced replication (user PII stays in eu-west-1), AWS Config rules enforcing data residency, SCP preventing PII table replication to non-EU regions, automated compliance drift detection</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="🔗-supply-chain-ai-model-governance-threats" class="tsd-anchor-link">🔗 Supply Chain &amp; AI Model Governance Threats<a href="#🔗-supply-chain-ai-model-governance-threats" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<blockquote>
+<p><em>The platform's AI supply chain extends beyond npm packages to foundation models, training data, and MCP tool ecosystems — each a potential vector for subtle, high-impact compromise.</em></p>
+</blockquote>
+<h3 id="🏭-ai-supply-chain-threat-model" class="tsd-anchor-link"><strong>🏭 AI Supply Chain Threat Model</strong><a href="#🏭-ai-supply-chain-threat-model" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<pre><code class="mermaid"><span class="hl-1">flowchart TD</span><br/><span class="hl-1">    subgraph AI_SUPPLY_CHAIN[&quot;🤖 AI Supply Chain Attack Surface&quot;]</span><br/><span class="hl-1">        direction TB</span><br/><span class="hl-1">        SC1[&quot;🧠 Foundation Model Updates&lt;br/&gt;Behavioral regression on upgrade&quot;]</span><br/><span class="hl-1">        SC2[&quot;📦 MCP Server Dependencies&lt;br/&gt;Tool-level supply chain&quot;]</span><br/><span class="hl-1">        SC3[&quot;📚 Training Data Provenance&lt;br/&gt;Poisoned public datasets&quot;]</span><br/><span class="hl-1">        SC4[&quot;🔧 Prompt Template Integrity&lt;br/&gt;Workflow instruction tampering&quot;]</span><br/><span class="hl-1">        SC5[&quot;🌐 External API Dependencies&lt;br/&gt;Riksdag/SCB/IMF availability&quot;]</span><br/><span class="hl-1">    end</span><br/><br/><span class="hl-1">    subgraph GOVERNANCE_THREATS[&quot;⚖️ AI Governance Threats&quot;]</span><br/><span class="hl-1">        direction TB</span><br/><span class="hl-1">        AG1[&quot;📜 EU AI Act Non-Compliance&lt;br/&gt;Regulatory classification change&quot;]</span><br/><span class="hl-1">        AG2[&quot;🎯 Model Behavior Drift&lt;br/&gt;Post-update output degradation&quot;]</span><br/><span class="hl-1">        AG3[&quot;🔄 Vendor Lock-In Exploitation&lt;br/&gt;AWS service discontinuation&quot;]</span><br/><span class="hl-1">        AG4[&quot;📊 Transparency Debt&lt;br/&gt;Unexplainable model decisions&quot;]</span><br/><span class="hl-1">    end</span><br/><br/><span class="hl-1">    subgraph SUPPLY_CONTROLS[&quot;🛡️ Supply Chain Controls&quot;]</span><br/><span class="hl-1">        direction TB</span><br/><span class="hl-1">        SCC1[&quot;📌 Model Version Pinning&lt;br/&gt;+ regression testing&quot;]</span><br/><span class="hl-1">        SCC2[&quot;🔐 SLSA Level 3&lt;br/&gt;Build provenance&quot;]</span><br/><span class="hl-1">        SCC3[&quot;✅ Output Regression Suite&lt;br/&gt;Golden-set validation&quot;]</span><br/><span class="hl-1">        SCC4[&quot;📋 AI Model Cards&lt;br/&gt;Transparency documentation&quot;]</span><br/><span class="hl-1">        SCC5[&quot;🔄 Multi-Model Fallback&lt;br/&gt;Provider redundancy&quot;]</span><br/><span class="hl-1">    end</span><br/><br/><span class="hl-1">    SC1 --&gt; AG2</span><br/><span class="hl-1">    SC2 --&gt; AG1</span><br/><span class="hl-1">    SC3 --&gt; AG2</span><br/><span class="hl-1">    SC4 --&gt; AG1</span><br/><span class="hl-1">    SC5 --&gt; AG3</span><br/><br/><span class="hl-1">    AG1 -.-&gt;|mitigated by| SCC4</span><br/><span class="hl-1">    AG2 -.-&gt;|mitigated by| SCC1</span><br/><span class="hl-1">    AG2 -.-&gt;|mitigated by| SCC3</span><br/><span class="hl-1">    AG3 -.-&gt;|mitigated by| SCC5</span><br/><span class="hl-1">    AG4 -.-&gt;|mitigated by| SCC4</span><br/><br/><span class="hl-1">    style AI_SUPPLY_CHAIN fill:#fff3e0,stroke:#e65100,color:#000</span><br/><span class="hl-1">    style GOVERNANCE_THREATS fill:#fce4ec,stroke:#c62828,color:#000</span><br/><span class="hl-1">    style SUPPLY_CONTROLS fill:#e8f5e9,stroke:#2e7d32,color:#000</span>
+</code><button type="button">Copy</button></pre>
+
+<h3 id="scenario-f19-foundation-model-behavioral-regression" class="tsd-anchor-link"><strong>Scenario F19: Foundation Model Behavioral Regression</strong><a href="#scenario-f19-foundation-model-behavioral-regression" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>🎭 Threat Agent</strong></td>
+<td>Model provider (unintentional), adversary targeting model training</td>
+</tr>
+<tr>
+<td><strong>⚔️ Attack Vector</strong></td>
+<td>A Claude or Bedrock model update introduces subtle behavioral changes: different political framing, altered fact-selection preferences, or degraded neutrality in Swedish-language outputs</td>
+</tr>
+<tr>
+<td><strong>🎯 Target</strong></td>
+<td>All AI-generated content (14 news workflows, translation, analysis)</td>
+</tr>
+<tr>
+<td><strong>💥 Impact</strong></td>
+<td>Gradual quality/neutrality degradation across all outputs; potentially undetected for days if regression is subtle</td>
+</tr>
+<tr>
+<td><strong>📊 Likelihood</strong></td>
+<td>Medium (model updates are frequent; political-content testing is specialized)</td>
+</tr>
+<tr>
+<td><strong>⚠️ Risk Score</strong></td>
+<td><strong>7.0/10 HIGH</strong></td>
+</tr>
+<tr>
+<td><strong>🗂️ MITRE ATT&amp;CK</strong></td>
+<td><a href="https://attack.mitre.org/techniques/T1195/003/">T1195.003 Compromise Hardware Supply Chain</a> (adapted: model supply chain)</td>
+</tr>
+<tr>
+<td><strong>🛡️ Planned Controls</strong></td>
+<td>FUT-030: Model regression test suite (golden-set political content), automated neutrality scoring on model upgrade, staged rollout (canary → full), model version pinning with explicit upgrade gates</td>
+</tr>
+</tbody>
+</table>
+<h3 id="scenario-f20-eu-ai-act-regulatory-reclassification" class="tsd-anchor-link"><strong>Scenario F20: EU AI Act Regulatory Reclassification</strong><a href="#scenario-f20-eu-ai-act-regulatory-reclassification" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>🎭 Threat Agent</strong></td>
+<td>Regulatory environment change</td>
+</tr>
+<tr>
+<td><strong>⚔️ Attack Vector</strong></td>
+<td>EU AI Act enforcement classifies the platform's election forecasting or political analysis as &quot;high-risk AI&quot; (Annex III, Category 8: administration of justice/democratic processes), triggering mandatory conformity assessment, transparency obligations, and human-oversight requirements</td>
+</tr>
+<tr>
+<td><strong>🎯 Target</strong></td>
+<td>Platform operational model, AI governance framework, compliance posture</td>
+</tr>
+<tr>
+<td><strong>💥 Impact</strong></td>
+<td>Mandatory conformity assessment, potential operational restrictions during compliance period, significant documentation/audit requirements</td>
+</tr>
+<tr>
+<td><strong>📊 Likelihood</strong></td>
+<td>Medium (political-analysis AI is an emerging regulatory gray area)</td>
+</tr>
+<tr>
+<td><strong>⚠️ Risk Score</strong></td>
+<td><strong>6.5/10 MEDIUM</strong></td>
+</tr>
+<tr>
+<td><strong>🗂️ MITRE ATT&amp;CK</strong></td>
+<td>N/A (regulatory threat)</td>
+</tr>
+<tr>
+<td><strong>🛡️ Planned Controls</strong></td>
+<td>FUT-031: Proactive EU AI Act alignment (maintain documentation as if high-risk), model cards per Bedrock model, human-oversight architecture already designed, transparency reports, regular legal-counsel review of classification guidance</td>
+</tr>
+</tbody>
+</table>
+<h3 id="scenario-f21-mcp-tool-ecosystem-compromise" class="tsd-anchor-link"><strong>Scenario F21: MCP Tool Ecosystem Compromise</strong><a href="#scenario-f21-mcp-tool-ecosystem-compromise" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>🎭 Threat Agent</strong></td>
+<td>Supply-chain attacker, compromised open-source maintainer</td>
+</tr>
+<tr>
+<td><strong>⚔️ Attack Vector</strong></td>
+<td>Compromise an MCP server dependency (riksdag-regering, scb, world-bank, or upstream npm packages) to inject malicious tool responses into agentic workflows</td>
+</tr>
+<tr>
+<td><strong>🎯 Target</strong></td>
+<td>14 agentic news workflows consuming MCP tool responses as trusted inputs</td>
+</tr>
+<tr>
+<td><strong>💥 Impact</strong></td>
+<td>Poisoned data flows through multiple workflows, generating and publishing manipulated content at scale</td>
+</tr>
+<tr>
+<td><strong>📊 Likelihood</strong></td>
+<td>Low-Medium (MCP ecosystem is young, rapidly evolving, less audited than mature npm packages)</td>
+</tr>
+<tr>
+<td><strong>⚠️ Risk Score</strong></td>
+<td><strong>7.5/10 HIGH</strong></td>
+</tr>
+<tr>
+<td><strong>🗂️ MITRE ATT&amp;CK</strong></td>
+<td><a href="https://attack.mitre.org/techniques/T1195/001/">T1195.001 Compromise Software Dependencies and Development Tools</a></td>
+</tr>
+<tr>
+<td><strong>🛡️ Planned Controls</strong></td>
+<td>FUT-032: MCP server integrity verification (SHA-pinned versions, SBOM tracking), response schema validation, anomaly detection on MCP responses, sandboxed tool execution, SLSA Level 3 provenance for all build inputs</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="🌍-geopolitical-information-environment-threats" class="tsd-anchor-link">🌍 Geopolitical &amp; Information Environment Threats<a href="#🌍-geopolitical-information-environment-threats" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<blockquote>
+<p><em>As Riksdagsmonitor expands to Nordic and EU parliaments, it enters a contested information environment where state-level actors actively seek to undermine democratic institutions.</em></p>
+</blockquote>
+<h3 id="🗺️-geopolitical-threat-landscape" class="tsd-anchor-link"><strong>🗺️ Geopolitical Threat Landscape</strong><a href="#🗺️-geopolitical-threat-landscape" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<pre><code class="mermaid"><span class="hl-1">flowchart TB</span><br/><span class="hl-1">    subgraph GEO_CONTEXT[&quot;🌍 Geopolitical Context (2026–2037)&quot;]</span><br/><span class="hl-1">        direction LR</span><br/><span class="hl-1">        GC1[&quot;🇷🇺 Hybrid Warfare&lt;br/&gt;Information operations&lt;br/&gt;targeting Nordic democracies&quot;]</span><br/><span class="hl-1">        GC2[&quot;🇨🇳 Influence Operations&lt;br/&gt;United Front Work targeting&lt;br/&gt;diaspora communities&quot;]</span><br/><span class="hl-1">        GC3[&quot;🏴 Non-State FIMI&lt;br/&gt;Coordinated inauthentic&lt;br/&gt;behavior networks&quot;]</span><br/><span class="hl-1">        GC4[&quot;🤖 AI-Powered IO&lt;br/&gt;Synthetic media &amp;&lt;br/&gt;automated propaganda&quot;]</span><br/><span class="hl-1">    end</span><br/><br/><span class="hl-1">    subgraph PLATFORM_EXPOSURE[&quot;📡 Platform Exposure Points&quot;]</span><br/><span class="hl-1">        direction LR</span><br/><span class="hl-1">        PE1[&quot;🌐 14-Language Surface&lt;br/&gt;Each language = unique&lt;br/&gt;disinformation vector&quot;]</span><br/><span class="hl-1">        PE2[&quot;🔮 Forecast Outputs&lt;br/&gt;Election predictions as&lt;br/&gt;influence leverage&quot;]</span><br/><span class="hl-1">        PE3[&quot;🤝 Federation Trust&lt;br/&gt;Nordic/EU data mesh&lt;br/&gt;as attack vector&quot;]</span><br/><span class="hl-1">        PE4[&quot;📊 Credibility Capital&lt;br/&gt;Platform trust as&lt;br/&gt;laundering vehicle&quot;]</span><br/><span class="hl-1">    end</span><br/><br/><span class="hl-1">    subgraph GEO_DEFENSES[&quot;🛡️ Geopolitical Defenses&quot;]</span><br/><span class="hl-1">        direction LR</span><br/><span class="hl-1">        GD1[&quot;🔍 FIMI Detection (C20)&lt;br/&gt;Early-warning indicators&quot;]</span><br/><span class="hl-1">        GD2[&quot;📏 Source Grading&lt;br/&gt;Confidence-floor enforcement&quot;]</span><br/><span class="hl-1">        GD3[&quot;🌐 Per-Language Review&lt;br/&gt;Native-speaker verification&quot;]</span><br/><span class="hl-1">        GD4[&quot;⚖️ Advisory-Only Output&lt;br/&gt;No accusatory attribution&quot;]</span><br/><span class="hl-1">    end</span><br/><br/><span class="hl-1">    GC1 --&gt; PE3</span><br/><span class="hl-1">    GC1 --&gt; PE1</span><br/><span class="hl-1">    GC2 --&gt; PE1</span><br/><span class="hl-1">    GC3 --&gt; PE4</span><br/><span class="hl-1">    GC4 --&gt; PE2</span><br/><br/><span class="hl-1">    PE1 -.-&gt;|defended by| GD3</span><br/><span class="hl-1">    PE2 -.-&gt;|defended by| GD2</span><br/><span class="hl-1">    PE3 -.-&gt;|defended by| GD1</span><br/><span class="hl-1">    PE4 -.-&gt;|defended by| GD4</span><br/><br/><span class="hl-1">    style GEO_CONTEXT fill:#ffebee,stroke:#b71c1c,color:#000</span><br/><span class="hl-1">    style PLATFORM_EXPOSURE fill:#fff3e0,stroke:#e65100,color:#000</span><br/><span class="hl-1">    style GEO_DEFENSES fill:#e8f5e9,stroke:#1b5e20,color:#000</span>
+</code><button type="button">Copy</button></pre>
+
+<h3 id="language-specific-threat-vectors" class="tsd-anchor-link"><strong>Language-Specific Threat Vectors</strong><a href="#language-specific-threat-vectors" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p>The 14-language surface creates <strong>asymmetric verification challenges</strong>: content in languages without native-speaker review capacity (Arabic, Chinese, Japanese, Korean, Hebrew) presents higher manipulation risk.</p>
+<table>
+<thead>
+<tr>
+<th>Language Tier</th>
+<th>Languages</th>
+<th>Verification Capacity</th>
+<th>Manipulation Risk</th>
+<th>Control</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>🟢 Tier 1 — Native Review</strong></td>
+<td>Swedish (sv), English (en)</td>
+<td>Full native review</td>
+<td>Low</td>
+<td>Direct editorial oversight</td>
+</tr>
+<tr>
+<td><strong>🟡 Tier 2 — Accessible Review</strong></td>
+<td>Norwegian (no), Danish (da), Finnish (fi), German (de), French (fr), Spanish (es), Dutch (nl)</td>
+<td>Accessible via Nordic/EU network</td>
+<td>Medium</td>
+<td>Back-translation + network review</td>
+</tr>
+<tr>
+<td><strong>🔴 Tier 3 — Limited Review</strong></td>
+<td>Arabic (ar), Hebrew (he), Japanese (ja), Korean (ko), Chinese (zh)</td>
+<td>Limited native review capacity</td>
+<td>High</td>
+<td>Enhanced back-translation, automated semantic-similarity scoring, community verification pipeline</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="📊-consolidated-future-security-control-requirements-extended" class="tsd-anchor-link">📊 Consolidated Future Security Control Requirements (Extended)<a href="#📊-consolidated-future-security-control-requirements-extended" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<h3 id="additional-controls-for-democratic-privacy-threats" class="tsd-anchor-link"><strong>Additional Controls for Democratic &amp; Privacy Threats</strong><a href="#additional-controls-for-democratic-privacy-threats" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>Control ID</th>
+<th>Control Name</th>
+<th>Threat Addressed</th>
+<th>STRIDE Coverage</th>
+<th>Implementation Target</th>
+<th>Priority</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>FUT-023</strong></td>
+<td>Party-Symmetry CI Gate (automated neutrality audit)</td>
+<td>F13: Neutrality Erosion</td>
+<td>T, R</td>
+<td>Q2 2026</td>
+<td>🔴 Critical</td>
+</tr>
+<tr>
+<td><strong>FUT-024</strong></td>
+<td>Longitudinal Sentiment-Balance Monitoring</td>
+<td>F13: Neutrality Erosion</td>
+<td>T</td>
+<td>Q3 2026</td>
+<td>🔴 Critical</td>
+</tr>
+<tr>
+<td><strong>FUT-025</strong></td>
+<td>Election Cooling-Period Protocol</td>
+<td>F14: Election Manipulation</td>
+<td>T, D</td>
+<td>Q3 2026</td>
+<td>🔴 Critical</td>
+</tr>
+<tr>
+<td><strong>FUT-026</strong></td>
+<td>Completeness Audit (Riksdag decision coverage)</td>
+<td>F15: Accountability Suppression</td>
+<td>R, I</td>
+<td>Q2 2026</td>
+<td>🟡 High</td>
+</tr>
+<tr>
+<td><strong>FUT-027</strong></td>
+<td>Multi-Source Cross-Validation on Ingest</td>
+<td>F16: Information Laundering</td>
+<td>S, T</td>
+<td>Q2 2026</td>
+<td>🔴 Critical</td>
+</tr>
+<tr>
+<td><strong>FUT-028</strong></td>
+<td>Privacy-by-Design Architecture (no opinion storage)</td>
+<td>F17: Political-Opinion Inference</td>
+<td>I</td>
+<td>2027 Q3</td>
+<td>🔴 Critical</td>
+</tr>
+<tr>
+<td><strong>FUT-029</strong></td>
+<td>Geo-Fenced Replication (EU PII residency)</td>
+<td>F18: Data Residency Violation</td>
+<td>I</td>
+<td>2027 Q4</td>
+<td>🟡 High</td>
+</tr>
+<tr>
+<td><strong>FUT-030</strong></td>
+<td>Model Regression Test Suite (golden-set)</td>
+<td>F19: Model Behavioral Regression</td>
+<td>T</td>
+<td>Q2 2026</td>
+<td>🟡 High</td>
+</tr>
+<tr>
+<td><strong>FUT-031</strong></td>
+<td>Proactive EU AI Act Alignment</td>
+<td>F20: Regulatory Reclassification</td>
+<td>—</td>
+<td>Q4 2026</td>
+<td>🟡 High</td>
+</tr>
+<tr>
+<td><strong>FUT-032</strong></td>
+<td>MCP Server Integrity Verification (SHA-pinned)</td>
+<td>F21: MCP Ecosystem Compromise</td>
+<td>S, T</td>
+<td>Q2 2026</td>
+<td>🔴 Critical</td>
+</tr>
+</tbody>
+</table>
+<h3 id="extended-stride-→-control-mapping-democratic-privacy" class="tsd-anchor-link"><strong>Extended STRIDE → Control Mapping (Democratic &amp; Privacy)</strong><a href="#extended-stride-→-control-mapping-democratic-privacy" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>STRIDE Category</th>
+<th>Democratic/Privacy Primary Control</th>
+<th>Secondary Control</th>
+<th>Monitoring</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Spoofing</strong></td>
+<td>Multi-source cross-validation (FUT-027)</td>
+<td>MCP integrity verification (FUT-032)</td>
+<td>Source-grade monitoring, ingest anomaly alerts</td>
+</tr>
+<tr>
+<td><strong>Tampering</strong></td>
+<td>Party-symmetry CI gate (FUT-023), model regression suite (FUT-030)</td>
+<td>Election cooling protocol (FUT-025)</td>
+<td>Longitudinal sentiment monitoring (FUT-024)</td>
+</tr>
+<tr>
+<td><strong>Repudiation</strong></td>
+<td>Completeness audit (FUT-026)</td>
+<td>Immutable calibration ledger</td>
+<td>Decision-coverage gap alerts</td>
+</tr>
+<tr>
+<td><strong>Info Disclosure</strong></td>
+<td>Privacy-by-design (FUT-028), geo-fenced replication (FUT-029)</td>
+<td>Data minimization, auto-purge</td>
+<td>Privacy-impact continuous assessment</td>
+</tr>
+<tr>
+<td><strong>DoS</strong></td>
+<td>Election cooling protocol (FUT-025)</td>
+<td>Rate limiting, human-escalation gates</td>
+<td>Election-window monitoring escalation</td>
+</tr>
+<tr>
+<td><strong>Elevation</strong></td>
+<td>EU AI Act alignment (FUT-031)</td>
+<td>Neutrality-as-governance</td>
+<td>Regulatory landscape scanning</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="📈-extended-risk-assessment-democratic--governance-threats" class="tsd-anchor-link">📈 Extended Risk Assessment — Democratic &amp; Governance Threats<a href="#📈-extended-risk-assessment-democratic--governance-threats" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<table>
+<thead>
+<tr>
+<th>Threat</th>
+<th style="text-align:center">Horizon</th>
+<th style="text-align:center">Likelihood (1-5)</th>
+<th style="text-align:center">Impact (1-5)</th>
+<th style="text-align:center">Risk Score</th>
+<th>Treatment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Gradual neutrality erosion via AI drift</td>
+<td style="text-align:center">H2</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center"><strong>20 CRITICAL</strong></td>
+<td>MITIGATE (FUT-023, FUT-024)</td>
+</tr>
+<tr>
+<td>Election-period forecast manipulation</td>
+<td style="text-align:center">H2/H3</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center"><strong>15 CRITICAL</strong></td>
+<td>MITIGATE (FUT-025)</td>
+</tr>
+<tr>
+<td>Democratic accountability suppression</td>
+<td style="text-align:center">H2</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center"><strong>10 CRITICAL</strong></td>
+<td>MITIGATE (FUT-026)</td>
+</tr>
+<tr>
+<td>Information laundering via platform credibility</td>
+<td style="text-align:center">H2</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center"><strong>8 HIGH</strong></td>
+<td>MITIGATE (FUT-027)</td>
+</tr>
+<tr>
+<td>Political-opinion inference from usage</td>
+<td style="text-align:center">H3</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center"><strong>12 HIGH</strong></td>
+<td>MITIGATE (FUT-028)</td>
+</tr>
+<tr>
+<td>Cross-region data residency violation</td>
+<td style="text-align:center">H3</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center"><strong>4 MEDIUM</strong></td>
+<td>MITIGATE (FUT-029)</td>
+</tr>
+<tr>
+<td>Foundation model behavioral regression</td>
+<td style="text-align:center">H2</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center"><strong>9 HIGH</strong></td>
+<td>MITIGATE (FUT-030)</td>
+</tr>
+<tr>
+<td>EU AI Act regulatory reclassification</td>
+<td style="text-align:center">H3</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center"><strong>9 HIGH</strong></td>
+<td>MITIGATE (FUT-031)</td>
+</tr>
+<tr>
+<td>MCP tool ecosystem compromise</td>
+<td style="text-align:center">H2</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center"><strong>8 HIGH</strong></td>
+<td>MITIGATE (FUT-032)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="🎯-risk-heat-map-all-future-threats" class="tsd-anchor-link"><strong>🎯 Risk Heat Map — All Future Threats</strong><a href="#🎯-risk-heat-map-all-future-threats" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<pre><code class="mermaid"><span class="hl-1">quadrantChart</span><br/><span class="hl-1">    title Future Threat Risk Heat Map</span><br/><span class="hl-1">    x-axis &quot;Low Likelihood&quot; --&gt; &quot;High Likelihood&quot;</span><br/><span class="hl-1">    y-axis &quot;Low Impact&quot; --&gt; &quot;High Impact&quot;</span><br/><span class="hl-1">    quadrant-1 &quot;🔴 Critical — Immediate Action&quot;</span><br/><span class="hl-1">    quadrant-2 &quot;🟡 High — Plan Mitigation&quot;</span><br/><span class="hl-1">    quadrant-3 &quot;🟢 Low — Monitor&quot;</span><br/><span class="hl-1">    quadrant-4 &quot;🟡 Medium — Assess Controls&quot;</span><br/><span class="hl-1">    &quot;Neutrality Erosion (F13)&quot;: [0.75, 0.95]</span><br/><span class="hl-1">    &quot;Election Manipulation (F14)&quot;: [0.60, 0.90]</span><br/><span class="hl-1">    &quot;Vote Data Tampering (F1)&quot;: [0.55, 0.92]</span><br/><span class="hl-1">    &quot;Agent Excessive Agency (F8)&quot;: [0.40, 0.90]</span><br/><span class="hl-1">    &quot;IAM Escalation (F7)&quot;: [0.35, 0.92]</span><br/><span class="hl-1">    &quot;RAG Poisoning (F5)&quot;: [0.55, 0.80]</span><br/><span class="hl-1">    &quot;Forecast Manipulation (F9)&quot;: [0.55, 0.80]</span><br/><span class="hl-1">    &quot;Information Laundering (F16)&quot;: [0.40, 0.78]</span><br/><span class="hl-1">    &quot;Accountability Suppression (F15)&quot;: [0.35, 0.85]</span><br/><span class="hl-1">    &quot;Model Regression (F19)&quot;: [0.55, 0.60]</span><br/><span class="hl-1">    &quot;MCP Compromise (F21)&quot;: [0.40, 0.72]</span><br/><span class="hl-1">    &quot;API Abuse (F10)&quot;: [0.55, 0.45]</span><br/><span class="hl-1">    &quot;Data Residency (F18)&quot;: [0.20, 0.65]</span><br/><span class="hl-1">    &quot;EU AI Act (F20)&quot;: [0.55, 0.55]</span>
+</code><button type="button">Copy</button></pre>
+
+<hr>
+<h2 id="🔄-continuous-future-threat-assessment" class="tsd-anchor-link">🔄 Continuous Future Threat Assessment<a href="#🔄-continuous-future-threat-assessment" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<h3 id="assessment-lifecycle-for-future-features" class="tsd-anchor-link"><strong>Assessment Lifecycle for Future Features</strong><a href="#assessment-lifecycle-for-future-features" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>Phase</th>
+<th>Trigger</th>
+<th>Activities</th>
+<th>Output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Pre-Implementation</strong></td>
+<td>Feature design finalized</td>
+<td>STRIDE analysis, attack tree construction, control design</td>
+<td>Feature-specific threat addendum</td>
+</tr>
+<tr>
+<td><strong>During Implementation</strong></td>
+<td>Code review, PR merge</td>
+<td>Security testing, SAST/DAST scanning, dependency audit</td>
+<td>Security test results, remediation items</td>
+</tr>
+<tr>
+<td><strong>Post-Deployment</strong></td>
+<td>Feature goes live</td>
+<td>Penetration testing, monitoring activation, alert tuning</td>
+<td>Deployment security report</td>
+</tr>
+<tr>
+<td><strong>Ongoing</strong></td>
+<td>Quarterly review</td>
+<td>Threat landscape update, control effectiveness assessment</td>
+<td>Updated risk scores, new mitigations</td>
+</tr>
+</tbody>
+</table>
+<h3 id="future-threat-monitoring-kpis" class="tsd-anchor-link"><strong>Future Threat Monitoring KPIs</strong><a href="#future-threat-monitoring-kpis" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>KPI</th>
+<th>Target</th>
+<th>Measurement Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>New feature threat coverage</td>
+<td>100% STRIDE per component</td>
+<td>Feature threat model completeness</td>
+</tr>
+<tr>
+<td>Time to detect data manipulation</td>
+<td>&lt; 15 minutes</td>
+<td>Integrity check monitoring</td>
+</tr>
+<tr>
+<td>Cross-workflow anomaly detection rate</td>
+<td>&gt; 95%</td>
+<td>Consistency check pass rate</td>
+</tr>
+<tr>
+<td>Translation integrity score</td>
+<td>&gt; 98% accuracy</td>
+<td>Back-translation verification rate</td>
+</tr>
+<tr>
+<td>Pipeline data freshness SLA</td>
+<td>&lt; 24 hours</td>
+<td>Cache timestamp monitoring</td>
+</tr>
+<tr>
+<td>WebSocket connection security</td>
+<td>100% TLS 1.3</td>
+<td>Connection protocol audit</td>
+</tr>
+<tr>
+<td>RAG / Knowledge-Base source provenance (H3)</td>
+<td>100% allow-listed</td>
+<td>Bedrock KB ingestion audit</td>
+</tr>
+<tr>
+<td>Bedrock Agent action-scope conformance (H3)</td>
+<td>100% within least-privilege policy</td>
+<td>Agent action-group / guardrail audit</td>
+</tr>
+<tr>
+<td>Cognito MFA enrolment for authenticated tier (H3)</td>
+<td>100% of accounts</td>
+<td>Identity provider compliance report</td>
+</tr>
+<tr>
+<td>IAM least-privilege drift (H3)</td>
+<td>0 over-privileged roles</td>
+<td>IAM Access Analyzer findings</td>
+</tr>
+<tr>
+<td>Multi-region replication integrity (H3)</td>
+<td>100% checksum match</td>
+<td>Cross-region reconciliation audit</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="⚖️-future-risk-assessment" class="tsd-anchor-link">⚖️ Future Risk Assessment<a href="#⚖️-future-risk-assessment" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<h3 id="quantitative-risk-matrix-future-threats" class="tsd-anchor-link"><strong>Quantitative Risk Matrix — Future Threats</strong><a href="#quantitative-risk-matrix-future-threats" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p>Scores split by horizon. <strong>H2</strong> threats can materialise 2026–2027 while the platform is still static; <strong>H3</strong> threats only become live once managed AWS services are provisioned (2027+).</p>
+<table>
+<thead>
+<tr>
+<th>Threat</th>
+<th style="text-align:center">Horizon</th>
+<th style="text-align:center">Likelihood (1-5)</th>
+<th style="text-align:center">Impact (1-5)</th>
+<th style="text-align:center">Risk Score</th>
+<th>Treatment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Real-time vote data manipulation</td>
+<td style="text-align:center">H2</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center"><strong>15 CRITICAL</strong></td>
+<td>MITIGATE (FUT-001, FUT-009)</td>
+</tr>
+<tr>
+<td>CIA pipeline cache poisoning</td>
+<td style="text-align:center">H2</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center"><strong>8 HIGH</strong></td>
+<td>MITIGATE (FUT-002, FUT-003)</td>
+</tr>
+<tr>
+<td>Multi-workflow AI orchestration attack</td>
+<td style="text-align:center">H2</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center"><strong>8 HIGH</strong></td>
+<td>MITIGATE (FUT-004)</td>
+</tr>
+<tr>
+<td>Translation integrity attack</td>
+<td style="text-align:center">H2</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center"><strong>9 HIGH</strong></td>
+<td>MITIGATE (FUT-005)</td>
+</tr>
+<tr>
+<td>Dashboard rendering DoS</td>
+<td style="text-align:center">H2</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center"><strong>6 MEDIUM</strong></td>
+<td>MITIGATE (FUT-007)</td>
+</tr>
+<tr>
+<td>Politician profile defacement</td>
+<td style="text-align:center">H2</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center"><strong>6 MEDIUM</strong></td>
+<td>MITIGATE (FUT-006)</td>
+</tr>
+<tr>
+<td>EU Parliament API compromise</td>
+<td style="text-align:center">H2</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center"><strong>3 LOW</strong></td>
+<td>ACCEPT + MONITOR (FUT-008)</td>
+</tr>
+<tr>
+<td>Lambda/IAM privilege escalation &amp; data exfiltration</td>
+<td style="text-align:center">H3</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center"><strong>10 CRITICAL</strong></td>
+<td>MITIGATE (FUT-015, FUT-016, FUT-020)</td>
+</tr>
+<tr>
+<td>Bedrock Agent excessive agency</td>
+<td style="text-align:center">H3</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center"><strong>10 CRITICAL</strong></td>
+<td>MITIGATE (FUT-017)</td>
+</tr>
+<tr>
+<td>Bedrock Knowledge-Base / RAG poisoning</td>
+<td style="text-align:center">H3</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center"><strong>12 HIGH</strong></td>
+<td>MITIGATE (FUT-011, FUT-012)</td>
+</tr>
+<tr>
+<td>SageMaker election-forecast manipulation</td>
+<td style="text-align:center">H3</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center"><strong>12 HIGH</strong></td>
+<td>MITIGATE (FUT-018)</td>
+</tr>
+<tr>
+<td>Cognito account takeover &amp; IDOR</td>
+<td style="text-align:center">H3</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center"><strong>9 HIGH</strong></td>
+<td>MITIGATE (FUT-013, FUT-014)</td>
+</tr>
+<tr>
+<td>AppSync/API Gateway public-API abuse</td>
+<td style="text-align:center">H3</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center"><strong>6 MEDIUM</strong></td>
+<td>MITIGATE (FUT-019)</td>
+</tr>
+<tr>
+<td>Multi-region failover &amp; replication tampering</td>
+<td style="text-align:center">H3</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center"><strong>4 MEDIUM</strong></td>
+<td>MITIGATE (FUT-021)</td>
+</tr>
+<tr>
+<td>Nordic/EU federation cross-jurisdiction integrity</td>
+<td style="text-align:center">H3</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center"><strong>6 MEDIUM</strong></td>
+<td>MITIGATE (FUT-022)</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="📚-related-documents" class="tsd-anchor-link">📚 Related Documents<a href="#📚-related-documents" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<h3 id="riksdagsmonitor-documentation" class="tsd-anchor-link"><strong>Riksdagsmonitor Documentation</strong><a href="#riksdagsmonitor-documentation" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul>
+<li><a href="THREAT_MODEL.html">🎯 Current Threat Model</a> — Active production threat analysis</li>
+<li><a href="ARCHITECTURE.html">🏛️ Architecture</a> — Current C4 architecture models</li>
+<li><a href="FUTURE_ARCHITECTURE.html">🔮 Future Architecture</a> — Planned architecture evolution</li>
+<li><a href="SECURITY_ARCHITECTURE.html">🔐 Security Architecture</a> — Current security controls</li>
+<li><a href="FUTURE_SECURITY_ARCHITECTURE.html">🔮 Future Security Architecture</a> — Planned security enhancements</li>
+<li><a href="DATA_MODEL.html">📊 Data Model</a> — Political data entities and relationships</li>
+<li><a href="FUTURE_DATA_MODEL.html">📊 Future Data Model</a> — Enhanced data architecture plans</li>
+<li><a href="FLOWCHART.html">🔄 Flowchart</a> — Business process and data flows</li>
+<li><a href="STATEDIAGRAM.html">📈 State Diagram</a> — System state transitions</li>
+<li><a href="MINDMAP.html">🧠 Mindmap</a> — System conceptual relationships</li>
+<li><a href="SWOT.html">💼 SWOT</a> — Strategic analysis and positioning</li>
+<li><a href="WORKFLOWS.html">🔄 Workflows</a> — CI/CD security workflows</li>
+</ul>
+<h3 id="hack23-isms-policies-public" class="tsd-anchor-link"><strong>Hack23 ISMS Policies (Public)</strong><a href="#hack23-isms-policies-public" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul>
+<li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Threat_Modeling.md">🎯 Threat Modeling Policy</a> — ISMS threat modeling methodology</li>
+<li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md">🔐 Secure Development Policy</a> — SDLC security requirements</li>
+<li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md">🏷️ Classification Framework</a> — CIA triad business impact analysis</li>
+<li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Risk_Register.md">📉 Risk Register</a> — Enterprise risk management</li>
+<li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/AI_Policy.md">🤖 AI Policy</a> — LLM application security requirements</li>
+</ul>
+<h3 id="reference-implementations" class="tsd-anchor-link"><strong>Reference Implementations</strong><a href="#reference-implementations" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul>
+<li><a href="https://github.com/Hack23/cia/blob/master/THREAT_MODEL.md">🏛️ CIA Threat Model</a> — Full-stack web application threat model</li>
+<li><a href="https://github.com/Hack23/blacktrigram/blob/main/FUTURE_THREAT_MODEL.md">🎮 Black Trigram Future Threat Model</a> — AWS serverless future threat analysis</li>
+</ul>
+<hr>
+<h2 id="📋-document-control" class="tsd-anchor-link">📋 Document Control<a href="#📋-document-control" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<p><strong>📋 Document Owner:</strong> James Pether Sörling, CEO &amp; CISO<br>
+<strong>📄 Version:</strong> 2.1<br>
+<strong>📅 Last Updated:</strong> 2026-06-02 (UTC)<br>
+<strong>✅ Approved by:</strong> James Pether Sörling, CEO<br>
+<strong>🔄 Review Cycle:</strong> Quarterly (Feb, May, Aug, Nov)<br>
+<strong>⏰ Next Review:</strong> 2026-09-02<br>
+<strong>🏢 Owner:</strong> Hack23 AB (<a href="http://Org.nr">Org.nr</a> 5595347807)<br>
+<strong>📤 Distribution:</strong> Public<br>
+<strong>🏷️ Classification:</strong> <a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#confidentiality-levels"><img src="https://img.shields.io/badge/C-Public-lightgrey?style=flat-square" alt="Confidentiality: Public"></a> <a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#integrity-levels"><img src="https://img.shields.io/badge/I-High-orange?style=flat-square" alt="Integrity: High"></a> <a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#availability-levels"><img src="https://img.shields.io/badge/A-High-orange?style=flat-square" alt="Availability: High"></a></p>
+<h3 id="revision-history" class="tsd-anchor-link"><strong>Revision History</strong><a href="#revision-history" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>Version</th>
+<th>Date</th>
+<th>Author</th>
+<th>Changes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2.1</td>
+<td>2026-06-02</td>
+<td>James Pether Sörling</td>
+<td>Added Democratic Integrity &amp; Accountability Threats (F13-F16); Privacy/GDPR threats (F17-F18); Supply Chain &amp; AI Governance threats (F19-F21); Geopolitical &amp; FIMI section; extended controls FUT-023–FUT-032; risk heat map; language-specific threat vectors table; 5 new mermaid diagrams</td>
+</tr>
+<tr>
+<td>2.0</td>
+<td>2026-05-31</td>
+<td>James Pether Sörling</td>
+<td>Major expansion: Three-Horizon framework, Crown Jewel analysis, Attack Trees, Kill Chain mapping, OWASP LLM Top 10, Political-Intelligence capabilities</td>
+</tr>
+<tr>
+<td>1.0</td>
+<td>2026-04-15</td>
+<td>James Pether Sörling</td>
+<td>Initial future threat model with STRIDE and basic scenarios</td>
+</tr>
+</tbody>
+</table>
+<h3 id="framework-compliance" class="tsd-anchor-link"><strong>Framework Compliance</strong><a href="#framework-compliance" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p><strong>🎯 Framework Alignment:</strong><br>
+<a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md"><img src="https://img.shields.io/badge/ISO_27001-2022_Compliant-blue?style=flat-square&amp;logo=iso&amp;logoColor=white" alt="ISO 27001"></a> <a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md"><img src="https://img.shields.io/badge/NIST_CSF-2.0_Aligned-green?style=flat-square&amp;logo=nist&amp;logoColor=white" alt="NIST CSF 2.0"></a> <a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md"><img src="https://img.shields.io/badge/CIS_Controls-v8.1_Aligned-orange?style=flat-square&amp;logo=cisecurity&amp;logoColor=white" alt="CIS Controls"></a> <a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/OWASP_LLM_Security_Policy.md"><img src="https://img.shields.io/badge/OWASP-LLM_Top_10_Compliant-purple?style=flat-square&amp;logo=owasp&amp;logoColor=white" alt="OWASP"></a> <a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/EU_AI_Act_Compliance.md"><img src="https://img.shields.io/badge/EU_AI_Act-Limited_Risk_Compliant-darkblue?style=flat-square" alt="EU AI Act"></a></p>
+<hr>
+<h2 id="🌐-evolving-the-current-imf-threat-model-future-state-stride-expansion" class="tsd-anchor-link">🌐 Evolving the Current IMF Threat Model — Future-State STRIDE Expansion<a href="#🌐-evolving-the-current-imf-threat-model-future-state-stride-expansion" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<p><em>Baseline: the <strong>already-implemented</strong> IMF STRIDE coverage (T-IMF-01..07) lives in <a href="THREAT_MODEL.html"><code>THREAT_MODEL.md</code></a> §IMF. The rows below (T-IMF-F-01..08) add future-state threats that emerge when the runtime migrates to Lambda + Aurora — they extend the baseline rather than replace it.</em></p>
+<blockquote>
+<p><strong>Authoritative hub:</strong> <a href="../media/README-5.md"><code>analysis/imf/README.md</code></a> · <a href="../media/agentic-integration.md"><code>analysis/imf/agentic-integration.md</code></a> · <a href="../media/indicators-inventory.json"><code>analysis/imf/indicators-inventory.json</code></a> · <a href="../media/data-dictionary.md"><code>analysis/imf/data-dictionary.md</code></a> · <a href="../media/ECONOMIC_DATA_CONTRACT.md"><code>.github/aw/ECONOMIC_DATA_CONTRACT.md</code></a></p>
+</blockquote>
+<h3 id="stride-rows-for-imf-integration" class="tsd-anchor-link">STRIDE rows for IMF integration<a href="#stride-rows-for-imf-integration" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Element</th>
+<th>STRIDE</th>
+<th>Description</th>
+<th>Likelihood</th>
+<th>Impact</th>
+<th>Mitigation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>T-IMF-F-01</strong></td>
+<td>IMF cache (Aurora)</td>
+<td><strong>T</strong>ampering</td>
+<td>Vintage substitution attack — older WEO vintage swapped for newer label</td>
+<td>LOW</td>
+<td>HIGH</td>
+<td>SHA-256 payload pin + immutable supersedes-chain + CloudTrail audit</td>
+</tr>
+<tr>
+<td><strong>T-IMF-F-02</strong></td>
+<td>IMF egress path</td>
+<td><strong>D</strong>oS</td>
+<td>Workflow exhausts IMF rate limit (~30 req/min) → blocks legitimate articles</td>
+<td>MEDIUM</td>
+<td>MEDIUM</td>
+<td>Cache-first; ≤30 req/min self-imposed; exponential back-off; metric alarm</td>
+</tr>
+<tr>
+<td><strong>T-IMF-F-03</strong></td>
+<td>IMF payload</td>
+<td><strong>R</strong>epudiation</td>
+<td>Article cites &quot;IMF projects 2.1% growth&quot; without vintage label → unauditable</td>
+<td>MEDIUM</td>
+<td>MEDIUM</td>
+<td><code>economicProvenance</code> row required for every economic claim; <code>cite_text</code> mandatory</td>
+</tr>
+<tr>
+<td><strong>T-IMF-F-04</strong></td>
+<td>IMF Datamapper schema</td>
+<td><strong>T</strong>ampering</td>
+<td>Upstream schema change between WEO Apr/Oct cycles silently corrupts cache</td>
+<td>LOW</td>
+<td>HIGH</td>
+<td>Version-pinned client guard; CI integration test against IMF sandbox</td>
+</tr>
+<tr>
+<td><strong>T-IMF-F-05</strong></td>
+<td>IMF data licence</td>
+<td><strong>R</strong>epudiation</td>
+<td>Article reuses IMF figure without attribution (licence violation)</td>
+<td>LOW</td>
+<td>MEDIUM</td>
+<td>Article footer template auto-emits IMF citation block; lint enforces</td>
+</tr>
+<tr>
+<td><strong>T-IMF-F-06</strong></td>
+<td>IMF cache fallback</td>
+<td><strong>I</strong>nformation disclosure</td>
+<td>Stale vintage served to readers as current</td>
+<td>LOW</td>
+<td>MEDIUM</td>
+<td>Vintage-age badge (yellow &gt;3mo, red &gt;6mo); ECONOMIC_DATA_CONTRACT v2.1 banned phrases</td>
+</tr>
+<tr>
+<td><strong>T-IMF-F-07</strong></td>
+<td>IMF + SCB cross-validation</td>
+<td><strong>T</strong>ampering</td>
+<td>IMF SWE figure diverges &gt;0.3pp from SCB national-accounts (silent error)</td>
+<td>LOW</td>
+<td>MEDIUM</td>
+<td>Quarterly cross-validation worker opens editorial-review issue</td>
+</tr>
+<tr>
+<td><strong>T-IMF-F-08</strong></td>
+<td>IMF script supply chain</td>
+<td><strong>E</strong>levation</td>
+<td><code>tsx scripts/imf-fetch.ts</code> execution path tampered upstream</td>
+<td>LOW</td>
+<td>HIGH</td>
+<td>Script in-repo; reviewed; no dynamic eval; harden-runner egress audit</td>
+</tr>
+</tbody>
+</table>
+<h3 id="mapping-to-mitre-attck-data-source-threats" class="tsd-anchor-link">Mapping to MITRE ATT&amp;CK (data-source threats)<a href="#mapping-to-mitre-attck-data-source-threats" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>Tactic</th>
+<th>Technique</th>
+<th>IMF-specific application</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TA0006 Credential Access</td>
+<td>T1552 Unsecured credentials</td>
+<td>Datamapper transport is unauthenticated; SDMX 3.0 uses an Azure APIM subscription key (<code>IMF_SDMX_SUBSCRIPTION_KEY</code>) stored only as a GitHub Actions secret (never on disk, never logged); rotation playbook in <code>analysis/imf/agentic-integration.md</code></td>
+</tr>
+<tr>
+<td>TA0007 Discovery</td>
+<td>T1083 File and directory discovery</td>
+<td>Cache directory permissions (read-only to article workers)</td>
+</tr>
+<tr>
+<td>TA0009 Collection</td>
+<td>T1530 Cloud storage object</td>
+<td>Aurora row-level access controls</td>
+</tr>
+<tr>
+<td>TA0040 Impact</td>
+<td>T1485 Data destruction</td>
+<td>Supersedes-chain prevents destructive overwrite</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Egress hosts</strong> (allow-list): <code>www.imf.org</code> (Datamapper REST · WEO/FM, <strong>unauthenticated</strong>), <code>api.imf.org</code> (SDMX 3.0 REST · IFS/BOP/DOTS/GFS/PCPS/ER/MFS_IR/MFS_PR, <strong>subscription-key authenticated</strong> via the Azure APIM <code>Ocp-Apim-Subscription-Key</code> header / <code>IMF_SDMX_SUBSCRIPTION_KEY</code> secret). Both HTTPS-only; payloads are public macro statistics with no PII.</p>
+<p><strong>Canonical rule.</strong> Every economic claim in a Riksdagsmonitor article cites an IMF dataflow first; World Bank citations are reserved for governance, environment and social residue (the classes IMF does not publish). SCB is the Swedish-specific ground truth layer. See <code>ECONOMIC_DATA_CONTRACT.md</code> v2.1 for the banned-phrase list and vintage discipline (&gt;6 mo → annotation).</p>
+<hr>
+<h2 id="🔗-hack23-ecosystem" class="tsd-anchor-link">🔗 Hack23 Ecosystem<a href="#🔗-hack23-ecosystem" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<table>
+<tr>
+  <th width="33%">🌐 Platforms</th>
+  <th width="33%">📦 Open-Source Projects</th>
+  <th width="33%">🛡️ Governance &amp; Standards</th>
+</tr>
+<tr>
+<td valign="top">
+🗳️ <a href="https://riksdagsmonitor.com">Riksdagsmonitor</a> — Swedish Parliament intelligence<br>
+🇪🇺 <a href="https://www.euparliamentmonitor.com">EU Parliament Monitor</a> — European coverage<br>
+🕵️ <a href="https://www.hack23.com/cia">Citizen Intelligence Agency</a> — political-data engine<br>
+🌐 <a href="https://www.hack23.com">Hack23 AB</a> — corporate site<br>
+📰 <a href="https://hack23.com/blog.html">Hack23 Blog</a> — engineering &amp; policy<br>
+💼 <a href="https://www.linkedin.com/company/hack23/">Hack23 on LinkedIn</a>
+</td>
+<td valign="top">
+🗳️ <a href="https://github.com/Hack23/riksdagsmonitor">Hack23/riksdagsmonitor</a><br>
+🕵️ <a href="https://github.com/Hack23/cia">Hack23/cia</a><br>
+🇪🇺 <a href="https://github.com/Hack23/euparliamentmonitor">Hack23/euparliamentmonitor</a><br>
+🔌 <a href="https://github.com/Hack23/european-parliament-mcp">Hack23/european-parliament-mcp</a><br>
+✅ <a href="https://github.com/Hack23/cia-compliance-manager">Hack23/cia-compliance-manager</a><br>
+🥋 <a href="https://github.com/Hack23/black-trigram">Hack23/black-trigram</a><br>
+🏠 <a href="https://github.com/Hack23/homepage">Hack23/homepage</a>
+</td>
+<td valign="top">
+🛡️ <a href="https://github.com/Hack23/ISMS-PUBLIC">Hack23 ISMS-PUBLIC</a> — public ISMS<br>
+🔒 <a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Information_Security_Policy.md">Information Security Policy</a><br>
+🤖 <a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/AI_Policy.md">AI Policy</a><br>
+🧪 <a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md">Secure Development Policy</a><br>
+🎯 <a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Threat_Modeling.md">Threat Modeling Policy</a><br>
+⚠️ <a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Vulnerability_Management.md">Vulnerability Management</a><br>
+🏷️ <a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md">Classification Framework</a>
+</td>
+</tr>
+</table>
+<p align="center">
+<a href="https://www.bestpractices.dev/projects/12069"><img src="https://www.bestpractices.dev/projects/12069/badge" alt="OpenSSF Best Practices"/></a>
+<a href="https://scorecard.dev/viewer/?uri=github.com/Hack23/riksdagsmonitor"><img src="https://api.securityscorecards.dev/projects/github.com/Hack23/riksdagsmonitor/badge" alt="OpenSSF Scorecard"/></a>
+<a href="https://github.com/Hack23/ISMS-PUBLIC"><img src="https://img.shields.io/badge/ISO_27001-2022-blue?style=flat-square&logo=iso&logoColor=white" alt="ISO 27001:2022"/></a>
+<a href="https://github.com/Hack23/ISMS-PUBLIC"><img src="https://img.shields.io/badge/NIST_CSF-2.0-green?style=flat-square&logo=nist&logoColor=white" alt="NIST CSF 2.0"/></a>
+<a href="https://github.com/Hack23/ISMS-PUBLIC"><img src="https://img.shields.io/badge/CIS_Controls-v8.1-orange?style=flat-square&logo=cisecurity&logoColor=white" alt="CIS Controls v8.1"/></a>
+<a href="https://www.apache.org/licenses/LICENSE-2.0"><img src="https://img.shields.io/badge/License-Apache_2.0-blue?style=flat-square" alt="Apache 2.0"/></a>
+</p>
+<p align="center"><em>🗳️ Empower citizens · 🔍 Strengthen democratic accountability · 🕵️ Illuminate the political process</em></p>
+<p align="center"><sub>© 2008–2026 <a href="https://www.hack23.com">Hack23 AB</a> (Org.nr 559534-7807) · Maintainer: <a href="https://www.linkedin.com/in/jamessorling/">James Pether Sörling, CISSP CISM</a></sub></p></div></div><div class="col-sidebar"><div class="page-menu"><div class="tsd-navigation settings"><details class="tsd-accordion"><summary class="tsd-accordion-summary"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg><h3>Settings</h3></summary><div class="tsd-accordion-details"><div class="tsd-filter-visibility"><span class="settings-label">Member Visibility</span><ul id="tsd-filter-options"><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-protected" name="protected" checked/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Protected</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-private" name="private" checked/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Private</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-inherited" name="inherited" checked/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Inherited</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-alpha" name="alpha"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Alpha</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-beta" name="beta"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Beta</span></label></li></ul></div><div class="tsd-theme-toggle"><label class="settings-label" for="tsd-theme">Theme</label><select id="tsd-theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></div></div></details></div><details open class="tsd-accordion tsd-page-navigation"><summary class="tsd-accordion-summary"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg><h3>On This Page</h3></summary><div class="tsd-accordion-details"><a href="#🎯-purpose-scope"><span>🎯 <wbr/>Purpose &amp; <wbr/>Scope</span></a><ul><li><a href="#🧭-the-three-horizons-threat-model-framing"><span>🧭 <wbr/>The <wbr/>Three <wbr/>Horizons (threat-<wbr/>model framing)</span></a></li><li><a href="#🔗-policy-alignment"><span>🔗 <wbr/>Policy <wbr/>Alignment</span></a></li><li><a href="#🔍-scope-planned-architecture-changes"><span>🔍 <wbr/>Scope — <wbr/>Planned <wbr/>Architecture <wbr/>Changes</span></a></li><li><a href="#📅-threat-landscape-evolution-timeline"><span>📅 <wbr/>Threat <wbr/>Landscape <wbr/>Evolution <wbr/>Timeline</span></a></li></ul><a href="#📊-future-system-classification"><span>📊 <wbr/>Future <wbr/>System <wbr/>Classification</span></a><ul><li><a href="#🏷️-evolved-security-classification"><span>🏷️ <wbr/>Evolved <wbr/>Security <wbr/>Classification</span></a></li></ul><a href="#🏗️-future-architecture-threat-analysis"><span>🏗️ <wbr/>Future <wbr/>Architecture <wbr/>Threat <wbr/>Analysis</span></a><ul><li><a href="#🎭-stride-per-future-component"><span>🎭 <wbr/>STRIDE per <wbr/>Future <wbr/>Component</span></a></li><li><a href="#🔐-future-crown-jewel-analysis"><span>🔐 <wbr/>Future <wbr/>Crown <wbr/>Jewel <wbr/>Analysis</span></a></li></ul><a href="#🎯-future-priority-threat-scenarios"><span>🎯 <wbr/>Future <wbr/>Priority <wbr/>Threat <wbr/>Scenarios</span></a><ul><li><a href="#scenario-f1-real-time-vote-manipulation-during-parliamentary-session"><span>Scenario <wbr/>F1: <wbr/>Real-<wbr/>Time <wbr/>Vote <wbr/>Manipulation <wbr/>During <wbr/>Parliamentary <wbr/>Session</span></a></li><li><a href="#scenario-f2-cia-data-pipeline-cache-poisoning"><span>Scenario <wbr/>F2: <wbr/>CIA <wbr/>Data <wbr/>Pipeline <wbr/>Cache <wbr/>Poisoning</span></a></li><li><a href="#scenario-f3-multi-workflow-ai-orchestration-attack"><span>Scenario <wbr/>F3: <wbr/>Multi-<wbr/>Workflow <wbr/>AI <wbr/>Orchestration <wbr/>Attack</span></a></li><li><a href="#scenario-f4-translation-pipeline-integrity-attack"><span>Scenario <wbr/>F4: <wbr/>Translation <wbr/>Pipeline <wbr/>Integrity <wbr/>Attack</span></a></li><li><a href="#scenario-f5-bedrock-knowledge-base-rag-poisoning-h3"><span>Scenario <wbr/>F5: <wbr/>Bedrock <wbr/>Knowledge-<wbr/>Base / <wbr/>RAG <wbr/>Poisoning (<wbr/>H3)</span></a></li><li><a href="#scenario-f6-cognito-account-takeover-idor-h3"><span>Scenario <wbr/>F6: <wbr/>Cognito <wbr/>Account <wbr/>Takeover &amp; <wbr/>IDOR (<wbr/>H3)</span></a></li><li><a href="#scenario-f7-lambdaiam-privilege-escalation-data-exfiltration-h3"><span>Scenario <wbr/>F7: <wbr/>Lambda/<wbr/>IAM <wbr/>Privilege <wbr/>Escalation &amp; <wbr/>Data <wbr/>Exfiltration (<wbr/>H3)</span></a></li><li><a href="#scenario-f8-bedrock-agent-excessive-agency-h3"><span>Scenario <wbr/>F8: <wbr/>Bedrock <wbr/>Agent <wbr/>Excessive <wbr/>Agency (<wbr/>H3)</span></a></li><li><a href="#scenario-f9-sagemaker-election-forecast-manipulation-h3"><span>Scenario <wbr/>F9: <wbr/>Sage<wbr/>Maker <wbr/>Election-<wbr/>Forecast <wbr/>Manipulation (<wbr/>H3)</span></a></li><li><a href="#scenario-f10-appsyncapi-gateway-public-api-abuse-h3"><span>Scenario <wbr/>F10: <wbr/>App<wbr/>Sync/<wbr/>API <wbr/>Gateway <wbr/>Public-<wbr/>API <wbr/>Abuse (<wbr/>H3)</span></a></li><li><a href="#scenario-f11-multi-region-failover-replication-tampering-h3"><span>Scenario <wbr/>F11: <wbr/>Multi-<wbr/>Region <wbr/>Failover &amp; <wbr/>Replication <wbr/>Tampering (<wbr/>H3)</span></a></li><li><a href="#scenario-f12-nordiceu-federation-cross-jurisdiction-integrity-h3"><span>Scenario <wbr/>F12: <wbr/>Nordic/<wbr/>EU <wbr/>Federation <wbr/>Cross-<wbr/>Jurisdiction <wbr/>Integrity (<wbr/>H3)</span></a></li></ul><a href="#🛡️-future-security-control-requirements"><span>🛡️ <wbr/>Future <wbr/>Security <wbr/>Control <wbr/>Requirements</span></a><ul><li><a href="#planned-controls-for-future-architecture"><span>Planned <wbr/>Controls for <wbr/>Future <wbr/>Architecture</span></a></li><li><a href="#future-stride-→-control-mapping"><span>Future <wbr/>STRIDE → <wbr/>Control <wbr/>Mapping</span></a></li></ul><a href="#🎖️-attacker-centric-threat-modeling-future-attack-vectors"><span>🎖️ <wbr/>Attacker-<wbr/>Centric <wbr/>Threat <wbr/>Modeling — <wbr/>Future <wbr/>Attack <wbr/>Vectors</span></a><ul><li><a href="#👥-future-threat-agent-classification"><span>👥 <wbr/>Future <wbr/>Threat <wbr/>Agent <wbr/>Classification</span></a></li><li><a href="#🌳-future-attack-tree-real-time-vote-manipulation"><span>🌳 <wbr/>Future <wbr/>Attack <wbr/>Tree — <wbr/>Real-<wbr/>Time <wbr/>Vote <wbr/>Manipulation</span></a></li><li><a href="#🌳-future-attack-tree-cia-pipeline-compromise"><span>🌳 <wbr/>Future <wbr/>Attack <wbr/>Tree — <wbr/>CIA <wbr/>Pipeline <wbr/>Compromise</span></a></li><li><a href="#🌳-future-attack-tree-h3-cloud-iam-compromise--data-exfiltration"><span>🌳 <wbr/>Future <wbr/>Attack <wbr/>Tree — <wbr/>H3 <wbr/>Cloud <wbr/>IAM <wbr/>Compromise &amp; <wbr/>Data <wbr/>Exfiltration</span></a></li></ul><a href="#🏗️-future-asset-attack-surface-analysis"><span>🏗️ <wbr/>Future <wbr/>Asset <wbr/>Attack <wbr/>Surface <wbr/>Analysis</span></a><ul><li><a href="#🗺️-new-attack-surface-inventory"><span>🗺️ <wbr/>New <wbr/>Attack <wbr/>Surface <wbr/>Inventory</span></a></li><li><a href="#📊-future-data-flow-threat-analysis"><span>📊 <wbr/>Future <wbr/>Data <wbr/>Flow <wbr/>Threat <wbr/>Analysis</span></a></li></ul><a href="#🤖-aillm-future-threat-analysis-owasp-llm-top-10"><span>🤖 <wbr/>AI/<wbr/>LLM <wbr/>Future <wbr/>Threat <wbr/>Analysis (<wbr/>OWASP <wbr/>LLM <wbr/>Top 10)</span></a><ul><li><a href="#future-ai-workflow-expansion-threats"><span>Future <wbr/>AI <wbr/>Workflow <wbr/>Expansion <wbr/>Threats</span></a></li><li><a href="#🟠-h3-bedrock-agentic-ai-threat-intensification"><span>🟠 <wbr/>H3 <wbr/>Bedrock / <wbr/>Agentic <wbr/>AI <wbr/>Threat <wbr/>Intensification</span></a></li><li><a href="#future-multi-workflow-orchestration-threat-matrix"><span>Future <wbr/>Multi-<wbr/>Workflow <wbr/>Orchestration <wbr/>Threat <wbr/>Matrix</span></a></li></ul><a href="#🛰️-political-intelligence-capability-threat-analysis-counter-ai-·-fimi-·-analytic-integrity"><span>🛰️ <wbr/>Political-<wbr/>Intelligence <wbr/>Capability <wbr/>Threat <wbr/>Analysis (<wbr/>Counter-<wbr/>AI · <wbr/>FIMI · <wbr/>Analytic <wbr/>Integrity)</span></a><ul><li><a href="#stride-per-intelligence-capability-component"><span>STRIDE per intelligence-<wbr/>capability component</span></a></li><li><a href="#priority-intelligence-integrity-scenarios"><span>Priority intelligence-<wbr/>integrity scenarios</span></a></li><li><a href="#mapping-to-standards"><span>Mapping to standards</span></a></li></ul><a href="#🗳️-democratic-integrity-accountability-threats"><span>🗳️ <wbr/>Democratic <wbr/>Integrity &amp; <wbr/>Accountability <wbr/>Threats</span></a><ul><li><a href="#🏛️-democratic-threat-landscape"><span>🏛️ <wbr/>Democratic <wbr/>Threat <wbr/>Landscape</span></a></li><li><a href="#scenario-f13-gradual-neutrality-erosion-via-ai-drift"><span>Scenario <wbr/>F13: <wbr/>Gradual <wbr/>Neutrality <wbr/>Erosion via <wbr/>AI <wbr/>Drift</span></a></li><li><a href="#scenario-f14-election-period-forecast-manipulation"><span>Scenario <wbr/>F14: <wbr/>Election-<wbr/>Period <wbr/>Forecast <wbr/>Manipulation</span></a></li><li><a href="#scenario-f15-democratic-accountability-suppression"><span>Scenario <wbr/>F15: <wbr/>Democratic <wbr/>Accountability <wbr/>Suppression</span></a></li><li><a href="#scenario-f16-information-laundering-via-platform-credibility"><span>Scenario <wbr/>F16: <wbr/>Information <wbr/>Laundering via <wbr/>Platform <wbr/>Credibility</span></a></li></ul><a href="#🔒-privacy-gdpr-data-protection-threats"><span>🔒 <wbr/>Privacy, <wbr/>GDPR &amp; <wbr/>Data <wbr/>Protection <wbr/>Threats</span></a><ul><li><a href="#🔐-privacy-threat-landscape-h3"><span>🔐 <wbr/>Privacy <wbr/>Threat <wbr/>Landscape (<wbr/>H3)</span></a></li><li><a href="#scenario-f17-political-opinion-inference-from-usage-patterns-h3"><span>Scenario <wbr/>F17: <wbr/>Political-<wbr/>Opinion <wbr/>Inference from <wbr/>Usage <wbr/>Patterns (<wbr/>H3)</span></a></li><li><a href="#scenario-f18-cross-region-data-residency-violation-h3"><span>Scenario <wbr/>F18: <wbr/>Cross-<wbr/>Region <wbr/>Data <wbr/>Residency <wbr/>Violation (<wbr/>H3)</span></a></li></ul><a href="#🔗-supply-chain-ai-model-governance-threats"><span>🔗 <wbr/>Supply <wbr/>Chain &amp; <wbr/>AI <wbr/>Model <wbr/>Governance <wbr/>Threats</span></a><ul><li><a href="#🏭-ai-supply-chain-threat-model"><span>🏭 <wbr/>AI <wbr/>Supply <wbr/>Chain <wbr/>Threat <wbr/>Model</span></a></li><li><a href="#scenario-f19-foundation-model-behavioral-regression"><span>Scenario <wbr/>F19: <wbr/>Foundation <wbr/>Model <wbr/>Behavioral <wbr/>Regression</span></a></li><li><a href="#scenario-f20-eu-ai-act-regulatory-reclassification"><span>Scenario <wbr/>F20: <wbr/>EU <wbr/>AI <wbr/>Act <wbr/>Regulatory <wbr/>Reclassification</span></a></li><li><a href="#scenario-f21-mcp-tool-ecosystem-compromise"><span>Scenario <wbr/>F21: <wbr/>MCP <wbr/>Tool <wbr/>Ecosystem <wbr/>Compromise</span></a></li></ul><a href="#🌍-geopolitical-information-environment-threats"><span>🌍 <wbr/>Geopolitical &amp; <wbr/>Information <wbr/>Environment <wbr/>Threats</span></a><ul><li><a href="#🗺️-geopolitical-threat-landscape"><span>🗺️ <wbr/>Geopolitical <wbr/>Threat <wbr/>Landscape</span></a></li><li><a href="#language-specific-threat-vectors"><span>Language-<wbr/>Specific <wbr/>Threat <wbr/>Vectors</span></a></li></ul><a href="#📊-consolidated-future-security-control-requirements-extended"><span>📊 <wbr/>Consolidated <wbr/>Future <wbr/>Security <wbr/>Control <wbr/>Requirements (<wbr/>Extended)</span></a><ul><li><a href="#additional-controls-for-democratic-privacy-threats"><span>Additional <wbr/>Controls for <wbr/>Democratic &amp; <wbr/>Privacy <wbr/>Threats</span></a></li><li><a href="#extended-stride-→-control-mapping-democratic-privacy"><span>Extended <wbr/>STRIDE → <wbr/>Control <wbr/>Mapping (<wbr/>Democratic &amp; <wbr/>Privacy)</span></a></li></ul><a href="#📈-extended-risk-assessment-democratic--governance-threats"><span>📈 <wbr/>Extended <wbr/>Risk <wbr/>Assessment — <wbr/>Democratic &amp; <wbr/>Governance <wbr/>Threats</span></a><ul><li><a href="#🎯-risk-heat-map-all-future-threats"><span>🎯 <wbr/>Risk <wbr/>Heat <wbr/>Map — <wbr/>All <wbr/>Future <wbr/>Threats</span></a></li></ul><a href="#🔄-continuous-future-threat-assessment"><span>🔄 <wbr/>Continuous <wbr/>Future <wbr/>Threat <wbr/>Assessment</span></a><ul><li><a href="#assessment-lifecycle-for-future-features"><span>Assessment <wbr/>Lifecycle for <wbr/>Future <wbr/>Features</span></a></li><li><a href="#future-threat-monitoring-kpis"><span>Future <wbr/>Threat <wbr/>Monitoring <wbr/>KP<wbr/>Is</span></a></li></ul><a href="#⚖️-future-risk-assessment"><span>⚖️ <wbr/>Future <wbr/>Risk <wbr/>Assessment</span></a><ul><li><a href="#quantitative-risk-matrix-future-threats"><span>Quantitative <wbr/>Risk <wbr/>Matrix — <wbr/>Future <wbr/>Threats</span></a></li></ul><a href="#📚-related-documents"><span>📚 <wbr/>Related <wbr/>Documents</span></a><ul><li><a href="#riksdagsmonitor-documentation"><span>Riksdagsmonitor <wbr/>Documentation</span></a></li><li><a href="#hack23-isms-policies-public"><span>Hack23 <wbr/>ISMS <wbr/>Policies (<wbr/>Public)</span></a></li><li><a href="#reference-implementations"><span>Reference <wbr/>Implementations</span></a></li></ul><a href="#📋-document-control"><span>📋 <wbr/>Document <wbr/>Control</span></a><ul><li><a href="#revision-history"><span>Revision <wbr/>History</span></a></li><li><a href="#framework-compliance"><span>Framework <wbr/>Compliance</span></a></li></ul><a href="#🌐-evolving-the-current-imf-threat-model-future-state-stride-expansion"><span>🌐 <wbr/>Evolving the <wbr/>Current <wbr/>IMF <wbr/>Threat <wbr/>Model — <wbr/>Future-<wbr/>State <wbr/>STRIDE <wbr/>Expansion</span></a><ul><li><a href="#stride-rows-for-imf-integration"><span>STRIDE rows for <wbr/>IMF integration</span></a></li><li><a href="#mapping-to-mitre-attck-data-source-threats"><span>Mapping to <wbr/>MITRE <wbr/>ATT&amp;<wbr/>CK (data-<wbr/>source threats)</span></a></li></ul><a href="#🔗-hack23-ecosystem"><span>🔗 <wbr/>Hack23 <wbr/>Ecosystem</span></a></div></details></div><div class="site-menu"><nav id="tsd-sidebar-links" class="tsd-navigation"><a href="https://riksdagsmonitor.com">── Live Platform ──</a><a href="https://riksdagsmonitor.com">🌐 Riksdagsmonitor.com</a><a href="https://riksdagsmonitor.com/political-intelligence.html">🕵️ Political Intelligence Index</a><a href="https://riksdagsmonitor.com/sitemap.html">🗺️ Sitemap (Human + XML)</a><a href="https://riksdagsmonitor.com/news/">📰 News &amp; Articles</a><a href="https://www.npmjs.com/package/riksdagsmonitor">📦 npm Package</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/ARCHITECTURE.md">── Current Architecture ──</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/ARCHITECTURE.md">🏛️ Architecture</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/SECURITY_ARCHITECTURE.md">🔒 Security Architecture</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/THREAT_MODEL.md">🛡️ Threat Model</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/DATA_MODEL.md">📊 Data Model</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FLOWCHART.md">🔄 Flowchart</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/STATEDIAGRAM.md">📈 State Diagram</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/MINDMAP.md">🧠 Mindmap</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/SWOT.md">💼 SWOT Analysis</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_ARCHITECTURE.md">── Future Architecture ──</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_ARCHITECTURE.md">🚀 Future Architecture</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_SECURITY_ARCHITECTURE.md">🔮 Future Security</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_THREAT_MODEL.md">🎯 Future Threat Model</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_DATA_MODEL.md">📊 Future Data Model</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_FLOWCHART.md">🔄 Future Flowchart</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_STATEDIAGRAM.md">📈 Future State Diagram</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_MINDMAP.md">🧠 Future Mindmap</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_SWOT.md">💼 Future SWOT</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_WORKFLOWS.md">🔄 Future Workflows</a><a href="#">── Security &amp; Compliance ──</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/SECURITY.md">🔐 Security Policy</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/CRA-ASSESSMENT.md">📋 CRA Assessment</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/BCPPlan.md">🏢 BCP Plan</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FinancialSecurityPlan.md">💰 Financial Security</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/End-of-Life-Strategy.md">📅 End-of-Life Strategy</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/README.md">── Project Docs ──</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/TESTING.md">🧪 Testing</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/WORKFLOWS.md">🔄 Workflows</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/RELEASE_PROCESS.md">📦 Release Process</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/CONTRIBUTING.md">🤝 Contributing</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/CODE_OF_CONDUCT.md">📜 Code of Conduct</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/AGENTS.md">🤖 Copilot Agents</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/SKILLS.md">🛠 Copilot Skills</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/LABELS.md">🏷 Labels</a><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/TRANSLATION_GUIDE.md">🌐 Translation Guide</a><a href="https://github.com/Hack23/ISMS-PUBLIC">── Hack23 ISMS Policies ──</a><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md">📋 Secure Dev Policy</a><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Information_Security_Policy.md">🔐 Information Security</a><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Threat_Modeling.md">🎯 Threat Modeling</a><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Open_Source_Policy.md">🌐 Open Source Policy</a><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Risk_Assessment_Methodology.md">📊 Risk Assessment</a><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/AI_Policy.md">🤖 AI Policy</a><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Change_Management_Policy.md">🔧 Change Management</a><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Incident_Response_Plan.md">🛡️ Incident Response</a><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Asset_Management_Policy.md">📦 Asset Management</a><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Access_Control_Policy.md">🔑 Access Control</a><a href="https://riksdagsmonitor.com/docs/api/">── Hack23 API Docs ──</a><a href="https://riksdagsmonitor.com/docs/api/">📚 Riksdagsmonitor API</a><a href="https://euparliamentmonitor.com/docs/api/">🇪🇺 EU Parliament MCP API</a><a href="https://ciacompliancemanager.com/api/">🔍 CIA Compliance Mgr API</a><a href="https://blacktrigram.com/api/">⚔️ Black Trigram API</a><a href="https://riksdagsmonitor.com" class="tsd-nav-link">🏠 Home</a><a href="https://riksdagsmonitor.com/political-intelligence.html" class="tsd-nav-link">🕵️ Political Intelligence</a><a href="https://riksdagsmonitor.com/sitemap.html" class="tsd-nav-link">🗺️ Sitemap</a><a href="https://www.npmjs.com/package/riksdagsmonitor" class="tsd-nav-link">📦 npm Package</a><a href="https://github.com/Hack23/riksdagsmonitor" class="tsd-nav-link">📦 GitHub</a><a href="https://github.com/Hack23/ISMS-PUBLIC" class="tsd-nav-link">🛡️ ISMS</a><a href="https://github.com/Hack23/cia" class="tsd-nav-link">🏛️ CIA Platform</a></nav><nav class="tsd-navigation"><a href="../modules.html">Riksdagsmonitor Intelligence Platform — API Documentation - v1.0.28</a><ul class="tsd-small-nested-navigation" id="tsd-nav-container"><li>Loading...</li></ul></nav></div></div></div><footer><p class="tsd-generator">Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></footer><div class="overlay"></div></body></html>
