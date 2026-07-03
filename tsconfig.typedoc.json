@@ -20,6 +20,7 @@
     "src/browser/**/*.ts",
     "scripts/**/*.ts",
     "scripts/**/*.js",
+    "scripts/**/*.cjs",
     "js/**/*.js"
   ],
   "exclude": [
