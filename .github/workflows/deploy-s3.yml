@@ -1,5 +1,13 @@
 name: Deploy to S3
 on:
+  # Documented in WORKFLOWS.md (§4.2 "Push to main") as the primary trigger:
+  # every push to main (including the docs/ commit that release.yml's
+  # deploy-docs job pushes back to main) must redeploy the static site —
+  # including docs/** and docs/api/** — to S3/CloudFront. Without this
+  # trigger the bucket only refreshes on manual workflow_dispatch, which is
+  # how production silently drifted from the committed docs/api tree.
+  push:
+    branches: [main]
   workflow_dispatch:
     inputs:
       fix_mimetypes:
@@ -14,6 +22,14 @@ permissions:
   contents: read
   id-token: write
   actions: write
+
+# Serialise deploys so overlapping pushes to main (e.g. release.yml's docs
+# commit landing right after a merge) never race each other's S3 sync /
+# CloudFront invalidation. Queue rather than cancel so every push still
+# results in a completed deploy.
+concurrency:
+  group: deploy-s3-${{ github.ref }}
+  cancel-in-progress: false
 
 env:
   AWS_REGION : "us-east-1"

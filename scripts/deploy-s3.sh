@@ -14,9 +14,12 @@
 #      Content-Type and Cache-Control from the start.
 #      - Immutable hashed assets use --size-only (safe: content hash in filename)
 #      - Mutable assets (HTML, metadata) use default size+mtime comparison
-#   2. A final `sync --delete --size-only` pass removes orphaned S3 objects
+#   2. An unconditional catch-all `sync` pass guarantees every remaining
+#      file — any extension, any name, including dotfiles — is uploaded
+#      even if it wasn't covered by an explicit per-type pass above.
+#   3. A final `sync --delete --size-only` pass removes orphaned S3 objects
 #      without re-uploading anything (all files already handled above).
-#   3. Cache-busting overrides for sw.js / manifests / styles.css run last.
+#   4. Cache-busting overrides for sw.js / manifests / styles.css run last.
 #
 # Existing objects already on S3 are assumed to have correct MIME types and
 # cache headers (fixed by the one-time fix-s3-mimetypes.sh run).  If this
@@ -168,14 +171,37 @@ aws s3 sync "$SRC" "$BUCKET" \
 # Metadata files - medium cache (1 day)
 # No --size-only: mutable files (sitemaps, RSS, JSON-LD) must always reflect
 # latest content even if byte size happens to stay the same.
+# Includes .yml/.yaml and .ts: TypeDoc's `projectDocuments` copies referenced
+# "media" files verbatim into docs/api/media/ (e.g. labeler.yml,
+# dependabot.yml, *.test.ts samples linked from CONTRIBUTING.md/WORKFLOWS.md)
+# — without these two extensions those links 403 on production.
 aws s3 sync "$SRC" "$BUCKET" \
   --exclude '*' \
   --include '*.xml' --include '*.json' --include '*.txt' --include '*.csv' \
   --include '*.pdf' --include '*.md' --include '*.webmanifest' \
+  --include '*.yml' --include '*.yaml' --include '*.ts' \
   --cache-control 'public, max-age=86400' \
   "${SKIP[@]}"
 
 echo "✅ Per-type sync complete (only changed files uploaded)"
+
+# ── Catch-all: literally every remaining file, any extension ─────────
+# Requirement: ALL files must be uploaded, regardless of extension — not
+# just the types explicitly enumerated above. Rather than maintaining an
+# ever-growing --exclude mirror of the per-type passes (which drifts the
+# moment a new file type appears, exactly how docs/api/media/*.yml and
+# *.ts previously 403'd), this pass has NO include/exclude filter beyond
+# the directory-level SKIP list, so any file `aws s3 sync` sees — known
+# extension, unknown extension, or no extension at all (e.g. a bare
+# `.nojekyll` dotfile) — is uploaded. Files already uploaded by the
+# type-specific passes above are unchanged (sync only transfers new or
+# modified objects), so this is a true safety net, not a duplicate-upload
+# cost centre.
+aws s3 sync "$SRC" "$BUCKET" \
+  --cache-control 'public, max-age=86400' \
+  "${SKIP[@]}"
+
+echo "✅ Catch-all sync complete (every remaining file, any extension, uploaded with guessed MIME type)"
 
 # ── Mermaid runtime: unconditional cp --recursive ────────────────────
 # The per-type `aws s3 sync --include '*.mjs' --size-only` block above

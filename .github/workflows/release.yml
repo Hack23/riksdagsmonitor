@@ -518,14 +518,21 @@ jobs:
           path: api/
 
       - name: Clean old docs
+        # Remove and recreate each directory (rather than `rm -rf dir/*`)
+        # so dotfiles such as a stale `docs/api/.nojekyll` from a previous
+        # run never survive a clean — shell globs do not match dotfiles,
+        # so `dir/*` alone would silently leave hidden files behind.
         run: |
-          rm -rf docs/api/* docs/cypress/* docs/test-results/* docs/coverage/* docs/dependencies/* || true
+          rm -rf docs/api docs/cypress docs/test-results docs/coverage docs/dependencies
+          mkdir -p docs/api docs/cypress docs/test-results docs/coverage docs/dependencies
 
       - name: Copy API documentation to docs
         run: |
-          mkdir -p docs/api
           if [ -d "api" ]; then
-            cp -r api/* docs/api/ || true
+            # `api/.` (not `api/*`) copies dotfiles too — TypeDoc emits
+            # `api/.nojekyll` which a bare glob would otherwise skip,
+            # silently dropping it from docs/api on every release.
+            cp -r api/. docs/api/ || true
           fi
 
       - name: Generate dependencies documentation

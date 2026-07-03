@@ -52,12 +52,10 @@
     "**/*.test.*",
     "**/*.spec.*",
     "**/*.d.ts",
-    "**/*.cjs",
     "**/coalition-dashboard.ts",
     "**/coalition-dashboard/**",
     "**/committees-dashboard.ts",
-    "**/committees-dashboard/**",
-    "scripts/strip-in-method-comments.ts"
+    "**/committees-dashboard/**"
   ],
   "blockTags": [
     "@author",
