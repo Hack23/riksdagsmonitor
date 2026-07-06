@@ -187,4 +187,4 @@
 .hl-21 { color: var(--hl-21); }
 .hl-22 { color: var(--hl-22); }
 .hl-23 { color: var(--hl-23); }
-pre, code { background: var(--code-background); }
+pre, code, math[display='block'] { background: var(--code-background); }

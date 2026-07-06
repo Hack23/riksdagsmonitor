@@ -1,4 +1,4 @@
-riksdagsmonitor@1.0.29 /home/runner/work/riksdagsmonitor/riksdagsmonitor
+riksdagsmonitor@1.0.30 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 ├─┬ @eslint/js@10.0.1
 │ └── eslint@10.6.0 deduped
 ├─┬ @types/d3@7.4.3
@@ -51,11 +51,11 @@ riksdagsmonitor@1.0.29 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ └── undici-types@8.3.0
 ├─┬ @types/papaparse@5.5.2
 │ └── @types/node@26.1.0 deduped
-├─┬ @vitest/coverage-v8@4.1.9
+├─┬ @vitest/coverage-v8@4.1.10
 │ ├── @bcoe/v8-coverage@1.0.2
-│ ├── UNMET OPTIONAL DEPENDENCY @vitest/browser@4.1.9
-│ ├─┬ @vitest/utils@4.1.9
-│ │ ├── @vitest/pretty-format@4.1.9 deduped
+│ ├── UNMET OPTIONAL DEPENDENCY @vitest/browser@4.1.10
+│ ├─┬ @vitest/utils@4.1.10
+│ │ ├── @vitest/pretty-format@4.1.10 deduped
 │ │ ├── convert-source-map@2.0.0
 │ │ └── tinyrainbow@3.1.0 deduped
 │ ├─┬ ast-v8-to-istanbul@1.0.0
@@ -85,9 +85,9 @@ riksdagsmonitor@1.0.29 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ ├── obug@2.1.1
 │ ├── std-env@4.0.0
 │ ├── tinyrainbow@3.1.0
-│ └── vitest@4.1.9 deduped
-├─┬ @vitest/ui@4.1.9
-│ ├── @vitest/utils@4.1.9 deduped
+│ └── vitest@4.1.10 deduped
+├─┬ @vitest/ui@4.1.10
+│ ├── @vitest/utils@4.1.10 deduped
 │ ├── fflate@0.8.2
 │ ├── flatted@3.4.2
 │ ├── pathe@2.0.3
@@ -99,7 +99,7 @@ riksdagsmonitor@1.0.29 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ │ ├── fdir@6.5.0 deduped
 │ │ └── picomatch@4.0.4 deduped
 │ ├── tinyrainbow@3.1.0 deduped
-│ └── vitest@4.1.9 deduped
+│ └── vitest@4.1.10 deduped
 ├─┬ ajv-formats@3.0.1
 │ └── ajv@8.20.0 deduped
 ├─┬ ajv@8.20.0
@@ -1169,8 +1169,8 @@ riksdagsmonitor@1.0.29 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ ├── esbuild@0.28.1 deduped
 │ └── UNMET OPTIONAL DEPENDENCY fsevents@~2.3.3
 ├─┬ typedoc-plugin-mdn-links@5.1.1
-│ └── typedoc@0.28.19 deduped
-├─┬ typedoc@0.28.19
+│ └── typedoc@0.28.20 deduped
+├─┬ typedoc@0.28.20
 │ ├─┬ @gerrit0/mini-shiki@3.23.0
 │ │ ├─┬ @shikijs/engine-oniguruma@3.23.0
 │ │ │ ├── @shikijs/types@3.23.0 deduped
@@ -1184,10 +1184,10 @@ riksdagsmonitor@1.0.29 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ │ │ └── @types/hast@3.0.4 deduped
 │ │ └── @shikijs/vscode-textmate@10.0.2
 │ ├── lunr@2.3.9
-│ ├─┬ markdown-it@14.2.0
+│ ├─┬ markdown-it@14.3.0
 │ │ ├── argparse@2.0.1 deduped
 │ │ ├── entities@4.5.0
-│ │ ├─┬ linkify-it@5.0.1
+│ │ ├─┬ linkify-it@5.0.2
 │ │ │ └── uc.micro@2.1.0 deduped
 │ │ ├── mdurl@2.0.0
 │ │ ├── punycode.js@2.3.1
@@ -1310,43 +1310,43 @@ riksdagsmonitor@1.0.29 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ ├── tinyglobby@0.2.17 deduped
 │ ├── tsx@4.23.0 deduped
 │ └── yaml@2.9.0 deduped
-├─┬ vitest@4.1.9
+├─┬ vitest@4.1.10
 │ ├── UNMET OPTIONAL DEPENDENCY @edge-runtime/vm@*
 │ ├── UNMET OPTIONAL DEPENDENCY @opentelemetry/api@^1.9.0
 │ ├── @types/node@26.1.0 deduped
-│ ├── UNMET OPTIONAL DEPENDENCY @vitest/browser-playwright@4.1.9
-│ ├── UNMET OPTIONAL DEPENDENCY @vitest/browser-preview@4.1.9
-│ ├── UNMET OPTIONAL DEPENDENCY @vitest/browser-webdriverio@4.1.9
-│ ├── UNMET OPTIONAL DEPENDENCY @vitest/coverage-istanbul@4.1.9
-│ ├── @vitest/coverage-v8@4.1.9 deduped
-│ ├─┬ @vitest/expect@4.1.9
+│ ├── UNMET OPTIONAL DEPENDENCY @vitest/browser-playwright@4.1.10
+│ ├── UNMET OPTIONAL DEPENDENCY @vitest/browser-preview@4.1.10
+│ ├── UNMET OPTIONAL DEPENDENCY @vitest/browser-webdriverio@4.1.10
+│ ├── UNMET OPTIONAL DEPENDENCY @vitest/coverage-istanbul@4.1.10
+│ ├── @vitest/coverage-v8@4.1.10 deduped
+│ ├─┬ @vitest/expect@4.1.10
 │ │ ├── @standard-schema/spec@1.1.0
 │ │ ├─┬ @types/chai@5.2.3
 │ │ │ ├── @types/deep-eql@4.0.2
 │ │ │ └── assertion-error@2.0.1
-│ │ ├── @vitest/spy@4.1.9 deduped
-│ │ ├── @vitest/utils@4.1.9 deduped
+│ │ ├── @vitest/spy@4.1.10 deduped
+│ │ ├── @vitest/utils@4.1.10 deduped
 │ │ ├── chai@6.2.2
 │ │ └── tinyrainbow@3.1.0 deduped
-│ ├─┬ @vitest/mocker@4.1.9
-│ │ ├── @vitest/spy@4.1.9 deduped
+│ ├─┬ @vitest/mocker@4.1.10
+│ │ ├── @vitest/spy@4.1.10 deduped
 │ │ ├── estree-walker@3.0.3 deduped
 │ │ ├── magic-string@0.30.21 deduped
 │ │ ├── UNMET OPTIONAL DEPENDENCY msw@^2.4.9
 │ │ └── vite@8.1.3 deduped
-│ ├─┬ @vitest/pretty-format@4.1.9
+│ ├─┬ @vitest/pretty-format@4.1.10
 │ │ └── tinyrainbow@3.1.0 deduped
-│ ├─┬ @vitest/runner@4.1.9
-│ │ ├── @vitest/utils@4.1.9 deduped
+│ ├─┬ @vitest/runner@4.1.10
+│ │ ├── @vitest/utils@4.1.10 deduped
 │ │ └── pathe@2.0.3 deduped
-│ ├─┬ @vitest/snapshot@4.1.9
-│ │ ├── @vitest/pretty-format@4.1.9 deduped
-│ │ ├── @vitest/utils@4.1.9 deduped
+│ ├─┬ @vitest/snapshot@4.1.10
+│ │ ├── @vitest/pretty-format@4.1.10 deduped
+│ │ ├── @vitest/utils@4.1.10 deduped
 │ │ ├── magic-string@0.30.21 deduped
 │ │ └── pathe@2.0.3 deduped
-│ ├── @vitest/spy@4.1.9
-│ ├── @vitest/ui@4.1.9 deduped
-│ ├── @vitest/utils@4.1.9 deduped
+│ ├── @vitest/spy@4.1.10
+│ ├── @vitest/ui@4.1.10 deduped
+│ ├── @vitest/utils@4.1.10 deduped
 │ ├── es-module-lexer@2.0.0
 │ ├── expect-type@1.3.0
 │ ├── happy-dom@20.10.6 deduped
