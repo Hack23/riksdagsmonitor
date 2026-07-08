@@ -12,7 +12,6 @@
     "noEmit": true,
     "resolveJsonModule": true,
     "ignoreDeprecations": "6.0",
-    "baseUrl": ".",
     "lib": ["ES2025", "DOM", "DOM.Iterable"],
     "types": ["node"]
   },
