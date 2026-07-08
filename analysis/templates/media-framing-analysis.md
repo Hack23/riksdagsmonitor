@@ -451,6 +451,39 @@ flowchart LR
 
 ---
 
+## 🎯 Personalization & Character-Attack Analysis (target = the ATTACK, never the private person)
+
+> **ETHICAL FIREWALL — non-negotiable, Pass-2 blocking.** This section analyzes the *mechanics of a personal attack* as a media-manipulation phenomenon. It does **NOT** profile, investigate, or repeat allegations about private individuals.
+> - **Public officials** are analyzable **only in their official capacity** (GDPR Art. 9(2)(e)/(g)).
+> - **Private individuals** — spouses, partners, children, named private citizens — are **NEVER the analytical object.** They appear only as the *target of a documented attack*, and only to expose the manipulation.
+> - **Any unverified personal allegation is a manipulation datapoint to be flagged — NEVER a claim to be restated as fact.** Repeat nothing; map the attack vector.
+
+### Personalization Vector Table
+
+| Attack vector | Target class | Legitimate scrutiny OR smear? | Evidence (public URL / dated) | Manipulation technique | Private-individual shield applied? |
+|---------------|--------------|-------------------------------|-------------------------------|------------------------|:----------------------------------:|
+| Record/conduct in office | Public official (official capacity) | Legitimate if evidenced | `[url]` | — (fair scrutiny) | N/A |
+| Character / integrity smear | Public official | Smear if unevidenced | `[url]` | `T0023 Distort facts` | N/A |
+| **Family-member instrumentalization** | **Private individual (spouse/relative)** | **Smear — always** | `[url — the ATTACK, not the allegation]` | Guilt-by-association | ✅ **shielded — not profiled** |
+| Gendered / sexualized attack | Public official + private | Smear | `[url]` | `T0048 Harass` | ✅ if private target |
+| Deepfake / synthetic media | Either | Smear | `[url]` | `T0088 AI-generated media` | ✅ if private target |
+
+### Attack-Escalation Ladder (severity classification)
+
+```mermaid
+flowchart LR
+    S1["🟢 L1 Legitimate scrutiny<br/>evidenced, official-capacity"] --> S2["🟡 L2 Character framing<br/>unevidenced integrity attack"]
+    S2 --> S3["🟠 L3 Guilt-by-association<br/>family/relationship weaponized"]
+    S3 --> S4["🔴 L4 Harassment / smear campaign<br/>coordinated, CIB signals"]
+    S4 --> S5["⚫ L5 Incitement / threat<br/>escalate to SÄPO reporting note"]
+    style S1 fill:#4CAF50,color:#FFFFFF
+    style S2 fill:#FFC107,color:#000000
+    style S3 fill:#FB8C00,color:#FFFFFF
+    style S4 fill:#D32F2F,color:#FFFFFF
+    style S5 fill:#212121,color:#FFFFFF
+```
+---
+
 ## 📎 Sources
 
 Public media coverage and public social-media posts only. Representative sample across Swedish national, regional, and commentary outlets, plus international quality press for comparative frame lineage. **No outlet is treated as neutral** — every cited outlet appears in the §"Source Ecology — Outlet Bias Audit" table with ownership, funding mix, board-appointment authority, documented editorial lean, Reuters Institute Trust score, and PO/PON complaint history. Public-service broadcasters (SVT/SR/UR) are publicly funded with politically-appointed boards (Förvaltningsstiftelsen) and an institutional editorial culture — process-disciplined but not bias-free. State-affiliated outlets (RT/Sputnik/CGTN/PressTV/RIA/TASS) monitored only as amplification signal — never cited as factual sources. No paywall bypass. No private-account social-media content. No leaked or hacked material. Frame-ownership and funding data sourced from Nordicom Media Ownership Database (gu.se), Reuters Institute Digital News Report 2024, EUvsDisinfo case dossiers, EU DSA transparency reports, and public SÄPO/MUST/FRA/EU-EEAS publications.
