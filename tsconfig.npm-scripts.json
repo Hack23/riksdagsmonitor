@@ -20,6 +20,7 @@
     "outDir": "./dist/scripts",
     "rootDir": "./scripts",
     "ignoreDeprecations": "6.0",
+    "baseUrl": ".",
     "paths": {
       "@scripts/*": ["./scripts/*"],
       "@types/*": ["./scripts/types/*"]
