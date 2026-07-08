@@ -1,5 +1,5 @@
 {
-  "version": "1.0.31",
+  "version": "1.0.32",
   "name": "riksdagsmonitor",
   "dependencies": {
     "@eslint/js": {
@@ -245,8 +245,8 @@
       }
     },
     "@types/node": {
-      "version": "26.1.0",
-      "resolved": "https://registry.npmjs.org/@types/node/-/node-26.1.0.tgz",
+      "version": "26.1.1",
+      "resolved": "https://registry.npmjs.org/@types/node/-/node-26.1.1.tgz",
       "overridden": false,
       "dependencies": {
         "undici-types": {
@@ -262,7 +262,7 @@
       "overridden": false,
       "dependencies": {
         "@types/node": {
-          "version": "26.1.0"
+          "version": "26.1.1"
         }
       }
     },
@@ -2571,7 +2571,7 @@
       "overridden": false,
       "dependencies": {
         "@types/node": {
-          "version": "26.1.0"
+          "version": "26.1.1"
         },
         "@types/whatwg-mimetype": {
           "version": "3.0.2",
@@ -2584,7 +2584,7 @@
           "overridden": false,
           "dependencies": {
             "@types/node": {
-              "version": "26.1.0"
+              "version": "26.1.1"
             }
           }
         },
@@ -2594,7 +2594,7 @@
           "overridden": false,
           "dependencies": {
             "@types/node": {
-              "version": "26.1.0"
+              "version": "26.1.1"
             }
           }
         },
@@ -5273,6 +5273,37 @@
         }
       }
     },
+    "typescript-7": {
+      "version": "7.0.1-rc",
+      "resolved": "https://registry.npmjs.org/typescript/-/typescript-7.0.1-rc.tgz",
+      "overridden": false,
+      "dependencies": {
+        "@typescript/typescript-aix-ppc64": {},
+        "@typescript/typescript-darwin-arm64": {},
+        "@typescript/typescript-darwin-x64": {},
+        "@typescript/typescript-freebsd-arm64": {},
+        "@typescript/typescript-freebsd-x64": {},
+        "@typescript/typescript-linux-arm": {},
+        "@typescript/typescript-linux-arm64": {},
+        "@typescript/typescript-linux-loong64": {},
+        "@typescript/typescript-linux-mips64el": {},
+        "@typescript/typescript-linux-ppc64": {},
+        "@typescript/typescript-linux-riscv64": {},
+        "@typescript/typescript-linux-s390x": {},
+        "@typescript/typescript-linux-x64": {
+          "version": "7.0.1-rc",
+          "resolved": "https://registry.npmjs.org/@typescript/typescript-linux-x64/-/typescript-linux-x64-7.0.1-rc.tgz",
+          "overridden": false
+        },
+        "@typescript/typescript-netbsd-arm64": {},
+        "@typescript/typescript-netbsd-x64": {},
+        "@typescript/typescript-openbsd-arm64": {},
+        "@typescript/typescript-openbsd-x64": {},
+        "@typescript/typescript-sunos-x64": {},
+        "@typescript/typescript-win32-arm64": {},
+        "@typescript/typescript-win32-x64": {}
+      }
+    },
     "typescript-eslint": {
       "version": "8.63.0",
       "resolved": "https://registry.npmjs.org/typescript-eslint/-/typescript-eslint-8.63.0.tgz",
@@ -5584,7 +5615,7 @@
       "overridden": false,
       "dependencies": {
         "@types/node": {
-          "version": "26.1.0"
+          "version": "26.1.1"
         },
         "@vitejs/devtools": {},
         "esbuild": {
@@ -5681,7 +5712,7 @@
         "@edge-runtime/vm": {},
         "@opentelemetry/api": {},
         "@types/node": {
-          "version": "26.1.0"
+          "version": "26.1.1"
         },
         "@vitest/browser-playwright": {},
         "@vitest/browser-preview": {},
