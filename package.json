@@ -212,7 +212,7 @@
     "tsx": "4.23.0",
     "typedoc": "0.28.20",
     "typedoc-plugin-mdn-links": "5.1.1",
-    "typescript": "npm:@typescript/typescript6@^6.0.0",
+    "typescript": "npm:@typescript/typescript6@^6.0.2",
     "typescript-7": "npm:typescript@rc",
     "typescript-eslint": "8.63.0",
     "unified": "^11.0.5",
