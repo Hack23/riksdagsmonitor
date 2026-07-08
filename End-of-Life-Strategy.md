@@ -26,7 +26,7 @@
 
 **Riksdagsmonitor** is a static HTML5/CSS3 website deployed to AWS CloudFront + S3 (primary) and GitHub Pages (disaster recovery), built with **Vite**, tested with **Vitest** and **Cypress**, and powered by **Node.js 26**. The platform provides Swedish Parliament transparency through interactive **Chart.js** and **D3.js** visualisations across **14 languages**.
 
-> **⚡ Upgrade Note (May 2026):** Riksdagsmonitor has been upgraded to Node.js 26 (Current → LTS in October 2026). Node.js 26 will be promoted to LTS in October 2026 — no additional migration step needed. A Node.js 27 nightly compatibility CI job (`continue-on-error: true`) tracks the next-generation release. See the [Node.js Migration Roadmap](#️-nodejs-migration-roadmap) for the full plan.
+> **⚡ Upgrade Note (July 2026):** The toolchain migration to TypeScript 7 has started. The project now runs the TypeScript 6 compatibility package (`typescript`) side-by-side with a TypeScript 7 RC toolchain (`typescript-7`) so the build can validate the next compiler without breaking existing workflows. Node.js 26 remains the current runtime and will be promoted to LTS in October 2026; a Node.js 27 nightly compatibility CI job (`continue-on-error: true`) tracks the next-generation release. See the [Node.js Migration Roadmap](#️-nodejs-migration-roadmap) for the full plan.
 
 This document defines the technology lifecycle management strategy — covering the current stack, Node.js release schedule evolution, dependency EOL timelines, and migration plans — to ensure stability, compatibility, and security throughout the project's operational life.
 

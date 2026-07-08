@@ -75,10 +75,10 @@ jobs:
         run: npm ci
       
       - name: TypeScript type-check (browser)
-        run: npx tsc --project tsconfig.browser.json --noEmit
+        run: node ./node_modules/typescript/bin/tsc --project tsconfig.browser.json --noEmit
       
       - name: TypeScript type-check (scripts)
-        run: npx tsc --project tsconfig.scripts.json --noEmit
+        run: node ./node_modules/typescript/bin/tsc --project tsconfig.scripts.json --noEmit
       
       - name: Generate TypeDoc API documentation
         run: npm run typedoc
@@ -327,11 +327,11 @@ jobs:
       
       - name: TypeScript type-check (browser)
         if: steps.nightly.outputs.version != '' && steps.setup_nightly.outcome == 'success'
-        run: npx tsc --project tsconfig.browser.json --noEmit
+        run: node ./node_modules/typescript/bin/tsc --project tsconfig.browser.json --noEmit
       
       - name: TypeScript type-check (scripts)
         if: steps.nightly.outputs.version != '' && steps.setup_nightly.outcome == 'success'
-        run: npx tsc --project tsconfig.scripts.json --noEmit
+        run: node ./node_modules/typescript/bin/tsc --project tsconfig.scripts.json --noEmit
       
       - name: Run Vitest unit tests
         if: steps.nightly.outputs.version != '' && steps.setup_nightly.outcome == 'success'

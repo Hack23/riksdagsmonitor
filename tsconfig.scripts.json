@@ -22,8 +22,8 @@
     "ignoreDeprecations": "6.0",
     "baseUrl": ".",
     "paths": {
-      "@scripts/*": ["scripts/*"],
-      "@types/*": ["scripts/types/*"]
+      "@scripts/*": ["./scripts/*"],
+      "@types/*": ["./scripts/types/*"]
     },
     "lib": ["ES2025"],
     "types": ["node"],

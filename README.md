@@ -318,9 +318,10 @@ Riksdagsmonitor uses a **provider-tiered** data architecture, with each provider
 ### Stack
 
 - **Frontend** — Static HTML5 / CSS3 with TypeScript-built Chart.js / D3.js dashboards (no SPA framework, mobile-first, cyberpunk theme)
-- **Build** — Vite 8 (ES modules, code splitting, SRI via `vite-plugin-sri-gen`)
-- **Visualisation** — Chart.js 4 + D3.js 7, hosted locally on CloudFront
-- **Testing** — Vitest 4 (2,890 unit tests, 100 % pass rate, 70 % line coverage) + Cypress 15 (E2E)
+- **Language** — TypeScript 6.0.2 compatibility package (`typescript`) plus TypeScript 7.0.1-rc (`typescript-7`) running side-by-side while the migration is underway
+- **Build** — Vite 8.1.3 (ES modules, code splitting, SRI via `vite-plugin-sri-gen`)
+- **Visualisation** — Chart.js 4.5.1 + D3.js 7.9.0, hosted locally on CloudFront
+- **Testing** — Vitest 4.1.10 (2,890 unit tests, 100 % pass rate, 70 % line coverage) + Cypress 15.18.1 (E2E)
 - **Hosting** — AWS CloudFront + S3 dual-region (us-east-1 primary, eu-west-1 replica) via OIDC; GitHub Pages as DR fallback
 - **CI/CD** — 50 GitHub Actions workflow files (22 standard `.yml` + 14 agentic `.md` sources + 14 compiled `.lock.yml`); SHA-pinned, `step-security/harden-runner` everywhere
 - **Data Platform** — Citizen Intelligence Agency (CIA) Java/Spring Boot backend + 15 CIA subsystems
