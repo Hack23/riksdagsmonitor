@@ -40,7 +40,8 @@
     "htmlhint",
     "js-yaml",
     "chartjs-plugin-annotation",
-    "worldbank-mcp"
+    "worldbank-mcp",
+    "typescript-7"
   ],
   "ignoreBinaries": [
     "cypress",
