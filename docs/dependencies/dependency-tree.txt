@@ -1,4 +1,4 @@
-riksdagsmonitor@1.0.32 /home/runner/work/riksdagsmonitor/riksdagsmonitor
+riksdagsmonitor@1.0.33 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 ├─┬ @eslint/js@10.0.1
 │ └── eslint@10.6.0 deduped
 ├─┬ @types/d3@7.4.3
@@ -45,7 +45,7 @@ riksdagsmonitor@1.0.32 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ └─┬ @types/d3-zoom@3.0.8
 │   ├── @types/d3-interpolate@3.0.4 deduped
 │   └── @types/d3-selection@3.0.11 deduped
-├─┬ @types/hast@3.0.4
+├─┬ @types/hast@3.0.5
 │ └── @types/unist@3.0.3
 ├─┬ @types/node@26.1.1
 │ └── undici-types@8.3.0
@@ -97,7 +97,7 @@ riksdagsmonitor@1.0.32 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ │ └── totalist@3.0.1
 │ ├─┬ tinyglobby@0.2.17
 │ │ ├── fdir@6.5.0 deduped
-│ │ └── picomatch@4.0.4 deduped
+│ │ └── picomatch@4.0.5 deduped
 │ ├── tinyrainbow@3.1.0 deduped
 │ └── vitest@4.1.10 deduped
 ├─┬ ajv-formats@3.0.1
@@ -517,7 +517,7 @@ riksdagsmonitor@1.0.32 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │   ├── UNMET OPTIONAL DEPENDENCY bufferutil@^4.0.1
 │   └── UNMET OPTIONAL DEPENDENCY utf-8-validate@>=5.0.2
 ├─┬ hast-util-to-string@3.0.1
-│ └── @types/hast@3.0.4 deduped
+│ └── @types/hast@3.0.5 deduped
 ├─┬ htmlhint@1.9.2
 │ ├── async@3.2.6
 │ ├── chalk@4.1.2 deduped
@@ -570,7 +570,7 @@ riksdagsmonitor@1.0.32 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ └── setimmediate@1.0.5
 ├─┬ knip@6.25.0
 │ ├─┬ fdir@6.5.0
-│ │ └── picomatch@4.0.4 deduped
+│ │ └── picomatch@4.0.5 deduped
 │ ├─┬ formatly@0.3.0
 │ │ └─┬ fd-package-json@2.0.0
 │ │   └── walk-up-path@4.0.0
@@ -619,7 +619,7 @@ riksdagsmonitor@1.0.32 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-resolver/binding-wasm32-wasi@11.21.3
 │ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-resolver/binding-win32-arm64-msvc@11.21.3
 │ │ └── UNMET OPTIONAL DEPENDENCY @oxc-resolver/binding-win32-x64-msvc@11.21.3
-│ ├── picomatch@4.0.4
+│ ├── picomatch@4.0.5
 │ ├── smol-toml@1.6.1
 │ ├── strip-json-comments@5.0.3
 │ ├── tinyglobby@0.2.17 deduped
@@ -825,29 +825,29 @@ riksdagsmonitor@1.0.32 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ └── try-to-catch@4.0.5
 ├── papaparse@5.5.4
 ├─┬ rehype-autolink-headings@7.1.0
-│ ├── @types/hast@3.0.4 deduped
+│ ├── @types/hast@3.0.5 deduped
 │ ├── @ungap/structured-clone@1.3.0
 │ ├─┬ hast-util-heading-rank@3.0.0
-│ │ └── @types/hast@3.0.4 deduped
+│ │ └── @types/hast@3.0.5 deduped
 │ ├─┬ hast-util-is-element@3.0.0
-│ │ └── @types/hast@3.0.4 deduped
+│ │ └── @types/hast@3.0.5 deduped
 │ ├── unified@11.0.5 deduped
 │ └── unist-util-visit@5.1.0 deduped
 ├─┬ rehype-raw@7.0.0
-│ ├── @types/hast@3.0.4 deduped
+│ ├── @types/hast@3.0.5 deduped
 │ ├─┬ hast-util-raw@9.1.0
-│ │ ├── @types/hast@3.0.4 deduped
+│ │ ├── @types/hast@3.0.5 deduped
 │ │ ├── @types/unist@3.0.3 deduped
 │ │ ├── @ungap/structured-clone@1.3.0 deduped
 │ │ ├─┬ hast-util-from-parse5@8.0.3
-│ │ │ ├── @types/hast@3.0.4 deduped
+│ │ │ ├── @types/hast@3.0.5 deduped
 │ │ │ ├── @types/unist@3.0.3 deduped
 │ │ │ ├── devlop@1.1.0 deduped
 │ │ │ ├─┬ hastscript@9.0.1
-│ │ │ │ ├── @types/hast@3.0.4 deduped
+│ │ │ │ ├── @types/hast@3.0.5 deduped
 │ │ │ │ ├── comma-separated-tokens@2.0.3 deduped
 │ │ │ │ ├─┬ hast-util-parse-selector@4.0.0
-│ │ │ │ │ └── @types/hast@3.0.4 deduped
+│ │ │ │ │ └── @types/hast@3.0.5 deduped
 │ │ │ │ ├── property-information@7.1.0 deduped
 │ │ │ │ └── space-separated-tokens@2.0.2 deduped
 │ │ │ ├── property-information@7.1.0 deduped
@@ -857,7 +857,7 @@ riksdagsmonitor@1.0.32 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ │ │ ├── vfile@6.0.3 deduped
 │ │ │ └── web-namespaces@2.0.1 deduped
 │ │ ├─┬ hast-util-to-parse5@8.0.1
-│ │ │ ├── @types/hast@3.0.4 deduped
+│ │ │ ├── @types/hast@3.0.5 deduped
 │ │ │ ├── comma-separated-tokens@2.0.3 deduped
 │ │ │ ├── devlop@1.1.0 deduped
 │ │ │ ├── property-information@7.1.0 deduped
@@ -880,20 +880,20 @@ riksdagsmonitor@1.0.32 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │     ├── @types/unist@3.0.3 deduped
 │     └── unist-util-stringify-position@4.0.0 deduped
 ├─┬ rehype-sanitize@6.0.0
-│ ├── @types/hast@3.0.4 deduped
+│ ├── @types/hast@3.0.5 deduped
 │ └─┬ hast-util-sanitize@5.0.2
-│   ├── @types/hast@3.0.4 deduped
+│   ├── @types/hast@3.0.5 deduped
 │   ├── @ungap/structured-clone@1.3.0 deduped
 │   └── unist-util-position@5.0.0 deduped
 ├─┬ rehype-stringify@10.0.1
-│ ├── @types/hast@3.0.4 deduped
+│ ├── @types/hast@3.0.5 deduped
 │ ├─┬ hast-util-to-html@9.0.5
-│ │ ├── @types/hast@3.0.4 deduped
+│ │ ├── @types/hast@3.0.5 deduped
 │ │ ├── @types/unist@3.0.3 deduped
 │ │ ├── ccount@2.0.1
 │ │ ├── comma-separated-tokens@2.0.3
 │ │ ├─┬ hast-util-whitespace@3.0.0
-│ │ │ └── @types/hast@3.0.4 deduped
+│ │ │ └── @types/hast@3.0.5 deduped
 │ │ ├── html-void-elements@3.0.0 deduped
 │ │ ├── mdast-util-to-hast@13.2.1 deduped
 │ │ ├── property-information@7.1.0
@@ -1086,10 +1086,10 @@ riksdagsmonitor@1.0.32 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ ├── micromark-util-types@2.0.2
 │ └── unified@11.0.5 deduped
 ├─┬ remark-rehype@11.1.2
-│ ├── @types/hast@3.0.4 deduped
+│ ├── @types/hast@3.0.5 deduped
 │ ├── @types/mdast@4.0.4 deduped
 │ ├─┬ mdast-util-to-hast@13.2.1
-│ │ ├── @types/hast@3.0.4 deduped
+│ │ ├── @types/hast@3.0.5 deduped
 │ │ ├── @types/mdast@4.0.4 deduped
 │ │ ├── @ungap/structured-clone@1.3.0 deduped
 │ │ ├── devlop@1.1.0 deduped
@@ -1181,7 +1181,7 @@ riksdagsmonitor@1.0.32 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ │ │ └── @shikijs/types@3.23.0 deduped
 │ │ ├─┬ @shikijs/types@3.23.0
 │ │ │ ├── @shikijs/vscode-textmate@10.0.2 deduped
-│ │ │ └── @types/hast@3.0.4 deduped
+│ │ │ └── @types/hast@3.0.5 deduped
 │ │ └── @shikijs/vscode-textmate@10.0.2
 │ ├── lunr@2.3.9
 │ ├─┬ markdown-it@14.3.0
@@ -1292,7 +1292,7 @@ riksdagsmonitor@1.0.32 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ └─┬ unist-util-visit-parents@6.0.2
 │   ├── @types/unist@3.0.3 deduped
 │   └── unist-util-is@6.0.1 deduped
-├─┬ vite@8.1.3
+├─┬ vite@8.1.4
 │ ├── @types/node@26.1.1 deduped
 │ ├── UNMET OPTIONAL DEPENDENCY @vitejs/devtools@^0.3.0
 │ ├── esbuild@0.28.1 deduped
@@ -1300,28 +1300,28 @@ riksdagsmonitor@1.0.32 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ ├── jiti@2.7.0 deduped
 │ ├── UNMET OPTIONAL DEPENDENCY less@^4.0.0
 │ ├── lightningcss@1.32.0 deduped
-│ ├── picomatch@4.0.4 deduped
+│ ├── picomatch@4.0.5 deduped
 │ ├─┬ postcss@8.5.16
 │ │ ├── nanoid@3.3.15
 │ │ ├── picocolors@1.1.1
 │ │ └── source-map-js@1.2.1 deduped
-│ ├─┬ rolldown@1.1.3
-│ │ ├── @oxc-project/types@0.137.0 deduped
-│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-android-arm64@1.1.3
-│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-darwin-arm64@1.1.3
-│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-darwin-x64@1.1.3
-│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-freebsd-x64@1.1.3
-│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-linux-arm-gnueabihf@1.1.3
-│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-linux-arm64-gnu@1.1.3
-│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-linux-arm64-musl@1.1.3
-│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-linux-ppc64-gnu@1.1.3
-│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-linux-s390x-gnu@1.1.3
-│ │ ├── @rolldown/binding-linux-x64-gnu@1.1.3
-│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-linux-x64-musl@1.1.3
-│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-openharmony-arm64@1.1.3
-│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-wasm32-wasi@1.1.3
-│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-win32-arm64-msvc@1.1.3
-│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-win32-x64-msvc@1.1.3
+│ ├─┬ rolldown@1.1.5
+│ │ ├── @oxc-project/types@0.139.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-android-arm64@1.1.5
+│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-darwin-arm64@1.1.5
+│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-darwin-x64@1.1.5
+│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-freebsd-x64@1.1.5
+│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-linux-arm-gnueabihf@1.1.5
+│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-linux-arm64-gnu@1.1.5
+│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-linux-arm64-musl@1.1.5
+│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-linux-ppc64-gnu@1.1.5
+│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-linux-s390x-gnu@1.1.5
+│ │ ├── @rolldown/binding-linux-x64-gnu@1.1.5
+│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-linux-x64-musl@1.1.5
+│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-openharmony-arm64@1.1.5
+│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-wasm32-wasi@1.1.5
+│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-win32-arm64-msvc@1.1.5
+│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-win32-x64-msvc@1.1.5
 │ │ └── @rolldown/pluginutils@1.0.1
 │ ├── UNMET OPTIONAL DEPENDENCY sass-embedded@^1.70.0
 │ ├── UNMET OPTIONAL DEPENDENCY sass@^1.70.0
@@ -1354,7 +1354,7 @@ riksdagsmonitor@1.0.32 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ │ ├── estree-walker@3.0.3 deduped
 │ │ ├── magic-string@0.30.21 deduped
 │ │ ├── UNMET OPTIONAL DEPENDENCY msw@^2.4.9
-│ │ └── vite@8.1.3 deduped
+│ │ └── vite@8.1.4 deduped
 │ ├─┬ @vitest/pretty-format@4.1.10
 │ │ └── tinyrainbow@3.1.0 deduped
 │ ├─┬ @vitest/runner@4.1.10
@@ -1376,13 +1376,13 @@ riksdagsmonitor@1.0.32 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ │ └── @jridgewell/sourcemap-codec@1.5.5
 │ ├── obug@2.1.1 deduped
 │ ├── pathe@2.0.3 deduped
-│ ├── picomatch@4.0.4 deduped
+│ ├── picomatch@4.0.5 deduped
 │ ├── std-env@4.0.0 deduped
 │ ├── tinybench@2.9.0
 │ ├── tinyexec@1.0.2
 │ ├── tinyglobby@0.2.17 deduped
 │ ├── tinyrainbow@3.1.0 deduped
-│ ├── vite@8.1.3 deduped
+│ ├── vite@8.1.4 deduped
 │ └─┬ why-is-node-running@2.3.0
 │   ├── siginfo@2.0.0
 │   └── stackback@0.0.2
