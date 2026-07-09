@@ -34,11 +34,14 @@ export function rehypeWrapTables() {
         parent.type === 'element' &&
         (parent as Element).tagName === 'div'
       ) {
-        const cls = (parent as Element).properties?.className;
-        const hasClass =
-          (Array.isArray(cls) && (cls as string[]).includes('rm-table-wrap')) ||
-          (typeof cls === 'string' && cls.split(/\s+/).includes('rm-table-wrap'));
-        if (hasClass) {
+        const className = (parent as Element).properties?.className as
+          | string
+          | string[]
+          | undefined;
+        const classNames = Array.isArray(className)
+          ? className
+          : (className ?? '').split(/\s+/);
+        if (classNames.includes('rm-table-wrap')) {
           return;
         }
       }
