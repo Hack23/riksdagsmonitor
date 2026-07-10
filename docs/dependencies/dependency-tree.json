@@ -1,5 +1,5 @@
 {
-  "version": "1.0.33",
+  "version": "1.0.34",
   "name": "riksdagsmonitor",
   "dependencies": {
     "@eslint/js": {
@@ -2880,8 +2880,8 @@
       }
     },
     "knip": {
-      "version": "6.25.0",
-      "resolved": "https://registry.npmjs.org/knip/-/knip-6.25.0.tgz",
+      "version": "6.26.0",
+      "resolved": "https://registry.npmjs.org/knip/-/knip-6.26.0.tgz",
       "overridden": false,
       "dependencies": {
         "fdir": {

@@ -167,9 +167,9 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add .github/workflows/*.lock.yml \
-                  .github/workflows/agentics-maintenance.yml \
-                  .github/aw/actions-lock.json
+          git add .github/workflows/*.md \
+            .github/workflows/*.lock.yml \
+            .github/aw/actions-lock.json
           if git diff --cached --quiet; then
             echo "No changes to commit"
           else
