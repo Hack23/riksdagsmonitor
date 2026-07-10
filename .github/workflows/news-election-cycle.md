@@ -286,11 +286,11 @@ safe-outputs:
 
 steps:
   - name: News pre-warm & pre-flight (composite)
-    uses: .github/actions/news-prewarm
+    uses: ./.github/actions/news-prewarm
     with:
       imf-sdmx-subscription-key: ${{ secrets.IMF_SDMX_SUBSCRIPTION_KEY }}
   - name: Resolve workflow inputs
-    uses: .github/actions/news-resolve-inputs
+    uses: ./.github/actions/news-resolve-inputs
     with:
       subfolder: election-cycle
       article-date: ${{ inputs.article_date }}
