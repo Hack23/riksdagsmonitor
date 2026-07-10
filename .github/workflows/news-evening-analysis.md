@@ -284,11 +284,11 @@ safe-outputs:
 
 steps:
   - name: News pre-warm & pre-flight (composite)
-    uses: Hack23/riksdagsmonitor/.github/actions/news-prewarm@a9014fb7edc152cbc6cad7b6cc6fc79f59dc80a4
+    uses: .github/actions/news-prewarm
     with:
       imf-sdmx-subscription-key: ${{ secrets.IMF_SDMX_SUBSCRIPTION_KEY }}
   - name: Resolve workflow inputs
-    uses: Hack23/riksdagsmonitor/.github/actions/news-resolve-inputs@a9014fb7edc152cbc6cad7b6cc6fc79f59dc80a4
+    uses: .github/actions/news-resolve-inputs
     with:
       subfolder: evening-analysis
       article-date: ${{ inputs.article_date }}
