@@ -14,7 +14,7 @@ const ACTION_CONTENT = readFileSync(ACTION_PATH, 'utf8');
 // under strict action pinning. These helpers locate either form.
 const newsActionRef = (name: string): RegExp =>
   new RegExp(
-    `uses:\\s*(?:\\./|[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+/)\\.github/actions/${name}(?:@[0-9a-fA-F]+)?`,
+    `uses:\\s*(?:(?:\\./|[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+/))?\\.github/actions/${name}(?:@[0-9a-fA-F]+)?`,
   );
 const indexOfNewsAction = (content: string, name: string): number =>
   content.search(newsActionRef(name));
