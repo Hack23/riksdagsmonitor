@@ -53,13 +53,12 @@ const NEWS_PREWARM_ACTION = path.join(
   'news-prewarm',
   'action.yml'
 );
-const NEWS_PREWARM_USES_REF = './.github/actions/news-prewarm';
-// A `uses:` reference to the shared news-prewarm composite action may appear as
-// the bare local form (`./.github/actions/news-prewarm`) or the SHA-pinned
-// remote form (`<owner>/<repo>/.github/actions/news-prewarm@<sha>`) that
-// `gh aw compile` emits under strict action pinning. Match either form.
+const NEWS_PREWARM_USES_REF = '.github/actions/news-prewarm';
+// A `uses:` reference to the shared news-prewarm composite action must stay
+// local and unpinned (always latest from this repository). Accept both local
+// syntaxes with or without the leading `./`.
 const NEWS_PREWARM_USES_RE =
-  /uses:\s*(?:\.\/|[A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+\/)\.github\/actions\/news-prewarm(?:@[0-9a-fA-F]+)?/;
+  /uses:\s*(?:\.\/)?\.github\/actions\/news-prewarm/;
 
 // ---------------------------------------------------------------------------
 // Constants
