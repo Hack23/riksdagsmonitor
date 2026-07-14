@@ -1,3 +1,4 @@
+version: 2
 updates:
 - directory: /
   ignore:
@@ -29,4 +30,3 @@ updates:
   schedule:
     interval: daily
   versioning-strategy: increase
-version: 2
