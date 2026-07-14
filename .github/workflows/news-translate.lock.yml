@@ -50,7 +50,7 @@
 #   - actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
 #   - actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
 #   - github/gh-aw-actions/setup@bf7ba42ce6443bf79fa184c9c6a35de202690bfc # v0.82.7
-#   - ruby/setup-ruby@9eb537ca036ebaed86729dcb9309076e4c5c3b74 # v1.314.0
+#   - ruby/setup-ruby@6e5d382445ae5590b7449d8b3bc8cb1c2c27f617 # v1.317.0
 #
 # Container images used:
 #   - ghcr.io/github/gh-aw-firewall/agent:0.27.27@sha256:bb5a0150dcff1cddf9b8045bb411b7759806bace0abcb132fb22158073e155d9
@@ -519,7 +519,7 @@ jobs:
           node-version: '26'
           package-manager-cache: false
       - name: Setup Ruby
-        uses: ruby/setup-ruby@9eb537ca036ebaed86729dcb9309076e4c5c3b74 # v1.314.0
+        uses: ruby/setup-ruby@6e5d382445ae5590b7449d8b3bc8cb1c2c27f617 # v1.317.0
         with:
           ruby-version: '3.3'
       - name: Create gh-aw temp directory
