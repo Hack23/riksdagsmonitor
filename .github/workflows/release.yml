@@ -65,9 +65,18 @@ jobs:
         with:
           egress-policy: audit
 
+      - name: Generate GitHub App token
+        id: app-token
+        uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3.2.0
+        with:
+          app-id: ${{ vars.GH_APP_ID }}
+          private-key: ${{ secrets.GH_APP_PRIVATE_KEY }}
+
       - name: Checkout repository
         uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
-        # No fetch-depth: 0 needed for the version bump — saves ~2 min.
+        with:
+          token: ${{ steps.app-token.outputs.token }}
+          persist-credentials: true
 
       - name: Get version
         id: get-version
@@ -129,9 +138,20 @@ jobs:
         with:
           egress-policy: audit
 
+
+      - name: Generate GitHub App token
+        id: app-token
+        uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3.2.0
+        with:
+          app-id: ${{ vars.GH_APP_ID }}
+          private-key: ${{ secrets.GH_APP_PRIVATE_KEY }}
+
       - name: Checkout repository
         uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
         with:
+          fetch-depth: 0
+          token: ${{ steps.app-token.outputs.token }}
+          persist-credentials: true
           ref: ${{ needs.prepare.outputs.release_sha }}
 
       - name: Setup Node.js
@@ -459,9 +479,20 @@ jobs:
         with:
           egress-policy: audit
 
+
+      - name: Generate GitHub App token
+        id: app-token
+        uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3.2.0
+        with:
+          app-id: ${{ vars.GH_APP_ID }}
+          private-key: ${{ secrets.GH_APP_PRIVATE_KEY }}
+
       - name: Checkout repository
         uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
         with:
+          fetch-depth: 0
+          token: ${{ steps.app-token.outputs.token }}
+          persist-credentials: true
           ref: ${{ needs.prepare.outputs.release_sha }}
 
       - name: Setup Node.js
@@ -689,11 +720,20 @@ jobs:
         with:
           egress-policy: audit
 
-      # release-drafter reads .github/release-drafter.yml from the default
-      # branch (api driven), so a shallow checkout is sufficient here.
+
+      - name: Generate GitHub App token
+        id: app-token
+        uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3.2.0
+        with:
+          app-id: ${{ vars.GH_APP_ID }}
+          private-key: ${{ secrets.GH_APP_PRIVATE_KEY }}
+
       - name: Checkout repository
         uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
         with:
+          fetch-depth: 0
+          token: ${{ steps.app-token.outputs.token }}
+          persist-credentials: true
           ref: ${{ needs.prepare.outputs.release_sha }}
 
       - name: Download release zip
@@ -720,7 +760,7 @@ jobs:
           publish: false
           prerelease: ${{ needs.prepare.outputs.is_prerelease }}
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
 
       - name: Create GitHub Release
         uses: ncipollo/release-action@339a81892b84b4eeb0f6e744e4574d79d0d9b8dd # v1.21.0
@@ -770,7 +810,7 @@ jobs:
             artifacts/security/riksdagsmonitor-${{ needs.prepare.outputs.version }}.spdx.json
             artifacts/security/riksdagsmonitor-${{ needs.prepare.outputs.version }}.zip.intoto.jsonl
             artifacts/security/riksdagsmonitor-${{ needs.prepare.outputs.version }}.spdx.json.intoto.jsonl
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ steps.app-token.outputs.token }}
 
   # --------------------------------------------------------------------------
   # 9. npm-publish — build:lib + publish (≤5 min) — RUNS LAST
@@ -794,9 +834,19 @@ jobs:
         with:
           egress-policy: audit
 
+      - name: Generate GitHub App token
+        id: app-token
+        uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3.2.0
+        with:
+          app-id: ${{ vars.GH_APP_ID }}
+          private-key: ${{ secrets.GH_APP_PRIVATE_KEY }}
+
       - name: Checkout repository
         uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
         with:
+          fetch-depth: 0
+          token: ${{ steps.app-token.outputs.token }}
+          persist-credentials: true
           ref: ${{ needs.prepare.outputs.release_sha }}
 
       - name: Setup Node.js for npm publish
@@ -830,7 +880,6 @@ jobs:
       - name: Publish to npm with provenance
         run: npm publish --ignore-scripts --provenance --access public
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           NPM_CONFIG_PROVENANCE: true
 
       - name: Verify npm package
