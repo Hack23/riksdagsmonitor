@@ -8,8 +8,12 @@ updates:
   - github-actions
   open-pull-requests-limit: 10
   package-ecosystem: github-actions
+  cooldown:
+    default-days: 1
+    exclude: ["*"]
   schedule:
     interval: daily
+
 - directory: /
   groups:
     development-dependencies:
@@ -29,4 +33,7 @@ updates:
   package-ecosystem: npm
   schedule:
     interval: daily
+  cooldown:
+    default-days: 1
+    exclude: ["*"]
   versioning-strategy: increase
