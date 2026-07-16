@@ -41,7 +41,7 @@ on:
 # trigger workflows, unlike the former GITHUB_TOKEN behavior, so tag-push
 # triggering would start a second release pipeline for the same version.
 concurrency:
-  group: release-${{ inputs.version }}
+  group: release-${{ github.workflow }}-${{ github.ref_name }}
   cancel-in-progress: false
 
 # Restrict top-level permissions to minimum required defaults
@@ -104,6 +104,12 @@ jobs:
           if git ls-remote --exit-code --tags origin "refs/tags/$VERSION" > /dev/null; then
             echo "::error::Release tag $VERSION already exists."
             exit 1
+          else
+            status=$?
+            if [[ "$status" -ne 2 ]]; then
+              echo "::error::Unable to verify whether release tag $VERSION exists (git ls-remote exited with $status)."
+              exit "$status"
+            fi
           fi
 
       - name: Setup Node.js
