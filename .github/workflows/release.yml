@@ -128,13 +128,30 @@ jobs:
           PLAIN_VERSION="${VERSION#v}"
           npm version "$PLAIN_VERSION" --no-git-tag-version
 
-      - uses: stefanzweifel/git-auto-commit-action@4a55954c782fc1ea30b9056cd3e7a2b40ca8887d # v7.2.0
-        with:
-          commit_message: "chore(release): bump version to ${{ inputs.version }}"
-          tagging_message: "${{ inputs.version }}"
-          commit_user_name: hack23-automation[bot]
-          commit_user_email: 304996498+hack23-automation[bot]@users.noreply.github.com
-          commit_author: hack23-automation[bot] <304996498+hack23-automation[bot]@users.noreply.github.com>
+      - name: Commit, sign, and tag release
+        env:
+          RELEASE_TAG: ${{ steps.get-version.outputs.version }}
+          RELEASE_SSH_SIGNING_KEY: ${{ secrets.RELEASE_SSH_SIGNING_KEY }}
+        run: |
+          git config user.name "hack23-automation[bot]"
+          git config user.email "304996498+hack23-automation[bot]@users.noreply.github.com"
+
+          if [ -n "$RELEASE_SSH_SIGNING_KEY" ]; then
+            signing_key="$RUNNER_TEMP/release-signing-key"
+            umask 077
+            printf '%s\n' "$RELEASE_SSH_SIGNING_KEY" > "$signing_key"
+            git config gpg.format ssh
+            git config user.signingkey "$signing_key"
+            git config commit.gpgsign true
+            git config tag.gpgsign true
+          else
+            echo "RELEASE_SSH_SIGNING_KEY is not configured; commits and tags will not be signed." >&2
+          fi
+
+          git add package.json package-lock.json
+          git commit -m "chore(release): bump version to $RELEASE_TAG"
+          git tag -a "$RELEASE_TAG" -m "Release $RELEASE_TAG"
+          git push --atomic origin HEAD:refs/heads/main "refs/tags/$RELEASE_TAG"
 
       - name: Resolve release SHA
         id: resolve-sha
@@ -726,6 +743,8 @@ jobs:
           branch: main
           clean: false
           commit-message: "docs: update documentation for ${{ needs.prepare.outputs.version || 'development' }}"
+          token: ${{ steps.app-token.outputs.token }}
+
 
   # --------------------------------------------------------------------------
   # 8. release — create GitHub Release with artifacts (≤3 min)
