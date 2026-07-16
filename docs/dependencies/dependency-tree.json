@@ -1,5 +1,5 @@
 {
-  "version": "1.0.36",
+  "version": "1.0.37",
   "name": "riksdagsmonitor",
   "dependencies": {
     "@eslint/js": {
@@ -2880,8 +2880,8 @@
       }
     },
     "knip": {
-      "version": "6.26.0",
-      "resolved": "https://registry.npmjs.org/knip/-/knip-6.26.0.tgz",
+      "version": "6.27.0",
+      "resolved": "https://registry.npmjs.org/knip/-/knip-6.27.0.tgz",
       "overridden": false,
       "dependencies": {
         "fdir": {
@@ -5610,8 +5610,8 @@
       }
     },
     "vite": {
-      "version": "8.1.4",
-      "resolved": "https://registry.npmjs.org/vite/-/vite-8.1.4.tgz",
+      "version": "8.1.5",
+      "resolved": "https://registry.npmjs.org/vite/-/vite-8.1.5.tgz",
       "overridden": false,
       "dependencies": {
         "@types/node": {
@@ -5633,13 +5633,13 @@
           "version": "4.0.5"
         },
         "postcss": {
-          "version": "8.5.16",
-          "resolved": "https://registry.npmjs.org/postcss/-/postcss-8.5.16.tgz",
+          "version": "8.5.19",
+          "resolved": "https://registry.npmjs.org/postcss/-/postcss-8.5.19.tgz",
           "overridden": false,
           "dependencies": {
             "nanoid": {
-              "version": "3.3.15",
-              "resolved": "https://registry.npmjs.org/nanoid/-/nanoid-3.3.15.tgz",
+              "version": "3.3.16",
+              "resolved": "https://registry.npmjs.org/nanoid/-/nanoid-3.3.16.tgz",
               "overridden": false
             },
             "picocolors": {
@@ -5782,7 +5782,7 @@
             },
             "msw": {},
             "vite": {
-              "version": "8.1.4"
+              "version": "8.1.5"
             }
           }
         },
@@ -5894,7 +5894,7 @@
           "version": "3.1.0"
         },
         "vite": {
-          "version": "8.1.4"
+          "version": "8.1.5"
         },
         "why-is-node-running": {
           "version": "2.3.0",
