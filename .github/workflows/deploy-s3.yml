@@ -13,7 +13,6 @@ on:
 permissions:
   contents: read
   id-token: write
-  actions: write
 
 env:
   AWS_REGION : "us-east-1"
