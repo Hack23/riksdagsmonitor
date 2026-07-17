@@ -23,9 +23,6 @@ env:
   IMF_SDMX_SUBSCRIPTION_KEY: ${{ secrets.IMF_SDMX_SUBSCRIPTION_KEY }}
   IMF_SDMX_SUBSCRIPTION_KEY_SECONDARY: ${{ secrets.IMF_SDMX_SUBSCRIPTION_KEY_SECONDARY }}
 
-permissions:
-  contents: read
-
 jobs:
   # The job MUST be called `copilot-setup-steps` or it will not be picked up by Copilot.
   copilot-setup-steps:
@@ -35,17 +32,6 @@ jobs:
     # Copilot will be given its own token for its operations.
     permissions:
       contents: read
-      actions: read
-      attestations: read
-      checks: read
-      deployments: read
-      issues: write
-      models: read
-      discussions: read
-      pages: read
-      pull-requests: write
-      security-events: read
-      statuses: read
 
     # Steps run before the agent starts working
     steps:
