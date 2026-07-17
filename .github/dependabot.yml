@@ -42,4 +42,5 @@ updates:
   cooldown:
     default-days: 1
     exclude: ["*"]
-  versioning-strategy: increase
+  exclude-paths:
+    - "docs/**"
