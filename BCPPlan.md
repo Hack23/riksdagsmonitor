@@ -60,9 +60,9 @@ graph TB
     end
     
     subgraph RECOVERY["🔄 Recovery Requirements"]
-        RTO[⏰ RTO Target<br/>&lt; 30 seconds origin failover<br/>&lt; 15 minutes DNS failover]
-        RPO[💾 RPO Target<br/>&lt; 15 minutes<br/>near-zero effective RPO (S3 replication lag)]
-        AVAILABILITY[📈 Availability Target<br/>99.998%<br/>≈10.5 minutes (~631 seconds) downtime/year]
+        RTO["⏰ RTO Target<br/>&lt; 30 seconds origin failover<br/>&lt; 15 minutes DNS failover"]
+        RPO["💾 RPO Target<br/>&lt; 15 minutes<br/>near-zero effective RPO (S3 replication lag)"]
+        AVAILABILITY["📈 Availability Target<br/>99.998%<br/>≈10.5 minutes (~631 seconds) downtime/year"]
     end
     
     subgraph DEPLOYMENT["🌍 Deployment Strategy"]
@@ -122,9 +122,9 @@ graph TB
     end
     
     subgraph PRIMARY["☁️ AWS Primary (Active)"]
-        CF[🌍 CloudFront CDN<br/>600+ PoPs<br/>Automatic Origin Failover]
+        CF["🌍 CloudFront CDN<br/>600+ PoPs<br/>Automatic Origin Failover"]
         S3_US[💾 S3 us-east-1<br/>Primary Origin<br/>Versioning Enabled]
-        S3_EU[💾 S3 eu-west-1<br/>Replica Origin<br/>Asynchronous Replication (&lt;15 min RPO)]
+        S3_EU["💾 S3 eu-west-1<br/>Replica Origin<br/>Asynchronous Replication (&lt;15 min RPO)"]
         
         CF -->|Primary| S3_US
         CF -->|Failover on 5xx errors| S3_EU
@@ -132,15 +132,15 @@ graph TB
     end
     
     subgraph DR["📝 GitHub Pages (Standby)"]
-        GH[📄 GitHub Pages<br/>Default branch (root)<br/>Automated Deployment]
+        GH["📄 GitHub Pages<br/>Default branch (root)<br/>Automated Deployment"]
     end
     
     USERS[👥 Users] -->|DNS Query| DNS
     HEALTHCHECK -->|Monitor| CF
-    DNS -->|Healthy: Return CloudFront alias/hostname| USERS
-    DNS -.->|3 Failed Checks (~90s detection)<br/>+ DNS TTL/propagation (up to ~15 min total)| USERS
-    USERS -->|HTTPS/TLS 1.3| CF
-    USERS -.->|HTTPS/TLS 1.3 (DR)| GH
+    DNS -->|"Healthy: Return CloudFront alias/hostname"| USERS
+    DNS -.->|"3 Failed Checks (~90s detection)<br/>+ DNS TTL/propagation (up to ~15 min total)"| USERS
+    USERS -->|"HTTPS/TLS 1.3"| CF
+    USERS -.->|"HTTPS/TLS 1.3 (DR)"| GH
     
     style ROUTE53 fill:#1565C0,color:#ffffff
     style PRIMARY fill:#4CAF50,color:#000000
