@@ -1,5 +1,5 @@
 {
-  "version": "1.0.40",
+  "version": "1.0.41",
   "name": "riksdagsmonitor",
   "dependencies": {
     "@eslint/js": {
@@ -1664,8 +1664,8 @@
           }
         },
         "systeminformation": {
-          "version": "5.31.6",
-          "resolved": "https://registry.npmjs.org/systeminformation/-/systeminformation-5.31.6.tgz",
+          "version": "5.31.17",
+          "resolved": "https://registry.npmjs.org/systeminformation/-/systeminformation-5.31.17.tgz",
           "overridden": false
         },
         "tmp": {

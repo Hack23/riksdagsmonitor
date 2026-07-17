@@ -1,4 +1,4 @@
-riksdagsmonitor@1.0.40 /home/runner/work/riksdagsmonitor/riksdagsmonitor
+riksdagsmonitor@1.0.41 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 ├─┬ @eslint/js@10.0.1
 │ └── eslint@10.7.0 deduped
 ├─┬ @types/d3@7.4.3
@@ -324,7 +324,7 @@ riksdagsmonitor@1.0.40 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ │ └── throttleit@1.0.1
 │ ├─┬ supports-color@8.1.1
 │ │ └── has-flag@4.0.0
-│ ├── systeminformation@5.31.6
+│ ├── systeminformation@5.31.17
 │ ├── tmp@0.2.7
 │ ├── tree-kill@1.2.2
 │ ├── tslib@1.14.1
