@@ -61,42 +61,6 @@ export function getDocFiles(): DocFile[] {
         });
       }
 
-      /**
-       * Get generated analysis pages from the `analysis/` directory.
-       *
-       * The S3 deployment copies this directory verbatim to `dist/analysis/`, so
-       * every HTML page below it must also be represented in sitemap.xml.
-       */
-      export function getAnalysisFiles(): DocFile[] {
-        const analysisDir = path.join(__dirname, '..', '..', '..', 'analysis');
-        if (!fs.existsSync(analysisDir)) {
-          console.warn('⚠️ Analysis directory not found');
-          return [];
-        }
-
-        const results: DocFile[] = [];
-
-        function scanDir(dir: string): void {
-          const entries = fs.readdirSync(dir, { withFileTypes: true });
-          for (const entry of entries) {
-            const fullPath = path.join(dir, entry.name);
-            if (entry.isDirectory()) {
-              scanDir(fullPath);
-            } else if (entry.isFile() && entry.name.endsWith('.html')) {
-              results.push({
-                file: path.relative(analysisDir, fullPath).replace(/\\/g, '/'),
-                path: fullPath,
-                lastmod: getFileModTime(fullPath),
-              });
-            }
-          }
-        }
-
-        scanDir(analysisDir);
-        results.sort((a, b) => a.file.localeCompare(b.file));
-        console.log(`  Found ${results.length} analysis HTML files in analysis/`);
-        return results;
-      }
     }
   }
 
@@ -106,5 +70,42 @@ export function getDocFiles(): DocFile[] {
 
   console.log(`  Found ${results.length} documentation files in docs/`);
 
+  return results;
+}
+
+/**
+ * Get generated analysis pages from the `analysis/` directory.
+ *
+ * The S3 deployment copies this directory verbatim to `dist/analysis/`, so
+ * every HTML page below it must also be represented in sitemap.xml.
+ */
+export function getAnalysisFiles(): DocFile[] {
+  const analysisDir = path.join(__dirname, '..', '..', '..', 'analysis');
+  if (!fs.existsSync(analysisDir)) {
+    console.warn('⚠️ Analysis directory not found');
+    return [];
+  }
+
+  const results: DocFile[] = [];
+
+  function scanDir(dir: string): void {
+    const entries = fs.readdirSync(dir, { withFileTypes: true });
+    for (const entry of entries) {
+      const fullPath = path.join(dir, entry.name);
+      if (entry.isDirectory()) {
+        scanDir(fullPath);
+      } else if (entry.isFile() && entry.name.endsWith('.html')) {
+        results.push({
+          file: path.relative(analysisDir, fullPath).replace(/\\/g, '/'),
+          path: fullPath,
+          lastmod: getFileModTime(fullPath),
+        });
+      }
+    }
+  }
+
+  scanDir(analysisDir);
+  results.sort((a, b) => a.file.localeCompare(b.file));
+  console.log(`  Found ${results.length} analysis HTML files in analysis/`);
   return results;
 }
