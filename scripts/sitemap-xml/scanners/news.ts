@@ -33,7 +33,13 @@ const NEWS_DIR = path.join(__dirname, '..', '..', '..', 'news');
 export interface ArticleGroup {
   baseSlug: string;
   languages: string[];
+  pages: ArticlePage[];
   lastmod: string;
+}
+
+export interface ArticlePage {
+  lang: string;
+  path: string;
 }
 
 /**
@@ -55,22 +61,27 @@ export function getNewsArticles(): ArticleGroup[] {
     for (const entry of entries) {
       if (entry.isDirectory()) {
         scanDir(path.join(dir, entry.name));
-      } else if (entry.isFile() && entry.name !== 'index.html' && !entry.name.startsWith('index_') && entry.name.endsWith('.html')) {
+      } else if (entry.isFile() && entry.name.endsWith('.html')) {
         const file = entry.name;
-        const match = file.match(/^(.+?)-(en|sv|da|no|fi|de|fr|es|nl|ar|he|ja|ko|zh)\.html$/);
+        const relDir = path.relative(NEWS_DIR, dir).split(path.sep).join('/');
+        const match = file.match(/^(.+?)-(en|sv|da|no|fi|de|fr|es|nl|ar|he|ja|ko|zh)\.html$/)
+          ?? (relDir && file.match(/^index(?:_(en|sv|da|no|fi|de|fr|es|nl|ar|he|ja|ko|zh))?\.html$/)
+            ? [file, relDir, file === 'index.html' ? 'en' : file.slice(6, -5)] as RegExpMatchArray
+            : null);
         if (match) {
           const baseSlug = match[1]!;
           const lang = match[2]!;
           const filePath = path.join(dir, file);
           const fileModTime = getFileModTime(filePath);
 
-          const relDir = path.relative(NEWS_DIR, dir).split(path.sep).join('/');
           const fullBaseSlug = relDir ? `${relDir}/${baseSlug}` : baseSlug;
+          const pagePath = relDir ? `${relDir}/${file}` : file;
 
           if (!articles.has(fullBaseSlug)) {
             articles.set(fullBaseSlug, {
               baseSlug: fullBaseSlug,
               languages: [],
+              pages: [],
               lastmod: fileModTime,
             });
           } else {
@@ -81,6 +92,7 @@ export function getNewsArticles(): ArticleGroup[] {
           }
 
           articles.get(fullBaseSlug)!.languages.push(lang);
+          articles.get(fullBaseSlug)!.pages.push({ lang, path: pagePath });
         }
       }
     }

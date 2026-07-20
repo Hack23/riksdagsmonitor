@@ -73,7 +73,25 @@ export function generateSitemap(): string {
 
   if (existsAtRoot('politician-dashboard.html')) {
     const politicianDashboardMtime = getFileModTime(path.join(ROOT_DIR, 'politician-dashboard.html'));
-    xml += generateUrlEntry('politician-dashboard.html', politicianDashboardMtime, 'weekly', '0.8');
+    const politicianAlternates: HreflangAlternate[] = LANGUAGES
+      .map((lang) => ({
+        lang,
+        href: lang === 'en' ? 'politician-dashboard.html' : `politician-dashboard_${lang}.html`,
+      }))
+      .filter((alt) => existsAtRoot(alt.href));
+    politicianAlternates.push({ lang: 'x-default', href: 'politician-dashboard.html' });
+    xml += generateUrlEntry(
+      'politician-dashboard.html',
+      politicianDashboardMtime,
+      'weekly',
+      '0.8',
+      politicianAlternates,
+    );
+    LANGUAGES.filter((lang) => lang !== 'en').forEach((lang) => {
+      const loc = `politician-dashboard_${lang}.html`;
+      if (!existsAtRoot(loc)) return;
+      xml += generateUrlEntry(loc, getFileModTime(path.join(ROOT_DIR, loc)), 'weekly', '0.7');
+    });
   }
 
   // English rss.xml plus every localized rss_<lang>.xml that was actually
@@ -235,18 +253,21 @@ export function generateSitemap(): string {
       return a.localeCompare(b);
     });
 
-    const alternates: HreflangAlternate[] = sortedLanguages.map((altLang) => ({
-      lang: altLang,
-      href: `news/${article.baseSlug}-${altLang}.html`,
-    }));
+    const pagesByLanguage = new Map(article.pages.map((page) => [page.lang, page.path]));
+    const alternates: HreflangAlternate[] = sortedLanguages
+      .map((altLang) => {
+        const pagePath = pagesByLanguage.get(altLang);
+        return pagePath ? { lang: altLang, href: `news/${pagePath}` } : null;
+      })
+      .filter((alternate): alternate is HreflangAlternate => alternate !== null);
 
     alternates.push({
       lang: 'x-default',
-      href: `news/${article.baseSlug}-${sortedLanguages[0]}.html`,
+      href: `news/${pagesByLanguage.get(sortedLanguages[0]) ?? `${article.baseSlug}-${sortedLanguages[0]}.html`}`,
     });
 
-    sortedLanguages.forEach((lang) => {
-      const loc = `news/${article.baseSlug}-${lang}.html`;
+    article.pages.forEach(({ path: pagePath }) => {
+      const loc = `news/${pagePath}`;
       xml += generateUrlEntry(loc, article.lastmod, 'monthly', '0.8', alternates);
     });
   });
