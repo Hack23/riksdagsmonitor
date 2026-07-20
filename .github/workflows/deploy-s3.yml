@@ -242,6 +242,16 @@ jobs:
             echo "ℹ️ No docs directory found, skipping"
           fi
 
+      - name: Copy analysis pages to build output
+        run: |
+          if [ -d "analysis" ]; then
+            echo "📊 Copying analysis pages to dist/analysis/..."
+            cp -r analysis dist/analysis
+            echo "✅ Analysis pages copied to dist/analysis/"
+          else
+            echo "ℹ️ No analysis directory found, skipping"
+          fi
+
       - name: Copy JS libraries to build output
         run: |
           echo "📦 Copying js/ directory to dist/js/..."

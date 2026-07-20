@@ -25,7 +25,7 @@ import type { Language } from '../../types/language.js';
 import { getFileModTime } from '../git-timestamps.js';
 import { getNewsArticles } from '../scanners/news.js';
 import { getApiDocs } from '../scanners/api.js';
-import { getDocFiles } from '../scanners/docs.js';
+import { getAnalysisFiles, getDocFiles } from '../scanners/docs.js';
 import { generateUrlEntry, type HreflangAlternate } from './url-entry.js';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -270,6 +270,15 @@ export function generateSitemap(): string {
       const loc = `docs/${doc.file}`;
       const priority = doc.file === 'index.html' || doc.file.endsWith('/index.html') ? '0.4' : '0.3';
       xml += generateUrlEntry(loc, doc.lastmod, 'monthly', priority);
+    });
+  }
+
+  const analysisFiles = getAnalysisFiles();
+  if (analysisFiles.length > 0) {
+    console.log(`  Processing ${analysisFiles.length} analysis HTML files...`);
+
+    analysisFiles.forEach((analysisFile) => {
+      xml += generateUrlEntry(`analysis/${analysisFile.file}`, analysisFile.lastmod, 'weekly', '0.3');
     });
   }
 

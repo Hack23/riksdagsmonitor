@@ -4,8 +4,8 @@
  * @name docs/ scanner — coverage / test-results / cypress / api index
  *
  * @description
- * Walks `docs/` recursively (skipping `assets/` and `node_modules/`),
- * collects every `*.html` file, and returns a sorted list. Output is
+ * Walks `docs/` recursively, collects every `*.html` file, and returns a
+ * sorted list. Output is
  * sorted alphabetically by relative path so sitemap XML stays
  * deterministic across platforms.
  *
@@ -50,7 +50,7 @@ export function getDocFiles(): DocFile[] {
     const entries = fs.readdirSync(dir, { withFileTypes: true });
     for (const entry of entries) {
       const fullPath = path.join(dir, entry.name);
-      if (entry.isDirectory() && entry.name !== 'assets' && entry.name !== 'node_modules') {
+      if (entry.isDirectory()) {
         scanDir(fullPath);
       } else if (entry.isFile() && entry.name.endsWith('.html')) {
         const relativePath = path.relative(DOCS_DIR, fullPath).replace(/\\/g, '/');
@@ -59,6 +59,43 @@ export function getDocFiles(): DocFile[] {
           path: fullPath,
           lastmod: getFileModTime(fullPath),
         });
+      }
+
+      /**
+       * Get generated analysis pages from the `analysis/` directory.
+       *
+       * The S3 deployment copies this directory verbatim to `dist/analysis/`, so
+       * every HTML page below it must also be represented in sitemap.xml.
+       */
+      export function getAnalysisFiles(): DocFile[] {
+        const analysisDir = path.join(__dirname, '..', '..', '..', 'analysis');
+        if (!fs.existsSync(analysisDir)) {
+          console.warn('⚠️ Analysis directory not found');
+          return [];
+        }
+
+        const results: DocFile[] = [];
+
+        function scanDir(dir: string): void {
+          const entries = fs.readdirSync(dir, { withFileTypes: true });
+          for (const entry of entries) {
+            const fullPath = path.join(dir, entry.name);
+            if (entry.isDirectory()) {
+              scanDir(fullPath);
+            } else if (entry.isFile() && entry.name.endsWith('.html')) {
+              results.push({
+                file: path.relative(analysisDir, fullPath).replace(/\\/g, '/'),
+                path: fullPath,
+                lastmod: getFileModTime(fullPath),
+              });
+            }
+          }
+        }
+
+        scanDir(analysisDir);
+        results.sort((a, b) => a.file.localeCompare(b.file));
+        console.log(`  Found ${results.length} analysis HTML files in analysis/`);
+        return results;
       }
     }
   }

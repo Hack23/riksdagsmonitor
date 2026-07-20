@@ -22,6 +22,7 @@ import {
   type HreflangAlternate,
 } from '../scripts/sitemap-xml/render/url-entry.js';
 import { validateSitemap } from '../scripts/sitemap-xml/validator.js';
+import { getAnalysisFiles, getDocFiles } from '../scripts/sitemap-xml/scanners/docs.js';
 
 describe('sitemap-xml/hreflang.ts — hreflangCode', () => {
   it('maps the legacy `no` file-suffix to BCP-47 `nb` (Norwegian Bokmål)', () => {
@@ -142,6 +143,22 @@ describe('sitemap-xml/validator.ts — validateSitemap', () => {
 
   it('returns true on a valid sitemap', () => {
     expect(validateSitemap(happyPath)).toBe(true);
+  });
+
+  describe('sitemap-xml/scanners/docs.ts — deployed HTML coverage', () => {
+    it('returns deterministic HTML file lists for docs and analysis', () => {
+      const docs = getDocFiles();
+      const analysis = getAnalysisFiles();
+
+      expect(docs.map((file) => file.file)).toEqual(
+        [...docs].map((file) => file.file).sort((a, b) => a.localeCompare(b)),
+      );
+      expect(analysis.map((file) => file.file)).toEqual(
+        [...analysis].map((file) => file.file).sort((a, b) => a.localeCompare(b)),
+      );
+      expect(docs.every((file) => file.file.endsWith('.html'))).toBe(true);
+      expect(analysis.every((file) => file.file.endsWith('.html'))).toBe(true);
+    });
   });
 
   it('throws on missing XML declaration', () => {

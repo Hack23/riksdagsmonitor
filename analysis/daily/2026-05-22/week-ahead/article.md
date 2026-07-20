@@ -3,7 +3,7 @@ date: 2026-05-22
 subfolder: week-ahead
 slug: 2026-05-22-week-ahead
 source_folder: analysis/daily/2026-05-22/week-ahead
-generated_at: 2026-07-08T15:25:48.787Z
+generated_at: 2026-07-20T15:07:51.297Z
 language: en
 layout: article
 ---

@@ -20,7 +20,7 @@ export { getNewsArticles } from './scanners/news.js';
 export type { ArticleGroup } from './scanners/news.js';
 export { getApiDocs } from './scanners/api.js';
 export type { ApiDoc } from './scanners/api.js';
-export { getDocFiles } from './scanners/docs.js';
+export { getDocFiles, getAnalysisFiles } from './scanners/docs.js';
 export type { DocFile } from './scanners/docs.js';
 export { generateUrlEntry } from './render/url-entry.js';
 export type { HreflangAlternate } from './render/url-entry.js';
