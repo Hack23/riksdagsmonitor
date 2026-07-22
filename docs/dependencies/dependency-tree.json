@@ -1,5 +1,5 @@
 {
-  "version": "1.0.44",
+  "version": "1.0.45",
   "name": "riksdagsmonitor",
   "dependencies": {
     "@eslint/js": {
@@ -528,8 +528,8 @@
           "overridden": false
         },
         "fast-uri": {
-          "version": "3.1.2",
-          "resolved": "https://registry.npmjs.org/fast-uri/-/fast-uri-3.1.2.tgz",
+          "version": "3.1.4",
+          "resolved": "https://registry.npmjs.org/fast-uri/-/fast-uri-3.1.4.tgz",
           "overridden": false
         },
         "json-schema-traverse": {
@@ -567,8 +567,8 @@
       }
     },
     "cypress": {
-      "version": "15.18.1",
-      "resolved": "https://registry.npmjs.org/cypress/-/cypress-15.18.1.tgz",
+      "version": "15.19.0",
+      "resolved": "https://registry.npmjs.org/cypress/-/cypress-15.19.0.tgz",
       "overridden": false,
       "dependencies": {
         "@cypress/request": {
@@ -2751,8 +2751,8 @@
               "version": "7.0.15"
             },
             "js-yaml": {
-              "version": "4.2.0",
-              "resolved": "https://registry.npmjs.org/js-yaml/-/js-yaml-4.2.0.tgz",
+              "version": "4.3.0",
+              "resolved": "https://registry.npmjs.org/js-yaml/-/js-yaml-4.3.0.tgz",
               "overridden": false,
               "dependencies": {
                 "argparse": {
@@ -2776,8 +2776,8 @@
           "version": "4.0.3"
         },
         "js-yaml": {
-          "version": "4.2.0",
-          "resolved": "https://registry.npmjs.org/js-yaml/-/js-yaml-4.2.0.tgz",
+          "version": "4.3.0",
+          "resolved": "https://registry.npmjs.org/js-yaml/-/js-yaml-4.3.0.tgz",
           "overridden": false,
           "dependencies": {
             "argparse": {
@@ -2880,8 +2880,8 @@
       }
     },
     "knip": {
-      "version": "6.27.0",
-      "resolved": "https://registry.npmjs.org/knip/-/knip-6.27.0.tgz",
+      "version": "6.29.0",
+      "resolved": "https://registry.npmjs.org/knip/-/knip-6.29.0.tgz",
       "overridden": false,
       "dependencies": {
         "fdir": {
@@ -2929,8 +2929,8 @@
           "version": "2.7.0"
         },
         "oxc-parser": {
-          "version": "0.137.0",
-          "resolved": "https://registry.npmjs.org/oxc-parser/-/oxc-parser-0.137.0.tgz",
+          "version": "0.140.0",
+          "resolved": "https://registry.npmjs.org/oxc-parser/-/oxc-parser-0.140.0.tgz",
           "overridden": false,
           "dependencies": {
             "@oxc-parser/binding-android-arm-eabi": {},
@@ -2947,8 +2947,8 @@
             "@oxc-parser/binding-linux-riscv64-musl": {},
             "@oxc-parser/binding-linux-s390x-gnu": {},
             "@oxc-parser/binding-linux-x64-gnu": {
-              "version": "0.137.0",
-              "resolved": "https://registry.npmjs.org/@oxc-parser/binding-linux-x64-gnu/-/binding-linux-x64-gnu-0.137.0.tgz",
+              "version": "0.140.0",
+              "resolved": "https://registry.npmjs.org/@oxc-parser/binding-linux-x64-gnu/-/binding-linux-x64-gnu-0.140.0.tgz",
               "overridden": false
             },
             "@oxc-parser/binding-linux-x64-musl": {},
@@ -2958,15 +2958,15 @@
             "@oxc-parser/binding-win32-ia32-msvc": {},
             "@oxc-parser/binding-win32-x64-msvc": {},
             "@oxc-project/types": {
-              "version": "0.137.0",
-              "resolved": "https://registry.npmjs.org/@oxc-project/types/-/types-0.137.0.tgz",
+              "version": "0.140.0",
+              "resolved": "https://registry.npmjs.org/@oxc-project/types/-/types-0.140.0.tgz",
               "overridden": false
             }
           }
         },
         "oxc-resolver": {
-          "version": "11.21.3",
-          "resolved": "https://registry.npmjs.org/oxc-resolver/-/oxc-resolver-11.21.3.tgz",
+          "version": "11.24.2",
+          "resolved": "https://registry.npmjs.org/oxc-resolver/-/oxc-resolver-11.24.2.tgz",
           "overridden": false,
           "dependencies": {
             "@oxc-resolver/binding-android-arm-eabi": {},
@@ -2983,8 +2983,8 @@
             "@oxc-resolver/binding-linux-riscv64-musl": {},
             "@oxc-resolver/binding-linux-s390x-gnu": {},
             "@oxc-resolver/binding-linux-x64-gnu": {
-              "version": "11.21.3",
-              "resolved": "https://registry.npmjs.org/@oxc-resolver/binding-linux-x64-gnu/-/binding-linux-x64-gnu-11.21.3.tgz",
+              "version": "11.24.2",
+              "resolved": "https://registry.npmjs.org/@oxc-resolver/binding-linux-x64-gnu/-/binding-linux-x64-gnu-11.24.2.tgz",
               "overridden": false
             },
             "@oxc-resolver/binding-linux-x64-musl": {},
@@ -3000,8 +3000,8 @@
           "overridden": false
         },
         "smol-toml": {
-          "version": "1.6.1",
-          "resolved": "https://registry.npmjs.org/smol-toml/-/smol-toml-1.6.1.tgz",
+          "version": "1.7.0",
+          "resolved": "https://registry.npmjs.org/smol-toml/-/smol-toml-1.7.0.tgz",
           "overridden": false
         },
         "strip-json-comments": {
@@ -3013,8 +3013,8 @@
           "version": "0.2.17"
         },
         "unbash": {
-          "version": "4.0.1",
-          "resolved": "https://registry.npmjs.org/unbash/-/unbash-4.0.1.tgz",
+          "version": "4.0.3",
+          "resolved": "https://registry.npmjs.org/unbash/-/unbash-4.0.3.tgz",
           "overridden": false
         },
         "yaml": {
@@ -3023,8 +3023,8 @@
           "overridden": false
         },
         "zod": {
-          "version": "4.3.6",
-          "resolved": "https://registry.npmjs.org/zod/-/zod-4.3.6.tgz",
+          "version": "4.4.3",
+          "resolved": "https://registry.npmjs.org/zod/-/zod-4.4.3.tgz",
           "overridden": false
         }
       }
@@ -3232,8 +3232,8 @@
           "version": "1.11.21"
         },
         "dompurify": {
-          "version": "3.4.11",
-          "resolved": "https://registry.npmjs.org/dompurify/-/dompurify-3.4.11.tgz",
+          "version": "3.4.12",
+          "resolved": "https://registry.npmjs.org/dompurify/-/dompurify-3.4.12.tgz",
           "overridden": false,
           "dependencies": {
             "@types/trusted-types": {
@@ -3492,8 +3492,8 @@
               "version": "1.32.0"
             },
             "svgo": {
-              "version": "4.0.1",
-              "resolved": "https://registry.npmjs.org/svgo/-/svgo-4.0.1.tgz",
+              "version": "4.0.2",
+              "resolved": "https://registry.npmjs.org/svgo/-/svgo-4.0.2.tgz",
               "overridden": false,
               "dependencies": {
                 "commander": {
@@ -5052,7 +5052,7 @@
           "overridden": false,
           "dependencies": {
             "axios": {
-              "version": "1.16.0"
+              "version": "1.18.1"
             },
             "joi": {
               "version": "18.2.1",
@@ -5274,8 +5274,8 @@
       }
     },
     "typescript-7": {
-      "version": "7.0.1-rc",
-      "resolved": "https://registry.npmjs.org/typescript/-/typescript-7.0.1-rc.tgz",
+      "version": "7.0.2",
+      "resolved": "https://registry.npmjs.org/typescript/-/typescript-7.0.2.tgz",
       "overridden": false,
       "dependencies": {
         "@typescript/typescript-aix-ppc64": {},
@@ -5291,8 +5291,8 @@
         "@typescript/typescript-linux-riscv64": {},
         "@typescript/typescript-linux-s390x": {},
         "@typescript/typescript-linux-x64": {
-          "version": "7.0.1-rc",
-          "resolved": "https://registry.npmjs.org/@typescript/typescript-linux-x64/-/typescript-linux-x64-7.0.1-rc.tgz",
+          "version": "7.0.2",
+          "resolved": "https://registry.npmjs.org/@typescript/typescript-linux-x64/-/typescript-linux-x64-7.0.2.tgz",
           "overridden": false
         },
         "@typescript/typescript-netbsd-arm64": {},
@@ -5932,7 +5932,7 @@
               "overridden": false,
               "dependencies": {
                 "hono": {
-                  "version": "4.12.25"
+                  "version": "4.12.31"
                 }
               }
             },
@@ -6027,15 +6027,17 @@
                   }
                 },
                 "body-parser": {
-                  "version": "2.2.2",
-                  "resolved": "https://registry.npmjs.org/body-parser/-/body-parser-2.2.2.tgz",
+                  "version": "2.3.0",
+                  "resolved": "https://registry.npmjs.org/body-parser/-/body-parser-2.3.0.tgz",
                   "overridden": false,
                   "dependencies": {
                     "bytes": {
                       "version": "3.1.2"
                     },
                     "content-type": {
-                      "version": "1.0.5"
+                      "version": "2.0.0",
+                      "resolved": "https://registry.npmjs.org/content-type/-/content-type-2.0.0.tgz",
+                      "overridden": false
                     },
                     "debug": {
                       "version": "4.4.3"
@@ -6063,7 +6065,7 @@
                       "version": "3.0.2"
                     },
                     "type-is": {
-                      "version": "2.0.1"
+                      "version": "2.1.0"
                     }
                   }
                 },
@@ -6335,12 +6337,14 @@
                   "overridden": false
                 },
                 "type-is": {
-                  "version": "2.0.1",
-                  "resolved": "https://registry.npmjs.org/type-is/-/type-is-2.0.1.tgz",
+                  "version": "2.1.0",
+                  "resolved": "https://registry.npmjs.org/type-is/-/type-is-2.1.0.tgz",
                   "overridden": false,
                   "dependencies": {
                     "content-type": {
-                      "version": "1.0.5"
+                      "version": "2.0.0",
+                      "resolved": "https://registry.npmjs.org/content-type/-/content-type-2.0.0.tgz",
+                      "overridden": false
                     },
                     "media-typer": {
                       "version": "1.1.0",
@@ -6367,8 +6371,8 @@
               }
             },
             "hono": {
-              "version": "4.12.25",
-              "resolved": "https://registry.npmjs.org/hono/-/hono-4.12.25.tgz",
+              "version": "4.12.31",
+              "resolved": "https://registry.npmjs.org/hono/-/hono-4.12.31.tgz",
               "overridden": false
             },
             "jose": {
@@ -6422,18 +6426,18 @@
               "overridden": false,
               "dependencies": {
                 "zod": {
-                  "version": "4.3.6"
+                  "version": "4.4.3"
                 }
               }
             },
             "zod": {
-              "version": "4.3.6"
+              "version": "4.4.3"
             }
           }
         },
         "axios": {
-          "version": "1.16.0",
-          "resolved": "https://registry.npmjs.org/axios/-/axios-1.16.0.tgz",
+          "version": "1.18.1",
+          "resolved": "https://registry.npmjs.org/axios/-/axios-1.18.1.tgz",
           "overridden": false,
           "dependencies": {
             "follow-redirects": {
@@ -6443,6 +6447,26 @@
             },
             "form-data": {
               "version": "4.0.6"
+            },
+            "https-proxy-agent": {
+              "version": "5.0.1",
+              "resolved": "https://registry.npmjs.org/https-proxy-agent/-/https-proxy-agent-5.0.1.tgz",
+              "overridden": false,
+              "dependencies": {
+                "agent-base": {
+                  "version": "6.0.2",
+                  "resolved": "https://registry.npmjs.org/agent-base/-/agent-base-6.0.2.tgz",
+                  "overridden": false,
+                  "dependencies": {
+                    "debug": {
+                      "version": "4.4.3"
+                    }
+                  }
+                },
+                "debug": {
+                  "version": "4.4.3"
+                }
+              }
             },
             "proxy-from-env": {
               "version": "2.1.0",
