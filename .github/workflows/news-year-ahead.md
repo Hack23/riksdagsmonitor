@@ -290,9 +290,9 @@ steps:
       force-generation: ${{ inputs.force_generation }}
       analysis-depth: ${{ inputs.analysis_depth }}
       default-analysis-depth: comprehensive
+model: claude-opus-4.8
 engine:
   id: copilot
-  model: claude-opus-4.8
 ---
 
 # 🛰️ Year Ahead

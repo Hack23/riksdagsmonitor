@@ -298,9 +298,9 @@ steps:
       analysis-depth: ${{ inputs.analysis_depth }}
       default-analysis-depth: comprehensive
       cycle-anchor: ${{ inputs.cycle_anchor }}
+model: claude-opus-4.8
 engine:
   id: copilot
-  model: claude-opus-4.8
 ---
 
 # 🗳️ Election Cycle
