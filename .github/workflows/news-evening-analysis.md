@@ -296,9 +296,9 @@ steps:
       default-analysis-depth: deep
       coverage-depth: ${{ inputs.coverage_depth }}
       lookback-hours: ${{ inputs.lookback_hours }}
+model: claude-opus-4.8
 engine:
   id: copilot
-  model: claude-opus-4.8
 ---
 
 # 🌆 Evening Analysis

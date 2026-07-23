@@ -300,9 +300,9 @@ steps:
       default-analysis-depth: deep
       article-types: ${{ inputs.article_types }}
       focus: ${{ inputs.focus }}
+model: gpt-5.3-codex
 engine:
   id: copilot
-  model: gpt-5.3-codex
 ---
 
 # 🚨 Realtime Monitor
