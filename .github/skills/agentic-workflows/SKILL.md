@@ -15,6 +15,7 @@ Repository overlay (optional):
 
 Read only the files you need:
 Load these files from `github/gh-aw` (they are not available locally).
+- `.github/aw/action-container-substitutions.md`
 - `.github/aw/agentic-chat.md`
 - `.github/aw/agentic-workflows-mcp.md`
 - `.github/aw/asciicharts.md`
@@ -74,10 +75,10 @@ Load these files from `github/gh-aw` (they are not available locally).
 - `.github/aw/workflow-editing.md`
 - `.github/aw/workflow-patterns.md`
 
-- `.github/skills/agentic-workflow-designer/SKILL.md`
 After loading the matching workflow prompt or skill, follow it directly:
-- Design workflows from scratch via interview: `skills/agentic-workflow-designer/SKILL.md`
+- Design workflows from scratch via interview: `.github/aw/designer.md`
 - Create new workflows: `.github/aw/create-agentic-workflow.md`
+- Configure or add declarative engines: `.github/aw/configure-agentic-engine.md`
 - Update existing workflows: `.github/aw/update-agentic-workflow.md`
 - Debug, audit, or investigate workflows: `.github/aw/debug-agentic-workflow.md`
 - Upgrade workflows and fix deprecations: `.github/aw/upgrade-agentic-workflows.md`
@@ -89,5 +90,6 @@ After loading the matching workflow prompt or skill, follow it directly:
 - Map CLI commands to MCP usage: `.github/aw/cli-commands.md`
 - Choose workflow architecture and patterns: `.github/aw/patterns.md`
 - Optimize token usage and cost: `.github/aw/token-optimization.md`
+- Design long-running multi-agent research workflows: `.github/aw/multi-agent-research.md`
 
 When the task involves OTEL, OTLP, traces, observability backends, or telemetry-driven analysis, also read and follow `skills/otel-queries/SKILL.md` after loading the matching workflow prompt or skill.
