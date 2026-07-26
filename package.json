@@ -212,7 +212,7 @@
     "tsx": "4.23.1",
     "typedoc": "0.28.20",
     "typedoc-plugin-mdn-links": "5.1.1",
-    "typescript": "npm:@typescript/typescript6@6.0.3",
+    "typescript": "npm:@typescript/typescript6@6.0.2",
     "typescript-7": "npm:typescript@7.0.2",
     "typescript-eslint": "8.65.0",
     "unified": "11.0.5",
@@ -226,12 +226,20 @@
   },
   "overrides": {
     "glob": "13.0.6",
-    "brace-expansion": "5.0.7"
+	"js-yaml": "5.2.2",
+    "brace-expansion": "5.0.8",
+    "license-compliance": {
+      "joi": "17.13.4"
+    }
   },
   "engines": {
     "node": ">=26"
   },
   "x-external-mcp": {
     "_comment": "SBOM-style manifest for MCP servers managed outside of npm dependencies (Python, Docker, HTTP). Tracked here so supply-chain reviews, Open_Source_Policy.md audits, and Change_Management.md tickets have a single source of truth. Currently EMPTY: IMF access was migrated from c-cf/imf-data-mcp (Python/uvx) to the repository's pure-TypeScript client scripts/imf-client.ts (invoked via scripts/imf-fetch.ts from the bash tool in agentic workflows) — it is now fully covered by the npm SBOM."
+  },
+  "allowScripts": {
+    "esbuild@0.28.1": true,
+    "cypress@15.19.0": true
   }
 }
