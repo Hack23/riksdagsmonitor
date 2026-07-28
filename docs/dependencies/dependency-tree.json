@@ -1,5 +1,5 @@
 {
-  "version": "1.0.48",
+  "version": "1.0.49",
   "name": "riksdagsmonitor",
   "dependencies": {
     "@eslint/js": {
@@ -245,8 +245,8 @@
       }
     },
     "@types/node": {
-      "version": "26.1.1",
-      "resolved": "https://registry.npmjs.org/@types/node/-/node-26.1.1.tgz",
+      "version": "26.1.2",
+      "resolved": "https://registry.npmjs.org/@types/node/-/node-26.1.2.tgz",
       "overridden": false,
       "dependencies": {
         "undici-types": {
@@ -262,7 +262,7 @@
       "overridden": false,
       "dependencies": {
         "@types/node": {
-          "version": "26.1.1"
+          "version": "26.1.2"
         }
       }
     },
@@ -2505,8 +2505,8 @@
       "overridden": false
     },
     "globals": {
-      "version": "17.7.0",
-      "resolved": "https://registry.npmjs.org/globals/-/globals-17.7.0.tgz",
+      "version": "17.8.0",
+      "resolved": "https://registry.npmjs.org/globals/-/globals-17.8.0.tgz",
       "overridden": false
     },
     "gray-matter": {
@@ -2578,7 +2578,7 @@
       "overridden": false,
       "dependencies": {
         "@types/node": {
-          "version": "26.1.1"
+          "version": "26.1.2"
         },
         "@types/whatwg-mimetype": {
           "version": "3.0.2",
@@ -2591,7 +2591,7 @@
           "overridden": false,
           "dependencies": {
             "@types/node": {
-              "version": "26.1.1"
+              "version": "26.1.2"
             }
           }
         },
@@ -2601,7 +2601,7 @@
           "overridden": false,
           "dependencies": {
             "@types/node": {
-              "version": "26.1.1"
+              "version": "26.1.2"
             }
           }
         },
@@ -5622,7 +5622,7 @@
       "overridden": false,
       "dependencies": {
         "@types/node": {
-          "version": "26.1.1"
+          "version": "26.1.2"
         },
         "@vitejs/devtools": {},
         "esbuild": {
@@ -5721,7 +5721,7 @@
         "@edge-runtime/vm": {},
         "@opentelemetry/api": {},
         "@types/node": {
-          "version": "26.1.1"
+          "version": "26.1.2"
         },
         "@vitest/browser-playwright": {},
         "@vitest/browser-preview": {},
