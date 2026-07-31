@@ -1,5 +1,5 @@
 {
-  "version": "1.0.52",
+  "version": "1.0.53",
   "name": "riksdagsmonitor",
   "dependencies": {
     "@eslint/js": {
@@ -2887,8 +2887,8 @@
       }
     },
     "knip": {
-      "version": "6.29.0",
-      "resolved": "https://registry.npmjs.org/knip/-/knip-6.29.0.tgz",
+      "version": "6.31.0",
+      "resolved": "https://registry.npmjs.org/knip/-/knip-6.31.0.tgz",
       "overridden": false,
       "dependencies": {
         "fdir": {
@@ -2936,8 +2936,8 @@
           "version": "2.7.0"
         },
         "oxc-parser": {
-          "version": "0.140.0",
-          "resolved": "https://registry.npmjs.org/oxc-parser/-/oxc-parser-0.140.0.tgz",
+          "version": "0.142.0",
+          "resolved": "https://registry.npmjs.org/oxc-parser/-/oxc-parser-0.142.0.tgz",
           "overridden": false,
           "dependencies": {
             "@oxc-parser/binding-android-arm-eabi": {},
@@ -2954,8 +2954,8 @@
             "@oxc-parser/binding-linux-riscv64-musl": {},
             "@oxc-parser/binding-linux-s390x-gnu": {},
             "@oxc-parser/binding-linux-x64-gnu": {
-              "version": "0.140.0",
-              "resolved": "https://registry.npmjs.org/@oxc-parser/binding-linux-x64-gnu/-/binding-linux-x64-gnu-0.140.0.tgz",
+              "version": "0.142.0",
+              "resolved": "https://registry.npmjs.org/@oxc-parser/binding-linux-x64-gnu/-/binding-linux-x64-gnu-0.142.0.tgz",
               "overridden": false
             },
             "@oxc-parser/binding-linux-x64-musl": {},
@@ -2965,8 +2965,8 @@
             "@oxc-parser/binding-win32-ia32-msvc": {},
             "@oxc-parser/binding-win32-x64-msvc": {},
             "@oxc-project/types": {
-              "version": "0.140.0",
-              "resolved": "https://registry.npmjs.org/@oxc-project/types/-/types-0.140.0.tgz",
+              "version": "0.142.0",
+              "resolved": "https://registry.npmjs.org/@oxc-project/types/-/types-0.142.0.tgz",
               "overridden": false
             }
           }
@@ -3007,8 +3007,8 @@
           "overridden": false
         },
         "smol-toml": {
-          "version": "1.7.0",
-          "resolved": "https://registry.npmjs.org/smol-toml/-/smol-toml-1.7.0.tgz",
+          "version": "1.7.1",
+          "resolved": "https://registry.npmjs.org/smol-toml/-/smol-toml-1.7.1.tgz",
           "overridden": false
         },
         "strip-json-comments": {
@@ -3020,8 +3020,8 @@
           "version": "0.2.17"
         },
         "unbash": {
-          "version": "4.0.3",
-          "resolved": "https://registry.npmjs.org/unbash/-/unbash-4.0.3.tgz",
+          "version": "4.0.4",
+          "resolved": "https://registry.npmjs.org/unbash/-/unbash-4.0.4.tgz",
           "overridden": false
         },
         "yaml": {
@@ -5661,9 +5661,7 @@
           "overridden": false,
           "dependencies": {
             "@oxc-project/types": {
-              "version": "0.142.0",
-              "resolved": "https://registry.npmjs.org/@oxc-project/types/-/types-0.142.0.tgz",
-              "overridden": false
+              "version": "0.142.0"
             },
             "@rolldown/binding-android-arm64": {},
             "@rolldown/binding-darwin-arm64": {},
@@ -5722,8 +5720,8 @@
                   "overridden": false,
                   "dependencies": {
                     "@emnapi/core": {
-                      "version": "1.11.1",
-                      "resolved": "https://registry.npmjs.org/@emnapi/core/-/core-1.11.1.tgz",
+                      "version": "1.11.2",
+                      "resolved": "https://registry.npmjs.org/@emnapi/core/-/core-1.11.2.tgz",
                       "overridden": false,
                       "dependencies": {
                         "@emnapi/wasi-threads": {
@@ -5742,8 +5740,8 @@
                       }
                     },
                     "@emnapi/runtime": {
-                      "version": "1.11.1",
-                      "resolved": "https://registry.npmjs.org/@emnapi/runtime/-/runtime-1.11.1.tgz",
+                      "version": "1.11.2",
+                      "resolved": "https://registry.npmjs.org/@emnapi/runtime/-/runtime-1.11.2.tgz",
                       "overridden": false,
                       "dependencies": {
                         "tslib": {
