@@ -1,5 +1,5 @@
 {
-  "version": "1.0.53",
+  "version": "1.0.54",
   "name": "riksdagsmonitor",
   "dependencies": {
     "@eslint/js": {
@@ -2728,8 +2728,8 @@
       }
     },
     "js-yaml": {
-      "version": "5.2.2",
-      "resolved": "https://registry.npmjs.org/js-yaml/-/js-yaml-5.2.2.tgz",
+      "version": "5.2.3",
+      "resolved": "https://registry.npmjs.org/js-yaml/-/js-yaml-5.2.3.tgz",
       "overridden": false,
       "dependencies": {
         "argparse": {
@@ -4986,8 +4986,8 @@
       }
     },
     "start-server-and-test": {
-      "version": "3.0.11",
-      "resolved": "https://registry.npmjs.org/start-server-and-test/-/start-server-and-test-3.0.11.tgz",
+      "version": "3.0.12",
+      "resolved": "https://registry.npmjs.org/start-server-and-test/-/start-server-and-test-3.0.12.tgz",
       "overridden": false,
       "dependencies": {
         "arg": {
@@ -5050,16 +5050,16 @@
           "version": "1.2.2"
         },
         "wait-on": {
-          "version": "9.0.10",
-          "resolved": "https://registry.npmjs.org/wait-on/-/wait-on-9.0.10.tgz",
+          "version": "9.1.0",
+          "resolved": "https://registry.npmjs.org/wait-on/-/wait-on-9.1.0.tgz",
           "overridden": false,
           "dependencies": {
             "axios": {
               "version": "1.18.1"
             },
             "joi": {
-              "version": "18.2.1",
-              "resolved": "https://registry.npmjs.org/joi/-/joi-18.2.1.tgz",
+              "version": "18.2.3",
+              "resolved": "https://registry.npmjs.org/joi/-/joi-18.2.3.tgz",
               "overridden": false,
               "dependencies": {
                 "@hapi/address": {
@@ -5088,8 +5088,8 @@
                   "overridden": false
                 },
                 "@hapi/tlds": {
-                  "version": "1.1.6",
-                  "resolved": "https://registry.npmjs.org/@hapi/tlds/-/tlds-1.1.6.tgz",
+                  "version": "1.1.7",
+                  "resolved": "https://registry.npmjs.org/@hapi/tlds/-/tlds-1.1.7.tgz",
                   "overridden": false
                 },
                 "@hapi/topo": {

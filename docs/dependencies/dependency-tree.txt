@@ -1,4 +1,4 @@
-riksdagsmonitor@1.0.53 /home/runner/work/riksdagsmonitor/riksdagsmonitor
+riksdagsmonitor@1.0.54 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 ├─┬ @eslint/js@10.0.1
 │ └── eslint@10.8.0 deduped
 ├─┬ @types/d3@7.4.3
@@ -538,7 +538,7 @@ riksdagsmonitor@1.0.53 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ │   └── universalify@2.0.1 deduped
 │ ├── strip-json-comments@3.1.1
 │ └── xml@1.0.1
-├─┬ js-yaml@5.2.2
+├─┬ js-yaml@5.2.3
 │ └── argparse@2.0.1
 ├─┬ json-schema-to-typescript@15.0.4
 │ ├─┬ @apidevtools/json-schema-ref-parser@11.9.3
@@ -1134,7 +1134,7 @@ riksdagsmonitor@1.0.53 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ ├── UNMET OPTIONAL DEPENDENCY @img/sharp-win32-x64@0.35.3
 │ ├── detect-libc@2.1.2
 │ └── semver@7.8.5
-├─┬ start-server-and-test@3.0.11
+├─┬ start-server-and-test@3.0.12
 │ ├── arg@5.0.2
 │ ├── check-more-types@2.24.0
 │ ├── debug@4.4.3 deduped
@@ -1150,15 +1150,15 @@ riksdagsmonitor@1.0.53 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ │ └── strip-final-newline@2.0.0 deduped
 │ ├── lazy-ass@2.0.3
 │ ├── tree-kill@1.2.2 deduped
-│ └─┬ wait-on@9.0.10
+│ └─┬ wait-on@9.1.0
 │   ├── axios@1.18.1 deduped
-│   ├─┬ joi@18.2.1
+│   ├─┬ joi@18.2.3
 │   │ ├─┬ @hapi/address@5.1.1
 │   │ │ └── @hapi/hoek@11.0.7 deduped
 │   │ ├── @hapi/formula@3.0.2
 │   │ ├── @hapi/hoek@11.0.7
 │   │ ├── @hapi/pinpoint@2.0.1
-│   │ ├── @hapi/tlds@1.1.6
+│   │ ├── @hapi/tlds@1.1.7
 │   │ ├─┬ @hapi/topo@6.0.2
 │   │ │ └── @hapi/hoek@11.0.7 deduped
 │   │ └── @standard-schema/spec@1.1.0 deduped
