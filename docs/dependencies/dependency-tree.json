@@ -1,5 +1,5 @@
 {
-  "version": "1.0.55",
+  "version": "1.0.56",
   "name": "riksdagsmonitor",
   "dependencies": {
     "@eslint/js": {
@@ -528,8 +528,8 @@
           "overridden": false
         },
         "fast-uri": {
-          "version": "3.1.4",
-          "resolved": "https://registry.npmjs.org/fast-uri/-/fast-uri-3.1.4.tgz",
+          "version": "3.1.5",
+          "resolved": "https://registry.npmjs.org/fast-uri/-/fast-uri-3.1.5.tgz",
           "overridden": false
         },
         "json-schema-traverse": {
@@ -6075,8 +6075,8 @@
                   "version": "5.2.1"
                 },
                 "ip-address": {
-                  "version": "10.2.0",
-                  "resolved": "https://registry.npmjs.org/ip-address/-/ip-address-10.2.0.tgz",
+                  "version": "10.4.0",
+                  "resolved": "https://registry.npmjs.org/ip-address/-/ip-address-10.4.0.tgz",
                   "overridden": false
                 }
               }
