@@ -1,4 +1,4 @@
-riksdagsmonitor@1.0.54 /home/runner/work/riksdagsmonitor/riksdagsmonitor
+riksdagsmonitor@1.0.55 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 ├─┬ @eslint/js@10.0.1
 │ └── eslint@10.8.0 deduped
 ├─┬ @types/d3@7.4.3
@@ -493,7 +493,7 @@ riksdagsmonitor@1.0.54 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │   │ └── prelude-ls@1.2.1 deduped
 │   └── word-wrap@1.2.5
 ├── github-slugger@2.0.0
-├── globals@17.8.0
+├── globals@17.9.0
 ├─┬ gray-matter@4.0.3
 │ ├─┬ js-yaml@3.15.0
 │ │ ├─┬ argparse@1.0.10
@@ -1166,7 +1166,7 @@ riksdagsmonitor@1.0.54 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │   ├── minimist@1.2.8 deduped
 │   └─┬ rxjs@7.8.2
 │     └── tslib@2.8.1
-├─┬ tsx@4.23.1
+├─┬ tsx@4.23.5
 │ ├── esbuild@0.28.1 deduped
 │ └── UNMET OPTIONAL DEPENDENCY fsevents@~2.3.3
 ├─┬ typedoc-plugin-mdn-links@5.1.1
@@ -1218,24 +1218,24 @@ riksdagsmonitor@1.0.54 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ ├── UNMET OPTIONAL DEPENDENCY @typescript/typescript-sunos-x64@7.0.2
 │ ├── UNMET OPTIONAL DEPENDENCY @typescript/typescript-win32-arm64@7.0.2
 │ └── UNMET OPTIONAL DEPENDENCY @typescript/typescript-win32-x64@7.0.2
-├─┬ typescript-eslint@8.65.0
-│ ├─┬ @typescript-eslint/eslint-plugin@8.65.0
+├─┬ typescript-eslint@8.66.0
+│ ├─┬ @typescript-eslint/eslint-plugin@8.66.0
 │ │ ├── @eslint-community/regexpp@4.12.2 deduped
-│ │ ├── @typescript-eslint/parser@8.65.0 deduped
-│ │ ├─┬ @typescript-eslint/scope-manager@8.65.0
-│ │ │ ├── @typescript-eslint/types@8.65.0 deduped
-│ │ │ └── @typescript-eslint/visitor-keys@8.65.0 deduped
-│ │ ├─┬ @typescript-eslint/type-utils@8.65.0
-│ │ │ ├── @typescript-eslint/types@8.65.0 deduped
-│ │ │ ├── @typescript-eslint/typescript-estree@8.65.0 deduped
-│ │ │ ├── @typescript-eslint/utils@8.65.0 deduped
+│ │ ├── @typescript-eslint/parser@8.66.0 deduped
+│ │ ├─┬ @typescript-eslint/scope-manager@8.66.0
+│ │ │ ├── @typescript-eslint/types@8.66.0 deduped
+│ │ │ └── @typescript-eslint/visitor-keys@8.66.0 deduped
+│ │ ├─┬ @typescript-eslint/type-utils@8.66.0
+│ │ │ ├── @typescript-eslint/types@8.66.0 deduped
+│ │ │ ├── @typescript-eslint/typescript-estree@8.66.0 deduped
+│ │ │ ├── @typescript-eslint/utils@8.66.0 deduped
 │ │ │ ├── debug@4.4.3 deduped
 │ │ │ ├── eslint@10.8.0 deduped
 │ │ │ ├── ts-api-utils@2.5.0 deduped
 │ │ │ └── typescript@6.0.3 deduped
-│ │ ├── @typescript-eslint/utils@8.65.0 deduped
-│ │ ├─┬ @typescript-eslint/visitor-keys@8.65.0
-│ │ │ ├── @typescript-eslint/types@8.65.0 deduped
+│ │ ├── @typescript-eslint/utils@8.66.0 deduped
+│ │ ├─┬ @typescript-eslint/visitor-keys@8.66.0
+│ │ │ ├── @typescript-eslint/types@8.66.0 deduped
 │ │ │ └── eslint-visitor-keys@5.0.1 deduped
 │ │ ├── eslint@10.8.0 deduped
 │ │ ├── ignore@7.0.6
@@ -1243,35 +1243,35 @@ riksdagsmonitor@1.0.54 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ │ ├─┬ ts-api-utils@2.5.0
 │ │ │ └── typescript@6.0.3 deduped
 │ │ └── typescript@6.0.3 deduped
-│ ├─┬ @typescript-eslint/parser@8.65.0
-│ │ ├── @typescript-eslint/scope-manager@8.65.0 deduped
-│ │ ├── @typescript-eslint/types@8.65.0
-│ │ ├── @typescript-eslint/typescript-estree@8.65.0 deduped
-│ │ ├── @typescript-eslint/visitor-keys@8.65.0 deduped
+│ ├─┬ @typescript-eslint/parser@8.66.0
+│ │ ├── @typescript-eslint/scope-manager@8.66.0 deduped
+│ │ ├── @typescript-eslint/types@8.66.0
+│ │ ├── @typescript-eslint/typescript-estree@8.66.0 deduped
+│ │ ├── @typescript-eslint/visitor-keys@8.66.0 deduped
 │ │ ├── debug@4.4.3 deduped
 │ │ ├── eslint@10.8.0 deduped
 │ │ └── typescript@6.0.3 deduped
-│ ├─┬ @typescript-eslint/typescript-estree@8.65.0
-│ │ ├─┬ @typescript-eslint/project-service@8.65.0
-│ │ │ ├── @typescript-eslint/tsconfig-utils@8.65.0 deduped
-│ │ │ ├── @typescript-eslint/types@8.65.0 deduped
+│ ├─┬ @typescript-eslint/typescript-estree@8.66.0
+│ │ ├─┬ @typescript-eslint/project-service@8.66.0
+│ │ │ ├── @typescript-eslint/tsconfig-utils@8.66.0 deduped
+│ │ │ ├── @typescript-eslint/types@8.66.0 deduped
 │ │ │ ├── debug@4.4.3 deduped
 │ │ │ └── typescript@6.0.3 deduped
-│ │ ├─┬ @typescript-eslint/tsconfig-utils@8.65.0
+│ │ ├─┬ @typescript-eslint/tsconfig-utils@8.66.0
 │ │ │ └── typescript@6.0.3 deduped
-│ │ ├── @typescript-eslint/types@8.65.0 deduped
-│ │ ├── @typescript-eslint/visitor-keys@8.65.0 deduped
+│ │ ├── @typescript-eslint/types@8.66.0 deduped
+│ │ ├── @typescript-eslint/visitor-keys@8.66.0 deduped
 │ │ ├── debug@4.4.3 deduped
 │ │ ├── minimatch@10.2.4 deduped
 │ │ ├── semver@7.8.5 deduped
 │ │ ├── tinyglobby@0.2.17 deduped
 │ │ ├── ts-api-utils@2.5.0 deduped
 │ │ └── typescript@6.0.3 deduped
-│ ├─┬ @typescript-eslint/utils@8.65.0
+│ ├─┬ @typescript-eslint/utils@8.66.0
 │ │ ├── @eslint-community/eslint-utils@4.9.1 deduped
-│ │ ├── @typescript-eslint/scope-manager@8.65.0 deduped
-│ │ ├── @typescript-eslint/types@8.65.0 deduped
-│ │ ├── @typescript-eslint/typescript-estree@8.65.0 deduped
+│ │ ├── @typescript-eslint/scope-manager@8.66.0 deduped
+│ │ ├── @typescript-eslint/types@8.66.0 deduped
+│ │ ├── @typescript-eslint/typescript-estree@8.66.0 deduped
 │ │ ├── eslint@10.8.0 deduped
 │ │ └── typescript@6.0.3 deduped
 │ ├── eslint@10.8.0 deduped
@@ -1345,7 +1345,7 @@ riksdagsmonitor@1.0.54 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ ├── UNMET OPTIONAL DEPENDENCY sugarss@^5.0.0
 │ ├── terser@5.47.1 deduped
 │ ├── tinyglobby@0.2.17 deduped
-│ ├── tsx@4.23.1 deduped
+│ ├── tsx@4.23.5 deduped
 │ └── yaml@2.9.0 deduped
 ├─┬ vitest@4.1.10
 │ ├── UNMET OPTIONAL DEPENDENCY @edge-runtime/vm@*
