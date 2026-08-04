@@ -1,5 +1,5 @@
 {
-  "version": "1.0.56",
+  "version": "1.0.57",
   "name": "riksdagsmonitor",
   "dependencies": {
     "@eslint/js": {
@@ -3037,8 +3037,8 @@
       }
     },
     "mermaid": {
-      "version": "11.16.0",
-      "resolved": "https://registry.npmjs.org/mermaid/-/mermaid-11.16.0.tgz",
+      "version": "11.16.1",
+      "resolved": "https://registry.npmjs.org/mermaid/-/mermaid-11.16.1.tgz",
       "overridden": false,
       "dependencies": {
         "@braintree/sanitize-url": {
