@@ -1,5 +1,5 @@
 {
-  "version": "1.0.57",
+  "version": "1.0.58",
   "name": "riksdagsmonitor",
   "dependencies": {
     "@eslint/js": {
@@ -567,8 +567,8 @@
       }
     },
     "cypress": {
-      "version": "15.19.0",
-      "resolved": "https://registry.npmjs.org/cypress/-/cypress-15.19.0.tgz",
+      "version": "15.20.0",
+      "resolved": "https://registry.npmjs.org/cypress/-/cypress-15.20.0.tgz",
       "overridden": false,
       "dependencies": {
         "@cypress/request": {
@@ -1070,8 +1070,8 @@
           "overridden": false
         },
         "arch": {
-          "version": "2.2.0",
-          "resolved": "https://registry.npmjs.org/arch/-/arch-2.2.0.tgz",
+          "version": "3.0.0",
+          "resolved": "https://registry.npmjs.org/arch/-/arch-3.0.0.tgz",
           "overridden": false
         },
         "blob-util": {
@@ -1676,11 +1676,6 @@
         "tree-kill": {
           "version": "1.2.2",
           "resolved": "https://registry.npmjs.org/tree-kill/-/tree-kill-1.2.2.tgz",
-          "overridden": false
-        },
-        "tslib": {
-          "version": "1.14.1",
-          "resolved": "https://registry.npmjs.org/tslib/-/tslib-1.14.1.tgz",
           "overridden": false
         },
         "untildify": {
@@ -5130,8 +5125,8 @@
       }
     },
     "tsx": {
-      "version": "4.23.5",
-      "resolved": "https://registry.npmjs.org/tsx/-/tsx-4.23.5.tgz",
+      "version": "4.23.7",
+      "resolved": "https://registry.npmjs.org/tsx/-/tsx-4.23.7.tgz",
       "overridden": false,
       "dependencies": {
         "esbuild": {
@@ -5783,7 +5778,7 @@
           "version": "0.2.17"
         },
         "tsx": {
-          "version": "4.23.5"
+          "version": "4.23.7"
         },
         "yaml": {
           "version": "2.9.0"

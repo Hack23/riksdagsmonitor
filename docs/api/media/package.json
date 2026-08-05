@@ -1,6 +1,6 @@
 {
   "name": "riksdagsmonitor",
-  "version": "1.0.57",
+  "version": "1.0.58",
   "type": "module",
   "description": "Swedish Parliament (Riksdag) intelligence platform — TypeScript utilities for political data visualization, dashboards, and open data analysis with Chart.js and D3.js",
   "main": "dist/lib/shared/index.js",
@@ -209,7 +209,7 @@
     "remark-rehype": "11.1.2",
     "sharp": "0.35.3",
     "start-server-and-test": "3.0.12",
-    "tsx": "4.23.5",
+    "tsx": "4.23.7",
     "typedoc": "0.28.20",
     "typedoc-plugin-mdn-links": "5.1.1",
     "typescript": "npm:@typescript/typescript6@6.0.3",
@@ -222,7 +222,7 @@
     "worldbank-mcp": "1.0.1"
   },
   "optionalDependencies": {
-    "cypress": "15.19.0"
+    "cypress": "15.20.0"
   },
   "overrides": {
     "glob": "13.0.6",
