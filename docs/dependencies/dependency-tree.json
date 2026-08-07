@@ -1,5 +1,5 @@
 {
-  "version": "1.0.58",
+  "version": "1.0.59",
   "name": "riksdagsmonitor",
   "dependencies": {
     "@eslint/js": {
@@ -2882,8 +2882,8 @@
       }
     },
     "knip": {
-      "version": "6.31.0",
-      "resolved": "https://registry.npmjs.org/knip/-/knip-6.31.0.tgz",
+      "version": "6.32.0",
+      "resolved": "https://registry.npmjs.org/knip/-/knip-6.32.0.tgz",
       "overridden": false,
       "dependencies": {
         "fdir": {
@@ -2916,8 +2916,8 @@
           }
         },
         "get-tsconfig": {
-          "version": "4.14.0",
-          "resolved": "https://registry.npmjs.org/get-tsconfig/-/get-tsconfig-4.14.0.tgz",
+          "version": "4.14.1",
+          "resolved": "https://registry.npmjs.org/get-tsconfig/-/get-tsconfig-4.14.1.tgz",
           "overridden": false,
           "dependencies": {
             "resolve-pkg-maps": {
@@ -5125,8 +5125,8 @@
       }
     },
     "tsx": {
-      "version": "4.23.7",
-      "resolved": "https://registry.npmjs.org/tsx/-/tsx-4.23.7.tgz",
+      "version": "4.23.10",
+      "resolved": "https://registry.npmjs.org/tsx/-/tsx-4.23.10.tgz",
       "overridden": false,
       "dependencies": {
         "esbuild": {
@@ -5608,8 +5608,8 @@
       }
     },
     "vite": {
-      "version": "8.2.0",
-      "resolved": "https://registry.npmjs.org/vite/-/vite-8.2.0.tgz",
+      "version": "8.2.1",
+      "resolved": "https://registry.npmjs.org/vite/-/vite-8.2.1.tgz",
       "overridden": false,
       "dependencies": {
         "@types/node": {
@@ -5778,7 +5778,7 @@
           "version": "0.2.17"
         },
         "tsx": {
-          "version": "4.23.7"
+          "version": "4.23.10"
         },
         "yaml": {
           "version": "2.9.0"
@@ -5861,7 +5861,7 @@
             },
             "msw": {},
             "vite": {
-              "version": "8.2.0"
+              "version": "8.2.1"
             }
           }
         },
@@ -5973,7 +5973,7 @@
           "version": "3.1.0"
         },
         "vite": {
-          "version": "8.2.0"
+          "version": "8.2.1"
         },
         "why-is-node-running": {
           "version": "2.3.0",
