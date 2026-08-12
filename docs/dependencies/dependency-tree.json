@@ -1,5 +1,5 @@
 {
-  "version": "1.0.62",
+  "version": "1.0.63",
   "name": "riksdagsmonitor",
   "dependencies": {
     "@eslint/js": {
@@ -2500,8 +2500,8 @@
       "overridden": false
     },
     "globals": {
-      "version": "17.9.0",
-      "resolved": "https://registry.npmjs.org/globals/-/globals-17.9.0.tgz",
+      "version": "17.10.0",
+      "resolved": "https://registry.npmjs.org/globals/-/globals-17.10.0.tgz",
       "overridden": false
     },
     "gray-matter": {
@@ -2882,8 +2882,8 @@
       }
     },
     "knip": {
-      "version": "6.32.1",
-      "resolved": "https://registry.npmjs.org/knip/-/knip-6.32.1.tgz",
+      "version": "6.32.2",
+      "resolved": "https://registry.npmjs.org/knip/-/knip-6.32.2.tgz",
       "overridden": false,
       "dependencies": {
         "fdir": {
@@ -2931,8 +2931,8 @@
           "version": "2.7.0"
         },
         "oxc-parser": {
-          "version": "0.142.0",
-          "resolved": "https://registry.npmjs.org/oxc-parser/-/oxc-parser-0.142.0.tgz",
+          "version": "0.143.0",
+          "resolved": "https://registry.npmjs.org/oxc-parser/-/oxc-parser-0.143.0.tgz",
           "overridden": false,
           "dependencies": {
             "@oxc-parser/binding-android-arm-eabi": {},
@@ -2949,19 +2949,18 @@
             "@oxc-parser/binding-linux-riscv64-musl": {},
             "@oxc-parser/binding-linux-s390x-gnu": {},
             "@oxc-parser/binding-linux-x64-gnu": {
-              "version": "0.142.0",
-              "resolved": "https://registry.npmjs.org/@oxc-parser/binding-linux-x64-gnu/-/binding-linux-x64-gnu-0.142.0.tgz",
+              "version": "0.143.0",
+              "resolved": "https://registry.npmjs.org/@oxc-parser/binding-linux-x64-gnu/-/binding-linux-x64-gnu-0.143.0.tgz",
               "overridden": false
             },
             "@oxc-parser/binding-linux-x64-musl": {},
             "@oxc-parser/binding-openharmony-arm64": {},
-            "@oxc-parser/binding-wasm32-wasi": {},
             "@oxc-parser/binding-win32-arm64-msvc": {},
             "@oxc-parser/binding-win32-ia32-msvc": {},
             "@oxc-parser/binding-win32-x64-msvc": {},
             "@oxc-project/types": {
-              "version": "0.142.0",
-              "resolved": "https://registry.npmjs.org/@oxc-project/types/-/types-0.142.0.tgz",
+              "version": "0.143.0",
+              "resolved": "https://registry.npmjs.org/@oxc-project/types/-/types-0.143.0.tgz",
               "overridden": false
             }
           }
@@ -3015,8 +3014,8 @@
           "version": "0.2.17"
         },
         "unbash": {
-          "version": "4.0.4",
-          "resolved": "https://registry.npmjs.org/unbash/-/unbash-4.0.4.tgz",
+          "version": "4.0.10",
+          "resolved": "https://registry.npmjs.org/unbash/-/unbash-4.0.10.tgz",
           "overridden": false
         },
         "yaml": {
@@ -5656,7 +5655,9 @@
           "overridden": false,
           "dependencies": {
             "@oxc-project/types": {
-              "version": "0.142.0"
+              "version": "0.142.0",
+              "resolved": "https://registry.npmjs.org/@oxc-project/types/-/types-0.142.0.tgz",
+              "overridden": false
             },
             "@rolldown/binding-android-arm64": {},
             "@rolldown/binding-darwin-arm64": {},
