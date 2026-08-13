@@ -1,6 +1,6 @@
 {
   "name": "riksdagsmonitor",
-  "version": "1.0.63",
+  "version": "1.0.64",
   "type": "module",
   "description": "Swedish Parliament (Riksdag) intelligence platform — TypeScript utilities for political data visualization, dashboards, and open data analysis with Chart.js and D3.js",
   "main": "dist/lib/shared/index.js",
@@ -157,7 +157,7 @@
     "chart.js": "4.5.1",
     "chartjs-plugin-annotation": "3.1.0",
     "d3": "7.9.0",
-    "papaparse": "5.5.4"
+    "papaparse": "5.6.0"
   },
   "peerDependenciesMeta": {
     "chart.js": {
@@ -188,7 +188,7 @@
     "d3": "7.9.0",
     "eslint": "10.8.1",
     "github-slugger": "2.0.0",
-    "globals": "17.10.0",
+    "globals": "17.11.0",
     "gray-matter": "4.0.3",
     "happy-dom": "20.11.2",
     "hast-util-to-string": "3.0.1",
@@ -199,7 +199,7 @@
     "knip": "6.32.2",
     "mermaid": "11.16.1",
     "minify": "15.3.1",
-    "papaparse": "5.5.4",
+    "papaparse": "5.6.0",
     "rehype-autolink-headings": "7.1.0",
     "rehype-raw": "7.0.0",
     "rehype-sanitize": "6.0.0",

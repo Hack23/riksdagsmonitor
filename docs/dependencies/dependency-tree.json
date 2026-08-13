@@ -1,5 +1,5 @@
 {
-  "version": "1.0.63",
+  "version": "1.0.64",
   "name": "riksdagsmonitor",
   "dependencies": {
     "@eslint/js": {
@@ -2500,8 +2500,8 @@
       "overridden": false
     },
     "globals": {
-      "version": "17.10.0",
-      "resolved": "https://registry.npmjs.org/globals/-/globals-17.10.0.tgz",
+      "version": "17.11.0",
+      "resolved": "https://registry.npmjs.org/globals/-/globals-17.11.0.tgz",
       "overridden": false
     },
     "gray-matter": {
@@ -3780,8 +3780,8 @@
       }
     },
     "papaparse": {
-      "version": "5.5.4",
-      "resolved": "https://registry.npmjs.org/papaparse/-/papaparse-5.5.4.tgz",
+      "version": "5.6.0",
+      "resolved": "https://registry.npmjs.org/papaparse/-/papaparse-5.6.0.tgz",
       "overridden": false
     },
     "rehype-autolink-headings": {
@@ -6007,8 +6007,8 @@
           "dependencies": {
             "@cfworker/json-schema": {},
             "@hono/node-server": {
-              "version": "1.19.13",
-              "resolved": "https://registry.npmjs.org/@hono/node-server/-/node-server-1.19.13.tgz",
+              "version": "1.19.17",
+              "resolved": "https://registry.npmjs.org/@hono/node-server/-/node-server-1.19.17.tgz",
               "overridden": false,
               "dependencies": {
                 "hono": {
