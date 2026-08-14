@@ -193,7 +193,7 @@
     "happy-dom": "20.11.2",
     "hast-util-to-string": "3.0.1",
     "htmlhint": "1.9.2",
-    "js-yaml": "5.2.3",
+    "js-yaml": "5.3.0",
     "json-schema-to-typescript": "15.0.4",
     "jszip": "3.10.1",
     "knip": "6.32.2",
