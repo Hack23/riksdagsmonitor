@@ -1,5 +1,5 @@
 {
-  "version": "1.0.64",
+  "version": "1.0.65",
   "name": "riksdagsmonitor",
   "dependencies": {
     "@eslint/js": {
@@ -2723,8 +2723,8 @@
       }
     },
     "js-yaml": {
-      "version": "5.2.3",
-      "resolved": "https://registry.npmjs.org/js-yaml/-/js-yaml-5.2.3.tgz",
+      "version": "5.3.0",
+      "resolved": "https://registry.npmjs.org/js-yaml/-/js-yaml-5.3.0.tgz",
       "overridden": false,
       "dependencies": {
         "argparse": {
