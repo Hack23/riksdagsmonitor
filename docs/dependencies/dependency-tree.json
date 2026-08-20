@@ -1,5 +1,5 @@
 {
-  "version": "1.0.66",
+  "version": "1.0.67",
   "name": "riksdagsmonitor",
   "dependencies": {
     "@eslint/js": {
@@ -2589,8 +2589,8 @@
       }
     },
     "happy-dom": {
-      "version": "20.11.2",
-      "resolved": "https://registry.npmjs.org/happy-dom/-/happy-dom-20.11.2.tgz",
+      "version": "20.11.6",
+      "resolved": "https://registry.npmjs.org/happy-dom/-/happy-dom-20.11.6.tgz",
       "overridden": false,
       "dependencies": {
         "@types/node": {
@@ -3052,8 +3052,8 @@
       }
     },
     "mermaid": {
-      "version": "11.16.1",
-      "resolved": "https://registry.npmjs.org/mermaid/-/mermaid-11.16.1.tgz",
+      "version": "11.17.0",
+      "resolved": "https://registry.npmjs.org/mermaid/-/mermaid-11.17.0.tgz",
       "overridden": false,
       "dependencies": {
         "@braintree/sanitize-url": {
@@ -3125,8 +3125,8 @@
           }
         },
         "@mermaid-js/parser": {
-          "version": "1.2.0",
-          "resolved": "https://registry.npmjs.org/@mermaid-js/parser/-/parser-1.2.0.tgz",
+          "version": "1.2.1",
+          "resolved": "https://registry.npmjs.org/@mermaid-js/parser/-/parser-1.2.1.tgz",
           "overridden": false,
           "dependencies": {
             "@chevrotain/types": {
@@ -3270,9 +3270,21 @@
           "resolved": "https://registry.npmjs.org/es-toolkit/-/es-toolkit-1.46.1.tgz",
           "overridden": false
         },
+        "fastdom": {
+          "version": "1.0.12",
+          "resolved": "https://registry.npmjs.org/fastdom/-/fastdom-1.0.12.tgz",
+          "overridden": false,
+          "dependencies": {
+            "strictdom": {
+              "version": "1.0.1",
+              "resolved": "https://registry.npmjs.org/strictdom/-/strictdom-1.0.1.tgz",
+              "overridden": false
+            }
+          }
+        },
         "katex": {
-          "version": "0.16.45",
-          "resolved": "https://registry.npmjs.org/katex/-/katex-0.16.45.tgz",
+          "version": "0.16.47",
+          "resolved": "https://registry.npmjs.org/katex/-/katex-0.16.47.tgz",
           "overridden": false,
           "dependencies": {
             "commander": {
@@ -5628,8 +5640,8 @@
       }
     },
     "vite": {
-      "version": "8.2.1",
-      "resolved": "https://registry.npmjs.org/vite/-/vite-8.2.1.tgz",
+      "version": "8.2.2",
+      "resolved": "https://registry.npmjs.org/vite/-/vite-8.2.2.tgz",
       "overridden": false,
       "dependencies": {
         "@types/node": {
@@ -5651,13 +5663,13 @@
           "version": "4.0.5"
         },
         "postcss": {
-          "version": "8.5.25",
-          "resolved": "https://registry.npmjs.org/postcss/-/postcss-8.5.25.tgz",
+          "version": "8.5.26",
+          "resolved": "https://registry.npmjs.org/postcss/-/postcss-8.5.26.tgz",
           "overridden": false,
           "dependencies": {
             "nanoid": {
-              "version": "3.3.16",
-              "resolved": "https://registry.npmjs.org/nanoid/-/nanoid-3.3.16.tgz",
+              "version": "3.3.18",
+              "resolved": "https://registry.npmjs.org/nanoid/-/nanoid-3.3.18.tgz",
               "overridden": false
             },
             "picocolors": {
@@ -5671,15 +5683,16 @@
           }
         },
         "rolldown": {
-          "version": "1.2.1",
-          "resolved": "https://registry.npmjs.org/rolldown/-/rolldown-1.2.1.tgz",
+          "version": "1.2.5",
+          "resolved": "https://registry.npmjs.org/rolldown/-/rolldown-1.2.5.tgz",
           "overridden": false,
           "dependencies": {
             "@oxc-project/types": {
-              "version": "0.142.0",
-              "resolved": "https://registry.npmjs.org/@oxc-project/types/-/types-0.142.0.tgz",
+              "version": "0.146.0",
+              "resolved": "https://registry.npmjs.org/@oxc-project/types/-/types-0.146.0.tgz",
               "overridden": false
             },
+            "@rolldown/binding-android-arm-eabi": {},
             "@rolldown/binding-android-arm64": {},
             "@rolldown/binding-darwin-arm64": {},
             "@rolldown/binding-darwin-x64": {},
@@ -5690,96 +5703,12 @@
             "@rolldown/binding-linux-ppc64-gnu": {},
             "@rolldown/binding-linux-s390x-gnu": {},
             "@rolldown/binding-linux-x64-gnu": {
-              "version": "1.2.1",
-              "resolved": "https://registry.npmjs.org/@rolldown/binding-linux-x64-gnu/-/binding-linux-x64-gnu-1.2.1.tgz",
+              "version": "1.2.5",
+              "resolved": "https://registry.npmjs.org/@rolldown/binding-linux-x64-gnu/-/binding-linux-x64-gnu-1.2.5.tgz",
               "overridden": false
             },
             "@rolldown/binding-linux-x64-musl": {},
             "@rolldown/binding-openharmony-arm64": {},
-            "@rolldown/binding-wasm32-wasi": {
-              "version": "1.2.1",
-              "resolved": "https://registry.npmjs.org/@rolldown/binding-wasm32-wasi/-/binding-wasm32-wasi-1.2.1.tgz",
-              "overridden": false,
-              "dependencies": {
-                "@emnapi/core": {
-                  "version": "2.0.0-alpha.3",
-                  "resolved": "https://registry.npmjs.org/@emnapi/core/-/core-2.0.0-alpha.3.tgz",
-                  "overridden": false,
-                  "dependencies": {
-                    "@emnapi/wasi-threads": {
-                      "version": "2.0.1",
-                      "resolved": "https://registry.npmjs.org/@emnapi/wasi-threads/-/wasi-threads-2.0.1.tgz",
-                      "overridden": false,
-                      "dependencies": {
-                        "tslib": {
-                          "version": "2.8.1"
-                        }
-                      }
-                    },
-                    "tslib": {
-                      "version": "2.8.1"
-                    }
-                  }
-                },
-                "@emnapi/runtime": {
-                  "version": "2.0.0-alpha.3",
-                  "resolved": "https://registry.npmjs.org/@emnapi/runtime/-/runtime-2.0.0-alpha.3.tgz",
-                  "overridden": false,
-                  "dependencies": {
-                    "tslib": {
-                      "version": "2.8.1"
-                    }
-                  }
-                },
-                "@napi-rs/wasm-runtime": {
-                  "version": "1.2.1",
-                  "resolved": "https://registry.npmjs.org/@napi-rs/wasm-runtime/-/wasm-runtime-1.2.1.tgz",
-                  "overridden": false,
-                  "dependencies": {
-                    "@emnapi/core": {
-                      "version": "1.11.2",
-                      "resolved": "https://registry.npmjs.org/@emnapi/core/-/core-1.11.2.tgz",
-                      "overridden": false,
-                      "dependencies": {
-                        "@emnapi/wasi-threads": {
-                          "version": "1.2.2",
-                          "resolved": "https://registry.npmjs.org/@emnapi/wasi-threads/-/wasi-threads-1.2.2.tgz",
-                          "overridden": false,
-                          "dependencies": {
-                            "tslib": {
-                              "version": "2.8.1"
-                            }
-                          }
-                        },
-                        "tslib": {
-                          "version": "2.8.1"
-                        }
-                      }
-                    },
-                    "@emnapi/runtime": {
-                      "version": "1.11.2",
-                      "resolved": "https://registry.npmjs.org/@emnapi/runtime/-/runtime-1.11.2.tgz",
-                      "overridden": false,
-                      "dependencies": {
-                        "tslib": {
-                          "version": "2.8.1"
-                        }
-                      }
-                    },
-                    "@tybys/wasm-util": {
-                      "version": "0.10.3",
-                      "resolved": "https://registry.npmjs.org/@tybys/wasm-util/-/wasm-util-0.10.3.tgz",
-                      "overridden": false,
-                      "dependencies": {
-                        "tslib": {
-                          "version": "2.8.1"
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            },
             "@rolldown/binding-win32-arm64-msvc": {},
             "@rolldown/binding-win32-x64-msvc": {},
             "@rolldown/pluginutils": {
@@ -5883,7 +5812,7 @@
             },
             "msw": {},
             "vite": {
-              "version": "8.2.1"
+              "version": "8.2.2"
             }
           }
         },
@@ -5951,7 +5880,7 @@
           "overridden": false
         },
         "happy-dom": {
-          "version": "20.11.2"
+          "version": "20.11.6"
         },
         "jsdom": {},
         "magic-string": {
@@ -5995,7 +5924,7 @@
           "version": "3.1.0"
         },
         "vite": {
-          "version": "8.2.1"
+          "version": "8.2.2"
         },
         "why-is-node-running": {
           "version": "2.3.0",
