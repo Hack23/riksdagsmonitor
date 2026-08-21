@@ -1,5 +1,5 @@
 {
-  "version": "1.0.67",
+  "version": "1.0.68",
   "name": "riksdagsmonitor",
   "dependencies": {
     "@eslint/js": {
@@ -8,7 +8,7 @@
       "overridden": false,
       "dependencies": {
         "eslint": {
-          "version": "10.8.1"
+          "version": "10.9.0"
         }
       }
     },
@@ -2064,8 +2064,8 @@
       }
     },
     "eslint": {
-      "version": "10.8.1",
-      "resolved": "https://registry.npmjs.org/eslint/-/eslint-10.8.1.tgz",
+      "version": "10.9.0",
+      "resolved": "https://registry.npmjs.org/eslint/-/eslint-10.9.0.tgz",
       "overridden": false,
       "dependencies": {
         "@eslint-community/eslint-utils": {
@@ -2079,7 +2079,7 @@
               "overridden": false
             },
             "eslint": {
-              "version": "10.8.1"
+              "version": "10.9.0"
             }
           }
         },
@@ -5381,7 +5381,7 @@
                   "version": "4.4.3"
                 },
                 "eslint": {
-                  "version": "10.8.1"
+                  "version": "10.9.0"
                 },
                 "ts-api-utils": {
                   "version": "2.5.0"
@@ -5408,7 +5408,7 @@
               }
             },
             "eslint": {
-              "version": "10.8.1"
+              "version": "10.9.0"
             },
             "ignore": {
               "version": "7.0.6",
@@ -5456,7 +5456,7 @@
               "version": "4.4.3"
             },
             "eslint": {
-              "version": "10.8.1"
+              "version": "10.9.0"
             },
             "typescript": {
               "version": "6.0.3"
@@ -5541,7 +5541,7 @@
               "version": "8.67.0"
             },
             "eslint": {
-              "version": "10.8.1"
+              "version": "10.9.0"
             },
             "typescript": {
               "version": "6.0.3"
@@ -5549,7 +5549,7 @@
           }
         },
         "eslint": {
-          "version": "10.8.1"
+          "version": "10.9.0"
         },
         "typescript": {
           "version": "6.0.3"
