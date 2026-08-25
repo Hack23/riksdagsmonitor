@@ -1,5 +1,5 @@
 {
-  "version": "1.0.69",
+  "version": "1.0.70",
   "name": "riksdagsmonitor",
   "dependencies": {
     "@eslint/js": {
@@ -567,8 +567,8 @@
       }
     },
     "cypress": {
-      "version": "15.21.0",
-      "resolved": "https://registry.npmjs.org/cypress/-/cypress-15.21.0.tgz",
+      "version": "15.21.1",
+      "resolved": "https://registry.npmjs.org/cypress/-/cypress-15.21.1.tgz",
       "overridden": false,
       "dependencies": {
         "@cypress/request": {
@@ -2744,8 +2744,8 @@
       }
     },
     "js-yaml": {
-      "version": "5.3.0",
-      "resolved": "https://registry.npmjs.org/js-yaml/-/js-yaml-5.3.0.tgz",
+      "version": "5.4.0",
+      "resolved": "https://registry.npmjs.org/js-yaml/-/js-yaml-5.4.0.tgz",
       "overridden": false,
       "dependencies": {
         "argparse": {
@@ -3052,8 +3052,8 @@
       }
     },
     "mermaid": {
-      "version": "11.17.1",
-      "resolved": "https://registry.npmjs.org/mermaid/-/mermaid-11.17.1.tgz",
+      "version": "11.17.2",
+      "resolved": "https://registry.npmjs.org/mermaid/-/mermaid-11.17.2.tgz",
       "overridden": false,
       "dependencies": {
         "@braintree/sanitize-url": {
