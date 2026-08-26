@@ -207,7 +207,7 @@
     "remark-gfm": "4.0.1",
     "remark-parse": "11.0.0",
     "remark-rehype": "11.1.2",
-    "sharp": "0.35.3",
+    "sharp": "0.35.4",
     "start-server-and-test": "3.0.12",
     "tsx": "4.23.12",
     "typedoc": "0.28.20",
