@@ -194,7 +194,7 @@
     "hast-util-to-string": "3.0.1",
     "htmlhint": "1.9.2",
     "js-yaml": "5.4.1",
-    "json-schema-to-typescript": "15.0.4",
+    "json-schema-to-typescript": "16.0.0",
     "jszip": "3.10.1",
     "knip": "6.32.3",
     "mermaid": "11.17.2",
