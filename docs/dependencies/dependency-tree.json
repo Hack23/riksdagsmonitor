@@ -1,5 +1,5 @@
 {
-  "version": "1.0.71",
+  "version": "1.0.72",
   "name": "riksdagsmonitor",
   "dependencies": {
     "@eslint/js": {
@@ -245,8 +245,8 @@
       }
     },
     "@types/node": {
-      "version": "26.3.0",
-      "resolved": "https://registry.npmjs.org/@types/node/-/node-26.3.0.tgz",
+      "version": "26.4.0",
+      "resolved": "https://registry.npmjs.org/@types/node/-/node-26.4.0.tgz",
       "overridden": false,
       "dependencies": {
         "undici-types": {
@@ -262,7 +262,7 @@
       "overridden": false,
       "dependencies": {
         "@types/node": {
-          "version": "26.3.0"
+          "version": "26.4.0"
         }
       }
     },
@@ -495,7 +495,7 @@
               "version": "6.5.0"
             },
             "picomatch": {
-              "version": "4.0.5"
+              "version": "4.0.7"
             }
           }
         },
@@ -2589,12 +2589,12 @@
       }
     },
     "happy-dom": {
-      "version": "20.11.6",
-      "resolved": "https://registry.npmjs.org/happy-dom/-/happy-dom-20.11.6.tgz",
+      "version": "20.11.13",
+      "resolved": "https://registry.npmjs.org/happy-dom/-/happy-dom-20.11.13.tgz",
       "overridden": false,
       "dependencies": {
         "@types/node": {
-          "version": "26.3.0"
+          "version": "26.4.0"
         },
         "@types/whatwg-mimetype": {
           "version": "3.0.2",
@@ -2607,7 +2607,7 @@
           "overridden": false,
           "dependencies": {
             "@types/node": {
-              "version": "26.3.0"
+              "version": "26.4.0"
             }
           }
         },
@@ -2617,7 +2617,7 @@
           "overridden": false,
           "dependencies": {
             "@types/node": {
-              "version": "26.3.0"
+              "version": "26.4.0"
             }
           }
         },
@@ -2744,8 +2744,8 @@
       }
     },
     "js-yaml": {
-      "version": "5.4.0",
-      "resolved": "https://registry.npmjs.org/js-yaml/-/js-yaml-5.4.0.tgz",
+      "version": "5.4.1",
+      "resolved": "https://registry.npmjs.org/js-yaml/-/js-yaml-5.4.1.tgz",
       "overridden": false,
       "dependencies": {
         "argparse": {
@@ -2756,8 +2756,8 @@
       }
     },
     "json-schema-to-typescript": {
-      "version": "15.0.4",
-      "resolved": "https://registry.npmjs.org/json-schema-to-typescript/-/json-schema-to-typescript-15.0.4.tgz",
+      "version": "16.0.0",
+      "resolved": "https://registry.npmjs.org/json-schema-to-typescript/-/json-schema-to-typescript-16.0.0.tgz",
       "overridden": false,
       "dependencies": {
         "@apidevtools/json-schema-ref-parser": {
@@ -2791,22 +2791,12 @@
           "overridden": false
         },
         "@types/lodash": {
-          "version": "4.17.23",
-          "resolved": "https://registry.npmjs.org/@types/lodash/-/lodash-4.17.23.tgz",
+          "version": "4.17.25",
+          "resolved": "https://registry.npmjs.org/@types/lodash/-/lodash-4.17.25.tgz",
           "overridden": false
         },
-        "is-glob": {
-          "version": "4.0.3"
-        },
         "js-yaml": {
-          "version": "4.3.0",
-          "resolved": "https://registry.npmjs.org/js-yaml/-/js-yaml-4.3.0.tgz",
-          "overridden": false,
-          "dependencies": {
-            "argparse": {
-              "version": "2.0.1"
-            }
-          }
+          "version": "5.4.1"
         },
         "lodash": {
           "version": "4.18.1"
@@ -2815,8 +2805,8 @@
           "version": "1.2.8"
         },
         "prettier": {
-          "version": "3.8.1",
-          "resolved": "https://registry.npmjs.org/prettier/-/prettier-3.8.1.tgz",
+          "version": "3.9.6",
+          "resolved": "https://registry.npmjs.org/prettier/-/prettier-3.9.6.tgz",
           "overridden": false
         },
         "tinyglobby": {
@@ -2903,8 +2893,8 @@
       }
     },
     "knip": {
-      "version": "6.32.3",
-      "resolved": "https://registry.npmjs.org/knip/-/knip-6.32.3.tgz",
+      "version": "6.33.0",
+      "resolved": "https://registry.npmjs.org/knip/-/knip-6.33.0.tgz",
       "overridden": false,
       "dependencies": {
         "fdir": {
@@ -2913,13 +2903,13 @@
           "overridden": false,
           "dependencies": {
             "picomatch": {
-              "version": "4.0.5"
+              "version": "4.0.7"
             }
           }
         },
         "formatly": {
-          "version": "0.3.0",
-          "resolved": "https://registry.npmjs.org/formatly/-/formatly-0.3.0.tgz",
+          "version": "0.7.0",
+          "resolved": "https://registry.npmjs.org/formatly/-/formatly-0.7.0.tgz",
           "overridden": false,
           "dependencies": {
             "fd-package-json": {
@@ -2933,12 +2923,17 @@
                   "overridden": false
                 }
               }
+            },
+            "package-manager-detector": {
+              "version": "1.8.0",
+              "resolved": "https://registry.npmjs.org/package-manager-detector/-/package-manager-detector-1.8.0.tgz",
+              "overridden": false
             }
           }
         },
         "get-tsconfig": {
-          "version": "4.14.1",
-          "resolved": "https://registry.npmjs.org/get-tsconfig/-/get-tsconfig-4.14.1.tgz",
+          "version": "4.14.3",
+          "resolved": "https://registry.npmjs.org/get-tsconfig/-/get-tsconfig-4.14.3.tgz",
           "overridden": false,
           "dependencies": {
             "resolve-pkg-maps": {
@@ -2952,8 +2947,8 @@
           "version": "2.7.0"
         },
         "oxc-parser": {
-          "version": "0.143.0",
-          "resolved": "https://registry.npmjs.org/oxc-parser/-/oxc-parser-0.143.0.tgz",
+          "version": "0.147.0",
+          "resolved": "https://registry.npmjs.org/oxc-parser/-/oxc-parser-0.147.0.tgz",
           "overridden": false,
           "dependencies": {
             "@oxc-parser/binding-android-arm-eabi": {},
@@ -2970,8 +2965,8 @@
             "@oxc-parser/binding-linux-riscv64-musl": {},
             "@oxc-parser/binding-linux-s390x-gnu": {},
             "@oxc-parser/binding-linux-x64-gnu": {
-              "version": "0.143.0",
-              "resolved": "https://registry.npmjs.org/@oxc-parser/binding-linux-x64-gnu/-/binding-linux-x64-gnu-0.143.0.tgz",
+              "version": "0.147.0",
+              "resolved": "https://registry.npmjs.org/@oxc-parser/binding-linux-x64-gnu/-/binding-linux-x64-gnu-0.147.0.tgz",
               "overridden": false
             },
             "@oxc-parser/binding-linux-x64-musl": {},
@@ -2980,8 +2975,8 @@
             "@oxc-parser/binding-win32-ia32-msvc": {},
             "@oxc-parser/binding-win32-x64-msvc": {},
             "@oxc-project/types": {
-              "version": "0.143.0",
-              "resolved": "https://registry.npmjs.org/@oxc-project/types/-/types-0.143.0.tgz",
+              "version": "0.147.0",
+              "resolved": "https://registry.npmjs.org/@oxc-project/types/-/types-0.147.0.tgz",
               "overridden": false
             }
           }
@@ -3017,13 +3012,13 @@
           }
         },
         "picomatch": {
-          "version": "4.0.5",
-          "resolved": "https://registry.npmjs.org/picomatch/-/picomatch-4.0.5.tgz",
+          "version": "4.0.7",
+          "resolved": "https://registry.npmjs.org/picomatch/-/picomatch-4.0.7.tgz",
           "overridden": false
         },
         "smol-toml": {
-          "version": "1.7.1",
-          "resolved": "https://registry.npmjs.org/smol-toml/-/smol-toml-1.7.1.tgz",
+          "version": "1.8.0",
+          "resolved": "https://registry.npmjs.org/smol-toml/-/smol-toml-1.8.0.tgz",
           "overridden": false
         },
         "strip-json-comments": {
@@ -3072,9 +3067,7 @@
               "overridden": false,
               "dependencies": {
                 "package-manager-detector": {
-                  "version": "1.6.0",
-                  "resolved": "https://registry.npmjs.org/package-manager-detector/-/package-manager-detector-1.6.0.tgz",
-                  "overridden": false
+                  "version": "1.8.0"
                 },
                 "tinyexec": {
                   "version": "1.0.2"
@@ -5645,7 +5638,7 @@
       "overridden": false,
       "dependencies": {
         "@types/node": {
-          "version": "26.3.0"
+          "version": "26.4.0"
         },
         "@vitejs/devtools": {},
         "esbuild": {
@@ -5660,7 +5653,7 @@
           "version": "1.33.0"
         },
         "picomatch": {
-          "version": "4.0.5"
+          "version": "4.0.7"
         },
         "postcss": {
           "version": "8.5.26",
@@ -5744,7 +5737,7 @@
         "@edge-runtime/vm": {},
         "@opentelemetry/api": {},
         "@types/node": {
-          "version": "26.3.0"
+          "version": "26.4.0"
         },
         "@vitest/browser-playwright": {},
         "@vitest/browser-preview": {},
@@ -5880,7 +5873,7 @@
           "overridden": false
         },
         "happy-dom": {
-          "version": "20.11.6"
+          "version": "20.11.13"
         },
         "jsdom": {},
         "magic-string": {
@@ -5902,7 +5895,7 @@
           "version": "2.0.3"
         },
         "picomatch": {
-          "version": "4.0.5"
+          "version": "4.0.7"
         },
         "std-env": {
           "version": "4.0.0"
