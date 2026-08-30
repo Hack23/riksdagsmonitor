@@ -149,7 +149,7 @@ The 13 analysis/article-generating news workflows declare the Opus-class reasoni
 ```yaml
 engine:
   id: copilot
-  model: claude-opus-4.8          # Content/analysis workflows — strongest reasoning for the 23-artifact pipeline
+  model: claude-opus-5          # Content/analysis workflows — strongest reasoning for the 23-artifact pipeline
   # news-translate.md keeps:  model: claude-sonnet-4.6  — faster throughput for high-volume translation fan-out
   # Note: engine.mcp.session-timeout was removed in the v0.71.3 era due to MCP Gateway v0.3.1 rejecting it; the v0.74.3 lock files now run MCP Gateway v0.3.9 — re-test before re-enabling.
 ```

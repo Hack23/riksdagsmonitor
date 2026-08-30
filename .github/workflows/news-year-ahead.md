@@ -290,7 +290,7 @@ steps:
       force-generation: ${{ inputs.force_generation }}
       analysis-depth: ${{ inputs.analysis_depth }}
       default-analysis-depth: comprehensive
-model: claude-opus-4.8
+model: claude-opus-5
 engine:
   id: copilot
 ---
@@ -326,7 +326,7 @@ The dedicated `news-translate` workflow runs on a separate track and translates 
 
 > 🟡 **Plan to call `safeoutputs___create_pull_request` by agent minute 42 (hard deadline 45)** to reserve job-level headroom for setup variance and the safe-outputs runner. See `00-base-contract.md §Session timing` and `07-commit-and-pr.md §Deadline enforcement`.
 >
-> 🔴 **Token budget awareness**: This workflow uses `claude-opus-4.8` which consumes tokens rapidly on complex analysis. The 25M token budget can be exhausted in ~20 minutes of intensive MCP querying + large file writes. **Check `agent_minute` before EVERY phase transition. If agent_minute ≥ 20 and zero analysis artifacts exist on disk, immediately compress scope to a minimal viable set and target PR by minute 35.**
+> 🔴 **Token budget awareness**: This workflow uses `claude-opus-5` which consumes tokens rapidly on complex analysis. The 25M token budget can be exhausted in ~20 minutes of intensive MCP querying + large file writes. **Check `agent_minute` before EVERY phase transition. If agent_minute ≥ 20 and zero analysis artifacts exist on disk, immediately compress scope to a minimal viable set and target PR by minute 35.**
 
 | Minutes | Phase |
 |---------|-------|

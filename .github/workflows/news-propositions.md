@@ -287,7 +287,7 @@ steps:
       force-generation: ${{ inputs.force_generation }}
       analysis-depth: ${{ inputs.analysis_depth }}
       default-analysis-depth: deep
-model: claude-opus-4.8
+model: claude-opus-5
 engine:
   id: copilot
 ---

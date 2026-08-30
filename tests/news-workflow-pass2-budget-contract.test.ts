@@ -14,21 +14,21 @@ describe('agentic news workflow pass-2 and budget contracts', () => {
     expect(src).toContain("cron: '30 15 * * 1-5'");
   });
 
-  it('content-generating news workflows use the claude-opus-4.8 reasoning model', () => {
+  it('content-generating news workflows use the claude-opus-5 reasoning model', () => {
     const election = read('.github/workflows/news-election-cycle.md');
     const yearAhead = read('.github/workflows/news-year-ahead.md');
-    expect(election).toContain('model: claude-opus-4.8');
-    expect(yearAhead).toContain('model: claude-opus-4.8');
+    expect(election).toContain('model: claude-opus-5');
+    expect(yearAhead).toContain('model: claude-opus-5');
     expect(election).not.toContain('model: claude-sonnet-4.6');
     expect(yearAhead).not.toContain('model: claude-sonnet-4.6');
   });
 
   it('the translation workflow stays on the claude-sonnet-4.6 throughput model', () => {
     // Translations are high-volume, low-reasoning fan-out work; only the
-    // analysis/article-generating workflows use the claude-opus-4.8 model.
+    // analysis/article-generating workflows use the claude-opus-5 model.
     const translate = read('.github/workflows/news-translate.md');
     expect(translate).toContain('model: claude-sonnet-4.6');
-    expect(translate).not.toContain('model: claude-opus-4.8');
+    expect(translate).not.toContain('model: claude-opus-5');
   });
 
   it('analysis gate requires explicit full pass-2 declaration and canonical rerun schema fields', () => {

@@ -708,7 +708,7 @@ flowchart TD
 
 ### 🤖 Stage 6: Agentic News Generation
 
-Fourteen agentic workflows use the `gh-aw` (GitHub Agentic Workflows) framework to generate political-intelligence content following OSINT/INTOP editorial standards and the 23-artifact analysis baseline. The **13 analysis/article-generating workflows run on `claude-opus-4.8`** (strongest reasoning for the analysis pipeline), while the high-volume **`news-translate` workflow stays on `claude-sonnet-4.6`** for translation-fan-out throughput.
+Fourteen agentic workflows use the `gh-aw` (GitHub Agentic Workflows) framework to generate political-intelligence content following OSINT/INTOP editorial standards and the 23-artifact analysis baseline. The **13 analysis/article-generating workflows run on `claude-opus-5`** (strongest reasoning for the analysis pipeline), while the high-volume **`news-translate` workflow stays on `claude-sonnet-4.6`** for translation-fan-out throughput.
 
 ```mermaid
 flowchart TD
