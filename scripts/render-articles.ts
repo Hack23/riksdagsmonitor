@@ -31,8 +31,11 @@
  */
 
 import fs from 'fs';
+import os from 'os';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { execFile } from 'child_process';
+import { promisify } from 'util';
 
 import type { Language } from './types/language.js';
 import {
@@ -47,7 +50,7 @@ import {
 // — no direct usage needed here but the import documents the dependency chain.
 
 const __filename = fileURLToPath(import.meta.url);
-void __filename;
+const execFileAsync = promisify(execFile);
 
 interface CliOptions {
   readonly date?: string;
@@ -251,8 +254,7 @@ async function main(): Promise<void> {
 
   if (args.all) {
     const cases = allCaseDates();
-    let total = 0;
-    for (const rc of cases) total += await renderOne(rc, args.langs, args.quiet);
+    const total = await renderAllParallel(cases, args.langs, args.quiet);
     console.log(`\n📝 Rendered ${total} article HTML file(s) across ${cases.length} subfolder(s).`);
     return;
   }
@@ -292,6 +294,61 @@ async function main(): Promise<void> {
     subfolderRepoRelPath: `analysis/daily/${args.date}/${args.subfolder}`,
   };
   await renderOne(rc, args.langs, args.quiet);
+}
+
+/**
+ * Render every discovered subfolder in parallel using a bounded pool of
+ * child processes.
+ *
+ * The per-subfolder render (`renderOne`) is pure CPU work — the
+ * remark/micromark markdown→HTML pipeline (`renderMarkdownToHtml`) runs
+ * synchronously and never yields to the event loop, so in-process
+ * `Promise.all` concurrency provides zero speedup. Real parallelism
+ * requires separate processes.
+ *
+ * Each subfolder is independent (read-only `analysis/daily/**` inputs,
+ * distinct `news/<date>-<sub>-<lang>.html` outputs), so we fan out by
+ * re-invoking this same CLI in single-subfolder mode
+ * (`--date <d> --subfolder <s> --lang <langs>`) through a pool capped at
+ * the machine's core count. This reuses the exact, already-correct render
+ * path — no duplicated logic and no worker-thread/tsx-loader coupling.
+ */
+async function renderAllParallel(
+  cases: readonly RenderCase[],
+  langs: readonly Language[],
+  quiet: boolean,
+): Promise<number> {
+  const concurrency = Math.max(1, os.cpus().length);
+  const langsArg = langs.join(',');
+  let next = 0;
+  let total = 0;
+
+  const runOne = async (rc: RenderCase): Promise<number> => {
+    const cliArgs = [
+      __filename,
+      '--date', rc.date,
+      '--subfolder', rc.subfolder,
+      '--lang', langsArg,
+      '--quiet',
+    ];
+    try {
+      await execFileAsync('npx', ['tsx', ...cliArgs], { cwd: ROOT_DIR, maxBuffer: 16 * 1024 * 1024 });
+      return langs.length;
+    } catch (err) {
+      console.error(`❌ Failed to render ${rc.date}/${rc.subfolder}:`, err instanceof Error ? err.message : err);
+      process.exitCode = 1;
+      return 0;
+    }
+  };
+
+  const worker = async (): Promise<void> => {
+    while (next < cases.length) {
+      const rc = cases[next++];
+      total += await runOne(rc);
+    }
+  };
+  await Promise.all(Array.from({ length: concurrency }, worker));
+  return total;
 }
 
 main().catch((err) => {
