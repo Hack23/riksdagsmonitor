@@ -165,7 +165,7 @@ It declares:
 | **Schedule** | Daily around 07:00 on weekdays |
 | **Manual inputs** | `article_date`, `force_generation`, `analysis_depth` (no `languages` input — every run renders all 14). All `workflow_dispatch` inputs are validated and exported to `$GITHUB_ENV` by the [`./.github/actions/news-resolve-inputs`](.github/actions/news-resolve-inputs/action.yml) composite (runs right after `news-prewarm`) so the agent's bash sandbox sees the canonical `ARTICLE_DATE` / `SUBFOLDER` / `ANALYSIS_DEPTH` / `FORCE_GENERATION` variables verbatim via `awf --env-all`. See [`.github/prompts/00-base-contract.md §Runtime input contract`](.github/prompts/00-base-contract.md) for the per-workflow extra-input table (`CYCLE_ANCHOR`, `COVERAGE_DEPTH`, `LOOKBACK_HOURS`, `ARTICLE_TYPES`, `FOCUS`, `LANGUAGES_RESOLVED`, `MAX_BRIEFS_RESOLVED`, `FORCE_RETRANSLATE`, `TRANSLATE_SUBFOLDER`). |
 | **Runtime** | Node.js `26` |
-| **Engine** | Copilot with `claude-opus-4.8` (the 13 analysis/article-generating news workflows; `news-translate` keeps `claude-sonnet-4.6` for high-volume translation throughput) |
+| **Engine** | Copilot with `claude-opus-5` (the 13 analysis/article-generating news workflows; `news-translate` keeps `claude-sonnet-4.6` for high-volume translation throughput) |
 | **Permissions** | Read-only content/issues/PR/actions/discussions/security-events for AI job |
 | **MCP gateway** | Enabled |
 | **Safe outputs** | One PR max, labels `agentic-news`, `analysis-data` (no translation dispatch — all 14 languages rendered in-run) |

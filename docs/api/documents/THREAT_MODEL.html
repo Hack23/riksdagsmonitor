@@ -3614,7 +3614,7 @@
 <blockquote>
 <p><strong>Dual-model architecture.</strong> Riksdagsmonitor runs <strong>two</strong> Anthropic models through the GitHub Copilot API:</p>
 <ul>
-<li><strong>Claude Opus 4.8</strong> — the reasoning model that drives the <strong>13 analysis/article workflows</strong> and the full 23-artifact analysis pipeline (<code>engine.model: claude-opus-4.8</code>). It carries the integrity-critical workload: source synthesis, significance scoring, evidence citation, and English/Swedish article drafting.</li>
+<li><strong>Claude Opus 4.8</strong> — the reasoning model that drives the <strong>13 analysis/article workflows</strong> and the full 23-artifact analysis pipeline (<code>engine.model: claude-opus-5</code>). It carries the integrity-critical workload: source synthesis, significance scoring, evidence citation, and English/Swedish article drafting.</li>
 <li><strong>Claude Sonnet 4.6</strong> — the faster model used <strong>only</strong> for the high-volume <strong>news-translate</strong> fan-out (<code>engine.model: claude-sonnet-4.6</code>), translating rendered EN+SV articles into the 12 remaining languages.</li>
 </ul>
 <p>Sonnet 4.6 was the repo-wide baseline through v0.74.3; the analysis/article pipeline was promoted to the Opus reasoning model to strengthen factual grounding and reduce overreliance (LLM09) risk. GPT-5.4 / GPT-5.4-mini eligibility is resolved upstream but not yet A/B-tested on this repository.</p>
@@ -3816,7 +3816,7 @@
 <h4 id="maintenance-monitoring" class="tsd-anchor-link">Maintenance &amp; Monitoring<a href="#maintenance-monitoring" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4>
 <p><strong>Model Version Management</strong>:</p>
 <ul>
-<li>✅ <code>engine.model</code> pinned per workflow: <code>claude-opus-4.8</code> (13 analysis/article workflows), <code>claude-sonnet-4.6</code> (news-translate)</li>
+<li>✅ <code>engine.model</code> pinned per workflow: <code>claude-opus-5</code> (13 analysis/article workflows), <code>claude-sonnet-4.6</code> (news-translate)</li>
 <li>✅ Compiled <code>.lock.yml</code> files version-control the exact engine/model selection (reviewable in PRs)</li>
 <li>✅ GitHub Copilot API versioning (GitHub-managed)</li>
 <li>⚠️ No automated model update testing (GPT-5.4 / GPT-5.4-mini A/B test pending)</li>

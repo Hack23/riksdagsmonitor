@@ -1905,7 +1905,7 @@ This section provides comprehensive AI security analysis per [Hack23 AI Policy](
 **Per [Hack23 AI Policy § 4.3](https://github.com/Hack23/ISMS-PUBLIC/blob/main/AI_Policy.md)**, all LLM applications MUST maintain model cards documenting capabilities, limitations, and security characteristics.
 
 > **Dual-model architecture.** Riksdagsmonitor runs **two** Anthropic models through the GitHub Copilot API:
-> - **Claude Opus 4.8** — the reasoning model that drives the **13 analysis/article workflows** and the full 23-artifact analysis pipeline (`engine.model: claude-opus-4.8`). It carries the integrity-critical workload: source synthesis, significance scoring, evidence citation, and English/Swedish article drafting.
+> - **Claude Opus 4.8** — the reasoning model that drives the **13 analysis/article workflows** and the full 23-artifact analysis pipeline (`engine.model: claude-opus-5`). It carries the integrity-critical workload: source synthesis, significance scoring, evidence citation, and English/Swedish article drafting.
 > - **Claude Sonnet 4.6** — the faster model used **only** for the high-volume **news-translate** fan-out (`engine.model: claude-sonnet-4.6`), translating rendered EN+SV articles into the 12 remaining languages.
 >
 > Sonnet 4.6 was the repo-wide baseline through v0.74.3; the analysis/article pipeline was promoted to the Opus reasoning model to strengthen factual grounding and reduce overreliance (LLM09) risk. GPT-5.4 / GPT-5.4-mini eligibility is resolved upstream but not yet A/B-tested on this repository.
@@ -2032,7 +2032,7 @@ This section provides comprehensive AI security analysis per [Hack23 AI Policy](
 #### Maintenance & Monitoring
 
 **Model Version Management**:
-- ✅ `engine.model` pinned per workflow: `claude-opus-4.8` (13 analysis/article workflows), `claude-sonnet-4.6` (news-translate)
+- ✅ `engine.model` pinned per workflow: `claude-opus-5` (13 analysis/article workflows), `claude-sonnet-4.6` (news-translate)
 - ✅ Compiled `.lock.yml` files version-control the exact engine/model selection (reviewable in PRs)
 - ✅ GitHub Copilot API versioning (GitHub-managed)
 - ⚠️ No automated model update testing (GPT-5.4 / GPT-5.4-mini A/B test pending)
