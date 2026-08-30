@@ -3,7 +3,7 @@ date: 2026-05-27
 subfolder: election-cycle/current
 slug: 2026-05-27-election-cycle/current
 source_folder: analysis/daily/2026-05-27/election-cycle/current
-generated_at: 2026-07-21T11:29:12.204Z
+generated_at: 2026-08-30T17:29:16.906Z
 language: en
 layout: article
 ---
