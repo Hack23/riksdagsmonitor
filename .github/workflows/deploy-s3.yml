@@ -25,7 +25,7 @@ jobs:
     runs-on: ubuntu-26.04
     # Full prebuild + Vite + minify + S3 deploy routinely runs >15 minutes
     # as the article corpus grows, so keep explicit headroom.
-    timeout-minutes: 45
+    timeout-minutes: 90
     steps:
       - name: Harden Runner
         uses: step-security/harden-runner@05e31511f85b41b11d1cf0ef85d0992719546e2c # v2.21.0
