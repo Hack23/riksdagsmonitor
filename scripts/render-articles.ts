@@ -254,7 +254,7 @@ async function main(): Promise<void> {
 
   if (args.all) {
     const cases = allCaseDates();
-    const total = await renderAllParallel(cases, args.langs, args.quiet);
+    const total = await renderAllParallel(cases, args.langs);
     console.log(`\n📝 Rendered ${total} article HTML file(s) across ${cases.length} subfolder(s).`);
     return;
   }
@@ -316,7 +316,6 @@ async function main(): Promise<void> {
 async function renderAllParallel(
   cases: readonly RenderCase[],
   langs: readonly Language[],
-  quiet: boolean,
 ): Promise<number> {
   const concurrency = Math.max(1, os.cpus().length);
   const langsArg = langs.join(',');
