@@ -1,9 +1,9 @@
 {
   "metadata": {
-    "source_url": "https://raw.githubusercontent.com/Hack23/cia/6877bc4888a7aef1a196939233b5e6e0ce888611/service.data.impl/sample-data/extraction_summary_report.csv",
-    "last_updated": "2026-06-30 14:35:30.655519",
-    "extraction_time": "2026-06-30 14:35:30.655519",
-    "generated_at": "2026-06-30T13:29:35.818Z",
+    "source_url": "https://raw.githubusercontent.com/Hack23/cia/643750f38c201b403023a83ccc1a6e00ede840b1/service.data.impl/sample-data/extraction_summary_report.csv",
+    "last_updated": "2026-08-30 00:21:37.498449",
+    "extraction_time": "2026-08-30 00:21:37.498449",
+    "generated_at": "2026-08-30T03:36:41.780Z",
     "version": "1.2.0"
   },
   "counts": {
@@ -11,28 +11,28 @@
     "total_votes": 3793281,
     "total_documents": 109480,
     "total_committee_documents": 9158,
-    "total_rule_violations": 2306,
+    "total_rule_violations": 2298,
     "total_against_proposals": 58503,
     "total_committee_proposals": 61899,
     "total_document_activities": 393991,
     "total_political_parties": 40,
     "total_assignments": 31443,
     "total_document_attachments": 162525,
-    "total_riksdag_parties": 12,
+    "total_riksdag_parties": 11,
     "total_governments": 20,
-    "total_government_proposals": 5928,
+    "total_government_proposals": 5933,
     "total_government_roles": 77,
     "total_government_role_members": 503,
-    "total_member_proposals": 94936,
+    "total_member_proposals": 94938,
     "total_committee_decisions": 62287,
-    "total_committee_member_proposals": 94364,
+    "total_committee_member_proposals": 94366,
     "total_committee_role_members": 19177,
     "total_committee_roles": 153,
     "total_party_members": 2439,
     "total_party_role_members": 302,
-    "total_party_summary": 13,
-    "total_politician_documents": 281342,
-    "total_ballot_politician_summaries": 3793281,
+    "total_party_summary": 12,
+    "total_politician_documents": 281363,
+    "total_ballot_politician_summaries": 3794871,
     "total_document_content": 299910
   },
   "tables": {
@@ -175,19 +175,19 @@
       },
       {
         "name": "jv_commit",
-        "count": 5543929
+        "count": 5603430
       },
       {
         "name": "jv_commit_property",
-        "count": 5526090
+        "count": 5565229
       },
       {
         "name": "jv_global_id",
-        "count": 12680637
+        "count": 12729219
       },
       {
         "name": "jv_snapshot",
-        "count": 12543016
+        "count": 12495898
       },
       {
         "name": "language_data",
@@ -214,6 +214,10 @@
         "count": 4
       },
       {
+        "name": "qrtz_fired_triggers",
+        "count": 1
+      },
+      {
         "name": "qrtz_job_details",
         "count": 4
       },
@@ -231,7 +235,7 @@
       },
       {
         "name": "rule_violation",
-        "count": 2306
+        "count": 2298
       },
       {
         "name": "sweden_political_party",
@@ -255,7 +259,7 @@
       },
       {
         "name": "world_bank_data",
-        "count": 591906
+        "count": 598424
       }
     ],
     "empty": [
@@ -278,7 +282,6 @@
       "person_element",
       "qrtz_blob_triggers",
       "qrtz_calendars",
-      "qrtz_fired_triggers",
       "qrtz_paused_trigger_grps",
       "qrtz_simple_triggers",
       "qrtz_simprop_triggers",
