@@ -1,5 +1,5 @@
 {
-  "version": "1.0.72",
+  "version": "1.0.73",
   "name": "riksdagsmonitor",
   "dependencies": {
     "@eslint/js": {
@@ -2589,8 +2589,8 @@
       }
     },
     "happy-dom": {
-      "version": "20.11.13",
-      "resolved": "https://registry.npmjs.org/happy-dom/-/happy-dom-20.11.13.tgz",
+      "version": "20.12.0",
+      "resolved": "https://registry.npmjs.org/happy-dom/-/happy-dom-20.12.0.tgz",
       "overridden": false,
       "dependencies": {
         "@types/node": {
@@ -5150,8 +5150,8 @@
       }
     },
     "tsx": {
-      "version": "4.23.12",
-      "resolved": "https://registry.npmjs.org/tsx/-/tsx-4.23.12.tgz",
+      "version": "4.23.13",
+      "resolved": "https://registry.npmjs.org/tsx/-/tsx-4.23.13.tgz",
       "overridden": false,
       "dependencies": {
         "esbuild": {
@@ -5722,7 +5722,7 @@
           "version": "0.2.17"
         },
         "tsx": {
-          "version": "4.23.12"
+          "version": "4.23.13"
         },
         "yaml": {
           "version": "2.9.0"
@@ -5873,7 +5873,7 @@
           "overridden": false
         },
         "happy-dom": {
-          "version": "20.11.13"
+          "version": "20.12.0"
         },
         "jsdom": {},
         "magic-string": {

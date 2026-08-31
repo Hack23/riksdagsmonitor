@@ -1,4 +1,4 @@
-riksdagsmonitor@1.0.72 /home/runner/work/riksdagsmonitor/riksdagsmonitor
+riksdagsmonitor@1.0.73 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 ├─┬ @eslint/js@10.0.1
 │ └── eslint@10.9.1 deduped
 ├─┬ @types/d3@7.4.3
@@ -509,7 +509,7 @@ riksdagsmonitor@1.0.72 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ │ │ └── is-extendable@0.1.1
 │ │ └── kind-of@6.0.3 deduped
 │ └── strip-bom-string@1.0.0
-├─┬ happy-dom@20.11.13
+├─┬ happy-dom@20.12.0
 │ ├── @types/node@26.4.0 deduped
 │ ├── @types/whatwg-mimetype@3.0.2
 │ ├─┬ @types/ws@8.18.1
@@ -1170,7 +1170,7 @@ riksdagsmonitor@1.0.72 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │   ├── minimist@1.2.8 deduped
 │   └─┬ rxjs@7.8.2
 │     └── tslib@2.8.1
-├─┬ tsx@4.23.12
+├─┬ tsx@4.23.13
 │ ├── esbuild@0.28.1 deduped
 │ └── UNMET OPTIONAL DEPENDENCY fsevents@~2.3.3
 ├─┬ typedoc-plugin-mdn-links@5.1.1
@@ -1334,7 +1334,7 @@ riksdagsmonitor@1.0.72 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ ├── UNMET OPTIONAL DEPENDENCY sugarss@^5.0.0
 │ ├── terser@5.47.1 deduped
 │ ├── tinyglobby@0.2.17 deduped
-│ ├── tsx@4.23.12 deduped
+│ ├── tsx@4.23.13 deduped
 │ └── yaml@2.9.0 deduped
 ├─┬ vitest@4.1.11
 │ ├── UNMET OPTIONAL DEPENDENCY @edge-runtime/vm@*
@@ -1375,7 +1375,7 @@ riksdagsmonitor@1.0.72 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ ├── @vitest/utils@4.1.11 deduped
 │ ├── es-module-lexer@2.0.0
 │ ├── expect-type@1.3.0
-│ ├── happy-dom@20.11.13 deduped
+│ ├── happy-dom@20.12.0 deduped
 │ ├── UNMET OPTIONAL DEPENDENCY jsdom@*
 │ ├─┬ magic-string@0.30.21
 │ │ └── @jridgewell/sourcemap-codec@1.5.5
