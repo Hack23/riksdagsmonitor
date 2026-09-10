@@ -1,5 +1,5 @@
 {
-  "version": "1.0.76",
+  "version": "1.0.77",
   "name": "riksdagsmonitor",
   "dependencies": {
     "@eslint/js": {
@@ -245,8 +245,8 @@
       }
     },
     "@types/node": {
-      "version": "26.5.0",
-      "resolved": "https://registry.npmjs.org/@types/node/-/node-26.5.0.tgz",
+      "version": "26.5.1",
+      "resolved": "https://registry.npmjs.org/@types/node/-/node-26.5.1.tgz",
       "overridden": false,
       "dependencies": {
         "undici-types": {
@@ -262,7 +262,7 @@
       "overridden": false,
       "dependencies": {
         "@types/node": {
-          "version": "26.5.0"
+          "version": "26.5.1"
         }
       }
     },
@@ -2634,12 +2634,12 @@
       }
     },
     "happy-dom": {
-      "version": "20.14.0",
-      "resolved": "https://registry.npmjs.org/happy-dom/-/happy-dom-20.14.0.tgz",
+      "version": "20.14.3",
+      "resolved": "https://registry.npmjs.org/happy-dom/-/happy-dom-20.14.3.tgz",
       "overridden": false,
       "dependencies": {
         "@types/node": {
-          "version": "26.5.0"
+          "version": "26.5.1"
         },
         "@types/whatwg-mimetype": {
           "version": "3.0.2",
@@ -2652,7 +2652,7 @@
           "overridden": false,
           "dependencies": {
             "@types/node": {
-              "version": "26.5.0"
+              "version": "26.5.1"
             }
           }
         },
@@ -2662,7 +2662,7 @@
           "overridden": false,
           "dependencies": {
             "@types/node": {
-              "version": "26.5.0"
+              "version": "26.5.1"
             }
           }
         },
@@ -2948,8 +2948,8 @@
       }
     },
     "knip": {
-      "version": "6.35.0",
-      "resolved": "https://registry.npmjs.org/knip/-/knip-6.35.0.tgz",
+      "version": "6.35.1",
+      "resolved": "https://registry.npmjs.org/knip/-/knip-6.35.1.tgz",
       "overridden": false,
       "dependencies": {
         "fdir": {
@@ -5695,7 +5695,7 @@
       "overridden": false,
       "dependencies": {
         "@types/node": {
-          "version": "26.5.0"
+          "version": "26.5.1"
         },
         "@vitejs/devtools": {},
         "esbuild": {
@@ -5811,7 +5811,7 @@
           }
         },
         "@types/node": {
-          "version": "26.5.0"
+          "version": "26.5.1"
         },
         "@vitest/browser-playwright": {},
         "@vitest/browser-preview": {},
@@ -5864,7 +5864,7 @@
           "overridden": false
         },
         "happy-dom": {
-          "version": "20.14.0"
+          "version": "20.14.3"
         },
         "jsdom": {},
         "magic-string": {

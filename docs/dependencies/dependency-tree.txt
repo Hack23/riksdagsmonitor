@@ -1,4 +1,4 @@
-riksdagsmonitor@1.0.76 /home/runner/work/riksdagsmonitor/riksdagsmonitor
+riksdagsmonitor@1.0.77 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 ├─┬ @eslint/js@10.0.1
 │ └── eslint@10.10.0 deduped
 ├─┬ @types/d3@7.4.3
@@ -47,10 +47,10 @@ riksdagsmonitor@1.0.76 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │   └── @types/d3-selection@3.0.11 deduped
 ├─┬ @types/hast@3.0.5
 │ └── @types/unist@3.0.3
-├─┬ @types/node@26.5.0
+├─┬ @types/node@26.5.1
 │ └── undici-types@8.9.0
 ├─┬ @types/papaparse@5.5.2
-│ └── @types/node@26.5.0 deduped
+│ └── @types/node@26.5.1 deduped
 ├─┬ @vitest/coverage-v8@5.0.0
 │ ├── @bcoe/v8-coverage@1.0.2
 │ ├── UNMET OPTIONAL DEPENDENCY @vitest/browser@5.0.0
@@ -518,13 +518,13 @@ riksdagsmonitor@1.0.76 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ │ │ └── is-extendable@0.1.1
 │ │ └── kind-of@6.0.3 deduped
 │ └── strip-bom-string@1.0.0
-├─┬ happy-dom@20.14.0
-│ ├── @types/node@26.5.0 deduped
+├─┬ happy-dom@20.14.3
+│ ├── @types/node@26.5.1 deduped
 │ ├── @types/whatwg-mimetype@3.0.2
 │ ├─┬ @types/ws@8.18.1
-│ │ └── @types/node@26.5.0 deduped
+│ │ └── @types/node@26.5.1 deduped
 │ ├─┬ buffer-image-size@0.6.4
-│ │ └── @types/node@26.5.0 deduped
+│ │ └── @types/node@26.5.1 deduped
 │ ├── entities@7.0.1
 │ ├── whatwg-mimetype@3.0.0
 │ └─┬ ws@8.21.0
@@ -582,7 +582,7 @@ riksdagsmonitor@1.0.76 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ │ │ └── safe-buffer@5.1.2
 │ │ └── util-deprecate@1.0.2
 │ └── setimmediate@1.0.5
-├─┬ knip@6.35.0
+├─┬ knip@6.35.1
 │ ├─┬ fdir@6.5.0
 │ │ └── picomatch@4.0.7 deduped
 │ ├─┬ formatly@0.7.0
@@ -1309,7 +1309,7 @@ riksdagsmonitor@1.0.76 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │   ├── @types/unist@3.0.3 deduped
 │   └── unist-util-is@6.0.1 deduped
 ├─┬ vite@8.2.2
-│ ├── @types/node@26.5.0 deduped
+│ ├── @types/node@26.5.1 deduped
 │ ├── UNMET OPTIONAL DEPENDENCY @vitejs/devtools@^0.4.0 || ^0.5.0
 │ ├── esbuild@0.28.1 deduped
 │ ├── UNMET OPTIONAL DEPENDENCY fsevents@~2.3.3
@@ -1353,7 +1353,7 @@ riksdagsmonitor@1.0.76 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ ├─┬ @types/chai@5.2.3
 │ │ ├── @types/deep-eql@4.0.2
 │ │ └── assertion-error@2.0.1
-│ ├── @types/node@26.5.0 deduped
+│ ├── @types/node@26.5.1 deduped
 │ ├── UNMET OPTIONAL DEPENDENCY @vitest/browser-playwright@5.0.0
 │ ├── UNMET OPTIONAL DEPENDENCY @vitest/browser-preview@5.0.0
 │ ├── UNMET OPTIONAL DEPENDENCY @vitest/browser-webdriverio@^5.0.0-beta.5 || >=5.0.0
@@ -1370,7 +1370,7 @@ riksdagsmonitor@1.0.76 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ ├── chai@6.2.2
 │ ├── es-module-lexer@2.3.2
 │ ├── expect-type@1.4.0
-│ ├── happy-dom@20.14.0 deduped
+│ ├── happy-dom@20.14.3 deduped
 │ ├── UNMET OPTIONAL DEPENDENCY jsdom@*
 │ ├─┬ magic-string@1.2.3
 │ │ └── @jridgewell/sourcemap-codec@1.5.5
