@@ -977,17 +977,3 @@ The same principle applies symmetrically to every party.
 * [`analysis/methodologies/ai-driven-analysis-guide.md`](../methodologies/ai-driven-analysis-guide.md)
 * [`Article-Generation.md`](../../Article-Generation.md)
 * [`DATA_MODEL.md`](../../DATA_MODEL.md)
-
----
-
-## 📌 Recommended Repository Location
-
-`analysis/election-2026/attack-and-influence-report.md`
-
-**Status:** Living analytical document — update through election day and post-election review.
-
-**Scope:** Public information only. No private-account material, hacked/leaked material, paywall circumvention or unsupported attribution.
-
-**Core rule:**
-
-### 🔐 *Document the attack. Do not become part of it.*
