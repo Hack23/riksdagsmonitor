@@ -1,5 +1,5 @@
 {
-  "version": "1.0.78",
+  "version": "1.0.79",
   "name": "riksdagsmonitor",
   "dependencies": {
     "@eslint/js": {
@@ -2634,8 +2634,8 @@
       }
     },
     "happy-dom": {
-      "version": "20.14.3",
-      "resolved": "https://registry.npmjs.org/happy-dom/-/happy-dom-20.14.3.tgz",
+      "version": "20.14.5",
+      "resolved": "https://registry.npmjs.org/happy-dom/-/happy-dom-20.14.5.tgz",
       "overridden": false,
       "dependencies": {
         "@types/node": {
@@ -3102,8 +3102,8 @@
       }
     },
     "mermaid": {
-      "version": "11.17.2",
-      "resolved": "https://registry.npmjs.org/mermaid/-/mermaid-11.17.2.tgz",
+      "version": "12.0.0",
+      "resolved": "https://registry.npmjs.org/mermaid/-/mermaid-12.0.0.tgz",
       "overridden": false,
       "dependencies": {
         "@braintree/sanitize-url": {
@@ -3173,8 +3173,8 @@
           }
         },
         "@mermaid-js/parser": {
-          "version": "1.2.1",
-          "resolved": "https://registry.npmjs.org/@mermaid-js/parser/-/parser-1.2.1.tgz",
+          "version": "2.0.0",
+          "resolved": "https://registry.npmjs.org/@mermaid-js/parser/-/parser-2.0.0.tgz",
           "overridden": false,
           "dependencies": {
             "@chevrotain/types": {
@@ -3197,6 +3197,64 @@
             },
             "d3-transition": {
               "version": "3.0.1"
+            }
+          }
+        },
+        "chevrotain": {
+          "version": "11.1.2",
+          "resolved": "https://registry.npmjs.org/chevrotain/-/chevrotain-11.1.2.tgz",
+          "overridden": false,
+          "dependencies": {
+            "@chevrotain/cst-dts-gen": {
+              "version": "11.1.2",
+              "resolved": "https://registry.npmjs.org/@chevrotain/cst-dts-gen/-/cst-dts-gen-11.1.2.tgz",
+              "overridden": false,
+              "dependencies": {
+                "@chevrotain/gast": {
+                  "version": "11.1.2"
+                },
+                "@chevrotain/types": {
+                  "version": "11.1.2"
+                },
+                "lodash-es": {
+                  "version": "4.17.23",
+                  "resolved": "https://registry.npmjs.org/lodash-es/-/lodash-es-4.17.23.tgz",
+                  "overridden": false
+                }
+              }
+            },
+            "@chevrotain/gast": {
+              "version": "11.1.2",
+              "resolved": "https://registry.npmjs.org/@chevrotain/gast/-/gast-11.1.2.tgz",
+              "overridden": false,
+              "dependencies": {
+                "@chevrotain/types": {
+                  "version": "11.1.2"
+                },
+                "lodash-es": {
+                  "version": "4.17.23",
+                  "resolved": "https://registry.npmjs.org/lodash-es/-/lodash-es-4.17.23.tgz",
+                  "overridden": false
+                }
+              }
+            },
+            "@chevrotain/regexp-to-ast": {
+              "version": "11.1.2",
+              "resolved": "https://registry.npmjs.org/@chevrotain/regexp-to-ast/-/regexp-to-ast-11.1.2.tgz",
+              "overridden": false
+            },
+            "@chevrotain/types": {
+              "version": "11.1.2"
+            },
+            "@chevrotain/utils": {
+              "version": "11.1.2",
+              "resolved": "https://registry.npmjs.org/@chevrotain/utils/-/utils-11.1.2.tgz",
+              "overridden": false
+            },
+            "lodash-es": {
+              "version": "4.17.23",
+              "resolved": "https://registry.npmjs.org/lodash-es/-/lodash-es-4.17.23.tgz",
+              "overridden": false
             }
           }
         },
@@ -3313,22 +3371,15 @@
             }
           }
         },
+        "elkjs": {
+          "version": "0.9.3",
+          "resolved": "https://registry.npmjs.org/elkjs/-/elkjs-0.9.3.tgz",
+          "overridden": false
+        },
         "es-toolkit": {
           "version": "1.46.1",
           "resolved": "https://registry.npmjs.org/es-toolkit/-/es-toolkit-1.46.1.tgz",
           "overridden": false
-        },
-        "fastdom": {
-          "version": "1.0.12",
-          "resolved": "https://registry.npmjs.org/fastdom/-/fastdom-1.0.12.tgz",
-          "overridden": false,
-          "dependencies": {
-            "strictdom": {
-              "version": "1.0.1",
-              "resolved": "https://registry.npmjs.org/strictdom/-/strictdom-1.0.1.tgz",
-              "overridden": false
-            }
-          }
         },
         "katex": {
           "version": "0.16.47",
@@ -5864,7 +5915,7 @@
           "overridden": false
         },
         "happy-dom": {
-          "version": "20.14.3"
+          "version": "20.14.5"
         },
         "jsdom": {},
         "magic-string": {

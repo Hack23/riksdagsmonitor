@@ -1,4 +1,4 @@
-riksdagsmonitor@1.0.78 /home/runner/work/riksdagsmonitor/riksdagsmonitor
+riksdagsmonitor@1.0.79 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 ├─┬ @eslint/js@10.0.1
 │ └── eslint@10.10.0 deduped
 ├─┬ @types/d3@7.4.3
@@ -518,7 +518,7 @@ riksdagsmonitor@1.0.78 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ │ │ └── is-extendable@0.1.1
 │ │ └── kind-of@6.0.3 deduped
 │ └── strip-bom-string@1.0.0
-├─┬ happy-dom@20.14.3
+├─┬ happy-dom@20.14.5
 │ ├── @types/node@26.5.1 deduped
 │ ├── @types/whatwg-mimetype@3.0.2
 │ ├─┬ @types/ws@8.18.1
@@ -640,7 +640,7 @@ riksdagsmonitor@1.0.78 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ ├── unbash@4.0.11
 │ ├── yaml@2.9.0
 │ └── zod@4.4.3
-├─┬ mermaid@11.17.2
+├─┬ mermaid@12.0.0
 │ ├── @braintree/sanitize-url@7.1.2
 │ ├─┬ @iconify/utils@3.1.0
 │ │ ├─┬ @antfu/install-pkg@1.1.0
@@ -655,12 +655,24 @@ riksdagsmonitor@1.0.78 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ │   │ ├── mlly@1.8.2 deduped
 │ │   │ └── pathe@2.0.3 deduped
 │ │   └── ufo@1.6.3
-│ ├─┬ @mermaid-js/parser@1.2.1
+│ ├─┬ @mermaid-js/parser@2.0.0
 │ │ └── @chevrotain/types@11.1.2
 │ ├── @types/d3@7.4.3 deduped
 │ ├─┬ @upsetjs/venn.js@2.0.0
 │ │ ├── d3-selection@3.0.0 deduped
 │ │ └── d3-transition@3.0.1 deduped
+│ ├─┬ chevrotain@11.1.2
+│ │ ├─┬ @chevrotain/cst-dts-gen@11.1.2
+│ │ │ ├── @chevrotain/gast@11.1.2 deduped
+│ │ │ ├── @chevrotain/types@11.1.2 deduped
+│ │ │ └── lodash-es@4.17.23
+│ │ ├─┬ @chevrotain/gast@11.1.2
+│ │ │ ├── @chevrotain/types@11.1.2 deduped
+│ │ │ └── lodash-es@4.17.23
+│ │ ├── @chevrotain/regexp-to-ast@11.1.2
+│ │ ├── @chevrotain/types@11.1.2 deduped
+│ │ ├── @chevrotain/utils@11.1.2
+│ │ └── lodash-es@4.17.23
 │ ├─┬ cytoscape-cose-bilkent@4.1.0
 │ │ ├─┬ cose-base@1.0.3
 │ │ │ └── layout-base@1.0.2
@@ -682,9 +694,8 @@ riksdagsmonitor@1.0.78 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ ├── dayjs@1.11.23 deduped
 │ ├─┬ dompurify@3.4.13
 │ │ └── @types/trusted-types@2.0.7
+│ ├── elkjs@0.9.3
 │ ├── es-toolkit@1.46.1
-│ ├─┬ fastdom@1.0.12
-│ │ └── strictdom@1.0.1
 │ ├─┬ katex@0.16.47
 │ │ └── commander@8.3.0
 │ ├── khroma@2.1.0
@@ -1370,7 +1381,7 @@ riksdagsmonitor@1.0.78 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ ├── chai@6.2.2
 │ ├── es-module-lexer@2.3.2
 │ ├── expect-type@1.4.0
-│ ├── happy-dom@20.14.3 deduped
+│ ├── happy-dom@20.14.5 deduped
 │ ├── UNMET OPTIONAL DEPENDENCY jsdom@*
 │ ├─┬ magic-string@1.2.3
 │ │ └── @jridgewell/sourcemap-codec@1.5.5
