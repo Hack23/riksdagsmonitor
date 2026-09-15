@@ -1,4 +1,4 @@
-riksdagsmonitor@1.0.79 /home/runner/work/riksdagsmonitor/riksdagsmonitor
+riksdagsmonitor@1.0.80 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 ├─┬ @eslint/js@10.0.1
 │ └── eslint@10.10.0 deduped
 ├─┬ @types/d3@7.4.3
@@ -51,16 +51,16 @@ riksdagsmonitor@1.0.79 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ └── undici-types@8.9.0
 ├─┬ @types/papaparse@5.5.2
 │ └── @types/node@26.5.1 deduped
-├─┬ @vitest/coverage-v8@5.0.0
+├─┬ @vitest/coverage-v8@5.0.1
 │ ├── @bcoe/v8-coverage@1.0.2
-│ ├── UNMET OPTIONAL DEPENDENCY @vitest/browser@5.0.0
+│ ├── UNMET OPTIONAL DEPENDENCY @vitest/browser@5.0.1
 │ ├── @vitest/istanbul-lib-coverage@1.0.1
 │ ├─┬ @vitest/istanbul-lib-report@1.0.1
 │ │ └── @vitest/istanbul-lib-coverage@1.0.1 deduped
 │ ├─┬ ast-v8-to-istanbul@1.0.5
 │ │ ├─┬ @jridgewell/trace-mapping@0.3.31
 │ │ │ ├── @jridgewell/resolve-uri@3.1.2
-│ │ │ └── @jridgewell/sourcemap-codec@1.5.5 deduped
+│ │ │ └── @jridgewell/sourcemap-codec@1.6.0 deduped
 │ │ ├─┬ estree-walker@3.0.3
 │ │ │ └── @types/estree@1.0.8 deduped
 │ │ └── js-tokens@10.0.0
@@ -74,10 +74,10 @@ riksdagsmonitor@1.0.79 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ ├── obug@2.1.4
 │ ├── std-env@4.2.0
 │ ├── tinyrainbow@3.1.1
-│ └── vitest@5.0.0 deduped
-├─┬ @vitest/ui@5.0.0
-│ ├─┬ @vitest/utils@5.0.0
-│ │ ├─┬ @vitest/pretty-format@5.0.0
+│ └── vitest@5.0.1 deduped
+├─┬ @vitest/ui@5.0.1
+│ ├─┬ @vitest/utils@5.0.1
+│ │ ├─┬ @vitest/pretty-format@5.0.1
 │ │ │ └── tinyrainbow@3.1.1 deduped
 │ │ ├── convert-source-map@2.0.0
 │ │ └── tinyrainbow@3.1.1 deduped
@@ -89,7 +89,7 @@ riksdagsmonitor@1.0.79 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ │ ├── mrmime@2.0.1
 │ │ └── totalist@3.0.1
 │ ├── tinyrainbow@3.1.1 deduped
-│ └── vitest@5.0.0 deduped
+│ └── vitest@5.0.1 deduped
 ├─┬ ajv-formats@3.0.1
 │ └── ajv@8.20.0 deduped
 ├─┬ ajv@8.20.0
@@ -551,7 +551,7 @@ riksdagsmonitor@1.0.79 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ │   └── universalify@2.0.1 deduped
 │ ├── strip-json-comments@3.1.1
 │ └── xml@1.0.1
-├─┬ js-yaml@5.4.1
+├─┬ js-yaml@5.4.2
 │ └── argparse@2.0.1
 ├─┬ json-schema-to-typescript@16.0.0
 │ ├─┬ @apidevtools/json-schema-ref-parser@11.9.3
@@ -561,7 +561,7 @@ riksdagsmonitor@1.0.79 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ │   └── argparse@2.0.1 deduped
 │ ├── @types/json-schema@7.0.15
 │ ├── @types/lodash@4.17.25
-│ ├── js-yaml@5.4.1 deduped
+│ ├── js-yaml@5.4.2 deduped
 │ ├── lodash@4.18.1 deduped
 │ ├── minimist@1.2.8 deduped
 │ ├── prettier@3.9.6
@@ -840,7 +840,7 @@ riksdagsmonitor@1.0.79 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ ├─┬ terser@5.47.1
 │ │ ├─┬ @jridgewell/source-map@0.3.11
 │ │ │ ├─┬ @jridgewell/gen-mapping@0.3.13
-│ │ │ │ ├── @jridgewell/sourcemap-codec@1.5.5 deduped
+│ │ │ │ ├── @jridgewell/sourcemap-codec@1.6.0 deduped
 │ │ │ │ └── @jridgewell/trace-mapping@0.3.31 deduped
 │ │ │ └── @jridgewell/trace-mapping@0.3.31 deduped
 │ │ ├── acorn@8.16.0 deduped
@@ -1358,33 +1358,33 @@ riksdagsmonitor@1.0.79 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ ├── tinyglobby@0.2.17 deduped
 │ ├── tsx@4.23.13 deduped
 │ └── yaml@2.9.0 deduped
-├─┬ vitest@5.0.0
+├─┬ vitest@5.0.1
 │ ├── UNMET OPTIONAL DEPENDENCY @edge-runtime/vm@*
 │ ├── UNMET OPTIONAL DEPENDENCY @opentelemetry/api@^1.9.0
 │ ├─┬ @types/chai@5.2.3
 │ │ ├── @types/deep-eql@4.0.2
 │ │ └── assertion-error@2.0.1
 │ ├── @types/node@26.5.1 deduped
-│ ├── UNMET OPTIONAL DEPENDENCY @vitest/browser-playwright@5.0.0
-│ ├── UNMET OPTIONAL DEPENDENCY @vitest/browser-preview@5.0.0
+│ ├── UNMET OPTIONAL DEPENDENCY @vitest/browser-playwright@5.0.1
+│ ├── UNMET OPTIONAL DEPENDENCY @vitest/browser-preview@5.0.1
 │ ├── UNMET OPTIONAL DEPENDENCY @vitest/browser-webdriverio@^5.0.0-beta.5 || >=5.0.0
-│ ├── UNMET OPTIONAL DEPENDENCY @vitest/coverage-istanbul@5.0.0
-│ ├── @vitest/coverage-v8@5.0.0 deduped
-│ ├─┬ @vitest/mocker@5.0.0
+│ ├── UNMET OPTIONAL DEPENDENCY @vitest/coverage-istanbul@5.0.1
+│ ├── @vitest/coverage-v8@5.0.1 deduped
+│ ├─┬ @vitest/mocker@5.0.1
 │ │ ├── @jridgewell/trace-mapping@0.3.31 deduped
-│ │ ├── @vitest/spy@5.0.0
+│ │ ├── @vitest/spy@5.0.1
 │ │ ├── estree-walker@3.0.3 deduped
-│ │ ├── magic-string@1.2.3 deduped
+│ │ ├── magic-string@1.4.1 deduped
 │ │ ├── UNMET OPTIONAL DEPENDENCY msw@^2.4.9
 │ │ └── vite@8.3.0 deduped
-│ ├── @vitest/ui@5.0.0 deduped
+│ ├── @vitest/ui@5.0.1 deduped
 │ ├── chai@6.2.2
 │ ├── es-module-lexer@2.3.2
 │ ├── expect-type@1.4.0
 │ ├── happy-dom@20.14.5 deduped
 │ ├── UNMET OPTIONAL DEPENDENCY jsdom@*
-│ ├─┬ magic-string@1.2.3
-│ │ └── @jridgewell/sourcemap-codec@1.5.5
+│ ├─┬ magic-string@1.4.1
+│ │ └── @jridgewell/sourcemap-codec@1.6.0
 │ ├── obug@2.1.4 deduped
 │ ├── picomatch@4.0.7 deduped
 │ ├── std-env@4.2.0 deduped
