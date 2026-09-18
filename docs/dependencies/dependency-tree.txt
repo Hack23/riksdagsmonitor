@@ -1,4 +1,4 @@
-riksdagsmonitor@1.0.80 /home/runner/work/riksdagsmonitor/riksdagsmonitor
+riksdagsmonitor@1.0.81 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 ├─┬ @eslint/js@10.0.1
 │ └── eslint@10.10.0 deduped
 ├─┬ @types/d3@7.4.3
@@ -47,10 +47,10 @@ riksdagsmonitor@1.0.80 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │   └── @types/d3-selection@3.0.11 deduped
 ├─┬ @types/hast@3.0.5
 │ └── @types/unist@3.0.3
-├─┬ @types/node@26.5.1
+├─┬ @types/node@26.6.1
 │ └── undici-types@8.9.0
 ├─┬ @types/papaparse@5.5.2
-│ └── @types/node@26.5.1 deduped
+│ └── @types/node@26.6.1 deduped
 ├─┬ @vitest/coverage-v8@5.0.1
 │ ├── @bcoe/v8-coverage@1.0.2
 │ ├── UNMET OPTIONAL DEPENDENCY @vitest/browser@5.0.1
@@ -101,7 +101,7 @@ riksdagsmonitor@1.0.80 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ └── @kurkle/color@0.3.4
 ├─┬ chartjs-plugin-annotation@3.1.0
 │ └── chart.js@4.5.1 deduped
-├─┬ cypress@16.0.0
+├─┬ cypress@16.1.0
 │ ├─┬ @cypress/request@4.0.1
 │ │ ├── aws-sign2@0.7.0
 │ │ ├── aws4@1.13.2
@@ -519,12 +519,12 @@ riksdagsmonitor@1.0.80 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ │ └── kind-of@6.0.3 deduped
 │ └── strip-bom-string@1.0.0
 ├─┬ happy-dom@20.14.5
-│ ├── @types/node@26.5.1 deduped
+│ ├── @types/node@26.6.1 deduped
 │ ├── @types/whatwg-mimetype@3.0.2
 │ ├─┬ @types/ws@8.18.1
-│ │ └── @types/node@26.5.1 deduped
+│ │ └── @types/node@26.6.1 deduped
 │ ├─┬ buffer-image-size@0.6.4
-│ │ └── @types/node@26.5.1 deduped
+│ │ └── @types/node@26.6.1 deduped
 │ ├── entities@7.0.1
 │ ├── whatwg-mimetype@3.0.0
 │ └─┬ ws@8.21.0
@@ -582,7 +582,7 @@ riksdagsmonitor@1.0.80 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ │ │ └── safe-buffer@5.1.2
 │ │ └── util-deprecate@1.0.2
 │ └── setimmediate@1.0.5
-├─┬ knip@6.35.1
+├─┬ knip@6.37.0
 │ ├─┬ fdir@6.5.0
 │ │ └── picomatch@4.0.7 deduped
 │ ├─┬ formatly@0.7.0
@@ -592,27 +592,27 @@ riksdagsmonitor@1.0.80 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ ├─┬ get-tsconfig@4.14.3
 │ │ └── resolve-pkg-maps@1.0.0
 │ ├── jiti@2.7.0 deduped
-│ ├─┬ oxc-parser@0.148.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-android-arm-eabi@0.148.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-android-arm64@0.148.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-darwin-arm64@0.148.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-darwin-x64@0.148.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-freebsd-x64@0.148.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-linux-arm-gnueabihf@0.148.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-linux-arm-musleabihf@0.148.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-linux-arm64-gnu@0.148.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-linux-arm64-musl@0.148.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-linux-ppc64-gnu@0.148.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-linux-riscv64-gnu@0.148.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-linux-riscv64-musl@0.148.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-linux-s390x-gnu@0.148.0
-│ │ ├── @oxc-parser/binding-linux-x64-gnu@0.148.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-linux-x64-musl@0.148.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-openharmony-arm64@0.148.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-win32-arm64-msvc@0.148.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-win32-ia32-msvc@0.148.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-win32-x64-msvc@0.148.0
-│ │ └── @oxc-project/types@0.148.0
+│ ├─┬ oxc-parser@0.150.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-android-arm-eabi@0.150.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-android-arm64@0.150.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-darwin-arm64@0.150.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-darwin-x64@0.150.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-freebsd-x64@0.150.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-linux-arm-gnueabihf@0.150.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-linux-arm-musleabihf@0.150.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-linux-arm64-gnu@0.150.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-linux-arm64-musl@0.150.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-linux-ppc64-gnu@0.150.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-linux-riscv64-gnu@0.150.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-linux-riscv64-musl@0.150.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-linux-s390x-gnu@0.150.0
+│ │ ├── @oxc-parser/binding-linux-x64-gnu@0.150.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-linux-x64-musl@0.150.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-openharmony-arm64@0.150.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-win32-arm64-msvc@0.150.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-win32-ia32-msvc@0.150.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-win32-x64-msvc@0.150.0
+│ │ └── @oxc-project/types@0.150.0
 │ ├─┬ oxc-resolver@11.24.2
 │ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-resolver/binding-android-arm-eabi@11.24.2
 │ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-resolver/binding-android-arm64@11.24.2
@@ -638,7 +638,7 @@ riksdagsmonitor@1.0.80 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ ├── strip-json-comments@5.0.3
 │ ├── tinyglobby@0.2.17 deduped
 │ ├── unbash@4.0.11
-│ ├── yaml@2.9.0
+│ ├── yaml@2.9.1
 │ └── zod@4.4.3
 ├─┬ mermaid@12.0.0
 │ ├── @braintree/sanitize-url@7.1.2
@@ -1222,7 +1222,7 @@ riksdagsmonitor@1.0.80 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ ├─┬ minimatch@10.2.5
 │ │ └── brace-expansion@5.0.7 deduped
 │ ├── typescript@6.0.3 deduped
-│ └── yaml@2.9.0 deduped
+│ └── yaml@2.9.1 deduped
 ├─┬ typescript-7@npm:typescript@7.0.2
 │ ├── UNMET OPTIONAL DEPENDENCY @typescript/typescript-aix-ppc64@7.0.2
 │ ├── UNMET OPTIONAL DEPENDENCY @typescript/typescript-darwin-arm64@7.0.2
@@ -1320,7 +1320,7 @@ riksdagsmonitor@1.0.80 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │   ├── @types/unist@3.0.3 deduped
 │   └── unist-util-is@6.0.1 deduped
 ├─┬ vite@8.3.0
-│ ├── @types/node@26.5.1 deduped
+│ ├── @types/node@26.6.1 deduped
 │ ├── UNMET OPTIONAL DEPENDENCY @vitejs/devtools@^0.7.1
 │ ├── esbuild@0.28.1 deduped
 │ ├── UNMET OPTIONAL DEPENDENCY fsevents@~2.3.3
@@ -1357,14 +1357,14 @@ riksdagsmonitor@1.0.80 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ ├── terser@5.47.1 deduped
 │ ├── tinyglobby@0.2.17 deduped
 │ ├── tsx@4.23.13 deduped
-│ └── yaml@2.9.0 deduped
+│ └── yaml@2.9.1 deduped
 ├─┬ vitest@5.0.1
 │ ├── UNMET OPTIONAL DEPENDENCY @edge-runtime/vm@*
 │ ├── UNMET OPTIONAL DEPENDENCY @opentelemetry/api@^1.9.0
 │ ├─┬ @types/chai@5.2.3
 │ │ ├── @types/deep-eql@4.0.2
 │ │ └── assertion-error@2.0.1
-│ ├── @types/node@26.5.1 deduped
+│ ├── @types/node@26.6.1 deduped
 │ ├── UNMET OPTIONAL DEPENDENCY @vitest/browser-playwright@5.0.1
 │ ├── UNMET OPTIONAL DEPENDENCY @vitest/browser-preview@5.0.1
 │ ├── UNMET OPTIONAL DEPENDENCY @vitest/browser-webdriverio@^5.0.0-beta.5 || >=5.0.0
