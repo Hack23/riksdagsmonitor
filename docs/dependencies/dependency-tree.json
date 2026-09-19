@@ -1,5 +1,5 @@
 {
-  "version": "1.0.81",
+  "version": "1.0.82",
   "name": "riksdagsmonitor",
   "dependencies": {
     "@eslint/js": {
@@ -8,7 +8,7 @@
       "overridden": false,
       "dependencies": {
         "eslint": {
-          "version": "10.10.0"
+          "version": "10.11.0"
         }
       }
     },
@@ -245,8 +245,8 @@
       }
     },
     "@types/node": {
-      "version": "26.6.1",
-      "resolved": "https://registry.npmjs.org/@types/node/-/node-26.6.1.tgz",
+      "version": "26.6.2",
+      "resolved": "https://registry.npmjs.org/@types/node/-/node-26.6.2.tgz",
       "overridden": false,
       "dependencies": {
         "undici-types": {
@@ -262,7 +262,7 @@
       "overridden": false,
       "dependencies": {
         "@types/node": {
-          "version": "26.6.1"
+          "version": "26.6.2"
         }
       }
     },
@@ -2020,8 +2020,8 @@
       }
     },
     "eslint": {
-      "version": "10.10.0",
-      "resolved": "https://registry.npmjs.org/eslint/-/eslint-10.10.0.tgz",
+      "version": "10.11.0",
+      "resolved": "https://registry.npmjs.org/eslint/-/eslint-10.11.0.tgz",
       "overridden": false,
       "dependencies": {
         "@eslint-community/eslint-utils": {
@@ -2035,7 +2035,7 @@
               "overridden": false
             },
             "eslint": {
-              "version": "10.10.0"
+              "version": "10.11.0"
             }
           }
         },
@@ -2639,7 +2639,7 @@
       "overridden": false,
       "dependencies": {
         "@types/node": {
-          "version": "26.6.1"
+          "version": "26.6.2"
         },
         "@types/whatwg-mimetype": {
           "version": "3.0.2",
@@ -2652,7 +2652,7 @@
           "overridden": false,
           "dependencies": {
             "@types/node": {
-              "version": "26.6.1"
+              "version": "26.6.2"
             }
           }
         },
@@ -2662,7 +2662,7 @@
           "overridden": false,
           "dependencies": {
             "@types/node": {
-              "version": "26.6.1"
+              "version": "26.6.2"
             }
           }
         },
@@ -5482,7 +5482,7 @@
                   "version": "4.4.3"
                 },
                 "eslint": {
-                  "version": "10.10.0"
+                  "version": "10.11.0"
                 },
                 "ts-api-utils": {
                   "version": "2.5.0"
@@ -5509,7 +5509,7 @@
               }
             },
             "eslint": {
-              "version": "10.10.0"
+              "version": "10.11.0"
             },
             "ignore": {
               "version": "7.0.8",
@@ -5557,7 +5557,7 @@
               "version": "4.4.3"
             },
             "eslint": {
-              "version": "10.10.0"
+              "version": "10.11.0"
             },
             "typescript": {
               "version": "6.0.3"
@@ -5642,7 +5642,7 @@
               "version": "8.70.0"
             },
             "eslint": {
-              "version": "10.10.0"
+              "version": "10.11.0"
             },
             "typescript": {
               "version": "6.0.3"
@@ -5650,7 +5650,7 @@
           }
         },
         "eslint": {
-          "version": "10.10.0"
+          "version": "10.11.0"
         },
         "typescript": {
           "version": "6.0.3"
@@ -5746,7 +5746,7 @@
       "overridden": false,
       "dependencies": {
         "@types/node": {
-          "version": "26.6.1"
+          "version": "26.6.2"
         },
         "@vitejs/devtools": {},
         "esbuild": {
@@ -5862,7 +5862,7 @@
           }
         },
         "@types/node": {
-          "version": "26.6.1"
+          "version": "26.6.2"
         },
         "@vitest/browser-playwright": {},
         "@vitest/browser-preview": {},
