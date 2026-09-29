@@ -1,4 +1,4 @@
-riksdagsmonitor@1.0.85 /home/runner/work/riksdagsmonitor/riksdagsmonitor
+riksdagsmonitor@1.0.86 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 ├─┬ @eslint/js@10.0.1
 │ └── eslint@10.11.0 deduped
 ├─┬ @types/d3@7.4.3
@@ -47,10 +47,10 @@ riksdagsmonitor@1.0.85 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │   └── @types/d3-selection@3.0.11 deduped
 ├─┬ @types/hast@3.0.5
 │ └── @types/unist@3.0.3
-├─┬ @types/node@26.6.2
+├─┬ @types/node@26.6.3
 │ └── undici-types@8.9.0
 ├─┬ @types/papaparse@5.5.2
-│ └── @types/node@26.6.2 deduped
+│ └── @types/node@26.6.3 deduped
 ├─┬ @vitest/coverage-v8@5.0.2
 │ ├── @bcoe/v8-coverage@1.0.2
 │ ├── UNMET OPTIONAL DEPENDENCY @vitest/browser@5.0.2
@@ -519,12 +519,12 @@ riksdagsmonitor@1.0.85 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ │ └── kind-of@6.0.3 deduped
 │ └── strip-bom-string@1.0.0
 ├─┬ happy-dom@20.14.5
-│ ├── @types/node@26.6.2 deduped
+│ ├── @types/node@26.6.3 deduped
 │ ├── @types/whatwg-mimetype@3.0.2
 │ ├─┬ @types/ws@8.18.1
-│ │ └── @types/node@26.6.2 deduped
+│ │ └── @types/node@26.6.3 deduped
 │ ├─┬ buffer-image-size@0.6.4
-│ │ └── @types/node@26.6.2 deduped
+│ │ └── @types/node@26.6.3 deduped
 │ ├── entities@7.0.1
 │ ├── whatwg-mimetype@3.0.0
 │ └─┬ ws@8.21.0
@@ -1130,34 +1130,34 @@ riksdagsmonitor@1.0.85 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ │ └── vfile@6.0.3 deduped
 │ ├── unified@11.0.5 deduped
 │ └── vfile@6.0.3 deduped
-├─┬ sharp@0.35.4
+├─┬ sharp@0.35.5
 │ ├── @img/colour@1.1.0
-│ ├── UNMET OPTIONAL DEPENDENCY @img/sharp-darwin-arm64@0.35.4
-│ ├── UNMET OPTIONAL DEPENDENCY @img/sharp-darwin-x64@0.35.4
-│ ├── UNMET OPTIONAL DEPENDENCY @img/sharp-freebsd-wasm32@0.35.4
-│ ├── UNMET OPTIONAL DEPENDENCY @img/sharp-libvips-darwin-arm64@1.3.3
-│ ├── UNMET OPTIONAL DEPENDENCY @img/sharp-libvips-darwin-x64@1.3.3
-│ ├── UNMET OPTIONAL DEPENDENCY @img/sharp-libvips-linux-arm@1.3.3
-│ ├── UNMET OPTIONAL DEPENDENCY @img/sharp-libvips-linux-arm64@1.3.3
-│ ├── UNMET OPTIONAL DEPENDENCY @img/sharp-libvips-linux-ppc64@1.3.3
-│ ├── UNMET OPTIONAL DEPENDENCY @img/sharp-libvips-linux-riscv64@1.3.3
-│ ├── UNMET OPTIONAL DEPENDENCY @img/sharp-libvips-linux-s390x@1.3.3
-│ ├── @img/sharp-libvips-linux-x64@1.3.3
-│ ├── UNMET OPTIONAL DEPENDENCY @img/sharp-libvips-linuxmusl-arm64@1.3.3
-│ ├── UNMET OPTIONAL DEPENDENCY @img/sharp-libvips-linuxmusl-x64@1.3.3
-│ ├── UNMET OPTIONAL DEPENDENCY @img/sharp-linux-arm@0.35.4
-│ ├── UNMET OPTIONAL DEPENDENCY @img/sharp-linux-arm64@0.35.4
-│ ├── UNMET OPTIONAL DEPENDENCY @img/sharp-linux-ppc64@0.35.4
-│ ├── UNMET OPTIONAL DEPENDENCY @img/sharp-linux-riscv64@0.35.4
-│ ├── UNMET OPTIONAL DEPENDENCY @img/sharp-linux-s390x@0.35.4
-│ ├─┬ @img/sharp-linux-x64@0.35.4
-│ │ └── @img/sharp-libvips-linux-x64@1.3.3 deduped
-│ ├── UNMET OPTIONAL DEPENDENCY @img/sharp-linuxmusl-arm64@0.35.4
-│ ├── UNMET OPTIONAL DEPENDENCY @img/sharp-linuxmusl-x64@0.35.4
-│ ├── UNMET OPTIONAL DEPENDENCY @img/sharp-webcontainers-wasm32@0.35.4
-│ ├── UNMET OPTIONAL DEPENDENCY @img/sharp-win32-arm64@0.35.4
-│ ├── UNMET OPTIONAL DEPENDENCY @img/sharp-win32-ia32@0.35.4
-│ ├── UNMET OPTIONAL DEPENDENCY @img/sharp-win32-x64@0.35.4
+│ ├── UNMET OPTIONAL DEPENDENCY @img/sharp-darwin-arm64@0.35.5
+│ ├── UNMET OPTIONAL DEPENDENCY @img/sharp-darwin-x64@0.35.5
+│ ├── UNMET OPTIONAL DEPENDENCY @img/sharp-freebsd-wasm32@0.35.5
+│ ├── UNMET OPTIONAL DEPENDENCY @img/sharp-libvips-darwin-arm64@1.3.4
+│ ├── UNMET OPTIONAL DEPENDENCY @img/sharp-libvips-darwin-x64@1.3.4
+│ ├── UNMET OPTIONAL DEPENDENCY @img/sharp-libvips-linux-arm@1.3.4
+│ ├── UNMET OPTIONAL DEPENDENCY @img/sharp-libvips-linux-arm64@1.3.4
+│ ├── UNMET OPTIONAL DEPENDENCY @img/sharp-libvips-linux-ppc64@1.3.4
+│ ├── UNMET OPTIONAL DEPENDENCY @img/sharp-libvips-linux-riscv64@1.3.4
+│ ├── UNMET OPTIONAL DEPENDENCY @img/sharp-libvips-linux-s390x@1.3.4
+│ ├── @img/sharp-libvips-linux-x64@1.3.4
+│ ├── UNMET OPTIONAL DEPENDENCY @img/sharp-libvips-linuxmusl-arm64@1.3.4
+│ ├── UNMET OPTIONAL DEPENDENCY @img/sharp-libvips-linuxmusl-x64@1.3.4
+│ ├── UNMET OPTIONAL DEPENDENCY @img/sharp-linux-arm@0.35.5
+│ ├── UNMET OPTIONAL DEPENDENCY @img/sharp-linux-arm64@0.35.5
+│ ├── UNMET OPTIONAL DEPENDENCY @img/sharp-linux-ppc64@0.35.5
+│ ├── UNMET OPTIONAL DEPENDENCY @img/sharp-linux-riscv64@0.35.5
+│ ├── UNMET OPTIONAL DEPENDENCY @img/sharp-linux-s390x@0.35.5
+│ ├─┬ @img/sharp-linux-x64@0.35.5
+│ │ └── @img/sharp-libvips-linux-x64@1.3.4 deduped
+│ ├── UNMET OPTIONAL DEPENDENCY @img/sharp-linuxmusl-arm64@0.35.5
+│ ├── UNMET OPTIONAL DEPENDENCY @img/sharp-linuxmusl-x64@0.35.5
+│ ├── UNMET OPTIONAL DEPENDENCY @img/sharp-webcontainers-wasm32@0.35.5
+│ ├── UNMET OPTIONAL DEPENDENCY @img/sharp-win32-arm64@0.35.5
+│ ├── UNMET OPTIONAL DEPENDENCY @img/sharp-win32-ia32@0.35.5
+│ ├── UNMET OPTIONAL DEPENDENCY @img/sharp-win32-x64@0.35.5
 │ ├── detect-libc@2.1.2
 │ └── semver@7.8.5
 ├─┬ start-server-and-test@3.0.12
@@ -1244,60 +1244,60 @@ riksdagsmonitor@1.0.85 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ ├── UNMET OPTIONAL DEPENDENCY @typescript/typescript-sunos-x64@7.0.2
 │ ├── UNMET OPTIONAL DEPENDENCY @typescript/typescript-win32-arm64@7.0.2
 │ └── UNMET OPTIONAL DEPENDENCY @typescript/typescript-win32-x64@7.0.2
-├─┬ typescript-eslint@8.70.1
-│ ├─┬ @typescript-eslint/eslint-plugin@8.70.1
+├─┬ typescript-eslint@8.71.0
+│ ├─┬ @typescript-eslint/eslint-plugin@8.71.0
 │ │ ├── @eslint-community/regexpp@4.12.2 deduped
-│ │ ├── @typescript-eslint/parser@8.70.1 deduped
-│ │ ├─┬ @typescript-eslint/scope-manager@8.70.1
-│ │ │ ├── @typescript-eslint/types@8.70.1 deduped
-│ │ │ └── @typescript-eslint/visitor-keys@8.70.1 deduped
-│ │ ├─┬ @typescript-eslint/type-utils@8.70.1
-│ │ │ ├── @typescript-eslint/types@8.70.1 deduped
-│ │ │ ├── @typescript-eslint/typescript-estree@8.70.1 deduped
-│ │ │ ├── @typescript-eslint/utils@8.70.1 deduped
+│ │ ├── @typescript-eslint/parser@8.71.0 deduped
+│ │ ├─┬ @typescript-eslint/scope-manager@8.71.0
+│ │ │ ├── @typescript-eslint/types@8.71.0 deduped
+│ │ │ └── @typescript-eslint/visitor-keys@8.71.0 deduped
+│ │ ├─┬ @typescript-eslint/type-utils@8.71.0
+│ │ │ ├── @typescript-eslint/types@8.71.0 deduped
+│ │ │ ├── @typescript-eslint/typescript-estree@8.71.0 deduped
+│ │ │ ├── @typescript-eslint/utils@8.71.0 deduped
 │ │ │ ├── debug@4.4.3 deduped
 │ │ │ ├── eslint@10.11.0 deduped
 │ │ │ ├── ts-api-utils@2.5.0 deduped
 │ │ │ └── typescript@6.0.3 deduped
-│ │ ├── @typescript-eslint/utils@8.70.1 deduped
-│ │ ├─┬ @typescript-eslint/visitor-keys@8.70.1
-│ │ │ ├── @typescript-eslint/types@8.70.1 deduped
+│ │ ├── @typescript-eslint/utils@8.71.0 deduped
+│ │ ├─┬ @typescript-eslint/visitor-keys@8.71.0
+│ │ │ ├── @typescript-eslint/types@8.71.0 deduped
 │ │ │ └── eslint-visitor-keys@5.0.1 deduped
 │ │ ├── eslint@10.11.0 deduped
-│ │ ├── ignore@7.0.9
+│ │ ├── ignore@7.0.10
 │ │ ├── natural-compare@1.4.0 deduped
 │ │ ├─┬ ts-api-utils@2.5.0
 │ │ │ └── typescript@6.0.3 deduped
 │ │ └── typescript@6.0.3 deduped
-│ ├─┬ @typescript-eslint/parser@8.70.1
-│ │ ├── @typescript-eslint/scope-manager@8.70.1 deduped
-│ │ ├── @typescript-eslint/types@8.70.1
-│ │ ├── @typescript-eslint/typescript-estree@8.70.1 deduped
-│ │ ├── @typescript-eslint/visitor-keys@8.70.1 deduped
+│ ├─┬ @typescript-eslint/parser@8.71.0
+│ │ ├── @typescript-eslint/scope-manager@8.71.0 deduped
+│ │ ├── @typescript-eslint/types@8.71.0
+│ │ ├── @typescript-eslint/typescript-estree@8.71.0 deduped
+│ │ ├── @typescript-eslint/visitor-keys@8.71.0 deduped
 │ │ ├── debug@4.4.3 deduped
 │ │ ├── eslint@10.11.0 deduped
 │ │ └── typescript@6.0.3 deduped
-│ ├─┬ @typescript-eslint/typescript-estree@8.70.1
-│ │ ├─┬ @typescript-eslint/project-service@8.70.1
-│ │ │ ├── @typescript-eslint/tsconfig-utils@8.70.1 deduped
-│ │ │ ├── @typescript-eslint/types@8.70.1 deduped
+│ ├─┬ @typescript-eslint/typescript-estree@8.71.0
+│ │ ├─┬ @typescript-eslint/project-service@8.71.0
+│ │ │ ├── @typescript-eslint/tsconfig-utils@8.71.0 deduped
+│ │ │ ├── @typescript-eslint/types@8.71.0 deduped
 │ │ │ ├── debug@4.4.3 deduped
 │ │ │ └── typescript@6.0.3 deduped
-│ │ ├─┬ @typescript-eslint/tsconfig-utils@8.70.1
+│ │ ├─┬ @typescript-eslint/tsconfig-utils@8.71.0
 │ │ │ └── typescript@6.0.3 deduped
-│ │ ├── @typescript-eslint/types@8.70.1 deduped
-│ │ ├── @typescript-eslint/visitor-keys@8.70.1 deduped
+│ │ ├── @typescript-eslint/types@8.71.0 deduped
+│ │ ├── @typescript-eslint/visitor-keys@8.71.0 deduped
 │ │ ├── debug@4.4.3 deduped
 │ │ ├── minimatch@10.2.4 deduped
 │ │ ├── semver@7.8.5 deduped
 │ │ ├── tinyglobby@0.2.17 deduped
 │ │ ├── ts-api-utils@2.5.0 deduped
 │ │ └── typescript@6.0.3 deduped
-│ ├─┬ @typescript-eslint/utils@8.70.1
+│ ├─┬ @typescript-eslint/utils@8.71.0
 │ │ ├── @eslint-community/eslint-utils@4.9.1 deduped
-│ │ ├── @typescript-eslint/scope-manager@8.70.1 deduped
-│ │ ├── @typescript-eslint/types@8.70.1 deduped
-│ │ ├── @typescript-eslint/typescript-estree@8.70.1 deduped
+│ │ ├── @typescript-eslint/scope-manager@8.71.0 deduped
+│ │ ├── @typescript-eslint/types@8.71.0 deduped
+│ │ ├── @typescript-eslint/typescript-estree@8.71.0 deduped
 │ │ ├── eslint@10.11.0 deduped
 │ │ └── typescript@6.0.3 deduped
 │ ├── eslint@10.11.0 deduped
@@ -1320,7 +1320,7 @@ riksdagsmonitor@1.0.85 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │   ├── @types/unist@3.0.3 deduped
 │   └── unist-util-is@6.0.1 deduped
 ├─┬ vite@8.3.1
-│ ├── @types/node@26.6.2 deduped
+│ ├── @types/node@26.6.3 deduped
 │ ├── UNMET OPTIONAL DEPENDENCY @vitejs/devtools@^0.7.1
 │ ├── esbuild@0.28.1 deduped
 │ ├── UNMET OPTIONAL DEPENDENCY fsevents@~2.3.3
@@ -1364,7 +1364,7 @@ riksdagsmonitor@1.0.85 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ ├─┬ @types/chai@5.2.3
 │ │ ├── @types/deep-eql@4.0.2
 │ │ └── assertion-error@2.0.1
-│ ├── @types/node@26.6.2 deduped
+│ ├── @types/node@26.6.3 deduped
 │ ├── UNMET OPTIONAL DEPENDENCY @vitest/browser-playwright@5.0.2
 │ ├── UNMET OPTIONAL DEPENDENCY @vitest/browser-preview@5.0.2
 │ ├── UNMET OPTIONAL DEPENDENCY @vitest/browser-webdriverio@^5.0.0-beta.5 || >=5.0.0
