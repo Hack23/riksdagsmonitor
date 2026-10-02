@@ -2,72 +2,87 @@ name-template: 'Riksdagsmonitor $RESOLVED_VERSION'
 tag-template: '$RESOLVED_VERSION'
 categories:
   - title: '🚀 Features'
-    labels:
-      - 'feature'
-      - 'enhancement'
+    when:
+      labels:
+        - 'feature'
+        - 'enhancement'
   - title: '🐛 Bug Fixes'
-    labels:
-      - 'fix'
-      - 'bugfix'
-      - 'bug'
+    when:
+      labels:
+        - 'fix'
+        - 'bugfix'
+        - 'bug'
   - title: '🔒 Security'
-    labels:
-      - 'security'
+    when:
+      labels:
+        - 'security'
   - title: '📚 Documentation'
-    labels:
-      - 'documentation'
-      - 'docs'
+    when:
+      labels:
+        - 'documentation'
+        - 'docs'
   - title: '🧪 Testing'
-    labels:
-      - 'test'
-      - 'testing'
+    when:
+      labels:
+        - 'test'
+        - 'testing'
   - title: '⚡ Performance'
-    labels:
-      - 'performance'
+    when:
+      labels:
+        - 'performance'
   - title: '🏗️ Infrastructure'
-    labels:
-      - 'infrastructure'
-      - 'ci'
-      - 'cd'
+    when:
+      labels:
+        - 'infrastructure'
+        - 'ci'
+        - 'cd'
   - title: '🎨 UI/UX'
-    labels:
-      - 'ui'
-      - 'ux'
-      - 'design'
+    when:
+      labels:
+        - 'ui'
+        - 'ux'
+        - 'design'
   - title: '♿ Accessibility'
-    labels:
-      - 'accessibility'
-      - 'a11y'
+    when:
+      labels:
+        - 'accessibility'
+        - 'a11y'
   - title: '🌐 Internationalization'
-    labels:
-      - 'i18n'
-      - 'l10n'
-      - 'translation'
+    when:
+      labels:
+        - 'i18n'
+        - 'l10n'
+        - 'translation'
   - title: '🔧 Maintenance'
-    labels:
-      - 'chore'
-      - 'maintenance'
-      - 'dependencies'
+    when:
+      labels:
+        - 'chore'
+        - 'maintenance'
+        - 'dependencies'
+  - type: 'version-resolver'
+    semver-increment: 'major'
+    when:
+      labels:
+        - 'major'
+        - 'breaking'
+  - type: 'version-resolver'
+    semver-increment: 'minor'
+    when:
+      labels:
+        - 'minor'
+        - 'feature'
+        - 'enhancement'
+  - type: 'version-resolver'
+    semver-increment: 'patch'
+    when:
+      labels:
+        - 'patch'
+        - 'fix'
+        - 'bugfix'
+        - 'bug'
+        - 'chore'
 change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
 change-title-escapes: '\<*_&' # You can add # and @ to disable mentions, and add ` to disable code blocks.
-version-resolver:
-  major:
-    labels:
-      - 'major'
-      - 'breaking'
-  minor:
-    labels:
-      - 'minor'
-      - 'feature'
-      - 'enhancement'
-  patch:
-    labels:
-      - 'patch'
-      - 'fix'
-      - 'bugfix'
-      - 'bug'
-      - 'chore'
-  default: patch
 template: |
   ## What's Changed
 
