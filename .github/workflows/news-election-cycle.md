@@ -298,7 +298,7 @@ steps:
       analysis-depth: ${{ inputs.analysis_depth }}
       default-analysis-depth: comprehensive
       cycle-anchor: ${{ inputs.cycle_anchor }}
-model: claude-opus-5
+model: claude-opus-5.5
 engine:
   id: copilot
 ---

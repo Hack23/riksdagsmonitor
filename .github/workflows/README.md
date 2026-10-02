@@ -104,12 +104,12 @@ Each agentic workflow is a **pair**: an authored `.md` source + a compiled `.loc
 
 ### Common tool surface (every `news-*.md`)
 
-Every news workflow declares the **same** tool & runtime surface for parity, resilience, and full gh-aw v0.74.3 capability coverage:
+Every news workflow declares the **same** tool & runtime surface for parity and resilience under gh-aw v0.90.1:
 
 | Field | Value | Purpose |
 |-------|-------|---------|
 | `runtimes.node.version` | `"26"` | Pinned Node 26 for IMF CLI + render scripts |
-| `engine.id` / `engine.model` | `copilot` / `claude-opus-5` (13 analysis/article workflows); `claude-sonnet-4.6` (`news-translate` only) | Opus reasoning model for the 23-artifact analysis pipeline; the high-volume translation fan-out keeps the faster Sonnet model. (Sonnet was the repo-wide baseline through v0.74.3; GPT-5.4 / GPT-5.4-mini eligibility resolved upstream per release notes #31695 + #32197 but not yet A/B-tested here.) |
+| `engine.id` / `engine.model` | `copilot` / `claude-opus-5.5` (all 14 workflows) | Consistent Opus 5.5 reasoning model across analysis, article generation, real-time monitoring, and translation workflows. |
 | `engine.mcp.session-timeout` | ~~`1h`~~ **removed** | Was added in gh-aw v0.71.3 and rejected by MCP Gateway v0.3.1. v0.74.3 lock files now ship MCP Gateway v0.3.9; re-acceptance has not yet been validated on this repo, so the field stays removed until verified. |
 | `tools.github.toolsets` | `[all]` | Full GitHub MCP surface (issues, PRs, repos, code-search, actions, releases, discussions, …); see [`github-tools.md`](https://github.com/github/gh-aw/blob/main/docs/src/content/docs/reference/github-tools.md) |
 | `tools.bash` / `tools.edit` / `tools.web-fetch` / `tools.agentic-workflows` | enabled | Full local tool surface; `web-fetch` reaches non-MCP public sources (`statskontoret.se`, `riksdagsmonitor.com`) through the AWF firewall |

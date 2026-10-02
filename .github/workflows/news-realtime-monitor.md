@@ -300,7 +300,7 @@ steps:
       default-analysis-depth: deep
       article-types: ${{ inputs.article_types }}
       focus: ${{ inputs.focus }}
-model: gpt-5.3-codex
+model: claude-opus-5.5
 engine:
   id: copilot
 ---

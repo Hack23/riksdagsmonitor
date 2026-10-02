@@ -542,7 +542,7 @@ steps:
       echo "   Worklist file (agent reads this): $WORKLIST_FILE"
       printf '   %s\n' "${WORK[@]}"
 
-model: claude-sonnet-4.6
+model: claude-opus-5.5
 engine:
   id: copilot
 ---
