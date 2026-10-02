@@ -56,6 +56,7 @@ max-ai-credits: 3000
 
 concurrency:
   group: gh-aw-news-month-ahead-${{ inputs.article_date || 'today' }}
+  job-discriminator: ${{ github.run_id }}
   cancel-in-progress: false
 
 features:
@@ -178,7 +179,7 @@ tools:
   agentic-workflows: true
   bash: true
   edit:
-  web-fetch:
+  web-fetch: false
   cache-memory:
     key: news-month-ahead-${{ inputs.article_date || 'today' }}
     retention-days: 14
@@ -311,7 +312,7 @@ Generates deep political intelligence analysis **and** renders the HTML article 
 
 > 🟡 **Plan to call `safeoutputs___create_pull_request` by agent minute 42 (hard deadline 45)** to reserve job-level headroom for setup variance and the safe-outputs runner. See `00-base-contract.md §Session timing` and `07-commit-and-pr.md §Deadline enforcement`.
 >
-> 🔴 **Token budget awareness**: This workflow uses `claude-opus-5` which consumes tokens rapidly on complex analysis. The 25M token budget can be exhausted in ~20 minutes of intensive MCP querying + large file writes. **Check `agent_minute` before EVERY phase transition. If agent_minute ≥ 20 and zero analysis artifacts exist on disk, immediately compress scope to a minimal viable set and target PR by minute 35.**
+> 🔴 **Token budget awareness**: This workflow uses `claude-opus-5.5` which consumes tokens rapidly on complex analysis. The 25M token budget can be exhausted in ~20 minutes of intensive MCP querying + large file writes. **Check `agent_minute` before EVERY phase transition. If agent_minute ≥ 20 and zero analysis artifacts exist on disk, immediately compress scope to a minimal viable set and target PR by minute 35.**
 >
 > **AI-FIRST within the 60-minute budget**: Pass 2 is still mandatory. Scheduled runs should honor the configured `analysis_depth=deep` default instead of pre-emptively downgrading scope. Prefer **scope compression over iteration skipping** only if runtime risk emerges — reduce the download/manifest scope if needed, but maintain 1:1 per-document coverage and always perform a full read-back-and-improve Pass 2 on whatever artifacts exist. Reserve `comprehensive` for manual `workflow_dispatch` backfills.
 

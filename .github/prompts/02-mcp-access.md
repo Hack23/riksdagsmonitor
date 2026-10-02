@@ -4,7 +4,7 @@ Authoritative per-workflow surface: the `mcp-servers:` + `tools:` blocks in that
 
 ## Servers & tool naming
 
-News workflows declare three data MCP servers + the built-in `github` toolset (`tools.github.toolsets: [all]`) + `bash` + `edit` + `web-fetch` (frontmatter key; agent calls `web_fetch`) + `agentic-workflows` + `cache-memory`.
+News workflows declare three data MCP servers + the built-in `github` toolset (`tools.github.toolsets: [all]`) + `bash` + `edit` + `agentic-workflows` + `cache-memory`. `web-fetch` is disabled because Copilot's hosted fetch does not honor the workflow's AWF network allowlist; use the allowlisted CLI/scripts through `bash` for non-MCP public sources.
 
 gh-aw frontmatter keys use **kebab-case** (`tools.web-fetch:`, `tools.cache-memory:`, `safe-outputs.create-pull-request:`). Runtime tool names use **snake_case** (`web_fetch`, `cache_memory`, `safeoutputs___create_pull_request`).
 
@@ -16,7 +16,6 @@ gh-aw frontmatter keys use **kebab-case** (`tools.web-fetch:`, `tools.cache-memo
 | `github` | HTTP (Copilot MCP) | `tools.github.toolsets: [all]` | standard | issues, PRs, repos, code-search, actions, releases, discussions |
 | `bash` | local helper | `tools.bash: true` | standard | shell execution. Hosts the IMF CLI (see § IMF CLI). |
 | `edit` | local helper | `tools.edit:` | standard | **Primary file create / overwrite mechanism.** All `.md` / `.json` / `.html` writes (analyses, briefs, sidecars, translations). Tier hierarchy → [`01-bash-and-shell-safety.md` §File creation & overwrite strategy](01-bash-and-shell-safety.md). |
-| `web-fetch` | local helper | `tools.web-fetch:` | standard | HTTP fetch for non-MCP public sources (`www.statskontoret.se`, `riksdagsmonitor.com`, …) — domain-filtered through AWF firewall. Agent invokes as `web_fetch`. |
 | `cache-memory` | GitHub Actions cache | `tools.cache-memory:` | filesystem | `/tmp/gh-aw/cache-memory/` keyed by `news-${workflow}-${article_date}` (14-day retention). Resilience for failed-PR retries → [`07-commit-and-pr.md §Cache-memory recovery`](07-commit-and-pr.md). |
 | `safeoutputs` | runner (Streamable HTTP) | always available | `snake_case` | `safeoutputs___create_pull_request`, `safeoutputs___noop`, `safeoutputs___dispatch_workflow`, `safeoutputs___add_comment`, `safeoutputs___missing_data`, `safeoutputs___missing_tool`, `safeoutputs___report_incomplete` |
 

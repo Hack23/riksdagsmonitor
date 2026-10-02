@@ -55,6 +55,7 @@ max-ai-credits: 3000
 
 concurrency:
   group: gh-aw-news-monthly-review-${{ inputs.article_date || 'today' }}
+  job-discriminator: ${{ github.run_id }}
   cancel-in-progress: false
 
 features:
@@ -177,7 +178,7 @@ tools:
   agentic-workflows: true
   bash: true
   edit:
-  web-fetch:
+  web-fetch: false
   cache-memory:
     key: news-monthly-review-${{ inputs.article_date || 'today' }}
     retention-days: 14
