@@ -1,5 +1,5 @@
 {
-  "version": "1.0.88",
+  "version": "1.0.89",
   "name": "riksdagsmonitor",
   "dependencies": {
     "@eslint/js": {
@@ -245,8 +245,8 @@
       }
     },
     "@types/node": {
-      "version": "26.6.3",
-      "resolved": "https://registry.npmjs.org/@types/node/-/node-26.6.3.tgz",
+      "version": "26.6.4",
+      "resolved": "https://registry.npmjs.org/@types/node/-/node-26.6.4.tgz",
       "overridden": false,
       "dependencies": {
         "undici-types": {
@@ -262,7 +262,7 @@
       "overridden": false,
       "dependencies": {
         "@types/node": {
-          "version": "26.6.3"
+          "version": "26.6.4"
         }
       }
     },
@@ -2639,7 +2639,7 @@
       "overridden": false,
       "dependencies": {
         "@types/node": {
-          "version": "26.6.3"
+          "version": "26.6.4"
         },
         "@types/whatwg-mimetype": {
           "version": "3.0.2",
@@ -2652,7 +2652,7 @@
           "overridden": false,
           "dependencies": {
             "@types/node": {
-              "version": "26.6.3"
+              "version": "26.6.4"
             }
           }
         },
@@ -2662,7 +2662,7 @@
           "overridden": false,
           "dependencies": {
             "@types/node": {
-              "version": "26.6.3"
+              "version": "26.6.4"
             }
           }
         },
@@ -5746,7 +5746,7 @@
       "overridden": false,
       "dependencies": {
         "@types/node": {
-          "version": "26.6.3"
+          "version": "26.6.4"
         },
         "@vitejs/devtools": {},
         "esbuild": {
@@ -5862,7 +5862,7 @@
           }
         },
         "@types/node": {
-          "version": "26.6.3"
+          "version": "26.6.4"
         },
         "@vitest/browser-playwright": {},
         "@vitest/browser-preview": {},
