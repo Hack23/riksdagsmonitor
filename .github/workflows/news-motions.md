@@ -53,6 +53,7 @@ max-ai-credits: 3000
 
 concurrency:
   group: gh-aw-news-motions-${{ inputs.article_date || 'today' }}
+  job-discriminator: ${{ github.run_id }}
   cancel-in-progress: false
 
 features:
@@ -175,7 +176,6 @@ tools:
   agentic-workflows: true
   bash: true
   edit:
-  web-fetch:
   cache-memory:
     key: news-motions-${{ inputs.article_date || 'today' }}
     retention-days: 14
@@ -287,7 +287,7 @@ steps:
       force-generation: ${{ inputs.force_generation }}
       analysis-depth: ${{ inputs.analysis_depth }}
       default-analysis-depth: deep
-model: claude-opus-5
+model: claude-opus-5.5
 engine:
   id: copilot
 ---

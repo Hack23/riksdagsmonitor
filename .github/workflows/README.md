@@ -104,15 +104,15 @@ Each agentic workflow is a **pair**: an authored `.md` source + a compiled `.loc
 
 ### Common tool surface (every `news-*.md`)
 
-Every news workflow declares the **same** tool & runtime surface for parity, resilience, and full gh-aw v0.74.3 capability coverage:
+Every news workflow declares the **same** tool & runtime surface for parity and resilience under gh-aw v0.90.1:
 
 | Field | Value | Purpose |
 |-------|-------|---------|
 | `runtimes.node.version` | `"26"` | Pinned Node 26 for IMF CLI + render scripts |
-| `engine.id` / `engine.model` | `copilot` / `claude-opus-5` (13 analysis/article workflows); `claude-sonnet-4.6` (`news-translate` only) | Opus reasoning model for the 23-artifact analysis pipeline; the high-volume translation fan-out keeps the faster Sonnet model. (Sonnet was the repo-wide baseline through v0.74.3; GPT-5.4 / GPT-5.4-mini eligibility resolved upstream per release notes #31695 + #32197 but not yet A/B-tested here.) |
-| `engine.mcp.session-timeout` | ~~`1h`~~ **removed** | Was added in gh-aw v0.71.3 and rejected by MCP Gateway v0.3.1. v0.74.3 lock files now ship MCP Gateway v0.3.9; re-acceptance has not yet been validated on this repo, so the field stays removed until verified. |
+| `engine.id` / `engine.model` | `copilot` / `claude-opus-5.5` (all 14 workflows) | Consistent Opus 5.5 reasoning model across analysis, article generation, real-time monitoring, and translation workflows. |
+| `engine.mcp.session-timeout` | ~~`1h`~~ **removed** | Was rejected by MCP Gateway v0.3.1; current gh-aw v0.90.1 lock files use MCP Gateway v0.4.27. Re-acceptance has not been validated on this repo, so the field stays removed until verified. |
 | `tools.github.toolsets` | `[all]` | Full GitHub MCP surface (issues, PRs, repos, code-search, actions, releases, discussions, …); see [`github-tools.md`](https://github.com/github/gh-aw/blob/main/docs/src/content/docs/reference/github-tools.md) |
-| `tools.bash` / `tools.edit` / `tools.web-fetch` / `tools.agentic-workflows` | enabled | Full local tool surface; `web-fetch` reaches non-MCP public sources (`statskontoret.se`, `riksdagsmonitor.com`) through the AWF firewall |
+| `tools.bash` / `tools.edit` / `tools.agentic-workflows` | enabled | Full local tool surface; non-MCP public sources are fetched through allowlisted CLI/scripts in `bash`. Copilot `web-fetch` is omitted because hosted requests do not follow `network.allowed`. |
 | `tools.cache-memory` | keyed by `news-${workflow}-${article_date}`; best-effort cache persistence aligned with a 14-day recovery window | **Resilience knob** — analysis artifacts persisted at `/tmp/gh-aw/cache-memory/`; may be restored on the next run if the previous PR failed and the cache entry is still available (see [`07-commit-and-pr.md` §Cache-memory recovery](../prompts/07-commit-and-pr.md)) |
 | `tools.playwright` | enabled in `news-evening-analysis` + `news-realtime-monitor` only | Live HTML validation for tier-C aggregation runs |
 | `features.mcp-gateway` | `true` | Routes all MCP traffic through the gh-aw mcp-gateway (single audit point) |
@@ -142,7 +142,7 @@ gh-aw emits this warning unconditionally for **any** `secrets.*` reference in an
 
 ### v0.74.3 capabilities — adoption status
 
-Tracking grid for the features called out in the [gh-aw v0.74.3 release notes](https://github.com/github/gh-aw/releases/tag/v0.74.3). All 14 `news-*.lock.yml` files compile against v0.74.3 today; the rows below classify each new capability as **adopted**, **planned** (follow-up PR), or **non-applicable**.
+Historical tracking grid for the features called out in the [gh-aw v0.74.3 release notes](https://github.com/github/gh-aw/releases/tag/v0.74.3). Those features were assessed against v0.74.3; all 14 `news-*.lock.yml` files now compile against gh-aw v0.90.1.
 
 | v0.74.3 feature | Status | Notes |
 |-----------------|--------|-------|
@@ -155,7 +155,7 @@ Tracking grid for the features called out in the [gh-aw v0.74.3 release notes](h
 | Enhanced OTel spans + Grafana MCP shared component (#32425, #32340) | Planned | Add Grafana MCP to `news-evening-analysis` + `news-realtime-monitor`; pipe agent-phase timings and gate-pass/fail counts. |
 | `excessivefuncparams` linter (#32402) | Planned | Run against `scripts/imf-fetch.ts`, `scripts/aggregate-analysis.ts`, `scripts/render-articles.ts`; refactor opportunity, non-blocking. |
 | `experiments.*` valid in runtime-import expressions (#32375) | Planned | Expose `experiments.tier_c_compression`, `experiments.lh_pestle_blocking`, `experiments.cycle_rollover_window`. |
-| MCP Gateway upgrade to `ghcr.io/github/gh-aw-mcpg:v0.3.9` | Adopted | Now present in every `news-*.lock.yml` manifest. Field-level effects (e.g. `engine.mcp.session-timeout` re-acceptance) still pending re-validation. |
+| MCP Gateway upgrade to `ghcr.io/github/gh-aw-mcpg:v0.3.9` | Adopted (superseded) | The v0.90.1 locks now use MCP Gateway v0.4.27. Field-level effects (e.g. `engine.mcp.session-timeout` re-acceptance) still pending re-validation. |
 | GPT-5.4 / GPT-5.4-mini fixes (#31695, #32197) | Available | Models now compatible; not yet A/B-tested against `claude-sonnet-4.6` on this repo. |
 | `gh aw compile --staged` (v0.74.2) | Planned | Adopt in `compile-agentic-workflows.yml` for PR previews of the compiled `.lock.yml`. |
 | REST API for agent session task creation (v0.74.2) | Adopted | Default in compiled `.lock.yml` files. |

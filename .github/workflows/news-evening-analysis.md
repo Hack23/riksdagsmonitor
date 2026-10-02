@@ -61,6 +61,7 @@ max-ai-credits: 3000
 
 concurrency:
   group: gh-aw-news-evening-analysis-${{ inputs.article_date || 'today' }}
+  job-discriminator: ${{ github.run_id }}
   cancel-in-progress: false
 
 features:
@@ -183,7 +184,6 @@ tools:
   agentic-workflows: true
   bash: true
   edit:
-  web-fetch:
   cache-memory:
     key: news-evening-analysis-${{ inputs.article_date || 'today' }}
     retention-days: 14
@@ -296,7 +296,7 @@ steps:
       default-analysis-depth: deep
       coverage-depth: ${{ inputs.coverage_depth }}
       lookback-hours: ${{ inputs.lookback_hours }}
-model: claude-opus-5
+model: claude-opus-5.5
 engine:
   id: copilot
 ---

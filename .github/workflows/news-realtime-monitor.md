@@ -65,6 +65,7 @@ max-ai-credits: 1500
 
 concurrency:
   group: gh-aw-news-realtime-monitor-${{ inputs.article_date || 'today' }}
+  job-discriminator: ${{ github.run_id }}
   cancel-in-progress: false
 
 features:
@@ -187,7 +188,6 @@ tools:
   agentic-workflows: true
   bash: true
   edit:
-  web-fetch:
   cache-memory:
     key: news-realtime-monitor-${{ inputs.article_date || 'today' }}
     retention-days: 14
@@ -300,7 +300,7 @@ steps:
       default-analysis-depth: deep
       article-types: ${{ inputs.article_types }}
       focus: ${{ inputs.focus }}
-model: gpt-5.3-codex
+model: claude-opus-5.5
 engine:
   id: copilot
 ---
