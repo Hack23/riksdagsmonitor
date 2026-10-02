@@ -754,7 +754,7 @@ jobs:
     needs: [prepare, build, package, unit-tests, e2e]
     runs-on: ubuntu-26.04
     permissions:
-      contents: read
+      contents: write
     steps:
       - name: Harden Runner
         uses: step-security/harden-runner@e14015d583714f6e62063499dc959a02595150a1 # v2.21.1
@@ -801,7 +801,7 @@ jobs:
           publish: false
           prerelease: ${{ needs.prepare.outputs.is_prerelease }}
         env:
-          GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
+          GITHUB_TOKEN: ${{ github.token }}
 
       - name: Create GitHub Release
         uses: ncipollo/release-action@339a81892b84b4eeb0f6e744e4574d79d0d9b8dd # v1.21.0
@@ -851,7 +851,7 @@ jobs:
             artifacts/security/riksdagsmonitor-${{ needs.prepare.outputs.version }}.spdx.json
             artifacts/security/riksdagsmonitor-${{ needs.prepare.outputs.version }}.zip.intoto.jsonl
             artifacts/security/riksdagsmonitor-${{ needs.prepare.outputs.version }}.spdx.json.intoto.jsonl
-          token: ${{ steps.app-token.outputs.token }}
+          token: ${{ github.token }}
 
   # --------------------------------------------------------------------------
   # 9. npm-publish — build:lib + publish (≤5 min) — RUNS LAST
