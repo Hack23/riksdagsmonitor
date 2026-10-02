@@ -188,7 +188,6 @@ tools:
   agentic-workflows: true
   bash: true
   edit:
-  web-fetch: false
   cache-memory:
     key: news-realtime-monitor-${{ inputs.article_date || 'today' }}
     retention-days: 14

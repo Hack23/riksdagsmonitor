@@ -178,7 +178,6 @@ tools:
   agentic-workflows: true
   bash: true
   edit:
-  web-fetch: false
   cache-memory:
     key: news-monthly-review-${{ inputs.article_date || 'today' }}
     retention-days: 14

@@ -4,9 +4,9 @@ Authoritative per-workflow surface: the `mcp-servers:` + `tools:` blocks in that
 
 ## Servers & tool naming
 
-News workflows declare three data MCP servers + the built-in `github` toolset (`tools.github.toolsets: [all]`) + `bash` + `edit` + `agentic-workflows` + `cache-memory`. `web-fetch` is disabled because Copilot's hosted fetch does not honor the workflow's AWF network allowlist; use the allowlisted CLI/scripts through `bash` for non-MCP public sources.
+News workflows declare three data MCP servers + the built-in `github` toolset (`tools.github.toolsets: [all]`) + `bash` + `edit` + `agentic-workflows` + `cache-memory`. `web-fetch` is omitted because Copilot's hosted fetch does not honor the workflow's AWF network allowlist; use the allowlisted CLI/scripts through `bash` for non-MCP public sources.
 
-gh-aw frontmatter keys use **kebab-case** (`tools.web-fetch:`, `tools.cache-memory:`, `safe-outputs.create-pull-request:`). Runtime tool names use **snake_case** (`web_fetch`, `cache_memory`, `safeoutputs___create_pull_request`).
+gh-aw frontmatter keys use **kebab-case** (`tools.cache-memory:`, `safe-outputs.create-pull-request:`). MCP runtime tool names use **snake_case** (`cache_memory`, `safeoutputs___create_pull_request`).
 
 | Server / tool | Transport | Declared in | Tool-name style | Example tools |
 |---------------|-----------|-------------|-----------------|---------------|
@@ -72,7 +72,7 @@ Run once at workflow start, then proceed:
 |------|
 | Riksdag tool arguments are documented under [`.github/skills/riksdag-regering-mcp/`](../skills/riksdag-regering-mcp/). |
 | **Economic data is IMF-first.** `get-economic-data` (world-bank MCP) is a legacy fallback for pre-2026-04-20 articles only — not a primary source for new articles. |
-| **Statskontoret is a public non-MCP source.** Use `web_fetch` / primary URLs, cite report title + URL, record retrieval in `data-download-manifest.md`. |
+| **Statskontoret is a public non-MCP source.** Fetch primary URLs through `bash` using `curl` so requests remain subject to the AWF allowlist; cite report title + URL and record retrieval in `data-download-manifest.md`. |
 | **Lagrådet is a public non-MCP source.** Required for major-bill propositions per [`03-data-download.md §Lagrådet enrichment`](03-data-download.md). Cite referral URL + yttrande publication date; tag `referral pending` when no yttrande yet exists. |
 | **Prior-voteringar enrichment** is standard: `search_voteringar` keyed by **topic keyword** (`avser`) or **full proposition beteckning** (e.g. `bet: "2024/25:JuU17"`, never a bare committee prefix like `JuU`) over the last 4 `rm` (riksmöten), for every committee-report, motion, interpellation cycle. Feeds `historical-parallels.md`, `coalition-mathematics.md`, `swot-analysis.md` evidence rows. See [`03-data-download.md §Prior-voteringar enrichment`](03-data-download.md) for the full query-shape contract and fallback hierarchy. |
 | **Calendar is fetched via the resilient CLI, not the raw tool.** The raw `get_calendar_events` MCP tool returns a *successful* empty `events: []` result (with an `error`/`rawHtml` sentinel) when `data.riksdagen.se/kalender/` serves HTML — silently masking the outage as a zero-sitting week. Source the forward calendar from the pre-warmed **`data/runtime/calendar-status.json`** (written by `news-prewarm`) and/or **`npx tsx scripts/calendar-fetch.ts --from <YYYY-MM-DD> --to <YYYY-MM-DD>`**, which falls back MCP→public-page scraper and reports `status` (`ok`/`error`) + `path` (`mcp-primary`/`web-fallback`/`none`). If `status: error` / `path: none`, record a `[DATA GAP: calendar source degraded]` in `data-download-manifest.md` — never assert an empty sitting calendar from the raw tool. |
@@ -83,6 +83,6 @@ Run once at workflow start, then proceed:
 
 Every news workflow declares a single `curl`-based pre-warm step (≤ 6 retries, ≤ 20 s apart). With `curl --max-time 30`, worst-case runtime can exceed 4 minutes — treat as best-effort, not a hard ≤ 2 min guarantee. For a strict cap, reduce the workflow's `curl` timeout or retry policy.
 
-## MCP gateway session timeout — **DO NOT SET** without re-testing on v0.3.9
+## MCP gateway session timeout — **DO NOT SET** without re-testing on v0.4.27
 
-`engine.mcp.session-timeout` and `sandbox.mcp.keepalive-interval` are currently removed from every workflow. MCP Gateway v0.3.1 rejected the gh-aw v0.71.3 compiled `sessionTimeout` field ([gh-aw #29353](https://github.com/github/gh-aw/issues/29353)). The gh-aw v0.74.3 lock files now ship MCP Gateway **v0.3.9** — acceptance has not yet been re-validated on this repo. Do not re-add either field without first running one news workflow end-to-end against v0.3.9. The MCP gateway default keepalive (v0.3.9) is sufficient for the 60-min job window. PR deadline is governed by Timer A (job `timeout-minutes: 60`) and Timer B (Copilot API session ~60 min) — call `safeoutputs___create_pull_request` by agent minute 42.
+`engine.mcp.session-timeout` and `sandbox.mcp.keepalive-interval` are currently removed from every workflow. MCP Gateway v0.3.1 rejected the gh-aw v0.71.3 compiled `sessionTimeout` field ([gh-aw #29353](https://github.com/github/gh-aw/issues/29353)). The gh-aw v0.90.1 lock files now ship MCP Gateway **v0.4.27** — acceptance has not yet been re-validated on this repo. Do not re-add either field without first running one news workflow end-to-end against v0.4.27. The MCP gateway default keepalive (v0.4.27) is sufficient for the 60-min job window. PR deadline is governed by Timer A (job `timeout-minutes: 60`) and Timer B (Copilot API session ~60 min) — call `safeoutputs___create_pull_request` by agent minute 42.

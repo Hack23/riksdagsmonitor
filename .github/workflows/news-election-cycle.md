@@ -186,7 +186,6 @@ tools:
   agentic-workflows: true
   bash: true
   edit:
-  web-fetch: false
   cache-memory:
     key: news-election-cycle-${{ inputs.article_date || 'today' }}-${{ inputs.cycle_anchor || 'both' }}
     retention-days: 30
