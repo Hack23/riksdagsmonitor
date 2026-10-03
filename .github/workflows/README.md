@@ -109,7 +109,7 @@ Every news workflow declares the **same** tool & runtime surface for parity and 
 | Field | Value | Purpose |
 |-------|-------|---------|
 | `runtimes.node.version` | `"26"` | Pinned Node 26 for IMF CLI + render scripts |
-| `engine.id` / `engine.model` | `copilot` / `claude-opus-5.5` (all 14 workflows) | Consistent Opus 5.5 reasoning model across analysis, article generation, real-time monitoring, and translation workflows. |
+| `engine.id` / `engine.model` | `copilot` / `claude-opus-5.5` (13 workflows); `claude-sonnet-4.6` (`news-translate`) | Opus 5.5 for analysis and article generation; Sonnet 4.6 for high-volume translation fan-out. |
 | `engine.mcp.session-timeout` | ~~`1h`~~ **removed** | Was rejected by MCP Gateway v0.3.1; current gh-aw v0.90.1 lock files use MCP Gateway v0.4.27. Re-acceptance has not been validated on this repo, so the field stays removed until verified. |
 | `tools.github.toolsets` | `[all]` | Full GitHub MCP surface (issues, PRs, repos, code-search, actions, releases, discussions, …); see [`github-tools.md`](https://github.com/github/gh-aw/blob/main/docs/src/content/docs/reference/github-tools.md) |
 | `tools.bash` / `tools.edit` / `tools.agentic-workflows` | enabled | Full local tool surface; non-MCP public sources are fetched through allowlisted CLI/scripts in `bash`. Copilot `web-fetch` is omitted because hosted requests do not follow `network.allowed`. |
