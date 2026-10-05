@@ -1,5 +1,5 @@
 {
-  "version": "1.0.91",
+  "version": "1.0.92",
   "name": "riksdagsmonitor",
   "dependencies": {
     "@eslint/js": {
@@ -8,7 +8,7 @@
       "overridden": false,
       "dependencies": {
         "eslint": {
-          "version": "10.11.0"
+          "version": "10.12.0"
         }
       }
     },
@@ -2020,8 +2020,8 @@
       }
     },
     "eslint": {
-      "version": "10.11.0",
-      "resolved": "https://registry.npmjs.org/eslint/-/eslint-10.11.0.tgz",
+      "version": "10.12.0",
+      "resolved": "https://registry.npmjs.org/eslint/-/eslint-10.12.0.tgz",
       "overridden": false,
       "dependencies": {
         "@eslint-community/eslint-utils": {
@@ -2035,7 +2035,7 @@
               "overridden": false
             },
             "eslint": {
-              "version": "10.11.0"
+              "version": "10.12.0"
             }
           }
         },
@@ -3102,8 +3102,8 @@
       }
     },
     "mermaid": {
-      "version": "12.0.0",
-      "resolved": "https://registry.npmjs.org/mermaid/-/mermaid-12.0.0.tgz",
+      "version": "12.1.0",
+      "resolved": "https://registry.npmjs.org/mermaid/-/mermaid-12.1.0.tgz",
       "overridden": false,
       "dependencies": {
         "@braintree/sanitize-url": {
@@ -3173,13 +3173,13 @@
           }
         },
         "@mermaid-js/parser": {
-          "version": "2.0.0",
-          "resolved": "https://registry.npmjs.org/@mermaid-js/parser/-/parser-2.0.0.tgz",
+          "version": "2.0.1",
+          "resolved": "https://registry.npmjs.org/@mermaid-js/parser/-/parser-2.0.1.tgz",
           "overridden": false,
           "dependencies": {
             "@chevrotain/types": {
-              "version": "11.1.2",
-              "resolved": "https://registry.npmjs.org/@chevrotain/types/-/types-11.1.2.tgz",
+              "version": "13.2.0",
+              "resolved": "https://registry.npmjs.org/@chevrotain/types/-/types-13.2.0.tgz",
               "overridden": false
             }
           }
@@ -3201,59 +3201,44 @@
           }
         },
         "chevrotain": {
-          "version": "11.1.2",
-          "resolved": "https://registry.npmjs.org/chevrotain/-/chevrotain-11.1.2.tgz",
+          "version": "13.2.0",
+          "resolved": "https://registry.npmjs.org/chevrotain/-/chevrotain-13.2.0.tgz",
           "overridden": false,
           "dependencies": {
             "@chevrotain/cst-dts-gen": {
-              "version": "11.1.2",
-              "resolved": "https://registry.npmjs.org/@chevrotain/cst-dts-gen/-/cst-dts-gen-11.1.2.tgz",
+              "version": "13.2.0",
+              "resolved": "https://registry.npmjs.org/@chevrotain/cst-dts-gen/-/cst-dts-gen-13.2.0.tgz",
               "overridden": false,
               "dependencies": {
                 "@chevrotain/gast": {
-                  "version": "11.1.2"
+                  "version": "13.2.0"
                 },
                 "@chevrotain/types": {
-                  "version": "11.1.2"
-                },
-                "lodash-es": {
-                  "version": "4.17.23",
-                  "resolved": "https://registry.npmjs.org/lodash-es/-/lodash-es-4.17.23.tgz",
-                  "overridden": false
+                  "version": "13.2.0"
                 }
               }
             },
             "@chevrotain/gast": {
-              "version": "11.1.2",
-              "resolved": "https://registry.npmjs.org/@chevrotain/gast/-/gast-11.1.2.tgz",
+              "version": "13.2.0",
+              "resolved": "https://registry.npmjs.org/@chevrotain/gast/-/gast-13.2.0.tgz",
               "overridden": false,
               "dependencies": {
                 "@chevrotain/types": {
-                  "version": "11.1.2"
-                },
-                "lodash-es": {
-                  "version": "4.17.23",
-                  "resolved": "https://registry.npmjs.org/lodash-es/-/lodash-es-4.17.23.tgz",
-                  "overridden": false
+                  "version": "13.2.0"
                 }
               }
             },
             "@chevrotain/regexp-to-ast": {
-              "version": "11.1.2",
-              "resolved": "https://registry.npmjs.org/@chevrotain/regexp-to-ast/-/regexp-to-ast-11.1.2.tgz",
+              "version": "13.2.0",
+              "resolved": "https://registry.npmjs.org/@chevrotain/regexp-to-ast/-/regexp-to-ast-13.2.0.tgz",
               "overridden": false
             },
             "@chevrotain/types": {
-              "version": "11.1.2"
+              "version": "13.2.0"
             },
             "@chevrotain/utils": {
-              "version": "11.1.2",
-              "resolved": "https://registry.npmjs.org/@chevrotain/utils/-/utils-11.1.2.tgz",
-              "overridden": false
-            },
-            "lodash-es": {
-              "version": "4.17.23",
-              "resolved": "https://registry.npmjs.org/lodash-es/-/lodash-es-4.17.23.tgz",
+              "version": "13.2.0",
+              "resolved": "https://registry.npmjs.org/@chevrotain/utils/-/utils-13.2.0.tgz",
               "overridden": false
             }
           }
@@ -5482,7 +5467,7 @@
                   "version": "4.4.3"
                 },
                 "eslint": {
-                  "version": "10.11.0"
+                  "version": "10.12.0"
                 },
                 "ts-api-utils": {
                   "version": "2.5.0"
@@ -5509,7 +5494,7 @@
               }
             },
             "eslint": {
-              "version": "10.11.0"
+              "version": "10.12.0"
             },
             "ignore": {
               "version": "7.0.10",
@@ -5557,7 +5542,7 @@
               "version": "4.4.3"
             },
             "eslint": {
-              "version": "10.11.0"
+              "version": "10.12.0"
             },
             "typescript": {
               "version": "6.0.3"
@@ -5642,7 +5627,7 @@
               "version": "8.71.0"
             },
             "eslint": {
-              "version": "10.11.0"
+              "version": "10.12.0"
             },
             "typescript": {
               "version": "6.0.3"
@@ -5650,7 +5635,7 @@
           }
         },
         "eslint": {
-          "version": "10.11.0"
+          "version": "10.12.0"
         },
         "typescript": {
           "version": "6.0.3"
