@@ -219,7 +219,7 @@ jobs:
           echo "✅ Release artifacts created"
 
       - name: Upload dist artifact
-        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: dist
           path: dist/
@@ -227,7 +227,7 @@ jobs:
           if-no-files-found: error
 
       - name: Upload release zip
-        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: release-zip
           path: |
@@ -298,7 +298,7 @@ jobs:
           fi
 
       - name: Upload coverage + test reports
-        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         if: always()
         with:
           name: unit-test-reports
@@ -342,7 +342,7 @@ jobs:
         run: npm run typedoc
 
       - name: Upload typedoc artifact
-        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: typedoc
           path: api/
@@ -434,7 +434,7 @@ jobs:
       # gallery work identically to the pre-refactor pipeline.
       - name: Upload cypress artifacts
         if: always()
-        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: cypress-artifacts-${{ matrix.shard.name }}
           path: builds/cypress/
@@ -493,7 +493,7 @@ jobs:
         run: cp ${{ steps.attestsbom.outputs.bundle-path }} riksdagsmonitor-${{ needs.prepare.outputs.version }}.spdx.json.intoto.jsonl
 
       - name: Upload security artifacts
-        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: security-artifacts
           path: |
