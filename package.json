@@ -208,7 +208,7 @@
     "remark-parse": "11.0.0",
     "remark-rehype": "11.1.2",
     "sharp": "0.35.5",
-    "start-server-and-test": "3.0.12",
+    "start-server-and-test": "3.0.13",
     "tsx": "4.23.15",
     "typedoc": "0.28.20",
     "typedoc-plugin-mdn-links": "5.1.1",
