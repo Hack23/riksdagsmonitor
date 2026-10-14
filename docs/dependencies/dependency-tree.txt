@@ -1,4 +1,4 @@
-riksdagsmonitor@1.0.94 /home/runner/work/riksdagsmonitor/riksdagsmonitor
+riksdagsmonitor@1.0.95 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 ├─┬ @eslint/js@10.0.1
 │ └── eslint@10.12.0 deduped
 ├─┬ @types/d3@7.4.3
@@ -51,36 +51,36 @@ riksdagsmonitor@1.0.94 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ └── undici-types@8.9.0
 ├─┬ @types/papaparse@5.5.2
 │ └── @types/node@26.6.5 deduped
-├─┬ @vitest/coverage-v8@5.0.3
+├─┬ @vitest/coverage-v8@5.0.4
 │ ├── @bcoe/v8-coverage@1.0.2
-│ ├── UNMET OPTIONAL DEPENDENCY @vitest/browser@5.0.3
-│ ├── @vitest/istanbul-lib-coverage@1.0.1
-│ ├─┬ @vitest/istanbul-lib-report@1.0.1
-│ │ └── @vitest/istanbul-lib-coverage@1.0.1 deduped
-│ ├─┬ ast-v8-to-istanbul@1.0.5
+│ ├── UNMET OPTIONAL DEPENDENCY @vitest/browser@5.0.4
+│ ├── @vitest/istanbul-lib-coverage@1.0.2
+│ ├─┬ @vitest/istanbul-lib-report@1.0.2
+│ │ └── @vitest/istanbul-lib-coverage@1.0.2 deduped
+│ ├─┬ ast-v8-to-istanbul@1.0.7
 │ │ ├─┬ @jridgewell/trace-mapping@0.3.31
 │ │ │ ├── @jridgewell/resolve-uri@3.1.2
 │ │ │ └── @jridgewell/sourcemap-codec@1.6.0 deduped
 │ │ ├─┬ estree-walker@3.0.3
 │ │ │ └── @types/estree@1.0.8 deduped
 │ │ └── js-tokens@10.0.0
-│ ├─┬ magicast@0.5.4
-│ │ ├─┬ @babel/parser@7.29.8
+│ ├─┬ magicast@0.5.5
+│ │ ├─┬ @babel/parser@7.29.9
 │ │ │ └── @babel/types@7.29.8 deduped
 │ │ ├─┬ @babel/types@7.29.8
 │ │ │ ├── @babel/helper-string-parser@7.29.7
 │ │ │ └── @babel/helper-validator-identifier@7.29.7
 │ │ └── source-map-js@1.2.2
-│ ├── obug@2.1.4
-│ ├── std-env@4.2.0
-│ ├── tinyrainbow@3.1.1
-│ └── vitest@5.0.3 deduped
-├─┬ @vitest/ui@5.0.3
-│ ├─┬ @vitest/utils@5.0.3
-│ │ ├─┬ @vitest/pretty-format@5.0.3
-│ │ │ └── tinyrainbow@3.1.1 deduped
+│ ├── obug@3.0.0
+│ ├── std-env@4.3.0
+│ ├── tinyrainbow@3.2.0
+│ └── vitest@5.0.4 deduped
+├─┬ @vitest/ui@5.0.4
+│ ├─┬ @vitest/utils@5.0.4
+│ │ ├─┬ @vitest/pretty-format@5.0.4
+│ │ │ └── tinyrainbow@3.2.0 deduped
 │ │ ├── convert-source-map@2.0.0
-│ │ └── tinyrainbow@3.1.1 deduped
+│ │ └── tinyrainbow@3.2.0 deduped
 │ ├── fflate@0.8.3
 │ ├── flatted@3.4.4
 │ ├── pathe@2.0.3
@@ -88,8 +88,8 @@ riksdagsmonitor@1.0.94 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ │ ├── @polka/url@1.0.0-next.29
 │ │ ├── mrmime@2.0.1
 │ │ └── totalist@3.0.1
-│ ├── tinyrainbow@3.1.1 deduped
-│ └── vitest@5.0.3 deduped
+│ ├── tinyrainbow@3.2.0 deduped
+│ └── vitest@5.0.4 deduped
 ├─┬ ajv-formats@3.0.1
 │ └── ajv@8.20.0 deduped
 ├─┬ ajv@8.20.0
@@ -518,7 +518,7 @@ riksdagsmonitor@1.0.94 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ │ │ └── is-extendable@0.1.1
 │ │ └── kind-of@6.0.3 deduped
 │ └── strip-bom-string@1.0.0
-├─┬ happy-dom@20.14.6
+├─┬ happy-dom@21.0.1
 │ ├── @types/node@26.6.5 deduped
 │ ├── @types/whatwg-mimetype@3.0.2
 │ ├─┬ @types/ws@8.18.1
@@ -639,12 +639,12 @@ riksdagsmonitor@1.0.94 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ ├── unbash@5.0.0
 │ ├── yaml@2.9.1
 │ └── zod@4.6.5
-├─┬ mermaid@12.1.0
+├─┬ mermaid@12.2.0
 │ ├── @braintree/sanitize-url@7.1.2
 │ ├─┬ @iconify/utils@3.1.0
 │ │ ├─┬ @antfu/install-pkg@1.1.0
 │ │ │ ├── package-manager-detector@1.8.0 deduped
-│ │ │ └── tinyexec@1.3.0 deduped
+│ │ │ └── tinyexec@1.3.1 deduped
 │ │ ├── @iconify/types@2.0.0
 │ │ └─┬ mlly@1.8.2
 │ │   ├── acorn@8.16.0 deduped
@@ -692,8 +692,8 @@ riksdagsmonitor@1.0.94 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ │ └── @types/trusted-types@2.0.7
 │ ├── elkjs@0.9.3
 │ ├── es-toolkit@1.46.1
-│ ├─┬ katex@0.16.47
-│ │ └── commander@8.3.0
+│ ├─┬ katex@0.18.10
+│ │ └── commander@15.0.0
 │ ├── khroma@2.1.0
 │ ├── marked@16.4.2
 │ ├─┬ roughjs@4.6.6
@@ -1239,24 +1239,24 @@ riksdagsmonitor@1.0.94 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ ├── UNMET OPTIONAL DEPENDENCY @typescript/typescript-sunos-x64@7.0.2
 │ ├── UNMET OPTIONAL DEPENDENCY @typescript/typescript-win32-arm64@7.0.2
 │ └── UNMET OPTIONAL DEPENDENCY @typescript/typescript-win32-x64@7.0.2
-├─┬ typescript-eslint@8.71.1
-│ ├─┬ @typescript-eslint/eslint-plugin@8.71.1
+├─┬ typescript-eslint@8.71.2
+│ ├─┬ @typescript-eslint/eslint-plugin@8.71.2
 │ │ ├── @eslint-community/regexpp@4.12.2 deduped
-│ │ ├── @typescript-eslint/parser@8.71.1 deduped
-│ │ ├─┬ @typescript-eslint/scope-manager@8.71.1
-│ │ │ ├── @typescript-eslint/types@8.71.1 deduped
-│ │ │ └── @typescript-eslint/visitor-keys@8.71.1 deduped
-│ │ ├─┬ @typescript-eslint/type-utils@8.71.1
-│ │ │ ├── @typescript-eslint/types@8.71.1 deduped
-│ │ │ ├── @typescript-eslint/typescript-estree@8.71.1 deduped
-│ │ │ ├── @typescript-eslint/utils@8.71.1 deduped
+│ │ ├── @typescript-eslint/parser@8.71.2 deduped
+│ │ ├─┬ @typescript-eslint/scope-manager@8.71.2
+│ │ │ ├── @typescript-eslint/types@8.71.2 deduped
+│ │ │ └── @typescript-eslint/visitor-keys@8.71.2 deduped
+│ │ ├─┬ @typescript-eslint/type-utils@8.71.2
+│ │ │ ├── @typescript-eslint/types@8.71.2 deduped
+│ │ │ ├── @typescript-eslint/typescript-estree@8.71.2 deduped
+│ │ │ ├── @typescript-eslint/utils@8.71.2 deduped
 │ │ │ ├── debug@4.4.3 deduped
 │ │ │ ├── eslint@10.12.0 deduped
 │ │ │ ├── ts-api-utils@2.5.0 deduped
 │ │ │ └── typescript@6.0.3 deduped
-│ │ ├── @typescript-eslint/utils@8.71.1 deduped
-│ │ ├─┬ @typescript-eslint/visitor-keys@8.71.1
-│ │ │ ├── @typescript-eslint/types@8.71.1 deduped
+│ │ ├── @typescript-eslint/utils@8.71.2 deduped
+│ │ ├─┬ @typescript-eslint/visitor-keys@8.71.2
+│ │ │ ├── @typescript-eslint/types@8.71.2 deduped
 │ │ │ └── eslint-visitor-keys@5.0.1 deduped
 │ │ ├── eslint@10.12.0 deduped
 │ │ ├── ignore@7.0.12
@@ -1264,35 +1264,35 @@ riksdagsmonitor@1.0.94 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ │ ├─┬ ts-api-utils@2.5.0
 │ │ │ └── typescript@6.0.3 deduped
 │ │ └── typescript@6.0.3 deduped
-│ ├─┬ @typescript-eslint/parser@8.71.1
-│ │ ├── @typescript-eslint/scope-manager@8.71.1 deduped
-│ │ ├── @typescript-eslint/types@8.71.1
-│ │ ├── @typescript-eslint/typescript-estree@8.71.1 deduped
-│ │ ├── @typescript-eslint/visitor-keys@8.71.1 deduped
+│ ├─┬ @typescript-eslint/parser@8.71.2
+│ │ ├── @typescript-eslint/scope-manager@8.71.2 deduped
+│ │ ├── @typescript-eslint/types@8.71.2
+│ │ ├── @typescript-eslint/typescript-estree@8.71.2 deduped
+│ │ ├── @typescript-eslint/visitor-keys@8.71.2 deduped
 │ │ ├── debug@4.4.3 deduped
 │ │ ├── eslint@10.12.0 deduped
 │ │ └── typescript@6.0.3 deduped
-│ ├─┬ @typescript-eslint/typescript-estree@8.71.1
-│ │ ├─┬ @typescript-eslint/project-service@8.71.1
-│ │ │ ├── @typescript-eslint/tsconfig-utils@8.71.1 deduped
-│ │ │ ├── @typescript-eslint/types@8.71.1 deduped
+│ ├─┬ @typescript-eslint/typescript-estree@8.71.2
+│ │ ├─┬ @typescript-eslint/project-service@8.71.2
+│ │ │ ├── @typescript-eslint/tsconfig-utils@8.71.2 deduped
+│ │ │ ├── @typescript-eslint/types@8.71.2 deduped
 │ │ │ ├── debug@4.4.3 deduped
 │ │ │ └── typescript@6.0.3 deduped
-│ │ ├─┬ @typescript-eslint/tsconfig-utils@8.71.1
+│ │ ├─┬ @typescript-eslint/tsconfig-utils@8.71.2
 │ │ │ └── typescript@6.0.3 deduped
-│ │ ├── @typescript-eslint/types@8.71.1 deduped
-│ │ ├── @typescript-eslint/visitor-keys@8.71.1 deduped
+│ │ ├── @typescript-eslint/types@8.71.2 deduped
+│ │ ├── @typescript-eslint/visitor-keys@8.71.2 deduped
 │ │ ├── debug@4.4.3 deduped
 │ │ ├── minimatch@10.2.4 deduped
 │ │ ├── semver@7.8.5 deduped
 │ │ ├── tinyglobby@0.2.17 deduped
 │ │ ├── ts-api-utils@2.5.0 deduped
 │ │ └── typescript@6.0.3 deduped
-│ ├─┬ @typescript-eslint/utils@8.71.1
+│ ├─┬ @typescript-eslint/utils@8.71.2
 │ │ ├── @eslint-community/eslint-utils@4.9.1 deduped
-│ │ ├── @typescript-eslint/scope-manager@8.71.1 deduped
-│ │ ├── @typescript-eslint/types@8.71.1 deduped
-│ │ ├── @typescript-eslint/typescript-estree@8.71.1 deduped
+│ │ ├── @typescript-eslint/scope-manager@8.71.2 deduped
+│ │ ├── @typescript-eslint/types@8.71.2 deduped
+│ │ ├── @typescript-eslint/typescript-estree@8.71.2 deduped
 │ │ ├── eslint@10.12.0 deduped
 │ │ └── typescript@6.0.3 deduped
 │ ├── eslint@10.12.0 deduped
@@ -1353,38 +1353,38 @@ riksdagsmonitor@1.0.94 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ ├── tinyglobby@0.2.17 deduped
 │ ├── tsx@4.23.15 deduped
 │ └── yaml@2.9.1 deduped
-├─┬ vitest@5.0.3
+├─┬ vitest@5.0.4
 │ ├── UNMET OPTIONAL DEPENDENCY @edge-runtime/vm@*
 │ ├── UNMET OPTIONAL DEPENDENCY @opentelemetry/api@^1.9.0
 │ ├─┬ @types/chai@5.2.3
 │ │ ├── @types/deep-eql@4.0.2
 │ │ └── assertion-error@2.0.1
 │ ├── @types/node@26.6.5 deduped
-│ ├── UNMET OPTIONAL DEPENDENCY @vitest/browser-playwright@5.0.3
-│ ├── UNMET OPTIONAL DEPENDENCY @vitest/browser-preview@5.0.3
+│ ├── UNMET OPTIONAL DEPENDENCY @vitest/browser-playwright@5.0.4
+│ ├── UNMET OPTIONAL DEPENDENCY @vitest/browser-preview@5.0.4
 │ ├── UNMET OPTIONAL DEPENDENCY @vitest/browser-webdriverio@^5.0.0-beta.5 || >=5.0.0
-│ ├── UNMET OPTIONAL DEPENDENCY @vitest/coverage-istanbul@5.0.3
-│ ├── @vitest/coverage-v8@5.0.3 deduped
-│ ├─┬ @vitest/mocker@5.0.3
+│ ├── UNMET OPTIONAL DEPENDENCY @vitest/coverage-istanbul@5.0.4
+│ ├── @vitest/coverage-v8@5.0.4 deduped
+│ ├─┬ @vitest/mocker@5.0.4
 │ │ ├── @jridgewell/trace-mapping@0.3.31 deduped
-│ │ ├── @vitest/spy@5.0.3
+│ │ ├── @vitest/spy@5.0.4
 │ │ ├── estree-walker@3.0.3 deduped
-│ │ ├── magic-string@1.4.2 deduped
-│ │ ├── UNMET OPTIONAL DEPENDENCY msw@^2.4.9
+│ │ ├── magic-string@1.4.3 deduped
+│ │ ├── UNMET OPTIONAL DEPENDENCY msw@^2.4.9 || ^3.0.0
 │ │ └── vite@8.3.4 deduped
-│ ├── @vitest/ui@5.0.3 deduped
-│ ├── chai@6.2.2
+│ ├── @vitest/ui@5.0.4 deduped
+│ ├── chai@6.3.0
 │ ├── es-module-lexer@2.3.2
 │ ├── expect-type@1.4.0
-│ ├── happy-dom@20.14.6 deduped
+│ ├── happy-dom@21.0.1 deduped
 │ ├── UNMET OPTIONAL DEPENDENCY jsdom@*
-│ ├─┬ magic-string@1.4.2
+│ ├─┬ magic-string@1.4.3
 │ │ └── @jridgewell/sourcemap-codec@1.6.0
-│ ├── obug@2.1.4 deduped
+│ ├── obug@3.0.0 deduped
 │ ├── picomatch@4.0.7 deduped
-│ ├── std-env@4.2.0 deduped
-│ ├── tinybench@6.1.4
-│ ├── tinyexec@1.3.0
+│ ├── std-env@4.3.0 deduped
+│ ├── tinybench@6.2.2
+│ ├── tinyexec@1.3.1
 │ ├── tinyglobby@0.2.17 deduped
 │ ├── vite@8.3.4 deduped
 │ └── why-is-node-running@3.2.1
