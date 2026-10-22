@@ -543,7 +543,7 @@ jobs:
           node-version: '26'
           package-manager-cache: false
       - name: Setup Ruby
-        uses: ruby/setup-ruby@b1da4809b005e0178fe08a1d57317bffc00b7b4c # v1.332.0
+        uses: ruby/setup-ruby@e1bd6146574da5e0795075b5319b300edb30c5b0 # v1.333.0
         with:
           ruby-version: '3.3'
       - name: Create gh-aw temp directory
