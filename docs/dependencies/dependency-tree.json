@@ -1,5 +1,5 @@
 {
-  "version": "1.0.97",
+  "version": "1.0.98",
   "name": "riksdagsmonitor",
   "dependencies": {
     "@eslint/js": {
@@ -501,8 +501,8 @@
       }
     },
     "chart.js": {
-      "version": "4.5.1",
-      "resolved": "https://registry.npmjs.org/chart.js/-/chart.js-4.5.1.tgz",
+      "version": "4.6.1",
+      "resolved": "https://registry.npmjs.org/chart.js/-/chart.js-4.6.1.tgz",
       "overridden": false,
       "dependencies": {
         "@kurkle/color": {
@@ -518,7 +518,7 @@
       "overridden": false,
       "dependencies": {
         "chart.js": {
-          "version": "4.5.1"
+          "version": "4.6.1"
         }
       }
     },
@@ -3342,8 +3342,8 @@
           "version": "1.11.23"
         },
         "dompurify": {
-          "version": "3.4.16",
-          "resolved": "https://registry.npmjs.org/dompurify/-/dompurify-3.4.16.tgz",
+          "version": "3.4.17",
+          "resolved": "https://registry.npmjs.org/dompurify/-/dompurify-3.4.17.tgz",
           "overridden": false,
           "dependencies": {
             "@types/trusted-types": {
@@ -5722,8 +5722,8 @@
       }
     },
     "vite": {
-      "version": "8.3.4",
-      "resolved": "https://registry.npmjs.org/vite/-/vite-8.3.4.tgz",
+      "version": "8.3.5",
+      "resolved": "https://registry.npmjs.org/vite/-/vite-8.3.5.tgz",
       "overridden": false,
       "dependencies": {
         "@types/node": {
@@ -5745,8 +5745,8 @@
           "version": "4.0.7"
         },
         "postcss": {
-          "version": "8.5.29",
-          "resolved": "https://registry.npmjs.org/postcss/-/postcss-8.5.29.tgz",
+          "version": "8.5.31",
+          "resolved": "https://registry.npmjs.org/postcss/-/postcss-8.5.31.tgz",
           "overridden": false,
           "dependencies": {
             "nanoid": {
@@ -5765,14 +5765,12 @@
           }
         },
         "rolldown": {
-          "version": "1.2.12",
-          "resolved": "https://registry.npmjs.org/rolldown/-/rolldown-1.2.12.tgz",
+          "version": "1.2.14",
+          "resolved": "https://registry.npmjs.org/rolldown/-/rolldown-1.2.14.tgz",
           "overridden": false,
           "dependencies": {
             "@oxc-project/types": {
-              "version": "0.152.0",
-              "resolved": "https://registry.npmjs.org/@oxc-project/types/-/types-0.152.0.tgz",
-              "overridden": false
+              "version": "0.154.0"
             },
             "@rolldown/binding-android-arm-eabi": {},
             "@rolldown/binding-android-arm64": {},
@@ -5785,8 +5783,8 @@
             "@rolldown/binding-linux-ppc64-gnu": {},
             "@rolldown/binding-linux-s390x-gnu": {},
             "@rolldown/binding-linux-x64-gnu": {
-              "version": "1.2.12",
-              "resolved": "https://registry.npmjs.org/@rolldown/binding-linux-x64-gnu/-/binding-linux-x64-gnu-1.2.12.tgz",
+              "version": "1.2.14",
+              "resolved": "https://registry.npmjs.org/@rolldown/binding-linux-x64-gnu/-/binding-linux-x64-gnu-1.2.14.tgz",
               "overridden": false
             },
             "@rolldown/binding-linux-x64-musl": {},
@@ -5873,7 +5871,7 @@
             },
             "msw": {},
             "vite": {
-              "version": "8.3.4"
+              "version": "8.3.5"
             }
           }
         },
@@ -5934,7 +5932,7 @@
           "version": "0.2.17"
         },
         "vite": {
-          "version": "8.3.4"
+          "version": "8.3.5"
         },
         "why-is-node-running": {
           "version": "3.2.1",
