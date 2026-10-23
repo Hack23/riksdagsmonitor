@@ -35,15 +35,15 @@
       "version": "v7.0.2",
       "sha": "cf430e030ddbb5b0abf93d22962f4752f3646cd9"
     },
-    "github/gh-aw-actions/setup-cli@v0.93.2": {
+    "github/gh-aw-actions/setup-cli@v0.90.1": {
       "repo": "github/gh-aw-actions/setup-cli",
-      "version": "v0.93.2",
-      "sha": "d9128eb3ea40c18b77c76184eda03c0ff2608d79"
+      "version": "v0.90.1",
+      "sha": "7c1d4b7ab319216ef4a931cc3dcb0d7245144ff1"
     },
-    "github/gh-aw-actions/setup@v0.93.2": {
+    "github/gh-aw-actions/setup@v0.90.1": {
       "repo": "github/gh-aw-actions/setup",
-      "version": "v0.93.2",
-      "sha": "d9128eb3ea40c18b77c76184eda03c0ff2608d79"
+      "version": "v0.90.1",
+      "sha": "7c1d4b7ab319216ef4a931cc3dcb0d7245144ff1"
     },
     "ruby/setup-ruby@v1.334.0": {
       "repo": "ruby/setup-ruby",
@@ -54,8 +54,8 @@
   "containers": {
     "alpine:latest": {
       "image": "alpine:latest",
-      "digest": "sha256:294b683cb724975bec92580e1e685676bd4b50bda910ddb8c51d4cabeaec77e6",
-      "pinned_image": "alpine:latest@sha256:294b683cb724975bec92580e1e685676bd4b50bda910ddb8c51d4cabeaec77e6"
+      "digest": "sha256:be2656061b536c1883c4034790e21d0a09c5aaaf51968b89368a3c0371ea2c9a",
+      "pinned_image": "alpine:latest@sha256:be2656061b536c1883c4034790e21d0a09c5aaaf51968b89368a3c0371ea2c9a"
     },
     "ghcr.io/github/gh-aw-firewall/agent:0.27.44": {
       "image": "ghcr.io/github/gh-aw-firewall/agent:0.27.44",
@@ -109,8 +109,8 @@
     },
     "ghcr.io/github/gh-aw-node": {
       "image": "ghcr.io/github/gh-aw-node",
-      "digest": "sha256:11c2c544876cdbaffefe0f7f1283b74838c209654b4934a78e23ed11f750490f",
-      "pinned_image": "ghcr.io/github/gh-aw-node@sha256:11c2c544876cdbaffefe0f7f1283b74838c209654b4934a78e23ed11f750490f"
+      "digest": "sha256:23746305eeded20dc2726ab18bb081962d66ee3b2e09a54291afd1869ab3ef6d",
+      "pinned_image": "ghcr.io/github/gh-aw-node@sha256:23746305eeded20dc2726ab18bb081962d66ee3b2e09a54291afd1869ab3ef6d"
     },
     "ghcr.io/github/github-mcp-server:v2.0.2": {
       "image": "ghcr.io/github/github-mcp-server:v2.0.2",
@@ -119,8 +119,8 @@
     },
     "node:26-alpine": {
       "image": "node:26-alpine",
-      "digest": "sha256:0b36e8c136b94cd4fcf02188228e76c31ad5872eef3fec8cbd2eee500cfd9e80",
-      "pinned_image": "node:26-alpine@sha256:0b36e8c136b94cd4fcf02188228e76c31ad5872eef3fec8cbd2eee500cfd9e80"
+      "digest": "sha256:40cd011b55415bc894e45b02fdd5a5dfde056921b7d23a64c74f80497af48797",
+      "pinned_image": "node:26-alpine@sha256:40cd011b55415bc894e45b02fdd5a5dfde056921b7d23a64c74f80497af48797"
     }
   }
 }
