@@ -35,15 +35,15 @@
       "version": "v7.0.2",
       "sha": "cf430e030ddbb5b0abf93d22962f4752f3646cd9"
     },
-    "github/gh-aw-actions/setup-cli@v0.90.1": {
+    "github/gh-aw-actions/setup-cli@v0.93.2": {
       "repo": "github/gh-aw-actions/setup-cli",
-      "version": "v0.90.1",
-      "sha": "7c1d4b7ab319216ef4a931cc3dcb0d7245144ff1"
+      "version": "v0.93.2",
+      "sha": "d9128eb3ea40c18b77c76184eda03c0ff2608d79"
     },
-    "github/gh-aw-actions/setup@v0.90.1": {
+    "github/gh-aw-actions/setup@v0.93.2": {
       "repo": "github/gh-aw-actions/setup",
-      "version": "v0.90.1",
-      "sha": "7c1d4b7ab319216ef4a931cc3dcb0d7245144ff1"
+      "version": "v0.93.2",
+      "sha": "d9128eb3ea40c18b77c76184eda03c0ff2608d79"
     },
     "ruby/setup-ruby@v1.334.0": {
       "repo": "ruby/setup-ruby",
