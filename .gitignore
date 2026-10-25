@@ -56,27 +56,27 @@ builds/
 # pnpm-lock.yaml
 
 # News metadata (runtime state, not versioned)
-news/metadata/generation-result.json
-news/metadata/last-generation.json
+#news/metadata/generation-result.json
+#news/metadata/last-generation.json
 scripts/__pycache__/
 
 # Build-time generated files (created by prebuild script, NOT committed)
 # These caused constant merge conflicts when committed by parallel agent PRs.
 # They are regenerated at build time via: npm run prebuild
-/sitemap.xml
-/news/index.html
-/news/index_*.html
-/data/news-articles.json
+#/sitemap.xml
+#/news/index.html
+#/news/index_*.html
+#/data/news-articles.json
 # IMF connectivity pre-flight artifacts (regenerated at the start of every
 # news-* workflow by scripts/check-imf-connectivity.ts; transient).
-/data/imf-context.json
-/data/imf-unavailable.flag
-/data/runtime/
-/rss.xml
-/sitemap*
-dashboard-initial.png
-/api/
-current-*.png
+#/data/imf-context.json
+#/data/imf-unavailable.flag
+#/data/runtime/
+#/rss.xml
+#/sitemap*
+#dashboard-initial.png
+#/api/
+#current-*.png
 
 # Workflow lock files (runtime artifacts, not committed)
 news/metadata/locks/*.lock/
