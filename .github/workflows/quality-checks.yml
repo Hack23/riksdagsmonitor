@@ -19,11 +19,24 @@ jobs:
           egress-policy: block
           allowed-endpoints: >
             api.github.com:443
+            cia.sourceforge.io:443
             codeload.github.com:443
+            data.riksdagen.se:443
+            data.worldbank.org:443
             github.com:443
             nodejs.org:443
             objects.githubusercontent.com:443
+            raw.githubusercontent.com:443
             registry.npmjs.org:443
+            riksdagsmonitor.com:443
+            www.esv.se:443
+            www.hack23.com:443
+            www.linkedin.com:443
+            www.riksdagen.se:443
+            www.val.se:443
+            *.blob.core.windows.net:443
+            download.cypress.io:443
+            release-assets.githubusercontent.com:443
 
       - name: Checkout repository
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -74,11 +87,24 @@ jobs:
           egress-policy: block
           allowed-endpoints: >
             api.github.com:443
+            cia.sourceforge.io:443
             codeload.github.com:443
+            data.riksdagen.se:443
+            data.worldbank.org:443
             github.com:443
             nodejs.org:443
             objects.githubusercontent.com:443
+            raw.githubusercontent.com:443
             registry.npmjs.org:443
+            riksdagsmonitor.com:443
+            www.esv.se:443
+            www.hack23.com:443
+            www.linkedin.com:443
+            www.riksdagen.se:443
+            www.val.se:443
+            *.blob.core.windows.net:443
+            download.cypress.io:443
+            release-assets.githubusercontent.com:443
 
       - name: Checkout repository
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -171,6 +197,9 @@ jobs:
             www.linkedin.com:443
             www.riksdagen.se:443
             www.val.se:443
+            *.blob.core.windows.net:443
+            download.cypress.io:443
+            release-assets.githubusercontent.com:443
 
       - name: Checkout repository
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -295,6 +324,26 @@ jobs:
         uses: step-security/harden-runner@dc2769abcc0fcfbadfc1df54081c1608579ef6b2 # v2.22.2
         with:
           egress-policy: block
+          allowed-endpoints: >
+            api.github.com:443
+            cia.sourceforge.io:443
+            codeload.github.com:443
+            data.riksdagen.se:443
+            data.worldbank.org:443
+            github.com:443
+            nodejs.org:443
+            objects.githubusercontent.com:443
+            raw.githubusercontent.com:443
+            registry.npmjs.org:443
+            riksdagsmonitor.com:443
+            www.esv.se:443
+            www.hack23.com:443
+            www.linkedin.com:443
+            www.riksdagen.se:443
+            www.val.se:443
+            *.blob.core.windows.net:443
+            download.cypress.io:443
+            release-assets.githubusercontent.com:443
 
       - name: Quality Check Summary
         run: |
