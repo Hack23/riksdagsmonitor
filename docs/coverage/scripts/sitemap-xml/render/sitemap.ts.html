@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">91.6% </span>
+                <span class="strong">90.9% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>131/143</span>
+                <span class='fraction'>130/143</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">78.57% </span>
+                <span class="strong">77.14% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>55/70</span>
+                <span class='fraction'>54/70</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">93.7% </span>
+                <span class="strong">95.27% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>119/127</span>
+                <span class='fraction'>121/127</span>
             </div>
         
             
@@ -428,8 +428,8 @@
 <span class="cline-any cline-yes">17x</span>
 <span class="cline-any cline-yes">238x</span>
 <span class="cline-any cline-yes">238x</span>
-<span class="cline-any cline-yes">221x</span>
-<span class="cline-any cline-yes">221x</span>
+<span class="cline-any cline-yes">238x</span>
+<span class="cline-any cline-yes">238x</span>
 <span class="cline-any cline-yes">238x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -507,8 +507,8 @@
 <span class="cline-any cline-yes">238x</span>
 <span class="cline-any cline-yes">221x</span>
 <span class="cline-any cline-yes">221x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">221x</span>
+<span class="cline-any cline-yes">221x</span>
 <span class="cline-any cline-yes">221x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -539,20 +539,20 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">238x</span>
 <span class="cline-any cline-yes">17x</span>
-<span class="cline-any cline-yes">224x</span>
-<span class="cline-any cline-yes">224x</span>
+<span class="cline-any cline-yes">238x</span>
+<span class="cline-any cline-yes">238x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">17x</span>
-<span class="cline-any cline-yes">224x</span>
+<span class="cline-any cline-yes">238x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">17x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">238x</span>
-<span class="cline-any cline-yes">224x</span>
+<span class="cline-any cline-yes">238x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -560,14 +560,14 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">17x</span>
-<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-yes">17x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">238x</span>
 <span class="cline-any cline-yes">221x</span>
 <span class="cline-any cline-yes">221x</span>
-<span class="cline-any cline-yes">208x</span>
-<span class="cline-any cline-yes">208x</span>
+<span class="cline-any cline-yes">221x</span>
+<span class="cline-any cline-yes">221x</span>
 <span class="cline-any cline-yes">221x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -708,9 +708,9 @@ export function generateSitemap(): string {
   // so the existence check keeps the sitemap free of dead feed URLs).
   for (const lang of LANGUAGES) {
     const loc = lang === 'en' ? 'rss.xml' : `rss_${lang}.xml`;
-    if (!existsAtRoot(loc)) continue;
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (!existsAtRoot(loc)) <span class="cstat-no" title="statement not covered" >continue;</span>
     const rssMtime = getFileModTime(path.join(ROOT_DIR, loc));
-    const priority = lang === 'en' ? <span class="branch-0 cbranch-no" title="branch not covered" >'0.5' : '</span>0.4';
+    const priority = lang === 'en' ? '0.5' : '0.4';
     xml += generateUrlEntry(loc, rssMtime, 'daily', priority);
   }
 &nbsp;
@@ -787,9 +787,9 @@ export function generateSitemap(): string {
 &nbsp;
   LANGUAGES.filter((lang) =&gt; lang !== 'en').forEach((lang) =&gt; {
     const file = `sitemap_${lang}.html`;
-    <span class="missing-if-branch" title="else path not taken" >E</span>if (!existsAtRoot(file)) return;
-    const lastmod = <span class="cstat-no" title="statement not covered" >getFileModTime(path.join(ROOT_DIR, file));</span>
-    const priority = <span class="cstat-no" title="statement not covered" >lang === 'sv' ? '0.5' : '0.4';</span>
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (!existsAtRoot(file)) <span class="cstat-no" title="statement not covered" >return;</span>
+    const lastmod = getFileModTime(path.join(ROOT_DIR, file));
+    const priority = lang === 'sv' ? '0.5' : '0.4';
     xml += generateUrlEntry(file, lastmod, 'monthly', priority);
   });
 &nbsp;
@@ -828,7 +828,7 @@ export function generateSitemap(): string {
   });
   const newsIndexMaxMtime = newsIndexMtimes.length &gt; 0
     ? new Date(Math.max(...newsIndexMtimes.map((d) =&gt; d.getTime()))).toISOString()
-    : new Date(0).toISOString();
+    : <span class="branch-1 cbranch-no" title="branch not covered" >new Date(0).toISOString();</span>
 &nbsp;
   const newsIndexAlternates: HreflangAlternate[] = [
     ...LANGUAGES
@@ -840,13 +840,13 @@ export function generateSitemap(): string {
     { lang: 'x-default', href: 'news/' },
   ];
 &nbsp;
-  if (fs.existsSync(path.join(NEWS_DIR, 'index.html'))) {
+  <span class="missing-if-branch" title="else path not taken" >E</span>if (fs.existsSync(path.join(NEWS_DIR, 'index.html'))) {
     xml += generateUrlEntry('news/', newsIndexMaxMtime, 'daily', '0.9', newsIndexAlternates);
   }
 &nbsp;
   LANGUAGES.filter((lang) =&gt; lang !== 'en').forEach((lang) =&gt; {
     const file = newsIndexFileFor(lang);
-    if (!fs.existsSync(path.join(NEWS_DIR, file))) return;
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (!fs.existsSync(path.join(NEWS_DIR, file))) <span class="cstat-no" title="statement not covered" >return;</span>
     const lastmod = getFileModTime(path.join(NEWS_DIR, file));
     const priority = lang === 'sv' ? '0.9' : '0.7';
     xml += generateUrlEntry(`news/${file}`, lastmod, 'daily', priority);
@@ -913,7 +913,7 @@ export function generateSitemap(): string {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-10-23T19:05:16.596Z
+                at 2026-10-27T22:21:31.081Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>
