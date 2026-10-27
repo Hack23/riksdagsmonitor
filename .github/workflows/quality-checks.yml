@@ -24,6 +24,8 @@ jobs:
             data.riksdagen.se:443
             data.worldbank.org:443
             github.com:443
+            pipelines.actions.githubusercontent.com:443
+            results-receiver.actions.githubusercontent.com:443
             nodejs.org:443
             objects.githubusercontent.com:443
             raw.githubusercontent.com:443
@@ -92,6 +94,8 @@ jobs:
             data.riksdagen.se:443
             data.worldbank.org:443
             github.com:443
+            pipelines.actions.githubusercontent.com:443
+            results-receiver.actions.githubusercontent.com:443
             nodejs.org:443
             objects.githubusercontent.com:443
             raw.githubusercontent.com:443
@@ -187,6 +191,8 @@ jobs:
             data.riksdagen.se:443
             data.worldbank.org:443
             github.com:443
+            pipelines.actions.githubusercontent.com:443
+            results-receiver.actions.githubusercontent.com:443
             nodejs.org:443
             objects.githubusercontent.com:443
             raw.githubusercontent.com:443
@@ -331,6 +337,8 @@ jobs:
             data.riksdagen.se:443
             data.worldbank.org:443
             github.com:443
+            pipelines.actions.githubusercontent.com:443
+            results-receiver.actions.githubusercontent.com:443
             nodejs.org:443
             objects.githubusercontent.com:443
             raw.githubusercontent.com:443
