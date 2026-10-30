@@ -1,5 +1,5 @@
 {
-  "version": "1.0.99",
+  "version": "1.0.100",
   "name": "riksdagsmonitor",
   "dependencies": {
     "@eslint/js": {
@@ -245,8 +245,8 @@
       }
     },
     "@types/node": {
-      "version": "26.6.5",
-      "resolved": "https://registry.npmjs.org/@types/node/-/node-26.6.5.tgz",
+      "version": "26.6.6",
+      "resolved": "https://registry.npmjs.org/@types/node/-/node-26.6.6.tgz",
       "overridden": false,
       "dependencies": {
         "undici-types": {
@@ -262,7 +262,7 @@
       "overridden": false,
       "dependencies": {
         "@types/node": {
-          "version": "26.6.5"
+          "version": "26.6.6"
         }
       }
     },
@@ -523,8 +523,8 @@
       }
     },
     "cypress": {
-      "version": "16.2.0",
-      "resolved": "https://registry.npmjs.org/cypress/-/cypress-16.2.0.tgz",
+      "version": "16.2.1",
+      "resolved": "https://registry.npmjs.org/cypress/-/cypress-16.2.1.tgz",
       "overridden": false,
       "dependencies": {
         "@cypress/request": {
@@ -1641,8 +1641,8 @@
           }
         },
         "systeminformation": {
-          "version": "5.31.17",
-          "resolved": "https://registry.npmjs.org/systeminformation/-/systeminformation-5.31.17.tgz",
+          "version": "5.33.18",
+          "resolved": "https://registry.npmjs.org/systeminformation/-/systeminformation-5.33.18.tgz",
           "overridden": false
         },
         "tmp": {
@@ -2639,7 +2639,7 @@
       "overridden": false,
       "dependencies": {
         "@types/node": {
-          "version": "26.6.5"
+          "version": "26.6.6"
         },
         "@types/whatwg-mimetype": {
           "version": "3.0.2",
@@ -2652,7 +2652,7 @@
           "overridden": false,
           "dependencies": {
             "@types/node": {
-              "version": "26.6.5"
+              "version": "26.6.6"
             }
           }
         },
@@ -2662,7 +2662,7 @@
           "overridden": false,
           "dependencies": {
             "@types/node": {
-              "version": "26.6.5"
+              "version": "26.6.6"
             }
           }
         },
@@ -2955,8 +2955,8 @@
       }
     },
     "knip": {
-      "version": "6.43.0",
-      "resolved": "https://registry.npmjs.org/knip/-/knip-6.43.0.tgz",
+      "version": "6.44.0",
+      "resolved": "https://registry.npmjs.org/knip/-/knip-6.44.0.tgz",
       "overridden": false,
       "dependencies": {
         "formatly": {
@@ -5727,7 +5727,7 @@
       "overridden": false,
       "dependencies": {
         "@types/node": {
-          "version": "26.6.5"
+          "version": "26.6.6"
         },
         "@vitejs/devtools": {},
         "esbuild": {
@@ -5843,7 +5843,7 @@
           }
         },
         "@types/node": {
-          "version": "26.6.5"
+          "version": "26.6.6"
         },
         "@vitest/browser-playwright": {},
         "@vitest/browser-preview": {},
@@ -5955,8 +5955,8 @@
           "dependencies": {
             "@cfworker/json-schema": {},
             "@hono/node-server": {
-              "version": "1.19.17",
-              "resolved": "https://registry.npmjs.org/@hono/node-server/-/node-server-1.19.17.tgz",
+              "version": "2.1.5",
+              "resolved": "https://registry.npmjs.org/@hono/node-server/-/node-server-2.1.5.tgz",
               "overridden": false,
               "dependencies": {
                 "hono": {

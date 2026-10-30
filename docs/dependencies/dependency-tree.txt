@@ -1,4 +1,4 @@
-riksdagsmonitor@1.0.99 /home/runner/work/riksdagsmonitor/riksdagsmonitor
+riksdagsmonitor@1.0.100 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 ├─┬ @eslint/js@10.0.1
 │ └── eslint@10.13.0 deduped
 ├─┬ @types/d3@7.4.3
@@ -47,10 +47,10 @@ riksdagsmonitor@1.0.99 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │   └── @types/d3-selection@3.0.11 deduped
 ├─┬ @types/hast@3.0.5
 │ └── @types/unist@3.0.3
-├─┬ @types/node@26.6.5
+├─┬ @types/node@26.6.6
 │ └── undici-types@8.9.0
 ├─┬ @types/papaparse@5.5.2
-│ └── @types/node@26.6.5 deduped
+│ └── @types/node@26.6.6 deduped
 ├─┬ @vitest/coverage-v8@5.0.5
 │ ├── @bcoe/v8-coverage@1.0.2
 │ ├── UNMET OPTIONAL DEPENDENCY @vitest/browser@5.0.5
@@ -101,7 +101,7 @@ riksdagsmonitor@1.0.99 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ └── @kurkle/color@0.3.4
 ├─┬ chartjs-plugin-annotation@3.1.0
 │ └── chart.js@4.6.1 deduped
-├─┬ cypress@16.2.0
+├─┬ cypress@16.2.1
 │ ├─┬ @cypress/request@4.0.1
 │ │ ├── aws-sign2@0.7.0
 │ │ ├── aws4@1.13.2
@@ -319,7 +319,7 @@ riksdagsmonitor@1.0.99 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ │ └── throttleit@1.0.1
 │ ├─┬ supports-color@8.1.1
 │ │ └── has-flag@4.0.0
-│ ├── systeminformation@5.31.17
+│ ├── systeminformation@5.33.18
 │ ├── tmp@0.2.7
 │ ├── tree-kill@1.2.2
 │ ├── untildify@4.0.0
@@ -519,12 +519,12 @@ riksdagsmonitor@1.0.99 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ │ └── kind-of@6.0.3 deduped
 │ └── strip-bom-string@1.0.0
 ├─┬ happy-dom@21.0.4
-│ ├── @types/node@26.6.5 deduped
+│ ├── @types/node@26.6.6 deduped
 │ ├── @types/whatwg-mimetype@3.0.2
 │ ├─┬ @types/ws@8.18.1
-│ │ └── @types/node@26.6.5 deduped
+│ │ └── @types/node@26.6.6 deduped
 │ ├─┬ buffer-image-size@0.6.4
-│ │ └── @types/node@26.6.5 deduped
+│ │ └── @types/node@26.6.6 deduped
 │ ├── entities@7.0.1
 │ ├── whatwg-mimetype@3.0.0
 │ └─┬ ws@8.21.0
@@ -583,7 +583,7 @@ riksdagsmonitor@1.0.99 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ │ │ └── safe-buffer@5.1.2
 │ │ └── util-deprecate@1.0.2
 │ └── setimmediate@1.0.5
-├─┬ knip@6.43.0
+├─┬ knip@6.44.0
 │ ├─┬ formatly@0.11.4
 │ │ ├─┬ fd-package-json@2.0.0
 │ │ │ └── walk-up-path@4.0.0
@@ -1315,7 +1315,7 @@ riksdagsmonitor@1.0.99 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │   ├── @types/unist@3.0.3 deduped
 │   └── unist-util-is@6.0.1 deduped
 ├─┬ vite@8.3.5
-│ ├── @types/node@26.6.5 deduped
+│ ├── @types/node@26.6.6 deduped
 │ ├── UNMET OPTIONAL DEPENDENCY @vitejs/devtools@^0.7.1 || ^0.8.0
 │ ├── esbuild@0.28.1 deduped
 │ ├── UNMET OPTIONAL DEPENDENCY fsevents@~2.3.3
@@ -1359,7 +1359,7 @@ riksdagsmonitor@1.0.99 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ ├─┬ @types/chai@5.2.3
 │ │ ├── @types/deep-eql@4.0.2
 │ │ └── assertion-error@2.0.1
-│ ├── @types/node@26.6.5 deduped
+│ ├── @types/node@26.6.6 deduped
 │ ├── UNMET OPTIONAL DEPENDENCY @vitest/browser-playwright@5.0.5
 │ ├── UNMET OPTIONAL DEPENDENCY @vitest/browser-preview@5.0.5
 │ ├── UNMET OPTIONAL DEPENDENCY @vitest/browser-webdriverio@^5.0.0-beta.5 || >=5.0.0
@@ -1391,7 +1391,7 @@ riksdagsmonitor@1.0.99 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 └─┬ worldbank-mcp@1.0.1
   ├─┬ @modelcontextprotocol/sdk@1.32.1
   │ ├── UNMET OPTIONAL DEPENDENCY @cfworker/json-schema@^4.1.1
-  │ ├─┬ @hono/node-server@1.19.17
+  │ ├─┬ @hono/node-server@2.1.5
   │ │ └── hono@4.13.13 deduped
   │ ├── ajv-formats@3.0.1 deduped
   │ ├── ajv@8.20.0 deduped
