@@ -1,5 +1,5 @@
 {
-  "version": "1.0.100",
+  "version": "1.0.101",
   "name": "riksdagsmonitor",
   "dependencies": {
     "@eslint/js": {
@@ -8,7 +8,7 @@
       "overridden": false,
       "dependencies": {
         "eslint": {
-          "version": "10.13.0"
+          "version": "10.14.0"
         }
       }
     },
@@ -267,8 +267,8 @@
       }
     },
     "@vitest/coverage-v8": {
-      "version": "5.0.5",
-      "resolved": "https://registry.npmjs.org/@vitest/coverage-v8/-/coverage-v8-5.0.5.tgz",
+      "version": "5.1.0",
+      "resolved": "https://registry.npmjs.org/@vitest/coverage-v8/-/coverage-v8-5.1.0.tgz",
       "overridden": false,
       "dependencies": {
         "@bcoe/v8-coverage": {
@@ -278,17 +278,17 @@
         },
         "@vitest/browser": {},
         "@vitest/istanbul-lib-coverage": {
-          "version": "1.0.2",
-          "resolved": "https://registry.npmjs.org/@vitest/istanbul-lib-coverage/-/istanbul-lib-coverage-1.0.2.tgz",
+          "version": "2.1.0",
+          "resolved": "https://registry.npmjs.org/@vitest/istanbul-lib-coverage/-/istanbul-lib-coverage-2.1.0.tgz",
           "overridden": false
         },
         "@vitest/istanbul-lib-report": {
-          "version": "1.0.2",
-          "resolved": "https://registry.npmjs.org/@vitest/istanbul-lib-report/-/istanbul-lib-report-1.0.2.tgz",
+          "version": "2.1.0",
+          "resolved": "https://registry.npmjs.org/@vitest/istanbul-lib-report/-/istanbul-lib-report-2.1.0.tgz",
           "overridden": false,
           "dependencies": {
             "@vitest/istanbul-lib-coverage": {
-              "version": "1.0.2"
+              "version": "2.1.0"
             }
           }
         },
@@ -384,23 +384,23 @@
           "overridden": false
         },
         "vitest": {
-          "version": "5.0.5"
+          "version": "5.1.0"
         }
       }
     },
     "@vitest/ui": {
-      "version": "5.0.5",
-      "resolved": "https://registry.npmjs.org/@vitest/ui/-/ui-5.0.5.tgz",
+      "version": "5.1.0",
+      "resolved": "https://registry.npmjs.org/@vitest/ui/-/ui-5.1.0.tgz",
       "overridden": false,
       "dependencies": {
         "@vitest/utils": {
-          "version": "5.0.5",
-          "resolved": "https://registry.npmjs.org/@vitest/utils/-/utils-5.0.5.tgz",
+          "version": "5.1.0",
+          "resolved": "https://registry.npmjs.org/@vitest/utils/-/utils-5.1.0.tgz",
           "overridden": false,
           "dependencies": {
             "@vitest/pretty-format": {
-              "version": "5.0.5",
-              "resolved": "https://registry.npmjs.org/@vitest/pretty-format/-/pretty-format-5.0.5.tgz",
+              "version": "5.1.0",
+              "resolved": "https://registry.npmjs.org/@vitest/pretty-format/-/pretty-format-5.1.0.tgz",
               "overridden": false,
               "dependencies": {
                 "tinyrainbow": {
@@ -459,7 +459,7 @@
           "version": "3.2.0"
         },
         "vitest": {
-          "version": "5.0.5"
+          "version": "5.1.0"
         }
       }
     },
@@ -1680,13 +1680,13 @@
       }
     },
     "d3": {
-      "version": "7.9.0",
-      "resolved": "https://registry.npmjs.org/d3/-/d3-7.9.0.tgz",
+      "version": "7.9.2",
+      "resolved": "https://registry.npmjs.org/d3/-/d3-7.9.2.tgz",
       "overridden": false,
       "dependencies": {
         "d3-array": {
-          "version": "3.2.4",
-          "resolved": "https://registry.npmjs.org/d3-array/-/d3-array-3.2.4.tgz",
+          "version": "3.2.5",
+          "resolved": "https://registry.npmjs.org/d3-array/-/d3-array-3.2.5.tgz",
           "overridden": false,
           "dependencies": {
             "internmap": {
@@ -1697,70 +1697,70 @@
           }
         },
         "d3-axis": {
-          "version": "3.0.0",
-          "resolved": "https://registry.npmjs.org/d3-axis/-/d3-axis-3.0.0.tgz",
+          "version": "3.0.1",
+          "resolved": "https://registry.npmjs.org/d3-axis/-/d3-axis-3.0.1.tgz",
           "overridden": false
         },
         "d3-brush": {
-          "version": "3.0.0",
-          "resolved": "https://registry.npmjs.org/d3-brush/-/d3-brush-3.0.0.tgz",
+          "version": "3.0.1",
+          "resolved": "https://registry.npmjs.org/d3-brush/-/d3-brush-3.0.1.tgz",
           "overridden": false,
           "dependencies": {
             "d3-dispatch": {
-              "version": "3.0.1"
+              "version": "3.0.2"
             },
             "d3-drag": {
-              "version": "3.0.0"
+              "version": "3.0.1"
             },
             "d3-interpolate": {
-              "version": "3.0.1"
+              "version": "3.0.2"
             },
             "d3-selection": {
-              "version": "3.0.0"
+              "version": "3.0.1"
             },
             "d3-transition": {
-              "version": "3.0.1"
+              "version": "3.0.2"
             }
           }
         },
         "d3-chord": {
-          "version": "3.0.1",
-          "resolved": "https://registry.npmjs.org/d3-chord/-/d3-chord-3.0.1.tgz",
+          "version": "3.0.2",
+          "resolved": "https://registry.npmjs.org/d3-chord/-/d3-chord-3.0.2.tgz",
           "overridden": false,
           "dependencies": {
             "d3-path": {
-              "version": "3.1.0"
+              "version": "3.1.1"
             }
           }
         },
         "d3-color": {
-          "version": "3.1.0",
-          "resolved": "https://registry.npmjs.org/d3-color/-/d3-color-3.1.0.tgz",
+          "version": "3.1.1",
+          "resolved": "https://registry.npmjs.org/d3-color/-/d3-color-3.1.1.tgz",
           "overridden": false
         },
         "d3-contour": {
-          "version": "4.0.2",
-          "resolved": "https://registry.npmjs.org/d3-contour/-/d3-contour-4.0.2.tgz",
+          "version": "4.0.3",
+          "resolved": "https://registry.npmjs.org/d3-contour/-/d3-contour-4.0.3.tgz",
           "overridden": false,
           "dependencies": {
             "d3-array": {
-              "version": "3.2.4"
+              "version": "3.2.5"
             }
           }
         },
         "d3-delaunay": {
-          "version": "6.0.4",
-          "resolved": "https://registry.npmjs.org/d3-delaunay/-/d3-delaunay-6.0.4.tgz",
+          "version": "6.0.6",
+          "resolved": "https://registry.npmjs.org/d3-delaunay/-/d3-delaunay-6.0.6.tgz",
           "overridden": false,
           "dependencies": {
             "delaunator": {
-              "version": "5.0.1",
-              "resolved": "https://registry.npmjs.org/delaunator/-/delaunator-5.0.1.tgz",
+              "version": "5.1.0",
+              "resolved": "https://registry.npmjs.org/delaunator/-/delaunator-5.1.0.tgz",
               "overridden": false,
               "dependencies": {
                 "robust-predicates": {
-                  "version": "3.0.2",
-                  "resolved": "https://registry.npmjs.org/robust-predicates/-/robust-predicates-3.0.2.tgz",
+                  "version": "3.0.3",
+                  "resolved": "https://registry.npmjs.org/robust-predicates/-/robust-predicates-3.0.3.tgz",
                   "overridden": false
                 }
               }
@@ -1768,26 +1768,26 @@
           }
         },
         "d3-dispatch": {
-          "version": "3.0.1",
-          "resolved": "https://registry.npmjs.org/d3-dispatch/-/d3-dispatch-3.0.1.tgz",
+          "version": "3.0.2",
+          "resolved": "https://registry.npmjs.org/d3-dispatch/-/d3-dispatch-3.0.2.tgz",
           "overridden": false
         },
         "d3-drag": {
-          "version": "3.0.0",
-          "resolved": "https://registry.npmjs.org/d3-drag/-/d3-drag-3.0.0.tgz",
+          "version": "3.0.1",
+          "resolved": "https://registry.npmjs.org/d3-drag/-/d3-drag-3.0.1.tgz",
           "overridden": false,
           "dependencies": {
             "d3-dispatch": {
-              "version": "3.0.1"
+              "version": "3.0.2"
             },
             "d3-selection": {
-              "version": "3.0.0"
+              "version": "3.0.1"
             }
           }
         },
         "d3-dsv": {
-          "version": "3.0.1",
-          "resolved": "https://registry.npmjs.org/d3-dsv/-/d3-dsv-3.0.1.tgz",
+          "version": "3.0.2",
+          "resolved": "https://registry.npmjs.org/d3-dsv/-/d3-dsv-3.0.2.tgz",
           "overridden": false,
           "dependencies": {
             "commander": {
@@ -1815,213 +1815,216 @@
           }
         },
         "d3-ease": {
-          "version": "3.0.1",
-          "resolved": "https://registry.npmjs.org/d3-ease/-/d3-ease-3.0.1.tgz",
+          "version": "3.0.2",
+          "resolved": "https://registry.npmjs.org/d3-ease/-/d3-ease-3.0.2.tgz",
           "overridden": false
         },
         "d3-fetch": {
-          "version": "3.0.1",
-          "resolved": "https://registry.npmjs.org/d3-fetch/-/d3-fetch-3.0.1.tgz",
+          "version": "3.0.2",
+          "resolved": "https://registry.npmjs.org/d3-fetch/-/d3-fetch-3.0.2.tgz",
           "overridden": false,
           "dependencies": {
             "d3-dsv": {
-              "version": "3.0.1"
+              "version": "3.0.2"
             }
           }
         },
         "d3-force": {
-          "version": "3.0.0",
-          "resolved": "https://registry.npmjs.org/d3-force/-/d3-force-3.0.0.tgz",
+          "version": "3.0.1",
+          "resolved": "https://registry.npmjs.org/d3-force/-/d3-force-3.0.1.tgz",
           "overridden": false,
           "dependencies": {
             "d3-dispatch": {
-              "version": "3.0.1"
+              "version": "3.0.2"
             },
             "d3-quadtree": {
-              "version": "3.0.1"
+              "version": "3.0.2"
             },
             "d3-timer": {
-              "version": "3.0.1"
+              "version": "3.0.2"
             }
           }
         },
         "d3-format": {
-          "version": "3.1.2",
-          "resolved": "https://registry.npmjs.org/d3-format/-/d3-format-3.1.2.tgz",
+          "version": "3.1.3",
+          "resolved": "https://registry.npmjs.org/d3-format/-/d3-format-3.1.3.tgz",
           "overridden": false
         },
         "d3-geo": {
-          "version": "3.1.1",
-          "resolved": "https://registry.npmjs.org/d3-geo/-/d3-geo-3.1.1.tgz",
+          "version": "3.1.2",
+          "resolved": "https://registry.npmjs.org/d3-geo/-/d3-geo-3.1.2.tgz",
           "overridden": false,
           "dependencies": {
             "d3-array": {
-              "version": "3.2.4"
+              "version": "3.2.5"
             }
           }
         },
         "d3-hierarchy": {
-          "version": "3.1.2",
-          "resolved": "https://registry.npmjs.org/d3-hierarchy/-/d3-hierarchy-3.1.2.tgz",
+          "version": "3.1.3",
+          "resolved": "https://registry.npmjs.org/d3-hierarchy/-/d3-hierarchy-3.1.3.tgz",
           "overridden": false
         },
         "d3-interpolate": {
-          "version": "3.0.1",
-          "resolved": "https://registry.npmjs.org/d3-interpolate/-/d3-interpolate-3.0.1.tgz",
+          "version": "3.0.2",
+          "resolved": "https://registry.npmjs.org/d3-interpolate/-/d3-interpolate-3.0.2.tgz",
           "overridden": false,
           "dependencies": {
             "d3-color": {
-              "version": "3.1.0"
+              "version": "3.1.1"
             }
           }
         },
         "d3-path": {
-          "version": "3.1.0",
-          "resolved": "https://registry.npmjs.org/d3-path/-/d3-path-3.1.0.tgz",
+          "version": "3.1.1",
+          "resolved": "https://registry.npmjs.org/d3-path/-/d3-path-3.1.1.tgz",
           "overridden": false
         },
         "d3-polygon": {
-          "version": "3.0.1",
-          "resolved": "https://registry.npmjs.org/d3-polygon/-/d3-polygon-3.0.1.tgz",
+          "version": "3.0.2",
+          "resolved": "https://registry.npmjs.org/d3-polygon/-/d3-polygon-3.0.2.tgz",
           "overridden": false
         },
         "d3-quadtree": {
-          "version": "3.0.1",
-          "resolved": "https://registry.npmjs.org/d3-quadtree/-/d3-quadtree-3.0.1.tgz",
+          "version": "3.0.2",
+          "resolved": "https://registry.npmjs.org/d3-quadtree/-/d3-quadtree-3.0.2.tgz",
           "overridden": false
         },
         "d3-random": {
-          "version": "3.0.1",
-          "resolved": "https://registry.npmjs.org/d3-random/-/d3-random-3.0.1.tgz",
+          "version": "3.0.2",
+          "resolved": "https://registry.npmjs.org/d3-random/-/d3-random-3.0.2.tgz",
           "overridden": false
         },
         "d3-scale-chromatic": {
-          "version": "3.1.0",
-          "resolved": "https://registry.npmjs.org/d3-scale-chromatic/-/d3-scale-chromatic-3.1.0.tgz",
+          "version": "3.1.1",
+          "resolved": "https://registry.npmjs.org/d3-scale-chromatic/-/d3-scale-chromatic-3.1.1.tgz",
           "overridden": false,
           "dependencies": {
             "d3-color": {
-              "version": "3.1.0"
+              "version": "3.1.1"
             },
             "d3-interpolate": {
-              "version": "3.0.1"
+              "version": "3.0.2"
+            },
+            "d3-scale": {
+              "version": "4.0.3"
             }
           }
         },
         "d3-scale": {
-          "version": "4.0.2",
-          "resolved": "https://registry.npmjs.org/d3-scale/-/d3-scale-4.0.2.tgz",
+          "version": "4.0.3",
+          "resolved": "https://registry.npmjs.org/d3-scale/-/d3-scale-4.0.3.tgz",
           "overridden": false,
           "dependencies": {
             "d3-array": {
-              "version": "3.2.4"
+              "version": "3.2.5"
             },
             "d3-format": {
-              "version": "3.1.2"
+              "version": "3.1.3"
             },
             "d3-interpolate": {
-              "version": "3.0.1"
+              "version": "3.0.2"
             },
             "d3-time-format": {
-              "version": "4.1.0"
+              "version": "4.1.1"
             },
             "d3-time": {
-              "version": "3.1.0"
+              "version": "3.1.1"
             }
           }
         },
         "d3-selection": {
-          "version": "3.0.0",
-          "resolved": "https://registry.npmjs.org/d3-selection/-/d3-selection-3.0.0.tgz",
+          "version": "3.0.1",
+          "resolved": "https://registry.npmjs.org/d3-selection/-/d3-selection-3.0.1.tgz",
           "overridden": false
         },
         "d3-shape": {
-          "version": "3.2.0",
-          "resolved": "https://registry.npmjs.org/d3-shape/-/d3-shape-3.2.0.tgz",
+          "version": "3.2.1",
+          "resolved": "https://registry.npmjs.org/d3-shape/-/d3-shape-3.2.1.tgz",
           "overridden": false,
           "dependencies": {
             "d3-path": {
-              "version": "3.1.0"
+              "version": "3.1.1"
             }
           }
         },
         "d3-time-format": {
-          "version": "4.1.0",
-          "resolved": "https://registry.npmjs.org/d3-time-format/-/d3-time-format-4.1.0.tgz",
+          "version": "4.1.1",
+          "resolved": "https://registry.npmjs.org/d3-time-format/-/d3-time-format-4.1.1.tgz",
           "overridden": false,
           "dependencies": {
             "d3-time": {
-              "version": "3.1.0"
+              "version": "3.1.1"
             }
           }
         },
         "d3-time": {
-          "version": "3.1.0",
-          "resolved": "https://registry.npmjs.org/d3-time/-/d3-time-3.1.0.tgz",
+          "version": "3.1.1",
+          "resolved": "https://registry.npmjs.org/d3-time/-/d3-time-3.1.1.tgz",
           "overridden": false,
           "dependencies": {
             "d3-array": {
-              "version": "3.2.4"
+              "version": "3.2.5"
             }
           }
         },
         "d3-timer": {
-          "version": "3.0.1",
-          "resolved": "https://registry.npmjs.org/d3-timer/-/d3-timer-3.0.1.tgz",
+          "version": "3.0.2",
+          "resolved": "https://registry.npmjs.org/d3-timer/-/d3-timer-3.0.2.tgz",
           "overridden": false
         },
         "d3-transition": {
-          "version": "3.0.1",
-          "resolved": "https://registry.npmjs.org/d3-transition/-/d3-transition-3.0.1.tgz",
+          "version": "3.0.2",
+          "resolved": "https://registry.npmjs.org/d3-transition/-/d3-transition-3.0.2.tgz",
           "overridden": false,
           "dependencies": {
             "d3-color": {
-              "version": "3.1.0"
+              "version": "3.1.1"
             },
             "d3-dispatch": {
-              "version": "3.0.1"
+              "version": "3.0.2"
             },
             "d3-ease": {
-              "version": "3.0.1"
+              "version": "3.0.2"
             },
             "d3-interpolate": {
-              "version": "3.0.1"
+              "version": "3.0.2"
             },
             "d3-selection": {
-              "version": "3.0.0"
+              "version": "3.0.1"
             },
             "d3-timer": {
-              "version": "3.0.1"
+              "version": "3.0.2"
             }
           }
         },
         "d3-zoom": {
-          "version": "3.0.0",
-          "resolved": "https://registry.npmjs.org/d3-zoom/-/d3-zoom-3.0.0.tgz",
+          "version": "3.0.1",
+          "resolved": "https://registry.npmjs.org/d3-zoom/-/d3-zoom-3.0.1.tgz",
           "overridden": false,
           "dependencies": {
             "d3-dispatch": {
-              "version": "3.0.1"
+              "version": "3.0.2"
             },
             "d3-drag": {
-              "version": "3.0.0"
+              "version": "3.0.1"
             },
             "d3-interpolate": {
-              "version": "3.0.1"
+              "version": "3.0.2"
             },
             "d3-selection": {
-              "version": "3.0.0"
+              "version": "3.0.1"
             },
             "d3-transition": {
-              "version": "3.0.1"
+              "version": "3.0.2"
             }
           }
         }
       }
     },
     "eslint": {
-      "version": "10.13.0",
-      "resolved": "https://registry.npmjs.org/eslint/-/eslint-10.13.0.tgz",
+      "version": "10.14.0",
+      "resolved": "https://registry.npmjs.org/eslint/-/eslint-10.14.0.tgz",
       "overridden": false,
       "dependencies": {
         "@eslint-community/eslint-utils": {
@@ -2035,7 +2038,7 @@
               "overridden": false
             },
             "eslint": {
-              "version": "10.13.0"
+              "version": "10.14.0"
             }
           }
         },
@@ -2495,8 +2498,8 @@
           "overridden": false
         },
         "minimatch": {
-          "version": "10.2.5",
-          "resolved": "https://registry.npmjs.org/minimatch/-/minimatch-10.2.5.tgz",
+          "version": "10.2.6",
+          "resolved": "https://registry.npmjs.org/minimatch/-/minimatch-10.2.6.tgz",
           "overridden": false,
           "dependencies": {
             "brace-expansion": {
@@ -2566,8 +2569,8 @@
       "overridden": false
     },
     "globals": {
-      "version": "17.13.0",
-      "resolved": "https://registry.npmjs.org/globals/-/globals-17.13.0.tgz",
+      "version": "17.14.0",
+      "resolved": "https://registry.npmjs.org/globals/-/globals-17.14.0.tgz",
       "overridden": false
     },
     "gray-matter": {
@@ -2955,8 +2958,8 @@
       }
     },
     "knip": {
-      "version": "6.44.0",
-      "resolved": "https://registry.npmjs.org/knip/-/knip-6.44.0.tgz",
+      "version": "6.44.1",
+      "resolved": "https://registry.npmjs.org/knip/-/knip-6.44.1.tgz",
       "overridden": false,
       "dependencies": {
         "formatly": {
@@ -3099,8 +3102,8 @@
       }
     },
     "mermaid": {
-      "version": "12.2.0",
-      "resolved": "https://registry.npmjs.org/mermaid/-/mermaid-12.2.0.tgz",
+      "version": "12.3.0",
+      "resolved": "https://registry.npmjs.org/mermaid/-/mermaid-12.3.0.tgz",
       "overridden": false,
       "dependencies": {
         "@braintree/sanitize-url": {
@@ -3190,10 +3193,10 @@
           "overridden": false,
           "dependencies": {
             "d3-selection": {
-              "version": "3.0.0"
+              "version": "3.0.1"
             },
             "d3-transition": {
-              "version": "3.0.1"
+              "version": "3.0.2"
             }
           }
         },
@@ -3321,7 +3324,7 @@
           }
         },
         "d3": {
-          "version": "7.9.0"
+          "version": "7.9.2"
         },
         "dagre-d3-es": {
           "version": "7.0.14",
@@ -3329,7 +3332,7 @@
           "overridden": false,
           "dependencies": {
             "d3": {
-              "version": "7.9.0"
+              "version": "7.9.2"
             },
             "lodash-es": {
               "version": "4.18.1",
@@ -3354,8 +3357,8 @@
           }
         },
         "elkjs": {
-          "version": "0.9.3",
-          "resolved": "https://registry.npmjs.org/elkjs/-/elkjs-0.9.3.tgz",
+          "version": "0.12.1",
+          "resolved": "https://registry.npmjs.org/elkjs/-/elkjs-0.12.1.tgz",
           "overridden": false
         },
         "es-toolkit": {
@@ -3428,11 +3431,6 @@
         "ts-dedent": {
           "version": "2.2.0",
           "resolved": "https://registry.npmjs.org/ts-dedent/-/ts-dedent-2.2.0.tgz",
-          "overridden": false
-        },
-        "uuid": {
-          "version": "14.0.0",
-          "resolved": "https://registry.npmjs.org/uuid/-/uuid-14.0.0.tgz",
           "overridden": false
         }
       }
@@ -5463,7 +5461,7 @@
                   "version": "4.4.3"
                 },
                 "eslint": {
-                  "version": "10.13.0"
+                  "version": "10.14.0"
                 },
                 "ts-api-utils": {
                   "version": "2.5.0"
@@ -5490,7 +5488,7 @@
               }
             },
             "eslint": {
-              "version": "10.13.0"
+              "version": "10.14.0"
             },
             "ignore": {
               "version": "7.0.14",
@@ -5538,7 +5536,7 @@
               "version": "4.4.3"
             },
             "eslint": {
-              "version": "10.13.0"
+              "version": "10.14.0"
             },
             "typescript": {
               "version": "6.0.3"
@@ -5623,7 +5621,7 @@
               "version": "8.72.1"
             },
             "eslint": {
-              "version": "10.13.0"
+              "version": "10.14.0"
             },
             "typescript": {
               "version": "6.0.3"
@@ -5631,7 +5629,7 @@
           }
         },
         "eslint": {
-          "version": "10.13.0"
+          "version": "10.14.0"
         },
         "typescript": {
           "version": "6.0.3"
@@ -5819,8 +5817,8 @@
       }
     },
     "vitest": {
-      "version": "5.0.5",
-      "resolved": "https://registry.npmjs.org/vitest/-/vitest-5.0.5.tgz",
+      "version": "5.1.0",
+      "resolved": "https://registry.npmjs.org/vitest/-/vitest-5.1.0.tgz",
       "overridden": false,
       "dependencies": {
         "@edge-runtime/vm": {},
@@ -5850,26 +5848,26 @@
         "@vitest/browser-webdriverio": {},
         "@vitest/coverage-istanbul": {},
         "@vitest/coverage-v8": {
-          "version": "5.0.5"
+          "version": "5.1.0"
         },
         "@vitest/mocker": {
-          "version": "5.0.5",
-          "resolved": "https://registry.npmjs.org/@vitest/mocker/-/mocker-5.0.5.tgz",
+          "version": "5.1.0",
+          "resolved": "https://registry.npmjs.org/@vitest/mocker/-/mocker-5.1.0.tgz",
           "overridden": false,
           "dependencies": {
             "@jridgewell/trace-mapping": {
               "version": "0.3.31"
             },
             "@vitest/spy": {
-              "version": "5.0.5",
-              "resolved": "https://registry.npmjs.org/@vitest/spy/-/spy-5.0.5.tgz",
+              "version": "5.1.0",
+              "resolved": "https://registry.npmjs.org/@vitest/spy/-/spy-5.1.0.tgz",
               "overridden": false
             },
             "estree-walker": {
               "version": "3.0.3"
             },
             "magic-string": {
-              "version": "1.4.3"
+              "version": "1.4.5"
             },
             "msw": {},
             "vite": {
@@ -5878,7 +5876,7 @@
           }
         },
         "@vitest/ui": {
-          "version": "5.0.5"
+          "version": "5.1.0"
         },
         "chai": {
           "version": "6.3.0",
@@ -5900,8 +5898,8 @@
         },
         "jsdom": {},
         "magic-string": {
-          "version": "1.4.3",
-          "resolved": "https://registry.npmjs.org/magic-string/-/magic-string-1.4.3.tgz",
+          "version": "1.4.5",
+          "resolved": "https://registry.npmjs.org/magic-string/-/magic-string-1.4.5.tgz",
           "overridden": false,
           "dependencies": {
             "@jridgewell/sourcemap-codec": {
@@ -6469,8 +6467,8 @@
           "overridden": false,
           "dependencies": {
             "follow-redirects": {
-              "version": "1.16.1",
-              "resolved": "https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.16.1.tgz",
+              "version": "1.16.2",
+              "resolved": "https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.16.2.tgz",
               "overridden": false
             },
             "form-data": {
