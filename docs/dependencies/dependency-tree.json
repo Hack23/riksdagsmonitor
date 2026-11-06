@@ -1,5 +1,5 @@
 {
-  "version": "1.0.101",
+  "version": "1.0.102",
   "name": "riksdagsmonitor",
   "dependencies": {
     "@eslint/js": {
@@ -5720,8 +5720,8 @@
       }
     },
     "vite": {
-      "version": "8.3.5",
-      "resolved": "https://registry.npmjs.org/vite/-/vite-8.3.5.tgz",
+      "version": "8.3.6",
+      "resolved": "https://registry.npmjs.org/vite/-/vite-8.3.6.tgz",
       "overridden": false,
       "dependencies": {
         "@types/node": {
@@ -5743,8 +5743,8 @@
           "version": "4.0.7"
         },
         "postcss": {
-          "version": "8.5.31",
-          "resolved": "https://registry.npmjs.org/postcss/-/postcss-8.5.31.tgz",
+          "version": "8.5.32",
+          "resolved": "https://registry.npmjs.org/postcss/-/postcss-8.5.32.tgz",
           "overridden": false,
           "dependencies": {
             "nanoid": {
@@ -5763,13 +5763,13 @@
           }
         },
         "rolldown": {
-          "version": "1.2.14",
-          "resolved": "https://registry.npmjs.org/rolldown/-/rolldown-1.2.14.tgz",
+          "version": "1.2.16",
+          "resolved": "https://registry.npmjs.org/rolldown/-/rolldown-1.2.16.tgz",
           "overridden": false,
           "dependencies": {
             "@oxc-project/types": {
-              "version": "0.154.0",
-              "resolved": "https://registry.npmjs.org/@oxc-project/types/-/types-0.154.0.tgz",
+              "version": "0.156.0",
+              "resolved": "https://registry.npmjs.org/@oxc-project/types/-/types-0.156.0.tgz",
               "overridden": false
             },
             "@rolldown/binding-android-arm-eabi": {},
@@ -5783,8 +5783,8 @@
             "@rolldown/binding-linux-ppc64-gnu": {},
             "@rolldown/binding-linux-s390x-gnu": {},
             "@rolldown/binding-linux-x64-gnu": {
-              "version": "1.2.14",
-              "resolved": "https://registry.npmjs.org/@rolldown/binding-linux-x64-gnu/-/binding-linux-x64-gnu-1.2.14.tgz",
+              "version": "1.2.16",
+              "resolved": "https://registry.npmjs.org/@rolldown/binding-linux-x64-gnu/-/binding-linux-x64-gnu-1.2.16.tgz",
               "overridden": false
             },
             "@rolldown/binding-linux-x64-musl": {},
@@ -5871,7 +5871,7 @@
             },
             "msw": {},
             "vite": {
-              "version": "8.3.5"
+              "version": "8.3.6"
             }
           }
         },
@@ -5932,7 +5932,7 @@
           "version": "0.2.17"
         },
         "vite": {
-          "version": "8.3.5"
+          "version": "8.3.6"
         },
         "why-is-node-running": {
           "version": "3.2.1",
